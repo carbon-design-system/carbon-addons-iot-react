@@ -111,8 +111,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Facility Metrics"
                       >
-                        Facility Metrics
-                         
+                        <span>
+                          Facility Metrics
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -260,8 +261,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Humidity"
                       >
-                        Humidity
-                         
+                        <span>
+                          Humidity
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -370,8 +372,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Utilization"
                       >
-                        Utilization
-                         
+                        <span>
+                          Utilization
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -441,8 +444,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Alert Count"
                       >
-                        Alert Count
-                         
+                        <span>
+                          Alert Count
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -512,8 +516,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Comfort Level"
                       >
-                        Comfort Level
-                         
+                        <span>
+                          Comfort Level
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -605,8 +610,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Foot Traffic"
                       >
-                        Foot Traffic
-                         
+                        <span>
+                          Foot Traffic
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -650,6 +656,167 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="GaugeCard"
+                    style={
+                      Object {
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(1122px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(1122px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="GAUGE"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Health"
+                      >
+                        <span>
+                          Health
+                        </span>
+                        <div
+                          className="bx--tooltip__label"
+                          id="card-tooltip-trigger-GaugeCard"
+                        >
+                          
+                          <div
+                            aria-describedby={null}
+                            aria-haspopup="true"
+                            className="bx--tooltip__trigger"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              description={null}
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role={null}
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                              />
+                              <path
+                                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </span>
+                      <div
+                        className="card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        className="iot--gauge-container react-grid-item cssTransforms"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
+                      >
+                        <meter
+                          className=""
+                          max={100}
+                          min={0}
+                          title="%"
+                          value={73}
+                        >
+                          <svg
+                            className="iot--gauge react-grid-item cssTransforms"
+                            percent="0"
+                            style={
+                              Object {
+                                "--gauge-bg": "#e0e0e0",
+                                "--gauge-colors": "#f1c21b",
+                                "--gauge-max-value": 100,
+                                "--gauge-size": "68px",
+                                "--gauge-trend-color": undefined,
+                                "--gauge-value": 73,
+                                "--stroke-dash": 137.60175822723292,
+                              }
+                            }
+                          >
+                            <circle
+                              className="iot--gauge-bg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <circle
+                              className="iot--gauge-fg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <text
+                              className="iot--gauge-value"
+                              textAnchor="middle"
+                              x={34}
+                              y="29"
+                            >
+                              <tspan>
+                                73%
+                              </tspan>
+                            </text>
+                            <text
+                              className="iot--gauge-rating"
+                              textAnchor="middle"
+                              x={34}
+                              y="50"
+                            >
+                              <tspan>
+                                Fair
+                              </tspan>
+                            </text>
+                          </svg>
+                        </meter>
+                        <div
+                          className="iot--gauge-trend iot--gauge-trend__up"
+                        >
+                          <p
+                            style={
+                              Object {
+                                "--gauge-trend-color": undefined,
+                              }
+                            }
+                          >
+                            5%
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                     id="facilitycard-health"
                     style={
@@ -673,8 +840,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Health"
                       >
-                        Health
-                         
+                        <span>
+                          Health
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -766,8 +934,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Temperature"
                       >
-                        Temperature
-                         
+                        <span>
+                          Temperature
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -1389,8 +1558,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Environment"
                       >
-                        Environment
-                         
+                        <span>
+                          Environment
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -1516,8 +1686,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Floor Map"
                       >
-                        Floor Map
-                         
+                        <span>
+                          Floor Map
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -1956,8 +2127,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Facility Metrics"
                       >
-                        Facility Metrics
-                         
+                        <span>
+                          Facility Metrics
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2105,8 +2277,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Humidity"
                       >
-                        Humidity
-                         
+                        <span>
+                          Humidity
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2215,8 +2388,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Utilization"
                       >
-                        Utilization
-                         
+                        <span>
+                          Utilization
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2286,8 +2460,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Alert Count"
                       >
-                        Alert Count
-                         
+                        <span>
+                          Alert Count
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2357,8 +2532,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Comfort Level"
                       >
-                        Comfort Level
-                         
+                        <span>
+                          Comfort Level
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2450,8 +2626,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Foot Traffic"
                       >
-                        Foot Traffic
-                         
+                        <span>
+                          Foot Traffic
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2495,6 +2672,167 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="GaugeCard"
+                    style={
+                      Object {
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(1122px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(1122px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="GAUGE"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Health"
+                      >
+                        <span>
+                          Health
+                        </span>
+                        <div
+                          className="bx--tooltip__label"
+                          id="card-tooltip-trigger-GaugeCard"
+                        >
+                          
+                          <div
+                            aria-describedby={null}
+                            aria-haspopup="true"
+                            className="bx--tooltip__trigger"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              description={null}
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role={null}
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                              />
+                              <path
+                                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </span>
+                      <div
+                        className="card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        className="iot--gauge-container react-grid-item cssTransforms"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
+                      >
+                        <meter
+                          className=""
+                          max={100}
+                          min={0}
+                          title="%"
+                          value={73}
+                        >
+                          <svg
+                            className="iot--gauge react-grid-item cssTransforms"
+                            percent="0"
+                            style={
+                              Object {
+                                "--gauge-bg": "#e0e0e0",
+                                "--gauge-colors": "#f1c21b",
+                                "--gauge-max-value": 100,
+                                "--gauge-size": "68px",
+                                "--gauge-trend-color": undefined,
+                                "--gauge-value": 73,
+                                "--stroke-dash": 137.60175822723292,
+                              }
+                            }
+                          >
+                            <circle
+                              className="iot--gauge-bg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <circle
+                              className="iot--gauge-fg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <text
+                              className="iot--gauge-value"
+                              textAnchor="middle"
+                              x={34}
+                              y="29"
+                            >
+                              <tspan>
+                                73%
+                              </tspan>
+                            </text>
+                            <text
+                              className="iot--gauge-rating"
+                              textAnchor="middle"
+                              x={34}
+                              y="50"
+                            >
+                              <tspan>
+                                Fair
+                              </tspan>
+                            </text>
+                          </svg>
+                        </meter>
+                        <div
+                          className="iot--gauge-trend iot--gauge-trend__up"
+                        >
+                          <p
+                            style={
+                              Object {
+                                "--gauge-trend-color": undefined,
+                              }
+                            }
+                          >
+                            5%
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                     id="facilitycard-health"
                     style={
@@ -2518,8 +2856,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Health"
                       >
-                        Health
-                         
+                        <span>
+                          Health
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -2611,8 +2950,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Temperature"
                       >
-                        Temperature
-                         
+                        <span>
+                          Temperature
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -3234,8 +3574,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Environment"
                       >
-                        Environment
-                         
+                        <span>
+                          Environment
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -3361,8 +3702,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Floor Map"
                       >
-                        Floor Map
-                         
+                        <span>
+                          Floor Map
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -3833,8 +4175,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Facility Metrics"
                       >
-                        Facility Metrics
-                         
+                        <span>
+                          Facility Metrics
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -3982,8 +4325,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Humidity"
                       >
-                        Humidity
-                         
+                        <span>
+                          Humidity
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -4092,8 +4436,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Utilization"
                       >
-                        Utilization
-                         
+                        <span>
+                          Utilization
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -4163,8 +4508,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Alert Count"
                       >
-                        Alert Count
-                         
+                        <span>
+                          Alert Count
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -4234,8 +4580,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Comfort Level"
                       >
-                        Comfort Level
-                         
+                        <span>
+                          Comfort Level
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -4327,8 +4674,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Foot Traffic"
                       >
-                        Foot Traffic
-                         
+                        <span>
+                          Foot Traffic
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -4372,6 +4720,167 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="GaugeCard"
+                    style={
+                      Object {
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(1122px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(1122px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="GAUGE"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Health"
+                      >
+                        <span>
+                          Health
+                        </span>
+                        <div
+                          className="bx--tooltip__label"
+                          id="card-tooltip-trigger-GaugeCard"
+                        >
+                          
+                          <div
+                            aria-describedby={null}
+                            aria-haspopup="true"
+                            className="bx--tooltip__trigger"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              description={null}
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role={null}
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                              />
+                              <path
+                                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </span>
+                      <div
+                        className="card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        className="iot--gauge-container react-grid-item cssTransforms"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
+                      >
+                        <meter
+                          className=""
+                          max={100}
+                          min={0}
+                          title="%"
+                          value={73}
+                        >
+                          <svg
+                            className="iot--gauge react-grid-item cssTransforms"
+                            percent="0"
+                            style={
+                              Object {
+                                "--gauge-bg": "#e0e0e0",
+                                "--gauge-colors": "#f1c21b",
+                                "--gauge-max-value": 100,
+                                "--gauge-size": "68px",
+                                "--gauge-trend-color": undefined,
+                                "--gauge-value": 73,
+                                "--stroke-dash": 137.60175822723292,
+                              }
+                            }
+                          >
+                            <circle
+                              className="iot--gauge-bg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <circle
+                              className="iot--gauge-fg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <text
+                              className="iot--gauge-value"
+                              textAnchor="middle"
+                              x={34}
+                              y="29"
+                            >
+                              <tspan>
+                                73%
+                              </tspan>
+                            </text>
+                            <text
+                              className="iot--gauge-rating"
+                              textAnchor="middle"
+                              x={34}
+                              y="50"
+                            >
+                              <tspan>
+                                Fair
+                              </tspan>
+                            </text>
+                          </svg>
+                        </meter>
+                        <div
+                          className="iot--gauge-trend iot--gauge-trend__up"
+                        >
+                          <p
+                            style={
+                              Object {
+                                "--gauge-trend-color": undefined,
+                              }
+                            }
+                          >
+                            5%
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                     id="facilitycard-health"
                     style={
@@ -4395,8 +4904,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Health"
                       >
-                        Health
-                         
+                        <span>
+                          Health
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -4488,8 +4998,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Temperature"
                       >
-                        Temperature
-                         
+                        <span>
+                          Temperature
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -5111,8 +5622,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Environment"
                       >
-                        Environment
-                         
+                        <span>
+                          Environment
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -5238,8 +5750,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Floor Map"
                       >
-                        Floor Map
-                         
+                        <span>
+                          Floor Map
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -5685,8 +6198,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Expanded card"
                       >
-                        Expanded card
-                         
+                        <span>
+                          Expanded card
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -5968,8 +6482,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="card--title"
                       title="Expanded card"
                     >
-                      Expanded card
-                       
+                      <span>
+                        Expanded card
+                      </span>
                     </span>
                     <div
                       className="card--toolbar"
@@ -8026,8 +8541,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Facility Metrics"
                       >
-                        Facility Metrics
-                         
+                        <span>
+                          Facility Metrics
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8175,8 +8691,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Humidity"
                       >
-                        Humidity
-                         
+                        <span>
+                          Humidity
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8285,8 +8802,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Utilization"
                       >
-                        Utilization
-                         
+                        <span>
+                          Utilization
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8356,8 +8874,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Alert Count"
                       >
-                        Alert Count
-                         
+                        <span>
+                          Alert Count
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8427,8 +8946,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Comfort Level"
                       >
-                        Comfort Level
-                         
+                        <span>
+                          Comfort Level
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8520,8 +9040,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Foot Traffic"
                       >
-                        Foot Traffic
-                         
+                        <span>
+                          Foot Traffic
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8565,6 +9086,167 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="GaugeCard"
+                    style={
+                      Object {
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(1122px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(1122px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="GAUGE"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Health"
+                      >
+                        <span>
+                          Health
+                        </span>
+                        <div
+                          className="bx--tooltip__label"
+                          id="card-tooltip-trigger-GaugeCard"
+                        >
+                          
+                          <div
+                            aria-describedby={null}
+                            aria-haspopup="true"
+                            className="bx--tooltip__trigger"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              description={null}
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role={null}
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                              />
+                              <path
+                                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </span>
+                      <div
+                        className="card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        className="iot--gauge-container react-grid-item cssTransforms"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
+                      >
+                        <meter
+                          className=""
+                          max={100}
+                          min={0}
+                          title="%"
+                          value={73}
+                        >
+                          <svg
+                            className="iot--gauge react-grid-item cssTransforms"
+                            percent="0"
+                            style={
+                              Object {
+                                "--gauge-bg": "#e0e0e0",
+                                "--gauge-colors": "#f1c21b",
+                                "--gauge-max-value": 100,
+                                "--gauge-size": "68px",
+                                "--gauge-trend-color": undefined,
+                                "--gauge-value": 73,
+                                "--stroke-dash": 137.60175822723292,
+                              }
+                            }
+                          >
+                            <circle
+                              className="iot--gauge-bg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <circle
+                              className="iot--gauge-fg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <text
+                              className="iot--gauge-value"
+                              textAnchor="middle"
+                              x={34}
+                              y="29"
+                            >
+                              <tspan>
+                                73%
+                              </tspan>
+                            </text>
+                            <text
+                              className="iot--gauge-rating"
+                              textAnchor="middle"
+                              x={34}
+                              y="50"
+                            >
+                              <tspan>
+                                Fair
+                              </tspan>
+                            </text>
+                          </svg>
+                        </meter>
+                        <div
+                          className="iot--gauge-trend iot--gauge-trend__up"
+                        >
+                          <p
+                            style={
+                              Object {
+                                "--gauge-trend-color": undefined,
+                              }
+                            }
+                          >
+                            5%
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                     id="facilitycard-health"
                     style={
@@ -8588,8 +9270,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Health"
                       >
-                        Health
-                         
+                        <span>
+                          Health
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -8681,8 +9364,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Temperature"
                       >
-                        Temperature
-                         
+                        <span>
+                          Temperature
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -9302,8 +9986,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Environment"
                       >
-                        Environment
-                         
+                        <span>
+                          Environment
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -9429,8 +10114,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Floor Map"
                       >
-                        Floor Map
-                         
+                        <span>
+                          Floor Map
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -9877,8 +10563,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 13 "
                         >
-                          value: 13 
-                           
+                          <span>
+                            value: 13 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -9945,8 +10632,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1352 steps"
                         >
-                          value: 1352 steps
-                           
+                          <span>
+                            value: 1352 steps
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10013,8 +10701,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 103.2 ˚F"
                         >
-                          value: 103.2 ˚F
-                           
+                          <span>
+                            value: 103.2 ˚F
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10081,8 +10770,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 107324.3 kJ"
                         >
-                          value: 107324.3 kJ
-                           
+                          <span>
+                            value: 107324.3 kJ
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10149,8 +10839,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1709384.1 people"
                         >
-                          value: 1709384.1 people
-                           
+                          <span>
+                            value: 1709384.1 people
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10217,8 +10908,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: false "
                         >
-                          value: false 
-                           
+                          <span>
+                            value: false 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10289,8 +10981,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: true "
                         >
-                          value: true 
-                           
+                          <span>
+                            value: true 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10426,8 +11119,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 13 "
                         >
-                          value: 13 
-                           
+                          <span>
+                            value: 13 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10494,8 +11188,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1352 steps"
                         >
-                          value: 1352 steps
-                           
+                          <span>
+                            value: 1352 steps
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10562,8 +11257,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 103.2 ˚F"
                         >
-                          value: 103.2 ˚F
-                           
+                          <span>
+                            value: 103.2 ˚F
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10630,8 +11326,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 107324.3 kJ"
                         >
-                          value: 107324.3 kJ
-                           
+                          <span>
+                            value: 107324.3 kJ
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10698,8 +11395,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1709384.1 people"
                         >
-                          value: 1709384.1 people
-                           
+                          <span>
+                            value: 1709384.1 people
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10766,8 +11464,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: false "
                         >
-                          value: false 
-                           
+                          <span>
+                            value: false 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10838,8 +11537,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: true "
                         >
-                          value: true 
-                           
+                          <span>
+                            value: true 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -10975,8 +11675,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11043,8 +11744,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11114,8 +11816,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11182,8 +11885,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11318,8 +12022,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11386,8 +12091,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11457,8 +12163,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11525,8 +12232,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11661,8 +12369,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11754,8 +12463,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11847,8 +12557,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -11940,8 +12651,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12098,8 +12810,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12191,8 +12904,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12284,8 +12998,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12377,8 +13092,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12535,8 +13251,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12603,8 +13320,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12671,8 +13389,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12739,8 +13458,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12807,8 +13527,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -12940,8 +13661,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13008,8 +13730,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13076,8 +13799,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13144,8 +13868,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13212,8 +13937,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13345,8 +14071,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 13 "
                         >
-                          value: 13 
-                           
+                          <span>
+                            value: 13 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13413,8 +14140,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1352 steps"
                         >
-                          value: 1352 steps
-                           
+                          <span>
+                            value: 1352 steps
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13481,8 +14209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 103.2 ˚F"
                         >
-                          value: 103.2 ˚F
-                           
+                          <span>
+                            value: 103.2 ˚F
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13549,8 +14278,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 107324.3 kJ"
                         >
-                          value: 107324.3 kJ
-                           
+                          <span>
+                            value: 107324.3 kJ
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13617,8 +14347,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1709384.1 people"
                         >
-                          value: 1709384.1 people
-                           
+                          <span>
+                            value: 1709384.1 people
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13685,8 +14416,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: false "
                         >
-                          value: false 
-                           
+                          <span>
+                            value: false 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13757,8 +14489,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: true "
                         >
-                          value: true 
-                           
+                          <span>
+                            value: true 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13829,8 +14562,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13897,8 +14631,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -13968,8 +14703,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14036,8 +14772,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14107,8 +14844,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14200,8 +14938,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14293,8 +15032,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14386,8 +15126,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14479,8 +15220,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14547,8 +15289,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14615,8 +15358,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14683,8 +15427,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14751,8 +15496,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14884,8 +15630,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 13 "
                         >
-                          value: 13 
-                           
+                          <span>
+                            value: 13 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -14952,8 +15699,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1352 steps"
                         >
-                          value: 1352 steps
-                           
+                          <span>
+                            value: 1352 steps
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15020,8 +15768,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 103.2 ˚F"
                         >
-                          value: 103.2 ˚F
-                           
+                          <span>
+                            value: 103.2 ˚F
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15088,8 +15837,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 107324.3 kJ"
                         >
-                          value: 107324.3 kJ
-                           
+                          <span>
+                            value: 107324.3 kJ
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15156,8 +15906,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: 1709384.1 people"
                         >
-                          value: 1709384.1 people
-                           
+                          <span>
+                            value: 1709384.1 people
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15224,8 +15975,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: false "
                         >
-                          value: false 
-                           
+                          <span>
+                            value: false 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15296,8 +16048,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="value: true "
                         >
-                          value: true 
-                           
+                          <span>
+                            value: true 
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15368,8 +16121,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15436,8 +16190,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15507,8 +16262,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15575,8 +16331,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Temperature"
                         >
-                          Temperature
-                           
+                          <span>
+                            Temperature
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15646,8 +16403,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15739,8 +16497,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15832,8 +16591,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -15925,8 +16685,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16018,8 +16779,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16086,8 +16848,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16154,8 +16917,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16222,8 +16986,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16290,8 +17055,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16423,8 +17189,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 89.2%, 76 mb"
                         >
-                          values: 89.2%, 76 mb
-                           
+                          <span>
+                            values: 89.2%, 76 mb
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16525,8 +17292,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16627,8 +17395,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16794,8 +17563,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 89.2%, 76 mb"
                         >
-                          values: 89.2%, 76 mb
-                           
+                          <span>
+                            values: 89.2%, 76 mb
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16896,8 +17666,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -16998,8 +17769,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17165,8 +17937,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 89.2%, 76 mb"
                         >
-                          values: 89.2%, 76 mb
-                           
+                          <span>
+                            values: 89.2%, 76 mb
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17267,8 +18040,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17369,8 +18143,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17536,8 +18311,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 89.2%, 76 mb"
                         >
-                          values: 89.2%, 76 mb
-                           
+                          <span>
+                            values: 89.2%, 76 mb
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17638,8 +18414,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17740,8 +18517,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="values: 88.3˚F, Elevated"
                         >
-                          values: 88.3˚F, Elevated
-                           
+                          <span>
+                            values: 88.3˚F, Elevated
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -17907,8 +18685,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -18059,8 +18838,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -18276,8 +19056,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -18428,8 +19209,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -18645,8 +19427,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -18794,8 +19577,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -18943,8 +19727,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -19232,8 +20017,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Humidity"
                         >
-                          Humidity
-                           
+                          <span>
+                            Humidity
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -19381,8 +20167,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -19530,8 +20317,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Danger Level"
                         >
-                          Danger Level
-                           
+                          <span>
+                            Danger Level
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -19908,8 +20696,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Facility Metrics"
                       >
-                        Facility Metrics
-                         
+                        <span>
+                          Facility Metrics
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20057,8 +20846,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Humidity"
                       >
-                        Humidity
-                         
+                        <span>
+                          Humidity
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20167,8 +20957,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Utilization"
                       >
-                        Utilization
-                         
+                        <span>
+                          Utilization
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20238,8 +21029,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Alert Count"
                       >
-                        Alert Count
-                         
+                        <span>
+                          Alert Count
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20309,8 +21101,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Comfort Level"
                       >
-                        Comfort Level
-                         
+                        <span>
+                          Comfort Level
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20402,8 +21195,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Foot Traffic"
                       >
-                        Foot Traffic
-                         
+                        <span>
+                          Foot Traffic
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20447,6 +21241,167 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    id="GaugeCard"
+                    style={
+                      Object {
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
+                        "height": "128px",
+                        "msTransform": "translate(1122px,16px)",
+                        "position": "absolute",
+                        "transform": "translate(1122px,16px)",
+                        "width": "142px",
+                      }
+                    }
+                    type="GAUGE"
+                  >
+                    <div
+                      className="card--header"
+                    >
+                      <span
+                        className="card--title"
+                        title="Health"
+                      >
+                        <span>
+                          Health
+                        </span>
+                        <div
+                          className="bx--tooltip__label"
+                          id="card-tooltip-trigger-GaugeCard"
+                        >
+                          
+                          <div
+                            aria-describedby={null}
+                            aria-haspopup="true"
+                            className="bx--tooltip__trigger"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseOut={[Function]}
+                            onMouseOver={[Function]}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              description={null}
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              role={null}
+                              style={
+                                Object {
+                                  "willChange": "transform",
+                                }
+                              }
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                              />
+                              <path
+                                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </span>
+                      <div
+                        className="card--toolbar"
+                      />
+                    </div>
+                    <div
+                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                    >
+                      <div
+                        className="iot--gauge-container react-grid-item cssTransforms"
+                        style={
+                          Object {
+                            "paddingBottom": 0,
+                            "paddingLeft": 16,
+                            "paddingRight": 16,
+                            "paddingTop": 0,
+                          }
+                        }
+                      >
+                        <meter
+                          className=""
+                          max={100}
+                          min={0}
+                          title="%"
+                          value={73}
+                        >
+                          <svg
+                            className="iot--gauge react-grid-item cssTransforms"
+                            percent="0"
+                            style={
+                              Object {
+                                "--gauge-bg": "#e0e0e0",
+                                "--gauge-colors": "#f1c21b",
+                                "--gauge-max-value": 100,
+                                "--gauge-size": "68px",
+                                "--gauge-trend-color": undefined,
+                                "--gauge-value": 73,
+                                "--stroke-dash": 137.60175822723292,
+                              }
+                            }
+                          >
+                            <circle
+                              className="iot--gauge-bg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <circle
+                              className="iot--gauge-fg"
+                              cx={34}
+                              cy={34}
+                              r={30}
+                            />
+                            <text
+                              className="iot--gauge-value"
+                              textAnchor="middle"
+                              x={34}
+                              y="29"
+                            >
+                              <tspan>
+                                73%
+                              </tspan>
+                            </text>
+                            <text
+                              className="iot--gauge-rating"
+                              textAnchor="middle"
+                              x={34}
+                              y="50"
+                            >
+                              <tspan>
+                                Fair
+                              </tspan>
+                            </text>
+                          </svg>
+                        </meter>
+                        <div
+                          className="iot--gauge-trend iot--gauge-trend__up"
+                        >
+                          <p
+                            style={
+                              Object {
+                                "--gauge-trend-color": undefined,
+                              }
+                            }
+                          >
+                            5%
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
                     id="facilitycard-health"
                     style={
@@ -20470,8 +21425,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Health"
                       >
-                        Health
-                         
+                        <span>
+                          Health
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -20563,8 +21519,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Temperature"
                       >
-                        Temperature
-                         
+                        <span>
+                          Temperature
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -21186,8 +22143,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Environment"
                       >
-                        Environment
-                         
+                        <span>
+                          Environment
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -21313,8 +22271,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         className="card--title"
                         title="Floor Map"
                       >
-                        Floor Map
-                         
+                        <span>
+                          Floor Map
+                        </span>
                       </span>
                       <div
                         className="card--toolbar"
@@ -22305,8 +23264,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Tutorials"
                         >
-                          Tutorials
-                           
+                          <span>
+                            Tutorials
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
@@ -22484,8 +23444,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           className="card--title"
                           title="Announcements"
                         >
-                          Announcements
-                           
+                          <span>
+                            Announcements
+                          </span>
                         </span>
                         <div
                           className="card--toolbar"
