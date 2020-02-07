@@ -3,6 +3,7 @@
 
 .card {
   &--title {
+    display: flex;
     @include type-style('productive-heading-01');
     overflow: hidden;
     text-overflow: ellipsis;

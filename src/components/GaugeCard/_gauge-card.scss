@@ -1,0 +1,128 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--gauge-container {
+  display: flex;
+  font-size: carbon--type-scale(1);
+  height: 100%;
+  width: 100%;
+}
+
+meter {
+  appearance: none;
+  height: var(--gauge-size);
+  position: relative;
+  width: var(--gauge-size);
+
+  &::after {
+    border-top: 1px dashed $text-02;
+    content: '';
+    left: 50%;
+    position: absolute;
+    top: 43.5%;
+    transform: translateX(-50%);
+    width: 1rem;
+  }
+}
+
+.#{$iot-prefix}--gauge {
+  fill: none;
+  font-size: inherit;
+  height: var(--gauge-size);
+  stroke-width: 5px;
+  width: var(--gauge-size);
+
+  text {
+    fill: $text-02;
+  }
+}
+
+.#{$iot-prefix}--gauge-bg {
+  stroke: var(--gauge-bg);
+  stroke-width: 0.25rem;
+}
+
+.#{$iot-prefix}--gauge-fg {
+  paint-order: stroke;
+  stroke: var(--gauge-colors);
+  stroke-dasharray: 0 188.1910858154297;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: all 0.2s ease-in;
+
+  .#{$iot-prefix}--gauge__loaded & {
+    stroke-dasharray: var(--stroke-dash) 188.1910858154297;
+  }
+}
+
+.#{$iot-prefix}--gauge-value__centered {
+  transform: translateY(10px);
+}
+.#{$iot-prefix}--meter__centered::after {
+  display: none;
+}
+
+.#{$iot-prefix}--gauge-trend {
+  align-items: center;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+
+  &__up {
+    color: $support-02;
+
+    & p::before {
+      border-bottom: 0.4rem solid;
+      border-left: 0.4rem solid transparent;
+      border-right: 0.4rem solid transparent;
+      content: '';
+      left: 50%;
+      height: 0;
+      position: absolute;
+      top: -0.25rem;
+      transform: translateX(-50%);
+      width: 0;
+    }
+  }
+  &__down {
+    color: $support-01;
+
+    & p::before {
+      border-left: 0.4rem solid transparent;
+      border-right: 0.4rem solid transparent;
+      border-top: 0.4rem solid;
+      bottom: -0.25rem;
+      content: '';
+      left: 50%;
+      height: 0;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 0;
+    }
+  }
+
+  p {
+    // --gauge-trend-color: blue;
+    color: var(--gauge-trend-color);
+    font-size: inherit;
+    margin-top: $spacing-06;
+    position: relative;
+  }
+}
+
+.#{$iot-prefix}--gauge-card {
+  .card--title {
+    padding-bottom: $spacing-02;
+    padding-top: $spacing-02;
+    width: 100%;
+
+    span {
+      max-width: calc(100% - 40px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .#{$prefix}--tooltip__trigger {
+    margin-right: $spacing-03;
+  }
+}
