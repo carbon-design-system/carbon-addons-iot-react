@@ -7,7 +7,8 @@ import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
-const propTypes = {
+
+export const SimplePaginationPropTypes = {
   /** current page number */
   page: PropTypes.number.isRequired,
   /** The maximum page number that can be navigated to */
@@ -24,7 +25,7 @@ const propTypes = {
   onPage: PropTypes.func.isRequired,
 };
 
-const defaultProps = {
+const SimplePaginationDefaultProps = {
   pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
   pageText: null,
   nextPageText: 'Next page',
@@ -92,7 +93,7 @@ const SimplePagination = ({
   );
 };
 
-SimplePagination.propTypes = propTypes;
-SimplePagination.defaultProps = defaultProps;
+SimplePagination.propTypes = SimplePaginationPropTypes;
+SimplePagination.defaultProps = SimplePaginationDefaultProps;
 
 export default SimplePagination;

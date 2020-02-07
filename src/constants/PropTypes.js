@@ -190,6 +190,41 @@ export const ImageCardPropTypes = {
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;
+export const GaugeCardPropTypes = {
+  tooltip: PropTypes.element,
+  content: PropTypes.shape({
+    gauges: PropTypes.arrayOf(
+      PropTypes.shape({
+        dataSourceId: PropTypes.string,
+        units: PropTypes.string,
+        minimumValue: PropTypes.number,
+        maximumValue: PropTypes.number,
+        renderValueFunction: PropTypes.func,
+        color: PropTypes.string,
+        backgroundColor: PropTypes.string,
+        shape: PropTypes.oneOf(['half-circle', 'line', 'circle']),
+        trend: PropTypes.shape({
+          /** the key to load the trend value from the values object. */
+          dataSourceId: PropTypes.string,
+          color: PropTypes.string,
+          trend: PropTypes.oneOf(['up', 'down']),
+        }),
+        thresholds: PropTypes.arrayOf(
+          PropTypes.shape({
+            comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']),
+            value: PropTypes.number,
+            color: PropTypes.string,
+            label: PropTypes.string,
+          })
+        ),
+      })
+    ),
+  }),
+  values: PropTypes.shape({
+    temperature: PropTypes.number,
+    temperatureTrend: PropTypes.number,
+  }),
+};
 
 export const DashboardLayoutPropTypes = PropTypes.shape({
   i: PropTypes.any,
@@ -229,6 +264,8 @@ export const CardPropTypes = {
   isEditable: PropTypes.bool,
   /** goes full screen if expanded */
   isExpanded: PropTypes.bool,
+  /** should hide the header */
+  hideHeader: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),

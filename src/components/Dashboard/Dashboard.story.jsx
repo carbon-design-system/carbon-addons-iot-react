@@ -63,6 +63,15 @@ export const originalCards = [
     },
   },
   {
+    id: 'section-card',
+    size: CARD_SIZES.XSMALLWIDE,
+    type: CARD_TYPES.CUSTOM,
+    availableActions: {
+      delete: true,
+    },
+    content: <h2 style={{ padding: '1rem' }}>Section Header</h2>,
+  },
+  {
     title: 'Utilization',
     id: 'facilitycard-xs2',
     size: CARD_SIZES.XSMALL,
@@ -135,6 +144,54 @@ export const originalCards = [
       ],
     },
     values: { footTraffic: 13572, footTrafficTrend: '22%' },
+  },
+  {
+    tooltip: <p>Health - of floor 8</p>,
+    id: 'GaugeCard',
+    title: 'Health',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.GAUGE,
+    values: {
+      usage: 73,
+      usageTrend: '5%',
+    },
+    content: {
+      gauges: [
+        {
+          dataSourceId: 'usage',
+          units: '%',
+          minimumValue: 0,
+          maximumValue: 100,
+          color: 'orange',
+          backgroundColor: '#e0e0e0',
+          shape: 'circle',
+          trend: {
+            dataSourceId: 'usageTrend',
+            trend: 'up',
+          },
+          thresholds: [
+            {
+              comparison: '>',
+              value: 0,
+              color: '#fa4d56', // red
+              label: 'Poor',
+            },
+            {
+              comparison: '>',
+              value: 60,
+              color: '#f1c21b', // yellow
+              label: 'Fair',
+            },
+            {
+              comparison: '>',
+              value: 80,
+              color: '#42be65', // green
+              label: 'Good',
+            },
+          ],
+        },
+      ],
+    },
   },
   {
     title: 'Health',
@@ -292,15 +349,16 @@ export const originalCards = [
 const commonDashboardProps = {
   title: text('title', 'Munich Building'),
   cards: originalCards,
-  onFetchData: (card, isTimeseriesData) => {
-    action('onFetchData')(card, isTimeseriesData);
-    return Promise.resolve({ ...card, values: [] });
-  },
   lastUpdated: new Date('2019-10-22T00:00:00').toUTCString(),
   isEditable: boolean('isEditable', false),
   isLoading: boolean('isLoading', false),
   onBreakpointChange: action('onBreakpointChange'),
   onLayoutChange: action('onLayoutChange'),
+  onSetRefresh: action('onSetRefresh'),
+  setIsLoading: action('setIsLoading'),
+  onFetchData: card => {
+    return new Promise(resolve => setTimeout(() => resolve(card), 5000));
+  },
 };
 
 storiesOf('Watson IoT|Dashboard', module)
@@ -309,7 +367,7 @@ storiesOf('Watson IoT|Dashboard', module)
     () => {
       return (
         <FullWidthWrapper>
-          <Dashboard {...commonDashboardProps} />
+          <Dashboard {...commonDashboardProps} isLoading={boolean('isLoading', false)} />
         </FullWidthWrapper>
       );
     },
@@ -317,15 +375,15 @@ storiesOf('Watson IoT|Dashboard', module)
       info: {
         text: `
         ## Data Fetching
-        To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.  
+        To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.
         You will be passed an object containing all of the card props (including the currently selected range of the card) and can use these to determine which data to fetch.
-        
+
         Return a promise that will resolve into an updated card object with data values
         For instance you could return {...card, values: [{timestamp: 1234123123,temperature: 35.5}]}
 
         If you want to trigger all the cards of the dashboard to load from an outside event (like a change in the data range that the dashboard is displaying), set the isLoading bit to true.
         Once all the cards have finished loading the setIsLoading(false) will be called from the Dashboard.
-        
+
         # Component Overview
         `,
       },

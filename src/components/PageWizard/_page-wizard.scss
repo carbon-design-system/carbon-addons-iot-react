@@ -1,7 +1,8 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/typography';
+@import '../../globals/vars';
 
-.page-wizard {
+.#{$iot-prefix}--page-wizard {
   display: flex;
 
   &__sticky {
@@ -9,17 +10,26 @@
   }
 
   &--progress {
-    padding-right: $spacing-05;
-    flex: 0 0 12rem;
+    &--vertical {
+      padding-right: $spacing-05;
+      flex: 0 0 12rem;
+    }
+
+    &--horizontal {
+      padding-bottom: $spacing-05;
+    }
+
     .#{$prefix}--progress--vertical {
       li {
         min-height: 4.5rem;
       }
     }
   }
+
   &--step {
     padding-bottom: $spacing-07;
     @include type-style('body-long-01');
+
     &--title {
       @include type-style('productive-heading-02');
       margin-bottom: $spacing-03;
@@ -32,14 +42,18 @@
       display: none; /* TODO: render as sidebar */
     }
   }
+
   &--content {
     flex: 1;
+
     &--actions {
       padding-top: $spacing-07;
+
       .#{$prefix}--btn {
         margin-right: $spacing-05;
       }
     }
+
     &--actions--sticky {
       position: fixed;
       bottom: 0;

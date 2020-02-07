@@ -87,15 +87,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <span>
+                      Facility Metrics
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-1 coBfbV"
                 />
               </div>
               <div
@@ -123,15 +124,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Humidity"
                   >
-                    Humidity
-                     
+                    <span>
+                      Humidity
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 bVgaXY"
                 />
               </div>
               <div
@@ -159,15 +161,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Utilization"
                   >
-                    Utilization
-                     
+                    <span>
+                      Utilization
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 bVgaXY"
                 />
               </div>
             </div>
@@ -289,15 +292,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <span>
+                      Facility Metrics
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-1 coBfbV"
                 />
               </div>
               <div
@@ -325,15 +329,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Humidity"
                   >
-                    Humidity
-                     
+                    <span>
+                      Humidity
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 bVgaXY"
                 />
               </div>
               <div
@@ -361,15 +366,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Utilization"
                   >
-                    Utilization
-                     
+                    <span>
+                      Utilization
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 bVgaXY"
                 />
               </div>
             </div>
@@ -496,15 +502,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <span>
+                      Facility Metrics
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-1 coBfbV"
                 />
               </div>
               <div
@@ -537,15 +544,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Humidity"
                   >
-                    Humidity
-                     
+                    <span>
+                      Humidity
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 bVgaXY"
                 />
               </div>
               <div
@@ -578,15 +586,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Utilization"
                   >
-                    Utilization
-                     
+                    <span>
+                      Utilization
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 bVgaXY"
                 />
               </div>
             </div>

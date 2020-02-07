@@ -122,7 +122,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Form/form';
 @import 'components/Link/link';
 @import 'components/ListBox/list-box';
-@import 'components/List/list';
 @import 'components/DataTable/data-table';
 @import 'components/StructuredList/structured-list';
 @import 'components/CodeSnippet/code-snippet';
@@ -187,3 +186,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Table/table';
 @import 'components/Button/button';
 @import 'components/SimplePagination/simple-pagination';
+@import 'components/GaugeCard/gauge-card';
+@import 'components/List/list';
+@import 'components/List/ListItem/list-item';
+@import 'components/List/ListHeader/list-header';
