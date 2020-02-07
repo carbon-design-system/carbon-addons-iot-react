@@ -1774,17 +1774,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@^0.28.1":
-  version "0.28.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.28.1.tgz#0a64702d4cd9df753d94f1505966faedcfcb9d04"
-  integrity sha512-+gR8quh32slJU725S20HnRAk4nZqrzynaYA4r50npwaf7NxabuueHTWx6WLtFIRNoGfJyUSkN5gdVae5oCtrmA==
+"@carbon/charts-react@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.29.0.tgz#89223751fc51e037c0c1fb10711fffa5bc6d1eca"
+  integrity sha512-uwFv7sGtA8wSZYQmSB297yLtW9lILbNrD9/grbZQnYHKkOUFZStoJs/wU+46yGoPGvbRfXnPGoPsIVfi8F8Vhg==
   dependencies:
-    "@carbon/charts" "^0.28.1"
+    "@carbon/charts" "^0.29.0"
 
-"@carbon/charts@^0.28.1":
-  version "0.28.1"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.28.1.tgz#8fe6e3b22e82f211693c18e17a6551d7fae35215"
-  integrity sha512-ZA3mdrO+ccqMhx8tx9LNJAEh8OzgSqv0Yk2Ax7v8L7kRb94CQ0p2VWlCDINm2btQ3Y6GdK3CMy8eLN0Gh1fNPg==
+"@carbon/charts@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.29.0.tgz#8ea1c6449de741465ea574b51bf94ba11d35b6ef"
+  integrity sha512-QWD73L5dHI1JU5S87VIJWuvKzdpOXZ7g9pnWQ4BiFtzjFfplZnEnRQT6d/b4n4kmZ4Oze4i0ekI5kMlNs5MWGQ==
   dependencies:
     "@carbon/utils-position" "1.1.1"
     babel-polyfill "6.26.0"

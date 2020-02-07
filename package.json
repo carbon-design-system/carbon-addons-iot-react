@@ -65,8 +65,8 @@
     ]
   },
   "dependencies": {
-    "@carbon/charts": "^0.28.1",
-    "@carbon/charts-react": "^0.28.1",
+    "@carbon/charts": "^0.29.0",
+    "@carbon/charts-react": "^0.29.0",
     "@carbon/colors": "^10.7.0",
     "@carbon/icons": "10.6.1",
     "@carbon/icons-react": "10.6.1",
