@@ -11,6 +11,7 @@ import ImageCard from '../ImageCard/ImageCard';
 import TableCard from '../TableCard/TableCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import ListCard from '../ListCard/ListCard';
+import GaugeCard from '../GaugeCard/GaugeCard';
 import Card from '../Card/Card';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
@@ -189,6 +190,8 @@ const CardRenderer = React.memo(
       <TableCard {...commonCardProps} />
     ) : type === CARD_TYPES.LIST ? (
       <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
+    ) : type === CARD_TYPES.GAUGE ? (
+      <GaugeCard {...commonCardProps} />
     ) : type === CARD_TYPES.CUSTOM ? (
       <Card hideHeader={isNil(card.title)} {...commonCardProps}>
         {card.content}
