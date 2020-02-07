@@ -58,8 +58,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                Image
-                 
+                <span>
+                  Image
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -434,8 +435,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                Image
-                 
+                <span>
+                  Image
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -824,8 +826,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                Image
-                 
+                <span>
+                  Image
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -958,8 +961,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                Image
-                 
+                <span>
+                  Image
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1092,8 +1096,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                Image
-                 
+                <span>
+                  Image
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -1352,8 +1357,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                Image
-                 
+                <span>
+                  Image
+                </span>
               </span>
               <div
                 className="card--toolbar"

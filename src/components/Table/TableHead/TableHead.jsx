@@ -94,16 +94,6 @@ const StyledCheckboxTableHeader = styled(TableHeader)`
     }
 `;
 
-const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
-  <CarbonTableHead {...others} />
-))`
-  th {
-    height: 3rem;
-    border-top: none;
-    border-bottom: none;
-  }
-`;
-
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
     ${props => {
@@ -152,7 +142,7 @@ const TableHead = ({
   const filterBarActive = activeBar === 'filter';
 
   return (
-    <StyledCarbonTableHead lightweight={`${lightweight}`}>
+    <CarbonTableHead className={classnames({ lightweight })}>
       <TableRow>
         {hasRowExpansion ? <TableExpandHeader /> : null}
         {hasRowSelection === 'multi' ? (
@@ -236,7 +226,7 @@ const TableHead = ({
           columnSelectionConfigText={i18n.columnSelectionConfig}
         />
       )}
-    </StyledCarbonTableHead>
+    </CarbonTableHead>
   );
 };
 

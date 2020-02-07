@@ -232,7 +232,7 @@ const Card = props => {
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
-                      {title}&nbsp;
+                      <span>{title}</span>
                       {tooltip && (
                         <Tooltip
                           triggerId={`card-tooltip-trigger-${id}`}
