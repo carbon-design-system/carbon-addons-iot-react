@@ -2,10 +2,14 @@
 @import '~carbon-components/scss/globals/scss/layout';
 
 .#{$prefix}--data-table {
+  th {
+    height: 3rem;
+    border-top: none;
+    border-bottom: none;
+  }
   .#{$prefix}--table-header-label {
     display: flex;
   }
-
   .column-header__btn {
     margin: 0 $spacing-05 $spacing-05 0;
     max-height: $spacing-07;
@@ -17,5 +21,22 @@
 
   .column-header__select--hidden {
     opacity: 0.5;
+  }
+
+  .lightweight {
+    tr:last-of-type {
+      th {
+        border-bottom: solid 2px $interactive-02;
+      }
+    }
+    th {
+      background-color: $ui-01;
+      .#{$prefix}--table-sort {
+        background-color: $ui-01;
+        &:hover {
+          background-color: $ui-03;
+        }
+      }
+    }
   }
 }
