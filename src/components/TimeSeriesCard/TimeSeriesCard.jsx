@@ -39,7 +39,7 @@ const LineChartWrapper = styled.div`
   padding-bottom: 16px;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: ${props => (props.isExpanded ? '55%' : '100%')};
 
   &&& {
     .chart-wrapper g.x.axis g.tick text {
@@ -48,7 +48,6 @@ const LineChartWrapper = styled.div`
     }
     .chart-holder {
       width: 100%;
-      height: ${props => (props.isExpanded ? '50%' : '100%')};
       padding-top: 0.25rem;
     }
     .axis-title {
@@ -297,16 +296,23 @@ const TimeSeriesCard = ({
     valueSort,
   ]);
 
-  const tableData = useMemo(
+  const { tableData, columnNames } = useMemo(
     () => {
-      return valueSort.map((value, index) => ({
-        id: `dataindex-${index}`,
-        values: {
-          ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-          [timeDataSourceId]: moment(value[timeDataSourceId]).format('L HH:mm'),
-        },
-        isSelectable: false,
-      }));
+      let maxColumnNames = [];
+      const tableValues = valueSort.map((value, index) => {
+        const currentValueColumns = Object.keys(omit(value, timeDataSourceId));
+        maxColumnNames =
+          currentValueColumns.length > maxColumnNames.length ? currentValueColumns : maxColumnNames;
+        return {
+          id: `dataindex-${index}`,
+          values: {
+            ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
+            [timeDataSourceId]: moment(value[timeDataSourceId]).format('L HH:mm'),
+          },
+          isSelectable: false,
+        };
+      });
+      return { tableData: tableValues, columnNames: maxColumnNames };
     },
     [timeDataSourceId, valueSort]
   );
@@ -325,15 +331,15 @@ const TimeSeriesCard = ({
       ];
       // then the rest in series order
       return columns.concat(
-        series.map(line => ({
-          id: line.dataSourceId,
-          name: line.label,
+        columnNames.map(columnName => ({
+          id: columnName,
+          name: capitalize(columnName),
           isSortable: true,
           filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
         }))
       );
     },
-    [i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]
+    [columnNames, i18n.defaultFilterStringPlaceholdText, timeDataSourceId]
   );
 
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
