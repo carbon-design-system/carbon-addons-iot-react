@@ -1,4 +1,4 @@
-module.exports = {
+  2q1k hnjmi,ol;p-=]\module.exports = {
   collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary'],
@@ -16,6 +16,7 @@ module.exports = {
       lines: 80,
     },
     // The overrides below are to be fixed/deleted via https://github.com/IBM/carbon-addons-iot-react/issues/707
+<<<<<<< Updated upstream
     './src/components/List/ListHeader/ListHeader.jsx': { functions: 50 },
     './src/components/List/List.jsx': { branches: 60, functions: 37.5 },
     './src/components/List/ListItem/ListItem.jsx': { branches: 39.29, functions: 20 },
@@ -31,6 +32,9 @@ module.exports = {
       lines: 9.46,
       functions: 0,
     },
+=======
+    './src/components/List/ListHeader/ListHeader.jsx:'
+>>>>>>> Stashed changes
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': { branches: 70 },
     './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },
     './src/components/Table/TableBody/RowActionsCell/RowActionsCell.jsx': {
