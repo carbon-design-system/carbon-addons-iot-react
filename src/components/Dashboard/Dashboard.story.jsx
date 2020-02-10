@@ -7,7 +7,7 @@ import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
-import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import iconViewDashboards from './dashboard.svg';
@@ -567,6 +567,46 @@ storiesOf('Watson IoT|Dashboard', module)
               ],
             },
             values: data,
+          },
+        ]}
+      />
+    );
+  })
+  .add('full screen bar chart card', () => {
+    const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand line"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TIMESERIES,
+            chartType: TIME_SERIES_TYPES.BAR,
+            content: {
+              series: [
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temperature Device 1',
+                  dataFilter: { ENTITY_ID: 'Sensor2-1' },
+                },
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temperature Device 2',
+                  dataFilter: { ENTITY_ID: 'Sensor2-2' },
+                },
+              ],
+            },
+            values: data.reduce((acc, dataPoint) => {
+              acc.push(dataPoint);
+              acc.push({
+                ...dataPoint,
+                temperature: dataPoint.temperature / 2,
+                ENTITY_ID: 'Sensor2-2',
+              });
+              return acc;
+            }, []),
           },
         ]}
       />
