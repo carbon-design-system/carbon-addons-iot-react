@@ -9,11 +9,16 @@ const propTypes = {};
 const defaultPros = {};
 
 const TileCatalog = ({ title, search, tiles, featuredTile, sort, pagination, filter }) => {
+  const [currentPage, setCurrentPage] = useState(1);
   return (
     <div>
       <div className=""> {title}</div>
       <div>{tiles}</div>
-      <TilePagination />
+      <TilePagination
+        page={currentPage}
+        numPages={6}
+        onChange={newPage => setCurrentPage(newPage)}
+      />
     </div>
   );
 };

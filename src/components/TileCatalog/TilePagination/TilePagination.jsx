@@ -1,89 +1,101 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-const TilePagination = () => {
+const propTypes = {
+  page: PropTypes.number.isRequired,
+  numPages: PropTypes.number.isRequired,
+  onChange: PropTypes.number.isRequired,
+  i18n: PropTypes.shape({}),
+};
+const defaultProps = {
+  i18n: {
+    ariaLabelPreviousPage: 'Previous page',
+    ariaLabelNextPage: 'Next page',
+    ariaLabelPagination: 'pagination',
+    ariaLabelPage: 'page',
+  },
+};
+
+const TilePagination = ({ page, numPages, onChange, i18n }) => {
+  const prevButton = (
+    <button
+      type="button"
+      onClick={() => page > 1 && onChange(page - 1)}
+      className={classnames('bx--pagination-nav__page', 'bx--pagination-nav__page--direction', {
+        'bx--pagination-nav__page--disabled': page === 1,
+      })}
+      ariaDisabled="true"
+    >
+      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPreviousPage}</span>
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ 'will-change': 'transform' }}
+        xmlns="http://www.w3.org/2000/svg"
+        className="bx--pagination-nav__icon"
+        width="5"
+        height="8"
+        viewBox="0 0 5 8"
+        ariaHidden="true"
+      >
+        <path d="M5 8L0 4 5 0z" />
+      </svg>
+    </button>
+  );
+  const nextButton = (
+    <button
+      type="button"
+      onClick={() => page < numPages && onChange(page + 1)}
+      className={classnames('bx--pagination-nav__page', 'bx--pagination-nav__page--direction', {
+        'bx--pagination-nav__page--disabled': page === numPages,
+      })}
+    >
+      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelNextPage}</span>
+      <svg
+        focusable="false"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ 'will-change': 'transform' }}
+        xmlns="http://www.w3.org/2000/svg"
+        className="bx--pagination-nav__icon"
+        width="5"
+        height="8"
+        viewBox="0 0 5 8"
+        ariaHidden="true"
+      >
+        <path d="M0 0L5 4 0 8z" />
+      </svg>
+    </button>
+  );
+  const getPageButton = pageNumber => (
+    <button
+      type="button"
+      onClick={() => onChange(pageNumber)}
+      className={classnames('bx--pagination-nav__page', {
+        'bx--pagination-nav__page--active': page === pageNumber,
+        'bx--pagination-nav__page--disabled': page === pageNumber,
+      })}
+      ariaCurrent={i18n.ariaLabelPage}
+      ariaDisabled={page === pageNumber}
+    >
+      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPage}</span>
+      {pageNumber}
+    </button>
+  );
   return (
-    <nav className="bx--pagination-nav" aria-label="pagination" data-pagination-nav>
+    <nav className="bx--pagination-nav" ariaLabel={i18n.ariaLabelPagination}>
       <ul className="bx--pagination-nav__list">
-        <li className="bx--pagination-nav__list-item">
-          <button
-            className="bx--pagination-nav__page bx--pagination-nav__page--direction "
-            data-page-previous
-          >
-            <span className="bx--pagination-nav__accessibility-label">Previous page </span>
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button className="bx--pagination-nav__page" data-page="1" data-page-button>
-            <span className="bx--pagination-nav__accessibility-label">page </span>1
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button className="bx--pagination-nav__page" data-page="2" data-page-button>
-            <span className="bx--pagination-nav__accessibility-label">page </span>2
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button
-            className="bx--pagination-nav__page bx--pagination-nav__page--active bx--pagination-nav__page--disabled"
-            data-page="3"
-            data-page-button
-            data-page-active="true"
-            aria-current="page"
-            aria-disabled="true"
-          >
-            <span className="bx--pagination-nav__accessibility-label">page </span>3
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button className="bx--pagination-nav__page" data-page="4" data-page-button>
-            <span className="bx--pagination-nav__accessibility-label">page </span>4
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button className="bx--pagination-nav__page" data-page="5" data-page-button>
-            <span className="bx--pagination-nav__accessibility-label">page </span>5
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <div className="bx--pagination-nav__select">
-            <select
-              className="bx--pagination-nav__page bx--pagination-nav__page--select"
-              data-page-select
-              aria-label="select page number"
-            >
-              <option value="" hidden />
-              <option value="6" data-page="6">
-                6
-              </option>
-              <option value="7" data-page="7">
-                7
-              </option>
-              <option value="8" data-page="8">
-                8
-              </option>
-              <option value="9" data-page="9">
-                9
-              </option>
-            </select>
-            <div className="bx--pagination-nav__select-icon-wrapper" />
-          </div>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button className="bx--pagination-nav__page" data-page="10" data-page-button>
-            <span className="bx--pagination-nav__accessibility-label">page </span>10
-          </button>
-        </li>
-        <li className="bx--pagination-nav__list-item">
-          <button
-            className="bx--pagination-nav__page bx--pagination-nav__page--direction"
-            data-page-next
-          >
-            <span className="bx--pagination-nav__accessibility-label">Next page </span>
-          </button>
-        </li>
+        <li className="bx--pagination-nav__list-item">{prevButton}</li>
+        {Array.from({ length: numPages }, (v, i) => (
+          <li className="bx--pagination-nav__list-item">{getPageButton(i + 1)}</li>
+        ))}
+        <li className="bx--pagination-nav__list-item">{nextButton}</li>
       </ul>
     </nav>
   );
 };
+
+TilePagination.propTypes = propTypes;
+TilePagination.defaultProps = defaultProps;
 
 export default TilePagination;
