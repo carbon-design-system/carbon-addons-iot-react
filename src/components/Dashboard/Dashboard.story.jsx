@@ -63,6 +63,31 @@ export const originalCards = [
     },
   },
   {
+    title: 'Show tooltip when the card title has ellipsis ',
+    id: 'facilitycard-tooltip',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'humidity',
+          unit: '%',
+          thresholds: [
+            { comparison: '<', value: '40', color: 'red' },
+            { comparison: '<', value: '70', color: 'green' },
+            { comparison: '>=', value: '70', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: {
+      humidity: 62.1,
+    },
+  },
+  {
     id: 'section-card',
     size: CARD_SIZES.XSMALLWIDE,
     type: CARD_TYPES.CUSTOM,

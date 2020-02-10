@@ -1,8 +1,9 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState, createRef } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -42,9 +43,14 @@ export const CardHeader = (
 ) => <div className="card--header">{children}</div>;
 
 export const CardTitle = (
-  { children, title } //eslint-disable-line
+  { children, title, handleTooltip } //eslint-disable-line
 ) => (
-  <span className="card--title" title={title}>
+  <span
+    className="card--title"
+    title={title}
+    onMouseEnter={() => handleTooltip(true)}
+    onMouseLeave={() => handleTooltip(false)}
+  >
     {children}
   </span>
 );
@@ -198,6 +204,15 @@ const Card = props => {
     return childSize;
   };
 
+  const elmRef = createRef();
+  const [showTooltip, setshowTooltip] = useState(false);
+  const handleTooltip = IsShow => {
+    const element = elmRef.current;
+    if (element && element.offsetWidth < element.scrollWidth) {
+      setshowTooltip(IsShow);
+    }
+  };
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
@@ -230,8 +245,23 @@ const Card = props => {
               >
                 {!hideHeader && (
                   <CardHeader>
-                    <CardTitle title={title}>
-                      <span>{title}</span>
+                    <CardTitle handleTooltip={handleTooltip}>
+                      <Tooltip
+                        triggerId={`card-tooltip-trigger-${id}`}
+                        tooltipId={`card-tooltip-${id}`}
+                        triggerClassName={classNames(`card--title-tooltip`, {
+                          'card--title-tooltip-icon': tooltip,
+                        })}
+                        triggerText={
+                          <div ref={elmRef} className="card--title-wrapper">
+                            {title}
+                          </div>
+                        }
+                        showIcon={false}
+                        open={showTooltip}
+                      >
+                        {title}
+                      </Tooltip>
                       {tooltip && (
                         <Tooltip
                           triggerId={`card-tooltip-trigger-${id}`}

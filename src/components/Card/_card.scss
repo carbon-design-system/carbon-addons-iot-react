@@ -3,11 +3,20 @@
 
 .card {
   &--title {
-    display: flex;
-    @include type-style('productive-heading-01');
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    width: 100%;
+    padding-right: $spacing-05;
+    &-wrapper {
+      @include type-style('productive-heading-01');
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &-tooltip {
+      max-width: 100%;
+      &-icon {
+        max-width: 86%;
+      }
+    }
 
     & + * {
       margin-left: $spacing-05;
