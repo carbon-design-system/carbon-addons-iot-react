@@ -787,12 +787,12 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
+                color: COLORS.MAGENTA,
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                color: text('color', COLORS.TEAL),
+                color: COLORS.TEAL,
               },
             ],
 
@@ -1144,6 +1144,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           chartType={select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR)}
           id="facility-temperature"
+          key="bar chart"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             series: [
@@ -1174,6 +1175,8 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
+          chartType={select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR)}
+          key="dataFilter"
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           content={object('content', {

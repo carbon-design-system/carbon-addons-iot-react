@@ -369,7 +369,9 @@ const TimeSeriesCard = ({
                   bottom: {
                     title: xLabel,
                     scaleType: 'time',
-                    primary: true,
+                    ...(chartType !== TIME_SERIES_TYPES.BAR
+                      ? { primary: true }
+                      : { secondary: true }),
                     ticks: {
                       max: maxTicksPerSize,
                       formatter: formatTick,
@@ -378,8 +380,13 @@ const TimeSeriesCard = ({
                   left: {
                     title: yLabel,
                     formatter: axisValue => valueFormatter(axisValue, size, unit),
-                    yMaxAdjuster: yMaxValue => yMaxValue * 1.3,
-                    secondary: true,
+                    ...(chartType !== TIME_SERIES_TYPES.BAR
+                      ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
+                      : {}),
+                    ...(chartType === TIME_SERIES_TYPES.BAR
+                      ? { primary: true }
+                      : { secondary: true }),
+                    stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
                   },
                 },
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
