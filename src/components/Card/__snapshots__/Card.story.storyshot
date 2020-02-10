@@ -626,7 +626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 className="bx--table-toolbar"
               >
                 <div
-                  className="bx--batch-actions TableToolbar__StyledTableBatchActions-sc-17lb3av-3 gnkbSD"
+                  className="bx--batch-actions iot--table-batch-actions"
                 >
                   <div
                     className="bx--action-list"
@@ -654,12 +654,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   </div>
                 </div>
                 <label
-                  className="table-toolbar-secondary-title"
+                  className="iot--table-toolbar-secondary-title"
                 >
                   Card Title
                 </label>
                 <div
-                  className="bx--toolbar-content TableToolbar__StyledTableToolbarContent-sc-17lb3av-2 ksiTUe"
+                  className="bx--toolbar-content iot--table-toolbar-content"
                 >
                   <div
                     className="card--toolbar"
@@ -750,13 +750,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   className="bx--data-table bx--data-table--no-border"
                   title={null}
                 >
-                  <thead
-                    className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
-                  >
+                  <thead>
                     <tr>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                         data-column="value1"
                         id="column-value1"
                         scope="col"
@@ -773,7 +771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                       </th>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                         data-column="timestamp"
                         id="column-timestamp"
                         scope="col"

@@ -329,7 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -353,13 +353,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -425,13 +425,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -497,13 +497,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -591,13 +591,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -660,13 +660,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="GaugeCard"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(490px,160px)",
                         "width": "142px",
                       }
                     }
@@ -731,7 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -744,62 +744,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           }
                         }
                       >
-                        <meter
-                          className=""
-                          max={100}
-                          min={0}
-                          title="%"
-                          value={73}
-                        >
-                          <svg
-                            className="iot--gauge react-grid-item cssTransforms"
-                            percent="0"
-                            style={
-                              Object {
-                                "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": "#f1c21b",
-                                "--gauge-max-value": 100,
-                                "--gauge-size": "68px",
-                                "--gauge-trend-color": undefined,
-                                "--gauge-value": 73,
-                                "--stroke-dash": 137.60175822723292,
-                              }
+                        <svg
+                          className="iot--gauge react-grid-item cssTransforms"
+                          percent="0"
+                          style={
+                            Object {
+                              "--gauge-bg": "#e0e0e0",
+                              "--gauge-colors": "#f1c21b",
+                              "--gauge-max-value": 100,
+                              "--gauge-size": "68px",
+                              "--gauge-trend-color": undefined,
+                              "--gauge-value": 73,
+                              "--stroke-dash": 137.60175822723292,
                             }
+                          }
+                        >
+                          <circle
+                            className="iot--gauge-bg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <circle
+                            className="iot--gauge-fg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <text
+                            className="iot--gauge-value"
+                            textAnchor="middle"
+                            x={34}
+                            y="33"
                           >
-                            <circle
-                              className="iot--gauge-bg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <circle
-                              className="iot--gauge-fg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <text
-                              className="iot--gauge-value"
-                              textAnchor="middle"
-                              x={34}
-                              y="29"
-                            >
-                              <tspan>
-                                73%
-                              </tspan>
-                            </text>
-                            <text
-                              className="iot--gauge-rating"
-                              textAnchor="middle"
-                              x={34}
-                              y="50"
-                            >
-                              <tspan>
-                                Fair
-                              </tspan>
-                            </text>
-                          </svg>
-                        </meter>
+                            <tspan>
+                              73%
+                            </tspan>
+                          </text>
+                          <text
+                            className="iot--gauge-rating"
+                            textAnchor="middle"
+                            x={34}
+                            y="48"
+                          >
+                            <tspan>
+                              Fair
+                            </tspan>
+                          </text>
+                        </svg>
                         <div
                           className="iot--gauge-trend iot--gauge-trend__up"
                         >
@@ -821,13 +813,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(648px,160px)",
+                        "OTransform": "translate(648px,160px)",
+                        "WebkitTransform": "translate(648px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(648px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(648px,160px)",
                         "width": "300px",
                       }
                     }
@@ -915,13 +907,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -1043,13 +1035,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -1519,13 +1511,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -1647,13 +1639,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -2325,7 +2317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -2349,13 +2341,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2421,13 +2413,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2493,13 +2485,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -2587,13 +2579,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -2656,13 +2648,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="GaugeCard"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(490px,160px)",
                         "width": "142px",
                       }
                     }
@@ -2727,7 +2719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -2740,62 +2732,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           }
                         }
                       >
-                        <meter
-                          className=""
-                          max={100}
-                          min={0}
-                          title="%"
-                          value={73}
-                        >
-                          <svg
-                            className="iot--gauge react-grid-item cssTransforms"
-                            percent="0"
-                            style={
-                              Object {
-                                "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": "#f1c21b",
-                                "--gauge-max-value": 100,
-                                "--gauge-size": "68px",
-                                "--gauge-trend-color": undefined,
-                                "--gauge-value": 73,
-                                "--stroke-dash": 137.60175822723292,
-                              }
+                        <svg
+                          className="iot--gauge react-grid-item cssTransforms"
+                          percent="0"
+                          style={
+                            Object {
+                              "--gauge-bg": "#e0e0e0",
+                              "--gauge-colors": "#f1c21b",
+                              "--gauge-max-value": 100,
+                              "--gauge-size": "68px",
+                              "--gauge-trend-color": undefined,
+                              "--gauge-value": 73,
+                              "--stroke-dash": 137.60175822723292,
                             }
+                          }
+                        >
+                          <circle
+                            className="iot--gauge-bg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <circle
+                            className="iot--gauge-fg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <text
+                            className="iot--gauge-value"
+                            textAnchor="middle"
+                            x={34}
+                            y="33"
                           >
-                            <circle
-                              className="iot--gauge-bg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <circle
-                              className="iot--gauge-fg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <text
-                              className="iot--gauge-value"
-                              textAnchor="middle"
-                              x={34}
-                              y="29"
-                            >
-                              <tspan>
-                                73%
-                              </tspan>
-                            </text>
-                            <text
-                              className="iot--gauge-rating"
-                              textAnchor="middle"
-                              x={34}
-                              y="50"
-                            >
-                              <tspan>
-                                Fair
-                              </tspan>
-                            </text>
-                          </svg>
-                        </meter>
+                            <tspan>
+                              73%
+                            </tspan>
+                          </text>
+                          <text
+                            className="iot--gauge-rating"
+                            textAnchor="middle"
+                            x={34}
+                            y="48"
+                          >
+                            <tspan>
+                              Fair
+                            </tspan>
+                          </text>
+                        </svg>
                         <div
                           className="iot--gauge-trend iot--gauge-trend__up"
                         >
@@ -2817,13 +2801,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(648px,160px)",
+                        "OTransform": "translate(648px,160px)",
+                        "WebkitTransform": "translate(648px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(648px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(648px,160px)",
                         "width": "300px",
                       }
                     }
@@ -2911,13 +2895,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -3039,13 +3023,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -3515,13 +3499,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -3643,13 +3627,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -4353,7 +4337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -4377,13 +4361,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4449,13 +4433,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4521,13 +4505,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -4615,13 +4599,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -4684,13 +4668,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="GaugeCard"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(490px,160px)",
                         "width": "142px",
                       }
                     }
@@ -4755,7 +4739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -4768,62 +4752,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           }
                         }
                       >
-                        <meter
-                          className=""
-                          max={100}
-                          min={0}
-                          title="%"
-                          value={73}
-                        >
-                          <svg
-                            className="iot--gauge react-grid-item cssTransforms"
-                            percent="0"
-                            style={
-                              Object {
-                                "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": "#f1c21b",
-                                "--gauge-max-value": 100,
-                                "--gauge-size": "68px",
-                                "--gauge-trend-color": undefined,
-                                "--gauge-value": 73,
-                                "--stroke-dash": 137.60175822723292,
-                              }
+                        <svg
+                          className="iot--gauge react-grid-item cssTransforms"
+                          percent="0"
+                          style={
+                            Object {
+                              "--gauge-bg": "#e0e0e0",
+                              "--gauge-colors": "#f1c21b",
+                              "--gauge-max-value": 100,
+                              "--gauge-size": "68px",
+                              "--gauge-trend-color": undefined,
+                              "--gauge-value": 73,
+                              "--stroke-dash": 137.60175822723292,
                             }
+                          }
+                        >
+                          <circle
+                            className="iot--gauge-bg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <circle
+                            className="iot--gauge-fg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <text
+                            className="iot--gauge-value"
+                            textAnchor="middle"
+                            x={34}
+                            y="33"
                           >
-                            <circle
-                              className="iot--gauge-bg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <circle
-                              className="iot--gauge-fg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <text
-                              className="iot--gauge-value"
-                              textAnchor="middle"
-                              x={34}
-                              y="29"
-                            >
-                              <tspan>
-                                73%
-                              </tspan>
-                            </text>
-                            <text
-                              className="iot--gauge-rating"
-                              textAnchor="middle"
-                              x={34}
-                              y="50"
-                            >
-                              <tspan>
-                                Fair
-                              </tspan>
-                            </text>
-                          </svg>
-                        </meter>
+                            <tspan>
+                              73%
+                            </tspan>
+                          </text>
+                          <text
+                            className="iot--gauge-rating"
+                            textAnchor="middle"
+                            x={34}
+                            y="48"
+                          >
+                            <tspan>
+                              Fair
+                            </tspan>
+                          </text>
+                        </svg>
                         <div
                           className="iot--gauge-trend iot--gauge-trend__up"
                         >
@@ -4845,13 +4821,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(648px,160px)",
+                        "OTransform": "translate(648px,160px)",
+                        "WebkitTransform": "translate(648px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(648px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(648px,160px)",
                         "width": "300px",
                       }
                     }
@@ -4939,13 +4915,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -5067,13 +5043,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -5543,13 +5519,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -5671,13 +5647,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -8720,7 +8696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -8744,13 +8720,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8816,13 +8792,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8888,13 +8864,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -8982,13 +8958,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -9051,13 +9027,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="GaugeCard"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(490px,160px)",
                         "width": "142px",
                       }
                     }
@@ -9122,7 +9098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -9135,62 +9111,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           }
                         }
                       >
-                        <meter
-                          className=""
-                          max={100}
-                          min={0}
-                          title="%"
-                          value={73}
-                        >
-                          <svg
-                            className="iot--gauge react-grid-item cssTransforms"
-                            percent="0"
-                            style={
-                              Object {
-                                "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": "#f1c21b",
-                                "--gauge-max-value": 100,
-                                "--gauge-size": "68px",
-                                "--gauge-trend-color": undefined,
-                                "--gauge-value": 73,
-                                "--stroke-dash": 137.60175822723292,
-                              }
+                        <svg
+                          className="iot--gauge react-grid-item cssTransforms"
+                          percent="0"
+                          style={
+                            Object {
+                              "--gauge-bg": "#e0e0e0",
+                              "--gauge-colors": "#f1c21b",
+                              "--gauge-max-value": 100,
+                              "--gauge-size": "68px",
+                              "--gauge-trend-color": undefined,
+                              "--gauge-value": 73,
+                              "--stroke-dash": 137.60175822723292,
                             }
+                          }
+                        >
+                          <circle
+                            className="iot--gauge-bg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <circle
+                            className="iot--gauge-fg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <text
+                            className="iot--gauge-value"
+                            textAnchor="middle"
+                            x={34}
+                            y="33"
                           >
-                            <circle
-                              className="iot--gauge-bg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <circle
-                              className="iot--gauge-fg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <text
-                              className="iot--gauge-value"
-                              textAnchor="middle"
-                              x={34}
-                              y="29"
-                            >
-                              <tspan>
-                                73%
-                              </tspan>
-                            </text>
-                            <text
-                              className="iot--gauge-rating"
-                              textAnchor="middle"
-                              x={34}
-                              y="50"
-                            >
-                              <tspan>
-                                Fair
-                              </tspan>
-                            </text>
-                          </svg>
-                        </meter>
+                            <tspan>
+                              73%
+                            </tspan>
+                          </text>
+                          <text
+                            className="iot--gauge-rating"
+                            textAnchor="middle"
+                            x={34}
+                            y="48"
+                          >
+                            <tspan>
+                              Fair
+                            </tspan>
+                          </text>
+                        </svg>
                         <div
                           className="iot--gauge-trend iot--gauge-trend__up"
                         >
@@ -9212,13 +9180,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(648px,160px)",
+                        "OTransform": "translate(648px,160px)",
+                        "WebkitTransform": "translate(648px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(648px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(648px,160px)",
                         "width": "300px",
                       }
                     }
@@ -9306,13 +9274,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -9434,13 +9402,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -9908,13 +9876,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -10036,13 +10004,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
@@ -20855,7 +20823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         "msTransform": "translate(490px,16px)",
                         "position": "absolute",
                         "transform": "translate(490px,16px)",
-                        "width": "142px",
+                        "width": "300px",
                       }
                     }
                     type="CUSTOM"
@@ -20879,13 +20847,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs2"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,16px)",
-                        "OTransform": "translate(648px,16px)",
-                        "WebkitTransform": "translate(648px,16px)",
+                        "MozTransform": "translate(806px,16px)",
+                        "OTransform": "translate(806px,16px)",
+                        "WebkitTransform": "translate(806px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(648px,16px)",
+                        "msTransform": "translate(806px,16px)",
                         "position": "absolute",
-                        "transform": "translate(648px,16px)",
+                        "transform": "translate(806px,16px)",
                         "width": "142px",
                       }
                     }
@@ -20951,13 +20919,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs3"
                     style={
                       Object {
-                        "MozTransform": "translate(806px,16px)",
-                        "OTransform": "translate(806px,16px)",
-                        "WebkitTransform": "translate(806px,16px)",
+                        "MozTransform": "translate(964px,16px)",
+                        "OTransform": "translate(964px,16px)",
+                        "WebkitTransform": "translate(964px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(806px,16px)",
+                        "msTransform": "translate(964px,16px)",
                         "position": "absolute",
-                        "transform": "translate(806px,16px)",
+                        "transform": "translate(964px,16px)",
                         "width": "142px",
                       }
                     }
@@ -21023,13 +20991,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-comfort-level"
                     style={
                       Object {
-                        "MozTransform": "translate(964px,16px)",
-                        "OTransform": "translate(964px,16px)",
-                        "WebkitTransform": "translate(964px,16px)",
+                        "MozTransform": "translate(1122px,16px)",
+                        "OTransform": "translate(1122px,16px)",
+                        "WebkitTransform": "translate(1122px,16px)",
                         "height": "128px",
-                        "msTransform": "translate(964px,16px)",
+                        "msTransform": "translate(1122px,16px)",
                         "position": "absolute",
-                        "transform": "translate(964px,16px)",
+                        "transform": "translate(1122px,16px)",
                         "width": "142px",
                       }
                     }
@@ -21117,13 +21085,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-xs4"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(332px,160px)",
+                        "OTransform": "translate(332px,160px)",
+                        "WebkitTransform": "translate(332px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(332px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(332px,160px)",
                         "width": "142px",
                       }
                     }
@@ -21186,13 +21154,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="GaugeCard"
                     style={
                       Object {
-                        "MozTransform": "translate(1122px,16px)",
-                        "OTransform": "translate(1122px,16px)",
-                        "WebkitTransform": "translate(1122px,16px)",
+                        "MozTransform": "translate(490px,160px)",
+                        "OTransform": "translate(490px,160px)",
+                        "WebkitTransform": "translate(490px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(1122px,16px)",
+                        "msTransform": "translate(490px,160px)",
                         "position": "absolute",
-                        "transform": "translate(1122px,16px)",
+                        "transform": "translate(490px,160px)",
                         "width": "142px",
                       }
                     }
@@ -21257,7 +21225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hoCWQe"
+                      className="Card__CardContent-v5r71h-1 bVgaXY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -21270,62 +21238,54 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           }
                         }
                       >
-                        <meter
-                          className=""
-                          max={100}
-                          min={0}
-                          title="%"
-                          value={73}
-                        >
-                          <svg
-                            className="iot--gauge react-grid-item cssTransforms"
-                            percent="0"
-                            style={
-                              Object {
-                                "--gauge-bg": "#e0e0e0",
-                                "--gauge-colors": "#f1c21b",
-                                "--gauge-max-value": 100,
-                                "--gauge-size": "68px",
-                                "--gauge-trend-color": undefined,
-                                "--gauge-value": 73,
-                                "--stroke-dash": 137.60175822723292,
-                              }
+                        <svg
+                          className="iot--gauge react-grid-item cssTransforms"
+                          percent="0"
+                          style={
+                            Object {
+                              "--gauge-bg": "#e0e0e0",
+                              "--gauge-colors": "#f1c21b",
+                              "--gauge-max-value": 100,
+                              "--gauge-size": "68px",
+                              "--gauge-trend-color": undefined,
+                              "--gauge-value": 73,
+                              "--stroke-dash": 137.60175822723292,
                             }
+                          }
+                        >
+                          <circle
+                            className="iot--gauge-bg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <circle
+                            className="iot--gauge-fg"
+                            cx={34}
+                            cy={34}
+                            r={30}
+                          />
+                          <text
+                            className="iot--gauge-value"
+                            textAnchor="middle"
+                            x={34}
+                            y="33"
                           >
-                            <circle
-                              className="iot--gauge-bg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <circle
-                              className="iot--gauge-fg"
-                              cx={34}
-                              cy={34}
-                              r={30}
-                            />
-                            <text
-                              className="iot--gauge-value"
-                              textAnchor="middle"
-                              x={34}
-                              y="29"
-                            >
-                              <tspan>
-                                73%
-                              </tspan>
-                            </text>
-                            <text
-                              className="iot--gauge-rating"
-                              textAnchor="middle"
-                              x={34}
-                              y="50"
-                            >
-                              <tspan>
-                                Fair
-                              </tspan>
-                            </text>
-                          </svg>
-                        </meter>
+                            <tspan>
+                              73%
+                            </tspan>
+                          </text>
+                          <text
+                            className="iot--gauge-rating"
+                            textAnchor="middle"
+                            x={34}
+                            y="48"
+                          >
+                            <tspan>
+                              Fair
+                            </tspan>
+                          </text>
+                        </svg>
                         <div
                           className="iot--gauge-trend iot--gauge-trend__up"
                         >
@@ -21347,13 +21307,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facilitycard-health"
                     style={
                       Object {
-                        "MozTransform": "translate(332px,160px)",
-                        "OTransform": "translate(332px,160px)",
-                        "WebkitTransform": "translate(332px,160px)",
+                        "MozTransform": "translate(648px,160px)",
+                        "OTransform": "translate(648px,160px)",
+                        "WebkitTransform": "translate(648px,160px)",
                         "height": "128px",
-                        "msTransform": "translate(332px,160px)",
+                        "msTransform": "translate(648px,160px)",
                         "position": "absolute",
-                        "transform": "translate(332px,160px)",
+                        "transform": "translate(648px,160px)",
                         "width": "300px",
                       }
                     }
@@ -21441,13 +21401,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-temperature-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,160px)",
-                        "OTransform": "translate(648px,160px)",
-                        "WebkitTransform": "translate(648px,160px)",
+                        "MozTransform": "translate(16px,304px)",
+                        "OTransform": "translate(16px,304px)",
+                        "WebkitTransform": "translate(16px,304px)",
                         "height": "272px",
-                        "msTransform": "translate(648px,160px)",
+                        "msTransform": "translate(16px,304px)",
                         "position": "absolute",
-                        "transform": "translate(648px,160px)",
+                        "transform": "translate(16px,304px)",
                         "width": "616px",
                       }
                     }
@@ -21569,13 +21529,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="alert-table1"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,304px)",
-                        "OTransform": "translate(16px,304px)",
-                        "WebkitTransform": "translate(16px,304px)",
+                        "MozTransform": "translate(648px,304px)",
+                        "OTransform": "translate(648px,304px)",
+                        "WebkitTransform": "translate(648px,304px)",
                         "height": "560px",
-                        "msTransform": "translate(16px,304px)",
+                        "msTransform": "translate(648px,304px)",
                         "position": "absolute",
-                        "transform": "translate(16px,304px)",
+                        "transform": "translate(648px,304px)",
                         "width": "616px",
                       }
                     }
@@ -22045,13 +22005,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="facility-multi-timeseries"
                     style={
                       Object {
-                        "MozTransform": "translate(648px,448px)",
-                        "OTransform": "translate(648px,448px)",
-                        "WebkitTransform": "translate(648px,448px)",
+                        "MozTransform": "translate(16px,592px)",
+                        "OTransform": "translate(16px,592px)",
+                        "WebkitTransform": "translate(16px,592px)",
                         "height": "560px",
-                        "msTransform": "translate(648px,448px)",
+                        "msTransform": "translate(16px,592px)",
                         "position": "absolute",
-                        "transform": "translate(648px,448px)",
+                        "transform": "translate(16px,592px)",
                         "width": "616px",
                       }
                     }
@@ -22173,13 +22133,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     id="floor map picture"
                     style={
                       Object {
-                        "MozTransform": "translate(16px,880px)",
-                        "OTransform": "translate(16px,880px)",
-                        "WebkitTransform": "translate(16px,880px)",
+                        "MozTransform": "translate(648px,880px)",
+                        "OTransform": "translate(648px,880px)",
+                        "WebkitTransform": "translate(648px,880px)",
                         "height": "272px",
-                        "msTransform": "translate(16px,880px)",
+                        "msTransform": "translate(648px,880px)",
                         "position": "absolute",
-                        "transform": "translate(16px,880px)",
+                        "transform": "translate(648px,880px)",
                         "width": "616px",
                       }
                     }
