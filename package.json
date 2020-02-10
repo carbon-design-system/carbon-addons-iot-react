@@ -24,13 +24,13 @@
     "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore",
     "prepare": "yarn build",
     "publish-npm": "yarn semantic-release",
-    "start": "yarn --max_old_space_size=16384 storybook",
-    "storybook": "start-storybook -p 3000 -s public/development",
+    "start": "yarn storybook",
+    "storybook": "NODE_OPTIONS='--inspect' cross-env start-storybook -p 3000 -s public/development",
     "test": "yarn test:a11y && yarn test:base",
-    "test:base": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=16384' jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
+    "test:base": "NODE_OPTIONS='--inspect' cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
-    "test:watch": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=16384' jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "cross-env TZ=America/Chicago NODE_OPTIONS='--max-old-space-size=16384' jest src/components/StorybookSnapshots.test.js --updateSnapshot",
+    "test:watch": "NODE_OPTIONS='--inspect' cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
+    "test:update": "NODE_OPTIONS='--inspect' cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --updateSnapshot",
     "test:clear": "cross-env TZ=America/Chicago jest --clearCache"
   },
   "stylelint": {
