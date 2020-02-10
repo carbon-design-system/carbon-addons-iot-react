@@ -89,6 +89,7 @@ const GaugeCard = ({
           return (
             <React.Fragment key={`${iotPrefix}-gauge-${i}`}>
               <svg
+                aria-labelledby="gauge-label"
                 className={classnames(
                   `${iotPrefix}--gauge`,
                   { [`${iotPrefix}--gauge__loaded`]: loadedState },
@@ -118,6 +119,7 @@ const GaugeCard = ({
                   r={radius}
                 />
                 <text
+                  id="gauge-label"
                   className={classnames(`${iotPrefix}--gauge-value`, {
                     [`${iotPrefix}--gauge-value__centered`]: !grade,
                   })}

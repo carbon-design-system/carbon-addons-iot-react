@@ -745,6 +745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <svg
+                          aria-labelledby="gauge-label"
                           className="iot--gauge react-grid-item cssTransforms"
                           percent="0"
                           style={
@@ -773,6 +774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           />
                           <text
                             className="iot--gauge-value"
+                            id="gauge-label"
                             textAnchor="middle"
                             x={34}
                             y="33"
@@ -2733,6 +2735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <svg
+                          aria-labelledby="gauge-label"
                           className="iot--gauge react-grid-item cssTransforms"
                           percent="0"
                           style={
@@ -2761,6 +2764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           />
                           <text
                             className="iot--gauge-value"
+                            id="gauge-label"
                             textAnchor="middle"
                             x={34}
                             y="33"
@@ -4753,6 +4757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <svg
+                          aria-labelledby="gauge-label"
                           className="iot--gauge react-grid-item cssTransforms"
                           percent="0"
                           style={
@@ -4781,6 +4786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           />
                           <text
                             className="iot--gauge-value"
+                            id="gauge-label"
                             textAnchor="middle"
                             x={34}
                             y="33"
@@ -9112,6 +9118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <svg
+                          aria-labelledby="gauge-label"
                           className="iot--gauge react-grid-item cssTransforms"
                           percent="0"
                           style={
@@ -9140,6 +9147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           />
                           <text
                             className="iot--gauge-value"
+                            id="gauge-label"
                             textAnchor="middle"
                             x={34}
                             y="33"
@@ -21239,6 +21247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         }
                       >
                         <svg
+                          aria-labelledby="gauge-label"
                           className="iot--gauge react-grid-item cssTransforms"
                           percent="0"
                           style={
@@ -21267,6 +21276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           />
                           <text
                             className="iot--gauge-value"
+                            id="gauge-label"
                             textAnchor="middle"
                             x={34}
                             y="33"
