@@ -17,6 +17,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             sort: 'DESC',
@@ -35,7 +36,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
-          tooltip="X-Large Card's Tooltip"
+          tooltip={text('Tooltip text', "X-Large Card's Tooltip")}
           content={{
             columns: tableColumns,
           }}
@@ -60,6 +61,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
           }}
@@ -84,6 +86,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
           }}
@@ -135,6 +138,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableCustomColumns,
             thresholds,
@@ -202,6 +206,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             thresholds,
@@ -252,6 +257,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             thresholds,
@@ -275,6 +281,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableCustomColumns,
           }}
@@ -297,6 +304,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableCustomColumns,
           }}
@@ -315,6 +323,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             expandedRows: [
@@ -343,6 +352,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
           }}
@@ -361,6 +371,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
           }}
@@ -378,6 +389,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
           }}
@@ -397,6 +409,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             expandedRows: [{}],
@@ -416,6 +429,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             expandedRows: [{}],
@@ -469,6 +483,7 @@ storiesOf('Watson IoT|TableCard', module)
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
           content={{
             columns: tableColumns,
             thresholds,

@@ -25,6 +25,7 @@ const cardValues = [
         { label: 'Sev 1', dataSourceId: 'data3', color: COLORS.BLUE },
       ],
     },
+    dataSource: {},
   },
   {
     title: 'Alerts (Section 2)',
@@ -43,6 +44,7 @@ const cardValues = [
         { label: 'Sev 1', value: 32, color: COLORS.BLUE },
       ],
     },
+    dataSource: {},
   },
   {
     title: 'Alerts',
@@ -56,6 +58,7 @@ const cardValues = [
       data: tableData,
       columns: tableColumns,
     },
+    dataSource: {},
   },
   {
     title: 'Floor Map',
@@ -73,6 +76,7 @@ const cardValues = [
       image: 'firstfloor',
       src: imageFile,
     },
+    dataSource: {},
     values: {
       hotspots: [
         {
@@ -118,6 +122,7 @@ const cardValues = [
         { label: 'Sev 1', value: 18, color: COLORS.BLUE },
       ],
     },
+    dataSource: {},
   },
 ];
 

@@ -48,7 +48,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -58,18 +58,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="XLARGE"
               >
                 <div
@@ -156,7 +157,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -166,18 +167,128 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
+                size="LARGE"
+              >
+                <div
+                  className="chart-holder"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard dataFilter 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": 20,
+              "width": "520px",
+            }
+          }
+        >
+          <div
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
+            id="facility-temperature"
+          >
+            <div
+              className="card--header"
+            >
+              <span
+                className="card--title"
+                title="Temperature"
+              >
+                <span>
+                  Temperature
+                </span>
+              </span>
+              <div
+                className="card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ewwdRD"
+            >
+              <div
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -264,7 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -274,15 +385,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -369,7 +481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -379,18 +491,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -477,7 +590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -487,18 +600,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -585,7 +699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -595,18 +709,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 LzeMP"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 esQSiJ"
                 size="LARGE"
               >
                 <div
@@ -693,7 +808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -703,18 +818,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -801,7 +917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -811,18 +927,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -909,7 +1026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -919,18 +1036,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1017,7 +1135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1027,18 +1145,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1125,7 +1244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1135,18 +1254,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1233,7 +1353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1243,18 +1363,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1341,7 +1462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-Pressure"
           >
             <div
@@ -1351,18 +1472,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Pressure"
               >
-                Pressure
-                 
+                <span>
+                  Pressure
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1449,7 +1571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1459,18 +1581,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1557,7 +1680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1567,18 +1690,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1665,7 +1789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1675,18 +1799,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1773,7 +1898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1783,18 +1908,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1881,7 +2007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1891,18 +2017,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -1989,7 +2116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -1999,18 +2126,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -2097,7 +2225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -2107,18 +2235,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -2205,7 +2334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facility-temperature"
           >
             <div
@@ -2215,18 +2344,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 jAGfWa"
+              className="Card__CardContent-v5r71h-1 ewwdRD"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="LARGE"
               >
                 <div
@@ -2313,7 +2443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2323,18 +2453,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -2421,7 +2552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2431,18 +2562,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -2529,7 +2661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2539,18 +2671,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -2637,7 +2770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2647,18 +2780,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -2745,7 +2879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2755,18 +2889,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -2853,7 +2988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2863,18 +2998,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -2961,7 +3097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -2971,18 +3107,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3069,7 +3206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3079,18 +3216,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3177,7 +3315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3187,18 +3325,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3285,7 +3424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3295,18 +3434,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3393,7 +3533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3403,18 +3543,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3501,7 +3642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3511,18 +3652,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3609,7 +3751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3619,18 +3761,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3717,7 +3860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3727,8 +3870,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
@@ -3790,10 +3934,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div
@@ -3880,7 +4024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facility-temperature"
           >
             <div
@@ -3890,18 +4034,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
                 className="card--title"
                 title="Temperature"
               >
-                Temperature
-                 
+                <span>
+                  Temperature
+                </span>
               </span>
               <div
                 className="card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hDVRgE"
+              className="Card__CardContent-v5r71h-1 ioQZbN"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
+                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 kupEJX"
                 size="MEDIUM"
               >
                 <div

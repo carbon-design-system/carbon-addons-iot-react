@@ -63,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -87,19 +87,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <span>
+                      Facility Metrics
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-1 ioQZbN"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -123,19 +124,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Humidity"
                   >
-                    Humidity
-                     
+                    <span>
+                      Humidity
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 cZyqBY"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My utilization chart"
                 id="utilization"
                 style={
@@ -159,15 +161,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Utilization"
                   >
-                    Utilization
-                     
+                    <span>
+                      Utilization
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 cZyqBY"
                 />
               </div>
             </div>
@@ -265,7 +268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -289,19 +292,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <span>
+                      Facility Metrics
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-1 ioQZbN"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -325,19 +329,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Humidity"
                   >
-                    Humidity
-                     
+                    <span>
+                      Humidity
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 cZyqBY"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My utilization chart"
                 id="utilization"
                 style={
@@ -361,15 +366,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Utilization"
                   >
-                    Utilization
-                     
+                    <span>
+                      Utilization
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 cZyqBY"
                 />
               </div>
             </div>
@@ -467,7 +473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                 content="My Facility Metrics"
                 id="facility"
                 onMouseDown={[Function]}
@@ -496,19 +502,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Facility Metrics"
                   >
-                    Facility Metrics
-                     
+                    <span>
+                      Facility Metrics
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hDVRgE"
+                  className="Card__CardContent-v5r71h-1 ioQZbN"
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My Humidity Values"
                 id="humidity"
                 onMouseDown={[Function]}
@@ -537,19 +544,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Humidity"
                   >
-                    Humidity
-                     
+                    <span>
+                      Humidity
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 cZyqBY"
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My utilization chart"
                 id="utilization"
                 onMouseDown={[Function]}
@@ -578,15 +586,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="card--title"
                     title="Utilization"
                   >
-                    Utilization
-                     
+                    <span>
+                      Utilization
+                    </span>
                   </span>
                   <div
                     className="card--toolbar"
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 hoCWQe"
+                  className="Card__CardContent-v5r71h-1 cZyqBY"
                 />
               </div>
             </div>
