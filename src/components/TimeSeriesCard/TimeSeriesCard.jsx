@@ -2,8 +2,7 @@ import React, { Fragment, useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
-// TODO: waiting for @carbon/charts support https://github.com/carbon-design-system/carbon-charts/pull/389
-import '@carbon/charts/dist/styles.css';
+import '@carbon/charts/styles.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
@@ -253,17 +252,17 @@ const TimeSeriesCard = ({
     [isEditable, series]
   );
 
-  const handleStrokeColor = (datasetLabel, label, value, data, originalStrokeColor) => {
-    if (!isNil(value)) {
+  const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
+    if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
       return matchingAlertRange ? matchingAlertRange.color : originalStrokeColor;
     }
     return originalStrokeColor;
   };
 
-  const handleFillColor = (datasetLabel, label, value, data, originalFillColor) => {
+  const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
-    if (!isNil(value)) {
+    if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
       return matchingAlertRange ? matchingAlertRange.color : defaultFillColor;
     }
@@ -271,8 +270,8 @@ const TimeSeriesCard = ({
     return defaultFillColor;
   };
 
-  const handleIsFilled = (datasetLabel, label, value, data, isFilled) => {
-    if (!isNil(value)) {
+  const handleIsFilled = (datasetLabel, label, data, isFilled) => {
+    if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
       return matchingAlertRange ? true : isFilled;
     }
@@ -383,7 +382,7 @@ const TimeSeriesCard = ({
                     secondary: true,
                   },
                 },
-                legend: { position: 'top', clickable: !isEditable, visible: lines.length > 1 },
+                legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
                 containerResizable: true,
                 tooltip: {
                   formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),

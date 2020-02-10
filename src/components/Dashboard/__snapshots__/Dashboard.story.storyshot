@@ -88,7 +88,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facilitycard"
                     style={
                       Object {
@@ -120,7 +120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -238,7 +238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs"
                     style={
                       Object {
@@ -270,7 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -307,7 +307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     content={
                       <h2
                         style={
@@ -335,7 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="CUSTOM"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <h2
                         style={
@@ -349,7 +349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs2"
                     style={
                       Object {
@@ -381,7 +381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -421,7 +421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs3"
                     style={
                       Object {
@@ -453,7 +453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -493,7 +493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-comfort-level"
                     style={
                       Object {
@@ -525,7 +525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -587,7 +587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs4"
                     style={
                       Object {
@@ -619,7 +619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -656,7 +656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 HsjmT"
                     id="GaugeCard"
                     style={
                       Object {
@@ -731,7 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -817,7 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-health"
                     style={
                       Object {
@@ -849,7 +849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -911,7 +911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facility-temperature-timeseries"
                     style={
                       Object {
@@ -1026,7 +1026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -1039,7 +1039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="alert-table1"
                     style={
                       Object {
@@ -1056,7 +1056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -1515,7 +1515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="facility-multi-timeseries"
                     style={
                       Object {
@@ -1630,7 +1630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -1643,7 +1643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="floor map picture"
                     style={
                       Object {
@@ -1704,7 +1704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -2084,7 +2084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facilitycard"
                     style={
                       Object {
@@ -2116,7 +2116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -2234,7 +2234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs"
                     style={
                       Object {
@@ -2266,7 +2266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2303,7 +2303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     content={
                       <h2
                         style={
@@ -2331,7 +2331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="CUSTOM"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <h2
                         style={
@@ -2345,7 +2345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs2"
                     style={
                       Object {
@@ -2377,7 +2377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2417,7 +2417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs3"
                     style={
                       Object {
@@ -2449,7 +2449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2489,7 +2489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-comfort-level"
                     style={
                       Object {
@@ -2521,7 +2521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2583,7 +2583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs4"
                     style={
                       Object {
@@ -2615,7 +2615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2652,7 +2652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 HsjmT"
                     id="GaugeCard"
                     style={
                       Object {
@@ -2727,7 +2727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -2813,7 +2813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-health"
                     style={
                       Object {
@@ -2845,7 +2845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2907,7 +2907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facility-temperature-timeseries"
                     style={
                       Object {
@@ -3022,7 +3022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -3035,7 +3035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="alert-table1"
                     style={
                       Object {
@@ -3052,7 +3052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -3511,7 +3511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="facility-multi-timeseries"
                     style={
                       Object {
@@ -3626,7 +3626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -3639,7 +3639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="floor map picture"
                     style={
                       Object {
@@ -3700,7 +3700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -4112,7 +4112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facilitycard"
                     style={
                       Object {
@@ -4144,7 +4144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -4262,7 +4262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs"
                     style={
                       Object {
@@ -4294,7 +4294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4331,7 +4331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     content={
                       <h2
                         style={
@@ -4359,7 +4359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="CUSTOM"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <h2
                         style={
@@ -4373,7 +4373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs2"
                     style={
                       Object {
@@ -4405,7 +4405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4445,7 +4445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs3"
                     style={
                       Object {
@@ -4477,7 +4477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4517,7 +4517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-comfort-level"
                     style={
                       Object {
@@ -4549,7 +4549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4611,7 +4611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs4"
                     style={
                       Object {
@@ -4643,7 +4643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4680,7 +4680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 HsjmT"
                     id="GaugeCard"
                     style={
                       Object {
@@ -4755,7 +4755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -4841,7 +4841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-health"
                     style={
                       Object {
@@ -4873,7 +4873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4935,7 +4935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facility-temperature-timeseries"
                     style={
                       Object {
@@ -5050,7 +5050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -5063,7 +5063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="alert-table1"
                     style={
                       Object {
@@ -5080,7 +5080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -5539,7 +5539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="facility-multi-timeseries"
                     style={
                       Object {
@@ -5654,7 +5654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -5667,7 +5667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="floor map picture"
                     style={
                       Object {
@@ -5728,7 +5728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -6115,7 +6115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="expandedcard"
                     style={
                       Object {
@@ -6176,7 +6176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -6399,7 +6399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                   id="expandedcard"
                   style={
                     Object {
@@ -6460,7 +6460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="Card__CardContent-v5r71h-1 hUPzK"
+                    className="Card__CardContent-v5r71h-1 ewwdRD"
                   >
                     <div
                       className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -6604,7 +6604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="expandedcard"
                     style={
                       Object {
@@ -6621,7 +6621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -8479,7 +8479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facilitycard"
                     style={
                       Object {
@@ -8511,7 +8511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -8629,7 +8629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs"
                     style={
                       Object {
@@ -8661,7 +8661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8698,7 +8698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     content={
                       <h2
                         style={
@@ -8726,7 +8726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="CUSTOM"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <h2
                         style={
@@ -8740,7 +8740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs2"
                     style={
                       Object {
@@ -8772,7 +8772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8812,7 +8812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs3"
                     style={
                       Object {
@@ -8844,7 +8844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8884,7 +8884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-comfort-level"
                     style={
                       Object {
@@ -8916,7 +8916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -8978,7 +8978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs4"
                     style={
                       Object {
@@ -9010,7 +9010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -9047,7 +9047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 HsjmT"
                     id="GaugeCard"
                     style={
                       Object {
@@ -9122,7 +9122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -9208,7 +9208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-health"
                     style={
                       Object {
@@ -9240,7 +9240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -9302,7 +9302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facility-temperature-timeseries"
                     style={
                       Object {
@@ -9417,7 +9417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -9430,7 +9430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="alert-table1"
                     style={
                       Object {
@@ -9447,7 +9447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -9904,7 +9904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="facility-multi-timeseries"
                     style={
                       Object {
@@ -10019,7 +10019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -10032,7 +10032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="floor map picture"
                     style={
                       Object {
@@ -10093,7 +10093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -10481,7 +10481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-0"
                       style={
                         Object {
@@ -10513,7 +10513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10550,7 +10550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-1"
                       style={
                         Object {
@@ -10582,7 +10582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10619,7 +10619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-2"
                       style={
                         Object {
@@ -10651,7 +10651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10688,7 +10688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-3"
                       style={
                         Object {
@@ -10720,7 +10720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10757,7 +10757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-4"
                       style={
                         Object {
@@ -10789,7 +10789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10826,7 +10826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-5"
                       style={
                         Object {
@@ -10858,7 +10858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -10899,7 +10899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-6"
                       style={
                         Object {
@@ -10931,7 +10931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11037,7 +11037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-0"
                       style={
                         Object {
@@ -11069,7 +11069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11106,7 +11106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-1"
                       style={
                         Object {
@@ -11138,7 +11138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11175,7 +11175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-2"
                       style={
                         Object {
@@ -11207,7 +11207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11244,7 +11244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-3"
                       style={
                         Object {
@@ -11276,7 +11276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11313,7 +11313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-4"
                       style={
                         Object {
@@ -11345,7 +11345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11382,7 +11382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-5"
                       style={
                         Object {
@@ -11414,7 +11414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11455,7 +11455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-6"
                       style={
                         Object {
@@ -11487,7 +11487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11593,7 +11593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-0"
                       style={
                         Object {
@@ -11625,7 +11625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11662,7 +11662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-1"
                       style={
                         Object {
@@ -11694,7 +11694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11734,7 +11734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-2"
                       style={
                         Object {
@@ -11766,7 +11766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11803,7 +11803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-3"
                       style={
                         Object {
@@ -11835,7 +11835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -11940,7 +11940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-0"
                       style={
                         Object {
@@ -11972,7 +11972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12009,7 +12009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-1"
                       style={
                         Object {
@@ -12041,7 +12041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12081,7 +12081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-2"
                       style={
                         Object {
@@ -12113,7 +12113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12150,7 +12150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-3"
                       style={
                         Object {
@@ -12182,7 +12182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12287,7 +12287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-0"
                       style={
                         Object {
@@ -12319,7 +12319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12381,7 +12381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-1"
                       style={
                         Object {
@@ -12413,7 +12413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12475,7 +12475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-2"
                       style={
                         Object {
@@ -12507,7 +12507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12569,7 +12569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-3"
                       style={
                         Object {
@@ -12601,7 +12601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12728,7 +12728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-0"
                       style={
                         Object {
@@ -12760,7 +12760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12822,7 +12822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-1"
                       style={
                         Object {
@@ -12854,7 +12854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -12916,7 +12916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-2"
                       style={
                         Object {
@@ -12948,7 +12948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13010,7 +13010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-number-threshold-3"
                       style={
                         Object {
@@ -13042,7 +13042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13169,7 +13169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-0"
                       style={
                         Object {
@@ -13201,7 +13201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13238,7 +13238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-1"
                       style={
                         Object {
@@ -13270,7 +13270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13307,7 +13307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-2"
                       style={
                         Object {
@@ -13339,7 +13339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13376,7 +13376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-3"
                       style={
                         Object {
@@ -13408,7 +13408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13445,7 +13445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-4"
                       style={
                         Object {
@@ -13477,7 +13477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13579,7 +13579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-0"
                       style={
                         Object {
@@ -13611,7 +13611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13648,7 +13648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-1"
                       style={
                         Object {
@@ -13680,7 +13680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13717,7 +13717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-2"
                       style={
                         Object {
@@ -13749,7 +13749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13786,7 +13786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-3"
                       style={
                         Object {
@@ -13818,7 +13818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13855,7 +13855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmall-string-threshold-4"
                       style={
                         Object {
@@ -13887,7 +13887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -13989,7 +13989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-0"
                       style={
                         Object {
@@ -14021,7 +14021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14058,7 +14058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-1"
                       style={
                         Object {
@@ -14090,7 +14090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14127,7 +14127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-2"
                       style={
                         Object {
@@ -14159,7 +14159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14196,7 +14196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-3"
                       style={
                         Object {
@@ -14228,7 +14228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14265,7 +14265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-4"
                       style={
                         Object {
@@ -14297,7 +14297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14334,7 +14334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-5"
                       style={
                         Object {
@@ -14366,7 +14366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14407,7 +14407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-6"
                       style={
                         Object {
@@ -14439,7 +14439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14480,7 +14480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-0"
                       style={
                         Object {
@@ -14512,7 +14512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14549,7 +14549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-1"
                       style={
                         Object {
@@ -14581,7 +14581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14621,7 +14621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-2"
                       style={
                         Object {
@@ -14653,7 +14653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14690,7 +14690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-3"
                       style={
                         Object {
@@ -14722,7 +14722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14762,7 +14762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-0"
                       style={
                         Object {
@@ -14794,7 +14794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14856,7 +14856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-1"
                       style={
                         Object {
@@ -14888,7 +14888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -14950,7 +14950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-2"
                       style={
                         Object {
@@ -14982,7 +14982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15044,7 +15044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-3"
                       style={
                         Object {
@@ -15076,7 +15076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15138,7 +15138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-0"
                       style={
                         Object {
@@ -15170,7 +15170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15207,7 +15207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-1"
                       style={
                         Object {
@@ -15239,7 +15239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15276,7 +15276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-2"
                       style={
                         Object {
@@ -15308,7 +15308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15345,7 +15345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-3"
                       style={
                         Object {
@@ -15377,7 +15377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15414,7 +15414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-4"
                       style={
                         Object {
@@ -15446,7 +15446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15548,7 +15548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-0"
                       style={
                         Object {
@@ -15580,7 +15580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15617,7 +15617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-1"
                       style={
                         Object {
@@ -15649,7 +15649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15686,7 +15686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-2"
                       style={
                         Object {
@@ -15718,7 +15718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15755,7 +15755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-3"
                       style={
                         Object {
@@ -15787,7 +15787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15824,7 +15824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-4"
                       style={
                         Object {
@@ -15856,7 +15856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15893,7 +15893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-5"
                       style={
                         Object {
@@ -15925,7 +15925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -15966,7 +15966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-6"
                       style={
                         Object {
@@ -15998,7 +15998,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16039,7 +16039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-0"
                       style={
                         Object {
@@ -16071,7 +16071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16108,7 +16108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-1"
                       style={
                         Object {
@@ -16140,7 +16140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16180,7 +16180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-2"
                       style={
                         Object {
@@ -16212,7 +16212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16249,7 +16249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-trend-3"
                       style={
                         Object {
@@ -16281,7 +16281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16321,7 +16321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-0"
                       style={
                         Object {
@@ -16353,7 +16353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16415,7 +16415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-1"
                       style={
                         Object {
@@ -16447,7 +16447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16509,7 +16509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-2"
                       style={
                         Object {
@@ -16541,7 +16541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16603,7 +16603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-number-threshold-3"
                       style={
                         Object {
@@ -16635,7 +16635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16697,7 +16697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-0"
                       style={
                         Object {
@@ -16729,7 +16729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16766,7 +16766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-1"
                       style={
                         Object {
@@ -16798,7 +16798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16835,7 +16835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-2"
                       style={
                         Object {
@@ -16867,7 +16867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16904,7 +16904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-3"
                       style={
                         Object {
@@ -16936,7 +16936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -16973,7 +16973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-string-threshold-4"
                       style={
                         Object {
@@ -17005,7 +17005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17107,7 +17107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-0"
                       style={
                         Object {
@@ -17139,7 +17139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17210,7 +17210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-1"
                       style={
                         Object {
@@ -17242,7 +17242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17313,7 +17313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-2"
                       style={
                         Object {
@@ -17345,7 +17345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17481,7 +17481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-0"
                       style={
                         Object {
@@ -17513,7 +17513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17584,7 +17584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-1"
                       style={
                         Object {
@@ -17616,7 +17616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17687,7 +17687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-2"
                       style={
                         Object {
@@ -17719,7 +17719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17855,7 +17855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-0"
                       style={
                         Object {
@@ -17887,7 +17887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -17958,7 +17958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-1"
                       style={
                         Object {
@@ -17990,7 +17990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18061,7 +18061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-2"
                       style={
                         Object {
@@ -18093,7 +18093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18229,7 +18229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-0"
                       style={
                         Object {
@@ -18261,7 +18261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18332,7 +18332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-1"
                       style={
                         Object {
@@ -18364,7 +18364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18435,7 +18435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-2"
                       style={
                         Object {
@@ -18467,7 +18467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18603,7 +18603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-number-threshold-0"
                       style={
                         Object {
@@ -18635,7 +18635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18756,7 +18756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-number-threshold-1"
                       style={
                         Object {
@@ -18788,7 +18788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -18974,7 +18974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-number-threshold-0"
                       style={
                         Object {
@@ -19006,7 +19006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -19127,7 +19127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       id="xsmallwide-multi-number-threshold-1"
                       style={
                         Object {
@@ -19159,7 +19159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -19345,7 +19345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       id="xsmallwide-multi-number-threshold-0"
                       style={
                         Object {
@@ -19377,7 +19377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19495,7 +19495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       id="xsmallwide-multi-number-threshold-1"
                       style={
                         Object {
@@ -19527,7 +19527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19645,7 +19645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       id="xsmallwide-multi-number-threshold-2"
                       style={
                         Object {
@@ -19677,7 +19677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -19935,7 +19935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       id="xsmallwide-multi-number-threshold-0"
                       style={
                         Object {
@@ -19967,7 +19967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -20085,7 +20085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       id="xsmallwide-multi-number-threshold-1"
                       style={
                         Object {
@@ -20117,7 +20117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -20235,7 +20235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       id="xsmallwide-multi-number-threshold-2"
                       style={
                         Object {
@@ -20267,7 +20267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -20614,7 +20614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   }
                 >
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facilitycard"
                     style={
                       Object {
@@ -20646,7 +20646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -20764,7 +20764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs"
                     style={
                       Object {
@@ -20796,7 +20796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -20833,7 +20833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     content={
                       <h2
                         style={
@@ -20861,7 +20861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="CUSTOM"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <h2
                         style={
@@ -20875,7 +20875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs2"
                     style={
                       Object {
@@ -20907,7 +20907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -20947,7 +20947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs3"
                     style={
                       Object {
@@ -20979,7 +20979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -21019,7 +21019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-comfort-level"
                     style={
                       Object {
@@ -21051,7 +21051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -21113,7 +21113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-xs4"
                     style={
                       Object {
@@ -21145,7 +21145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -21182,7 +21182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="iot--gauge-card Card__CardWrapper-v5r71h-0 HsjmT"
                     id="GaugeCard"
                     style={
                       Object {
@@ -21257,7 +21257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="iot--gauge-container react-grid-item cssTransforms"
@@ -21343,7 +21343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                     id="facilitycard-health"
                     style={
                       Object {
@@ -21375,7 +21375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       />
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 bVgaXY"
+                      className="Card__CardContent-v5r71h-1 cZyqBY"
                     >
                       <div
                         className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -21437,7 +21437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="facility-temperature-timeseries"
                     style={
                       Object {
@@ -21552,7 +21552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -21565,7 +21565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="alert-table1"
                     style={
                       Object {
@@ -21582,7 +21582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     type="TABLE"
                   >
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -22041,7 +22041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 kGdXdI"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 iSCSRD"
                     id="facility-multi-timeseries"
                     style={
                       Object {
@@ -22156,7 +22156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 hUPzK"
+                      className="Card__CardContent-v5r71h-1 ewwdRD"
                     >
                       <div
                         className="TimeSeriesCard__LineChartWrapper-q25vbg-1 ldWnXS"
@@ -22169,7 +22169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                   </div>
                   <div
-                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                    className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                     id="floor map picture"
                     style={
                       Object {
@@ -22230,7 +22230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardContent-v5r71h-1 coBfbV"
+                      className="Card__CardContent-v5r71h-1 ioQZbN"
                     >
                       <div
                         className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -22600,7 +22600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     }
                   >
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       content={
                         <ClickableTile
                           clicked={false}
@@ -22669,7 +22669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <a
                           className="bx--link bx--tile bx--tile--clickable"
@@ -22723,7 +22723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       content={
                         <ClickableTile
                           clicked={false}
@@ -22792,7 +22792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <a
                           className="bx--link bx--tile bx--tile--clickable"
@@ -22846,7 +22846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                       content={
                         <div
                           style={
@@ -22901,7 +22901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           style={
@@ -22942,7 +22942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       content={
                         <div
                           style={
@@ -22988,7 +22988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           style={
@@ -23036,7 +23036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                      className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                       content={
                         <div
                           style={
@@ -23082,7 +23082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       type="CUSTOM"
                     >
                       <div
-                        className="Card__CardContent-v5r71h-1 bVgaXY"
+                        className="Card__CardContent-v5r71h-1 cZyqBY"
                       >
                         <div
                           style={
@@ -23130,7 +23130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="Card__CardWrapper-v5r71h-0 SYfLr"
                       content={
                         Object {
                           "data": Array [
@@ -23194,7 +23194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="list-card react-grid-item cssTransforms"
@@ -23314,7 +23314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       </div>
                     </div>
                     <div
-                      className="Card__CardWrapper-v5r71h-0 cynIXT"
+                      className="Card__CardWrapper-v5r71h-0 SYfLr"
                       content={
                         Object {
                           "data": Array [
@@ -23374,7 +23374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         />
                       </div>
                       <div
-                        className="Card__CardContent-v5r71h-1 coBfbV"
+                        className="Card__CardContent-v5r71h-1 ioQZbN"
                       >
                         <div
                           className="list-card react-grid-item cssTransforms"
