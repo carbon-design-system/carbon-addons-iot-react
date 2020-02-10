@@ -7,6 +7,7 @@ import '@carbon/charts/dist/styles.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
+import filter from 'lodash/filter';
 import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
@@ -101,12 +102,12 @@ export const determinePrecision = (size, value, defaultPrecision) => {
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
   return {
     labels: series.map(({ label }) => label),
-    datasets: series.map(({ dataSourceId, label, color }) => ({
+    datasets: series.map(({ dataSourceId, dataFilter = {}, label, color }) => ({
       label,
       ...(color ? { fillColors: [color] } : {}),
       data:
-        values &&
-        values // have to filter out null values from the dataset, as it causes Carbon Charts to break
+        filter(values, dataFilter) &&
+        filter(values, dataFilter) // have to filter out null values from the dataset, as it causes Carbon Charts to break
           .filter(i => !isNil(i[dataSourceId]))
           .map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
     })),

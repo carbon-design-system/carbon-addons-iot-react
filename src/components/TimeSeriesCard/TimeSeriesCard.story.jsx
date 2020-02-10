@@ -1167,4 +1167,58 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
         />
       </div>
     );
+  })
+  .add('dataFilter', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature Device 1',
+                dataSourceId: 'temperature',
+                dataFilter: {
+                  ENTITY_ID: 'Sensor2-1',
+                },
+                color: text('color1', COLORS.MAGENTA),
+              },
+              {
+                label: 'Temperature Device 2',
+                dataSourceId: 'temperature',
+                dataFilter: {
+                  ENTITY_ID: 'Sensor2-2',
+                },
+                color: text('color2', COLORS.BLUE),
+              },
+            ],
+            unit: '˚F',
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature'),
+            timeDataSourceId: 'timestamp',
+          })}
+          locale="sq"
+          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
+            (acc, dataPoint) => {
+              // make "two devices worth of data" so that we can filter
+              acc.push(dataPoint);
+              acc.push({
+                ...dataPoint,
+                temperature: dataPoint.temperature / 2,
+                ENTITY_ID: 'Sensor2-2',
+              });
+              return acc;
+            },
+            []
+          )}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
   });
