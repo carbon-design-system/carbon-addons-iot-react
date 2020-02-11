@@ -904,37 +904,6 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
       </div>
     );
   })
-  .add('large / LOCALE DATE', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
-              },
-            ],
-            unit: '˚F',
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature'),
-            timeDataSourceId: 'timestamp',
-          })}
-          locale="sq"
-          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
-          interval="day"
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
   .add('Xlarge / multi line - (No X/Y Label)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
     return (
@@ -1159,7 +1128,6 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
           })}
-          locale="sq"
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           interval="day"
           breakpoint="lg"
@@ -1203,7 +1171,6 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
           })}
-          locale="sq"
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
             (acc, dataPoint) => {
               // make "two devices worth of data" so that we can filter
@@ -1217,6 +1184,37 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             },
             []
           )}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('locale', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+                color: text('color', COLORS.MAGENTA),
+              },
+            ],
+            unit: '˚F',
+            xLabel: text('xLabel', 'Time'),
+            yLabel: text('yLabel', 'Temperature'),
+            timeDataSourceId: 'timestamp',
+          })}
+          locale="sq"
+          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           interval="day"
           breakpoint="lg"
           size={size}
