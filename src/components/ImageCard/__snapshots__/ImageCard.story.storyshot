@@ -56,11 +56,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -433,11 +437,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -824,11 +832,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -959,11 +971,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1094,11 +1110,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1355,11 +1375,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"

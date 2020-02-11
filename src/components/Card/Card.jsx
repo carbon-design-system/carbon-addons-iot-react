@@ -1,9 +1,8 @@
-import React, { useCallback, useMemo, useState, createRef } from 'react';
+import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
-import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -205,14 +204,16 @@ const Card = props => {
     return childSize;
   };
 
-  const elmRef = createRef();
-  const [showTooltip, setshowTooltip] = useState(false);
-  const handleTooltip = IsShow => {
-    const element = elmRef.current;
-    if (element && element.offsetWidth < element.scrollWidth) {
-      setshowTooltip(IsShow);
+  // Ensure the title text has a tooltip only if the title text is truncated
+  const titleRef = React.createRef();
+  const [hasTitleTooltip, setHasTitleTooltip] = useState(false);
+  useEffect(() => {
+    if (titleRef.current && titleRef.current.clientWidth < titleRef.current.scrollWidth) {
+      setHasTitleTooltip(true);
+    } else {
+      setHasTitleTooltip(false);
     }
-  };
+  });
 
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
@@ -246,23 +247,21 @@ const Card = props => {
               >
                 {!hideHeader && (
                   <CardHeader>
-                    <CardTitle handleTooltip={handleTooltip}>
-                      <Tooltip
-                        triggerId={`card-tooltip-trigger-${id}`}
-                        tooltipId={`card-tooltip-${id}`}
-                        triggerClassName={classNames(`card--title-tooltip`, {
-                          'card--title-tooltip-icon': tooltip,
-                        })}
-                        triggerText={
-                          <div ref={elmRef} className="card--title-wrapper">
-                            {title}
-                          </div>
-                        }
-                        showIcon={false}
-                        open={showTooltip}
-                      >
-                        {title}
-                      </Tooltip>
+                    <CardTitle title={title}>
+                      {hasTitleTooltip ? (
+                        <Tooltip
+                          ref={titleRef}
+                          showIcon={false}
+                          triggerClassName="title--text"
+                          triggerText={title}
+                        >
+                          {title}
+                        </Tooltip>
+                      ) : (
+                        <div ref={titleRef} className="title--text">
+                          {title}
+                        </div>
+                      )}
                       {tooltip && (
                         <Tooltip
                           triggerId={`card-tooltip-trigger-${id}`}

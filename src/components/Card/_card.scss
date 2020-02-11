@@ -3,19 +3,18 @@
 
 .card {
   &--title {
-    width: 100%;
-    padding-right: $spacing-05;
-    &-wrapper {
+    flex: 1;
+    // min-width value is required to ensure flex child with text properly truncates
+    // https://css-tricks.com/flexbox-truncated-text/
+    min-width: 0;
+    display: flex;
+
+    .title--text {
       @include type-style('productive-heading-01');
+      display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
-    &-tooltip {
-      max-width: 100%;
-      &-icon {
-        max-width: 86%;
-      }
     }
 
     & + * {

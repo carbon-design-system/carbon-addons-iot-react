@@ -85,11 +85,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Facility Metrics"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Facility Metrics
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -122,11 +126,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Humidity"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Humidity
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -159,11 +167,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Utilization"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Utilization
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -290,11 +302,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Facility Metrics"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Facility Metrics
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -327,11 +343,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Humidity"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Humidity
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -364,11 +384,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Utilization"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Utilization
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -500,11 +524,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Facility Metrics"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Facility Metrics
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -542,11 +570,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Humidity"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Humidity
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"
@@ -584,11 +616,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                     title="Utilization"
                   >
-                    <span>
+                    <div
+                      className="title--text"
+                    >
                       Utilization
-                    </span>
+                    </div>
                   </span>
                   <div
                     className="card--toolbar"

@@ -56,11 +56,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -165,11 +169,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -274,11 +282,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -383,11 +395,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -489,11 +505,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -598,11 +618,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -707,11 +731,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -816,11 +844,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -925,11 +957,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1034,11 +1070,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1143,11 +1183,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1252,11 +1296,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1361,11 +1409,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1470,11 +1522,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Pressure"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Pressure
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1579,11 +1635,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1688,11 +1748,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1797,11 +1861,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1906,11 +1974,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2015,11 +2087,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2124,11 +2200,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2233,11 +2313,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2342,11 +2426,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2451,11 +2539,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2560,11 +2652,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2669,11 +2765,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2778,11 +2878,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2887,11 +2991,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2996,11 +3104,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3105,11 +3217,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3214,11 +3330,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3323,11 +3443,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3432,11 +3556,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3541,11 +3669,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3650,11 +3782,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3759,11 +3895,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3868,11 +4008,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -4032,11 +4176,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
                 title="Temperature"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Temperature
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"

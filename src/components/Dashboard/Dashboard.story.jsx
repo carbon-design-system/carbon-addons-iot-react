@@ -17,7 +17,8 @@ import Dashboard from './Dashboard';
 
 export const originalCards = [
   {
-    title: 'Facility Metrics',
+    title:
+      'Facility Metrics with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
@@ -240,7 +241,8 @@ export const originalCards = [
     values: { health: 'Healthy' },
   },
   {
-    title: 'Temperature',
+    title:
+      'Temperature with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facility-temperature-timeseries',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
