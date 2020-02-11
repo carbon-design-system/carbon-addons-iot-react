@@ -55,7 +55,7 @@ export const CardContent = styled.div`
   position: relative;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
   overflow-x: visible;
-  overflow-y: auto;
+  overflow-y: visible;
 `;
 
 export const SkeletonWrapper = styled.div`
