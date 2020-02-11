@@ -56,8 +56,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions per device"
               >
                 <div
@@ -235,8 +233,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Really really really long card title?"
               >
                 <div
@@ -414,8 +410,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -524,8 +518,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -820,8 +812,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Really long card title?"
               >
                 <div
@@ -960,8 +950,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Really really really long card title?"
               >
                 <div
@@ -1139,8 +1127,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -1357,8 +1343,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -1536,8 +1520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -1715,8 +1697,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -1983,8 +1963,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -2201,8 +2179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -2341,8 +2317,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -2715,8 +2689,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Facility Conditions"
               >
                 <div
@@ -2933,8 +2905,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Uncomfortable?"
               >
                 <div
@@ -3077,8 +3047,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Occupancy"
               >
                 <div
@@ -3214,8 +3182,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Occupancy"
               >
                 <div
@@ -3351,8 +3317,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Alert Count"
               >
                 <div
@@ -3521,8 +3485,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Alert Count"
               >
                 <div
@@ -3683,8 +3645,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Alert Count"
               >
                 <div
@@ -3820,8 +3780,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Foot Traffic"
               >
                 <div
@@ -3960,8 +3918,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Foot Traffic"
               >
                 <div
@@ -4097,8 +4053,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Alert Count"
               >
                 <div
@@ -4234,8 +4188,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Occupancy"
               >
                 <div
@@ -4371,8 +4323,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Status"
               >
                 <div
@@ -4542,8 +4492,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Status"
               >
                 <div
@@ -4704,8 +4652,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Status"
               >
                 <div

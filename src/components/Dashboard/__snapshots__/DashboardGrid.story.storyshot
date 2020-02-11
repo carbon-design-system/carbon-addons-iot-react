@@ -85,8 +85,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Facility Metrics"
                   >
                     <div
@@ -126,8 +124,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Humidity"
                   >
                     <div
@@ -167,8 +163,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Utilization"
                   >
                     <div
@@ -302,8 +296,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Facility Metrics"
                   >
                     <div
@@ -343,8 +335,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Humidity"
                   >
                     <div
@@ -384,8 +374,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Utilization"
                   >
                     <div
@@ -524,8 +512,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Facility Metrics"
                   >
                     <div
@@ -570,8 +556,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Humidity"
                   >
                     <div
@@ -616,8 +600,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 >
                   <span
                     className="card--title"
-                    onMouseEnter={[Function]}
-                    onMouseLeave={[Function]}
                     title="Utilization"
                   >
                     <div

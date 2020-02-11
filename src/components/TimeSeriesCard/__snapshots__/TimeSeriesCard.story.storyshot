@@ -56,8 +56,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -169,8 +167,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -282,8 +278,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -395,8 +389,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -505,8 +497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -618,8 +608,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -731,8 +719,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -844,8 +830,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -957,8 +941,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1070,8 +1052,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1183,8 +1163,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1296,8 +1274,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1409,8 +1385,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1522,8 +1496,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Pressure"
               >
                 <div
@@ -1635,8 +1607,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1748,8 +1718,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1861,8 +1829,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -1974,8 +1940,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2087,8 +2051,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2200,8 +2162,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2313,8 +2273,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2426,8 +2384,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2539,8 +2495,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2652,8 +2606,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2765,8 +2717,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2878,8 +2828,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -2991,8 +2939,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3104,8 +3050,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3217,8 +3161,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3330,8 +3272,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3443,8 +3383,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3556,8 +3494,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3669,8 +3605,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3782,8 +3716,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -3895,8 +3827,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -4008,8 +3938,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div
@@ -4176,8 +4104,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Temperature"
               >
                 <div

@@ -56,8 +56,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -237,8 +235,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card with render prop"
               >
                 <div
@@ -424,8 +420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -534,8 +528,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -939,8 +931,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1098,8 +1088,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1234,8 +1222,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1279,8 +1265,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1373,8 +1357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1467,8 +1449,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1561,8 +1541,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1655,8 +1633,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1749,8 +1725,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -1843,8 +1817,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -2002,8 +1974,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title that is really long and should be truncated and have a tooltip"
               >
                 <div
@@ -2183,8 +2153,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -2342,8 +2310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div
@@ -2477,8 +2443,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             >
               <span
                 className="card--title"
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
                 title="Card Title"
               >
                 <div

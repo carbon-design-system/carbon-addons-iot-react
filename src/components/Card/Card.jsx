@@ -43,14 +43,9 @@ export const CardHeader = (
 ) => <div className="card--header">{children}</div>;
 
 export const CardTitle = (
-  { children, title, handleTooltip } //eslint-disable-line
+  { children, title } //eslint-disable-line
 ) => (
-  <span
-    className="card--title"
-    title={title}
-    onMouseEnter={() => handleTooltip(true)}
-    onMouseLeave={() => handleTooltip(false)}
-  >
+  <span className="card--title" title={title}>
     {children}
   </span>
 );
