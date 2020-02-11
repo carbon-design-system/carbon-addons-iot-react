@@ -178,12 +178,12 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit },
+  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit, chartType },
   size,
   interval,
   isEditable,
   values: valuesProp,
-  chartType,
+
   locale,
   i18n: { alertDetected, noDataLabel },
   i18n,

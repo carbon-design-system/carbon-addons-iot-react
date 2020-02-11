@@ -583,7 +583,7 @@ storiesOf('Watson IoT|Dashboard', module)
             id: `expandedcard`,
             size: CARD_SIZES.LARGE,
             type: CARD_TYPES.TIMESERIES,
-            chartType: TIME_SERIES_TYPES.BAR,
+
             content: {
               series: [
                 {
@@ -597,6 +597,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   dataFilter: { ENTITY_ID: 'Sensor2-2' },
                 },
               ],
+              chartType: TIME_SERIES_TYPES.BAR,
             },
             values: data.reduce((acc, dataPoint) => {
               acc.push(dataPoint);
