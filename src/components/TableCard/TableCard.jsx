@@ -16,6 +16,12 @@ import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
 
+const ContentWrapper = styled.div`
+  height: 100%;
+  max-height: 100%;
+  padding: 0 16px 16px 16px;
+`;
+
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
     margin-left: 10px;
@@ -689,6 +695,12 @@ const TableCard = ({
     ? columnsToRender.find(item => item.priority === 1)
     : columnStartSortDefined;
 
+  const supportedSizes = [
+    CARD_SIZES.LARGE,
+    CARD_SIZES.XLARGE,
+  ];
+  const supportedSize = supportedSizes.includes(size);
+
   const cardToolbar = (
     <CardToolbar
       availableActions={{ expand: isExpandable, range: true }}
@@ -711,8 +723,9 @@ const TableCard = ({
       i18n={i18n}
       hideHeader
       {...others}
-    >
-      {({ height }) => {
+    > 
+      {supportedSize ?
+      ({ height }) => {
         const numberOfRowsPerPage = !isNil(height) ? Math.floor((height - 48 * 3) / 48) : 10;
         return (
           <StyledStatefulTable
@@ -771,7 +784,10 @@ const TableCard = ({
             i18n={i18n} // TODO: add Card defaultprops ?
           />
         );
-      }}
+      } :
+      <ContentWrapper>
+        <p>Size not supported.</p>
+      </ContentWrapper>}
     </Card>
   );
 };
