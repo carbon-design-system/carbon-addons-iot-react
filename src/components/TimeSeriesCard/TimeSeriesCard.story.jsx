@@ -1111,7 +1111,6 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
-          chartType={select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR)}
           id="facility-temperature"
           key="bar chart"
           isLoading={boolean('isLoading', false)}
@@ -1127,6 +1126,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             xLabel: text('xLabel', 'Time'),
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
+            chartType: select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR),
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           interval="day"
@@ -1143,7 +1143,6 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
-          chartType={select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR)}
           key="dataFilter"
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
@@ -1170,6 +1169,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             xLabel: text('xLabel', 'Time'),
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
+            chartType: select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR),
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
             (acc, dataPoint) => {

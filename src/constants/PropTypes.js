@@ -76,8 +76,9 @@ export const TimeSeriesCardPropTypes = {
     yLabel: PropTypes.string,
     /** Which attribute is the time attribute */
     timeDataSourceId: PropTypes.string,
+    /** should it be a line chart or bar chart, default is line chart */
+    chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
   }).isRequired,
-  chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),
