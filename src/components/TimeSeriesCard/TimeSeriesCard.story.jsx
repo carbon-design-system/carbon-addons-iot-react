@@ -1126,7 +1126,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             xLabel: text('xLabel', 'Time'),
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
-            chartType: select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR),
+            chartType: TIME_SERIES_TYPES.BAR,
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           interval="day"
@@ -1169,7 +1169,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             xLabel: text('xLabel', 'Time'),
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
-            chartType: select('chartType', Object.keys(TIME_SERIES_TYPES), TIME_SERIES_TYPES.BAR),
+            chartType: TIME_SERIES_TYPES.BAR,
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
             (acc, dataPoint) => {
