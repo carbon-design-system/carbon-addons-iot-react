@@ -163,11 +163,14 @@ const DashboardGrid = ({
   );
 
   const [animationState, setAnimationState] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setAnimationState(true);
-    }, 1000);
-  }, []);
+  useEffect(
+    () => {
+      requestAnimationFrame(() => {
+        setAnimationState(isEditable);
+      });
+    },
+    [isEditable]
+  );
 
   return (
     <div style={{ flex: 1 }}>
