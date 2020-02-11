@@ -5,7 +5,12 @@ import ListHeader from './ListHeader';
 
 describe('ListHeader tests', () => {
   test('ListHeader gets rendered', () => {
-    const renderedElement = render(<ListHeader title="list" i18n="" />);
-    expect(renderedElement.container.innerHTML).toBeTruthy();
+    const { getByText } = render(<ListHeader title="List Header" i18n="" />);
+    expect(getByText('List Header')).toBeTruthy();
+  });
+
+  test('ListHeader with defaultProps onChange function', () => {
+    expect(ListHeader.defaultProps.search.onChange).toBeDefined();
+    ListHeader.defaultProps.search.onChange();
   });
 });

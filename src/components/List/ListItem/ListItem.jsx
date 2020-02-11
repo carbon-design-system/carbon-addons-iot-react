@@ -62,9 +62,9 @@ const ListItemPropTypes = {
 const ListItemDefaultProps = {
   isLargeRow: false,
   isExpandable: false,
-  onExpand: null,
+  onExpand: () => {},
   isSelectable: false,
-  onSelect: null,
+  onSelect: () => {},
   selected: false,
   expanded: false,
   secondaryValue: null,
