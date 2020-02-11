@@ -750,13 +750,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   className="bx--data-table bx--data-table--no-border"
                   title={null}
                 >
-                  <thead
-                    className="TableHead__StyledCarbonTableHead-sc-1fviaow-1 jDaLBC"
-                  >
+                  <thead>
                     <tr>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                         data-column="value1"
                         id="column-value1"
                         scope="col"
@@ -773,7 +771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                       </th>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-2 dSXhWB"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
                         data-column="timestamp"
                         id="column-timestamp"
                         scope="col"
