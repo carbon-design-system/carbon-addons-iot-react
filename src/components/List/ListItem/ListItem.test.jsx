@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, getByText } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Add16, Edit16 } from '@carbon/icons-react';
 
 import ListItem from './ListItem';
