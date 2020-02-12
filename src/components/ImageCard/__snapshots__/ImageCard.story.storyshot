@@ -58,9 +58,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -435,9 +437,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -826,9 +830,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -961,9 +967,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1096,9 +1104,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1357,9 +1367,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"

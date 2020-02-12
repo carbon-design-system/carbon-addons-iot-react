@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
@@ -199,6 +199,17 @@ const Card = props => {
     return childSize;
   };
 
+  // Ensure the title text has a tooltip only if the title text is truncated
+  const titleRef = React.createRef();
+  const [hasTitleTooltip, setHasTitleTooltip] = useState(false);
+  useEffect(() => {
+    if (titleRef.current && titleRef.current.clientWidth < titleRef.current.scrollWidth) {
+      setHasTitleTooltip(true);
+    } else {
+      setHasTitleTooltip(false);
+    }
+  });
+
   const card = (
     <VisibilitySensor partialVisibility offset={{ top: 10 }}>
       {({ isVisible }) => (
@@ -232,7 +243,20 @@ const Card = props => {
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
-                      <span>{title}</span>
+                      {hasTitleTooltip ? (
+                        <Tooltip
+                          ref={titleRef}
+                          showIcon={false}
+                          triggerClassName="title--text"
+                          triggerText={title}
+                        >
+                          {title}
+                        </Tooltip>
+                      ) : (
+                        <div ref={titleRef} className="title--text">
+                          {title}
+                        </div>
+                      )}
                       {tooltip && (
                         <Tooltip
                           triggerId={`card-tooltip-trigger-${id}`}
