@@ -352,57 +352,63 @@ const Table = props => {
 
   return (
     <StyledTableContainer style={style} className={className}>
-      <TableToolbar
-        tableId={id}
-        secondaryTitle={secondaryTitle}
-        tooltip={tooltip}
-        i18n={{
-          clearAllFilters: i18n.clearAllFilters,
-          columnSelectionButtonAria: i18n.columnSelectionButtonAria,
-          filterButtonAria: i18n.filterButtonAria,
-          searchLabel: i18n.searchLabel,
-          searchPlaceholder: i18n.searchPlaceholder,
-          batchCancel: i18n.batchCancel,
-          itemsSelected: i18n.itemsSelected,
-          itemSelected: i18n.itemSelected,
-          filterNone: i18n.filterNone,
-          filterAscending: i18n.filterAscending,
-          filterDescending: i18n.filterDescending,
-          downloadIconDescription: i18n.downloadIconDescription,
-          rowCountInHeader: i18n.rowCountInHeader,
-        }}
-        actions={pick(
-          actions.toolbar,
-          'onCancelBatchAction',
-          'onApplyBatchAction',
-          'onClearAllFilters',
-          'onToggleColumnSelection',
-          'onToggleFilter',
-          'onApplySearch',
-          'onDownloadCSV'
-        )}
-        options={pick(
-          options,
-          'hasColumnSelection',
-          'hasFilter',
-          'hasSearch',
-          'hasRowSelection',
-          'hasRowCountInHeader'
-        )}
-        tableState={{
-          totalSelected: view.table.selectedIds.length,
-          totalFilters: view.filters ? view.filters.length : 0,
-          totalItemsCount: view.pagination.totalItems,
-          ...pick(
-            view.toolbar,
-            'batchActions',
-            'search',
-            'activeBar',
-            'customToolbarContent',
-            'isDisabled'
-          ),
-        }}
-      />
+      {/* If there is no items being rendered in the toolbar, don't render the toolbar */
+      options.hasFilter ||
+      options.hasSearch ||
+      options.hasRowActions ||
+      options.hasRowCountInHeader ? (
+        <TableToolbar
+          tableId={id}
+          secondaryTitle={secondaryTitle}
+          tooltip={tooltip}
+          i18n={{
+            clearAllFilters: i18n.clearAllFilters,
+            columnSelectionButtonAria: i18n.columnSelectionButtonAria,
+            filterButtonAria: i18n.filterButtonAria,
+            searchLabel: i18n.searchLabel,
+            searchPlaceholder: i18n.searchPlaceholder,
+            batchCancel: i18n.batchCancel,
+            itemsSelected: i18n.itemsSelected,
+            itemSelected: i18n.itemSelected,
+            filterNone: i18n.filterNone,
+            filterAscending: i18n.filterAscending,
+            filterDescending: i18n.filterDescending,
+            downloadIconDescription: i18n.downloadIconDescription,
+            rowCountInHeader: i18n.rowCountInHeader,
+          }}
+          actions={pick(
+            actions.toolbar,
+            'onCancelBatchAction',
+            'onApplyBatchAction',
+            'onClearAllFilters',
+            'onToggleColumnSelection',
+            'onToggleFilter',
+            'onApplySearch',
+            'onDownloadCSV'
+          )}
+          options={pick(
+            options,
+            'hasColumnSelection',
+            'hasFilter',
+            'hasSearch',
+            'hasRowSelection',
+            'hasRowCountInHeader'
+          )}
+          tableState={{
+            totalSelected: view.table.selectedIds.length,
+            totalFilters: view.filters ? view.filters.length : 0,
+            totalItemsCount: view.pagination.totalItems,
+            ...pick(
+              view.toolbar,
+              'batchActions',
+              'search',
+              'activeBar',
+              'customToolbarContent',
+              'isDisabled'
+            ),
+          }}
+        />
+      ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable {...others}>
           <TableHead

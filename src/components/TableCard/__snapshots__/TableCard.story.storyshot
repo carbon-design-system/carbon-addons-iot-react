@@ -1182,8 +1182,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-29"
-                      id="bx-pagination-select-29-count-label"
+                      htmlFor="bx-pagination-select-28"
+                      id="bx-pagination-select-28-count-label"
                     >
                       Items per page:
                     </label>
@@ -1202,7 +1202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-29"
+                              id="bx-pagination-select-28"
                               onChange={[Function]}
                               value={10}
                             >
@@ -1271,7 +1271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-31"
+                          htmlFor="bx-pagination-select-30"
                         >
                           Page number, of 1 pages
                         </label>
@@ -1284,7 +1284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-31"
+                              id="bx-pagination-select-30"
                               onChange={[Function]}
                               value={1}
                             >
@@ -2958,8 +2958,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-30"
-                      id="bx-pagination-select-30-count-label"
+                      htmlFor="bx-pagination-select-29"
+                      id="bx-pagination-select-29-count-label"
                     >
                       Items per page:
                     </label>
@@ -2978,7 +2978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-30"
+                              id="bx-pagination-select-29"
                               onChange={[Function]}
                               value={10}
                             >
@@ -3047,7 +3047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-32"
+                          htmlFor="bx-pagination-select-31"
                         >
                           Page number, of 1 pages
                         </label>
@@ -3060,7 +3060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-32"
+                              id="bx-pagination-select-31"
                               onChange={[Function]}
                               value={1}
                             >
@@ -6050,8 +6050,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-32"
-                      id="bx-pagination-select-32-count-label"
+                      htmlFor="bx-pagination-select-31"
+                      id="bx-pagination-select-31-count-label"
                     >
                       Items per page:
                     </label>
@@ -6070,7 +6070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-32"
+                              id="bx-pagination-select-31"
                               onChange={[Function]}
                               value={10}
                             >
@@ -6139,7 +6139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-34"
+                          htmlFor="bx-pagination-select-33"
                         >
                           Page number, of 2 pages
                         </label>
@@ -6152,7 +6152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-34"
+                              id="bx-pagination-select-33"
                               onChange={[Function]}
                               value={1}
                             >
@@ -7443,8 +7443,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-28"
-                      id="bx-pagination-select-28-count-label"
+                      htmlFor="bx-pagination-select-27"
+                      id="bx-pagination-select-27-count-label"
                     >
                       Items per page:
                     </label>
@@ -7463,7 +7463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-28"
+                              id="bx-pagination-select-27"
                               onChange={[Function]}
                               value={10}
                             >
@@ -7532,7 +7532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-30"
+                          htmlFor="bx-pagination-select-29"
                         >
                           Page number, of 2 pages
                         </label>
@@ -7545,7 +7545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-30"
+                              id="bx-pagination-select-29"
                               onChange={[Function]}
                               value={1}
                             >
@@ -8837,8 +8837,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-18"
-                      id="bx-pagination-select-18-count-label"
+                      htmlFor="bx-pagination-select-17"
+                      id="bx-pagination-select-17-count-label"
                     >
                       Items per page:
                     </label>
@@ -8857,7 +8857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-18"
+                              id="bx-pagination-select-17"
                               onChange={[Function]}
                               value={10}
                             >
@@ -8926,7 +8926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-20"
+                          htmlFor="bx-pagination-select-19"
                         >
                           Page number, of 2 pages
                         </label>
@@ -8939,7 +8939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-20"
+                              id="bx-pagination-select-19"
                               onChange={[Function]}
                               value={1}
                             >
@@ -10456,8 +10456,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-19"
-                      id="bx-pagination-select-19-count-label"
+                      htmlFor="bx-pagination-select-18"
+                      id="bx-pagination-select-18-count-label"
                     >
                       Items per page:
                     </label>
@@ -10476,7 +10476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-19"
+                              id="bx-pagination-select-18"
                               onChange={[Function]}
                               value={10}
                             >
@@ -10545,7 +10545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-21"
+                          htmlFor="bx-pagination-select-20"
                         >
                           Page number, of 2 pages
                         </label>
@@ -10558,7 +10558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-21"
+                              id="bx-pagination-select-20"
                               onChange={[Function]}
                               value={1}
                             >
@@ -12076,8 +12076,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-25"
-                      id="bx-pagination-select-25-count-label"
+                      htmlFor="bx-pagination-select-24"
+                      id="bx-pagination-select-24-count-label"
                     >
                       Items per page:
                     </label>
@@ -12096,7 +12096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-25"
+                              id="bx-pagination-select-24"
                               onChange={[Function]}
                               value={10}
                             >
@@ -12165,7 +12165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-27"
+                          htmlFor="bx-pagination-select-26"
                         >
                           Page number, of 2 pages
                         </label>
@@ -12178,7 +12178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-27"
+                              id="bx-pagination-select-26"
                               onChange={[Function]}
                               value={1}
                             >
@@ -13469,8 +13469,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-26"
-                      id="bx-pagination-select-26-count-label"
+                      htmlFor="bx-pagination-select-25"
+                      id="bx-pagination-select-25-count-label"
                     >
                       Items per page:
                     </label>
@@ -13489,7 +13489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-26"
+                              id="bx-pagination-select-25"
                               onChange={[Function]}
                               value={10}
                             >
@@ -13558,7 +13558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-28"
+                          htmlFor="bx-pagination-select-27"
                         >
                           Page number, of 2 pages
                         </label>
@@ -13571,7 +13571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-28"
+                              id="bx-pagination-select-27"
                               onChange={[Function]}
                               value={1}
                             >
@@ -15460,8 +15460,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-20"
-                      id="bx-pagination-select-20-count-label"
+                      htmlFor="bx-pagination-select-19"
+                      id="bx-pagination-select-19-count-label"
                     >
                       Items per page:
                     </label>
@@ -15480,7 +15480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-20"
+                              id="bx-pagination-select-19"
                               onChange={[Function]}
                               value={10}
                             >
@@ -15549,7 +15549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-22"
+                          htmlFor="bx-pagination-select-21"
                         >
                           Page number, of 2 pages
                         </label>
@@ -15562,7 +15562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-22"
+                              id="bx-pagination-select-21"
                               onChange={[Function]}
                               value={1}
                             >
@@ -17217,8 +17217,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-27"
-                      id="bx-pagination-select-27-count-label"
+                      htmlFor="bx-pagination-select-26"
+                      id="bx-pagination-select-26-count-label"
                     >
                       Items per page:
                     </label>
@@ -17237,7 +17237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-27"
+                              id="bx-pagination-select-26"
                               onChange={[Function]}
                               value={10}
                             >
@@ -17306,7 +17306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-29"
+                          htmlFor="bx-pagination-select-28"
                         >
                           Page number, of 2 pages
                         </label>
@@ -17319,7 +17319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-29"
+                              id="bx-pagination-select-28"
                               onChange={[Function]}
                               value={1}
                             >
@@ -18938,8 +18938,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-21"
-                      id="bx-pagination-select-21-count-label"
+                      htmlFor="bx-pagination-select-20"
+                      id="bx-pagination-select-20-count-label"
                     >
                       Items per page:
                     </label>
@@ -18958,7 +18958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-21"
+                              id="bx-pagination-select-20"
                               onChange={[Function]}
                               value={10}
                             >
@@ -19027,7 +19027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-23"
+                          htmlFor="bx-pagination-select-22"
                         >
                           Page number, of 2 pages
                         </label>
@@ -19040,7 +19040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-23"
+                              id="bx-pagination-select-22"
                               onChange={[Function]}
                               value={1}
                             >
@@ -21405,8 +21405,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-23"
-                      id="bx-pagination-select-23-count-label"
+                      htmlFor="bx-pagination-select-22"
+                      id="bx-pagination-select-22-count-label"
                     >
                       Items per page:
                     </label>
@@ -21425,7 +21425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-23"
+                              id="bx-pagination-select-22"
                               onChange={[Function]}
                               value={10}
                             >
@@ -21494,7 +21494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-25"
+                          htmlFor="bx-pagination-select-24"
                         >
                           Page number, of 2 pages
                         </label>
@@ -21507,7 +21507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-25"
+                              id="bx-pagination-select-24"
                               onChange={[Function]}
                               value={1}
                             >
@@ -22786,8 +22786,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-24"
-                      id="bx-pagination-select-24-count-label"
+                      htmlFor="bx-pagination-select-23"
+                      id="bx-pagination-select-23-count-label"
                     >
                       Items per page:
                     </label>
@@ -22806,7 +22806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-24"
+                              id="bx-pagination-select-23"
                               onChange={[Function]}
                               value={10}
                             >
@@ -22875,7 +22875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-26"
+                          htmlFor="bx-pagination-select-25"
                         >
                           Page number, of 1 pages
                         </label>
@@ -22888,7 +22888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-26"
+                              id="bx-pagination-select-25"
                               onChange={[Function]}
                               value={1}
                             >
@@ -25609,8 +25609,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-22"
-                      id="bx-pagination-select-22-count-label"
+                      htmlFor="bx-pagination-select-21"
+                      id="bx-pagination-select-21-count-label"
                     >
                       Items per page:
                     </label>
@@ -25629,7 +25629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-22"
+                              id="bx-pagination-select-21"
                               onChange={[Function]}
                               value={10}
                             >
@@ -25698,7 +25698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-24"
+                          htmlFor="bx-pagination-select-23"
                         >
                           Page number, of 2 pages
                         </label>
@@ -25711,7 +25711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-24"
+                              id="bx-pagination-select-23"
                               onChange={[Function]}
                               value={1}
                             >
@@ -27971,8 +27971,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <label
                       className="bx--pagination__text"
-                      htmlFor="bx-pagination-select-31"
-                      id="bx-pagination-select-31-count-label"
+                      htmlFor="bx-pagination-select-30"
+                      id="bx-pagination-select-30-count-label"
                     >
                       Items per page:
                     </label>
@@ -27991,7 +27991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-31"
+                              id="bx-pagination-select-30"
                               onChange={[Function]}
                               value={10}
                             >
@@ -28060,7 +28060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       >
                         <label
                           className="bx--label bx--visually-hidden"
-                          htmlFor="bx-pagination-select-33"
+                          htmlFor="bx-pagination-select-32"
                         >
                           Page number, of 2 pages
                         </label>
@@ -28073,7 +28073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                           >
                             <select
                               className="bx--select-input"
-                              id="bx-pagination-select-33"
+                              id="bx-pagination-select-32"
                               onChange={[Function]}
                               value={1}
                             >
