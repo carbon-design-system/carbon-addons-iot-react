@@ -58,8 +58,6 @@ const LineChartWrapper = styled.div`
       height: 100%;
       circle.dot.unfilled {
         stroke-opacity: ${props => (props.isEditable ? '1' : '')};
-      }
-      circle.dot.unfilled {
         opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
       }
     }
@@ -157,21 +155,28 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
         'L HH:mm:ss'
       )}</p></li>`
     : '';
-  const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-  const matchingAlertLabel = matchingAlertRange
-    ? `<li class='datapoint-tooltip'><p class='label'>${alertDetected} ${
-        matchingAlertRange.details
-      }</p></li>`
+  const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
+  const matchingAlertLabels = Array.isArray(matchingAlertRanges)
+    ? matchingAlertRanges
+        .map(
+          matchingAlertRange =>
+            `<li class='datapoint-tooltip'><a style="background-color:${
+              matchingAlertRange.color
+            }" class="tooltip-color"></a><p class='label'>${alertDetected} ${
+              matchingAlertRange.details
+            }</p></li>`
+        )
+        .join('')
     : '';
   let updatedTooltip = defaultTooltip;
   if (Array.isArray(data)) {
     // prepend the date inside the existing multi tooltip
     updatedTooltip = defaultTooltip
       .replace('<li', `${dateLabel}<li`)
-      .replace('</ul', `${matchingAlertLabel}</ul`);
+      .replace('</ul', `${matchingAlertLabels}</ul`);
   } else {
     // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabel}</ul>`;
+    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
   }
   return updatedTooltip;
 };
@@ -254,7 +259,7 @@ const TimeSeriesCard = ({
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? matchingAlertRange.color : originalStrokeColor;
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
     }
     return originalStrokeColor;
   };
@@ -263,7 +268,7 @@ const TimeSeriesCard = ({
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? matchingAlertRange.color : defaultFillColor;
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
     }
     // If it's editable don't fill the dot
     return defaultFillColor;
@@ -272,7 +277,7 @@ const TimeSeriesCard = ({
   const handleIsFilled = (datasetLabel, label, data, isFilled) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? true : isFilled;
+      return matchingAlertRange?.length > 0 ? true : isFilled;
     }
 
     return isFilled;

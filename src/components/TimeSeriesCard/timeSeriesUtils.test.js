@@ -148,7 +148,8 @@ describe('timeSeriesUtils', () => {
       },
     ];
     const matchingAlertRange = findMatchingAlertRange(alertRange, data);
-    expect(matchingAlertRange.color).toEqual('#FF0000');
-    expect(matchingAlertRange.details).toEqual('Alert details');
+    expect(matchingAlertRange).toHaveLength();
+    expect(matchingAlertRange[0].color).toEqual('#FF0000');
+    expect(matchingAlertRange[0].details).toEqual('Alert details');
   });
 });

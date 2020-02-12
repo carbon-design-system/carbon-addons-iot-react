@@ -140,7 +140,7 @@ export const findMatchingAlertRange = (alertRanges, data) => {
   const currentDatapointTimestamp = data && data.date && data.date.valueOf();
   return (
     Array.isArray(alertRanges) &&
-    alertRanges.find(
+    alertRanges.filter(
       alert =>
         currentDatapointTimestamp <= alert.endTimestamp &&
         currentDatapointTimestamp >= alert.startTimestamp
