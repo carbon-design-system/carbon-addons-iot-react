@@ -24,7 +24,13 @@ const StyledTableHeader = styled(TableHeader)`
     }
 
     .bx--form-item input {
-      min-width: 12.75rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 2rem;
+    }
+    .bx--form-item input:placeholder-shown {
+      padding-right: 0.5rem;
     }
 
     .bx--list-box input[role='combobox'] {
@@ -260,7 +266,7 @@ class FilterHeaderRow extends Component {
                       this.handleApplyFilter
                     );
                   }}
-                  light={!lightweight}
+                  light={lightweight}
                 />
               ) : (
                 <StyledFormItem>
@@ -268,8 +274,9 @@ class FilterHeaderRow extends Component {
                     id={column.id}
                     labelText={column.id}
                     hideLabel
-                    light={!lightweight}
+                    light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
+                    title={this.state[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
                     onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
                     onBlur={this.handleApplyFilter}
                     onChange={event => this.setState({ [column.id]: event.target.value })}

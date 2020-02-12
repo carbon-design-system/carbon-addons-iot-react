@@ -1,12 +1,12 @@
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import every from 'lodash/every';
+import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import find from 'lodash/find';
 
 /** Generate fake values for my line chart */
 export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day') => {
-  const attributeNames = series.map(line => line.dataSourceId);
-
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -28,15 +28,36 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
       count = 7;
       break;
   }
-  const now = moment().subtract(count, timeGrain);
+
+  // number of each record to define
   const sampleValues = Array(count).fill(1);
-  return sampleValues.map(() => ({
-    [timeDataSourceId]: now.add(1, timeGrain).valueOf(),
-    ...attributeNames.reduce((allAttributes, attribute) => {
-      allAttributes[attribute] = Math.random() * 100; // eslint-disable-line
-      return allAttributes;
-    }, {}),
-  }));
+  return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
+    const now = moment().subtract(count, timeGrain);
+    sampleValues.forEach(() => {
+      const nextTimeStamp = now.add(1, timeGrain).valueOf();
+      if (!isEmpty(dataFilter)) {
+        // if we have a data filter, then we need a specific row for every filter
+        sampleData.push({
+          [timeDataSourceId]: nextTimeStamp,
+          [dataSourceId]: Math.random() * 100,
+          ...dataFilter,
+        });
+      } else {
+        const existingData = find(sampleData, { [timeDataSourceId]: nextTimeStamp });
+        if (existingData) {
+          // add the additional dataSource to the existing datapoint
+          existingData[dataSourceId] = Math.random() * 100;
+        } else {
+          // otherwise we need explicit row
+          sampleData.push({
+            [timeDataSourceId]: nextTimeStamp,
+            [dataSourceId]: Math.random() * 100,
+          });
+        }
+      }
+    });
+    return sampleData;
+  }, []);
 };
 
 /**

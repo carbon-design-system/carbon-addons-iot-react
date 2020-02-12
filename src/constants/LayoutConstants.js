@@ -20,15 +20,16 @@ export const CARD_SIZES = {
 };
 
 export const CARD_TYPES = {
+  BAR: 'BAR',
+  DONUT: 'DONUT',
+  CUSTOM: 'CUSTOM',
+  GAUGE: 'GAUGE',
+  IMAGE: 'IMAGE',
+  LIST: 'LIST',
+  PIE: 'PIE',
+  TABLE: 'TABLE',
   TIMESERIES: 'TIMESERIES',
   VALUE: 'VALUE',
-  IMAGE: 'IMAGE',
-  TABLE: 'TABLE',
-  DONUT: 'DONUT',
-  PIE: 'PIE',
-  BAR: 'BAR',
-  CUSTOM: 'CUSTOM',
-  LIST: 'LIST',
 };
 
 export const CARD_ACTIONS = {
@@ -42,11 +43,11 @@ export const CARD_ACTIONS = {
 };
 
 export const DASHBOARD_SIZES = {
-  MAX: 'max',
-  XLARGE: 'xl',
   LARGE: 'lg',
+  MAX: 'max',
   MEDIUM: 'md',
   SMALL: 'sm',
+  XLARGE: 'xl',
   XSMALL: 'xs',
 };
 
