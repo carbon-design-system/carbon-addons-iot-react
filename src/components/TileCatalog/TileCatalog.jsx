@@ -3,7 +3,7 @@ import { DataTable } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import TilePagination from './TilePagination/TilePagination';
-import { placeholder } from 'polished';
+import { placeholder, rem } from 'polished';
 
 const { TableToolbarSearch } = DataTable;
 
@@ -47,7 +47,7 @@ const TileCatalog = ({ title, search, tiles, featuredTile, sort, pagination, fil
 
       <div className="tile-catalog--content">
         <div className="bx--grid">
-          {sampleTiles.map((item, idx, arr) =>
+          {tiles.map((item, idx, arr) =>
             idx % 4 === 0 ? (
               <div className="bx--row">
                 <div className="bx--col">{arr[idx]}</div>

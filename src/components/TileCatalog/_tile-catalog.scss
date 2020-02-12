@@ -7,6 +7,9 @@
       @include type-style('productive-heading-01');
       flex: 1;
     }
+    .#{$prefix}--select-input {
+      width: rem(224px);
+    }
   }
 
   &--content {
@@ -26,6 +29,11 @@
 
   &--placeholder-tile {
     background: $ui-03;
+    height: rem(224px);
+  }
+
+  &--no-placeholder-tile {
+    background: $ui-02;
     height: rem(224px);
   }
 
