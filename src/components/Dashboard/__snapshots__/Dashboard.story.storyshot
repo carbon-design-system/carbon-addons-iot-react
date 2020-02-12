@@ -1276,24 +1276,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--data-table bx--data-table--no-border"
                             title={null}
                           >
-                            <thead
-                              onMouseMove={[Function]}
-                              onMouseUp={[Function]}
-                            >
+                            <thead>
                               <tr>
                                 <th
-                                  aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort bx--table-sort--active"
                                     data-column="alert"
                                     id="column-alert"
                                     onClick={[Function]}
@@ -1309,7 +1300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </span>
                                     </span>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon"
                                       focusable="false"
                                       height={20}
@@ -1325,11 +1316,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon-unsorted"
                                       focusable="false"
                                       height={20}
@@ -1345,24 +1336,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="hour"
                                     id="column-hour"
                                     onClick={[Function]}
@@ -1394,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -1414,24 +1400,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="pressure"
                                     id="column-pressure"
                                     onClick={[Function]}
@@ -1463,7 +1444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -1483,7 +1464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -3291,24 +3272,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--data-table bx--data-table--no-border"
                             title={null}
                           >
-                            <thead
-                              onMouseMove={[Function]}
-                              onMouseUp={[Function]}
-                            >
+                            <thead>
                               <tr>
                                 <th
-                                  aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort bx--table-sort--active"
                                     data-column="alert"
                                     id="column-alert"
                                     onClick={[Function]}
@@ -3324,7 +3296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </span>
                                     </span>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon"
                                       focusable="false"
                                       height={20}
@@ -3340,11 +3312,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon-unsorted"
                                       focusable="false"
                                       height={20}
@@ -3360,24 +3332,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="hour"
                                     id="column-hour"
                                     onClick={[Function]}
@@ -3409,7 +3376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -3429,24 +3396,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="pressure"
                                     id="column-pressure"
                                     onClick={[Function]}
@@ -3478,7 +3440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -3498,7 +3460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -5338,24 +5300,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--data-table bx--data-table--no-border"
                             title={null}
                           >
-                            <thead
-                              onMouseMove={[Function]}
-                              onMouseUp={[Function]}
-                            >
+                            <thead>
                               <tr>
                                 <th
-                                  aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort bx--table-sort--active"
                                     data-column="alert"
                                     id="column-alert"
                                     onClick={[Function]}
@@ -5371,7 +5324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </span>
                                     </span>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon"
                                       focusable="false"
                                       height={20}
@@ -5387,11 +5340,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon-unsorted"
                                       focusable="false"
                                       height={20}
@@ -5407,24 +5360,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="hour"
                                     id="column-hour"
                                     onClick={[Function]}
@@ -5456,7 +5404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -5476,24 +5424,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="pressure"
                                     id="column-pressure"
                                     onClick={[Function]}
@@ -5525,7 +5468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -5545,7 +5488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -7098,24 +7041,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--data-table bx--data-table--no-border"
                             title={null}
                           >
-                            <thead
-                              onMouseMove={[Function]}
-                              onMouseUp={[Function]}
-                            >
+                            <thead>
                               <tr>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="timestamp"
                                     id="column-timestamp"
                                     onClick={[Function]}
@@ -7147,7 +7082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -7167,24 +7102,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="Campus_EGL"
                                     id="column-Campus_EGL"
                                     onClick={[Function]}
@@ -7216,7 +7146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -7236,24 +7166,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="peopleCount_EnterpriseBuilding_mean"
                                     id="column-peopleCount_EnterpriseBuilding_mean"
                                     onClick={[Function]}
@@ -7285,7 +7210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -7305,24 +7230,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="headCount_EnterpriseBuilding_mean"
                                     id="column-headCount_EnterpriseBuilding_mean"
                                     onClick={[Function]}
@@ -7354,7 +7274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -7374,24 +7294,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="capacity_EnterpriseBuilding_mean"
                                     id="column-capacity_EnterpriseBuilding_mean"
                                     onClick={[Function]}
@@ -7423,7 +7338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -7443,7 +7358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -7459,11 +7374,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-0-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7477,11 +7393,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-0-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7489,11 +7406,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-0-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7507,11 +7425,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-0-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7525,11 +7444,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-0-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7548,11 +7468,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-1-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7566,11 +7487,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-1-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7578,11 +7500,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-1-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7596,11 +7519,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-1-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7614,11 +7538,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-1-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7637,11 +7562,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-2-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7655,11 +7581,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-2-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7667,11 +7594,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-2-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7685,11 +7613,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-2-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7703,11 +7632,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-2-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7726,11 +7656,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-3-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7744,11 +7675,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-3-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7756,11 +7688,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-3-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7774,11 +7707,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-3-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7792,11 +7726,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-3-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7815,11 +7750,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-4-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7833,11 +7769,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-4-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7845,11 +7782,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-4-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7863,11 +7801,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-4-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7881,11 +7820,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-4-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7904,11 +7844,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-5-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7922,11 +7863,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-5-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7934,11 +7876,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-5-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7952,11 +7895,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-5-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7970,11 +7914,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-5-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -7993,11 +7938,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-6-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8011,11 +7957,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-6-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8023,11 +7970,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-6-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8041,11 +7989,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-6-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8059,11 +8008,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-6-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8082,11 +8032,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-7-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8100,11 +8051,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-7-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8112,11 +8064,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-7-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8130,11 +8083,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-7-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8148,11 +8102,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-7-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8171,11 +8126,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-8-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8189,11 +8145,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-8-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8201,11 +8158,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-8-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8219,11 +8177,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-8-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8237,11 +8196,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-8-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8260,11 +8220,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="timestamp"
                                   data-offset={0}
                                   id="cell-Table-row-9-timestamp"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8278,11 +8239,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="Campus_EGL"
                                   data-offset={0}
                                   id="cell-Table-row-9-Campus_EGL"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8290,11 +8252,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="peopleCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-9-peopleCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8308,11 +8271,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="headCount_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-9-headCount_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -8326,11 +8290,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 lhMdXS"
                                   data-column="capacity_EnterpriseBuilding_mean"
                                   data-offset={0}
                                   id="cell-Table-row-9-capacity_EnterpriseBuilding_mean"
                                   offset={0}
+                                  width=""
                                 >
                                   <span
                                     className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
@@ -9901,24 +9866,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--data-table bx--data-table--no-border"
                             title={null}
                           >
-                            <thead
-                              onMouseMove={[Function]}
-                              onMouseUp={[Function]}
-                            >
+                            <thead>
                               <tr>
                                 <th
-                                  aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort bx--table-sort--active"
                                     data-column="alert"
                                     id="column-alert"
                                     onClick={[Function]}
@@ -9934,7 +9890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </span>
                                     </span>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon"
                                       focusable="false"
                                       height={20}
@@ -9950,11 +9906,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon-unsorted"
                                       focusable="false"
                                       height={20}
@@ -9970,24 +9926,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="hour"
                                     id="column-hour"
                                     onClick={[Function]}
@@ -10019,7 +9970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -10039,24 +9990,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="pressure"
                                     id="column-pressure"
                                     onClick={[Function]}
@@ -10088,7 +10034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -10108,7 +10054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
@@ -22057,24 +22003,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             className="bx--data-table bx--data-table--no-border"
                             title={null}
                           >
-                            <thead
-                              onMouseMove={[Function]}
-                              onMouseUp={[Function]}
-                            >
+                            <thead>
                               <tr>
                                 <th
-                                  aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort bx--table-sort--active"
                                     data-column="alert"
                                     id="column-alert"
                                     onClick={[Function]}
@@ -22090,7 +22027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       </span>
                                     </span>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon"
                                       focusable="false"
                                       height={20}
@@ -22106,11 +22043,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
-                                      aria-label="Sort rows by this header in ascending order"
+                                      aria-label="Unsort rows by this header"
                                       className="bx--table-sort__icon-unsorted"
                                       focusable="false"
                                       height={20}
@@ -22126,24 +22063,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="hour"
                                     id="column-hour"
                                     onClick={[Function]}
@@ -22175,7 +22107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -22195,24 +22127,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
                                 </th>
                                 <th
                                   aria-sort="none"
-                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                                  className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE"
                                   scope="col"
-                                  style={
-                                    Object {
-                                      "width": undefined,
-                                    }
-                                  }
                                 >
                                   <button
                                     align="start"
-                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                    className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-1 fqeHQE bx--table-sort"
                                     data-column="pressure"
                                     id="column-pressure"
                                     onClick={[Function]}
@@ -22244,7 +22171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
                                       />
                                     </svg>
                                     <svg
@@ -22264,7 +22191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
-                                        d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                        d="M26.59 20.59L23 24.17 23 4 21 4 21 24.17 17.41 20.59 16 22 22 28 28 22 26.59 20.59zM10 4L4 10 5.41 11.41 9 7.83 9 28 11 28 11 7.83 14.59 11.41 16 10 10 4z"
                                       />
                                     </svg>
                                   </button>
