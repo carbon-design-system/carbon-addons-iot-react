@@ -148,7 +148,7 @@ describe('timeSeriesUtils', () => {
       },
     ];
     const matchingAlertRange = findMatchingAlertRange(alertRange, data);
-    expect(matchingAlertRange).toHaveLength();
+    expect(matchingAlertRange).toHaveLength(1);
     expect(matchingAlertRange[0].color).toEqual('#FF0000');
     expect(matchingAlertRange[0].details).toEqual('Alert details');
   });
