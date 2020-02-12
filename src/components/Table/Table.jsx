@@ -357,6 +357,8 @@ const Table = props => {
       options.hasSearch ||
       options.hasRowActions ||
       options.hasRowCountInHeader ||
+      options.hasColumnSelection ||
+      actions.toolbar.onDownloadCSV ||
       secondaryTitle ||
       tooltip ? (
         <TableToolbar
