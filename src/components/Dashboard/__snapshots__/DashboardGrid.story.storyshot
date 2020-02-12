@@ -63,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -96,11 +96,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 coBfbV"
+                  className="Card__CardContent-v5r71h-1 bfMykM"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -133,11 +133,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 bVgaXY"
+                  className="Card__CardContent-v5r71h-1 dwzAuJ"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My utilization chart"
                 id="utilization"
                 style={
@@ -170,7 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 bVgaXY"
+                  className="Card__CardContent-v5r71h-1 dwzAuJ"
                 />
               </div>
             </div>
@@ -268,7 +268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -301,11 +301,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 coBfbV"
+                  className="Card__CardContent-v5r71h-1 bfMykM"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -338,11 +338,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 bVgaXY"
+                  className="Card__CardContent-v5r71h-1 dwzAuJ"
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My utilization chart"
                 id="utilization"
                 style={
@@ -375,7 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 bVgaXY"
+                  className="Card__CardContent-v5r71h-1 dwzAuJ"
                 />
               </div>
             </div>
@@ -465,7 +465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             }
           >
             <div
-              className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 fKgkDF"
+              className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
                   "height": "304px",
@@ -473,7 +473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 cynIXT"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
                 content="My Facility Metrics"
                 id="facility"
                 onMouseDown={[Function]}
@@ -511,11 +511,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 coBfbV"
+                  className="Card__CardContent-v5r71h-1 bfMykM"
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My Humidity Values"
                 id="humidity"
                 onMouseDown={[Function]}
@@ -553,11 +553,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 bVgaXY"
+                  className="Card__CardContent-v5r71h-1 dwzAuJ"
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 fbzdtE"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
                 content="My utilization chart"
                 id="utilization"
                 onMouseDown={[Function]}
@@ -595,7 +595,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   />
                 </div>
                 <div
-                  className="Card__CardContent-v5r71h-1 bVgaXY"
+                  className="Card__CardContent-v5r71h-1 dwzAuJ"
                 />
               </div>
             </div>
