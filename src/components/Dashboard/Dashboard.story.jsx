@@ -7,7 +7,7 @@ import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
-import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import iconViewDashboards from './dashboard.svg';
@@ -17,7 +17,8 @@ import Dashboard from './Dashboard';
 
 export const originalCards = [
   {
-    title: 'Facility Metrics',
+    title:
+      'Facility Metrics with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
@@ -40,6 +41,31 @@ export const originalCards = [
   {
     title: 'Humidity',
     id: 'facilitycard-xs',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'humidity',
+          unit: '%',
+          thresholds: [
+            { comparison: '<', value: '40', color: 'red' },
+            { comparison: '<', value: '70', color: 'green' },
+            { comparison: '>=', value: '70', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: {
+      humidity: 62.1,
+    },
+  },
+  {
+    title: 'Show tooltip when the card title has ellipsis ',
+    id: 'facilitycard-tooltip',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
@@ -215,7 +241,8 @@ export const originalCards = [
     values: { health: 'Healthy' },
   },
   {
-    title: 'Temperature',
+    title:
+      'Temperature with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facility-temperature-timeseries',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
@@ -567,6 +594,47 @@ storiesOf('Watson IoT|Dashboard', module)
               ],
             },
             values: data,
+          },
+        ]}
+      />
+    );
+  })
+  .add('full screen bar chart card', () => {
+    const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand line"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TIMESERIES,
+
+            content: {
+              series: [
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temperature Device 1',
+                  dataFilter: { ENTITY_ID: 'Sensor2-1' },
+                },
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temperature Device 2',
+                  dataFilter: { ENTITY_ID: 'Sensor2-2' },
+                },
+              ],
+              chartType: TIME_SERIES_TYPES.BAR,
+            },
+            values: data.reduce((acc, dataPoint) => {
+              acc.push(dataPoint);
+              acc.push({
+                ...dataPoint,
+                temperature: dataPoint.temperature / 2,
+                ENTITY_ID: 'Sensor2-2',
+              });
+              return acc;
+            }, []),
           },
         ]}
       />
