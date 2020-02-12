@@ -1145,6 +1145,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           key="dataFilter"
           id="facility-temperature"
+          isEditable={boolean('isEditable', false)}
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             series: [
@@ -1169,7 +1170,6 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
             xLabel: text('xLabel', 'Time'),
             yLabel: text('yLabel', 'Temperature'),
             timeDataSourceId: 'timestamp',
-            chartType: TIME_SERIES_TYPES.BAR,
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
             (acc, dataPoint) => {
