@@ -163,3 +163,5 @@ export const TIME_SERIES_TYPES = {
   BAR: 'BAR',
   LINE: 'LINE',
 };
+
+export const VALUE_CARD_DATA_STATE = { NO_DATA: 'NO_DATA', ERROR: 'ERROR' };

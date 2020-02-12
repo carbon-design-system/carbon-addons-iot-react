@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, VALUE_CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-import { default as ValueCard, VALUE_CARD_DATA_STATE } from './ValueCard';
+import { default as ValueCard } from './ValueCard';
 
 function getDataStateProp() {
   return {
