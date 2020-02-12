@@ -484,7 +484,10 @@ storiesOf('Watson IoT|Table', module)
         }}
       />
     </FullWidthWrapper>
-  ))
+  ),
+  {
+    centered: { disable: true },
+  })
   .add(
     'Stateful Example with every third row unselectable',
     () => (

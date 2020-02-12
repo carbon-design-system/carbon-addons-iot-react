@@ -7,23 +7,6 @@
   width: 100%;
 }
 
-meter {
-  appearance: none;
-  height: var(--gauge-size);
-  position: relative;
-  width: var(--gauge-size);
-
-  &::after {
-    border-top: 1px dashed $text-02;
-    content: '';
-    left: 50%;
-    position: absolute;
-    top: 43.5%;
-    transform: translateX(-50%);
-    width: 1rem;
-  }
-}
-
 .#{$iot-prefix}--gauge {
   fill: none;
   font-size: inherit;
@@ -55,7 +38,7 @@ meter {
 }
 
 .#{$iot-prefix}--gauge-value__centered {
-  transform: translateY(10px);
+  transform: translateY(6px);
 }
 .#{$iot-prefix}--meter__centered::after {
   display: none;
@@ -104,7 +87,7 @@ meter {
     // --gauge-trend-color: blue;
     color: var(--gauge-trend-color);
     font-size: inherit;
-    margin-top: $spacing-06;
+    margin-top: $spacing-05;
     position: relative;
   }
 }
