@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
@@ -10,6 +10,15 @@ import Card from '../Card/Card';
 import { determineMaxValueCardAttributeCount } from '../../utils/cardUtilityFunctions';
 
 import Attribute from './Attribute';
+import { settings } from '../../constants/Settings';
+import classnames from 'classnames';
+import { Tooltip } from 'carbon-components-react';
+import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
+
+const { iotPrefix, prefix: carbonPrefix } = settings;
+const dsPrefix = `${iotPrefix}--data-state`;
+
+export const VALUE_CARD_DATA_STATE = { NO_DATA: 'NO_DATA', ERROR: 'ERROR' };
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -204,10 +213,92 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }) => {
+const DataStateIcon = ({ dataState, onClick }) => {
+  let icon;
+  if (dataState.icon) {
+    icon = dataState.icon;
+  } else if (dataState.type === VALUE_CARD_DATA_STATE.ERROR) {
+    icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
+  } else if (dataState.type === VALUE_CARD_DATA_STATE.NO_DATA) {
+    icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
+  }
+
+  const clickWrappedIcon = <span onClick={onClick}>{icon}</span>;
+  return clickWrappedIcon;
+};
+
+const renderDataStateTooltipContent = dataState => {
+  return (
+    <span className={`${dsPrefix}-tooltip`}>
+      <p className={`${dsPrefix}-tooltip__label`}>{dataState.label}</p>
+      <p>{dataState.description}</p>
+      <p>{dataState.extraTooltipText}</p>
+      {dataState.learnMoreURL ? (
+        <a
+          className={`${carbonPrefix}--link`}
+          href={dataState.learnMoreURL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {dataState.learnMoreText}
+        </a>
+      ) : null}
+    </span>
+  );
+};
+
+const ValueCard = ({ title, content, size, values, isEditable, i18n, dataState, ...others }) => {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+  const toggleTooltip = () => setTooltipOpen(open => !open);
   const availableActions = {
     expand: false,
     ...others.availableActions,
+  };
+
+  const renderElementWithTooltip = triggerElement => {
+    return (
+      <Tooltip open={tooltipOpen} showIcon={false} triggerText={triggerElement}>
+        {renderDataStateTooltipContent(dataState)}
+      </Tooltip>
+    );
+  };
+
+  const renderDataStateGridItems = () => {
+    const label = (
+      <span className={`${dsPrefix}-grid__label`} onClick={toggleTooltip}>
+        {dataState.label}
+      </span>
+    );
+    return (
+      <React.Fragment>
+        <DataStateIcon dataState={dataState} onClick={toggleTooltip} />
+        {renderElementWithTooltip(label)}
+        <p className={`${dsPrefix}-grid__description`} onClick={toggleTooltip}>
+          {dataState.description}
+        </p>
+      </React.Fragment>
+    );
+  };
+
+  const renderDataStateGridItemsXSmall = () => {
+    const icon = <DataStateIcon dataState={dataState} onClick={toggleTooltip} />;
+    return renderElementWithTooltip(icon);
+  };
+
+  const renderDataState = () => {
+    return (
+      <div
+        className={`${dsPrefix}-container`}
+        style={{ '--container-padding': `${CARD_CONTENT_PADDING}px` }}
+      >
+        <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
+        <div className={`${dsPrefix}-grid`}>
+          {size === CARD_SIZES.XSMALL
+            ? renderDataStateGridItemsXSmall()
+            : renderDataStateGridItems()}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -232,73 +323,77 @@ const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }
             title={title}
             size={size}
             availableActions={availableActions}
-            isEmpty={isEmpty(values)}
+            isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
             i18n={i18n}
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {attributes.map((attribute, i) => (
-                <React.Fragment key={`fragment-${attribute.dataSourceId}`}>
-                  <AttributeWrapper
-                    layout={layout}
-                    isVertical={isVertical}
-                    isSmall={attribute.secondaryValue !== undefined}
-                    isMini={isMini}
-                    size={size}
-                    attributeCount={attributes.length}
-                  >
-                    <Attribute
-                      isVertical={isVertical}
-                      layout={layout}
-                      isSmall={
-                        size === CARD_SIZES.XSMALL &&
-                        (attribute.secondaryValue !== undefined || attribute.label !== undefined)
-                      }
-                      isMini={isMini}
-                      alignValue={
-                        size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
-                      }
-                      {...attribute}
-                      renderIconByName={others.renderIconByName}
-                      size={size} // When the card is in the editable state, we will show a preview
-                      value={isEditable ? '--' : determineValue(attribute.dataSourceId, values)}
-                      secondaryValue={
-                        attribute.secondaryValue && {
-                          ...attribute.secondaryValue,
-                          value: isEditable // When the card is in the editable state, we will show a preview
-                            ? '--'
-                            : determineValue(attribute.secondaryValue.dataSourceId, values),
-                        }
-                      }
-                    />
-                    {isMini && <Spacer />}
-                    <AttributeLabel
-                      title={attribute.label}
-                      isVertical={isVertical}
-                      layout={layout}
-                      isMini={isMini}
-                      attributeCount={attributes.length}
-                      size={size}
-                    >
-                      {attribute.label}
-                    </AttributeLabel>
-                  </AttributeWrapper>
-                  {i < attributes.length - 1 &&
-                  (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
-                  size !== CARD_SIZES.XSMALLWIDE ? (
+              {isEmpty(values) && dataState && renderDataState(dataState)}
+              {!dataState &&
+                attributes.map((attribute, i) => (
+                  <React.Fragment key={`fragment-${attribute.dataSourceId}`}>
                     <AttributeWrapper
                       layout={layout}
                       isVertical={isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
                       isMini={isMini}
                       size={size}
+                      attributeCount={attributes.length}
                     >
-                      <AttributeSeparator />
+                      <Attribute
+                        isVertical={isVertical}
+                        layout={layout}
+                        isSmall={
+                          size === CARD_SIZES.XSMALL &&
+                          (attribute.secondaryValue !== undefined || attribute.label !== undefined)
+                        }
+                        isMini={isMini}
+                        alignValue={
+                          size === CARD_SIZES.SMALL && attributes.length === 1
+                            ? 'center'
+                            : undefined
+                        }
+                        {...attribute}
+                        renderIconByName={others.renderIconByName}
+                        size={size} // When the card is in the editable state, we will show a preview
+                        value={isEditable ? '--' : determineValue(attribute.dataSourceId, values)}
+                        secondaryValue={
+                          attribute.secondaryValue && {
+                            ...attribute.secondaryValue,
+                            value: isEditable // When the card is in the editable state, we will show a preview
+                              ? '--'
+                              : determineValue(attribute.secondaryValue.dataSourceId, values),
+                          }
+                        }
+                      />
+                      {isMini && <Spacer />}
+                      <AttributeLabel
+                        title={attribute.label}
+                        isVertical={isVertical}
+                        layout={layout}
+                        isMini={isMini}
+                        attributeCount={attributes.length}
+                        size={size}
+                      >
+                        {attribute.label}
+                      </AttributeLabel>
                     </AttributeWrapper>
-                  ) : null}
-                </React.Fragment>
-              ))}
+                    {i < attributes.length - 1 &&
+                    (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
+                    size !== CARD_SIZES.XSMALLWIDE ? (
+                      <AttributeWrapper
+                        layout={layout}
+                        isVertical={isVertical}
+                        isSmall={attribute.secondaryValue !== undefined}
+                        isMini={isMini}
+                        size={size}
+                      >
+                        <AttributeSeparator />
+                      </AttributeWrapper>
+                    ) : null}
+                  </React.Fragment>
+                ))}
             </ContentWrapper>
           </Card>
         );

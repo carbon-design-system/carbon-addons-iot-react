@@ -6,7 +6,23 @@ import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-import ValueCard from './ValueCard';
+import { default as ValueCard, VALUE_CARD_DATA_STATE } from './ValueCard';
+
+function getDataStateProp() {
+  return {
+    label: text('dataState : Label', 'No data available for this score at this time'),
+    description: text(
+      'dataState : Description',
+      'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.'
+    ),
+    extraTooltipText: text(
+      'dataState : ExtraTooltipText',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    ),
+    learnMoreURL: text('dataState : LearnMoreURL', 'http://www.ibm.com'),
+    learnMoreText: text('dataState : LearnMoreText', 'Learn more'),
+  };
+}
 
 storiesOf('Watson IoT|ValueCard', module)
   .add('xsmall / basic', () => {
@@ -682,6 +698,108 @@ storiesOf('Watson IoT|ValueCard', module)
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
           content={{ attributes: [] }}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('data state - no data - small', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const myDataState = {
+      type: select(
+        'dataState : Type',
+        Object.keys(VALUE_CARD_DATA_STATE),
+        VALUE_CARD_DATA_STATE.NO_DATA
+      ),
+      ...getDataStateProp(),
+    };
+
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Health score')}
+          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          dataState={myDataState}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('data state - no data - custom icon - large', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    const myDataState = {
+      type: select(
+        'dataState : Type',
+        Object.keys(VALUE_CARD_DATA_STATE),
+        VALUE_CARD_DATA_STATE.NO_DATA
+      ),
+      ...getDataStateProp(),
+      icon: (
+        <Bee16 style={{ fill: 'orange' }}>
+          <title>App supplied icon</title>
+        </Bee16>
+      ),
+    };
+
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Health score')}
+          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          dataState={myDataState}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('data state - error - medium', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const myDataState = {
+      ...getDataStateProp(),
+      type: select(
+        'dataState : Type',
+        Object.keys(VALUE_CARD_DATA_STATE),
+        VALUE_CARD_DATA_STATE.ERROR
+      ),
+    };
+
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Health score')}
+          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          dataState={myDataState}
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('data state - error - xsmall', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    const dataStateType = select(
+      'dataStateType',
+      Object.keys(VALUE_CARD_DATA_STATE),
+      VALUE_CARD_DATA_STATE.ERROR
+    );
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Health score')}
+          id="facilitycard"
+          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          dataState={{
+            type: dataStateType,
+            label: 'No data available',
+            description: 'There is no available data for this score at this time',
+            extraTooltipText:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  ',
+            learnMoreURL: 'http://www.ibm.com',
+            learnMoreText: 'Learn more',
+          }}
           breakpoint="lg"
           size={size}
         />

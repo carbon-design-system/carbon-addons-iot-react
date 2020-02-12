@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bundledIconNames } from '../utils/bundledIcons';
 
 import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES, TIME_SERIES_TYPES } from './LayoutConstants';
+import { VALUE_CARD_DATA_STATE } from '../components/ValueCard/ValueCard';
 
 export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
@@ -50,6 +51,16 @@ export const ValueCardPropTypes = {
   content: PropTypes.shape({ attributes: PropTypes.arrayOf(AttributePropTypes).isRequired }),
   /** Value card expects its values passed as an object with key value pairs */
   values: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
+  /** DataState will override the cards default empty state and error string */
+  dataState: PropTypes.shape({
+    type: PropTypes.oneOf([VALUE_CARD_DATA_STATE.NO_DATA, VALUE_CARD_DATA_STATE.ERROR]).isRequired,
+    icon: PropTypes.element,
+    label: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    extraTooltipText: PropTypes.string,
+    learnMoreURL: PropTypes.string,
+    learnMoreText: PropTypes.string,
+  }),
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
