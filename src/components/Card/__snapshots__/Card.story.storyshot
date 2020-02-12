@@ -48,7 +48,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-basic"
           >
             <div
@@ -144,7 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -225,7 +225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="render-prop-basic"
           >
             <div
@@ -321,7 +321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <p>
                 Content width is 
@@ -408,7 +408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-error"
           >
             <div
@@ -427,7 +427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -514,7 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 fbzdtE"
+            className="Card__CardWrapper-v5r71h-0 HsjmT"
             id="facilitycard-error-small"
           >
             <div
@@ -533,7 +533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 bVgaXY"
+              className="Card__CardContent-v5r71h-1 dwzAuJ"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -612,11 +612,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         }
       >
         <div
-          className="Card__CardWrapper-v5r71h-0 cynIXT"
+          className="Card__CardWrapper-v5r71h-0 SYfLr"
           id="mycard"
         >
           <div
-            className="Card__CardContent-v5r71h-1 coBfbV"
+            className="Card__CardContent-v5r71h-1 bfMykM"
           >
             <div
               className="Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -751,14 +751,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   title={null}
                 >
                   <thead
-                    className="TableHead__StyledCarbonTableHead-sc-1fviaow-0 cnjfsc"
                     onMouseMove={[Function]}
                     onMouseUp={[Function]}
                   >
                     <tr>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
                         data-column="value1"
                         id="column-value1"
                         scope="col"
@@ -780,7 +779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                       </th>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
                         data-column="timestamp"
                         id="column-timestamp"
                         scope="col"
@@ -929,7 +928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-with-loading"
           >
             <div
@@ -1003,7 +1002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -1084,7 +1083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-with-loading"
           >
             <div
@@ -1132,7 +1131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -1216,7 +1215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 fbzdtE"
+            className="Card__CardWrapper-v5r71h-0 HsjmT"
             id="facilitycard-size-gallery-XSMALL"
           >
             <div
@@ -1235,7 +1234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 bVgaXY"
+              className="Card__CardContent-v5r71h-1 dwzAuJ"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1257,7 +1256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 fbzdtE"
+            className="Card__CardWrapper-v5r71h-0 HsjmT"
             id="facilitycard-size-gallery-XSMALLWIDE"
           >
             <div
@@ -1325,7 +1324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 bVgaXY"
+              className="Card__CardContent-v5r71h-1 dwzAuJ"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1347,7 +1346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-size-gallery-SMALL"
           >
             <div
@@ -1415,7 +1414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1437,7 +1436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facilitycard-size-gallery-TALL"
           >
             <div
@@ -1505,7 +1504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hUPzK"
+              className="Card__CardContent-v5r71h-1 eebKIM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1527,7 +1526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-size-gallery-MEDIUM"
           >
             <div
@@ -1595,7 +1594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1617,7 +1616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-size-gallery-WIDE"
           >
             <div
@@ -1685,7 +1684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1707,7 +1706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facilitycard-size-gallery-LARGE"
           >
             <div
@@ -1775,7 +1774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hUPzK"
+              className="Card__CardContent-v5r71h-1 eebKIM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1797,7 +1796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 kGdXdI"
+            className="Card__CardWrapper-v5r71h-0 iSCSRD"
             id="facilitycard-size-gallery-XLARGE"
           >
             <div
@@ -1865,7 +1864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hUPzK"
+              className="Card__CardContent-v5r71h-1 eebKIM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1952,7 +1951,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-empty"
           >
             <div
@@ -2020,7 +2019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -2107,7 +2106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-with-loading"
           >
             <div
@@ -2126,7 +2125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
@@ -2238,7 +2237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           }
         >
           <div
-            className="Card__CardWrapper-v5r71h-0 cynIXT"
+            className="Card__CardWrapper-v5r71h-0 SYfLr"
             id="facilitycard-with-loading"
           >
             <div
@@ -2306,7 +2305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 coBfbV"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>

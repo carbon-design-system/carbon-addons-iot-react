@@ -95,11 +95,29 @@ html[dir='rtl'] {
 }
 
 // Fixes bug when modal is opened, then closed. The toolbar moves to the top
-section.bx--table-toolbar {
+section.#{$prefix}--table-toolbar {
   overflow: unset;
 }
 
 .#{$prefix}--data-table th {
   position: relative;
   word-break: break-all;
+}
+
+.#{$prefix}--expandable-row .#{$prefix}--table-expand {
+  z-index: 2;
+}
+
+.#{$prefix}--expandable-row .#{$prefix}--checkbox-table-cell {
+  z-index: 1;
+}
+
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected td,
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected:not(.#{$prefix}--expandable-row):hover
+  td,
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row td,
+tr.#{$prefix}--parent-row.#{$prefix}--data-table--selected.#{$prefix}--expandable-row
+  td:first-of-type {
+  border-bottom-color: $active-ui;
+  box-shadow: none;
 }

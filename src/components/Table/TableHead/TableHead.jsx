@@ -95,16 +95,6 @@ const defaultProps = {
   },
 };
 
-const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
-  <CarbonTableHead {...others} />
-))`
-  th {
-    height: 3rem;
-    border-top: none;
-    border-bottom: none;
-  }
-`;
-
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
     ${props => {
@@ -232,8 +222,8 @@ const TableHead = ({
     []
   );
   return (
-    <StyledCarbonTableHead
-      lightweight={`${lightweight}`}
+    <CarbonTableHead
+      className={classnames({ lightweight })}
       onMouseMove={forwardMouseEvent}
       onMouseUp={forwardMouseEvent}
     >
@@ -343,7 +333,7 @@ const TableHead = ({
           columnSelectionConfigText={i18n.columnSelectionConfig}
         />
       )}
-    </StyledCarbonTableHead>
+    </CarbonTableHead>
   );
 };
 

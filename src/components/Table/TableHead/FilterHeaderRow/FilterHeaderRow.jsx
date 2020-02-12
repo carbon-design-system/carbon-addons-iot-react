@@ -266,7 +266,7 @@ class FilterHeaderRow extends Component {
                       this.handleApplyFilter
                     );
                   }}
-                  light={!lightweight}
+                  light={lightweight}
                 />
               ) : (
                 <StyledFormItem>
@@ -274,7 +274,7 @@ class FilterHeaderRow extends Component {
                     id={column.id}
                     labelText={column.id}
                     hideLabel
-                    light={!lightweight}
+                    light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
                     title={this.state[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
                     onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
