@@ -750,14 +750,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   className="bx--data-table bx--data-table--no-border"
                   title={null}
                 >
-                  <thead>
+                  <thead
+                    onMouseMove={[Function]}
+                    onMouseUp={[Function]}
+                  >
                     <tr>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
                         data-column="value1"
                         id="column-value1"
                         scope="col"
+                        style={
+                          Object {
+                            "width": undefined,
+                          }
+                        }
                       >
                         <span
                           className="bx--table-header-label"
@@ -771,10 +779,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                       </th>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
                         data-column="timestamp"
                         id="column-timestamp"
                         scope="col"
+                        style={
+                          Object {
+                            "width": undefined,
+                          }
+                        }
                       >
                         <span
                           className="bx--table-header-label"
