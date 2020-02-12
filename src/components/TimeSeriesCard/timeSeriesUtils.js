@@ -101,6 +101,7 @@ export const formatGraphTick = (
   const currentTimestamp = moment.unix(timestamp / 1000);
 
   const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
+  const sameMonth = moment(previousTickTimestamp).isSame(currentTimestamp, 'month');
   const sameYear = moment(previousTickTimestamp).isSame(currentTimestamp, 'year');
 
   // This works around a bug in moment where some Chinese languages are missing the day indicator
@@ -116,18 +117,22 @@ export const formatGraphTick = (
     ? currentTimestamp.format(dailyFormat)
     : interval === 'hour'
     ? currentTimestamp.format('HH:mm')
-    : interval === 'day' && index === 0
+    : (interval === 'day' || interval === 'week') && sameDay
+    ? '' // if we're on the day and week and the same day then skip
+    : (interval === 'day' || interval === 'week') && index === 0
     ? currentTimestamp.format(dailyFormat)
-    : interval === 'day' && index !== 0
+    : (interval === 'day' || interval === 'week') && index !== 0
     ? currentTimestamp.format(dailyFormat)
+    : interval === 'month' && sameMonth // don't repeat same month
+    ? ''
     : interval === 'month' && !sameYear
     ? currentTimestamp.format('MMM YYYY')
     : interval === 'month' && sameYear && index === 0
     ? currentTimestamp.format('MMM YYYY')
     : interval === 'month' && sameYear
     ? currentTimestamp.format('MMM')
-    : interval === 'year' && sameYear && index !== 0
-    ? currentTimestamp.format('MMM') // if we're on the year boundary and the same year, then don't repeat
+    : interval === 'year' && sameYear
+    ? '' // if we're on the year boundary and the same year, then don't repeat
     : interval === 'year' && (!sameYear || index === 0)
     ? currentTimestamp.format('YYYY')
     : interval === 'minute'
