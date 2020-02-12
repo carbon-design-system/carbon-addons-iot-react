@@ -6,7 +6,10 @@ import { Tile } from 'carbon-components-react';
 import TileCatalog from './TileCatalog';
 
 const tiles = [<Tile />, <Tile />];
+const sort = [{ option: 'A-Z' }, { option: 'Most Popular' }];
 
 storiesOf('Watson IoT|TileCatalogNew', module).add('default', () => (
-  <TileCatalog title="product name" tiles={tiles} />
+  <div style={{ width: '55rem' }}>
+    <TileCatalog title="Product name" tiles={tiles} sort={sort} />
+  </div>
 ));

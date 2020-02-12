@@ -1,2 +1,36 @@
 .tile-catalog {
+  &--header {
+    display: flex;
+    align-items: center;
+    padding-bottom: $spacing-05;
+    &--title {
+      @include type-style('productive-heading-01');
+      flex: 1;
+    }
+  }
+
+  &--content {
+    .#{$prefix}--grid {
+      padding: 0;
+    }
+    .#{$prefix}--row {
+      padding-bottom: $spacing-05;
+      margin-left: -$spacing-03;
+      margin-right: -$spacing-03;
+    }
+    .#{$prefix}--col {
+      padding-left: $spacing-03;
+      padding-right: $spacing-03;
+    }
+  }
+
+  &--placeholder-tile {
+    background: $ui-03;
+    height: rem(224px);
+  }
+
+  &--bottom {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
