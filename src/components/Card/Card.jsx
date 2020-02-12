@@ -55,7 +55,7 @@ export const CardContent = styled.div`
   position: relative;
   height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
   overflow-x: visible;
-  overflow-y: auto;
+  overflow-y: ${props => (!props.isExpanded ? 'visible' : 'auto')};
 `;
 
 export const SkeletonWrapper = styled.div`
@@ -270,7 +270,7 @@ const Card = props => {
                     {cardToolbar}
                   </CardHeader>
                 )}
-                <CardContent dimensions={dimensions}>
+                <CardContent dimensions={dimensions} isExpanded={isExpanded}>
                   {!isVisible && isLazyLoading ? ( // if not visible don't show anything
                     ''
                   ) : isLoading ? (

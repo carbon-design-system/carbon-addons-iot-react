@@ -146,7 +146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -325,7 +325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <p>
                 Content width is 
@@ -433,7 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -541,7 +541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 cZyqBY"
+              className="Card__CardContent-v5r71h-1 dwzAuJ"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -624,7 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
           id="mycard"
         >
           <div
-            className="Card__CardContent-v5r71h-1 ioQZbN"
+            className="Card__CardContent-v5r71h-1 bfMykM"
           >
             <div
               className="Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
@@ -758,14 +758,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                   className="bx--data-table bx--data-table--no-border"
                   title={null}
                 >
-                  <thead>
+                  <thead
+                    onMouseMove={[Function]}
+                    onMouseUp={[Function]}
+                  >
                     <tr>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
                         data-column="value1"
                         id="column-value1"
                         scope="col"
+                        style={
+                          Object {
+                            "width": undefined,
+                          }
+                        }
                       >
                         <span
                           className="bx--table-header-label"
@@ -779,10 +787,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                       </th>
                       <th
                         align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-1 iEEfpV"
+                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
                         data-column="timestamp"
                         id="column-timestamp"
                         scope="col"
+                        style={
+                          Object {
+                            "width": undefined,
+                          }
+                        }
                       >
                         <span
                           className="bx--table-header-label"
@@ -999,7 +1012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -1130,7 +1143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -1235,7 +1248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 cZyqBY"
+              className="Card__CardContent-v5r71h-1 dwzAuJ"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1327,7 +1340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 cZyqBY"
+              className="Card__CardContent-v5r71h-1 dwzAuJ"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1419,7 +1432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1511,7 +1524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ewwdRD"
+              className="Card__CardContent-v5r71h-1 eebKIM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1603,7 +1616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1695,7 +1708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1787,7 +1800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ewwdRD"
+              className="Card__CardContent-v5r71h-1 eebKIM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -1879,7 +1892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ewwdRD"
+              className="Card__CardContent-v5r71h-1 eebKIM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -2064,7 +2077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>
@@ -2215,7 +2228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
@@ -2323,7 +2336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             >
               <div
                 className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
@@ -2505,7 +2518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               </div>
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ioQZbN"
+              className="Card__CardContent-v5r71h-1 bfMykM"
             />
           </div>
         </div>

@@ -9,7 +9,7 @@ import { withReadme } from 'storybook-readme';
 import SimpleList from './SimpleList';
 import SimpleListREADME from './README.md';
 
-export const getListItems = num =>
+const getListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
