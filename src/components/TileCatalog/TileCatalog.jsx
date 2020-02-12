@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DataTable } from 'carbon-components-react';
+import { Search } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import TilePagination from './TilePagination/TilePagination';
@@ -11,60 +12,112 @@ const propTypes = {};
 
 const defaultPros = {};
 
-const sampleTiles = [
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-  <div className="tile-catalog--placeholder-tile" />,
-];
-
-const TileCatalog = ({ title, search, tiles, featuredTile, sort, pagination, filter }) => {
+const TileCatalog = ({
+  title,
+  search,
+  tiles,
+  featuredTileTitle,
+  featuredTile,
+  sort,
+  persistentSearch,
+  pagination,
+  filter,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <div>
-      <div className="tile-catalog--header">
-        <div className="tile-catalog--header--title"> {title}</div>
-        <div className="search">
-          <TableToolbarSearch {...search} className="tile-search" />
+      {persistentSearch ? (
+        <div className="tile-catalog--persistent-search">
+          <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
         </div>
-        <select
-          className="bx--select-input"
-          id="bx-pagination-select-3"
-          onChange={[Function]}
-          value={1}
-        >
-          {sort.map(option => (
-            <option className="bx--select-option" disabled={false} hidden={false} value={option}>
-              {option.option}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="tile-catalog--content">
-        <div className="bx--grid">
-          {tiles.map((item, idx, arr) =>
-            idx % 4 === 0 ? (
-              <div className="bx--row">
-                <div className="bx--col">{arr[idx]}</div>
-                <div className="bx--col">{idx + 1 < arr.length ? arr[idx + 1] : ''}</div>
-                <div className="bx--col">{idx + 2 < arr.length ? arr[idx + 2] : ''}</div>
-                <div className="bx--col">{idx + 3 < arr.length ? arr[idx + 3] : ''}</div>
+      ) : null}
+      <div className="tile-catalog--canvas-container ">
+        <div className="tile-catalog--tile-canvas">
+          {featuredTile ? (
+            <div>
+              <div className="tile-catalog--tile-canvas--featured-tile-title">
+                {featuredTileTitle}
               </div>
-            ) : null
-          )}
+              <div className="tile-catalog--tile-canvas--featured-tile">{featuredTile}</div>
+            </div>
+          ) : null}
+          <div className="tile-catalog--tile-canvas--header">
+            <div className="tile-catalog--tile-canvas--header--title"> {title}</div>
+            {persistentSearch ? null : (
+              <div className="search">
+                <TableToolbarSearch {...search} className="tile-search" />
+              </div>
+            )}
+            <select
+              className="bx--select-input"
+              id="bx-pagination-select-3"
+              onChange={[Function]}
+              value={1}
+            >
+              {sort.map(option => (
+                <option
+                  className="bx--select-option"
+                  disabled={false}
+                  hidden={false}
+                  value={option}
+                >
+                  {option.option}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="tile-catalog--tile-canvas--content">
+            <div className="bx--grid">
+              {tiles.map((item, idx, arr) =>
+                idx % 4 === 0 ? (
+                  <div className="bx--row">
+                    <div className="bx--col">{arr[idx]}</div>
+                    <div className="bx--col">{idx + 1 < arr.length ? arr[idx + 1] : ''}</div>
+                    <div className="bx--col">{idx + 2 < arr.length ? arr[idx + 2] : ''}</div>
+                    <div className="bx--col">{idx + 3 < arr.length ? arr[idx + 3] : ''}</div>
+                  </div>
+                ) : null
+              )}
+            </div>
+          </div>
+          <div className="tile-catalog--tile-canvas--bottom">
+            <TilePagination
+              page={currentPage}
+              numPages={6}
+              onChange={newPage => setCurrentPage(newPage)}
+            />
+          </div>
         </div>
-      </div>
-      <div className="tile-catalog--bottom">
-        <TilePagination
-          page={currentPage}
-          numPages={6}
-          onChange={newPage => setCurrentPage(newPage)}
-        />
+        {filter ? (
+          <div className="tile-catalog--filter">
+            <div className="tile-catalog--filter--title">Refined results</div>
+            <div className="tile-catalog--filter--content">
+              <div className="tile-catalog--filter--content--select">
+                <div>Label</div>
+                <select
+                  className="bx--select-input"
+                  id="bx-pagination-select-3"
+                  onChange={[Function]}
+                  value={1}
+                />
+              </div>
+              <div className="tile-catalog--filter--content--select">
+                <div>Label</div>
+                <select
+                  className="bx--select-input"
+                  id="bx-pagination-select-3"
+                  onChange={[Function]}
+                  value={1}
+                />
+              </div>
+              <div className="tile-catalog--filter--content--checkbox">
+                <div>Label</div>
+                {filter.checkboxFilter}
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

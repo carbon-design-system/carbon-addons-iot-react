@@ -1,44 +1,91 @@
 .tile-catalog {
-  &--header {
+  &--persistent-search {
+    width: 56rem;
+    margin-bottom: $spacing-05;
+  }
+  &--canvas-container {
     display: flex;
-    align-items: center;
-    padding-bottom: $spacing-05;
+    flex-direction: row;
+  }
+  &--tile-canvas {
+    flex: 1;
+    &--featured-tile-title {
+      @include type-style('productive-heading-01');
+    }
+    &--featured-tile {
+      background: $ui-03;
+      height: 17rem;
+      margin-bottom: $spacing-05;
+      margin-top: $spacing-05;
+    }
+    &--header {
+      display: flex;
+      align-items: center;
+      padding-bottom: $spacing-05;
+      &--title {
+        @include type-style('productive-heading-01');
+        flex: 1;
+      }
+      .#{$prefix}--select-input {
+        width: rem(224px);
+      }
+    }
+
+    &--content {
+      .#{$prefix}--grid {
+        padding: 0;
+      }
+      .#{$prefix}--row {
+        padding-bottom: $spacing-05;
+        margin-left: -$spacing-03;
+        margin-right: -$spacing-03;
+      }
+      .#{$prefix}--col {
+        padding-left: $spacing-03;
+        padding-right: $spacing-03;
+      }
+    }
+
+    &--placeholder-tile {
+      background: $ui-03;
+      height: rem(224px);
+    }
+
+    &--no-placeholder-tile {
+      background: $ui-02;
+      height: rem(224px);
+    }
+
+    &--bottom {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &--filter {
+    margin-left: $spacing-05;
+
+    width: rem(212px);
     &--title {
       @include type-style('productive-heading-01');
-      flex: 1;
+      margin-bottom: $spacing-05;
     }
-    .#{$prefix}--select-input {
-      width: rem(224px);
-    }
-  }
+    &--content {
+      background: $ui-01;
 
-  &--content {
-    .#{$prefix}--grid {
-      padding: 0;
-    }
-    .#{$prefix}--row {
-      padding-bottom: $spacing-05;
-      margin-left: -$spacing-03;
-      margin-right: -$spacing-03;
-    }
-    .#{$prefix}--col {
-      padding-left: $spacing-03;
-      padding-right: $spacing-03;
-    }
-  }
+      &--select {
+        width: rem(212px);
+        padding: $spacing-05;
 
-  &--placeholder-tile {
-    background: $ui-03;
-    height: rem(224px);
-  }
+        .#{$prefix}--select-input {
+          width: rem(180px);
+          background: $ui-02;
+        }
+      }
 
-  &--no-placeholder-tile {
-    background: $ui-02;
-    height: rem(224px);
-  }
-
-  &--bottom {
-    display: flex;
-    justify-content: flex-end;
+      &--checkbox {
+        border-top: 1px solid $ui-03;
+        padding: $spacing-05;
+      }
+    }
   }
 }
