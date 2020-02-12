@@ -356,7 +356,9 @@ const Table = props => {
       options.hasFilter ||
       options.hasSearch ||
       options.hasRowActions ||
-      options.hasRowCountInHeader ? (
+      options.hasRowCountInHeader ||
+      secondaryTitle ||
+      tooltip ? (
         <TableToolbar
           tableId={id}
           secondaryTitle={secondaryTitle}
