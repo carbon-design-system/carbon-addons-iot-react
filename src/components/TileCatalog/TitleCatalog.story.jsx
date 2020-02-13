@@ -43,11 +43,35 @@ const featuredTile = <div className="tile-catalog--featured-tile" />;
 
 const sampleFeaturedTile = <div>sample</div>;
 
-const checkboxFilter = [
-  <Checkbox id="" name="checkbox filter" labelText="Checkbox Label 1" onClick="" checked="" />,
-  <Checkbox id="" name="checkbox filter" labelText="Checkbox Label 2 " onClick="" checked="" />,
+const selectFilter = [
+  <div className="tile-catalog--filter--content--select">
+    <div>Label</div>
+    <select
+      className="bx--select-input"
+      id="bx-pagination-select-3"
+      onChange={[Function]}
+      value={1}
+    />
+  </div>,
+  <div className="tile-catalog--filter--content--select">
+    <div>Label</div>
+    <select
+      className="bx--select-input"
+      id="bx-pagination-select-3"
+      onChange={[Function]}
+      value={1}
+    />
+  </div>,
 ];
-const filter = { checkboxFilter: checkboxFilter };
+
+const checkboxFilter = (
+  <div className="tile-catalog--filter--content--checkbox">
+    <div>Label</div>
+    <Checkbox id="" name="checkbox filter" labelText="Checkbox Label 1" onClick="" checked="" />
+    <Checkbox id="" name="checkbox filter" labelText="Checkbox Label 2 " onClick="" checked="" />
+  </div>
+);
+const filter = { selectFilter: selectFilter, checkboxFilter: checkboxFilter };
 
 storiesOf('Watson IoT|TileCatalogNew', module)
   .add('Simple Canvas with placeholder tiles', () => (

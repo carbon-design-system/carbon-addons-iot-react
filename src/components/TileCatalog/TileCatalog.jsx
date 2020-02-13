@@ -93,28 +93,8 @@ const TileCatalog = ({
           <div className="tile-catalog--filter">
             <div className="tile-catalog--filter--title">Refined results</div>
             <div className="tile-catalog--filter--content">
-              <div className="tile-catalog--filter--content--select">
-                <div>Label</div>
-                <select
-                  className="bx--select-input"
-                  id="bx-pagination-select-3"
-                  onChange={[Function]}
-                  value={1}
-                />
-              </div>
-              <div className="tile-catalog--filter--content--select">
-                <div>Label</div>
-                <select
-                  className="bx--select-input"
-                  id="bx-pagination-select-3"
-                  onChange={[Function]}
-                  value={1}
-                />
-              </div>
-              <div className="tile-catalog--filter--content--checkbox">
-                <div>Label</div>
-                {filter.checkboxFilter}
-              </div>
+              {filter.selectFilter}
+              {filter.checkboxFilter}
             </div>
           </div>
         ) : null}
