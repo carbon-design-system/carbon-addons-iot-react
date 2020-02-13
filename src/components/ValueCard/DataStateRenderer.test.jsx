@@ -1,12 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Bee16 } from '@carbon/icons-react';
-import { act } from 'react-dom/test-utils';
 
-import { VALUE_CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
+import { VALUE_CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 
-import DataStateRenderer from './DataStateRenderer';
+import DataStateRenderer, { TooltipContent } from './DataStateRenderer';
 
 const { iotPrefix, prefix: carbonPrefix } = settings;
 
@@ -79,7 +78,7 @@ describe('ValueCard', () => {
     hasLabelDescription(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.LARGE} />);
   });
 
-  test('should only render icon for size XSMALL', () => {
+  test('should render only icon for size XSMALL', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.XSMALL} />);
 
@@ -88,19 +87,53 @@ describe('ValueCard', () => {
     expect(wrapper.find(`.${iotPrefix}--data-state-grid__description`)).toHaveLength(0);
   });
 
-  test('should contain tooltip', () => {
+  test('should contain tooltip for icon, label and description', () => {
     const myDataState = getDataStateProp();
-    const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.XSMALL} />);
-    const clickableIconWrapper = wrapper
+
+    const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.SMALL} />);
+    const iconTooltipTrigger = wrapper
       .find(`svg.${iotPrefix}--data-state-default-warning-icon`)
-      .closest('[onClick]');
+      .closest('.bx--tooltip__label');
+    expect(iconTooltipTrigger).toHaveLength(1);
 
-    act(() => {
-      clickableIconWrapper.props().onClick();
-    });
+    const labelTooltipTrigger = wrapper
+      .find(`.${iotPrefix}--data-state-grid__label`)
+      .closest('.bx--tooltip__label');
+    expect(labelTooltipTrigger).toHaveLength(1);
 
-    // Haven't found a good way to test the activation and content of the tooltip
-    // So for now we are just checking that the tooltip component is present
-    expect(wrapper.find('Tooltip')).toHaveLength(1);
+    const descriptionTooltipTrigger = wrapper
+      .find(`.${iotPrefix}--data-state-grid__description`)
+      .closest('.bx--tooltip__label');
+    expect(descriptionTooltipTrigger).toHaveLength(1);
+  });
+
+  test('should render all tooltip content when present', () => {
+    const myDataState = getDataStateProp();
+    const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
+
+    expect(wrapper.find(`.${iotPrefix}--data-state-tooltip__label`).text()).toEqual(
+      myDataState.label
+    );
+
+    expect(wrapper.text()).toMatch(RegExp(`.${myDataState.description}.`));
+    expect(wrapper.text()).toMatch(RegExp(`.${myDataState.extraTooltipText}.`));
+    expect(wrapper.find(`.${carbonPrefix}--link`).text()).toEqual(myDataState.learnMoreText);
+    expect(wrapper.find(`.${carbonPrefix}--link`).props().href).toEqual(myDataState.learnMoreURL);
+  });
+
+  test('should not render extraTooltipText nor link when missing', () => {
+    const myDataState = getDataStateProp();
+    delete myDataState.learnMoreURL;
+    delete myDataState.extraTooltipText;
+
+    const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
+
+    expect(wrapper.find(`.${iotPrefix}--data-state-tooltip__label`).text()).toEqual(
+      myDataState.label
+    );
+    expect(wrapper.text()).not.toMatch(RegExp(`.${myDataState.description}.`));
+
+    expect(wrapper.text()).not.toMatch(RegExp(`.${myDataState.extraTooltipText}.`));
+    expect(wrapper.find(`.${carbonPrefix}--link`)).toHaveLength(0);
   });
 });

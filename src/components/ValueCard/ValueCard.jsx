@@ -7,9 +7,9 @@ import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
-import DataStateRenderer from './DataStateRenderer';
 import { determineMaxValueCardAttributeCount } from '../../utils/cardUtilityFunctions';
 
+import DataStateRenderer from './DataStateRenderer';
 import Attribute from './Attribute';
 
 const ContentWrapper = styled.div`
@@ -205,7 +205,17 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, i18n, dataState, ...others }) => {
+const ValueCard = ({
+  title,
+  content,
+  size,
+  values,
+  isEditable,
+  i18n,
+  dataState,
+  id,
+  ...others
+}) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -239,7 +249,7 @@ const ValueCard = ({ title, content, size, values, isEditable, i18n, dataState, 
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {dataState && <DataStateRenderer dataState={dataState} size={size} />}
+              {dataState && <DataStateRenderer dataState={dataState} size={size} id={id} />}
               {!dataState &&
                 attributes.map((attribute, i) => (
                   <React.Fragment key={`fragment-${attribute.dataSourceId}`}>

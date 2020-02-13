@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
 import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
@@ -14,72 +14,71 @@ import {
 const { iotPrefix, prefix: carbonPrefix } = settings;
 const dsPrefix = `${iotPrefix}--data-state`;
 
-const DataStateIcon = ({ dataState, onClick }) => {
-  let icon;
-  if (dataState.icon) {
-    icon = dataState.icon;
-  } else if (dataState.type === VALUE_CARD_DATA_STATE.ERROR) {
-    icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
-  } else if (dataState.type === VALUE_CARD_DATA_STATE.NO_DATA) {
-    icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
-  }
-
-  const clickWrappedIcon = <span onClick={onClick}>{icon}</span>;
-  return clickWrappedIcon;
-};
-
-const renderDataStateTooltipContent = dataState => {
+// Testing the tooltip content outside carbon proved difficult.
+// So this is exposed for testing purpose.
+export const TooltipContent = ({ tooltipContent }) => {
+  const { label, description, extraTooltipText, learnMoreURL, learnMoreText } = tooltipContent;
   return (
     <span className={`${dsPrefix}-tooltip`}>
-      <p className={`${dsPrefix}-tooltip__label`}>{dataState.label}</p>
-      <p>{dataState.description}</p>
-      <p>{dataState.extraTooltipText}</p>
-      {dataState.learnMoreURL ? (
+      <p className={`${dsPrefix}-tooltip__label`}>{label}</p>
+      <p>{description}</p>
+      {extraTooltipText && <p>{extraTooltipText}</p>}
+      {learnMoreURL && (
         <a
           className={`${carbonPrefix}--link`}
-          href={dataState.learnMoreURL}
+          href={learnMoreURL}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {dataState.learnMoreText}
+          {learnMoreText}
         </a>
-      ) : null}
+      )}
     </span>
   );
 };
+TooltipContent.propTypes = { tooltipContent: ValueCardPropTypes.dataState.isRequired };
 
-const DataStateRenderer = ({ dataState, size }) => {
-  const [tooltipOpen, setTooltipOpen] = useState(false);
-  const toggleTooltip = () => setTooltipOpen(open => !open);
+const DataStateIcon = ({ dataState }) => {
+  const { type } = dataState;
+  let { icon } = dataState;
+  if (!icon) {
+    if (type === VALUE_CARD_DATA_STATE.ERROR) {
+      icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
+    } else if (type === VALUE_CARD_DATA_STATE.NO_DATA) {
+      icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
+    }
+  }
+  return icon;
+};
 
-  const renderElementWithTooltip = triggerElement => {
+const DataStateRenderer = ({ dataState, size, id }) => {
+  const { label, description } = dataState;
+
+  const withTooltip = element => {
     return (
-      <Tooltip open={tooltipOpen} showIcon={false} triggerText={triggerElement}>
-        {tooltipOpen && renderDataStateTooltipContent(dataState)}
+      <Tooltip
+        showIcon={false}
+        triggerText={element}
+        triggerId={`${dsPrefix}-tooltip-trigger-${id}`}
+        tooltipId={`${dsPrefix}-tooltip-${id}`}
+      >
+        <TooltipContent tooltipContent={dataState} />
       </Tooltip>
     );
   };
 
   const renderDataStateGridItems = () => {
-    const label = (
-      <span className={`${dsPrefix}-grid__label`} onClick={toggleTooltip}>
-        {dataState.label}
-      </span>
-    );
     return (
       <React.Fragment>
-        <DataStateIcon dataState={dataState} onClick={toggleTooltip} />
-        {renderElementWithTooltip(label)}
-        <p className={`${dsPrefix}-grid__description`} onClick={toggleTooltip}>
-          {dataState.description}
-        </p>
+        {withTooltip(<DataStateIcon dataState={dataState} />)}
+        {withTooltip(<span className={`${dsPrefix}-grid__label`}>{label}</span>)}
+        {withTooltip(<p className={`${dsPrefix}-grid__description`}>{description}</p>)}
       </React.Fragment>
     );
   };
 
   const renderDataStateGridItemsXSmall = () => {
-    const icon = <DataStateIcon dataState={dataState} onClick={toggleTooltip} />;
-    return renderElementWithTooltip(icon);
+    return withTooltip(<DataStateIcon dataState={dataState} />);
   };
 
   return (
@@ -95,6 +94,14 @@ const DataStateRenderer = ({ dataState, size }) => {
   );
 };
 
-DataStateRenderer.propTypes = { size: CardPropTypes.size, dataState: ValueCardPropTypes.dataState };
+DataStateRenderer.propTypes = {
+  size: CardPropTypes.size,
+  id: CardPropTypes.id,
+  dataState: ValueCardPropTypes.dataState.isRequired,
+};
+DataStateRenderer.defaultProps = {
+  size: CARD_SIZES.MEDIUM,
+  id: 'data-state-renderer',
+};
 
 export default DataStateRenderer;

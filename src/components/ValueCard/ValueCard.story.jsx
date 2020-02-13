@@ -6,7 +6,7 @@ import { Bee16, Checkmark16 } from '@carbon/icons-react';
 import { CARD_SIZES, VALUE_CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-import { default as ValueCard } from './ValueCard';
+import ValueCard from './ValueCard';
 
 function getDataStateProp() {
   return {

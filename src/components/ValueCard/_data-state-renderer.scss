@@ -27,22 +27,28 @@
       outline: none;
     }
   }
-}
 
-.#{$iot-prefix}--data-state-grid > *:first-child {
-  grid-area: app-icon;
-  cursor: pointer;
-  margin-right: $spacing-03;
+  & > *:first-child {
+    grid-area: app-icon;
+    cursor: pointer;
+    margin-right: $spacing-03;
+  }
+
+  & > *:nth-child(2) {
+    grid-area: app-label;
+  }
+
+  & > *:nth-child(3) {
+    grid-area: app-description;
+  }
 }
 
 .#{$iot-prefix}--data-state-grid__label {
-  grid-area: app-label;
   @include type-style('productive-heading-01');
   @include text-overflow();
 }
 
 .#{$iot-prefix}--data-state-grid__description {
-  grid-area: app-description;
   @include type-style('helper-text-01');
   color: $gray-70;
 
