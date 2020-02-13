@@ -161,13 +161,15 @@ const ListItem = ({
                 </div>
                 {renderRowActions()}
               </div>
-              <div
-                title={secondaryValue}
-                className={`${iotPrefix}--list-item--content--values--secondary
+              {secondaryValue ? (
+                <div
+                  title={secondaryValue}
+                  className={`${iotPrefix}--list-item--content--values--secondary
                    ${iotPrefix}--list-item--content--values--secondary__large`}
-              >
-                {secondaryValue || null}
-              </div>
+                >
+                  {secondaryValue}
+                </div>
+              ) : null}
             </>
           ) : (
             <>
@@ -180,12 +182,14 @@ const ListItem = ({
                 >
                   {value}
                 </div>
-                <div
-                  title={secondaryValue}
-                  className={`${iotPrefix}--list-item--content--values--secondary`}
-                >
-                  {secondaryValue || null}
-                </div>
+                {secondaryValue ? (
+                  <div
+                    title={secondaryValue}
+                    className={`${iotPrefix}--list-item--content--values--secondary`}
+                  >
+                    {secondaryValue}
+                  </div>
+                ) : null}
                 {renderRowActions()}
               </div>
             </>

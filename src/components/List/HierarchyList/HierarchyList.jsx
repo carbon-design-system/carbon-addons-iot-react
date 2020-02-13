@@ -55,22 +55,22 @@ const defaultProps = {
 /**
  * Searches an item for a specific value
  * @param {Object} item to be searched
+ * @param {string} searchTerm
  * @returns {Boolean} found or not
  */
-export const searchItem = (item, searchTerm) => {
+export const searchForItemValue = (item, searchTerm) => {
   // Check that the value is not empty
   if (item.content.value !== '' && item.content.value !== undefined) {
+    if (item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1) {
+      return true;
+    }
     // Check that the secondary value is not empty
     if (
       item.content.secondaryValue !== '' &&
       item.content.secondaryValue !== undefined &&
       // Check if the value or secondary value has a match
-      (item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1 ||
-        item.content.secondaryValue.toLowerCase().search(searchTerm.toLowerCase()) !== -1)
+      item.content.secondaryValue.toLowerCase().search(searchTerm.toLowerCase()) !== -1
     ) {
-      return true;
-    }
-    if (item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1) {
       return true;
     }
     return false;
@@ -87,19 +87,63 @@ export const searchItem = (item, searchTerm) => {
  * @param {String} value what to search for
  * @returns {Array<Object>}
  */
-export const searchNestedItems = (items, value) => {
+export const searchForNestedItemValues = (items, value) => {
   const filteredItems = [];
   cloneDeep(items).forEach(item => {
     // if the item has children, recurse and search children
     if (item.children) {
       // eslint-disable-next-line
-      item.children = searchNestedItems(item.children, value);
+      item.children = searchForNestedItemValues(item.children, value);
       // if it's children did, we still need the item
       if (item.children.length > 0) {
         filteredItems.push(item);
       }
     } // if the item matches, add it to the filterItems array
-    else if (searchItem(item, value)) {
+    else if (searchForItemValue(item, value)) {
+      filteredItems.push(item);
+    }
+  });
+  return filteredItems;
+};
+
+/**
+ * Searches an item for a specific id
+ * @param {Object} item to be searched
+ * @param {string} searchId
+ * @returns {Boolean} found or not
+ */
+export const searchForItemId = (item, searchId) => {
+  if (
+    // Check if the value or secondary value has a match
+    item.id.toLowerCase().search(searchId.toLowerCase()) !== -1
+  ) {
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Assumes that the first level of items is not searchable and is only uses to categorize the
+ * items. Because of that, only search through the children. If a child is found while filtering,
+ * it needs to be returned to the filtered array. Deep clone is required because spread syntax is
+ * only a shallow clone
+ * @param {Array<Object>} items
+ * @param {String} value what to search for
+ * @returns {Array<Object>}
+ */
+export const searchForNestedItemIds = (items, value) => {
+  const filteredItems = [];
+  cloneDeep(items).forEach(item => {
+    // if the item has children, recurse and search children
+    if (item.children) {
+      // eslint-disable-next-line
+      item.children = searchForNestedItemIds(item.children, value);
+      // if it's children did, we still need the item
+      if (item.children.length > 0) {
+        filteredItems.push(item);
+      }
+    } // if the item matches, add it to the filterItems array
+    else if (searchForItemId(item, value)) {
       filteredItems.push(item);
     }
   });
@@ -125,6 +169,22 @@ const HierarchyList = ({
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
+
+  useEffect(
+    () => {
+      // Expand the parent elements of the defaultSelectedId
+      if (defaultSelectedId) {
+        const tempFilteredItems = searchForNestedItemIds(items, defaultSelectedId);
+        const tempExpandedIds = [];
+        // Expand the categories that have found results
+        tempFilteredItems.forEach(categoryItem => {
+          tempExpandedIds.push(categoryItem.id);
+        });
+        setExpandedIds(tempExpandedIds);
+      }
+    },
+    [defaultSelectedId, items]
+  );
 
   const handleSelect = id => {
     if (selectedIds.includes(id)) {
@@ -192,9 +252,7 @@ const HierarchyList = ({
    * @param {String} text keyed values from search input
    */
   const handleSearch = text => {
-    /**
-     */
-    const tempFilteredItems = searchNestedItems(items, text);
+    const tempFilteredItems = searchForNestedItemValues(items, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
     tempFilteredItems.forEach(categoryItem => {

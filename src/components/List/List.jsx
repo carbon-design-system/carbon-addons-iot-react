@@ -145,7 +145,17 @@ const List = ({
         search={search}
         i18n={i18n}
       />
-      <div className={`${iotPrefix}--list--content`}>{listItems}</div>
+      <div
+        className={classnames(
+          {
+            // If FullHeight, the content's overflow shouldn't be hidden
+            [`${iotPrefix}--list--content__full-height`]: isFullHeight,
+          },
+          `${iotPrefix}--list--content`
+        )}
+      >
+        {listItems}
+      </div>
       {pagination !== null ? (
         <div className={`${iotPrefix}--list--page`}>
           <SimplePagination {...pagination} />
