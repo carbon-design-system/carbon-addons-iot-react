@@ -167,7 +167,7 @@ export const tableColumnsFixedWidth = tableColumns.map(i => ({
   ...i,
   width:
     i.id === 'string'
-      ? '300px'
+      ? '50px'
       : i.id === 'date'
       ? '180px'
       : i.id === 'select'
@@ -317,6 +317,7 @@ const actions = {
     onChangeOrdering: action('onChangeOrdering'),
     onColumnSelectionConfig: action('onColumnSelectionConfig'),
     onChangeSort: action('onChangeSort'),
+    onColumnResize: action('onColumnResize'),
   },
 };
 
@@ -537,7 +538,7 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add(
-    'Stateful Example with row nesting',
+    'Stateful Example with row nesting and fixed columns',
     () => {
       const tableData = initialState.data.map((i, idx) => ({
         ...i,
@@ -1246,12 +1247,121 @@ storiesOf('Watson IoT|Table', module)
   .add('with zebra striping', () => (
     <Table useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
   ))
+  .add('with resize and initial column widths on Simple Stateful and row selection', () => (
+    <StatefulTable
+      {...initialState}
+      actions={actions}
+      lightweight={boolean('lightweight', false)}
+      columns={tableColumns.map((i, idx) => ({
+        width: idx % 2 === 0 ? '100px' : '200px',
+        ...i,
+      }))}
+      options={{
+        hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
+        hasRowExpansion: false,
+        hasResize: true,
+      }}
+      view={{ table: { selectedIds: array('selectedIds', []) } }}
+    />
+  ))
   .add(
-    'with fixed column width',
+    'with resize and initial column widths and hidden column',
+    () => (
+      <FullWidthWrapper>
+        <Table
+          options={{ hasResize: true }}
+          columns={tableColumns.map((i, idx) => ({
+            width: idx % 2 === 0 ? '100px' : '200px',
+            ...i,
+          }))}
+          data={tableData}
+          actions={actions}
+          view={{
+            table: {
+              ordering: defaultOrdering,
+            },
+          }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        source: true,
+        propTables: false,
+      },
+    }
+  )
+  .add(
+    'with resize and initial column widths',
+    () => (
+      <Table
+        options={{ hasResize: true }}
+        columns={tableColumns.map((i, idx) => ({
+          width: idx % 2 === 0 ? '100px' : '100px',
+          ...i,
+        }))}
+        data={tableData}
+        actions={actions}
+      />
+    ),
+    {
+      info: {
+        source: true,
+        propTables: false,
+      },
+    }
+  )
+  .add(
+    'with resize and no initial column width',
+    () => (
+      <Table
+        options={{ hasResize: true }}
+        columns={tableColumns}
+        data={tableData}
+        actions={actions}
+      />
+    ),
+    {
+      info: {
+        source: true,
+        propTables: false,
+      },
+    }
+  )
+  .add(
+    'with resize and no initial column width and auto adjusted column widths',
+    () => (
+      <React.Fragment>
+        <p>
+          <strong>Note!</strong> <br />
+          For this configuration to work, the table must be wrapped in a container that has a with
+          defined in other than %. <br />
+          E.g. the FullWidthWrapper used by the storybook examples.
+        </p>
+        <FullWidthWrapper>
+          <Table
+            options={{ hasResize: true, useAutoTableLayoutForResize: true }}
+            columns={tableColumns}
+            data={tableData}
+            actions={actions}
+          />
+        </FullWidthWrapper>
+      </React.Fragment>
+    ),
+    {
+      info: {
+        source: true,
+        propTables: false,
+      },
+    }
+  )
+  .add(
+    'with fixed column width and no resize',
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <FullWidthWrapper>
         <Table
+          options={{ hasResize: false, hasColumnSelection: true }}
           columns={tableColumns.map((i, idx) => ({
             width: idx % 2 === 0 ? '20rem' : '10rem',
             ...i,

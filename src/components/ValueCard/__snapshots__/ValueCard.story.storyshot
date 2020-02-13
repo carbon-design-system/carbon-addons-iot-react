@@ -58,9 +58,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions per device"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions per device
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -233,9 +235,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Really really really long card title?"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Really really really long card title?
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -408,9 +412,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -514,9 +520,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -806,9 +814,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Really long card title?"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Really long card title?
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -942,9 +952,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Really really really long card title?"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Really really really long card title?
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1117,9 +1129,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1331,9 +1345,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1506,9 +1522,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1681,9 +1699,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -1945,9 +1965,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2159,9 +2181,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2295,9 +2319,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2665,9 +2691,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Facility Conditions"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Facility Conditions
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -2879,9 +2907,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Uncomfortable?"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Uncomfortable?
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3019,9 +3049,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Occupancy"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Occupancy
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3152,9 +3184,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Occupancy"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Occupancy
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3285,9 +3319,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Alert Count"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Alert Count
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3451,9 +3487,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Alert Count"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Alert Count
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3609,9 +3647,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Alert Count"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Alert Count
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3742,9 +3782,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Foot Traffic"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Foot Traffic
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -3878,9 +3920,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Foot Traffic"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Foot Traffic
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -4011,9 +4055,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Alert Count"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Alert Count
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -4144,9 +4190,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Occupancy"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Occupancy
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -4277,9 +4325,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Status"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Status
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -4444,9 +4494,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Status"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Status
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
@@ -4602,9 +4654,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 className="card--title"
                 title="Status"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Status
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"

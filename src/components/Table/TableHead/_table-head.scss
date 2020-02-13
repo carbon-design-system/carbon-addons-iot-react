@@ -1,5 +1,7 @@
+@import '../../../globals/vars';
 @import '~carbon-components/scss/globals/scss/vars';
 @import '~carbon-components/scss/globals/scss/layout';
+@import 'column-resize';
 
 .#{$prefix}--data-table {
   th {
@@ -9,6 +11,7 @@
   }
   .#{$prefix}--table-header-label {
     display: flex;
+    user-select: none;
   }
   .column-header__btn {
     margin: 0 $spacing-05 $spacing-05 0;
@@ -38,5 +41,20 @@
         }
       }
     }
+  }
+
+  .#{$iot-prefix}--table-expand-resize {
+    width: 40px;
+  }
+
+  .#{$iot-prefix}--table-header-checkbox {
+    vertical-align: middle;
+    & > span {
+      padding: 0;
+    }
+  }
+
+  .#{$iot-prefix}--table-header-checkbox-resize {
+    width: 54px;
   }
 }

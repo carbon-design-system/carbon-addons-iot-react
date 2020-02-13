@@ -6,8 +6,10 @@ import { Pagination, Table as CarbonTable, TableContainer } from 'carbon-compone
 import isNil from 'lodash/isNil';
 import styled from 'styled-components';
 import sizeMe from 'react-sizeme';
+import classNames from 'classnames';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
+import { settings } from '../../constants/Settings';
 
 import {
   TableColumnsPropTypes,
@@ -24,6 +26,7 @@ import EmptyTable from './EmptyTable/EmptyTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import TableBody from './TableBody/TableBody';
 
+const { iotPrefix } = settings;
 const StyledTableContainer = styled(TableContainer)`
   && {
     min-width: unset;
@@ -90,6 +93,9 @@ const propTypes = {
     hasColumnSelectionConfig: PropTypes.bool,
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
+    hasResize: PropTypes.bool,
+    /** If true removes the "table-layout: fixed" for resizable tables  */
+    useAutoTableLayoutForResize: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -184,6 +190,7 @@ const propTypes = {
       onEmptyStateAction: PropTypes.func,
       onChangeOrdering: PropTypes.func,
       onColumnSelectionConfig: PropTypes.func,
+      onColumnResize: PropTypes.func,
     }).isRequired,
   }),
   i18n: I18NPropTypes,
@@ -207,6 +214,8 @@ export const defaultProps = baseProps => ({
     hasSearch: false,
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
+    hasResize: false,
+    useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
   },
   view: {
@@ -250,6 +259,7 @@ export const defaultProps = baseProps => ({
       onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
+      onColumnResize: defaultFunction('actions.table.onColumnResize'),
     },
   },
   i18n: {
@@ -414,7 +424,13 @@ const Table = props => {
         />
       ) : null}
       <div className="addons-iot-table-container">
-        <CarbonTable {...others}>
+        <CarbonTable
+          className={classNames({
+            [`${iotPrefix}--data-table--fixed`]:
+              options.hasResize && !options.useAutoTableLayoutForResize,
+          })}
+          {...others}
+        >
           <TableHead
             {...others}
             i18n={i18n}
@@ -424,7 +440,9 @@ const Table = props => {
               'hasRowSelection',
               'hasRowExpansion',
               'hasRowActions',
-              'hasColumnSelectionConfig'
+              'hasColumnSelectionConfig',
+              'hasResize',
+              'useAutoTableLayoutForResize'
             )}
             columns={columns}
             filters={view.filters}
@@ -435,7 +453,8 @@ const Table = props => {
                 'onSelectAll',
                 'onChangeSort',
                 'onChangeOrdering',
-                'onColumnSelectionConfig'
+                'onColumnSelectionConfig',
+                'onColumnResize'
               ),
             }}
             selectAllText={i18n.selectAllAria}
