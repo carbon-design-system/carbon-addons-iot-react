@@ -7,7 +7,7 @@ import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
-import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import iconViewDashboards from './dashboard.svg';
@@ -17,7 +17,8 @@ import Dashboard from './Dashboard';
 
 export const originalCards = [
   {
-    title: 'Facility Metrics',
+    title:
+      'Facility Metrics with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facilitycard',
     size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
@@ -40,6 +41,31 @@ export const originalCards = [
   {
     title: 'Humidity',
     id: 'facilitycard-xs',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.VALUE,
+    availableActions: {
+      delete: true,
+    },
+    content: {
+      attributes: [
+        {
+          dataSourceId: 'humidity',
+          unit: '%',
+          thresholds: [
+            { comparison: '<', value: '40', color: 'red' },
+            { comparison: '<', value: '70', color: 'green' },
+            { comparison: '>=', value: '70', color: 'red' },
+          ],
+        },
+      ],
+    },
+    values: {
+      humidity: 62.1,
+    },
+  },
+  {
+    title: 'Show tooltip when the card title has ellipsis ',
+    id: 'facilitycard-tooltip',
     size: CARD_SIZES.XSMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
@@ -146,6 +172,54 @@ export const originalCards = [
     values: { footTraffic: 13572, footTrafficTrend: '22%' },
   },
   {
+    tooltip: <p>Health - of floor 8</p>,
+    id: 'GaugeCard',
+    title: 'Health',
+    size: CARD_SIZES.XSMALL,
+    type: CARD_TYPES.GAUGE,
+    values: {
+      usage: 73,
+      usageTrend: '5%',
+    },
+    content: {
+      gauges: [
+        {
+          dataSourceId: 'usage',
+          units: '%',
+          minimumValue: 0,
+          maximumValue: 100,
+          color: 'orange',
+          backgroundColor: '#e0e0e0',
+          shape: 'circle',
+          trend: {
+            dataSourceId: 'usageTrend',
+            trend: 'up',
+          },
+          thresholds: [
+            {
+              comparison: '>',
+              value: 0,
+              color: '#fa4d56', // red
+              label: 'Poor',
+            },
+            {
+              comparison: '>',
+              value: 60,
+              color: '#f1c21b', // yellow
+              label: 'Fair',
+            },
+            {
+              comparison: '>',
+              value: 80,
+              color: '#42be65', // green
+              label: 'Good',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     title: 'Health',
     id: 'facilitycard-health',
     size: CARD_SIZES.XSMALLWIDE,
@@ -167,7 +241,8 @@ export const originalCards = [
     values: { health: 'Healthy' },
   },
   {
-    title: 'Temperature',
+    title:
+      'Temperature with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facility-temperature-timeseries',
     size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.TIMESERIES,
@@ -327,15 +402,15 @@ storiesOf('Watson IoT|Dashboard', module)
       info: {
         text: `
         ## Data Fetching
-        To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.  
+        To wire this dashboard to your own backend, implement the onFetchData callback to retrieve data for each card.
         You will be passed an object containing all of the card props (including the currently selected range of the card) and can use these to determine which data to fetch.
-        
+
         Return a promise that will resolve into an updated card object with data values
         For instance you could return {...card, values: [{timestamp: 1234123123,temperature: 35.5}]}
 
         If you want to trigger all the cards of the dashboard to load from an outside event (like a change in the data range that the dashboard is displaying), set the isLoading bit to true.
         Once all the cards have finished loading the setIsLoading(false) will be called from the Dashboard.
-        
+
         # Component Overview
         `,
       },
@@ -519,6 +594,47 @@ storiesOf('Watson IoT|Dashboard', module)
               ],
             },
             values: data,
+          },
+        ]}
+      />
+    );
+  })
+  .add('full screen bar chart card', () => {
+    const data = getIntervalChartData('day', 7, { min: 10, max: 100 }, 100);
+    return (
+      <Dashboard
+        title="Expandable card, click expand to expand line"
+        cards={[
+          {
+            title: 'Expanded card',
+            id: `expandedcard`,
+            size: CARD_SIZES.LARGE,
+            type: CARD_TYPES.TIMESERIES,
+
+            content: {
+              series: [
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temperature Device 1',
+                  dataFilter: { ENTITY_ID: 'Sensor2-1' },
+                },
+                {
+                  dataSourceId: 'temperature',
+                  label: 'Temperature Device 2',
+                  dataFilter: { ENTITY_ID: 'Sensor2-2' },
+                },
+              ],
+              chartType: TIME_SERIES_TYPES.BAR,
+            },
+            values: data.reduce((acc, dataPoint) => {
+              acc.push(dataPoint);
+              acc.push({
+                ...dataPoint,
+                temperature: dataPoint.temperature / 2,
+                ENTITY_ID: 'Sensor2-2',
+              });
+              return acc;
+            }, []),
           },
         ]}
       />

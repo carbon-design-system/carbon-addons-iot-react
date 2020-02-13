@@ -16,6 +16,8 @@ export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
   /** the key to load the value from the values object */
   dataSourceId: PropTypes.string.isRequired,
+  /** optional data filter to apply to each attribute */
+  dataFilter: PropTypes.objectOf(PropTypes.any),
   secondaryValue: PropTypes.shape({
     /** the key to load the value from the values object */
     dataSourceId: PropTypes.string.isRequired,
@@ -74,6 +76,8 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   /** the attribute in values to map to */
   dataSourceId: PropTypes.string.isRequired,
+  /** optional filter to apply to this particular line */
+  dataFilter: PropTypes.objectOf(PropTypes.any),
   /** optional units to put in the legend */
   unit: PropTypes.string,
   /** optional param to set the colors */
@@ -90,8 +94,9 @@ export const TimeSeriesCardPropTypes = {
     yLabel: PropTypes.string,
     /** Which attribute is the time attribute */
     timeDataSourceId: PropTypes.string,
+    /** should it be a line chart or bar chart, default is line chart */
+    chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
   }).isRequired,
-  chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),
@@ -208,6 +213,41 @@ export const ImageCardPropTypes = {
 };
 
 export const PieCardPropTypes = DonutCardPropTypes;
+export const GaugeCardPropTypes = {
+  tooltip: PropTypes.element,
+  content: PropTypes.shape({
+    gauges: PropTypes.arrayOf(
+      PropTypes.shape({
+        dataSourceId: PropTypes.string,
+        units: PropTypes.string,
+        minimumValue: PropTypes.number,
+        maximumValue: PropTypes.number,
+        renderValueFunction: PropTypes.func,
+        color: PropTypes.string,
+        backgroundColor: PropTypes.string,
+        shape: PropTypes.oneOf(['half-circle', 'line', 'circle']),
+        trend: PropTypes.shape({
+          /** the key to load the trend value from the values object. */
+          dataSourceId: PropTypes.string,
+          color: PropTypes.string,
+          trend: PropTypes.oneOf(['up', 'down']),
+        }),
+        thresholds: PropTypes.arrayOf(
+          PropTypes.shape({
+            comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']),
+            value: PropTypes.number,
+            color: PropTypes.string,
+            label: PropTypes.string,
+          })
+        ),
+      })
+    ),
+  }),
+  values: PropTypes.shape({
+    temperature: PropTypes.number,
+    temperatureTrend: PropTypes.number,
+  }),
+};
 
 export const DashboardLayoutPropTypes = PropTypes.shape({
   i: PropTypes.any,

@@ -65,14 +65,13 @@
     ]
   },
   "dependencies": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.28-gitpkg",
-    "@carbon/charts-react": "^0.16.25",
+    "@carbon/charts": "^0.29.0",
+    "@carbon/charts-react": "^0.29.0",
     "@carbon/colors": "^10.7.0",
     "@carbon/icons": "10.6.1",
     "@carbon/icons-react": "10.6.1",
     "@carbon/layout": "^10.7.1",
     "@carbon/themes": "^10.9.1",
-    "c3": "^0.7.1",
     "carbon-components": "^10.9.1",
     "carbon-components-react": "^7.9.1",
     "carbon-icons": "7.0.7",
@@ -84,7 +83,6 @@
     "moment": "^2.24.0",
     "polished": "^2.3.3",
     "prop-types": "^15.7.2",
-    "react-c3js": "^0.1.20",
     "react-dnd": "7.0.2",
     "react-dnd-html5-backend": "2.5.1",
     "react-dnd-test-backend": "^7.2.0",
@@ -100,7 +98,7 @@
     "warning": "^4.0.3"
   },
   "peerDependencies": {
-    "d3": "^4.12.0",
+    "d3": "5.14.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -154,6 +152,7 @@
     "coveralls": "^3.0.2",
     "cross-env": "^6.0.3",
     "css-loader": "^2.1.0",
+    "d3": "5.14.2",
     "deepdash": "^4.4.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -183,10 +182,10 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.15.3",
     "promise": "^8.0.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-lorem-component": "^0.13.0",
-    "react-test-renderer": "^16.8.3",
+    "react-test-renderer": "^16.8.6",
     "rimraf": "^3.0.0",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.3.0",
@@ -210,9 +209,6 @@
     "stylelint-scss": "^3.10.0",
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
-  },
-  "resolutions": {
-    "@carbon/charts": "https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.28-gitpkg"
   },
   "version": "0.0.0-development"
 }

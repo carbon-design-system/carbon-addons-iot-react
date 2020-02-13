@@ -51,6 +51,20 @@ describe('timeSeriesUtils', () => {
     expect(sampleValues[0].temperature).toBeDefined();
     expect(sampleValues[0].pressure).toBeDefined();
   });
+  test('generateSampleValues with data Filters', () => {
+    const sampleValues = generateSampleValues(
+      [
+        { dataSourceId: 'temperature', dataFilter: { severity: 5 } },
+        { dataSourceId: 'temperature', dataFilter: { severity: 3 } },
+      ],
+      'timestamp'
+    );
+    expect(sampleValues).toHaveLength(14);
+    expect(sampleValues[0].temperature).toBeDefined();
+    expect(sampleValues[0].severity).toEqual(5);
+    expect(sampleValues[7].temperature).toBeDefined();
+    expect(sampleValues[7].severity).toEqual(3);
+  });
   test('generateSampleValues hour', () => {
     const sampleValues = generateSampleValues(
       [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
@@ -86,7 +100,7 @@ describe('timeSeriesUtils', () => {
     const sampleValues5 = generateSampleValues(
       [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
       'timestamp',
-      'other'
+      'day'
     );
     expect(sampleValues5).toHaveLength(7);
   });

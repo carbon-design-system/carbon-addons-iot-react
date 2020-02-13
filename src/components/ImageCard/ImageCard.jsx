@@ -47,7 +47,13 @@ const ImageCard = ({
 }) => {
   const { src } = content;
   const hotspots = values ? values.hotspots || [] : [];
-  const supportedSizes = [CARD_SIZES.MEDIUM, CARD_SIZES.WIDE, CARD_SIZES.LARGE, CARD_SIZES.XLARGE];
+  const supportedSizes = [
+    CARD_SIZES.SMALL,
+    CARD_SIZES.MEDIUM,
+    CARD_SIZES.WIDE,
+    CARD_SIZES.LARGE,
+    CARD_SIZES.XLARGE,
+  ];
   const supportedSize = supportedSizes.includes(size);
   const availableActions = { expand: supportedSize };
 

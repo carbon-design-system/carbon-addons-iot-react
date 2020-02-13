@@ -422,7 +422,6 @@ const TableBodyRow = ({
             data-column={col.columnId}
             data-offset={offset}
             offset={offset}
-            width={matchingColumnMeta && matchingColumnMeta.width}
             align={align}
             className={`data-table-${align}`}
           >

@@ -887,4 +887,37 @@ storiesOf('Watson IoT|ValueCard', module)
         />
       </div>
     );
+  })
+  .add('dataFilters', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Facility Conditions per device')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                label: 'Device 1 Comfort',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+                dataFilter: { deviceid: '73000' },
+              },
+              {
+                label: 'Device 2 Comfort',
+                dataSourceId: 'comfortLevel',
+                unit: '%',
+                dataFilter: { deviceid: '73001' },
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={object('values', [
+            { deviceid: '73000', comfortLevel: '100', unit: '%' },
+            { deviceid: '73001', comfortLevel: '50', unit: '%' },
+          ])}
+        />
+      </div>
+    );
   });

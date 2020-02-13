@@ -1,5 +1,6 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import 'TableHead/table-head';
+@import '../../globals/vars';
 
 .addons-iot-table-container {
   overflow-x: auto;
@@ -7,4 +8,8 @@
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
+}
+
+.#{$iot-prefix}--data-table--fixed {
+  table-layout: fixed;
 }

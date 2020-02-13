@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
+import filter from 'lodash/filter';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -183,8 +184,10 @@ const determineLayout = (size, attributes, measuredWidth) => {
 };
 
 /** Support either an array of values or an object of values */
-export const determineValue = (dataSourceId, values) =>
-  Array.isArray(values) ? values[0] && values[0][dataSourceId] : values && values[dataSourceId];
+export const determineValue = (dataSourceId, values, dataFilter = {}) =>
+  Array.isArray(values)
+    ? filter(values, dataFilter)[0] && filter(values, dataFilter)[0][dataSourceId]
+    : values && values[dataSourceId];
 
 const determineAttributes = (size, attributes) => {
   if (!attributes || !Array.isArray(attributes)) {
@@ -252,7 +255,11 @@ const ValueCard = ({
               {dataState && <DataStateRenderer dataState={dataState} size={size} id={id} />}
               {!dataState &&
                 attributes.map((attribute, i) => (
-                  <React.Fragment key={`fragment-${attribute.dataSourceId}`}>
+                  <React.Fragment
+                    key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
+                      attribute.dataFilter || {}
+                    )}`}
+                  >
                     <AttributeWrapper
                       layout={layout}
                       isVertical={isVertical}
@@ -277,7 +284,11 @@ const ValueCard = ({
                         {...attribute}
                         renderIconByName={others.renderIconByName}
                         size={size} // When the card is in the editable state, we will show a preview
-                        value={isEditable ? '--' : determineValue(attribute.dataSourceId, values)}
+                        value={
+                          isEditable
+                            ? '--'
+                            : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
+                        }
                         secondaryValue={
                           attribute.secondaryValue && {
                             ...attribute.secondaryValue,
