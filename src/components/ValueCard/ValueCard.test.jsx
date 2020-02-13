@@ -2,25 +2,12 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { CARD_LAYOUTS, VALUE_CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
+import { settings } from '../../constants/Settings';
 
 import Attribute from './Attribute';
 import ValueCard from './ValueCard';
-import { settings } from '../../constants/Settings';
 
-const { iotPrefix, prefix: carbonPrefix } = settings;
-
-function getDataStateProp() {
-  return {
-    type: VALUE_CARD_DATA_STATE.NO_DATA,
-    label: 'No data available for this score at this time',
-    description:
-      'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.',
-    extraTooltipText:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    learnMoreURL: 'http://www.ibm.com',
-    learnMoreText: 'Learn more',
-  };
-}
+const { iotPrefix } = settings;
 
 describe('ValueCard', () => {
   test('fail over to vertical layouts when not enough space', () => {
@@ -54,13 +41,13 @@ describe('ValueCard', () => {
     ).toEqual(CARD_LAYOUTS.VERTICAL);
   });
 
-  test('temp', () => {
-    const myDataState = getDataStateProp();
+  test('DataState prop shows DataState elements instead of content', () => {
     const wrapperWithoutDataState = mount(
       <ValueCard
         title="Health score"
         content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
         size={CARD_SIZES.SMALL}
+        values={{ v: 'value' }}
       />
     );
     expect(wrapperWithoutDataState.find(`.${iotPrefix}--data-state-container`)).toHaveLength(0);
@@ -70,10 +57,14 @@ describe('ValueCard', () => {
         title="Health score"
         content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
         size={CARD_SIZES.SMALL}
-        dataState={myDataState}
+        dataState={{
+          type: VALUE_CARD_DATA_STATE.NO_DATA,
+          label: '-',
+          description: '-',
+        }}
+        values={{ v: 'value' }}
       />
     );
-
     expect(wrapperWithDataState.find(`.${iotPrefix}--data-state-container`)).toHaveLength(1);
   });
 });
