@@ -51,7 +51,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
               Page 1 of 4
             </span>
             <div
-              className="bx--pagination__button bx--pagination__button--backward SimplePagination__StyledButton-l7ezj3-2 bxiYjR"
+              className="bx--pagination__button bx--pagination__button--backward SimplePagination__StyledButton-l7ezj3-2 iBEASq"
               role="button"
               tabIndex={-1}
             >
@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
               </svg>
             </div>
             <div
-              className="bx--pagination__button bx--pagination__button--forward SimplePagination__StyledButton-l7ezj3-2 gxHBrs"
+              className="bx--pagination__button bx--pagination__button--forward SimplePagination__StyledButton-l7ezj3-2 hEeyee"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"

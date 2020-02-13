@@ -25,18 +25,22 @@ const StyledPageLabel = styled.span`
 `;
 
 const StyledButton = styled.div`
-  ${props =>
-    props.onClick
-      ? `` // If the item isn't clickable remove the focus outline
-      : `&:focus {
-          outline: none;
-          border: 1px solid ${COLORS.blue};
-        }
-        cursor: default;
-  `}
+  && {
+    ${props =>
+      props.onClick
+        ? `` // If the item isnt clickable remove the focus outline
+        : `&:focus {
+            outline: none;
+          }
+          &:hover {
+            background-color: ${COLORS.gray10};
+          }
+          cursor: default;
+    `}
 
-  svg path {
-    fill: ${COLORS.gray100};
+    svg path {
+      fill: ${COLORS.gray100};
+    }
   }
 `;
 
