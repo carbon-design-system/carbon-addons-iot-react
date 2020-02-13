@@ -1112,7 +1112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 bfMykM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="MEDIUM"
                       >
                         <div
@@ -1737,7 +1737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 eebKIM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="LARGE"
                       >
                         <div
@@ -3214,7 +3214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 bfMykM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="MEDIUM"
                       >
                         <div
@@ -3839,7 +3839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 eebKIM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="LARGE"
                       >
                         <div
@@ -5348,7 +5348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 bfMykM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="MEDIUM"
                       >
                         <div
@@ -5973,7 +5973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 eebKIM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="LARGE"
                       >
                         <div
@@ -6492,7 +6492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 eebKIM"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                       size="LARGE"
                     >
                       <div
@@ -6988,7 +6988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     className="Card__CardContent-v5r71h-1 eebKIM"
                   >
                     <div
-                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                      className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                       size="LARGE"
                     >
                       <div
@@ -10006,7 +10006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 bfMykM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="MEDIUM"
                       >
                         <div
@@ -10629,7 +10629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 eebKIM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="LARGE"
                       >
                         <div
@@ -22451,7 +22451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 bfMykM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="MEDIUM"
                       >
                         <div
@@ -23076,7 +23076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       className="Card__CardContent-v5r71h-1 eebKIM"
                     >
                       <div
-                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 cCqfBS"
+                        className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
                         size="LARGE"
                       >
                         <div

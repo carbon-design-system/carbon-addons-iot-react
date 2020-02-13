@@ -13,7 +13,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
-import { CARD_SIZES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 
@@ -57,7 +57,6 @@ const LineChartWrapper = styled.div`
       width: 100%;
       height: 100%;
       circle.dot.unfilled {
-        stroke-opacity: ${props => (props.isEditable ? '1' : '')};
         opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
       }
     }
@@ -252,7 +251,11 @@ const TimeSeriesCard = ({
   );
 
   const lines = useMemo(
-    () => series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' })),
+    () =>
+      series.map((line, index) => ({
+        ...line,
+        color: !isEditable ? line.color : DISABLED_COLORS[index % DISABLED_COLORS.length],
+      })),
     [isEditable, series]
   );
 
@@ -265,12 +268,13 @@ const TimeSeriesCard = ({
   };
 
   const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
+    // If it's editable don't fill the dot
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
       return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
     }
-    // If it's editable don't fill the dot
+
     return defaultFillColor;
   };
 
