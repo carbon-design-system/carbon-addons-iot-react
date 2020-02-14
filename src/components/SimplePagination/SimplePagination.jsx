@@ -58,8 +58,8 @@ const SimplePagination = ({
           <div
             className={
               hasPrev
-                ? `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-simple-pagination-button`
-                : 'bx--pagination__button bx--pagination__button--backward'
+                ? 'bx--pagination__button bx--pagination__button--backward'
+                : `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button`
             }
             role="button"
             tabIndex={hasPrev ? 0 : -1}
@@ -74,8 +74,8 @@ const SimplePagination = ({
           <div
             className={
               hasNext
-                ? `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-simple-pagination-button`
-                : 'bx--pagination__button bx--pagination__button--forward'
+                ? 'bx--pagination__button bx--pagination__button--forward'
+                : `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button`
             }
             role="button"
             tabIndex={hasNext ? 0 : -1}

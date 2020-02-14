@@ -52,7 +52,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
               Page 1 of 4
             </span>
             <div
-              className="bx--pagination__button bx--pagination__button--backward"
+              className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button"
               role="button"
               tabIndex={-1}
             >
@@ -78,7 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
               </svg>
             </div>
             <div
-              className="bx--pagination__button bx--pagination__button--forward iot-simple-pagination-button"
+              className="bx--pagination__button bx--pagination__button--forward"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"

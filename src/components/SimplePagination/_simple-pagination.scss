@@ -19,7 +19,9 @@
 .#{$iot-prefix}-addons-simple-pagination-button {
   &:focus {
     outline: none;
-    border: rem(1px) solid $focus;
+  }
+  &:hover {
+    background-color: $ui-01;
   }
   cursor: default;
 }
