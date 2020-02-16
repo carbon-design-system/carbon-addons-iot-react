@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { select } from '@storybook/addon-knobs';
+import { select, number } from '@storybook/addon-knobs';
 import { Tile } from 'carbon-components-react';
 import TileCatalog from './TileCatalog';
 import { Checkbox } from '../..';
@@ -19,6 +19,16 @@ const placeholderTiles = [
   <div className="tile-catalog--tile-canvas--placeholder-tile" />,
   <div className="tile-catalog--tile-canvas--placeholder-tile" />,
 ];
+
+const getTiles = num => {
+  var tiles = [];
+  Array(num)
+    .fill(0)
+    .map(
+      (i, idx) => (tiles[idx] = <div className="tile-catalog--tile-canvas--placeholder-tile" />)
+    );
+  return tiles;
+};
 
 const placeholderTilesNoBackground = [
   <div className="tile-catalog--tile-canvas--placeholder-tile" />,
@@ -76,17 +86,35 @@ const filter = { selectFilter: selectFilter, checkboxFilter: checkboxFilter };
 storiesOf('Watson IoT|TileCatalogNew', module)
   .add('Simple Canvas with placeholder tiles', () => (
     <div style={{ width: '60rem' }}>
-      <TileCatalog title="Product name" tiles={placeholderTiles} sort={sort} />
+      <TileCatalog
+        title="Product name"
+        tiles={placeholderTiles}
+        sort={sort}
+        numOfColumns="4"
+        numOfRows="2"
+      />
     </div>
   ))
   .add('Simple Canvas without placeholder tiles last page', () => (
     <div style={{ width: '55rem' }}>
-      <TileCatalog title="Product name" tiles={placeholderTilesNoBackground} sort={sort} />
+      <TileCatalog
+        title="Product name"
+        tiles={placeholderTilesNoBackground}
+        sort={sort}
+        numOfColumns="4"
+        numOfRows="2"
+      />
     </div>
   ))
   .add('Simple Canvas with 3 tiles', () => (
     <div style={{ width: '60rem' }}>
-      <TileCatalog title="Product name" tiles={fewTiles} sort={sort} />
+      <TileCatalog
+        title="Product name"
+        tiles={fewTiles}
+        sort={sort}
+        numOfColumns="4"
+        numOfRows="2"
+      />
     </div>
   ))
   .add('Enhanced Canvas with tile placeholders', () => (
@@ -97,6 +125,8 @@ storiesOf('Watson IoT|TileCatalogNew', module)
         featuredTile={featuredTile}
         tiles={placeholderTiles}
         sort={sort}
+        numOfColumns="4"
+        numOfRows="2"
       />
     </div>
   ))
@@ -109,19 +139,33 @@ storiesOf('Watson IoT|TileCatalogNew', module)
         featuredTile={featuredTile}
         tiles={placeholderTiles}
         sort={sort}
+        numOfColumns="4"
+        numOfRows="2"
       />
     </div>
   ))
-  .add('Enhanced Canvas with checkbox filter', () => (
-    <div style={{ width: '80rem' }}>
+  .add('Simple Canvas with column size and row size', () => (
+    <div style={{ width: '60rem' }}>
       <TileCatalog
         title="Product name"
         persistentSearch
-        featuredTileTitle={featuredTileTitle}
-        featuredTile={featuredTile}
-        tiles={placeholderTiles}
+        tiles={getTiles(20)}
         sort={sort}
-        filter={filter}
+        numOfColumns={number('numOfColumns', 5)}
+        numOfRows={number('numOfRows', 3)}
       />
     </div>
   ));
+// .add('Enhanced Canvas with checkbox filter', () => (
+//   <div style={{ width: '80rem' }}>
+//     <TileCatalog
+//       title="Product name"
+//       persistentSearch
+//       featuredTileTitle={featuredTileTitle}
+//       featuredTile={featuredTile}
+//       tiles={placeholderTiles}
+//       sort={sort}
+//       filter={filter}
+//     />
+//   </div>
+// ));

@@ -85,6 +85,11 @@
         border-top: 1px solid $ui-03;
         padding: $spacing-05;
       }
+
+      .#{$prefix}--link {
+        padding: $spacing-05;
+        color: $interactive-04;
+      }
     }
   }
 }

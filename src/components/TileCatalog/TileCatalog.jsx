@@ -1,12 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { DataTable } from 'carbon-components-react';
-import { Search } from 'carbon-components-react';
+import { Search, Link } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import TilePagination from './TilePagination/TilePagination';
-import { placeholder, rem } from 'polished';
 
 const { TableToolbarSearch } = DataTable;
+
+const renderColumns = tiles => {
+  var cols = [];
+  tiles.map((tile, idx, arr) => {
+    cols[idx] = <div className="bx--col">{tile}</div>;
+  });
+  return cols;
+};
+
+const renderGrid = (columnSize, rowSize, tiles) => {
+  let numberOfTiles = tiles.length;
+  var numberOfRows = Math.ceil(numberOfTiles / columnSize);
+  var rows = [];
+  for (let i = 0; i < numberOfRows; i++) {
+    let lower = i * columnSize;
+    let upper = lower + columnSize;
+    rows[i] = <div className="bx--row"> {renderColumns(tiles.slice(lower, upper))}</div>;
+  }
+  if (rows.length > rowSize) {
+    return rows.slice(0, rowSize);
+  } else {
+    return rows;
+  }
+};
 
 const propTypes = {};
 
@@ -22,15 +45,21 @@ const TileCatalog = ({
   persistentSearch,
   pagination,
   filter,
+  numOfColumns,
+  numOfRows,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <div>
-      {persistentSearch ? (
-        <div className="tile-catalog--persistent-search">
-          <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
-        </div>
-      ) : null}
+      <div>
+        {persistentSearch ? (
+          <div className="tile-catalog--persistent-search">
+            <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
+          </div>
+        ) : null}
+        <div />
+      </div>
+
       <div className="tile-catalog--canvas-container ">
         <div className="tile-catalog--tile-canvas">
           {featuredTile ? (
@@ -68,18 +97,7 @@ const TileCatalog = ({
           </div>
 
           <div className="tile-catalog--tile-canvas--content">
-            <div className="bx--grid">
-              {tiles.map((item, idx, arr) =>
-                idx % 4 === 0 ? (
-                  <div className="bx--row">
-                    <div className="bx--col">{arr[idx]}</div>
-                    <div className="bx--col">{idx + 1 < arr.length ? arr[idx + 1] : ''}</div>
-                    <div className="bx--col">{idx + 2 < arr.length ? arr[idx + 2] : ''}</div>
-                    <div className="bx--col">{idx + 3 < arr.length ? arr[idx + 3] : ''}</div>
-                  </div>
-                ) : null
-              )}
-            </div>
+            <div className="bx--grid">{renderGrid(numOfColumns, numOfRows, tiles)}</div>
           </div>
           <div className="tile-catalog--tile-canvas--bottom">
             <TilePagination
@@ -95,6 +113,7 @@ const TileCatalog = ({
             <div className="tile-catalog--filter--content">
               {filter.selectFilter}
               {filter.checkboxFilter}
+              <Link className="bx--link">Reset All</Link>
             </div>
           </div>
         ) : null}
