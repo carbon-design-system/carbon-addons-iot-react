@@ -58,23 +58,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
-                  "height": "448px",
+                  "height": "592px",
                 }
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bRjjuy"
                 content="My Facility Metrics"
                 id="facility"
                 style={
                   Object {
-                    "MozTransform": "translate(332px,160px)",
-                    "OTransform": "translate(332px,160px)",
-                    "WebkitTransform": "translate(332px,160px)",
+                    "MozTransform": "translate(332px,304px)",
+                    "OTransform": "translate(332px,304px)",
+                    "WebkitTransform": "translate(332px,304px)",
                     "height": "272px",
-                    "msTransform": "translate(332px,160px)",
+                    "msTransform": "translate(332px,304px)",
                     "position": "absolute",
-                    "transform": "translate(332px,160px)",
+                    "transform": "translate(332px,304px)",
                     "width": "300px",
                   }
                 }
@@ -102,7 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 dpLZmz"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -114,7 +114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     "msTransform": "translate(16px,16px)",
                     "position": "absolute",
                     "transform": "translate(16px,16px)",
-                    "width": "142px",
+                    "width": "300px",
                   }
                 }
                 type="VALUE"
@@ -141,19 +141,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 dpLZmz"
                 content="My utilization chart"
                 id="utilization"
                 style={
                   Object {
-                    "MozTransform": "translate(253px,16px)",
-                    "OTransform": "translate(253px,16px)",
-                    "WebkitTransform": "translate(253px,16px)",
+                    "MozTransform": "translate(253px,160px)",
+                    "OTransform": "translate(253px,160px)",
+                    "WebkitTransform": "translate(253px,160px)",
                     "height": "128px",
-                    "msTransform": "translate(253px,16px)",
+                    "msTransform": "translate(253px,160px)",
                     "position": "absolute",
-                    "transform": "translate(253px,16px)",
-                    "width": "142px",
+                    "transform": "translate(253px,160px)",
+                    "width": "300px",
                   }
                 }
                 type="VALUE"
@@ -274,7 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bRjjuy"
                 content="My Facility Metrics"
                 id="facility"
                 style={
@@ -313,7 +313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 dpLZmz"
                 content="My Humidity Values"
                 id="humidity"
                 style={
@@ -325,7 +325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     "msTransform": "translate(332px,16px)",
                     "position": "absolute",
                     "transform": "translate(332px,16px)",
-                    "width": "142px",
+                    "width": "300px",
                   }
                 }
                 type="VALUE"
@@ -352,19 +352,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
+                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 dpLZmz"
                 content="My utilization chart"
                 id="utilization"
                 style={
                   Object {
-                    "MozTransform": "translate(490px,16px)",
-                    "OTransform": "translate(490px,16px)",
-                    "WebkitTransform": "translate(490px,16px)",
+                    "MozTransform": "translate(648px,16px)",
+                    "OTransform": "translate(648px,16px)",
+                    "WebkitTransform": "translate(648px,16px)",
                     "height": "128px",
-                    "msTransform": "translate(490px,16px)",
+                    "msTransform": "translate(648px,16px)",
                     "position": "absolute",
-                    "transform": "translate(490px,16px)",
-                    "width": "142px",
+                    "transform": "translate(648px,16px)",
+                    "width": "300px",
                   }
                 }
                 type="VALUE"
@@ -485,7 +485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
               }
             >
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 SYfLr"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bRjjuy"
                 content="My Facility Metrics"
                 id="facility"
                 onMouseDown={[Function]}
@@ -529,7 +529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 dpLZmz"
                 content="My Humidity Values"
                 id="humidity"
                 onMouseDown={[Function]}
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     "position": "absolute",
                     "touchAction": "none",
                     "transform": "translate(332px,16px)",
-                    "width": "142px",
+                    "width": "300px",
                   }
                 }
                 type="VALUE"
@@ -573,7 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 />
               </div>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 HsjmT"
+                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 dpLZmz"
                 content="My utilization chart"
                 id="utilization"
                 onMouseDown={[Function]}
@@ -582,15 +582,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "MozTransform": "translate(490px,16px)",
-                    "OTransform": "translate(490px,16px)",
-                    "WebkitTransform": "translate(490px,16px)",
+                    "MozTransform": "translate(648px,16px)",
+                    "OTransform": "translate(648px,16px)",
+                    "WebkitTransform": "translate(648px,16px)",
                     "height": "128px",
-                    "msTransform": "translate(490px,16px)",
+                    "msTransform": "translate(648px,16px)",
                     "position": "absolute",
                     "touchAction": "none",
-                    "transform": "translate(490px,16px)",
-                    "width": "142px",
+                    "transform": "translate(648px,16px)",
+                    "width": "300px",
                   }
                 }
                 type="VALUE"
