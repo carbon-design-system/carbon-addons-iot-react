@@ -58,15 +58,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
               >
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
                   onClick={[Function]}
                 >
                   <svg
@@ -435,15 +437,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
               >
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
                   onClick={[Function]}
                 >
                   <svg
@@ -826,15 +830,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
               >
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
                   onClick={[Function]}
                 >
                   <svg
@@ -961,15 +967,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
               >
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
                   onClick={[Function]}
                 >
                   <svg
@@ -1096,15 +1104,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
               >
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
                   onClick={[Function]}
                 >
                   <svg
@@ -1357,15 +1367,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 className="card--title"
                 title="Image"
               >
-                <span>
+                <div
+                  className="title--text"
+                >
                   Image
-                </span>
+                </div>
               </span>
               <div
                 className="card--toolbar"
               >
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 eapGUf"
+                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
                   onClick={[Function]}
                 >
                   <svg
