@@ -11,6 +11,7 @@ import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
 export const ToolbarSVGWrapper = styled.button`
   &&& {
+    align-items: center;
     background: transparent;
     border: none;
     display: flex;
