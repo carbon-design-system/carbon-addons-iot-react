@@ -126,6 +126,10 @@ describe('timeSeriesUtils', () => {
     expect(
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572933600000)
     ).toContain('00:00');
+    // day same day should skip
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'day', 'en', 1572933600000)
+    ).toEqual('');
     // month different year
     expect(
       formatGraphTick(1546322400000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1522558800000)
@@ -134,6 +138,25 @@ describe('timeSeriesUtils', () => {
     expect(
       formatGraphTick(1561957200000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572584400000)
     ).toContain('Jul');
+    // week shouldn't show year
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'week', 'en', 1572912000000)
+    ).toContain('Nov 05');
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'week', 'en', 1572912000000)
+    ).not.toContain('Nov 05 2019');
+    // same year should not repeat
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'year', 'en', 1572933600000)
+    ).toEqual('');
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'year', 'en', 872912000000)
+    ).toContain('2019');
+
+    // same month should not repeat
+    expect(
+      formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572933600000)
+    ).toEqual('');
   });
   test('findMatchingAlertRange', () => {
     const data = {
@@ -148,7 +171,8 @@ describe('timeSeriesUtils', () => {
       },
     ];
     const matchingAlertRange = findMatchingAlertRange(alertRange, data);
-    expect(matchingAlertRange.color).toEqual('#FF0000');
-    expect(matchingAlertRange.details).toEqual('Alert details');
+    expect(matchingAlertRange).toHaveLength(1);
+    expect(matchingAlertRange[0].color).toEqual('#FF0000');
+    expect(matchingAlertRange[0].details).toEqual('Alert details');
   });
 });
