@@ -103,6 +103,8 @@ export const ComposedModalPropTypes = {
     PropTypes.shape({
       primaryButtonLabel: PropTypes.node,
       secondaryButtonLabel: PropTypes.node,
+      /** should the primary button be hidden (i.e. only show Cancel) */
+      isPrimaryButtonHidden: PropTypes.bool,
     }),
   ]),
   /** NEW PROP: Type of dialog, affects colors, styles of dialog */
