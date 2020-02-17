@@ -85,17 +85,6 @@ REDUXFORM or REDUXDIALOG`,
       onClose={action('close')}
     />
   ))
-  .add('add translated description', () => (
-    <ComposedModal
-      sendingData
-      iconDescription="Translated string"
-      header={{
-        label: 'Add translation',
-        title: 'Dialog with translated string for close icon',
-      }}
-      onClose={action('close')}
-    />
-  ))
   .add('custom footer', () => (
     <ComposedModal
       sendingData
@@ -107,8 +96,24 @@ REDUXFORM or REDUXDIALOG`,
       onClose={action('close')}
     />
   ))
+  .add('primary button is hidden', () => (
+    <ComposedModal
+      sendingData
+      header={{
+        label: 'Custom footer',
+        title: 'Custom footer element',
+      }}
+      footer={{ isPrimaryButtonHidden: true }}
+      onClose={action('close')}
+    />
+  ))
   .add('i18n', () => (
     <ComposedModal
+      header={{
+        label: 'Translated bottom buttons',
+        title: 'Dialog with bottom buttons and close button flyover translated',
+      }}
+      iconDescription="My Close Button"
       footer={{ primaryButtonLabel: 'My Submit', secondaryButtonLabel: 'My Cancel' }}
       onClose={action('close')}
       onSubmit={action('submit')}

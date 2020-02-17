@@ -131,8 +131,6 @@ export const ComposedModalPropTypes = {
   invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
   /** Callback to submit the dialog/form */
   onSubmit: PropTypes.func,
-  /** switchc to render footer buttons or not (carbon consistency) */
-  passiveModal: PropTypes.bool,
 };
 
 /**
@@ -166,7 +164,6 @@ class ComposedModal extends React.Component {
     children: null,
     header: {},
     iconDescription: 'Close',
-    passiveModal: true,
   };
 
   componentDidUpdate(prevProps) {
@@ -201,7 +198,6 @@ class ComposedModal extends React.Component {
       isLarge,
       onSubmit,
       iconDescription,
-      passiveModal,
       onClearError,
       submitFailed,
       invalid,
@@ -240,7 +236,7 @@ class ComposedModal extends React.Component {
             onCloseButtonClick={this.handleClearError}
           />
         ) : null}
-        {(!passiveModal && footer) || onSubmit ? (
+        {footer || onSubmit ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
               footer
@@ -249,16 +245,18 @@ class ComposedModal extends React.Component {
                 <Button kind="secondary" onClick={onClose}>
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </Button>
-                <Button
-                  kind={type === 'warn' ? 'danger' : 'primary'}
-                  loading={
-                    (typeof sendingData === 'boolean' && sendingData) ||
-                    typeof sendingData === 'string'
-                  }
-                  onClick={onSubmit}
-                >
-                  {(footer && footer.primaryButtonLabel) || 'Save'}
-                </Button>
+                {!footer?.isPrimaryButtonHidden ? (
+                  <Button
+                    kind={type === 'warn' ? 'danger' : 'primary'}
+                    loading={
+                      (typeof sendingData === 'boolean' && sendingData) ||
+                      typeof sendingData === 'string'
+                    }
+                    onClick={onSubmit}
+                  >
+                    {(footer && footer.primaryButtonLabel) || 'Save'}
+                  </Button>
+                ) : null}
               </Fragment>
             )}
           </StyledModalFooter>
