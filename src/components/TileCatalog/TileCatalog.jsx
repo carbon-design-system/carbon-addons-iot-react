@@ -9,8 +9,7 @@ import SampleTile from './SampleTile';
 const { TableToolbarSearch } = DataTable;
 
 const propTypes = {};
-
-const defaultPros = {};
+const defaultProps = {};
 
 const TileCatalog = ({
   title,
@@ -22,23 +21,25 @@ const TileCatalog = ({
   persistentSearch,
   pagination,
   filter,
-  numOfColumns = 0,
-  numOfRows = 0,
+  numColumns = 4,
+  numRows = 2,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [numPages, setNumPages] = useState(1);
   const [tilesOnPage, setTilesOnPage] = useState([]);
 
   const placeHolderTile = <div className="tile-catalog--tile-canvas--no-placeholder-tile" />;
+
+  /*
   const renderColumns = tiles => {
     var cols = [];
     tiles.map((tile, idx, arr) => {
       cols[idx] = <div className="bx--col">{tile}</div>;
     });
 
-    if (cols.length < numOfColumns) {
+    if (cols.length < numColumns) {
       console.log(cols.length + 'this is render col length');
-      for (let i = cols.length; i < numOfColumns; i++) {
+      for (let i = cols.length; i < numColumns; i++) {
         cols[i] = <div className="tile-catalog--tile-canvas--no-placeholder-tile" />;
         console.log(cols[i]);
       }
@@ -46,29 +47,29 @@ const TileCatalog = ({
     console.log(cols + 'this is returned cols');
     return cols;
   };
+  */
 
-  const renderGrid = () => {
-    var numberOfTiles = tiles.length;
-    var totalRows = 0;
-    var rows = [];
-
-    if (numOfColumns !== 0 && numberOfTiles !== 0) {
-      totalRows = Math.ceil(numberOfTiles / numOfColumns);
-    }
-
-    for (let i = 0; i < totalRows; i++) {
-      let lower = i * numOfColumns;
-      let upper = lower + numOfColumns;
-      rows[i] = <div className="bx--row"> {renderColumns(tiles.slice(lower, upper))}</div>;
-    }
-    if (rows.length > numOfRows) {
-      return rows.slice(0, numOfRows);
-    } else {
-      if (numberOfTiles < numOfColumns * numOfRows) {
-      }
-      return rows;
-    }
+  const getTile = (rowIdx, colIdx) => {
+    // TODO: find the correct tile to render
+    return <div>{`${rowIdx}, ${colIdx}`}</div>;
   };
+
+  const renderGrid = () => (
+    <div className="bx--grid">
+      {Array(numRows)
+        .fill(null)
+        .map((i, rowIdx) => (
+          <div className="bx--row">
+            {Array(numColumns)
+              .fill(null)
+              .map((j, colIdx) => (
+                <div className="bx--col">{getTile(rowIdx, colIdx)}</div>
+              ))}
+          </div>
+        ))}
+    </div>
+  );
+
   return (
     <div>
       <div>
@@ -116,9 +117,7 @@ const TileCatalog = ({
             </select>
           </div>
 
-          <div className="tile-catalog--tile-canvas--content">
-            <div className="bx--grid">{renderGrid()}</div>
-          </div>
+          <div className="tile-catalog--tile-canvas--content">{renderGrid()}</div>
           <div className="tile-catalog--tile-canvas--bottom">
             <TilePagination
               page={currentPage}
@@ -142,7 +141,7 @@ const TileCatalog = ({
   );
 };
 
-TileCatalog.PropTypes = propTypes;
-TileCatalog.defaultPros = defaultPros;
+TileCatalog.propTypes = propTypes;
+TileCatalog.defaultProps = defaultProps;
 
 export default TileCatalog;
