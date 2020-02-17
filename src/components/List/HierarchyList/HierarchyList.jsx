@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
@@ -46,7 +46,7 @@ const defaultProps = {
     expand: 'Expand',
     close: 'Close',
   },
-  isFullHeight: true,
+  isFullHeight: false,
   pageSize: null,
   defaultSelectedId: null,
   onSelect: null,
@@ -150,6 +150,35 @@ export const searchForNestedItemIds = (items, value) => {
   return filteredItems;
 };
 
+/**
+ * The ref should only be set if the item is selected by default. By using a callback,
+ * we can check if a node is properly attached to the ref, then scroll to it within the list
+ */
+const useHookWithRefCallback = () => {
+  const ref = useRef(null);
+  const setRef = useCallback(
+    node => {
+      if (node) {
+        // Check if a node is actually passed. Otherwise node would be null.
+        // node is the text of the item
+        // parentNode is the container div with the button role
+        // parentNode.parentNode is the list content, which is also the element to be scrolled
+        // the offsetHeight needs to be multiplied by 3 to be able to view the whole element
+        const offset =
+          node.offsetTop -
+          node.parentNode.offsetHeight -
+          node.parentNode.offsetHeight -
+          node.parentNode.offsetHeight;
+        node.parentNode.parentNode.scroll(0, offset);
+      }
+      // Save a reference to the node
+      ref.current = node;
+    },
+    [ref]
+  );
+  return [setRef];
+};
+
 const HierarchyList = ({
   title,
   hasSearch,
@@ -169,6 +198,8 @@ const HierarchyList = ({
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
+
+  const [selectedItemRef] = useHookWithRefCallback();
 
   useEffect(
     () => {
@@ -305,6 +336,7 @@ const HierarchyList = ({
       selectedId={selectedId}
       selectedIds={selectedIds}
       handleSelect={handleSelect}
+      ref={selectedItemRef}
     />
   );
 };

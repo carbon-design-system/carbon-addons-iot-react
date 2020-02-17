@@ -68,7 +68,6 @@ storiesOf('Watson IoT Experimental|HierarchyList', module)
     <div style={{ width: 400, height: 400 }}>
       <HierarchyList
         title={text('Title', 'MLB Expanded List')}
-        isFullHeight
         defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
         items={[
           ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
