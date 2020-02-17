@@ -72,12 +72,12 @@ export const DASHBOARD_BREAKPOINTS = {
 };
 
 export const ROW_HEIGHT = {
-  max: 128,
-  xl: 128,
-  lg: 128,
-  md: 128,
-  sm: 128,
-  xs: 128,
+  max: 144,
+  xl: 144,
+  lg: 144,
+  md: 144,
+  sm: 144,
+  xs: 144,
 };
 
 /** The amount of space to preserve between cards */
