@@ -320,12 +320,7 @@ const actions = {
     onColumnResize: action('onColumnResize'),
   },
 };
-// const exampletext = (
-//   <div>
-//     <p>This is text</p>
-//     <Add />
-//   </div>
-// );
+
 /** This would be loaded from your fetch */
 export const initialState = {
   columns: tableColumns.map((i, idx) => ({
@@ -447,6 +442,7 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           columns={tableColumnsWithAlignment}
           actions={actions}
           lightweight={boolean('lightweight', false)}
@@ -496,6 +492,7 @@ storiesOf('Watson IoT|Table', module)
     () => (
       <StatefulTable
         {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         data={initialState.data.map((eachRow, index) => ({
           ...eachRow,
           isSelectable: index % 3 !== 0,
@@ -524,6 +521,7 @@ storiesOf('Watson IoT|Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
             toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
@@ -601,6 +599,7 @@ storiesOf('Watson IoT|Table', module)
         <div>
           <StatefulTable
             {...initialState}
+            secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
             columns={tableColumnsFixedWidth}
             data={tableData}
             options={{
@@ -722,6 +721,7 @@ storiesOf('Watson IoT|Table', module)
     'minitable',
     () => (
       <StatefulTable
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         style={{ maxWidth: '300px' }}
         columns={tableColumns.slice(0, 2)}
         data={tableData}
@@ -737,6 +737,7 @@ storiesOf('Watson IoT|Table', module)
   )
   .add('with multi select and batch actions', () => (
     <StatefulTable
+      secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
       columns={tableColumns}
       data={tableData}
       actions={actions}
@@ -1546,6 +1547,7 @@ storiesOf('Watson IoT|Table', module)
     () => (
       <StatefulTable
         {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         actions={actions}
         options={{
           hasRowActions: true,
@@ -1662,7 +1664,6 @@ storiesOf('Watson IoT|Table', module)
             learnMoreText,
             dismissText,
           }
-        ~~~
 
         <br />
 
