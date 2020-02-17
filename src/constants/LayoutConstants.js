@@ -8,6 +8,8 @@ export const COLORS = {
   CYAN: '#0072C3',
 };
 
+export const DISABLED_COLORS = ['#e0e0e0', '#cacaca', '#a8a8a8', '#8d8d8d', '#6f6f6f'];
+
 export const CARD_SIZES = {
   XSMALL: 'XSMALL',
   XSMALLWIDE: 'XSMALLWIDE',
