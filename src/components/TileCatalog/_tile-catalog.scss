@@ -93,3 +93,17 @@
     }
   }
 }
+
+.sample-tile {
+  background: $ui-01;
+  padding: $spacing-05;
+  height: rem(224px);
+  &--title {
+    @include type-style('productive-heading-01');
+    padding: $spacing-03;
+  }
+
+  &--content {
+    @include type-style('label-01');
+  }
+}

@@ -5,6 +5,7 @@ import { select, number } from '@storybook/addon-knobs';
 import { Tile } from 'carbon-components-react';
 import TileCatalog from './TileCatalog';
 import { Checkbox } from '../..';
+import SampleTile from './SampleTile';
 
 const tiles = [<Tile />, <Tile />];
 const sort = [{ option: 'A-Z' }, { option: 'Most Popular' }];
@@ -20,20 +21,25 @@ const placeholderTiles = [
   <div className="tile-catalog--tile-canvas--placeholder-tile" />,
 ];
 
-const getTiles = num => {
+const getTiles = (num, tile) => {
   var tiles = [];
   Array(num)
     .fill(0)
-    .map(
-      (i, idx) => (tiles[idx] = <div className="tile-catalog--tile-canvas--placeholder-tile" />)
-    );
+    .map((i, idx) => (tiles[idx] = tile));
   return tiles;
 };
 
+const tile = (
+  <div>
+    <h5>HI</h5>
+  </div>
+);
+
 const placeholderTilesNoBackground = [
   <div className="tile-catalog--tile-canvas--placeholder-tile" />,
+  tile,
   <div className="tile-catalog--tile-canvas--placeholder-tile" />,
-  <div className="tile-catalog--tile-canvas--placeholder-tile" />,
+
   <div className="tile-catalog--tile-canvas--no-placeholder-tile" />,
   <div className="tile-catalog--tile-canvas--no-placeholder-tile" />,
   <div className="tile-catalog--tile-canvas--no-placeholder-tile" />,
@@ -149,7 +155,22 @@ storiesOf('Watson IoT|TileCatalogNew', module)
       <TileCatalog
         title="Product name"
         persistentSearch
-        tiles={getTiles(20)}
+        tiles={getTiles(20, <div className="tile-catalog--tile-canvas--placeholder-tile" />)}
+        sort={sort}
+        numOfColumns={number('numOfColumns', 5)}
+        numOfRows={number('numOfRows', 3)}
+      />
+    </div>
+  ))
+  .add('Simple Canvas with sample tiles', () => (
+    <div style={{ width: '60rem' }}>
+      <TileCatalog
+        title="Product name"
+        persistentSearch
+        tiles={getTiles(
+          20,
+          <SampleTile title="Sample product tile" description="This is a sample product tile" />
+        )}
         sort={sort}
         numOfColumns={number('numOfColumns', 5)}
         numOfRows={number('numOfRows', 3)}
