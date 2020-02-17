@@ -464,6 +464,30 @@ storiesOf('Watson IoT|Table', module)
     }
   )
   .add(
+    'Stateful Example with Secondary Title',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          {...initialState}
+          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          options={{
+            hasSearch: boolean('Show Search', true),
+            hasPagination: boolean('Show Pagination', true),
+            hasRowSelection: 'multi',
+            hasFilter: boolean('Show Filter', true),
+            hasRowActions: boolean('Show Row Action', true),
+          }}
+          view={{
+            toolbar: { activeBar: null },
+          }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      centered: { disable: true },
+    }
+  )
+  .add(
     'Stateful Example with every third row unselectable',
     () => (
       <StatefulTable

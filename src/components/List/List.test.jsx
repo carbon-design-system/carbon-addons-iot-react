@@ -9,7 +9,7 @@ describe('List component tests', () => {
     Array(num)
       .fill(0)
       .map((i, idx) => ({
-        id: idx + 1,
+        id: (idx + 1).toString(),
         content: { value: `Item ${idx + 1}` },
         isSelectable: true,
       }));
@@ -31,7 +31,7 @@ describe('List component tests', () => {
 
   test('List when selectedIds is set', () => {
     const renderedElement = render(
-      <List title="list" items={getListItems(5)} selectedIds={[1, 2]} />
+      <List title="list" items={getListItems(5)} selectedIds={['1', '2']} />
     );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
