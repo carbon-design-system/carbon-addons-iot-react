@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
 
+import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
 import List from '../List';
 
 const propTypes = {
@@ -53,32 +54,6 @@ const defaultProps = {
 };
 
 /**
- * Searches an item for a specific value
- * @param {Object} item to be searched
- * @param {string} searchTerm
- * @returns {Boolean} found or not
- */
-export const searchForItemValue = (item, searchTerm) => {
-  // Check that the value is not empty
-  if (item.content.value !== '' && item.content.value !== undefined) {
-    if (item.content.value.toLowerCase().search(searchTerm.toLowerCase()) !== -1) {
-      return true;
-    }
-    // Check that the secondary value is not empty
-    if (
-      item.content.secondaryValue !== '' &&
-      item.content.secondaryValue !== undefined &&
-      // Check if the value or secondary value has a match
-      item.content.secondaryValue.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-    ) {
-      return true;
-    }
-    return false;
-  }
-  return false;
-};
-
-/**
  * Assumes that the first level of items is not searchable and is only uses to categorize the
  * items. Because of that, only search through the children. If a child is found while filtering,
  * it needs to be returned to the filtered array. Deep clone is required because spread syntax is
@@ -99,27 +74,11 @@ export const searchForNestedItemValues = (items, value) => {
         filteredItems.push(item);
       }
     } // if the item matches, add it to the filterItems array
-    else if (searchForItemValue(item, value)) {
+    else if (caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)) {
       filteredItems.push(item);
     }
   });
   return filteredItems;
-};
-
-/**
- * Searches an item for a specific id
- * @param {Object} item to be searched
- * @param {string} searchId
- * @returns {Boolean} found or not
- */
-export const searchForItemId = (item, searchId) => {
-  if (
-    // Check if the value or secondary value has a match
-    item.id.toLowerCase().search(searchId.toLowerCase()) !== -1
-  ) {
-    return true;
-  }
-  return false;
 };
 
 /**
@@ -143,40 +102,11 @@ export const searchForNestedItemIds = (items, value) => {
         filteredItems.push(item);
       }
     } // if the item matches, add it to the filterItems array
-    else if (searchForItemId(item, value)) {
+    else if (caseInsensitiveSearch([item.id], value)) {
       filteredItems.push(item);
     }
   });
   return filteredItems;
-};
-
-/**
- * The ref should only be set if the item is selected by default. By using a callback,
- * we can check if a node is properly attached to the ref, then scroll to it within the list
- */
-const useHookWithRefCallback = () => {
-  const ref = useRef(null);
-  const setRef = useCallback(
-    node => {
-      if (node) {
-        // Check if a node is actually passed. Otherwise node would be null.
-        // node is the text of the item
-        // parentNode is the container div with the button role
-        // parentNode.parentNode is the list content, which is also the element to be scrolled
-        // the offsetHeight needs to be multiplied by 3 to be able to view the whole element
-        const offset =
-          node.offsetTop -
-          node.parentNode.offsetHeight -
-          node.parentNode.offsetHeight -
-          node.parentNode.offsetHeight;
-        node.parentNode.parentNode.scroll(0, offset);
-      }
-      // Save a reference to the node
-      ref.current = node;
-    },
-    [ref]
-  );
-  return [setRef];
 };
 
 const HierarchyList = ({
@@ -199,7 +129,22 @@ const HierarchyList = ({
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
-  const [selectedItemRef] = useHookWithRefCallback();
+  const selectedItemRef = useCallback(node => {
+    if (node) {
+      // Check if a node is actually passed. Otherwise node would be null.
+      // node is the text of the item
+      // parentNode is the container div with the button role
+      // parentNode.parentNode is the list content, which is also the element to be scrolled
+      // the offsetHeight needs to be multiplied by 3 to be able to view the whole element
+      const offset =
+        node.offsetTop -
+        node.parentNode?.offsetHeight -
+        node.parentNode?.offsetHeight -
+        node.parentNode?.offsetHeight;
+      // eslint-disable-next-line no-unused-expressions
+      node.parentNode?.parentNode?.scroll(0, offset);
+    }
+  }, []);
 
   useEffect(
     () => {

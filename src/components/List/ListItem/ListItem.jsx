@@ -22,7 +22,9 @@ const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, chi
         { [`${iotPrefix}--list-item__large`]: isLargeRow }
       )}
       onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
-      onClick={() => onSelect(id)}
+      onClick={() => {
+        onSelect(id);
+      }}
     >
       {children}
     </div>
