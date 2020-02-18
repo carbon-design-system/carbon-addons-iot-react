@@ -20,12 +20,22 @@
   &:focus {
     outline: none;
   }
+}
+
+.#{$iot-prefix}-addons-simple-pagination-button-disabled {
+  &:focus {
+    outline: none;
+  }
   &:hover {
     background-color: $ui-01;
   }
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .#{$iot-prefix}-simple-pagination-caret {
   fill: $icon-01;
+}
+
+.#{$iot-prefix}-simple-pagination-caret-disabled {
+  fill: #c6c6c6;
 }
