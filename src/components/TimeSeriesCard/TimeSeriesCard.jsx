@@ -13,7 +13,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
-import { CARD_SIZES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 
@@ -56,9 +56,6 @@ const LineChartWrapper = styled.div`
     .bx--cc--chart-svg {
       width: 100%;
       height: 100%;
-      circle.dot.unfilled {
-        stroke-opacity: ${props => (props.isEditable ? '1' : '')};
-      }
       circle.dot.unfilled {
         opacity: ${props => (props.numberOfPoints > 50 ? '0' : '1')};
       }
@@ -157,21 +154,28 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
         'L HH:mm:ss'
       )}</p></li>`
     : '';
-  const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-  const matchingAlertLabel = matchingAlertRange
-    ? `<li class='datapoint-tooltip'><p class='label'>${alertDetected} ${
-        matchingAlertRange.details
-      }</p></li>`
+  const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
+  const matchingAlertLabels = Array.isArray(matchingAlertRanges)
+    ? matchingAlertRanges
+        .map(
+          matchingAlertRange =>
+            `<li class='datapoint-tooltip'><a style="background-color:${
+              matchingAlertRange.color
+            }" class="tooltip-color"></a><p class='label'>${alertDetected} ${
+              matchingAlertRange.details
+            }</p></li>`
+        )
+        .join('')
     : '';
   let updatedTooltip = defaultTooltip;
   if (Array.isArray(data)) {
     // prepend the date inside the existing multi tooltip
     updatedTooltip = defaultTooltip
       .replace('<li', `${dateLabel}<li`)
-      .replace('</ul', `${matchingAlertLabel}</ul`);
+      .replace('</ul', `${matchingAlertLabels}</ul`);
   } else {
     // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabel}</ul>`;
+    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
   }
   return updatedTooltip;
 };
@@ -247,32 +251,37 @@ const TimeSeriesCard = ({
   );
 
   const lines = useMemo(
-    () => series.map(line => ({ ...line, color: !isEditable ? line.color : 'gray' })),
+    () =>
+      series.map((line, index) => ({
+        ...line,
+        color: !isEditable ? line.color : DISABLED_COLORS[index % DISABLED_COLORS.length],
+      })),
     [isEditable, series]
   );
 
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? matchingAlertRange.color : originalStrokeColor;
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : originalStrokeColor;
     }
     return originalStrokeColor;
   };
 
   const handleFillColor = (datasetLabel, label, data, originalFillColor) => {
+    // If it's editable don't fill the dot
     const defaultFillColor = !isEditable ? originalFillColor : '#f3f3f3';
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? matchingAlertRange.color : defaultFillColor;
+      return matchingAlertRange?.length > 0 ? matchingAlertRange[0].color : defaultFillColor;
     }
-    // If it's editable don't fill the dot
+
     return defaultFillColor;
   };
 
   const handleIsFilled = (datasetLabel, label, data, isFilled) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
-      return matchingAlertRange ? true : isFilled;
+      return matchingAlertRange?.length > 0 ? true : isFilled;
     }
 
     return isFilled;
