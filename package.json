@@ -25,7 +25,7 @@
     "prepare": "yarn build",
     "publish-npm": "yarn semantic-release",
     "start": "yarn storybook",
-    "storybook": "cross-env start-storybook -p 3000 -s public/development",
+    "storybook": "start-storybook -p 3000 -s public/development",
     "test": "yarn test:a11y && yarn test:base",
     "test:base": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
