@@ -51,7 +51,9 @@ const TileCatalog = ({
 
   const getTile = (rowIdx, colIdx) => {
     // TODO: find the correct tile to render
-    return <div>{`${rowIdx}, ${colIdx}`}</div>;
+
+    var index = rowIdx * numColumns + colIdx;
+    return <div>{tiles[index]}</div>;
   };
 
   const renderGrid = () => (
