@@ -261,6 +261,7 @@ class ComposedModal extends React.Component {
                 </Button>
                 {!footer?.isPrimaryButtonHidden ? (
                   <Button
+                    disabled={footer?.isPrimaryButtonDisabled}
                     kind={type === 'warn' ? 'danger' : 'primary'}
                     loading={
                       (typeof sendingData === 'boolean' && sendingData) ||
