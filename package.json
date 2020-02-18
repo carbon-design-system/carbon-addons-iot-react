@@ -25,12 +25,12 @@
     "prepare": "yarn build",
     "publish-npm": "yarn semantic-release",
     "start": "yarn storybook",
-    "storybook": "NODE_OPTIONS='--inspect' cross-env start-storybook -p 3000 -s public/development",
+    "storybook": "cross-env start-storybook -p 3000 -s public/development",
     "test": "yarn test:a11y && yarn test:base",
-    "test:base": "NODE_OPTIONS='--inspect' cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
+    "test:base": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
-    "test:watch": "NODE_OPTIONS='--inspect' cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "NODE_OPTIONS='--inspect' cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --updateSnapshot",
+    "test:watch": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
+    "test:update": "cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --updateSnapshot",
     "test:clear": "cross-env TZ=America/Chicago jest --clearCache"
   },
   "stylelint": {
