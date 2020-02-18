@@ -179,8 +179,8 @@ const ListItem = ({
               {secondaryValue ? (
                 <div
                   title={secondaryValue}
-                  className={`${iotPrefix}--list-item--content--values--secondary
-                   ${iotPrefix}--list-item--content--values--secondary__large`}
+                  className={`${iotPrefix}--list-item--content--values--value
+                   ${iotPrefix}--list-item--content--values--value__large`}
                 >
                   {secondaryValue}
                 </div>
@@ -200,7 +200,7 @@ const ListItem = ({
                 {secondaryValue ? (
                   <div
                     title={secondaryValue}
-                    className={`${iotPrefix}--list-item--content--values--secondary`}
+                    className={`${iotPrefix}--list-item--content--values--value`}
                   >
                     {secondaryValue}
                   </div>
