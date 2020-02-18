@@ -43,20 +43,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
           className="SimplePaginationstory__StyledSimplePagination-sc-17bs5nv-0 eccRzy"
         >
           <div
-            className="SimplePagination__StyledContainer-l7ezj3-0 bzKmAQ"
+            className="iot-simple-pagination-container"
           >
             <span
-              className="SimplePagination__StyledPageLabel-l7ezj3-1 hybMqK"
+              className="iot-simple-pagination-page-label"
+              maxpage={4}
             >
               Page 1 of 4
             </span>
             <div
-              className="bx--pagination__button bx--pagination__button--backward SimplePagination__StyledButton-l7ezj3-2 bxiYjR"
+              className="bx--pagination__button bx--pagination__button--backward"
               role="button"
               tabIndex={-1}
             >
               <svg
                 aria-hidden={true}
+                className="iot-simple-pagination-caret"
                 description="Prev page"
                 focusable="false"
                 height={20}
@@ -76,7 +78,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
               </svg>
             </div>
             <div
-              className="bx--pagination__button bx--pagination__button--forward SimplePagination__StyledButton-l7ezj3-2 gxHBrs"
+              className="bx--pagination__button bx--pagination__button--forward iot-simple-pagination-button"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -84,6 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Simpl
             >
               <svg
                 aria-hidden={true}
+                className="iot-simple-pagination-caret"
                 description="Next page"
                 focusable="false"
                 height={20}

@@ -1,18 +1,26 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
+import React, { useState, useEffect, useLayoutEffect, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
 import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
+import { settings } from '../../../constants/Settings';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
+import TableHeader from './TableHeader';
+import ColumnResize from './ColumnResize';
 
-const { TableHead: CarbonTableHead, TableRow, TableExpandHeader, TableHeader } = DataTable;
+const { iotPrefix } = settings;
+
+const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
   /** Important table options that the head needs to know about */
@@ -20,6 +28,7 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
+    hasResize: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -65,6 +74,7 @@ const propTypes = {
     onChangeOrdering: PropTypes.func,
     onColumnSelectionConfig: PropTypes.func,
     onApplyFilter: PropTypes.func,
+    onColumnResize: PropTypes.func,
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
@@ -84,25 +94,6 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
 };
-
-const StyledCheckboxTableHeader = styled(TableHeader)`
-  && {
-    vertical-align: middle;
-
-    & > span {
-      padding: 0;
-    }
-`;
-
-const StyledCarbonTableHead = styled(({ lightweight, ...others }) => (
-  <CarbonTableHead {...others} />
-))`
-  th {
-    height: 3rem;
-    border-top: none;
-    border-bottom: none;
-  }
-`;
 
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
@@ -130,7 +121,7 @@ const StyledCustomTableHeader = styled(TableHeader)`
 
 const TableHead = ({
   options,
-  options: { hasRowExpansion, hasRowSelection },
+  options: { hasRowExpansion, hasRowSelection, hasResize },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -139,7 +130,14 @@ const TableHead = ({
     ordering,
     filters,
   },
-  actions: { onSelectAll, onChangeSort, onApplyFilter, onChangeOrdering, onColumnSelectionConfig },
+  actions: {
+    onSelectAll,
+    onChangeSort,
+    onApplyFilter,
+    onChangeOrdering,
+    onColumnSelectionConfig,
+    onColumnResize,
+  },
   selectAllText,
   clearFilterText,
   filterText,
@@ -150,13 +148,98 @@ const TableHead = ({
   i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
+  const initialColumnWidths = {};
+  const columnRef = ordering.map(() => createRef());
+  const columnResizeRefs = ordering.map(() => createRef());
 
+  const [currentColumnWidths, setCurrentColumnWidths] = useState({});
+  const [emitUpdatedColumnWidths, setEmitUpdatedColumnWidths] = useState(false);
+
+  if (isEmpty(currentColumnWidths)) {
+    columns.forEach(col => {
+      initialColumnWidths[col.id] = col.width;
+    });
+  }
+
+  const forwardMouseEvent = e => {
+    columnResizeRefs.forEach(ref => {
+      if (ref.current) {
+        ref.current.forwardMouseEvent(e);
+      }
+    });
+  };
+
+  const getRenderedWidths = () => {
+    return columnRef.map(ref => ref.current && ref.current.getBoundingClientRect().width);
+  };
+
+  const getRenderedWidthsMap = () => {
+    const widths = getRenderedWidths();
+    const widthsMap = {};
+
+    ordering.forEach((orderedColumn, index) => {
+      widthsMap[orderedColumn.columnId] = {
+        width: widths[index],
+        index,
+        id: orderedColumn.columnId,
+        visible: !orderedColumn.isHidden,
+      };
+    });
+    return widthsMap;
+  };
+
+  const updateColumnWidthsAfterResize = modifiedColumnWidths => {
+    setCurrentColumnWidths(prevColumnWidths => {
+      const merged = { ...prevColumnWidths };
+      modifiedColumnWidths.forEach(modCol => {
+        merged[modCol.id].width = modCol.width;
+      });
+      return merged;
+    });
+    if (onColumnResize) {
+      setEmitUpdatedColumnWidths(true);
+    }
+  };
+
+  useEffect(() => {
+    if (emitUpdatedColumnWidths) {
+      const updatedColumns = getRenderedWidths().map((width, index) => ({
+        ...columns[index],
+        width,
+      }));
+      onColumnResize(updatedColumns);
+      setEmitUpdatedColumnWidths(false);
+    }
+  });
+
+  useLayoutEffect(
+    () => {
+      if (hasResize) {
+        setCurrentColumnWidths(getRenderedWidthsMap());
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   return (
-    <StyledCarbonTableHead lightweight={`${lightweight}`}>
+    <CarbonTableHead
+      className={classnames({ lightweight })}
+      onMouseMove={forwardMouseEvent}
+      onMouseUp={forwardMouseEvent}
+    >
       <TableRow>
-        {hasRowExpansion ? <TableExpandHeader /> : null}
+        {hasRowExpansion ? (
+          <TableExpandHeader
+            className={classnames({ [`${iotPrefix}--table-expand-resize`]: hasResize })}
+          />
+        ) : null}
         {hasRowSelection === 'multi' ? (
-          <StyledCheckboxTableHeader translateWithId={(...args) => tableTranslateWithId(...args)}>
+          <TableHeader
+            className={classnames(`${iotPrefix}--table-header-checkbox`, {
+              [`${iotPrefix}--table-header-checkbox-resize`]: hasResize,
+            })}
+            translateWithId={(...args) => tableTranslateWithId(...args)}
+          >
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
@@ -167,22 +250,28 @@ const TableHead = ({
               checked={isSelectAllSelected}
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
-          </StyledCheckboxTableHeader>
+          </TableHeader>
         ) : null}
 
-        {ordering.map(item => {
+        {ordering.map((item, i) => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
+              width={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
-              width={matchingColumnMeta.width}
+              ref={columnRef[i]}
+              thStyle={{
+                width:
+                  currentColumnWidths[matchingColumnMeta.id] &&
+                  currentColumnWidths[matchingColumnMeta.id].width,
+              }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -196,6 +285,14 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+              {hasResize && i < ordering.length - 1 ? (
+                <ColumnResize
+                  onResize={updateColumnWidthsAfterResize}
+                  ref={columnResizeRefs[i]}
+                  allColumns={currentColumnWidths}
+                  columnId={matchingColumnMeta.id}
+                />
+              ) : null}
             </StyledCustomTableHeader>
           ) : null;
         })}
@@ -236,7 +333,7 @@ const TableHead = ({
           columnSelectionConfigText={i18n.columnSelectionConfig}
         />
       )}
-    </StyledCarbonTableHead>
+    </CarbonTableHead>
   );
 };
 

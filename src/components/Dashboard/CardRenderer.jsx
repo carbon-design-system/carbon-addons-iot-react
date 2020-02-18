@@ -11,6 +11,7 @@ import ImageCard from '../ImageCard/ImageCard';
 import TableCard from '../TableCard/TableCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import ListCard from '../ListCard/ListCard';
+import GaugeCard from '../GaugeCard/GaugeCard';
 import Card from '../Card/Card';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
@@ -36,17 +37,20 @@ const CachedCardRenderer = ({
 
 /** Asynchronous reusable function to load Card Data */
 export const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
-  // Set state to loading
-  setCard({ ...card, isLoading: true });
-  const cardWithData = await onFetchData(
-    card,
-    card.type !== CARD_TYPES.IMAGE && card.type !== CARD_TYPES.VALUE
-  );
-  setCard({
-    ...cardWithData,
-    timeGrain: compareGrains(timeGrain, card.timeGrain) < 1 ? card.timeGrain : timeGrain,
-    isLoading: false,
-  });
+  // Only set the card to loading if it has a datasource to support simple cards
+  if (card.dataSource) {
+    // Set state to loading
+    setCard({ ...card, isLoading: true });
+    const cardWithData = await onFetchData(
+      card,
+      card.type !== CARD_TYPES.IMAGE && card.type !== CARD_TYPES.VALUE
+    );
+    setCard({
+      ...cardWithData,
+      timeGrain: compareGrains(timeGrain, card.timeGrain) < 1 ? card.timeGrain : timeGrain,
+      isLoading: false,
+    });
+  }
 };
 
 /**
@@ -186,6 +190,8 @@ const CardRenderer = React.memo(
       <TableCard {...commonCardProps} />
     ) : type === CARD_TYPES.LIST ? (
       <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
+    ) : type === CARD_TYPES.GAUGE ? (
+      <GaugeCard {...commonCardProps} />
     ) : type === CARD_TYPES.CUSTOM ? (
       <Card hideHeader={isNil(card.title)} {...commonCardProps}>
         {card.content}

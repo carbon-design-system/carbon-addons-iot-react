@@ -1774,22 +1774,23 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@carbon/charts-react@^0.16.25":
-  version "0.16.25"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.16.25.tgz#ef2e44270d3633dea3acefb1f0ed1794549ae487"
-  integrity sha512-ybfEDM7/ytXCmYVyva8CEtCRja3V+cCgl0W+jxnOf1MVtMp5vpFX9/j838shJCVdKK2YcZ14DVrNvA1jEF9ZlQ==
+"@carbon/charts-react@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.29.0.tgz#89223751fc51e037c0c1fb10711fffa5bc6d1eca"
+  integrity sha512-uwFv7sGtA8wSZYQmSB297yLtW9lILbNrD9/grbZQnYHKkOUFZStoJs/wU+46yGoPGvbRfXnPGoPsIVfi8F8Vhg==
   dependencies:
-    "@carbon/charts" "^0.16.25"
+    "@carbon/charts" "^0.29.0"
 
-"@carbon/charts@^0.16.25", "@carbon/charts@https://github.com/scottdickerson/carbon-charts#carbon-charts-v0.16.28-gitpkg":
-  version "0.16.28"
-  resolved "https://github.com/scottdickerson/carbon-charts#4f77105a6cdac8b203b62ab831a97eca05ad5354"
+"@carbon/charts@^0.29.0":
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.29.0.tgz#8ea1c6449de741465ea574b51bf94ba11d35b6ef"
+  integrity sha512-QWD73L5dHI1JU5S87VIJWuvKzdpOXZ7g9pnWQ4BiFtzjFfplZnEnRQT6d/b4n4kmZ4Oze4i0ekI5kMlNs5MWGQ==
   dependencies:
     "@carbon/utils-position" "1.1.1"
     babel-polyfill "6.26.0"
     carbon-components "10.5.0"
+    date-fns "2.8.1"
     lodash-es "4.17.15"
-    moment "^2.24.0"
     resize-observer-polyfill "1.5.0"
 
 "@carbon/colors@^10.7.0":
@@ -5483,18 +5484,6 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
-c3@^0.4.11:
-  version "0.4.23"
-  resolved "https://registry.yarnpkg.com/c3/-/c3-0.4.23.tgz#32ece135d0ac6d124187be5c6935903699643002"
-  dependencies:
-    d3 "~3.5.0"
-
-c3@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/c3/-/c3-0.7.1.tgz#ac6e5023667216858c2638de19bed356a6e4a459"
-  dependencies:
-    d3 "^5.8.0"
-
 cacache@^11.0.2, cacache@^11.3.2:
   version "11.3.2"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-11.3.2.tgz#2d81e308e3d258ca38125b676b98b2ac9ce69bfa"
@@ -7129,9 +7118,10 @@ d3-zoom@1:
     d3-selection "1"
     d3-transition "1"
 
-d3@^5.8.0:
-  version "5.9.2"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-5.9.2.tgz#64e8a7e9c3d96d9e6e4999d2c8a2c829767e67f5"
+d3@5.14.2:
+  version "5.14.2"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-5.14.2.tgz#a3fb3af016d362aaf4dacbe618ae949c1744b8c4"
+  integrity sha512-Ccipa9XrYW5N0QkP6u0Qb8kU6WekIXBiDenmZm1zLvuq/9pBBhRCJLCICEOsH5Og4B0Xw02bhqGkK5VN/oPH0w==
   dependencies:
     d3-array "1"
     d3-axis "1"
@@ -7165,10 +7155,6 @@ d3@^5.8.0:
     d3-voronoi "1"
     d3-zoom "1"
 
-d3@~3.5.0:
-  version "3.5.17"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
-
 damerau-levenshtein@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
@@ -7192,6 +7178,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+date-fns@2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.8.1.tgz#2109362ccb6c87c3ca011e9e31f702bc09e4123b"
+  integrity sha512-EL/C8IHvYRwAHYgFRse4MGAPSqlJVlOrhVYZ75iQBKrnv+ZedmYsgwH3t+BCDuZDXpoo07+q9j4qgSSOa7irJg==
 
 date-fns@^1.27.2:
   version "1.29.0"
@@ -7285,6 +7276,14 @@ deep-object-diff@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==
+
+deepdash@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/deepdash/-/deepdash-4.4.2.tgz#0641bbba183a97b2182b9b6f3b0376cd150af741"
+  integrity sha512-ZZ4Is/8YEy0HilZZOIE5EO7Ndc08gVRbz8/J0YnAA086j+kwovoD4TmyqlxMj+96pruYa+AGvSkCF5JRnW0g4g==
+  dependencies:
+    lodash "^4.17.15"
+    lodash-es "^4.17.15"
 
 defaults@^1.0.3:
   version "1.0.3"
@@ -11879,7 +11878,7 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash-es@4.17.15:
+lodash-es@4.17.15, lodash-es@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
   integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
@@ -15137,12 +15136,6 @@ react-addons-create-fragment@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.0"
 
-react-c3js@^0.1.20:
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/react-c3js/-/react-c3js-0.1.20.tgz#561bb211bd691be42af39726d11bab42d09f3e7b"
-  dependencies:
-    c3 "^0.4.11"
-
 react-clientside-effect@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-clientside-effect/-/react-clientside-effect-1.2.1.tgz#feb81abe9531061d4987941c15a00f2b3d0b6071"
@@ -15250,6 +15243,16 @@ react-dom@^16.8.3:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.13.3"
+
+react-dom@^16.8.6:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
+  integrity sha512-LMxFfAGrcS3kETtQaCkTKjMiifahaMySFDn71fZUNpPHZQEzmk/GiAeIT8JSOrHB23fnuCOMruL2a8NYlw+8Gw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.18.0"
 
 react-draggable@3.x, react-draggable@^3.0.3, react-draggable@^3.1.1:
   version "3.3.0"
@@ -15472,14 +15475,15 @@ react-test-renderer@^16.0.0-0:
     prop-types "^15.6.0"
     react-is "^16.4.1"
 
-react-test-renderer@^16.8.3:
-  version "16.8.3"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.8.3.tgz#230006af264cc46aeef94392e04747c21839e05e"
+react-test-renderer@^16.8.6:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.12.0.tgz#11417ffda579306d4e841a794d32140f3da1b43f"
+  integrity sha512-Vj/teSqt2oayaWxkbhQ6gKis+t5JrknXfPVo+aIJ8QwYAqMPH77uptOdrlphyxl8eQI/rtkOYg86i/UWkpFu0w==
   dependencies:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    react-is "^16.8.3"
-    scheduler "^0.13.3"
+    react-is "^16.8.6"
+    scheduler "^0.18.0"
 
 react-textarea-autosize@^7.1.0:
   version "7.1.0"
@@ -15530,6 +15534,15 @@ react@^16.8.3:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.13.3"
+
+react@^16.8.6:
+  version "16.12.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
+  integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 reactcss@^1.2.0:
   version "1.2.3"
@@ -16597,6 +16610,14 @@ saxes@^3.1.9:
 scheduler@^0.13.3:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.3.tgz#bed3c5850f62ea9c716a4d781f9daeb9b2a58896"
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
+  integrity sha512-agTSHR1Nbfi6ulI0kYNK0203joW2Y5W4po4l+v03tOoiJKpTBbxpNhWDvqc/4IcOw+KLmSiQLTasZ4cab2/UWQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

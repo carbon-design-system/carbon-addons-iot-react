@@ -1,1 +1,38 @@
-@import '~carbon-components/scss/components/list/list';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  max-height: 100%;
+  &--header {
+    flex: 0;
+  }
+  &--content {
+    flex: 1 1 0 0;
+    background: $ui-01;
+    overflow-y: auto;
+
+    &__full-height {
+      overflow-y: unset;
+    }
+  }
+
+  &__full-height {
+    height: 100%;
+  }
+
+  &--page {
+    position: relative;
+    div[class^='SimplePagination__StyledContainer'] {
+      border-top: $ui-03;
+      background: $ui-01;
+      height: rem(40px);
+      border: none;
+    }
+    div > span {
+      padding-left: $spacing-05;
+      margin-right: auto;
+    }
+  }
+}

@@ -137,7 +137,7 @@ export const stopPropagationAndCallback = (evt, callback, ...args) => {
 };
 
 // Dashboard layout
-const gridHeight = 50;
+const gridHeight = 200;
 
 export const printGrid = grid => {
   let result = '';
@@ -244,4 +244,15 @@ export const getCardMinSize = (
     y: cardRows * rowHeight[breakpoint] + (cardRows - 1) * GUTTER,
   };
   return cardSize;
+};
+
+/**
+ * Searches through an array of keys for a searchTerm match
+ * @param {Array<string>} keys to be searched
+ * @param {string} searchTerm
+ * @returns {Boolean} found or not
+ */
+export const caseInsensitiveSearch = (keys, searchTerm) => {
+  // eslint-disable-next-line
+  return keys.some(key => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };

@@ -125,6 +125,7 @@ const onClick = jest.fn();
 describe('CardRenderer testcases', () => {
   test('load card data', async () => {
     let state = {
+      dataSource: {},
       hasLoaded: false,
     };
     const setCard = cardObj => {

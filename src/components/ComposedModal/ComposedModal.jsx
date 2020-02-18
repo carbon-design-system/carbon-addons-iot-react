@@ -11,6 +11,7 @@ import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import warning from 'warning';
 
 import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
@@ -103,6 +104,8 @@ export const ComposedModalPropTypes = {
     PropTypes.shape({
       primaryButtonLabel: PropTypes.node,
       secondaryButtonLabel: PropTypes.node,
+      /** should the primary button be hidden (i.e. only show Cancel) */
+      isPrimaryButtonHidden: PropTypes.bool,
     }),
   ]),
   /** NEW PROP: Type of dialog, affects colors, styles of dialog */
@@ -131,7 +134,7 @@ export const ComposedModalPropTypes = {
   invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
   /** Callback to submit the dialog/form */
   onSubmit: PropTypes.func,
-  /** switchc to render footer buttons or not (carbon consistency) */
+  /** Hide the footer */
   passiveModal: PropTypes.bool,
 };
 
@@ -166,7 +169,7 @@ class ComposedModal extends React.Component {
     children: null,
     header: {},
     iconDescription: 'Close',
-    passiveModal: true,
+    passiveModal: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -201,14 +204,21 @@ class ComposedModal extends React.Component {
       isLarge,
       onSubmit,
       iconDescription,
-      passiveModal,
       onClearError,
       submitFailed,
       invalid,
+      passiveModal,
       ...props
     } = this.props;
     const { label, title, helpText } = header;
     // First check for dataErrors as they are worse than form errors
+
+    if (__DEV__ && passiveModal && (footer || onSubmit)) {
+      warning(
+        false,
+        'You have set passiveModal to true, but also passed a footer or onSubmit handler.  Your footer will not be rendered.'
+      );
+    }
 
     return isFetchingData ? (
       <Loading />
@@ -240,7 +250,7 @@ class ComposedModal extends React.Component {
             onCloseButtonClick={this.handleClearError}
           />
         ) : null}
-        {(!passiveModal && footer) || onSubmit ? (
+        {!passiveModal ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
               footer
@@ -249,16 +259,18 @@ class ComposedModal extends React.Component {
                 <Button kind="secondary" onClick={onClose}>
                   {(footer && footer.secondaryButtonLabel) || 'Cancel'}
                 </Button>
-                <Button
-                  kind={type === 'warn' ? 'danger' : 'primary'}
-                  loading={
-                    (typeof sendingData === 'boolean' && sendingData) ||
-                    typeof sendingData === 'string'
-                  }
-                  onClick={onSubmit}
-                >
-                  {(footer && footer.primaryButtonLabel) || 'Save'}
-                </Button>
+                {!footer?.isPrimaryButtonHidden ? (
+                  <Button
+                    kind={type === 'warn' ? 'danger' : 'primary'}
+                    loading={
+                      (typeof sendingData === 'boolean' && sendingData) ||
+                      typeof sendingData === 'string'
+                    }
+                    onClick={onSubmit}
+                  >
+                    {(footer && footer.primaryButtonLabel) || 'Save'}
+                  </Button>
+                ) : null}
               </Fragment>
             )}
           </StyledModalFooter>

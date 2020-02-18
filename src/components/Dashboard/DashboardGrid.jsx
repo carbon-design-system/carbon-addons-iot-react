@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import styled from 'styled-components';
@@ -82,10 +82,15 @@ export const findLayoutOrGenerate = (layouts, cards) => {
         layout = getLayout(layoutName, cards, DASHBOARD_COLUMNS, CARD_DIMENSIONS);
       } else {
         // if we're using an existing layout, we need to add CARD_DIMENSIONS because they are not stored in our JSON document
-        layout = layout.map(cardFromLayout => {
+        layout = layout.reduce((updatedLayout, cardFromLayout) => {
           const matchingCard = find(cards, { id: cardFromLayout.i });
-          return { ...cardFromLayout, ...CARD_DIMENSIONS[matchingCard.size][layoutName] };
-        });
+          if (matchingCard)
+            updatedLayout.push({
+              ...cardFromLayout,
+              ...CARD_DIMENSIONS[matchingCard.size][layoutName],
+            });
+          return updatedLayout;
+        }, []);
       }
     } else {
       // generate the layout if we're not passed from the parent
@@ -157,6 +162,16 @@ const DashboardGrid = ({
     [childrenArray]
   );
 
+  const [animationState, setAnimationState] = useState(false);
+  useEffect(
+    () => {
+      requestAnimationFrame(() => {
+        setAnimationState(isEditable);
+      });
+    },
+    [isEditable]
+  );
+
   return (
     <div style={{ flex: 1 }}>
       <StyledGridLayout
@@ -168,7 +183,7 @@ const DashboardGrid = ({
         rowHeight={ROW_HEIGHT[breakpoint]}
         preventCollision={false}
         // Stop the initial animation unless we need to support editing drag-and-drop
-        shouldAnimate={isEditable}
+        shouldAnimate={animationState}
         onLayoutChange={handleLayoutChange}
         onBreakpointChange={onBreakpointChange}
         isResizable={false}

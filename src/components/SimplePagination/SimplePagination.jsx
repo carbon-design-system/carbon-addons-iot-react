@@ -1,46 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import CaretLeft from '@carbon/icons-react/lib/caret--left/20';
 import CaretRight from '@carbon/icons-react/lib/caret--right/20';
 
+import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
-import { COLORS } from '../../styles/styles';
 
-const StyledContainer = styled.div`
-  &&& {
-    display: flex;
-    height: 3rem;
-    justify-content: flex-end;
-    width: 100%;
-    border: 1px solid ${COLORS.gray20};
-    background-color: ${COLORS.gray10};
-    align-items: center;
-  }
-`;
+const { iotPrefix } = settings;
 
-const StyledPageLabel = styled.span`
-  padding-right: 1rem;
-  font-size: 0.875rem;
-`;
-
-const StyledButton = styled.div`
-  ${props =>
-    props.onClick
-      ? `` // If the item isn't clickable remove the focus outline
-      : `&:focus {
-          outline: none;
-          border: 1px solid ${COLORS.blue};
-        }
-        cursor: default;
-  `}
-
-  svg path {
-    fill: ${COLORS.gray100};
-  }
-`;
-
-const propTypes = {
+export const SimplePaginationPropTypes = {
   /** current page number */
   page: PropTypes.number.isRequired,
   /** The maximum page number that can be navigated to */
@@ -57,7 +25,7 @@ const propTypes = {
   onPage: PropTypes.func.isRequired,
 };
 
-const defaultProps = {
+const SimplePaginationDefaultProps = {
   pageOfPagesText: (page, maxPage) => `Page ${page} of ${maxPage}`,
   pageText: null,
   nextPageText: 'Next page',
@@ -81,37 +49,51 @@ const SimplePagination = ({
   const handlePrev = () => onPage(page - 1);
 
   return (
-    <StyledContainer>
-      <StyledPageLabel maxPage={maxPage}>
+    <div className={`${iotPrefix}-simple-pagination-container`}>
+      <span className={`${iotPrefix}-simple-pagination-page-label`} maxpage={maxPage}>
         {pageText ? `${pageText} ${page}` : pageOfPagesText(page, maxPage)}
-      </StyledPageLabel>
+      </span>
       {maxPage > 1 ? (
         <>
-          <StyledButton
-            className="bx--pagination__button bx--pagination__button--backward"
+          <div
+            className={
+              hasPrev
+                ? `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-simple-pagination-button`
+                : 'bx--pagination__button bx--pagination__button--backward'
+            }
             role="button"
             tabIndex={hasPrev ? 0 : -1}
             onClick={hasPrev ? handlePrev : undefined}
             onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
           >
-            <CaretLeft description={prevPageText} />
-          </StyledButton>
-          <StyledButton
-            className="bx--pagination__button bx--pagination__button--forward"
+            <CaretLeft
+              description={prevPageText}
+              className={`${iotPrefix}-simple-pagination-caret`}
+            />
+          </div>
+          <div
+            className={
+              hasNext
+                ? `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-simple-pagination-button`
+                : 'bx--pagination__button bx--pagination__button--forward'
+            }
             role="button"
             tabIndex={hasNext ? 0 : -1}
             onClick={hasNext ? handleNext : undefined}
             onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
           >
-            <CaretRight description={nextPageText} />
-          </StyledButton>
+            <CaretRight
+              description={nextPageText}
+              className={`${iotPrefix}-simple-pagination-caret`}
+            />
+          </div>
         </>
       ) : null}
-    </StyledContainer>
+    </div>
   );
 };
 
-SimplePagination.propTypes = propTypes;
-SimplePagination.defaultProps = defaultProps;
+SimplePagination.propTypes = SimplePaginationPropTypes;
+SimplePagination.defaultProps = SimplePaginationDefaultProps;
 
 export default SimplePagination;

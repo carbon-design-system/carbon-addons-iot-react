@@ -30,6 +30,7 @@ export ComposedStructuredList from './components/ComposedStructuredList/Composed
 export ResourceList from './components/ResourceList/ResourceList';
 export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
+export HierarchyList from './components/List/HierarchyList';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -84,6 +85,10 @@ export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwi
 export TileGallerySearch from './components/TileGallery/TileGallerySearch';
 
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
+
+export List from './components/List/List';
+
+export SimpleList from './components/List/SimpleList/SimpleList';
 
 // Carbon proxy
 export {
