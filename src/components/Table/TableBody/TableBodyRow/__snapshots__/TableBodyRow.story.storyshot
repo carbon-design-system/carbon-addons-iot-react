@@ -112,7 +112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     <button
                       className="bx--btn bx--btn--ghost"
                       disabled={false}
-                      id="rowId-row-actions-button-add"
+                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -286,7 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     <button
                       className="bx--btn bx--btn--ghost"
                       disabled={false}
-                      id="rowId-row-actions-button-add"
+                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -565,7 +565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     <button
                       className="bx--btn bx--btn--ghost"
                       disabled={false}
-                      id="rowId-row-actions-button-add"
+                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -741,7 +741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     <button
                       className="bx--btn bx--btn--ghost"
                       disabled={false}
-                      id="rowId-row-actions-button-add"
+                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"

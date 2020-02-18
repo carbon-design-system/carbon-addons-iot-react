@@ -185,8 +185,8 @@ class RowActionsCell extends React.Component {
                   <Button
                     {...others}
                     iconDescription={overflowMenuAria}
-                    key={`${id}-row-actions-button-${actionId}`}
-                    id={`${id}-row-actions-button-${actionId}`}
+                    key={`${tableId}-${id}-row-actions-button-${actionId}`}
+                    id={`${tableId}-${id}-row-actions-button-${actionId}`}
                     kind="ghost"
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                   >
