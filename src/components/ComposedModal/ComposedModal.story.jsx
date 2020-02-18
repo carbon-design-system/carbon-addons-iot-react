@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { boolean } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import ComposedModal from './ComposedModal';
@@ -77,11 +78,12 @@ REDUXFORM or REDUXDIALOG`,
   ))
   .add('no footer', () => (
     <ComposedModal
-      sendingData
       header={{
         label: 'No footer',
         title: 'Dialog without footer',
       }}
+      passiveModal={boolean('passiveModal', true)}
+      onSubmit={action('onSubmit')}
       onClose={action('close')}
     />
   ))

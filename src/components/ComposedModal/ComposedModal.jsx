@@ -11,6 +11,7 @@ import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import warning from 'warning';
 
 import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
@@ -133,6 +134,8 @@ export const ComposedModalPropTypes = {
   invalid: PropTypes.bool, // eslint-disable-line react/boolean-prop-naming
   /** Callback to submit the dialog/form */
   onSubmit: PropTypes.func,
+  /** Hide the footer */
+  passiveModal: PropTypes.bool,
 };
 
 /**
@@ -166,6 +169,7 @@ class ComposedModal extends React.Component {
     children: null,
     header: {},
     iconDescription: 'Close',
+    passiveModal: false,
   };
 
   componentDidUpdate(prevProps) {
@@ -203,10 +207,18 @@ class ComposedModal extends React.Component {
       onClearError,
       submitFailed,
       invalid,
+      passiveModal,
       ...props
     } = this.props;
     const { label, title, helpText } = header;
     // First check for dataErrors as they are worse than form errors
+
+    if (__DEV__ && passiveModal && (footer || onSubmit)) {
+      warning(
+        false,
+        'You have set passiveModal to true, but also passed a footer or onSubmit handler.  Your footer will not be rendered.'
+      );
+    }
 
     return isFetchingData ? (
       <Loading />
@@ -238,7 +250,7 @@ class ComposedModal extends React.Component {
             onCloseButtonClick={this.handleClearError}
           />
         ) : null}
-        {footer || onSubmit ? (
+        {!passiveModal ? (
           <StyledModalFooter>
             {React.isValidElement(footer) ? (
               footer
