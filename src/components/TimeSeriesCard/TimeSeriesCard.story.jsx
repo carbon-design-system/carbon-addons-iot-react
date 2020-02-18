@@ -993,7 +993,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
                 details: 'Alert name',
               },
               {
-                startTimestamp: 1572804320000,
+                startTimestamp: 1572313622000,
                 endTimestamp: 1572824320000,
                 color: '#FFFF00',
                 details: 'Less severe',
