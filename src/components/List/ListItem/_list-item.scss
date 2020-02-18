@@ -94,4 +94,8 @@
       display: flex;
     }
   }
+  &--list-item--nesting-offset {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 }
