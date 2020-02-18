@@ -172,8 +172,8 @@ storiesOf('Watson IoT|TileCatalogNew', module)
           <SampleTile title="Sample product tile" description="This is a sample product tile" />
         )}
         sort={sort}
-        numOfColumns={number('numOfColumns', 5)}
-        numOfRows={number('numOfRows', 3)}
+        numColumns={number('numColumns', 5)}
+        numRows={number('numRows', 3)}
       />
     </div>
   ));

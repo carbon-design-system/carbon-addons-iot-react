@@ -21,8 +21,8 @@ const TileCatalog = ({
   persistentSearch,
   pagination,
   filter,
-  numColumns = 4,
-  numRows = 2,
+  numColumns = 0,
+  numRows = 0,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [numPages, setNumPages] = useState(1);
@@ -53,6 +53,8 @@ const TileCatalog = ({
     // TODO: find the correct tile to render
 
     var index = rowIdx * numColumns + colIdx;
+    console.log(index);
+    console.log(tiles[index]);
     return <div>{tiles[index]}</div>;
   };
 
