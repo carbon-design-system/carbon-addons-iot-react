@@ -1,0 +1,29 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--bar-chart-container {
+  padding-left: 16px;
+  padding-right: 1rem;
+  padding-top: 0px;
+  padding-bottom: 16px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.#{$iot-prefix}--bar-chart-card {
+  .card--title {
+    padding-bottom: $spacing-02;
+    padding-top: $spacing-02;
+    width: 100%;
+
+    span {
+      max-width: calc(100% - 40px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .#{$prefix}--tooltip__trigger {
+    margin-right: $spacing-03;
+  }
+}

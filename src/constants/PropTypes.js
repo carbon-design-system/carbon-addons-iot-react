@@ -9,6 +9,8 @@ import {
   LEGACY_CARD_SIZES,
   VALUE_CARD_DATA_STATE,
   CARD_SIZES,
+  BAR_CHART_TYPES,
+  BAR_CHART_ORIENTATION,
 } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
@@ -171,21 +173,26 @@ export const TableCardPropTypes = {
   }),
 };
 
-export const BarChartDatasetPropTypes = PropTypes.shape({
-  label: PropTypes.string.isRequired,
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-    })
-  ),
-  color: PropTypes.string,
-});
-
 export const BarChartCardPropTypes = {
   content: PropTypes.shape({
-    data: PropTypes.arrayOf(BarChartDatasetPropTypes),
+    orientation: PropTypes.oneOf(Object.values(BAR_CHART_ORIENTATION)),
+    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
+    isTimeSeries: PropTypes.bool,
+    xLabel: PropTypes.string,
+    yLabel: PropTypes.string,
+    data: PropTypes.shape({
+      labels: PropTypes.arrayOf(PropTypes.string),
+      datasets: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          data: PropTypes.array,
+        })
+      ),
+    }),
   }).isRequired,
+  i18n: PropTypes.shape({
+    alertDetected: PropTypes.string,
+  }),
 };
 
 export const DonutCardPropTypes = {
