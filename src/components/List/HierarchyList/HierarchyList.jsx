@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
 import List from '../List';
@@ -128,6 +129,13 @@ const HierarchyList = ({
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [selectedId, setSelectedId] = useState(defaultSelectedId);
+
+  useDeepCompareEffect(
+    () => {
+      setFilteredItems(items);
+    },
+    [items]
+  );
 
   const selectedItemRef = useCallback(node => {
     if (node) {
