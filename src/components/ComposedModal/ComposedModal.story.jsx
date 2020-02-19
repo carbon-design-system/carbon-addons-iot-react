@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, object } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import ComposedModal from './ComposedModal';
@@ -100,12 +100,11 @@ REDUXFORM or REDUXDIALOG`,
   ))
   .add('primary button is hidden', () => (
     <ComposedModal
-      sendingData
       header={{
         label: 'Custom footer',
         title: 'Custom footer element',
       }}
-      footer={{ isPrimaryButtonHidden: true }}
+      footer={object('footer', { isPrimaryButtonHidden: true, isPrimaryButtonDisabled: false })}
       onClose={action('close')}
     />
   ))
