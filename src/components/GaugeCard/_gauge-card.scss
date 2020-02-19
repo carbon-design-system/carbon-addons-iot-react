@@ -2,6 +2,7 @@
 
 .#{$iot-prefix}--gauge-container {
   display: flex;
+  flex-wrap: wrap;
   font-size: carbon--type-scale(1);
   height: 100%;
   width: 100%;
@@ -11,6 +12,7 @@
   fill: none;
   font-size: inherit;
   height: var(--gauge-size);
+  min-width: var(--gauge-size);
   stroke-width: 5px;
   width: var(--gauge-size);
 
@@ -47,39 +49,34 @@
 .#{$iot-prefix}--gauge-trend {
   align-items: center;
   display: flex;
-  flex: 2;
   justify-content: center;
+  margin: auto auto auto 0;
+  padding-left: $spacing-05;
+
+  & p::before {
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    content: '';
+    left: -$spacing-04;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+  }
 
   &__up {
     color: $support-02;
 
     & p::before {
-      border-bottom: 0.4rem solid;
-      border-left: 0.4rem solid transparent;
-      border-right: 0.4rem solid transparent;
-      content: '';
-      left: 50%;
-      height: 0;
-      position: absolute;
-      top: -0.25rem;
-      transform: translateX(-50%);
-      width: 0;
+      border-bottom: 0.3rem solid;
     }
   }
   &__down {
     color: $support-01;
 
     & p::before {
-      border-left: 0.4rem solid transparent;
-      border-right: 0.4rem solid transparent;
-      border-top: 0.4rem solid;
-      bottom: -0.25rem;
-      content: '';
-      left: 50%;
-      height: 0;
-      position: absolute;
-      transform: translateX(-50%);
-      width: 0;
+      border-top: 0.3rem solid;
     }
   }
 
@@ -87,7 +84,6 @@
     // --gauge-trend-color: blue;
     color: var(--gauge-trend-color);
     font-size: inherit;
-    margin-top: $spacing-05;
     position: relative;
   }
 }
