@@ -111,8 +111,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <button
                       className="bx--btn bx--btn--ghost"
+                      data-testid="tableId-rowId-row-actions-button-add"
                       disabled={false}
-                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -285,8 +285,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <button
                       className="bx--btn bx--btn--ghost"
+                      data-testid="tableId-rowId-row-actions-button-add"
                       disabled={false}
-                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -564,8 +564,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <button
                       className="bx--btn bx--btn--ghost"
+                      data-testid="tableId-rowId-row-actions-button-add"
                       disabled={false}
-                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -740,8 +740,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   >
                     <button
                       className="bx--btn bx--btn--ghost"
+                      data-testid="tableId-rowId-row-actions-button-add"
                       disabled={false}
-                      id="tableId-rowId-row-actions-button-add"
                       onClick={[Function]}
                       tabIndex={0}
                       type="button"
@@ -773,6 +773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       aria-haspopup={true}
                       aria-label="More actions"
                       className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eSvzkA bx--overflow-menu"
+                      data-testid="tableId-rowId-row-actions-cell-overflow"
                       id="tableId-rowId-row-actions-cell-overflow"
                       onClick={[Function]}
                       onClose={[Function]}
