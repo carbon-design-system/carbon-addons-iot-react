@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { AccordionItem as CarbonAccordionItem } from '.';
 
+const defaultRenderExpando = props => <button type="button" {...props} />;
+
 const AccordionItem = ({ children, ...props }) => {
   const [openState, setOpenState] = useState(false);
   const handleToggle = event => {
@@ -10,7 +12,7 @@ const AccordionItem = ({ children, ...props }) => {
     setOpenState(!openState);
   };
   return (
-    <CarbonAccordionItem onClick={event => handleToggle(event)}>
+    <CarbonAccordionItem {...props} onClick={event => handleToggle(event)}>
       {openState && children}
     </CarbonAccordionItem>
   );
@@ -63,7 +65,7 @@ AccordionItem.defaultProps = {
   children: null,
   className: null,
   title: null,
-  renderExpando: null,
+  renderExpando: defaultRenderExpando,
   iconDescription: 'Open/Close',
   open: null,
   onClick: () => {},
