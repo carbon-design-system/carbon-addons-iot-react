@@ -54,6 +54,7 @@ export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
 export TableCard, { findMatchingThresholds } from './components/TableCard/TableCard';
+export GaugeCard from './components/GaugeCard/GaugeCard';
 export {
   CARD_TYPES,
   CARD_SIZES,
