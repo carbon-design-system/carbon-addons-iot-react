@@ -50,14 +50,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Accor
             className="bx--accordion bx--accordion--end"
           >
             <li
-              className="bx--accordion__item"
+              className="bx--accordion__item bx--accordion__item--active"
               data-testid="accordion-item"
               id="a"
               onAnimationEnd={[Function]}
               onClick={[Function]}
             >
               <button
-                aria-expanded={null}
+                aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
                 onKeyDown={[Function]}
@@ -92,7 +92,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Accor
               </button>
               <div
                 className="bx--accordion__content"
-              />
+              >
+                <p>
+                  This content
+                </p>
+              </div>
             </li>
             <li
               className="bx--accordion__item"
@@ -102,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Accor
               onClick={[Function]}
             >
               <button
-                aria-expanded={null}
+                aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
                 onKeyDown={[Function]}
