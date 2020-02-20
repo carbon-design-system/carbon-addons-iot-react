@@ -282,6 +282,7 @@ const TableHead = ({
               align={align}
               className={classnames(`table-header-label-${align}`, {
                 'table-header-sortable': matchingColumnMeta.isSortable,
+                [`${iotPrefix}--table-header-resize`]: hasResize,
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
