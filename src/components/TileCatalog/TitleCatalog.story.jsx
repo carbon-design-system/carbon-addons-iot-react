@@ -6,7 +6,12 @@ import TileCatalog from './TileCatalog';
 import { Checkbox } from '../..';
 import SampleTile from './SampleTile';
 
-const i18n = { sortOptions: [{ option: 'A-Z' }, { option: 'Most Popular' }] };
+const i18n = {
+  sortOptions: [
+    { value: 'A-Z', disable: false, hidden: false },
+    { value: 'Most Popular', disable: false, hidden: false },
+  ],
+};
 
 const getTiles = (num, tile) => {
   var tiles = [];
@@ -121,6 +126,22 @@ storiesOf('Watson IoT|TileCatalogNew', module)
       <TileCatalog
         title="Product name"
         persistentSearch
+        tiles={getTiles(
+          20,
+          <SampleTile title="Sample product tile" description="This is a sample product tile" />
+        )}
+        numColumns={number('numColumns', 5)}
+        numRows={number('numRows', 3)}
+      />
+    </div>
+  ))
+  .add('Simple Canvas with search and sort', () => (
+    <div style={{ width: '60rem' }}>
+      <TileCatalog
+        title="Product name"
+        onSort={action('sort', () => {})}
+        onSearch={action('search', () => {})}
+        i18n={i18n}
         tiles={getTiles(
           20,
           <SampleTile title="Sample product tile" description="This is a sample product tile" />

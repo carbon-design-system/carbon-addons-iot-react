@@ -12,7 +12,7 @@ const defaultProps = {
   onSort: () => {},
   numColumns: 1,
   numRows: 1,
-  i18n: { sortOptions: {}, placeHolderText: '' },
+  i18n: { sortOptions: [], placeHolderText: '' },
 };
 
 const TileCatalog = ({
@@ -83,7 +83,7 @@ const TileCatalog = ({
                 />
               </div>
             )}
-            {i18n.sortOptions.length == 0 ? (
+            {i18n.sortOptions.length !== 0 ? (
               <select
                 className="bx--select-input"
                 id="bx-pagination-select-3"
