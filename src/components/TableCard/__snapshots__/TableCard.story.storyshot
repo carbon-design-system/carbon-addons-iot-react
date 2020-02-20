@@ -346,8 +346,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -1747,8 +1747,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -3533,8 +3533,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -4157,8 +4157,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -6626,8 +6626,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -8008,8 +8008,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -9362,8 +9362,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -10965,8 +10965,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -12596,8 +12596,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -13978,8 +13978,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -15953,8 +15953,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -17699,8 +17699,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -19376,8 +19376,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -21817,8 +21817,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -23212,8 +23212,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
@@ -26045,8 +26045,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                     title={null}
                   >
                     <thead
-                      onMouseMove={[Function]}
-                      onMouseUp={[Function]}
+                      onMouseMove={null}
+                      onMouseUp={null}
                     >
                       <tr>
                         <th
