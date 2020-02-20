@@ -1,61 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DataTable } from 'carbon-components-react';
 import { Search, Link } from 'carbon-components-react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import TilePagination from './TilePagination/TilePagination';
 import SampleTile from './SampleTile';
 
 const { TableToolbarSearch } = DataTable;
 
 const propTypes = {};
-const defaultProps = {};
+const defaultProps = {
+  onSearch: () => {},
+  onSort: () => {},
+  numColumns: 1,
+  numRows: 1,
+  i18n: { sortOptions: {}, placeHolderText: '' },
+};
 
 const TileCatalog = ({
   title,
-  search,
+  onSearch,
   tiles,
   featuredTileTitle,
   featuredTile,
-  sort,
+  onSort,
   persistentSearch,
-  pagination,
   filter,
-  numColumns = 0,
-  numRows = 0,
+  numColumns,
+  numRows,
+  i18n,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [numPages, setNumPages] = useState(1);
-  const [tilesOnPage, setTilesOnPage] = useState([]);
-
-  const placeHolderTile = <div className="tile-catalog--tile-canvas--no-placeholder-tile" />;
-
-  /*
-  const renderColumns = tiles => {
-    var cols = [];
-    tiles.map((tile, idx, arr) => {
-      cols[idx] = <div className="bx--col">{tile}</div>;
-    });
-
-    if (cols.length < numColumns) {
-      console.log(cols.length + 'this is render col length');
-      for (let i = cols.length; i < numColumns; i++) {
-        cols[i] = <div className="tile-catalog--tile-canvas--no-placeholder-tile" />;
-        console.log(cols[i]);
-      }
-    }
-    console.log(cols + 'this is returned cols');
-    return cols;
-  };
-  */
 
   const getTile = (rowIdx, colIdx) => {
-    // TODO: find the correct tile to render
-
-    var index = rowIdx * numColumns + colIdx;
-    console.log(index);
-    console.log(tiles[index]);
-    return <div>{tiles[index]}</div>;
+    var tileIndex = rowIdx * numColumns + colIdx;
+    return <div>{tiles[tileIndex]}</div>;
   };
 
   const renderGrid = () => (
@@ -99,33 +76,39 @@ const TileCatalog = ({
             <div className="tile-catalog--tile-canvas--header--title"> {title}</div>
             {persistentSearch ? null : (
               <div className="search">
-                <TableToolbarSearch {...search} className="tile-search" />
+                <TableToolbarSearch
+                  placeHolderText={i18n.placeHolderText}
+                  className="tile-search"
+                  onChange={onSearch}
+                />
               </div>
             )}
-            <select
-              className="bx--select-input"
-              id="bx-pagination-select-3"
-              onChange={[Function]}
-              value={1}
-            >
-              {sort.map(option => (
-                <option
-                  className="bx--select-option"
-                  disabled={false}
-                  hidden={false}
-                  value={option}
-                >
-                  {option.option}
-                </option>
-              ))}
-            </select>
+            {i18n.sortOptions.length == 0 ? (
+              <select
+                className="bx--select-input"
+                id="bx-pagination-select-3"
+                onChange={onSort}
+                value={1}
+              >
+                {i18n.sortOptions.map(option => (
+                  <option
+                    className="bx--select-option"
+                    disabled={option.disabled}
+                    hidden={option.hidden}
+                    value={option.value}
+                  >
+                    {option.value}
+                  </option>
+                ))}
+              </select>
+            ) : null}
           </div>
 
           <div className="tile-catalog--tile-canvas--content">{renderGrid()}</div>
           <div className="tile-catalog--tile-canvas--bottom">
             <TilePagination
               page={currentPage}
-              numPages={6}
+              numPages={Math.ceil(tiles.length / (numRows * numColumns))}
               onChange={newPage => setCurrentPage(newPage)}
             />
           </div>
