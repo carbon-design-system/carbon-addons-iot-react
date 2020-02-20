@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { AccordionItem as CarbonAccordionItem } from 'carbon-components-react';
 
@@ -6,7 +6,14 @@ import { AccordionItem as CarbonAccordionItem } from 'carbon-components-react';
 const defaultRenderExpando = props => <button type="button" {...props} />;
 
 const AccordionItem = ({ children, ...props }) => {
-  const [openState, setOpenState] = useState(false);
+  const { open } = props;
+  const [openState, setOpenState] = useState(open);
+  useEffect(
+    () => {
+      setOpenState(open);
+    },
+    [open]
+  );
   const handleToggle = event => {
     props.onClick(event);
     setOpenState(!openState);
@@ -71,7 +78,7 @@ AccordionItem.defaultProps = {
   title: null,
   renderExpando: defaultRenderExpando,
   iconDescription: 'Open/Close',
-  open: null,
+  open: false,
   onClick: () => {},
   onHeadingClick: () => {},
 };
