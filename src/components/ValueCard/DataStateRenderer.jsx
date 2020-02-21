@@ -11,28 +11,20 @@ import {
   VALUE_CARD_DATA_STATE,
 } from '../../constants/LayoutConstants';
 
-const { iotPrefix, prefix: carbonPrefix } = settings;
+const { iotPrefix } = settings;
 const dsPrefix = `${iotPrefix}--data-state`;
 
 // Testing the tooltip content outside carbon proved difficult.
 // So this is exposed for testing purpose.
 export const TooltipContent = ({ tooltipContent }) => {
-  const { label, description, extraTooltipText, learnMoreURL, learnMoreText } = tooltipContent;
+  const { label, description, extraTooltipText, learnMoreElement } = tooltipContent;
+
   return (
     <span className={`${dsPrefix}-tooltip`}>
       <p className={`${dsPrefix}-tooltip__label`}>{label}</p>
       <p>{description}</p>
       {extraTooltipText && <p>{extraTooltipText}</p>}
-      {learnMoreURL && (
-        <a
-          className={`${carbonPrefix}--link`}
-          href={learnMoreURL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {learnMoreText}
-        </a>
-      )}
+      {learnMoreElement}
     </span>
   );
 };

@@ -7,7 +7,7 @@ import { VALUE_CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstan
 
 import DataStateRenderer, { TooltipContent } from './DataStateRenderer';
 
-const { iotPrefix, prefix: carbonPrefix } = settings;
+const { iotPrefix } = settings;
 
 function getDataStateProp() {
   return {
@@ -15,8 +15,11 @@ function getDataStateProp() {
     label: 'No data available for this score at this time',
     description: 'My description text',
     extraTooltipText: 'Lorem ipsum dolor sit amet',
-    learnMoreURL: 'http://www.ibm.com',
-    learnMoreText: 'Learn more',
+    learnMoreElement: (
+      <a href="#test" className="learn-more-link">
+        Learn more
+      </a>
+    ),
   };
 }
 
@@ -107,7 +110,7 @@ describe('ValueCard', () => {
     expect(descriptionTooltipTrigger).toHaveLength(1);
   });
 
-  test('should render all tooltip content when present', () => {
+  test('should render label, description and extra text in the tooltip when present', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
 
@@ -117,13 +120,34 @@ describe('ValueCard', () => {
 
     expect(wrapper.text()).toMatch(RegExp(`.${myDataState.description}.`));
     expect(wrapper.text()).toMatch(RegExp(`.${myDataState.extraTooltipText}.`));
-    expect(wrapper.find(`.${carbonPrefix}--link`).text()).toEqual(myDataState.learnMoreText);
-    expect(wrapper.find(`.${carbonPrefix}--link`).props().href).toEqual(myDataState.learnMoreURL);
   });
 
-  test('should not render extraTooltipText nor link when missing', () => {
+  test('should render learn-more link as anchor link', () => {
     const myDataState = getDataStateProp();
-    delete myDataState.learnMoreURL;
+    const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
+
+    expect(wrapper.find(`a.learn-more-link`).text()).toEqual('Learn more');
+  });
+
+  test('should render learn-more link as button with onClick', () => {
+    const onLearnMoreClick = jest.fn();
+    const myDataState = getDataStateProp();
+    myDataState.learnMoreElement = (
+      <button type="button" className="learn-more-button" onClick={onLearnMoreClick}>
+        Learn more
+      </button>
+    );
+    const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
+    wrapper
+      .find('.learn-more-button')
+      .props()
+      .onClick();
+    expect(onLearnMoreClick).toHaveBeenCalled();
+  });
+
+  test('should not render extraTooltipText nor learnMoreElement when missing', () => {
+    const myDataState = getDataStateProp();
+    delete myDataState.learnMoreElement;
     delete myDataState.extraTooltipText;
 
     const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
@@ -134,6 +158,6 @@ describe('ValueCard', () => {
     expect(wrapper.text()).not.toMatch(RegExp(`.${myDataState.description}.`));
 
     expect(wrapper.text()).not.toMatch(RegExp(`.${myDataState.extraTooltipText}.`));
-    expect(wrapper.find(`.${carbonPrefix}--link`)).toHaveLength(0);
+    expect(wrapper.find('.learn-more-link')).toHaveLength(0);
   });
 });

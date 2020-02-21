@@ -67,8 +67,7 @@ export const ValueCardPropTypes = {
     label: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     extraTooltipText: PropTypes.string,
-    learnMoreURL: PropTypes.string,
-    learnMoreText: PropTypes.string,
+    learnMoreElement: PropTypes.element,
   }),
 };
 

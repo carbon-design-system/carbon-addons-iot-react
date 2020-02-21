@@ -19,8 +19,11 @@ function getDataStateProp() {
       'dataState : ExtraTooltipText',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     ),
-    learnMoreURL: text('dataState : LearnMoreURL', 'http://www.ibm.com'),
-    learnMoreText: text('dataState : LearnMoreText', 'Learn more'),
+    learnMoreElement: (
+      <a className="bx--link" href="#top">
+        Learn more
+      </a>
+    ),
   };
 }
 
@@ -713,6 +716,16 @@ storiesOf('Watson IoT|ValueCard', module)
         VALUE_CARD_DATA_STATE.NO_DATA
       ),
       ...getDataStateProp(),
+      learnMoreElement: (
+        <button
+          type="button"
+          onClick={() => {
+            console.info('Learning more is great');
+          }}
+        >
+          Learn more
+        </button>
+      ),
     };
 
     return (
