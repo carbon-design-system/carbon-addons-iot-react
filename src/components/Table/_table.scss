@@ -13,3 +13,7 @@ table.#{$prefix}--side-nav--data-table {
 .#{$iot-prefix}--data-table--fixed {
   table-layout: fixed;
 }
+
+.#{$iot-prefix}--data-table--resize td {
+  word-break: break-all;
+}
