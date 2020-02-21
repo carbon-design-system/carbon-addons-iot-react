@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import styled from 'styled-components';
@@ -162,6 +162,16 @@ const DashboardGrid = ({
     [childrenArray]
   );
 
+  const [animationState, setAnimationState] = useState(false);
+  useEffect(
+    () => {
+      requestAnimationFrame(() => {
+        setAnimationState(isEditable);
+      });
+    },
+    [isEditable]
+  );
+
   return (
     <div style={{ flex: 1 }}>
       <StyledGridLayout
@@ -173,7 +183,7 @@ const DashboardGrid = ({
         rowHeight={ROW_HEIGHT[breakpoint]}
         preventCollision={false}
         // Stop the initial animation unless we need to support editing drag-and-drop
-        shouldAnimate={isEditable}
+        shouldAnimate={animationState}
         onLayoutChange={handleLayoutChange}
         onBreakpointChange={onBreakpointChange}
         isResizable={false}

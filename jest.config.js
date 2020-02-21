@@ -9,27 +9,23 @@
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|List|ListItem|ListHeader|SimpleList|HierarchyList).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|HierarchyList|TableHead|ColumnResize).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
       lines: 80,
     },
-    // The overrides below are to be fixed/deleted via https://github.com/IBM/carbon-addons-iot-react/issues/707
-    './src/components/List/ListHeader/ListHeader.jsx': { functions: 50 },
-    './src/components/List/List.jsx': { branches: 60, functions: 37.5 },
-    './src/components/List/ListItem/ListItem.jsx': { branches: 39.29, functions: 20 },
-    './src/components/List/SimpleList/SimpleList.jsx': {
-      statements: 58.7,
-      branches: 26.92,
-      lines: 58.7,
-      functions: 37.5,
+    './src/components/Table/TableHead/TableHead.jsx': {
+      statements: 73,
+      branches: 77,
+      lines: 73,
+      functions: 57,
     },
-    './src/components/List/HierarchyList/HierarchyList.jsx': {
-      statements: 8.97,
-      branches: 0,
-      lines: 9.46,
-      functions: 0,
+    './src/components/Table/TableHead/ColumnResize.jsx': {
+      statements: 36,
+      branches: 11,
+      lines: 36,
+      functions: 20,
     },
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': { branches: 70 },
     './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },

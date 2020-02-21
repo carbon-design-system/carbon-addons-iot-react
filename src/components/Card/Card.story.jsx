@@ -29,6 +29,28 @@ storiesOf('Watson IoT|Card', module)
       </div>
     );
   })
+  .add('with ellipsed title and tooltip', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <Card
+          title={text(
+            'title',
+            'Card Title that is really long and should be truncated and have a tooltip'
+          )}
+          id="facilitycard-basic"
+          size={size}
+          isLoading={boolean('isLoading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpanded', false)}
+          breakpoint="lg"
+          availableActions={{ range: true, expand: true }}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
   .add('basic with render prop', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (

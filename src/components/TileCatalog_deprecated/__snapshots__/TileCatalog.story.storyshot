@@ -256,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test1"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test1"
             />
@@ -269,10 +270,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -290,6 +292,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -347,6 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test2"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test2"
             />
@@ -360,10 +366,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -381,6 +388,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -438,6 +448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test3"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test3"
             />
@@ -451,10 +462,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -472,6 +484,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -529,6 +544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test4"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test4"
             />
@@ -542,10 +558,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -563,6 +580,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -620,6 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test5"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test5"
             />
@@ -633,10 +654,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -654,6 +676,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -711,6 +736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test6"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test6"
             />
@@ -724,10 +750,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -745,6 +772,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -802,6 +832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test7"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test7"
             />
@@ -815,10 +846,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -836,6 +868,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -892,10 +927,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             />
           </div>
           <div
-            className="SimplePagination__StyledContainer-l7ezj3-0 eKVeFk"
+            className="iot-simple-pagination-container"
           >
             <span
-              className="SimplePagination__StyledPageLabel-l7ezj3-1 hybMqK"
+              className="iot-simple-pagination-page-label"
+              maxpage={1}
             >
               Page 1 of 1
             </span>
@@ -1072,6 +1108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test1"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test1"
             />
@@ -1085,10 +1122,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1106,6 +1144,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1163,6 +1204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test2"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test2"
             />
@@ -1176,10 +1218,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1197,6 +1240,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1254,6 +1300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test3"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test3"
             />
@@ -1267,10 +1314,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1288,6 +1336,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1345,6 +1396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test4"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test4"
             />
@@ -1358,10 +1410,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1379,6 +1432,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1436,6 +1492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test5"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test5"
             />
@@ -1449,10 +1506,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1470,6 +1528,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1527,6 +1588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test6"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test6"
             />
@@ -1540,10 +1602,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1561,6 +1624,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1618,6 +1684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test7"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test7"
             />
@@ -1631,10 +1698,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1652,6 +1720,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -1708,10 +1779,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             />
           </div>
           <div
-            className="SimplePagination__StyledContainer-l7ezj3-0 eKVeFk"
+            className="iot-simple-pagination-container"
           >
             <span
-              className="SimplePagination__StyledPageLabel-l7ezj3-1 hybMqK"
+              className="iot-simple-pagination-page-label"
+              maxpage={1}
             >
               Page 1 of 1
             </span>
@@ -2002,6 +2074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test1"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test1"
             />
@@ -2015,10 +2088,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2036,6 +2110,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2093,6 +2170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test2"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test2"
             />
@@ -2106,10 +2184,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2127,6 +2206,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2184,6 +2266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test3"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test3"
             />
@@ -2197,10 +2280,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2218,6 +2302,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2275,6 +2362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test4"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test4"
             />
@@ -2288,10 +2376,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2309,6 +2398,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2366,6 +2458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test5"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test5"
             />
@@ -2379,10 +2472,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2400,6 +2494,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2457,6 +2554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test6"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test6"
             />
@@ -2470,10 +2568,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2491,6 +2590,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2547,20 +2649,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             />
           </div>
           <div
-            className="SimplePagination__StyledContainer-l7ezj3-0 eKVeFk"
+            className="iot-simple-pagination-container"
           >
             <span
-              className="SimplePagination__StyledPageLabel-l7ezj3-1 hybMqK"
+              className="iot-simple-pagination-page-label"
+              maxpage={2}
             >
               Page 1 of 2
             </span>
             <div
-              className="bx--pagination__button bx--pagination__button--backward SimplePagination__StyledButton-l7ezj3-2 bxiYjR"
+              className="bx--pagination__button bx--pagination__button--backward"
               role="button"
               tabIndex={-1}
             >
               <svg
                 aria-hidden={true}
+                className="iot-simple-pagination-caret"
                 description="Prev page"
                 focusable="false"
                 height={20}
@@ -2580,7 +2684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               </svg>
             </div>
             <div
-              className="bx--pagination__button bx--pagination__button--forward SimplePagination__StyledButton-l7ezj3-2 gxHBrs"
+              className="bx--pagination__button bx--pagination__button--forward iot-simple-pagination-button"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -2588,6 +2692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             >
               <svg
                 aria-hidden={true}
+                className="iot-simple-pagination-caret"
                 description="Next page"
                 focusable="false"
                 height={20}
@@ -2766,6 +2871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test1"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test1"
             />
@@ -2779,10 +2885,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2800,6 +2907,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2857,6 +2967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test2"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test2"
             />
@@ -2870,10 +2981,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2891,6 +3003,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -2948,6 +3063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test3"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test3"
             />
@@ -2961,10 +3077,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -2982,6 +3099,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -3039,6 +3159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test4"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test4"
             />
@@ -3052,10 +3173,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -3073,6 +3195,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -3130,6 +3255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test5"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test5"
             />
@@ -3143,10 +3269,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -3164,6 +3291,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -3221,6 +3351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               id="test6"
               name="entityType"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="test6"
             />
@@ -3234,10 +3365,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                 className="bx--tile__checkmark"
               >
                 <svg
-                  aria-hidden={true}
+                  aria-label="Tile checkmark"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
+                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -3255,6 +3387,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
                     data-icon-path="inner-path"
                     opacity="0"
                   />
+                  <title>
+                    Tile checkmark
+                  </title>
                 </svg>
               </span>
               <span
@@ -3311,20 +3446,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             />
           </div>
           <div
-            className="SimplePagination__StyledContainer-l7ezj3-0 eKVeFk"
+            className="iot-simple-pagination-container"
           >
             <span
-              className="SimplePagination__StyledPageLabel-l7ezj3-1 hybMqK"
+              className="iot-simple-pagination-page-label"
+              maxpage={2}
             >
               Page 1 of 2
             </span>
             <div
-              className="bx--pagination__button bx--pagination__button--backward SimplePagination__StyledButton-l7ezj3-2 bxiYjR"
+              className="bx--pagination__button bx--pagination__button--backward"
               role="button"
               tabIndex={-1}
             >
               <svg
                 aria-hidden={true}
+                className="iot-simple-pagination-caret"
                 description="Prev page"
                 focusable="false"
                 height={20}
@@ -3344,7 +3481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
               </svg>
             </div>
             <div
-              className="bx--pagination__button bx--pagination__button--forward SimplePagination__StyledButton-l7ezj3-2 gxHBrs"
+              className="bx--pagination__button bx--pagination__button--forward iot-simple-pagination-button"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -3352,6 +3489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
             >
               <svg
                 aria-hidden={true}
+                className="iot-simple-pagination-caret"
                 description="Next page"
                 focusable="false"
                 height={20}

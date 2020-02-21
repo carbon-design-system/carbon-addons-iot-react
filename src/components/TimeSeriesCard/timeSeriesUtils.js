@@ -1,12 +1,12 @@
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import every from 'lodash/every';
+import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
+import find from 'lodash/find';
 
 /** Generate fake values for my line chart */
 export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day') => {
-  const attributeNames = series.map(line => line.dataSourceId);
-
   let count = 7;
   switch (timeGrain) {
     case 'hour':
@@ -28,15 +28,36 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
       count = 7;
       break;
   }
-  const now = moment().subtract(count, timeGrain);
+
+  // number of each record to define
   const sampleValues = Array(count).fill(1);
-  return sampleValues.map(() => ({
-    [timeDataSourceId]: now.add(1, timeGrain).valueOf(),
-    ...attributeNames.reduce((allAttributes, attribute) => {
-      allAttributes[attribute] = Math.random() * 100; // eslint-disable-line
-      return allAttributes;
-    }, {}),
-  }));
+  return series.reduce((sampleData, { dataSourceId, dataFilter }) => {
+    const now = moment().subtract(count, timeGrain);
+    sampleValues.forEach(() => {
+      const nextTimeStamp = now.add(1, timeGrain).valueOf();
+      if (!isEmpty(dataFilter)) {
+        // if we have a data filter, then we need a specific row for every filter
+        sampleData.push({
+          [timeDataSourceId]: nextTimeStamp,
+          [dataSourceId]: Math.random() * 100,
+          ...dataFilter,
+        });
+      } else {
+        const existingData = find(sampleData, { [timeDataSourceId]: nextTimeStamp });
+        if (existingData) {
+          // add the additional dataSource to the existing datapoint
+          existingData[dataSourceId] = Math.random() * 100;
+        } else {
+          // otherwise we need explicit row
+          sampleData.push({
+            [timeDataSourceId]: nextTimeStamp,
+            [dataSourceId]: Math.random() * 100,
+          });
+        }
+      }
+    });
+    return sampleData;
+  }, []);
 };
 
 /**
@@ -80,6 +101,7 @@ export const formatGraphTick = (
   const currentTimestamp = moment.unix(timestamp / 1000);
 
   const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
+  const sameMonth = moment(previousTickTimestamp).isSame(currentTimestamp, 'month');
   const sameYear = moment(previousTickTimestamp).isSame(currentTimestamp, 'year');
 
   // This works around a bug in moment where some Chinese languages are missing the day indicator
@@ -95,18 +117,22 @@ export const formatGraphTick = (
     ? currentTimestamp.format(dailyFormat)
     : interval === 'hour'
     ? currentTimestamp.format('HH:mm')
-    : interval === 'day' && index === 0
+    : (interval === 'day' || interval === 'week') && sameDay
+    ? '' // if we're on the day and week and the same day then skip
+    : (interval === 'day' || interval === 'week') && index === 0
     ? currentTimestamp.format(dailyFormat)
-    : interval === 'day' && index !== 0
+    : (interval === 'day' || interval === 'week') && index !== 0
     ? currentTimestamp.format(dailyFormat)
+    : interval === 'month' && sameMonth // don't repeat same month
+    ? ''
     : interval === 'month' && !sameYear
     ? currentTimestamp.format('MMM YYYY')
     : interval === 'month' && sameYear && index === 0
     ? currentTimestamp.format('MMM YYYY')
     : interval === 'month' && sameYear
     ? currentTimestamp.format('MMM')
-    : interval === 'year' && sameYear && index !== 0
-    ? currentTimestamp.format('MMM') // if we're on the year boundary and the same year, then don't repeat
+    : interval === 'year' && sameYear
+    ? '' // if we're on the year boundary and the same year, then don't repeat
     : interval === 'year' && (!sameYear || index === 0)
     ? currentTimestamp.format('YYYY')
     : interval === 'minute'
@@ -119,7 +145,7 @@ export const findMatchingAlertRange = (alertRanges, data) => {
   const currentDatapointTimestamp = data && data.date && data.date.valueOf();
   return (
     Array.isArray(alertRanges) &&
-    alertRanges.find(
+    alertRanges.filter(
       alert =>
         currentDatapointTimestamp <= alert.endTimestamp &&
         currentDatapointTimestamp >= alert.startTimestamp
