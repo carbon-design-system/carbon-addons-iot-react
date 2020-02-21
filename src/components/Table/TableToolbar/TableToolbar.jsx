@@ -6,7 +6,6 @@ import IconEdit from '@carbon/icons-react/lib/edit/20';
 import { DataTable, Button } from 'carbon-components-react';
 import Download16 from '@carbon/icons-react/lib/download/16';
 import styled from 'styled-components';
-import { settings } from 'carbon-components';
 
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
