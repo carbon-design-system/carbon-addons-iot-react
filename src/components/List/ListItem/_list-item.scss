@@ -63,6 +63,7 @@
       flex: 1;
       max-width: 100%;
       &--main {
+        flex: 1;
         display: flex;
         max-width: 100%;
         align-items: center;
@@ -74,17 +75,10 @@
       }
       &--value {
         flex: 1;
-        margin-right: $spacing-04;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-      }
-      &--secondary {
-        flex: 1;
-        margin-right: $spacing-04;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        padding-right: $spacing-05;
         &__large {
           color: $text-05;
           white-space: wrap;
@@ -99,5 +93,9 @@
       overflow: none;
       display: flex;
     }
+  }
+  &--nesting-offset {
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
