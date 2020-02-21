@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React, { useState, useEffect, useLayoutEffect, createRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, createRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -169,24 +169,12 @@ const TableHead = ({
     });
   };
 
-  const getRenderedWidths = () => {
-    return columnRef.map(ref => ref.current && ref.current.getBoundingClientRect().width);
-  };
-
-  const getRenderedWidthsMap = () => {
-    const widths = getRenderedWidths();
-    const widthsMap = {};
-
-    ordering.forEach((orderedColumn, index) => {
-      widthsMap[orderedColumn.columnId] = {
-        width: widths[index],
-        index,
-        id: orderedColumn.columnId,
-        visible: !orderedColumn.isHidden,
-      };
-    });
-    return widthsMap;
-  };
+  const getRenderedWidths = useCallback(
+    () => {
+      return columnRef.map(ref => ref.current && ref.current.getBoundingClientRect().width);
+    },
+    [columnRef]
+  );
 
   const updateColumnWidthsAfterResize = modifiedColumnWidths => {
     setCurrentColumnWidths(prevColumnWidths => {
@@ -214,18 +202,31 @@ const TableHead = ({
 
   useLayoutEffect(
     () => {
-      if (hasResize) {
-        setCurrentColumnWidths(getRenderedWidthsMap());
+      if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
+        setCurrentColumnWidths(() => {
+          const widths = getRenderedWidths();
+          const widthsMap = {};
+
+          ordering.forEach((orderedColumn, index) => {
+            widthsMap[orderedColumn.columnId] = {
+              width: widths[index],
+              index,
+              id: orderedColumn.columnId,
+              visible: !orderedColumn.isHidden,
+            };
+          });
+          return widthsMap;
+        });
       }
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
+    [hasResize, columns, currentColumnWidths, ordering, getRenderedWidths]
   );
+
   return (
     <CarbonTableHead
       className={classnames({ lightweight })}
-      onMouseMove={forwardMouseEvent}
-      onMouseUp={forwardMouseEvent}
+      onMouseMove={hasResize ? forwardMouseEvent : null}
+      onMouseUp={hasResize ? forwardMouseEvent : null}
     >
       <TableRow>
         {hasRowExpansion ? (
