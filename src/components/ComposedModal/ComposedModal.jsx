@@ -106,6 +106,8 @@ export const ComposedModalPropTypes = {
       secondaryButtonLabel: PropTypes.node,
       /** should the primary button be hidden (i.e. only show Cancel) */
       isPrimaryButtonHidden: PropTypes.bool,
+      /** should the primary button be disabled */
+      isPrimaryButtonDisabled: PropTypes.bool,
     }),
   ]),
   /** NEW PROP: Type of dialog, affects colors, styles of dialog */
@@ -261,6 +263,7 @@ class ComposedModal extends React.Component {
                 </Button>
                 {!footer?.isPrimaryButtonHidden ? (
                   <Button
+                    disabled={footer?.isPrimaryButtonDisabled}
                     kind={type === 'warn' ? 'danger' : 'primary'}
                     loading={
                       (typeof sendingData === 'boolean' && sendingData) ||
