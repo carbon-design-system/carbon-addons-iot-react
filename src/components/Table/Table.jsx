@@ -184,7 +184,7 @@ const propTypes = {
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
-      /** if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
+      /** callback if a row action is clicked called with the id of the action then the id of the row if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
       onApplyRowAction: PropTypes.func,
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
