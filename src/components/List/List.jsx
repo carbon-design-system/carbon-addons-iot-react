@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -77,22 +77,25 @@ const defaultProps = {
   toggleExpansion: () => {},
 };
 
-const List = ({
-  title,
-  search,
-  buttons,
-  items,
-  isFullHeight,
-  i18n,
-  pagination,
-  selectedId,
-  selectedIds,
-  expandedIds,
-  handleSelect,
-  toggleExpansion,
-  iconPosition,
-  isLargeRow,
-}) => {
+const List = forwardRef((props, ref) => {
+  // Destructuring this way is needed to retain the propTypes and defaultProps
+  const {
+    title,
+    search,
+    buttons,
+    items,
+    isFullHeight,
+    i18n,
+    pagination,
+    selectedId,
+    selectedIds,
+    expandedIds,
+    handleSelect,
+    toggleExpansion,
+    iconPosition,
+    isLargeRow,
+  } = props;
+  const selectedItemRef = ref;
   const renderItemAndChildren = (item, level) => {
     const hasChildren = item.children && item.children.length > 0;
     const isSelected = item.id === selectedId || selectedIds.some(id => item.id === id);
@@ -123,6 +126,7 @@ const List = ({
         isCategory={isCategory}
         isSelectable={isSelectable}
         i18n={i18n}
+        selectedItemRef={isSelected ? selectedItemRef : null}
       />,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))
@@ -145,7 +149,17 @@ const List = ({
         search={search}
         i18n={i18n}
       />
-      <div className={`${iotPrefix}--list--content`}>{listItems}</div>
+      <div
+        className={classnames(
+          {
+            // If FullHeight, the content's overflow shouldn't be hidden
+            [`${iotPrefix}--list--content__full-height`]: isFullHeight,
+          },
+          `${iotPrefix}--list--content`
+        )}
+      >
+        {listItems}
+      </div>
       {pagination !== null ? (
         <div className={`${iotPrefix}--list--page`}>
           <SimplePagination {...pagination} />
@@ -153,7 +167,7 @@ const List = ({
       ) : null}
     </div>
   );
-};
+});
 
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;

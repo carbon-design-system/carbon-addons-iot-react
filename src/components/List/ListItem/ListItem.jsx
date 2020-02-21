@@ -22,7 +22,9 @@ const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, chi
         { [`${iotPrefix}--list-item__large`]: isLargeRow }
       )}
       onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
-      onClick={() => onSelect(id)}
+      onClick={() => {
+        onSelect(id);
+      }}
     >
       {children}
     </div>
@@ -57,6 +59,13 @@ const ListItemPropTypes = {
     expand: PropTypes.string,
     close: PropTypes.string,
   }),
+  /** Default selected item ref needed for scrolling */
+  selectedItemRef: PropTypes.oneOfType([
+    // Either a function
+    PropTypes.func,
+    // Or the instance of a DOM native element (see the note about SSR)
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 const ListItemDefaultProps = {
@@ -77,6 +86,7 @@ const ListItemDefaultProps = {
     expand: 'Expand',
     close: 'Close',
   },
+  selectedItemRef: null,
 };
 
 const ListItem = ({
@@ -96,11 +106,20 @@ const ListItem = ({
   nestingLevel,
   isCategory,
   i18n,
+  selectedItemRef,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
   const renderNestingOffset = () =>
-    nestingLevel > 0 ? <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div> : null;
+    nestingLevel > 0 ? (
+      <div
+        className={`${iotPrefix}--list-item--nesting-offset`}
+        style={{ width: `${nestingLevel * 30}px` }}
+      >
+        &nbsp;
+      </div>
+    ) : null;
+
   const renderExpander = () =>
     isExpandable ? (
       <div
@@ -116,6 +135,7 @@ const ListItem = ({
         />
       </div>
     ) : null;
+
   const renderIcon = () =>
     icon ? (
       <div
@@ -124,6 +144,7 @@ const ListItem = ({
         {icon}
       </div>
     ) : null;
+
   const renderRowActions = () =>
     rowActions && rowActions.length > 0 ? (
       <div className={`${iotPrefix}--list-item--content--row-actions`}>{rowActions}</div>
@@ -139,6 +160,7 @@ const ListItem = ({
           { [`${iotPrefix}--list-item--content__selected`]: selected },
           { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
         )}
+        ref={selectedItemRef}
       >
         {renderIcon()}
         <div
@@ -161,13 +183,15 @@ const ListItem = ({
                 </div>
                 {renderRowActions()}
               </div>
-              <div
-                title={secondaryValue}
-                className={`${iotPrefix}--list-item--content--values--secondary
-                   ${iotPrefix}--list-item--content--values--secondary__large`}
-              >
-                {secondaryValue || null}
-              </div>
+              {secondaryValue ? (
+                <div
+                  title={secondaryValue}
+                  className={`${iotPrefix}--list-item--content--values--value
+                   ${iotPrefix}--list-item--content--values--value__large`}
+                >
+                  {secondaryValue}
+                </div>
+              ) : null}
             </>
           ) : (
             <>
@@ -180,12 +204,14 @@ const ListItem = ({
                 >
                   {value}
                 </div>
-                <div
-                  title={secondaryValue}
-                  className={`${iotPrefix}--list-item--content--values--secondary`}
-                >
-                  {secondaryValue || null}
-                </div>
+                {secondaryValue ? (
+                  <div
+                    title={secondaryValue}
+                    className={`${iotPrefix}--list-item--content--values--value`}
+                  >
+                    {secondaryValue}
+                  </div>
+                ) : null}
                 {renderRowActions()}
               </div>
             </>
@@ -198,5 +224,4 @@ const ListItem = ({
 
 ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;
-
 export default ListItem;

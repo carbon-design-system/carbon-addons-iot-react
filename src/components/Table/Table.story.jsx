@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/20';
+import { Add20 } from '@carbon/icons-react';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -90,6 +91,7 @@ export const tableColumns = [
     name: 'String',
     filter: { placeholderText: 'enter a string' },
   },
+
   {
     id: 'date',
     name: 'Date',
@@ -119,6 +121,10 @@ export const tableColumns = [
     id: 'boolean',
     name: 'Boolean',
     filter: { placeholderText: 'true or false' },
+  },
+  {
+    id: 'node',
+    name: 'React Node',
   },
 ];
 
@@ -238,6 +244,7 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     number: idx * idx,
     status: getStatus(idx),
     boolean: getBoolean(idx),
+    node: <Add20 />,
   },
   rowActions: withActions
     ? [
@@ -463,6 +470,7 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
+
   .add(
     'Stateful Example with every third row unselectable',
     () => (
@@ -645,12 +653,31 @@ storiesOf('Watson IoT|Table', module)
   )
   .add(
     'basic `dumb` table',
-    () => <Table columns={tableColumns} data={tableData} actions={actions} />,
+    () => (
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={actions}
+        options={{
+          hasSearch: boolean('hasSearch', false),
+          hasFilter: boolean('hasFilter', false),
+          hasPagination: boolean('hasPagination', false),
+        }}
+      />
+    ),
     {
       info: {
         text: `
 
         For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
+        
+        <br />
+
+        To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
+        
+        <br />
+
+        Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
 
         <br />
 
@@ -674,22 +701,6 @@ storiesOf('Watson IoT|Table', module)
 
         <br />
         `,
-      },
-    }
-  )
-  .add(
-    'with simple search',
-    () => (
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={actions}
-        options={{ hasSearch: true }}
-      />
-    ),
-    {
-      info: {
-        text: `To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.`,
       },
     }
   )
@@ -786,32 +797,6 @@ storiesOf('Watson IoT|Table', module)
         table: {
           expandedIds: ['row-3', 'row-7', 'row-7_B'],
           selectedIds: ['row-3_A'],
-        },
-      }}
-    />
-  ))
-  .add('with row expansion', () => (
-    <Table
-      columns={tableColumns}
-      data={tableData}
-      actions={actions}
-      options={{
-        hasRowExpansion: true,
-      }}
-      view={{
-        filters: [],
-        table: {
-          ordering: defaultOrdering,
-          expandedRows: [
-            {
-              rowId: 'row-2',
-              content: <RowExpansionContent rowId="row-2" />,
-            },
-            {
-              rowId: 'row-5',
-              content: <RowExpansionContent rowId="row-5" />,
-            },
-          ],
         },
       }}
     />
@@ -1377,6 +1362,23 @@ storiesOf('Watson IoT|Table', module)
         propTables: false,
       },
     }
+  )
+  .add('with resize and no initial columns', () =>
+    React.createElement(() => {
+      // Initial render is an empty columns array, which is updated after the first render
+      const [columns, setColumns] = useState([]);
+      useLayoutEffect(() => {
+        setColumns(
+          tableColumns.map((i, idx) => ({
+            width: idx % 2 === 0 ? '100px' : '100px',
+            ...i,
+          }))
+        );
+      }, []);
+      return (
+        <Table options={{ hasResize: true }} columns={columns} data={tableData} actions={actions} />
+      );
+    })
   )
   .add(
     'with custom row height',

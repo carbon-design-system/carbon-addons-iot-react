@@ -245,3 +245,14 @@ export const getCardMinSize = (
   };
   return cardSize;
 };
+
+/**
+ * Searches through an array of keys for a searchTerm match
+ * @param {Array<string>} keys to be searched
+ * @param {string} searchTerm
+ * @returns {Boolean} found or not
+ */
+export const caseInsensitiveSearch = (keys, searchTerm) => {
+  // eslint-disable-next-line
+  return keys.some(key => key.toLowerCase().includes(searchTerm.toLowerCase()));
+};

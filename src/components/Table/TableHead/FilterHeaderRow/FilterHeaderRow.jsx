@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
 import Close from '@carbon/icons-react/lib/close/16';
 import styled from 'styled-components';
+import memoize from 'lodash/memoize';
 
 import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
@@ -237,6 +238,13 @@ class FilterHeaderRow extends Component {
           .map((c, i) => {
             const column = columns.find(item => c.columnId === item.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
+            const filterColumnOptions = options => {
+              options.sort((a, b) => {
+                return a.text.localeCompare(b.text, { sensitivity: 'base' });
+              });
+              return options;
+            };
+            const memoizeColumnOptions = memoize(filterColumnOptions);
 
             // undefined check has the effect of making isFilterable default to true
             // if unspecified
@@ -248,7 +256,7 @@ class FilterHeaderRow extends Component {
                   id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
-                  items={column.options}
+                  items={memoizeColumnOptions(column.options)}
                   itemToString={item => (item ? item.text : '')}
                   initialSelectedItem={{
                     id: columnStateValue,

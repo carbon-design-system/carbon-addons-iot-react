@@ -1,7 +1,7 @@
 module.exports = {
   collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
-  coverageReporters: ['html', 'text-summary'],
+  coverageReporters: ['html', 'text-summary', 'lcov'],
   coverageThreshold: {
     global: {
       statements: 80,
@@ -21,20 +21,11 @@ module.exports = {
       lines: 73,
       functions: 57,
     },
-
     './src/components/Table/TableHead/ColumnResize.jsx': {
       statements: 36,
       branches: 11,
       lines: 36,
       functions: 20,
-    },
-
-    // The overrides below are to be fixed/deleted via https://github.com/IBM/carbon-addons-iot-react/issues/707
-    './src/components/List/HierarchyList/HierarchyList.jsx': {
-      statements: 69.62,
-      branches: 65,
-      lines: 73.33,
-      functions: 56.25,
     },
     './src/components/Table/TableHead/FilterHeaderRow/FilterHeaderRow.jsx': { branches: 70 },
     './src/components/Table/TableToolbar/TableToolbar.jsx': { functions: 66 },

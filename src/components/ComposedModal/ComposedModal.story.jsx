@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { boolean, object } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 
 import ComposedModal from './ComposedModal';
@@ -77,22 +78,12 @@ REDUXFORM or REDUXDIALOG`,
   ))
   .add('no footer', () => (
     <ComposedModal
-      sendingData
       header={{
         label: 'No footer',
         title: 'Dialog without footer',
       }}
-      onClose={action('close')}
-    />
-  ))
-  .add('add translated description', () => (
-    <ComposedModal
-      sendingData
-      iconDescription="Translated string"
-      header={{
-        label: 'Add translation',
-        title: 'Dialog with translated string for close icon',
-      }}
+      passiveModal={boolean('passiveModal', true)}
+      onSubmit={action('onSubmit')}
       onClose={action('close')}
     />
   ))
@@ -107,8 +98,23 @@ REDUXFORM or REDUXDIALOG`,
       onClose={action('close')}
     />
   ))
+  .add('primary button is hidden', () => (
+    <ComposedModal
+      header={{
+        label: 'Custom footer',
+        title: 'Custom footer element',
+      }}
+      footer={object('footer', { isPrimaryButtonHidden: true, isPrimaryButtonDisabled: false })}
+      onClose={action('close')}
+    />
+  ))
   .add('i18n', () => (
     <ComposedModal
+      header={{
+        label: 'Translated bottom buttons',
+        title: 'Dialog with bottom buttons and close button flyover translated',
+      }}
+      iconDescription="My Close Button"
       footer={{ primaryButtonLabel: 'My Submit', secondaryButtonLabel: 'My Cancel' }}
       onClose={action('close')}
       onSubmit={action('submit')}
