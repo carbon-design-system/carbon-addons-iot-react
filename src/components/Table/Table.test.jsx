@@ -2,6 +2,7 @@ import { mount } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import merge from 'lodash/merge';
+import { Add20 } from '@carbon/icons-react';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
 import { settings } from '../../constants/Settings';
@@ -31,6 +32,11 @@ const tableColumns = [
     id: 'string',
     name: 'String',
     filter: { placeholderText: 'pick a string' },
+    isSortable: true,
+  },
+  {
+    id: 'node',
+    name: 'React node',
     isSortable: true,
   },
   {
@@ -72,6 +78,7 @@ const tableData = Array(20)
     id: `row-${idx}`,
     values: {
       string: getSentence(idx),
+      node: <Add20 />,
       date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
       select: selectData[idx % 3].id,
       number: idx * idx,
