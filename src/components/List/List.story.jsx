@@ -34,6 +34,7 @@ export const sampleHierarchy = {
         'Brett Gardner': 'LF',
         'Gio Urshela': '3B',
         'Cameron Maybin': 'RF',
+        'Robinson Cano': '2B',
       },
       'Houston Astros': {
         'George Springer': 'RF',
@@ -62,7 +63,7 @@ export const sampleHierarchy = {
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
-        'Michael Conforto': 'RF',
+        'Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto': 'RF',
         'Pete Alonso': '1B',
         'Wilson Ramos': 'C',
         'Robinson Cano': '2B',
