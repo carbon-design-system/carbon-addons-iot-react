@@ -55,7 +55,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -1156,13 +1156,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -1456,7 +1454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -2921,13 +2919,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -3221,7 +3217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 kzFKjW Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -3874,7 +3870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -6006,13 +6002,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -6314,7 +6308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -7388,13 +7382,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -7696,7 +7688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -8770,13 +8762,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -9078,7 +9068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -10373,13 +10363,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -10681,7 +10669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -11976,13 +11964,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -12284,7 +12270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -13358,13 +13344,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -13666,7 +13650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -15333,13 +15317,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -15641,7 +15623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -17079,13 +17061,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -17387,7 +17367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -18784,13 +18764,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -19092,7 +19070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -21225,13 +21203,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -21533,7 +21509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -22628,13 +22604,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -22928,7 +22902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -25425,13 +25399,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >
@@ -25733,7 +25705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
               className="Card__CardContent-v5r71h-1 flVXpj"
             >
               <div
-                className="TableCard__StyledStatefulTable-q9l5bz-2 SdwkD Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+                className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
               >
                 <section
                   aria-label="data table toolbar"
@@ -27771,13 +27743,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                   </table>
                 </div>
                 <div
-                  className="bx--pagination Table__StyledPagination-sc-1kalfns-1 iakRST"
+                  className="bx--pagination iot--pagination iot--pagination--hide-page"
                   disabled={false}
-                  size={
+                  style={
                     Object {
-                      "height": undefined,
-                      "position": undefined,
-                      "width": undefined,
+                      "--pagination-text-display": "flex",
                     }
                   }
                 >

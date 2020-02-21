@@ -13,3 +13,12 @@ table.#{$prefix}--side-nav--data-table {
 .#{$iot-prefix}--data-table--fixed {
   table-layout: fixed;
 }
+
+.#{$iot-prefix}--table-container {
+  min-width: unset;
+  padding-top: 0;
+
+  .bx--table-toolbar {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,21 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--pagination {
+  .bx--pagination__left {
+    margin: auto auto auto 0;
+  }
+  .bx--select .bx--select-input ~ .bx--select__arrow {
+    align-self: center;
+  }
+  .bx--pagination__left,
+  .bx--pagination__text {
+    display: var(--pagination-text-display);
+  }
+}
+.#{$iot-prefix}--pagination--hide-page {
+  .bx--pagination__left span:first-child,
+  .bx--pagination__left .bx--form-item {
+    display: none;
+  }
+}
