@@ -120,4 +120,36 @@ describe('TableHead', () => {
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(2);
   });
+
+  test('header renders with resizing columns when columns are empty on initial render', () => {
+    const wrapper = mount(
+      <TableHead
+        columns={[]}
+        tableState={{
+          filters: [],
+          expandedIds: [],
+          isSelectAllSelected: false,
+          selectedIds: [],
+          rowActions: [],
+          sort: {},
+          ordering: [],
+          loadingState: { rowCount: 5 },
+          selection: { isSelectAllSelected: false },
+        }}
+        actions={{ onColumnResize: jest.fn() }}
+        options={{ hasResize: true }}
+      />
+    );
+    const tableHeaders = wrapper.find(TableHeader);
+    expect(tableHeaders).toHaveLength(0);
+    // trigger a re-render with non-empty columns
+    wrapper.setProps({ ...commonTableHeadProps, options: { hasResize: true } });
+    // sync enzyme component tree with the updated dom
+    wrapper.update();
+    const tableHeaderResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+    tableHeaderResizeHandles.first().simulate('mouseDown');
+    tableHeaderResizeHandles.first().simulate('mouseMove');
+    tableHeaderResizeHandles.first().simulate('mouseUp');
+    expect(tableHeaderResizeHandles).toHaveLength(2);
+  });
 });
