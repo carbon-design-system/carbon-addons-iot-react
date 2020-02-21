@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
-import '@carbon/charts/styles.css';
 import classnames from 'classnames';
 import every from 'lodash/every';
 import isNil from 'lodash/isNil';
@@ -36,9 +35,9 @@ const BarChartCard = ({
   className,
   ...others
 }) => {
-  const isAllValuesEmpty = data
-    ? every(data.datasets, set => every(set.data, value => isNil(value)))
-    : true;
+  const isAllValuesEmpty = every(data && data.datasets, set =>
+    every(set.data, value => isNil(value))
+  );
 
   let ChartComponent = SimpleBarChart;
 

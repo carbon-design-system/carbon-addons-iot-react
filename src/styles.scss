@@ -76,6 +76,11 @@ $carbon--theme: $carbon--theme--g10;
 @import 'globals/css--body';
 @import 'globals/grid';
 
+//-------------------------------------
+// Carbon Charts
+//-------------------------------------
+@import '~@carbon/charts/styles.css';
+
 //-------------------------
 // ⚠️ Manage deprecations
 //-------------------------
