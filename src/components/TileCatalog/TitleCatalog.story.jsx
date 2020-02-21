@@ -6,12 +6,9 @@ import TileCatalog from './TileCatalog';
 import { Checkbox } from '../..';
 import SampleTile from './SampleTile';
 
-const i18n = {
-  sortOptions: [
-    { value: 'A-Z', disable: false, hidden: false },
-    { value: 'Most Popular', disable: false, hidden: false },
-  ],
-};
+const i18n = {};
+
+const sortOptions = [{ text: 'A-Z', id: 'A-Z' }, { text: 'Most Popular', id: 'Most Popular' }];
 
 const getTiles = (num, tile) => {
   var tiles = [];
@@ -142,6 +139,7 @@ storiesOf('Watson IoT|TileCatalogNew', module)
         onSort={action('sort', () => {})}
         onSearch={action('search', () => {})}
         i18n={i18n}
+        sortOptions={sortOptions}
         tiles={getTiles(
           20,
           <SampleTile title="Sample product tile" description="This is a sample product tile" />

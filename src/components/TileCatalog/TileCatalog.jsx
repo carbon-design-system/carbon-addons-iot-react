@@ -1,27 +1,39 @@
 import React, { useState } from 'react';
-import { DataTable } from 'carbon-components-react';
+import { Select, SelectItem, DataTable } from 'carbon-components-react';
 import { Search, Link } from 'carbon-components-react';
 import TilePagination from './TilePagination/TilePagination';
-import SampleTile from './SampleTile';
+import PropTypes from 'prop-types';
 
 const { TableToolbarSearch } = DataTable;
 
-const propTypes = {};
+const propTypes = {
+  title: PropTypes.string,
+  onSearch: PropTypes.func,
+  onSort: PropTypes.func,
+  numColumns: PropTypes.number,
+  i18n: PropTypes.shape({
+    placeHolderText: PropTypes.string,
+  }),
+};
+
 const defaultProps = {
   onSearch: () => {},
   onSort: () => {},
+  sortOptions: [],
   numColumns: 1,
   numRows: 1,
-  i18n: { sortOptions: [], placeHolderText: '' },
+  i18n: { placeHolderText: '' },
 };
 
 const TileCatalog = ({
   title,
   onSearch,
+  expandSearch,
   tiles,
   featuredTileTitle,
   featuredTile,
   onSort,
+  sortOptions,
   persistentSearch,
   filter,
   numColumns,
@@ -29,6 +41,7 @@ const TileCatalog = ({
   i18n,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [expandedSearch, setExpandedSearch] = useState(false);
 
   const getTile = (rowIdx, colIdx) => {
     var tileIndex = rowIdx * numColumns + colIdx;
@@ -72,36 +85,35 @@ const TileCatalog = ({
               <div className="tile-catalog--tile-canvas--featured-tile">{featuredTile}</div>
             </div>
           ) : null}
-          <div className="tile-catalog--tile-canvas--header">
-            <div className="tile-catalog--tile-canvas--header--title"> {title}</div>
-            {persistentSearch ? null : (
-              <div className="search">
-                <TableToolbarSearch
-                  placeHolderText={i18n.placeHolderText}
-                  className="tile-search"
-                  onChange={onSearch}
-                />
-              </div>
+          <div
+            className="tile-catalog--tile-canvas--header"
+            onClick={() => {
+              setExpandedSearch(!expandedSearch);
+            }}
+          >
+            {expandedSearch ? null : (
+              <div className="tile-catalog--tile-canvas--header--title"> {title}</div>
             )}
-            {i18n.sortOptions.length !== 0 ? (
-              <select
-                className="bx--select-input"
-                id="bx-pagination-select-3"
-                onChange={onSort}
-                value={1}
-              >
-                {i18n.sortOptions.map(option => (
-                  <option
-                    className="bx--select-option"
-                    disabled={option.disabled}
-                    hidden={option.hidden}
-                    value={option.value}
-                  >
-                    {option.value}
-                  </option>
-                ))}
-              </select>
-            ) : null}
+            {persistentSearch ? null : (
+              <TableToolbarSearch
+                placeHolderText={i18n.placeHolderText}
+                onChange={onSearch}
+                className="tile-catalog--tile-canvas--header--search"
+              />
+            )}
+            <div className="tile-catalog--tile-canvas--header--select">
+              {sortOptions.length !== 0 ? (
+                <Select
+                  onChange={evt => onSort(evt.target.value)}
+                  defaultValue={sortOptions[0].id}
+                  labelText=""
+                >
+                  {sortOptions.map(option => (
+                    <SelectItem text={option.text} value={option.id} />
+                  ))}
+                </Select>
+              ) : null}
+            </div>
           </div>
 
           <div className="tile-catalog--tile-canvas--content">{renderGrid()}</div>
