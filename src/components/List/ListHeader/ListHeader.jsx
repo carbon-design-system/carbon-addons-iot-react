@@ -15,7 +15,7 @@ const propTypes = {
   }),
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 const defaultProps = {
@@ -23,6 +23,9 @@ const defaultProps = {
   search: {
     onChange: () => {},
     value: '',
+  },
+  i18n: {
+    searchPlaceHolderText: 'Enter a value',
   },
 };
 
