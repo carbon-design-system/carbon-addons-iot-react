@@ -3,12 +3,14 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,
   CARD_SIZES,
+  CARD_LAYOUTS,
   ROW_HEIGHT,
   CARD_DIMENSIONS,
   DASHBOARD_BREAKPOINTS,
@@ -75,8 +77,8 @@ const EmptyMessageWrapper = styled.div`
 `;
 
 export const defaultProps = {
-  size: CARD_SIZES.SMALL,
-  layout: CARD_SIZES.HORIZONTAL,
+  size: CARD_SIZES.MEDIUMTHIN,
+  layout: CARD_LAYOUTS.HORIZONTAL,
   title: undefined,
   toolbar: undefined,
   hideHeader: false,
@@ -158,10 +160,33 @@ const Card = props => {
     values,
     ...others
   } = props;
-  const isXS = size === CARD_SIZES.XSMALL;
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const changedSize =
+    size === 'XSMALL'
+      ? 'SMALL'
+      : size === 'XSMALLWIDE'
+      ? 'SMALLWIDE'
+      : size === 'WIDE'
+      ? 'MEDIUMWIDE'
+      : size === 'TALL'
+      ? 'LARGETHIN'
+      : size === 'XLARGE'
+      ? 'LARGEWIDE'
+      : null;
+  let newSize = size;
+  if (changedSize) {
+    warning(
+      false,
+      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
+    );
+    newSize = changedSize;
+  }
+
+  const isSM = newSize === CARD_SIZES.SMALL;
+
   const dimensions = getCardMinSize(
     breakpoint,
-    size,
+    newSize,
     others.dashboardBreakpoints,
     others.cardDimensions,
     others.rowHeight,
@@ -278,20 +303,20 @@ const Card = props => {
                       <OptimizedSkeletonText
                         paragraph
                         lineCount={
-                          size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
+                          newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3
                         }
                         width="100%"
                       />
                     </SkeletonWrapper>
                   ) : error ? (
                     <EmptyMessageWrapper>
-                      {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+                      {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
                         ? strings.errorLoadingDataShortLabel
                         : `${strings.errorLoadingDataLabel} ${error}`}
                     </EmptyMessageWrapper>
                   ) : isEmpty && !isEditable ? (
                     <EmptyMessageWrapper>
-                      {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+                      {isSM ? strings.noDataShortLabel : strings.noDataLabel}
                     </EmptyMessageWrapper>
                   ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
                     children(getChildSize(cardSize, title), { cardToolbar, ...props })

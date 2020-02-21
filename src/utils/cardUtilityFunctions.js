@@ -72,22 +72,22 @@ export const compareGrains = (grain1, grain2) => {
 export const determineMaxValueCardAttributeCount = (size, currentAttributeCount) => {
   let attributeCount = currentAttributeCount;
   switch (size) {
-    case CARD_SIZES.XSMALL:
+    case CARD_SIZES.SMALL:
       attributeCount = 1;
       break;
-    case CARD_SIZES.XSMALLWIDE:
+    case CARD_SIZES.SMALLWIDE:
       attributeCount = 2;
       break;
     case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.SMALL:
-    case CARD_SIZES.WIDE:
+    case CARD_SIZES.MEDIUMTHIN:
+    case CARD_SIZES.MEDIUMWIDE:
       attributeCount = 3;
       break;
     case CARD_SIZES.LARGE:
       attributeCount = 5;
       break;
-    case CARD_SIZES.TALL:
-    case CARD_SIZES.XLARGE:
+    case CARD_SIZES.LARGETHIN:
+    case CARD_SIZES.LARGEWIDE:
       attributeCount = 7;
       break;
     default:

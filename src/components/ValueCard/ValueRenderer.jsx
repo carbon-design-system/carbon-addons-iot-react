@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import warning from 'warning';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -40,9 +41,9 @@ const Attribute = styled.div`
 const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
   if (typeof value === 'string') {
     switch (size) {
-      case CARD_SIZES.XSMALL:
+      case CARD_SIZES.SMALL:
         return value.length > 4 ? 1 : 2;
-      case CARD_SIZES.XSMALLWIDE:
+      case CARD_SIZES.SMALLWIDE:
         return layout === CARD_LAYOUTS.HORIZONTAL ? 1.25 : 1;
       default:
     }
@@ -73,7 +74,7 @@ const determinePrecision = (size, value, precision) => {
   }
   // If the card is xsmall we don't have room for decimals!
   switch (size) {
-    case CARD_SIZES.XSMALL:
+    case CARD_SIZES.SMALL:
       return Math.abs(value) > 9 ? 0 : precision;
     default:
   }
@@ -92,7 +93,29 @@ const ValueRenderer = ({
   color,
   isVertical,
 }) => {
-  const precision = determinePrecision(size, value, precisionProp);
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const changedSize =
+    size === 'XSMALL'
+      ? 'SMALL'
+      : size === 'XSMALLWIDE'
+      ? 'SMALLWIDE'
+      : size === 'WIDE'
+      ? 'MEDIUMWIDE'
+      : size === 'TALL'
+      ? 'LARGETHIN'
+      : size === 'XLARGE'
+      ? 'LARGEWIDE'
+      : null;
+  let newSize = size;
+  if (changedSize) {
+    warning(
+      false,
+      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
+    );
+    newSize = changedSize;
+  }
+
+  const precision = determinePrecision(newSize, value, precisionProp);
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -114,7 +137,7 @@ const ValueRenderer = ({
   return (
     <Attribute unit={unit} isSmall={isSmall} isMini={isMini} color={color} isVertical={isVertical}>
       <AttributeValue
-        size={size}
+        size={newSize}
         title={`${value} ${unit || ''}`}
         layout={layout}
         isSmall={isSmall}

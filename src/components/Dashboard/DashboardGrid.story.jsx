@@ -14,7 +14,7 @@ const Cards = [
     title="Facility Metrics"
     key="facility"
     id="facility"
-    size={CARD_SIZES.SMALL}
+    size={CARD_SIZES.MEDIUMTHIN}
     type={CARD_TYPES.VALUE}
     availableActions={{
       delete: true,
@@ -25,7 +25,7 @@ const Cards = [
     title="Humidity"
     key="humidity"
     id="humidity"
-    size={CARD_SIZES.XSMALL}
+    size={CARD_SIZES.SMALL}
     type={CARD_TYPES.VALUE}
     availableActions={{
       delete: true,
@@ -36,7 +36,7 @@ const Cards = [
     title="Utilization"
     id="utilization"
     key="utilization"
-    size={CARD_SIZES.XSMALL}
+    size={CARD_SIZES.SMALL}
     type={CARD_TYPES.VALUE}
     availableActions={{
       delete: true,

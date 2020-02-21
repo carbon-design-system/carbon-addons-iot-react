@@ -10,7 +10,9 @@ export const COLORS = {
 
 export const DISABLED_COLORS = ['#e0e0e0', '#cacaca', '#a8a8a8', '#8d8d8d', '#6f6f6f'];
 
-export const CARD_SIZES = {
+export const DEPRECATED_SIZES = ['XSMALL', 'XSMALLWIDE', 'WIDE', 'TALL', 'XLARGE'];
+
+export const OLD_CARD_SIZES = {
   XSMALL: 'XSMALL',
   XSMALLWIDE: 'XSMALLWIDE',
   SMALL: 'SMALL',
@@ -19,6 +21,17 @@ export const CARD_SIZES = {
   WIDE: 'WIDE',
   LARGE: 'LARGE',
   XLARGE: 'XLARGE',
+};
+
+export const CARD_SIZES = {
+  SMALL: 'SMALL',
+  SMALLWIDE: 'SMALLWIDE',
+  MEDIUMTHIN: 'MEDIUMTHIN',
+  MEDIUM: 'MEDIUM',
+  MEDIUMWIDE: 'MEDIUMWIDE',
+  LARGETHIN: 'LARGETHIN',
+  LARGE: 'LARGE',
+  LARGEWIDE: 'LARGEWIDE',
 };
 
 export const CARD_TYPES = {
@@ -88,37 +101,29 @@ export const GUTTER = 16;
  */
 
 export const CARD_DIMENSIONS = {
-  XSMALL: {
+  SMALL: {
     max: { w: 2, h: 1 },
-    xl: { w: 2, h: 1 },
+    xl: { w: 4, h: 1 },
     lg: { w: 4, h: 1 },
-    md: { w: 2, h: 1 },
+    md: { w: 4, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 4, h: 1 },
   },
-  XSMALLWIDE: {
+  SMALLWIDE: {
     max: { w: 4, h: 1 },
     xl: { w: 4, h: 1 },
     lg: { w: 4, h: 1 },
     md: { w: 4, h: 1 },
-    sm: { w: 4, h: 1 },
+    sm: { w: 4, h: 2 },
     xs: { w: 4, h: 1 },
   },
-  SMALL: {
+  MEDIUMTHIN: {
     max: { w: 2, h: 2 },
-    xl: { w: 2, h: 2 },
+    xl: { w: 4, h: 2 },
     lg: { w: 4, h: 2 },
     md: { w: 2, h: 2 },
     sm: { w: 2, h: 2 },
     xs: { w: 4, h: 2 },
-  },
-  TALL: {
-    max: { w: 4, h: 4 },
-    xl: { w: 4, h: 4 },
-    lg: { w: 4, h: 4 },
-    md: { w: 4, h: 4 },
-    sm: { w: 4, h: 4 },
-    xs: { w: 4, h: 4 },
   },
   MEDIUM: {
     max: { w: 4, h: 2 },
@@ -128,13 +133,21 @@ export const CARD_DIMENSIONS = {
     sm: { w: 4, h: 2 },
     xs: { w: 4, h: 2 },
   },
-  WIDE: {
+  MEDIUMWIDE: {
     max: { w: 8, h: 2 },
     xl: { w: 8, h: 2 },
     lg: { w: 8, h: 2 },
     md: { w: 8, h: 2 },
     sm: { w: 4, h: 2 },
     xs: { w: 4, h: 2 },
+  },
+  LARGETHIN: {
+    max: { w: 4, h: 4 },
+    xl: { w: 4, h: 4 },
+    lg: { w: 4, h: 4 },
+    md: { w: 4, h: 4 },
+    sm: { w: 4, h: 4 },
+    xs: { w: 4, h: 4 },
   },
   LARGE: {
     max: { w: 8, h: 4 },
@@ -144,7 +157,7 @@ export const CARD_DIMENSIONS = {
     sm: { w: 4, h: 4 },
     xs: { w: 4, h: 4 },
   },
-  XLARGE: {
+  LARGEWIDE: {
     max: { w: 16, h: 4 },
     xl: { w: 16, h: 4 },
     lg: { w: 16, h: 4 },

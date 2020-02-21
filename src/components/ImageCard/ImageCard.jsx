@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import Image32 from '@carbon/icons-react/lib/image/32';
+import warning from 'warning';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, DEPRECATED_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 
 import ImageHotspots from './ImageHotspots';
@@ -47,14 +48,37 @@ const ImageCard = ({
 }) => {
   const { src } = content;
   const hotspots = values ? values.hotspots || [] : [];
+
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const changedSize =
+    size === 'XSMALL'
+      ? 'SMALL'
+      : size === 'XSMALLWIDE'
+      ? 'SMALLWIDE'
+      : size === 'WIDE'
+      ? 'MEDIUMWIDE'
+      : size === 'TALL'
+      ? 'LARGETHIN'
+      : size === 'XLARGE'
+      ? 'LARGEWIDE'
+      : null;
+  let newSize = size;
+  if (changedSize) {
+    warning(
+      false,
+      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
+    );
+    newSize = changedSize;
+  }
+
   const supportedSizes = [
-    CARD_SIZES.SMALL,
+    CARD_SIZES.MEDIUMTHIN,
     CARD_SIZES.MEDIUM,
-    CARD_SIZES.WIDE,
+    CARD_SIZES.MEDIUMWIDE,
     CARD_SIZES.LARGE,
-    CARD_SIZES.XLARGE,
+    CARD_SIZES.LARGEWIDE,
   ];
-  const supportedSize = supportedSizes.includes(size);
+  const supportedSize = supportedSizes.includes(newSize);
   const availableActions = { expand: supportedSize };
 
   const isCardLoading = isNil(src) && !isEditable && !error;
@@ -62,7 +86,7 @@ const ImageCard = ({
   return (
     <Card
       title={title}
-      size={size}
+      size={newSize}
       onCardAction={onCardAction}
       availableActions={availableActions}
       isLoading={isCardLoading} // only show the spinner if we don't have an image

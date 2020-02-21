@@ -7,6 +7,7 @@ import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
+import warning from 'warning';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -259,6 +260,28 @@ const TableCard = ({
   tooltip,
   ...others
 }) => {
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const changedSize =
+    size === 'XSMALL'
+      ? 'SMALL'
+      : size === 'XSMALLWIDE'
+      ? 'SMALLWIDE'
+      : size === 'WIDE'
+      ? 'MEDIUMWIDE'
+      : size === 'TALL'
+      ? 'LARGETHIN'
+      : size === 'XLARGE'
+      ? 'LARGEWIDE'
+      : null;
+  let newSize = size;
+  if (changedSize) {
+    warning(
+      false,
+      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
+    );
+    newSize = changedSize;
+  }
+
   /** adds the id to the card action */
   const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [
     onCardAction,
@@ -504,7 +527,7 @@ const TableCard = ({
           id: i.dataSourceId ? i.dataSourceId : i.id,
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
-          width: i.width ? `${i.width}px` : size === CARD_SIZES.TALL ? '150px' : '', // force the text wrap
+          width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
           filter: i.filter
             ? i.filter
             : { placeholderText: strings.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
@@ -512,14 +535,14 @@ const TableCard = ({
         .concat(hasActionColumn ? actionColumn : [])
         .map(column => {
           const columnPriority = column.priority || 1; // default to 1 if not provided
-          switch (size) {
-            case CARD_SIZES.TALL:
+          switch (newSize) {
+            case CARD_SIZES.LARGETHIN:
               return columnPriority === 1 ? column : null;
 
             case CARD_SIZES.LARGE:
               return columnPriority === 1 || columnPriority === 2 ? column : null;
 
-            case CARD_SIZES.XLARGE:
+            case CARD_SIZES.LARGEWIDE:
               return column;
 
             default:
@@ -527,7 +550,7 @@ const TableCard = ({
           }
         })
         .filter(i => i),
-    [actionColumn, hasActionColumn, newColumns, size, strings.defaultFilterStringPlaceholdText]
+    [actionColumn, hasActionColumn, newColumns, newSize, strings.defaultFilterStringPlaceholdText]
   );
 
   const filteredTimestampColumns = useMemo(
@@ -677,7 +700,7 @@ const TableCard = ({
     columnsToRender.filter(item => item.id !== 'actionColumn' && !item.id.includes('iconColumn'))
       .length;
 
-  const hasFilter = size !== CARD_SIZES.TALL;
+  const hasFilter = newSize !== CARD_SIZES.LARGETHIN;
 
   const hasRowExpansion = !!(expandedRows && expandedRows.length);
 
@@ -703,7 +726,7 @@ const TableCard = ({
   return (
     <Card
       id={id}
-      size={size}
+      size={newSize}
       onCardAction={onCardAction}
       availableActions={{ expand: isExpandable, range: true }}
       isEditable={isEditable}
