@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { settings } from 'carbon-components';
 import {
   TextInput as CarbonTextInput,
   Select,
@@ -455,7 +454,6 @@ export const initialState = {
 };
 
 const EditingTable = () => {
-  const { prefix } = settings;
   const [showToast, setShowToast] = useState(false);
   const [closeToastClicked, setCloseToastClicked] = useState(false);
 
@@ -471,7 +469,7 @@ const EditingTable = () => {
     <FullWidthWrapper>
       {showToast ? (
         <ToastNotification
-          className={`${prefix}--toast`}
+          className="table--edit-mode-toast"
           caption=""
           hideCloseButton={false}
           iconDescription="undo changes and close"
@@ -1655,11 +1653,19 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
-  .add('In-line editing of Data Table', () => <EditingTable />, {
-    info: {
-      text:
-        'Use can edit the data of visible columns using appropriate component, and save multiple row edits at once.',
-      propTables: [Table],
-      propTablesExclude: [StatefulTable],
-    },
-  });
+  .add(
+    'In-line editing of Data Table',
+    () => (
+      <div className="table--edit-mode">
+        <EditingTable />
+      </div>
+    ),
+    {
+      info: {
+        text:
+          'Use can edit the data of visible columns using appropriate component, and save multiple row edits at once.',
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  );

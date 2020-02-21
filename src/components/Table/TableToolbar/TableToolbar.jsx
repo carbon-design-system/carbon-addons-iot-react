@@ -12,8 +12,6 @@ import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 // import { COLORS } from '../../../styles/styles';
 
-const { prefix } = settings;
-
 const {
   TableToolbar: CarbonTableToolbar,
   TableToolbarContent,
@@ -284,10 +282,10 @@ const TableToolbar = ({
       ) : null}
       {activeEditBar ? (
         <StyledTableToolbarContent>
-          <Button className={`${prefix}--toolbar-button`} kind="ghost" onClick={onCancelEditAction}>
+          <Button className="table--edit-mode-button" kind="ghost" onClick={onCancelEditAction}>
             {i18n.batchCancel}
           </Button>
-          <Button className={`${prefix}--toolbar-button`} onClick={onSaveEditAction}>
+          <Button className="table--edit-mode-button" onClick={onSaveEditAction}>
             {i18n.batchSave}
           </Button>
         </StyledTableToolbarContent>

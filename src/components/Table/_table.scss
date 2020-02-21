@@ -1,23 +1,23 @@
 @import 'TableHead/table-head';
-@import '~carbon-components/scss/components/data-table/data-table';
 
-.#{$prefix}--toast {
-  margin-bottom: 0.5rem;
-  min-width: 30rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
-}
-
-.#{$prefix}--toolbar-button {
-  width: 6rem;
-  height: 2rem;
-  border-color: #0062ff;
-  border-width: 0.02rem;
-  min-height: auto;
-  margin: auto 0.4rem;
-  text-align: center;
-  padding: 0;
-  display: block;
+.table--edit-mode {
+  .table--edit-mode-toast {
+    margin-bottom: $spacing-03;
+    min-width: $spacing-09 * 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .table--edit-mode-button {
+    width: $spacing-09 * 2;
+    height: $spacing-07;
+    border-color: $interactive-01;
+    border-width: $spacing-01 / 2;
+    min-height: auto;
+    margin: auto $spacing-03;
+    text-align: center;
+    padding: 0;
+    display: block;
+  }
 }
