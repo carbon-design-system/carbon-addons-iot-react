@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -1362,6 +1362,23 @@ storiesOf('Watson IoT|Table', module)
         propTables: false,
       },
     }
+  )
+  .add('with resize and no initial columns', () =>
+    React.createElement(() => {
+      // Initial render is an empty columns array, which is updated after the first render
+      const [columns, setColumns] = useState([]);
+      useLayoutEffect(() => {
+        setColumns(
+          tableColumns.map((i, idx) => ({
+            width: idx % 2 === 0 ? '100px' : '100px',
+            ...i,
+          }))
+        );
+      }, []);
+      return (
+        <Table options={{ hasResize: true }} columns={columns} data={tableData} actions={actions} />
+      );
+    })
   )
   .add(
     'with custom row height',
