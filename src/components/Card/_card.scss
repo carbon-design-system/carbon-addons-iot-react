@@ -73,3 +73,10 @@
     }
   }
 }
+
+html[dir='rtl'] .card {
+  &--header {
+    padding-right: $spacing-05;
+    padding-left: 0;
+  }
+}
