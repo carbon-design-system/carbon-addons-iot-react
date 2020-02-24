@@ -65,10 +65,8 @@ export const TableRowPropTypes = PropTypes.arrayOf(
     /** id is sent back on each event callback as users interact with the row */
     id: PropTypes.string.isRequired,
     /** {key: value} object where each key is a column identifier so that it can be dynamically ordered and value is the underlying data value of the each field.
-     * We don't support custom nodes here, only simple primitives so we can sort and search on them */
-    values: PropTypes.objectOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
-    ).isRequired,
+     * If the item is a boolean, string, or number, it can be searched, filtered, and sorted. Else, it will not be able to. */
+    values: PropTypes.objectOf(PropTypes.any).isRequired,
     /** Optional array of rows (TableDataPropTypes) nested beneath this one */
     children: PropTypes.oneOfType([
       PropTypes.array, // an array of TableRowPropTypes or elements

@@ -111,7 +111,14 @@ const ListItem = ({
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
   const renderNestingOffset = () =>
-    nestingLevel > 0 ? <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div> : null;
+    nestingLevel > 0 ? (
+      <div
+        className={`${iotPrefix}--list-item--nesting-offset`}
+        style={{ width: `${nestingLevel * 30}px` }}
+      >
+        &nbsp;
+      </div>
+    ) : null;
 
   const renderExpander = () =>
     isExpandable ? (

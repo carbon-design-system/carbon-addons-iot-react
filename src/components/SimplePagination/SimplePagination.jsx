@@ -58,8 +58,8 @@ const SimplePagination = ({
           <div
             className={
               hasPrev
-                ? `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-simple-pagination-button`
-                : 'bx--pagination__button bx--pagination__button--backward'
+                ? `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button`
+                : `bx--pagination__button bx--pagination__button--backward ${iotPrefix}-addons-simple-pagination-button-disabled`
             }
             role="button"
             tabIndex={hasPrev ? 0 : -1}
@@ -68,14 +68,18 @@ const SimplePagination = ({
           >
             <CaretLeft
               description={prevPageText}
-              className={`${iotPrefix}-simple-pagination-caret`}
+              className={
+                hasPrev
+                  ? `${iotPrefix}-simple-pagination-caret`
+                  : `${iotPrefix}-simple-pagination-caret-disabled`
+              }
             />
           </div>
           <div
             className={
               hasNext
-                ? `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-simple-pagination-button`
-                : 'bx--pagination__button bx--pagination__button--forward'
+                ? `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button`
+                : `bx--pagination__button bx--pagination__button--forward ${iotPrefix}-addons-simple-pagination-button-disabled`
             }
             role="button"
             tabIndex={hasNext ? 0 : -1}
@@ -84,7 +88,11 @@ const SimplePagination = ({
           >
             <CaretRight
               description={nextPageText}
-              className={`${iotPrefix}-simple-pagination-caret`}
+              className={
+                hasNext
+                  ? `${iotPrefix}-simple-pagination-caret`
+                  : `${iotPrefix}-simple-pagination-caret-disabled`
+              }
             />
           </div>
         </>
