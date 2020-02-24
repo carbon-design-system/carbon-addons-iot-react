@@ -32,10 +32,12 @@ const defaultProps = {
 const ListHeader = ({ title, buttons, search, i18n }) => {
   return (
     <div className={`${iotPrefix}--list-header-container`}>
-      <div className={`${iotPrefix}--list-header`}>
-        <div className={`${iotPrefix}--list-header--title`}>{title}</div>
-        <div className={`${iotPrefix}--list-header--btn-container`}>{buttons}</div>
-      </div>
+      {title || (buttons && buttons.length > 0) ? (
+        <div className={`${iotPrefix}--list-header`}>
+          <div className={`${iotPrefix}--list-header--title`}>{title}</div>
+          <div className={`${iotPrefix}--list-header--btn-container`}>{buttons}</div>
+        </div>
+      ) : null}
       {search && (
         <div className={`${iotPrefix}--list-header--search`}>
           <Search
