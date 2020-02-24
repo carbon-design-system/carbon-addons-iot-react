@@ -22,7 +22,7 @@ export const itemPropTypes = {
 
 const propTypes = {
   /** list title */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** search bar call back function and search value */
   search: PropTypes.shape({
     onChange: PropTypes.func,
@@ -59,6 +59,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  title: null,
   search: null,
   buttons: [],
   isFullHeight: false,

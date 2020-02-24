@@ -8,6 +8,8 @@
   color: $text-02;
   padding: $spacing-03 $spacing-03 $spacing-03 $spacing-05;
   align-items: center;
+  overflow-x: hidden;
+
   &__large {
     height: rem(96px);
     padding: $spacing-05;
