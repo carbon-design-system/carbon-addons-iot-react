@@ -30,47 +30,59 @@ export const TooltipContent = ({ tooltipContent }) => {
 };
 TooltipContent.propTypes = { tooltipContent: ValueCardPropTypes.dataState.isRequired };
 
-const DataStateIcon = ({ dataState }) => {
-  const { type } = dataState;
-  let { icon } = dataState;
-  if (!icon) {
-    if (type === VALUE_CARD_DATA_STATE.ERROR) {
-      icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
-    } else if (type === VALUE_CARD_DATA_STATE.NO_DATA) {
-      icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
-    }
-  }
-  return icon;
-};
-
 const DataStateRenderer = ({ dataState, size, id }) => {
   const { label, description } = dataState;
 
-  const withTooltip = element => {
+  const withTooltip = (element, triggerId) => {
+    console.info('triggerId', triggerId);
     return (
-      <Tooltip
-        showIcon={false}
-        triggerText={element}
-        triggerId={`${dsPrefix}-tooltip-trigger-${id}`}
-        tooltipId={`${dsPrefix}-tooltip-${id}`}
-      >
-        <TooltipContent tooltipContent={dataState} />
-      </Tooltip>
+      <div style={{ position: 'relative' }} data-floating-menu-container>
+        <Tooltip
+          showIcon={false}
+          triggerText={element}
+          triggerId={triggerId}
+          tooltipId={`${triggerId}-tooltip`}
+          menuOffset={menuBody => {
+            const container = menuBody.closest('[data-floating-menu-container]');
+            return {
+              top: -container.getBoundingClientRect().y - window.pageYOffset + 7,
+              left: -container.getBoundingClientRect().x - window.pageXOffset,
+            };
+          }}
+        >
+          <TooltipContent tooltipContent={dataState} />
+        </Tooltip>
+      </div>
     );
+  };
+
+  const renderDataStateGridIcon = () => {
+    const { type } = dataState;
+    let { icon } = dataState;
+    if (!icon) {
+      if (type === VALUE_CARD_DATA_STATE.ERROR) {
+        icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
+      } else if (type === VALUE_CARD_DATA_STATE.NO_DATA) {
+        icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
+      }
+    }
+
+    return withTooltip(icon, `${dsPrefix}-grid__icon-${id}`);
   };
 
   const renderDataStateGridItems = () => {
+    const labelClass = `${dsPrefix}-grid__label`;
+    const descriptionClass = `${dsPrefix}-grid__description`;
     return (
       <React.Fragment>
-        {withTooltip(<DataStateIcon dataState={dataState} />)}
-        {withTooltip(<span className={`${dsPrefix}-grid__label`}>{label}</span>)}
-        {withTooltip(<p className={`${dsPrefix}-grid__description`}>{description}</p>)}
+        {renderDataStateGridIcon()}
+        {withTooltip(<span className={labelClass}>{label}</span>, `${labelClass}-${id}`)}
+        {withTooltip(
+          <p className={descriptionClass}>{description}</p>,
+          `${descriptionClass}-${id}`
+        )}
       </React.Fragment>
     );
-  };
-
-  const renderDataStateGridItemsXSmall = () => {
-    return withTooltip(<DataStateIcon dataState={dataState} />);
   };
 
   return (
@@ -80,7 +92,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     >
       <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
       <div className={`${dsPrefix}-grid`}>
-        {size === CARD_SIZES.XSMALL ? renderDataStateGridItemsXSmall() : renderDataStateGridItems()}
+        {size === CARD_SIZES.XSMALL ? renderDataStateGridIcon() : renderDataStateGridItems()}
       </div>
     </div>
   );

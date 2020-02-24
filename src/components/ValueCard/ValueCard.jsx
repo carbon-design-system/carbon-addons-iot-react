@@ -248,6 +248,7 @@ const ValueCard = ({
             availableActions={availableActions}
             isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
+            showOverflow={!!dataState}
             i18n={i18n}
             {...others}
           >

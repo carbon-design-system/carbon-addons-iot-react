@@ -34,7 +34,7 @@ const CardWrapper = styled.div`
   span#timeRange {
     display: ${props => (props.cardWidthSize < 230 ? `none` : `flex`)};
   }
-  overflow: hidden;
+  overflow: ${props => (props.showOverflow ? `visible` : `hidden`)};
 `;
 
 /** Header components */
@@ -80,6 +80,7 @@ export const defaultProps = {
   title: undefined,
   toolbar: undefined,
   hideHeader: false,
+  showOverflow: false,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,

@@ -288,6 +288,8 @@ export const CardPropTypes = {
   isExpanded: PropTypes.bool,
   /** should hide the header */
   hideHeader: PropTypes.bool,
+  /** sets the CardWrapper CSS overflow to visible */
+  showOverflow: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),

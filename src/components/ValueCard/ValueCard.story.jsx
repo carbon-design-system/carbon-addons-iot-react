@@ -707,7 +707,7 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('data state - no data - small', () => {
+  .add('data state - no data - small - scroll page', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     const myDataState = {
       type: select(
@@ -729,14 +729,18 @@ storiesOf('Watson IoT|ValueCard', module)
     };
 
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
-        <ValueCard
-          title={text('title', 'Health score')}
-          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
-          dataState={myDataState}
-          breakpoint="lg"
-          size={size}
-        />
+      <div>
+        <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Health score')}
+            content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+            dataState={myDataState}
+            breakpoint="lg"
+            size={size}
+            id="myStoryId"
+          />
+        </div>
+        <div style={{ height: '150vh' }} />
       </div>
     );
   })
@@ -764,6 +768,7 @@ storiesOf('Watson IoT|ValueCard', module)
           dataState={myDataState}
           breakpoint="lg"
           size={size}
+          id="myStoryId"
         />
       </div>
     );
@@ -787,6 +792,7 @@ storiesOf('Watson IoT|ValueCard', module)
           dataState={myDataState}
           breakpoint="lg"
           size={size}
+          id="myStoryId"
         />
       </div>
     );
@@ -802,7 +808,7 @@ storiesOf('Watson IoT|ValueCard', module)
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Health score')}
-          id="facilitycard"
+          id="myStoryId"
           content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
           dataState={{
             type: dataStateType,
