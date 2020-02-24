@@ -27,18 +27,30 @@
         flex: 1;
       }
 
+      .#{$prefix}--toolbar-action {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-right: $spacing-05;
+      }
+
       &--search {
         flex: 1;
         height: rem(40px);
         width: rem(40px);
-        .bx--search-magnifier {
-          height: 2.5rem;
-          padding: 0.75rem;
+        .#{$prefix}--search {
+          svg {
+            height: 2.5rem;
+            width: 2.5rem;
+            padding: 0.75rem;
+          }
         }
       }
 
       &--select {
         flex: 0 0;
+        .#{$prefix}--label {
+          margin-bottom: 0;
+        }
       }
     }
 
