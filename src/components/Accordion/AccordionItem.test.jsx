@@ -7,7 +7,7 @@ import { Accordion } from '.';
 
 describe('AccordionItem', () => {
   test('that it conditionally loads', () => {
-    const { getByTestId } = render(
+    const { container, getByTestId } = render(
       <Accordion>
         <AccordionItem id="a" title="Title one">
           <p>This content</p>
@@ -15,7 +15,10 @@ describe('AccordionItem', () => {
       </Accordion>
     );
     expect(getByTestId('accordion-item').lastElementChild.childElementCount).toEqual(0);
-    fireEvent.click(getByTestId('accordion-item'));
+    fireEvent.click(container.querySelector('.bx--accordion__heading'));
+    expect(getByTestId('accordion-item').lastElementChild.childElementCount).toEqual(1);
+    // test that content will not close accordion
+    fireEvent.click(container.querySelector('.bx--accordion__content'));
     expect(getByTestId('accordion-item').lastElementChild.childElementCount).toEqual(1);
   });
 });
