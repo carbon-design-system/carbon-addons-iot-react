@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
+import isNil from 'lodash/isNil';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
@@ -75,7 +76,12 @@ export const searchForNestedItemValues = (items, value) => {
         filteredItems.push(item);
       }
     } // if the item matches, add it to the filterItems array
-    else if (caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)) {
+    else if (
+      !isNil(item.content.secondaryValue) &&
+      caseInsensitiveSearch([item.content.value, item.content.secondaryValue], value)
+    ) {
+      filteredItems.push(item);
+    } else if (caseInsensitiveSearch([item.content.value], value)) {
       filteredItems.push(item);
     }
   });
@@ -103,7 +109,7 @@ export const searchForNestedItemIds = (items, value) => {
         filteredItems.push(item);
       }
     } // if the item matches, add it to the filterItems array
-    else if (caseInsensitiveSearch([item.id], value)) {
+    else if (item.id === value) {
       filteredItems.push(item);
     }
   });
@@ -137,22 +143,15 @@ const HierarchyList = ({
     [items]
   );
 
-  const selectedItemRef = useCallback(node => {
-    if (node) {
-      // Check if a node is actually passed. Otherwise node would be null.
-      // node is the text of the item
-      // parentNode is the container div with the button role
-      // parentNode.parentNode is the list content, which is also the element to be scrolled
-      // the offsetHeight needs to be multiplied by 3 to be able to view the whole element
-      const offset =
-        node.offsetTop -
-        node.parentNode?.offsetHeight -
-        node.parentNode?.offsetHeight -
-        node.parentNode?.offsetHeight;
-      // eslint-disable-next-line no-unused-expressions
-      node.parentNode?.parentNode?.scroll(0, offset);
-    }
-  }, []);
+  const selectedItemRef = useCallback(
+    node => {
+      if (node) {
+        node.parentNode.scrollIntoView();
+      }
+    },
+    // eslint-disable-next-line
+    [defaultSelectedId]
+  );
 
   useEffect(
     () => {

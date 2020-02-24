@@ -8,6 +8,7 @@ export styles from './styles.scss';
 
 // Components
 export AddCard from './components/AddCard';
+export { AccordionItem } from './components/Accordion';
 export Button from './components/Button';
 export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
@@ -94,7 +95,7 @@ export SimpleList from './components/List/SimpleList/SimpleList';
 // Carbon proxy
 export {
   Accordion,
-  AccordionItem,
+  // AccordionItem,
   Checkbox,
   CodeSnippet,
   ComboBox,

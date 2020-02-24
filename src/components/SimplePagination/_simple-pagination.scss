@@ -19,11 +19,23 @@
 .#{$iot-prefix}-addons-simple-pagination-button {
   &:focus {
     outline: none;
-    border: rem(1px) solid $focus;
   }
-  cursor: default;
+}
+
+.#{$iot-prefix}-addons-simple-pagination-button-disabled {
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: $ui-01;
+  }
+  cursor: not-allowed;
 }
 
 .#{$iot-prefix}-simple-pagination-caret {
   fill: $icon-01;
+}
+
+.#{$iot-prefix}-simple-pagination-caret-disabled {
+  fill: $disabled-02;
 }
