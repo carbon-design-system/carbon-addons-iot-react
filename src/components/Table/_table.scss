@@ -2,10 +2,6 @@
 @import 'TableHead/table-head';
 @import '../../globals/vars';
 
-.addons-iot-table-container {
-  overflow-x: auto;
-}
-
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
@@ -16,4 +12,17 @@ table.#{$prefix}--side-nav--data-table {
 
 .#{$iot-prefix}--data-table--resize td {
   word-break: break-all;
+}
+
+.#{$iot-prefix}--table-container {
+  min-width: unset;
+  padding-top: 0;
+
+  .addons-iot-table-container {
+    overflow-x: auto;
+  }
+
+  .bx--table-toolbar {
+    overflow: hidden;
+  }
 }
