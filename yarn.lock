@@ -1793,7 +1793,7 @@
     lodash-es "4.17.15"
     resize-observer-polyfill "1.5.0"
 
-"@carbon/colors@^10.7.0":
+"@carbon/colors@10.7.0", "@carbon/colors@^10.7.0":
   version "10.7.0"
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.7.0.tgz#44984250aacfc8f1c281879949ac8298110e67fe"
   integrity sha512-1qhMy+EweaCjI/xNiNsFOltyb9wXwAOaxXHedo9RLzaoMZFhAApBkslK/+naR5sdW12wFjrvBxpkOZAWTKbuiw==
@@ -1832,12 +1832,12 @@
   resolved "https://registry.yarnpkg.com/@carbon/import-once/-/import-once-10.3.0.tgz#58617da4efb6d7a11352d8e6b7209da1d39f364d"
   integrity sha512-PFk3FhMe3psihYtCg3JsyPHismqglnbUqIpz1DCG5Gn/kt0HdVKhGvHdEq7E305rGoBUCKzMn/4xoY9v9mcmlg==
 
-"@carbon/layout@^10.7.1":
+"@carbon/layout@10.7.1", "@carbon/layout@^10.7.1":
   version "10.7.1"
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.7.1.tgz#72525a4b2667235094522f65363c07af1f954283"
   integrity sha512-PiWKD+V/X+mz8bkQMGmh4bHCcZ0FQQ59kqgS0dNqXWSMTbd4TfOk2RFerePYBvcrjvjU4eZ78PTi+vwPe9tl0Q==
 
-"@carbon/themes@^10.9.1":
+"@carbon/themes@10.9.1":
   version "10.9.1"
   resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.9.1.tgz#374673501e416ee58dc36460518c1b9b05ab4ed7"
   integrity sha512-ldJgfLEfhwWDUeKBjN2DlSoIfkv+mTtnfVKFPB8dzWPRJm26uUC3Vs4fL3Vg7UTG/dWzBmNYbQeU/IgttyFWqA==
@@ -5671,7 +5671,7 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@^7.9.1:
+carbon-components-react@7.9.1:
   version "7.9.1"
   resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.9.1.tgz#c904ca11c841e25e5952aff4efc0bd184c6db2b5"
   integrity sha512-D+wG4gW/FyASYJitOSlvqeLNfOrrd4LGFn6FYGB4dfo0wxXBH40k9Fxx11hLtv2y2EpM/j6PKLCSFHVUsS4GWw==
@@ -5699,7 +5699,7 @@ carbon-components@10.5.0:
     lodash.debounce "^4.0.8"
     warning "^3.0.0"
 
-carbon-components@^10.9.1:
+carbon-components@10.9.1:
   version "10.9.1"
   resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.9.1.tgz#fb6cc94d9e05b5163270da04b1928b77fc2d70d4"
   integrity sha512-b/47WXM5/STldGj8E1kCFVg8B/S9aQy5tPUSvNQDXF1dojYz22nSREVJWkXjAxGMmOMWoG0D0R1ySlT5Q6S9IA==
