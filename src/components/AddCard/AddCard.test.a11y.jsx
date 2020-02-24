@@ -20,5 +20,5 @@ describe('AddCard a11y scan', () => {
       expect(AAT.assertCompliance(data)).toEqual(0);
       done();
     });
-  });
+  }, 20000);
 });
