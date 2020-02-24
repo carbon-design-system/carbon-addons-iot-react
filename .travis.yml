@@ -1,4 +1,5 @@
 language: node_js
+filter_secrets: false
 
 stages:
   - name: after_success
