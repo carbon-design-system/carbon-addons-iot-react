@@ -16,7 +16,7 @@
   "scripts": {
     "build": "yarn build:pre && rollup -c",
     "build:pre": "rimraf lib storybook-static",
-    "build:storybook": "build-storybook -s public/production",
+    "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn lint:javascript && yarn lint:stylelint",
