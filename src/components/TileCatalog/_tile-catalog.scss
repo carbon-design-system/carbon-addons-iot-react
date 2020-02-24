@@ -28,8 +28,13 @@
       }
 
       &--search {
-        left: 0;
+        flex: 1;
         height: rem(40px);
+        width: rem(40px);
+        .bx--search-magnifier {
+          height: 2.5rem;
+          padding: 0.75rem;
+        }
       }
 
       &--select {
