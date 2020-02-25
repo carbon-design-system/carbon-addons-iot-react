@@ -95,7 +95,7 @@ describe('TableCard', () => {
           columns: tableColumns,
         }}
         values={tableData}
-        size={CARD_SIZES.XLARGE}
+        size={CARD_SIZES.LARGEWIDE}
       />
     );
     expect(wrapper.find('TableHeader').length).toBe(tableColumns.length);
