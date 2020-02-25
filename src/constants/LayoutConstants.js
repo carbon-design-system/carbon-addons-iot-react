@@ -99,7 +99,7 @@ export const GUTTER = 16;
 export const CARD_DIMENSIONS = {
   SMALL: {
     max: { w: 2, h: 1 },
-    xl: { w: 4, h: 1 },
+    xl: { w: 2, h: 1 },
     lg: { w: 4, h: 1 },
     md: { w: 4, h: 1 },
     sm: { w: 2, h: 1 },
@@ -115,7 +115,7 @@ export const CARD_DIMENSIONS = {
   },
   MEDIUMTHIN: {
     max: { w: 2, h: 2 },
-    xl: { w: 4, h: 2 },
+    xl: { w: 2, h: 2 },
     lg: { w: 4, h: 2 },
     md: { w: 2, h: 2 },
     sm: { w: 2, h: 2 },
