@@ -72,24 +72,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               className="Card__CardContent-v5r71h-1 hxiPNM"
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
               >
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Device 1 Comfort"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="100 %"
                         value="100"
                       >
@@ -99,36 +99,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Device 1 Comfort"
                   >
                     Device 1 Comfort
                   </div>
                 </div>
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <hr
-                    className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                  />
-                </div>
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Device 2 Comfort"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="50 %"
                         value="50"
                       >
@@ -138,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Device 2 Comfort"
                   >
                     Device 2 Comfort
@@ -249,24 +241,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               className="Card__CardContent-v5r71h-1 hxiPNM"
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
               >
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Monthly summary"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="-- Wh"
                         value="--"
                       >
@@ -276,36 +268,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Monthly summary"
                   >
                     Monthly summary
                   </div>
                 </div>
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <hr
-                    className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                  />
-                </div>
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Yearly summary"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="-- Wh"
                         value="--"
                       >
@@ -315,7 +299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Yearly summary"
                   >
                     Yearly summary
@@ -1338,24 +1322,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               className="Card__CardContent-v5r71h-1 hxiPNM"
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
               >
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Monthly summary"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="100000000 Wh"
                         value={100000000}
                       >
@@ -1365,36 +1349,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Monthly summary"
                   >
                     Monthly summary
                   </div>
                 </div>
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <hr
-                    className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                  />
-                </div>
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Yearly summary"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="40000000000000 Wh"
                         value={40000000000000}
                       >
@@ -1404,10 +1380,179 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Yearly summary"
                   >
                     Yearly summary
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / horizontal /  2 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": 20,
+              "width": "300px",
+            }
+          }
+        >
+          <div
+            className="Card__CardWrapper-v5r71h-0 bHPJyP"
+            id="facilitycard"
+          >
+            <div
+              className="card--header"
+            >
+              <span
+                className="card--title"
+                title="Facility Conditions"
+              >
+                <div
+                  className="title--text"
+                >
+                  Facility Conditions
+                </div>
+              </span>
+              <div
+                className="card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            >
+              <div
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+              >
+                <div
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
+                >
+                  <div
+                    className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
+                    label="Comfort Level"
+                    size="MEDIUM"
+                  >
+                    <div
+                      className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                      color={null}
+                    >
+                      <span
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
+                        title="89 %"
+                        value={89}
+                      >
+                        89
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                    size="MEDIUM"
+                    title="Comfort Level"
+                  >
+                    Comfort Level
+                  </div>
+                </div>
+                <div
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
+                >
+                  <div
+                    className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
+                    label="Average Temperature"
+                    size="MEDIUM"
+                  >
+                    <div
+                      className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                      color={null}
+                    >
+                      <span
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
+                        title="76.7 ˚F"
+                        value={76.7}
+                      >
+                        76.7
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
+                    size="MEDIUM"
+                    title="Average Temperature"
+                  >
+                    Average Temperature
                   </div>
                 </div>
               </div>
@@ -1541,7 +1686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     </div>
                   </div>
                   <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
+                    className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
                     size="MEDIUM"
                     title="Comfort Level"
                   >
@@ -1580,7 +1725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     </div>
                   </div>
                   <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
+                    className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
                     size="MEDIUM"
                     title="Average Temperature"
                   >
@@ -1619,7 +1764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     </div>
                   </div>
                   <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 krPcSU"
+                    className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
                     size="MEDIUM"
                     title="Utilization"
                   >
@@ -1659,7 +1804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium-thin / horizontal /  2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical /  2 1`] = `
 <div
   style={
     Object {
@@ -1702,7 +1847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
           style={
             Object {
               "margin": 20,
-              "width": "300px",
+              "width": "252px",
             }
           }
         >
@@ -1731,24 +1876,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               className="Card__CardContent-v5r71h-1 hxiPNM"
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
               >
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Comfort Level"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="89 %"
                         value={89}
                       >
@@ -1758,36 +1903,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Comfort Level"
                   >
                     Comfort Level
                   </div>
                 </div>
                 <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <hr
-                    className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                  />
-                </div>
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  className="ValueCard__AttributeWrapper-hyxf2q-1 fwYwXi"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Average Temperature"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="76.7 ˚F"
                         value={76.7}
                       >
@@ -1797,7 +1934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Average Temperature"
                   >
                     Average Temperature
@@ -1836,7 +1973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium-thin / vertical /  2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical /  3 1`] = `
 <div
   style={
     Object {
@@ -1912,12 +2049,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               >
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Comfort Level"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -1925,184 +2062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     >
                       <span
                         className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
-                        title="89 %"
-                        value={89}
-                      >
-                        89
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
-                    title="Comfort Level"
-                  >
-                    Comfort Level
-                  </div>
-                </div>
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <hr
-                    className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
-                  />
-                </div>
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <div
-                    className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                    label="Average Temperature"
-                    size="MEDIUMTHIN"
-                  >
-                    <div
-                      className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                      color={null}
-                    >
-                      <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
-                        title="76.7 ˚F"
-                        value={76.7}
-                      >
-                        76.7
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
-                    title="Average Temperature"
-                  >
-                    Average Temperature
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium-thin / vertical /  3 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Facility Conditions"
-              >
-                <div
-                  className="title--text"
-                >
-                  Facility Conditions
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
-              >
-                <div
-                  className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
-                >
-                  <div
-                    className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
-                    label="Comfort Level"
-                    size="MEDIUMTHIN"
-                  >
-                    <div
-                      className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                      color={null}
-                    >
-                      <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        size="MEDIUM"
                         title="89 %"
                         value={89}
                       >
@@ -2137,7 +2097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Comfort Level"
                   >
                     Comfort Level
@@ -2145,7 +2105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <hr
                     className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -2153,12 +2113,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Average Temperature"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2166,7 +2126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     >
                       <span
                         className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        size="MEDIUM"
                         title="null ˚F"
                         value={null}
                       >
@@ -2176,7 +2136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Average Temperature"
                   >
                     Average Temperature
@@ -2184,7 +2144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <hr
                     className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -2192,12 +2152,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Humidity"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2205,7 +2165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     >
                       <span
                         className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        size="MEDIUM"
                         title="76.7 ˚F"
                         value={76.7}
                       >
@@ -2240,7 +2200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Humidity"
                   >
                     Humidity
@@ -2279,7 +2239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium-thin / vertical / multiple 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical / multiple 1`] = `
 <div
   style={
     Object {
@@ -2355,12 +2315,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               >
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Comfort Level"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2368,7 +2328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     >
                       <span
                         className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        size="MEDIUM"
                         title="89 %"
                         value={89}
                       >
@@ -2378,7 +2338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Comfort Level"
                   >
                     Comfort Level
@@ -2386,7 +2346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <hr
                     className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -2394,12 +2354,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Average Temperature"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2407,7 +2367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     >
                       <span
                         className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        size="MEDIUM"
                         title="76.7 ˚F"
                         value={76.7}
                       >
@@ -2417,7 +2377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Average Temperature"
                   >
                     Average Temperature
@@ -2425,7 +2385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <hr
                     className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -2433,12 +2393,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                 </div>
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
                     className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                     label="Utilization"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2446,7 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     >
                       <span
                         className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        size="MEDIUM"
                         title="76 %"
                         value={76}
                       >
@@ -2456,7 +2416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Utilization"
                   >
                     Utilization
@@ -2495,7 +2455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium-thin / vertical / single 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical / single 1`] = `
 <div
   style={
     Object {
@@ -2567,24 +2527,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               className="Card__CardContent-v5r71h-1 hxiPNM"
             >
               <div
-                className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
+                className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
               >
                 <div
                   className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
-                  size="MEDIUMTHIN"
+                  size="MEDIUM"
                 >
                   <div
-                    className="Attribute__StyledAttribute-dhraql-0 eexmWz"
+                    className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
                     label="Comfort Level"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                   >
                     <div
                       className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
                       color={null}
                     >
                       <span
-                        className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                        size="MEDIUMTHIN"
+                        className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
+                        size="MEDIUM"
                         title="89 %"
                         value={89}
                       >
@@ -2594,7 +2554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   </div>
                   <div
                     className="ValueCard__AttributeLabel-hyxf2q-4 cAyPcU"
-                    size="MEDIUMTHIN"
+                    size="MEDIUM"
                     title="Comfort Level"
                   >
                     Comfort Level

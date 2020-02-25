@@ -20,7 +20,7 @@ export const originalCards = [
     title:
       'Facility Metrics with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facilitycard',
-    size: CARD_SIZES.MEDIUMTHIN,
+    size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -1044,7 +1044,7 @@ storiesOf('Watson IoT|Dashboard', module)
         ].map((v, idx) => ({
           title: v[0],
           id: `xsmallwide-multi-number-threshold-${idx}`,
-          size: CARD_SIZES.MEDIUMTHIN,
+          size: CARD_SIZES.MEDIUM,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [
@@ -1164,7 +1164,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </ClickableTile>
                 ),
                 id: 'viewDashboards',
-                size: CARD_SIZES.MEDIUMTHIN,
+                size: CARD_SIZES.MEDIUM,
                 type: 'CUSTOM',
               },
               {
@@ -1198,7 +1198,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </ClickableTile>
                 ),
                 id: 'connectDevices',
-                size: CARD_SIZES.MEDIUMTHIN,
+                size: CARD_SIZES.MEDIUM,
                 type: 'CUSTOM',
               },
               {
@@ -1225,7 +1225,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </div>
                 ),
                 id: 'monitorEntities',
-                size: CARD_SIZES.MEDIUMTHIN,
+                size: CARD_SIZES.MEDIUM,
                 type: 'CUSTOM',
               },
               {

@@ -80,8 +80,8 @@ export const determineMaxValueCardAttributeCount = (size, currentAttributeCount)
     case CARD_SIZES.SMALLWIDE:
       attributeCount = 2;
       break;
-    case CARD_SIZES.MEDIUM:
     case CARD_SIZES.MEDIUMTHIN:
+    case CARD_SIZES.MEDIUM:
     case CARD_SIZES.MEDIUMWIDE:
       attributeCount = 3;
       break;

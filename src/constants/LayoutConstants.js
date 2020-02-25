@@ -10,12 +10,7 @@ export const COLORS = {
 
 export const DISABLED_COLORS = ['#e0e0e0', '#cacaca', '#a8a8a8', '#8d8d8d', '#6f6f6f'];
 
-export const LEGACY_CARD_SIZES = {
-  XSMALL: 'XSMALL',
-  XSMALLWIDE: 'XSMALLWIDE',
-  TALL: 'TALL',
-  WIDE: 'WIDE',
-  XLARGE: 'XLARGE',
+export const CARD_SIZES = {
   SMALL: 'SMALL',
   SMALLWIDE: 'SMALLWIDE',
   MEDIUMTHIN: 'MEDIUMTHIN',
@@ -26,15 +21,13 @@ export const LEGACY_CARD_SIZES = {
   LARGEWIDE: 'LARGEWIDE',
 };
 
-export const CARD_SIZES = {
-  SMALL: 'SMALL',
-  SMALLWIDE: 'SMALLWIDE',
-  MEDIUMTHIN: 'MEDIUMTHIN',
-  MEDIUM: 'MEDIUM',
-  MEDIUMWIDE: 'MEDIUMWIDE',
-  LARGETHIN: 'LARGETHIN',
-  LARGE: 'LARGE',
-  LARGEWIDE: 'LARGEWIDE',
+export const LEGACY_CARD_SIZES = {
+  XSMALL: 'XSMALL',
+  XSMALLWIDE: 'XSMALLWIDE',
+  TALL: 'TALL',
+  WIDE: 'WIDE',
+  XLARGE: 'XLARGE',
+  ...CARD_SIZES,
 };
 
 export const CARD_TYPES = {

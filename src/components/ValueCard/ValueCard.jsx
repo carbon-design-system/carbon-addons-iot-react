@@ -88,7 +88,7 @@ const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) =>
     case CARD_SIZES.SMALLWIDE:
       fontSize = 0.875;
       break;
-    case CARD_SIZES.MEDIUMTHIN:
+    case CARD_SIZES.MEDIUM:
       fontSize = isVertical && attributeCount > 2 ? 0.875 : 1;
       break;
     case CARD_SIZES.LARGETHIN:
@@ -102,7 +102,7 @@ const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) =>
 
 /** * Determines the label alignment */
 const getLabelAlignment = ({ size, isVertical, attributeCount }) => {
-  if (attributeCount === 1 && size === CARD_SIZES.MEDIUMTHIN && isVertical) {
+  if (attributeCount === 1 && size === CARD_SIZES.MEDIUM && isVertical) {
     return 'center';
   }
   return isVertical ? 'left' : 'right';
@@ -127,7 +127,7 @@ const AttributeLabel = styled.div`
   ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
   text-align: ${props => getLabelAlignment(props)};
   ${props =>
-    (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUMTHIN) &&
+    (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUM) &&
     `padding-top: 0.25rem;`};
   ${props =>
     !(props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.SMALLWIDE) &&
@@ -200,7 +200,7 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   switch (size) {
     case CARD_SIZES.SMALLWIDE:
       return layout === CARD_LAYOUTS.HORIZONTAL;
-    case CARD_SIZES.MEDIUMTHIN:
+    case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
       return !measuredSize || measuredSize.width < 300;

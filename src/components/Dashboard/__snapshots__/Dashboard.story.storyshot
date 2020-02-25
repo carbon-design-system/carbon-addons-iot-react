@@ -129,12 +129,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       >
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Comfort Level"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -142,7 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="89 %"
                                 value={89}
                               >
@@ -152,7 +152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Comfort Level"
                           >
                             Comfort Level
@@ -160,7 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -168,12 +168,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Utilization"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -181,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="76 %"
                                 value={76}
                               >
@@ -191,7 +191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Utilization"
                           >
                             Utilization
@@ -199,7 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -207,12 +207,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Pressure"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -220,7 +220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="21.4 mb"
                                 value={21.4}
                               >
@@ -230,7 +230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Pressure"
                           >
                             Pressure
@@ -2231,12 +2231,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       >
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Comfort Level"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2244,7 +2244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="89 %"
                                 value={89}
                               >
@@ -2254,7 +2254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Comfort Level"
                           >
                             Comfort Level
@@ -2262,7 +2262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -2270,12 +2270,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Utilization"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2283,7 +2283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="76 %"
                                 value={76}
                               >
@@ -2293,7 +2293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Utilization"
                           >
                             Utilization
@@ -2301,7 +2301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -2309,12 +2309,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Pressure"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -2322,7 +2322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="21.4 mb"
                                 value={21.4}
                               >
@@ -2332,7 +2332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Pressure"
                           >
                             Pressure
@@ -4365,12 +4365,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       >
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Comfort Level"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -4378,7 +4378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="89 %"
                                 value={89}
                               >
@@ -4388,7 +4388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Comfort Level"
                           >
                             Comfort Level
@@ -4396,7 +4396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -4404,12 +4404,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Utilization"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -4417,7 +4417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="76 %"
                                 value={76}
                               >
@@ -4427,7 +4427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Utilization"
                           >
                             Utilization
@@ -4435,7 +4435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -4443,12 +4443,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Pressure"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -4456,7 +4456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="21.4 mb"
                                 value={21.4}
                               >
@@ -4466,7 +4466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Pressure"
                           >
                             Pressure
@@ -9023,12 +9023,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       >
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Comfort Level"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -9036,7 +9036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="89 %"
                                 value={89}
                               >
@@ -9046,7 +9046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Comfort Level"
                           >
                             Comfort Level
@@ -9054,7 +9054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -9062,12 +9062,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Utilization"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -9075,7 +9075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="76 %"
                                 value={76}
                               >
@@ -9085,7 +9085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Utilization"
                           >
                             Utilization
@@ -9093,7 +9093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -9101,12 +9101,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Pressure"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -9114,7 +9114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="21.4 mb"
                                 value={21.4}
                               >
@@ -9124,7 +9124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Pressure"
                           >
                             Pressure
@@ -20187,12 +20187,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="YTD"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -20200,7 +20200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="13634.56 MWh"
                                   value={13634.56}
                                 >
@@ -20210,7 +20210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="YTD"
                             >
                               YTD
@@ -20218,7 +20218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20226,12 +20226,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="MTD"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -20239,7 +20239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="1047.2 MWh"
                                   value={1047.2}
                                 >
@@ -20249,7 +20249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="MTD"
                             >
                               MTD
@@ -20257,7 +20257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20265,12 +20265,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Week"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -20278,7 +20278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="314.5 MWh"
                                   value={314.5}
                                 >
@@ -20288,7 +20288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Week"
                             >
                               Last Week
@@ -20339,12 +20339,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Current"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 bShNpT"
@@ -20352,7 +20352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Severe "
                                   value="Severe"
                                 >
@@ -20362,7 +20362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Current"
                             >
                               Current
@@ -20370,7 +20370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20378,12 +20378,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Week"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 fZOGnQ"
@@ -20391,7 +20391,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Low "
                                   value="Low"
                                 >
@@ -20401,7 +20401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Week"
                             >
                               Last Week
@@ -20409,7 +20409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20417,12 +20417,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Month"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 eBvnHB"
@@ -20430,7 +20430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="High "
                                   value="High"
                                 >
@@ -20440,7 +20440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Month"
                             >
                               Last Month
@@ -20491,12 +20491,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Current"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
@@ -20504,7 +20504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Low "
                                   value="Low"
                                 >
@@ -20539,7 +20539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Current"
                             >
                               Current
@@ -20547,7 +20547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20555,12 +20555,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Week"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
@@ -20568,7 +20568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Severe "
                                   value="Severe"
                                 >
@@ -20603,7 +20603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Week"
                             >
                               Last Week
@@ -20611,7 +20611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20619,12 +20619,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Month"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
@@ -20632,7 +20632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Elevated "
                                   value="Elevated"
                                 >
@@ -20667,7 +20667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Month"
                             >
                               Last Month
@@ -20783,12 +20783,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="YTD"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -20796,7 +20796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="13634.56 MWh"
                                   value={13634.56}
                                 >
@@ -20806,7 +20806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="YTD"
                             >
                               YTD
@@ -20814,7 +20814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20822,12 +20822,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="MTD"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -20835,7 +20835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="1047.2 MWh"
                                   value={1047.2}
                                 >
@@ -20845,7 +20845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="MTD"
                             >
                               MTD
@@ -20853,7 +20853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20861,12 +20861,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Week"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -20874,7 +20874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="314.5 MWh"
                                   value={314.5}
                                 >
@@ -20884,7 +20884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Week"
                             >
                               Last Week
@@ -20935,12 +20935,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Current"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 bShNpT"
@@ -20948,7 +20948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Severe "
                                   value="Severe"
                                 >
@@ -20958,7 +20958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Current"
                             >
                               Current
@@ -20966,7 +20966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -20974,12 +20974,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Week"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 fZOGnQ"
@@ -20987,7 +20987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Low "
                                   value="Low"
                                 >
@@ -20997,7 +20997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Week"
                             >
                               Last Week
@@ -21005,7 +21005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -21013,12 +21013,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Month"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 eBvnHB"
@@ -21026,7 +21026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="High "
                                   value="High"
                                 >
@@ -21036,7 +21036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Month"
                             >
                               Last Month
@@ -21087,12 +21087,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         >
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Current"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
@@ -21100,7 +21100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Low "
                                   value="Low"
                                 >
@@ -21135,7 +21135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Current"
                             >
                               Current
@@ -21143,7 +21143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -21151,12 +21151,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Week"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
@@ -21164,7 +21164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Severe "
                                   value="Severe"
                                 >
@@ -21199,7 +21199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Week"
                             >
                               Last Week
@@ -21207,7 +21207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <hr
                               className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -21215,12 +21215,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                               label="Last Month"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                             >
                               <div
                                 className="ValueRenderer__Attribute-f4stpz-0 loxLrG"
@@ -21228,7 +21228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                               >
                                 <span
                                   className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                  size="MEDIUMTHIN"
+                                  size="MEDIUM"
                                   title="Elevated "
                                   value="Elevated"
                                 >
@@ -21263,7 +21263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             </div>
                             <div
                               className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                              size="MEDIUMTHIN"
+                              size="MEDIUM"
                               title="Last Month"
                             >
                               Last Month
@@ -21468,12 +21468,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                       >
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Comfort Level"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -21481,7 +21481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="89 %"
                                 value={89}
                               >
@@ -21491,7 +21491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Comfort Level"
                           >
                             Comfort Level
@@ -21499,7 +21499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -21507,12 +21507,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Utilization"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -21520,7 +21520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="76 %"
                                 value={76}
                               >
@@ -21530,7 +21530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Utilization"
                           >
                             Utilization
@@ -21538,7 +21538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <hr
                             className="ValueCard__AttributeSeparator-hyxf2q-2 hazVaq"
@@ -21546,12 +21546,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         </div>
                         <div
                           className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-                          size="MEDIUMTHIN"
+                          size="MEDIUM"
                         >
                           <div
                             className="Attribute__StyledAttribute-dhraql-0 gYrKUA"
                             label="Pressure"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                           >
                             <div
                               className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
@@ -21559,7 +21559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                             >
                               <span
                                 className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
-                                size="MEDIUMTHIN"
+                                size="MEDIUM"
                                 title="21.4 mb"
                                 value={21.4}
                               >
@@ -21569,7 +21569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                           </div>
                           <div
                             className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
-                            size="MEDIUMTHIN"
+                            size="MEDIUM"
                             title="Pressure"
                           >
                             Pressure

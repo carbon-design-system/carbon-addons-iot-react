@@ -77,7 +77,7 @@ const EmptyMessageWrapper = styled.div`
 `;
 
 export const defaultProps = {
-  size: CARD_SIZES.MEDIUMTHIN,
+  size: CARD_SIZES.MEDIUM,
   layout: CARD_LAYOUTS.HORIZONTAL,
   title: undefined,
   toolbar: undefined,
