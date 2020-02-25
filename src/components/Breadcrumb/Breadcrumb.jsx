@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, Children } from 'react';
+import React, { useState, useEffect, useRef, useReducer, Children } from 'react';
 import useResizeObserver from 'use-resize-observer';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -51,7 +51,18 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   });
   const [overflowItems, setOverflowItems] = useState([]);
   const [afterOverflowItems, setAfterOverflowItems] = useState(childrenItems.slice(1));
+  const [prevChildren, setPrevChildren] = useState([]);
 
+  useEffect(
+    () => {
+      if (hasOverflow) {
+        setOverflowItems([]);
+        setAfterOverflowItems(childrenItems.slice(1));
+        setPrevChildren(children);
+      }
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [children]
+  );
   /** update breadcrumbs  */
   useEffect(
     () => {
@@ -79,7 +90,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
         }
       }
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [breadcrumbRef.current?.clientWidth, breadcrumbRef.current?.scrollWidth]
+    [breadcrumbRef.current?.clientWidth, breadcrumbRef.current?.scrollWidth, prevChildren]
   );
 
   return (
