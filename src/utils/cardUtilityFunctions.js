@@ -112,10 +112,12 @@ export const getUpdatedCardSize = oldSize => {
       : null;
   let newSize = oldSize;
   if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${oldSize} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
+    if (__DEV__) {
+      warning(
+        false,
+        `You have set your card to a ${oldSize} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
+      );
+    }
     newSize = changedSize;
   }
   return newSize;
