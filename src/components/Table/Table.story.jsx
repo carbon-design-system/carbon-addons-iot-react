@@ -723,6 +723,31 @@ storiesOf('Watson IoT|Table', module)
       },
     }
   )
+  .add(
+    'with pre-filled search',
+    () => (
+      <StatefulTable
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        style={{ maxWidth: '300px' }}
+        columns={tableColumns.slice(0, 2)}
+        data={tableData}
+        actions={actions}
+        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'toyota',
+            },
+          },
+        }}
+      />
+    ),
+    {
+      info: {
+        text: `The table will pre-fill a search value, expand the search input and trigger a search`,
+      },
+    }
+  )
   .add('with multi select and batch actions', () => (
     <StatefulTable
       secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}

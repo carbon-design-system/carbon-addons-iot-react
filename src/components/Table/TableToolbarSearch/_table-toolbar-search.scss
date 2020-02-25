@@ -1,0 +1,12 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--table-toolbar-search {
+  display: flex;
+  flex: 0;
+  width: 100%;
+}
+
+.#{$iot-prefix}--table-toolbar-search__expanded {
+  flex: 1;
+}
