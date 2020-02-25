@@ -31,17 +31,14 @@
 td.data-table {
   &-start {
     text-align: start;
-    word-break: break-all;
   }
 
   &-center {
     text-align: center;
-    word-break: break-all;
   }
 
   &-end {
     text-align: end;
-    word-break: break-all;
   }
 }
 
@@ -101,7 +98,6 @@ section.#{$prefix}--table-toolbar {
 
 .#{$prefix}--data-table th {
   position: relative;
-  word-break: break-all;
 }
 
 .#{$prefix}--expandable-row .#{$prefix}--table-expand {
