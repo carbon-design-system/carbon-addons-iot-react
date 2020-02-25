@@ -112,9 +112,9 @@ storiesOf('Watson IoT | Breadcrumb', module)
               <BreadcrumbItem
                 href="#"
                 isCurrentPage
-                title={text('Breadcrumb 5 text', '5 page name')}
+                title={text('Breadcrumb 5 text', '5th level page')}
               >
-                {text('Breadcrumb 5 text', '5 page name')}
+                {text('Breadcrumb 5 text', '5th level page')}
               </BreadcrumbItem>
             </Breadcrumb>
           </div>

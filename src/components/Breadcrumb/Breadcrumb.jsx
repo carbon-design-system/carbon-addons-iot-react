@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useReducer, Children } from 'react';
+import React, { useState, useEffect, useRef, Children } from 'react';
 import useResizeObserver from 'use-resize-observer';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
