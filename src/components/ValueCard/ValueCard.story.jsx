@@ -53,6 +53,30 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
+  .add('xsmall / wrapping', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    return (
+      <div style={{ width: text('cardWidth', '120px'), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Occupancy')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'occupancy',
+                unit: '%',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{
+            occupancy: text('occupancy', 'Really really busy loong long long long'),
+          }}
+        />
+      </div>
+    );
+  })
   .add('xsmall / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
@@ -182,7 +206,7 @@ storiesOf('Watson IoT|ValueCard', module)
   .add('xsmall / thresholds (number, icon)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${number('cardWidth', 300)}px`, margin: 20 }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
@@ -192,7 +216,7 @@ storiesOf('Watson IoT|ValueCard', module)
                 dataSourceId: 'alertCount',
                 thresholds: [
                   {
-                    comparison: '<',
+                    comparison: '>',
                     value: 5,
                     icon: 'checkmark',
                     color: 'green',
@@ -203,7 +227,7 @@ storiesOf('Watson IoT|ValueCard', module)
           }}
           breakpoint="lg"
           size={size}
-          values={{ alertCount: number('alertCount', 4) }}
+          values={{ alertCount: number('alertCount', 70) }}
         />
       </div>
     );
