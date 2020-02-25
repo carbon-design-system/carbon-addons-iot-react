@@ -14,8 +14,12 @@
   }
 }
 .#{$iot-prefix}--pagination--hide-page {
+  .bx--pagination__left .bx--pagination__text:first-child,
   .bx--pagination__left span:first-child,
   .bx--pagination__left .bx--form-item {
     display: none;
+  }
+  .bx--pagination__left .bx--pagination__text {
+    margin-left: 0rem;
   }
 }
