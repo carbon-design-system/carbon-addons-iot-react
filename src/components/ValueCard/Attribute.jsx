@@ -30,13 +30,6 @@ const TrendIcon = styled(Icon)`
   margin-right: 0.25rem;
 `;
 
-// const ThresholdIconWrapper = styled.div`
-//   width: 1rem;
-//   height: 1rem;
-//   ${props => !props.isMini && 'margin: 0 0 0.5rem 0.5rem;'}
-//   ${props => props.allowedToWrap === 'true' && 'margin-left: 0;'}
-// `;
-
 const ThresholdIcon = styled(Icon)`
   ${props =>
     props.color &&
