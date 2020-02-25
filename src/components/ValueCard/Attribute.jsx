@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Icon } from 'carbon-components-react';
 import withSize from 'react-sizeme';
-import warning from 'warning';
 
 import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -118,26 +118,8 @@ const Attribute = ({
   size, // eslint-disable-line
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const changedSize =
-    size === 'XSMALL'
-      ? 'SMALL'
-      : size === 'XSMALLWIDE'
-      ? 'SMALLWIDE'
-      : size === 'WIDE'
-      ? 'MEDIUMWIDE'
-      : size === 'TALL'
-      ? 'LARGETHIN'
-      : size === 'XLARGE'
-      ? 'LARGEWIDE'
-      : null;
-  let newSize = size;
-  if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
-    newSize = changedSize;
-  }
+  const newSize = getUpdatedCardSize(size);
+
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
     .filter(t => {

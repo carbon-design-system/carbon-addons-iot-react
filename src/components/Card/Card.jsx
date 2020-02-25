@@ -3,7 +3,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
-import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -19,6 +18,7 @@ import {
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
@@ -161,26 +161,7 @@ const Card = props => {
     ...others
   } = props;
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const changedSize =
-    size === 'XSMALL'
-      ? 'SMALL'
-      : size === 'XSMALLWIDE'
-      ? 'SMALLWIDE'
-      : size === 'WIDE'
-      ? 'MEDIUMWIDE'
-      : size === 'TALL'
-      ? 'LARGETHIN'
-      : size === 'XLARGE'
-      ? 'LARGEWIDE'
-      : null;
-  let newSize = size;
-  if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
-    newSize = changedSize;
-  }
+  const newSize = getUpdatedCardSize(size);
 
   const isSM = newSize === CARD_SIZES.SMALL;
 

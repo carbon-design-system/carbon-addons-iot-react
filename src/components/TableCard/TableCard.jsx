@@ -7,7 +7,6 @@ import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
-import warning from 'warning';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -16,6 +15,7 @@ import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 const StyledOverflowMenu = styled(OverflowMenu)`
   &&& {
@@ -261,26 +261,7 @@ const TableCard = ({
   ...others
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const changedSize =
-    size === 'XSMALL'
-      ? 'SMALL'
-      : size === 'XSMALLWIDE'
-      ? 'SMALLWIDE'
-      : size === 'WIDE'
-      ? 'MEDIUMWIDE'
-      : size === 'TALL'
-      ? 'LARGETHIN'
-      : size === 'XLARGE'
-      ? 'LARGEWIDE'
-      : null;
-  let newSize = size;
-  if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
-    newSize = changedSize;
-  }
+  const newSize = getUpdatedCardSize(size);
 
   /** adds the id to the card action */
   const cachedOnCardAction = useCallback((...args) => onCardAction(id, ...args), [

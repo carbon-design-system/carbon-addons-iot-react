@@ -9023,7 +9023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard size - xlarge with tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard size - large-wide with tooltip 1`] = `
 <div
   style={
     Object {

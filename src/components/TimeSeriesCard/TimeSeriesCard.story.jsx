@@ -904,7 +904,7 @@ storiesOf('Watson IoT|TimeSeriesCard', module)
       </div>
     );
   })
-  .add('Xlarge / multi line - (No X/Y Label)', () => {
+  .add('largewide / multi line - (No X/Y Label)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>

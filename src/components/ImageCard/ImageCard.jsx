@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import Image32 from '@carbon/icons-react/lib/image/32';
-import warning from 'warning';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
-import { CARD_SIZES, DEPRECATED_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 
@@ -50,26 +50,7 @@ const ImageCard = ({
   const hotspots = values ? values.hotspots || [] : [];
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const changedSize =
-    size === 'XSMALL'
-      ? 'SMALL'
-      : size === 'XSMALLWIDE'
-      ? 'SMALLWIDE'
-      : size === 'WIDE'
-      ? 'MEDIUMWIDE'
-      : size === 'TALL'
-      ? 'LARGETHIN'
-      : size === 'XLARGE'
-      ? 'LARGEWIDE'
-      : null;
-  let newSize = size;
-  if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
-    newSize = changedSize;
-  }
+  const newSize = getUpdatedCardSize(size);
 
   const supportedSizes = [
     CARD_SIZES.MEDIUMTHIN,

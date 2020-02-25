@@ -3,13 +3,15 @@ import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
-import warning from 'warning';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
-import { determineMaxValueCardAttributeCount } from '../../utils/cardUtilityFunctions';
+import {
+  determineMaxValueCardAttributeCount,
+  getUpdatedCardSize,
+} from '../../utils/cardUtilityFunctions';
 
 import Attribute from './Attribute';
 
@@ -211,26 +213,7 @@ const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }
     ...others.availableActions,
   };
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const changedSize =
-    size === 'XSMALL'
-      ? 'SMALL'
-      : size === 'XSMALLWIDE'
-      ? 'SMALLWIDE'
-      : size === 'WIDE'
-      ? 'MEDIUMWIDE'
-      : size === 'TALL'
-      ? 'LARGETHIN'
-      : size === 'XLARGE'
-      ? 'LARGEWIDE'
-      : null;
-  let newSize = size;
-  if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
-    newSize = changedSize;
-  }
+  const newSize = getUpdatedCardSize(size);
 
   return (
     <withSize.SizeMe>

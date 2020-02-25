@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import warning from 'warning';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
@@ -94,26 +94,7 @@ const ValueRenderer = ({
   isVertical,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
-  const changedSize =
-    size === 'XSMALL'
-      ? 'SMALL'
-      : size === 'XSMALLWIDE'
-      ? 'SMALLWIDE'
-      : size === 'WIDE'
-      ? 'MEDIUMWIDE'
-      : size === 'TALL'
-      ? 'LARGETHIN'
-      : size === 'XLARGE'
-      ? 'LARGEWIDE'
-      : null;
-  let newSize = size;
-  if (changedSize) {
-    warning(
-      false,
-      `You have set your card to a ${size} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
-    );
-    newSize = changedSize;
-  }
+  const newSize = getUpdatedCardSize(size);
 
   const precision = determinePrecision(newSize, value, precisionProp);
   let renderValue = value;

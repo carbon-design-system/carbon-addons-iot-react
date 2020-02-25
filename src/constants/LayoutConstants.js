@@ -10,17 +10,20 @@ export const COLORS = {
 
 export const DISABLED_COLORS = ['#e0e0e0', '#cacaca', '#a8a8a8', '#8d8d8d', '#6f6f6f'];
 
-export const DEPRECATED_SIZES = ['XSMALL', 'XSMALLWIDE', 'WIDE', 'TALL', 'XLARGE'];
-
-export const OLD_CARD_SIZES = {
+export const LEGACY_CARD_SIZES = {
   XSMALL: 'XSMALL',
   XSMALLWIDE: 'XSMALLWIDE',
-  SMALL: 'SMALL',
   TALL: 'TALL',
-  MEDIUM: 'MEDIUM',
   WIDE: 'WIDE',
-  LARGE: 'LARGE',
   XLARGE: 'XLARGE',
+  SMALL: 'SMALL',
+  SMALLWIDE: 'SMALLWIDE',
+  MEDIUMTHIN: 'MEDIUMTHIN',
+  MEDIUM: 'MEDIUM',
+  MEDIUMWIDE: 'MEDIUMWIDE',
+  LARGETHIN: 'LARGETHIN',
+  LARGE: 'LARGE',
+  LARGEWIDE: 'LARGEWIDE',
 };
 
 export const CARD_SIZES = {

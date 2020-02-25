@@ -1,3 +1,5 @@
+import warning from 'warning';
+
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
 /**
@@ -93,4 +95,28 @@ export const determineMaxValueCardAttributeCount = (size, currentAttributeCount)
     default:
   }
   return attributeCount;
+};
+
+export const getUpdatedCardSize = oldSize => {
+  const changedSize =
+    oldSize === 'XSMALL'
+      ? 'SMALL'
+      : oldSize === 'XSMALLWIDE'
+      ? 'SMALLWIDE'
+      : oldSize === 'WIDE'
+      ? 'MEDIUMWIDE'
+      : oldSize === 'TALL'
+      ? 'LARGETHIN'
+      : oldSize === 'XLARGE'
+      ? 'LARGEWIDE'
+      : null;
+  let newSize = oldSize;
+  if (changedSize) {
+    warning(
+      false,
+      `You have set your card to a ${oldSize} size. This size name is deprecated. The card will be displayed as a ${changedSize} size.`
+    );
+    newSize = changedSize;
+  }
+  return newSize;
 };

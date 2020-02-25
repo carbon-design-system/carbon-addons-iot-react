@@ -1164,7 +1164,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </ClickableTile>
                 ),
                 id: 'viewDashboards',
-                size: 'SMALL',
+                size: CARD_SIZES.MEDIUMTHIN,
                 type: 'CUSTOM',
               },
               {
@@ -1198,7 +1198,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </ClickableTile>
                 ),
                 id: 'connectDevices',
-                size: 'SMALL',
+                size: CARD_SIZES.MEDIUMTHIN,
                 type: 'CUSTOM',
               },
               {
@@ -1225,7 +1225,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </div>
                 ),
                 id: 'monitorEntities',
-                size: 'SMALL',
+                size: CARD_SIZES.MEDIUMTHIN,
                 type: 'CUSTOM',
               },
               {
@@ -1247,7 +1247,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </div>
                 ),
                 id: 'trackUsage',
-                size: 'XSMALLWIDE',
+                size: CARD_SIZES.SMALLWIDE,
                 type: 'CUSTOM',
               },
               {
@@ -1269,7 +1269,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   </div>
                 ),
                 id: 'administerUsers',
-                size: 'XSMALLWIDE',
+                size: CARD_SIZES.SMALLWIDE,
                 type: 'CUSTOM',
               },
               {
@@ -1316,7 +1316,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   loadData: () => {},
                 },
                 id: 'tutorials',
-                size: 'WIDE',
+                size: CARD_SIZES.MEDIUMWIDE,
                 title: 'Tutorials',
                 type: 'LIST',
               },
@@ -1349,7 +1349,7 @@ storiesOf('Watson IoT|Dashboard', module)
                   loadData: () => {},
                 },
                 id: 'announcements',
-                size: 'WIDE',
+                size: CARD_SIZES.MEDIUMWIDE,
                 title: 'Announcements',
                 type: 'LIST',
               },
