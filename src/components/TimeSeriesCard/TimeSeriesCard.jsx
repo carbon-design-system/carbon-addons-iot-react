@@ -16,6 +16,7 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropType
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import {
   generateSampleValues,
@@ -79,7 +80,7 @@ export const determinePrecision = (size, value, defaultPrecision) => {
   }
   // If the card is xsmall we don't have room for decimals!
   switch (size) {
-    case CARD_SIZES.XSMALL:
+    case CARD_SIZES.SMALL:
       return Math.abs(value) > 9 ? 0 : defaultPrecision;
     default:
   }
@@ -216,23 +217,26 @@ const TimeSeriesCard = ({
     [values, timeDataSourceId]
   );
 
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
+
   const maxTicksPerSize = useMemo(
     () => {
-      switch (size) {
-        case CARD_SIZES.SMALL:
+      switch (newSize) {
+        case CARD_SIZES.MEDIUMTHIN:
           return 2;
         case CARD_SIZES.MEDIUM:
           return 4;
-        case CARD_SIZES.WIDE:
+        case CARD_SIZES.MEDIUMWIDE:
         case CARD_SIZES.LARGE:
           return 6;
-        case CARD_SIZES.XLARGE:
+        case CARD_SIZES.LARGEWIDE:
           return 14;
         default:
           return 10;
       }
     },
-    [size]
+    [newSize]
   );
 
   const formatTick = useCallback(
@@ -356,7 +360,7 @@ const TimeSeriesCard = ({
   return (
     <Card
       title={title}
-      size={size}
+      size={newSize}
       i18n={i18n}
       {...others}
       isExpanded={isExpanded}
@@ -367,7 +371,7 @@ const TimeSeriesCard = ({
       {!others.isLoading && !isAllValuesEmpty ? (
         <Fragment>
           <LineChartWrapper
-            size={size}
+            size={newSize}
             isEditable={isEditable}
             isExpanded={isExpanded}
             numberOfPoints={valueSort && valueSort.length}
@@ -394,7 +398,7 @@ const TimeSeriesCard = ({
                   },
                   left: {
                     title: yLabel,
-                    formatter: axisValue => valueFormatter(axisValue, size, unit),
+                    formatter: axisValue => valueFormatter(axisValue, newSize, unit),
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
                       : {}),
@@ -407,7 +411,7 @@ const TimeSeriesCard = ({
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
                 containerResizable: true,
                 tooltip: {
-                  formatter: tooltipValue => valueFormatter(tooltipValue, size, unit),
+                  formatter: tooltipValue => valueFormatter(tooltipValue, newSize, unit),
                   customHTML: (...args) =>
                     handleTooltip(...args, alertRanges, alertDetected, locale),
                   gridline: {

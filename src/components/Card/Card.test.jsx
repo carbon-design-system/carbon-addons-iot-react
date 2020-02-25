@@ -19,7 +19,7 @@ const cardProps = {
 };
 
 describe('Card testcases', () => {
-  test('xsmall', () => {
+  test('small', () => {
     const wrapper = mount(<Card {...cardProps} size={CARD_SIZES.SMALL} />);
 
     // small should have full header
@@ -62,7 +62,7 @@ describe('Card testcases', () => {
     wrapper = mount(
       <Card
         {...cardProps}
-        size={CARD_SIZES.XSMALL}
+        size={CARD_SIZES.SMALL}
         availableActions={{ range: true, expand: true }}
       />
     );
@@ -72,7 +72,7 @@ describe('Card testcases', () => {
     expect(wrapper.find(Popup20)).toHaveLength(1);
 
     wrapper = mount(
-      <Card {...cardProps} size={CARD_SIZES.XSMALL} isEditable availableActions={{ range: true }} />
+      <Card {...cardProps} size={CARD_SIZES.SMALL} isEditable availableActions={{ range: true }} />
     );
     // CardRangePicker icon should not render if isEditable prop is true
     expect(wrapper.find(CardRangePicker)).toHaveLength(0);
@@ -86,7 +86,7 @@ describe('Card testcases', () => {
     expect(wrapper.find(SkeletonWrapper)).toHaveLength(0);
     // with the isLoading prop SkeletonWrapper should  be rendered
     wrapper = mount(
-      <Card {...cardProps} isLoading size={CARD_SIZES.XSMALLWIDE} tooltip={tooltipElement} />
+      <Card {...cardProps} isLoading size={CARD_SIZES.SMALLWIDE} tooltip={tooltipElement} />
     );
     expect(wrapper.find(SkeletonWrapper)).toHaveLength(1);
   });

@@ -6,6 +6,7 @@ import Image32 from '@carbon/icons-react/lib/image/32';
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 
@@ -47,14 +48,18 @@ const ImageCard = ({
 }) => {
   const { src } = content;
   const hotspots = values ? values.hotspots || [] : [];
+
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
+
   const supportedSizes = [
-    CARD_SIZES.SMALL,
+    CARD_SIZES.MEDIUMTHIN,
     CARD_SIZES.MEDIUM,
-    CARD_SIZES.WIDE,
+    CARD_SIZES.MEDIUMWIDE,
     CARD_SIZES.LARGE,
-    CARD_SIZES.XLARGE,
+    CARD_SIZES.LARGEWIDE,
   ];
-  const supportedSize = supportedSizes.includes(size);
+  const supportedSize = supportedSizes.includes(newSize);
   const availableActions = { expand: supportedSize };
 
   const isCardLoading = isNil(src) && !isEditable && !error;
@@ -62,7 +67,7 @@ const ImageCard = ({
   return (
     <Card
       title={title}
-      size={size}
+      size={newSize}
       onCardAction={onCardAction}
       availableActions={availableActions}
       isLoading={isCardLoading} // only show the spinner if we don't have an image
