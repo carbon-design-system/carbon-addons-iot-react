@@ -185,7 +185,8 @@ class RowActionsCell extends React.Component {
                   <Button
                     {...others}
                     iconDescription={overflowMenuAria}
-                    key={`${id}-row-actions-button-${actionId}`}
+                    key={`${tableId}-${id}-row-actions-button-${actionId}`}
+                    data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                     kind="ghost"
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                   >
@@ -195,6 +196,7 @@ class RowActionsCell extends React.Component {
               {hasOverflow ? (
                 <StyledOverflowMenu
                   id={`${tableId}-${id}-row-actions-cell-overflow`}
+                  data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
                   flipped
                   ariaLabel={overflowMenuAria}
                   onClick={event => event.stopPropagation()}
