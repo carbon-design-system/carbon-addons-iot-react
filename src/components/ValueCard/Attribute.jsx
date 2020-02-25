@@ -4,12 +4,16 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Icon } from 'carbon-components-react';
 import withSize from 'react-sizeme';
+import classNames from 'classnames';
 
 import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { settings } from '../../constants/Settings';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
+
+const { iotPrefix } = settings;
 
 const StyledAttribute = styled.div`
   display: flex;
@@ -26,11 +30,12 @@ const TrendIcon = styled(Icon)`
   margin-right: 0.25rem;
 `;
 
-const ThresholdIconWrapper = styled.div`
-  width: 1rem;
-  height: 1rem;
-  ${props => !props.isMini && 'margin: 0 0 0.5rem 0.5rem;'}
-`;
+// const ThresholdIconWrapper = styled.div`
+//   width: 1rem;
+//   height: 1rem;
+//   ${props => !props.isMini && 'margin: 0 0 0.5rem 0.5rem;'}
+//   ${props => props.allowedToWrap === 'true' && 'margin-left: 0;'}
+// `;
 
 const ThresholdIcon = styled(Icon)`
   ${props =>
@@ -50,10 +55,6 @@ const AttributeSecondaryValue = styled.div`
   font-size: 0.875rem;
   padding-left: ${props => (props.isMini ? '0.5rem' : '0.25rem')};
   margin-bottom: ${props => (props.isMini ? '0' : '0.25rem')};
-`;
-
-const StyledIcon = styled.div`
-  margin-left: auto;
 `;
 
 const propTypes = {
@@ -145,9 +146,16 @@ const Attribute = ({
         description: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
       }
     : {};
-  const thresholdIcon =
-    matchingThreshold && matchingThreshold.icon ? (
-      <ThresholdIconWrapper isMini={isMini}>
+  const bemBase = `${iotPrefix}--value-card__attribute`;
+
+  const renderThresholdIcon = allowedToWrap => {
+    return (
+      <div
+        className={classNames(`${bemBase}-threshold-icon-container`, {
+          [`${bemBase}-threshold-icon-container--mini`]: isMini,
+          [`${bemBase}-threshold-icon-container--wrappable`]: allowedToWrap,
+        })}
+      >
         {renderIconByName ? (
           renderIconByName(matchingThreshold.icon, thresholdIconProps)
         ) : (
@@ -158,12 +166,14 @@ const Attribute = ({
             description={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
           />
         )}
-      </ThresholdIconWrapper>
-    ) : null;
+      </div>
+    );
+  };
 
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
+        const allowWrap = measuredSize && measuredSize.width <= 100;
         return (
           <StyledAttribute
             size={size}
@@ -171,6 +181,7 @@ const Attribute = ({
             isVertical={isVertical}
             isMini={isMini}
             label={label}
+            className={classNames({ [`${bemBase}--wrappable`]: allowWrap })}
           >
             <ValueRenderer
               value={value}
@@ -183,13 +194,14 @@ const Attribute = ({
               precision={precision}
               isVertical={isVertical}
               color={valueColor}
+              allowedToWrap={allowWrap}
             />
             <UnitRenderer
-              isVisible={!measuredSize || measuredSize.width > 100}
               value={value}
               unit={unit}
               layout={layout}
               isMini={isMini}
+              allowedToWrap={allowWrap}
             />
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue
@@ -205,7 +217,15 @@ const Attribute = ({
                 {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>
             ) : null}
-            {thresholdIcon ? <StyledIcon>{thresholdIcon}</StyledIcon> : null}
+            {matchingThreshold && matchingThreshold.icon ? (
+              <div
+                className={classNames(`${bemBase}-icon-container`, {
+                  [`${bemBase}-icon-container--wrappable`]: allowWrap,
+                })}
+              >
+                {renderThresholdIcon(allowWrap)}
+              </div>
+            ) : null}
           </StyledAttribute>
         );
       }}

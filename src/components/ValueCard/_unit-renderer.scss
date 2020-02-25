@@ -1,0 +1,20 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--value-card__attribute-unit {
+  padding-left: 0.25rem;
+  font-weight: lighter;
+  white-space: nowrap;
+  padding-bottom: 0.25rem;
+  font-size: var(--font-size);
+}
+
+.#{$iot-prefix}--value-card__attribute-unit--mini {
+  padding-bottom: 0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.#{$iot-prefix}--value-card__attribute-unit--wrappable {
+  padding-left: 0;
+  padding-bottom: 0;
+}

@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import classNames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
@@ -16,6 +20,7 @@ const propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
   isVertical: PropTypes.bool,
+  allowedToWrap: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -91,6 +96,7 @@ const ValueRenderer = ({
   isMini,
   color,
   isVertical,
+  allowedToWrap,
 }) => {
   const precision = determinePrecision(size, value, precisionProp);
   let renderValue = value;
@@ -112,7 +118,17 @@ const ValueRenderer = ({
     renderValue = '--';
   }
   return (
-    <Attribute unit={unit} isSmall={isSmall} isMini={isMini} color={color} isVertical={isVertical}>
+    <Attribute
+      unit={unit}
+      isSmall={isSmall}
+      isMini={isMini}
+      color={color}
+      isVertical={isVertical}
+      allowedToWrap={allowedToWrap}
+      className={classNames({
+        [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
+      })}
+    >
       <AttributeValue
         size={size}
         title={`${value} ${unit || ''}`}
