@@ -93,6 +93,9 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
     }
     .bx--data-table {
       ${props => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
+      td {
+        white-space: nowrap;
+      }
     }
     .bx--data-table thead tr:nth-child(2) {
       height: 3rem;

@@ -627,7 +627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             className="Card__CardContent-v5r71h-1 hxiPNM"
           >
             <div
-              className="Table__StyledTableContainer-sc-1kalfns-0 buETAI bx--data-table-container"
+              className="iot--table-container bx--data-table-container"
             >
               <section
                 aria-label="data table toolbar"

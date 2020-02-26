@@ -97,6 +97,51 @@ export const GUTTER = 16;
  */
 
 export const CARD_DIMENSIONS = {
+  XSMALL: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 2, h: 1 },
+    xl: { w: 2, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 2, h: 1 },
+    xs: { w: 4, h: 1 },
+  },
+  XSMALLWIDE: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 4, h: 1 },
+    xl: { w: 4, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 4, h: 2 },
+    xs: { w: 4, h: 1 },
+  },
+  TALL: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 4, h: 4 },
+    xl: { w: 4, h: 4 },
+    lg: { w: 4, h: 4 },
+    md: { w: 4, h: 4 },
+    sm: { w: 4, h: 4 },
+    xs: { w: 4, h: 4 },
+  },
+  WIDE: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 8, h: 2 },
+    xl: { w: 8, h: 2 },
+    lg: { w: 8, h: 2 },
+    md: { w: 8, h: 2 },
+    sm: { w: 4, h: 2 },
+    xs: { w: 4, h: 2 },
+  },
+  XLARGE: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 16, h: 4 },
+    xl: { w: 16, h: 4 },
+    lg: { w: 16, h: 4 },
+    md: { w: 8, h: 4 },
+    sm: { w: 4, h: 4 },
+    xs: { w: 4, h: 4 },
+  },
   SMALL: {
     max: { w: 2, h: 1 },
     xl: { w: 2, h: 1 },
