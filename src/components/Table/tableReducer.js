@@ -284,7 +284,7 @@ export const tableReducer = (state = {}, action) => {
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
-            pageSize: { $set: pageSize || paginationFromState.pageSize },
+            pageSize: { $set: paginationFromState.pageSize || pageSize },
             pageSizes: { $set: pageSizes },
           }
         : {};

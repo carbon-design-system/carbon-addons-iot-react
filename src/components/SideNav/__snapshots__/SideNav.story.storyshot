@@ -347,6 +347,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
             </li>
           </ul>
         </nav>
+        <div
+          className="page-title-bar"
+        >
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Title
+                  </h2>
+                </div>
+              </div>
+              <p
+                className="page-title-bar-description"
+              >
+                Description
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <button
         className="info__show-button"
