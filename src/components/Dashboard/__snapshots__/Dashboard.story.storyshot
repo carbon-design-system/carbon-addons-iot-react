@@ -380,17 +380,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                    content={
-                      <h2
-                        style={
-                          Object {
-                            "padding": "1rem",
-                          }
-                        }
-                      >
-                        Section Header
-                      </h2>
-                    }
                     id="section-card"
                     style={
                       Object {
@@ -2474,17 +2463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                    content={
-                      <h2
-                        style={
-                          Object {
-                            "padding": "1rem",
-                          }
-                        }
-                      >
-                        Section Header
-                      </h2>
-                    }
                     id="section-card"
                     style={
                       Object {
@@ -4600,17 +4578,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                    content={
-                      <h2
-                        style={
-                          Object {
-                            "padding": "1rem",
-                          }
-                        }
-                      >
-                        Section Header
-                      </h2>
-                    }
                     id="section-card"
                     style={
                       Object {
@@ -9248,17 +9215,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                    content={
-                      <h2
-                        style={
-                          Object {
-                            "padding": "1rem",
-                          }
-                        }
-                      >
-                        Section Header
-                      </h2>
-                    }
                     id="section-card"
                     style={
                       Object {
@@ -21583,17 +21539,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   </div>
                   <div
                     className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                    content={
-                      <h2
-                        style={
-                          Object {
-                            "padding": "1rem",
-                          }
-                        }
-                      >
-                        Section Header
-                      </h2>
-                    }
                     id="section-card"
                     style={
                       Object {
@@ -23376,58 +23321,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                   >
                     <div
                       className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                      content={
-                        <ClickableTile
-                          clicked={false}
-                          handleClick={[Function]}
-                          handleKeyDown={[Function]}
-                          href="https://internetofthings.ibmcloud.com"
-                          light={false}
-                          style={
-                            Object {
-                              "height": "100%",
-                              "padding": "0 0 0 0",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "padding": "12px",
-                              }
-                            }
-                          >
-                            <h4>
-                              View Dashboards
-                            </h4>
-                            <br />
-                            <p>
-                              View pinned dashboards to keep track of your world in IoT.
-                            </p>
-                            <div
-                              style={
-                                Object {
-                                  "bottom": "0",
-                                  "padding": "0 36px 16px 0",
-                                  "position": "absolute",
-                                  "textAlign": "right",
-                                  "width": "100%",
-                                }
-                              }
-                            >
-                              <img
-                                alt="View Dashboards"
-                                src="dashboard.svg"
-                                style={
-                                  Object {
-                                    "width": "50%",
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </ClickableTile>
-                      }
                       id="viewDashboards"
                       style={
                         Object {
@@ -23499,58 +23392,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                     <div
                       className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                      content={
-                        <ClickableTile
-                          clicked={false}
-                          handleClick={[Function]}
-                          handleKeyDown={[Function]}
-                          href="https://internetofthings.ibmcloud.com"
-                          light={false}
-                          style={
-                            Object {
-                              "height": "100%",
-                              "padding": "0 0 0 0",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "padding": "12px",
-                              }
-                            }
-                          >
-                            <h4>
-                              Connect Devices
-                            </h4>
-                            <br />
-                            <p>
-                              Connect devices and collect data by using the Watson IoT Platform Service.
-                            </p>
-                            <div
-                              style={
-                                Object {
-                                  "bottom": "0",
-                                  "padding": "0 36px 16px 0",
-                                  "position": "absolute",
-                                  "textAlign": "right",
-                                  "width": "100%",
-                                }
-                              }
-                            >
-                              <img
-                                alt="Connect Devices"
-                                src="computer-chip.svg"
-                                style={
-                                  Object {
-                                    "width": "50%",
-                                  }
-                                }
-                              />
-                            </div>
-                          </div>
-                        </ClickableTile>
-                      }
                       id="connectDevices"
                       style={
                         Object {
@@ -23622,44 +23463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                     <div
                       className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                      content={
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            Monitor Entities
-                          </h4>
-                          <br />
-                          <p>
-                            Expore your entities and analyze their associated data.
-                          </p>
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <img
-                              alt="Monitor Entities"
-                              src="data-scientist-illustration.svg"
-                              style={
-                                Object {
-                                  "width": "50%",
-                                }
-                              }
-                            />
-                          </div>
-                        </div>
-                      }
                       id="monitorEntities"
                       style={
                         Object {
@@ -23718,35 +23521,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                     <div
                       className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                      content={
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            Track Usage
-                          </h4>
-                          <br />
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <ForwardRef(Application32)
-                              aria-label="Track Usage"
-                            />
-                          </div>
-                        </div>
-                      }
                       id="trackUsage"
                       style={
                         Object {
@@ -23812,35 +23586,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                     </div>
                     <div
                       className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                      content={
-                        <div
-                          style={
-                            Object {
-                              "padding": "12px",
-                            }
-                          }
-                        >
-                          <h4>
-                            Administer Users
-                          </h4>
-                          <br />
-                          <div
-                            style={
-                              Object {
-                                "bottom": "0",
-                                "padding": "0 36px 16px 0",
-                                "position": "absolute",
-                                "textAlign": "right",
-                                "width": "100%",
-                              }
-                            }
-                          >
-                            <ForwardRef(Group32)
-                              aria-label="Track Usage"
-                            />
-                          </div>
-                        </div>
-                      }
                       id="administerUsers"
                       style={
                         Object {
