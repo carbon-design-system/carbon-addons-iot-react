@@ -7,7 +7,6 @@ import { settings } from '../../constants/Settings';
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import {
   CARD_SIZES,
-  LEGACY_CARD_SIZES,
   CARD_CONTENT_PADDING,
   VALUE_CARD_DATA_STATE,
 } from '../../constants/LayoutConstants';
@@ -92,7 +91,9 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     >
       <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
       <div className={`${dsPrefix}-grid`}>
-        {size === LEGACY_CARD_SIZES.XSMALL ? renderDataStateGridIcon() : renderDataStateGridItems()}
+        {size === CARD_SIZES.SMALL || size === CARD_SIZES.MEDIUMTHIN
+          ? renderDataStateGridIcon()
+          : renderDataStateGridItems()}
       </div>
     </div>
   );

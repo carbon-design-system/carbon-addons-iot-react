@@ -3,11 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 
-import {
-  CARD_SIZES,
-  LEGACY_CARD_SIZES,
-  VALUE_CARD_DATA_STATE,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, VALUE_CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import ValueCard from './ValueCard';
@@ -711,8 +707,10 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('data state - no data - small - scroll page', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  .add('data state - no data - medium - scroll page', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const width = text('cardWidth', `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`);
+
     const myDataState = {
       type: select(
         'dataState : Type',
@@ -734,16 +732,16 @@ storiesOf('Watson IoT|ValueCard', module)
 
     return (
       <div>
-        <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
-          <ValueCard
-            title={text('title', 'Health score')}
-            content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
-            dataState={myDataState}
-            breakpoint="lg"
-            size={size}
-            id="myStoryId"
-          />
-        </div>
+        <ValueCard
+          style={{ width }}
+          title={text('title', 'Health score')}
+          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          dataState={myDataState}
+          breakpoint="lg"
+          size={size}
+          id="myStoryId"
+        />
+
         <div style={{ height: '150vh' }} />
       </div>
     );
@@ -801,15 +799,15 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('data state - error - xsmall', () => {
-    const size = select('size', Object.keys(LEGACY_CARD_SIZES), LEGACY_CARD_SIZES.XSMALL);
+  .add('data state - error - small', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     const dataStateType = select(
       'dataStateType',
       Object.keys(VALUE_CARD_DATA_STATE),
       VALUE_CARD_DATA_STATE.ERROR
     );
     return (
-      <div style={{ width: text('cardWidth', '150px'), margin: 20 }}>
+      <div style={{ width: text('cardWidth', `${getCardMinSize('sm', size).x}px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Health score')}
           id="myStoryId"
@@ -823,7 +821,7 @@ storiesOf('Watson IoT|ValueCard', module)
             learnMoreURL: 'http://www.ibm.com',
             learnMoreText: 'Learn more',
           }}
-          breakpoint="lg"
+          breakpoint="sm"
           size={size}
         />
       </div>
