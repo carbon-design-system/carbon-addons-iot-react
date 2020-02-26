@@ -28,8 +28,8 @@ function getDataStateProp() {
 }
 
 storiesOf('Watson IoT|ValueCard', module)
-  .add('xsmall / basic', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / basic', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -50,8 +50,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / long', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / long', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -72,8 +72,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / units', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / units', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
         <ValueCard
@@ -94,8 +94,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / title', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / title', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -116,8 +116,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / trend down', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / trend down', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
         <ValueCard
@@ -138,8 +138,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / trend up', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / trend up', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
         <ValueCard
@@ -160,8 +160,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / thresholds (number, no icon)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / thresholds (number, no icon)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -198,8 +198,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / thresholds (number, icon)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / thresholds (number, icon)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -227,8 +227,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmall / thresholds (number, custom renderIconByName)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+  .add('small / thresholds (number, custom renderIconByName)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -269,8 +269,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmallwide / thresholds (string)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
+  .add('smallwide / thresholds (string)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -304,8 +304,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmallwide / vertical 2', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
+  .add('smallwide / vertical 2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ValueCard
@@ -330,8 +330,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('xsmallwide / horizontal 2', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALLWIDE);
+  .add('smallwide / horizontal 2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
     return (
       <div style={{ width: `${number('cardWidth', 300)}px`, margin: 20 }}>
         <ValueCard
@@ -360,8 +360,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / vertical / single', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  .add('medium / vertical / single', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -379,8 +379,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / vertical / multiple', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  .add('medium / vertical / multiple', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -409,8 +409,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / vertical /  2', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  .add('medium / vertical /  2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -437,8 +437,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / vertical /  3', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  .add('medium / vertical /  3', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -518,8 +518,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / horizontal /  2', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+  .add('medium / horizontal /  2', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
         <ValueCard
@@ -610,8 +610,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('tall / vertical /  6', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.TALL);
+  .add('large-thin / vertical /  6', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGETHIN);
     return (
       <div style={{ width: text('cardWidth', `250px`), margin: 20 }}>
         <ValueCard
@@ -648,8 +648,8 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('wide / horizontal /  3', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+  .add('medium-wide / horizontal /  3', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
         <ValueCard
@@ -679,7 +679,7 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('with boolean', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -694,7 +694,7 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('empty state', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -826,7 +826,7 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('long titles and values', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -849,7 +849,7 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('long titles and values/multiple', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -880,7 +880,7 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('editable', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <ValueCard
@@ -908,7 +908,7 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('dataFilters', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: text('cardWidth', `300px`), margin: 20 }}>
         <ValueCard

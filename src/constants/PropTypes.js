@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { bundledIconNames } from '../utils/bundledIcons';
 
 import {
-  CARD_SIZES,
   CARD_LAYOUTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
+  LEGACY_CARD_SIZES,
   VALUE_CARD_DATA_STATE,
 } from './LayoutConstants';
 
@@ -288,7 +288,7 @@ export const CardPropTypes = {
   hideHeader: PropTypes.bool,
   /** sets the CardWrapper CSS overflow to visible */
   showOverflow: PropTypes.bool,
-  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
+  size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional range to pass at the card level */
