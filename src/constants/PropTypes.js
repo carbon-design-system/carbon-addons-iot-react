@@ -9,8 +9,6 @@ import {
   TIME_SERIES_TYPES,
   VALUE_CARD_DATA_STATE,
 } from './LayoutConstants';
-// import { VALUE_CARD_DATA_STATE } from '../components/ValueCard/ValueCard';
-// import { VALUE_CARD_DATA_STATE } from '../components/ValueCard/ValueCard';
 
 export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
