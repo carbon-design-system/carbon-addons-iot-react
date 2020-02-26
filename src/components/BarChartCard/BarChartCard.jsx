@@ -7,11 +7,7 @@ import every from 'lodash/every';
 import isNil from 'lodash/isNil';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
-import {
-  CARD_SIZES,
-  BAR_CHART_TYPES,
-  BAR_CHART_ORIENTATION,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 
@@ -22,7 +18,7 @@ const BarChartCard = ({
   content: {
     xLabel,
     yLabel,
-    orientation = BAR_CHART_ORIENTATION.VERTICAL,
+    orientation = BAR_CHART_LAYOUTS.VERTICAL,
     chartType = BAR_CHART_TYPES.SIMPLE,
     data,
     isTimeSeries = false,
@@ -71,19 +67,19 @@ const BarChartCard = ({
                 axes: {
                   bottom: {
                     title: xLabel,
-                    scaleType: orientation === BAR_CHART_ORIENTATION.VERTICAL ? scaleType : null,
+                    scaleType: orientation === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                     primary: true,
                     stacked:
                       chartType === BAR_CHART_TYPES.STACKED &&
-                      orientation === BAR_CHART_ORIENTATION.HORIZONTAL,
+                      orientation === BAR_CHART_LAYOUTS.HORIZONTAL,
                   },
                   left: {
                     title: yLabel,
-                    scaleType: orientation === BAR_CHART_ORIENTATION.HORIZONTAL ? scaleType : null,
+                    scaleType: orientation === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                     secondary: true,
                     stacked:
                       chartType === BAR_CHART_TYPES.STACKED &&
-                      orientation === BAR_CHART_ORIENTATION.VERTICAL,
+                      orientation === BAR_CHART_LAYOUTS.VERTICAL,
                   },
                 },
                 legend: { position: 'bottom', enabled: data.datasets.length > 1 },
@@ -107,7 +103,7 @@ const BarChartCard = ({
 BarChartCard.propTypes = { ...CardPropTypes, ...BarChartCardPropTypes };
 
 BarChartCard.defaultProps = {
-  size: CARD_SIZES.MEDIUM,
+  size: CARD_SIZES.MEDIUMWIDE,
 };
 
 export default BarChartCard;

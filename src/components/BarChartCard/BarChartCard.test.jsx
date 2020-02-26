@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { barChartData } from '../../utils/barChartDataSample';
-import { BAR_CHART_ORIENTATION, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
+import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
 
@@ -14,7 +14,7 @@ const barChartCardProps = {
     xLabel: 'X Label',
     yLabel: 'Y Label',
     data: barChartData.simple,
-    orientation: BAR_CHART_ORIENTATION.VERTICAL,
+    orientation: BAR_CHART_LAYOUTS.VERTICAL,
   },
   breakpoint: 'lg',
   size: 'LARGE',
@@ -77,7 +77,7 @@ describe('BarChartCard tests', () => {
         content={{
           data: barChartData.timeSeries,
           isTimeSeries: true,
-          orientation: BAR_CHART_ORIENTATION.HORIZONTAL,
+          orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
         }}
       />
     );

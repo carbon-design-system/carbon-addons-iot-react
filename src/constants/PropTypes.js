@@ -6,11 +6,12 @@ import {
   CARD_LAYOUTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
+  CARD_SIZES,
   LEGACY_CARD_SIZES,
   VALUE_CARD_DATA_STATE,
   CARD_SIZES,
   BAR_CHART_TYPES,
-  BAR_CHART_ORIENTATION,
+  BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
@@ -174,8 +175,9 @@ export const TableCardPropTypes = {
 };
 
 export const BarChartCardPropTypes = {
+  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   content: PropTypes.shape({
-    orientation: PropTypes.oneOf(Object.values(BAR_CHART_ORIENTATION)),
+    orientation: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
     isTimeSeries: PropTypes.bool,
     xLabel: PropTypes.string,

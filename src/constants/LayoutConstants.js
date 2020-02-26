@@ -229,7 +229,7 @@ export const BAR_CHART_TYPES = {
   STACKED: 'STACKED',
 };
 
-export const BAR_CHART_ORIENTATION = {
+export const BAR_CHART_LAYOUTS = {
   HORIZONTAL: 'HORIZONTAL',
   VERTICAL: 'VERTICAL',
 };

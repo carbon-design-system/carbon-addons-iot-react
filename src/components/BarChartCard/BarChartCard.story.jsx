@@ -3,11 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 
-import {
-  CARD_SIZES,
-  BAR_CHART_TYPES,
-  BAR_CHART_ORIENTATION,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { barChartData } from '../../utils/barChartDataSample';
 
@@ -15,7 +11,7 @@ import BarChartCard from './BarChartCard';
 
 storiesOf('Watson IoT Experimental|BarChartCard', module)
   .add('Simple bar', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -34,7 +30,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
     );
   })
   .add('Simple bar with no data', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -58,7 +54,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Simple bar (horizontal)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -66,7 +62,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           id="simple-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            orientation: BAR_CHART_ORIENTATION.HORIZONTAL,
+            orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
             xLabel: 'X Label',
             yLabel: 'Y Label',
             data: barChartData.simple,
@@ -79,7 +75,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Simple bar (time series)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -88,7 +84,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             isTimeSeries: true,
-            orientation: BAR_CHART_ORIENTATION.VERTICAL,
+            orientation: BAR_CHART_LAYOUTS.VERTICAL,
             xLabel: 'X Label',
             yLabel: 'Y Label',
             data: barChartData.timeSeries,
@@ -101,7 +97,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Grouped bar', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -122,7 +118,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Grouped bar (horizontal)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -131,7 +127,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.GROUPED,
-            orientation: BAR_CHART_ORIENTATION.HORIZONTAL,
+            orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
             xLabel: 'X Label',
             yLabel: 'Y Label',
             data: barChartData.grouped,
@@ -144,7 +140,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Stacked bar', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -165,7 +161,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Stacked bar (horizontal)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -174,7 +170,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.STACKED,
-            orientation: BAR_CHART_ORIENTATION.HORIZONTAL,
+            orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
             xLabel: 'X Label',
             yLabel: 'Y Label',
             data: barChartData.stacked,
@@ -187,7 +183,7 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
   })
 
   .add('Stacked bar (time series)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
