@@ -7,6 +7,7 @@ import { settings } from '../../constants/Settings';
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import {
   CARD_SIZES,
+  LEGACY_CARD_SIZES,
   CARD_CONTENT_PADDING,
   VALUE_CARD_DATA_STATE,
 } from '../../constants/LayoutConstants';
@@ -34,7 +35,6 @@ const DataStateRenderer = ({ dataState, size, id }) => {
   const { label, description } = dataState;
 
   const withTooltip = (element, triggerId) => {
-    console.info('triggerId', triggerId);
     return (
       <div style={{ position: 'relative' }} data-floating-menu-container>
         <Tooltip
@@ -92,7 +92,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     >
       <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
       <div className={`${dsPrefix}-grid`}>
-        {size === CARD_SIZES.XSMALL ? renderDataStateGridIcon() : renderDataStateGridItems()}
+        {size === LEGACY_CARD_SIZES.XSMALL ? renderDataStateGridIcon() : renderDataStateGridItems()}
       </div>
     </div>
   );

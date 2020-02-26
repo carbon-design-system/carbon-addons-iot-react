@@ -3,7 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 
-import { CARD_SIZES, VALUE_CARD_DATA_STATE } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  LEGACY_CARD_SIZES,
+  VALUE_CARD_DATA_STATE,
+} from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import ValueCard from './ValueCard';
@@ -798,14 +802,14 @@ storiesOf('Watson IoT|ValueCard', module)
     );
   })
   .add('data state - error - xsmall', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    const size = select('size', Object.keys(LEGACY_CARD_SIZES), LEGACY_CARD_SIZES.XSMALL);
     const dataStateType = select(
       'dataStateType',
       Object.keys(VALUE_CARD_DATA_STATE),
       VALUE_CARD_DATA_STATE.ERROR
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', '150px'), margin: 20 }}>
         <ValueCard
           title={text('title', 'Health score')}
           id="myStoryId"
