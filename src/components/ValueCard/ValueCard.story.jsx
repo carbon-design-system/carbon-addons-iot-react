@@ -445,7 +445,7 @@ storiesOf('Watson IoT|ValueCard', module)
   .add('small / vertical /  3', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', `120px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -515,9 +515,9 @@ storiesOf('Watson IoT|ValueCard', module)
           breakpoint="lg"
           size={size}
           values={{
-            comfortLevel: number('comfortLevel', 89),
-            averageTemp: number('averageTemp', null),
-            humidity: number('humidity', 76.7),
+            comfortLevel: number('comfortLevel', 345678234234234234),
+            averageTemp: number('averageTemp', 456778234234234234),
+            humidity: number('humidity', 88888678234234234234),
           }}
         />
       </div>

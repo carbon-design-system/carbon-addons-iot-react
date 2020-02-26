@@ -77,6 +77,7 @@ const propTypes = {
   ),
   renderIconByName: PropTypes.func,
   precision: PropTypes.number,
+  attributeCount: PropTypes.number.isRequired,
 };
 
 const defaultProps = {
@@ -96,6 +97,7 @@ const defaultProps = {
  * An attribute has a Value, Units and maybe a Threshold or Trend.
  */
 const Attribute = ({
+  attributeCount,
   value,
   unit,
   layout,
@@ -167,6 +169,7 @@ const Attribute = ({
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
         const allowWrap = measuredSize && measuredSize.width <= 100;
+        const wrapCompact = allowWrap && layout === CARD_LAYOUTS.VERTICAL && attributeCount > 2;
         return (
           <StyledAttribute
             size={size}
@@ -188,6 +191,7 @@ const Attribute = ({
               isVertical={isVertical}
               color={valueColor}
               allowedToWrap={allowWrap}
+              wrapCompact={wrapCompact}
             />
             <UnitRenderer
               value={value}
@@ -195,6 +199,7 @@ const Attribute = ({
               layout={layout}
               isMini={isMini}
               allowedToWrap={allowWrap}
+              wrapCompact={wrapCompact}
             />
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue

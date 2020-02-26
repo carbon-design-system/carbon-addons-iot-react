@@ -256,6 +256,7 @@ const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }
                     attributeCount={attributes.length}
                   >
                     <Attribute
+                      attributeCount={attributes.length}
                       isVertical={isVertical}
                       layout={layout}
                       isSmall={

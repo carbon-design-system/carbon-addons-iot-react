@@ -3,3 +3,10 @@
 .#{$iot-prefix}--value-card__attribute-value--wrappable {
   margin-right: 0.25rem;
 }
+
+.#{$iot-prefix}--value-card__attribute-value--wrappable-compact {
+  > span {
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+  }
+}

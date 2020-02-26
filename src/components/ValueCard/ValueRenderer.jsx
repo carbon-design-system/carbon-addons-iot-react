@@ -20,7 +20,8 @@ const propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
   isVertical: PropTypes.bool,
-  allowedToWrap: PropTypes.bool,
+  allowedToWrap: PropTypes.bool.isRequired,
+  wrapCompact: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -30,6 +31,7 @@ const defaultProps = {
   precision: 1,
   color: null,
   isVertical: false,
+  wrapCompact: false,
 };
 
 const Attribute = styled.div`
@@ -97,6 +99,7 @@ const ValueRenderer = ({
   color,
   isVertical,
   allowedToWrap,
+  wrapCompact,
 }) => {
   const precision = determinePrecision(size, value, precisionProp);
   let renderValue = value;
@@ -127,6 +130,7 @@ const ValueRenderer = ({
       allowedToWrap={allowedToWrap}
       className={classNames({
         [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
+        [`${iotPrefix}--value-card__attribute-value--wrappable-compact`]: wrapCompact,
       })}
     >
       <AttributeValue
