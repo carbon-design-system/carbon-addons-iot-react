@@ -20,7 +20,7 @@ export const originalCards = [
     title:
       'Facility Metrics with a very long title that should be truncated and have a tooltip for the full text ',
     id: 'facilitycard',
-    size: CARD_SIZES.SMALL,
+    size: CARD_SIZES.MEDIUM,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -41,7 +41,7 @@ export const originalCards = [
   {
     title: 'Humidity',
     id: 'facilitycard-xs',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -66,7 +66,7 @@ export const originalCards = [
   {
     title: 'Show tooltip when the card title has ellipsis ',
     id: 'facilitycard-tooltip',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -90,7 +90,7 @@ export const originalCards = [
   },
   {
     id: 'section-card',
-    size: CARD_SIZES.XSMALLWIDE,
+    size: CARD_SIZES.SMALLWIDE,
     type: CARD_TYPES.CUSTOM,
     availableActions: {
       delete: true,
@@ -100,7 +100,7 @@ export const originalCards = [
   {
     title: 'Utilization',
     id: 'facilitycard-xs2',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -115,7 +115,7 @@ export const originalCards = [
   {
     title: 'Alert Count',
     id: 'facilitycard-xs3',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -134,7 +134,7 @@ export const originalCards = [
   {
     title: 'Comfort Level',
     id: 'facilitycard-comfort-level',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -155,7 +155,7 @@ export const originalCards = [
   {
     title: 'Foot Traffic',
     id: 'facilitycard-xs4',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -175,7 +175,7 @@ export const originalCards = [
     tooltip: <p>Health - of floor 8</p>,
     id: 'GaugeCard',
     title: 'Health',
-    size: CARD_SIZES.XSMALL,
+    size: CARD_SIZES.SMALL,
     type: CARD_TYPES.GAUGE,
     values: {
       usage: 73,
@@ -222,7 +222,7 @@ export const originalCards = [
   {
     title: 'Health',
     id: 'facilitycard-health',
-    size: CARD_SIZES.XSMALLWIDE,
+    size: CARD_SIZES.SMALLWIDE,
     type: CARD_TYPES.VALUE,
     availableActions: {
       delete: true,
@@ -701,7 +701,7 @@ storiesOf('Watson IoT/Dashboard', module)
         ].map((v, idx) => ({
           title: `${v[0]} ${v[2] || ''}`,
           id: `xsmall-number-${idx}`,
-          size: CARD_SIZES.XSMALL,
+          size: CARD_SIZES.SMALL,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [{ dataSourceId: 'v', unit: v[2] }],
@@ -715,7 +715,7 @@ storiesOf('Watson IoT/Dashboard', module)
         cards={[65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
           title: 'Temperature',
           id: `xsmall-number-${idx}`,
-          size: CARD_SIZES.XSMALL,
+          size: CARD_SIZES.SMALL,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [
@@ -746,7 +746,7 @@ storiesOf('Watson IoT/Dashboard', module)
         cards={[38.2, 65.3, 77.7, 91].map((v, idx) => ({
           title: 'Humidity',
           id: `xsmall-number-threshold-${idx}`,
-          size: CARD_SIZES.XSMALL,
+          size: CARD_SIZES.SMALL,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
@@ -762,7 +762,7 @@ storiesOf('Watson IoT/Dashboard', module)
           .map((v, idx) => ({
             title: 'Danger Level',
             id: `xsmall-string-threshold-${idx}`,
-            size: CARD_SIZES.XSMALL,
+            size: CARD_SIZES.SMALL,
             type: CARD_TYPES.VALUE,
             content: {
               attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
@@ -785,7 +785,7 @@ storiesOf('Watson IoT/Dashboard', module)
           .map((v, idx) => ({
             title: `${v[0]} ${v[2] || ''}`,
             id: `xsmallwide-number-${idx}`,
-            size: CARD_SIZES.XSMALLWIDE,
+            size: CARD_SIZES.SMALLWIDE,
             type: CARD_TYPES.VALUE,
             content: {
               attributes: [{ dataSourceId: 'v', unit: v[2] }],
@@ -796,7 +796,7 @@ storiesOf('Watson IoT/Dashboard', module)
             [65.3, 48.7, 88.1, 103.2].map((v, idx) => ({
               title: 'Temperature',
               id: `xsmallwide-number-trend-${idx}`,
-              size: CARD_SIZES.XSMALLWIDE,
+              size: CARD_SIZES.SMALLWIDE,
               type: CARD_TYPES.VALUE,
               content: {
                 attributes: [
@@ -825,7 +825,7 @@ storiesOf('Watson IoT/Dashboard', module)
             [38.2, 65.3, 77.7, 91].map((v, idx) => ({
               title: 'Humidity',
               id: `xsmallwide-number-threshold-${idx}`,
-              size: CARD_SIZES.XSMALLWIDE,
+              size: CARD_SIZES.SMALLWIDE,
               type: CARD_TYPES.VALUE,
               content: {
                 attributes: [{ dataSourceId: 'v', unit: '%', thresholds: numberThresholds }],
@@ -839,7 +839,7 @@ storiesOf('Watson IoT/Dashboard', module)
               .map((v, idx) => ({
                 title: 'Danger Level',
                 id: `xsmallwide-string-threshold-${idx}`,
-                size: CARD_SIZES.XSMALLWIDE,
+                size: CARD_SIZES.SMALLWIDE,
                 type: CARD_TYPES.VALUE,
                 content: {
                   attributes: [{ dataSourceId: 'v', thresholds: stringThresholds }],
@@ -866,7 +866,7 @@ storiesOf('Watson IoT/Dashboard', module)
         ].map((v, idx) => ({
           title: v[0],
           id: `xsmallwide-multi-${idx}`,
-          size: CARD_SIZES.XSMALLWIDE,
+          size: CARD_SIZES.SMALLWIDE,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [
@@ -937,7 +937,7 @@ storiesOf('Watson IoT/Dashboard', module)
         ].map((v, idx) => ({
           title: v[0],
           id: `xsmallwide-multi-${idx}`,
-          size: CARD_SIZES.XSMALLWIDE,
+          size: CARD_SIZES.SMALLWIDE,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [
@@ -981,7 +981,7 @@ storiesOf('Watson IoT/Dashboard', module)
         ].map((v, idx) => ({
           title: 'Humidity',
           id: `xsmallwide-multi-number-threshold-${idx}`,
-          size: CARD_SIZES.XSMALLWIDE,
+          size: CARD_SIZES.SMALLWIDE,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [
@@ -1044,7 +1044,7 @@ storiesOf('Watson IoT/Dashboard', module)
         ].map((v, idx) => ({
           title: v[0],
           id: `xsmallwide-multi-number-threshold-${idx}`,
-          size: CARD_SIZES.SMALL,
+          size: CARD_SIZES.MEDIUM,
           type: CARD_TYPES.VALUE,
           content: {
             attributes: [
@@ -1164,7 +1164,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   </ClickableTile>
                 ),
                 id: 'viewDashboards',
-                size: 'SMALL',
+                size: CARD_SIZES.MEDIUM,
                 type: 'CUSTOM',
               },
               {
@@ -1198,7 +1198,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   </ClickableTile>
                 ),
                 id: 'connectDevices',
-                size: 'SMALL',
+                size: CARD_SIZES.MEDIUM,
                 type: 'CUSTOM',
               },
               {
@@ -1225,7 +1225,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   </div>
                 ),
                 id: 'monitorEntities',
-                size: 'SMALL',
+                size: CARD_SIZES.MEDIUM,
                 type: 'CUSTOM',
               },
               {
@@ -1247,7 +1247,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   </div>
                 ),
                 id: 'trackUsage',
-                size: 'XSMALLWIDE',
+                size: CARD_SIZES.SMALLWIDE,
                 type: 'CUSTOM',
               },
               {
@@ -1269,7 +1269,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   </div>
                 ),
                 id: 'administerUsers',
-                size: 'XSMALLWIDE',
+                size: CARD_SIZES.SMALLWIDE,
                 type: 'CUSTOM',
               },
               {
@@ -1316,7 +1316,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   loadData: () => {},
                 },
                 id: 'tutorials',
-                size: 'WIDE',
+                size: CARD_SIZES.MEDIUMWIDE,
                 title: 'Tutorials',
                 type: 'LIST',
               },
@@ -1349,7 +1349,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   loadData: () => {},
                 },
                 id: 'announcements',
-                size: 'WIDE',
+                size: CARD_SIZES.MEDIUMWIDE,
                 title: 'Announcements',
                 type: 'LIST',
               },

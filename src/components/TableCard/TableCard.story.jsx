@@ -29,8 +29,8 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
-  .add('size - xlarge with tooltip', () => {
-    const size = CARD_SIZES.XLARGE;
+  .add('size - large-wide with tooltip', () => {
+    const size = CARD_SIZES.LARGEWIDE;
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TableCard
@@ -48,7 +48,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with multiple actions', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.LARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     const tableDataWithActions = tableData.map(item => {
       return {
@@ -73,7 +73,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with single actions', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.LARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     const tableDataWithActions = tableData.map(item => {
       return {
@@ -98,7 +98,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with thresholds, precision and expanded rows', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.XLARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
       // this threshold is applied to the whole row, not a particular attribute
@@ -169,7 +169,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with thresholds', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.XLARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
       // this threshold is applied to the whole row, not a particular attribute
@@ -219,7 +219,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with thresholds only with value', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.XLARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
       // this threshold is applied to the whole row, not a particular attribute
@@ -270,7 +270,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with custom column sort', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.XLARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const tableCustomColumns = tableColumns.map(item =>
       item.dataSourceId === 'count' ? { ...item, sort: 'DESC' } : item
@@ -293,7 +293,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with fixed column size', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.LARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     const tableCustomColumns = tableColumns.map((item, index) =>
       index === 0 ? { ...item, width: 250, name: 'Alert with long string name' } : item
@@ -316,7 +316,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('table with row expansion', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.LARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -446,7 +446,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('i18n', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.XLARGE], CARD_SIZES.XLARGE);
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
       // this threshold is applied to the whole row, not a particular attribute

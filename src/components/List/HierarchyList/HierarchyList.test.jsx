@@ -14,7 +14,7 @@ import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from
 describe('HierarchyList', () => {
   // Mock the scroll function as its not implemented in jsdom
   // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
-  window.HTMLElement.prototype.scroll = jest.fn();
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
   const items = [
     ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({

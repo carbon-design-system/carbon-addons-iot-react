@@ -111,7 +111,14 @@ const ListItem = ({
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
   const renderNestingOffset = () =>
-    nestingLevel > 0 ? <div style={{ width: `${nestingLevel * 30}px` }}>&nbsp;</div> : null;
+    nestingLevel > 0 ? (
+      <div
+        className={`${iotPrefix}--list-item--nesting-offset`}
+        style={{ width: `${nestingLevel * 30}px` }}
+      >
+        &nbsp;
+      </div>
+    ) : null;
 
   const renderExpander = () =>
     isExpandable ? (
@@ -179,8 +186,8 @@ const ListItem = ({
               {secondaryValue ? (
                 <div
                   title={secondaryValue}
-                  className={`${iotPrefix}--list-item--content--values--secondary
-                   ${iotPrefix}--list-item--content--values--secondary__large`}
+                  className={`${iotPrefix}--list-item--content--values--value
+                   ${iotPrefix}--list-item--content--values--value__large`}
                 >
                   {secondaryValue}
                 </div>
@@ -200,7 +207,7 @@ const ListItem = ({
                 {secondaryValue ? (
                   <div
                     title={secondaryValue}
-                    className={`${iotPrefix}--list-item--content--values--secondary`}
+                    className={`${iotPrefix}--list-item--content--values--value`}
                   >
                     {secondaryValue}
                   </div>

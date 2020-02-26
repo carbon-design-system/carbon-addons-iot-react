@@ -34,6 +34,7 @@ export const sampleHierarchy = {
         'Brett Gardner': 'LF',
         'Gio Urshela': '3B',
         'Cameron Maybin': 'RF',
+        'Robinson Cano': '2B',
       },
       'Houston Astros': {
         'George Springer': 'RF',
@@ -62,7 +63,7 @@ export const sampleHierarchy = {
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
-        'Michael Conforto': 'RF',
+        'Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto': 'RF',
         'Pete Alonso': '1B',
         'Wilson Ramos': 'C',
         'Robinson Cano': '2B',
@@ -172,6 +173,7 @@ storiesOf('Watson IoT Experimental/List', module)
               secondaryValue: value,
               rowActions: [
                 <Button
+                  key={`${key}-list-item-button-${value}`}
                   style={{ color: 'black' }}
                   renderIcon={Edit16}
                   hasIconOnly
@@ -198,7 +200,7 @@ storiesOf('Watson IoT Experimental/List', module)
               value: key,
               secondaryValue: value,
               rowActions: [
-                <OverflowMenu flipped>
+                <OverflowMenu flipped key={`${key}-list-item-button-${value}`}>
                   <OverflowMenuItem itemText="Edit" />
                   <OverflowMenuItem itemText="Add" />
                   <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -222,6 +224,7 @@ storiesOf('Watson IoT Experimental/List', module)
             level === 1
               ? [
                   <Button
+                    key={`${key}-list-item-button-${level}`}
                     style={{ color: 'black' }}
                     renderIcon={Edit16}
                     hasIconOnly
@@ -233,7 +236,7 @@ storiesOf('Watson IoT Experimental/List', module)
                 ]
               : level === 2
               ? [
-                  <OverflowMenu flipped>
+                  <OverflowMenu flipped key={`${key}-list-item-button-${level}`}>
                     <OverflowMenuItem itemText="Edit" />
                     <OverflowMenuItem itemText="Add" />
                     <OverflowMenuItem itemText="Delete" hasDivider isDelete />
@@ -401,6 +404,7 @@ storiesOf('Watson IoT Experimental/List', module)
             value: team,
             icon: (
               <Checkbox
+                key={`${team}-list-item-checkbox`}
                 id={`${team}-checkbox`}
                 name={team}
                 onClick={e => handleCheckboxChange(e, nestedItems)}
@@ -421,6 +425,7 @@ storiesOf('Watson IoT Experimental/List', module)
               secondaryValue: sampleHierarchy.MLB['National League'][team][player],
               icon: (
                 <Checkbox
+                  key={`${team}-list-item-checkbox-${player}`}
                   id={`${player}-checkbox`}
                   name={player}
                   onClick={e => handleCheckboxChange(e, nestedItems)}

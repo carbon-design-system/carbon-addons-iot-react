@@ -80,7 +80,6 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
               id: `${team}_${player}`,
               content: {
                 value: player,
-                secondaryValue: sampleHierarchy.MLB['American League'][team][player],
               },
               isSelectable: true,
             })),
@@ -95,7 +94,6 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
               id: `${team}_${player}`,
               content: {
                 value: player,
-                secondaryValue: sampleHierarchy.MLB['National League'][team][player],
               },
               isSelectable: true,
             })),

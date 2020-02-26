@@ -247,7 +247,7 @@ storiesOf('Watson IoT Experimental/ListCard', module)
     );
   })
   .add('with extra content', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
 
     return (
       <ListCardExtraContent
@@ -258,7 +258,7 @@ storiesOf('Watson IoT Experimental/ListCard', module)
     );
   })
   .add('with extra long content', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.WIDE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
 
     return (
       <ListCardExtraContentLong

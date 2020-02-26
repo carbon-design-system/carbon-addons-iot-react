@@ -49,7 +49,7 @@ const values = {
 
 storiesOf('Watson IoT/ImageCard', module)
   .add('basic', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
@@ -65,7 +65,7 @@ storiesOf('Watson IoT/ImageCard', module)
     );
   })
   .add('custom renderIconByName', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
@@ -94,7 +94,7 @@ storiesOf('Watson IoT/ImageCard', module)
     );
   })
   .add('isEditable', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
@@ -111,7 +111,7 @@ storiesOf('Watson IoT/ImageCard', module)
     );
   })
   .add('hotspots are loading', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
@@ -128,7 +128,7 @@ storiesOf('Watson IoT/ImageCard', module)
     );
   })
   .add('error', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard
@@ -146,7 +146,7 @@ storiesOf('Watson IoT/ImageCard', module)
     );
   })
   .add('error loading image', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XLARGE);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <ImageCard

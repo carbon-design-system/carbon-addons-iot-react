@@ -54,7 +54,7 @@ storiesOf('Watson IoT Experimental/GaugeCard', module).add('basic', () => {
         tooltip={<p>Health - of floor 8</p>}
         id="GaugeCard"
         title={text('Text', 'Health')}
-        size={CARD_SIZES.XSMALL}
+        size={CARD_SIZES.SMALL}
         values={{
           usage: number('Gauge value', 81),
           usageTrend: '12%',

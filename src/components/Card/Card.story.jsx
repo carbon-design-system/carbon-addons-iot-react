@@ -192,7 +192,7 @@ storiesOf('Watson IoT/Card', module)
             isEditable={boolean('isEditable', false)}
             isExpanded={boolean('isExpanded', false)}
             breakpoint="lg"
-            availableActions={{ range: i !== CARD_SIZES.XSMALL }}
+            availableActions={{ range: i !== CARD_SIZES.SMALL }}
             onCardAction={action('onCardAction')}
           />
         </div>
@@ -216,7 +216,7 @@ storiesOf('Watson IoT/Card', module)
     );
   })
   .add('error/small', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
@@ -269,7 +269,7 @@ storiesOf('Watson IoT/Card', module)
           size={size}
           isEditable={boolean('isEditable', false)}
           values={[{ timestamp: 12341231231, value1: 'my value' }]}
-          availableActions={{ range: size !== CARD_SIZES.XSMALL, expand: true }}
+          availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
           onCardAction={action('onCardAction')}
         />
       );

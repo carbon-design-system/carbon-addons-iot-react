@@ -52,8 +52,8 @@ describe('TimeSeriesCard tests', () => {
   });
   test('determine precision', () => {
     expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
-    expect(determinePrecision(CARD_SIZES.XSMALL, 11.45)).toEqual(0);
-    expect(determinePrecision(CARD_SIZES.XSMALL, 1.45, 1)).toEqual(1);
+    expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
+    expect(determinePrecision(CARD_SIZES.SMALL, 1.45, 1)).toEqual(1);
     expect(determinePrecision(CARD_SIZES.LARGE, 1.45, 1)).toEqual(1);
   });
   test('valueFormatter', () => {

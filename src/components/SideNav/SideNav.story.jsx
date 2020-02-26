@@ -8,6 +8,7 @@ import Group from '@carbon/icons-react/lib/group/24';
 import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell';
 
 import Header from '../Header';
+import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 import SideNav from './SideNav';
 
@@ -117,23 +118,30 @@ const HeaderProps = {
 storiesOf('Watson IoT/SideNav', module).add(
   'SideNav component',
   () => (
-    <HeaderContainer
-      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-        <>
-          <Header
-            {...HeaderProps}
-            isSideNavExpanded={isSideNavExpanded}
-            onClickSideNavExpand={onClickSideNavExpand}
-          />
-          <SideNav
-            links={links}
-            isSideNavExpanded={isSideNavExpanded}
-            onClickSideNavExpand={onClickSideNavExpand}
-            switcherProps={switcherProps}
-          />
-        </>
-      )}
-    />
+    <>
+      <HeaderContainer
+        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+          <>
+            <Header
+              {...HeaderProps}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+            />
+            <SideNav
+              links={links}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+              switcherProps={switcherProps}
+            />
+          </>
+        )}
+      />
+      <PageTitleBar
+        title="Title"
+        description="Description"
+        style={{ width: '100vw', height: '100vh' }}
+      />
+    </>
   ),
   {
     info: {
