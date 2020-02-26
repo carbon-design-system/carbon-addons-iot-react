@@ -8,6 +8,7 @@ export styles from './styles.scss';
 
 // Components
 export AddCard from './components/AddCard';
+export { AccordionItem } from './components/Accordion';
 export Button from './components/Button';
 export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
@@ -54,6 +55,7 @@ export ValueCard from './components/ValueCard/ValueCard';
 export TimeSeriesCard from './components/TimeSeriesCard/TimeSeriesCard';
 export ImageCard from './components/ImageCard/ImageCard';
 export TableCard, { findMatchingThresholds } from './components/TableCard/TableCard';
+export GaugeCard from './components/GaugeCard/GaugeCard';
 export {
   CARD_TYPES,
   CARD_SIZES,
@@ -93,7 +95,7 @@ export SimpleList from './components/List/SimpleList/SimpleList';
 // Carbon proxy
 export {
   Accordion,
-  AccordionItem,
+  // AccordionItem,
   Checkbox,
   CodeSnippet,
   ComboBox,

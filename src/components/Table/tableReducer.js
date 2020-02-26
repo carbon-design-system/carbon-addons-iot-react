@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import get from 'lodash/get';
 import find from 'lodash/find';
 
-import { getSortedData } from '../../utils/componentUtilityFunctions';
+import { getSortedData, caseInsensitiveSearch } from '../../utils/componentUtilityFunctions';
 
 import {
   TABLE_PAGE_CHANGE,
@@ -37,16 +37,13 @@ export const defaultComparison = (value1, value2) =>
     ? value1 === value2 // type number do a direct comparison
     : value1 && // type string do a lowercase includes comparison
       value1.toString &&
-      value1
-        .toString()
-        .toLowerCase()
-        .includes(value2.toString().toLowerCase());
+      caseInsensitiveSearch([value1.toString()], value2.toString());
 
 /**
  * Little utility to filter data
- * @param {*} data data to filter
- * @param {*} filters [{columnId: 'columnName', value: any}]
- * @param {*} columns
+ * @param {Array<Object>} data data to filter
+ * @param {Array<{columnId: string, value: any}>} filters
+ * @param {Array<Object>} columns AKA headers
  */
 export const filterData = (data, filters, columns) => {
   return !filters || filters.length === 0
@@ -54,36 +51,46 @@ export const filterData = (data, filters, columns) => {
     : data.filter(({ values }) =>
         // return false if a value doesn't match a valid filter
         filters.reduce((acc, { columnId, value }) => {
-          if (!isNil(columns)) {
-            const { filter } = find(columns, { id: columnId }) || {};
-            const filterFunction = filter?.filterFunction;
-            return (
-              acc &&
-              (filterFunction
-                ? filterFunction(values[columnId], value)
-                : defaultComparison(values[columnId], value))
-            );
+          if (
+            typeof value === 'number' ||
+            typeof value === 'string' ||
+            typeof value === 'boolean'
+          ) {
+            if (!isNil(columns)) {
+              const { filter } = find(columns, { id: columnId }) || {};
+              const filterFunction = filter?.filterFunction;
+              return (
+                acc &&
+                (filterFunction
+                  ? filterFunction(values[columnId], value)
+                  : defaultComparison(values[columnId], value))
+              );
+            }
+            return acc && defaultComparison(values[columnId], value);
           }
-          return acc && defaultComparison(values[columnId], value);
+          return false;
         }, true)
       );
 };
-// Little utility to search
 
+// Little utility to search
 export const searchData = (data, searchString) =>
   searchString && searchString !== ''
     ? data.filter((
         { values } // globally check row values for a match
       ) =>
-        Object.values(values).find(
-          value =>
-            !isNil(value) &&
-            value.toString &&
-            value
-              .toString() // case insensitive search
-              .toLowerCase()
-              .includes(searchString.toString().toLowerCase())
-        )
+        // eslint-disable-next-line
+        Object.values(values).find(value => {
+          if (
+            typeof value === 'number' ||
+            typeof value === 'string' ||
+            typeof value === 'boolean'
+          ) {
+            if (!isNil(value)) {
+              return caseInsensitiveSearch([value.toString()], searchString.toString());
+            }
+          }
+        })
       )
     : data;
 

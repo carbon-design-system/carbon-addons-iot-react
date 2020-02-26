@@ -2,10 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
-import { Pagination, Table as CarbonTable, TableContainer } from 'carbon-components-react';
+import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
-import styled from 'styled-components';
-import sizeMe from 'react-sizeme';
 import classNames from 'classnames';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
@@ -25,41 +23,9 @@ import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import TableBody from './TableBody/TableBody';
+import Pagination from './Pagination';
 
 const { iotPrefix } = settings;
-const StyledTableContainer = styled(TableContainer)`
-  && {
-    min-width: unset;
-    padding-top: 0;
-
-    .bx--table-toolbar {
-      overflow: hidden;
-    }
-  }
-`;
-
-const StyledPagination = sizeMe({ noPlaceholder: true })(styled(
-  ({ isItemPerPageHidden, ...rest }) => <Pagination {...rest} />
-)`
-  &&& {
-    .bx--pagination__left {
-      margin: auto auto auto 0;
-    }
-
-    .bx--pagination__left,
-    .bx--pagination__text {
-      display: ${props =>
-        props.size && props.size.width && props.size.width < 500 ? 'none' : 'flex'};
-    }
-    .bx--pagination__left span:first-child,
-    .bx--pagination__left .bx--form-item {
-      display: ${props => (props.isItemPerPageHidden ? 'none' : '')};
-    }
-    .bx--select .bx--select-input ~ .bx--select__arrow {
-      align-self: center;
-    }
-  }
-`);
 
 const propTypes = {
   /** DOM ID for component */
@@ -361,7 +327,10 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   return (
-    <StyledTableContainer style={style} className={className}>
+    <TableContainer
+      style={style}
+      className={classNames(className, `${iotPrefix}--table-container`)}
+    >
       {/* If there is no items being rendered in the toolbar, don't render the toolbar */
       options.hasFilter ||
       options.hasSearch ||
@@ -426,6 +395,7 @@ const Table = props => {
       <div className="addons-iot-table-container">
         <CarbonTable
           className={classNames({
+            [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
           })}
@@ -546,7 +516,7 @@ const Table = props => {
       !view.table.loadingState.isLoading &&
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
-        <StyledPagination
+        <Pagination
           {...view.pagination}
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
@@ -559,7 +529,7 @@ const Table = props => {
           pageRangeText={i18n.pageRange}
         />
       ) : null}
-    </StyledTableContainer>
+    </TableContainer>
   );
 };
 

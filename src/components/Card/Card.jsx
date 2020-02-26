@@ -9,6 +9,7 @@ import {
   CARD_TITLE_HEIGHT,
   CARD_CONTENT_PADDING,
   CARD_SIZES,
+  CARD_LAYOUTS,
   ROW_HEIGHT,
   CARD_DIMENSIONS,
   DASHBOARD_BREAKPOINTS,
@@ -17,6 +18,7 @@ import {
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
@@ -75,8 +77,8 @@ const EmptyMessageWrapper = styled.div`
 `;
 
 export const defaultProps = {
-  size: CARD_SIZES.SMALL,
-  layout: CARD_SIZES.HORIZONTAL,
+  size: CARD_SIZES.MEDIUM,
+  layout: CARD_LAYOUTS.HORIZONTAL,
   title: undefined,
   toolbar: undefined,
   hideHeader: false,
@@ -158,10 +160,14 @@ const Card = props => {
     values,
     ...others
   } = props;
-  const isXS = size === CARD_SIZES.XSMALL;
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
+
+  const isSM = newSize === CARD_SIZES.SMALL;
+
   const dimensions = getCardMinSize(
     breakpoint,
-    size,
+    newSize,
     others.dashboardBreakpoints,
     others.cardDimensions,
     others.rowHeight,
@@ -278,20 +284,20 @@ const Card = props => {
                       <OptimizedSkeletonText
                         paragraph
                         lineCount={
-                          size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE ? 2 : 3
+                          newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3
                         }
                         width="100%"
                       />
                     </SkeletonWrapper>
                   ) : error ? (
                     <EmptyMessageWrapper>
-                      {size === CARD_SIZES.XSMALL || size === CARD_SIZES.XSMALLWIDE
+                      {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
                         ? strings.errorLoadingDataShortLabel
                         : `${strings.errorLoadingDataLabel} ${error}`}
                     </EmptyMessageWrapper>
                   ) : isEmpty && !isEditable ? (
                     <EmptyMessageWrapper>
-                      {isXS ? strings.noDataShortLabel : strings.noDataLabel}
+                      {isSM ? strings.noDataShortLabel : strings.noDataLabel}
                     </EmptyMessageWrapper>
                   ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
                     children(getChildSize(cardSize, title), { cardToolbar, ...props })
