@@ -9,7 +9,7 @@ import {
   BAR_CHART_ORIENTATION,
 } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { barChartData } from '../../utils/sample';
+import { barChartData } from '../../utils/barChartDataSample';
 
 import BarChartCard from './BarChartCard';
 

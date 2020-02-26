@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { barChartData } from '../../utils/sample';
+import { barChartData } from '../../utils/barChartDataSample';
 import { BAR_CHART_ORIENTATION, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
 import BarChartCard from './BarChartCard';
