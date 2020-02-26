@@ -152,7 +152,7 @@ const footerComponent = <StyledFooterContent>this is footer content</StyledFoote
 
 // Simple Static Wizard Stories
 
-storiesOf('Watson IoT|WizardInline (Deprecated)', module)
+storiesOf('Watson IoT/WizardInline (Deprecated)', module)
   .add(deprecatedStoryTitle, () => (
     <DeprecationNotice
       deprecatedComponentName="WizardInline"

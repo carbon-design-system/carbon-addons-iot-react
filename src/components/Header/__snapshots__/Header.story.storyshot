@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Header Header action buttons with dropdowns 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Header Header action buttons with dropdowns 1`] = `
 <div
   style={
     Object {
@@ -440,7 +440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Header Header no submenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Header Header no submenu 1`] = `
 <div
   style={
     Object {
@@ -592,7 +592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Heade
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Header header submenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Header header submenu 1`] = `
 <div
   style={
     Object {

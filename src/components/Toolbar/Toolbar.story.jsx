@@ -1,1 +1,3 @@
-export default from 'carbon-components-react/lib/components/Toolbar/Toolbar-story';
+export {
+  default as ToolbarStory,
+} from 'carbon-components-react/lib/components/Toolbar/Toolbar-story';

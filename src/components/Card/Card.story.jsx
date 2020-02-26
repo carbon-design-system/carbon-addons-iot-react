@@ -9,7 +9,7 @@ import Table from '../Table/Table';
 
 import Card from './Card';
 
-storiesOf('Watson IoT|Card', module)
+storiesOf('Watson IoT/Card', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (

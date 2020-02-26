@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard editable 1`] = `
 <div
   style={
     Object {
@@ -1401,7 +1401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard editable with expanded rows 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard editable with expanded rows 1`] = `
 <div
   style={
     Object {
@@ -3166,7 +3166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard empty table 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard empty table 1`] = `
 <div
   style={
     Object {
@@ -3819,7 +3819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard i18n 1`] = `
 <div
   style={
     Object {
@@ -6259,7 +6259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard no row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard no row actions 1`] = `
 <div
   style={
     Object {
@@ -7641,7 +7641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard size - large 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard size - large 1`] = `
 <div
   style={
     Object {
@@ -9023,7 +9023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard size - xlarge with tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard size - xlarge with tooltip 1`] = `
 <div
   style={
     Object {
@@ -10626,7 +10626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with custom column sort 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with custom column sort 1`] = `
 <div
   style={
     Object {
@@ -12229,7 +12229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with fixed column size 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with fixed column size 1`] = `
 <div
   style={
     Object {
@@ -13611,7 +13611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with multiple actions 1`] = `
 <div
   style={
     Object {
@@ -15586,7 +15586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with row expansion 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with row expansion 1`] = `
 <div
   style={
     Object {
@@ -17332,7 +17332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with single actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with single actions 1`] = `
 <div
   style={
     Object {
@@ -19037,7 +19037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with thresholds 1`] = `
 <div
   style={
     Object {
@@ -21478,7 +21478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with thresholds only with value 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with thresholds only with value 1`] = `
 <div
   style={
     Object {
@@ -22873,7 +22873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard table with thresholds, precision and expanded rows 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard table with thresholds, precision and expanded rows 1`] = `
 <div
   style={
     Object {
@@ -25678,7 +25678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableCard with matching thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard with matching thresholds 1`] = `
 <div
   style={
     Object {

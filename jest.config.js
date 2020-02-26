@@ -96,6 +96,7 @@ module.exports = {
   ],
   testURL: 'http://localhost',
   transform: {
+    '^.+\\.story\\.jsx?$': '@storybook/addon-storyshots/injectFileName',
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.s?css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',

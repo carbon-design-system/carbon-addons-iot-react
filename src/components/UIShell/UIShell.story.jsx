@@ -8,4 +8,4 @@
 //  @ ./.storybook/config.js
 //  @ multi ./node_modules/@storybook/core/dist/server/common/polyfills.js ./node_modules/@storybook/core/dist/server/preview/globals.js ./.storybook/config.js ./node_modules/webpack-hot-middleware/client.js?reload=true
 
-// export default from 'carbon-components-react/lib/components/UIShell/UIShell-story'
+// export { default as UIShellStory } from 'carbon-components-react/lib/components/UIShell/UIShell-story'

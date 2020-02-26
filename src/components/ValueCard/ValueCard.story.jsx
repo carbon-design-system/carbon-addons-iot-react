@@ -8,7 +8,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import ValueCard from './ValueCard';
 
-storiesOf('Watson IoT|ValueCard', module)
+storiesOf('Watson IoT/ValueCard', module)
   .add('xsmall / basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.XSMALL);
     return (

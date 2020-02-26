@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ResourceList default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ResourceList default 1`] = `
 <div
   style={
     Object {
@@ -220,7 +220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Resou
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ResourceList with action 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ResourceList with action 1`] = `
 <div
   style={
     Object {
@@ -452,7 +452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Resou
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ResourceList with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ResourceList with extra content 1`] = `
 <div
   style={
     Object {

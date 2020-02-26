@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar example with workArea 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar example with workArea 1`] = `
 <div
   style={
     Object {
@@ -250,7 +250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar normal 1`] = `
 <div
   style={
     Object {
@@ -482,7 +482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar start with tab 2 selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar start with tab 2 selected 1`] = `
 <div
   style={
     Object {
@@ -714,7 +714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar with actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar with actions 1`] = `
 <div
   style={
     Object {

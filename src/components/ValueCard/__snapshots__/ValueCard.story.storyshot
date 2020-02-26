@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard dataFilters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard dataFilters 1`] = `
 <div
   style={
     Object {
@@ -177,7 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard editable 1`] = `
 <div
   style={
     Object {
@@ -354,7 +354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard empty state 1`] = `
 <div
   style={
     Object {
@@ -462,7 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard large / vertical /  5 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard large / vertical /  5 1`] = `
 <div
   style={
     Object {
@@ -756,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard long titles and values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard long titles and values 1`] = `
 <div
   style={
     Object {
@@ -894,7 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard long titles and values/multiple 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard long titles and values/multiple 1`] = `
 <div
   style={
     Object {
@@ -1071,7 +1071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / horizontal /  3 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / horizontal /  3 1`] = `
 <div
   style={
     Object {
@@ -1287,7 +1287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / horizontal /  2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / horizontal /  2 1`] = `
 <div
   style={
     Object {
@@ -1464,7 +1464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / vertical /  2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / vertical /  2 1`] = `
 <div
   style={
     Object {
@@ -1641,7 +1641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / vertical /  3 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / vertical /  3 1`] = `
 <div
   style={
     Object {
@@ -1907,7 +1907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / vertical / multiple 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / vertical / multiple 1`] = `
 <div
   style={
     Object {
@@ -2123,7 +2123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / vertical / single 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / vertical / single 1`] = `
 <div
   style={
     Object {
@@ -2261,7 +2261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard tall / vertical /  6 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard tall / vertical /  6 1`] = `
 <div
   style={
     Object {
@@ -2633,7 +2633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard wide / horizontal /  3 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard wide / horizontal /  3 1`] = `
 <div
   style={
     Object {
@@ -2849,7 +2849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard with boolean 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with boolean 1`] = `
 <div
   style={
     Object {
@@ -2991,7 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / basic 1`] = `
 <div
   style={
     Object {
@@ -3126,7 +3126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / long 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / long 1`] = `
 <div
   style={
     Object {
@@ -3261,7 +3261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / thresholds (number, custom renderIconByName) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / thresholds (number, custom renderIconByName) 1`] = `
 <div
   style={
     Object {
@@ -3429,7 +3429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / thresholds (number, icon) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / thresholds (number, icon) 1`] = `
 <div
   style={
     Object {
@@ -3589,7 +3589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / thresholds (number, no icon) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / thresholds (number, no icon) 1`] = `
 <div
   style={
     Object {
@@ -3724,7 +3724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / title 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / title 1`] = `
 <div
   style={
     Object {
@@ -3862,7 +3862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / trend down 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / trend down 1`] = `
 <div
   style={
     Object {
@@ -3997,7 +3997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / trend up 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / trend up 1`] = `
 <div
   style={
     Object {
@@ -4132,7 +4132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmall / units 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmall / units 1`] = `
 <div
   style={
     Object {
@@ -4267,7 +4267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmallwide / horizontal 2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmallwide / horizontal 2 1`] = `
 <div
   style={
     Object {
@@ -4436,7 +4436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmallwide / thresholds (string) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmallwide / thresholds (string) 1`] = `
 <div
   style={
     Object {
@@ -4596,7 +4596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard xsmallwide / vertical 2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard xsmallwide / vertical 2 1`] = `
 <div
   style={
     Object {

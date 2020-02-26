@@ -6,7 +6,7 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 import GaugeCard from './GaugeCard';
 
-storiesOf('Watson IoT Experimental|GaugeCard', module).add('basic', () => {
+storiesOf('Watson IoT Experimental/GaugeCard', module).add('basic', () => {
   const content = {
     gauges: [
       {

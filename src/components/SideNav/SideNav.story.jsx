@@ -114,7 +114,7 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Watson IoT|SideNav', module).add(
+storiesOf('Watson IoT/SideNav', module).add(
   'SideNav component',
   () => (
     <HeaderContainer

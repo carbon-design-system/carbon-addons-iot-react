@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) custom cell renderer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) custom cell renderer 1`] = `
 <div
   style={
     Object {
@@ -254,7 +254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) default  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) default  1`] = `
 <div
   style={
     Object {
@@ -436,7 +436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with empty state 1`] = `
 <div
   style={
     Object {
@@ -567,7 +567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) with empty state with fixed column width 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with empty state with fixed column width 1`] = `
 <div
   style={
     Object {
@@ -701,7 +701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) with fixed column widths 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with fixed column widths 1`] = `
 <div
   style={
     Object {
@@ -895,7 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedStructuredList (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   style={
     Object {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard basic 1`] = `
 <div
   style={
     Object {
@@ -379,7 +379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard custom renderIconByName 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard custom renderIconByName 1`] = `
 <div
   style={
     Object {
@@ -772,7 +772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error 1`] = `
 <div
   style={
     Object {
@@ -909,7 +909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard error loading image 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error loading image 1`] = `
 <div
   style={
     Object {
@@ -1046,7 +1046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard hotspots are loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard hotspots are loading 1`] = `
 <div
   style={
     Object {
@@ -1309,7 +1309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageCard isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable 1`] = `
 <div
   style={
     Object {

@@ -159,7 +159,7 @@ export const StepValidation = ({ ...props }) => {
   );
 };
 
-storiesOf('Watson IoT|PageWizard', module)
+storiesOf('Watson IoT/PageWizard', module)
   .add('stateful example', () => (
     <div>
       <StatefulPageWizard
