@@ -3,7 +3,8 @@ import { Select, SelectItem, DataTable } from 'carbon-components-react';
 import { Search } from 'carbon-components-react';
 import TilePagination from './TilePagination/TilePagination';
 import PropTypes from 'prop-types';
-import SizeMe from 'react-sizeme';
+import ReactDOM from 'react-dom';
+import sizeMe from 'react-sizeme';
 
 const { TableToolbarSearch } = DataTable;
 
@@ -61,28 +62,29 @@ const TileCatalog = ({
   i18n,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [tileHeight, setTileHeight] = useState(0);
+
+  const onSize = ({ height }) => {
+    setTileHeight(height);
+  };
+
+  const HeightMonitor = sizeMe({
+    monitorHeight: true,
+  })(({ content }) => <div>{content}</div>);
 
   const getTile = (rowIdx, colIdx) => {
     var numTilesPerPage = numRows * numColumns;
     var tileIndex = rowIdx * numColumns + colIdx + (currentPage - 1) * numTilesPerPage;
 
-    <SizeMe.SizeMe monitorHeight>
-      {({ size }) => {
-        <div />;
-        console.log(size.height);
-        tiles[0];
-      }}
-    </SizeMe.SizeMe>;
-
-    return (
-      <div>
-        {tiles[tileIndex] === undefined ? (
-          <div className="tile-catalog--tile-canvas--no-placeholder-tile" />
-        ) : (
-          tiles[tileIndex]
-        )}
-      </div>
-    );
+    if (tileIndex === 0) {
+      return <HeightMonitor content={tiles[0]} onSize={onSize} />;
+    } else {
+      return tiles[tileIndex] !== undefined ? (
+        tiles[tileIndex]
+      ) : (
+        <div style={{ height: tileHeight }} />
+      );
+    }
   };
 
   const renderGrid = () => (

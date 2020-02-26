@@ -6,8 +6,6 @@ import TileCatalog from './TileCatalog';
 import { Checkbox } from '../..';
 import SampleTile from './SampleTile';
 
-const i18n = {};
-
 const sortOptions = [
   { text: 'Choose from options', id: 'Choose from options' },
   { text: 'A-Z', id: 'A-Z' },
@@ -22,17 +20,7 @@ const getTiles = (num, tile) => {
     .map(
       (i, idx) =>
         (tiles[idx] = (
-          <SampleTile
-            title={
-              Math.random()
-                .toString(36)
-                .substring(2, 15) +
-              Math.random()
-                .toString(36)
-                .substring(2, 15)
-            }
-            description="This is a sample product tile"
-          />
+          <SampleTile title={`${idx + 1}`} description="This is a sample product tile" />
         ))
     );
   return tiles;
@@ -122,126 +110,52 @@ storiesOf('Watson IoT Experimental|TileCatalog', module)
       />
     </div>
   ))
-  .add('Stateful', () => {
-    // const [tiles, setTiles] = useState(getTiles(20));
-    const tiles = getTiles(20);
-    const sortOptions = [
-      { text: 'Choose from options', id: 'Choose from options' },
-      { text: 'A-Z', id: 'A-Z' },
-      { text: 'Z-A', id: 'Z-A' },
-    ];
-    const selectedSortOption = 'Choose from options';
-    const onSort = id => {
-      console.log(id);
-      if (id == 'A-Z') {
-        tiles.sort();
-      } else if (id === 'Z-A') {
-        tiles.sort();
-        tiles.reverse();
-      }
-      // setTiles(tiles);
+  .add('StatefulTileCatalog', () => {
+    const StatefulTileCatalog = () => {
+      const [tiles, setTiles] = useState(getTiles(20));
+
+      const sortOptions = [
+        { text: 'Choose from options', id: 'Choose from options' },
+        { text: 'A-Z', id: 'A-Z' },
+        { text: 'Z-A', id: 'Z-A' },
+      ];
+      const selectedSortOption = 'Choose from options';
+      const onSort = id => {
+        if (id === 'A-Z') {
+          tiles.sort(function(a, b) {
+            const tileA = a.props.title.toUpperCase();
+            const tileB = b.props.title.toUpperCase();
+
+            return tileA - tileB;
+          });
+        } else if (id === 'Z-A') {
+          tiles.sort(function(a, b) {
+            const tileA = a.props.title.toUpperCase();
+            const tileB = b.props.title.toUpperCase();
+
+            return tileB - tileA;
+          });
+        }
+        setTiles(tiles);
+      };
+
+      return (
+        <div style={{ width: '60rem' }}>
+          <TileCatalog
+            title="Product name"
+            tiles={tiles}
+            numColumns={number('numColumns', 4)}
+            numRows={number('numRows', 2)}
+            hasSort={boolean('hasSort', true)}
+            sortOptions={sortOptions}
+            onSort={onSort}
+            selectedSortOption={selectedSortOption}
+            hasSearch={boolean('hasSearch', true)}
+            onSearch={action('onSearch', () => {})}
+          />
+        </div>
+      );
     };
-    return (
-      <div style={{ width: '60rem' }}>
-        <TileCatalog
-          title="Product name"
-          tiles={tiles}
-          numColumns={number('numColumns', 4)}
-          numRows={number('numRows', 2)}
-          hasSort={boolean('hasSort', true)}
-          sortOptions={sortOptions}
-          onSort={onSort}
-          selectedSortOption={selectedSortOption}
-          hasSearch={boolean('hasSearch', true)}
-          onSearch={action('onSearch', () => {})}
-        />
-      </div>
-    );
-  })
-  .add('Simple Canvas without placeholder tiles last page', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        tiles={getTiles(5, <div className="tile-catalog--tile-canvas--placeholder-tile" />)}
-        numColumns={number('numColumns', 4)}
-        numRows={number('numRows', 2)}
-      />
-    </div>
-  ))
-  .add('Simple Canvas with 3 tiles', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        tiles={getTiles(3, <div className="tile-catalog--tile-canvas--placeholder-tile" />)}
-        numColumns={number('numColumns', 4)}
-        numRows={number('numRows', 2)}
-      />
-    </div>
-  ))
-  .add('Enhanced Canvas with tile placeholders', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        featuredTileTitle={featuredTileTitle}
-        featuredTile={featuredTile}
-        tiles={getTiles(20, <div className="tile-catalog--tile-canvas--placeholder-tile" />)}
-        numColumns={number('numColumns', 5)}
-        numRows={number('numRows', 3)}
-      />
-    </div>
-  ))
-  .add('Enhanced Canvas with persistent search', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        persistentSearch
-        featuredTileTitle={featuredTileTitle}
-        featuredTile={featuredTile}
-        tiles={getTiles(20, <div className="tile-catalog--tile-canvas--placeholder-tile" />)}
-        numColumns={number('numColumns', 5)}
-        numRows={number('numRows', 3)}
-      />
-    </div>
-  ))
-  .add('Simple Canvas with column size and row size', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        persistentSearch
-        tiles={getTiles(20, <div className="tile-catalog--tile-canvas--placeholder-tile" />)}
-        numColumns={number('numColumns', 5)}
-        numRows={number('numRows', 3)}
-      />
-    </div>
-  ))
-  .add('Simple Canvas with sample tiles', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        persistentSearch
-        tiles={getTiles(
-          20,
-          <SampleTile title="Sample product tile" description="This is a sample product tile" />
-        )}
-        numColumns={number('numColumns', 5)}
-        numRows={number('numRows', 3)}
-      />
-    </div>
-  ))
-  .add('Simple Canvas with search and sort', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        onSort={action('sort', () => {})}
-        onSearch={action('search', () => {})}
-        i18n={i18n}
-        sortOptions={sortOptions}
-        tiles={getTiles(
-          20,
-          <SampleTile title="Sample product tile" description="This is a sample product tile" />
-        )}
-        numColumns={number('numColumns', 5)}
-        numRows={number('numRows', 3)}
-      />
-    </div>
-  ));
+
+    return <StatefulTileCatalog />;
+  });
