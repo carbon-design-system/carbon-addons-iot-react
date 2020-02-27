@@ -10,6 +10,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix, prefix } = settings;
+
 const propTypes = {
   /** Specify whether the side navigation is expanded or collapsed */
   defaultExpanded: PropTypes.bool,
@@ -133,7 +137,10 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
 
   return (
     <CarbonSideNav
-      className={classnames({ 'bx--side-nav--expanded': isSideNavExpanded })}
+      className={classnames({
+        [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
+        [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
+      })}
       translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}

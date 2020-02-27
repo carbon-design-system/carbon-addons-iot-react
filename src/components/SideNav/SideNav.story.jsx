@@ -9,8 +9,11 @@ import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell'
 
 import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
+import { settings } from '../../constants/Settings';
 
 import SideNav from './SideNav';
+
+const { iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -118,7 +121,7 @@ const HeaderProps = {
 storiesOf('Watson IoT|SideNav', module).add(
   'SideNav component',
   () => (
-    <>
+    <div style={{ width: 'calc(100vw - 6rem)', height: 'calc(100vh - 6rem)' }}>
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
           <>
@@ -133,15 +136,24 @@ storiesOf('Watson IoT|SideNav', module).add(
               onClickSideNavExpand={onClickSideNavExpand}
               switcherProps={switcherProps}
             />
+            <div
+              className={`${iotPrefix}--main-content`}
+              // this would be done in your stylesheet off of .iot--side-nav--expanded
+              style={{
+                transition: 'all .2s',
+                transform: isSideNavExpanded ? `translateX(13rem)` : null,
+              }}
+            >
+              <PageTitleBar
+                title="Title"
+                description="Description"
+                style={{ width: '100vw', height: '100vh' }}
+              />
+            </div>
           </>
         )}
       />
-      <PageTitleBar
-        title="Title"
-        description="Description"
-        style={{ width: '100vw', height: '100vh' }}
-      />
-    </>
+    </div>
   ),
   {
     info: {
