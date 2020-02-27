@@ -7,6 +7,7 @@ import {
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
   LEGACY_CARD_SIZES,
+  VALUE_CARD_DATA_STATE,
 } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
@@ -57,6 +58,15 @@ export const ValueCardPropTypes = {
   content: PropTypes.shape({ attributes: PropTypes.arrayOf(AttributePropTypes).isRequired }),
   /** Value card expects its values passed as an object with key value pairs */
   values: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
+  /** DataState will override the cards default empty state and error string */
+  dataState: PropTypes.shape({
+    type: PropTypes.oneOf([VALUE_CARD_DATA_STATE.NO_DATA, VALUE_CARD_DATA_STATE.ERROR]).isRequired,
+    icon: PropTypes.element,
+    label: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    extraTooltipText: PropTypes.string,
+    learnMoreElement: PropTypes.element,
+  }),
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
@@ -276,6 +286,8 @@ export const CardPropTypes = {
   isExpanded: PropTypes.bool,
   /** should hide the header */
   hideHeader: PropTypes.bool,
+  /** sets the CardWrapper CSS overflow to visible */
+  showOverflow: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
