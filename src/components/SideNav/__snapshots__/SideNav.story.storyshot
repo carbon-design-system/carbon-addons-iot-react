@@ -39,337 +39,356 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SideN
           }
         }
       >
-        <header
-          aria-label="main header"
-          className="bx--header custom-class-name"
-          role="banner"
+        <div
+          style={
+            Object {
+              "height": "calc(100vh - 6rem)",
+              "width": "calc(100vw - 6rem)",
+            }
+          }
         >
-          <a
-            className="bx--skip-to-content"
-            href="#main-content"
-            tabIndex="0"
+          <header
+            aria-label="main header"
+            className="bx--header custom-class-name"
+            role="banner"
           >
-            Skip to main content
-          </a>
-          <button
-            aria-label="Open menu"
-            className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
-            onClick={[Function]}
-            title="Open menu"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 20 20"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
+            <a
+              className="bx--skip-to-content"
+              href="#main-content"
+              tabIndex="0"
             >
-              <path
-                d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
-              />
-            </svg>
-          </button>
-          <a
-            className="bx--header__name"
-            href="#"
-          >
-            <span
-              className="bx--header__name--prefix"
-            >
-              IBM
-            </span>
-             
-            Watson IoT Platform 
-          </a>
-          <div
-            className="bx--header__global"
-          >
+              Skip to main content
+            </a>
             <button
-              aria-label="user"
-              className="bx--header-action-btn bx--header__action"
+              aria-label="Open menu"
+              className="bx--header__action bx--header__menu-trigger bx--header__menu-toggle bx--header__menu-toggle__hidden"
+              onClick={[Function]}
+              title="Open menu"
               type="button"
             >
               <svg
                 aria-hidden={true}
-                className="bx--header__menu-item bx--header__menu-title"
-                description="Icon"
-                fill="white"
                 focusable="false"
-                height={24}
+                height={20}
                 preserveAspectRatio="xMidYMid meet"
                 style={
                   Object {
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
-                width={24}
+                viewBox="0 0 20 20"
+                width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                  d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
                 />
               </svg>
             </button>
-          </div>
-        </header>
-        <div
-          className="bx--side-nav__overlay"
-        />
-        <nav
-          aria-label="Side navigation"
-          className="bx--side-nav__navigation bx--side-nav bx--side-nav--ux"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <ul
-            className="bx--side-nav__items"
-          >
-            <li
-              className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large disabled"
+            <a
+              className="bx--header__name"
+              href="#"
+            >
+              <span
+                className="bx--header__name--prefix"
+              >
+                IBM
+              </span>
+               
+              Watson IoT Platform 
+            </a>
+            <div
+              className="bx--header__global"
             >
               <button
-                aria-expanded={false}
-                aria-haspopup="true"
-                className="bx--side-nav__submenu"
-                onClick={[Function]}
+                aria-label="user"
+                className="bx--header-action-btn bx--header__action"
                 type="button"
               >
-                <div
-                  className="bx--side-nav__icon"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
+                <svg
+                  aria-hidden={true}
+                  className="bx--header__menu-item bx--header__menu-title"
+                  description="Icon"
+                  fill="white"
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
                     }
-                    viewBox="0 0 24 24"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
-                    />
-                  </svg>
-                </div>
-                <span
-                  className="bx--side-nav__submenu-title"
+                  }
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Boards
-                </span>
-                <div
-                  className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
-                    />
-                  </svg>
-                </div>
+                  <path
+                    d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                  />
+                </svg>
               </button>
-              <ul
-                className="bx--side-nav__menu"
-                role="menu"
-              >
-                <li
-                  className="bx--side-nav__menu-item"
-                  role="none"
-                >
-                  <button
-                    className="bx--side-nav__link"
-                    label="Yet another link"
-                    onClick={[Function]}
-                    role="menuitem"
-                    title="Yet another link"
-                  >
-                    <span
-                      className="bx--side-nav__link-text"
-                    >
-                      Yet another link
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </li>
-            <li
-              className="bx--side-nav__item bx--side-nav__item--large"
-            >
-              <a
-                aria-label="Devices"
-                className="bx--side-nav__link disabled"
-                href="https://google.com"
-                label="Devices"
-                target="_blank"
-              >
-                <div
-                  className="bx--side-nav__icon bx--side-nav__icon--small"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11 11v10h10V11zm8 8h-6v-6h6z"
-                    />
-                    <path
-                      d="M30 13v-2h-4V8a2 2 0 0 0-2-2h-3V2h-2v4h-6V2h-2v4H8a2 2 0 0 0-2 2v3H2v2h4v6H2v2h4v3a2 2 0 0 0 2 2h3v4h2v-4h6v4h2v-4h3a2 2 0 0 0 2-2v-3h4v-2h-4v-6zm-6 11H8V8h16z"
-                    />
-                  </svg>
-                </div>
-                <span
-                  className="bx--side-nav__link-text"
-                >
-                  Devices
-                </span>
-              </a>
-            </li>
-            <li
-              className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large disabled"
-            >
-              <button
-                aria-expanded={false}
-                aria-haspopup="true"
-                className="bx--side-nav__submenu"
-                onClick={[Function]}
-                type="button"
-              >
-                <div
-                  className="bx--side-nav__icon"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
-                    />
-                  </svg>
-                </div>
-                <span
-                  className="bx--side-nav__submenu-title"
-                >
-                  Members
-                </span>
-                <div
-                  className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
-                    />
-                  </svg>
-                </div>
-              </button>
-              <ul
-                className="bx--side-nav__menu"
-                role="menu"
-              >
-                <li
-                  className="bx--side-nav__menu-item"
-                  role="none"
-                >
-                  <button
-                    className="bx--side-nav__link bx--side-nav__link--current"
-                    label="Yet another link"
-                    onClick={[Function]}
-                    role="menuitem"
-                    title="Yet another link"
-                  >
-                    <span
-                      className="bx--side-nav__link-text"
-                    >
-                      Yet another link
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div
-          className="page-title-bar"
-        >
+            </div>
+          </header>
           <div
-            className="page-title-bar-header"
+            className="bx--side-nav__overlay"
+          />
+          <nav
+            aria-label="Side navigation"
+            className="bx--side-nav__navigation bx--side-nav bx--side-nav--ux"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
-            <div>
-              <div
-                className="page-title-bar-title"
+            <ul
+              className="bx--side-nav__items"
+            >
+              <li
+                className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
               >
-                <div
-                  className="page-title-bar-title--text"
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="true"
+                  className="bx--side-nav__submenu"
+                  onClick={[Function]}
+                  type="button"
                 >
-                  <h2>
-                    Title
-                  </h2>
+                  <div
+                    className="bx--side-nav__icon"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      focusable="false"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 18h3v3h-3zm-7.5 0h3v3h-3zM3 18h3v3H3zm15-7.5h3v3h-3zm-7.5 0h3v3h-3zm-7.5 0h3v3H3zM18 3h3v3h-3zm-7.5 0h3v3h-3zM3 3h3v3H3z"
+                      />
+                    </svg>
+                  </div>
+                  <span
+                    className="bx--side-nav__submenu-title"
+                  >
+                    Boards
+                  </span>
+                  <div
+                    className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                <ul
+                  className="bx--side-nav__menu"
+                  role="menu"
+                >
+                  <li
+                    className="bx--side-nav__menu-item"
+                    role="none"
+                  >
+                    <button
+                      className="bx--side-nav__link"
+                      label="Yet another link"
+                      onClick={[Function]}
+                      role="menuitem"
+                      title="Yet another link"
+                    >
+                      <span
+                        className="bx--side-nav__link-text"
+                      >
+                        Yet another link
+                      </span>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+              <li
+                className="bx--side-nav__item bx--side-nav__item--large"
+              >
+                <a
+                  aria-label="Devices"
+                  className="bx--side-nav__link"
+                  href="https://google.com"
+                  label="Devices"
+                  target="_blank"
+                >
+                  <div
+                    className="bx--side-nav__icon bx--side-nav__icon--small"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      focusable="false"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 11v10h10V11zm8 8h-6v-6h6z"
+                      />
+                      <path
+                        d="M30 13v-2h-4V8a2 2 0 0 0-2-2h-3V2h-2v4h-6V2h-2v4H8a2 2 0 0 0-2 2v3H2v2h4v6H2v2h4v3a2 2 0 0 0 2 2h3v4h2v-4h6v4h2v-4h3a2 2 0 0 0 2-2v-3h4v-2h-4v-6zm-6 11H8V8h16z"
+                      />
+                    </svg>
+                  </div>
+                  <span
+                    className="bx--side-nav__link-text"
+                  >
+                    Devices
+                  </span>
+                </a>
+              </li>
+              <li
+                className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large"
+              >
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="true"
+                  className="bx--side-nav__submenu"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <div
+                    className="bx--side-nav__icon"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      focusable="false"
+                      height={24}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                      />
+                    </svg>
+                  </div>
+                  <span
+                    className="bx--side-nav__submenu-title"
+                  >
+                    Members
+                  </span>
+                  <div
+                    className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+                  >
+                    <svg
+                      aria-hidden={true}
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                <ul
+                  className="bx--side-nav__menu"
+                  role="menu"
+                >
+                  <li
+                    className="bx--side-nav__menu-item"
+                    role="none"
+                  >
+                    <button
+                      className="bx--side-nav__link bx--side-nav__link--current"
+                      label="Yet another link"
+                      onClick={[Function]}
+                      role="menuitem"
+                      title="Yet another link"
+                    >
+                      <span
+                        className="bx--side-nav__link-text"
+                      >
+                        Yet another link
+                      </span>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div
+            className="iot--main-content"
+            style={
+              Object {
+                "transform": null,
+                "transition": "all .2s",
+              }
+            }
+          >
+            <div
+              className="page-title-bar"
+            >
+              <div
+                className="page-title-bar-header"
+              >
+                <div>
+                  <div
+                    className="page-title-bar-title"
+                  >
+                    <div
+                      className="page-title-bar-title--text"
+                    >
+                      <h2>
+                        Title
+                      </h2>
+                    </div>
+                  </div>
+                  <p
+                    className="page-title-bar-description"
+                  >
+                    Description
+                  </p>
                 </div>
               </div>
-              <p
-                className="page-title-bar-description"
-              >
-                Description
-              </p>
             </div>
           </div>
         </div>
