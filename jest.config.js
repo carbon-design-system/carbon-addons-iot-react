@@ -1,4 +1,4 @@
-  2q1k hnjmi,ol;p-=]\module.exports = {
+module.exports = {
   collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary'],

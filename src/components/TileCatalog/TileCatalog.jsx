@@ -106,11 +106,11 @@ const TileCatalog = ({
   return (
     <div>
       <div>
-        {persistentSearch ? (
+        {/* {persistentSearch ? (
           <div className="tile-catalog--persistent-search">
             <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
           </div>
-        ) : null}
+        ) : null} */}
         <div />
       </div>
 
