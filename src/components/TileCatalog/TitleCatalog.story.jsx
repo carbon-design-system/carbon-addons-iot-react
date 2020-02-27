@@ -108,7 +108,7 @@ storiesOf('Watson IoT Experimental|TileCatalog', module)
                   return tileB - tileA;
                 });
               }
-              setTiles(tiles);
+              setTiles([...tiles]);
             }}
             selectedSortOption={selectedSortOption}
             hasSearch={boolean('hasSearch', true)}

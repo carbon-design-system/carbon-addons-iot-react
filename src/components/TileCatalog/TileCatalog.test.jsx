@@ -1,18 +1,19 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+
 import TileCatalog from './TileCatalog';
 import SampleTile from './SampleTile';
 
-const getTiles = (num, title) => {
-  var tiles = [];
+const getTiles = num => {
+  const tiles = [];
   Array(num)
     .fill(0)
-    .map(
-      (i, idx) =>
-        (tiles[idx] = (
-          <SampleTile title={`${title} ${idx + 1}`} description="This is a sample product tile" />
-        ))
-    );
+    .map((i, idx) => {
+      tiles[idx] = (
+        <SampleTile title={`Tile ${idx + 1}`} description="This is a sample product tile" />
+      );
+      return tiles[idx];
+    });
   return tiles;
 };
 
@@ -23,6 +24,19 @@ describe('TileCatalog tests', () => {
         tiles={getTiles(2, 'Tile')}
         title="Test Tile Catalog"
         numRows={1}
+        numColumns={2}
+      />
+    );
+    expect(getByText('Tile 1')).toBeTruthy();
+    expect(getByText('Tile 2')).toBeTruthy();
+  });
+
+  test('TileCatalog placeholder tile are rendered', () => {
+    const { getByText } = render(
+      <TileCatalog
+        tiles={getTiles(6, 'Tile')}
+        title="Test Tile Catalog"
+        numRows={2}
         numColumns={2}
       />
     );
@@ -49,7 +63,7 @@ describe('TileCatalog tests', () => {
       />
     );
     fireEvent.change(getByPlaceholderText('Enter a value'), { target: { value: '5' } });
-    expect(onSearch).toBeCalledTimes(1);
+    expect(onSearch).toHaveBeenCalledTimes(1);
   });
 
   test('TileCatalog hasSort set to true', () => {
@@ -72,10 +86,10 @@ describe('TileCatalog tests', () => {
       />
     );
     fireEvent.change(getByDisplayValue('Choose from options'), { target: { value: 'Z-A' } });
-    expect(onSort).toBeCalledTimes(1);
+    expect(onSort).toHaveBeenCalledTimes(1);
   });
 
-  test('TileCatalog pagination', () => {
+  test('TileCatalog pagination next button', () => {
     const { getByText, getAllByRole } = render(
       <TileCatalog
         title="Test Tile Catalog"
@@ -91,5 +105,41 @@ describe('TileCatalog tests', () => {
     expect(getByText('Tile 6')).toBeTruthy();
     expect(getByText('Tile 7')).toBeTruthy();
     expect(getByText('Tile 8')).toBeTruthy();
+  });
+
+  test('TileCatalog pagination previous button', () => {
+    const { getByText, getAllByRole } = render(
+      <TileCatalog
+        title="Test Tile Catalog"
+        tiles={getTiles(8, 'Tile')}
+        numColumns={2}
+        numRows={2}
+      />
+    );
+    const buttons = getAllByRole('button');
+    fireEvent.click(buttons[buttons.length - 1]);
+    fireEvent.click(buttons[0]);
+    expect(getByText('Tile 1')).toBeTruthy();
+    expect(getByText('Tile 2')).toBeTruthy();
+    expect(getByText('Tile 3')).toBeTruthy();
+    expect(getByText('Tile 4')).toBeTruthy();
+  });
+
+  test('TileCatalog pagination number button', () => {
+    const { getByText, getAllByRole } = render(
+      <TileCatalog
+        title="Test Tile Catalog"
+        tiles={getTiles(8, 'Tile')}
+        numColumns={2}
+        numRows={2}
+      />
+    );
+    const buttons = getAllByRole('button');
+    fireEvent.click(buttons[buttons.length - 2]);
+    fireEvent.click(buttons[0]);
+    expect(getByText('Tile 1')).toBeTruthy();
+    expect(getByText('Tile 2')).toBeTruthy();
+    expect(getByText('Tile 3')).toBeTruthy();
+    expect(getByText('Tile 4')).toBeTruthy();
   });
 });

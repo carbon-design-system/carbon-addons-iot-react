@@ -1,4 +1,6 @@
-.tile-catalog {
+@import '../../globals/vars';
+
+.#{$iot-prefix}--tile-catalog {
   &--persistent-search {
     margin-bottom: $spacing-05;
   }

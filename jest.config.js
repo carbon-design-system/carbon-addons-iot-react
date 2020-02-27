@@ -9,7 +9,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|HierarchyList|TableHead|ColumnResize).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|HierarchyList|TableHead|ColumnResize).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -37,7 +37,6 @@ module.exports = {
     },
     './src/components/Table/TableBody/RowActionsCell/RowActionsError.jsx': { functions: 66 },
     './src/components/Table/StatefulTable.jsx': { branches: 66 },
-    './src/components/TileCatalog/CatalogContent.jsx': { branches: 50 },
     './src/components/FileDrop/FileDrop.jsx': { branches: 53, functions: 75 },
     './src/components/Dashboard/Dashboard.jsx': { statements: 79, branches: 50, lines: 78 },
     './src/components/Dashboard/CardRenderer.jsx': {
