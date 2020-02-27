@@ -1,1 +1,16 @@
 @import '~carbon-components/scss/globals/scss/mixins';
+
+@mixin multiline-text-overflow($max-lines: 3, $line-height-rem: 1) {
+  overflow: hidden;
+
+  // Fallback solution for users where -webkit-line-clamp doesn't work
+  max-height: calc(#{$line-height-rem} * (#{$max-lines} + 0.5));
+  display: block;
+
+  // Use webkit-line-clamp which despite webkit prefix has good browser support
+  display: -webkit-box;
+  -webkit-line-clamp: $max-lines;
+  // Not needed after we upgrade to Prefixer 9.6.1 or higher
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
