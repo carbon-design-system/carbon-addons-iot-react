@@ -41,6 +41,8 @@ const StatefulPageWizardPropTypes = {
   hasStickyFooter: PropTypes.bool,
   /** Displays the progress indicator vertically */
   isProgressIndicatorVertical: PropTypes.bool,
+  /** Content to render before footer buttons (on left side, in LTR) */
+  beforeFooterContent: PropTypes.node,
 };
 
 const defaultProps = {
@@ -60,6 +62,7 @@ const defaultProps = {
   isProgressIndicatorVertical: true,
   onNext: null,
   onBack: null,
+  beforeFooterContent: null,
 };
 
 const StatefulPageWizard = ({
