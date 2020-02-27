@@ -2,7 +2,13 @@ import PropTypes from 'prop-types';
 
 import { bundledIconNames } from '../utils/bundledIcons';
 
-import { CARD_SIZES, CARD_LAYOUTS, DASHBOARD_SIZES, TIME_SERIES_TYPES } from './LayoutConstants';
+import {
+  CARD_LAYOUTS,
+  DASHBOARD_SIZES,
+  TIME_SERIES_TYPES,
+  LEGACY_CARD_SIZES,
+  VALUE_CARD_DATA_STATE,
+} from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
   label: PropTypes.string, // optional for little cards
@@ -52,6 +58,15 @@ export const ValueCardPropTypes = {
   content: PropTypes.shape({ attributes: PropTypes.arrayOf(AttributePropTypes).isRequired }),
   /** Value card expects its values passed as an object with key value pairs */
   values: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
+  /** DataState will override the cards default empty state and error string */
+  dataState: PropTypes.shape({
+    type: PropTypes.oneOf([VALUE_CARD_DATA_STATE.NO_DATA, VALUE_CARD_DATA_STATE.ERROR]).isRequired,
+    icon: PropTypes.element,
+    label: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    extraTooltipText: PropTypes.string,
+    learnMoreElement: PropTypes.element,
+  }),
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
@@ -271,7 +286,9 @@ export const CardPropTypes = {
   isExpanded: PropTypes.bool,
   /** should hide the header */
   hideHeader: PropTypes.bool,
-  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
+  /** sets the CardWrapper CSS overflow to visible */
+  showOverflow: PropTypes.bool,
+  size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional range to pass at the card level */

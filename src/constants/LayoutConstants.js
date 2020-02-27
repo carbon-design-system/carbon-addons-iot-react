@@ -11,14 +11,23 @@ export const COLORS = {
 export const DISABLED_COLORS = ['#e0e0e0', '#cacaca', '#a8a8a8', '#8d8d8d', '#6f6f6f'];
 
 export const CARD_SIZES = {
+  SMALL: 'SMALL',
+  SMALLWIDE: 'SMALLWIDE',
+  MEDIUMTHIN: 'MEDIUMTHIN',
+  MEDIUM: 'MEDIUM',
+  MEDIUMWIDE: 'MEDIUMWIDE',
+  LARGETHIN: 'LARGETHIN',
+  LARGE: 'LARGE',
+  LARGEWIDE: 'LARGEWIDE',
+};
+
+export const LEGACY_CARD_SIZES = {
   XSMALL: 'XSMALL',
   XSMALLWIDE: 'XSMALLWIDE',
-  SMALL: 'SMALL',
   TALL: 'TALL',
-  MEDIUM: 'MEDIUM',
   WIDE: 'WIDE',
-  LARGE: 'LARGE',
   XLARGE: 'XLARGE',
+  ...CARD_SIZES,
 };
 
 export const CARD_TYPES = {
@@ -63,7 +72,7 @@ export const DASHBOARD_COLUMNS = {
 };
 
 export const DASHBOARD_BREAKPOINTS = {
-  max: 1800,
+  max: 1584,
   xl: 1312,
   lg: 1056,
   md: 672,
@@ -72,12 +81,12 @@ export const DASHBOARD_BREAKPOINTS = {
 };
 
 export const ROW_HEIGHT = {
-  max: 128,
-  xl: 128,
-  lg: 128,
-  md: 128,
-  sm: 128,
-  xs: 128,
+  max: 144,
+  xl: 144,
+  lg: 144,
+  md: 144,
+  sm: 144,
+  xs: 144,
 };
 
 /** The amount of space to preserve between cards */
@@ -89,64 +98,109 @@ export const GUTTER = 16;
 
 export const CARD_DIMENSIONS = {
   XSMALL: {
+    // TODO: remove once we've removed these deprecated sizes
     max: { w: 2, h: 1 },
     xl: { w: 2, h: 1 },
-    lg: { w: 2, h: 1 },
-    md: { w: 2, h: 1 },
-    sm: { w: 2, h: 1 },
-    xs: { w: 2, h: 1 },
-  },
-  XSMALLWIDE: {
-    max: { w: 3, h: 1 },
-    xl: { w: 4, h: 1 },
     lg: { w: 4, h: 1 },
     md: { w: 4, h: 1 },
     sm: { w: 2, h: 1 },
     xs: { w: 4, h: 1 },
   },
-  SMALL: {
-    max: { w: 2, h: 2 },
-    xl: { w: 4, h: 2 },
-    lg: { w: 4, h: 2 },
-    md: { w: 4, h: 2 },
-    sm: { w: 2, h: 2 },
-    xs: { w: 4, h: 2 },
+  XSMALLWIDE: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 4, h: 1 },
+    xl: { w: 4, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 4, h: 2 },
+    xs: { w: 4, h: 1 },
   },
   TALL: {
-    max: { w: 2, h: 4 },
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 4, h: 4 },
     xl: { w: 4, h: 4 },
     lg: { w: 4, h: 4 },
     md: { w: 4, h: 4 },
-    sm: { w: 2, h: 4 },
+    sm: { w: 4, h: 4 },
     xs: { w: 4, h: 4 },
   },
-  MEDIUM: {
-    max: { w: 6, h: 2 },
+  WIDE: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 8, h: 2 },
     xl: { w: 8, h: 2 },
     lg: { w: 8, h: 2 },
     md: { w: 8, h: 2 },
     sm: { w: 4, h: 2 },
     xs: { w: 4, h: 2 },
   },
-  WIDE: {
+  XLARGE: {
+    // TODO: remove once we've removed these deprecated sizes
+    max: { w: 16, h: 4 },
+    xl: { w: 16, h: 4 },
+    lg: { w: 16, h: 4 },
+    md: { w: 8, h: 4 },
+    sm: { w: 4, h: 4 },
+    xs: { w: 4, h: 4 },
+  },
+  SMALL: {
+    max: { w: 2, h: 1 },
+    xl: { w: 2, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 2, h: 1 },
+    xs: { w: 4, h: 1 },
+  },
+  SMALLWIDE: {
+    max: { w: 4, h: 1 },
+    xl: { w: 4, h: 1 },
+    lg: { w: 4, h: 1 },
+    md: { w: 4, h: 1 },
+    sm: { w: 4, h: 2 },
+    xs: { w: 4, h: 1 },
+  },
+  MEDIUMTHIN: {
+    max: { w: 2, h: 2 },
+    xl: { w: 2, h: 2 },
+    lg: { w: 4, h: 2 },
+    md: { w: 2, h: 2 },
+    sm: { w: 2, h: 2 },
+    xs: { w: 4, h: 2 },
+  },
+  MEDIUM: {
+    max: { w: 4, h: 2 },
+    xl: { w: 4, h: 2 },
+    lg: { w: 4, h: 2 },
+    md: { w: 4, h: 2 },
+    sm: { w: 4, h: 2 },
+    xs: { w: 4, h: 2 },
+  },
+  MEDIUMWIDE: {
     max: { w: 8, h: 2 },
     xl: { w: 8, h: 2 },
-    lg: { w: 12, h: 2 },
+    lg: { w: 8, h: 2 },
     md: { w: 8, h: 2 },
     sm: { w: 4, h: 2 },
     xs: { w: 4, h: 2 },
   },
+  LARGETHIN: {
+    max: { w: 4, h: 4 },
+    xl: { w: 4, h: 4 },
+    lg: { w: 4, h: 4 },
+    md: { w: 4, h: 4 },
+    sm: { w: 4, h: 4 },
+    xs: { w: 4, h: 4 },
+  },
   LARGE: {
-    max: { w: 6, h: 4 },
+    max: { w: 8, h: 4 },
     xl: { w: 8, h: 4 },
     lg: { w: 8, h: 4 },
     md: { w: 8, h: 4 },
     sm: { w: 4, h: 4 },
     xs: { w: 4, h: 4 },
   },
-  XLARGE: {
-    max: { w: 8, h: 4 },
-    xl: { w: 12, h: 4 },
+  LARGEWIDE: {
+    max: { w: 16, h: 4 },
+    xl: { w: 16, h: 4 },
     lg: { w: 16, h: 4 },
     md: { w: 8, h: 4 },
     sm: { w: 4, h: 4 },
@@ -166,3 +220,5 @@ export const TIME_SERIES_TYPES = {
   BAR: 'BAR',
   LINE: 'LINE',
 };
+
+export const VALUE_CARD_DATA_STATE = { NO_DATA: 'NO_DATA', ERROR: 'ERROR' };

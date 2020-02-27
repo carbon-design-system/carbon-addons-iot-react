@@ -7,6 +7,7 @@ import withSize from 'react-sizeme';
 
 import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -17,7 +18,7 @@ const StyledAttribute = styled.div`
   ${props => (props.isVertical && props.alignValue ? `justify-content: ${props.alignValue};` : '')};
   order: 1;
   ${props =>
-    !props.label || props.isVertical || props.size === CARD_SIZES.XSMALL
+    !props.label || props.isVertical || props.size === CARD_SIZES.SMALL
       ? 'width: 100%'
       : 'width: 50%'};
 `;
@@ -116,6 +117,9 @@ const Attribute = ({
   renderIconByName,
   size, // eslint-disable-line
 }) => {
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
+
   // matching threshold will be the first match in the list, or a value of null
   const matchingThreshold = thresholds
     .filter(t => {
@@ -166,7 +170,7 @@ const Attribute = ({
       {({ size: measuredSize }) => {
         return (
           <StyledAttribute
-            size={size}
+            size={newSize}
             alignValue={alignValue}
             isVertical={isVertical}
             isMini={isMini}
@@ -178,7 +182,7 @@ const Attribute = ({
               layout={layout}
               isSmall={isSmall}
               isMini={isMini}
-              size={size}
+              size={newSize}
               thresholds={thresholds}
               precision={precision}
               isVertical={isVertical}

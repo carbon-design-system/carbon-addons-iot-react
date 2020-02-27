@@ -183,6 +183,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/WizardInline/wizard-inline';
 @import 'components/TileGallery/tile-gallery';
 @import 'components/Table/TableToolbar/table-toolbar';
+@import 'components/Table/pagination';
 @import 'components/Table/table';
 @import 'components/Button/button';
 @import 'components/SimplePagination/simple-pagination';
@@ -191,3 +192,4 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/List/ListItem/list-item';
 @import 'components/List/ListHeader/list-header';
 @import 'components/TileCatalog/tile-catalog';
+@import 'components/ValueCard/value-card';

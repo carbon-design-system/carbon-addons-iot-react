@@ -1,7 +1,7 @@
 module.exports = {
   collectCoverageFrom: ['src/components/**/*.js?(x)', '!src/**/*.story.js?(x)'],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
-  coverageReporters: ['html', 'text-summary'],
+  coverageReporters: ['html', 'text-summary', 'lcov'],
   coverageThreshold: {
     global: {
       statements: 80,

@@ -8,8 +8,12 @@ import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
-import { determineMaxValueCardAttributeCount } from '../../utils/cardUtilityFunctions';
+import {
+  determineMaxValueCardAttributeCount,
+  getUpdatedCardSize,
+} from '../../utils/cardUtilityFunctions';
 
+import DataStateRenderer from './DataStateRenderer';
 import Attribute from './Attribute';
 
 const ContentWrapper = styled.div`
@@ -75,23 +79,23 @@ const Spacer = styled.div`
  * @param {*} param0
  */
 const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) => {
-  if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.WIDE) {
+  if (layout === CARD_LAYOUTS.HORIZONTAL && !CARD_SIZES.MEDIUMWIDE) {
     return 1.25;
   }
 
   let fontSize = 1.25;
   switch (size) {
-    case CARD_SIZES.XSMALL:
-    case CARD_SIZES.XSMALLWIDE:
+    case CARD_SIZES.SMALL:
+    case CARD_SIZES.SMALLWIDE:
       fontSize = 0.875;
       break;
-    case CARD_SIZES.SMALL:
+    case CARD_SIZES.MEDIUM:
       fontSize = isVertical && attributeCount > 2 ? 0.875 : 1;
       break;
-    case CARD_SIZES.TALL:
+    case CARD_SIZES.LARGETHIN:
       fontSize = isVertical && attributeCount > 5 ? 0.875 : 1;
       break;
-    case CARD_SIZES.WIDE:
+    case CARD_SIZES.MEDIUMWIDE:
     default:
   }
   return fontSize;
@@ -99,7 +103,7 @@ const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) =>
 
 /** * Determines the label alignment */
 const getLabelAlignment = ({ size, isVertical, attributeCount }) => {
-  if (attributeCount === 1 && size === CARD_SIZES.SMALL && isVertical) {
+  if (attributeCount === 1 && size === CARD_SIZES.MEDIUM && isVertical) {
     return 'center';
   }
   return isVertical ? 'left' : 'right';
@@ -124,14 +128,11 @@ const AttributeLabel = styled.div`
   ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
   text-align: ${props => getLabelAlignment(props)};
   ${props =>
-    (props.isVertical || props.size === CARD_SIZES.XSMALL || props.size === CARD_SIZES.SMALL) &&
+    (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUM) &&
     `padding-top: 0.25rem;`};
   ${props =>
-    !(
-      props.isVertical ||
-      props.size === CARD_SIZES.XSMALL ||
-      props.size === CARD_SIZES.XSMALLWIDE
-    ) && `padding-left: 0.5rem`};
+    !(props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.SMALLWIDE) &&
+    `padding-left: 0.5rem`};
   order: ${props => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
@@ -145,21 +146,21 @@ const AttributeLabel = styled.div`
 const determineLayout = (size, attributes, measuredWidth) => {
   let layout = CARD_LAYOUTS.HORIZONTAL;
   switch (size) {
-    case CARD_SIZES.XSMALL:
+    case CARD_SIZES.SMALL:
       layout = CARD_LAYOUTS.HORIZONTAL;
       break;
-    case CARD_SIZES.XSMALLWIDE:
+    case CARD_SIZES.SMALLWIDE:
       layout =
         measuredWidth && measuredWidth < 300 && attributes.length > 1
           ? CARD_LAYOUTS.VERTICAL
           : CARD_LAYOUTS.HORIZONTAL;
       break;
-    case CARD_SIZES.SMALL:
+    case CARD_SIZES.MEDIUMTHIN:
       layout = CARD_LAYOUTS.VERTICAL;
       break;
-    case CARD_SIZES.TALL:
+    case CARD_SIZES.LARGETHIN:
     case CARD_SIZES.MEDIUM:
-    case CARD_SIZES.WIDE:
+    case CARD_SIZES.MEDIUMWIDE:
       if (attributes.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
@@ -170,7 +171,7 @@ const determineLayout = (size, attributes, measuredWidth) => {
       }
       break;
 
-    case CARD_SIZES.XLARGE:
+    case CARD_SIZES.LARGEWIDE:
       if (attributes.length > 5) {
         layout = CARD_LAYOUTS.VERTICAL;
       }
@@ -198,118 +199,135 @@ const determineAttributes = (size, attributes) => {
 
 const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   switch (size) {
-    case CARD_SIZES.XSMALLWIDE:
+    case CARD_SIZES.SMALLWIDE:
       return layout === CARD_LAYOUTS.HORIZONTAL;
-    case CARD_SIZES.SMALL:
+    case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
       return !measuredSize || measuredSize.width < 300;
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }) => {
+const ValueCard = ({
+  title,
+  content,
+  size,
+  values,
+  isEditable,
+  i18n,
+  dataState,
+  id,
+  ...others
+}) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
   };
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
 
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
-        const layout = determineLayout(size, content && content.attributes, measuredSize.width);
-        const attributes = determineAttributes(size, content && content.attributes);
+        const layout = determineLayout(newSize, content && content.attributes, measuredSize.width);
+        const attributes = determineAttributes(newSize, content && content.attributes);
 
         // Measure the size to determine whether to render the attribute label above the value
         const isVertical = isLabelAboveValue(
-          size,
+          newSize,
           layout,
           content ? content.attributes : [],
           measuredSize
         );
 
         // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
-        const isMini = size === CARD_SIZES.XSMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
+        const isMini = newSize === CARD_SIZES.SMALLWIDE && layout === CARD_LAYOUTS.VERTICAL;
 
         return (
           <Card
             title={title}
-            size={size}
+            size={newSize}
             availableActions={availableActions}
-            isEmpty={isEmpty(values)}
+            isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
+            showOverflow={!!dataState}
             i18n={i18n}
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {attributes.map((attribute, i) => (
-                <React.Fragment
-                  key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
-                    attribute.dataFilter || {}
-                  )}`}
-                >
-                  <AttributeWrapper
-                    layout={layout}
-                    isVertical={isVertical}
-                    isSmall={attribute.secondaryValue !== undefined}
-                    isMini={isMini}
-                    size={size}
-                    attributeCount={attributes.length}
+              {dataState && <DataStateRenderer dataState={dataState} size={newSize} id={id} />}
+              {!dataState &&
+                attributes.map((attribute, i) => (
+                  <React.Fragment
+                    key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
+                      attribute.dataFilter || {}
+                    )}`}
                   >
-                    <Attribute
-                      isVertical={isVertical}
-                      layout={layout}
-                      isSmall={
-                        size === CARD_SIZES.XSMALL &&
-                        (attribute.secondaryValue !== undefined || attribute.label !== undefined)
-                      }
-                      isMini={isMini}
-                      alignValue={
-                        size === CARD_SIZES.SMALL && attributes.length === 1 ? 'center' : undefined
-                      }
-                      {...attribute}
-                      renderIconByName={others.renderIconByName}
-                      size={size} // When the card is in the editable state, we will show a preview
-                      value={
-                        isEditable
-                          ? '--'
-                          : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
-                      }
-                      secondaryValue={
-                        attribute.secondaryValue && {
-                          ...attribute.secondaryValue,
-                          value: isEditable // When the card is in the editable state, we will show a preview
-                            ? '--'
-                            : determineValue(attribute.secondaryValue.dataSourceId, values),
-                        }
-                      }
-                    />
-                    {isMini && <Spacer />}
-                    <AttributeLabel
-                      title={attribute.label}
-                      isVertical={isVertical}
-                      layout={layout}
-                      isMini={isMini}
-                      attributeCount={attributes.length}
-                      size={size}
-                    >
-                      {attribute.label}
-                    </AttributeLabel>
-                  </AttributeWrapper>
-                  {i < attributes.length - 1 &&
-                  (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
-                  size !== CARD_SIZES.XSMALLWIDE ? (
                     <AttributeWrapper
                       layout={layout}
                       isVertical={isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
                       isMini={isMini}
-                      size={size}
+                      size={newSize}
+                      attributeCount={attributes.length}
                     >
-                      <AttributeSeparator />
+                      <Attribute
+                        isVertical={isVertical}
+                        layout={layout}
+                        isSmall={
+                          newSize === CARD_SIZES.SMALL &&
+                          (attribute.secondaryValue !== undefined || attribute.label !== undefined)
+                        }
+                        isMini={isMini}
+                        alignValue={
+                          newSize === CARD_SIZES.MEDIUMTHIN && attributes.length === 1
+                            ? 'center'
+                            : undefined
+                        }
+                        {...attribute}
+                        renderIconByName={others.renderIconByName}
+                        size={newSize} // When the card is in the editable state, we will show a preview
+                        value={
+                          isEditable
+                            ? '--'
+                            : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
+                        }
+                        secondaryValue={
+                          attribute.secondaryValue && {
+                            ...attribute.secondaryValue,
+                            value: isEditable // When the card is in the editable state, we will show a preview
+                              ? '--'
+                              : determineValue(attribute.secondaryValue.dataSourceId, values),
+                          }
+                        }
+                      />
+                      {isMini && <Spacer />}
+                      <AttributeLabel
+                        title={attribute.label}
+                        isVertical={isVertical}
+                        layout={layout}
+                        isMini={isMini}
+                        attributeCount={attributes.length}
+                        size={newSize}
+                      >
+                        {attribute.label}
+                      </AttributeLabel>
                     </AttributeWrapper>
-                  ) : null}
-                </React.Fragment>
-              ))}
+                    {i < attributes.length - 1 &&
+                    (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
+                    newSize !== CARD_SIZES.SMALLWIDE ? (
+                      <AttributeWrapper
+                        layout={layout}
+                        isVertical={isVertical}
+                        isSmall={attribute.secondaryValue !== undefined}
+                        isMini={isMini}
+                        size={newSize}
+                      >
+                        <AttributeSeparator />
+                      </AttributeWrapper>
+                    ) : null}
+                  </React.Fragment>
+                ))}
             </ContentWrapper>
           </Card>
         );
