@@ -15,15 +15,11 @@ const AccordionItem = ({ children, ...props }) => {
     [open]
   );
   const handleToggle = event => {
-    props.onClick(event);
+    props.onHeadingClick(event);
     setOpenState(!openState);
   };
   return (
-    <CarbonAccordionItem
-      data-testid="accordion-item"
-      {...props}
-      onClick={event => handleToggle(event)}
-    >
+    <CarbonAccordionItem data-testid="accordion-item" {...props} onHeadingClick={handleToggle}>
       {openState && children}
     </CarbonAccordionItem>
   );

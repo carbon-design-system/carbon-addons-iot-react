@@ -5,6 +5,7 @@ import isNil from 'lodash/isNil';
 import classNames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -47,9 +48,9 @@ const Attribute = styled.div`
 const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
   if (typeof value === 'string') {
     switch (size) {
-      case CARD_SIZES.XSMALL:
+      case CARD_SIZES.SMALL:
         return value.length > 4 ? 1 : 2;
-      case CARD_SIZES.XSMALLWIDE:
+      case CARD_SIZES.SMALLWIDE:
         return layout === CARD_LAYOUTS.HORIZONTAL ? 1.25 : 1;
       default:
     }
@@ -80,7 +81,7 @@ const determinePrecision = (size, value, precision) => {
   }
   // If the card is xsmall we don't have room for decimals!
   switch (size) {
-    case CARD_SIZES.XSMALL:
+    case CARD_SIZES.SMALL:
       return Math.abs(value) > 9 ? 0 : precision;
     default:
   }
@@ -101,7 +102,10 @@ const ValueRenderer = ({
   allowedToWrap,
   wrapCompact,
 }) => {
-  const precision = determinePrecision(size, value, precisionProp);
+  // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
+  const newSize = getUpdatedCardSize(size);
+
+  const precision = determinePrecision(newSize, value, precisionProp);
   let renderValue = value;
   if (typeof value === 'boolean') {
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
@@ -134,7 +138,7 @@ const ValueRenderer = ({
       })}
     >
       <AttributeValue
-        size={size}
+        size={newSize}
         title={`${value} ${unit || ''}`}
         layout={layout}
         isSmall={isSmall}
