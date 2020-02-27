@@ -193,7 +193,7 @@ const CardRenderer = React.memo(
     ) : type === CARD_TYPES.GAUGE ? (
       <GaugeCard {...commonCardProps} />
     ) : type === CARD_TYPES.CUSTOM ? (
-      <Card hideHeader={isNil(card.title)} {...commonCardProps}>
+      <Card hideHeader={isNil(card.title)} {...omit(commonCardProps, 'content')}>
         {card.content}
       </Card>
     ) : null;
