@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { number, boolean } from '@storybook/addon-knobs';
+
 import TileCatalog from './TileCatalog';
 import SampleTile from './SampleTile';
 
@@ -13,15 +14,13 @@ const sortOptions = [
 const selectedSortOption = 'Choose from options';
 
 const getTiles = num => {
-  var tiles = [];
+  const tiles = [];
   Array(num)
     .fill(0)
-    .map(
-      (i, idx) =>
-        (tiles[idx] = (
-          <SampleTile title={`${idx + 1}`} description="This is a sample product tile" />
-        ))
-    );
+    .map((i, idx) => {
+      tiles[idx] = <SampleTile title={`${idx + 1}`} description="This is a sample product tile" />;
+      return tiles[idx];
+    });
   return tiles;
 };
 
@@ -52,7 +51,7 @@ storiesOf('Watson IoT Experimental|TileCatalog', module)
         numColumns={number('numColumns', 4)}
         numRows={number('numRows', 2)}
         hasSearch={boolean('hasSearch', true)}
-        onSearch={action('search', evt => {})}
+        onSearch={action('search', () => {})}
       />
     </div>
   ))
