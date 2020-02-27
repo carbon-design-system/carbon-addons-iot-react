@@ -593,6 +593,376 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard With additional footer content 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "bottom": "0",
+      "display": "flex",
+      "left": "0",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": "0",
+      "top": "0",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "margin": "auto",
+        "maxHeight": "100%",
+      }
+    }
+  >
+    <div
+      className="storybook-container"
+      style={
+        Object {
+          "padding": "3rem",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "position": "relative",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div>
+          <div
+            className="page-title-bar"
+          >
+            <div
+              className="page-title-bar-header"
+            >
+              <div>
+                <div
+                  className="page-title-bar-breadcrumb"
+                >
+                  <nav
+                    aria-label="Breadcrumb"
+                  >
+                    <ol
+                      className="bx--breadcrumb"
+                    >
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          to="www.ibm.com"
+                        >
+                          Home
+                        </a>
+                      </li>
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          to="www.ibm.com"
+                        >
+                          Something
+                        </a>
+                      </li>
+                      <li
+                        className="bx--breadcrumb-item"
+                      >
+                        <a
+                          className="bx--link bx--link"
+                          to="www.ibm.com"
+                        >
+                          Something Else
+                        </a>
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+                <div
+                  className="page-title-bar-title"
+                >
+                  <div
+                    className="page-title-bar-title--text"
+                  >
+                    <h2>
+                      A cool PageWizard!
+                    </h2>
+                    <div
+                      className="bx--tooltip__label"
+                      id="tooltip"
+                    >
+                      
+                      <div
+                        aria-describedby={null}
+                        aria-haspopup="true"
+                        className="bx--tooltip__trigger"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg
+                          aria-hidden={true}
+                          description={null}
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role={null}
+                          style={
+                            Object {
+                              "willChange": "transform",
+                            }
+                          }
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                          />
+                          <path
+                            d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="page-title-bar-content"
+            >
+              <div
+                className="iot--page-wizard iot--page-wizard__sticky"
+              >
+                <div
+                  className="iot--page-wizard--progress--vertical"
+                >
+                  <ul
+                    className="bx--progress bx--progress--vertical"
+                    onChange={[Function]}
+                  >
+                    <li
+                      className="bx--progress-step bx--progress-step--current"
+                    >
+                      <div
+                        className="bx--progress-step-button bx--progress-step-button--unclickable"
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={-1}
+                      >
+                        <svg>
+                          <path
+                            d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                          />
+                          <title />
+                        </svg>
+                        <p
+                          className="bx--progress-label"
+                        >
+                          Step with validation
+                        </p>
+                        <span
+                          className="bx--progress-line"
+                        />
+                      </div>
+                    </li>
+                    <li
+                      className="bx--progress-step bx--progress-step--incomplete"
+                    >
+                      <div
+                        className="bx--progress-step-button"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <svg>
+                          <title />
+                          <path
+                            d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                          />
+                        </svg>
+                        <p
+                          className="bx--progress-label"
+                        >
+                          Step 2
+                        </p>
+                        <span
+                          className="bx--progress-line"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className="iot--page-wizard--content"
+                >
+                  <div
+                    className="iot--page-wizard--step"
+                    id="step1"
+                  >
+                    <div
+                      className="iot--page-wizard--step--title"
+                    >
+                      Enter some things
+                    </div>
+                    <div
+                      className="iot--page-wizard--step--description"
+                    >
+                      Make sure you do not try to go to the next step with an empty input! Bad things will happen.
+                    </div>
+                    <div
+                      className="iot--page-wizard--step--content"
+                    >
+                      <form
+                        className="bx--form"
+                      >
+                         
+                        <fieldset
+                          className="bx--fieldset"
+                        >
+                          <legend
+                            className="bx--label"
+                          >
+                            Name
+                          </legend>
+                          <div
+                            className="bx--form-item"
+                          >
+                            <div
+                              className="bx--form-item bx--text-input-wrapper"
+                            >
+                              <label
+                                className="bx--label"
+                                htmlFor="first-name"
+                              >
+                                First name
+                              </label>
+                              <div
+                                className="bx--text-input__field-wrapper"
+                                data-invalid={null}
+                              >
+                                <input
+                                  className="bx--text-input bx--text__input"
+                                  data-testid="first-name"
+                                  disabled={false}
+                                  id="first-name"
+                                  onChange={[Function]}
+                                  onClick={[Function]}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className="bx--form-item"
+                          >
+                            <div
+                              className="bx--form-item bx--text-input-wrapper"
+                            >
+                              <label
+                                className="bx--label"
+                                htmlFor="last-name"
+                              >
+                                Last name
+                              </label>
+                              <div
+                                className="bx--text-input__field-wrapper"
+                                data-invalid={null}
+                              >
+                                <input
+                                  className="bx--text-input bx--text__input"
+                                  data-testid="last-name"
+                                  disabled={false}
+                                  id="last-name"
+                                  onChange={[Function]}
+                                  onClick={[Function]}
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                         
+                      </form>
+                    </div>
+                    <div
+                      className="iot--page-wizard--content--actions--sticky"
+                    >
+                      <button
+                        className="bx--btn bx--btn--tertiary"
+                        disabled={false}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        Save and close
+                      </button>
+                      <button
+                        className="iot--btn bx--btn bx--btn--secondary"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="iot--btn bx--btn bx--btn--primary"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        className="info__show-button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#027ac5",
+            "border": "none",
+            "borderRadius": "0 0 0 5px",
+            "color": "#fff",
+            "cursor": "pointer",
+            "display": "block",
+            "fontFamily": "sans-serif",
+            "fontSize": "12px",
+            "padding": "5px 15px",
+            "position": "fixed",
+            "right": 0,
+            "top": 0,
+          }
+        }
+        type="button"
+      >
+        Show Info
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard only one step, in PageTitleBar 1`] = `
 <div
   style={
