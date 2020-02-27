@@ -8,6 +8,7 @@ import {
   TIME_SERIES_TYPES,
   LEGACY_CARD_SIZES,
   VALUE_CARD_DATA_STATE,
+  CARD_SIZES,
 } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
@@ -104,6 +105,7 @@ export const TimeSeriesCardPropTypes = {
 export const TableCardPropTypes = {
   tooltip: PropTypes.node,
   title: PropTypes.string,
+  size: PropTypes.oneOf([CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE]),
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({
