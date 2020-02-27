@@ -9,6 +9,8 @@ import { barChartData } from '../../utils/barChartDataSample';
 
 import BarChartCard from './BarChartCard';
 
+const COLORS = ['#d91e28', '#ff832c', '#fdd13a', '#feeaaa'];
+
 storiesOf('Watson IoT Experimental|BarChartCard', module)
   .add('Simple bar', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
@@ -19,10 +21,15 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           id="simple-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.simple,
+            xLabel: 'Cities',
+            yLabel: 'Particles',
+            series: {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={object('values', barChartData.quarters.filter(q => q.quarter === '2020-Q1'))}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -35,17 +42,21 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
           title={text('title', 'Sample')}
-          id="simple-sample"
+          id="simple-sample-no-data"
           isLoading={boolean('isLoading', false)}
           i18n={object('i18n', {
             noDataLabel: 'No data for this card.',
           })}
           content={object('content', {
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.empty,
-            hasLegend: false,
+            xLabel: 'Cities',
+            yLabel: 'Particles',
+            series: {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={object('values', barChartData.quarters.filter(a => a.quarter === 'NOT_VALID'))}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -62,11 +73,16 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           id="simple-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.simple,
+            layout: BAR_CHART_LAYOUTS.HORIZONTAL,
+            xLabel: 'Cities',
+            yLabel: 'Particles',
+            series: {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={object('values', barChartData.quarters.filter(a => a.quarter === '2020-Q1'))}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -83,12 +99,16 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           id="simple-time-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
-            isTimeSeries: true,
-            orientation: BAR_CHART_LAYOUTS.VERTICAL,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.timeSeries,
+            layout: BAR_CHART_LAYOUTS.VERTICAL,
+            xLabel: 'Date',
+            yLabel: 'Particles',
+            series: {
+              dataSourceId: 'particles',
+              timeDataSourceId: 'timestamp',
+              colors: COLORS,
+            },
           })}
+          values={object('values', barChartData.timestamps.filter(t => t.city === 'Amsterdam'))}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -106,10 +126,16 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.GROUPED,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.grouped,
+            xLabel: 'Quarters',
+            yLabel: 'Particles',
+            series: {
+              groupDataSourceId: 'quarter',
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={barChartData.quarters}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -127,11 +153,17 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.GROUPED,
-            orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.grouped,
+            layout: BAR_CHART_LAYOUTS.HORIZONTAL,
+            xLabel: 'Particles',
+            yLabel: 'Quarters',
+            series: {
+              groupDataSourceId: 'quarter',
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={barChartData.quarters}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -149,10 +181,16 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.STACKED,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.stacked,
+            xLabel: 'Quarters',
+            yLabel: 'Particles',
+            series: {
+              groupDataSourceId: 'quarter',
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={barChartData.quarters}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -170,11 +208,17 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.STACKED,
-            orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.stacked,
+            layout: BAR_CHART_LAYOUTS.HORIZONTAL,
+            xLabel: 'Particles',
+            yLabel: 'Quarters',
+            series: {
+              groupDataSourceId: 'quarter',
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              colors: COLORS,
+            },
           })}
+          values={barChartData.quarters}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -192,11 +236,17 @@ storiesOf('Watson IoT Experimental|BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.STACKED,
-            isTimeSeries: true,
-            xLabel: 'X Label',
-            yLabel: 'Y Label',
-            data: barChartData.stackedTimeSeries,
+            xLabel: 'Particles',
+            yLabel: 'Quarters',
+            series: {
+              groupDataSourceId: 'timestamp',
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              timeDataSourceId: 'timestamp',
+              colors: COLORS,
+            },
           })}
+          values={barChartData.timestamps}
           size={size}
           onCardAction={action('onCardAction')}
         />

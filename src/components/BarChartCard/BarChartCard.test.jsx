@@ -11,11 +11,15 @@ const barChartCardProps = {
   id: 'sample-bar-chart',
   isLoading: false,
   content: {
-    xLabel: 'X Label',
-    yLabel: 'Y Label',
-    data: barChartData.simple,
-    orientation: BAR_CHART_LAYOUTS.VERTICAL,
+    xLabel: 'Cities',
+    yLabel: 'Particles',
+    series: {
+      labelDataSourceId: 'city',
+      dataSourceId: 'particles',
+    },
+    layout: BAR_CHART_LAYOUTS.VERTICAL,
   },
+  values: barChartData.quarters.filter(q => q.quarter === '2020-Q1'),
   breakpoint: 'lg',
   size: 'LARGE',
   onCardAction: () => {},
@@ -32,11 +36,14 @@ describe('BarChartCard tests', () => {
 
   test('does not show bar chart when empty data', () => {
     let wrapper = mount(
-      <BarChartCard {...barChartCardProps} content={{ data: barChartData.empty }} />
+      <BarChartCard
+        {...barChartCardProps}
+        values={barChartData.quarters.filter(q => q.quarter === 'NOT_VALID')}
+      />
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
 
-    wrapper = mount(<BarChartCard {...barChartCardProps} content={{ data: null }} />);
+    wrapper = mount(<BarChartCard {...barChartCardProps} values={null} />);
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
   });
 
@@ -44,17 +51,33 @@ describe('BarChartCard tests', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
-        content={{ data: barChartData.grouped, chartType: BAR_CHART_TYPES.GROUPED }}
+        content={{
+          series: {
+            groupDataSourceId: 'quarter',
+            labelDataSourceId: 'city',
+            dataSourceId: 'particles',
+          },
+          chartType: BAR_CHART_TYPES.GROUPED,
+        }}
+        values={barChartData.quarters}
       />
     );
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
   });
 
-  test('shows groupedBarChart on stacked data', () => {
+  test('shows stackedBarChart on stacked data', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
-        content={{ data: barChartData.stacked, chartType: BAR_CHART_TYPES.STACKED }}
+        content={{
+          series: {
+            groupDataSourceId: 'quarter',
+            labelDataSourceId: 'city',
+            dataSourceId: 'particles',
+          },
+          chartType: BAR_CHART_TYPES.STACKED,
+        }}
+        values={barChartData.quarters}
       />
     );
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
@@ -64,7 +87,15 @@ describe('BarChartCard tests', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
-        content={{ data: barChartData.timeSeries, isTimeSeries: true }}
+        content={{
+          xLabel: 'Date',
+          yLabel: 'Particles',
+          series: {
+            dataSourceId: 'particles',
+            timeDataSourceId: 'timestamp',
+          },
+        }}
+        values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
       />
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
@@ -75,10 +106,15 @@ describe('BarChartCard tests', () => {
       <BarChartCard
         {...barChartCardProps}
         content={{
-          data: barChartData.timeSeries,
-          isTimeSeries: true,
-          orientation: BAR_CHART_LAYOUTS.HORIZONTAL,
+          xLabel: 'Date',
+          yLabel: 'Particles',
+          series: {
+            dataSourceId: 'particles',
+            timeDataSourceId: 'timestamp',
+          },
+          layout: BAR_CHART_LAYOUTS.HORIZONTAL,
         }}
+        values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
       />
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(1);

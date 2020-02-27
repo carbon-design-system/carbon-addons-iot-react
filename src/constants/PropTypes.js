@@ -177,21 +177,27 @@ export const TableCardPropTypes = {
 export const BarChartCardPropTypes = {
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   content: PropTypes.shape({
-    orientation: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
+    /** the layout of the bar chart (horizontal, vertical) */
+    layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
+    /** the type of bar chart (simple, grouped, stacked) */
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
-    isTimeSeries: PropTypes.bool,
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
-    data: PropTypes.shape({
-      labels: PropTypes.arrayOf(PropTypes.string),
-      datasets: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string,
-          data: PropTypes.array,
-        })
-      ),
+    series: PropTypes.shape({
+      /** the attribute in values to map to */
+      dataSourceId: PropTypes.string,
+      /** the attribute in values to group by */
+      groupDataSourceId: PropTypes.string,
+      /** the attribute in values to display the bars for */
+      labelDataSourceId: PropTypes.string,
+      /** the attribute that is the time attribute */
+      timeDataSourceId: PropTypes.string,
+      /** an array of HEX colors for the chart */
+      colors: PropTypes.arrayOf(PropTypes.string),
     }),
   }).isRequired,
+  /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
+  values: PropTypes.arrayOf(PropTypes.object),
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),
