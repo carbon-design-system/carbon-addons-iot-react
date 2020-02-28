@@ -21,7 +21,9 @@ const propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
   isVertical: PropTypes.bool,
+  /** Allows the unit and threshold icons to wrap into a new line */
   allowedToWrap: PropTypes.bool.isRequired,
+  /** Makes the value and the unit smaller */
   wrapCompact: PropTypes.bool,
 };
 

@@ -1,25 +1,25 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--value-card__attribute-unit {
-  padding-left: 0.25rem;
+  padding-left: $carbon--spacing-02;
   font-weight: lighter;
   white-space: nowrap;
-  padding-bottom: 0.25rem;
+  padding-bottom: $carbon--spacing-02;
   font-size: var(--default-font-size);
 }
 
 .#{$iot-prefix}--value-card__attribute-unit--mini {
   padding-bottom: 0;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+  font-size: $carbon--spacing-05;
+  margin-bottom: $carbon--spacing-02;
 }
 
 .#{$iot-prefix}--value-card__attribute-unit--wrappable {
   padding-left: 0;
   padding-bottom: 0;
-  margin-right: 0.25rem;
+  margin-right: $carbon--spacing-02;
 }
 
 .#{$iot-prefix}--value-card__attribute-unit--wrappable-compact {
-  font-size: 1rem;
+  font-size: $carbon--spacing-05;
 }

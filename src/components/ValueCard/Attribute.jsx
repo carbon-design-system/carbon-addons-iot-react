@@ -78,6 +78,7 @@ const propTypes = {
   ),
   renderIconByName: PropTypes.func,
   precision: PropTypes.number,
+  /** Number of attributes that the parent ValueCard is trying to display */
   attributeCount: PropTypes.number.isRequired,
 };
 

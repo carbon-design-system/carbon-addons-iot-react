@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
@@ -97,26 +97,45 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / units', () => {
+  .add('small / units incl wrapping', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
-        <ValueCard
-          title={text('title', 'Occupancy')}
-          id="facilitycard"
-          content={{
-            attributes: object('attributes', [
-              {
-                dataSourceId: 'occupancy',
-                unit: '%',
-              },
-            ]),
-          }}
-          breakpoint="lg"
-          size={size}
-          values={{ occupancy: number('occupancy', 88) }}
-        />
-      </div>
+      <Fragment>
+        <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Occupancy')}
+            id="facilitycard"
+            content={{
+              attributes: object('attributes', [
+                {
+                  dataSourceId: 'occupancy',
+                  unit: '%',
+                },
+              ]),
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{ occupancy: number('occupancy', 88) }}
+          />
+        </div>
+        <div style={{ width: text('wrappedCardWidth', '120px'), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Occupancy')}
+            id="facilitycard"
+            content={{
+              attributes: object('attributes', [
+                {
+                  dataSourceId: 'occupancy',
+                  unit: '%',
+                },
+              ]),
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{ occupancy: text('occupancy', 'A longer value that cause the unit to wrap') }}
+          />
+        </div>
+      </Fragment>
     );
   })
   .add('small / title', () => {
