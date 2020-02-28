@@ -18,7 +18,7 @@ const propTypes = {
   /** Number of rows to be rendered per page */
   numRows: PropTypes.number,
   /** A collection of tiles to to rendered  */
-  tiles: PropTypes.arrayOf.isRequired,
+  tiles: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** Set to true if a search is needed */
   hasSearch: PropTypes.bool,
   /** Call back function of search */
@@ -28,7 +28,7 @@ const propTypes = {
   /** Call back function of sort */
   onSort: PropTypes.func,
   /** Options in sort */
-  sortOptions: PropTypes.arrayOf,
+  sortOptions: PropTypes.arrayOf(PropTypes.node),
   /** Default option in sort */
   selectedSortOption: PropTypes.string,
   /** Set to true if filter is needed */

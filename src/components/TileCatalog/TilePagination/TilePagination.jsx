@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const propTypes = {
+  /** current page number */
   page: PropTypes.number.isRequired,
+  /** total number of pages */
   numPages: PropTypes.number.isRequired,
+  /** call back function receive current page number */
   onChange: PropTypes.number.isRequired,
+  /** i18n strings */
   i18n: PropTypes.shape({}),
 };
 const defaultProps = {

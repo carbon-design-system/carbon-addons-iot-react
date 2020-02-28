@@ -44,7 +44,7 @@ describe('TileCatalog tests', () => {
     expect(getByText('Tile 2')).toBeTruthy();
   });
 
-  test('TileCatalog to have default ', () => {
+  test('TileCatalog to have default call back function ', () => {
     expect(TileCatalog.defaultProps.onSearch).toBeDefined();
     expect(TileCatalog.defaultProps.onSort).toBeDefined();
     TileCatalog.defaultProps.onSearch();

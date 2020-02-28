@@ -112,10 +112,8 @@ storiesOf('Watson IoT Experimental|TileCatalog', module)
             selectedSortOption={selectedSortOption}
             hasSearch={boolean('hasSearch', true)}
             onSearch={evt => {
+              const searchTerm = evt.target.value;
               const searchFilteredTiles = tiles.filter(tile => {
-                console.log(tile.props.title);
-                const searchTerm = evt.target.value;
-                console.log(searchTerm);
                 return tile.props.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
               });
               setTiles(searchFilteredTiles);
