@@ -191,7 +191,7 @@ storiesOf('Watson IoT|SideNav', module).add(
       ~~~scss
       .iot--main-content {
         width: calc(100% - 3rem);
-        transform: translateX(0);
+        transform: translateX(3rem);
         transition: all .2s ease-in;
       }
 
@@ -201,6 +201,7 @@ storiesOf('Watson IoT|SideNav', module).add(
       }
 
       html[dir='rtl'] {
+        .iot--main-content,
         .iot--side-nav--expanded + .iot--main-content {
           transform: translateX(0);
         }
