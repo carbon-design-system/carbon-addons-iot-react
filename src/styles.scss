@@ -184,11 +184,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/WizardInline/wizard-inline';
 @import 'components/TileGallery/tile-gallery';
 @import 'components/Table/TableToolbar/table-toolbar';
-<<<<<<< HEAD
 @import 'components/Table/pagination';
-=======
 @import 'components/Table/TableToolbarSearch/table-toolbar-search';
->>>>>>> fix(table): allow default values to be set
 @import 'components/Table/table';
 @import 'components/Button/button';
 @import 'components/SimplePagination/simple-pagination';
