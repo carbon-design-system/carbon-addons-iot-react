@@ -1146,6 +1146,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         <div
                           className="iot--table-toolbar-search"
                           onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="-1"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -3211,6 +3214,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         <div
                           className="iot--table-toolbar-search"
                           onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="-1"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -5308,6 +5314,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         <div
                           className="iot--table-toolbar-search"
                           onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="-1"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -6989,6 +6998,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         <div
                           className="iot--table-toolbar-search"
                           onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="-1"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -9837,6 +9849,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         <div
                           className="iot--table-toolbar-search"
                           onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="-1"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -22119,6 +22134,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                         <div
                           className="iot--table-toolbar-search"
                           onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex="-1"
                         >
                           <div
                             className="bx--toolbar-action bx--toolbar-search-container-expandable"
