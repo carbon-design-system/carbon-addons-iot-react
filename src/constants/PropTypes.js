@@ -9,7 +9,6 @@ import {
   CARD_SIZES,
   LEGACY_CARD_SIZES,
   VALUE_CARD_DATA_STATE,
-  CARD_SIZES,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
