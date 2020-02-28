@@ -1,0 +1,10 @@
+@import '~@carbon/charts/styles.css';
+
+html[dir='rtl'] .chart-holder {
+  .axis {
+    direction: ltr;
+    .axis-title {
+      direction: ltr;
+    }
+  }
+}
