@@ -50,6 +50,8 @@ export const PageWizardPropTypes = {
   hasStickyFooter: PropTypes.bool,
   /** Displays the progress indicator vertically */
   isProgressIndicatorVertical: PropTypes.bool,
+  /** Content to render before footer buttons (on left side, in LTR) */
+  beforeFooterContent: PropTypes.node,
 };
 
 export const defaultProps = {
@@ -70,6 +72,7 @@ export const defaultProps = {
   onNext: null,
   onBack: null,
   setStep: null,
+  beforeFooterContent: null,
 };
 
 const PageWizard = ({
@@ -88,6 +91,7 @@ const PageWizard = ({
   hasStickyFooter,
   onClearError,
   isProgressIndicatorVertical,
+  beforeFooterContent,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
@@ -108,6 +112,7 @@ const PageWizard = ({
     error,
     hasStickyFooter,
     onClearError,
+    beforeFooterContent,
   });
 
   return (
