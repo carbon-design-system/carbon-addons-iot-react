@@ -52,7 +52,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             id="image-hotspots"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
@@ -431,7 +431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             id="image-hotspots"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -444,7 +444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
@@ -824,7 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             id="image-hotspots"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
@@ -961,7 +961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             id="image-hotspots"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -974,7 +974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
@@ -1098,7 +1098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             id="image-hotspots"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -1111,7 +1111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
@@ -1361,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
             id="image-hotspots"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -1374,7 +1374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <button
                   className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
