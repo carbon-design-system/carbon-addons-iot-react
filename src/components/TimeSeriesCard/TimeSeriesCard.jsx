@@ -2,7 +2,6 @@ import React, { Fragment, useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
-import '@carbon/charts/styles.css';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
