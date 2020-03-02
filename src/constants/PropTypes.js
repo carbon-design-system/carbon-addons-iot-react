@@ -6,8 +6,11 @@ import {
   CARD_LAYOUTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
+  CARD_SIZES,
   LEGACY_CARD_SIZES,
   VALUE_CARD_DATA_STATE,
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 
 export const AttributePropTypes = PropTypes.shape({
@@ -104,6 +107,7 @@ export const TimeSeriesCardPropTypes = {
 export const TableCardPropTypes = {
   tooltip: PropTypes.node,
   title: PropTypes.string,
+  size: PropTypes.oneOf([CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE]),
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({
@@ -169,21 +173,33 @@ export const TableCardPropTypes = {
   }),
 };
 
-export const BarChartDatasetPropTypes = PropTypes.shape({
-  label: PropTypes.string.isRequired,
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-    })
-  ),
-  color: PropTypes.string,
-});
-
 export const BarChartCardPropTypes = {
+  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   content: PropTypes.shape({
-    data: PropTypes.arrayOf(BarChartDatasetPropTypes),
+    /** the layout of the bar chart (horizontal, vertical) */
+    layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
+    /** the type of bar chart (simple, grouped, stacked) */
+    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
+    xLabel: PropTypes.string,
+    yLabel: PropTypes.string,
+    series: PropTypes.shape({
+      /** the attribute in values to map to */
+      dataSourceId: PropTypes.string,
+      /** the attribute in values to group by */
+      groupDataSourceId: PropTypes.string,
+      /** the attribute in values to display the bars for */
+      labelDataSourceId: PropTypes.string,
+      /** the attribute that is the time attribute */
+      timeDataSourceId: PropTypes.string,
+      /** an array of HEX colors for the chart */
+      colors: PropTypes.arrayOf(PropTypes.string),
+    }),
   }).isRequired,
+  /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
+  values: PropTypes.arrayOf(PropTypes.object),
+  i18n: PropTypes.shape({
+    alertDetected: PropTypes.string,
+  }),
 };
 
 export const DonutCardPropTypes = {
