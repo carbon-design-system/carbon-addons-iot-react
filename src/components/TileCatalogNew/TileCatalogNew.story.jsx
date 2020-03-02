@@ -24,7 +24,7 @@ const getTiles = num => {
   return tiles;
 };
 
-storiesOf('Watson IoT Experimental|TileCatalogNew/Marketplace', module)
+storiesOf('Watson IoT Experimental|TileCatalogNew', module)
   .add('Base', () => {
     const numOfTiles = number('number of tiles', 10);
     return (
