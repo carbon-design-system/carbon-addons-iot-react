@@ -1,127 +1,120 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { number, boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
+import Add from '@carbon/icons-react/lib/add/32';
 
-import TileCatalog from './TileCatalog';
-import SampleTile from './SampleTile';
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
-const sortOptions = [
-  { text: 'Choose from options', id: 'Choose from options' },
-  { text: 'A-Z', id: 'A-Z' },
-  { text: 'Most Popular', id: 'Most Popular' },
-];
-const selectedSortOption = 'Choose from options';
+import StatefulTileCatalog from './StatefulTileCatalog';
+import CatalogContent from './CatalogContent';
 
-const getTiles = num => {
-  const tiles = [];
-  Array(num)
-    .fill(0)
-    .map((i, idx) => {
-      tiles[idx] = <SampleTile title={`${idx + 1}`} description="This is a sample product tile" />;
-      return tiles[idx];
-    });
-  return tiles;
+const longDescription =
+  'Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile';
+
+const tileRenderFunction = ({ values }) => <CatalogContent {...values} icon={<Add />} />;
+
+export const commonTileCatalogProps = {
+  title: 'My Tile Catalog',
+  id: 'entityType',
+  tiles: [
+    {
+      id: 'test1',
+      values: {
+        title: 'Test Tile with really long title that should wrap',
+        description: longDescription,
+      },
+      renderContent: tileRenderFunction,
+    },
+    {
+      id: 'test2',
+      values: { title: 'Test Tile2', description: longDescription },
+      renderContent: tileRenderFunction,
+    },
+    {
+      id: 'test3',
+      values: { title: 'Test Tile3', description: 'Tile contents' },
+      renderContent: tileRenderFunction,
+    },
+    {
+      id: 'test4',
+      values: { title: 'Test Tile4', description: longDescription },
+      renderContent: tileRenderFunction,
+    },
+    {
+      id: 'test5',
+      values: { title: 'Test Tile5', description: longDescription },
+      renderContent: tileRenderFunction,
+    },
+    {
+      id: 'test6',
+      values: { title: 'Test Tile6', description: longDescription },
+      renderContent: tileRenderFunction,
+    },
+    {
+      id: 'test7',
+      values: { title: 'Test Tile7', description: longDescription },
+      renderContent: tileRenderFunction,
+    },
+  ],
+  onSelection: action('onSelection'),
 };
 
-storiesOf('Watson IoT Experimental|TileCatalog', module)
-  .add('Base', () => {
-    const numOfTiles = number('number of tiles', 10);
-    return (
-      <div style={{ width: '60rem' }}>
-        <TileCatalog
-          title="Product name"
-          tiles={getTiles(
-            numOfTiles,
-            <SampleTile title="Sample product tile" description="This is a sample product tile" />
-          )}
-          numColumns={number('numColumns', 4)}
-          numRows={number('numRows', 2)}
-          hasSearch={boolean('hasSearch', true)}
-          hasSort={boolean('hasSort', true)}
-        />
-      </div>
-    );
-  })
-  .add('With Search', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        tiles={getTiles(20)}
-        numColumns={number('numColumns', 4)}
-        numRows={number('numRows', 2)}
-        hasSearch={boolean('hasSearch', true)}
-        onSearch={action('search', () => {})}
-      />
-    </div>
+storiesOf('Watson IoT|TileCatalog', module)
+  .add('default', () => (
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      selectedTileId={select(
+        'id',
+        commonTileCatalogProps.tiles.map(tile => tile.id),
+        commonTileCatalogProps.tiles[0].id
+      )}
+    />
   ))
-  .add('With Sort', () => (
-    <div style={{ width: '60rem' }}>
-      <TileCatalog
-        title="Product name"
-        tiles={getTiles(
-          8,
-          <SampleTile title="Sample product tile" description="This is a sample product tile" />
-        )}
-        numColumns={number('numColumns', 4)}
-        numRows={number('numRows', 2)}
-        hasSort={boolean('hasSort', true)}
-        sortOptions={sortOptions}
-        onSort={action('sort', () => {})}
-        selectedSortOption={selectedSortOption}
-      />
-    </div>
+  .add('with search', () => (
+    // Example stateful catalog component that can search
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      search={{
+        placeHolderText: 'Search catalog',
+        onSearch: action('search'),
+      }}
+      pagination={{ pageSize: 6, onPage: action('onPage') }}
+    />
   ))
-  .add('StatefulTileCatalog', () => {
-    const StatefulTileCatalog = () => {
-      const [tiles, setTiles] = useState(getTiles(20));
-      const sortOptions = [
-        { text: 'Choose from options', id: 'Choose from options' },
-        { text: 'A-Z', id: 'A-Z' },
-        { text: 'Z-A', id: 'Z-A' },
-      ];
-      const selectedSortOption = 'Choose from options';
-
+  .add('with pages', () => (
+    <StatefulTileCatalog
+      {...commonTileCatalogProps}
+      pagination={{ pageSize: 6, onPage: action('onPage') }}
+      selectedTileId={select(
+        'id',
+        commonTileCatalogProps.tiles.map(tile => tile.id),
+        commonTileCatalogProps.tiles[0].id
+      )}
+    />
+  ))
+  .add('loading', () => <StatefulTileCatalog {...commonTileCatalogProps} isLoading />)
+  .add('error', () => (
+    <FullWidthWrapper>
+      <StatefulTileCatalog {...commonTileCatalogProps} tiles={[]} error="In error state" />
+    </FullWidthWrapper>
+  ))
+  .add('async loaded wait one second', () => {
+    const Container = () => {
+      const [tilesProp, setTiles] = useState([]);
+      const [isLoading, setIsLoading] = useState(true);
+      useEffect(() => {
+        setTimeout(() => {
+          setTiles(commonTileCatalogProps.tiles); // eslint-disable-line
+          setIsLoading(false);
+        }, 1000);
+      }, []);
       return (
-        <div style={{ width: '60rem' }}>
-          <TileCatalog
-            title="Product name"
-            tiles={tiles}
-            numColumns={number('numColumns', 4)}
-            numRows={number('numRows', 2)}
-            hasSort={boolean('hasSort', true)}
-            sortOptions={sortOptions}
-            onSort={id => {
-              if (id === 'A-Z') {
-                tiles.sort(function(a, b) {
-                  const tileA = a.props.title.toUpperCase();
-                  const tileB = b.props.title.toUpperCase();
-
-                  return tileA - tileB;
-                });
-              } else if (id === 'Z-A') {
-                tiles.sort(function(a, b) {
-                  const tileA = a.props.title.toUpperCase();
-                  const tileB = b.props.title.toUpperCase();
-
-                  return tileB - tileA;
-                });
-              }
-              setTiles([...tiles]);
-            }}
-            selectedSortOption={selectedSortOption}
-            hasSearch={boolean('hasSearch', true)}
-            onSearch={evt => {
-              const searchTerm = evt.target.value;
-              const searchFilteredTiles = tiles.filter(tile => {
-                return tile.props.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1;
-              });
-              setTiles(searchFilteredTiles);
-            }}
-          />
-        </div>
+        <StatefulTileCatalog {...commonTileCatalogProps} isLoading={isLoading} tiles={tilesProp} />
       );
     };
-
-    return <StatefulTileCatalog />;
-  });
+    return <Container />;
+  })
+  .add('isSelectedByDefault false', () => (
+    <StatefulTileCatalog {...commonTileCatalogProps} isSelectedByDefault={false} />
+  ));

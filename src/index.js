@@ -23,9 +23,8 @@ export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
 export StatefulTable from './components/Table/StatefulTable';
 export TileCatalog from './components/TileCatalog/TileCatalog';
-export TileCatalog_deprecated from './components/TileCatalog_deprecated/TileCatalog_deprecated';
-export StatefulTileCatalog from './components/TileCatalog_deprecated/StatefulTileCatalog';
-export CatalogContent from './components/TileCatalog_deprecated/CatalogContent';
+export StatefulTileCatalog from './components/TileCatalog/StatefulTileCatalog';
+export CatalogContent from './components/TileCatalog/CatalogContent';
 export SimplePagination from './components/SimplePagination/SimplePagination';
 export ProgressIndicator from './components/ProgressIndicator/ProgressIndicator';
 export ComposedStructuredList from './components/ComposedStructuredList/ComposedStructuredList';
@@ -34,11 +33,12 @@ export FileDrop from './components/FileDrop/FileDrop';
 export PageTitleBar from './components/PageTitleBar/PageTitleBar';
 export HierarchyList from './components/List/HierarchyList';
 export BarChartCard from './components/BarChartCard/BarChartCard';
+export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
 export { tableReducer } from './components/Table/tableReducer';
-export { tileCatalogReducer } from './components/TileCatalog_deprecated/tileCatalogReducer';
+export { tileCatalogReducer } from './components/TileCatalog/tileCatalogReducer';
 export * as tableActions from './components/Table/tableActionCreators';
 
 // Page related helpers

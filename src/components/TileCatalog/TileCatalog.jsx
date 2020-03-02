@@ -1,176 +1,189 @@
-import React, { useState } from 'react';
-import { Select, SelectItem, DataTable } from 'carbon-components-react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import sizeMe from 'react-sizeme';
+import styled from 'styled-components';
+import { RadioTile, Tile, SkeletonText, DataTable } from 'carbon-components-react';
+import Bee32 from '@carbon/icons-react/lib/bee/32';
 
-import { settings } from '../../constants/Settings';
+import SimplePagination from '../SimplePagination/SimplePagination';
+import { COLORS } from '../../styles/styles';
 
-import TilePagination from './TilePagination/TilePagination';
+import TileGroup from './TileGroup';
 
 const { TableToolbarSearch } = DataTable;
-const { iotPrefix } = settings;
 
-const propTypes = {
-  /** Title for the product */
-  title: PropTypes.string.isRequired,
-  /** Number of columns to be rendered per page */
-  numColumns: PropTypes.number,
-  /** Number of rows to be rendered per page */
-  numRows: PropTypes.number,
-  /** A collection of tiles to to rendered  */
-  tiles: PropTypes.arrayOf(PropTypes.node).isRequired,
-  /** Set to true if a search is needed */
-  hasSearch: PropTypes.bool,
-  /** Call back function of search */
-  onSearch: PropTypes.func,
-  /** Set to true if sorting is needed */
-  hasSort: PropTypes.bool,
-  /** Call back function of sort */
-  onSort: PropTypes.func,
-  /** Options in sort */
-  sortOptions: PropTypes.arrayOf(PropTypes.node),
-  /** Default option in sort */
-  selectedSortOption: PropTypes.string,
-  /** Set to true if filter is needed */
-  i18n: PropTypes.shape({
-    placeHolderText: PropTypes.string,
+const StyledContainerDiv = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+`;
+
+const StyledCatalogHeader = styled.div`
+  background: ${COLORS.gray10};
+
+  display: flex;
+  height: 3rem;
+
+  .bx--toolbar-action:active:not([disabled]) {
+    outline-color: transparent;
+  }
+
+  .bx--toolbar-search-container-expandable {
+    max-width: 40%;
+    padding: 0;
+    width: auto;
+  }
+
+  .bx--search-input:focus {
+    width: 100%;
+  }
+`;
+
+const StyledEmptyTile = styled(Tile)`
+  &&& {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    > * {
+      padding-bottom: 0.5rem;
+    }
+  }
+`;
+
+export const propTypes = {
+  /** Is the data actively loading? */
+  isLoading: PropTypes.bool,
+  /** error loading the tile catalog */
+  error: PropTypes.string,
+  pagination: PropTypes.shape({
+    pageSize: PropTypes.number,
+    pageText: PropTypes.string,
+    /** Gets called back with arguments (page, maxPage) */
+    pageOfPagesText: PropTypes.func,
+    nextPageText: PropTypes.string,
+    prevPageText: PropTypes.string,
+    onPage: PropTypes.func,
+    /** current page number */
+    page: PropTypes.number,
+    totalItems: PropTypes.number,
   }),
+
+  /** We will callback with the search value */
+  search: PropTypes.shape({
+    placeHolderText: PropTypes.string,
+    noMatchesFoundText: PropTypes.string,
+    /** current search value */
+    value: PropTypes.string,
+    onSearch: PropTypes.func,
+  }),
+
+  /** form id */
+  id: PropTypes.string.isRequired,
+  /** title displayed above the catalog */
+  title: PropTypes.node,
+  /** tiles describes what to render */
+  tiles: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      /**  the values field is searched by the search widget */
+      values: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+      /** renderContent is called back with the full value object and id to render */
+      renderContent: PropTypes.func,
+      className: PropTypes.string,
+    })
+  ).isRequired,
+  /** Callbacks */
+  onSelection: PropTypes.func.isRequired,
+  /** currently selected tile id */
+  selectedTileId: PropTypes.string,
 };
 
 const defaultProps = {
-  hasSort: false,
-  hasSearch: false,
-  onSearch: () => {},
-  onSort: () => {},
-  sortOptions: [],
-  selectedSortOption: '',
-  numColumns: 1,
-  numRows: 1,
-  i18n: { searchPlaceHolderText: 'Enter a value' },
+  isLoading: false,
+  title: null,
+  error: null,
+  pagination: null,
+  search: null,
+  selectedTileId: null,
 };
 
+/**
+ * Renders a searchable and pageable catalog of RadioTiles from carbon. Couldn't reuse the TileGroup component from Carbon due to this limitation.
+ * https://github.com/IBM/carbon-components-react/issues/1999
+ *
+ */
 const TileCatalog = ({
-  title,
-  numColumns,
-  numRows,
+  id,
+  className,
+  isLoading,
+  error,
+  search,
+  pagination,
   tiles,
-  hasSearch,
-  onSearch,
-  hasSort,
-  onSort,
-  sortOptions,
-  selectedSortOption,
-  i18n,
+  onSelection,
+  selectedTileId,
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [tileHeight, setTileHeight] = useState(0);
-
-  const onSize = ({ height }) => {
-    setTileHeight(height);
-  };
-
-  const HeightMonitor = sizeMe({
-    monitorHeight: true,
-  })(({ content }) => <div>{content}</div>);
-
-  const getTile = (rowIdx, colIdx) => {
-    const numTilesPerPage = numRows * numColumns;
-    const tileIndex = rowIdx * numColumns + colIdx + (currentPage - 1) * numTilesPerPage;
-
-    if (tileIndex === 0) {
-      return <HeightMonitor content={tiles[0]} onSize={onSize} />;
-    }
-    return tiles[tileIndex] !== undefined ? (
-      tiles[tileIndex]
-    ) : (
-      <div style={{ height: tileHeight }} />
-    );
-  };
-
-  const renderGrid = () => (
-    <div className="bx--grid">
-      {Array(numRows)
-        .fill(null)
-        .map((i, rowIdx) => (
-          <div className="bx--row">
-            {Array(numColumns)
-              .fill(null)
-              .map((j, colIdx) => (
-                <div className="bx--col">{getTile(rowIdx, colIdx)}</div>
-              ))}
-          </div>
-        ))}
-    </div>
-  );
+  const searchState = search ? search.value : '';
+  const handleSearch = search && search.onSearch;
+  const pageSize = pagination && pagination.pageSize ? pagination.pageSize : 10;
+  const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
   return (
-    <div>
-      <div>
-        {/* {persistentSearch ? (
-          <div className="tile-catalog--persistent-search">
-            <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
-          </div>
-        ) : null} */}
-        <div />
-      </div>
-
-      <div className={`${iotPrefix}--tile-catalog--canvas-container`}>
-        <div className={`${iotPrefix}--tile-catalog--tile-canvas`}>
-          {/* {featuredTile ? (
-            <div>
-              <div className="tile-catalog--tile-canvas--featured-tile-title">
-                {featuredTileTitle}
-              </div>
-              <div className="tile-catalog--tile-canvas--featured-tile">{featuredTile}</div>
-            </div>
-          ) : null} */}
-          <div className={`${iotPrefix}--tile-catalog--tile-canvas--header`}>
-            <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}> {title}</div>
-            {hasSearch ? (
-              <TableToolbarSearch
-                placeHolderText={i18n.searchPlaceHolderText}
-                onChange={onSearch}
-                className={`${iotPrefix}--tile-catalog--tile-canvas--header--search`}
-              />
-            ) : null}
-            <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}>
-              {hasSort ? (
-                <Select
-                  onChange={evt => onSort(evt.target.value)}
-                  defaultValue={selectedSortOption}
-                  labelText=""
-                >
-                  {sortOptions.map(option => (
-                    <SelectItem text={option.text} value={option.id} />
-                  ))}
-                </Select>
-              ) : null}
-            </div>
-          </div>
-
-          <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
-          <div className={`${iotPrefix}--tile-catalog--tile-canvas--bottom`}>
-            <TilePagination
-              page={currentPage}
-              numPages={Math.ceil(tiles.length / (numRows * numColumns))}
-              onChange={newPage => setCurrentPage(newPage)}
-            />
-          </div>
-        </div>
-        {/* {hasFilter ? (
-          <div className="tile-catalog--filter">
-            <div className="tile-catalog--filter--title">Refined results</div>
-            <div className="tile-catalog--filter--content">
-              {filter.selectFilter}
-              {filter.checkboxFilter}
-            </div>
-          </div>
-        ) : null} */}
-      </div>
-    </div>
+    <StyledContainerDiv className={className}>
+      <StyledCatalogHeader>
+        {search && search.placeHolderText ? (
+          <TableToolbarSearch
+            size="sm"
+            value={searchState}
+            labelText={search.placeHolderText}
+            placeHolderText={search.placeHolderText}
+            onChange={handleSearch}
+            id={`${id}-searchbox`}
+          />
+        ) : null}
+      </StyledCatalogHeader>
+      {isLoading ? ( // generate empty tiles for first page
+        <TileGroup
+          tiles={[...Array(pageSize)].map((val, index) => (
+            <StyledEmptyTile key={`emptytile-${index}`}>
+              <SkeletonText />
+            </StyledEmptyTile>
+          ))}
+          totalTiles={totalTiles}
+        />
+      ) : tiles.length > 0 ? (
+        <TileGroup
+          tiles={tiles.map(tile => (
+            <RadioTile
+              className={tile.className}
+              key={tile.id}
+              id={tile.id}
+              value={tile.id}
+              name={id}
+              checked={selectedTileId === tile.id}
+              onChange={onSelection}
+            >
+              {tile.renderContent
+                ? tile.renderContent({ values: tile.values, id: tile.id })
+                : tile.value}
+            </RadioTile>
+          ))}
+        />
+      ) : (
+        <StyledEmptyTile>
+          {error || (
+            <Fragment>
+              <Bee32 />
+              <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
+            </Fragment>
+          )}
+        </StyledEmptyTile>
+      )}
+      {!isLoading && tiles.length > 0 && !error && pagination ? (
+        <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
+      ) : null}
+    </StyledContainerDiv>
   );
 };
-
 TileCatalog.propTypes = propTypes;
 TileCatalog.defaultProps = defaultProps;
 

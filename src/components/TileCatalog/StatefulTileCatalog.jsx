@@ -4,7 +4,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import omit from 'lodash/omit';
 
 import { tileCatalogReducer, determineInitialState, TILE_ACTIONS } from './tileCatalogReducer';
-import TileCatalog_deprecated, { propTypes } from './TileCatalog_deprecated';
+import TileCatalog, { propTypes } from './TileCatalog';
 
 /**
  * Paging and searching happens on local state within the component
@@ -98,7 +98,7 @@ const StatefulTileCatalog = ({
   const isFiltered = searchState !== '';
 
   return (
-    <TileCatalog_deprecated
+    <TileCatalog
       {...props}
       selectedTileId={selectedTileId}
       // slice doesn't include the last index!
