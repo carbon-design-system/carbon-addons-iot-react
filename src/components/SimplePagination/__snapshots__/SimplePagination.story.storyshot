@@ -2,136 +2,112 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|SimplePagination default 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="SimplePaginationstory__StyledSimplePagination-sc-17bs5nv-0 eccRzy"
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="iot-simple-pagination-container"
       >
-        <div
-          className="SimplePaginationstory__StyledSimplePagination-sc-17bs5nv-0 eccRzy"
+        <span
+          className="iot-simple-pagination-page-label"
+          maxpage={4}
         >
-          <div
-            className="iot-simple-pagination-container"
+          Page 1 of 4
+        </span>
+        <div
+          className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+          role="button"
+          tabIndex={-1}
+        >
+          <svg
+            aria-hidden={true}
+            className="iot-simple-pagination-caret-disabled"
+            description="Prev page"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "willChange": "transform",
+              }
+            }
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <span
-              className="iot-simple-pagination-page-label"
-              maxpage={4}
-            >
-              Page 1 of 4
-            </span>
-            <div
-              className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
-              role="button"
-              tabIndex={-1}
-            >
-              <svg
-                aria-hidden={true}
-                className="iot-simple-pagination-caret-disabled"
-                description="Prev page"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19 23l-8-7 8-7v14z"
-                />
-              </svg>
-            </div>
-            <div
-              className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <svg
-                aria-hidden={true}
-                className="iot-simple-pagination-caret"
-                description="Next page"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13 9l8 7-8 7V9z"
-                />
-              </svg>
-            </div>
-          </div>
+            <path
+              d="M19 23l-8-7 8-7v14z"
+            />
+          </svg>
+        </div>
+        <div
+          className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <svg
+            aria-hidden={true}
+            className="iot-simple-pagination-caret"
+            description="Next page"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "willChange": "transform",
+              }
+            }
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 9l8 7-8 7V9z"
+            />
+          </svg>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;

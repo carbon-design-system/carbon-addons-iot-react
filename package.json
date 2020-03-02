@@ -129,7 +129,6 @@
     "@ibma/aat": "https://able.ibm.com/tools/dist/ibma-aat-2.0.8.tgz",
     "@storybook/addon-a11y": "^5.1.7",
     "@storybook/addon-actions": "^5.1.7",
-    "@storybook/addon-centered": "^5.2.8",
     "@storybook/addon-info": "5.2.0-alpha.44",
     "@storybook/addon-knobs": "^5.1.7",
     "@storybook/addon-links": "^5.1.7",
