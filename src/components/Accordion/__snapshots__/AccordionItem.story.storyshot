@@ -2,174 +2,150 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|AccordionItem conditionally load 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "width": "calc(100vw - 6rem)",
         }
       }
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <ul
+        className="bx--accordion bx--accordion--end"
       >
-        <div
-          style={
-            Object {
-              "width": "calc(100vw - 6rem)",
-            }
-          }
+        <li
+          className="bx--accordion__item bx--accordion__item--active"
+          data-testid="accordion-item"
+          id="a"
+          onAnimationEnd={[Function]}
+          onClick={[Function]}
         >
-          <ul
-            className="bx--accordion bx--accordion--end"
+          <button
+            aria-expanded={true}
+            className="bx--accordion__heading"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            title="Open/Close"
+            type="button"
           >
-            <li
-              className="bx--accordion__item bx--accordion__item--active"
-              data-testid="accordion-item"
-              id="a"
-              onAnimationEnd={[Function]}
-              onClick={[Function]}
+            <svg
+              aria-label="Open/Close"
+              className="bx--accordion__arrow"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <button
-                aria-expanded={true}
-                className="bx--accordion__heading"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                title="Open/Close"
-                type="button"
-              >
-                <svg
-                  aria-label="Open/Close"
-                  className="bx--accordion__arrow"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-                <div
-                  className="bx--accordion__title"
-                >
-                  Title one
-                </div>
-              </button>
-              <div
-                className="bx--accordion__content"
-              >
-                <p>
-                  This content
-                </p>
-              </div>
-            </li>
-            <li
-              className="bx--accordion__item"
-              data-testid="accordion-item"
-              id="b"
-              onAnimationEnd={[Function]}
-              onClick={[Function]}
-            >
-              <button
-                aria-expanded={false}
-                className="bx--accordion__heading"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                title="Open/Close"
-                type="button"
-              >
-                <svg
-                  aria-label="Open/Close"
-                  className="bx--accordion__arrow"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-                <div
-                  className="bx--accordion__title"
-                >
-                  Title two
-                </div>
-              </button>
-              <div
-                className="bx--accordion__content"
+              <path
+                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
               />
-            </li>
-          </ul>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+            </svg>
+            <div
+              className="bx--accordion__title"
+            >
+              Title one
+            </div>
+          </button>
+          <div
+            className="bx--accordion__content"
+          >
+            <p>
+              This content
+            </p>
+          </div>
+        </li>
+        <li
+          className="bx--accordion__item"
+          data-testid="accordion-item"
+          id="b"
+          onAnimationEnd={[Function]}
+          onClick={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            className="bx--accordion__heading"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            title="Open/Close"
+            type="button"
+          >
+            <svg
+              aria-label="Open/Close"
+              className="bx--accordion__arrow"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+              />
+            </svg>
+            <div
+              className="bx--accordion__title"
+            >
+              Title two
+            </div>
+          </button>
+          <div
+            className="bx--accordion__content"
+          />
+        </li>
+      </ul>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
