@@ -29,14 +29,14 @@ storiesOf('Watson IoT|Card', module)
       </div>
     );
   })
-  .add('with ellipsed title and tooltip', () => {
+  .add('with ellipsed title tooltip & external tooltip', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <Card
           title={text(
             'title',
-            'Card Title that is really long and should be truncated and have a tooltip'
+            'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.'
           )}
           id="facilitycard-basic"
           size={size}
@@ -47,31 +47,12 @@ storiesOf('Watson IoT|Card', module)
           breakpoint="lg"
           availableActions={{ range: true, expand: true }}
           onCardAction={action('onCardAction')}
+          tooltip={<p>this is the external tooltip content</p>}
         />
       </div>
     );
   })
-  .add('with explicit tooltip and long title', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <Card
-          title={text(
-            'title',
-            'Card Title that is long and should be truncated and have a tooltip'
-          )}
-          id="facilitycard-basic"
-          size={size}
-          isLoading={boolean('isLoading', false)}
-          isEmpty={boolean('isEmpty', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          breakpoint="lg"
-          tooltip={<p>this is the tooltip content</p>}
-        />
-      </div>
-    );
-  })
+
   .add('basic with render prop', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
