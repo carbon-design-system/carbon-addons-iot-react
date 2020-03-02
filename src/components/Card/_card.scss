@@ -80,7 +80,7 @@ $iot-header-padding: $spacing-05;
   margin-right: calc(#{$iot-header-padding} * -1);
 }
 
-html[dir='rtl'] .#{$iot-prefix}--card--header {
-  padding-right: $spacing-05;
-  padding-left: 0;
+html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
+  margin-right: 0;
+  margin-left: calc(#{$iot-header-padding} * -1);
 }
