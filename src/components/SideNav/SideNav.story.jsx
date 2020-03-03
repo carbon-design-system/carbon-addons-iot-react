@@ -12,7 +12,7 @@ import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import { settings } from '../../constants/Settings';
 
 import SideNav from './SideNav';
-import Styles from './SideNav.story.scss';
+import Styles from './SideNav.story.scss'; // eslint-disable-line
 
 const { iotPrefix } = settings;
 
