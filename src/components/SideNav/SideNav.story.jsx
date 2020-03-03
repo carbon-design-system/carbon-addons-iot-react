@@ -12,6 +12,7 @@ import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import { settings } from '../../constants/Settings';
 
 import SideNav from './SideNav';
+import Styles from './SideNav.story.scss';
 
 const { iotPrefix } = settings;
 
@@ -121,39 +122,26 @@ const HeaderProps = {
 storiesOf('Watson IoT|SideNav', module).add(
   'SideNav component',
   () => (
-    <div style={{ width: 'calc(100vw - 6rem)', height: 'calc(100vh - 6rem)' }}>
-      <HeaderContainer
-        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-          <>
-            <Header
-              {...HeaderProps}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
-            />
-            <SideNav
-              links={links}
-              isSideNavExpanded={isSideNavExpanded}
-              onClickSideNavExpand={onClickSideNavExpand}
-              switcherProps={switcherProps}
-            />
-            <div
-              className={`${iotPrefix}--main-content`}
-              // this would be done in your stylesheet off of .iot--side-nav--expanded
-              style={{
-                transition: 'all .2s',
-                transform: isSideNavExpanded ? `translateX(13rem)` : null,
-              }}
-            >
-              <PageTitleBar
-                title="Title"
-                description="Description"
-                style={{ width: '100vw', height: '100vh' }}
-              />
-            </div>
-          </>
-        )}
-      />
-    </div>
+    <HeaderContainer
+      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+        <>
+          <Header
+            {...HeaderProps}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+          />
+          <SideNav
+            links={links}
+            isSideNavExpanded={isSideNavExpanded}
+            onClickSideNavExpand={onClickSideNavExpand}
+            switcherProps={switcherProps}
+          />
+          <div className={`${iotPrefix}--main-content`}>
+            <PageTitleBar title="Title" description="Description" />
+          </div>
+        </>
+      )}
+    />
   ),
   {
     info: {
