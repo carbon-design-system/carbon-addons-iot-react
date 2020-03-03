@@ -2,11 +2,12 @@
 
 .storybook-container {
   padding: 0 !important;
+  overflow: hidden;
 }
 
 .#{$iot-prefix}--main-content {
   padding-top: 3rem;
-  height: 100vh;
+  height: 100%;
   transition: all 0.11s cubic-bezier(0.2, 0, 1, 0.9);
   width: 100%;
 
