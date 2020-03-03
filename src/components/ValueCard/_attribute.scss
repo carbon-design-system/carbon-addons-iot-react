@@ -1,0 +1,27 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--value-card__attribute--wrappable {
+  flex-wrap: wrap;
+}
+
+.#{$iot-prefix}--value-card__attribute-icon-container {
+  margin-left: auto;
+}
+
+.#{$iot-prefix}--value-card__attribute-icon-container--wrappable {
+  margin-left: 0;
+}
+
+.#{$iot-prefix}--value-card__attribute-threshold-icon-container {
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0 0.5rem 0.5rem;
+}
+
+.#{$iot-prefix}--value-card__attribute-threshold-icon-container--mini {
+  margin: unset;
+}
+
+.#{$iot-prefix}--value-card__attribute-threshold-icon-container--wrappable {
+  margin-left: 0;
+}

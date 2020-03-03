@@ -1,0 +1,15 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--table-toolbar-search {
+  display: flex;
+  flex: 0;
+  width: 100%;
+  outline: none;
+  .bx--toolbar-action:focus {
+    outline: 2px solid #0062ff !important;
+  }
+}
+
+.#{$iot-prefix}--table-toolbar-search__expanded {
+  flex: 1;
+}
