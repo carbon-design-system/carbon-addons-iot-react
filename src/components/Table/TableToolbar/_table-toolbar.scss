@@ -1,5 +1,5 @@
-@import '~carbon-components/scss/globals/scss/vars';
 @import '../../../globals/vars';
+
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
