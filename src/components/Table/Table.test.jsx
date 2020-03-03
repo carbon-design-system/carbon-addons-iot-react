@@ -357,25 +357,9 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input')).toHaveLength(1);
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('toyota');
 
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={{
-          hasSearch: true,
-        }}
-        view={{
-          toolbar: {
-            search: {
-              value: 'ferrari',
-            },
-          },
-        }}
-      />
-    );
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
+    wrapper.update();
 
-    expect(wrapper2.find('.bx--search-input')).toHaveLength(1);
-    expect(wrapper2.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
   });
 });
