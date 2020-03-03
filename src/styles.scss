@@ -75,6 +75,7 @@ $carbon--theme: $carbon--theme--g10;
 @import 'globals/css--helpers';
 @import 'globals/css--body';
 @import 'globals/grid';
+@import 'globals/charts';
 
 //-------------------------
 // ⚠️ Manage deprecations
@@ -188,7 +189,9 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Button/button';
 @import 'components/SimplePagination/simple-pagination';
 @import 'components/GaugeCard/gauge-card';
+@import 'components/BarChartCard/bar-chart-card';
 @import 'components/List/list';
 @import 'components/List/ListItem/list-item';
 @import 'components/List/ListHeader/list-header';
+@import 'components/TileCatalogNew/tile-catalog';
 @import 'components/ValueCard/value-card';
