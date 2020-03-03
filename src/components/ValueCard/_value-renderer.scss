@@ -1,0 +1,12 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--value-card__attribute-value--wrappable {
+  margin-right: $carbon--spacing-02;
+}
+
+.#{$iot-prefix}--value-card__attribute-value--wrappable-compact {
+  > span {
+    line-height: $carbon--spacing-06;
+    font-size: $carbon--spacing-06;
+  }
+}

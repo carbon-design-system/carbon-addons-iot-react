@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
@@ -72,10 +72,11 @@ storiesOf('Watson IoT|ValueCard', module)
       </div>
     );
   })
-  .add('small / units', () => {
+
+  .add('small / wrapping', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', '120px'), margin: 20 }}>
         <ValueCard
           title={text('title', 'Occupancy')}
           id="facilitycard"
@@ -89,9 +90,52 @@ storiesOf('Watson IoT|ValueCard', module)
           }}
           breakpoint="lg"
           size={size}
-          values={{ occupancy: number('occupancy', 88) }}
+          values={{
+            occupancy: text('occupancy', 'Really really busy loong long long long'),
+          }}
         />
       </div>
+    );
+  })
+  .add('small / units incl wrapping', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <Fragment>
+        <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Occupancy')}
+            id="facilitycard"
+            content={{
+              attributes: object('attributes', [
+                {
+                  dataSourceId: 'occupancy',
+                  unit: '%',
+                },
+              ]),
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{ occupancy: number('occupancy', 88) }}
+          />
+        </div>
+        <div style={{ width: text('wrappedCardWidth', '120px'), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Occupancy')}
+            id="facilitycard"
+            content={{
+              attributes: object('attributes', [
+                {
+                  dataSourceId: 'occupancy',
+                  unit: '%',
+                },
+              ]),
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{ occupancy: text('occupancy', 'A longer value that cause the unit to wrap') }}
+          />
+        </div>
+      </Fragment>
     );
   })
   .add('small / title', () => {
@@ -201,7 +245,7 @@ storiesOf('Watson IoT|ValueCard', module)
   .add('small / thresholds (number, icon)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${number('cardWidth', 300)}px`, margin: 20 }}>
         <ValueCard
           title={text('title', 'Alert Count')}
           id="facilitycard"
@@ -211,7 +255,7 @@ storiesOf('Watson IoT|ValueCard', module)
                 dataSourceId: 'alertCount',
                 thresholds: [
                   {
-                    comparison: '<',
+                    comparison: '>',
                     value: 5,
                     icon: 'checkmark',
                     color: 'green',
@@ -222,7 +266,7 @@ storiesOf('Watson IoT|ValueCard', module)
           }}
           breakpoint="lg"
           size={size}
-          values={{ alertCount: number('alertCount', 4) }}
+          values={{ alertCount: number('alertCount', 70) }}
         />
       </div>
     );
@@ -440,7 +484,7 @@ storiesOf('Watson IoT|ValueCard', module)
   .add('medium / vertical /  3', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div style={{ width: text('cardWidth', `120px`), margin: 20 }}>
         <ValueCard
           title={text('title', 'Facility Conditions')}
           id="facilitycard"
@@ -510,9 +554,9 @@ storiesOf('Watson IoT|ValueCard', module)
           breakpoint="lg"
           size={size}
           values={{
-            comfortLevel: number('comfortLevel', 89),
-            averageTemp: number('averageTemp', null),
-            humidity: number('humidity', 76.7),
+            comfortLevel: number('comfortLevel', 345678234234234234),
+            averageTemp: number('averageTemp', 456778234234234234),
+            humidity: number('humidity', 88888678234234234234),
           }}
         />
       </div>
