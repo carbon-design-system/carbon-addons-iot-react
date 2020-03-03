@@ -25,11 +25,11 @@
       transform: translateX(16rem);
     }
 
-    html:not([dir='ltr']) & {
+    html[dir='rtl'] & {
       transform: translateX(-3rem);
     }
 
-    html:not([dir='ltr']) .#{$iot-prefix}--side-nav--expanded + & {
+    html[dir='rtl'] .#{$iot-prefix}--side-nav--expanded + & {
       transform: translateX(-16rem);
     }
   }
