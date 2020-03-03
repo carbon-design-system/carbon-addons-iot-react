@@ -126,6 +126,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             89
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -165,6 +175,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -204,6 +224,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             21.4
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          mb
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -277,6 +307,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -347,6 +387,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -448,6 +498,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -521,6 +581,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             35
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -594,15 +664,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Bad
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
@@ -689,6 +769,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             14K
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -916,15 +1006,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Healthy
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
@@ -2194,6 +2294,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             89
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2233,6 +2343,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -2272,6 +2392,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             21.4
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          mb
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -2345,6 +2475,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -2415,6 +2555,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -2516,6 +2666,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -2589,6 +2749,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             35
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -2662,15 +2832,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Bad
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
@@ -2757,6 +2937,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             14K
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -2984,15 +3174,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Healthy
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
@@ -4294,6 +4494,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             89
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -4333,6 +4543,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -4372,6 +4592,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             21.4
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          mb
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -4445,6 +4675,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4515,6 +4755,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4616,6 +4866,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4689,6 +4949,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             35
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4762,15 +5032,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Bad
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
@@ -4857,6 +5137,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             14K
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -5084,15 +5374,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Healthy
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
@@ -8829,6 +9129,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             89
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -8868,6 +9178,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -8907,6 +9227,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             21.4
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          mb
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -8980,6 +9310,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -9050,6 +9390,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -9151,6 +9501,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -9224,6 +9584,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             35
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -9297,15 +9667,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Bad
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
@@ -9392,6 +9772,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             14K
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -9619,15 +10009,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Healthy
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
@@ -10903,6 +11303,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               13
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -10973,6 +11381,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            steps
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11043,6 +11461,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11113,6 +11541,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               107K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            kJ
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11183,6 +11621,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               2M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11257,6 +11705,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11331,6 +11787,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11466,6 +11930,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               13
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11536,6 +12008,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            steps
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11606,6 +12088,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11676,6 +12168,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               107K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            kJ
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11746,6 +12248,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               2M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11820,6 +12332,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -11894,6 +12414,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12029,6 +12557,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12099,6 +12637,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               49
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 gHjNPp"
@@ -12172,6 +12720,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12242,6 +12800,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12380,6 +12948,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12450,6 +13028,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               49
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 gHjNPp"
@@ -12523,6 +13111,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12593,6 +13191,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -12731,15 +13339,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               38
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -12826,15 +13444,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -12921,15 +13549,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               78
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
@@ -13016,15 +13654,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               91
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -13176,15 +13824,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               38
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -13271,15 +13929,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -13366,15 +14034,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               78
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
@@ -13461,15 +14139,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               91
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -13621,6 +14309,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -13691,6 +14389,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Guarded
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -13761,6 +14469,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -13831,6 +14549,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               High
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -13901,6 +14629,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -14036,6 +14774,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -14106,6 +14854,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Guarded
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -14176,6 +14934,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -14246,6 +15014,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               High
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -14316,6 +15094,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -14451,6 +15239,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               13
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14521,6 +15317,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            steps
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14591,6 +15397,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14661,6 +15477,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               107.3K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            kJ
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14731,6 +15557,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.7M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14805,6 +15641,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14879,6 +15723,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -14949,6 +15801,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15019,6 +15881,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               48.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15092,6 +15964,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88.1
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15162,6 +16044,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15235,15 +16127,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               38.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -15330,15 +16232,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -15425,15 +16337,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               77.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
@@ -15520,15 +16442,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               91
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -15615,6 +16547,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15685,6 +16627,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Guarded
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15755,6 +16707,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15825,6 +16787,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               High
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -15895,6 +16867,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16030,6 +17012,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               13
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16100,6 +17090,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            steps
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16170,6 +17170,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16240,6 +17250,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               107.3K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            kJ
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16310,6 +17330,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.7M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16384,6 +17414,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16458,6 +17496,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               </span>
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16528,6 +17574,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16598,6 +17654,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               48.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16671,6 +17737,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88.1
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16741,6 +17817,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -16814,15 +17900,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               38.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -16909,15 +18005,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -17004,15 +18110,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               77.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
@@ -17099,15 +18215,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               91
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -17194,6 +18320,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17264,6 +18400,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Guarded
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17334,6 +18480,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17404,6 +18560,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               High
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17474,6 +18640,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17609,6 +18785,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               89.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17640,6 +18826,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               21.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            mb
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17713,6 +18909,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17744,6 +18950,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17817,6 +19031,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17848,6 +19072,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.7M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -17986,6 +19220,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               89.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18017,6 +19261,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               21.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            mb
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18090,6 +19344,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18121,6 +19385,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18194,6 +19466,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18225,6 +19507,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.7M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18363,6 +19655,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               89.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18394,6 +19696,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               21.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            mb
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18467,6 +19779,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18498,6 +19820,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18571,6 +19901,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18602,6 +19942,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.7M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18740,6 +20090,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               89.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18771,6 +20131,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               21.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            mb
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18844,6 +20214,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               88.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18875,6 +20255,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18948,6 +20336,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               103.7
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -18979,6 +20377,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.7M
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            people
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -19117,15 +20525,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               38.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -19173,15 +20591,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -19271,15 +20699,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               77.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
@@ -19327,15 +20765,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               91.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -19490,15 +20938,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               38.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -19546,15 +21004,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               65.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            %
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -19644,15 +21112,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               77.2
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
@@ -19700,15 +21178,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               91.3
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.25rem",
+                              }
+                            }
+                          >
+                            ˚F
+                          </span>
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -19863,6 +21351,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               13.6K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          >
+                            MWh
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -19902,6 +21400,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.0K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          >
+                            MWh
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -19941,6 +21449,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               314.5
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          >
+                            MWh
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -20014,6 +21532,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -20053,6 +21579,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -20092,6 +21626,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               High
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -20165,15 +21707,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="= Low"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -20229,15 +21779,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="= Severe"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -20293,15 +21851,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="= Elevated"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="gold"
                                 fillRule="evenodd"
                                 height="16"
@@ -20456,6 +22022,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               13.6K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          >
+                            MWh
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -20495,6 +22071,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               1.0K
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          >
+                            MWh
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -20534,6 +22120,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               314.5
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          >
+                            MWh
+                          </span>
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -20607,6 +22203,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -20646,6 +22250,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -20685,6 +22297,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               High
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                         </div>
                         <div
                           className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -20758,15 +22378,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Low
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="= Low"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
@@ -20822,15 +22450,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Severe
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="= Severe"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
@@ -20886,15 +22522,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               Elevated
                             </span>
                           </div>
+                          <span
+                            className="iot--value-card__attribute-unit"
+                            style={
+                              Object {
+                                "--default-font-size": "1.5rem",
+                              }
+                            }
+                          />
                           <div
-                            className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                            className="iot--value-card__attribute-icon-container"
                           >
                             <div
-                              className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                              className="iot--value-card__attribute-threshold-icon-container"
                             >
                               <svg
                                 aria-label="= Elevated"
-                                className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                                 fill="gold"
                                 fillRule="evenodd"
                                 height="16"
@@ -21114,6 +22758,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             89
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -21153,6 +22807,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -21192,6 +22856,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             21.4
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.5rem",
+                            }
+                          }
+                        >
+                          mb
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -21265,6 +22939,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -21335,6 +23019,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             62
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -21436,6 +23130,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             76
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          %
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -21509,6 +23213,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             35
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -21582,15 +23296,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Bad
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
@@ -21677,6 +23401,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             14K
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                       </div>
                       <div
                         className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -21904,15 +23638,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             Healthy
                           </span>
                         </div>
+                        <span
+                          className="iot--value-card__attribute-unit"
+                          style={
+                            Object {
+                              "--default-font-size": "1.25rem",
+                            }
+                          }
+                        >
+                          
+                        </span>
                         <div
-                          className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                          className="iot--value-card__attribute-icon-container"
                         >
                           <div
-                            className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                            className="iot--value-card__attribute-threshold-icon-container"
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
