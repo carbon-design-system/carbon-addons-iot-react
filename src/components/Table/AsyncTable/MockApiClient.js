@@ -2,6 +2,7 @@
  * Simulates a client capable of asynchronously fetching
  * paginated, filtered and sorted data from some resource (e.g. an HTTP API)
  */
+/* istanbul ignore file */
 export default class MockApiClient {
   static firstNames = [
     'Tom',
