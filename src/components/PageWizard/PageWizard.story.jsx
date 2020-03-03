@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
-import { Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
+import { Button, Form, FormGroup, FormItem, Link, TextInput } from 'carbon-components-react';
 
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
@@ -299,7 +299,35 @@ storiesOf('Watson IoT/PageWizard', module)
       />
     </div>
   ))
-
+  .add('With additional footer content', () => (
+    <div>
+      <PageTitleBar
+        title="A cool PageWizard!"
+        description="The description from the PageTitleBar"
+        breadcrumb={[
+          <Link to="www.ibm.com">Home</Link>,
+          <Link to="www.ibm.com">Something</Link>,
+          <Link to="www.ibm.com">Something Else</Link>,
+        ]}
+        content={
+          <StatefulPageWizard
+            hasStickyFooter={boolean('hasStickyFooter', true)}
+            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+            onClearError={() => {}}
+            onClose={() => {}}
+            onSubmit={() => {}}
+            onNext={() => {}}
+            onBack={() => {}}
+            setStep={() => {}}
+            beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
+          >
+            <StepValidation id="step1" label="Step with validation" />
+            {content[1]}
+          </StatefulPageWizard>
+        }
+      />
+    </div>
+  ))
   .add('w/ i18n', () => (
     <div>
       <PageWizard

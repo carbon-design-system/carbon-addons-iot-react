@@ -10,7 +10,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
 
 import Breadcrumb from './Breadcrumb';
@@ -41,7 +41,7 @@ storiesOf('Watson IoT/Breadcrumb', module)
         <Breadcrumb {...props()}>
           <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
           <BreadcrumbItem href="#">Breadcrumb 2</BreadcrumbItem>
-          <BreadcrumbItem href="#">Breadcrumb 3</BreadcrumbItem>
+          <BreadcrumbItem href="#">{text('Breadcrumb 3 text', 'Breadcrumb 3')}</BreadcrumbItem>
         </Breadcrumb>
       );
     },
@@ -106,11 +106,15 @@ storiesOf('Watson IoT/Breadcrumb', module)
               <BreadcrumbItem href="#" title="3 A really long page name">
                 3 A really long page name
               </BreadcrumbItem>
-              <BreadcrumbItem href="#" title="4 Another page">
-                4 Another page
+              <BreadcrumbItem href="#" title={text('Breadcrumb 4 text', '4 Another page')}>
+                {text('Breadcrumb 4 text', '4 Another page')}
               </BreadcrumbItem>
-              <BreadcrumbItem href="#" isCurrentPage title="5th level page">
-                5th level page
+              <BreadcrumbItem
+                href="#"
+                isCurrentPage
+                title={text('Breadcrumb 5 text', '5th level page')}
+              >
+                {text('Breadcrumb 5 text', '5th level page')}
               </BreadcrumbItem>
             </Breadcrumb>
           </div>

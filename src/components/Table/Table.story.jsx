@@ -8,6 +8,7 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/20';
 import { Add20 } from '@carbon/icons-react';
+import { Tooltip } from 'carbon-components-react';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -719,6 +720,31 @@ storiesOf('Watson IoT/Table', module)
     {
       info: {
         text: `The table will automatically adjust to narrow mode if you set a style or class that makes max-width smaller than 600 pixels (which is the width needed to render the full pagination controls) `,
+      },
+    }
+  )
+  .add(
+    'with pre-filled search',
+    () => (
+      <StatefulTable
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        style={{ maxWidth: '300px' }}
+        columns={tableColumns.slice(0, 2)}
+        data={tableData}
+        actions={actions}
+        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'toyota',
+            },
+          },
+        }}
+      />
+    ),
+    {
+      info: {
+        text: `The table will pre-fill a search value, expand the search input and trigger a search`,
       },
     }
   )
@@ -1648,6 +1674,66 @@ storiesOf('Watson IoT/Table', module)
         `,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'with sticky header and cell tooltip calculation',
+    () => {
+      const renderDataFunction = ({ value }) => (
+        <div style={{ position: 'relative' }} data-floating-menu-container>
+          {value}
+          <Tooltip
+            direction="right"
+            tabIndex={0}
+            tooltipId="table-tooltip"
+            triggerId="table-tooltip-trigger"
+            triggerText=""
+            menuOffset={menuBody => {
+              const container = menuBody.closest('[data-floating-menu-container]');
+              return {
+                top: -container.getBoundingClientRect().y - window.pageYOffset + 4,
+                left: -container.getBoundingClientRect().x - window.pageXOffset + 10,
+              };
+            }}
+          >
+            <p>This scroll with the table body</p>
+          </Tooltip>
+        </div>
+      );
+      return (
+        <div>
+          <Table
+            columns={tableColumns.map(i => ({
+              ...i,
+              renderDataFunction,
+            }))}
+            data={tableData}
+            actions={actions}
+            stickyHeader
+            options={{
+              hasFilter: true,
+              hasPagination: true,
+              hasRowSelection: 'multi',
+            }}
+            view={{
+              filters: [],
+              table: {
+                ordering: defaultOrdering,
+                sort: {
+                  columnId: 'string',
+                  direction: 'ASC',
+                },
+              },
+            }}
+          />
+        </div>
+      );
+    },
+    {
+      centered: { disable: true },
+      info: {
+        text: `To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
       },
     }
   );

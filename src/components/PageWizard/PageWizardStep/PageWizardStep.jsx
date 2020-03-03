@@ -39,6 +39,8 @@ const PageWizardStepPropTypes = {
   sendingData: PropTypes.bool,
   /** Callback function when Submit button is clicked */
   onSubmit: PropTypes.func.isRequired,
+  /** Content to render before footer buttons (on left side, in LTR) */
+  beforeFooterContent: PropTypes.node,
 };
 
 const PageWizardStepDefaultProps = {
@@ -60,6 +62,7 @@ const PageWizardStepDefaultProps = {
   hasNext: false,
   onNext: null,
   onBack: null,
+  beforeFooterContent: null,
 };
 
 const PageWizardStep = ({
@@ -78,6 +81,7 @@ const PageWizardStep = ({
   onBack,
   sendingData,
   onSubmit,
+  beforeFooterContent,
 }) => (
   <div className={`${iotPrefix}--page-wizard--step`} id={id}>
     {error ? (
@@ -98,6 +102,7 @@ const PageWizardStep = ({
           : `${iotPrefix}--page-wizard--content--actions`
       }
     >
+      {beforeFooterContent}
       {!hasPrev ? (
         <Button onClick={onClose} kind="secondary">
           {i18n.cancel}

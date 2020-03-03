@@ -220,3 +220,16 @@ export const TIME_SERIES_TYPES = {
   BAR: 'BAR',
   LINE: 'LINE',
 };
+
+export const VALUE_CARD_DATA_STATE = { NO_DATA: 'NO_DATA', ERROR: 'ERROR' };
+
+export const BAR_CHART_TYPES = {
+  SIMPLE: 'SIMPLE',
+  GROUPED: 'GROUPED',
+  STACKED: 'STACKED',
+};
+
+export const BAR_CHART_LAYOUTS = {
+  HORIZONTAL: 'HORIZONTAL',
+  VERTICAL: 'VERTICAL',
+};

@@ -2,4159 +2,3271 @@
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard bar chart 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard dataFilter 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard empty 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
-            <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard empty for a range 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard highlight alert ranges 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard isEditable 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 bJyHEu"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 bJyHEu"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / 5 years 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / multi line - (Custom color) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / multi line - (No X/Y Label) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / multi line - no interval 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (High Temperature number) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (Low Pressure number) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-Pressure"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-Pressure"
+          <span
+            className="card--title"
+            title="Pressure"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Pressure"
-              >
-                <div
-                  className="title--text"
-                >
-                  Pressure
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Pressure
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (Month) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (Week) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval hour (Diff day) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval hour (Same day) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval month (Year/ Diff Year) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval month (Year/ Same Year) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - year interval (One data point) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / units 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard largewide / multi line - (No X/Y Label) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "1056px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "1056px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGEWIDE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGEWIDE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard locale 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "520px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="LARGE"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="LARGE"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard lots of dots 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / multi line - (No X/Y Label) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / multiple line - interval month (Year/ Same Year) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day (Month) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day (Same Month) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day (Week) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval hour (Diff day) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval hour (Same day) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval hour 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval month (Year/ Diff Year) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval month (Year/ Same Year) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval year (Two data point) 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - timeRange dayByHour 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <div
-                    className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                    id="timeRange"
-                  >
-                    Last 7 days
-                  </div>
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="Last 7 days"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        Last 7 days
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
             >
               <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
+                className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
+                id="timeRange"
               >
-                <div
-                  className="chart-holder"
-                />
+                Last 7 days
               </div>
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="Last 7 days"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    Last 7 days
+                  </title>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
+            <div
+              className="chart-holder"
+            />
+          </div>
+        </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single point - interval hour 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facility-temperature"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facility-temperature"
+          <span
+            className="card--title"
+            title="Temperature"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Temperature"
-              >
-                <div
-                  className="title--text"
-                >
-                  Temperature
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
+              Temperature
             </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+            size="MEDIUM"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
-                size="MEDIUM"
-              >
-                <div
-                  className="chart-holder"
-                />
-              </div>
-            </div>
+              className="chart-holder"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": 12,
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;

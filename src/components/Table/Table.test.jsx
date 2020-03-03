@@ -334,4 +334,32 @@ describe('Table', () => {
     fireEvent.keyDown(filterButton, { keyCode: keyCodes.ENTER });
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
+
+  test('toolbar search should render with default value', () => {
+    const wrapper = mount(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'toyota',
+            },
+          },
+        }}
+      />
+    );
+
+    expect(wrapper.find('.bx--search-input')).toHaveLength(1);
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('toyota');
+
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
+    wrapper.update();
+
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+  });
 });

@@ -63,7 +63,7 @@ const propTypes = {
   /** file type either TEXT or BINARY to determine the correct encoding */
   fileType: PropTypes.oneOf(Object.values(FILE_TYPES)),
 };
-
+/* istanbul ignore next */
 const defaultProps = {
   id: 'FileUploader',
   buttonLabel: 'Add files',

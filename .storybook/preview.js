@@ -4,7 +4,6 @@ import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { initializeRTL } from 'storybook-addon-rtl';
-import centered from '@storybook/addon-centered/react';
 import theme from './theme';
 
 initializeRTL();
@@ -28,4 +27,3 @@ addDecorator(
 addDecorator(story => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);
-addDecorator(centered);
