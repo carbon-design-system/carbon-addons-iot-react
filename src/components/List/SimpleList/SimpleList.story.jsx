@@ -106,7 +106,7 @@ const buttonsToRender = [
   <Button renderIcon={Add16} hasIconOnly size="small" iconDescription="Add" />,
 ];
 
-storiesOf('Watson IoT Experimental|SimpleList', module)
+storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'basic',
     withReadme(SimpleListREADME, () => (

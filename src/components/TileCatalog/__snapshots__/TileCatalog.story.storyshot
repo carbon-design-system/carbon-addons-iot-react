@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog async loaded wait one second 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog async loaded wait one second 1`] = `
 <div
   className="storybook-container"
   style={
@@ -164,7 +164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -178,7 +178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog default 1`] = `
 <div
   className="storybook-container"
   style={
@@ -904,7 +904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -918,7 +918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog error 1`] = `
 <div
   className="storybook-container"
   style={
@@ -968,7 +968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -982,7 +982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog isSelectedByDefault false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog isSelectedByDefault false 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1708,7 +1708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1722,7 +1722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog loading 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1886,7 +1886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1900,7 +1900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog with pages 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog with pages 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2584,7 +2584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2598,7 +2598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog with search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileCatalog with search 1`] = `
 <div
   className="storybook-container"
   style={
@@ -3357,7 +3357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

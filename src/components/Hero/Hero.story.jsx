@@ -24,7 +24,7 @@ const tooltip = {
   linkLabel: 'Learn more',
 };
 
-storiesOf('Watson IoT|Hero (Deprecated)', module)
+storiesOf('Watson IoT/Hero (Deprecated)', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add(deprecatedStoryTitle, () => (
     <DeprecationNotice deprecatedComponentName="Hero" replacementComponentName="PageTitleBar" />
