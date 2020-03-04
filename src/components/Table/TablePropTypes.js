@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import deprecate from '../../internal/deprecate';
+
 export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
@@ -211,5 +213,12 @@ export const defaultI18NPropTypes = {
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
-  value: PropTypes.string,
+  value: deprecate(
+    PropTypes.string,
+    '\n The prop `value` has been deprecated in favor of `defaultValue`'
+  ),
+  defaultValue: PropTypes.string,
+  defaultExpanded: PropTypes.bool,
+  onChange: PropTypes.func,
+  onExpand: PropTypes.func,
 });

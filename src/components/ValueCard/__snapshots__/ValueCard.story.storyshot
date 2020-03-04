@@ -840,6 +840,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     100
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -871,6 +881,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     50
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -981,6 +1001,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     --
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -1012,6 +1042,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     --
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -1202,6 +1242,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
@@ -1241,6 +1291,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
@@ -1280,6 +1340,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 krPcSU"
@@ -1319,6 +1389,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     50
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 krPcSU"
@@ -1358,6 +1438,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     0.6
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
@@ -1468,6 +1558,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 IgeiL"
@@ -1507,6 +1607,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 IgeiL"
@@ -1546,6 +1656,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 fVxPsv"
@@ -1585,6 +1705,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 fVxPsv"
@@ -1624,6 +1754,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 fVxPsv"
@@ -1663,6 +1803,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 IgeiL"
@@ -1702,6 +1852,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 IgeiL"
@@ -1812,6 +1972,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     20000T
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 gHjNPp"
@@ -1922,6 +2092,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     100M
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -1953,6 +2133,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     40T
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  Wh
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2063,6 +2253,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2094,6 +2294,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2204,6 +2414,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2243,6 +2463,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2282,6 +2512,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -2392,6 +2632,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2423,6 +2673,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2484,7 +2744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "120px",
         }
       }
     >
@@ -2527,21 +2787,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   <span
                     className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
                     size="MEDIUM"
-                    title="89 %"
-                    value={89}
+                    title="345678234234234240 %"
+                    value={345678234234234240}
                   >
-                    89
+                    345678T
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
                 <div
-                  className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                  className="iot--value-card__attribute-icon-container"
                 >
                   <div
-                    className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                    className="iot--value-card__attribute-threshold-icon-container"
                   >
                     <svg
                       aria-label="> 80"
-                      className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                       fill="#F00"
                       fillRule="evenodd"
                       height="16"
@@ -2591,11 +2861,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   <span
                     className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
                     size="MEDIUM"
-                    title="null ˚F"
-                    value={null}
+                    title="456778234234234240 ˚F"
+                    value={456778234234234240}
                   >
-                    --
+                    456778T
                   </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
+                <div
+                  className="iot--value-card__attribute-icon-container"
+                >
+                  <div
+                    className="iot--value-card__attribute-threshold-icon-container"
+                  >
+                    <svg
+                      aria-label="> 80"
+                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      fill="#F00"
+                      fillRule="evenodd"
+                      height="16"
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="16"
+                    >
+                      <title>
+                        &gt; 80
+                      </title>
+                      <path
+                        d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div
@@ -2630,22 +2935,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   <span
                     className="ValueRenderer__AttributeValue-f4stpz-1 kuugZx"
                     size="MEDIUM"
-                    title="76.7 ˚F"
-                    value={76.7}
+                    title="88888678234234240000 ˚F"
+                    value={88888678234234240000}
                   >
-                    76.7
+                    88888678T
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
                 <div
-                  className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                  className="iot--value-card__attribute-icon-container"
                 >
                   <div
-                    className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                    className="iot--value-card__attribute-threshold-icon-container"
                   >
                     <svg
-                      aria-label="< 80"
-                      className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
-                      fill="#5aa700"
+                      aria-label="> 80"
+                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      fill="#F00"
                       fillRule="evenodd"
                       height="16"
                       role="img"
@@ -2653,10 +2968,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                       width="16"
                     >
                       <title>
-                        &lt; 80
+                        &gt; 80
                       </title>
                       <path
-                        d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                        d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
                       />
                     </svg>
                   </div>
@@ -2771,6 +3086,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2810,6 +3135,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 hFUKTu"
@@ -2849,6 +3184,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 ceuwLr"
@@ -2959,6 +3304,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAyPcU"
@@ -3069,6 +3424,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     89
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
@@ -3108,6 +3473,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76.7
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  ˚F
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 jvOQzz"
@@ -3147,6 +3522,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     76
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.5rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 krPcSU"
@@ -3257,6 +3642,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     88
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -3364,6 +3759,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     Really really busy
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -3471,11 +3876,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     4
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
                 <div
-                  className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                  className="iot--value-card__attribute-icon-container"
                 >
                   <div
-                    className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                    className="iot--value-card__attribute-threshold-icon-container"
                   >
                     <svg
                       description="< 5"
@@ -3562,7 +3977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
       style={
         Object {
           "margin": 20,
-          "width": "252px",
+          "width": "300px",
         }
       }
     >
@@ -3605,21 +4020,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                   <span
                     className="ValueRenderer__AttributeValue-f4stpz-1 iOFzxv"
                     size="SMALL"
-                    title="4 "
-                    value={4}
+                    title="70 "
+                    value={70}
                   >
-                    4
+                    70
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
                 <div
-                  className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                  className="iot--value-card__attribute-icon-container"
                 >
                   <div
-                    className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                    className="iot--value-card__attribute-threshold-icon-container"
                   >
                     <svg
-                      aria-label="< 5"
-                      className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                      aria-label="> 5"
+                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                       fill="green"
                       fillRule="evenodd"
                       height="16"
@@ -3628,7 +4053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                       width="16"
                     >
                       <title>
-                        &lt; 5
+                        &gt; 5
                       </title>
                       <path
                         d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
@@ -3743,6 +4168,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     35
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -3850,6 +4285,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     14K
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -3960,6 +4405,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     14K
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4067,6 +4522,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     35
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4104,7 +4569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / units 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / units incl wrapping 1`] = `
 <div
   className="storybook-container"
   style={
@@ -4174,6 +4639,212 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     88
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
+              </div>
+              <div
+                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                size="SMALL"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "120px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bAafuV"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Occupancy"
+          >
+            <div
+              className="title--text"
+            >
+              Occupancy
+            </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 ggrDpu"
+        >
+          <div
+            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+          >
+            <div
+              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+              size="SMALL"
+            >
+              <div
+                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                label={null}
+                size="SMALL"
+              >
+                <div
+                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                  color={null}
+                >
+                  <span
+                    className="ValueRenderer__AttributeValue-f4stpz-1 bztBvA"
+                    size="SMALL"
+                    title="A longer value that cause the unit to wrap %"
+                    value="A longer value that cause the unit to wrap"
+                  >
+                    A longer value that cause the unit to wrap
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
+              </div>
+              <div
+                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                size="SMALL"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": "12px",
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / wrapping 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "120px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bAafuV"
+      >
+        <div
+          className="card--header"
+        >
+          <span
+            className="card--title"
+            title="Occupancy"
+          >
+            <div
+              className="title--text"
+            >
+              Occupancy
+            </div>
+          </span>
+          <div
+            className="card--toolbar"
+          />
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 ggrDpu"
+        >
+          <div
+            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+          >
+            <div
+              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+              size="SMALL"
+            >
+              <div
+                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                label={null}
+                size="SMALL"
+              >
+                <div
+                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                  color={null}
+                >
+                  <span
+                    className="ValueRenderer__AttributeValue-f4stpz-1 bztBvA"
+                    size="SMALL"
+                    title="Really really busy loong long long long %"
+                    value="Really really busy loong long long long"
+                  >
+                    Really really busy loong long long long
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
@@ -4281,6 +4952,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     Problem
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -4312,6 +4993,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     Healthy
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  feels
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -4422,15 +5113,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     Unhealthy
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
                 <div
-                  className="Attribute__StyledIcon-dhraql-5 gssLPC"
+                  className="iot--value-card__attribute-icon-container"
                 >
                   <div
-                    className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
+                    className="iot--value-card__attribute-threshold-icon-container"
                   >
                     <svg
                       aria-label="= Unhealthy"
-                      className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
                       fill="red"
                       fillRule="evenodd"
                       height="16"
@@ -4554,6 +5255,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     Good
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -4585,6 +5296,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     Healthy
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
@@ -4699,6 +5420,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                     </span>
                   </span>
                 </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
               </div>
               <div
                 className="ValueCard__AttributeLabel-hyxf2q-4 gHjNPp"

@@ -272,6 +272,7 @@ const ValueCard = ({
                       attributeCount={attributes.length}
                     >
                       <Attribute
+                        attributeCount={attributes.length}
                         isVertical={isVertical}
                         layout={layout}
                         isSmall={

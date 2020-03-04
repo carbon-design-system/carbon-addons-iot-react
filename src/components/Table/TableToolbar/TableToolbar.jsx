@@ -9,6 +9,7 @@ import deprecate from '../../../internal/deprecate';
 import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
+import TableToolbarSearch from '../TableToolbarSearch/TableToolbarSearch';
 
 const { iotPrefix } = settings;
 
@@ -18,7 +19,6 @@ const {
   // TableToolbarAction,
   TableBatchActions,
   TableBatchAction,
-  TableToolbarSearch,
 } = DataTable;
 
 const propTypes = {
