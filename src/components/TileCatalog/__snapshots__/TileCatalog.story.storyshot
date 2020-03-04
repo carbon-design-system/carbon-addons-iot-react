@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog async loaded wait one second 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -181,11 +176,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog default 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -921,11 +911,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog error 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -985,11 +970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog isSelectedByDefault false 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1725,11 +1705,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog loading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1903,11 +1878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog with pages 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2601,11 +2571,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileC
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TileCatalog with search 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card basic 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -158,11 +153,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card basic with render prop 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -319,11 +309,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card error 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -403,11 +388,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card error/small 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -487,11 +467,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card implementing a custom card 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -771,11 +746,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is editable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -904,11 +874,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is expandable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1011,11 +976,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card size gallery 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1742,11 +1702,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with ellipsed title and tooltip 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1897,11 +1852,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with empty state 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2030,11 +1980,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with loading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2139,11 +2084,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with range selector 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

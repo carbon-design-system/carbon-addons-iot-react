@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar example with workArea 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -229,11 +224,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar normal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -437,11 +427,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar start with tab 2 selected 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -645,11 +630,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar with actions 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

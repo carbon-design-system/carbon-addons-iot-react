@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) isLoading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -83,11 +78,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -204,11 +194,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) with blurb 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -330,11 +315,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) with breadcrumb 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -496,11 +476,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

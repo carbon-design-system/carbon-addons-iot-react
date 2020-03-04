@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) has breadcrumb 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -62,11 +57,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) has left content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -160,11 +150,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -251,11 +236,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) normal with content switcher 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -378,11 +358,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) with section 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -474,11 +449,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

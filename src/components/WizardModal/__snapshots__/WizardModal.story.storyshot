@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardModal basic wizard modal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -227,11 +222,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardModal custom footer 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -458,11 +448,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardModal sending data 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

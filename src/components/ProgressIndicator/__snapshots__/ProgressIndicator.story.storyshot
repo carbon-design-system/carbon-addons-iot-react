@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ProgressIndicator Stateful 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -224,11 +219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Progr
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ProgressIndicator hideLabels and default stepWidth 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -461,11 +451,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Progr
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ProgressIndicator presentation 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -682,11 +667,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Progr
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ProgressIndicator presentation vertical 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -903,11 +883,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Progr
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ProgressIndicator skeleton 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
