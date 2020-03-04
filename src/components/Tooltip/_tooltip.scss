@@ -1,1 +1,8 @@
 @import '~carbon-components/scss/components/tooltip/tooltip';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--tooltip__floating-menu-container {
+  position: relative;
+  min-width: 0;
+  border: 1px solid black;
+}

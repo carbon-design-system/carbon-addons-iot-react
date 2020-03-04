@@ -32,22 +32,46 @@ storiesOf('Watson IoT|Card', module)
   .add('with ellipsed title and tooltip', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <Card
-          title={text(
-            'title',
-            'Card Title that is really long and should be truncated and have a tooltip'
-          )}
-          id="facilitycard-basic"
-          size={size}
-          isLoading={boolean('isLoading', false)}
-          isEmpty={boolean('isEmpty', false)}
-          isEditable={boolean('isEditable', false)}
-          isExpanded={boolean('isExpanded', false)}
-          breakpoint="lg"
-          availableActions={{ range: true, expand: true }}
-          onCardAction={action('onCardAction')}
-        />
+      <div>
+        <div style={{ height: '30vh' }} />
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <Card
+            title={text(
+              'title',
+              'Card Title that is really long and should be truncated and have a tooltip'
+            )}
+            id="facilitycard-basic"
+            size={size}
+            isLoading={boolean('isLoading', false)}
+            isEmpty={boolean('isEmpty', false)}
+            isEditable={boolean('isEditable', false)}
+            isExpanded={boolean('isExpanded', false)}
+            breakpoint="lg"
+            availableActions={{ range: true, expand: true }}
+            onCardAction={action('onCardAction')}
+          />
+        </div>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <Card
+            title="External tooltip"
+            id="facilitycard-basic-tooltip"
+            size={size}
+            isLoading={boolean('isLoading', false)}
+            isEmpty={boolean('isEmpty', false)}
+            isEditable={boolean('isEditable', false)}
+            isExpanded={boolean('isExpanded', false)}
+            breakpoint="lg"
+            availableActions={{ range: true, expand: true }}
+            onCardAction={action('onCardAction')}
+            tooltip={
+              <p>
+                External tooltip content External tooltip content External tooltip content External
+                tooltip content External tooltip content{' '}
+              </p>
+            }
+          />
+        </div>
+        <div style={{ height: '50vh' }} />
       </div>
     );
   })

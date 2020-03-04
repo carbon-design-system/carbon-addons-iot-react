@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Tooltip } from 'carbon-components-react';
 import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
 
+import Tooltip from '../Tooltip/Tooltip';
 import { settings } from '../../constants/Settings';
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
 import {
@@ -35,23 +35,15 @@ const DataStateRenderer = ({ dataState, size, id }) => {
 
   const withTooltip = (element, triggerId) => {
     return (
-      <div style={{ position: 'relative' }} data-floating-menu-container>
-        <Tooltip
-          showIcon={false}
-          triggerText={element}
-          triggerId={triggerId}
-          tooltipId={`${triggerId}-tooltip`}
-          menuOffset={menuBody => {
-            const container = menuBody.closest('[data-floating-menu-container]');
-            return {
-              top: -container.getBoundingClientRect().y - window.pageYOffset + 7,
-              left: -container.getBoundingClientRect().x - window.pageXOffset,
-            };
-          }}
-        >
-          <TooltipContent tooltipContent={dataState} />
-        </Tooltip>
-      </div>
+      <Tooltip
+        showIcon={false}
+        triggerText={element}
+        triggerId={triggerId}
+        tooltipId={`${triggerId}-tooltip`}
+        scrollWithTriggerElement={true}
+      >
+        <TooltipContent tooltipContent={dataState} />
+      </Tooltip>
     );
   };
 

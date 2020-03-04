@@ -742,7 +742,7 @@ storiesOf('Watson IoT|ValueCard', module)
           id="myStoryId"
         />
 
-        <div style={{ height: '150vh' }} />
+        <div style={{ height: '250vh' }} />
       </div>
     );
   })

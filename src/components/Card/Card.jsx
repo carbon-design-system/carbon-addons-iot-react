@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import { Tooltip, SkeletonText } from 'carbon-components-react';
+import { SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
 
@@ -21,6 +21,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
+import Tooltip from '../Tooltip/Tooltip';
 
 const { prefix } = settings;
 
@@ -82,7 +83,7 @@ export const defaultProps = {
   title: undefined,
   toolbar: undefined,
   hideHeader: false,
-  showOverflow: false,
+  showOverflow: true,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,
@@ -250,12 +251,14 @@ const Card = props => {
                 {!hideHeader && (
                   <CardHeader>
                     <CardTitle title={title}>
-                      {hasTitleTooltip ? (
+                      {hasTitleTooltip && isVisible ? (
                         <Tooltip
+                          scrollWithTriggerElement={true}
                           ref={titleRef}
                           showIcon={false}
                           triggerClassName="title--text"
                           triggerText={title}
+                          direction="left"
                         >
                           {title}
                         </Tooltip>
@@ -264,11 +267,13 @@ const Card = props => {
                           {title}
                         </div>
                       )}
-                      {tooltip && (
+                      {tooltip && isVisible && (
                         <Tooltip
+                          scrollWithTriggerElement={true}
                           triggerId={`card-tooltip-trigger-${id}`}
                           tooltipId={`card-tooltip-${id}`}
                           triggerText=""
+                          direction="left"
                         >
                           {tooltip}
                         </Tooltip>

@@ -366,6 +366,7 @@ const TimeSeriesCard = ({
       isEditable={isEditable}
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
+      showOverflow={false}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
         <Fragment>
