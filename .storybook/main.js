@@ -66,16 +66,6 @@ module.exports = {
       ],
     });
 
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg)$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {},
-        },
-      ],
-    });
-
     // Return the altered config
     return config;
   },
