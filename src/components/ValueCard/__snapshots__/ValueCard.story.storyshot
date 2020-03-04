@@ -4671,7 +4671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4683,9 +4683,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4791,7 +4788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4803,9 +4800,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
