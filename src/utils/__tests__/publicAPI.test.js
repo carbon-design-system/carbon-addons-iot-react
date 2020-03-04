@@ -148,11 +148,11 @@ test('Public API should only change with a semver change', () => {
   }
 
   // eslint-disable-next-line global-require
-  const CarbonReact = require('../../index');
+  const CarbonAddonsIoTReact = require('../../index');
   const PublicAPI = new Map();
 
-  Object.keys(CarbonReact).forEach(name => {
-    const Component = CarbonReact[name];
+  Object.keys(CarbonAddonsIoTReact).forEach(name => {
+    const Component = CarbonAddonsIoTReact[name];
     PublicAPI.set(name, mapComponentToAPI(Component));
   });
 
