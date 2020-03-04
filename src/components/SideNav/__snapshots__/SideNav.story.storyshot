@@ -114,7 +114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         className="bx--side-nav__items"
       >
         <li
-          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large disabled"
+          className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
         >
           <button
             aria-expanded={false}
@@ -202,7 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
         >
           <a
             aria-label="Devices"
-            className="bx--side-nav__link disabled"
+            className="bx--side-nav__link"
             href="https://google.com"
             label="Devices"
             target="_blank"
@@ -240,7 +240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
           </a>
         </li>
         <li
-          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large disabled"
+          className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large"
         >
           <button
             aria-expanded={false}
@@ -326,28 +326,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
       </ul>
     </nav>
     <div
-      className="page-title-bar"
+      className="iot--main-content"
     >
       <div
-        className="page-title-bar-header"
+        className="page-title-bar"
       >
-        <div>
-          <div
-            className="page-title-bar-title"
-          >
+        <div
+          className="page-title-bar-header"
+        >
+          <div>
             <div
-              className="page-title-bar-title--text"
+              className="page-title-bar-title"
             >
-              <h2>
-                Title
-              </h2>
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  Title
+                </h2>
+              </div>
             </div>
+            <p
+              className="page-title-bar-description"
+            >
+              Description
+            </p>
           </div>
-          <p
-            className="page-title-bar-description"
-          >
-            Description
-          </p>
         </div>
       </div>
     </div>
