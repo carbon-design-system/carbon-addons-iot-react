@@ -10,6 +10,7 @@ import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell'
 import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import { settings } from '../../constants/Settings';
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import SideNav from './SideNav';
 import Styles from './SideNav.story.scss'; // eslint-disable-line
@@ -122,26 +123,28 @@ const HeaderProps = {
 storiesOf('Watson IoT|SideNav', module).add(
   'SideNav component',
   () => (
-    <HeaderContainer
-      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-        <>
-          <Header
-            {...HeaderProps}
-            isSideNavExpanded={isSideNavExpanded}
-            onClickSideNavExpand={onClickSideNavExpand}
-          />
-          <SideNav
-            links={links}
-            isSideNavExpanded={isSideNavExpanded}
-            onClickSideNavExpand={onClickSideNavExpand}
-            switcherProps={switcherProps}
-          />
-          <div className={`${iotPrefix}--main-content`}>
-            <PageTitleBar title="Title" description="Description" />
-          </div>
-        </>
-      )}
-    />
+    <FullWidthWrapper withPadding={false}>
+      <HeaderContainer
+        render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+          <>
+            <Header
+              {...HeaderProps}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+            />
+            <SideNav
+              links={links}
+              isSideNavExpanded={isSideNavExpanded}
+              onClickSideNavExpand={onClickSideNavExpand}
+              switcherProps={switcherProps}
+            />
+            <div className={`${iotPrefix}--main-content`}>
+              <PageTitleBar title="Title" description="Description" />
+            </div>
+          </>
+        )}
+      />
+    </FullWidthWrapper>
   ),
   {
     info: {
