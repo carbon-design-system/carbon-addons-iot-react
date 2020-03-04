@@ -1148,9 +1148,19 @@ Map {
                   "search": Object {
                     "args": Array [
                       Object {
-                        "value": Object {
+                        "defaultExpanded": Object {
+                          "type": "bool",
+                        },
+                        "defaultValue": Object {
                           "type": "string",
                         },
+                        "onChange": Object {
+                          "type": "func",
+                        },
+                        "onExpand": Object {
+                          "type": "func",
+                        },
+                        "value": [Function],
                       },
                     ],
                     "type": "shape",
@@ -2164,9 +2174,19 @@ Map {
             "search": Object {
               "args": Array [
                 Object {
-                  "value": Object {
+                  "defaultExpanded": Object {
+                    "type": "bool",
+                  },
+                  "defaultValue": Object {
                     "type": "string",
                   },
+                  "onChange": Object {
+                    "type": "func",
+                  },
+                  "onExpand": Object {
+                    "type": "func",
+                  },
+                  "value": [Function],
                 },
               ],
               "type": "shape",
@@ -2184,6 +2204,32 @@ Map {
       },
       "tooltip": Object {
         "type": "node",
+      },
+    },
+  },
+  "TableToolbarSearch" => Object {
+    "defaultProps": Object {
+      "defaultExpanded": false,
+      "defaultValue": "",
+      "onChange": null,
+      "onExpand": null,
+      "value": "",
+    },
+    "propTypes": Object {
+      "defaultExpanded": Object {
+        "type": "bool",
+      },
+      "defaultValue": Object {
+        "type": "string",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onExpand": Object {
+        "type": "func",
+      },
+      "value": Object {
+        "type": "string",
       },
     },
   },
@@ -2775,6 +2821,24 @@ Map {
       },
     },
   },
+  "CatalogContent" => Object {
+    "defaultProps": Object {
+      "description": null,
+      "icon": null,
+    },
+    "propTypes": Object {
+      "description": Object {
+        "type": "string",
+      },
+      "icon": Object {
+        "type": "node",
+      },
+      "title": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
   "SimplePagination" => Object {
     "defaultProps": Object {
       "nextPageText": "Next page",
@@ -2805,24 +2869,6 @@ Map {
         "type": "string",
       },
       "prevPageText": Object {
-        "type": "string",
-      },
-    },
-  },
-  "CatalogContent" => Object {
-    "defaultProps": Object {
-      "description": null,
-      "icon": null,
-    },
-    "propTypes": Object {
-      "description": Object {
-        "type": "string",
-      },
-      "icon": Object {
-        "type": "node",
-      },
-      "title": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -3983,6 +4029,75 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+    },
+  },
+  "TileCatalogNew" => Object {
+    "defaultProps": Object {
+      "hasSearch": false,
+      "hasSort": false,
+      "i18n": Object {
+        "searchPlaceHolderText": "Enter a value",
+      },
+      "numColumns": 1,
+      "numRows": 1,
+      "onSearch": [Function],
+      "onSort": [Function],
+      "selectedSortOption": "",
+      "sortOptions": Array [],
+    },
+    "propTypes": Object {
+      "hasSearch": Object {
+        "type": "bool",
+      },
+      "hasSort": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "placeHolderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "numColumns": Object {
+        "type": "number",
+      },
+      "numRows": Object {
+        "type": "number",
+      },
+      "onSearch": Object {
+        "type": "func",
+      },
+      "onSort": Object {
+        "type": "func",
+      },
+      "selectedSortOption": Object {
+        "type": "string",
+      },
+      "sortOptions": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "tiles": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+      "title": Object {
+        "isRequired": true,
+        "type": "string",
       },
     },
   },

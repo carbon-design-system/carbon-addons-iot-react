@@ -30,7 +30,7 @@
     "test:base": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
     "test:watch": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --updateSnapshot",
+    "test:update": "cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
     "test:clear": "cross-env TZ=America/Chicago jest --clearCache"
   },
   "stylelint": {
