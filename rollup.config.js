@@ -68,7 +68,7 @@ export default {
 
         // Sass components
         {
-          src: ['src/components/**/*.scss'],
+          src: ['src/components/**/*.scss', '!src/components/**/*.story.scss'],
           dest: 'lib/scss',
         },
       ],
