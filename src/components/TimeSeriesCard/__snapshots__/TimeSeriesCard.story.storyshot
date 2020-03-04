@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard bar chart 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard bar chart 1`] = `
 <div
   className="storybook-container"
   style={
@@ -70,7 +70,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -84,7 +84,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard dataFilter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard dataFilter 1`] = `
 <div
   className="storybook-container"
   style={
@@ -154,7 +154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -168,7 +168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard empty 1`] = `
 <div
   className="storybook-container"
   style={
@@ -235,7 +235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -249,7 +249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard empty for a range 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard empty for a range 1`] = `
 <div
   className="storybook-container"
   style={
@@ -319,7 +319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -333,7 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard highlight alert ranges 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard highlight alert ranges 1`] = `
 <div
   className="storybook-container"
   style={
@@ -403,7 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -417,7 +417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard isEditable 1`] = `
 <div
   className="storybook-container"
   style={
@@ -487,7 +487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -501,7 +501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / 5 years 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / 5 years 1`] = `
 <div
   className="storybook-container"
   style={
@@ -571,7 +571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -585,7 +585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / multi line - (Custom color) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / multi line - (Custom color) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -655,7 +655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -669,7 +669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / multi line - (No X/Y Label) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / multi line - (No X/Y Label) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -739,7 +739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -753,7 +753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / multi line - no interval 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / multi line - no interval 1`] = `
 <div
   className="storybook-container"
   style={
@@ -823,7 +823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval day (High Temperature number) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (High Temperature number) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -907,7 +907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -921,7 +921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval day (Low Pressure number) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (Low Pressure number) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -991,7 +991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1005,7 +1005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval day (Month) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (Month) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1075,7 +1075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1089,7 +1089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval day (Week) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval day (Week) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1159,7 +1159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1173,7 +1173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval hour (Diff day) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval hour (Diff day) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1243,7 +1243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1257,7 +1257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval hour (Same day) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval hour (Same day) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1327,7 +1327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1341,7 +1341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval month (Year/ Diff Year) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval month (Year/ Diff Year) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1411,7 +1411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1425,7 +1425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - interval month (Year/ Same Year) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - interval month (Year/ Same Year) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1495,7 +1495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1509,7 +1509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / single line - year interval (One data point) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / single line - year interval (One data point) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1579,7 +1579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1593,7 +1593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard large / units 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard large / units 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1663,7 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1677,7 +1677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard largewide / multi line - (No X/Y Label) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard largewide / multi line - (No X/Y Label) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1747,7 +1747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1761,7 +1761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard locale 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard locale 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1831,7 +1831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1845,7 +1845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard lots of dots 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard lots of dots 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1915,7 +1915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1929,7 +1929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / multi line - (No X/Y Label) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / multi line - (No X/Y Label) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1999,7 +1999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2013,7 +2013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / multiple line - interval month (Year/ Same Year) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / multiple line - interval month (Year/ Same Year) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2083,7 +2083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2097,7 +2097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval day (Month) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day (Month) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2167,7 +2167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2181,7 +2181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval day (Same Month) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day (Same Month) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2251,7 +2251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2265,7 +2265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval day (Week) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day (Week) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2335,7 +2335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2349,7 +2349,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval day 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval day 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2419,7 +2419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2433,7 +2433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval hour (Diff day) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval hour (Diff day) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2503,7 +2503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2517,7 +2517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval hour (Same day) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval hour (Same day) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2587,7 +2587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2601,7 +2601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval hour 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval hour 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2671,7 +2671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2685,7 +2685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval month (Year/ Diff Year) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval month (Year/ Diff Year) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2755,7 +2755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2769,7 +2769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval month (Year/ Same Year) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval month (Year/ Same Year) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2839,7 +2839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2853,7 +2853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - interval year (Two data point) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - interval year (Two data point) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2923,7 +2923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2937,7 +2937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single line - timeRange dayByHour 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - timeRange dayByHour 1`] = `
 <div
   className="storybook-container"
   style={
@@ -3065,7 +3065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3079,7 +3079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeSeriesCard medium / single point - interval hour 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single point - interval hour 1`] = `
 <div
   className="storybook-container"
   style={
@@ -3149,7 +3149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TimeS
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

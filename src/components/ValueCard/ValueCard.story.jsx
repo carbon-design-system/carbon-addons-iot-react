@@ -27,7 +27,7 @@ function getDataStateProp() {
   };
 }
 
-storiesOf('Watson IoT|ValueCard', module)
+storiesOf('Watson IoT/ValueCard', module)
   .add('small / basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (

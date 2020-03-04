@@ -32,7 +32,7 @@ const TableDecorator = storyFn => (
     </Table>
   </TableContainer>
 );
-storiesOf('Watson IoT|TableBodyRow', module)
+storiesOf('Watson IoT/TableBodyRow', module)
   // Table rows need to be rendered in a tbody or else they'll throw an error
   .addDecorator(TableDecorator)
   .add('normal', () => <TableBodyRow {...tableBodyRowProps} />)

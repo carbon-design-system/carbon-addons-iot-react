@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar example with workArea 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar example with workArea 1`] = `
 <div
   className="storybook-container"
   style={
@@ -212,7 +212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -226,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar normal 1`] = `
 <div
   className="storybook-container"
   style={
@@ -420,7 +420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -434,7 +434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar start with tab 2 selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar start with tab 2 selected 1`] = `
 <div
   className="storybook-container"
   style={
@@ -628,7 +628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -642,7 +642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|NavigationBar with actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/NavigationBar with actions 1`] = `
 <div
   className="storybook-container"
   style={
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Navig
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

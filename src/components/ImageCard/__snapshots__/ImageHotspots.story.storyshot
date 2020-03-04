@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
 <div
   className="storybook-container"
   style={
@@ -282,7 +282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -296,7 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageHotspots landscape image & landscape container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots landscape image & landscape container 1`] = `
 <div
   className="storybook-container"
   style={
@@ -578,7 +578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -592,7 +592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageHotspots landscape image & portrait container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots landscape image & portrait container 1`] = `
 <div
   className="storybook-container"
   style={
@@ -874,7 +874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -888,7 +888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageHotspots portrait image & landscape container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots portrait image & landscape container 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1170,7 +1170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1184,7 +1184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ImageHotspots portrait image & portrait container 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots portrait image & portrait container 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1466,7 +1466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Image
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

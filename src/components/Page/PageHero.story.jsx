@@ -15,7 +15,7 @@ const commonPageHeroProps = {
   rightContent: <div style={{ textAlign: 'right' }}>Right Content</div>,
 };
 
-storiesOf('Watson IoT|PageHero (Deprecated)', module)
+storiesOf('Watson IoT/PageHero (Deprecated)', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add(deprecatedStoryTitle, () => (
     <DeprecationNotice deprecatedComponentName="PageHero" replacementComponentName="Hero" />

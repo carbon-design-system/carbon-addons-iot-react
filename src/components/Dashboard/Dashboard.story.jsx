@@ -388,7 +388,7 @@ const commonDashboardProps = {
   },
 };
 
-storiesOf('Watson IoT|Dashboard', module)
+storiesOf('Watson IoT/Dashboard', module)
   .add(
     'basic dashboard',
     () => {

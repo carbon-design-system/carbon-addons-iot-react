@@ -1,1 +1,1 @@
-export default from 'carbon-components-react/lib/components/Search/Search-story';
+export { default as SearchStory } from 'carbon-components-react/lib/components/Search/Search-story';

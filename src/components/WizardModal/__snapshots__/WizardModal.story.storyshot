@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardModal basic wizard modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardModal basic wizard modal 1`] = `
 <div
   className="storybook-container"
   style={
@@ -210,7 +210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -224,7 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardModal custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardModal custom footer 1`] = `
 <div
   className="storybook-container"
   style={
@@ -441,7 +441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -455,7 +455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardModal sending data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardModal sending data 1`] = `
 <div
   className="storybook-container"
   style={
@@ -730,7 +730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

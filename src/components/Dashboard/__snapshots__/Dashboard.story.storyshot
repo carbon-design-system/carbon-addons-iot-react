@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard basic - without last updated header 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard basic - without last updated header 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2144,7 +2144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2158,7 +2158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard basic dashboard 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard basic dashboard 1`] = `
 <div
   className="storybook-container"
   style={
@@ -4309,7 +4309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4323,7 +4323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard custom actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard custom actions 1`] = `
 <div
   className="storybook-container"
   style={
@@ -6506,7 +6506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6520,7 +6520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen bar chart card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen bar chart card 1`] = `
 <div
   className="storybook-container"
   style={
@@ -6685,7 +6685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6699,7 +6699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen image card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen image card 1`] = `
 <div
   className="storybook-container"
   style={
@@ -6954,7 +6954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -6968,7 +6968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen line card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen line card 1`] = `
 <div
   className="storybook-container"
   style={
@@ -7133,7 +7133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -7147,7 +7147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard full screen table card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen table card 1`] = `
 <div
   className="storybook-container"
   style={
@@ -8973,7 +8973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -8987,7 +8987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard i18n labels 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard i18n labels 1`] = `
 <div
   className="storybook-container"
   style={
@@ -11136,7 +11136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -11150,7 +11150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard only value cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard only value cards 1`] = `
 <div
   className="storybook-container"
   style={
@@ -22268,7 +22268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -22282,7 +22282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard sidebar 1`] = `
 <div
   className="storybook-container"
   style={
@@ -24458,7 +24458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -24472,7 +24472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard with custom cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard with custom cards 1`] = `
 <div
   className="storybook-container"
   style={
@@ -25248,7 +25248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

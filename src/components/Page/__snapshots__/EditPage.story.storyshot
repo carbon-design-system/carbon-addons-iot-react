@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) isLoading 1`] = `
 <div
   className="storybook-container"
   style={
@@ -66,7 +66,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -80,7 +80,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
   style={
@@ -187,7 +187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -201,7 +201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) with blurb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) with blurb 1`] = `
 <div
   className="storybook-container"
   style={
@@ -313,7 +313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -327,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) with breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) with breadcrumb 1`] = `
 <div
   className="storybook-container"
   style={
@@ -479,7 +479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -493,7 +493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditPage (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditPage (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
   style={
@@ -586,7 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|EditP
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
