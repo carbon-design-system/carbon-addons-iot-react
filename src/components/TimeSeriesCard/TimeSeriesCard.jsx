@@ -9,6 +9,7 @@ import filter from 'lodash/filter';
 import memoize from 'lodash/memoize';
 import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import uniqBy from 'lodash/uniqBy';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
@@ -96,7 +97,7 @@ export const determinePrecision = (size, value, defaultPrecision) => {
  */
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
   return {
-    labels: series.map(({ label }) => label),
+    labels: uniqBy(values, timeDataSourceId).map(val => val[timeDataSourceId]),
     datasets: series.map(({ dataSourceId, dataFilter = {}, label, color }) => ({
       label,
       ...(color ? { fillColors: [color] } : {}),
