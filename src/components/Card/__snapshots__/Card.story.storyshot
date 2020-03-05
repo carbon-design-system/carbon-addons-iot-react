@@ -1730,7 +1730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with ellipsed title tooltip & external tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with ellipsed title tooltip & external tooltip 1`] = `
 <div
   className="storybook-container"
   style={
