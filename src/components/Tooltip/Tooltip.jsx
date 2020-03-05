@@ -23,7 +23,7 @@ const FloatingMenuContainer = props => {
 /**
  * This component extends the Carbon tooltip by simplifying the process
  * of getting the tooltip floating menu to follow the triggering element
- * when the user scrolls the page/container.
+ * when the user scrolls a page/container that has fixed position.
  */
 const Tooltip = React.forwardRef((props, ref) => {
   const { children, scrollWithTriggerElement, menuOffset, ...other } = props;
@@ -31,15 +31,9 @@ const Tooltip = React.forwardRef((props, ref) => {
     menuOffset || !scrollWithTriggerElement
       ? menuOffset
       : (menuBody, menuDirection) => {
-          // console.info(menuBody.getBoundingClientRect());
           const container = menuBody.closest('[data-floating-menu-container]');
-          console.info(container);
           const caretHeight = 7;
-          const {
-            x: triggerX,
-            y: triggerY,
-            width: triggerWidth,
-          } = container.getBoundingClientRect();
+          const { x: triggerX, y: triggerY } = container.getBoundingClientRect();
 
           let offset;
           switch (menuDirection) {
@@ -56,13 +50,9 @@ const Tooltip = React.forwardRef((props, ref) => {
               };
               break;
             case DIRECTION_LEFT:
-              // (left position of trigger element) - (width of the menu) + (scrollX?) - offsetleft,
-              console.info('container', container);
-              // menuBody.getElementByClass('bx--tooltip__caret')[0].getBoundingClientRect();
-              offset = {
-                top: -triggerY,
-                left: triggerX,
-              };
+              console.error(
+                'Position LEFT is not automatically supported but must be handled on an individual basis.'
+              );
               break;
             case DIRECTION_RIGHT:
               offset = {
@@ -72,7 +62,6 @@ const Tooltip = React.forwardRef((props, ref) => {
             default:
               break;
           }
-          // return { top: 0, left: 0 };
           return offset;
         };
 

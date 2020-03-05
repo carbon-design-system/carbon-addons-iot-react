@@ -29,10 +29,10 @@ storiesOf('Watson IoT/Card', module)
       </div>
     );
   })
-  .add('with ellipsed title tooltip & external tooltip', () => {
+  .add('with scrolling tooltips and fixed containers', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div>
+      <div style={{ position: 'fixed' }}>
         <div style={{ height: '30vh' }} />
         <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
           <Card

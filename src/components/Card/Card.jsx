@@ -261,7 +261,6 @@ const Card = props => {
                           showIcon={false}
                           triggerClassName="title--text"
                           triggerText={title}
-                          direction="left"
                         >
                           {title}
                         </Tooltip>
@@ -276,7 +275,6 @@ const Card = props => {
                           triggerId={`card-tooltip-trigger-${id}`}
                           tooltipId={`card-tooltip-${id}`}
                           triggerText=""
-                          direction="left"
                         >
                           {tooltip}
                         </Tooltip>
