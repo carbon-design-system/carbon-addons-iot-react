@@ -1,0 +1,37 @@
+@import '../../globals/vars';
+
+.storybook-container {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.#{$iot-prefix}--main-content {
+  padding-top: 3rem;
+  height: 100%;
+  transition: all 0.11s cubic-bezier(0.2, 0, 1, 0.9);
+  width: 100%;
+
+  @media (min-width: 66em) {
+    width: calc(100% - 3rem);
+
+    .#{$iot-prefix}--side-nav--expanded + & {
+      width: calc(100% - 16rem);
+    }
+
+    html:not([dir='rtl']) & {
+      transform: translateX(3rem);
+    }
+
+    html:not([dir='rtl']) .#{$iot-prefix}--side-nav--expanded + & {
+      transform: translateX(16rem);
+    }
+
+    html[dir='rtl'] & {
+      transform: translateX(-3rem);
+    }
+
+    html[dir='rtl'] .#{$iot-prefix}--side-nav--expanded + & {
+      transform: translateX(-16rem);
+    }
+  }
+}

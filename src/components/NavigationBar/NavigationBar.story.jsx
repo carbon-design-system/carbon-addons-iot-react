@@ -64,7 +64,7 @@ const StatefulNavigationBar = () => {
   );
 };
 
-storiesOf('Watson IoT|NavigationBar', module)
+storiesOf('Watson IoT/NavigationBar', module)
   .add('normal', () => <NavigationBar {...navBarProps} />)
   .add('start with tab 2 selected', () => <NavigationBar {...navBarProps} selected={1} />)
   .add('with actions', () => (

@@ -138,7 +138,7 @@ export const itemsAndComponents = items.map((item, i) => ({
   component: itemComponents[i],
 }));
 
-storiesOf('Watson IoT|TableDetailWizard', module)
+storiesOf('Watson IoT/TableDetailWizard', module)
   .add('Stateful example', () => (
     <StatefulTableDetailWizard
       currentItemId="step1"

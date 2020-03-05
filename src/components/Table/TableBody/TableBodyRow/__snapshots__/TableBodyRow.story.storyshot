@@ -1,528 +1,851 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow is not selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is not selectable 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="bx--data-table-container"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <table
+        className="bx--data-table bx--data-table--no-border"
       >
-        <div
-          className="bx--data-table-container"
+        <tbody
+          aria-live="polite"
         >
-          <table
-            className="bx--data-table bx--data-table--no-border"
+          <tr
+            className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+            onClick={[Function]}
           >
-            <tbody
-              aria-live="polite"
+            <td
+              className="bx--checkbox-table-cell"
+              onChange={null}
+              onClick={[Function]}
             >
-              <tr
-                className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                onClick={[Function]}
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
               >
-                <td
-                  className="bx--checkbox-table-cell"
-                  onChange={null}
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    disabled={true}
+                    id="select-row-tableId-rowId"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="select-row-tableId-rowId"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text bx--visually-hidden"
+                    >
+                      Select row
+                    </span>
+                  </label>
+                </div>
+              </span>
+            </td>
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+              >
+                <button
+                  className="bx--btn bx--btn--ghost"
+                  data-testid="tableId-rowId-row-actions-button-add"
+                  disabled={false}
                   onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                  <svg
+                    aria-hidden="true"
+                    aria-label="More actions"
+                    className="bx--btn__icon"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <div
-                      className="bx--form-item bx--checkbox-wrapper"
-                    >
-                      <input
-                        checked={false}
-                        className="bx--checkbox"
-                        disabled={true}
-                        id="select-row-tableId-rowId"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <label
-                        className="bx--checkbox-label"
-                        htmlFor="select-row-tableId-rowId"
-                        title={null}
-                      >
-                        <span
-                          className="bx--checkbox-label-text bx--visually-hidden"
-                        >
-                          Select row
-                        </span>
-                      </label>
-                    </div>
-                  </span>
-                </td>
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
-                >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-                <td
-                  className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
-                >
-                  <div
-                    className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
-                  >
-                    <button
-                      className="bx--btn bx--btn--ghost"
-                      data-testid="tableId-rowId-row-actions-button-add"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="More actions"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={32}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={32}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+                    <path
+                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow is selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is selectable 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="bx--data-table-container"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <table
+        className="bx--data-table bx--data-table--no-border"
       >
-        <div
-          className="bx--data-table-container"
+        <tbody
+          aria-live="polite"
         >
-          <table
-            className="bx--data-table bx--data-table--no-border"
+          <tr
+            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+            onClick={[Function]}
           >
-            <tbody
-              aria-live="polite"
+            <td
+              className="bx--checkbox-table-cell"
+              onChange={[Function]}
+              onClick={[Function]}
             >
-              <tr
-                className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
-                onClick={[Function]}
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
               >
-                <td
-                  className="bx--checkbox-table-cell"
-                  onChange={[Function]}
+                <div
+                  className="bx--form-item bx--checkbox-wrapper"
+                >
+                  <input
+                    checked={false}
+                    className="bx--checkbox"
+                    disabled={false}
+                    id="select-row-tableId-rowId"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  <label
+                    className="bx--checkbox-label"
+                    htmlFor="select-row-tableId-rowId"
+                    title={null}
+                  >
+                    <span
+                      className="bx--checkbox-label-text bx--visually-hidden"
+                    >
+                      Select row
+                    </span>
+                  </label>
+                </div>
+              </span>
+            </td>
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+              >
+                <button
+                  className="bx--btn bx--btn--ghost"
+                  data-testid="tableId-rowId-row-actions-button-add"
+                  disabled={false}
                   onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
                 >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                  <svg
+                    aria-hidden="true"
+                    aria-label="More actions"
+                    className="bx--btn__icon"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <div
-                      className="bx--form-item bx--checkbox-wrapper"
-                    >
-                      <input
-                        checked={false}
-                        className="bx--checkbox"
-                        disabled={false}
-                        id="select-row-tableId-rowId"
-                        onChange={[Function]}
-                        type="checkbox"
-                      />
-                      <label
-                        className="bx--checkbox-label"
-                        htmlFor="select-row-tableId-rowId"
-                        title={null}
-                      >
-                        <span
-                          className="bx--checkbox-label-text bx--visually-hidden"
-                        >
-                          Select row
-                        </span>
-                      </label>
-                    </div>
-                  </span>
-                </td>
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
-                >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-                <td
-                  className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
-                >
-                  <div
-                    className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
-                  >
-                    <button
-                      className="bx--btn bx--btn--ghost"
-                      data-testid="tableId-rowId-row-actions-button-add"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="More actions"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={32}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={32}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+                    <path
+                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow normal 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="bx--data-table-container"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <table
+        className="bx--data-table bx--data-table--no-border"
       >
-        <div
-          className="bx--data-table-container"
+        <tbody
+          aria-live="polite"
         >
-          <table
-            className="bx--data-table bx--data-table--no-border"
+          <tr
+            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+            onClick={[Function]}
           >
-            <tbody
-              aria-live="polite"
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
             >
-              <tr
-                className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
-                onClick={[Function]}
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
               >
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
+                <span
+                  title="My String"
                 >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+                  My String
+                </span>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="bx--data-table-container"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <table
+        className="bx--data-table bx--data-table--no-border"
       >
-        <div
-          className="bx--data-table-container"
+        <tbody
+          aria-live="polite"
         >
-          <table
-            className="bx--data-table bx--data-table--no-border"
+          <tr
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            data-child-count={0}
+            data-nesting-offset={0}
+            data-parent-row={true}
+            onClick={[Function]}
           >
-            <tbody
-              aria-live="polite"
+            <td
+              className="bx--table-expand"
+              headers="expand"
             >
-              <tr
-                className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
-                data-child-count={0}
-                data-nesting-offset={0}
-                data-parent-row={true}
+              <button
+                aria-label="Click to expand."
+                className="bx--table-expand__button"
                 onClick={[Function]}
+                title="Click to expand."
               >
-                <td
-                  className="bx--table-expand"
-                  headers="expand"
+                <svg
+                  aria-label="Click to expand."
+                  className="bx--table-expand__svg"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <button
-                    aria-label="Click to expand."
-                    className="bx--table-expand__button"
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+              >
+                <button
+                  className="bx--btn bx--btn--ghost"
+                  data-testid="tableId-rowId-row-actions-button-add"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="More actions"
+                    className="bx--btn__icon"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions with overflow 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--data-table-container"
+    >
+      <table
+        className="bx--data-table bx--data-table--no-border"
+      >
+        <tbody
+          aria-live="polite"
+        >
+          <tr
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            data-child-count={0}
+            data-nesting-offset={0}
+            data-parent-row={true}
+            onClick={[Function]}
+          >
+            <td
+              className="bx--table-expand"
+              headers="expand"
+            >
+              <button
+                aria-label="Click to expand."
+                className="bx--table-expand__button"
+                onClick={[Function]}
+                title="Click to expand."
+              >
+                <svg
+                  aria-label="Click to expand."
+                  className="bx--table-expand__svg"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+              >
+                <button
+                  className="bx--btn bx--btn--ghost"
+                  data-testid="tableId-rowId-row-actions-button-add"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="More actions"
+                    className="bx--btn__icon"
+                    focusable="false"
+                    height={32}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 32 32"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  aria-label="More actions"
+                  className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eSvzkA bx--overflow-menu"
+                  data-testid="tableId-rowId-row-actions-cell-overflow"
+                  id="tableId-rowId-row-actions-cell-overflow"
+                  onClick={[Function]}
+                  onClose={[Function]}
+                  onKeyDown={[Function]}
+                  open={false}
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-label="More actions"
+                    className="bx--overflow-menu__icon"
+                    focusable="false"
+                    height={16}
                     onClick={[Function]}
-                    title="Click to expand."
+                    onKeyDown={[Function]}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    style={
+                      Object {
+                        "willChange": "transform",
+                      }
+                    }
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="8"
+                      cy="3"
+                      r="1"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="1"
+                    />
+                    <circle
+                      cx="8"
+                      cy="13"
+                      r="1"
+                    />
+                    <title>
+                      More actions
+                    </title>
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions error 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--data-table-container"
+    >
+      <table
+        className="bx--data-table bx--data-table--no-border"
+      >
+        <tbody
+          aria-live="polite"
+        >
+          <tr
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            data-child-count={0}
+            data-nesting-offset={0}
+            data-parent-row={true}
+            onClick={[Function]}
+          >
+            <td
+              className="bx--table-expand"
+              headers="expand"
+            >
+              <button
+                aria-label="Click to expand."
+                className="bx--table-expand__button"
+                onClick={[Function]}
+                title="Click to expand."
+              >
+                <svg
+                  aria-label="Click to expand."
+                  className="bx--table-expand__svg"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+              >
+                <span
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jEXYjq"
+              >
+                <div
+                  className="bx--tooltip__label"
+                  id="tooltip-error"
+                >
+                  
+                  <div
+                    aria-describedby={null}
+                    aria-haspopup="true"
+                    className="bx--tooltip__trigger"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
                   >
                     <svg
-                      aria-label="Click to expand."
-                      className="bx--table-expand__svg"
+                      aria-hidden={true}
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
-                      role="img"
                       style={
                         Object {
                           "willChange": "transform",
@@ -533,695 +856,204 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                        d="M14.5 14h-13c-.2 0-.3-.1-.4-.2-.1-.2-.1-.3 0-.5l6.5-12c.1-.3.4-.4.6-.2.1 0 .2.1.2.2l6.5 12c.1.2.1.3 0 .5 0 .1-.2.2-.4.2zM2.3 13h11.3L8 2.5 2.3 13z"
+                      />
+                      <path
+                        d="M7.5 6h1v3.5h-1zm.5 4.8c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8s-.4-.8-.8-.8z"
                       />
                     </svg>
-                  </button>
-                </td>
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
-                >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-                <td
-                  className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
-                >
-                  <div
-                    className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
-                  >
-                    <button
-                      className="bx--btn bx--btn--ghost"
-                      data-testid="tableId-rowId-row-actions-button-add"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="More actions"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={32}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={32}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                        />
-                      </svg>
-                    </button>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+                </div>
+                <span
+                  className="RowActionsError__StyledSpan-sc-1htz5gr-0 gQemCK"
+                >
+                  Action failed
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow row actions with overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions running 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="bx--data-table-container"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <table
+        className="bx--data-table bx--data-table--no-border"
       >
-        <div
-          className="bx--data-table-container"
+        <tbody
+          aria-live="polite"
         >
-          <table
-            className="bx--data-table bx--data-table--no-border"
+          <tr
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            data-child-count={0}
+            data-nesting-offset={0}
+            data-parent-row={true}
+            onClick={[Function]}
           >
-            <tbody
-              aria-live="polite"
+            <td
+              className="bx--table-expand"
+              headers="expand"
             >
-              <tr
-                className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
-                data-child-count={0}
-                data-nesting-offset={0}
-                data-parent-row={true}
+              <button
+                aria-label="Click to expand."
+                className="bx--table-expand__button"
                 onClick={[Function]}
+                title="Click to expand."
               >
-                <td
-                  className="bx--table-expand"
-                  headers="expand"
+                <svg
+                  aria-label="Click to expand."
+                  className="bx--table-expand__svg"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <button
-                    aria-label="Click to expand."
-                    className="bx--table-expand__button"
-                    onClick={[Function]}
-                    title="Click to expand."
-                  >
-                    <svg
-                      aria-label="Click to expand."
-                      className="bx--table-expand__svg"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                      />
-                    </svg>
-                  </button>
-                </td>
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td
+              align="start"
+              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+              >
+                <span
+                  title="My String"
                 >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-                <td
-                  className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jEXYjq"
+              >
+                <div
+                  aria-atomic="true"
+                  aria-labelledby="loading-id-8"
+                  aria-live="assertive"
+                  className="bx--loading bx--loading--small"
                 >
-                  <div
-                    className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
+                  <label
+                    className="bx--visually-hidden"
+                    id="loading-id-8"
                   >
-                    <button
-                      className="bx--btn bx--btn--ghost"
-                      data-testid="tableId-rowId-row-actions-button-add"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        aria-label="More actions"
-                        className="bx--btn__icon"
-                        focusable="false"
-                        height={32}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={32}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="More actions"
-                      className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eSvzkA bx--overflow-menu"
-                      data-testid="tableId-rowId-row-actions-cell-overflow"
-                      id="tableId-rowId-row-actions-cell-overflow"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      tabIndex={0}
-                    >
-                      <svg
-                        aria-label="More actions"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={16}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="8"
-                          cy="3"
-                          r="1"
-                        />
-                        <circle
-                          cx="8"
-                          cy="8"
-                          r="1"
-                        />
-                        <circle
-                          cx="8"
-                          cy="13"
-                          r="1"
-                        />
-                        <title>
-                          More actions
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+                    Active loading indicator
+                  </label>
+                  <svg
+                    className="bx--loading__svg"
+                    viewBox="-75 -75 150 150"
+                  >
+                    <title>
+                      Active loading indicator
+                    </title>
+                    <circle
+                      className="bx--loading__background"
+                      cx="0"
+                      cy="0"
+                      r="26.8125"
+                    />
+                    <circle
+                      className="bx--loading__stroke"
+                      cx="0"
+                      cy="0"
+                      r="26.8125"
+                    />
+                  </svg>
+                </div>
+                In progress
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow rowActions error 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
+  <button
+    className="info__show-button"
+    onClick={[Function]}
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
       }
     }
+    type="button"
   >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="bx--data-table-container"
-        >
-          <table
-            className="bx--data-table bx--data-table--no-border"
-          >
-            <tbody
-              aria-live="polite"
-            >
-              <tr
-                className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
-                data-child-count={0}
-                data-nesting-offset={0}
-                data-parent-row={true}
-                onClick={[Function]}
-              >
-                <td
-                  className="bx--table-expand"
-                  headers="expand"
-                >
-                  <button
-                    aria-label="Click to expand."
-                    className="bx--table-expand__button"
-                    onClick={[Function]}
-                    title="Click to expand."
-                  >
-                    <svg
-                      aria-label="Click to expand."
-                      className="bx--table-expand__svg"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                      />
-                    </svg>
-                  </button>
-                </td>
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
-                >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-                <td
-                  className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
-                >
-                  <div
-                    className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jEXYjq"
-                  >
-                    <div
-                      className="bx--tooltip__label"
-                      id="tooltip-error"
-                    >
-                      
-                      <div
-                        aria-describedby={null}
-                        aria-haspopup="true"
-                        className="bx--tooltip__trigger"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseOver={[Function]}
-                        role="button"
-                        tabIndex={0}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14.5 14h-13c-.2 0-.3-.1-.4-.2-.1-.2-.1-.3 0-.5l6.5-12c.1-.3.4-.4.6-.2.1 0 .2.1.2.2l6.5 12c.1.2.1.3 0 .5 0 .1-.2.2-.4.2zM2.3 13h11.3L8 2.5 2.3 13z"
-                          />
-                          <path
-                            d="M7.5 6h1v3.5h-1zm.5 4.8c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8s-.4-.8-.8-.8z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      className="RowActionsError__StyledSpan-sc-1htz5gr-0 gQemCK"
-                    >
-                      Action failed
-                    </span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow rowActions running 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="bx--data-table-container"
-        >
-          <table
-            className="bx--data-table bx--data-table--no-border"
-          >
-            <tbody
-              aria-live="polite"
-            >
-              <tr
-                className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
-                data-child-count={0}
-                data-nesting-offset={0}
-                data-parent-row={true}
-                onClick={[Function]}
-              >
-                <td
-                  className="bx--table-expand"
-                  headers="expand"
-                >
-                  <button
-                    aria-label="Click to expand."
-                    className="bx--table-expand__button"
-                    onClick={[Function]}
-                    title="Click to expand."
-                  >
-                    <svg
-                      aria-label="Click to expand."
-                      className="bx--table-expand__svg"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                      />
-                    </svg>
-                  </button>
-                </td>
-                <td
-                  align="start"
-                  className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                  data-column="string"
-                  data-offset={0}
-                  id="cell-tableId-rowId-string"
-                  offset={0}
-                >
-                  <span
-                    className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                  >
-                    <span
-                      title="My String"
-                    >
-                      My String
-                    </span>
-                  </span>
-                </td>
-                <td
-                  className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
-                >
-                  <div
-                    className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jEXYjq"
-                  >
-                    <div
-                      aria-atomic="true"
-                      aria-labelledby="loading-id-8"
-                      aria-live="assertive"
-                      className="bx--loading bx--loading--small"
-                    >
-                      <label
-                        className="bx--visually-hidden"
-                        id="loading-id-8"
-                      >
-                        Active loading indicator
-                      </label>
-                      <svg
-                        className="bx--loading__svg"
-                        viewBox="-75 -75 150 150"
-                      >
-                        <title>
-                          Active loading indicator
-                        </title>
-                        <circle
-                          className="bx--loading__background"
-                          cx="0"
-                          cy="0"
-                          r="26.8125"
-                        />
-                        <circle
-                          className="bx--loading__stroke"
-                          cx="0"
-                          cy="0"
-                          r="26.8125"
-                        />
-                      </svg>
-                    </div>
-                    In progress
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
+    Show Info
+  </button>
 </div>
 `;

@@ -1,503 +1,407 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb current page with aria-current 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb current page with aria-current 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="breadcrumb--container"
+      data-testid="overflow"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <nav
+        aria-label="Breadcrumb"
+        className="some-class"
       >
-        <div
-          className="breadcrumb--container"
-          data-testid="overflow"
+        <ol
+          className="bx--breadcrumb"
         >
-          <nav
-            aria-label="Breadcrumb"
-            className="some-class"
+          <li
+            className="bx--breadcrumb-item"
           >
-            <ol
-              className="bx--breadcrumb"
+            <a
+              className="bx--link"
+              href="/#"
             >
-              <li
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  className="bx--link"
-                  href="/#"
-                >
-                  Breadcrumb 1
-                </a>
-              </li>
-              <li
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  className="bx--link"
-                  href="#"
-                >
-                  Breadcrumb 2
-                </a>
-              </li>
-              <li
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  aria-current="page"
-                  className="bx--link"
-                  href="#"
-                >
-                  Breadcrumb 3
-                </a>
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+              Breadcrumb 1
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+          >
+            <a
+              className="bx--link"
+              href="#"
+            >
+              Breadcrumb 2
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+          >
+            <a
+              aria-current="page"
+              className="bx--link"
+              href="#"
+            >
+              Breadcrumb 3
+            </a>
+          </li>
+        </ol>
+      </nav>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb default 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="breadcrumb--container"
+      data-testid="overflow"
     >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+      <nav
+        aria-label="Breadcrumb"
+        className="some-class"
       >
-        <div
-          className="breadcrumb--container"
-          data-testid="overflow"
+        <ol
+          className="bx--breadcrumb"
         >
-          <nav
-            aria-label="Breadcrumb"
-            className="some-class"
+          <li
+            className="bx--breadcrumb-item"
           >
-            <ol
-              className="bx--breadcrumb"
+            <a
+              className="bx--link"
+              href="#"
             >
-              <li
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  className="bx--link"
-                  href="#"
-                >
-                  Breadcrumb 1
-                </a>
-              </li>
-              <li
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  className="bx--link"
-                  href="#"
-                >
-                  Breadcrumb 2
-                </a>
-              </li>
-              <li
-                className="bx--breadcrumb-item"
-              >
-                <a
-                  className="bx--link"
-                  href="#"
-                >
-                  Breadcrumb 3
-                </a>
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
+              Breadcrumb 1
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+          >
+            <a
+              className="bx--link"
+              href="#"
+            >
+              Breadcrumb 2
+            </a>
+          </li>
+          <li
+            className="bx--breadcrumb-item"
+          >
+            <a
+              className="bx--link"
+              href="#"
+            >
+              Breadcrumb 3
+            </a>
+          </li>
+        </ol>
+      </nav>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb skeleton 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb skeleton 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="bx--breadcrumb bx--skeleton"
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="bx--breadcrumb-item"
       >
-        <div
-          className="bx--breadcrumb bx--skeleton"
+        <span
+          className="bx--link"
         >
-          <div
-            className="bx--breadcrumb-item"
-          >
-            <span
-              className="bx--link"
-            >
-               
-            </span>
-          </div>
-          <div
-            className="bx--breadcrumb-item"
-          >
-            <span
-              className="bx--link"
-            >
-               
-            </span>
-          </div>
-          <div
-            className="bx--breadcrumb-item"
-          >
-            <span
-              className="bx--link"
-            >
-               
-            </span>
-          </div>
-        </div>
+           
+        </span>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
+      <div
+        className="bx--breadcrumb-item"
       >
-        Show Info
-      </button>
+        <span
+          className="bx--link"
+        >
+           
+        </span>
+      </div>
+      <div
+        className="bx--breadcrumb-item"
+      >
+        <span
+          className="bx--link"
+        >
+           
+        </span>
+      </div>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb with useResizeObserver 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb with useResizeObserver 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "border": "1px solid",
+          "padding": "1rem",
+          "width": "50vw",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="breadcrumb--container"
+        data-testid="overflow"
       >
-        <div
-          style={
-            Object {
-              "border": "1px solid",
-              "padding": "1rem",
-              "width": "50vw",
-            }
-          }
+        <nav
+          aria-label="Breadcrumb"
+          className="some-class"
         >
-          <div
-            className="breadcrumb--container"
-            data-testid="overflow"
+          <ol
+            className="bx--breadcrumb"
           >
-            <nav
-              aria-label="Breadcrumb"
-              className="some-class"
+            <li
+              className="bx--breadcrumb-item"
+              title="1 Homexxxxxxxxxxxxxxxxxxxxxx"
             >
-              <ol
-                className="bx--breadcrumb"
+              <a
+                className="bx--link"
+                href="#"
               >
-                <li
-                  className="bx--breadcrumb-item"
-                  title="1 Homexxxxxxxxxxxxxxxxxxxxxx"
-                >
-                  <a
-                    className="bx--link"
-                    href="#"
-                  >
-                    1 Homexxxxxxxxxxxxxxxxxxxxxx
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                  onClick={[Function]}
-                  title="2 Devices"
-                >
-                  <a
-                    className="bx--link"
-                    href="#"
-                  >
-                    2 Devices
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                  title="3 A really long page name"
-                >
-                  <a
-                    className="bx--link"
-                    href="#"
-                  >
-                    3 A really long page name
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item"
-                  title="4 Another page"
-                >
-                  <a
-                    className="bx--link"
-                    href="#"
-                  >
-                    4 Another page
-                  </a>
-                </li>
-                <li
-                  className="bx--breadcrumb-item bx--breadcrumb-item--current"
-                  title="5th level page"
-                >
-                  <a
-                    className="bx--link"
-                    href="#"
-                  >
-                    5th level page
-                  </a>
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-        <p
-          style={
-            Object {
-              "marginTop": "5rem",
-            }
-          }
-        >
-          Note: This prop utilizes a
-           
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver"
-          >
-            ResizeObserver
-          </a>
-           to detect changes to the container width. A
-           
-          <a
-            href="https://www.npmjs.com/package/resize-observer-polyfill"
-          >
-            polyfill
-          </a>
-           will likely need to be added to your application due to
-           
-          <a
-            href="https://caniuse.com/#feat=resizeobserver"
-          >
-            current browser support
-          </a>
-          .
-        </p>
+                1 Homexxxxxxxxxxxxxxxxxxxxxx
+              </a>
+            </li>
+            <li
+              className="bx--breadcrumb-item"
+              onClick={[Function]}
+              title="2 Devices"
+            >
+              <a
+                className="bx--link"
+                href="#"
+              >
+                2 Devices
+              </a>
+            </li>
+            <li
+              className="bx--breadcrumb-item"
+              title="3 A really long page name"
+            >
+              <a
+                className="bx--link"
+                href="#"
+              >
+                3 A really long page name
+              </a>
+            </li>
+            <li
+              className="bx--breadcrumb-item"
+              title="4 Another page"
+            >
+              <a
+                className="bx--link"
+                href="#"
+              >
+                4 Another page
+              </a>
+            </li>
+            <li
+              className="bx--breadcrumb-item bx--breadcrumb-item--current"
+              title="5th level page"
+            >
+              <a
+                className="bx--link"
+                href="#"
+              >
+                5th level page
+              </a>
+            </li>
+          </ol>
+        </nav>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
+    <p
+      style={
+        Object {
+          "marginTop": "5rem",
+        }
+      }
+    >
+      Note: This prop utilizes a
+       
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver"
+      >
+        ResizeObserver
+      </a>
+       to detect changes to the container width. A
+       
+      <a
+        href="https://www.npmjs.com/package/resize-observer-polyfill"
+      >
+        polyfill
+      </a>
+       will likely need to be added to your application due to
+       
+      <a
+        href="https://caniuse.com/#feat=resizeobserver"
+      >
+        current browser support
+      </a>
+      .
+    </p>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;

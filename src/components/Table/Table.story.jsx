@@ -418,7 +418,7 @@ export const initialState = {
   },
 };
 
-storiesOf('Watson IoT|Table', module)
+storiesOf('Watson IoT/Table', module)
   .add(
     'Simple Stateful Example',
     () => (
@@ -720,6 +720,31 @@ storiesOf('Watson IoT|Table', module)
     {
       info: {
         text: `The table will automatically adjust to narrow mode if you set a style or class that makes max-width smaller than 600 pixels (which is the width needed to render the full pagination controls) `,
+      },
+    }
+  )
+  .add(
+    'with pre-filled search',
+    () => (
+      <StatefulTable
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        style={{ maxWidth: '300px' }}
+        columns={tableColumns.slice(0, 2)}
+        data={tableData}
+        actions={actions}
+        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'toyota',
+            },
+          },
+        }}
+      />
+    ),
+    {
+      info: {
+        text: `The table will pre-fill a search value, expand the search input and trigger a search`,
       },
     }
   )

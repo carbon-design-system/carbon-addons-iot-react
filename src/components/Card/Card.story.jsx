@@ -9,7 +9,7 @@ import Table from '../Table/Table';
 
 import Card from './Card';
 
-storiesOf('Watson IoT|Card', module)
+storiesOf('Watson IoT/Card', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
@@ -29,7 +29,7 @@ storiesOf('Watson IoT|Card', module)
       </div>
     );
   })
-  .add('with ellipsed title and tooltip', () => {
+  .add('with ellipsed title tooltip & external tooltip', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div>
@@ -75,6 +75,7 @@ storiesOf('Watson IoT|Card', module)
       </div>
     );
   })
+
   .add('basic with render prop', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (

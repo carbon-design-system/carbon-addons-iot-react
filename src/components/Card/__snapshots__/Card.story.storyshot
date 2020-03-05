@@ -1,71 +1,552 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card basic 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-basic"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="iot--card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-basic"
+          <span
+            className="card--title"
+            title="Card Title"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Card Title"
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
               >
-                <div
-                  className="title--text"
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Card Title
-                </div>
-              </span>
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+            <button
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              onClick={[Function]}
+            >
+              <svg
+                description="Expand to fullscreen"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                title="Expand to fullscreen"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        />
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card basic with render prop 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="render-prop-basic"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card with render prop"
+          >
+            <div
+              className="title--text"
+            >
+              Card with render prop
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+            <button
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              onClick={[Function]}
+            >
+              <svg
+                description="Expand to fullscreen"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                title="Expand to fullscreen"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <p>
+            Content width is 
+             and height is 
+            NaN
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card error 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-error"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            Error loading data for this card:  API threw Nullpointer
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card error/small 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard-error-small"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 ggrDpu"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            Data error.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card implementing a custom card 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="Card__CardWrapper-v5r71h-0 bHPJyP"
+      id="mycard"
+    >
+      <div
+        className="Card__CardContent-v5r71h-1 hxiPNM"
+      >
+        <div
+          className="iot--table-container bx--data-table-container"
+        >
+          <section
+            aria-label="data table toolbar"
+            className="bx--table-toolbar"
+          >
+            <div
+              className="bx--batch-actions iot--table-batch-actions"
+            >
               <div
-                className="card--toolbar"
+                className="bx--action-list"
+              >
+                <button
+                  className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+                  disabled={false}
+                  onClick={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div
+                className="bx--batch-summary"
+              >
+                <p
+                  className="bx--batch-summary__para"
+                >
+                  <span>
+                    0 item selected
+                  </span>
+                </p>
+              </div>
+            </div>
+            <label
+              className="iot--table-toolbar-secondary-title"
+            >
+              Card Title
+            </label>
+            <div
+              className="bx--toolbar-content iot--table-toolbar-content"
+            >
+              <div
+                className="iot--card--toolbar card--toolbar"
               >
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -145,2408 +626,1670 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
                 </button>
               </div>
             </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            />
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card basic with render prop 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
+          </section>
           <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="render-prop-basic"
+            className="addons-iot-table-container"
           >
-            <div
-              className="card--header"
+            <table
+              className="bx--data-table bx--data-table--no-border"
+              title={null}
             >
-              <span
-                className="card--title"
-                title="Card with render prop"
+              <thead
+                onMouseMove={null}
+                onMouseUp={null}
               >
-                <div
-                  className="title--text"
-                >
-                  Card with render prop
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-                <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
-                  onClick={[Function]}
-                >
-                  <svg
-                    description="Expand to fullscreen"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
+                <tr>
+                  <th
+                    align="start"
+                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                    data-column="value1"
+                    id="column-value1"
+                    scope="col"
                     style={
                       Object {
-                        "willChange": "transform",
+                        "width": undefined,
                       }
                     }
-                    title="Expand to fullscreen"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                    />
-                    <path
-                      d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <p>
-                Content width is 
-                 and height is 
-                NaN
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card error 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-error"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                Error loading data for this card:  API threw Nullpointer
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card error/small 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bAafuV"
-            id="facilitycard-error-small"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                Data error.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card implementing a custom card 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="Card__CardWrapper-v5r71h-0 bHPJyP"
-          id="mycard"
-        >
-          <div
-            className="Card__CardContent-v5r71h-1 hxiPNM"
-          >
-            <div
-              className="iot--table-container bx--data-table-container"
-            >
-              <section
-                aria-label="data table toolbar"
-                className="bx--table-toolbar"
-              >
-                <div
-                  className="bx--batch-actions iot--table-batch-actions"
-                >
-                  <div
-                    className="bx--action-list"
-                  >
-                    <button
-                      className="bx--batch-summary__cancel bx--btn bx--btn--primary"
-                      disabled={false}
-                      onClick={[Function]}
-                      tabIndex={0}
-                      type="button"
+                    <span
+                      className="bx--table-header-label"
                     >
-                      Cancel
-                    </button>
-                  </div>
-                  <div
-                    className="bx--batch-summary"
-                  >
-                    <p
-                      className="bx--batch-summary__para"
-                    >
-                      <span>
-                        0 item selected
+                      <span
+                        title="String"
+                      >
+                        String
                       </span>
-                    </p>
-                  </div>
-                </div>
-                <label
-                  className="iot--table-toolbar-secondary-title"
-                >
-                  Card Title
-                </label>
-                <div
-                  className="bx--toolbar-content iot--table-toolbar-content"
-                >
-                  <div
-                    className="card--toolbar"
-                  >
-                    <div
-                      className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                    >
-                      <button
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        aria-label="Menu"
-                        className="card--toolbar-action bx--overflow-menu"
-                        onClick={[Function]}
-                        onClose={[Function]}
-                        onKeyDown={[Function]}
-                        open={false}
-                        tabIndex={0}
-                        title="Open and close list of options"
-                      >
-                        <svg
-                          aria-label="open and close list of options"
-                          className="bx--overflow-menu__icon"
-                          focusable="false"
-                          height={20}
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                          />
-                          <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                          />
-                          <title>
-                            open and close list of options
-                          </title>
-                        </svg>
-                      </button>
-                    </div>
-                    <button
-                      className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
-                      onClick={[Function]}
-                    >
-                      <svg
-                        description="Expand to fullscreen"
-                        focusable="false"
-                        height={20}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        title="Expand to fullscreen"
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                        />
-                        <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <div
-                className="addons-iot-table-container"
-              >
-                <table
-                  className="bx--data-table bx--data-table--no-border"
-                  title={null}
-                >
-                  <thead
-                    onMouseMove={null}
-                    onMouseUp={null}
-                  >
-                    <tr>
-                      <th
-                        align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
-                        data-column="value1"
-                        id="column-value1"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="String"
-                          >
-                            String
-                          </span>
-                        </span>
-                      </th>
-                      <th
-                        align="start"
-                        className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
-                        data-column="timestamp"
-                        id="column-timestamp"
-                        scope="col"
-                        style={
-                          Object {
-                            "width": undefined,
-                          }
-                        }
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Date"
-                          >
-                            Date
-                          </span>
-                        </span>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    aria-live="polite"
-                  >
-                    <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
-                      onClick={[Function]}
-                    >
-                      <td
-                        align="start"
-                        className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                        data-column="value1"
-                        data-offset={0}
-                        id="cell-my table-rowid-0-value1"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                        >
-                          <span
-                            title="my value"
-                          >
-                            my value
-                          </span>
-                        </span>
-                      </td>
-                      <td
-                        align="start"
-                        className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                        data-column="timestamp"
-                        data-offset={0}
-                        id="cell-my table-rowid-0-timestamp"
-                        offset={0}
-                      >
-                        <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                        >
-                          <span
-                            title={12341231231}
-                          >
-                            12341231231
-                          </span>
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is editable 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-with-loading"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={16}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
+                    </span>
+                  </th>
+                  <th
+                    align="start"
+                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                    data-column="timestamp"
+                    id="column-timestamp"
+                    scope="col"
+                    style={
+                      Object {
+                        "width": undefined,
                       }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    }
+                  >
+                    <span
+                      className="bx--table-header-label"
                     >
-                      <circle
-                        cx="8"
-                        cy="3"
-                        r="1"
-                      />
-                      <circle
-                        cx="8"
-                        cy="8"
-                        r="1"
-                      />
-                      <circle
-                        cx="8"
-                        cy="13"
-                        r="1"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            />
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is expandable 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-with-loading"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
+                      <span
+                        title="Date"
+                      >
+                        Date
+                      </span>
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                aria-live="polite"
               >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+                <tr
+                  className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
                   onClick={[Function]}
                 >
-                  <svg
-                    description="Expand to fullscreen"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    title="Expand to fullscreen"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <td
+                    align="start"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                    data-column="value1"
+                    data-offset={0}
+                    id="cell-my table-rowid-0-value1"
+                    offset={0}
                   >
-                    <path
-                      d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                    />
-                    <path
-                      d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            />
+                    <span
+                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                    >
+                      <span
+                        title="my value"
+                      >
+                        my value
+                      </span>
+                    </span>
+                  </td>
+                  <td
+                    align="start"
+                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                    data-column="timestamp"
+                    data-offset={0}
+                    id="cell-my table-rowid-0-timestamp"
+                    offset={0}
+                  >
+                    <span
+                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                    >
+                      <span
+                        title={12341231231}
+                      >
+                        12341231231
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card size gallery 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card is editable 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <h3>
-          SMALL
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bAafuV"
-            id="facilitycard-size-gallery-SMALL"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              />
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          SMALLWIDE
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bAafuV"
-            id="facilitycard-size-gallery-SMALLWIDE"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          MEDIUMTHIN
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-size-gallery-MEDIUMTHIN"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          MEDIUM
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-size-gallery-MEDIUM"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          MEDIUMWIDE
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-size-gallery-MEDIUMWIDE"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          LARGETHIN
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facilitycard-size-gallery-LARGETHIN"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          LARGE
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "520px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facilitycard-size-gallery-LARGE"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-        <h3>
-          LARGEWIDE
-        </h3>
-        <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "1056px",
-            }
-          }
-        >
-          <div
-            className="Card__CardWrapper-v5r71h-0 izWJSI"
-            id="facilitycard-size-gallery-LARGEWIDE"
-          >
-            <div
-              className="card--header"
-            >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
-            >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
-              >
-                No data is available for this time range.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with ellipsed title and tooltip 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-with-loading"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="iot--card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-basic"
+          <span
+            className="card--title"
+            title="Card Title"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Card Title that is really long and should be truncated and have a tooltip"
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
               >
-                <div
-                  className="title--text"
-                >
-                  Card Title that is really long and should be truncated and have a tooltip
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-                <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={16}
                   onClick={[Function]}
-                >
-                  <svg
-                    description="Expand to fullscreen"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
                     }
-                    title="Expand to fullscreen"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                    />
-                    <path
-                      d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                    />
-                  </svg>
-                </button>
-              </div>
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="8"
+                    cy="3"
+                    r="1"
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    r="1"
+                  />
+                  <circle
+                    cx="8"
+                    cy="13"
+                    r="1"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
             </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            />
           </div>
         </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        />
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card is expandable 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-with-loading"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="iot--card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-empty"
+          <span
+            className="card--title"
+            title="Card Title"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              Card Title
             </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <button
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              onClick={[Function]}
             >
-              <div
-                className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+              <svg
+                description="Expand to fullscreen"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                title="Expand to fullscreen"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                No data is available for this time range.
-              </div>
-            </div>
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
           </div>
         </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        />
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card size gallery 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
+    <h3>
+      SMALL
+    </h3>
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard-size-gallery-SMALL"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="iot--card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-with-loading"
+          <span
+            className="card--title"
+            title="Card Title"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Card Title"
+              Card Title
+            </div>
+          </span>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 ggrDpu"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      SMALLWIDE
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard-size-gallery-SMALLWIDE"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
               >
-                <div
-                  className="title--text"
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Card Title
-                </div>
-              </span>
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 ggrDpu"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      MEDIUMTHIN
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-size-gallery-MEDIUMTHIN"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      MEDIUM
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-size-gallery-MEDIUM"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      MEDIUMWIDE
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "520px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-size-gallery-MEDIUMWIDE"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      LARGETHIN
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facilitycard-size-gallery-LARGETHIN"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      LARGE
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "520px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facilitycard-size-gallery-LARGE"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>
+      LARGEWIDE
+    </h3>
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "1056px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facilitycard-size-gallery-LARGEWIDE"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 flVXpj"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with ellipsed title tooltip & external tooltip 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-basic"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip."
+          >
+            <div
+              className="title--text"
+            >
+              Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.
+            </div>
+            <div
+              className="bx--tooltip__label"
+              id="card-tooltip-trigger-facilitycard-basic"
+            >
+              
               <div
-                className="card--toolbar"
+                aria-describedby={null}
+                aria-haspopup="true"
+                className="bx--tooltip__trigger"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-hidden={true}
+                  description={null}
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role={null}
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                  />
+                  <path
+                    d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+            <button
+              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              onClick={[Function]}
+            >
+              <svg
+                description="Expand to fullscreen"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                title="Expand to fullscreen"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                />
+                <path
+                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        />
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with empty state 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-empty"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
+            <div
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+          >
+            No data is available for this time range.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with loading 1`] = `
+<div
+  className="storybook-container"
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-with-loading"
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="card--title"
+            title="Card Title"
+          >
+            <div
+              className="title--text"
+            >
+              Card Title
+            </div>
+          </span>
+        </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        >
+          <div
+            className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
+          >
+            <div>
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "calc(100% - 73px)",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "calc(100% - 11px)",
+                  }
+                }
+              />
+              <p
+                className="bx--skeleton__text"
+                style={
+                  Object {
+                    "width": "calc(100% - 43px)",
+                  }
+                }
               />
             </div>
-            <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            >
-              <div
-                className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
-              >
-                <div>
-                  <p
-                    className="bx--skeleton__text"
-                    style={
-                      Object {
-                        "width": "calc(100% - 73px)",
-                      }
-                    }
-                  />
-                  <p
-                    className="bx--skeleton__text"
-                    style={
-                      Object {
-                        "width": "calc(100% - 11px)",
-                      }
-                    }
-                  />
-                  <p
-                    className="bx--skeleton__text"
-                    style={
-                      Object {
-                        "width": "calc(100% - 43px)",
-                      }
-                    }
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with range selector 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with range selector 1`] = `
 <div
+  className="storybook-container"
   style={
     Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
+      "padding": "3rem",
     }
   }
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "margin": 20,
+          "width": "252px",
         }
       }
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard-with-loading"
       >
         <div
-          style={
-            Object {
-              "margin": 20,
-              "width": "252px",
-            }
-          }
+          className="iot--card--header"
         >
-          <div
-            className="Card__CardWrapper-v5r71h-0 bHPJyP"
-            id="facilitycard-with-loading"
+          <span
+            className="card--title"
+            title="Card Title"
           >
             <div
-              className="card--header"
+              className="title--text"
             >
-              <span
-                className="card--title"
-                title="Card Title"
-              >
-                <div
-                  className="title--text"
-                >
-                  Card Title
-                </div>
-              </span>
-              <div
-                className="card--toolbar"
-              >
-                <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
-                    onClick={[Function]}
-                    onClose={[Function]}
-                    onKeyDown={[Function]}
-                    open={false}
-                    tabIndex={0}
-                    title="Open and close list of options"
-                  >
-                    <svg
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu__icon"
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                      />
-                      <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                      />
-                      <title>
-                        open and close list of options
-                      </title>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              Card Title
             </div>
+          </span>
+          <div
+            className="iot--card--toolbar card--toolbar"
+          >
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
-            />
+              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            >
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                aria-label="Menu"
+                className="card--toolbar-action bx--overflow-menu"
+                onClick={[Function]}
+                onClose={[Function]}
+                onKeyDown={[Function]}
+                open={false}
+                tabIndex={0}
+                title="Open and close list of options"
+              >
+                <svg
+                  aria-label="open and close list of options"
+                  className="bx--overflow-menu__icon"
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                  />
+                  <path
+                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
+                  />
+                  <path
+                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                  />
+                  <title>
+                    open and close list of options
+                  </title>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+        <div
+          className="Card__CardContent-v5r71h-1 hxiPNM"
+        />
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
