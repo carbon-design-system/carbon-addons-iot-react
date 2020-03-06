@@ -86,13 +86,53 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       {pageNumber}
     </button>
   );
+  const getPageSelect = pageNumber => (
+    <li className="bx--pagination-nav__list-item">
+      <div className="bx--pagination-nav__select">
+        <select
+          className="bx--pagination-nav__page bx--pagination-nav__page--select"
+          data-page-select
+          aria-label="select page number"
+        >
+          <option value="" hidden data-page="" />
+          {Array.from({ length: pageNumber }, (v, i) => (
+            <option value={i + 5} data-page={i + 5}>
+              {i + 5}
+            </option>
+          ))}
+        </select>
+        <div className="bx--pagination-nav__select-icon-wrapper">
+          <svg
+            focusable="false"
+            preserveAspectRatio="xMidYMid meet"
+            xmlns="http://www.w3.org/2000/svg"
+            class="bx--pagination-nav__select-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+          >
+            <circle cx="8" cy="16" r="2" />
+            <circle cx="16" cy="16" r="2" />
+            <circle cx="24" cy="16" r="2" />
+          </svg>
+        </div>
+      </div>
+    </li>
+  );
   return (
     <nav className="bx--pagination-nav" ariaLabel={i18n.ariaLabelPagination}>
       <ul className="bx--pagination-nav__list">
         <li className="bx--pagination-nav__list-item">{prevButton}</li>
-        {Array.from({ length: numPages }, (v, i) => (
-          <li className="bx--pagination-nav__list-item">{getPageButton(i + 1)}</li>
-        ))}
+        {numPages < 5
+          ? Array.from({ length: numPages - 1 }, (v, i) => (
+              <li className="bx--pagination-nav__list-item">{getPageButton(i + 1)}</li>
+            ))
+          : Array.from({ length: 4 }, (v, i) => (
+              <li className="bx--pagination-nav__list-item">{getPageButton(i + 1)}</li>
+            ))}
+        {numPages > 5 ? getPageSelect(numPages - 5) : null}
+        <li className="bx--pagination-nav__list-item">{getPageButton(numPages)}</li>
         <li className="bx--pagination-nav__list-item">{nextButton}</li>
       </ul>
     </nav>
