@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb current page with aria-current 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb current page with aria-current 1`] = `
 <div
   className="storybook-container"
   style={
@@ -75,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb default 1`] = `
 <div
   className="storybook-container"
   style={
@@ -163,7 +163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -177,7 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb skeleton 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb skeleton 1`] = `
 <div
   className="storybook-container"
   style={
@@ -238,7 +238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -252,7 +252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Breadcrumb with useResizeObserver 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb with useResizeObserver 1`] = `
 <div
   className="storybook-container"
   style={
@@ -392,7 +392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT | Bre
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

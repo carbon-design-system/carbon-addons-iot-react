@@ -53,7 +53,7 @@ const StructuredListInputProps = {
   className: 'checks',
 };
 
-storiesOf('Watson IoT|ComposedStructuredList (Deprecated)', module)
+storiesOf('Watson IoT/ComposedStructuredList (Deprecated)', module)
   .add(deprecatedStoryTitle, () => (
     <DeprecationNotice
       deprecatedComponentName="ComposedStructuredList"

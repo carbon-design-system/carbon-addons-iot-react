@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card basic 1`] = `
 <div
   className="storybook-container"
   style={
@@ -30,7 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-basic"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -43,7 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -141,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -155,7 +155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card basic with render prop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card basic with render prop 1`] = `
 <div
   className="storybook-container"
   style={
@@ -185,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="render-prop-basic"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -198,7 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -302,7 +302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -316,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card error 1`] = `
 <div
   className="storybook-container"
   style={
@@ -346,7 +346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-error"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -358,9 +358,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               Card Title
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -386,7 +383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -400,7 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card error/small 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card error/small 1`] = `
 <div
   className="storybook-container"
   style={
@@ -430,7 +427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-error-small"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -442,9 +439,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               Card Title
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -470,7 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -484,7 +478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card implementing a custom card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card implementing a custom card 1`] = `
 <div
   className="storybook-container"
   style={
@@ -552,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               className="bx--toolbar-content iot--table-toolbar-content"
             >
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               >
                 <div
                   className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -754,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -768,7 +762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card is editable 1`] = `
 <div
   className="storybook-container"
   style={
@@ -798,7 +792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -811,7 +805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -887,7 +881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -901,7 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card is expandable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card is expandable 1`] = `
 <div
   className="storybook-container"
   style={
@@ -931,7 +925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -944,7 +938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <button
               className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
@@ -994,7 +988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1008,7 +1002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card size gallery 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card size gallery 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1041,7 +1035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-SMALL"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1053,9 +1047,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               Card Title
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -1084,7 +1075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-SMALLWIDE"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1097,7 +1088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1176,7 +1167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-MEDIUMTHIN"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1189,7 +1180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1268,7 +1259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-MEDIUM"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1281,7 +1272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1360,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-MEDIUMWIDE"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1373,7 +1364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1452,7 +1443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-LARGETHIN"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1465,7 +1456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1544,7 +1535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-LARGE"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1557,7 +1548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1636,7 +1627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-size-gallery-LARGEWIDE"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1649,7 +1640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1725,7 +1716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1739,7 +1730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with ellipsed title and tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with ellipsed title tooltip & external tooltip 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1769,20 +1760,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-basic"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
-            title="Card Title that is really long and should be truncated and have a tooltip"
+            title="Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip."
           >
             <div
               className="title--text"
             >
-              Card Title that is really long and should be truncated and have a tooltip
+              Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.
+            </div>
+            <div
+              className="bx--tooltip__label"
+              id="card-tooltip-trigger-facilitycard-basic"
+            >
+              
+              <div
+                aria-describedby={null}
+                aria-haspopup="true"
+                className="bx--tooltip__trigger"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-hidden={true}
+                  description={null}
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role={null}
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                  />
+                  <path
+                    d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                  />
+                </svg>
+              </div>
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -1880,7 +1914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1894,7 +1928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with empty state 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1924,7 +1958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-empty"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1937,7 +1971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -2013,7 +2047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2027,7 +2061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with loading 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2057,7 +2091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2069,9 +2103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
               Card Title
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -2122,7 +2153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2136,7 +2167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card with range selector 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card with range selector 1`] = `
 <div
   className="storybook-container"
   style={
@@ -2166,7 +2197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         id="facilitycard-with-loading"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2179,7 +2210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
             </div>
           </span>
           <div
-            className="card--toolbar"
+            className="iot--card--toolbar card--toolbar"
           >
             <div
               className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
@@ -2249,7 +2280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Card 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

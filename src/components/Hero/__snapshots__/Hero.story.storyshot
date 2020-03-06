@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) isLoading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) isLoading 1`] = `
 <div
   className="storybook-container"
   style={
@@ -50,7 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -64,7 +64,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
   style={
@@ -115,7 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -129,7 +129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with breadcrumb 1`] = `
 <div
   className="storybook-container"
   style={
@@ -243,7 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -257,7 +257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with breadcrumb with right content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with breadcrumb with right content 1`] = `
 <div
   className="storybook-container"
   style={
@@ -381,7 +381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -395,7 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with close button 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with close button 1`] = `
 <div
   className="storybook-container"
   style={
@@ -532,7 +532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with description 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with description 1`] = `
 <div
   className="storybook-container"
   style={
@@ -602,7 +602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -616,7 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with right content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with right content 1`] = `
 <div
   className="storybook-container"
   style={
@@ -704,7 +704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -718,7 +718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with tooltip (no link) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with tooltip (no link) 1`] = `
 <div
   className="storybook-container"
   style={
@@ -873,7 +873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -887,7 +887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) with tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with tooltip 1`] = `
 <div
   className="storybook-container"
   style={
@@ -1042,7 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1056,7 +1056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
   style={
@@ -1149,7 +1149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Hero 
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

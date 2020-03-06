@@ -30,7 +30,7 @@ export const pageTitleBarBreadcrumb = [
   <span>Instance</span>,
 ];
 
-storiesOf('Watson IoT|PageTitleBar', module)
+storiesOf('Watson IoT/PageTitleBar', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add('base', () => <PageTitleBar title={commonPageTitleBarProps.title} />)
   .add('with breadcrumb', () => (

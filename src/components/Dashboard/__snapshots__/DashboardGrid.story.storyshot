@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, all card sizes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, all card sizes 1`] = `
 <div
   className="storybook-container"
   style={
@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -71,7 +71,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -96,7 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -109,7 +109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -134,7 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -147,7 +147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -172,7 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -185,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -210,7 +210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -223,7 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -248,7 +248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -261,7 +261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -286,7 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -299,7 +299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -324,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -337,7 +337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -360,7 +360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -374,7 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, custom layout 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, custom layout 1`] = `
 <div
   className="storybook-container"
   style={
@@ -433,7 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -446,7 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -472,7 +472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -485,7 +485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -511,7 +511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -524,7 +524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -547,7 +547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -561,7 +561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, default layouts 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, default layouts 1`] = `
 <div
   className="storybook-container"
   style={
@@ -620,7 +620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -633,7 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -659,7 +659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -672,7 +672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -698,7 +698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -711,7 +711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -734,7 +734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -748,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, is Edtiable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, is Edtiable 1`] = `
 <div
   className="storybook-container"
   style={
@@ -812,7 +812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -825,7 +825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -856,7 +856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -869,7 +869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -900,7 +900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
             type="VALUE"
           >
             <div
-              className="card--header"
+              className="iot--card--header"
             >
               <span
                 className="card--title"
@@ -913,7 +913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
                 </div>
               </span>
               <div
-                className="card--toolbar"
+                className="iot--card--toolbar card--toolbar"
               />
             </div>
             <div
@@ -936,7 +936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashb
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Accept JSON 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Accept JSON 1`] = `
 <div
   className="storybook-container"
   style={
@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -97,7 +97,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Browse 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Browse 1`] = `
 <div
   className="storybook-container"
   style={
@@ -171,7 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -185,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Browse only one 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Browse only one 1`] = `
 <div
   className="storybook-container"
   style={
@@ -259,7 +259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -273,7 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Drag and drop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Drag and drop 1`] = `
 <div
   className="storybook-container"
   style={
@@ -352,7 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -366,7 +366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Drag only one file 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Drag only one file 1`] = `
 <div
   className="storybook-container"
   style={
@@ -445,7 +445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -459,7 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileDrop Show files false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Show files false 1`] = `
 <div
   className="storybook-container"
   style={
@@ -535,7 +535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|FileD
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

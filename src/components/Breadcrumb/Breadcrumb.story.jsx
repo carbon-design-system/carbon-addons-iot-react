@@ -32,7 +32,7 @@ const PolyfillWarning = () => (
   </p>
 );
 
-storiesOf('Watson IoT | Breadcrumb', module)
+storiesOf('Watson IoT/Breadcrumb', module)
   .addDecorator(withKnobs)
   .add(
     'default',

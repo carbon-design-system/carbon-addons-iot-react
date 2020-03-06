@@ -4,6 +4,7 @@ import omit from 'lodash/omit';
 import styled from 'styled-components';
 import { Close20, Popup20 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import classNames from 'classnames';
 
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
@@ -71,11 +72,13 @@ const propTypes = {
   isEditable: PropTypes.bool,
   /** is the card expanded */
   isExpanded: PropTypes.bool,
+  className: PropTypes.string,
   ...omit(CardRangePickerPropTypes, 'onClose'),
 };
 const defaultProps = {
   isEditable: false,
   isExpanded: false,
+  className: null,
 };
 const CardToolbar = ({
   i18n,
@@ -85,9 +88,10 @@ const CardToolbar = ({
   availableActions,
   timeRange,
   onCardAction,
+  className,
 }) => {
   return isEditable ? (
-    <div className="card--toolbar">
+    <div className={classNames(className, 'card--toolbar')}>
       {(availableActions.edit || availableActions.clone || availableActions.delete) && (
         <ToolbarDateRangeWrapper>
           <OverflowMenu flipped title={i18n.overflowMenuDescription}>
@@ -121,7 +125,7 @@ const CardToolbar = ({
       )}
     </div>
   ) : (
-    <div className="card--toolbar">
+    <div className={classNames(className, 'card--toolbar')}>
       {availableActions.range ? (
         <ToolbarDateRangeWrapper>
           <CardRangePicker
