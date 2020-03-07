@@ -26,24 +26,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 jFCThr"
+        className="iot--card--wrapper iot--card--wrapper--overflowing"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Health score"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Health score
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -233,24 +243,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 hUpcuU"
+        className="iot--card--wrapper iot--card--wrapper--overflowing"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Health score"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Health score
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -380,24 +400,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 gmysZp"
+        className="iot--card--wrapper iot--card--wrapper--overflowing"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Health score"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Health score
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -577,9 +607,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
   >
     <div>
       <div
-        className="Card__CardWrapper-v5r71h-0 jFCThr"
+        className="iot--card--wrapper iot--card--wrapper--overflowing"
         style={
           Object {
+            "--card-default-height": "304px",
             "width": "252px",
           }
         }
@@ -588,18 +619,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Health score"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Health score
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -796,24 +832,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions per device"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions per device
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -957,24 +1003,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Really really really long card title?"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Really really really long card title?
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -1118,27 +1174,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1198,24 +1269,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -1514,24 +1595,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -1928,24 +2019,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Really long card title?"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Really long card title?
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2048,24 +2149,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Really really really long card title?"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Really really really long card title?
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2209,24 +2320,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2370,24 +2491,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -2588,24 +2719,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -2749,24 +2890,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -3042,24 +3193,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -3260,24 +3421,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -3380,24 +3551,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Facility Conditions"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Facility Conditions
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 jWmKBV"
@@ -3598,24 +3779,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Occupancy"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Occupancy
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -3715,24 +3906,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Occupancy"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Occupancy
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -3832,24 +4033,35 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        renderIconByName={[Function]}
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Alert Count"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Alert Count
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -3982,24 +4194,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Alert Count"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Alert Count
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4124,24 +4346,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Alert Count"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Alert Count
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4241,24 +4473,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Foot Traffic"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Foot Traffic
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4361,24 +4603,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Foot Traffic"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Foot Traffic
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4478,24 +4730,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Alert Count"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Alert Count
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4595,24 +4857,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Occupancy"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Occupancy
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4668,24 +4940,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Occupancy"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Occupancy
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4785,24 +5067,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Occupancy"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Occupancy
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -4902,24 +5194,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Status"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Status
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -5063,24 +5365,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Status"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Status
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -5205,24 +5517,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Status"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Status
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
@@ -5366,24 +5688,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Uncomfortable?"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Uncomfortable?
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
             className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"

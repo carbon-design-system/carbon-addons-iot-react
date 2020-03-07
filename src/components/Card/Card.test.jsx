@@ -5,9 +5,8 @@ import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import { Popup20 } from '@carbon/icons-react';
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
-import { ToolbarSVGWrapper } from './CardToolbar';
 import CardRangePicker from './CardRangePicker';
-import Card, { SkeletonWrapper } from './Card';
+import Card from './Card';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -84,12 +83,12 @@ describe('Card testcases', () => {
     // tooltip prop will render a tooltip in the header
     expect(wrapper.find(Tooltip)).toHaveLength(1);
     // without the isLoading prop SkeletonWrapper should not be rendered
-    expect(wrapper.find(SkeletonWrapper)).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--card--skeleton-wrapper`)).toHaveLength(0);
     // with the isLoading prop SkeletonWrapper should  be rendered
     wrapper = mount(
       <Card {...cardProps} isLoading size={CARD_SIZES.SMALLWIDE} tooltip={tooltipElement} />
     );
-    expect(wrapper.find(SkeletonWrapper)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--card--skeleton-wrapper`)).toHaveLength(1);
   });
   test('isExpanded', () => {
     let wrapper = mount(
@@ -111,7 +110,7 @@ describe('Card testcases', () => {
       />
     );
     wrapper
-      .find(ToolbarSVGWrapper)
+      .find(`.${iotPrefix}--card--toolbar-svg-wrapper`)
       .get(0)
       .props.onClick();
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLOSE_EXPANDED_CARD);
@@ -127,7 +126,7 @@ describe('Card testcases', () => {
       />
     );
     wrapper2
-      .find(ToolbarSVGWrapper)
+      .find(`.${iotPrefix}--card--toolbar-svg-wrapper`)
       .get(0)
       .props.onClick();
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.OPEN_EXPANDED_CARD);

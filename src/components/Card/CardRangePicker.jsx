@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import classNames from 'classnames';
+
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const TimeRangeLabel = styled.div`
   font-size: 0.875rem;
@@ -33,7 +38,7 @@ const defaultProps = {
   timeRange: null,
 };
 
-const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction }) => {
+const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWidth }) => {
   const [timeRange, setTimeRange] = useState(timeRangeProp);
   // maps the timebox internal label to a translated string
   const timeBoxLabels = {
@@ -57,48 +62,53 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction }) => {
   );
 
   return (
-    <ToolbarItem>
-      {timeBoxLabels[timeRange] ? (
-        <TimeRangeLabel id="timeRange" className="card--toolbar-timerange-label">
-          {timeBoxLabels[timeRange]}
-        </TimeRangeLabel>
-      ) : null}
+    <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
+      <ToolbarItem>
+        {timeBoxLabels[timeRange] && cardWidth > 229 ? (
+          <TimeRangeLabel id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
+            {timeBoxLabels[timeRange]}
+          </TimeRangeLabel>
+        ) : null}
 
-      <OverflowMenu
-        iconDescription={timeBoxLabels[timeRange]}
-        className="card--toolbar-action"
-        flipped
-        title={i18n.overflowMenuDescription}
-        menuOptionsClass="card--overflow"
-        renderIcon={EventSchedule}
-      >
-        <OverflowMenuItem
-          key="default"
-          onClick={() => handleTimeRange('default')}
-          itemText={i18n.defaultLabel}
-        />
-        {Object.keys(timeBoxLabels)
-          .filter(i => i.includes('last'))
-          .map((i, index) => (
-            <OverflowMenuItem
-              key={i}
-              hasDivider={index === 0}
-              onClick={() => handleTimeRange(i)}
-              itemText={timeBoxLabels[i]}
-            />
-          ))}
-        {Object.keys(timeBoxLabels)
-          .filter(i => i.includes('this'))
-          .map((i, index) => (
-            <OverflowMenuItem
-              key={i}
-              hasDivider={index === 0}
-              onClick={() => handleTimeRange(i)}
-              itemText={timeBoxLabels[i]}
-            />
-          ))}
-      </OverflowMenu>
-    </ToolbarItem>
+        <OverflowMenu
+          iconDescription={timeBoxLabels[timeRange]}
+          className={classNames(
+            `${iotPrefix}--card--toolbar-action`,
+            `${iotPrefix}--card--toolbar-date-range-action`
+          )}
+          flipped
+          title={i18n.overflowMenuDescription}
+          menuOptionsClass={`${iotPrefix}--card--overflow`}
+          renderIcon={EventSchedule}
+        >
+          <OverflowMenuItem
+            key="default"
+            onClick={() => handleTimeRange('default')}
+            itemText={i18n.defaultLabel}
+          />
+          {Object.keys(timeBoxLabels)
+            .filter(i => i.includes('last'))
+            .map((i, index) => (
+              <OverflowMenuItem
+                key={i}
+                hasDivider={index === 0}
+                onClick={() => handleTimeRange(i)}
+                itemText={timeBoxLabels[i]}
+              />
+            ))}
+          {Object.keys(timeBoxLabels)
+            .filter(i => i.includes('this'))
+            .map((i, index) => (
+              <OverflowMenuItem
+                key={i}
+                hasDivider={index === 0}
+                onClick={() => handleTimeRange(i)}
+                itemText={timeBoxLabels[i]}
+              />
+            ))}
+        </OverflowMenu>
+      </ToolbarItem>
+    </div>
   );
 };
 

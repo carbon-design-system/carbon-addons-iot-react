@@ -1,0 +1,34 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--card--toolbar-date-range-wrapper {
+  background: transparent;
+  border: none;
+  display: flex;
+  outline: 2px solid transparent;
+}
+
+.#{$iot-prefix}--card--toolbar-timerange-label {
+  white-space: nowrap;
+  min-height: $carbon--spacing-09;
+  min-width: $carbon--spacing-09;
+  padding: $carbon--spacing-05;
+}
+
+.#{$iot-prefix}--card--toolbar-date-range-wrapper
+  > .#{$iot-prefix}--card--toolbar-date-range-action {
+  min-height: $carbon--spacing-09;
+  min-width: $carbon--spacing-09;
+  cursor: pointer;
+  &:active,
+  &:focus {
+    outline: 2px solid $focus;
+    outline-offset: -2px;
+  }
+  &:hover {
+    background: $hover-ui;
+  }
+}
+
+.#{$iot-prefix}--card--overflow {
+  width: auto;
+}

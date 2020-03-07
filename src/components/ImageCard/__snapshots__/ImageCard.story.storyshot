@@ -26,27 +26,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="image-hotspots"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Image"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Image
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -76,7 +81,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -381,27 +391,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="image-hotspots"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Image"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Image
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -431,7 +446,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -750,27 +770,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="image-hotspots"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Image"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Image
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -800,10 +825,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             Error loading data for this card:  API threw Nullpointer
           </div>
@@ -863,27 +898,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="image-hotspots"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Image"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Image
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -913,10 +953,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             Error loading data for this card:  Error no image found called ImageID
           </div>
@@ -976,27 +1026,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="image-hotspots"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Image"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Image
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -1026,7 +1081,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
@@ -1215,27 +1275,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="image-hotspots"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Image"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Image
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -1265,7 +1330,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"

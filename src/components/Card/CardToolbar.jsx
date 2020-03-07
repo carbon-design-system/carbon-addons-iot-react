@@ -1,69 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
-import styled from 'styled-components';
 import { Close20, Popup20 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classNames from 'classnames';
 
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
-
+import { settings } from '../../constants/Settings';
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
-export const ToolbarSVGWrapper = styled.button`
-  &&& {
-    align-items: center;
-    background: transparent;
-    border: none;
-    display: flex;
-    cursor: pointer;
-    height: 3rem;
-    width: 3rem;
-    outline: 2px solid transparent;
-    margin: 0;
+const { iotPrefix } = settings;
 
-    :hover {
-      background: #e5e5e5;
-    }
-
-    &:active,
-    &:focus {
-      outline: 2px solid #0062ff;
-      outline-offset: -2px;
-    }
-  }
-`;
-
-// We need a special div to handle the date label
-const ToolbarDateRangeWrapper = styled.div`
-  &&& {
-    background: transparent;
-    border: none;
-    display: flex;
-    outline: 2px solid transparent;
-
-    .card--toolbar-timerange-label {
-      white-space: nowrap;
-      min-height: 3rem;
-      min-width: 3rem;
-      padding: 1rem;
-    }
-
-    .card--toolbar-action {
-      min-height: 3rem;
-      min-width: 3rem;
-      cursor: pointer;
-      &:active,
-      &:focus {
-        outline: 2px solid #0062ff;
-        outline-offset: -2px;
-      }
-      &:hover {
-        background: #e5e5e5;
-      }
-    }
-  }
-`;
+const ToolbarSVGWrapper = props => {
+  const { children, onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className={classNames(
+        `${iotPrefix}--card--toolbar-action`,
+        `${iotPrefix}--card--toolbar-svg-wrapper`
+      )}
+    >
+      {children}
+    </button>
+  );
+};
 
 const propTypes = {
   /** set of available actions for the card */
@@ -91,63 +52,56 @@ const CardToolbar = ({
   className,
 }) => {
   return isEditable ? (
-    <div className={classNames(className, 'card--toolbar')}>
+    <div className={classNames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.edit || availableActions.clone || availableActions.delete) && (
-        <ToolbarDateRangeWrapper>
-          <OverflowMenu flipped title={i18n.overflowMenuDescription}>
-            {availableActions.edit && (
-              <OverflowMenuItem
-                onClick={() => {
-                  onCardAction(CARD_ACTIONS.EDIT_CARD);
-                }}
-                itemText={i18n.editCardLabel}
-              />
-            )}
-            {availableActions.clone && (
-              <OverflowMenuItem
-                onClick={() => {
-                  onCardAction(CARD_ACTIONS.CLONE_CARD);
-                }}
-                itemText={i18n.cloneCardLabel}
-              />
-            )}
-            {availableActions.delete && (
-              <OverflowMenuItem
-                isDelete
-                onClick={() => {
-                  onCardAction(CARD_ACTIONS.DELETE_CARD);
-                }}
-                itemText={i18n.deleteCardLabel}
-              />
-            )}
-          </OverflowMenu>
-        </ToolbarDateRangeWrapper>
+        <OverflowMenu flipped title={i18n.overflowMenuDescription}>
+          {availableActions.edit && (
+            <OverflowMenuItem
+              onClick={() => {
+                onCardAction(CARD_ACTIONS.EDIT_CARD);
+              }}
+              itemText={i18n.editCardLabel}
+            />
+          )}
+          {availableActions.clone && (
+            <OverflowMenuItem
+              onClick={() => {
+                onCardAction(CARD_ACTIONS.CLONE_CARD);
+              }}
+              itemText={i18n.cloneCardLabel}
+            />
+          )}
+          {availableActions.delete && (
+            <OverflowMenuItem
+              isDelete
+              onClick={() => {
+                onCardAction(CARD_ACTIONS.DELETE_CARD);
+              }}
+              itemText={i18n.deleteCardLabel}
+            />
+          )}
+        </OverflowMenu>
       )}
     </div>
   ) : (
-    <div className={classNames(className, 'card--toolbar')}>
+    <div className={classNames(className, `${iotPrefix}--card--toolbar`)}>
       {availableActions.range ? (
-        <ToolbarDateRangeWrapper>
-          <CardRangePicker
-            width={width}
-            i18n={i18n}
-            timeRange={timeRange}
-            onCardAction={onCardAction}
-          />
-        </ToolbarDateRangeWrapper>
+        <CardRangePicker
+          width={width}
+          i18n={i18n}
+          timeRange={timeRange}
+          onCardAction={onCardAction}
+          cardWidth={width}
+        />
       ) : null}
       {availableActions.expand ? (
         <>
           {isExpanded ? (
-            <ToolbarSVGWrapper
-              className="card--toolbar-action"
-              onClick={() => onCardAction(CARD_ACTIONS.CLOSE_EXPANDED_CARD)}
-            >
+            <ToolbarSVGWrapper onClick={() => onCardAction(CARD_ACTIONS.CLOSE_EXPANDED_CARD)}>
               <Close20 title={i18n.closeLabel} description={i18n.closeLabel} />
             </ToolbarSVGWrapper>
           ) : (
             <ToolbarSVGWrapper
-              className="card--toolbar-action"
               onClick={() => {
                 onCardAction(CARD_ACTIONS.OPEN_EXPANDED_CARD);
               }}

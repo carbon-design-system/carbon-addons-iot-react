@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
-import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import classNames from 'classnames';
+import omit from 'lodash/omit';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -27,17 +28,37 @@ const { prefix, iotPrefix } = settings;
 const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
-const CardWrapper = styled.div`
-  background: white;
-  height: ${props => props.dimensions.y}px;
-  ${props => (props.isExpanded ? 'height: 100%; width: 100%;' : '')}
-  display: flex;
-  flex-direction: column;
-  span#timeRange {
-    display: ${props => (props.cardWidthSize < 230 ? `none` : `flex`)};
-  }
-  overflow: ${props => (props.showOverflow ? `visible` : `hidden`)};
-`;
+const CardWrapper = ({
+  children,
+  dimensions,
+  isExpanded,
+  showOverflow,
+  id,
+  style,
+  className,
+  ...others
+}) => {
+  // TODO: Solve this better by either
+  // a) explicitly define and pass along the HTML attributes needed for the wrapper
+  // b) use a tool like https://www.npmjs.com/package/filter-react-props
+
+  // To avoid 'Unknown Prop Warning' known Card properties are filtered out
+  // but  other (hopefully HTML) attributes are allowed to be passed to the wrapping div.
+  const htmlOthers = omit(others, Object.keys(CardPropTypes));
+
+  return (
+    <div
+      id={id}
+      style={{ ...style, ['--card-default-height']: `${dimensions.y}px` }}
+      {...htmlOthers}
+      className={classNames(className, `${iotPrefix}--card--wrapper`, {
+        [`${iotPrefix}--card--wrapper--overflowing`]: showOverflow,
+      })}
+    >
+      {children}
+    </div>
+  );
+};
 
 /** Header components */
 export const CardHeader = (
@@ -47,34 +68,37 @@ export const CardHeader = (
 export const CardTitle = (
   { children, title } //eslint-disable-line
 ) => (
-  <span className="card--title" title={title}>
+  <span className={`${iotPrefix}--card--title`} title={title}>
     {children}
   </span>
 );
 
-export const CardContent = styled.div`
-  flex: 1;
-  position: relative;
-  height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
-  overflow-x: visible;
-  overflow-y: ${props => (!props.isExpanded ? 'visible' : 'auto')};
-`;
+const CardContent = props => {
+  const { children, dimensions, isExpanded } = props;
+  const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
+  return (
+    <div
+      style={{ [`--card-content-height`]: height }}
+      className={classNames(`${iotPrefix}--card--content`, {
+        [`${iotPrefix}--card--content--expanded`]: isExpanded,
+      })}
+    >
+      {children}
+    </div>
+  );
+};
 
-export const SkeletonWrapper = styled.div`
-  padding: ${CARD_CONTENT_PADDING}px;
-  width: 80%;
-`;
-
-const EmptyMessageWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 ${CARD_CONTENT_PADDING}px ${CARD_CONTENT_PADDING}px;
-  text-align: center;
-  line-height: 1.3;
-`;
+const EmptyMessageWrapper = props => {
+  const { children } = props;
+  return (
+    <div
+      style={{ ['--card-content-padding']: `${CARD_CONTENT_PADDING}px` }}
+      className={`${iotPrefix}--card--empty-message-wrapper`}
+    >
+      {children}
+    </div>
+  );
+};
 
 export const defaultProps = {
   size: CARD_SIZES.MEDIUM,
@@ -227,7 +251,6 @@ const Card = props => {
             // support passing the card toolbar through to the custom card
             const cardToolbar = hasToolbarActions ? (
               <CardToolbar
-                className={`${iotPrefix}--card--toolbar`}
                 width={cardSize.width}
                 availableActions={mergedAvailableActions}
                 i18n={strings}
@@ -244,7 +267,6 @@ const Card = props => {
                 id={id}
                 dimensions={dimensions}
                 isExpanded={isExpanded}
-                cardWidthSize={cardSize.width}
                 style={
                   !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
                 }
@@ -257,13 +279,13 @@ const Card = props => {
                         <Tooltip
                           ref={titleRef}
                           showIcon={false}
-                          triggerClassName="title--text"
+                          triggerClassName={`${iotPrefix}--card--title--text`}
                           triggerText={title}
                         >
                           {title}
                         </Tooltip>
                       ) : (
-                        <div ref={titleRef} className="title--text">
+                        <div ref={titleRef} className={`${iotPrefix}--card--title--text`}>
                           {title}
                         </div>
                       )}
@@ -284,7 +306,10 @@ const Card = props => {
                   {!isVisible && isLazyLoading ? ( // if not visible don't show anything
                     ''
                   ) : isLoading ? (
-                    <SkeletonWrapper>
+                    <div
+                      style={{ ['--card-content-padding']: `${CARD_CONTENT_PADDING}px` }}
+                      className={`${iotPrefix}--card--skeleton-wrapper`}
+                    >
                       <OptimizedSkeletonText
                         paragraph
                         lineCount={
@@ -292,7 +317,7 @@ const Card = props => {
                         }
                         width="100%"
                       />
-                    </SkeletonWrapper>
+                    </div>
                   ) : error ? (
                     <EmptyMessageWrapper>
                       {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE

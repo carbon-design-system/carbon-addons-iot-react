@@ -26,33 +26,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-basic"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -94,7 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -124,7 +129,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         />
       </div>
     </div>
@@ -181,33 +191,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="render-prop-basic"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card with render prop"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card with render prop
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -249,7 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -279,7 +294,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <p>
             Content width is 
@@ -342,28 +362,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-error"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             Error loading data for this card:  API threw Nullpointer
           </div>
@@ -423,28 +458,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
         id="facilitycard-error-small"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             Data error.
           </div>
@@ -496,11 +546,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
     }
   >
     <div
-      className="Card__CardWrapper-v5r71h-0 bHPJyP"
+      className="iot--card--wrapper"
       id="mycard"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
     >
       <div
-        className="Card__CardContent-v5r71h-1 hxiPNM"
+        className="iot--card--content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
       >
         <div
           className="iot--table-container bx--data-table-container"
@@ -546,16 +606,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               className="bx--toolbar-content iot--table-toolbar-content"
             >
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               >
                 <div
-                  className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+                  className="iot--card--toolbar-date-range-wrapper"
                 >
                   <button
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="Menu"
-                    className="card--toolbar-action bx--overflow-menu"
+                    className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -597,7 +657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   </button>
                 </div>
                 <button
-                  className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+                  className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
                   onClick={[Function]}
                 >
                   <svg
@@ -788,83 +848,89 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-with-loading"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
-            <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="Menu"
+              className="bx--overflow-menu"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              tabIndex={0}
+              title="Open and close list of options"
             >
-              <button
-                aria-expanded={false}
-                aria-haspopup={true}
-                aria-label="Menu"
-                className="bx--overflow-menu"
+              <svg
+                aria-label="open and close list of options"
+                className="bx--overflow-menu__icon"
+                focusable="false"
+                height={16}
                 onClick={[Function]}
-                onClose={[Function]}
                 onKeyDown={[Function]}
-                open={false}
-                tabIndex={0}
-                title="Open and close list of options"
-              >
-                <svg
-                  aria-label="open and close list of options"
-                  className="bx--overflow-menu__icon"
-                  focusable="false"
-                  height={16}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  preserveAspectRatio="xMidYMid meet"
-                  role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                style={
+                  Object {
+                    "willChange": "transform",
                   }
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="8"
-                    cy="3"
-                    r="1"
-                  />
-                  <circle
-                    cx="8"
-                    cy="8"
-                    r="1"
-                  />
-                  <circle
-                    cx="8"
-                    cy="13"
-                    r="1"
-                  />
-                  <title>
-                    open and close list of options
-                  </title>
-                </svg>
-              </button>
-            </div>
+                }
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="8"
+                  r="2"
+                />
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="2"
+                />
+                <circle
+                  cx="16"
+                  cy="24"
+                  r="2"
+                />
+                <title>
+                  open and close list of options
+                </title>
+              </svg>
+            </button>
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         />
       </div>
     </div>
@@ -921,27 +987,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-with-loading"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -971,7 +1042,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         />
       </div>
     </div>
@@ -1031,28 +1107,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-SMALL"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data
           </div>
@@ -1071,33 +1162,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-SMALLWIDE"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1141,10 +1237,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 ggrDpu"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1163,33 +1269,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-MEDIUMTHIN"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1233,10 +1344,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1255,33 +1376,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-MEDIUM"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1325,10 +1451,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1347,33 +1483,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-MEDIUMWIDE"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1417,10 +1558,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1439,33 +1590,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-LARGETHIN"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1509,10 +1665,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1531,33 +1697,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-LARGE"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1601,10 +1772,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1623,33 +1804,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card--wrapper"
         id="facilitycard-size-gallery-LARGEWIDE"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1693,10 +1879,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -1756,18 +1952,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-basic"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip."
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.
             </div>
@@ -1816,16 +2017,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -1867,7 +2068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               </button>
             </div>
             <button
-              className="card--toolbar-action CardToolbar__ToolbarSVGWrapper-sc-1ekh8ti-0 ighPOu"
+              className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
             >
               <svg
@@ -1897,7 +2098,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         />
       </div>
     </div>
@@ -1954,33 +2160,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-empty"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -2024,10 +2235,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -2087,28 +2308,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-with-loading"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
-            className="Card__SkeletonWrapper-v5r71h-2 fqjitN"
+            className="iot--card--skeleton-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             <div>
               <p
@@ -2193,33 +2429,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card--wrapper"
         id="facilitycard-with-loading"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Card Title"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Card Title
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -2263,7 +2504,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         />
       </div>
     </div>
