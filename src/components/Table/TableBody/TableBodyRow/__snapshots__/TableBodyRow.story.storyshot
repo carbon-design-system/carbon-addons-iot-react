@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow is not selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is not selectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -131,7 +131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -145,7 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow is selectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is selectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -276,7 +276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -290,7 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow normal 1`] = `
 <div
   className="storybook-container"
 >
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -364,7 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -497,7 +497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -511,7 +511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow row actions with overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions with overflow 1`] = `
 <div
   className="storybook-container"
 >
@@ -695,7 +695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -709,7 +709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow rowActions error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions error 1`] = `
 <div
   className="storybook-container"
 >
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -872,7 +872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|TableBodyRow rowActions running 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions running 1`] = `
 <div
   className="storybook-container"
 >
@@ -1009,7 +1009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Table
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

@@ -1,1 +1,1 @@
-export default from 'carbon-components-react/lib/components/Slider/Slider-story';
+export { default as SliderStory } from 'carbon-components-react/lib/components/Slider/Slider-story';

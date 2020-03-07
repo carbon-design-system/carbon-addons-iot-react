@@ -50,7 +50,7 @@ const commonGridProps = {
   onLayoutChange: action('onLayoutChange'),
 };
 
-storiesOf('Watson IoT|Dashboard Grid', module)
+storiesOf('Watson IoT/Dashboard Grid', module)
   .add(
     'dashboard, default layouts',
     () => {

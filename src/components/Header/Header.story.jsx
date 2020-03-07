@@ -175,7 +175,7 @@ const headerPanel = {
   )),
 };
 
-storiesOf('Watson IoT|Header', module)
+storiesOf('Watson IoT/Header', module)
   .add('Header action buttons with dropdowns', () => (
     <div style={{ width: '100%', height: '100vh' }}>
       <StyledHeader {...HeaderProps} headerPanel={headerPanel} />

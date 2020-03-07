@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard data state - error - medium 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - error - medium 1`] = `
 <div
   className="storybook-container"
 >
@@ -24,7 +24,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 jFCThr"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -36,9 +36,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Health score
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -191,7 +188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -205,7 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard data state - error - small 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - error - small 1`] = `
 <div
   className="storybook-container"
 >
@@ -229,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 hUpcuU"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -241,9 +238,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Health score
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -336,7 +330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -350,7 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard data state - no data - custom icon - large 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - no data - custom icon - large 1`] = `
 <div
   className="storybook-container"
 >
@@ -374,7 +368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 gmysZp"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -386,9 +380,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Health score
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 flVXpj"
@@ -538,7 +529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -552,7 +543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard data state - no data - medium - scroll page 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - no data - medium - scroll page 1`] = `
 <div
   className="storybook-container"
 >
@@ -574,7 +565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         }
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -586,9 +577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Health score
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -748,7 +736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -762,7 +750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard dataFilters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard dataFilters 1`] = `
 <div
   className="storybook-container"
 >
@@ -786,7 +774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -798,9 +786,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions per device
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -907,7 +892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -921,7 +906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -945,7 +930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -957,9 +942,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Really really really long card title?
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -1066,7 +1048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1080,7 +1062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard empty state 1`] = `
 <div
   className="storybook-container"
 >
@@ -1104,7 +1086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1116,9 +1098,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -1144,7 +1123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1158,7 +1137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard large / vertical /  5 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard large / vertical /  5 1`] = `
 <div
   className="storybook-container"
 >
@@ -1182,7 +1161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 izWJSI"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1194,9 +1173,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 flVXpj"
@@ -1458,7 +1434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1472,7 +1448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard large-thin / vertical /  6 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard large-thin / vertical /  6 1`] = `
 <div
   className="storybook-container"
 >
@@ -1496,7 +1472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 izWJSI"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1508,9 +1484,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 flVXpj"
@@ -1870,7 +1843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1884,7 +1857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard long titles and values 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard long titles and values 1`] = `
 <div
   className="storybook-container"
 >
@@ -1908,7 +1881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -1920,9 +1893,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Really long card title?
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -1988,7 +1958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2002,7 +1972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard long titles and values/multiple 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard long titles and values/multiple 1`] = `
 <div
   className="storybook-container"
 >
@@ -2026,7 +1996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2038,9 +2008,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Really really really long card title?
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -2147,7 +2114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2161,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / horizontal /  2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / horizontal /  2 1`] = `
 <div
   className="storybook-container"
 >
@@ -2185,7 +2152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2197,9 +2164,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -2306,7 +2270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2320,7 +2284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / horizontal /  3 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / horizontal /  3 1`] = `
 <div
   className="storybook-container"
 >
@@ -2344,7 +2308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2356,9 +2320,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -2522,7 +2483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2536,7 +2497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical /  2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical /  2 1`] = `
 <div
   className="storybook-container"
 >
@@ -2560,7 +2521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2572,9 +2533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -2681,7 +2639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2695,7 +2653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical /  3 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical /  3 1`] = `
 <div
   className="storybook-container"
 >
@@ -2719,7 +2677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -2731,9 +2689,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -2972,7 +2927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -2986,7 +2941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical / multiple 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical / multiple 1`] = `
 <div
   className="storybook-container"
 >
@@ -3010,7 +2965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3022,9 +2977,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -3188,7 +3140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3202,7 +3154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium / vertical / single 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical / single 1`] = `
 <div
   className="storybook-container"
 >
@@ -3226,7 +3178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3238,9 +3190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -3306,7 +3255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3320,7 +3269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard medium-wide / horizontal /  3 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium-wide / horizontal /  3 1`] = `
 <div
   className="storybook-container"
 >
@@ -3344,7 +3293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3356,9 +3305,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Facility Conditions
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 hxiPNM"
@@ -3522,7 +3468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3536,7 +3482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -3560,7 +3506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3572,9 +3518,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -3637,7 +3580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3651,7 +3594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / long 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / long 1`] = `
 <div
   className="storybook-container"
 >
@@ -3675,7 +3618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3687,9 +3630,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -3752,7 +3692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3766,7 +3706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / thresholds (number, custom renderIconByName) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, custom renderIconByName) 1`] = `
 <div
   className="storybook-container"
 >
@@ -3790,7 +3730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3802,9 +3742,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Alert Count
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -3900,7 +3837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -3914,7 +3851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / thresholds (number, icon) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, icon) 1`] = `
 <div
   className="storybook-container"
 >
@@ -3938,7 +3875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -3950,9 +3887,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Alert Count
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4040,7 +3974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4054,7 +3988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / thresholds (number, no icon) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, no icon) 1`] = `
 <div
   className="storybook-container"
 >
@@ -4078,7 +4012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4090,9 +4024,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Alert Count
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4155,7 +4086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4169,7 +4100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / title 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / title 1`] = `
 <div
   className="storybook-container"
 >
@@ -4193,7 +4124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4205,9 +4136,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Foot Traffic
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4273,7 +4201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4287,7 +4215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / trend down 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / trend down 1`] = `
 <div
   className="storybook-container"
 >
@@ -4311,7 +4239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4323,9 +4251,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Foot Traffic
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4388,7 +4313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4402,7 +4327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / trend up 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / trend up 1`] = `
 <div
   className="storybook-container"
 >
@@ -4426,7 +4351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4438,9 +4363,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Alert Count
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4503,7 +4425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4517,7 +4439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / units incl wrapping 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / units incl wrapping 1`] = `
 <div
   className="storybook-container"
 >
@@ -4541,7 +4463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4553,9 +4475,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4617,7 +4536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4629,9 +4548,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4694,7 +4610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4708,7 +4624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard small / wrapping 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / wrapping 1`] = `
 <div
   className="storybook-container"
 >
@@ -4732,7 +4648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4744,9 +4660,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Occupancy
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4809,7 +4722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4823,7 +4736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard smallwide / horizontal 2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard smallwide / horizontal 2 1`] = `
 <div
   className="storybook-container"
 >
@@ -4847,7 +4760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -4859,9 +4772,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Status
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -4968,7 +4878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -4982,7 +4892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard smallwide / thresholds (string) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard smallwide / thresholds (string) 1`] = `
 <div
   className="storybook-container"
 >
@@ -5006,7 +4916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -5018,9 +4928,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Status
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -5108,7 +5015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -5122,7 +5029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard smallwide / vertical 2 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard smallwide / vertical 2 1`] = `
 <div
   className="storybook-container"
 >
@@ -5146,7 +5053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -5158,9 +5065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Status
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -5267,7 +5171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -5281,7 +5185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ValueCard with boolean 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with boolean 1`] = `
 <div
   className="storybook-container"
 >
@@ -5305,7 +5209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         className="Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
-          className="card--header"
+          className="iot--card--header"
         >
           <span
             className="card--title"
@@ -5317,9 +5221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
               Uncomfortable?
             </div>
           </span>
-          <div
-            className="card--toolbar"
-          />
         </div>
         <div
           className="Card__CardContent-v5r71h-1 ggrDpu"
@@ -5389,7 +5290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

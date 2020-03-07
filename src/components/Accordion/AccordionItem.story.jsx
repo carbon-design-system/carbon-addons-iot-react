@@ -8,7 +8,7 @@ import AccordionItem from './AccordionItem';
 
 import { Accordion } from '.';
 
-storiesOf('Watson IoT|AccordionItem', module).add('conditionally load', () => (
+storiesOf('Watson IoT/AccordionItem', module).add('conditionally load', () => (
   <FullWidthWrapper>
     <Accordion>
       <AccordionItem id="a" title="Title one" open={boolean('switch open state via prop', true)}>

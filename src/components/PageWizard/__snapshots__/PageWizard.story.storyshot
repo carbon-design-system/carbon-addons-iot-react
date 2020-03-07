@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard With Horizontal ProgressIndicator 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Horizontal ProgressIndicator 1`] = `
 <div
   className="storybook-container"
 >
@@ -188,7 +188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -202,7 +202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard With Sticky Footer: stateful example w/ validation in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Sticky Footer: stateful example w/ validation in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -521,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -535,7 +535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard With additional footer content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With additional footer content 1`] = `
 <div
   className="storybook-container"
 >
@@ -862,7 +862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -876,7 +876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard only one step, in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard only one step, in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1088,7 +1088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1102,7 +1102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -1290,7 +1290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1304,7 +1304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard stateful example w/ validation in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful example w/ validation in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1623,7 +1623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1637,7 +1637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard w/ i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard w/ i18n 1`] = `
 <div
   className="storybook-container"
 >
@@ -1825,7 +1825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1839,7 +1839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageWizard wrapped in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard wrapped in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -2137,7 +2137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageW
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
