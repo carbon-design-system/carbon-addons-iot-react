@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Stateful example 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -304,11 +299,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -600,11 +590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Footer 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -937,11 +922,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Sidebar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1224,11 +1204,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with breadcrumbs 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1520,11 +1495,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with error 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1878,11 +1848,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

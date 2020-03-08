@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots image smaller than card, minimap and zoomcontrols should be hidden 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -299,11 +294,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots landscape image & landscape container 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -595,11 +585,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots landscape image & portrait container 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -891,11 +876,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots portrait image & landscape container 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1187,11 +1167,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageHotspots portrait image & portrait container 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
