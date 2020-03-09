@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header basic 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -83,11 +78,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header with custom actions 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -235,11 +225,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header with custom actions component 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -311,11 +296,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header with filter 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -448,11 +428,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Header with filter and custom actions 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - error - medium 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -210,11 +205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - error - small 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -357,11 +347,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - no data - custom icon - large 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -561,11 +546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard data state - no data - medium - scroll page 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -773,11 +753,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard dataFilters 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -934,11 +909,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard editable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1095,11 +1065,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard empty state 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1175,11 +1140,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard large / vertical /  5 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1491,11 +1451,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard large-thin / vertical /  6 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1905,11 +1860,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard long titles and values 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2025,11 +1975,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard long titles and values/multiple 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2186,11 +2131,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / horizontal /  2 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2347,11 +2287,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / horizontal /  3 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2565,11 +2500,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical /  2 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2726,11 +2656,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical /  3 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3019,11 +2944,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical / multiple 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3237,11 +3157,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium / vertical / single 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3357,11 +3272,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard medium-wide / horizontal /  3 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3575,11 +3485,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / basic 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3692,11 +3597,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / long 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3809,11 +3709,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, custom renderIconByName) 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -3959,11 +3854,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, icon) 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4101,11 +3991,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, no icon) 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4218,11 +4103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / title 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4338,11 +4218,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / trend down 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4455,11 +4330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / trend up 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4572,11 +4442,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / units incl wrapping 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4762,11 +4627,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / wrapping 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4879,11 +4739,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard smallwide / horizontal 2 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -5040,11 +4895,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard smallwide / thresholds (string) 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -5182,11 +5032,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard smallwide / vertical 2 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -5343,11 +5188,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard with boolean 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

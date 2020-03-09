@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard basic 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -358,11 +353,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard custom renderIconByName 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -727,11 +717,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -840,11 +825,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard error loading image 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -953,11 +933,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard hotspots are loading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1192,11 +1167,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ImageCard isEditable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

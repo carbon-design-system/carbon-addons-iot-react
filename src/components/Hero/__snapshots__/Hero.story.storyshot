@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) isLoading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -67,11 +62,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -132,11 +122,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with breadcrumb 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -260,11 +245,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with breadcrumb with right content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -398,11 +378,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with close button 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -549,11 +524,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with description 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -619,11 +589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with right content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -721,11 +686,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with tooltip (no link) 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -890,11 +850,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) with tooltip 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1059,11 +1014,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar base 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -76,11 +71,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar isLoading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -140,11 +130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with breadcrumb 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -254,11 +239,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -548,11 +528,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with description 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -626,11 +601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with editable title bar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -738,11 +708,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with everything 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1124,11 +1089,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with rich content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1298,11 +1258,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with tooltip description 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

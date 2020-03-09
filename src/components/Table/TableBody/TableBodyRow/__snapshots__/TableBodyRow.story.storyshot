@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is not selectable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -153,11 +148,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow is selectable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -303,11 +293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow normal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -382,11 +367,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -534,11 +514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow row actions with overflow 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -737,11 +712,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions error 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -905,11 +875,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions running 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
