@@ -116,7 +116,8 @@ export const TableCardPropTypes = {
         width: PropTypes.number,
         label: PropTypes.string.isRequired,
         priority: PropTypes.number,
-        renderer: PropTypes.func,
+        /** See the renderDataFunction for TablePropTypes */
+        renderDataFunction: PropTypes.func,
         type: PropTypes.string,
       })
     ).isRequired,
