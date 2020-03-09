@@ -397,12 +397,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         "willChange": "transform",
                       }
                     }
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 16 16"
                     width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                      d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"
                     />
                     <title>
                       Icon description
@@ -534,12 +534,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         "willChange": "transform",
                       }
                     }
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 16 16"
                     width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                      d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"
                     />
                     <title>
                       Icon description

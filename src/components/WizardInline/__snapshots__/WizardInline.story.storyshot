@@ -406,15 +406,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
+                viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                 />
                 <path
-                  d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                 />
                 <title>
                   First step
@@ -702,15 +702,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
+                viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                 />
                 <path
-                  d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                 />
                 <title>
                   First step
@@ -746,15 +746,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
+                viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                 />
                 <path
-                  d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                 />
                 <title>
                   Device Information step goes here
@@ -790,15 +790,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
+                viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                 />
                 <path
-                  d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                 />
                 <title>
                   Long step
@@ -1326,15 +1326,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
+                viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
                 />
                 <path
-                  d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
                 />
                 <title>
                   First step

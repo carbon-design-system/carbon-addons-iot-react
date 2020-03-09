@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classNames from 'classnames';
@@ -8,11 +7,6 @@ import classNames from 'classnames';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
-
-const TimeRangeLabel = styled.div`
-  font-size: 0.875rem;
-  font-weight: normal;
-`;
 
 export const CardRangePickerPropTypes = {
   /** Optional range to pass at the card level */
@@ -32,10 +26,12 @@ export const CardRangePickerPropTypes = {
   onCardAction: PropTypes.func.isRequired,
   /** set of internationalized labels */
   i18n: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.func])).isRequired,
+  cardWidth: PropTypes.number,
 };
 
 const defaultProps = {
   timeRange: null,
+  cardWidth: undefined,
 };
 
 const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWidth }) => {
@@ -65,9 +61,9 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
         {timeBoxLabels[timeRange] && cardWidth > 229 ? (
-          <TimeRangeLabel id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
+          <div id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
             {timeBoxLabels[timeRange]}
-          </TimeRangeLabel>
+          </div>
         ) : null}
 
         <OverflowMenu

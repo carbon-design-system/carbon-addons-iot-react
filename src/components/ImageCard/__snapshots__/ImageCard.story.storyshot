@@ -53,6 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             <button
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 description="Expand to fullscreen"
@@ -418,6 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             <button
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 description="Expand to fullscreen"
@@ -797,6 +799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             <button
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 description="Expand to fullscreen"
@@ -925,6 +928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             <button
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 description="Expand to fullscreen"
@@ -1053,6 +1057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             <button
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 description="Expand to fullscreen"
@@ -1302,6 +1307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
             <button
               className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
               onClick={[Function]}
+              type="button"
             >
               <svg
                 description="Expand to fullscreen"

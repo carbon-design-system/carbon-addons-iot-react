@@ -5,8 +5,9 @@ import { Close20, Popup20 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classNames from 'classnames';
 
-import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
+import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
 const { iotPrefix } = settings;
@@ -15,6 +16,7 @@ const ToolbarSVGWrapper = props => {
   const { children, onClick } = props;
   return (
     <button
+      type="button"
       onClick={onClick}
       className={classNames(
         `${iotPrefix}--card--toolbar-action`,
@@ -24,6 +26,10 @@ const ToolbarSVGWrapper = props => {
       {children}
     </button>
   );
+};
+ToolbarSVGWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 const propTypes = {

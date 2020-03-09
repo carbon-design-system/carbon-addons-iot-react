@@ -4,6 +4,7 @@ import { Tooltip, SkeletonText } from 'carbon-components-react';
 import SizeMe from 'react-sizeme';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
+import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -49,7 +50,7 @@ const CardWrapper = ({
   return (
     <div
       id={id}
-      style={{ ...style, ['--card-default-height']: `${dimensions.y}px` }}
+      style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
       {...htmlOthers}
       className={classNames(className, `${iotPrefix}--card--wrapper`, {
         [`${iotPrefix}--card--wrapper--overflowing`]: showOverflow,
@@ -92,12 +93,31 @@ const EmptyMessageWrapper = props => {
   const { children } = props;
   return (
     <div
-      style={{ ['--card-content-padding']: `${CARD_CONTENT_PADDING}px` }}
+      style={{ '--card-content-padding': `${CARD_CONTENT_PADDING}px` }}
       className={`${iotPrefix}--card--empty-message-wrapper`}
     >
       {children}
     </div>
   );
+};
+
+CardWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
+  isExpanded: CardPropTypes.isExpanded.isRequired,
+  showOverflow: CardPropTypes.showOverflow.isRequired,
+  id: CardPropTypes.id,
+  style: PropTypes.objectOf(PropTypes.string),
+};
+CardWrapper.defaultProps = { id: undefined, style: undefined };
+CardContent.propTypes = {
+  children: PropTypes.node,
+  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
+  isExpanded: CardPropTypes.isExpanded.isRequired,
+};
+CardContent.defaultProps = { children: undefined };
+EmptyMessageWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export const defaultProps = {
@@ -307,7 +327,7 @@ const Card = props => {
                     ''
                   ) : isLoading ? (
                     <div
-                      style={{ ['--card-content-padding']: `${CARD_CONTENT_PADDING}px` }}
+                      style={{ '--card-content-padding': `${CARD_CONTENT_PADDING}px` }}
                       className={`${iotPrefix}--card--skeleton-wrapper`}
                     >
                       <OptimizedSkeletonText
