@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, all card sizes 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -377,11 +372,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, custom layout 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -564,11 +554,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, default layouts 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -751,11 +736,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, is Edtiable 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

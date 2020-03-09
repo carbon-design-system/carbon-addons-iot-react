@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) custom cell renderer 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -233,11 +228,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) default  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -391,11 +381,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with empty state 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -498,11 +483,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with empty state with fixed column width 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -608,11 +588,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) with fixed column widths 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -778,11 +753,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedStructuredList (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

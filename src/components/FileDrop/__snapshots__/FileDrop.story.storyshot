@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Accept JSON 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -100,11 +95,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Browse 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -188,11 +178,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Browse only one 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -276,11 +261,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Drag and drop 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -369,11 +349,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Drag only one file 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -462,11 +437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileDrop Show files false 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

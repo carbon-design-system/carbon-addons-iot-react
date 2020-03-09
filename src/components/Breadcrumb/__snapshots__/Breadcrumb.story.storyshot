@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb current page with aria-current 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -92,11 +87,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb default 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -180,11 +170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb skeleton 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -255,11 +240,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Breadcrumb with useResizeObserver 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

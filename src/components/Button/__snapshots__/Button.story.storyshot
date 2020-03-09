@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Button loading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -89,11 +84,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Button loading with secondary 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -175,11 +165,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Button not loading 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

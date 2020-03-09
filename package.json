@@ -30,7 +30,7 @@
     "test:base": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
     "test:watch": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
-    "test:update": "cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js --updateSnapshot",
+    "test:update": "cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
     "test:clear": "cross-env TZ=America/Chicago jest --clearCache"
   },
   "stylelint": {
@@ -183,6 +183,7 @@
     "promise": "^8.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-is": "^16.13.0",
     "react-lorem-component": "^0.13.0",
     "react-test-renderer": "^16.8.6",
     "rimraf": "^3.0.0",
