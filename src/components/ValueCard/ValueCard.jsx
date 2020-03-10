@@ -13,6 +13,7 @@ import {
   getUpdatedCardSize,
 } from '../../utils/cardUtilityFunctions';
 
+import DataStateRenderer from './DataStateRenderer';
 import Attribute from './Attribute';
 
 const ContentWrapper = styled.div`
@@ -207,7 +208,17 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
   }
 };
 
-const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }) => {
+const ValueCard = ({
+  title,
+  content,
+  size,
+  values,
+  isEditable,
+  i18n,
+  dataState,
+  id,
+  ...others
+}) => {
   const availableActions = {
     expand: false,
     ...others.availableActions,
@@ -237,83 +248,87 @@ const ValueCard = ({ title, content, size, values, isEditable, i18n, ...others }
             title={title}
             size={newSize}
             availableActions={availableActions}
-            isEmpty={isEmpty(values)}
+            isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
+            showOverflow={!!dataState}
             i18n={i18n}
             {...others}
           >
             <ContentWrapper layout={layout}>
-              {attributes.map((attribute, i) => (
-                <React.Fragment
-                  key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
-                    attribute.dataFilter || {}
-                  )}`}
-                >
-                  <AttributeWrapper
-                    layout={layout}
-                    isVertical={isVertical}
-                    isSmall={attribute.secondaryValue !== undefined}
-                    isMini={isMini}
-                    size={newSize}
-                    attributeCount={attributes.length}
+              {dataState && <DataStateRenderer dataState={dataState} size={newSize} id={id} />}
+              {!dataState &&
+                attributes.map((attribute, i) => (
+                  <React.Fragment
+                    key={`fragment-${attribute.dataSourceId}-${JSON.stringify(
+                      attribute.dataFilter || {}
+                    )}`}
                   >
-                    <Attribute
-                      isVertical={isVertical}
-                      layout={layout}
-                      isSmall={
-                        newSize === CARD_SIZES.SMALL &&
-                        (attribute.secondaryValue !== undefined || attribute.label !== undefined)
-                      }
-                      isMini={isMini}
-                      alignValue={
-                        newSize === CARD_SIZES.MEDIUMTHIN && attributes.length === 1
-                          ? 'center'
-                          : undefined
-                      }
-                      {...attribute}
-                      renderIconByName={others.renderIconByName}
-                      size={newSize} // When the card is in the editable state, we will show a preview
-                      value={
-                        isEditable
-                          ? '--'
-                          : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
-                      }
-                      secondaryValue={
-                        attribute.secondaryValue && {
-                          ...attribute.secondaryValue,
-                          value: isEditable // When the card is in the editable state, we will show a preview
-                            ? '--'
-                            : determineValue(attribute.secondaryValue.dataSourceId, values),
-                        }
-                      }
-                    />
-                    {isMini && <Spacer />}
-                    <AttributeLabel
-                      title={attribute.label}
-                      isVertical={isVertical}
-                      layout={layout}
-                      isMini={isMini}
-                      attributeCount={attributes.length}
-                      size={newSize}
-                    >
-                      {attribute.label}
-                    </AttributeLabel>
-                  </AttributeWrapper>
-                  {i < attributes.length - 1 &&
-                  (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
-                  newSize !== CARD_SIZES.SMALLWIDE ? (
                     <AttributeWrapper
                       layout={layout}
                       isVertical={isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
                       isMini={isMini}
                       size={newSize}
+                      attributeCount={attributes.length}
                     >
-                      <AttributeSeparator />
+                      <Attribute
+                        attributeCount={attributes.length}
+                        isVertical={isVertical}
+                        layout={layout}
+                        isSmall={
+                          newSize === CARD_SIZES.SMALL &&
+                          (attribute.secondaryValue !== undefined || attribute.label !== undefined)
+                        }
+                        isMini={isMini}
+                        alignValue={
+                          newSize === CARD_SIZES.MEDIUMTHIN && attributes.length === 1
+                            ? 'center'
+                            : undefined
+                        }
+                        {...attribute}
+                        renderIconByName={others.renderIconByName}
+                        size={newSize} // When the card is in the editable state, we will show a preview
+                        value={
+                          isEditable
+                            ? '--'
+                            : determineValue(attribute.dataSourceId, values, attribute.dataFilter)
+                        }
+                        secondaryValue={
+                          attribute.secondaryValue && {
+                            ...attribute.secondaryValue,
+                            value: isEditable // When the card is in the editable state, we will show a preview
+                              ? '--'
+                              : determineValue(attribute.secondaryValue.dataSourceId, values),
+                          }
+                        }
+                      />
+                      {isMini && <Spacer />}
+                      <AttributeLabel
+                        title={attribute.label}
+                        isVertical={isVertical}
+                        layout={layout}
+                        isMini={isMini}
+                        attributeCount={attributes.length}
+                        size={newSize}
+                      >
+                        {attribute.label}
+                      </AttributeLabel>
                     </AttributeWrapper>
-                  ) : null}
-                </React.Fragment>
-              ))}
+                    {i < attributes.length - 1 &&
+                    (isVertical || layout === CARD_LAYOUTS.VERTICAL) &&
+                    newSize !== CARD_SIZES.SMALLWIDE ? (
+                      <AttributeWrapper
+                        layout={layout}
+                        isVertical={isVertical}
+                        isSmall={attribute.secondaryValue !== undefined}
+                        isMini={isMini}
+                        size={newSize}
+                      >
+                        <AttributeSeparator />
+                      </AttributeWrapper>
+                    ) : null}
+                  </React.Fragment>
+                ))}
             </ContentWrapper>
           </Card>
         );

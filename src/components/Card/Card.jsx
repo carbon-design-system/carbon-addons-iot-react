@@ -22,7 +22,7 @@ import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
 
-const { prefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 const OptimizedSkeletonText = React.memo(SkeletonText);
 
@@ -36,13 +36,13 @@ const CardWrapper = styled.div`
   span#timeRange {
     display: ${props => (props.cardWidthSize < 230 ? `none` : `flex`)};
   }
-  overflow: hidden;
+  overflow: ${props => (props.showOverflow ? `visible` : `hidden`)};
 `;
 
 /** Header components */
 export const CardHeader = (
   { children } //eslint-disable-line
-) => <div className="card--header">{children}</div>;
+) => <div className={`${iotPrefix}--card--header`}>{children}</div>;
 
 export const CardTitle = (
   { children, title } //eslint-disable-line
@@ -82,6 +82,7 @@ export const defaultProps = {
   title: undefined,
   toolbar: undefined,
   hideHeader: false,
+  showOverflow: false,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,
@@ -183,6 +184,8 @@ const Card = props => {
     [availableActions]
   );
 
+  const hasToolbarActions = Object.values(mergedAvailableActions).includes(true);
+
   const strings = {
     ...defaultProps.i18n,
     ...i18n,
@@ -222,8 +225,9 @@ const Card = props => {
         <SizeMe.SizeMe monitorHeight>
           {({ size: cardSize }) => {
             // support passing the card toolbar through to the custom card
-            const cardToolbar = (
+            const cardToolbar = hasToolbarActions ? (
               <CardToolbar
+                className={`${iotPrefix}--card--toolbar`}
                 width={cardSize.width}
                 availableActions={mergedAvailableActions}
                 i18n={strings}
@@ -232,7 +236,7 @@ const Card = props => {
                 timeRange={timeRange}
                 onCardAction={cachedOnCardAction}
               />
-            );
+            ) : null;
 
             return (
               <CardWrapper

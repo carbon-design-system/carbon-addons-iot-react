@@ -80,12 +80,12 @@ describe(`Storybook Snapshot tests and console checks`, () => {
 
         // these stories require an input be nested within the ref, for compatibility with Carbon's TableToolbarSearch component
         const storiesNeedingNestedInputRefs = [
-          'Watson IoT|Table.minitable',
-          'Watson IoT|Table.with simple search',
-          'Watson IoT|Table.Stateful Example with row nesting',
-          'Watson IoT|Table.Stateful Example with expansion',
-          'Watson IoT|TileCatalog.with search',
-          'Watson IoT|TableCard',
+          'Watson IoT/Table.minitable',
+          'Watson IoT/Table.with simple search',
+          'Watson IoT/Table.Stateful Example with row nesting',
+          'Watson IoT/Table.Stateful Example with expansion',
+          'Watson IoT/TileCatalog.with search',
+          'Watson IoT/TableCard',
         ];
         if (
           storiesNeedingNestedInputRefs.includes(story.kind) ||
@@ -98,7 +98,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         }
 
         // Needed for DatePicker refererence in carbon-components-react
-        if (story.kind === 'Watson IoT|Dashboard Header') {
+        if (story.kind === 'Watson IoT/Dashboard Header') {
           const fragment = document.createDocumentFragment();
           const div = document.createElement('div');
           div.className = 'from-initStoryshots-createNodeMock'; // to assist in debugging

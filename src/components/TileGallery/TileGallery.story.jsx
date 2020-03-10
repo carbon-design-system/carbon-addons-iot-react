@@ -143,7 +143,7 @@ export const galleryData = [
   },
 ];
 
-storiesOf('Watson IoT Experimental|TileGallery', module)
+storiesOf('Watson IoT Experimental/TileGallery', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
 
   .add('Stateful TileGallery', () => (

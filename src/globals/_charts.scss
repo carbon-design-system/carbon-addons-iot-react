@@ -1,0 +1,13 @@
+@import '~@carbon/charts/styles.css';
+
+html[dir='rtl'] .chart-holder {
+  .legend-item {
+    direction: ltr;
+  }
+  .axis {
+    direction: ltr;
+    .axis-title {
+      direction: ltr;
+    }
+  }
+}

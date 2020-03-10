@@ -1,4 +1,4 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
 @import '~carbon-components/scss/components/ui-shell/side-nav';
 
 .#{$prefix}--side-nav {
@@ -162,4 +162,32 @@ button.#{$prefix}--side-nav__link {
   .#{$prefix}--side-nav__menu-item
   > * {
   height: 3rem;
+}
+
+// RTL style fixes
+html[dir='rtl'] {
+  .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
+    margin-right: unset;
+    margin-left: 1.5rem;
+  }
+
+  .#{$prefix}--header__menu-trigger {
+    margin-right: 0;
+  }
+
+  .#{$prefix}--side-nav {
+    left: auto;
+    right: 0;
+  }
+
+  .#{$prefix}--side-nav__link[aria-current='page']::before,
+  .#{$prefix}--side-nav__link--current::before,
+  .#{$prefix}--side-nav:not(.#{$prefix}--side-nav--expanded)
+    .#{$prefix}--side-nav__item--active
+    .#{$prefix}--side-nav__submenu[aria-expanded='true']::before,
+  .#{$prefix}--side-nav__item--active
+    .#{$prefix}--side-nav__submenu[aria-expanded='false']::before {
+    left: auto;
+    right: 0;
+  }
 }

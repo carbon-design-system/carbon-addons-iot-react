@@ -1,1925 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Stateful example 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
+  className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="bx--modal-container"
+        data-id="WizardInlineContainer"
       >
         <div
-          className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+          className="wizard-inline-header page-title-bar"
         >
           <div
-            className="bx--modal-container"
-            data-id="WizardInlineContainer"
+            className="page-title-bar-header"
           >
-            <div
-              className="wizard-inline-header page-title-bar"
-            >
+            <div>
               <div
-                className="page-title-bar-header"
+                className="page-title-bar-title"
               >
-                <div>
-                  <div
-                    className="page-title-bar-title"
-                  >
-                    <div
-                      className="page-title-bar-title--text"
-                    >
-                      <h2>
-                        I am a title
-                      </h2>
-                    </div>
-                  </div>
-                  <p
-                    className="page-title-bar-description"
-                  >
-                    My long blurb to explain what is going on
-                  </p>
-                </div>
                 <div
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                />
-                <div>
-                  <button
-                    className="bx--modal-close iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    tabIndex={0}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
-                      />
-                    </svg>
-                  </button>
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    I am a title
+                  </h2>
                 </div>
               </div>
-            </div>
-            <ul
-              className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-              onChange={[Function]}
-            >
-              <li
-                className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
+              <p
+                className="page-title-bar-description"
               >
-                <div
-                  className="bx--progress-step-button bx--progress-step-button--unclickable"
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={-1}
-                >
-                  <svg>
-                    <path
-                      d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
-                    />
-                    <title>
-                      First step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    First step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Device Information step goes here
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Device Information step goes here
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Long step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Long step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Final step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Final step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-            </ul>
-            <div
-              className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
-            >
-              <div
-                className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-                width={200}
-              >
-                <div>
-                  sidebar
-                </div>
-              </div>
-              <div
-                className="bx--modal-content"
-                data-id="WizardInlineContent"
-              >
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "backgroundColor": "#eaeaea",
-                      }
-                    }
-                  >
-                    <div>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, corrupti laboriosam, culpa similique quae dolorum provident vitae iusto at velit dignissimos reiciendis maiores voluptate fugit dolore harum unde laborum facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta placeat explicabo! Necessitatibus id neque accusantium molestiae officiis ducimus! Suscipit quae perferendis officiis vel, magnam est error! Vel, accusantium quas enim inventore natus adipisci autem at modi dolores assumenda mollitia ut facilis, deleniti aspernatur? Fuga at in expedita tempora cum quasi nemo neque alias id ullam omnis similique placeat provident, eum totam itaque perferendis, reiciendis laboriosam ducimus sunt facilis amet? Cupiditate voluptatem et, voluptas maxime sunt possimus repudiandae nisi necessitatibus?
-                    </div>
-                  </div>
-                </div>
-              </div>
+                My long blurb to explain what is going on
+              </p>
             </div>
             <div
-              className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
-            >
-              <div
-                className="bx--modal-footer"
-                data-id="WizardInlineFooter"
-              >
-                <div
-                  className="WizardInline-custom-footer-content"
-                >
-                  <p
-                    className="WizardInlinestory__StyledFooterContent-j3mhhx-0 hZOfgn"
-                  >
-                    this is footer content
-                  </p>
-                </div>
-                <div
-                  className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Static 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
-        >
-          <div
-            className="bx--modal-container"
-            data-id="WizardInlineContainer"
-          >
-            <div
-              className="wizard-inline-header page-title-bar"
-            >
-              <div
-                className="page-title-bar-header"
-              >
-                <div>
-                  <div
-                    className="page-title-bar-title"
-                  >
-                    <div
-                      className="page-title-bar-title--text"
-                    >
-                      <h2>
-                        Static Wizard
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                />
-                <div>
-                  <button
-                    className="bx--modal-close iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    tabIndex={0}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <ul
-              className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-              onChange={[Function]}
-            >
-              <li
-                className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                    />
-                    <path
-                      d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
-                    />
-                    <title>
-                      First step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    First step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button bx--progress-step-button--unclickable"
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={-1}
-                >
-                  <svg>
-                    <path
-                      d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
-                    />
-                    <title>
-                      Device Information step goes here
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Device Information step goes here
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Long step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Long step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Final step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Final step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-            </ul>
-            <div
-              className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
-            >
-              <div
-                className="bx--modal-content"
-                data-id="WizardInlineContent"
-              >
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "backgroundColor": "#dceadd",
-                        "padding": "70px 30px",
-                      }
-                    }
-                  >
-                    <div>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum mollitia repellendus assumenda fuga inventore nisi, minus optio ullam voluptas eveniet dolore dolorem vitae, neque suscipit labore at. Voluptatum, nobis perferendis!
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
-            >
-              <div
-                className="bx--modal-footer"
-                data-id="WizardInlineFooter"
-              >
-                <div
-                  className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Static with Footer 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
-        >
-          <div
-            className="bx--modal-container"
-            data-id="WizardInlineContainer"
-          >
-            <div
-              className="wizard-inline-header page-title-bar"
-            >
-              <div
-                className="page-title-bar-header"
-              >
-                <div>
-                  <div
-                    className="page-title-bar-title"
-                  >
-                    <div
-                      className="page-title-bar-title--text"
-                    >
-                      <h2>
-                        Static Wizard
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                />
-                <div>
-                  <button
-                    className="bx--modal-close iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    tabIndex={0}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <ul
-              className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-              onChange={[Function]}
-            >
-              <li
-                className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                    />
-                    <path
-                      d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
-                    />
-                    <title>
-                      First step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    First step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                    />
-                    <path
-                      d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
-                    />
-                    <title>
-                      Device Information step goes here
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Device Information step goes here
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                    />
-                    <path
-                      d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
-                    />
-                    <title>
-                      Long step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Long step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button bx--progress-step-button--unclickable"
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={-1}
-                >
-                  <svg>
-                    <path
-                      d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
-                    />
-                    <title>
-                      Final step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Final step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-            </ul>
-            <div
-              className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
-            >
-              <div
-                className="bx--modal-content"
-                data-id="WizardInlineContent"
-              >
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "backgroundColor": "#ae9e8e",
-                        "padding": "70px 30px",
-                      }
-                    }
-                  >
-                    <div>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur deserunt eius ad sequi provident, corporis rerum expedita amet enim perferendis?
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
-            >
-              <div
-                className="bx--modal-footer"
-                data-id="WizardInlineFooter"
-              >
-                <div
-                  className="WizardInline-custom-footer-content"
-                >
-                  <p
-                    className="WizardInlinestory__StyledFooterContent-j3mhhx-0 hZOfgn"
-                  >
-                    this is footer content
-                  </p>
-                </div>
-                <div
-                  className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Add
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Static with Sidebar 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
-        >
-          <div
-            className="bx--modal-container"
-            data-id="WizardInlineContainer"
-          >
-            <div
-              className="wizard-inline-header page-title-bar"
-            >
-              <div
-                className="page-title-bar-header"
-              >
-                <div>
-                  <div
-                    className="page-title-bar-title"
-                  >
-                    <div
-                      className="page-title-bar-title--text"
-                    >
-                      <h2>
-                        Static Wizard
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                />
-                <div>
-                  <button
-                    className="bx--modal-close iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    tabIndex={0}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <ul
-              className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-              onChange={[Function]}
-            >
-              <li
-                className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button bx--progress-step-button--unclickable"
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={-1}
-                >
-                  <svg>
-                    <path
-                      d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
-                    />
-                    <title>
-                      First step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    First step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Device Information step goes here
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Device Information step goes here
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Long step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Long step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Final step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Final step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-            </ul>
-            <div
-              className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
-            >
-              <div
-                className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
-                width={200}
-              >
-                <div>
-                  sidebar
-                </div>
-              </div>
-              <div
-                className="bx--modal-content"
-                data-id="WizardInlineContent"
-              >
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "backgroundColor": "#eaeaea",
-                      }
-                    }
-                  >
-                    <div>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, corrupti laboriosam, culpa similique quae dolorum provident vitae iusto at velit dignissimos reiciendis maiores voluptate fugit dolore harum unde laborum facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta placeat explicabo! Necessitatibus id neque accusantium molestiae officiis ducimus! Suscipit quae perferendis officiis vel, magnam est error! Vel, accusantium quas enim inventore natus adipisci autem at modi dolores assumenda mollitia ut facilis, deleniti aspernatur? Fuga at in expedita tempora cum quasi nemo neque alias id ullam omnis similique placeat provident, eum totam itaque perferendis, reiciendis laboriosam ducimus sunt facilis amet? Cupiditate voluptatem et, voluptas maxime sunt possimus repudiandae nisi necessitatibus?
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
-            >
-              <div
-                className="bx--modal-footer"
-                data-id="WizardInlineFooter"
-              >
-                <div
-                  className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) with breadcrumbs 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
-        >
-          <div
-            className="bx--modal-container"
-            data-id="WizardInlineContainer"
-          >
-            <div
-              className="wizard-inline-header page-title-bar"
-            >
-              <div
-                className="page-title-bar-header"
-              >
-                <div>
-                  <div
-                    className="page-title-bar-title"
-                  >
-                    <div
-                      className="page-title-bar-title--text"
-                    >
-                      <h2>
-                        Static Wizard
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                />
-                <div>
-                  <button
-                    className="bx--modal-close iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    tabIndex={0}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <ul
-              className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-              onChange={[Function]}
-            >
-              <li
-                className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                    />
-                    <path
-                      d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
-                    />
-                    <title>
-                      First step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    First step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button bx--progress-step-button--unclickable"
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={-1}
-                >
-                  <svg>
-                    <path
-                      d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
-                    />
-                    <title>
-                      Device Information step goes here
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Device Information step goes here
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Long step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Long step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Final step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Final step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-            </ul>
-            <div
-              className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
-            >
-              <div
-                className="bx--modal-content"
-                data-id="WizardInlineContent"
-              >
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "backgroundColor": "#dceadd",
-                        "padding": "70px 30px",
-                      }
-                    }
-                  >
-                    <div>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum mollitia repellendus assumenda fuga inventore nisi, minus optio ullam voluptas eveniet dolore dolorem vitae, neque suscipit labore at. Voluptatum, nobis perferendis!
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
-            >
-              <div
-                className="bx--modal-footer"
-                data-id="WizardInlineFooter"
-              >
-                <div
-                  className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Back
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) with error 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "margin": "auto",
-        "maxHeight": "100%",
-      }
-    }
-  >
-    <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
-      >
-        <div
-          className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
-        >
-          <div
-            className="bx--modal-container"
-            data-id="WizardInlineContainer"
-          >
-            <div
-              className="wizard-inline-header page-title-bar"
-            >
-              <div
-                className="page-title-bar-header"
-              >
-                <div>
-                  <div
-                    className="page-title-bar-title"
-                  >
-                    <div
-                      className="page-title-bar-title--text"
-                    >
-                      <h2>
-                        Static Wizard
-                      </h2>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "flex": 1,
-                    }
-                  }
-                />
-                <div>
-                  <button
-                    className="bx--modal-close iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    tabIndex={0}
-                    title="Close"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={20}
-                      onClick={[Function]}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <ul
-              className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-              onChange={[Function]}
-            >
-              <li
-                className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button bx--progress-step-button--unclickable"
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={-1}
-                >
-                  <svg>
-                    <path
-                      d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
-                    />
-                    <title>
-                      First step
-                    </title>
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    First step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Device Information step goes here
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Device Information step goes here
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Long step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Long step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-              <li
-                className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
-              >
-                <div
-                  className="bx--progress-step-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg>
-                    <title>
-                      Final step
-                    </title>
-                    <path
-                      d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                    />
-                  </svg>
-                  <p
-                    className="bx--progress-label"
-                  >
-                    Final step
-                  </p>
-                  <span
-                    className="bx--progress-line"
-                  />
-                </div>
-              </li>
-            </ul>
-            <div
-              className="bx--inline-notification bx--inline-notification--error WizardInline__StyledMessageBox-sc-8orpb0-2 jGtpBI"
-              kind="error"
-              role="alert"
-            >
-              <div
-                className="bx--inline-notification__details"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="bx--inline-notification__icon"
-                  focusable="false"
-                  height={20}
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
-                  viewBox="0 0 20 20"
-                  width={20}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
-                  />
-                  <path
-                    d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
-                    data-icon-path="inner-path"
-                    opacity="0"
-                  />
-                  <title>
-                    closes notification
-                  </title>
-                </svg>
-                <div
-                  className="bx--inline-notification__text-wrapper"
-                >
-                  <p
-                    className="bx--inline-notification__title"
-                  >
-                    Error on the form
-                  </p>
-                  <div
-                    className="bx--inline-notification__subtitle"
-                  >
-                    
-                  </div>
-                </div>
-              </div>
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
               <button
-                aria-label="closes notification"
-                className="bx--inline-notification__close-button"
-                onClick={[Function]}
-                title="closes notification"
+                className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
                 type="button"
               >
                 <svg
-                  aria-label="close notification"
-                  className="bx--inline-notification__close-icon"
+                  aria-hidden={true}
                   focusable="false"
                   height={20}
+                  onClick={[Function]}
                   preserveAspectRatio="xMidYMid meet"
-                  role="img"
                   style={
                     Object {
                       "willChange": "transform",
@@ -1930,218 +74,1871 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
                   />
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+        <ul
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          onChange={[Function]}
+        >
+          <li
+            className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
+          >
             <div
-              className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+              className="bx--progress-step-button bx--progress-step-button--unclickable"
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
             >
+              <svg>
+                <path
+                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                />
+                <title>
+                  First step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                First step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Device Information step goes here
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Device Information step goes here
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Long step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Long step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Final step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Final step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+        >
+          <div
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
+            width={200}
+          >
+            <div>
+              sidebar
+            </div>
+          </div>
+          <div
+            className="bx--modal-content"
+            data-id="WizardInlineContent"
+          >
+            <div>
               <div
-                className="bx--modal-content"
-                data-id="WizardInlineContent"
+                style={
+                  Object {
+                    "backgroundColor": "#eaeaea",
+                  }
+                }
               >
                 <div>
-                  <div
-                    style={
-                      Object {
-                        "backgroundColor": "#eaeaea",
-                      }
-                    }
-                  >
-                    <div>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, corrupti laboriosam, culpa similique quae dolorum provident vitae iusto at velit dignissimos reiciendis maiores voluptate fugit dolore harum unde laborum facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta placeat explicabo! Necessitatibus id neque accusantium molestiae officiis ducimus! Suscipit quae perferendis officiis vel, magnam est error! Vel, accusantium quas enim inventore natus adipisci autem at modi dolores assumenda mollitia ut facilis, deleniti aspernatur? Fuga at in expedita tempora cum quasi nemo neque alias id ullam omnis similique placeat provident, eum totam itaque perferendis, reiciendis laboriosam ducimus sunt facilis amet? Cupiditate voluptatem et, voluptas maxime sunt possimus repudiandae nisi necessitatibus?
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
-            >
-              <div
-                className="bx--modal-footer"
-                data-id="WizardInlineFooter"
-              >
-                <div
-                  className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, corrupti laboriosam, culpa similique quae dolorum provident vitae iusto at velit dignissimos reiciendis maiores voluptate fugit dolore harum unde laborum facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta placeat explicabo! Necessitatibus id neque accusantium molestiae officiis ducimus! Suscipit quae perferendis officiis vel, magnam est error! Vel, accusantium quas enim inventore natus adipisci autem at modi dolores assumenda mollitia ut facilis, deleniti aspernatur? Fuga at in expedita tempora cum quasi nemo neque alias id ullam omnis similique placeat provident, eum totam itaque perferendis, reiciendis laboriosam ducimus sunt facilis amet? Cupiditate voluptatem et, voluptas maxime sunt possimus repudiandae nisi necessitatibus?
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div
+          className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
+        >
+          <div
+            className="bx--modal-footer"
+            data-id="WizardInlineFooter"
+          >
+            <div
+              className="WizardInline-custom-footer-content"
+            >
+              <p
+                className="WizardInlinestory__StyledFooterContent-j3mhhx-0 hZOfgn"
+              >
+                this is footer content
+              </p>
+            </div>
+            <div
+              className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
+  className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
     <div
-      className="storybook-container"
-      style={
-        Object {
-          "padding": "3rem",
-        }
-      }
+      className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
     >
       <div
-        style={
-          Object {
-            "position": "relative",
-            "zIndex": 0,
-          }
-        }
+        className="bx--modal-container"
+        data-id="WizardInlineContainer"
       >
         <div
-          className="bx--toast-notification bx--toast-notification--warning"
-          kind="warning"
-          role="alert"
-          style={
-            Object {
-              "marginBottom": ".5rem",
-              "minWidth": "30rem",
-            }
-          }
-          timeout={0}
+          className="wizard-inline-header page-title-bar"
         >
-          <svg
-            aria-hidden={true}
-            className="bx--toast-notification__icon"
-            focusable="false"
-            height={20}
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "willChange": "transform",
-              }
-            }
-            viewBox="0 0 20 20"
-            width={20}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S10.6,16,10,16z"
-            />
-            <path
-              d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z"
-              data-icon-path="inner-path"
-              opacity="0"
-            />
-            <title>
-              
-            </title>
-          </svg>
           <div
-            className="bx--toast-notification__details"
+            className="page-title-bar-header"
           >
-            <h3
-              className="bx--toast-notification__title"
-            >
-              Deprecation Notice
-            </h3>
-            <div
-              className="bx--toast-notification__subtitle"
-            >
-              WizardInline has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
             </div>
             <div
-              className="bx--toast-notification__caption"
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          onChange={[Function]}
+        >
+          <li
+            className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
             >
-              Refactor usages of WizardInline to use PageWizard instead.
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                />
+                <path
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                />
+                <title>
+                  First step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                First step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button bx--progress-step-button--unclickable"
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+            >
+              <svg>
+                <path
+                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                />
+                <title>
+                  Device Information step goes here
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Device Information step goes here
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Long step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Long step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Final step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Final step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+        >
+          <div
+            className="bx--modal-content"
+            data-id="WizardInlineContent"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#dceadd",
+                    "padding": "70px 30px",
+                  }
+                }
+              >
+                <div>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum mollitia repellendus assumenda fuga inventore nisi, minus optio ullam voluptas eveniet dolore dolorem vitae, neque suscipit labore at. Voluptatum, nobis perferendis!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
+        >
+          <div
+            className="bx--modal-footer"
+            data-id="WizardInlineFooter"
+          >
+            <div
+              className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Back
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Footer 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    >
+      <div
+        className="bx--modal-container"
+        data-id="WizardInlineContainer"
+      >
+        <div
+          className="wizard-inline-header page-title-bar"
+        >
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          onChange={[Function]}
+        >
+          <li
+            className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                />
+                <path
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                />
+                <title>
+                  First step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                First step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                />
+                <path
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                />
+                <title>
+                  Device Information step goes here
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Device Information step goes here
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                />
+                <path
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                />
+                <title>
+                  Long step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Long step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button bx--progress-step-button--unclickable"
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+            >
+              <svg>
+                <path
+                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                />
+                <title>
+                  Final step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Final step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+        >
+          <div
+            className="bx--modal-content"
+            data-id="WizardInlineContent"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#ae9e8e",
+                    "padding": "70px 30px",
+                  }
+                }
+              >
+                <div>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur deserunt eius ad sequi provident, corporis rerum expedita amet enim perferendis?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
+        >
+          <div
+            className="bx--modal-footer"
+            data-id="WizardInlineFooter"
+          >
+            <div
+              className="WizardInline-custom-footer-content"
+            >
+              <p
+                className="WizardInlinestory__StyledFooterContent-j3mhhx-0 hZOfgn"
+              >
+                this is footer content
+              </p>
+            </div>
+            <div
+              className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Back
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Sidebar 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    >
+      <div
+        className="bx--modal-container"
+        data-id="WizardInlineContainer"
+      >
+        <div
+          className="wizard-inline-header page-title-bar"
+        >
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          onChange={[Function]}
+        >
+          <li
+            className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button bx--progress-step-button--unclickable"
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+            >
+              <svg>
+                <path
+                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                />
+                <title>
+                  First step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                First step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Device Information step goes here
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Device Information step goes here
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Long step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Long step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Final step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Final step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+        >
+          <div
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
+            width={200}
+          >
+            <div>
+              sidebar
+            </div>
+          </div>
+          <div
+            className="bx--modal-content"
+            data-id="WizardInlineContent"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#eaeaea",
+                  }
+                }
+              >
+                <div>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, corrupti laboriosam, culpa similique quae dolorum provident vitae iusto at velit dignissimos reiciendis maiores voluptate fugit dolore harum unde laborum facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta placeat explicabo! Necessitatibus id neque accusantium molestiae officiis ducimus! Suscipit quae perferendis officiis vel, magnam est error! Vel, accusantium quas enim inventore natus adipisci autem at modi dolores assumenda mollitia ut facilis, deleniti aspernatur? Fuga at in expedita tempora cum quasi nemo neque alias id ullam omnis similique placeat provident, eum totam itaque perferendis, reiciendis laboriosam ducimus sunt facilis amet? Cupiditate voluptatem et, voluptas maxime sunt possimus repudiandae nisi necessitatibus?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
+        >
+          <div
+            className="bx--modal-footer"
+            data-id="WizardInlineFooter"
+          >
+            <div
+              className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with breadcrumbs 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    >
+      <div
+        className="bx--modal-container"
+        data-id="WizardInlineContainer"
+      >
+        <div
+          className="wizard-inline-header page-title-bar"
+        >
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          onChange={[Function]}
+        >
+          <li
+            className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "willChange": "transform",
+                  }
+                }
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                />
+                <path
+                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                />
+                <title>
+                  First step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                First step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button bx--progress-step-button--unclickable"
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+            >
+              <svg>
+                <path
+                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                />
+                <title>
+                  Device Information step goes here
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Device Information step goes here
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Long step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Long step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Final step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Final step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+        >
+          <div
+            className="bx--modal-content"
+            data-id="WizardInlineContent"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#dceadd",
+                    "padding": "70px 30px",
+                  }
+                }
+              >
+                <div>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum mollitia repellendus assumenda fuga inventore nisi, minus optio ullam voluptas eveniet dolore dolorem vitae, neque suscipit labore at. Voluptatum, nobis perferendis!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
+        >
+          <div
+            className="bx--modal-footer"
+            data-id="WizardInlineFooter"
+          >
+            <div
+              className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Back
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="WizardInline__StyledWizardWrapper-sc-8orpb0-0 hExrwn"
+    >
+      <div
+        className="bx--modal-container"
+        data-id="WizardInlineContainer"
+      >
+        <div
+          className="wizard-inline-header page-title-bar"
+        >
+          <div
+            className="page-title-bar-header"
+          >
+            <div>
+              <div
+                className="page-title-bar-title"
+              >
+                <div
+                  className="page-title-bar-title--text"
+                >
+                  <h2>
+                    Static Wizard
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            />
+            <div>
+              <button
+                className="bx--modal-close iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                tabIndex={0}
+                title="Close"
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  onClick={[Function]}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="bx--progress wizard-inline-progress-indicator  ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          onChange={[Function]}
+        >
+          <li
+            className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button bx--progress-step-button--unclickable"
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+            >
+              <svg>
+                <path
+                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                />
+                <title>
+                  First step
+                </title>
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                First step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Device Information step goes here
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Device Information step goes here
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Long step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Long step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+          <li
+            className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
+          >
+            <div
+              className="bx--progress-step-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg>
+                <title>
+                  Final step
+                </title>
+                <path
+                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
+                />
+              </svg>
+              <p
+                className="bx--progress-label"
+              >
+                Final step
+              </p>
+              <span
+                className="bx--progress-line"
+              />
+            </div>
+          </li>
+        </ul>
+        <div
+          className="bx--inline-notification bx--inline-notification--error WizardInline__StyledMessageBox-sc-8orpb0-2 jGtpBI"
+          kind="error"
+          role="alert"
+        >
+          <div
+            className="bx--inline-notification__details"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--inline-notification__icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 20 20"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
+              />
+              <path
+                d="M13.5,14.5l-8-8l1-1l8,8L13.5,14.5z"
+                data-icon-path="inner-path"
+                opacity="0"
+              />
+              <title>
+                closes notification
+              </title>
+            </svg>
+            <div
+              className="bx--inline-notification__text-wrapper"
+            >
+              <p
+                className="bx--inline-notification__title"
+              >
+                Error on the form
+              </p>
+              <div
+                className="bx--inline-notification__subtitle"
+              >
+                
+              </div>
+            </div>
+          </div>
+          <button
+            aria-label="closes notification"
+            className="bx--inline-notification__close-button"
+            onClick={[Function]}
+            title="closes notification"
+            type="button"
+          >
+            <svg
+              aria-label="close notification"
+              className="bx--inline-notification__close-icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              style={
+                Object {
+                  "willChange": "transform",
+                }
+              }
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
+        >
+          <div
+            className="bx--modal-content"
+            data-id="WizardInlineContent"
+          >
+            <div>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#eaeaea",
+                  }
+                }
+              >
+                <div>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, corrupti laboriosam, culpa similique quae dolorum provident vitae iusto at velit dignissimos reiciendis maiores voluptate fugit dolore harum unde laborum facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et soluta placeat explicabo! Necessitatibus id neque accusantium molestiae officiis ducimus! Suscipit quae perferendis officiis vel, magnam est error! Vel, accusantium quas enim inventore natus adipisci autem at modi dolores assumenda mollitia ut facilis, deleniti aspernatur? Fuga at in expedita tempora cum quasi nemo neque alias id ullam omnis similique placeat provident, eum totam itaque perferendis, reiciendis laboriosam ducimus sunt facilis amet? Cupiditate voluptatem et, voluptas maxime sunt possimus repudiandae nisi necessitatibus?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="WizardInline__StyledFooter-sc-8orpb0-3 dNYflQ"
+        >
+          <div
+            className="bx--modal-footer"
+            data-id="WizardInlineFooter"
+          >
+            <div
+              className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--toast-notification bx--toast-notification--warning"
+      kind="warning"
+      role="alert"
+      style={
+        Object {
+          "marginBottom": ".5rem",
+          "minWidth": "30rem",
+        }
+      }
+      timeout={0}
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "willChange": "transform",
+          }
+        }
+        viewBox="0 0 20 20"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S10.6,16,10,16z"
+        />
+        <path
+          d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>
+          
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Deprecation Notice
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          WizardInline has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+        </div>
+        <div
+          className="bx--toast-notification__caption"
+        >
+          Refactor usages of WizardInline to use PageWizard instead.
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;

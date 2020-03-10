@@ -10,6 +10,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix, prefix } = settings;
+
 const propTypes = {
   /** Specify whether the side navigation is expanded or collapsed */
   defaultExpanded: PropTypes.bool,
@@ -101,7 +105,6 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
         return (
           <SideNavMenu
             isActive={parentActive}
-            className={classnames({ disabled: link.isEnabled })}
             renderIcon={link.icon}
             aria-label="dropdown"
             key={`menu-link-${links.indexOf(link)}-dropdown`}
@@ -114,7 +117,6 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
       }
       return (
         <SideNavLink
-          className={classnames({ disabled: link.isEnabled })}
           key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
           aria-label={link.metaData.label}
           onClick={link.metaData.onClick}
@@ -135,7 +137,10 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
 
   return (
     <CarbonSideNav
-      className={classnames({ 'bx--side-nav--expanded': isSideNavExpanded })}
+      className={classnames({
+        [`${iotPrefix}--side-nav--expanded`]: isSideNavExpanded,
+        [`${prefix}--side-nav--expanded`]: isSideNavExpanded,
+      })}
       translateById={translateById}
       aria-label="Side navigation"
       defaultExpanded={defaultExpanded}

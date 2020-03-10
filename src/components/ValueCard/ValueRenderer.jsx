@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import classNames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   value: PropTypes.any, // eslint-disable-line
@@ -17,6 +21,10 @@ const propTypes = {
   size: PropTypes.string.isRequired,
   color: PropTypes.string,
   isVertical: PropTypes.bool,
+  /** Allows the unit and threshold icons to wrap into a new line */
+  allowedToWrap: PropTypes.bool.isRequired,
+  /** Makes the value and the unit smaller */
+  wrapCompact: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -26,6 +34,7 @@ const defaultProps = {
   precision: 1,
   color: null,
   isVertical: false,
+  wrapCompact: false,
 };
 
 const Attribute = styled.div`
@@ -92,6 +101,8 @@ const ValueRenderer = ({
   isMini,
   color,
   isVertical,
+  allowedToWrap,
+  wrapCompact,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -116,7 +127,18 @@ const ValueRenderer = ({
     renderValue = '--';
   }
   return (
-    <Attribute unit={unit} isSmall={isSmall} isMini={isMini} color={color} isVertical={isVertical}>
+    <Attribute
+      unit={unit}
+      isSmall={isSmall}
+      isMini={isMini}
+      color={color}
+      isVertical={isVertical}
+      allowedToWrap={allowedToWrap}
+      className={classNames({
+        [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
+        [`${iotPrefix}--value-card__attribute-value--wrappable-compact`]: wrapCompact,
+      })}
+    >
       <AttributeValue
         size={newSize}
         title={`${value} ${unit || ''}`}

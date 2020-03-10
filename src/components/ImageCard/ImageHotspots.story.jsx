@@ -32,7 +32,7 @@ const componentDescription =
   'When the minimap is enabled, it will only appear when the image is being dragged ' +
   '/ panned, in which it will follow the overlaying panned position.';
 
-storiesOf('Watson IoT|ImageHotspots', module)
+storiesOf('Watson IoT/ImageHotspots', module)
   .addParameters({
     info: componentDescription,
   })

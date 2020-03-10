@@ -1,1047 +1,931 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, all card sizes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, all card sizes 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
+  className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
+    Resize your window to see the callback handlers get triggered in the Actions tab.
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "width": "calc(100vw - 6rem)",
         }
       }
     >
       <div
         style={
           Object {
-            "position": "relative",
-            "zIndex": 0,
+            "flex": 1,
           }
         }
       >
-        Resize your window to see the callback handlers get triggered in the Actions tab.
         <div
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
           style={
             Object {
-              "width": "calc(100vw - 6rem)",
+              "height": "1776px",
             }
           }
         >
           <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            id="Small"
             style={
               Object {
-                "flex": 1,
+                "MozTransform": "translate(16px,16px)",
+                "OTransform": "translate(16px,16px)",
+                "WebkitTransform": "translate(16px,16px)",
+                "height": "144px",
+                "msTransform": "translate(16px,16px)",
+                "position": "absolute",
+                "transform": "translate(16px,16px)",
+                "width": "300px",
               }
             }
+            type="VALUE"
           >
             <div
-              className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
-              style={
-                Object {
-                  "height": "1776px",
-                }
-              }
+              className="iot--card--header"
             >
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                id="Small"
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,16px)",
-                    "OTransform": "translate(16px,16px)",
-                    "WebkitTransform": "translate(16px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(16px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(16px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
+              <span
+                className="card--title"
+                title="Small"
               >
                 <div
-                  className="card--header"
+                  className="title--text"
                 >
-                  <span
-                    className="card--title"
-                    title="Small"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Small
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
+                  Small
                 </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
+              </span>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                id="Small Wide"
-                style={
-                  Object {
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(332px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(332px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Small Wide"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Small Wide
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                id="Medium Thin"
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,176px)",
-                    "OTransform": "translate(16px,176px)",
-                    "WebkitTransform": "translate(16px,176px)",
-                    "height": "304px",
-                    "msTransform": "translate(16px,176px)",
-                    "position": "absolute",
-                    "transform": "translate(16px,176px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Medium Thin"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Medium Thin
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 hxiPNM"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                id="Medium"
-                style={
-                  Object {
-                    "MozTransform": "translate(332px,176px)",
-                    "OTransform": "translate(332px,176px)",
-                    "WebkitTransform": "translate(332px,176px)",
-                    "height": "304px",
-                    "msTransform": "translate(332px,176px)",
-                    "position": "absolute",
-                    "transform": "translate(332px,176px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Medium"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Medium
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 hxiPNM"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                id="Medium Wide"
-                style={
-                  Object {
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
-                    "height": "304px",
-                    "msTransform": "translate(648px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(648px,16px)",
-                    "width": "616px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Medium Wide"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Medium Wide
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 hxiPNM"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
-                id="Large Thin"
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,496px)",
-                    "OTransform": "translate(16px,496px)",
-                    "WebkitTransform": "translate(16px,496px)",
-                    "height": "624px",
-                    "msTransform": "translate(16px,496px)",
-                    "position": "absolute",
-                    "transform": "translate(16px,496px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Large Thin"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Large Thin
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 flVXpj"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
-                id="Large"
-                style={
-                  Object {
-                    "MozTransform": "translate(332px,496px)",
-                    "OTransform": "translate(332px,496px)",
-                    "WebkitTransform": "translate(332px,496px)",
-                    "height": "624px",
-                    "msTransform": "translate(332px,496px)",
-                    "position": "absolute",
-                    "transform": "translate(332px,496px)",
-                    "width": "616px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Large"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Large
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 flVXpj"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
-                id="Large Wide"
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,1136px)",
-                    "OTransform": "translate(16px,1136px)",
-                    "WebkitTransform": "translate(16px,1136px)",
-                    "height": "624px",
-                    "msTransform": "translate(16px,1136px)",
-                    "position": "absolute",
-                    "transform": "translate(16px,1136px)",
-                    "width": "1248px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Large Wide"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Large Wide
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 flVXpj"
-                />
-              </div>
+                className="iot--card--toolbar card--toolbar"
+              />
             </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            id="Small Wide"
+            style={
+              Object {
+                "MozTransform": "translate(332px,16px)",
+                "OTransform": "translate(332px,16px)",
+                "WebkitTransform": "translate(332px,16px)",
+                "height": "144px",
+                "msTransform": "translate(332px,16px)",
+                "position": "absolute",
+                "transform": "translate(332px,16px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Small Wide"
+              >
+                <div
+                  className="title--text"
+                >
+                  Small Wide
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            id="Medium Thin"
+            style={
+              Object {
+                "MozTransform": "translate(16px,176px)",
+                "OTransform": "translate(16px,176px)",
+                "WebkitTransform": "translate(16px,176px)",
+                "height": "304px",
+                "msTransform": "translate(16px,176px)",
+                "position": "absolute",
+                "transform": "translate(16px,176px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Medium Thin"
+              >
+                <div
+                  className="title--text"
+                >
+                  Medium Thin
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            id="Medium"
+            style={
+              Object {
+                "MozTransform": "translate(332px,176px)",
+                "OTransform": "translate(332px,176px)",
+                "WebkitTransform": "translate(332px,176px)",
+                "height": "304px",
+                "msTransform": "translate(332px,176px)",
+                "position": "absolute",
+                "transform": "translate(332px,176px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Medium"
+              >
+                <div
+                  className="title--text"
+                >
+                  Medium
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            id="Medium Wide"
+            style={
+              Object {
+                "MozTransform": "translate(648px,16px)",
+                "OTransform": "translate(648px,16px)",
+                "WebkitTransform": "translate(648px,16px)",
+                "height": "304px",
+                "msTransform": "translate(648px,16px)",
+                "position": "absolute",
+                "transform": "translate(648px,16px)",
+                "width": "616px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Medium Wide"
+              >
+                <div
+                  className="title--text"
+                >
+                  Medium Wide
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+            id="Large Thin"
+            style={
+              Object {
+                "MozTransform": "translate(16px,496px)",
+                "OTransform": "translate(16px,496px)",
+                "WebkitTransform": "translate(16px,496px)",
+                "height": "624px",
+                "msTransform": "translate(16px,496px)",
+                "position": "absolute",
+                "transform": "translate(16px,496px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Large Thin"
+              >
+                <div
+                  className="title--text"
+                >
+                  Large Thin
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 flVXpj"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+            id="Large"
+            style={
+              Object {
+                "MozTransform": "translate(332px,496px)",
+                "OTransform": "translate(332px,496px)",
+                "WebkitTransform": "translate(332px,496px)",
+                "height": "624px",
+                "msTransform": "translate(332px,496px)",
+                "position": "absolute",
+                "transform": "translate(332px,496px)",
+                "width": "616px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Large"
+              >
+                <div
+                  className="title--text"
+                >
+                  Large
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 flVXpj"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+            id="Large Wide"
+            style={
+              Object {
+                "MozTransform": "translate(16px,1136px)",
+                "OTransform": "translate(16px,1136px)",
+                "WebkitTransform": "translate(16px,1136px)",
+                "height": "624px",
+                "msTransform": "translate(16px,1136px)",
+                "position": "absolute",
+                "transform": "translate(16px,1136px)",
+                "width": "1248px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Large Wide"
+              >
+                <div
+                  className="title--text"
+                >
+                  Large Wide
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 flVXpj"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, custom layout 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, custom layout 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
+  className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
+    Passes a custom layout to the dashboard grid. Only the lg and md breakpoint have a custom layout defined. Resize the screen to see the cards reposition and resize themselves at different layouts.
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "width": "calc(100vw - 6rem)",
         }
       }
     >
       <div
         style={
           Object {
-            "position": "relative",
-            "zIndex": 0,
+            "flex": 1,
           }
         }
       >
-        Passes a custom layout to the dashboard grid. Only the lg and md breakpoint have a custom layout defined. Resize the screen to see the cards reposition and resize themselves at different layouts.
         <div
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
           style={
             Object {
-              "width": "calc(100vw - 6rem)",
+              "height": "656px",
             }
           }
         >
           <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            content="My Facility Metrics"
+            id="facility"
             style={
               Object {
-                "flex": 1,
+                "MozTransform": "translate(332px,336px)",
+                "OTransform": "translate(332px,336px)",
+                "WebkitTransform": "translate(332px,336px)",
+                "height": "304px",
+                "msTransform": "translate(332px,336px)",
+                "position": "absolute",
+                "transform": "translate(332px,336px)",
+                "width": "300px",
               }
             }
+            type="VALUE"
           >
             <div
-              className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
-              style={
-                Object {
-                  "height": "656px",
-                }
-              }
+              className="iot--card--header"
             >
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                content="My Facility Metrics"
-                id="facility"
-                style={
-                  Object {
-                    "MozTransform": "translate(332px,336px)",
-                    "OTransform": "translate(332px,336px)",
-                    "WebkitTransform": "translate(332px,336px)",
-                    "height": "304px",
-                    "msTransform": "translate(332px,336px)",
-                    "position": "absolute",
-                    "transform": "translate(332px,336px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
+              <span
+                className="card--title"
+                title="Facility Metrics"
               >
                 <div
-                  className="card--header"
+                  className="title--text"
                 >
-                  <span
-                    className="card--title"
-                    title="Facility Metrics"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Facility Metrics
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
+                  Facility Metrics
                 </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 hxiPNM"
-                />
-              </div>
+              </span>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                content="My Humidity Values"
-                id="humidity"
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,16px)",
-                    "OTransform": "translate(16px,16px)",
-                    "WebkitTransform": "translate(16px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(16px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(16px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Humidity"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Humidity
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                content="My utilization chart"
-                id="utilization"
-                style={
-                  Object {
-                    "MozTransform": "translate(253px,176px)",
-                    "OTransform": "translate(253px,176px)",
-                    "WebkitTransform": "translate(253px,176px)",
-                    "height": "144px",
-                    "msTransform": "translate(253px,176px)",
-                    "position": "absolute",
-                    "transform": "translate(253px,176px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Utilization"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Utilization
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
+                className="iot--card--toolbar card--toolbar"
+              />
             </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            content="My Humidity Values"
+            id="humidity"
+            style={
+              Object {
+                "MozTransform": "translate(16px,16px)",
+                "OTransform": "translate(16px,16px)",
+                "WebkitTransform": "translate(16px,16px)",
+                "height": "144px",
+                "msTransform": "translate(16px,16px)",
+                "position": "absolute",
+                "transform": "translate(16px,16px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Humidity"
+              >
+                <div
+                  className="title--text"
+                >
+                  Humidity
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            content="My utilization chart"
+            id="utilization"
+            style={
+              Object {
+                "MozTransform": "translate(253px,176px)",
+                "OTransform": "translate(253px,176px)",
+                "WebkitTransform": "translate(253px,176px)",
+                "height": "144px",
+                "msTransform": "translate(253px,176px)",
+                "position": "absolute",
+                "transform": "translate(253px,176px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Utilization"
+              >
+                <div
+                  className="title--text"
+                >
+                  Utilization
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, default layouts 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, default layouts 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
+  className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
+    Resize your window to see the callback handlers get triggered in the Actions tab.
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "width": "calc(100vw - 6rem)",
         }
       }
     >
       <div
         style={
           Object {
-            "position": "relative",
-            "zIndex": 0,
+            "flex": 1,
           }
         }
       >
-        Resize your window to see the callback handlers get triggered in the Actions tab.
         <div
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
           style={
             Object {
-              "width": "calc(100vw - 6rem)",
+              "height": "336px",
             }
           }
         >
           <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            content="My Facility Metrics"
+            id="facility"
             style={
               Object {
-                "flex": 1,
+                "MozTransform": "translate(16px,16px)",
+                "OTransform": "translate(16px,16px)",
+                "WebkitTransform": "translate(16px,16px)",
+                "height": "304px",
+                "msTransform": "translate(16px,16px)",
+                "position": "absolute",
+                "transform": "translate(16px,16px)",
+                "width": "300px",
               }
             }
+            type="VALUE"
           >
             <div
-              className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
-              style={
-                Object {
-                  "height": "336px",
-                }
-              }
+              className="iot--card--header"
             >
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                content="My Facility Metrics"
-                id="facility"
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,16px)",
-                    "OTransform": "translate(16px,16px)",
-                    "WebkitTransform": "translate(16px,16px)",
-                    "height": "304px",
-                    "msTransform": "translate(16px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(16px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
+              <span
+                className="card--title"
+                title="Facility Metrics"
               >
                 <div
-                  className="card--header"
+                  className="title--text"
                 >
-                  <span
-                    className="card--title"
-                    title="Facility Metrics"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Facility Metrics
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
+                  Facility Metrics
                 </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 hxiPNM"
-                />
-              </div>
+              </span>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                content="My Humidity Values"
-                id="humidity"
-                style={
-                  Object {
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(332px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(332px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Humidity"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Humidity
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
-              <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                content="My utilization chart"
-                id="utilization"
-                style={
-                  Object {
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(648px,16px)",
-                    "position": "absolute",
-                    "transform": "translate(648px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Utilization"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Utilization
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
+                className="iot--card--toolbar card--toolbar"
+              />
             </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            content="My Humidity Values"
+            id="humidity"
+            style={
+              Object {
+                "MozTransform": "translate(332px,16px)",
+                "OTransform": "translate(332px,16px)",
+                "WebkitTransform": "translate(332px,16px)",
+                "height": "144px",
+                "msTransform": "translate(332px,16px)",
+                "position": "absolute",
+                "transform": "translate(332px,16px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Humidity"
+              >
+                <div
+                  className="title--text"
+                >
+                  Humidity
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
+          </div>
+          <div
+            className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            content="My utilization chart"
+            id="utilization"
+            style={
+              Object {
+                "MozTransform": "translate(648px,16px)",
+                "OTransform": "translate(648px,16px)",
+                "WebkitTransform": "translate(648px,16px)",
+                "height": "144px",
+                "msTransform": "translate(648px,16px)",
+                "position": "absolute",
+                "transform": "translate(648px,16px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Utilization"
+              >
+                <div
+                  className="title--text"
+                >
+                  Utilization
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Dashboard Grid dashboard, is Edtiable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, is Edtiable 1`] = `
 <div
-  style={
-    Object {
-      "alignItems": "center",
-      "bottom": "0",
-      "display": "flex",
-      "left": "0",
-      "overflow": "auto",
-      "position": "fixed",
-      "right": "0",
-      "top": "0",
-    }
-  }
+  className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "auto",
-        "maxHeight": "100%",
+        "position": "relative",
+        "zIndex": 0,
       }
     }
   >
+    You can drag and drop the cards around. Watch the handler get triggered on the Actions tab.
     <div
-      className="storybook-container"
       style={
         Object {
-          "padding": "3rem",
+          "width": "calc(100vw - 6rem)",
         }
       }
     >
       <div
         style={
           Object {
-            "position": "relative",
-            "zIndex": 0,
+            "flex": 1,
           }
         }
       >
-        You can drag and drop the cards around. Watch the handler get triggered on the Actions tab.
         <div
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
           style={
             Object {
-              "width": "calc(100vw - 6rem)",
+              "height": "336px",
             }
           }
         >
           <div
+            className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            content="My Facility Metrics"
+            id="facility"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
             style={
               Object {
-                "flex": 1,
+                "MozTransform": "translate(16px,16px)",
+                "OTransform": "translate(16px,16px)",
+                "WebkitTransform": "translate(16px,16px)",
+                "height": "304px",
+                "msTransform": "translate(16px,16px)",
+                "position": "absolute",
+                "touchAction": "none",
+                "transform": "translate(16px,16px)",
+                "width": "300px",
               }
             }
+            type="VALUE"
           >
             <div
-              className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
-              style={
-                Object {
-                  "height": "336px",
-                }
-              }
+              className="iot--card--header"
             >
-              <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
-                content="My Facility Metrics"
-                id="facility"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(16px,16px)",
-                    "OTransform": "translate(16px,16px)",
-                    "WebkitTransform": "translate(16px,16px)",
-                    "height": "304px",
-                    "msTransform": "translate(16px,16px)",
-                    "position": "absolute",
-                    "touchAction": "none",
-                    "transform": "translate(16px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
+              <span
+                className="card--title"
+                title="Facility Metrics"
               >
                 <div
-                  className="card--header"
+                  className="title--text"
                 >
-                  <span
-                    className="card--title"
-                    title="Facility Metrics"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Facility Metrics
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
+                  Facility Metrics
                 </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 hxiPNM"
-                />
-              </div>
+              </span>
               <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                content="My Humidity Values"
-                id="humidity"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(332px,16px)",
-                    "position": "absolute",
-                    "touchAction": "none",
-                    "transform": "translate(332px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Humidity"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Humidity
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
-              <div
-                className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
-                content="My utilization chart"
-                id="utilization"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
-                    "height": "144px",
-                    "msTransform": "translate(648px,16px)",
-                    "position": "absolute",
-                    "touchAction": "none",
-                    "transform": "translate(648px,16px)",
-                    "width": "300px",
-                  }
-                }
-                type="VALUE"
-              >
-                <div
-                  className="card--header"
-                >
-                  <span
-                    className="card--title"
-                    title="Utilization"
-                  >
-                    <div
-                      className="title--text"
-                    >
-                      Utilization
-                    </div>
-                  </span>
-                  <div
-                    className="card--toolbar"
-                  />
-                </div>
-                <div
-                  className="Card__CardContent-v5r71h-1 ggrDpu"
-                />
-              </div>
+                className="iot--card--toolbar card--toolbar"
+              />
             </div>
+            <div
+              className="Card__CardContent-v5r71h-1 hxiPNM"
+            />
+          </div>
+          <div
+            className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            content="My Humidity Values"
+            id="humidity"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "MozTransform": "translate(332px,16px)",
+                "OTransform": "translate(332px,16px)",
+                "WebkitTransform": "translate(332px,16px)",
+                "height": "144px",
+                "msTransform": "translate(332px,16px)",
+                "position": "absolute",
+                "touchAction": "none",
+                "transform": "translate(332px,16px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Humidity"
+              >
+                <div
+                  className="title--text"
+                >
+                  Humidity
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
+          </div>
+          <div
+            className="react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            content="My utilization chart"
+            id="utilization"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "MozTransform": "translate(648px,16px)",
+                "OTransform": "translate(648px,16px)",
+                "WebkitTransform": "translate(648px,16px)",
+                "height": "144px",
+                "msTransform": "translate(648px,16px)",
+                "position": "absolute",
+                "touchAction": "none",
+                "transform": "translate(648px,16px)",
+                "width": "300px",
+              }
+            }
+            type="VALUE"
+          >
+            <div
+              className="iot--card--header"
+            >
+              <span
+                className="card--title"
+                title="Utilization"
+              >
+                <div
+                  className="title--text"
+                >
+                  Utilization
+                </div>
+              </span>
+              <div
+                className="iot--card--toolbar card--toolbar"
+              />
+            </div>
+            <div
+              className="Card__CardContent-v5r71h-1 ggrDpu"
+            />
           </div>
         </div>
       </div>
-      <button
-        className="info__show-button"
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#027ac5",
-            "border": "none",
-            "borderRadius": "0 0 0 5px",
-            "color": "#fff",
-            "cursor": "pointer",
-            "display": "block",
-            "fontFamily": "sans-serif",
-            "fontSize": "12px",
-            "padding": "5px 15px",
-            "position": "fixed",
-            "right": 0,
-            "top": 0,
-          }
-        }
-        type="button"
-      >
-        Show Info
-      </button>
     </div>
   </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
 </div>
 `;
