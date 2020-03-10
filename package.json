@@ -39,6 +39,10 @@
       "stylelint-scss"
     ]
   },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint-staged && yarn test:base",
