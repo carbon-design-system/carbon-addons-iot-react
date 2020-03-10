@@ -96,7 +96,7 @@ export const determinePrecision = (size, value, defaultPrecision) => {
  */
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
   return {
-    labels: series.map(({ label }) => label),
+    labels: [...new Set(values.map(val => val[timeDataSourceId]))],
     datasets: series.map(({ dataSourceId, dataFilter = {}, label, color }) => ({
       label,
       ...(color ? { fillColors: [color] } : {}),
