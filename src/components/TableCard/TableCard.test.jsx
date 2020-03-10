@@ -137,4 +137,58 @@ describe('TableCard', () => {
     const totalColumns = tableColumns.filter(item => item.priority === 1 || item.priority === 2);
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length + 1); // +1 for action column
   });
+  test('Columns should use custom render fuction when present', () => {
+    const mockRenderFunc = jest.fn(() => {
+      return <p className="myCustomRenderedCell" />;
+    });
+    const columnWithRenderFunction = [
+      {
+        dataSourceId: 'alert',
+        label: 'Alert',
+        priority: 1,
+        renderDataFunction: mockRenderFunc,
+      },
+    ];
+    const wrapper = mount(
+      <TableCard
+        title="Open Alerts"
+        content={{
+          columns: columnWithRenderFunction,
+        }}
+        values={[tableData[0]]}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+    expect(wrapper.find('TableCell .myCustomRenderedCell').length).toBe(1);
+    expect(mockRenderFunc).toHaveBeenCalledWith({
+      columnId: 'alert',
+      row: {
+        alert: 'AHI005 Asset failure',
+        count: 1.2039201932,
+        hour: 1563877570000,
+        long_description: 'long description for a given event payload',
+      },
+      rowId: 'row-1',
+      value: 'AHI005 Asset failure',
+    });
+
+    const columnNormal = [
+      {
+        dataSourceId: 'alert',
+        label: 'Alert 2',
+        priority: 1,
+      },
+    ];
+    const wrapper2 = mount(
+      <TableCard
+        title="Open Alerts"
+        content={{
+          columns: columnNormal,
+        }}
+        values={[tableData[0]]}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+    expect(wrapper2.find('TableCell .myCustomRenderedCell').length).toBe(0);
+  });
 });
