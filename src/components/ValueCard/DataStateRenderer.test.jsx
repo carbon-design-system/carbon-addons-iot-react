@@ -60,7 +60,7 @@ describe('ValueCard', () => {
     expect(wrapperError.find(`svg.${iotPrefix}--data-state-default-warning-icon`)).toHaveLength(0);
   });
 
-  test('should render icon, label, description for sizes not equal SMALL or MEDIUMTHIN', () => {
+  test('should render icon, label, description for sizes not equal SMALL, SMALLWIDE or MEDIUMTHIN', () => {
     const myDataState = getDataStateProp();
     function hasLabelDescription(jsx) {
       const wrapper = mount(jsx);
@@ -73,7 +73,6 @@ describe('ValueCard', () => {
       );
     }
 
-    hasLabelDescription(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.SMALLWIDE} />);
     hasLabelDescription(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.MEDIUM} />);
     hasLabelDescription(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.MEDIUMWIDE} />);
     hasLabelDescription(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.LARGE} />);
@@ -84,6 +83,17 @@ describe('ValueCard', () => {
   test('should render only icon for size SMALL', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.SMALL} />);
+
+    expect(wrapper.find(`svg.${iotPrefix}--data-state-default-warning-icon`)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--data-state-grid__label`)).toHaveLength(0);
+    expect(wrapper.find(`.${iotPrefix}--data-state-grid__description`)).toHaveLength(0);
+  });
+
+  test('should render only icon for size SMALLWIDE', () => {
+    const myDataState = getDataStateProp();
+    const wrapper = mount(
+      <DataStateRenderer dataState={myDataState} size={CARD_SIZES.SMALLWIDE} />
+    );
 
     expect(wrapper.find(`svg.${iotPrefix}--data-state-default-warning-icon`)).toHaveLength(1);
     expect(wrapper.find(`.${iotPrefix}--data-state-grid__label`)).toHaveLength(0);
