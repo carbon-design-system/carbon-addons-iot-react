@@ -2077,11 +2077,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                       >
                         <svg
                           aria-label="> 80"
-                          className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                          className="Attribute__ThresholdIcon-dhraql-3 lcQqkC"
                           fill="#F00"
                           fillRule="evenodd"
                           height="16"
                           role="img"
+                          title="> 80"
                           viewBox="0 0 16 16"
                           width="16"
                         >
@@ -2180,11 +2181,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                       >
                         <svg
                           aria-label="< 80"
-                          className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                          className="Attribute__ThresholdIcon-dhraql-3 ssHZj"
                           fill="#5aa700"
                           fillRule="evenodd"
                           height="16"
                           role="img"
+                          title="< 80"
                           viewBox="0 0 16 16"
                           width="16"
                         >
@@ -3182,7 +3184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                         className="Attribute__ThresholdIconWrapper-dhraql-2 iEsJiF"
                       >
                         <svg
-                          description="< 5"
+                          className="Attribute__ThresholdIcon-dhraql-3 kRZQBQ"
                           fill="green"
                           focusable="true"
                           height={16}
@@ -3351,11 +3353,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                       >
                         <svg
                           aria-label="< 5"
-                          className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                          className="Attribute__ThresholdIcon-dhraql-3 kRZQBQ"
                           fill="green"
                           fillRule="evenodd"
                           height="16"
                           role="img"
+                          title="< 5"
                           viewBox="0 0 16 16"
                           width="16"
                         >
@@ -4358,11 +4361,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Value
                       >
                         <svg
                           aria-label="= Unhealthy"
-                          className="Attribute__ThresholdIcon-dhraql-3 elzdlt"
+                          className="Attribute__ThresholdIcon-dhraql-3 keCGGl"
                           fill="red"
                           fillRule="evenodd"
                           height="16"
                           role="img"
+                          title="= Unhealthy"
                           viewBox="0 0 16 16"
                           width="16"
                         >

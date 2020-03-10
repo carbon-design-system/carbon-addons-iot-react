@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Icon, Tooltip } from 'carbon-components-react';
+import { Tooltip } from 'carbon-components-react';
 
-import icons from '../../utils/bundledIcons';
+import CardIcon from './CardIcon';
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -106,22 +106,14 @@ const Hotspot = ({
   );
 
   const iconToRender = icon ? (
-    renderIconByName ? (
-      renderIconByName(icon, {
-        title: iconDescription,
-        fill: color,
-        width,
-        height,
-      })
-    ) : (
-      <Icon
-        icon={icons[icon] || icons.help}
-        fill={color}
-        width={parseInt(width, 10).toString()}
-        height={parseInt(height, 10).toString()}
-        description={iconDescription}
-      />
-    )
+    <CardIcon
+      icon={icon}
+      title={iconDescription}
+      color={color}
+      width={width}
+      height={height}
+      renderIconByName={renderIconByName}
+    />
   ) : (
     defaultIcon
   );

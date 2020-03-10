@@ -47,5 +47,7 @@ describe('WizardInline tests', () => {
     );
     spy.mockRestore();
     expect(wrapper.find('WizardInline')).toHaveLength(1);
+    // globally this is false, but we need it true so the warning pops
+    global.__DEV__ = false;
   });
 });
