@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard basic - without last updated header 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -2291,11 +2286,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard basic dashboard 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -4586,11 +4576,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard custom actions 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -6913,11 +6898,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen bar chart card 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -7101,11 +7081,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen image card 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -7377,11 +7352,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen line card 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -7565,11 +7535,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen table card 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -9413,11 +9378,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard i18n labels 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -11706,11 +11666,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard only value cards 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -23552,11 +23507,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard sidebar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -25872,11 +25822,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard with custom cards 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={

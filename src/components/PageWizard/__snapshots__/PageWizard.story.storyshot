@@ -3,11 +3,6 @@
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Horizontal ProgressIndicator 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -210,11 +205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Sticky Footer: stateful example w/ validation in PageTitleBar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -548,11 +538,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With additional footer content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -894,11 +879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard only one step, in PageTitleBar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1125,11 +1105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful example 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1332,11 +1307,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful example w/ validation in PageTitleBar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1670,11 +1640,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard w/ i18n 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1877,11 +1842,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard wrapped in PageTitleBar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
