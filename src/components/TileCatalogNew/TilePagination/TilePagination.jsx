@@ -93,6 +93,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
           className="bx--pagination-nav__page bx--pagination-nav__page--select"
           data-page-select
           aria-label="select page number"
+          onChange={evt => onChange(evt.target.value)}
         >
           <option value="" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
