@@ -9258,7 +9258,7 @@ Map {
                       "priority": Object {
                         "type": "number",
                       },
-                      "renderer": Object {
+                      "renderDataFunction": Object {
                         "type": "func",
                       },
                       "type": Object {
