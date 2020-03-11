@@ -383,15 +383,15 @@ const TableCard = ({
           placeholderText: strings.selectSeverityPlaceholder,
           options: [
             {
-              id: '1',
+              id: 1,
               text: strings.criticalLabel,
             },
             {
-              id: '2',
+              id: 2,
               text: strings.moderateLabel,
             },
             {
-              id: '3',
+              id: 3,
               text: strings.lowLabel,
             },
           ],

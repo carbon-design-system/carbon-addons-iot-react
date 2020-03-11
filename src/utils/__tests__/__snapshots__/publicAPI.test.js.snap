@@ -549,8 +549,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -919,8 +932,21 @@ Map {
                         "type": "string",
                       },
                       "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                          ],
+                        ],
                         "isRequired": true,
-                        "type": "string",
+                        "type": "oneOfType",
                       },
                     },
                   ],
@@ -1286,8 +1312,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -1510,8 +1549,21 @@ Map {
                         "type": "string",
                       },
                       "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                          ],
+                        ],
                         "isRequired": true,
-                        "type": "string",
+                        "type": "oneOfType",
                       },
                     },
                   ],
@@ -1652,8 +1704,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,

@@ -2,6 +2,7 @@ import delay from 'lodash/delay';
 import moment from 'moment';
 import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
+import isNil from 'lodash/isNil';
 
 import {
   GUTTER,
@@ -92,10 +93,10 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
 
   return sortedData.sort((a, b) => {
     const val = direction === 'ASC' ? -1 : 1;
-    if (a.values[columnId] === null) {
+    if (isNil(a.values[columnId])) {
       return 1;
     }
-    if (b.values[columnId] === null) {
+    if (isNil(b.values[columnId])) {
       return -1;
     }
     if (isTimestampColumn) {
