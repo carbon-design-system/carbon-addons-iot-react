@@ -134,6 +134,9 @@ export const TableCardPropTypes = {
         comparison: PropTypes.oneOf(['<', '>', '=', '<=', '>=']).isRequired,
         value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         severity: PropTypes.oneOf([1, 2, 3]),
+        /** optional overrides for color and icon */
+        color: PropTypes.string,
+        icon: PropTypes.string,
         label: PropTypes.string,
         showOnContent: PropTypes.bool,
       })
@@ -371,4 +374,6 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** optional function that returns an icon based on a name */
+  renderIconByName: PropTypes.func,
 };

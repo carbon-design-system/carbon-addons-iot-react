@@ -549,8 +549,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -919,8 +932,21 @@ Map {
                         "type": "string",
                       },
                       "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                          ],
+                        ],
                         "isRequired": true,
-                        "type": "string",
+                        "type": "oneOfType",
                       },
                     },
                   ],
@@ -1286,8 +1312,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -1510,8 +1549,21 @@ Map {
                         "type": "string",
                       },
                       "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                          ],
+                        ],
                         "isRequired": true,
-                        "type": "string",
+                        "type": "oneOfType",
                       },
                     },
                   ],
@@ -1652,8 +1704,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -3958,6 +4023,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderIconByName": Object {
+        "type": "func",
       },
       "rowHeight": Object {
         "args": Array [
@@ -6366,6 +6434,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -7200,6 +7271,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -7940,6 +8014,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -8658,6 +8735,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -9313,6 +9393,9 @@ Map {
                 Object {
                   "args": Array [
                     Object {
+                      "color": Object {
+                        "type": "string",
+                      },
                       "comparison": Object {
                         "args": Array [
                           Array [
@@ -9328,6 +9411,9 @@ Map {
                       },
                       "dataSourceId": Object {
                         "isRequired": true,
+                        "type": "string",
+                      },
+                      "icon": Object {
                         "type": "string",
                       },
                       "label": Object {
@@ -9481,6 +9567,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderIconByName": Object {
+        "type": "func",
       },
       "rowHeight": Object {
         "args": Array [
@@ -10375,6 +10464,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -11162,6 +11254,9 @@ Map {
       },
       "loadData": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "renderIconByName": Object {
         "type": "func",
       },
       "rowHeight": Object {
