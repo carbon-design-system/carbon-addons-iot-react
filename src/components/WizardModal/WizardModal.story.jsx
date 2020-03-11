@@ -16,7 +16,7 @@ const commonWizardProps = {
   onClose: action('close'),
 };
 
-storiesOf('Watson IoT|WizardModal', module)
+storiesOf('Watson IoT/WizardModal', module)
   .addParameters({
     info: `
   Extends ComposedModal to add Carbon's ProgressIndicator and Wizard pages and local state.  Refer to the ComposedModal component for additional props that can be passed

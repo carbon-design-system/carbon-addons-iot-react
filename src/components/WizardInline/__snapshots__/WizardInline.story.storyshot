@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Stateful example 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -287,7 +282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -301,14 +296,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Static 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -583,7 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -597,14 +587,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Static with Footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Footer 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -920,7 +905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -934,14 +919,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) Static with Sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) Static with Sidebar 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1207,7 +1187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1221,14 +1201,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) with breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with breadcrumbs 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1503,7 +1478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1517,14 +1492,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) with error 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1861,7 +1831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1875,14 +1845,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/WizardInline (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1964,7 +1929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Wizar
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

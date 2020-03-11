@@ -8,7 +8,7 @@ import { Button, OverflowMenu, OverflowMenuItem } from '../../..';
 
 import ListItem from './ListItem';
 
-storiesOf('Watson IoT Experimental|ListItem', module)
+storiesOf('Watson IoT Experimental/ListItem', module)
   .add('basic w/ knobs', () => {
     const value = text('value', 'List Item');
     const secondaryValue = text('secondaryValue', null);

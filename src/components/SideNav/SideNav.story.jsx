@@ -9,8 +9,13 @@ import { HeaderContainer } from 'carbon-components-react/lib/components/UIShell'
 
 import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
+import { settings } from '../../constants/Settings';
+import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import SideNav from './SideNav';
+import Styles from './SideNav.story.scss'; // eslint-disable-line
+
+const { iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -115,10 +120,10 @@ const HeaderProps = {
   ],
 };
 
-storiesOf('Watson IoT|SideNav', module).add(
+storiesOf('Watson IoT/SideNav', module).add(
   'SideNav component',
   () => (
-    <>
+    <FullWidthWrapper withPadding={false}>
       <HeaderContainer
         render={({ isSideNavExpanded, onClickSideNavExpand }) => (
           <>
@@ -133,15 +138,13 @@ storiesOf('Watson IoT|SideNav', module).add(
               onClickSideNavExpand={onClickSideNavExpand}
               switcherProps={switcherProps}
             />
+            <div className={`${iotPrefix}--main-content`}>
+              <PageTitleBar title="Title" description="Description" />
+            </div>
           </>
         )}
       />
-      <PageTitleBar
-        title="Title"
-        description="Description"
-        style={{ width: '100vw', height: '100vh' }}
-      />
-    </>
+    </FullWidthWrapper>
   ),
   {
     info: {
@@ -167,6 +170,34 @@ storiesOf('Watson IoT|SideNav', module).add(
         </>
       )}
     />
+
+      ~~~
+
+      <br/>
+
+      If you want to style your main content to "push over" instead of being overlayed by the sidenav you can use the ".iot--side-nav--expanded" class. It could look something like this.
+
+      <br/>
+
+      ~~~scss
+      .iot--main-content {
+        width: calc(100% - 3rem);
+        transform: translateX(3rem);
+        transition: all .2s ease-in;
+      }
+
+      .iot--side-nav--expanded + .iot--main-content {
+        width: calc(100% - 16rem);
+        transform: translateX(16rem);
+      }
+
+      html[dir='rtl'] {
+        .iot--main-content,
+        .iot--side-nav--expanded + .iot--main-content {
+          transform: translateX(0);
+        }
+
+      }
 
       ~~~
 

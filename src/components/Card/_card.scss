@@ -1,5 +1,7 @@
-@import '~carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
 @import '~carbon-components/scss/globals/scss/layout';
+
+$iot-header-padding: $spacing-05;
 
 .card {
   &--title {
@@ -20,15 +22,6 @@
     & + * {
       margin-left: $spacing-05;
     }
-  }
-
-  &--header {
-    padding-left: $spacing-05;
-    flex: 0 0 $spacing-09;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
   }
 
   &--toolbar {
@@ -74,9 +67,20 @@
   }
 }
 
-html[dir='rtl'] .card {
-  &--header {
-    padding-right: $spacing-05;
-    padding-left: 0;
-  }
+.#{$iot-prefix}--card--header {
+  flex: 0 0 $spacing-09;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 0 $iot-header-padding;
+}
+
+.#{$iot-prefix}--card--header > .#{$iot-prefix}--card--toolbar {
+  margin-right: calc(#{$iot-header-padding} * -1);
+}
+
+html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
+  margin-right: 0;
+  margin-left: calc(#{$iot-header-padding} * -1);
 }

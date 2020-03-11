@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) has breadcrumb 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) has breadcrumb 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -45,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -59,14 +54,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) has left content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) has left content 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -143,7 +133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -157,14 +147,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) normal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) normal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -234,7 +219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -248,14 +233,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) normal with content switcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) normal with content switcher 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -361,7 +341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -375,14 +355,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) with section 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) with section 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -457,7 +432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -471,14 +446,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageHero (Deprecated) ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageHero (Deprecated) ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -564,7 +534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|PageH
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

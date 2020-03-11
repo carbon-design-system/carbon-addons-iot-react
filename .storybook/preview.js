@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, addDecorator, addParameters } from '@storybook/react';
+import { addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -13,6 +13,9 @@ import Container from './Container';
 addParameters({
   options: {
     theme: theme,
+    showRoots: true,
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
 });
 
@@ -24,12 +27,3 @@ addDecorator(
 addDecorator(story => <Container story={story} />);
 addDecorator(withA11y);
 addDecorator(withKnobs);
-
-function loadStories() {
-  require('./Welcome.story.jsx'); // Welcome story should always be the first in the side nav heirarchy
-
-  const req = require.context('../src/components', true, /\.story\.jsx$/);
-  req.keys().forEach(filename => req(filename));
-}
-
-configure(loadStories, module);

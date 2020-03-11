@@ -1,13 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal big modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal big modal 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -114,7 +109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -128,14 +123,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal custom footer 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -224,7 +214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -238,14 +228,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal error states 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal error states 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -426,7 +411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -440,14 +425,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal fetching data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal fetching data 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -501,7 +481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -515,14 +495,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal i18n 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -624,7 +599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -638,14 +613,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal no footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal no footer 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -725,7 +695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -739,14 +709,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal primary button is hidden 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal primary button is hidden 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -839,7 +804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -853,14 +818,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal sending data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal sending data 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -995,7 +955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,
@@ -1009,14 +969,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|ComposedModal warning dialog 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ComposedModal warning dialog 1`] = `
 <div
   className="storybook-container"
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
 >
   <div
     style={
@@ -1123,7 +1078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT|Compo
         "cursor": "pointer",
         "display": "block",
         "fontFamily": "sans-serif",
-        "fontSize": "12px",
+        "fontSize": 12,
         "padding": "5px 15px",
         "position": "fixed",
         "right": 0,

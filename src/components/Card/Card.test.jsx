@@ -6,10 +6,11 @@ import { render, fireEvent, waitForElement } from '@testing-library/react';
 import { Popup20 } from '@carbon/icons-react';
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { ToolbarSVGWrapper } from './CardToolbar';
-
 import CardRangePicker from './CardRangePicker';
-
 import Card, { SkeletonWrapper } from './Card';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const tooltipElement = <div>This is some other text</div>;
 
@@ -23,7 +24,7 @@ describe('Card testcases', () => {
     const wrapper = mount(<Card {...cardProps} size={CARD_SIZES.SMALL} />);
 
     // small should have full header
-    expect(wrapper.find('.card--header')).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--card--header`)).toHaveLength(1);
   });
 
   test('child size prop', () => {
@@ -162,5 +163,22 @@ describe('Card testcases', () => {
     fireEvent.click(thirdElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.DELETE_CARD);
     done();
+  });
+  test('card toolbar renders in header only when there are actions', () => {
+    const wrapperWithActions = mount(
+      <Card {...cardProps} isExpanded size={CARD_SIZES.SMALL} availableActions={{ expand: true }} />
+    );
+    expect(
+      wrapperWithActions
+        .getDOMNode()
+        .querySelectorAll(`.${iotPrefix}--card--header .${iotPrefix}--card--toolbar`)
+    ).toHaveLength(1);
+
+    const wrapperWithoutActions = mount(<Card {...cardProps} isExpanded size={CARD_SIZES.SMALL} />);
+    expect(
+      wrapperWithoutActions
+        .getDOMNode()
+        .querySelectorAll(`.${iotPrefix}--card--header .${iotPrefix}--card--toolbar`)
+    ).toHaveLength(0);
   });
 });
