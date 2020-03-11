@@ -46,7 +46,7 @@ module.exports = {
       lines: 51,
       functions: 66,
     },
-    './src/components/ValueCard/Attribute.jsx': { branches: 65, functions: 66 },
+    './src/components/ValueCard/Attribute.jsx': { branches: 64, functions: 66 },
     './src/components/ValueCard/UnitRenderer.jsx': {
       statements: 70,
       branches: 8,
