@@ -370,7 +370,6 @@ const TableCard = ({
     label: uniqueThresholds[index].label
       ? uniqueThresholds[index].label
       : `${capitalize(columnId)} ${strings.severityLabel}`,
-    width: 200,
     isSortable: true,
     renderDataFunction: renderThresholdIcon,
     priority: 1,

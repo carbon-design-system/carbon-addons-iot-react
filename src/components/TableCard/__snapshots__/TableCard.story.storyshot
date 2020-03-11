@@ -4150,7 +4150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -4160,11 +4160,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -4357,7 +4357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -4367,11 +4367,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -19171,7 +19171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -19181,11 +19181,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -19378,7 +19378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -19388,11 +19388,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -21659,7 +21659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -21669,11 +21669,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -21728,7 +21728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -21738,11 +21738,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -22757,7 +22757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -22767,11 +22767,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -22964,7 +22964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -22974,11 +22974,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -25548,7 +25548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </th>
                     <th
                       aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS"
+                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
                       scope="col"
                       style={
                         Object {
@@ -25558,11 +25558,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <button
                         align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 gtucrS bx--table-sort"
+                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width="200px"
+                        width=""
                       >
                         <span
                           className="bx--table-header-label"
