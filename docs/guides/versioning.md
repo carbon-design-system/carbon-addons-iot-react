@@ -209,8 +209,8 @@ semver bump: **minor**
 
 ```diff
 .#{$iot-prefix}--bar-chart-card {
--  .card--title {
-+  .#{$iot-prefix}--card--title {
+- .card--title {
++ .#{$iot-prefix}--card--title {
     padding-bottom: $spacing-02;
     padding-top: $spacing-02;
     width: 100%;
@@ -221,8 +221,8 @@ semver bump: **minor**
 ```diff
 function CardTitle({ children, title }) {
   return (
--    <span className="card--title" title={title}>
-+    <span className={`${iotPrefix}--card--title`} title={title}>
+-   <span className="card--title" title={title}>
++   <span className={`${iotPrefix}--card--title`} title={title}>
       {children}
     </span>
   );
@@ -249,19 +249,19 @@ semver bump: **minor**
 + function ExportedComponent({ testID, message }) {
   return (
     <>
--      <span>{message}</span>
-+      <span data-testid={testID}>{message}</span>
+-     <span>{message}</span>
++     <span data-testid={testID}>{message}</span>
     </>
   );
 }
 
 ExportedComponent.propTypes = {
   message: PropTypes.string,
-+  testID: PropTypes.string,
++ testID: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
   message: '',
-+  testID: 'ExportedComponent',
++ testID: 'ExportedComponent',
 };
 ```
 
@@ -285,8 +285,8 @@ ExportedComponent.propTypes = {
 };
 ExportedComponent.defaultProps = {
   message: '',
--  testID: 'ExportedComponent',
-+  testID: 'ExportedComponentNewName',
+- testID: 'ExportedComponent',
++ testID: 'ExportedComponentNewName',
 };
 ```
 
