@@ -22,7 +22,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -1407,7 +1409,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -3156,7 +3160,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -3800,7 +3806,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -6228,7 +6236,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -7599,7 +7609,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -8970,7 +8982,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -10561,7 +10575,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -12152,7 +12168,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -13523,7 +13541,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -15487,7 +15507,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -17222,7 +17244,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -18916,7 +18940,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -21345,7 +21371,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -22728,7 +22756,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",
@@ -25521,7 +25551,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     >
       <div
         className="iot--card--wrapper"
+        data-testid="Card"
         id="table-list"
+        role="presentation"
         style={
           Object {
             "--card-default-height": "624px",

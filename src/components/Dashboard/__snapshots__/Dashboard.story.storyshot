@@ -62,7 +62,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -250,7 +251,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -337,7 +339,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -424,8 +427,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="section-card"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -462,7 +466,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -552,7 +557,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -642,7 +648,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -754,7 +761,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -841,9 +849,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="iot--gauge-card iot--card--wrapper"
-                description={null}
+                data-testid="Card"
                 id="GaugeCard"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -1003,7 +1011,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -1114,29 +1123,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-temperature-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -1267,8 +1257,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="alert-table1"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -1778,29 +1769,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-multi-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -1931,7 +1903,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="floor map picture"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -2352,7 +2326,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -2540,7 +2515,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -2627,7 +2603,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -2714,8 +2691,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="section-card"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -2752,7 +2730,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -2842,7 +2821,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -2932,7 +2912,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -3044,7 +3025,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -3131,9 +3113,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="iot--gauge-card iot--card--wrapper"
-                description={null}
+                data-testid="Card"
                 id="GaugeCard"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -3293,7 +3275,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -3404,29 +3387,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-temperature-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -3557,8 +3521,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="alert-table1"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -4068,29 +4033,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-multi-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -4221,7 +4167,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="floor map picture"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -4674,7 +4622,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -4862,7 +4811,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -4949,7 +4899,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5036,8 +4987,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="section-card"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5074,7 +5026,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5164,7 +5117,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5254,7 +5208,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5366,7 +5321,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5453,9 +5409,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="iot--gauge-card iot--card--wrapper"
-                description={null}
+                data-testid="Card"
                 id="GaugeCard"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5615,7 +5571,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -5726,29 +5683,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-temperature-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -5879,8 +5817,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="alert-table1"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -6390,29 +6329,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-multi-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -6543,7 +6463,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="floor map picture"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -6963,10 +6885,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             }
           >
             <div
-              chartType="LINE"
               className="react-grid-item cssTransforms iot--card--wrapper"
+              data-testid="Card"
               id="expandedcard"
-              renderIconByName={null}
+              role="presentation"
               style={
                 Object {
                   "--card-default-height": "624px",
@@ -7154,7 +7076,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="expandedcard"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -7417,10 +7341,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             }
           >
             <div
-              chartType="LINE"
               className="react-grid-item cssTransforms iot--card--wrapper"
+              data-testid="Card"
               id="expandedcard"
-              renderIconByName={null}
+              role="presentation"
               style={
                 Object {
                   "--card-default-height": "624px",
@@ -7605,8 +7529,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="expandedcard"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -9444,7 +9369,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -9632,7 +9558,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -9719,7 +9646,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -9806,8 +9734,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="section-card"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -9844,7 +9773,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -9934,7 +9864,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -10024,7 +9955,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -10136,7 +10068,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -10223,9 +10156,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="iot--gauge-card iot--card--wrapper"
-                description={null}
+                data-testid="Card"
                 id="GaugeCard"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -10385,7 +10318,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -10496,29 +10430,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-temperature-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -10649,8 +10564,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="alert-table1"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -11158,29 +11074,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-multi-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -11311,7 +11208,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="floor map picture"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -11740,7 +11639,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -11822,7 +11722,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -11906,7 +11807,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -11990,7 +11892,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12074,7 +11977,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12158,7 +12062,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12244,7 +12149,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12395,7 +12301,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12477,7 +12384,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12561,7 +12469,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12645,7 +12554,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12729,7 +12639,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12813,7 +12724,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -12899,7 +12811,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13050,7 +12963,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13134,7 +13048,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13221,7 +13136,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13305,7 +13221,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13457,7 +13374,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13541,7 +13459,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13628,7 +13547,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13712,7 +13632,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13864,7 +13785,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -13973,7 +13895,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14082,7 +14005,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14191,7 +14115,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14365,7 +14290,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14474,7 +14400,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14583,7 +14510,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14692,7 +14620,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14866,7 +14795,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -14950,7 +14880,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15034,7 +14965,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15118,7 +15050,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15202,7 +15135,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15351,7 +15285,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15435,7 +15370,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15519,7 +15455,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15603,7 +15540,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15687,7 +15625,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15836,7 +15775,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -15918,7 +15858,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16002,7 +15943,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16086,7 +16028,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16170,7 +16113,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16254,7 +16198,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16340,7 +16285,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16426,7 +16372,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16510,7 +16457,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16597,7 +16545,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16681,7 +16630,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16768,7 +16718,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16877,7 +16828,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -16986,7 +16938,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17095,7 +17048,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17204,7 +17158,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17288,7 +17243,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17372,7 +17328,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17456,7 +17413,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17540,7 +17498,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17689,7 +17648,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17771,7 +17731,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17855,7 +17816,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -17939,7 +17901,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18023,7 +17986,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18107,7 +18071,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18193,7 +18158,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18279,7 +18245,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18363,7 +18330,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18450,7 +18418,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18534,7 +18503,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18621,7 +18591,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18730,7 +18701,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18839,7 +18811,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -18948,7 +18921,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19057,7 +19031,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19141,7 +19116,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19225,7 +19201,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19309,7 +19286,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19393,7 +19371,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19542,7 +19521,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19670,7 +19650,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19796,7 +19777,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -19989,7 +19971,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -20117,7 +20100,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -20243,7 +20227,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -20436,7 +20421,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -20564,7 +20550,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -20690,7 +20677,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -20883,7 +20871,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -21011,7 +21000,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -21137,7 +21127,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -21330,7 +21321,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -21508,7 +21500,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -21751,7 +21744,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -21929,7 +21923,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -22172,7 +22167,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -22357,7 +22353,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -22536,7 +22533,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -22855,7 +22853,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -23040,7 +23039,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -23219,7 +23219,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
-                  renderIconByName={null}
+                  data-testid="Card"
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -23598,7 +23599,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -23786,7 +23788,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -23873,7 +23876,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -23960,8 +23964,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="section-card"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -23998,7 +24003,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -24088,7 +24094,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -24178,7 +24185,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -24290,7 +24298,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -24377,9 +24386,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="iot--gauge-card iot--card--wrapper"
-                description={null}
+                data-testid="Card"
                 id="GaugeCard"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -24539,7 +24548,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                renderIconByName={null}
+                data-testid="Card"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "144px",
@@ -24650,29 +24660,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-temperature-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -24803,8 +24794,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="alert-table1"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -25314,29 +25306,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                chartType="LINE"
                 className="react-grid-item cssTransforms iot--card--wrapper"
-                dataSource={
-                  Object {
-                    "attributes": Array [
-                      Object {
-                        "aggregator": "last",
-                        "attribute": "speed",
-                        "id": "speed_Claudia_Sample_Robot_Type_last",
-                      },
-                    ],
-                    "groupBy": Array [
-                      "deviceid",
-                    ],
-                    "range": Object {
-                      "count": -7,
-                      "interval": "day",
-                    },
-                    "timeGrain": "day",
-                  }
-                }
+                data-testid="Card"
                 id="facility-multi-timeseries"
-                renderIconByName={null}
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "624px",
@@ -25467,7 +25440,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms iot--card--wrapper"
+                data-testid="Card"
                 id="floor map picture"
+                role="presentation"
                 style={
                   Object {
                     "--card-default-height": "304px",
@@ -25878,8 +25853,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
+                  data-testid="Card"
                   id="viewDashboards"
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -25956,8 +25932,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
+                  data-testid="Card"
                   id="connectDevices"
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -26034,8 +26011,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
+                  data-testid="Card"
                   id="monitorEntities"
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -26099,8 +26077,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
+                  data-testid="Card"
                   id="trackUsage"
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -26171,8 +26150,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms iot--card--wrapper"
+                  data-testid="Card"
                   id="administerUsers"
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "144px",
@@ -26274,9 +26254,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       "loadData": [Function],
                     }
                   }
+                  data-testid="Card"
                   id="tutorials"
                   onScroll={[Function]}
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",
@@ -26460,9 +26441,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       "loadData": [Function],
                     }
                   }
+                  data-testid="Card"
                   id="announcements"
                   onScroll={[Function]}
-                  renderIconByName={null}
+                  role="presentation"
                   style={
                     Object {
                       "--card-default-height": "304px",

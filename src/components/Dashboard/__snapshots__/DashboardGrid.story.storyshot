@@ -37,7 +37,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         >
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Small"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -81,7 +83,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Small Wide"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -125,7 +129,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Medium Thin"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
@@ -169,7 +175,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Medium"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
@@ -213,7 +221,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Medium Wide"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
@@ -257,7 +267,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Large Thin"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "624px",
@@ -301,7 +313,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Large"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "624px",
@@ -345,7 +359,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           </div>
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Large Wide"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "624px",
@@ -455,7 +471,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
+            data-testid="Card"
             id="facility"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
@@ -500,7 +518,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
             content="My Humidity Values"
+            data-testid="Card"
             id="humidity"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -545,7 +565,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
             content="My utilization chart"
+            data-testid="Card"
             id="utilization"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -655,7 +677,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
+            data-testid="Card"
             id="facility"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
@@ -700,7 +724,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
             content="My Humidity Values"
+            data-testid="Card"
             id="humidity"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -745,7 +771,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item cssTransforms iot--card--wrapper"
             content="My utilization chart"
+            data-testid="Card"
             id="utilization"
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -855,11 +883,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
+            data-testid="Card"
             id="facility"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
@@ -905,11 +935,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My Humidity Values"
+            data-testid="Card"
             id="humidity"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
@@ -955,11 +987,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           <div
             className="react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My utilization chart"
+            data-testid="Card"
             id="utilization"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
+            role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",

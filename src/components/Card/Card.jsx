@@ -3,7 +3,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import SizeMe from 'react-sizeme';
 import classNames from 'classnames';
-import omit from 'lodash/omit';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
@@ -19,7 +18,7 @@ import {
   DASHBOARD_SIZES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/PropTypes';
-import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
@@ -32,29 +31,36 @@ const OptimizedSkeletonText = React.memo(SkeletonText);
 const CardWrapper = ({
   children,
   dimensions,
-  isExpanded,
   showOverflow,
   id,
   style,
   className,
+  onScroll,
+  // The event handlers are needed for when the card appears as grid items
+  // in the Dashboard Grid - isEditable
+  onMouseDown,
+  onMouseUp,
+  onTouchEnd,
+  onTouchStart,
+  testID,
   ...others
 }) => {
-  // TODO: Solve this better by either
-  // a) explicitly define and pass along the HTML attributes needed for the wrapper
-  // b) use a tool like https://www.npmjs.com/package/filter-react-props
-
-  // To avoid 'Unknown Prop Warning' known Card properties are filtered out
-  // but  other (hopefully HTML) attributes are allowed to be passed to the wrapping div.
-  const htmlOthers = omit(others, Object.keys(CardPropTypes));
-
+  const validOthers = filterValidAttributes(others);
   return (
     <div
+      role="presentation"
+      data-testid={testID}
       id={id}
       style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
-      {...htmlOthers}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onTouchEnd={onTouchEnd}
+      onTouchStart={onTouchStart}
+      onScroll={onScroll}
       className={classNames(className, `${iotPrefix}--card--wrapper`, {
         [`${iotPrefix}--card--wrapper--overflowing`]: showOverflow,
       })}
+      {...validOthers}
     >
       {children}
     </div>
@@ -104,12 +110,19 @@ const EmptyMessageWrapper = props => {
 CardWrapper.propTypes = {
   children: PropTypes.node.isRequired,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
-  isExpanded: CardPropTypes.isExpanded.isRequired,
   showOverflow: CardPropTypes.showOverflow.isRequired,
   id: CardPropTypes.id,
   style: PropTypes.objectOf(PropTypes.string),
+  testID: CardPropTypes.testID,
+  /* eslint-disable */
+  onMouseDown: PropTypes.func,
+  onMouseUp: PropTypes.func,
+  onTouchEnd: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  onScroll: PropTypes.func,
+  /* eslint-enable */
 };
-CardWrapper.defaultProps = { id: undefined, style: undefined };
+CardWrapper.defaultProps = { id: undefined, style: undefined, testID: 'Card' };
 CardContent.propTypes = {
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
@@ -177,6 +190,12 @@ export const defaultProps = {
     expandLabel: 'Expand to fullscreen',
     overflowMenuDescription: 'Open and close list of options',
   },
+  onMouseDown: undefined,
+  onMouseUp: undefined,
+  onTouchEnd: undefined,
+  onTouchStart: undefined,
+  onScroll: undefined,
+  testID: CardWrapper.defaultProps.testID,
 };
 
 /** Dumb component that renders the card basics */
@@ -203,6 +222,7 @@ const Card = props => {
     style,
     className,
     values,
+    testID,
     ...others
   } = props;
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.

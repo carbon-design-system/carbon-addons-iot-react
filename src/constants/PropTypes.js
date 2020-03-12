@@ -371,4 +371,12 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
+  /** Event handlers needed for Dashboard Grid - isEditable */
+  onMouseDown: PropTypes.func,
+  onMouseUp: PropTypes.func,
+  onTouchEnd: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  onScroll: PropTypes.func,
+  /** For testing */
+  testID: PropTypes.string,
 };
