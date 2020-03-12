@@ -10,15 +10,7 @@ import { defaultFunction, handleEnterKeyDown } from '../../../../utils/component
 
 const { TableHeader, TableRow } = DataTable;
 
-// const TableRow = styled(TableRow)`
-//   &&& {
-//     th {
-//       padding-top: 0.5rem;
-//       padding-bottom: 1.5rem;
-//     }
-//   }
-// `;
-const StyledTableHeader = styled(TableHeader)`
+const StyledTableHeader = styled(({ isSelectColumn, ...others }) => <TableHeader {...others} />)`
   &&& {
     span.bx--table-header-label {
       padding-top: 0;
@@ -125,7 +117,8 @@ class FilterHeaderRow extends Component {
         /** if options is empty array, assume text input for filter */
         options: PropTypes.arrayOf(
           PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool])
+              .isRequired,
             text: PropTypes.string.isRequired,
           })
         ),
@@ -147,7 +140,7 @@ class FilterHeaderRow extends Component {
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
       })
     ),
     /** Callback when filter is applied sends object of keys and values with the filter values */
