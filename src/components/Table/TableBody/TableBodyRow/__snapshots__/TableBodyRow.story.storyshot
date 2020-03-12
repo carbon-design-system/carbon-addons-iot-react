@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
               >
                 <button
-                  className="bx--btn bx--btn--ghost"
+                  className="iot--btn--icononly bx--btn bx--btn--ghost"
                   data-testid="tableId-rowId-row-actions-button-add"
                   disabled={false}
                   onClick={[Function]}
@@ -228,7 +228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
               >
                 <button
-                  className="bx--btn bx--btn--ghost"
+                  className="iot--btn--icononly bx--btn bx--btn--ghost"
                   data-testid="tableId-rowId-row-actions-button-add"
                   disabled={false}
                   onClick={[Function]}
@@ -449,7 +449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
               >
                 <button
-                  className="bx--btn bx--btn--ghost"
+                  className="iot--btn--icononly bx--btn bx--btn--ghost"
                   data-testid="tableId-rowId-row-actions-button-add"
                   disabled={false}
                   onClick={[Function]}
@@ -596,7 +596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 className="RowActionsCell__RowActionsContainer-sc-1toqqj7-1 hHPyiu"
               >
                 <button
-                  className="bx--btn bx--btn--ghost"
+                  className="iot--btn--icononly bx--btn bx--btn--ghost"
                   data-testid="tableId-rowId-row-actions-button-add"
                   disabled={false}
                   onClick={[Function]}

@@ -9,13 +9,16 @@ import {
   Loading,
 } from 'carbon-components-react';
 import styled from 'styled-components';
+import classnames from 'classnames';
 
+import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
 
 import RowActionsError from './RowActionsError';
 
 const { TableCell } = DataTable;
+const { iotPrefix } = settings;
 
 const StyledTableCell = styled(TableCell)`
   && {
@@ -188,6 +191,9 @@ class RowActionsCell extends React.Component {
                     key={`${tableId}-${id}-row-actions-button-${actionId}`}
                     data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                     kind="ghost"
+                    className={classnames({
+                      [`${iotPrefix}--btn--icononly`]: !labelText,
+                    })}
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                   >
                     {labelText}
