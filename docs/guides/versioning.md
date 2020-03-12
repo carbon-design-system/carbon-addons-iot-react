@@ -224,22 +224,22 @@ semver bump: **minor**
 
 ```diff
 - function ExportedComponent({ message }) {
-+ function ExportedComponent({ testId, message }) {
++ function ExportedComponent({ testID, message }) {
   return (
     <>
 -      <span>{message}</span>
-+      <span data-testId={testId}>{message}</span>
++      <span data-testid={testID}>{message}</span>
     </>
   );
 }
 
 ExportedComponent.propTypes = {
   message: PropTypes.string,
-+  testId: PropTypes.string,
++  testID: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
   message: '',
-+  testId: 'ExportedComponent',
++  testID: 'ExportedComponent',
 };
 ```
 
@@ -248,23 +248,23 @@ ExportedComponent.defaultProps = {
 semver bump: **major**
 
 ```diff
-function ExportedComponent({ testId, message }) {
+function ExportedComponent({ testID, message }) {
   return (
     <>
       <span>{message}</span>
-      <span data-testId={testId}>{message}</span>
+      <span data-testid={testID}>{message}</span>
     </>
   );
 }
 
 ExportedComponent.propTypes = {
   message: PropTypes.string,
-  testId: PropTypes.string,
+  testID: PropTypes.string,
 };
 ExportedComponent.defaultProps = {
   message: '',
--  testId: 'ExportedComponent',
-+  testId: 'ExportedComponentNewName',
+-  testID: 'ExportedComponent',
++  testID: 'ExportedComponentNewName',
 };
 ```
 
