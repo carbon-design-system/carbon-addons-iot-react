@@ -85,6 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="20"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="20"
               >
@@ -121,6 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="25"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="25"
               >
@@ -376,6 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="20"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="20"
               >
@@ -412,6 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="25"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="25"
               >
@@ -667,6 +671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="20"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="20"
               >
@@ -703,6 +708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="25"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="25"
               >
@@ -958,6 +964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="20"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="20"
               >
@@ -994,6 +1001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="25"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="25"
               >
@@ -1249,6 +1257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="20"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="20"
               >
@@ -1285,6 +1294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 fillRule="evenodd"
                 height="25"
                 role="img"
+                title=""
                 viewBox="0 0 16 16"
                 width="25"
               >

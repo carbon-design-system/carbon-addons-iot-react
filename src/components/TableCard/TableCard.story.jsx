@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { Bee16 } from '@carbon/icons-react';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -125,6 +126,8 @@ storiesOf('Watson IoT/TableCard', module)
         comparison: '>=',
         value: 10,
         severity: 1,
+        icon: 'bee',
+        color: 'black',
         label: 'Pressure Sev',
       },
     ];
@@ -164,6 +167,15 @@ storiesOf('Watson IoT/TableCard', module)
           values={tableData}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
+          renderIconByName={(name, props = {}) =>
+            name === 'bee' ? (
+              <Bee16 {...props}>
+                <title>{props.title}</title>
+              </Bee16>
+            ) : (
+              <span>Unknown</span>
+            )
+          }
         />
       </div>
     );
