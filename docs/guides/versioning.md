@@ -38,7 +38,7 @@ In the following sections, you'll find specific details for our packages and the
 | [A `PropTypes.func` prop type is changed to have fewer arguments](#a-proptypesfunc-prop-type-is-changed-to-have-fewer-arguments)           | `major`     |
 | [A class name, id, or other selector is added, changed, or removed](#a-class-name-id-or-other-selector-is-added-changed-or-removed)        | `minor`     |
 | [A `data-testid` attribute is added](#a-data-testid-attribute-is-added)                                                                    | `minor`     |
-| [A `data-testid` attribute _value_ is changed or removed](#a-data-testid-attribute-value-is-changed-or-removed)                            | `major`     |
+| [A `data-testid` attribute default prop value is changed or removed](#a-data-testid-attribute-default-prop-value-is-changed-or-removed)    | `major`     |
 
 ### Examples
 
