@@ -252,6 +252,7 @@ const ValueCard = ({
             isEditable={isEditable}
             showOverflow={!!dataState}
             i18n={i18n}
+            id={id}
             {...others}
           >
             <ContentWrapper layout={layout}>

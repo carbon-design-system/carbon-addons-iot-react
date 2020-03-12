@@ -22,6 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 jFCThr"
+        id="myStoryId"
       >
         <div
           className="iot--card--header"
@@ -224,6 +225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 hUpcuU"
+        id="myStoryId"
       >
         <div
           className="iot--card--header"
@@ -366,6 +368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 gmysZp"
+        id="myStoryId"
       >
         <div
           className="iot--card--header"
@@ -558,6 +561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div>
       <div
         className="Card__CardWrapper-v5r71h-0 jFCThr"
+        id="myStoryId"
         style={
           Object {
             "width": "252px",
@@ -772,6 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -928,6 +933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -1084,6 +1090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -1159,6 +1166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -1470,6 +1478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 izWJSI"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -1879,6 +1888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -1994,6 +2004,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -2150,6 +2161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -2306,6 +2318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -2519,6 +2532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -2675,6 +2689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -2736,11 +2751,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   >
                     <svg
                       aria-label="> 80"
-                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      className="Attribute__ThresholdIcon-dhraql-2 goOrNp"
                       fill="#F00"
                       fillRule="evenodd"
                       height="16"
                       role="img"
+                      title="> 80"
                       viewBox="0 0 16 16"
                       width="16"
                     >
@@ -2810,11 +2826,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   >
                     <svg
                       aria-label="> 80"
-                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      className="Attribute__ThresholdIcon-dhraql-2 goOrNp"
                       fill="#F00"
                       fillRule="evenodd"
                       height="16"
                       role="img"
+                      title="> 80"
                       viewBox="0 0 16 16"
                       width="16"
                     >
@@ -2884,11 +2901,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   >
                     <svg
                       aria-label="> 80"
-                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      className="Attribute__ThresholdIcon-dhraql-2 goOrNp"
                       fill="#F00"
                       fillRule="evenodd"
                       height="16"
                       role="img"
+                      title="> 80"
                       viewBox="0 0 16 16"
                       width="16"
                     >
@@ -2963,6 +2981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3176,6 +3195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3291,6 +3311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3504,6 +3525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3616,6 +3638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3728,6 +3751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3788,7 +3812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     className="iot--value-card__attribute-threshold-icon-container"
                   >
                     <svg
-                      description="< 5"
+                      className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                       fill="green"
                       focusable="true"
                       height={16}
@@ -3873,6 +3897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -3934,11 +3959,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   >
                     <svg
                       aria-label="> 5"
-                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                       fill="green"
                       fillRule="evenodd"
                       height="16"
                       role="img"
+                      title="> 5"
                       viewBox="0 0 16 16"
                       width="16"
                     >
@@ -4010,6 +4036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4122,6 +4149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4237,6 +4265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4349,6 +4378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4461,6 +4491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4534,6 +4565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4646,6 +4678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4758,6 +4791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4914,6 +4948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -4975,11 +5010,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                   >
                     <svg
                       aria-label="= Unhealthy"
-                      className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                      className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                       fill="red"
                       fillRule="evenodd"
                       height="16"
                       role="img"
+                      title="= Unhealthy"
                       viewBox="0 0 16 16"
                       width="16"
                     >
@@ -5051,6 +5087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"
@@ -5207,6 +5244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     >
       <div
         className="Card__CardWrapper-v5r71h-0 bAafuV"
+        id="facilitycard"
       >
         <div
           className="iot--card--header"

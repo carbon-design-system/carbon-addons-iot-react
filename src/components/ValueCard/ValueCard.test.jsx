@@ -67,4 +67,17 @@ describe('ValueCard', () => {
     );
     expect(wrapperWithDataState.find(`.${iotPrefix}--data-state-container`)).toHaveLength(1);
   });
+
+  test('Id is passed down to the card', () => {
+    const wrapper = mount(
+      <ValueCard
+        id="myIdTest"
+        title="Health score"
+        content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
+        size={CARD_SIZES.SMALL}
+        values={{ v: 'value' }}
+      />
+    );
+    expect(wrapper.find('Card#myIdTest')).toHaveLength(1);
+  });
 });

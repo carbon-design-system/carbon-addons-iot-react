@@ -62,6 +62,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                id="facilitycard"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -243,6 +244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -323,6 +325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-tooltip"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -434,6 +437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs2"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -517,6 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs3"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -600,6 +605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-comfort-level"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -677,11 +683,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Bad"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -705,6 +712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs4"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -939,6 +947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-health"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -1016,11 +1025,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Healthy"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -1940,6 +1950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -2060,6 +2071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -2222,6 +2234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                id="facilitycard"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -2403,6 +2416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -2483,6 +2497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-tooltip"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -2594,6 +2609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs2"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -2677,6 +2693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs3"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -2760,6 +2777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-comfort-level"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -2837,11 +2855,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Bad"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -2865,6 +2884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs4"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -3099,6 +3119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-health"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -3176,11 +3197,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Healthy"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -4100,6 +4122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -4220,6 +4243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -4414,6 +4438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                id="facilitycard"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -4595,6 +4620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -4675,6 +4701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-tooltip"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -4786,6 +4813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs2"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -4869,6 +4897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs3"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -4952,6 +4981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-comfort-level"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -5029,11 +5059,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Bad"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -5057,6 +5088,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs4"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -5291,6 +5323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-health"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -5368,11 +5401,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Healthy"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -6292,6 +6326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -6412,6 +6447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -9021,6 +9057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                id="facilitycard"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -9202,6 +9239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -9282,6 +9320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-tooltip"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -9393,6 +9432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs2"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -9476,6 +9516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs3"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -9559,6 +9600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-comfort-level"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -9636,11 +9678,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Bad"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -9664,6 +9707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs4"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -9898,6 +9942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-health"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -9975,11 +10020,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Healthy"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -10897,6 +10943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -11017,6 +11064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -11187,6 +11235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -11262,6 +11311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -11339,6 +11389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -11416,6 +11467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -11493,6 +11545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-4"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -11570,6 +11623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-5"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -11649,6 +11703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-6"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -11793,6 +11848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -11868,6 +11924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -11945,6 +12002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -12022,6 +12080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -12099,6 +12158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-4"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -12176,6 +12236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-5"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -12255,6 +12316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-6"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -12399,6 +12461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12476,6 +12539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12556,6 +12620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -12633,6 +12698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -12778,6 +12844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12855,6 +12922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12935,6 +13003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -13012,6 +13081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -13157,6 +13227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -13231,11 +13302,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 40"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13259,6 +13331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -13333,11 +13406,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 70"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13361,6 +13435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -13435,11 +13510,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 80"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13463,6 +13539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -13537,11 +13614,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title=">= 90"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13630,6 +13708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -13704,11 +13783,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 40"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13732,6 +13812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -13806,11 +13887,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 70"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13834,6 +13916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -13908,11 +13991,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 80"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -13936,6 +14020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-number-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14010,11 +14095,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title=">= 90"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -14103,6 +14189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -14180,6 +14267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -14257,6 +14345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14334,6 +14423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14411,6 +14501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-4"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -14553,6 +14644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -14630,6 +14722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -14707,6 +14800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14784,6 +14878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14861,6 +14956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmall-string-threshold-4"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -15003,6 +15099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -15078,6 +15175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -15155,6 +15253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -15232,6 +15331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -15309,6 +15409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-4"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -15386,6 +15487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-5"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -15465,6 +15567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-6"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -15544,6 +15647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-0"
                   style={
                     Object {
                       "MozTransform": "translate(964px,176px)",
@@ -15621,6 +15725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-1"
                   style={
                     Object {
                       "MozTransform": "translate(16px,336px)",
@@ -15701,6 +15806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-2"
                   style={
                     Object {
                       "MozTransform": "translate(332px,336px)",
@@ -15778,6 +15884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-3"
                   style={
                     Object {
                       "MozTransform": "translate(648px,336px)",
@@ -15858,6 +15965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(964px,336px)",
@@ -15932,11 +16040,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 40"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -15960,6 +16069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(16px,496px)",
@@ -16034,11 +16144,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 70"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -16062,6 +16173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(332px,496px)",
@@ -16136,11 +16248,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 80"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -16164,6 +16277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(648px,496px)",
@@ -16238,11 +16352,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title=">= 90"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -16266,6 +16381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(964px,496px)",
@@ -16343,6 +16459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(16px,656px)",
@@ -16420,6 +16537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(332px,656px)",
@@ -16497,6 +16615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(648px,656px)",
@@ -16574,6 +16693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-4"
                   style={
                     Object {
                       "MozTransform": "translate(964px,656px)",
@@ -16716,6 +16836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -16791,6 +16912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -16868,6 +16990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -16945,6 +17068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-3"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -17022,6 +17146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-4"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -17099,6 +17224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-5"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -17178,6 +17304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-6"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -17257,6 +17384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-0"
                   style={
                     Object {
                       "MozTransform": "translate(964px,176px)",
@@ -17334,6 +17462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-1"
                   style={
                     Object {
                       "MozTransform": "translate(16px,336px)",
@@ -17414,6 +17543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-2"
                   style={
                     Object {
                       "MozTransform": "translate(332px,336px)",
@@ -17491,6 +17621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-trend-3"
                   style={
                     Object {
                       "MozTransform": "translate(648px,336px)",
@@ -17571,6 +17702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(964px,336px)",
@@ -17645,11 +17777,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 40"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -17673,6 +17806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(16px,496px)",
@@ -17747,11 +17881,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 70"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -17775,6 +17910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(332px,496px)",
@@ -17849,11 +17985,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 80"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -17877,6 +18014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-number-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(648px,496px)",
@@ -17951,11 +18089,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title=">= 90"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -17979,6 +18118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(964px,496px)",
@@ -18056,6 +18196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(16px,656px)",
@@ -18133,6 +18274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(332px,656px)",
@@ -18210,6 +18352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-3"
                   style={
                     Object {
                       "MozTransform": "translate(648px,656px)",
@@ -18287,6 +18430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-string-threshold-4"
                   style={
                     Object {
                       "MozTransform": "translate(964px,656px)",
@@ -18429,6 +18573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -18550,6 +18695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -18669,6 +18815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -18855,6 +19002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -18976,6 +19124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19095,6 +19244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -19281,6 +19431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19402,6 +19553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19521,6 +19673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -19707,6 +19860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19828,6 +19982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19947,6 +20102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -20133,6 +20289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -20207,11 +20364,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 40"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20273,11 +20431,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 70"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20304,6 +20463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20378,11 +20538,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 80"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20444,11 +20605,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title=">= 90"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20540,6 +20702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -20614,11 +20777,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 40"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20680,11 +20844,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 70"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20711,6 +20876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  id="xsmallwide-multi-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20785,11 +20951,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
                                 fill="orange"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="< 80"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20851,11 +21018,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title=">= 90"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -20947,6 +21115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  id="xsmallwide-multi-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -21125,6 +21294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  id="xsmallwide-multi-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -21297,6 +21467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  id="xsmallwide-multi-number-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -21369,11 +21540,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Low"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="= Low"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -21441,11 +21613,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Severe"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="= Severe"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -21513,11 +21686,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Elevated"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 eSHhsI"
                                 fill="gold"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="= Elevated"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -21609,6 +21783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  id="xsmallwide-multi-number-threshold-0"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -21787,6 +21962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  id="xsmallwide-multi-number-threshold-1"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -21959,6 +22135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
                 <div
                   className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  id="xsmallwide-multi-number-threshold-2"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -22031,11 +22208,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Low"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                                 fill="green"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="= Low"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -22103,11 +22281,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Severe"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                                 fill="red"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="= Severe"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -22175,11 +22354,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Elevated"
-                                className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                                className="Attribute__ThresholdIcon-dhraql-2 eSHhsI"
                                 fill="gold"
                                 fillRule="evenodd"
                                 height="16"
                                 role="img"
+                                title="= Elevated"
                                 viewBox="0 0 16 16"
                                 width="16"
                               >
@@ -22331,6 +22511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             >
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                id="facilitycard"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -22512,6 +22693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -22592,6 +22774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-tooltip"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -22703,6 +22886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs2"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -22786,6 +22970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs3"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -22869,6 +23054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-comfort-level"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -22946,11 +23132,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
                               fill="red"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Bad"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -22974,6 +23161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-xs4"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -23208,6 +23396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </div>
               <div
                 className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                id="facilitycard-health"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -23285,11 +23474,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 bvOPCf"
+                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
                               fill="green"
                               fillRule="evenodd"
                               height="16"
                               role="img"
+                              title="= Healthy"
                               viewBox="0 0 16 16"
                               width="16"
                             >
@@ -24209,6 +24399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >
@@ -24329,6 +24520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               fillRule="evenodd"
                               height="25"
                               role="img"
+                              title=""
                               viewBox="0 0 14 16"
                               width="25"
                             >

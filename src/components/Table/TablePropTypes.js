@@ -109,7 +109,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
       placeholderText: PropTypes.string,
       options: PropTypes.arrayOf(
         PropTypes.shape({
-          id: PropTypes.string.isRequired,
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
           text: PropTypes.string.isRequired,
         })
       ),
