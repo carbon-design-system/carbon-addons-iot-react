@@ -207,6 +207,28 @@ function ExampleComponent() {
 
 semver bump: **minor**
 
+```diff
+.#{$iot-prefix}--bar-chart-card {
+-  .card--title {
++  .#{$iot-prefix}--card--title {
+    padding-bottom: $spacing-02;
+    padding-top: $spacing-02;
+    width: 100%;
+  }
+}
+```
+
+```diff
+function CardTitle({ children, title }) {
+  return (
+-    <span className="card--title" title={title}>
++    <span className={`${iotPrefix}--card--title`} title={title}>
+      {children}
+    </span>
+  );
+}
+```
+
 In general, we consider selectors to be internals/implementation details for the following reasons:
 
 1. There is no way we could test to see if a change we make could break how someone is overriding a specific selector
