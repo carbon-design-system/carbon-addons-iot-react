@@ -114,7 +114,7 @@ export const TableCardPropTypes = {
         dataSourceId: PropTypes.string.isRequired,
         /** optional width in pixels, default is no enforced max width */
         width: PropTypes.number,
-        label: PropTypes.string.isRequired,
+        label: PropTypes.string,
         priority: PropTypes.number,
         /** See the renderDataFunction for TablePropTypes */
         renderDataFunction: PropTypes.func,
@@ -142,7 +142,7 @@ export const TableCardPropTypes = {
       })
     ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
-    emptyMessage: PropTypes.string,
+    emptyMessage: PropTypes.node,
   }).isRequired,
   value: PropTypes.arrayOf(
     PropTypes.shape({

@@ -9,7 +9,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
 
-import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
@@ -642,6 +642,7 @@ const TableCard = ({
           <StyledStatefulTable
             columns={columnsToRender}
             data={tableDataWithTimestamp}
+            id={`table-for-card-${id}`}
             isExpanded={isExpanded}
             secondaryTitle={title}
             tooltip={tooltip}

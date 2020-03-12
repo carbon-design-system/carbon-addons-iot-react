@@ -13,7 +13,7 @@ import {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
 } from '../../constants/LayoutConstants';
-import { DashboardLayoutPropTypes } from '../../constants/PropTypes';
+import { DashboardLayoutPropTypes } from '../../constants/CardPropTypes';
 
 const GridLayout = WidthProvider(Responsive);
 
