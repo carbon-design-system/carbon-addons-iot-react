@@ -4,7 +4,9 @@ Enabling projects that consume this library to accurately test applications usin
 
 ## Automated Testing Support
 
-To enable support of testing automation in applications that consume this library, we are working to provide a dedicated `data-testid` data attribute for each component. It will be placed on the containing element of each component. This attribute should be used in place of class or id selectors in your testing automation.
+To enable support of testing automation in applications that consume this library, we are working to provide a dedicated `data-testid` data attribute for each component. [Here's a link to the issue to follow our progress](https://github.com/IBM/carbon-addons-iot-react/issues/1001).
+
+This attribute will be placed on the containing element of each component. This attribute should be used in place of class or id selectors in your testing automation.
 
 If you find a component is missing a dedicated `data-testid` attribute, or would like us to consider adding another attribute to a different sub-element of a component, please [open an issue](https://github.com/IBM/carbon-addons-iot-react/issues/new?assignees=&labels=%3Ahammer%3A++Enhancement&template=feature-request-or-enhancement.md&title=%5BComponentName%5D+request_title).
 
