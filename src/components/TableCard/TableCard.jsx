@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
+import find from 'lodash/find';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
 
-import { CardPropTypes, TableCardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import StatefulTable from '../Table/StatefulTable';
@@ -215,10 +216,14 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
         // If I don't have a threshold currently for this column
         currentThresholdIndex < 0
       ) {
-        highestSeverityThreshold.push(threshold); //eslint-disable-line
+        highestSeverityThreshold.push({ ...threshold, currentValue: item[threshold.dataSourceId] }); //eslint-disable-line
       } // The lowest severity is actually the most severe
       else if (highestSeverityThreshold[currentThresholdIndex].severity > threshold.severity) {
-        highestSeverityThreshold[currentThresholdIndex] = threshold; //eslint-disable-line
+        // eslint-disable-next-line
+        highestSeverityThreshold[currentThresholdIndex] = {
+          ...threshold,
+          currentValue: item[threshold.dataSourceId],
+        };
       }
       return highestSeverityThreshold;
     }, []);
@@ -322,9 +327,9 @@ const TableCard = ({
 
     return matchingThresholdValue ? (
       <ThresholdIcon
-        title={`${matchingThresholdValue.dataSourceId} ${matchingThresholdValue.comparison} ${
-          matchingThresholdValue.value
-        }`}
+        title={`${matchingThresholdValue.dataSourceId}: ${matchingThresholdValue.currentValue} ${
+          matchingThresholdValue.comparison
+        } ${matchingThresholdValue.value}`}
         {...matchingThresholdValue}
         strings={strings}
         renderIconByName={others.renderIconByName}
@@ -360,45 +365,59 @@ const TableCard = ({
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columns);
 
+  const generateThresholdColumn = (columnId, index) => ({
+    id: `iconColumn-${columnId}`,
+    label: uniqueThresholds[index].label
+      ? uniqueThresholds[index].label
+      : `${capitalize(columnId)} ${strings.severityLabel}`,
+    width: uniqueThresholds[index].width,
+    isSortable: true,
+    renderDataFunction: renderThresholdIcon,
+    priority: 1,
+    filter: {
+      placeholderText: strings.selectSeverityPlaceholder,
+      options: [
+        {
+          id: 1,
+          text: strings.criticalLabel,
+        },
+        {
+          id: 2,
+          text: strings.moderateLabel,
+        },
+        {
+          id: 3,
+          text: strings.lowLabel,
+        },
+      ],
+    },
+  });
+
   // Don't add the icon column in sample mode
   if (!isEditable) {
     const indexes = columns
       .map((column, index) =>
         uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0]
-          ? { i: index, columnId: column.dataSourceId }
+          ? { i: index, columnId: column.dataSourceId } // Find the column and put the threshold next to it
           : null
       )
       .filter(i => !isNil(i));
     indexes.forEach(({ i, columnId }, index) =>
-      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, {
-        id: `iconColumn-${columnId}`,
-        label: uniqueThresholds[index].label
-          ? uniqueThresholds[index].label
-          : `${capitalize(columnId)} ${strings.severityLabel}`,
-        width: '200px',
-        isSortable: true,
-        renderDataFunction: renderThresholdIcon,
-        priority: 1,
-        filter: {
-          placeholderText: strings.selectSeverityPlaceholder,
-          options: [
-            {
-              id: 1,
-              text: strings.criticalLabel,
-            },
-            {
-              id: 2,
-              text: strings.moderateLabel,
-            },
-            {
-              id: 3,
-              text: strings.lowLabel,
-            },
-          ],
-        },
-      })
+      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, generateThresholdColumn(columnId, index))
+    );
+    // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
+    const missingThresholdColumns = uniqueThresholds.filter(
+      threshold => !find(columnsUpdated, column => threshold.dataSourceId === column.dataSourceId)
+    );
+    columnsUpdated.splice(
+      columnsUpdated.length,
+      0,
+      ...missingThresholdColumns.map(({ dataSourceId }, index) =>
+        generateThresholdColumn(dataSourceId, index)
+      )
     );
   }
+
   const newColumns = thresholds ? columnsUpdated : columns;
 
   const columnsToRender = useMemo(
@@ -623,6 +642,7 @@ const TableCard = ({
           <StyledStatefulTable
             columns={columnsToRender}
             data={tableDataWithTimestamp}
+            id={`table-for-card-${id}`}
             isExpanded={isExpanded}
             secondaryTitle={title}
             tooltip={tooltip}

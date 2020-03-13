@@ -114,7 +114,7 @@ export const TableCardPropTypes = {
         dataSourceId: PropTypes.string.isRequired,
         /** optional width in pixels, default is no enforced max width */
         width: PropTypes.number,
-        label: PropTypes.string.isRequired,
+        label: PropTypes.string,
         priority: PropTypes.number,
         /** See the renderDataFunction for TablePropTypes */
         renderDataFunction: PropTypes.func,
@@ -142,7 +142,7 @@ export const TableCardPropTypes = {
       })
     ),
     sort: PropTypes.oneOf(['ASC', 'DESC']),
-    emptyMessage: PropTypes.string,
+    emptyMessage: PropTypes.node,
   }).isRequired,
   value: PropTypes.arrayOf(
     PropTypes.shape({
@@ -374,6 +374,6 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
-  /** optional function that returns an icon based on a name */
+  /** optional function that should return an icon react element based on a icon name, it is called back with the icon name and then an object containing additional icon properties to add to the rendered icon */
   renderIconByName: PropTypes.func,
 };
