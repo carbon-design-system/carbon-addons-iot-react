@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -22,6 +22,8 @@ const defaultProps = {
 };
 
 const TilePagination = ({ page, numPages, onChange, i18n }) => {
+  const [hideOption, setHideOption] = useState(true);
+  const [selectValue, setSelectValue] = useState('default');
   const prevButton = (
     <button
       type="button"
@@ -86,19 +88,23 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       {pageNumber}
     </button>
   );
-  const getPageSelect = pageNumber => (
+  const getPageSelect = (pageNumber, accumulator) => (
     <li className="bx--pagination-nav__list-item">
       <div className="bx--pagination-nav__select">
         <select
           className="bx--pagination-nav__page bx--pagination-nav__page--select"
           data-page-select
           aria-label="select page number"
-          onChange={evt => onChange(evt.target.value)}
+          value={selectValue}
+          onChange={evt => {
+            onChange(evt.target.value);
+            // setSelectValue('default');
+          }}
         >
-          <option value="" hidden data-page="" />
+          <option value="default" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
-            <option value={i + 5} data-page={i + 5}>
-              {i + 5}
+            <option value={i + accumulator} data-page={i + accumulator}>
+              {i + accumulator}
             </option>
           ))}
         </select>
@@ -121,19 +127,65 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       </div>
     </li>
   );
+  const first4PageNumbers = Array(4)
+    .fill(0)
+    .map((i, idx) => idx + 1);
+
+  const last4PageNumbers = Array(4)
+    .fill(0)
+    .map((i, idx) => numPages - idx);
+
+  const largeNumber = numPages > 6;
+  // page number in first 4 numbers ==> false, otherwise true
+  const showFrontPaginationSelect = !first4PageNumbers.find(number => number == page);
+  // "number in last 4 numbers ==> false, otherwide true";
+  const showBackPaginationSelect = !last4PageNumbers.find(number => number == page);
+  console.log('last4PageNumbers' + last4PageNumbers);
+  console.log('showBackPaginationSelect' + showBackPaginationSelect);
+  console.log('page' + page);
+
+  const getPageNumberButton = pageNumber => {
+    if (!largeNumber) {
+      return Array.from({ length: numPages - 2 }, (v, i) => (
+        <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
+      ));
+    } else {
+      if (!showFrontPaginationSelect && showBackPaginationSelect) {
+        return Array.from({ length: 4 }, (v, i) => (
+          <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
+        ));
+      } else if (showFrontPaginationSelect && showBackPaginationSelect) {
+        return [
+          <li className="bx--pagination-nav__list-item">{getPageButton(page - 1)}</li>,
+          <li className="bx--pagination-nav__list-item">{getPageButton(page)}</li>,
+          <li className="bx--pagination-nav__list-item">{getPageButton(page - 0 + 1)}</li>,
+        ];
+      } else if (showFrontPaginationSelect && !showBackPaginationSelect) {
+        return [
+          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 4)}</li>,
+          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 3)}</li>,
+          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 2)}</li>,
+          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 1)}</li>,
+        ];
+      }
+    }
+  };
+
   return (
     <nav className="bx--pagination-nav" ariaLabel={i18n.ariaLabelPagination}>
       <ul className="bx--pagination-nav__list">
         <li className="bx--pagination-nav__list-item">{prevButton}</li>
-        {numPages < 5
-          ? Array.from({ length: numPages - 1 }, (v, i) => (
-              <li className="bx--pagination-nav__list-item">{getPageButton(i + 1)}</li>
-            ))
-          : Array.from({ length: 4 }, (v, i) => (
-              <li className="bx--pagination-nav__list-item">{getPageButton(i + 1)}</li>
-            ))}
-        {numPages > 5 ? getPageSelect(numPages - 5) : null}
-        <li className="bx--pagination-nav__list-item">{getPageButton(numPages)}</li>
+        <li className="bx--pagination-nav__list-item">{getPageButton(1)}</li>
+
+        {showFrontPaginationSelect ? getPageSelect(numPages - 6, 2) : null}
+
+        {getPageNumberButton()}
+
+        {showBackPaginationSelect ? getPageSelect(numPages - 6, 6) : null}
+
+        {numPages > 1 ? (
+          <li className="bx--pagination-nav__list-item">{getPageButton(numPages)}</li>
+        ) : null}
         <li className="bx--pagination-nav__list-item">{nextButton}</li>
       </ul>
     </nav>
