@@ -33,11 +33,10 @@ const RowActionsContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    /* Need space between the buttons */
     > * {
       opacity: ${props => (props.visible ? 1 : 0)};
-      margin-left: 0.75rem;
     }
+
     /* If the actions are focused on, they should show up */
     > *:focus {
       opacity: 1;
@@ -166,6 +165,7 @@ class RowActionsCell extends React.Component {
         <RowActionsContainer
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
+          className={`${iotPrefix}--row-actions-container`}
         >
           {rowActionsError ? (
             <RowActionsError

@@ -1,8 +1,13 @@
 @import '../../../../globals/vars';
 
-.#{$iot-prefix}--row-actions-cell-btn--icononly {
-  margin-left: 0 !important; // !important needed to override the styled component value
-  .bx--btn__icon {
+.#{$iot-prefix}--row-actions-container {
+  > * {
+    margin-left: 0.75rem;
+  }
+  .#{$iot-prefix}--row-actions-cell-btn--icononly {
     margin-left: 0;
+    .bx--btn__icon {
+      margin-left: 0;
+    }
   }
 }
