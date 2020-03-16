@@ -230,57 +230,67 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
-  .add('table with thresholds only with value', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  .add(
+    'table with thresholds only with icon',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
-    const thresholds = [
-      // this threshold is applied to the whole row, not a particular attribute
-      {
-        dataSourceId: 'count',
-        comparison: '<',
-        value: 5,
-        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-      },
-      {
-        dataSourceId: 'count',
-        comparison: '>=',
-        value: 10,
-        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: 'Count Sev',
-      },
-      {
-        dataSourceId: 'count',
-        comparison: '=',
-        value: 7,
-        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-      },
-      {
-        dataSourceId: 'pressure',
-        comparison: '>=',
-        value: 10,
-        severity: 1,
-        label: 'Pressure Sev',
-        showOnContent: true,
-      },
-    ];
+      const thresholds = [
+        // this threshold is applied to the whole row, not a particular attribute
+        {
+          dataSourceId: 'count',
+          comparison: '<',
+          value: 5,
+          severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+        },
+        {
+          dataSourceId: 'count',
+          comparison: '>=',
+          value: 10,
+          severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+          label: 'Count Sev',
+        },
+        {
+          dataSourceId: 'count',
+          comparison: '=',
+          value: 7,
+          severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+        },
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: 10,
+          severity: 1,
+          label: 'Pressure Sev',
+          showOnContent: true,
+        },
+      ];
 
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TableCard
-          title={text('title', 'Open Alerts')}
-          id="table-list"
-          tooltip={text('Tooltip text', "Here's a Tooltip")}
-          content={{
-            columns: tableColumns,
-            thresholds,
-          }}
-          values={tableData}
-          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
-        />
-      </div>
-    );
-  })
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: [...tableColumns.slice(0, 1), tableColumns[2]],
+              thresholds,
+            }}
+            values={tableData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+          If you don't pass the underlying 'pressure' or 'count' column we will show the threshold icon columns at the right of the table
+        `,
+      },
+    }
+  )
   .add('table with custom column sort', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
