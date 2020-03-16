@@ -280,17 +280,17 @@ Map {
               "args": Array [
                 Object {
                   "buttonLabel": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                   "buttonLabelWithFilters": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                   "message": Object {
                     "isRequired": true,
-                    "type": "string",
+                    "type": "node",
                   },
                   "messageWithFilters": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                 },
               ],
@@ -992,17 +992,17 @@ Map {
                           "args": Array [
                             Object {
                               "buttonLabel": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                               "buttonLabelWithFilters": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                               "message": Object {
                                 "isRequired": true,
-                                "type": "string",
+                                "type": "node",
                               },
                               "messageWithFilters": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                             },
                           ],
@@ -9428,7 +9428,6 @@ Map {
                         "type": "string",
                       },
                       "label": Object {
-                        "isRequired": true,
                         "type": "string",
                       },
                       "priority": Object {
@@ -9452,7 +9451,7 @@ Map {
               "type": "arrayOf",
             },
             "emptyMessage": Object {
-              "type": "string",
+              "type": "node",
             },
             "expandedRows": Object {
               "args": Array [
