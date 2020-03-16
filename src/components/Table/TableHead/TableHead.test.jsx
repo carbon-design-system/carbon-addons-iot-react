@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 import { settings } from '../../../constants/Settings';
 
@@ -7,6 +8,11 @@ import TableHead from './TableHead';
 import TableHeader from './TableHeader';
 
 const { iotPrefix } = settings;
+
+const originalGetBoundingClientRect = Object.getOwnPropertyDescriptor(
+  HTMLElement.prototype,
+  'getBoundingClientRect'
+);
 
 const commonTableHeadProps = {
   /** List of columns */
@@ -151,5 +157,128 @@ describe('TableHead', () => {
     tableHeaderResizeHandles.first().simulate('mouseMove');
     tableHeaderResizeHandles.first().simulate('mouseUp');
     expect(tableHeaderResizeHandles).toHaveLength(2);
+  });
+
+  test('fixed column widths for non-resizable columns', () => {
+    const myProps = {
+      ...commonTableHeadProps,
+      columns: [{ id: 'col1', name: 'Column 1', width: '101' }],
+      tableState: {
+        ...commonTableHeadProps.tableState,
+        ordering: [{ columnId: 'col1', isHidden: false }],
+      },
+      options: { hasResize: false },
+    };
+
+    const wrapper = mount(<TableHead {...myProps} />);
+    const tableHeader = wrapper.find(TableHeader).first();
+    expect(tableHeader.prop('width')).toBe('101');
+  });
+
+  describe('Column resizing active', () => {
+    let getBoundingClientRectSpy;
+    let ordering;
+    let columns;
+    let myActions;
+    let myProps;
+
+    beforeEach(() => {
+      ordering = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+      columns = [
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '100px' },
+      ];
+
+      myActions = { onChangeOrdering: jest.fn(), onColumnResize: jest.fn() };
+      myProps = {
+        ...commonTableHeadProps,
+        columns,
+        tableState: {
+          ...commonTableHeadProps.tableState,
+          ordering,
+          activeBar: 'column',
+        },
+        options: { hasResize: true },
+        actions: myActions,
+      };
+
+      getBoundingClientRectSpy = jest.fn();
+      Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {
+        writable: true,
+        configurable: true,
+        value: getBoundingClientRectSpy,
+      });
+    });
+
+    afterAll(() => {
+      Object.defineProperty(
+        HTMLElement.prototype,
+        'getBoundingClientRect',
+        originalGetBoundingClientRect
+      );
+    });
+
+    test('toggle hide column correctly updates the column widths of visible columns', () => {
+      getBoundingClientRectSpy.mockReturnValue({ width: 100 });
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
+      const orderingAfterTogleHide = [
+        { columnId: 'col1', isHidden: true },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+
+      // Hide col1. The width of col1 is proportionally distributed over
+      // the remaining visible columns.
+      act(() => {
+        onColumnToggleFunc('col1', orderingAfterTogleHide);
+      });
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '150px' },
+        { id: 'col3', name: 'Column 3', width: '150px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleHide);
+    });
+
+    test('toggle show column correctly updates the column widths of visible columns', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+
+      getBoundingClientRectSpy.mockReturnValue({ width: 100 });
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
+
+      const orderingAfterTogleShow = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+
+      // Show col1. The width needed for col1 is proportionally subtracted from
+      // the other visible columns.
+      act(() => {
+        onColumnToggleFunc('col1', orderingAfterTogleShow);
+      });
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '50px' },
+        { id: 'col3', name: 'Column 3', width: '50px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+    });
   });
 });

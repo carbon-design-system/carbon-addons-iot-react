@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import React, { useState, useEffect, useLayoutEffect, createRef, useCallback } from 'react';
+import React, { useState, useLayoutEffect, createRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
@@ -17,6 +17,7 @@ import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 import TableHeader from './TableHeader';
 import ColumnResize from './ColumnResize';
+import { createNewWidthsMap, calculateWidthsOnToggle } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -119,6 +120,9 @@ const StyledCustomTableHeader = styled(TableHeader)`
   }
 `;
 
+const generateOrderedColumnRefs = ordering =>
+  ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
+
 const TableHead = ({
   options,
   options: { hasRowExpansion, hasRowSelection, hasResize },
@@ -149,11 +153,9 @@ const TableHead = ({
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
-  const columnRef = ordering.map(() => createRef());
-  const columnResizeRefs = ordering.map(() => createRef());
-
+  const columnRef = generateOrderedColumnRefs(ordering);
+  const columnResizeRefs = generateOrderedColumnRefs(ordering);
   const [currentColumnWidths, setCurrentColumnWidths] = useState({});
-  const [emitUpdatedColumnWidths, setEmitUpdatedColumnWidths] = useState(false);
 
   if (isEmpty(currentColumnWidths)) {
     columns.forEach(col => {
@@ -162,64 +164,65 @@ const TableHead = ({
   }
 
   const forwardMouseEvent = e => {
-    columnResizeRefs.forEach(ref => {
+    Object.entries(columnResizeRefs).forEach(([, ref]) => {
       if (ref.current) {
         ref.current.forwardMouseEvent(e);
       }
     });
   };
 
-  const getRenderedWidths = useCallback(
+  const measureColumnWidths = useCallback(
     () => {
-      return columnRef.map(ref => ref.current && ref.current.getBoundingClientRect().width);
+      return ordering
+        .filter(col => !col.isHidden)
+        .map(col => {
+          const ref = columnRef[col.columnId];
+          return {
+            id: col.columnId,
+            width: ref.current && ref.current.getBoundingClientRect().width,
+          };
+        });
     },
-    [columnRef]
+    [ordering, columnRef]
   );
 
-  const updateColumnWidthsAfterResize = modifiedColumnWidths => {
-    setCurrentColumnWidths(prevColumnWidths => {
-      const merged = { ...prevColumnWidths };
-      modifiedColumnWidths.forEach(modCol => {
-        merged[modCol.id].width = modCol.width;
-      });
-      return merged;
-    });
+  const updateColumnWidths = newColumnWidths => {
+    const updatedColumns = columns.map(col => ({
+      ...col,
+      width:
+        newColumnWidths[col.id].width !== undefined
+          ? `${newColumnWidths[col.id].width}px`
+          : col.width,
+    }));
+    setCurrentColumnWidths(newColumnWidths);
     if (onColumnResize) {
-      setEmitUpdatedColumnWidths(true);
+      onColumnResize(updatedColumns);
     }
   };
 
-  useEffect(() => {
-    if (emitUpdatedColumnWidths) {
-      const updatedColumns = getRenderedWidths().map((width, index) => ({
-        ...columns[index],
-        width,
-      }));
-      onColumnResize(updatedColumns);
-      setEmitUpdatedColumnWidths(false);
+  const onManualColumnResize = modifiedColumnWidths => {
+    const newColumnWidths = createNewWidthsMap(ordering, currentColumnWidths, modifiedColumnWidths);
+    updateColumnWidths(newColumnWidths);
+  };
+
+  const onColumnToggle = (columnId, newOrdering) => {
+    if (hasResize) {
+      const toggleArgs = { currentColumnWidths, newOrdering, columnId, columns };
+      const newColumnWidths = calculateWidthsOnToggle(toggleArgs);
+      updateColumnWidths(newColumnWidths);
     }
-  });
+    onChangeOrdering(newOrdering);
+  };
 
   useLayoutEffect(
     () => {
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
-        setCurrentColumnWidths(() => {
-          const widths = getRenderedWidths();
-          const widthsMap = {};
-
-          ordering.forEach((orderedColumn, index) => {
-            widthsMap[orderedColumn.columnId] = {
-              width: widths[index],
-              index,
-              id: orderedColumn.columnId,
-              visible: !orderedColumn.isHidden,
-            };
-          });
-          return widthsMap;
-        });
+        const measuredWidths = measureColumnWidths();
+        const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, measuredWidths);
+        setCurrentColumnWidths(newWidthsMap);
       }
     },
-    [hasResize, columns, currentColumnWidths, ordering, getRenderedWidths]
+    [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]
   );
 
   return (
@@ -267,7 +270,7 @@ const TableHead = ({
               data-column={matchingColumnMeta.id}
               isSortable={matchingColumnMeta.isSortable}
               isSortHeader={hasSort}
-              ref={columnRef[i]}
+              ref={columnRef[matchingColumnMeta.id]}
               thStyle={{
                 width:
                   currentColumnWidths[matchingColumnMeta.id] &&
@@ -289,10 +292,11 @@ const TableHead = ({
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
               {hasResize && i < ordering.length - 1 ? (
                 <ColumnResize
-                  onResize={updateColumnWidthsAfterResize}
-                  ref={columnResizeRefs[i]}
-                  allColumns={currentColumnWidths}
+                  onResize={onManualColumnResize}
+                  ref={columnResizeRefs[matchingColumnMeta.id]}
+                  currentColumnWidths={currentColumnWidths}
                   columnId={matchingColumnMeta.id}
+                  ordering={ordering}
                 />
               ) : null}
             </StyledCustomTableHeader>
@@ -323,6 +327,7 @@ const TableHead = ({
       )}
       {activeBar === 'column' && (
         <ColumnHeaderRow
+          erRow
           columns={columns.map(column => ({
             id: column.id,
             name: column.name,
@@ -330,6 +335,7 @@ const TableHead = ({
           ordering={ordering}
           options={options}
           onChangeOrdering={onChangeOrdering}
+          onColumnToggle={onColumnToggle}
           lightweight={lightweight}
           onColumnSelectionConfig={onColumnSelectionConfig}
           columnSelectionConfigText={i18n.columnSelectionConfig}
