@@ -89,7 +89,7 @@
 }
 
 .#{$iot-prefix}--gauge-card {
-  .card--title {
+  .#{$iot-prefix}--card--title {
     padding-bottom: $spacing-02;
     padding-top: $spacing-02;
     width: 100%;

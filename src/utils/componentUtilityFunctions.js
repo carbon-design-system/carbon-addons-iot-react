@@ -11,6 +11,12 @@ import {
   ROW_HEIGHT,
   DASHBOARD_COLUMNS,
 } from '../constants/LayoutConstants';
+import {
+  reactAttributes,
+  htmlAttributes,
+  svgAttributes,
+  eventHandlers,
+} from '../constants/HTMLAttributes';
 
 /** Helper function to support downloading data as CSV */
 export const csvDownloadHandler = (data, title = 'export') => {
@@ -257,3 +263,23 @@ export const caseInsensitiveSearch = (keys, searchTerm) => {
   // eslint-disable-next-line
   return keys.some(key => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };
+
+const data = '[Dd][Aa][Tt][Aa]';
+const aria = '[Aa][Rr][Ii][Aa]';
+const attributes = [...reactAttributes, ...htmlAttributes, ...svgAttributes, ...eventHandlers].join(
+  '|'
+);
+const validAttributes = RegExp(`^((${attributes})|((${data}|${aria}|x)-.*))$`);
+/**
+ * Filter out props that are not valid HTML or react library props like 'ref'.
+ * See HTMLAttributes.js for more info
+ * @param {object} props the props (attributes) to filter
+ */
+export const filterValidAttributes = props =>
+  Object.keys(props)
+    .filter(prop => validAttributes.test(prop))
+    .reduce((filteredProps, propName) => {
+      // eslint-disable-next-line
+      filteredProps[propName] = props[propName];
+      return filteredProps;
+    }, {});
