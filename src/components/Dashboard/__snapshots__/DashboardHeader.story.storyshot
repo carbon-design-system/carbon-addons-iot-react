@@ -121,7 +121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             className="dashboard--header-actions"
           >
             <div
-              className="card--toolbar-action"
+              className="iot--card--toolbar-action"
               id="action-icon--edit"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -155,7 +155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </svg>
             </div>
             <div
-              className="card--toolbar-action"
+              className="iot--card--toolbar-action"
               id="action-icon--delete"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -528,7 +528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             className="dashboard--header-actions"
           >
             <div
-              className="card--toolbar-action"
+              className="iot--card--toolbar-action"
               id="action-icon--edit"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -562,7 +562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </svg>
             </div>
             <div
-              className="card--toolbar-action"
+              className="iot--card--toolbar-action"
               id="action-icon--delete"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -599,7 +599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               </svg>
             </div>
             <div
-              className="card--toolbar-action"
+              className="iot--card--toolbar-action"
               id="action-icon--pin"
               onClick={[Function]}
               onKeyDown={[Function]}
