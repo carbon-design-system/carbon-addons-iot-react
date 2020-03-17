@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -22,7 +22,6 @@ const defaultProps = {
 };
 
 const TilePagination = ({ page, numPages, onChange, i18n }) => {
-  const [defaultValue, setDefaultValue] = useState('default');
   const prevButton = (
     <button
       type="button"
@@ -94,9 +93,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
           className="bx--pagination-nav__page bx--pagination-nav__page--select"
           data-page-select
           aria-label="select page number"
-          onChange={evt => {
-            onChange(Number(evt.target.value));
-          }}
+          onChange={evt => onChange(Number(evt.target.value))}
         >
           <option value="default" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
@@ -110,7 +107,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
             focusable="false"
             preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg"
-            class="bx--pagination-nav__select-icon"
+            className="bx--pagination-nav__select-icon"
             width="16"
             height="16"
             viewBox="0 0 32 32"
@@ -133,9 +130,9 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   const backThreshold = 4;
 
   const isLargeNumberOfButtons = numPages > maxPageButtonsToShow;
-  // if page number in first 4 numbers, not show front overflow menu
+  // if page number in first 4 numbers, do not show front overflow menu
   const showFrontOverFlowMenu = isLargeNumberOfButtons && page > frontThreshold;
-  // if page number in last 4 numbers, not show back overflow menu
+  // if page number in last 4 numbers, do not show back overflow menu
   const showBackOverFlowMenu = isLargeNumberOfButtons && page < numPages - backThreshold + 1;
 
   const getPageNumberButtons = pageNumber => {
