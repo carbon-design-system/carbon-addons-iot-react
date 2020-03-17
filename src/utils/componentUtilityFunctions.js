@@ -2,6 +2,7 @@ import delay from 'lodash/delay';
 import moment from 'moment';
 import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
+import isNil from 'lodash/isNil';
 
 import {
   GUTTER,
@@ -10,6 +11,12 @@ import {
   ROW_HEIGHT,
   DASHBOARD_COLUMNS,
 } from '../constants/LayoutConstants';
+import {
+  reactAttributes,
+  htmlAttributes,
+  svgAttributes,
+  eventHandlers,
+} from '../constants/HTMLAttributes';
 
 /** Helper function to support downloading data as CSV */
 export const csvDownloadHandler = (data, title = 'export') => {
@@ -92,10 +99,10 @@ export const getSortedData = (inputData, columnId, direction, isTimestampColumn)
 
   return sortedData.sort((a, b) => {
     const val = direction === 'ASC' ? -1 : 1;
-    if (a.values[columnId] === null) {
+    if (isNil(a.values[columnId])) {
       return 1;
     }
-    if (b.values[columnId] === null) {
+    if (isNil(b.values[columnId])) {
       return -1;
     }
     if (isTimestampColumn) {
@@ -256,3 +263,23 @@ export const caseInsensitiveSearch = (keys, searchTerm) => {
   // eslint-disable-next-line
   return keys.some(key => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };
+
+const data = '[Dd][Aa][Tt][Aa]';
+const aria = '[Aa][Rr][Ii][Aa]';
+const attributes = [...reactAttributes, ...htmlAttributes, ...svgAttributes, ...eventHandlers].join(
+  '|'
+);
+const validAttributes = RegExp(`^((${attributes})|((${data}|${aria}|x)-.*))$`);
+/**
+ * Filter out props that are not valid HTML or react library props like 'ref'.
+ * See HTMLAttributes.js for more info
+ * @param {object} props the props (attributes) to filter
+ */
+export const filterValidAttributes = props =>
+  Object.keys(props)
+    .filter(prop => validAttributes.test(prop))
+    .reduce((filteredProps, propName) => {
+      // eslint-disable-next-line
+      filteredProps[propName] = props[propName];
+      return filteredProps;
+    }, {});

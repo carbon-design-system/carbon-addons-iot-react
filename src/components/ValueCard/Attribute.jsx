@@ -6,10 +6,11 @@ import { Icon } from 'carbon-components-react';
 import withSize from 'react-sizeme';
 import classNames from 'classnames';
 
-import icons from '../../utils/bundledIcons';
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import CardIcon from '../ImageCard/CardIcon';
+import icons from '../../utils/bundledIcons';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -31,7 +32,7 @@ const TrendIcon = styled(Icon)`
   margin-right: 0.25rem;
 `;
 
-const ThresholdIcon = styled(Icon)`
+const ThresholdIcon = styled(CardIcon)`
   ${props =>
     props.color &&
     `
@@ -138,14 +139,7 @@ const Attribute = ({
     .concat([null])[0];
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
-  const thresholdIconProps = matchingThreshold
-    ? {
-        title: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
-        fill: matchingThreshold.color,
-        tabIndex: '0',
-        description: `${matchingThreshold.comparison} ${matchingThreshold.value}`,
-      }
-    : {};
+
   const bemBase = `${iotPrefix}--value-card__attribute`;
 
   const renderThresholdIcon = allowedToWrap => {
@@ -156,16 +150,13 @@ const Attribute = ({
           [`${bemBase}-threshold-icon-container--wrappable`]: allowedToWrap,
         })}
       >
-        {renderIconByName ? (
-          renderIconByName(matchingThreshold.icon, thresholdIconProps)
-        ) : (
-          <ThresholdIcon
-            icon={icons[matchingThreshold.icon] || icons.help}
-            iconTitle={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-            fill={matchingThreshold.color}
-            description={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
-          />
-        )}
+        <ThresholdIcon
+          {...matchingThreshold}
+          width={16}
+          height={16}
+          title={`${matchingThreshold.comparison} ${matchingThreshold.value}`}
+          renderIconByName={renderIconByName}
+        />
       </div>
     );
   };
