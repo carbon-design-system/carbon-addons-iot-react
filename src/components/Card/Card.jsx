@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
-import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -17,7 +18,7 @@ import {
   DASHBOARD_SIZES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
-import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 import CardToolbar from './CardToolbar';
@@ -27,17 +28,44 @@ const { prefix, iotPrefix } = settings;
 const OptimizedSkeletonText = React.memo(SkeletonText);
 
 /** Full card */
-const CardWrapper = styled.div`
-  background: white;
-  height: ${props => props.dimensions.y}px;
-  ${props => (props.isExpanded ? 'height: 100%; width: 100%;' : '')}
-  display: flex;
-  flex-direction: column;
-  span#timeRange {
-    display: ${props => (props.cardWidthSize < 230 ? `none` : `flex`)};
-  }
-  overflow: ${props => (props.showOverflow ? `visible` : `hidden`)};
-`;
+const CardWrapper = ({
+  children,
+  dimensions,
+  showOverflow,
+  id,
+  style,
+  className,
+  onScroll,
+  // The event handlers are needed for when the card appears as grid items
+  // in the Dashboard Grid - isEditable
+  onMouseDown,
+  onMouseUp,
+  onTouchEnd,
+  onTouchStart,
+  testID,
+  ...others
+}) => {
+  const validOthers = filterValidAttributes(others);
+  return (
+    <div
+      role="presentation"
+      data-testid={testID}
+      id={id}
+      style={{ ...style, '--card-default-height': `${dimensions.y}px` }}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onTouchEnd={onTouchEnd}
+      onTouchStart={onTouchStart}
+      onScroll={onScroll}
+      className={classNames(className, `${iotPrefix}--card--wrapper`, {
+        [`${iotPrefix}--card--wrapper--overflowing`]: showOverflow,
+      })}
+      {...validOthers}
+    >
+      {children}
+    </div>
+  );
+};
 
 /** Header components */
 export const CardHeader = (
@@ -47,34 +75,63 @@ export const CardHeader = (
 export const CardTitle = (
   { children, title } //eslint-disable-line
 ) => (
-  <span className="card--title" title={title}>
+  <span className={`${iotPrefix}--card--title`} title={title}>
     {children}
   </span>
 );
 
-export const CardContent = styled.div`
-  flex: 1;
-  position: relative;
-  height: ${props => props.dimensions.y - CARD_TITLE_HEIGHT}px;
-  overflow-x: visible;
-  overflow-y: ${props => (!props.isExpanded ? 'visible' : 'auto')};
-`;
+const CardContent = props => {
+  const { children, dimensions, isExpanded } = props;
+  const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
+  return (
+    <div
+      style={{ [`--card-content-height`]: height }}
+      className={classNames(`${iotPrefix}--card--content`, {
+        [`${iotPrefix}--card--content--expanded`]: isExpanded,
+      })}
+    >
+      {children}
+    </div>
+  );
+};
 
-export const SkeletonWrapper = styled.div`
-  padding: ${CARD_CONTENT_PADDING}px;
-  width: 80%;
-`;
+const EmptyMessageWrapper = props => {
+  const { children } = props;
+  return (
+    <div
+      style={{ '--card-content-padding': `${CARD_CONTENT_PADDING}px` }}
+      className={`${iotPrefix}--card--empty-message-wrapper`}
+    >
+      {children}
+    </div>
+  );
+};
 
-const EmptyMessageWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 ${CARD_CONTENT_PADDING}px ${CARD_CONTENT_PADDING}px;
-  text-align: center;
-  line-height: 1.3;
-`;
+CardWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
+  showOverflow: CardPropTypes.showOverflow.isRequired,
+  id: CardPropTypes.id,
+  style: PropTypes.objectOf(PropTypes.string),
+  testID: CardPropTypes.testID,
+  /* eslint-disable */
+  onMouseDown: PropTypes.func,
+  onMouseUp: PropTypes.func,
+  onTouchEnd: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  onScroll: PropTypes.func,
+  /* eslint-enable */
+};
+CardWrapper.defaultProps = { id: undefined, style: undefined, testID: 'Card' };
+CardContent.propTypes = {
+  children: PropTypes.node,
+  dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
+  isExpanded: CardPropTypes.isExpanded.isRequired,
+};
+CardContent.defaultProps = { children: undefined };
+EmptyMessageWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export const defaultProps = {
   size: CARD_SIZES.MEDIUM,
@@ -133,6 +190,12 @@ export const defaultProps = {
     expandLabel: 'Expand to fullscreen',
     overflowMenuDescription: 'Open and close list of options',
   },
+  onMouseDown: undefined,
+  onMouseUp: undefined,
+  onTouchEnd: undefined,
+  onTouchStart: undefined,
+  onScroll: undefined,
+  testID: CardWrapper.defaultProps.testID,
 };
 
 /** Dumb component that renders the card basics */
@@ -159,6 +222,7 @@ const Card = props => {
     style,
     className,
     values,
+    testID,
     ...others
   } = props;
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -227,7 +291,6 @@ const Card = props => {
             // support passing the card toolbar through to the custom card
             const cardToolbar = hasToolbarActions ? (
               <CardToolbar
-                className={`${iotPrefix}--card--toolbar`}
                 width={cardSize.width}
                 availableActions={mergedAvailableActions}
                 i18n={strings}
@@ -244,7 +307,6 @@ const Card = props => {
                 id={id}
                 dimensions={dimensions}
                 isExpanded={isExpanded}
-                cardWidthSize={cardSize.width}
                 style={
                   !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
                 }
@@ -257,13 +319,13 @@ const Card = props => {
                         <Tooltip
                           ref={titleRef}
                           showIcon={false}
-                          triggerClassName="title--text"
+                          triggerClassName={`${iotPrefix}--card--title--text`}
                           triggerText={title}
                         >
                           {title}
                         </Tooltip>
                       ) : (
-                        <div ref={titleRef} className="title--text">
+                        <div ref={titleRef} className={`${iotPrefix}--card--title--text`}>
                           {title}
                         </div>
                       )}
@@ -284,7 +346,10 @@ const Card = props => {
                   {!isVisible && isLazyLoading ? ( // if not visible don't show anything
                     ''
                   ) : isLoading ? (
-                    <SkeletonWrapper>
+                    <div
+                      style={{ '--card-content-padding': `${CARD_CONTENT_PADDING}px` }}
+                      className={`${iotPrefix}--card--skeleton-wrapper`}
+                    >
                       <OptimizedSkeletonText
                         paragraph
                         lineCount={
@@ -292,7 +357,7 @@ const Card = props => {
                         }
                         width="100%"
                       />
-                    </SkeletonWrapper>
+                    </div>
                   ) : error ? (
                     <EmptyMessageWrapper>
                       {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
