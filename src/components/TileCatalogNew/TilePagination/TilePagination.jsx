@@ -22,8 +22,7 @@ const defaultProps = {
 };
 
 const TilePagination = ({ page, numPages, onChange, i18n }) => {
-  const [hideOption, setHideOption] = useState(true);
-  const [selectValue, setSelectValue] = useState('default');
+  const [defaultValue, setDefaultValue] = useState('default');
   const prevButton = (
     <button
       type="button"
@@ -95,10 +94,8 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
           className="bx--pagination-nav__page bx--pagination-nav__page--select"
           data-page-select
           aria-label="select page number"
-          value={selectValue}
           onChange={evt => {
-            onChange(evt.target.value);
-            // setSelectValue('default');
+            onChange(Number(evt.target.value));
           }}
         >
           <option value="default" hidden data-page="" />
@@ -127,40 +124,37 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       </div>
     </li>
   );
-  const first4PageNumbers = Array(4)
-    .fill(0)
-    .map((i, idx) => idx + 1);
 
-  const last4PageNumbers = Array(4)
-    .fill(0)
-    .map((i, idx) => numPages - idx);
+  // maximum of how many page buttons to show
+  const maxPageButtonsToShow = 7;
+  // how many page buttons to show from the beginning before move to overflow menu
+  const frontThreshold = 4;
+  // how many page buttons to show from the end before move to overflow menu
+  const backThreshold = 4;
 
-  const largeNumber = numPages > 6;
-  // page number in first 4 numbers ==> false, otherwise true
-  const showFrontPaginationSelect = !first4PageNumbers.find(number => number == page);
-  // "number in last 4 numbers ==> false, otherwide true";
-  const showBackPaginationSelect = !last4PageNumbers.find(number => number == page);
-  console.log('last4PageNumbers' + last4PageNumbers);
-  console.log('showBackPaginationSelect' + showBackPaginationSelect);
-  console.log('page' + page);
+  const isLargeNumberOfButtons = numPages > maxPageButtonsToShow;
+  // if page number in first 4 numbers, not show front overflow menu
+  const showFrontOverFlowMenu = isLargeNumberOfButtons && page > frontThreshold;
+  // if page number in last 4 numbers, not show back overflow menu
+  const showBackOverFlowMenu = isLargeNumberOfButtons && page < numPages - backThreshold + 1;
 
-  const getPageNumberButton = pageNumber => {
-    if (!largeNumber) {
+  const getPageNumberButtons = pageNumber => {
+    if (!isLargeNumberOfButtons) {
       return Array.from({ length: numPages - 2 }, (v, i) => (
         <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
       ));
     } else {
-      if (!showFrontPaginationSelect && showBackPaginationSelect) {
+      if (!showFrontOverFlowMenu && showBackOverFlowMenu) {
         return Array.from({ length: 4 }, (v, i) => (
           <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
         ));
-      } else if (showFrontPaginationSelect && showBackPaginationSelect) {
+      } else if (showFrontOverFlowMenu && showBackOverFlowMenu) {
         return [
           <li className="bx--pagination-nav__list-item">{getPageButton(page - 1)}</li>,
           <li className="bx--pagination-nav__list-item">{getPageButton(page)}</li>,
-          <li className="bx--pagination-nav__list-item">{getPageButton(page - 0 + 1)}</li>,
+          <li className="bx--pagination-nav__list-item">{getPageButton(page + 1)}</li>,
         ];
-      } else if (showFrontPaginationSelect && !showBackPaginationSelect) {
+      } else if (showFrontOverFlowMenu && !showBackOverFlowMenu) {
         return [
           <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 4)}</li>,
           <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 3)}</li>,
@@ -177,11 +171,15 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         <li className="bx--pagination-nav__list-item">{prevButton}</li>
         <li className="bx--pagination-nav__list-item">{getPageButton(1)}</li>
 
-        {showFrontPaginationSelect ? getPageSelect(numPages - 6, 2) : null}
+        {showFrontOverFlowMenu ? getPageSelect(page - 3, 2) : null}
 
-        {getPageNumberButton()}
+        {getPageNumberButtons()}
 
-        {showBackPaginationSelect ? getPageSelect(numPages - 6, 6) : null}
+        {showBackOverFlowMenu && !showFrontOverFlowMenu ? getPageSelect(numPages - 6, 6) : null}
+
+        {showBackOverFlowMenu && showFrontOverFlowMenu
+          ? getPageSelect(numPages - page - 2, page + 2)
+          : null}
 
         {numPages > 1 ? (
           <li className="bx--pagination-nav__list-item">{getPageButton(numPages)}</li>
