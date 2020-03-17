@@ -135,31 +135,35 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   // if page number in last 4 numbers, do not show back overflow menu
   const showBackOverFlowMenu = isLargeNumberOfButtons && page < numPages - backThreshold + 1;
 
-  const getPageNumberButtons = pageNumber => {
+  const getPageNumberButtons = () => {
+    let buttons = [];
     if (!isLargeNumberOfButtons) {
-      return Array.from({ length: numPages - 2 }, (v, i) => (
+      buttons = Array.from({ length: numPages - 2 }, (v, i) => (
         <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
       ));
-    } else {
-      if (!showFrontOverFlowMenu && showBackOverFlowMenu) {
-        return Array.from({ length: 4 }, (v, i) => (
-          <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
-        ));
-      } else if (showFrontOverFlowMenu && showBackOverFlowMenu) {
-        return [
-          <li className="bx--pagination-nav__list-item">{getPageButton(page - 1)}</li>,
-          <li className="bx--pagination-nav__list-item">{getPageButton(page)}</li>,
-          <li className="bx--pagination-nav__list-item">{getPageButton(page + 1)}</li>,
-        ];
-      } else if (showFrontOverFlowMenu && !showBackOverFlowMenu) {
-        return [
-          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 4)}</li>,
-          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 3)}</li>,
-          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 2)}</li>,
-          <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 1)}</li>,
-        ];
-      }
     }
+    if (!showFrontOverFlowMenu && showBackOverFlowMenu) {
+      buttons = Array.from({ length: 4 }, (v, i) => (
+        <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
+      ));
+    }
+    if (showFrontOverFlowMenu && showBackOverFlowMenu) {
+      buttons = [
+        <li className="bx--pagination-nav__list-item">{getPageButton(page - 1)}</li>,
+        <li className="bx--pagination-nav__list-item">{getPageButton(page)}</li>,
+        <li className="bx--pagination-nav__list-item">{getPageButton(page + 1)}</li>,
+      ];
+    }
+    if (showFrontOverFlowMenu && !showBackOverFlowMenu) {
+      buttons = [
+        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 4)}</li>,
+        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 3)}</li>,
+        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 2)}</li>,
+        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 1)}</li>,
+      ];
+    }
+
+    return buttons;
   };
 
   return (
