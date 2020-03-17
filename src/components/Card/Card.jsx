@@ -16,7 +16,7 @@ import {
   DASHBOARD_COLUMNS,
   DASHBOARD_SIZES,
 } from '../../constants/LayoutConstants';
-import { CardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
