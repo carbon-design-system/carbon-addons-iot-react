@@ -376,4 +376,12 @@ export const CardPropTypes = {
   cardDimensions: CardSizesToDimensionsPropTypes,
   /** optional function that should return an icon react element based on a icon name, it is called back with the icon name and then an object containing additional icon properties to add to the rendered icon */
   renderIconByName: PropTypes.func,
+  /** Event handlers needed for Dashboard Grid - isEditable */
+  onMouseDown: PropTypes.func,
+  onMouseUp: PropTypes.func,
+  onTouchEnd: PropTypes.func,
+  onTouchStart: PropTypes.func,
+  onScroll: PropTypes.func,
+  /** For testing */
+  testID: PropTypes.string,
 };
