@@ -18,26 +18,56 @@ import {
   eventHandlers,
 } from '../constants/HTMLAttributes';
 
-/** Helper function to support downloading data as CSV */
-export const csvDownloadHandler = (data, title = 'export') => {
+/**
+ * Helper function to generate a CSV from an array of table cell data
+ * Retrieve the column headers, then match and join the cell values
+ * with each header
+ * @param {Array<string | number>} data from table cells
+ * @return {string} generated csv
+ */
+export const generateCsv = data => {
   let csv = '';
-  // get all keys availavle and merge it
-  let object = [];
+  // get all headers available and merge it
+  let columnHeaders = [];
   data.forEach(item => {
-    object = [...object, ...Object.keys(item.values)];
+    columnHeaders = [...columnHeaders, ...Object.keys(item.values)];
   });
-  object = [...new Set(object)];
-  csv += `${object.join(',')}\n`;
+  columnHeaders = [...new Set(columnHeaders)];
+  csv += `${columnHeaders.join(',')}\n`;
   data.forEach(item => {
-    object.forEach(arrayHeader => {
-      csv += `${item.values[arrayHeader] ? item.values[arrayHeader] : ''},`;
+    columnHeaders.forEach(arrayHeader => {
+      // if item is of arrayHeader, add value
+      // else if, check if the value is integer 0 as 0 is treated as false.
+      // Swap the 0 for a string literal 0 so that it displays in the csv
+      // else, return empty string
+      if (item.values[arrayHeader]) {
+        csv += `${item.values[arrayHeader]},`;
+      } // Needs explicit check as it treats the 0 as false
+      else if (item.values[arrayHeader] === 0) {
+        csv += `0,`;
+      } else {
+        csv += ',';
+      }
     });
     csv += `\n`;
   });
 
-  const exportedFilenmae = `${title}.csv`;
+  return csv;
+};
 
-  fileDownload(csv, exportedFilenmae);
+/**
+ * Helper function to support downloading data as CSV
+ * Retrieve the column headers, then match and join the cell values
+ * with each header. When CSV is fully joined, download the file
+ *
+ * @param {Array<string | number>} data from table cells
+ * @param {string} title file name to be saved as
+ */
+export const csvDownloadHandler = (data, title = 'export') => {
+  const csv = generateCsv(data);
+  const exportedFilename = `${title}.csv`;
+
+  fileDownload(csv, exportedFilename);
 };
 
 export const tableTranslateWithId = (i18n, id, state) => {
