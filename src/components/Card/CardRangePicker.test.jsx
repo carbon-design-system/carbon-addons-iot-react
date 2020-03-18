@@ -1,17 +1,22 @@
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import React from 'react';
+import { mount } from 'enzyme';
 
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
+import { settings } from '../../constants/Settings';
 
 import CardRangePicker from './CardRangePicker';
 
+const { iotPrefix } = settings;
+
 describe('CardRangePicker', () => {
+  const mockOnCardAction = jest.fn();
+  const overflowMenuDescription = 'Open and close list of options';
+  const defaultLabel = 'Default';
+  const last24HoursLabel = 'Last 24 Hours';
+  const thisWeekLabel = 'This week';
+
   test('card editable actions', async done => {
-    const mockOnCardAction = jest.fn();
-    const overflowMenuDescription = 'Open and close list of options';
-    const defaultLabel = 'Default';
-    const last24HoursLabel = 'Last 24 Hours';
-    const thisWeekLabel = 'This week';
     const { getByTitle, getByText } = render(
       <CardRangePicker
         i18n={{
@@ -49,5 +54,31 @@ describe('CardRangePicker', () => {
       range: 'thisWeek',
     });
     done();
+  });
+
+  test('show time range label when enough space', () => {
+    const wrapper = mount(
+      <CardRangePicker
+        i18n={{
+          thisWeekLabel,
+        }}
+        onCardAction={mockOnCardAction}
+        cardWidth={500}
+        timeRange="thisWeek"
+      />
+    );
+    expect(wrapper.find(`.${iotPrefix}--card--toolbar-timerange-label`)).toHaveLength(1);
+
+    const wrapper2 = mount(
+      <CardRangePicker
+        i18n={{
+          thisWeekLabel,
+        }}
+        onCardAction={mockOnCardAction}
+        cardWidth={229}
+        timeRange="thisWeek"
+      />
+    );
+    expect(wrapper2.find(`.${iotPrefix}--card--toolbar-timerange-label`)).toHaveLength(0);
   });
 });

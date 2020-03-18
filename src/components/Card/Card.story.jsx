@@ -13,7 +13,7 @@ storiesOf('Watson IoT/Card', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: text('width', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
           id="facilitycard-basic"
