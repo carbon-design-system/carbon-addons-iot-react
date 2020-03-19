@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2 } from '../../utils/sample';
@@ -7,13 +9,13 @@ import { tableColumns, tableData, actions2 } from '../../utils/sample';
 import TableCard, { findMatchingThresholds } from './TableCard';
 
 describe('TableCard', () => {
+  const thresholds = [
+    { comparison: '>', dataSourceId: 'airflow_mean', severity: 3, value: 2 },
+    { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
+    { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
+    { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
+  ];
   test('findMatchingThresholds', () => {
-    const thresholds = [
-      { comparison: '>', dataSourceId: 'airflow_mean', severity: 3, value: 2 },
-      { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
-      { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
-      { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
-    ];
     const oneMatchingThreshold = findMatchingThresholds(
       thresholds,
       { airflow_mean: 4 },
@@ -24,12 +26,6 @@ describe('TableCard', () => {
     expect(oneMatchingThreshold[0].severity).toEqual(1);
   });
   test('findMatchingThresholds multiple columns', () => {
-    const thresholds = [
-      { comparison: '>', dataSourceId: 'airflow_mean', severity: 3, value: 2 },
-      { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
-      { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
-      { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
-    ];
     const twoMatchingThresholds = findMatchingThresholds(thresholds, {
       airflow_mean: 4,
       airflow_max: 5,
@@ -190,5 +186,77 @@ describe('TableCard', () => {
       />
     );
     expect(wrapper2.find('TableCell .myCustomRenderedCell').length).toBe(0);
+  });
+  test('threshold colums should render in correct column regardless of order', () => {
+    const tableCustomColumns = tableColumns.map(item =>
+      item.dataSourceId === 'count' ? { ...item, precision: 1 } : { ...item }
+    );
+
+    // The pressure header comes after the count header, but the ordering should not matter when
+    // it comes to rendering the threshold columns
+    const customThresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        icon: 'bee',
+        color: 'black',
+        label: 'Pressure Sev',
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '>=',
+        value: 10,
+        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+      },
+    ];
+    const { getByTitle, queryByTitle } = render(
+      <TableCard
+        id="table-list"
+        title="Open Alerts"
+        content={{
+          columns: tableCustomColumns,
+          thresholds: customThresholds,
+          expandedRows: [
+            {
+              id: 'long_description',
+              label: 'Description',
+            },
+            {
+              id: 'other_description',
+              label: 'Other Description',
+            },
+            {
+              id: 'pressure',
+              label: 'Pressure',
+            },
+            {
+              id: 'temperature',
+              label: 'Temperature',
+            },
+          ],
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    // If the ordering was being affected, Count Severity would not appear. Instead, Pressure Severity would appear
+    expect(getByTitle('Count Severity')).toBeInTheDocument();
+    expect(queryByTitle('Pressure Severity')).not.toBeInTheDocument();
+    expect(getByTitle('Pressure Sev')).toBeInTheDocument();
   });
 });
