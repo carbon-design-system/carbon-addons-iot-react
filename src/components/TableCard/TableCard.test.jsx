@@ -167,6 +167,7 @@ describe('TableCard', () => {
         count: 1.2039201932,
         hour: 1563877570000,
         long_description: 'long description for a given event payload',
+        pressure: 0,
       },
       rowId: 'row-1',
       value: 'AHI005 Asset failure',
