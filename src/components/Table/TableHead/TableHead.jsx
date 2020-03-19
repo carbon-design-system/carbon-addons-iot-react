@@ -129,6 +129,7 @@ const TableHead = ({
     activeBar,
     ordering,
     filters,
+    rowActionColumn,
   },
   actions: {
     onSelectAll,
@@ -298,7 +299,12 @@ const TableHead = ({
             </StyledCustomTableHeader>
           ) : null;
         })}
-        {options.hasRowActions ? <TableHeader>&nbsp;</TableHeader> : null}
+        {options.hasRowActions ? (
+          <TableHeader
+            className={`${iotPrefix}--table-header-row-action-column`}
+            thStyle={{ '--row-action-min-width': rowActionColumn && rowActionColumn.minWidth }}
+          />
+        ) : null}
       </TableRow>
       {filterBarActive && (
         <FilterHeaderRow
