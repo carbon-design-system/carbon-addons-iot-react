@@ -4,7 +4,7 @@ import { Tooltip } from 'carbon-components-react';
 import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
-import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
+import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   CARD_CONTENT_PADDING,
@@ -91,7 +91,9 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     >
       <p className={classnames(`${dsPrefix}-dashes`)}>--</p>
       <div className={`${dsPrefix}-grid`}>
-        {size === CARD_SIZES.SMALL || size === CARD_SIZES.MEDIUMTHIN
+        {size === CARD_SIZES.SMALL ||
+        size === CARD_SIZES.SMALLWIDE ||
+        size === CARD_SIZES.MEDIUMTHIN
           ? renderDataStateGridIcon()
           : renderDataStateGridItems()}
       </div>
