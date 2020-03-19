@@ -36,10 +36,8 @@ export const generateCsv = data => {
   csv += `${columnHeaders.join(',')}\n`;
   data.forEach(item => {
     columnHeaders.forEach(arrayHeader => {
-      // if item is of arrayHeader, add value
-      // else if, check if the value is integer 0 as 0 is treated as false.
-      // Swap the 0 for a string literal 0 so that it displays in the csv
-      // else, return empty string
+      // if item is of arrayHeader, add value to csv
+      // isNil will also correct the cases in which the value is 0 or false
       csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
     });
     csv += `\n`;
