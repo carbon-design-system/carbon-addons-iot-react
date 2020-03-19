@@ -40,14 +40,7 @@ export const generateCsv = data => {
       // else if, check if the value is integer 0 as 0 is treated as false.
       // Swap the 0 for a string literal 0 so that it displays in the csv
       // else, return empty string
-      if (item.values[arrayHeader]) {
-        csv += `${item.values[arrayHeader]},`;
-      } // Needs explicit check as it treats the 0 as false
-      else if (item.values[arrayHeader] === 0) {
-        csv += `0,`;
-      } else {
-        csv += ',';
-      }
+      csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
     });
     csv += `\n`;
   });
