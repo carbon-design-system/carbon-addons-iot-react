@@ -166,21 +166,27 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
     return buttons;
   };
 
+  const getFrontOverFlowMenu = () => {
+    return showBackOverFlowMenu ? getPageSelect(page - 3, 2) : getPageSelect(numPages - 6, 2);
+  };
+
+  const getBackOverFlowMenu = () => {
+    return showFrontOverFlowMenu
+      ? getPageSelect(numPages - page - 2, page + 2)
+      : getPageSelect(numPages - 6, 6);
+  };
+
   return (
     <nav className="bx--pagination-nav" ariaLabel={i18n.ariaLabelPagination}>
       <ul className="bx--pagination-nav__list">
         <li className="bx--pagination-nav__list-item">{prevButton}</li>
         <li className="bx--pagination-nav__list-item">{getPageButton(1)}</li>
 
-        {showFrontOverFlowMenu ? getPageSelect(page - 3, 2) : null}
+        {showFrontOverFlowMenu ? getFrontOverFlowMenu() : null}
 
         {getPageNumberButtons()}
 
-        {showBackOverFlowMenu && !showFrontOverFlowMenu ? getPageSelect(numPages - 6, 6) : null}
-
-        {showBackOverFlowMenu && showFrontOverFlowMenu
-          ? getPageSelect(numPages - page - 2, page + 2)
-          : null}
+        {showBackOverFlowMenu ? getBackOverFlowMenu() : null}
 
         {numPages > 1 ? (
           <li className="bx--pagination-nav__list-item">{getPageButton(numPages)}</li>
