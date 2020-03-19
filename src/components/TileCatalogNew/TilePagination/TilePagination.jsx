@@ -18,6 +18,7 @@ const defaultProps = {
     ariaLabelNextPage: 'Next page',
     ariaLabelPagination: 'pagination',
     ariaLabelPage: 'page',
+    ariaLabelSelect: 'select page number',
   },
 };
 
@@ -92,7 +93,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         <select
           className="bx--pagination-nav__page bx--pagination-nav__page--select"
           data-page-select
-          aria-label="select page number"
+          aria-label={i18n.ariaLabelSelect}
           onChange={evt => onChange(Number(evt.target.value))}
         >
           <option value="default" hidden data-page="" />
