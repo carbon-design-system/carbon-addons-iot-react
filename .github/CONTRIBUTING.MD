@@ -8,7 +8,7 @@ installed:
 - [Node.js](https://nodejs.org/en/download/) - the required version is specified in the [`.nvmrc`](/.nvmrc)
   - If you're on macOS or using WSL on Windows, we recommend using [`nvm`](https://github.com/nvm-sh/nvm) as your version manager for Node.
 - Git
-- [Yarn](https://yarnpkg.com/en/docs/install)
+- [Yarn Classic](https://classic.yarnpkg.com/en/docs/install)
 
 You'll also need a code editor to make changes. There are many to
 choose from but some popular options are
