@@ -102,7 +102,15 @@ storiesOf('Watson IoT/TableCard', module)
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
     const thresholds = [
-      // this threshold is applied to the whole row, not a particular attribute
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        icon: 'bee',
+        color: 'black',
+        label: 'Pressure Sev',
+      },
       {
         dataSourceId: 'count',
         comparison: '<',
@@ -120,15 +128,6 @@ storiesOf('Watson IoT/TableCard', module)
         comparison: '=',
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-      },
-      {
-        dataSourceId: 'pressure',
-        comparison: '>=',
-        value: 10,
-        severity: 1,
-        icon: 'bee',
-        color: 'black',
-        label: 'Pressure Sev',
       },
     ];
 
@@ -180,56 +179,78 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
-  .add('table with thresholds', () => {
-    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  .add(
+    'table with thresholds',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
-    const thresholds = [
-      // this threshold is applied to the whole row, not a particular attribute
-      {
-        dataSourceId: 'count',
-        comparison: '<',
-        value: 5,
-        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-      },
-      {
-        dataSourceId: 'count',
-        comparison: '>=',
-        value: 10,
-        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: 'Count Sev',
-      },
-      {
-        dataSourceId: 'count',
-        comparison: '=',
-        value: 7,
-        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-      },
-      {
-        dataSourceId: 'pressure',
-        comparison: '>=',
-        value: 10,
-        severity: 1,
-        label: 'Pressure Sev',
-      },
-    ];
+      const thresholds = [
+        // this threshold is applied to the whole row, not a particular attribute
+        {
+          dataSourceId: 'count',
+          comparison: '<',
+          value: 5,
+          severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+        },
+        {
+          dataSourceId: 'count',
+          comparison: '>=',
+          value: 10,
+          severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+          label: 'Count Sev',
+        },
+        {
+          dataSourceId: 'count',
+          comparison: '=',
+          value: 7,
+          severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+        },
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: 10,
+          severity: 1,
+          label: 'Pressure Sev',
+        },
+      ];
 
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TableCard
-          title={text('title', 'Open Alerts')}
-          id="table-list"
-          tooltip={text('Tooltip text', "Here's a Tooltip")}
-          content={{
-            columns: tableColumns,
-            thresholds,
-          }}
-          values={tableData}
-          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
-        />
-      </div>
-    );
-  })
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableColumns,
+              thresholds,
+            }}
+            values={tableData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+       Thresholds can be based off 1 specific data source with the unique key: dataSourceId . 
+
+       Comparisons can then be added by defined the comparison key with one of the following: <,<=,=,>,>= .
+
+       Severity has 3 possible settings, 1 (high), 2 (medium), 3 (low).
+
+       Value is the number limit being compared in the comparison that was defined.
+
+       Label is a custom label that can be defined and displayed in the column. If a custom label is not set, 
+       the label will default to '<dataSourceId> Severity'
+
+       In addition, if the dataSourceId does not have a column displayed, a new column will be added at the end
+       of the table.
+      `,
+      },
+    }
+  )
   .add(
     'table with thresholds only with icon',
     () => {
