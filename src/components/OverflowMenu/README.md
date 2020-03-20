@@ -27,7 +27,7 @@ terminal:
 
 ```bash
 npm i carbon-components carbon-components-react carbon-icons --save
-# Or, with yarn
+# Or, with Yarn Classic
 yarn add carbon-components carbon-components-react carbon-icons
 ```
 
