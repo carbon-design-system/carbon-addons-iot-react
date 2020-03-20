@@ -9524,6 +9524,9 @@ Map {
                         ],
                         "type": "oneOf",
                       },
+                      "showLabel": Object {
+                        "type": "bool",
+                      },
                       "showOnContent": Object {
                         "type": "bool",
                       },

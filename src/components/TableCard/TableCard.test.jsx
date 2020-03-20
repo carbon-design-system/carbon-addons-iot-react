@@ -189,10 +189,6 @@ describe('TableCard', () => {
     expect(wrapper2.find('TableCell .myCustomRenderedCell').length).toBe(0);
   });
   test('threshold colums should render in correct column regardless of order', () => {
-    const tableCustomColumns = tableColumns.map(item =>
-      item.dataSourceId === 'count' ? { ...item, precision: 1 } : { ...item }
-    );
-
     // The pressure header comes after the count header, but the ordering should not matter when
     // it comes to rendering the threshold columns
     const customThresholds = [
@@ -209,19 +205,19 @@ describe('TableCard', () => {
         dataSourceId: 'count',
         comparison: '<',
         value: 5,
-        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+        severity: 3,
       },
       {
         dataSourceId: 'count',
         comparison: '>=',
         value: 10,
-        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+        severity: 1,
       },
       {
         dataSourceId: 'count',
         comparison: '=',
         value: 7,
-        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+        severity: 2,
       },
     ];
     const { getByTitle, queryByTitle } = render(
@@ -229,26 +225,8 @@ describe('TableCard', () => {
         id="table-list"
         title="Open Alerts"
         content={{
-          columns: tableCustomColumns,
+          columns: tableColumns,
           thresholds: customThresholds,
-          expandedRows: [
-            {
-              id: 'long_description',
-              label: 'Description',
-            },
-            {
-              id: 'other_description',
-              label: 'Other Description',
-            },
-            {
-              id: 'pressure',
-              label: 'Pressure',
-            },
-            {
-              id: 'temperature',
-              label: 'Temperature',
-            },
-          ],
         }}
         values={tableData}
         size={CARD_SIZES.LARGEWIDE}
@@ -259,5 +237,47 @@ describe('TableCard', () => {
     expect(getByTitle('Count Severity')).toBeInTheDocument();
     expect(queryByTitle('Pressure Severity')).not.toBeInTheDocument();
     expect(getByTitle('Pressure Sev')).toBeInTheDocument();
+  });
+  test('threshold icon labels should not display when showLabel is false', () => {
+    const customThresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        severity: 3,
+        showLabel: false,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2,
+        showLabel: false,
+      },
+    ];
+    const { queryByText, queryAllByText } = render(
+      <TableCard
+        id="table-list"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+          thresholds: customThresholds,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    // The Pressure threshold is the only threshold that has a 'Critical' severity
+    // and doesn't have showLabel: false, so it should be the only severity text to appear
+    expect(queryAllByText(/Critical/g)).toHaveLength(3);
+    expect(queryByText(/Moderate/g)).not.toBeInTheDocument();
+    expect(queryByText(/Low/g)).not.toBeInTheDocument();
   });
 });

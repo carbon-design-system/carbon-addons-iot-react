@@ -332,6 +332,7 @@ const TableCard = ({
         } ${matchingThresholdValue.value}`}
         {...matchingThresholdValue}
         strings={strings}
+        showLabel={matchingThresholdValue.showLabel}
         renderIconByName={others.renderIconByName}
       />
     ) : null;

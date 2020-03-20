@@ -1159,8 +1159,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-30"
-                  id="bx-pagination-select-30-count-label"
+                  htmlFor="bx-pagination-select-29"
+                  id="bx-pagination-select-29-count-label"
                 >
                   Items per page:
                 </label>
@@ -1179,7 +1179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-30"
+                          id="bx-pagination-select-29"
                           onChange={[Function]}
                           value={10}
                         >
@@ -1248,7 +1248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-32"
+                      htmlFor="bx-pagination-select-31"
                     >
                       Page number, of 1 pages
                     </label>
@@ -1261,7 +1261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-32"
+                          id="bx-pagination-select-31"
                           onChange={[Function]}
                           value={1}
                         >
@@ -2910,8 +2910,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-31"
-                  id="bx-pagination-select-31-count-label"
+                  htmlFor="bx-pagination-select-30"
+                  id="bx-pagination-select-30-count-label"
                 >
                   Items per page:
                 </label>
@@ -2930,7 +2930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-31"
+                          id="bx-pagination-select-30"
                           onChange={[Function]}
                           value={10}
                         >
@@ -2999,7 +2999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-33"
+                      htmlFor="bx-pagination-select-32"
                     >
                       Page number, of 1 pages
                     </label>
@@ -3012,7 +3012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-33"
+                          id="bx-pagination-select-32"
                           onChange={[Function]}
                           value={1}
                         >
@@ -4674,7 +4674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 2 < 5"
                         >
                           <svg
@@ -4714,7 +4714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -4822,7 +4822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.2039201932 < 5"
                         >
                           <svg
@@ -4862,7 +4862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -4970,7 +4970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.10329291 < 5"
                         >
                           <svg
@@ -5010,7 +5010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -5118,7 +5118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 30 >= 10"
                         >
                           <svg
@@ -5156,7 +5156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -5211,7 +5211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 68 >= 10"
                         >
                           <svg
@@ -5249,7 +5249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -5410,7 +5410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 7 = 7"
                         >
                           <svg
@@ -5448,7 +5448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Moderate
                           </span>
@@ -5556,7 +5556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 0 < 5"
                         >
                           <svg
@@ -5596,7 +5596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -5704,7 +5704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 3 < 5"
                         >
                           <svg
@@ -5744,7 +5744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -5799,7 +5799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -5837,7 +5837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -5897,7 +5897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 10 >= 10"
                         >
                           <svg
@@ -5935,7 +5935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -5990,7 +5990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -6028,7 +6028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -6071,8 +6071,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-33"
-                  id="bx-pagination-select-33-count-label"
+                  htmlFor="bx-pagination-select-31"
+                  id="bx-pagination-select-31-count-label"
                 >
                   Items per page:
                 </label>
@@ -6091,7 +6091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-33"
+                          id="bx-pagination-select-31"
                           onChange={[Function]}
                           value={10}
                         >
@@ -6160,7 +6160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-35"
+                      htmlFor="bx-pagination-select-33"
                     >
                       Page number, of 2 pages
                     </label>
@@ -6173,7 +6173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-35"
+                          id="bx-pagination-select-33"
                           onChange={[Function]}
                           value={1}
                         >
@@ -7492,8 +7492,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-29"
-                  id="bx-pagination-select-29-count-label"
+                  htmlFor="bx-pagination-select-28"
+                  id="bx-pagination-select-28-count-label"
                 >
                   Items per page:
                 </label>
@@ -7512,7 +7512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-29"
+                          id="bx-pagination-select-28"
                           onChange={[Function]}
                           value={10}
                         >
@@ -7581,7 +7581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-31"
+                      htmlFor="bx-pagination-select-30"
                     >
                       Page number, of 2 pages
                     </label>
@@ -7594,3069 +7594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-31"
-                          onChange={[Function]}
-                          value={1}
-                        >
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={1}
-                          >
-                            1
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={2}
-                          >
-                            2
-                          </option>
-                        </select>
-                        <svg
-                          aria-hidden={true}
-                          className="bx--select__arrow"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span
-                  className="bx--pagination__text"
-                >
-                  1 of 2 pages
-                </span>
-                <button
-                  aria-label="Previous page"
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
-                  disabled={true}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19 23L11 16 19 9 19 23z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="Next page"
-                  className="bx--pagination__button bx--pagination__button--forward"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 9L21 16 13 23 13 9z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard size - large 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": 20,
-          "width": "520px",
-        }
-      }
-    >
-      <div
-        className="iot--card--wrapper"
-        data-testid="Card"
-        id="table-list"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
-          >
-            <section
-              aria-label="data table toolbar"
-              className="bx--table-toolbar"
-            >
-              <div
-                className="bx--batch-actions iot--table-batch-actions"
-              >
-                <div
-                  className="bx--action-list"
-                >
-                  <button
-                    className="bx--batch-summary__cancel bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                </div>
-                <div
-                  className="bx--batch-summary"
-                >
-                  <p
-                    className="bx--batch-summary__para"
-                  >
-                    <span>
-                      0 item selected
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <label
-                className="iot--table-toolbar-secondary-title"
-              >
-                Open Alerts
-              </label>
-              <div
-                className="iot--table-tooltip-container"
-              >
-                <div
-                  className="bx--tooltip__label"
-                  id="card-tooltip-trigger-table-for-card-table-list"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-haspopup="true"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                      />
-                      <path
-                        d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="bx--toolbar-content iot--table-toolbar-content"
-              >
-                <div
-                  className="iot--table-toolbar-search"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex="-1"
-                >
-                  <div
-                    className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    role="search"
-                    tabIndex="0"
-                  >
-                    <div
-                      className="bx--search bx--search--sm table-toolbar-search"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="bx--search-magnifier"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                        />
-                      </svg>
-                      <label
-                        className="bx--label"
-                        htmlFor="table-for-card-table-list-toolbar-search"
-                      >
-                        Search
-                      </label>
-                      <input
-                        aria-hidden={true}
-                        autoComplete="off"
-                        className="bx--search-input"
-                        id="table-for-card-table-list-toolbar-search"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        placeholder="Search"
-                        role="searchbox"
-                        type="text"
-                        value=""
-                      />
-                      <button
-                        aria-label="Clear search input"
-                        className="bx--search-close bx--search-close--hidden"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--tooltip-svg-wrapper"
-                  data-testid="download-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    description="Download table content"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
-                    />
-                    <path
-                      d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="iot--tooltip-svg-wrapper"
-                  data-testid="filter-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    description="Filters"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="iot--card--toolbar"
-                >
-                  <div
-                    className="iot--card--toolbar-date-range-wrapper"
-                  >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      tabIndex={0}
-                      title="Open and close list of options"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
-                  <button
-                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    <svg
-                      description="Expand to fullscreen"
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      title="Expand to fullscreen"
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
-                      />
-                      <path
-                        d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </section>
-            <div
-              className="addons-iot-table-container"
-            >
-              <table
-                className="bx--data-table bx--data-table--no-border"
-                title={null}
-              >
-                <thead
-                  onMouseMove={null}
-                  onMouseUp={null}
-                >
-                  <tr>
-                    <th
-                      aria-sort="descending"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort bx--table-sort--active bx--table-sort--ascending"
-                        data-column="alert"
-                        id="column-alert"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Alert"
-                          >
-                            Alert
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Unsort rows by this header"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Unsort rows by this header"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                    <th
-                      aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                        data-column="hour"
-                        id="column-hour"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Hour"
-                          >
-                            Hour
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                    <th
-                      aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                        data-column="pressure"
-                        id="column-pressure"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Pressure"
-                          >
-                            Pressure
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  aria-live="polite"
-                >
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI010 proccess need to optimize adjust Y variables"
-                        >
-                          AHI010 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={1}
-                        >
-                          1
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI010 proccess need to optimize adjust Y variables"
-                        >
-                          AHI010 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI005 Asset failure"
-                        >
-                          AHI005 Asset failure
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI003 process need to optimize adjust X variables"
-                        >
-                          AHI003 process need to optimize adjust X variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={2}
-                        >
-                          2
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize."
-                        >
-                          AHI001 proccess need to optimize.
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={68}
-                        >
-                          68
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={10}
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={10}
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div
-              className="bx--pagination iot--pagination iot--pagination--hide-page"
-              disabled={false}
-              style={
-                Object {
-                  "--pagination-text-display": "flex",
-                }
-              }
-            >
-              <div
-                className="bx--pagination__left"
-              >
-                <label
-                  className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-19"
-                  id="bx-pagination-select-19-count-label"
-                >
-                  Items per page:
-                </label>
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select bx--select--inline bx--select__item-count"
-                  >
-                    <div
-                      className="bx--select-input--inline__wrapper"
-                    >
-                      <div
-                        className="bx--select-input__wrapper"
-                        data-invalid={null}
-                      >
-                        <select
-                          className="bx--select-input"
-                          id="bx-pagination-select-19"
-                          onChange={[Function]}
-                          value={10}
-                        >
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={10}
-                          >
-                            10
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={25}
-                          >
-                            25
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={100}
-                          >
-                            100
-                          </option>
-                        </select>
-                        <svg
-                          aria-hidden={true}
-                          className="bx--select__arrow"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span
-                  className="bx--pagination__text"
-                >
-                  1–10 of 11 items
-                </span>
-              </div>
-              <div
-                className="bx--pagination__right"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select bx--select--inline bx--select__page-number"
-                  >
-                    <label
-                      className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-21"
-                    >
-                      Page number, of 2 pages
-                    </label>
-                    <div
-                      className="bx--select-input--inline__wrapper"
-                    >
-                      <div
-                        className="bx--select-input__wrapper"
-                        data-invalid={null}
-                      >
-                        <select
-                          className="bx--select-input"
-                          id="bx-pagination-select-21"
-                          onChange={[Function]}
-                          value={1}
-                        >
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={1}
-                          >
-                            1
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={2}
-                          >
-                            2
-                          </option>
-                        </select>
-                        <svg
-                          aria-hidden={true}
-                          className="bx--select__arrow"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span
-                  className="bx--pagination__text"
-                >
-                  1 of 2 pages
-                </span>
-                <button
-                  aria-label="Previous page"
-                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
-                  disabled={true}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M19 23L11 16 19 9 19 23z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-label="Next page"
-                  className="bx--pagination__button bx--pagination__button--forward"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    focusable="false"
-                    height={24}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={24}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13 9L21 16 13 23 13 9z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableCard size - large-wide with tooltip 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": 20,
-          "width": "1056px",
-        }
-      }
-    >
-      <div
-        className="iot--card--wrapper"
-        data-testid="Card"
-        id="table-list"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "624px",
-          }
-        }
-      >
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "576px",
-            }
-          }
-        >
-          <div
-            className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
-          >
-            <section
-              aria-label="data table toolbar"
-              className="bx--table-toolbar"
-            >
-              <div
-                className="bx--batch-actions iot--table-batch-actions"
-              >
-                <div
-                  className="bx--action-list"
-                >
-                  <button
-                    className="bx--batch-summary__cancel bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                </div>
-                <div
-                  className="bx--batch-summary"
-                >
-                  <p
-                    className="bx--batch-summary__para"
-                  >
-                    <span>
-                      0 item selected
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <label
-                className="iot--table-toolbar-secondary-title"
-              >
-                Open Alerts
-              </label>
-              <div
-                className="iot--table-tooltip-container"
-              >
-                <div
-                  className="bx--tooltip__label"
-                  id="card-tooltip-trigger-table-for-card-table-list"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-haspopup="true"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
-                      />
-                      <path
-                        d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="bx--toolbar-content iot--table-toolbar-content"
-              >
-                <div
-                  className="iot--table-toolbar-search"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex="-1"
-                >
-                  <div
-                    className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    role="search"
-                    tabIndex="0"
-                  >
-                    <div
-                      className="bx--search bx--search--sm table-toolbar-search"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        className="bx--search-magnifier"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                        />
-                      </svg>
-                      <label
-                        className="bx--label"
-                        htmlFor="table-for-card-table-list-toolbar-search"
-                      >
-                        Search
-                      </label>
-                      <input
-                        aria-hidden={true}
-                        autoComplete="off"
-                        className="bx--search-input"
-                        id="table-for-card-table-list-toolbar-search"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        placeholder="Search"
-                        role="searchbox"
-                        type="text"
-                        value=""
-                      />
-                      <button
-                        aria-label="Clear search input"
-                        className="bx--search-close bx--search-close--hidden"
-                        onClick={[Function]}
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden={true}
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
-                          />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--tooltip-svg-wrapper"
-                  data-testid="download-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    description="Download table content"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
-                    />
-                    <path
-                      d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="iot--tooltip-svg-wrapper"
-                  data-testid="filter-button"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-hidden={true}
-                    description="Filters"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="iot--card--toolbar"
-                >
-                  <div
-                    className="iot--card--toolbar-date-range-wrapper"
-                  >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="Menu"
-                      className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      tabIndex={0}
-                      title="Open and close list of options"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        focusable="false"
-                        height={20}
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
-                        viewBox="0 0 32 32"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
-                        />
-                        <path
-                          d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                        />
-                        <path
-                          d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <div
-              className="addons-iot-table-container"
-            >
-              <table
-                className="bx--data-table bx--data-table--no-border"
-                title={null}
-              >
-                <thead
-                  onMouseMove={null}
-                  onMouseUp={null}
-                >
-                  <tr>
-                    <th
-                      aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                        data-column="alert"
-                        id="column-alert"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Alert"
-                          >
-                            Alert
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                    <th
-                      aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                        data-column="count"
-                        id="column-count"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Count"
-                          >
-                            Count
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                    <th
-                      aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                        data-column="hour"
-                        id="column-hour"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Hour"
-                          >
-                            Hour
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                    <th
-                      aria-sort="none"
-                      className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                      scope="col"
-                      style={
-                        Object {
-                          "width": undefined,
-                        }
-                      }
-                    >
-                      <button
-                        align="start"
-                        className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                        data-column="pressure"
-                        id="column-pressure"
-                        onClick={[Function]}
-                        width=""
-                      >
-                        <span
-                          className="bx--table-header-label"
-                        >
-                          <span
-                            title="Pressure"
-                          >
-                            Pressure
-                          </span>
-                        </span>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
-                          />
-                        </svg>
-                        <svg
-                          aria-label="Sort rows by this header in ascending order"
-                          className="bx--table-sort__icon-unsorted"
-                          focusable="false"
-                          height={20}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 32 32"
-                          width={20}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
-                          />
-                        </svg>
-                      </button>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  aria-live="polite"
-                >
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI010 proccess need to optimize adjust Y variables"
-                        >
-                          AHI010 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={5}
-                        >
-                          5
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-11-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={1}
-                        >
-                          1
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI010 proccess need to optimize adjust Y variables"
-                        >
-                          AHI010 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={2}
-                        >
-                          2
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI005 Asset failure"
-                        >
-                          AHI005 Asset failure
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={1.2039201932}
-                        >
-                          1.2039201932
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI003 process need to optimize adjust X variables"
-                        >
-                          AHI003 process need to optimize adjust X variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={1.10329291}
-                        >
-                          1.10329291
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={2}
-                        >
-                          2
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize."
-                        >
-                          AHI001 proccess need to optimize.
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={30}
-                        >
-                          30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-6-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={68}
-                        >
-                          68
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={5}
-                        >
-                          5
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-4-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={7}
-                        >
-                          7
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={0}
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={3}
-                        >
-                          3
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-3-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={10}
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-count"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={10}
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title="10/28/2018 07:34"
-                        >
-                          10/28/2018 07:34
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <span
-                          title={10}
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div
-              className="bx--pagination iot--pagination iot--pagination--hide-page"
-              disabled={false}
-              style={
-                Object {
-                  "--pagination-text-display": "flex",
-                }
-              }
-            >
-              <div
-                className="bx--pagination__left"
-              >
-                <label
-                  className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-20"
-                  id="bx-pagination-select-20-count-label"
-                >
-                  Items per page:
-                </label>
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select bx--select--inline bx--select__item-count"
-                  >
-                    <div
-                      className="bx--select-input--inline__wrapper"
-                    >
-                      <div
-                        className="bx--select-input__wrapper"
-                        data-invalid={null}
-                      >
-                        <select
-                          className="bx--select-input"
-                          id="bx-pagination-select-20"
-                          onChange={[Function]}
-                          value={10}
-                        >
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={10}
-                          >
-                            10
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={25}
-                          >
-                            25
-                          </option>
-                          <option
-                            className="bx--select-option"
-                            disabled={false}
-                            hidden={false}
-                            value={100}
-                          >
-                            100
-                          </option>
-                        </select>
-                        <svg
-                          aria-hidden={true}
-                          className="bx--select__arrow"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span
-                  className="bx--pagination__text"
-                >
-                  1–10 of 11 items
-                </span>
-              </div>
-              <div
-                className="bx--pagination__right"
-              >
-                <div
-                  className="bx--form-item"
-                >
-                  <div
-                    className="bx--select bx--select--inline bx--select__page-number"
-                  >
-                    <label
-                      className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-22"
-                    >
-                      Page number, of 2 pages
-                    </label>
-                    <div
-                      className="bx--select-input--inline__wrapper"
-                    >
-                      <div
-                        className="bx--select-input__wrapper"
-                        data-invalid={null}
-                      >
-                        <select
-                          className="bx--select-input"
-                          id="bx-pagination-select-22"
+                          id="bx-pagination-select-30"
                           onChange={[Function]}
                           value={1}
                         >
@@ -12195,8 +9133,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-26"
-                  id="bx-pagination-select-26-count-label"
+                  htmlFor="bx-pagination-select-25"
+                  id="bx-pagination-select-25-count-label"
                 >
                   Items per page:
                 </label>
@@ -12215,7 +9153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-26"
+                          id="bx-pagination-select-25"
                           onChange={[Function]}
                           value={10}
                         >
@@ -12284,7 +9222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-28"
+                      htmlFor="bx-pagination-select-27"
                     >
                       Page number, of 2 pages
                     </label>
@@ -12297,7 +9235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-28"
+                          id="bx-pagination-select-27"
                           onChange={[Function]}
                           value={1}
                         >
@@ -13616,8 +10554,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-27"
-                  id="bx-pagination-select-27-count-label"
+                  htmlFor="bx-pagination-select-26"
+                  id="bx-pagination-select-26-count-label"
                 >
                   Items per page:
                 </label>
@@ -13636,7 +10574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-27"
+                          id="bx-pagination-select-26"
                           onChange={[Function]}
                           value={10}
                         >
@@ -13705,7 +10643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-29"
+                      htmlFor="bx-pagination-select-28"
                     >
                       Page number, of 2 pages
                     </label>
@@ -13718,7 +10656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-29"
+                          id="bx-pagination-select-28"
                           onChange={[Function]}
                           value={1}
                         >
@@ -15630,8 +12568,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-21"
-                  id="bx-pagination-select-21-count-label"
+                  htmlFor="bx-pagination-select-19"
+                  id="bx-pagination-select-19-count-label"
                 >
                   Items per page:
                 </label>
@@ -15650,7 +12588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-21"
+                          id="bx-pagination-select-19"
                           onChange={[Function]}
                           value={10}
                         >
@@ -15719,7 +12657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-23"
+                      htmlFor="bx-pagination-select-21"
                     >
                       Page number, of 2 pages
                     </label>
@@ -15732,7 +12670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-23"
+                          id="bx-pagination-select-21"
                           onChange={[Function]}
                           value={1}
                         >
@@ -17415,8 +14353,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-28"
-                  id="bx-pagination-select-28-count-label"
+                  htmlFor="bx-pagination-select-27"
+                  id="bx-pagination-select-27-count-label"
                 >
                   Items per page:
                 </label>
@@ -17435,7 +14373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-28"
+                          id="bx-pagination-select-27"
                           onChange={[Function]}
                           value={10}
                         >
@@ -17504,7 +14442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-30"
+                      htmlFor="bx-pagination-select-29"
                     >
                       Page number, of 2 pages
                     </label>
@@ -17517,7 +14455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-30"
+                          id="bx-pagination-select-29"
                           onChange={[Function]}
                           value={1}
                         >
@@ -19159,8 +16097,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-22"
-                  id="bx-pagination-select-22-count-label"
+                  htmlFor="bx-pagination-select-20"
+                  id="bx-pagination-select-20-count-label"
                 >
                   Items per page:
                 </label>
@@ -19179,7 +16117,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-22"
+                          id="bx-pagination-select-20"
                           onChange={[Function]}
                           value={10}
                         >
@@ -19248,7 +16186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-24"
+                      htmlFor="bx-pagination-select-22"
                     >
                       Page number, of 2 pages
                     </label>
@@ -19261,7 +16199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-24"
+                          id="bx-pagination-select-22"
                           onChange={[Function]}
                           value={1}
                         >
@@ -19682,7 +16620,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
-                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -20286,7 +17223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 2 < 5"
                         >
                           <svg
@@ -20326,7 +17263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -20434,7 +17371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.2039201932 < 5"
                         >
                           <svg
@@ -20474,7 +17411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -20582,7 +17519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.10329291 < 5"
                         >
                           <svg
@@ -20622,7 +17559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -20730,7 +17667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 30 >= 10"
                         >
                           <svg
@@ -20768,7 +17705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -20823,7 +17760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 68 >= 10"
                         >
                           <svg
@@ -20861,7 +17798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -21022,7 +17959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 7 = 7"
                         >
                           <svg
@@ -21060,7 +17997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Moderate
                           </span>
@@ -21168,7 +18105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 0 < 5"
                         >
                           <svg
@@ -21208,7 +18145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -21316,7 +18253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 3 < 5"
                         >
                           <svg
@@ -21356,7 +18293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -21411,7 +18348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -21449,7 +18386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -21509,7 +18446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 10 >= 10"
                         >
                           <svg
@@ -21547,7 +18484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -21602,7 +18539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -21640,7 +18577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -21683,8 +18620,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-24"
-                  id="bx-pagination-select-24-count-label"
+                  htmlFor="bx-pagination-select-22"
+                  id="bx-pagination-select-22-count-label"
                 >
                   Items per page:
                 </label>
@@ -21703,7 +18640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-24"
+                          id="bx-pagination-select-22"
                           onChange={[Function]}
                           value={10}
                         >
@@ -21772,7 +18709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-26"
+                      htmlFor="bx-pagination-select-24"
                     >
                       Page number, of 2 pages
                     </label>
@@ -21785,7 +18722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-26"
+                          id="bx-pagination-select-24"
                           onChange={[Function]}
                           value={1}
                         >
@@ -22206,7 +19143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
-                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -22654,7 +19590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.10329291 < 5"
                         >
                           <svg
@@ -22694,7 +19630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -22766,7 +19702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 30 >= 10"
                         >
                           <svg
@@ -22804,7 +19740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -22823,7 +19759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 68 >= 10"
                         >
                           <svg
@@ -22861,7 +19797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -22921,7 +19857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 3 < 5"
                         >
                           <svg
@@ -22961,7 +19897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -22980,7 +19916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -23018,7 +19954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -23078,7 +20014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 10 >= 10"
                         >
                           <svg
@@ -23116,7 +20052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -23135,7 +20071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -23173,7 +20109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -23198,8 +20134,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-25"
-                  id="bx-pagination-select-25-count-label"
+                  htmlFor="bx-pagination-select-23"
+                  id="bx-pagination-select-23-count-label"
                 >
                   Items per page:
                 </label>
@@ -23218,7 +20154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-25"
+                          id="bx-pagination-select-23"
                           onChange={[Function]}
                           value={10}
                         >
@@ -23287,7 +20223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-27"
+                      htmlFor="bx-pagination-select-25"
                     >
                       Page number, of 1 pages
                     </label>
@@ -23300,7 +20236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-27"
+                          id="bx-pagination-select-25"
                           onChange={[Function]}
                           value={1}
                         >
@@ -23713,7 +20649,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
-                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -24393,7 +21328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 2 < 5"
                         >
                           <svg
@@ -24433,7 +21368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -24577,7 +21512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.2 < 5"
                         >
                           <svg
@@ -24617,7 +21552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -24761,7 +21696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.1 < 5"
                         >
                           <svg
@@ -24801,7 +21736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -24945,7 +21880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 30 >= 10"
                         >
                           <svg
@@ -24983,7 +21918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -25038,7 +21973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 68 >= 10"
                         >
                           <svg
@@ -25066,7 +22001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </title>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -25299,7 +22234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 7 = 7"
                         >
                           <svg
@@ -25337,7 +22272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Moderate
                           </span>
@@ -25481,7 +22416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 0 < 5"
                         >
                           <svg
@@ -25521,7 +22456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -25665,7 +22600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 3 < 5"
                         >
                           <svg
@@ -25705,7 +22640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -25760,7 +22695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -25788,7 +22723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </title>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -25884,7 +22819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 10 >= 10"
                         >
                           <svg
@@ -25922,7 +22857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -25977,7 +22912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="pressure: 10 >= 10"
                         >
                           <svg
@@ -26005,7 +22940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </title>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -26048,8 +22983,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-23"
-                  id="bx-pagination-select-23-count-label"
+                  htmlFor="bx-pagination-select-21"
+                  id="bx-pagination-select-21-count-label"
                 >
                   Items per page:
                 </label>
@@ -26068,7 +23003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-23"
+                          id="bx-pagination-select-21"
                           onChange={[Function]}
                           value={10}
                         >
@@ -26137,7 +23072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-25"
+                      htmlFor="bx-pagination-select-23"
                     >
                       Page number, of 2 pages
                     </label>
@@ -26150,7 +23085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-25"
+                          id="bx-pagination-select-23"
                           onChange={[Function]}
                           value={1}
                         >
@@ -26571,7 +23506,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
-                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -26612,17 +23546,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     type="button"
                   >
                     <svg
-                      description="Expand to fullscreen"
+                      aria-hidden={true}
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
-                      role="img"
                       style={
                         Object {
                           "willChange": "transform",
                         }
                       }
-                      title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
@@ -27005,7 +23937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 5 > 2"
                         >
                           <svg
@@ -27043,7 +23975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -27157,7 +24089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 2 > 0"
                         >
                           <svg
@@ -27197,7 +24129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -27311,7 +24243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.2039201932 > 0"
                         >
                           <svg
@@ -27351,7 +24283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -27465,7 +24397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 1.10329291 > 0"
                         >
                           <svg
@@ -27505,7 +24437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Low
                           </span>
@@ -27619,7 +24551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 30 > 2"
                         >
                           <svg
@@ -27657,7 +24589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -27771,7 +24703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 5 > 2"
                         >
                           <svg
@@ -27809,7 +24741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -27923,7 +24855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 7 > 2"
                         >
                           <svg
@@ -27961,7 +24893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -28182,7 +25114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 3 > 2"
                         >
                           <svg
@@ -28220,7 +25152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -28334,7 +25266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
                       >
                         <div
-                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          className="iot--threshold-icon--wrapper"
                           title="count: 10 > 2"
                         >
                           <svg
@@ -28372,7 +25304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             </g>
                           </svg>
                           <span
-                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                            className="iot--threshold-icon--text"
                           >
                             Critical
                           </span>
@@ -28433,8 +25365,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-32"
-                  id="bx-pagination-select-32-count-label"
+                  htmlFor="bx-pagination-select-24"
+                  id="bx-pagination-select-24-count-label"
                 >
                   Items per page:
                 </label>
@@ -28453,7 +25385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-32"
+                          id="bx-pagination-select-24"
                           onChange={[Function]}
                           value={10}
                         >
@@ -28522,7 +25454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-34"
+                      htmlFor="bx-pagination-select-26"
                     >
                       Page number, of 2 pages
                     </label>
@@ -28535,7 +25467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-34"
+                          id="bx-pagination-select-26"
                           onChange={[Function]}
                           value={1}
                         >

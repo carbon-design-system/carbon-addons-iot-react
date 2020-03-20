@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
+import { settings } from '../../constants/Settings';
 import CardIcon from '../ImageCard/CardIcon';
 
-const StyledIconDiv = styled.div`
-  display: flex;
-`;
-
-const StyledSpan = styled.span`
-  margin-left: 5px;
-`;
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** severities will determine which default icon to use if another icon name isn't provided */
@@ -27,6 +21,8 @@ const propTypes = {
     moderateLabel: PropTypes.string,
     lowLabel: PropTypes.string,
   }).isRequired,
+  /** Optionally hides the threshold's label */
+  showLabel: PropTypes.bool,
   /** optional function that returns an icon node for an icon name */
   renderIconByName: PropTypes.func,
 };
@@ -36,10 +32,11 @@ const defaultProps = {
   title: null,
   icon: null,
   color: null,
+  showLabel: true,
   renderIconByName: null,
 };
 
-const ThresholdIcon = ({ severity, strings, title, icon, color, renderIconByName }) => {
+const ThresholdIcon = ({ severity, strings, title, icon, color, showLabel, renderIconByName }) => {
   let iconToRender;
   let stringToRender = '';
 
@@ -132,10 +129,12 @@ const ThresholdIcon = ({ severity, strings, title, icon, color, renderIconByName
     default:
   }
   return (
-    <StyledIconDiv title={title}>
+    <div className={`${iotPrefix}--threshold-icon--wrapper`} title={title}>
       {iconToRender}
-      <StyledSpan>{stringToRender}</StyledSpan>
-    </StyledIconDiv>
+      {showLabel ? (
+        <span className={`${iotPrefix}--threshold-icon--text`}>{stringToRender}</span>
+      ) : null}
+    </div>
   );
 };
 
