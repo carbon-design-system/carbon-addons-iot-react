@@ -67,9 +67,12 @@ const AttributeValue = styled.span`
   padding-bottom: 0.25rem;
   font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
-  white-space: nowrap;
+  /* autoprefixer: ignore next */
+  ${props =>
+    props.unit
+      ? `white-space: nowrap; text-overflow: ellipsis;`
+      : `display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: break-word;`};
   overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 const StyledBoolean = styled.span`
@@ -146,6 +149,7 @@ const ValueRenderer = ({
         isSmall={isSmall}
         isMini={isMini}
         value={value}
+        unit={unit}
       >
         {renderValue}
       </AttributeValue>
