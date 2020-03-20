@@ -41,7 +41,7 @@ Run the following command using [npm](https://www.npmjs.com/):
 npm install carbon-addons-iot-react
 ```
 
-If you prefer [Yarn](https://yarnpkg.com/en/), use the following command instead:
+If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following command instead:
 
 ```bash
 yarn add carbon-addons-iot-react
