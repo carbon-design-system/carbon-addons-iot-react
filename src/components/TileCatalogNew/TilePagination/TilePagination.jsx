@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
+import { settings } from '../../../constants/Settings';
+
+const { prefix } = settings;
 
 const propTypes = {
   /** current page number */
@@ -23,22 +27,29 @@ const defaultProps = {
 };
 
 const TilePagination = ({ page, numPages, onChange, i18n }) => {
+  const [selectedValue, setSelectedValue] = useState();
   const prevButton = (
     <button
       type="button"
       onClick={() => page > 1 && onChange(page - 1)}
-      className={classnames('bx--pagination-nav__page', 'bx--pagination-nav__page--direction', {
-        'bx--pagination-nav__page--disabled': page === 1,
-      })}
+      className={classnames(
+        `${prefix}--pagination-nav__page`,
+        `${prefix}--pagination-nav__page--direction`,
+        {
+          [`${prefix}--pagination-nav__page--disabled`]: page === 1,
+        }
+      )}
       ariaDisabled="true"
     >
-      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPreviousPage}</span>
+      <span className={`${prefix}--pagination-nav__accessibility-label`}>
+        {i18n.ariaLabelPreviousPage}
+      </span>
       <svg
         focusable="false"
         preserveAspectRatio="xMidYMid meet"
         style={{ 'will-change': 'transform' }}
         xmlns="http://www.w3.org/2000/svg"
-        className="bx--pagination-nav__icon"
+        className={`${prefix}--pagination-nav__icon`}
         width="5"
         height="8"
         viewBox="0 0 5 8"
@@ -52,17 +63,23 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
     <button
       type="button"
       onClick={() => page < numPages && onChange(page + 1)}
-      className={classnames('bx--pagination-nav__page', 'bx--pagination-nav__page--direction', {
-        'bx--pagination-nav__page--disabled': page === numPages,
-      })}
+      className={classnames(
+        `${prefix}--pagination-nav__page`,
+        `${prefix}--pagination-nav__page--direction`,
+        {
+          [`${prefix}--pagination-nav__page--disabled`]: page === numPages,
+        }
+      )}
     >
-      <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelNextPage}</span>
+      <span className={`${prefix}--pagination-nav__accessibility-label`}>
+        {i18n.ariaLabelNextPage}
+      </span>
       <svg
         focusable="false"
         preserveAspectRatio="xMidYMid meet"
         style={{ 'will-change': 'transform' }}
         xmlns="http://www.w3.org/2000/svg"
-        className="bx--pagination-nav__icon"
+        className={`${prefix}--pagination-nav__icon`}
         width="5"
         height="8"
         viewBox="0 0 5 8"
@@ -76,9 +93,9 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
     <button
       type="button"
       onClick={() => onChange(pageNumber)}
-      className={classnames('bx--pagination-nav__page', {
-        'bx--pagination-nav__page--active': page === pageNumber,
-        'bx--pagination-nav__page--disabled': page === pageNumber,
+      className={classnames(`${prefix}--pagination-nav__page`, {
+        [`${prefix}--pagination-nav__page--active`]: page === pageNumber,
+        [`${prefix}--pagination-nav__page--disabled`]: page === pageNumber,
       })}
       ariaCurrent={i18n.ariaLabelPage}
       ariaDisabled={page === pageNumber}
@@ -88,13 +105,17 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
     </button>
   );
   const getPageSelect = (pageNumber, accumulator) => (
-    <li className="bx--pagination-nav__list-item">
-      <div className="bx--pagination-nav__select">
+    <li className={`${prefix}--pagination-nav__list-item`}>
+      <div className={`${prefix}--pagination-nav__select`}>
         <select
-          className="bx--pagination-nav__page bx--pagination-nav__page--select"
+          className={`${prefix}--pagination-nav__page ${prefix}--pagination-nav__page--select`}
           data-page-select
+          value={selectedValue}
           aria-label={i18n.ariaLabelSelect}
-          onChange={evt => onChange(Number(evt.target.value))}
+          onChange={evt => {
+            onChange(Number(evt.target.value));
+            setSelectedValue('default');
+          }}
         >
           <option value="default" hidden data-page="" />
           {Array.from({ length: pageNumber }, (v, i) => (
@@ -103,12 +124,12 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
             </option>
           ))}
         </select>
-        <div className="bx--pagination-nav__select-icon-wrapper">
+        <div className={`${prefix}--pagination-nav__select-icon-wrapper`}>
           <svg
             focusable="false"
             preserveAspectRatio="xMidYMid meet"
             xmlns="http://www.w3.org/2000/svg"
-            className="bx--pagination-nav__select-icon"
+            className={`${prefix}--pagination-nav__select-icon`}
             width="16"
             height="16"
             viewBox="0 0 32 32"
@@ -140,27 +161,27 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
     let buttons = [];
     if (!isLargeNumberOfButtons) {
       buttons = Array.from({ length: numPages - 2 }, (v, i) => (
-        <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(i + 2)}</li>
       ));
     }
     if (!showFrontOverFlowMenu && showBackOverFlowMenu) {
       buttons = Array.from({ length: 4 }, (v, i) => (
-        <li className="bx--pagination-nav__list-item">{getPageButton(i + 2)}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(i + 2)}</li>
       ));
     }
     if (showFrontOverFlowMenu && showBackOverFlowMenu) {
       buttons = [
-        <li className="bx--pagination-nav__list-item">{getPageButton(page - 1)}</li>,
-        <li className="bx--pagination-nav__list-item">{getPageButton(page)}</li>,
-        <li className="bx--pagination-nav__list-item">{getPageButton(page + 1)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(page - 1)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(page)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(page + 1)}</li>,
       ];
     }
     if (showFrontOverFlowMenu && !showBackOverFlowMenu) {
       buttons = [
-        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 4)}</li>,
-        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 3)}</li>,
-        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 2)}</li>,
-        <li className="bx--pagination-nav__list-item">{getPageButton(numPages - 1)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 4)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 3)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 2)}</li>,
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages - 1)}</li>,
       ];
     }
 
@@ -178,10 +199,10 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   };
 
   return (
-    <nav className="bx--pagination-nav" ariaLabel={i18n.ariaLabelPagination}>
-      <ul className="bx--pagination-nav__list">
-        <li className="bx--pagination-nav__list-item">{prevButton}</li>
-        <li className="bx--pagination-nav__list-item">{getPageButton(1)}</li>
+    <nav className={`${prefix}--pagination-nav`} ariaLabel={i18n.ariaLabelPagination}>
+      <ul className={`${prefix}--pagination-nav__list`}>
+        <li className={`${prefix}--pagination-nav__list-item`}>{prevButton}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(1)}</li>
 
         {showFrontOverFlowMenu ? getFrontOverFlowMenu() : null}
 
@@ -190,9 +211,9 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         {showBackOverFlowMenu ? getBackOverFlowMenu() : null}
 
         {numPages > 1 ? (
-          <li className="bx--pagination-nav__list-item">{getPageButton(numPages)}</li>
+          <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages)}</li>
         ) : null}
-        <li className="bx--pagination-nav__list-item">{nextButton}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>{nextButton}</li>
       </ul>
     </nav>
   );
