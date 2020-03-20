@@ -160,31 +160,42 @@ storiesOf('Watson IoT/ValueCard', module)
       </div>
     );
   })
-  .add('small / long string', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-    return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
-        <ValueCard
-          title="Tagpath"
-          id="facilitycard"
-          content={{
-            attributes: [
-              {
-                label: 'Tagpath',
-                dataSourceId: 'footTraffic',
-              },
-            ],
-          }}
-          breakpoint="lg"
-          size={size}
-          values={{
-            footTraffic:
-              'rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu',
-          }}
-        />
-      </div>
-    );
-  })
+  .add(
+    'small / long string',
+    () => {
+      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+      return (
+        <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+          <ValueCard
+            title="Tagpath"
+            id="facilitycard"
+            content={{
+              attributes: [
+                {
+                  label: 'Tagpath',
+                  dataSourceId: 'footTraffic',
+                },
+              ],
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{
+              footTraffic: text(
+                'occupancy',
+                'rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu'
+              ),
+            }}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text:
+          'In the case of having a long string value with no units, there is extra room to wrap the text to two lines. This makes it easier to read without needing to mouse over the text value.',
+      },
+    }
+  )
   .add('small / trend down', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
