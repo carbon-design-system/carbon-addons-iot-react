@@ -1,9 +1,43 @@
-import { getSortedData, canFit, filterValidAttributes } from '../componentUtilityFunctions';
+import {
+  getSortedData,
+  canFit,
+  filterValidAttributes,
+  generateCsv,
+} from '../componentUtilityFunctions';
 
 const mockData = [
   { values: { number: 10, string: 'string', null: 1 } },
   { values: { number: 100, string: 'string2' } },
   { values: { number: 20, string: 'string3', null: 3 } },
+];
+
+const mockCsvData = [
+  {
+    id: 'row-1',
+    values: {
+      alert: 'AHI003 process need to optimize adjust X variables',
+      count: 1.10329291,
+      pressure: 0,
+    },
+    isSelectable: false,
+  },
+  {
+    id: 'row-1',
+    values: {
+      alert: 'AHI003 process need to optimize adjust X variables',
+      count: 1.10329291,
+      pressure: 2,
+    },
+    isSelectable: false,
+  },
+  {
+    id: 'row-1',
+    values: {
+      alert: 'AHI003 process need to optimize adjust X variables',
+      count: 1.10329291,
+    },
+    isSelectable: false,
+  },
 ];
 
 describe('componentUtilityFunctions', () => {
@@ -51,5 +85,12 @@ describe('componentUtilityFunctions', () => {
     });
     // Other props
     expect(filterValidAttributes({ myProp: 'test', someProp: 'test2' })).toEqual({});
+  });
+  test('csv should display 0 value', () => {
+    const csv = generateCsv(mockCsvData);
+    const splitCsv = csv.split(',');
+
+    // The 0 should appear as the last value in the first row
+    expect(splitCsv[4]).toEqual('0');
   });
 });
