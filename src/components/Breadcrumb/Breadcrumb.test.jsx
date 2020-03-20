@@ -1,7 +1,6 @@
 import React from 'react';
 import { BreadcrumbItem } from 'carbon-components-react';
 import { render } from '@testing-library/react';
-import useResizeObserver from 'use-resize-observer';
 
 import Breadcrumb from './Breadcrumb';
 
