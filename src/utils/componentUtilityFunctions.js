@@ -18,26 +18,47 @@ import {
   eventHandlers,
 } from '../constants/HTMLAttributes';
 
-/** Helper function to support downloading data as CSV */
-export const csvDownloadHandler = (data, title = 'export') => {
+/**
+ * Helper function to generate a CSV from an array of table cell data
+ * Retrieve the column headers, then match and join the cell values
+ * with each header
+ * @param {Array<string | number>} data from table cells
+ * @return {string} generated csv
+ */
+export const generateCsv = data => {
   let csv = '';
-  // get all keys availavle and merge it
-  let object = [];
+  // get all headers available and merge it
+  let columnHeaders = [];
   data.forEach(item => {
-    object = [...object, ...Object.keys(item.values)];
+    columnHeaders = [...columnHeaders, ...Object.keys(item.values)];
   });
-  object = [...new Set(object)];
-  csv += `${object.join(',')}\n`;
+  columnHeaders = [...new Set(columnHeaders)];
+  csv += `${columnHeaders.join(',')}\n`;
   data.forEach(item => {
-    object.forEach(arrayHeader => {
-      csv += `${item.values[arrayHeader] ? item.values[arrayHeader] : ''},`;
+    columnHeaders.forEach(arrayHeader => {
+      // if item is of arrayHeader, add value to csv
+      // isNil will also correct the cases in which the value is 0 or false
+      csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
     });
     csv += `\n`;
   });
 
-  const exportedFilenmae = `${title}.csv`;
+  return csv;
+};
 
-  fileDownload(csv, exportedFilenmae);
+/**
+ * Helper function to support downloading data as CSV
+ * Retrieve the column headers, then match and join the cell values
+ * with each header. When CSV is fully joined, download the file
+ *
+ * @param {Array<string | number>} data from table cells
+ * @param {string} title file name to be saved as
+ */
+export const csvDownloadHandler = (data, title = 'export') => {
+  const csv = generateCsv(data);
+  const exportedFilename = `${title}.csv`;
+
+  fileDownload(csv, exportedFilename);
 };
 
 export const tableTranslateWithId = (i18n, id, state) => {

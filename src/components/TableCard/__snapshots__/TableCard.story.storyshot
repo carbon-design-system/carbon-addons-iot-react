@@ -4631,7 +4631,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -4773,7 +4779,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -4915,7 +4927,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -5057,7 +5075,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -5185,7 +5209,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <div
+                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          title="pressure: 68 >= 10"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy-2"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <path
+                                  d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
+                                  fill="#DA1E28"
+                                  id="background-color"
+                                />
+                                <polygon
+                                  fill="#FFFFFF"
+                                  id="icon-color"
+                                  points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                          >
+                            Critical
+                          </span>
+                        </div>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -5197,7 +5266,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -5292,7 +5367,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -5432,7 +5513,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -5574,7 +5661,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -6842,7 +6935,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -6895,7 +6994,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -6948,7 +7053,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -7001,7 +7112,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -7054,7 +7171,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -7107,7 +7230,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -7160,7 +7289,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -7213,7 +7348,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8215,7 +8356,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8268,7 +8415,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8321,7 +8474,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8374,7 +8533,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8427,7 +8592,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8480,7 +8651,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8533,7 +8710,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -8586,7 +8769,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -9646,7 +9835,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -9717,7 +9912,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -9788,7 +9989,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -9859,7 +10066,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -9930,7 +10143,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -10001,7 +10220,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -10072,7 +10297,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -10143,7 +10374,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11239,7 +11476,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11387,7 +11630,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11458,7 +11707,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11529,7 +11784,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11600,7 +11861,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11748,7 +12015,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11819,7 +12092,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -11890,7 +12169,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                 </tbody>
@@ -12774,7 +13059,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -12827,7 +13118,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -12880,7 +13177,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -12933,7 +13236,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -12986,7 +13295,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -13039,7 +13354,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -13092,7 +13413,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -13145,7 +13472,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -14170,7 +14503,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14280,7 +14619,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14390,7 +14735,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14500,7 +14851,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14610,7 +14967,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14720,7 +15083,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14830,7 +15199,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -14940,7 +15315,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -16153,7 +16534,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16242,7 +16629,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16331,7 +16724,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16420,7 +16819,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16509,7 +16914,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16598,7 +17009,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16687,7 +17104,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -16776,7 +17199,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -17873,7 +18302,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -17956,7 +18391,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -18039,7 +18480,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -18122,7 +18569,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -18205,7 +18658,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -18288,7 +18747,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -18371,7 +18836,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -18454,7 +18925,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -19766,7 +20243,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -19908,7 +20391,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -20050,7 +20539,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -20192,7 +20687,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -20320,7 +20821,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <div
+                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          title="pressure: 68 >= 10"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy-2"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <path
+                                  d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
+                                  fill="#DA1E28"
+                                  id="background-color"
+                                />
+                                <polygon
+                                  fill="#FFFFFF"
+                                  id="icon-color"
+                                  points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                          >
+                            Critical
+                          </span>
+                        </div>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -20332,7 +20878,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -20427,7 +20979,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -20567,7 +21125,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -20709,7 +21273,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -21976,6 +22546,338 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
                       data-column="alert"
                       data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI010 proccess need to optimize adjust Y variables"
+                        >
+                          AHI010 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI003 process need to optimize adjust X variables"
+                        >
+                          AHI003 process need to optimize adjust X variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          title="count: 1.10329291 < 5"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#FDD13A"
+                                  id="background-color"
+                                  r="7"
+                                />
+                                <path
+                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
+                                  fill="#FFFFFF"
+                                  id="symbol-color"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                          >
+                            Low
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI001 proccess need to optimize."
+                        >
+                          AHI001 proccess need to optimize.
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          title="count: 30 >= 10"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy-2"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <path
+                                  d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
+                                  fill="#DA1E28"
+                                  id="background-color"
+                                />
+                                <polygon
+                                  fill="#FFFFFF"
+                                  id="icon-color"
+                                  points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                          >
+                            Critical
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          title="pressure: 68 >= 10"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy-2"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <path
+                                  d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
+                                  fill="#DA1E28"
+                                  id="background-color"
+                                />
+                                <polygon
+                                  fill="#FFFFFF"
+                                  id="icon-color"
+                                  points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                          >
+                            Critical
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
                       offset={0}
                     >
@@ -22371,7 +23273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text"
                 >
-                  1–2 of 2 items
+                  1–5 of 5 items
                 </span>
               </div>
               <div
@@ -23412,7 +24314,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -23590,7 +24498,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -23768,7 +24682,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -23946,7 +24866,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -24110,7 +25036,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <div
+                          className="ThresholdIcon__StyledIconDiv-b3qqh-0 bmeCxW"
+                          title="pressure: 68 >= 10"
+                        >
+                          <svg
+                            fill="black"
+                            focusable="true"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            style={
+                              Object {
+                                "willChange": "transform",
+                              }
+                            }
+                            tabIndex="0"
+                            title="pressure: 68 >= 10"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                            />
+                            <title>
+                              pressure: 68 &gt;= 10
+                            </title>
+                          </svg>
+                          <span
+                            className="ThresholdIcon__StyledSpan-b3qqh-1 MyTmw"
+                          >
+                            Critical
+                          </span>
+                        </div>
+                      </span>
                     </td>
                     <td
                       align="start"
@@ -24122,7 +25083,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -24253,7 +25220,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -24429,7 +25402,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -24607,7 +25586,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26093,7 +27078,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={1}
+                        >
+                          1
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26241,7 +27232,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26389,7 +27386,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26537,7 +27540,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={2}
+                        >
+                          2
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26683,7 +27692,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={68}
+                        >
+                          68
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26829,7 +27844,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -26975,7 +27996,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -27076,7 +28103,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      />
+                      >
+                        <span
+                          title={0}
+                        >
+                          0
+                        </span>
+                      </span>
                     </td>
                   </tr>
                   <tr

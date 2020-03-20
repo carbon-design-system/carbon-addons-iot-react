@@ -365,33 +365,44 @@ const TableCard = ({
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columns);
 
-  const generateThresholdColumn = (columnId, index) => ({
-    id: `iconColumn-${columnId}`,
-    label: uniqueThresholds[index].label
-      ? uniqueThresholds[index].label
-      : `${capitalize(columnId)} ${strings.severityLabel}`,
-    width: uniqueThresholds[index].width,
-    isSortable: true,
-    renderDataFunction: renderThresholdIcon,
-    priority: 1,
-    filter: {
-      placeholderText: strings.selectSeverityPlaceholder,
-      options: [
-        {
-          id: 1,
-          text: strings.criticalLabel,
-        },
-        {
-          id: 2,
-          text: strings.moderateLabel,
-        },
-        {
-          id: 3,
-          text: strings.lowLabel,
-        },
-      ],
-    },
-  });
+  /**
+   * Generates a threshold column based off the uniqueThreshold's value
+   * @param {string} columnId AKA dataSourceId
+   * @returns {Object} new threshold column
+   */
+  const generateThresholdColumn = columnId => {
+    // Need to find the index of the dataSource regardless of uniqueThresholds ordering
+    const thresholdIndex = uniqueThresholds.findIndex(
+      threshold => threshold.dataSourceId === columnId
+    );
+    return {
+      id: `iconColumn-${columnId}`,
+      label: uniqueThresholds[thresholdIndex].label
+        ? uniqueThresholds[thresholdIndex].label
+        : `${capitalize(columnId)} ${strings.severityLabel}`,
+      width: uniqueThresholds[thresholdIndex].width,
+      isSortable: true,
+      renderDataFunction: renderThresholdIcon,
+      priority: 1,
+      filter: {
+        placeholderText: strings.selectSeverityPlaceholder,
+        options: [
+          {
+            id: 1,
+            text: strings.criticalLabel,
+          },
+          {
+            id: 2,
+            text: strings.moderateLabel,
+          },
+          {
+            id: 3,
+            text: strings.lowLabel,
+          },
+        ],
+      },
+    };
+  };
 
   // Don't add the icon column in sample mode
   if (!isEditable) {
@@ -402,9 +413,9 @@ const TableCard = ({
           : null
       )
       .filter(i => !isNil(i));
-    indexes.forEach(({ i, columnId }, index) =>
-      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, generateThresholdColumn(columnId, index))
-    );
+    indexes.forEach(({ i, columnId }, index) => {
+      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, generateThresholdColumn(columnId));
+    });
     // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
     const missingThresholdColumns = uniqueThresholds.filter(
       threshold => !find(columnsUpdated, column => threshold.dataSourceId === column.dataSourceId)
@@ -412,9 +423,7 @@ const TableCard = ({
     columnsUpdated.splice(
       columnsUpdated.length,
       0,
-      ...missingThresholdColumns.map(({ dataSourceId }, index) =>
-        generateThresholdColumn(dataSourceId, index)
-      )
+      ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
     );
   }
 
