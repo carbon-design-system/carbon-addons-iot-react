@@ -341,6 +341,7 @@ const Table = props => {
       options.hasColumnSelection ||
       actions.toolbar.onDownloadCSV ||
       secondaryTitle ||
+      view.toolbar.customToolbarContent ||
       tooltip ? (
         <TableToolbar
           tableId={id}
