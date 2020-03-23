@@ -66,7 +66,7 @@ const cardSource = {
 };
 
 const cardTarget = {
-  hover(props, monitor) {
+  drop(props, monitor) {
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
     // Don't replace items with themselves
