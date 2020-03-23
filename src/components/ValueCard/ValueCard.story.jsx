@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
@@ -73,95 +73,41 @@ storiesOf('Watson IoT/ValueCard', module)
     );
   })
 
-  .add('small / wrapping', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-    return (
-      <div style={{ width: text('cardWidth', '120px'), margin: 20 }}>
-        <ValueCard
-          title={text('title', 'Occupancy')}
-          id="facilitycard"
-          content={{
-            attributes: object('attributes', [
-              {
-                dataSourceId: 'occupancy',
-                unit: '%',
-              },
-            ]),
-          }}
-          breakpoint="lg"
-          size={size}
-          values={{
-            occupancy: text('occupancy', 'Really really busy loong long long long'),
-          }}
-        />
-      </div>
-    );
-  })
-  .add('small / units incl wrapping', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-    return (
-      <Fragment>
-        <div style={{ width: text('cardWidth', `150px`), margin: 20 }}>
-          <ValueCard
-            title={text('title', 'Occupancy')}
-            id="facilitycard"
-            content={{
-              attributes: object('attributes', [
-                {
-                  dataSourceId: 'occupancy',
-                  unit: '%',
-                },
-              ]),
-            }}
-            breakpoint="lg"
-            size={size}
-            values={{ occupancy: number('occupancy', 88) }}
-          />
-        </div>
-        <div style={{ width: text('wrappedCardWidth', '120px'), margin: 20 }}>
-          <ValueCard
-            title={text('title', 'Occupancy')}
-            id="facilitycard"
-            content={{
-              attributes: object('attributes', [
-                {
-                  dataSourceId: 'occupancy',
-                  unit: '%',
-                },
-              ]),
-            }}
-            breakpoint="lg"
-            size={size}
-            values={{ occupancy: text('occupancy', 'A longer value that cause the unit to wrap') }}
-          />
-        </div>
-      </Fragment>
-    );
-  })
-  .add('small / title', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
-    return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
-        <ValueCard
-          title={text('title', 'Foot Traffic')}
-          id="facilitycard"
-          content={{
-            attributes: object('attributes', [
-              {
-                label: 'Average',
-                dataSourceId: 'footTraffic',
-              },
-            ]),
-          }}
-          breakpoint="lg"
-          size={size}
-          values={{ footTraffic: number('footTraffic', 13572) }}
-        />
-      </div>
-    );
-  })
   .add(
-    'small / long string',
+    'small / wrapping',
+    () => {
+      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+      return (
+        <div style={{ width: text('cardWidth', '120px'), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Occupancy')}
+            id="facilitycard"
+            content={{
+              attributes: object('attributes', [
+                {
+                  dataSourceId: 'occupancy',
+                  unit: '%',
+                },
+              ]),
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{
+              occupancy: text('occupancy', 'Really really busy loong long long long'),
+            }}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text:
+          'In the case of having a long string value with units, we prioritize seeing the unit. We ellipsis the text while wrapping the unit to display under.',
+      },
+    }
+  )
+  .add(
+    'small / wrapping no units',
     () => {
       const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
       return (
@@ -196,6 +142,28 @@ storiesOf('Watson IoT/ValueCard', module)
       },
     }
   )
+  .add('small / title', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Foot Traffic')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                label: 'Average',
+                dataSourceId: 'footTraffic',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          values={{ footTraffic: number('footTraffic', 13572) }}
+        />
+      </div>
+    );
+  })
   .add('small / trend down', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
