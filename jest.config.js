@@ -106,12 +106,4 @@ module.exports = {
   watchPathIgnorePatterns: ['/coverage/', '/results/', '/.git/'],
   moduleFileExtensions: ['js', 'json', 'jsx'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  moduleNameMapper: {
-    // this fixes an error present due to the esm import when updating to storybook 5.3.13
-    // https://github.com/storybookjs/storybook/issues/9470#issuecomment-576022225
-    // this has a fix in v6, but is currently in alpha, it's possible a patch for 5.3 could be released
-    // https://github.com/storybookjs/storybook/pull/9795#issuecomment-587808019
-    // either way, this can be removed in the future
-    'react-syntax-highlighter/dist/esm/(.*)': 'react-syntax-highlighter/dist/cjs/$1',
-  },
 };
