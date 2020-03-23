@@ -72,29 +72,35 @@ storiesOf('Watson IoT/TableCard', module)
         severity: 1,
         icon: 'bee',
         color: 'black',
-        label: 'Pressure Sev',
-        showLabel: boolean('Show Pressure Threshold Label', true),
-      },
-      {
-        dataSourceId: 'count',
-        comparison: '<',
-        value: 5,
-        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-        showLabel: boolean('Show Count Threshold Labels', true),
+        label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+        showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+        severityLabel: text('Custom Pressure Critical Label', null),
       },
       {
         dataSourceId: 'count',
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        showLabel: boolean('Show Count Threshold Labels', true),
+        label: text('Custom Count Severity Header', null),
+        showSeverityLabel: boolean('Show Count Threshold Labels', true),
+        severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
       },
       {
         dataSourceId: 'count',
         comparison: '=',
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-        showLabel: boolean('Show Count Threshold Labels', true),
+        showSeverityLabel: boolean('Show Count Threshold Labels', true),
+        severityLabel: text('Custom Count Moderate Label', null),
+      },
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        label: 'Custom Pressure Severity Header',
+        showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+        severityLabel: text('Custom Pressure Critical Label', null),
       },
     ];
 
@@ -142,11 +148,6 @@ storiesOf('Watson IoT/TableCard', module)
               <span>Unknown</span>
             )
           }
-          i18n={{
-            criticalLabel: text('Critical Label', 'Critical'),
-            moderateLabel: text('Moderate Label', 'Moderate'),
-            lowLabel: text('Low Label', 'Low'),
-          }}
         />
       </div>
     );
@@ -163,30 +164,34 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '<',
           value: 5,
           severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-          showLabel: boolean('Show Count Threshold Labels', true),
+          label: text('Custom Count Severity Header', null),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Low Label', null),
         },
         {
           dataSourceId: 'count',
           comparison: '>=',
           value: 10,
           severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-          label: 'Count Sev',
-          showLabel: boolean('Show Count Threshold Labels', true),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
         },
         {
           dataSourceId: 'count',
           comparison: '=',
           value: 7,
           severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-          showLabel: boolean('Show Count Threshold Labels', true),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Moderate Label', null),
         },
         {
           dataSourceId: 'pressure',
           comparison: '>=',
           value: 10,
           severity: 1,
-          label: 'Pressure Sev',
-          showLabel: boolean('Show Pressure Threshold Label', true),
+          label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Pressure Critical Label', null),
         },
       ];
 
@@ -203,11 +208,6 @@ storiesOf('Watson IoT/TableCard', module)
             values={tableData}
             onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
-            i18n={{
-              criticalLabel: text('Critical Label', 'Critical'),
-              moderateLabel: text('Moderate Label', 'Moderate'),
-              lowLabel: text('Low Label', 'Low'),
-            }}
           />
         </div>
       );
@@ -244,31 +244,34 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '<',
           value: 5,
           severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-          showLabel: boolean('Show Count Threshold Labels', true),
+          label: text('Custom Count Severity Header', null),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Low Label', null),
         },
         {
           dataSourceId: 'count',
           comparison: '>=',
           value: 10,
           severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-          label: 'Count Sev',
-          showLabel: boolean('Show Count Threshold Labels', true),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
         },
         {
           dataSourceId: 'count',
           comparison: '=',
           value: 7,
           severity: 2, // High threshold, medium, or low used for sorting and defined filtration
-          showLabel: boolean('Show Count Threshold Labels', true),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Moderate Label', null),
         },
         {
           dataSourceId: 'pressure',
           comparison: '>=',
           value: 10,
           severity: 1,
-          label: 'Pressure Sev',
-          showOnContent: true,
-          showLabel: boolean('Show Pressure Threshold Label', true),
+          label: text('Custom Pressure Severity Header', null),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Pressure Critical Label', null),
         },
       ];
 
@@ -285,11 +288,6 @@ storiesOf('Watson IoT/TableCard', module)
             values={tableData}
             onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
-            i18n={{
-              criticalLabel: text('Critical Label', 'Critical'),
-              moderateLabel: text('Moderate Label', 'Moderate'),
-              lowLabel: text('Low Label', 'Low'),
-            }}
           />
         </div>
       );
@@ -319,27 +317,23 @@ storiesOf('Watson IoT/TableCard', module)
                 comparison: '>',
                 value: 0,
                 severity: 3,
-                label: 'Severity',
-                showLabel: boolean('Show Count Threshold Labels', true),
+                label: text('Custom Count Severity Header', null),
+                showSeverityLabel: boolean('Show Count Threshold Labels', true),
+                severityLabel: text('Custom Count Low Label', null),
               },
               {
                 dataSourceId: 'count',
                 comparison: '>',
                 value: 2,
                 severity: 1,
-                label: 'Severity',
-                showLabel: boolean('Show Count Threshold Labels', true),
+                showSeverityLabel: boolean('Show Count Threshold Labels', true),
+                severityLabel: text('Custom Count Critical Label', null),
               },
             ],
           }}
           values={tableData.map(i => ({ id: i.id, values: i.values }))}
           onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
           size={size}
-          i18n={{
-            criticalLabel: text('Critical Label', 'Critical'),
-            moderateLabel: text('Moderate Label', 'Moderate'),
-            lowLabel: text('Low Label', 'Low'),
-          }}
         />
       </div>
     );
@@ -514,7 +508,6 @@ storiesOf('Watson IoT/TableCard', module)
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: 'Count Sev',
       },
       {
         dataSourceId: 'count',
@@ -527,7 +520,6 @@ storiesOf('Watson IoT/TableCard', module)
         comparison: '>=',
         value: 10,
         severity: 1,
-        label: 'Pressure Sev',
       },
     ];
 

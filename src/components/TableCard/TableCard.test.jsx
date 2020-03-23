@@ -238,7 +238,7 @@ describe('TableCard', () => {
     expect(queryByTitle('Pressure Severity')).not.toBeInTheDocument();
     expect(getByTitle('Pressure Sev')).toBeInTheDocument();
   });
-  test('threshold icon labels should not display when showLabel is false', () => {
+  test('threshold icon labels should not display when showSeverityLabel is false', () => {
     const customThresholds = [
       {
         dataSourceId: 'pressure',
@@ -251,14 +251,62 @@ describe('TableCard', () => {
         comparison: '<',
         value: 5,
         severity: 3,
-        showLabel: false,
+        showSeverityLabel: false,
       },
       {
         dataSourceId: 'count',
         comparison: '=',
         value: 7,
         severity: 2,
-        showLabel: false,
+        showSeverityLabel: false,
+      },
+    ];
+    const { queryByText, queryAllByText } = render(
+      <TableCard
+        id="table-list"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+          thresholds: customThresholds,
+          expandedRows: [
+            {
+              id: 'pressure',
+              label: 'Pressure',
+            },
+          ],
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    // The Pressure threshold is the only threshold that has a 'Critical' severity
+    // and doesn't have showSeverityLabel: false, so it should be the only severity text to appear
+    expect(queryAllByText(/Critical/g)).toHaveLength(3);
+    expect(queryByText(/Moderate/g)).not.toBeInTheDocument();
+    expect(queryByText(/Low/g)).not.toBeInTheDocument();
+  });
+  test('threshold icon label should not display default strings', () => {
+    const customThresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        severity: 3,
+        severityLabel: 'Lowest',
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2,
+        severityLabel: 'Medium',
       },
     ];
     const { queryByText, queryAllByText } = render(
@@ -270,14 +318,17 @@ describe('TableCard', () => {
           thresholds: customThresholds,
         }}
         values={tableData}
-        size={CARD_SIZES.LARGEWIDE}
+        size={CARD_SIZES.LARGETHIN}
       />
     );
 
-    // The Pressure threshold is the only threshold that has a 'Critical' severity
-    // and doesn't have showLabel: false, so it should be the only severity text to appear
-    expect(queryAllByText(/Critical/g)).toHaveLength(3);
-    expect(queryByText(/Moderate/g)).not.toBeInTheDocument();
-    expect(queryByText(/Low/g)).not.toBeInTheDocument();
+    // Critical should exist as that is the only threshold that doesn't have custom label text
+    expect(queryAllByText(/^Critical$/g)).toHaveLength(3);
+    // These are default labels, so they should not exist
+    expect(queryByText(/^Moderate$/g)).not.toBeInTheDocument();
+    expect(queryByText(/^Low$/g)).not.toBeInTheDocument();
+    // These are the custom labels that should appear instead of the defaults above
+    expect(queryAllByText(/^Medium$/g)).toHaveLength(1);
+    expect(queryAllByText(/^Lowest$/g)).toHaveLength(5);
   });
 });

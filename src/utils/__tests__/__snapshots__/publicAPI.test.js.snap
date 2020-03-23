@@ -9524,10 +9524,13 @@ Map {
                         ],
                         "type": "oneOf",
                       },
-                      "showLabel": Object {
-                        "type": "bool",
+                      "severityLabel": Object {
+                        "type": "string",
                       },
                       "showOnContent": Object {
+                        "type": "bool",
+                      },
+                      "showSeverityLabel": Object {
                         "type": "bool",
                       },
                       "value": Object {
