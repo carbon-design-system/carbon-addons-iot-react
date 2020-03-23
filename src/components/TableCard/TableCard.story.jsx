@@ -74,14 +74,14 @@ storiesOf('Watson IoT/TableCard', module)
         color: 'black',
         label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
         showSeverityLabel: boolean('Show Pressure Threshold Label', true),
-        severityLabel: text('Custom Pressure Critical Label', null),
+        severityLabel: text('Custom Pressure Critical Label', ''),
       },
       {
         dataSourceId: 'count',
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: text('Custom Count Severity Header', null),
+        label: text('Custom Count Severity Header', ''),
         showSeverityLabel: boolean('Show Count Threshold Labels', true),
         severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
       },
@@ -91,7 +91,7 @@ storiesOf('Watson IoT/TableCard', module)
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
         showSeverityLabel: boolean('Show Count Threshold Labels', true),
-        severityLabel: text('Custom Count Moderate Label', null),
+        severityLabel: text('Custom Count Moderate Label', ''),
       },
       {
         dataSourceId: 'pressure',
@@ -100,7 +100,7 @@ storiesOf('Watson IoT/TableCard', module)
         severity: 1,
         label: 'Custom Pressure Severity Header',
         showSeverityLabel: boolean('Show Pressure Threshold Label', true),
-        severityLabel: text('Custom Pressure Critical Label', null),
+        severityLabel: text('Custom Pressure Critical Label', ''),
       },
     ];
 
@@ -164,9 +164,9 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '<',
           value: 5,
           severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-          label: text('Custom Count Severity Header', null),
+          label: text('Custom Count Severity Header', ''),
           showSeverityLabel: boolean('Show Count Threshold Labels', true),
-          severityLabel: text('Custom Count Low Label', null),
+          severityLabel: text('Custom Count Low Label', ''),
         },
         {
           dataSourceId: 'count',
@@ -182,7 +182,7 @@ storiesOf('Watson IoT/TableCard', module)
           value: 7,
           severity: 2, // High threshold, medium, or low used for sorting and defined filtration
           showSeverityLabel: boolean('Show Count Threshold Labels', true),
-          severityLabel: text('Custom Count Moderate Label', null),
+          severityLabel: text('Custom Count Moderate Label', ''),
         },
         {
           dataSourceId: 'pressure',
@@ -191,7 +191,7 @@ storiesOf('Watson IoT/TableCard', module)
           severity: 1,
           label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
           showSeverityLabel: boolean('Show Pressure Threshold Label', true),
-          severityLabel: text('Custom Pressure Critical Label', null),
+          severityLabel: text('Custom Pressure Critical Label', ''),
         },
       ];
 
@@ -244,9 +244,9 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '<',
           value: 5,
           severity: 3, // High threshold, medium, or low used for sorting and defined filtration
-          label: text('Custom Count Severity Header', null),
+          label: text('Custom Count Severity Header', ''),
           showSeverityLabel: boolean('Show Count Threshold Labels', true),
-          severityLabel: text('Custom Count Low Label', null),
+          severityLabel: text('Custom Count Low Label', ''),
         },
         {
           dataSourceId: 'count',
@@ -262,16 +262,16 @@ storiesOf('Watson IoT/TableCard', module)
           value: 7,
           severity: 2, // High threshold, medium, or low used for sorting and defined filtration
           showSeverityLabel: boolean('Show Count Threshold Labels', true),
-          severityLabel: text('Custom Count Moderate Label', null),
+          severityLabel: text('Custom Count Moderate Label', ''),
         },
         {
           dataSourceId: 'pressure',
           comparison: '>=',
           value: 10,
           severity: 1,
-          label: text('Custom Pressure Severity Header', null),
+          label: text('Custom Pressure Severity Header', ''),
           showSeverityLabel: boolean('Show Pressure Threshold Label', true),
-          severityLabel: text('Custom Pressure Critical Label', null),
+          severityLabel: text('Custom Pressure Critical Label', ''),
         },
       ];
 
@@ -317,9 +317,9 @@ storiesOf('Watson IoT/TableCard', module)
                 comparison: '>',
                 value: 0,
                 severity: 3,
-                label: text('Custom Count Severity Header', null),
+                label: text('Custom Count Severity Header', ''),
                 showSeverityLabel: boolean('Show Count Threshold Labels', true),
-                severityLabel: text('Custom Count Low Label', null),
+                severityLabel: text('Custom Count Low Label', ''),
               },
               {
                 dataSourceId: 'count',
@@ -327,7 +327,7 @@ storiesOf('Watson IoT/TableCard', module)
                 value: 2,
                 severity: 1,
                 showSeverityLabel: boolean('Show Count Threshold Labels', true),
-                severityLabel: text('Custom Count Critical Label', null),
+                severityLabel: text('Custom Count Critical Label', ''),
               },
             ],
           }}
