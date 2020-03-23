@@ -82,36 +82,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               <div
                 className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
               >
-                <button
-                  className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
-                  data-testid="tableId-rowId-row-actions-button-add"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
+                <div
+                  className="iot--row-actions-container__background"
                 >
-                  <svg
-                    aria-hidden="true"
-                    aria-label="More actions"
-                    className="bx--btn__icon"
-                    focusable="false"
-                    height={32}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={32}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <button
+                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    data-testid="tableId-rowId-row-actions-button-add"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
-                    <path
-                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="More actions"
+                      className="bx--btn__icon"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </td>
           </tr>
@@ -227,36 +231,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               <div
                 className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
               >
-                <button
-                  className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
-                  data-testid="tableId-rowId-row-actions-button-add"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
+                <div
+                  className="iot--row-actions-container__background"
                 >
-                  <svg
-                    aria-hidden="true"
-                    aria-label="More actions"
-                    className="bx--btn__icon"
-                    focusable="false"
-                    height={32}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={32}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <button
+                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    data-testid="tableId-rowId-row-actions-button-add"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
-                    <path
-                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="More actions"
+                      className="bx--btn__icon"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </td>
           </tr>
@@ -448,36 +456,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               <div
                 className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
               >
-                <button
-                  className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
-                  data-testid="tableId-rowId-row-actions-button-add"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
+                <div
+                  className="iot--row-actions-container__background"
                 >
-                  <svg
-                    aria-hidden="true"
-                    aria-label="More actions"
-                    className="bx--btn__icon"
-                    focusable="false"
-                    height={32}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={32}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <button
+                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    data-testid="tableId-rowId-row-actions-button-add"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
-                    <path
-                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="More actions"
+                      className="bx--btn__icon"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </td>
           </tr>
@@ -595,87 +607,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               <div
                 className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
               >
-                <button
-                  className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
-                  data-testid="tableId-rowId-row-actions-button-add"
-                  disabled={false}
-                  onClick={[Function]}
-                  tabIndex={0}
-                  type="button"
+                <div
+                  className="iot--row-actions-container__background"
                 >
-                  <svg
-                    aria-hidden="true"
-                    aria-label="More actions"
-                    className="bx--btn__icon"
-                    focusable="false"
-                    height={32}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 32 32"
-                    width={32}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  aria-expanded={false}
-                  aria-haspopup={true}
-                  aria-label="More actions"
-                  className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eSvzkA bx--overflow-menu"
-                  data-testid="tableId-rowId-row-actions-cell-overflow"
-                  id="tableId-rowId-row-actions-cell-overflow"
-                  onClick={[Function]}
-                  onClose={[Function]}
-                  onKeyDown={[Function]}
-                  open={false}
-                  tabIndex={0}
-                >
-                  <svg
-                    aria-label="More actions"
-                    className="bx--overflow-menu__icon"
-                    focusable="false"
-                    height={16}
+                  <button
+                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    data-testid="tableId-rowId-row-actions-button-add"
+                    disabled={false}
                     onClick={[Function]}
-                    onKeyDown={[Function]}
-                    preserveAspectRatio="xMidYMid meet"
-                    role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
+                    tabIndex={0}
+                    type="button"
                   >
-                    <circle
-                      cx="8"
-                      cy="3"
-                      r="1"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      r="1"
-                    />
-                    <circle
-                      cx="8"
-                      cy="13"
-                      r="1"
-                    />
-                    <title>
-                      More actions
-                    </title>
-                  </svg>
-                </button>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="More actions"
+                      className="bx--btn__icon"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="More actions"
+                    className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eSvzkA bx--overflow-menu"
+                    data-testid="tableId-rowId-row-actions-cell-overflow"
+                    id="tableId-rowId-row-actions-cell-overflow"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-label="More actions"
+                      className="bx--overflow-menu__icon"
+                      focusable="false"
+                      height={16}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      style={
+                        Object {
+                          "willChange": "transform",
+                        }
+                      }
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="8"
+                        cy="3"
+                        r="1"
+                      />
+                      <circle
+                        cx="8"
+                        cy="8"
+                        r="1"
+                      />
+                      <circle
+                        cx="8"
+                        cy="13"
+                        r="1"
+                      />
+                      <title>
+                        More actions
+                      </title>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </td>
           </tr>
@@ -794,51 +810,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 eQPybn"
               >
                 <div
-                  className="bx--tooltip__label"
-                  id="tooltip-error"
+                  className="iot--row-actions-container__background"
                 >
-                  
                   <div
-                    aria-describedby={null}
-                    aria-haspopup="true"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
+                    className="bx--tooltip__label"
+                    id="tooltip-error"
                   >
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    
+                    <div
+                      aria-describedby={null}
+                      aria-haspopup="true"
+                      className="bx--tooltip__trigger"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
                     >
-                      <path
-                        d="M14.5 14h-13c-.2 0-.3-.1-.4-.2-.1-.2-.1-.3 0-.5l6.5-12c.1-.3.4-.4.6-.2.1 0 .2.1.2.2l6.5 12c.1.2.1.3 0 .5 0 .1-.2.2-.4.2zM2.3 13h11.3L8 2.5 2.3 13z"
-                      />
-                      <path
-                        d="M7.5 6h1v3.5h-1zm.5 4.8c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8s-.4-.8-.8-.8z"
-                      />
-                    </svg>
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        style={
+                          Object {
+                            "willChange": "transform",
+                          }
+                        }
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.5 14h-13c-.2 0-.3-.1-.4-.2-.1-.2-.1-.3 0-.5l6.5-12c.1-.3.4-.4.6-.2.1 0 .2.1.2.2l6.5 12c.1.2.1.3 0 .5 0 .1-.2.2-.4.2zM2.3 13h11.3L8 2.5 2.3 13z"
+                        />
+                        <path
+                          d="M7.5 6h1v3.5h-1zm.5 4.8c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8s-.4-.8-.8-.8z"
+                        />
+                      </svg>
+                    </div>
                   </div>
+                  <span
+                    className="RowActionsError__StyledSpan-sc-1htz5gr-0 kSTEeW"
+                  >
+                    Action failed
+                  </span>
                 </div>
-                <span
-                  className="RowActionsError__StyledSpan-sc-1htz5gr-0 gQemCK"
-                >
-                  Action failed
-                </span>
               </div>
             </td>
           </tr>
@@ -957,39 +977,43 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 eQPybn"
               >
                 <div
-                  aria-atomic="true"
-                  aria-labelledby="loading-id-8"
-                  aria-live="assertive"
-                  className="bx--loading bx--loading--small"
+                  className="iot--row-actions-container__background"
                 >
-                  <label
-                    className="bx--visually-hidden"
-                    id="loading-id-8"
+                  <div
+                    aria-atomic="true"
+                    aria-labelledby="loading-id-8"
+                    aria-live="assertive"
+                    className="bx--loading bx--loading--small"
                   >
-                    Active loading indicator
-                  </label>
-                  <svg
-                    className="bx--loading__svg"
-                    viewBox="-75 -75 150 150"
-                  >
-                    <title>
+                    <label
+                      className="bx--visually-hidden"
+                      id="loading-id-8"
+                    >
                       Active loading indicator
-                    </title>
-                    <circle
-                      className="bx--loading__background"
-                      cx="0"
-                      cy="0"
-                      r="26.8125"
-                    />
-                    <circle
-                      className="bx--loading__stroke"
-                      cx="0"
-                      cy="0"
-                      r="26.8125"
-                    />
-                  </svg>
+                    </label>
+                    <svg
+                      className="bx--loading__svg"
+                      viewBox="-75 -75 150 150"
+                    >
+                      <title>
+                        Active loading indicator
+                      </title>
+                      <circle
+                        className="bx--loading__background"
+                        cx="0"
+                        cy="0"
+                        r="26.8125"
+                      />
+                      <circle
+                        className="bx--loading__stroke"
+                        cx="0"
+                        cy="0"
+                        r="26.8125"
+                      />
+                    </svg>
+                  </div>
+                  In progress
                 </div>
-                In progress
               </div>
             </td>
           </tr>
