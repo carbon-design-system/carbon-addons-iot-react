@@ -43,6 +43,24 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
       </div>
     );
   })
+  .add('With OverflowMenu in Pagination', () => {
+    const numOfTiles = number('number of tiles', 100);
+    return (
+      <div style={{ width: '60rem' }}>
+        <TileCatalogNew
+          title="Product name"
+          tiles={getTiles(
+            numOfTiles,
+            <SampleTile title="Sample product tile" description="This is a sample product tile" />
+          )}
+          numColumns={number('numColumns', 4)}
+          numRows={number('numRows', 2)}
+          hasSearch={boolean('hasSearch', true)}
+          hasSort={boolean('hasSort', true)}
+        />
+      </div>
+    );
+  })
   .add('With Search', () => (
     <div style={{ width: '60rem' }}>
       <TileCatalogNew
