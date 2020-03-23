@@ -3970,134 +3970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / long string 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": 20,
-          "width": "252px",
-        }
-      }
-    >
-      <div
-        className="iot--card--wrapper"
-        data-testid="Card"
-        id="facilitycard"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "144px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Tagpath"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Tagpath
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "96px",
-            }
-          }
-        >
-          <div
-            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
-          >
-            <div
-              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-              size="SMALL"
-            >
-              <div
-                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
-                label="Tagpath"
-                size="SMALL"
-              >
-                <div
-                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                  color={null}
-                >
-                  <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 fOSPFt"
-                    size="SMALL"
-                    title="rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu "
-                    value="rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu"
-                  >
-                    rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  
-                </span>
-              </div>
-              <div
-                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
-                size="SMALL"
-                title="Tagpath"
-              >
-                Tagpath
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / thresholds (number, custom renderIconByName) 1`] = `
 <div
   className="storybook-container"
@@ -4910,217 +4782,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / units incl wrapping 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "margin": 20,
-          "width": "150px",
-        }
-      }
-    >
-      <div
-        className="iot--card--wrapper"
-        data-testid="Card"
-        id="facilitycard"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "144px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Occupancy"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Occupancy
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "96px",
-            }
-          }
-        >
-          <div
-            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
-          >
-            <div
-              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-              size="SMALL"
-            >
-              <div
-                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
-                label={null}
-                size="SMALL"
-              >
-                <div
-                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                  color={null}
-                >
-                  <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
-                    size="SMALL"
-                    title="88 %"
-                    value={88}
-                  >
-                    88
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  %
-                </span>
-              </div>
-              <div
-                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
-                size="SMALL"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      style={
-        Object {
-          "margin": 20,
-          "width": "120px",
-        }
-      }
-    >
-      <div
-        className="iot--card--wrapper"
-        data-testid="Card"
-        id="facilitycard"
-        role="presentation"
-        style={
-          Object {
-            "--card-default-height": "144px",
-          }
-        }
-      >
-        <div
-          className="iot--card--header"
-        >
-          <span
-            className="iot--card--title"
-            title="Occupancy"
-          >
-            <div
-              className="iot--card--title--text"
-            >
-              Occupancy
-            </div>
-          </span>
-        </div>
-        <div
-          className="iot--card--content"
-          style={
-            Object {
-              "--card-content-height": "96px",
-            }
-          }
-        >
-          <div
-            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
-          >
-            <div
-              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
-              size="SMALL"
-            >
-              <div
-                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
-                label={null}
-                size="SMALL"
-              >
-                <div
-                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
-                  color={null}
-                >
-                  <span
-                    className="ValueRenderer__AttributeValue-f4stpz-1 iWrxZd"
-                    size="SMALL"
-                    title="A longer value that cause the unit to wrap %"
-                    value="A longer value that cause the unit to wrap"
-                  >
-                    A longer value that cause the unit to wrap
-                  </span>
-                </div>
-                <span
-                  className="iot--value-card__attribute-unit"
-                  style={
-                    Object {
-                      "--default-font-size": "1.25rem",
-                    }
-                  }
-                >
-                  %
-                </span>
-              </div>
-              <div
-                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
-                size="SMALL"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / wrapping 1`] = `
 <div
   className="storybook-container"
@@ -5214,6 +4875,134 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                 className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
                 size="SMALL"
               />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / wrapping no units 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Tagpath"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Tagpath
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
+        >
+          <div
+            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+          >
+            <div
+              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+              size="SMALL"
+            >
+              <div
+                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                label="Tagpath"
+                size="SMALL"
+              >
+                <div
+                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                  color={null}
+                >
+                  <span
+                    className="ValueRenderer__AttributeValue-f4stpz-1 fOSPFt"
+                    size="SMALL"
+                    title="rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu "
+                    value="rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu"
+                  >
+                    rutherford/rooms/northadd/ah2/ft_supflow/eurutherford/rooms/northadd/ah2/ft_supflow/eu
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  
+                </span>
+              </div>
+              <div
+                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                size="SMALL"
+                title="Tagpath"
+              >
+                Tagpath
+              </div>
             </div>
           </div>
         </div>
