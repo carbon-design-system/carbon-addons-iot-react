@@ -9,13 +9,16 @@ import {
   Loading,
 } from 'carbon-components-react';
 import styled from 'styled-components';
+import classnames from 'classnames';
 
+import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
 
 import RowActionsError from './RowActionsError';
 
 const { TableCell } = DataTable;
+const { iotPrefix } = settings;
 
 const StyledTableCell = styled(TableCell)`
   && {
@@ -30,11 +33,10 @@ const RowActionsContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    /* Need space between the buttons */
     > * {
       opacity: ${props => (props.visible ? 1 : 0)};
-      margin-left: 0.75rem;
     }
+
     /* If the actions are focused on, they should show up */
     > *:focus {
       opacity: 1;
@@ -163,6 +165,7 @@ class RowActionsCell extends React.Component {
         <RowActionsContainer
           visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
+          className={`${iotPrefix}--row-actions-container`}
         >
           {rowActionsError ? (
             <RowActionsError
@@ -188,6 +191,9 @@ class RowActionsCell extends React.Component {
                     key={`${tableId}-${id}-row-actions-button-${actionId}`}
                     data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                     kind="ghost"
+                    className={classnames({
+                      [`${iotPrefix}--row-actions-cell-btn--icononly`]: !labelText,
+                    })}
                     onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                   >
                     {labelText}
