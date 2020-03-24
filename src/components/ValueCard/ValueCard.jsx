@@ -4,7 +4,7 @@ import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
 
-import { ValueCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
+import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
@@ -252,6 +252,7 @@ const ValueCard = ({
             isEditable={isEditable}
             showOverflow={!!dataState}
             i18n={i18n}
+            id={id}
             {...others}
           >
             <ContentWrapper layout={layout}>

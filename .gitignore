@@ -25,7 +25,7 @@ storybook-static
 # log files
 *.log
 
-# We don't use npm, we use yarn
+# We don't use npm, we use Yarn Classic
 package-lock.json
 
 # Mac OS Specific files

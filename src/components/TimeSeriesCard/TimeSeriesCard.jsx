@@ -11,7 +11,7 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
+import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';

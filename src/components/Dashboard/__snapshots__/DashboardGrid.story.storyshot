@@ -36,10 +36,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Small"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(16px,16px)",
                 "OTransform": "translate(16px,16px)",
                 "WebkitTransform": "translate(16px,16px)",
@@ -56,28 +59,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Small"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Small
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Small Wide"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(332px,16px)",
                 "OTransform": "translate(332px,16px)",
                 "WebkitTransform": "translate(332px,16px)",
@@ -94,28 +105,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Small Wide"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Small Wide
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Medium Thin"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "304px",
                 "MozTransform": "translate(16px,176px)",
                 "OTransform": "translate(16px,176px)",
                 "WebkitTransform": "translate(16px,176px)",
@@ -132,28 +151,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Medium Thin"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Medium Thin
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "256px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Medium"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "304px",
                 "MozTransform": "translate(332px,176px)",
                 "OTransform": "translate(332px,176px)",
                 "WebkitTransform": "translate(332px,176px)",
@@ -170,28 +197,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Medium"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Medium
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "256px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Medium Wide"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "304px",
                 "MozTransform": "translate(648px,16px)",
                 "OTransform": "translate(648px,16px)",
                 "WebkitTransform": "translate(648px,16px)",
@@ -208,28 +243,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Medium Wide"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Medium Wide
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "256px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Large Thin"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "624px",
                 "MozTransform": "translate(16px,496px)",
                 "OTransform": "translate(16px,496px)",
                 "WebkitTransform": "translate(16px,496px)",
@@ -246,28 +289,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Large Thin"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Large Thin
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "576px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Large"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "624px",
                 "MozTransform": "translate(332px,496px)",
                 "OTransform": "translate(332px,496px)",
                 "WebkitTransform": "translate(332px,496px)",
@@ -284,28 +335,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Large"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Large
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "576px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            data-testid="Card"
             id="Large Wide"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "624px",
                 "MozTransform": "translate(16px,1136px)",
                 "OTransform": "translate(16px,1136px)",
                 "WebkitTransform": "translate(16px,1136px)",
@@ -322,21 +381,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Large Wide"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Large Wide
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 flVXpj"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "576px",
+                }
+              }
             />
           </div>
         </div>
@@ -405,11 +469,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
+            data-testid="Card"
             id="facility"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "304px",
                 "MozTransform": "translate(332px,336px)",
                 "OTransform": "translate(332px,336px)",
                 "WebkitTransform": "translate(332px,336px)",
@@ -426,29 +493,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Facility Metrics"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Facility Metrics
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "256px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Humidity Values"
+            data-testid="Card"
             id="humidity"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(16px,16px)",
                 "OTransform": "translate(16px,16px)",
                 "WebkitTransform": "translate(16px,16px)",
@@ -465,29 +540,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Humidity"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Humidity
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My utilization chart"
+            data-testid="Card"
             id="utilization"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(253px,176px)",
                 "OTransform": "translate(253px,176px)",
                 "WebkitTransform": "translate(253px,176px)",
@@ -504,21 +587,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Utilization"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Utilization
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
         </div>
@@ -587,11 +675,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
+            data-testid="Card"
             id="facility"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "304px",
                 "MozTransform": "translate(16px,16px)",
                 "OTransform": "translate(16px,16px)",
                 "WebkitTransform": "translate(16px,16px)",
@@ -608,29 +699,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Facility Metrics"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Facility Metrics
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "256px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Humidity Values"
+            data-testid="Card"
             id="humidity"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(332px,16px)",
                 "OTransform": "translate(332px,16px)",
                 "WebkitTransform": "translate(332px,16px)",
@@ -647,29 +746,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Humidity"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Humidity
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My utilization chart"
+            data-testid="Card"
             id="utilization"
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(648px,16px)",
                 "OTransform": "translate(648px,16px)",
                 "WebkitTransform": "translate(648px,16px)",
@@ -686,21 +793,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Utilization"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Utilization
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
         </div>
@@ -769,15 +881,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
+            data-testid="Card"
             id="facility"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "304px",
                 "MozTransform": "translate(16px,16px)",
                 "OTransform": "translate(16px,16px)",
                 "WebkitTransform": "translate(16px,16px)",
@@ -795,33 +910,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Facility Metrics"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Facility Metrics
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 hxiPNM"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "256px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My Humidity Values"
+            data-testid="Card"
             id="humidity"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(332px,16px)",
                 "OTransform": "translate(332px,16px)",
                 "WebkitTransform": "translate(332px,16px)",
@@ -839,33 +962,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Humidity"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Humidity
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
           <div
-            className="iot--card react-grid-item react-draggable cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My utilization chart"
+            data-testid="Card"
             id="utilization"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
             onTouchStart={[Function]}
+            role="presentation"
             style={
               Object {
+                "--card-default-height": "144px",
                 "MozTransform": "translate(648px,16px)",
                 "OTransform": "translate(648px,16px)",
                 "WebkitTransform": "translate(648px,16px)",
@@ -883,21 +1014,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="iot--card--header"
             >
               <span
-                className="card--title"
+                className="iot--card--title"
                 title="Utilization"
               >
                 <div
-                  className="title--text"
+                  className="iot--card--title--text"
                 >
                   Utilization
                 </div>
               </span>
               <div
-                className="iot--card--toolbar card--toolbar"
+                className="iot--card--toolbar"
               />
             </div>
             <div
-              className="Card__CardContent-v5r71h-1 ggrDpu"
+              className="iot--card--content"
+              style={
+                Object {
+                  "--card-content-height": "96px",
+                }
+              }
             />
           </div>
         </div>
