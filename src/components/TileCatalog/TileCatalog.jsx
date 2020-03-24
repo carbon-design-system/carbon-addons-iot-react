@@ -92,7 +92,7 @@ const TileCatalog = ({
   const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
   return (
-    <div className={classNames(`${iotPrefix}--tile-catalog`, className)}>
+    <div className={classNames(className, `${iotPrefix}--tile-catalog`)}>
       <div className={`${iotPrefix}--tile-catalog--header`}>
         {search && search.placeHolderText ? (
           <TableToolbarSearch
