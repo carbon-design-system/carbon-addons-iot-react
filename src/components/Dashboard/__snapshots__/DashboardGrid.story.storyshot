@@ -36,7 +36,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Small"
             role="presentation"
@@ -82,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Small Wide"
             role="presentation"
@@ -128,7 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Medium Thin"
             role="presentation"
@@ -174,7 +174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Medium"
             role="presentation"
@@ -220,7 +220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Medium Wide"
             role="presentation"
@@ -266,7 +266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Large Thin"
             role="presentation"
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Large"
             role="presentation"
@@ -358,7 +358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             data-testid="Card"
             id="Large Wide"
             role="presentation"
@@ -469,7 +469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -516,7 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -563,7 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
@@ -675,7 +675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -722,7 +722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -769,7 +769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
@@ -881,7 +881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="react-grid-item react-draggable cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -933,7 +933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item react-draggable cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -985,7 +985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             />
           </div>
           <div
-            className="react-grid-item react-draggable cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
