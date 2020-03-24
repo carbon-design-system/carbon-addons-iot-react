@@ -122,7 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="89 %"
                             value={89}
@@ -171,7 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="76 %"
                             value={76}
@@ -220,7 +220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="21.4 mb"
                             value={21.4}
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -401,7 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -529,7 +529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                             size="SMALL"
                             title="76 %"
                             value={76}
@@ -621,7 +621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="35 "
                             value={35}
@@ -700,7 +700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                   >
                     <div
-                      className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                      className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                       size="SMALL"
                     >
                       <div
@@ -713,7 +713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                             size="SMALL"
                             title="Bad "
                             value="Bad"
@@ -759,7 +759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                        className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                         size="SMALL"
                       />
                     </div>
@@ -828,7 +828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="13572 "
                             value={13572}
@@ -1079,7 +1079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                             size="SMALLWIDE"
                             title="Healthy "
                             value="Healthy"
@@ -2398,7 +2398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="89 %"
                             value={89}
@@ -2447,7 +2447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="76 %"
                             value={76}
@@ -2496,7 +2496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="21.4 mb"
                             value={21.4}
@@ -2588,7 +2588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -2677,7 +2677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -2805,7 +2805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                             size="SMALL"
                             title="76 %"
                             value={76}
@@ -2897,7 +2897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="35 "
                             value={35}
@@ -2976,7 +2976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                   >
                     <div
-                      className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                      className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                       size="SMALL"
                     >
                       <div
@@ -2989,7 +2989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                             size="SMALL"
                             title="Bad "
                             value="Bad"
@@ -3035,7 +3035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                        className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                         size="SMALL"
                       />
                     </div>
@@ -3104,7 +3104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="13572 "
                             value={13572}
@@ -3355,7 +3355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                             size="SMALLWIDE"
                             title="Healthy "
                             value="Healthy"
@@ -4706,7 +4706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="89 %"
                             value={89}
@@ -4755,7 +4755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="76 %"
                             value={76}
@@ -4804,7 +4804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="21.4 mb"
                             value={21.4}
@@ -4896,7 +4896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -4985,7 +4985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -5113,7 +5113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                             size="SMALL"
                             title="76 %"
                             value={76}
@@ -5205,7 +5205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="35 "
                             value={35}
@@ -5284,7 +5284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                   >
                     <div
-                      className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                      className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                       size="SMALL"
                     >
                       <div
@@ -5297,7 +5297,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                             size="SMALL"
                             title="Bad "
                             value="Bad"
@@ -5343,7 +5343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                        className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                         size="SMALL"
                       />
                     </div>
@@ -5412,7 +5412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="13572 "
                             value={13572}
@@ -5663,7 +5663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                             size="SMALLWIDE"
                             title="Healthy "
                             value="Healthy"
@@ -9465,7 +9465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="89 %"
                             value={89}
@@ -9514,7 +9514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="76 %"
                             value={76}
@@ -9563,7 +9563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="21.4 mb"
                             value={21.4}
@@ -9655,7 +9655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -9744,7 +9744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -9872,7 +9872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                             size="SMALL"
                             title="76 %"
                             value={76}
@@ -9964,7 +9964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="35 "
                             value={35}
@@ -10043,7 +10043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                   >
                     <div
-                      className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                      className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                       size="SMALL"
                     >
                       <div
@@ -10056,7 +10056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                             size="SMALL"
                             title="Bad "
                             value="Bad"
@@ -10102,7 +10102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                        className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                         size="SMALL"
                       />
                     </div>
@@ -10171,7 +10171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="13572 "
                             value={13572}
@@ -10422,7 +10422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                             size="SMALLWIDE"
                             title="Healthy "
                             value="Healthy"
@@ -11744,7 +11744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALL"
                               title="13 "
                               value={13}
@@ -11828,7 +11828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="1352 steps"
                               value={1352}
@@ -11914,7 +11914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="103.2 ˚F"
                               value={103.2}
@@ -12000,7 +12000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="107324.3 kJ"
                               value={107324.3}
@@ -12086,7 +12086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -12172,7 +12172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALL"
                               title="false "
                               value={false}
@@ -12260,7 +12260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALL"
                               title="true "
                               value={true}
@@ -12413,7 +12413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALL"
                               title="13 "
                               value={13}
@@ -12497,7 +12497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="1352 steps"
                               value={1352}
@@ -12583,7 +12583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="103.2 ˚F"
                               value={103.2}
@@ -12669,7 +12669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="107324.3 kJ"
                               value={107324.3}
@@ -12755,7 +12755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -12841,7 +12841,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALL"
                               title="false "
                               value={false}
@@ -12929,7 +12929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALL"
                               title="true "
                               value={true}
@@ -13082,7 +13082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="65.3 ˚F"
                               value={65.3}
@@ -13168,7 +13168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                               size="SMALL"
                               title="48.7 ˚F"
                               value={48.7}
@@ -13257,7 +13257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                               size="SMALL"
                               title="88.1 ˚F"
                               value={88.1}
@@ -13343,7 +13343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                               size="SMALL"
                               title="103.2 ˚F"
                               value={103.2}
@@ -13497,7 +13497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="65.3 ˚F"
                               value={65.3}
@@ -13583,7 +13583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                               size="SMALL"
                               title="48.7 ˚F"
                               value={48.7}
@@ -13672,7 +13672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                               size="SMALL"
                               title="88.1 ˚F"
                               value={88.1}
@@ -13758,7 +13758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                               size="SMALL"
                               title="103.2 ˚F"
                               value={103.2}
@@ -13912,7 +13912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="38.2 %"
                               value={38.2}
@@ -14024,7 +14024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="65.3 %"
                               value={65.3}
@@ -14136,7 +14136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="77.7 %"
                               value={77.7}
@@ -14248,7 +14248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="91 %"
                               value={91}
@@ -14425,7 +14425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="38.2 %"
                               value={38.2}
@@ -14537,7 +14537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="65.3 %"
                               value={65.3}
@@ -14649,7 +14649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="77.7 %"
                               value={77.7}
@@ -14761,7 +14761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALL"
                               title="91 %"
                               value={91}
@@ -14925,7 +14925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -14938,7 +14938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="green"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                               size="SMALL"
                               title="Low "
                               value="Low"
@@ -14958,7 +14958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15011,7 +15011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15024,7 +15024,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="blue"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kdSwFP"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 kZqfwH"
                               size="SMALL"
                               title="Guarded "
                               value="Guarded"
@@ -15044,7 +15044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15097,7 +15097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15110,7 +15110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="gold"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kdSwFP"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 kZqfwH"
                               size="SMALL"
                               title="Elevated "
                               value="Elevated"
@@ -15130,7 +15130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15183,7 +15183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15196,7 +15196,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="orange"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                               size="SMALL"
                               title="High "
                               value="High"
@@ -15216,7 +15216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15269,7 +15269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15282,7 +15282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="red"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kdSwFP"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 kZqfwH"
                               size="SMALL"
                               title="Severe "
                               value="Severe"
@@ -15302,7 +15302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15420,7 +15420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15433,7 +15433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="green"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                               size="SMALL"
                               title="Low "
                               value="Low"
@@ -15453,7 +15453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15506,7 +15506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15519,7 +15519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="blue"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kdSwFP"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 kZqfwH"
                               size="SMALL"
                               title="Guarded "
                               value="Guarded"
@@ -15539,7 +15539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15592,7 +15592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15605,7 +15605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="gold"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kdSwFP"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 kZqfwH"
                               size="SMALL"
                               title="Elevated "
                               value="Elevated"
@@ -15625,7 +15625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15678,7 +15678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15691,7 +15691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="orange"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                               size="SMALL"
                               title="High "
                               value="High"
@@ -15711,7 +15711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15764,7 +15764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                     >
                       <div
-                        className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                        className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                         size="SMALL"
                       >
                         <div
@@ -15777,7 +15777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="red"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kdSwFP"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 kZqfwH"
                               size="SMALL"
                               title="Severe "
                               value="Severe"
@@ -15797,7 +15797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <div
-                          className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                          className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                           size="SMALL"
                         />
                       </div>
@@ -15928,7 +15928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALLWIDE"
                               title="13 "
                               value={13}
@@ -16012,7 +16012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1352 steps"
                               value={1352}
@@ -16098,7 +16098,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.2 ˚F"
                               value={103.2}
@@ -16184,7 +16184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="107324.3 kJ"
                               value={107324.3}
@@ -16270,7 +16270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -16356,7 +16356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALLWIDE"
                               title="false "
                               value={false}
@@ -16444,7 +16444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALLWIDE"
                               title="true "
                               value={true}
@@ -16532,7 +16532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="65.3 ˚F"
                               value={65.3}
@@ -16618,7 +16618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="48.7 ˚F"
                               value={48.7}
@@ -16707,7 +16707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="88.1 ˚F"
                               value={88.1}
@@ -16793,7 +16793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.2 ˚F"
                               value={103.2}
@@ -16882,7 +16882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="38.2 %"
                               value={38.2}
@@ -16994,7 +16994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="65.3 %"
                               value={65.3}
@@ -17106,7 +17106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="77.7 %"
                               value={77.7}
@@ -17218,7 +17218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="91 %"
                               value={91}
@@ -17330,7 +17330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="green"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Low "
                               value="Low"
@@ -17416,7 +17416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="blue"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Guarded "
                               value="Guarded"
@@ -17502,7 +17502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="gold"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Elevated "
                               value="Elevated"
@@ -17588,7 +17588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="orange"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="High "
                               value="High"
@@ -17674,7 +17674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="red"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Severe "
                               value="Severe"
@@ -17825,7 +17825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALLWIDE"
                               title="13 "
                               value={13}
@@ -17909,7 +17909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1352 steps"
                               value={1352}
@@ -17995,7 +17995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.2 ˚F"
                               value={103.2}
@@ -18081,7 +18081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="107324.3 kJ"
                               value={107324.3}
@@ -18167,7 +18167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -18253,7 +18253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALLWIDE"
                               title="false "
                               value={false}
@@ -18341,7 +18341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 eiTUkN"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 eXiWbd"
                               size="SMALLWIDE"
                               title="true "
                               value={true}
@@ -18429,7 +18429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="65.3 ˚F"
                               value={65.3}
@@ -18515,7 +18515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="48.7 ˚F"
                               value={48.7}
@@ -18604,7 +18604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="88.1 ˚F"
                               value={88.1}
@@ -18690,7 +18690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.2 ˚F"
                               value={103.2}
@@ -18779,7 +18779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="38.2 %"
                               value={38.2}
@@ -18891,7 +18891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="65.3 %"
                               value={65.3}
@@ -19003,7 +19003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="77.7 %"
                               value={77.7}
@@ -19115,7 +19115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="91 %"
                               value={91}
@@ -19227,7 +19227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="green"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Low "
                               value="Low"
@@ -19313,7 +19313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="blue"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Guarded "
                               value="Guarded"
@@ -19399,7 +19399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="gold"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Elevated "
                               value="Elevated"
@@ -19485,7 +19485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="orange"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="High "
                               value="High"
@@ -19571,7 +19571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="red"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Severe "
                               value="Severe"
@@ -19722,7 +19722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="89.2 %"
                               value={89.2}
@@ -19763,7 +19763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="21.3 mb"
                               value={21.3}
@@ -19852,7 +19852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="88.3 ˚F"
                               value={88.3}
@@ -19893,7 +19893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Elevated "
                               value="Elevated"
@@ -19980,7 +19980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.7 ˚F"
                               value={103.7}
@@ -20021,7 +20021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -20175,7 +20175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="89.2 %"
                               value={89.2}
@@ -20216,7 +20216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="21.3 mb"
                               value={21.3}
@@ -20305,7 +20305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="88.3 ˚F"
                               value={88.3}
@@ -20346,7 +20346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Elevated "
                               value="Elevated"
@@ -20433,7 +20433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.7 ˚F"
                               value={103.7}
@@ -20474,7 +20474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -20628,7 +20628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="89.2 %"
                               value={89.2}
@@ -20669,7 +20669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="21.3 mb"
                               value={21.3}
@@ -20758,7 +20758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="88.3 ˚F"
                               value={88.3}
@@ -20799,7 +20799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Elevated "
                               value="Elevated"
@@ -20886,7 +20886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.7 ˚F"
                               value={103.7}
@@ -20927,7 +20927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -21081,7 +21081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="89.2 %"
                               value={89.2}
@@ -21122,7 +21122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="21.3 mb"
                               value={21.3}
@@ -21211,7 +21211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="88.3 ˚F"
                               value={88.3}
@@ -21252,7 +21252,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                               size="SMALLWIDE"
                               title="Elevated "
                               value="Elevated"
@@ -21339,7 +21339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="103.7 ˚F"
                               value={103.7}
@@ -21380,7 +21380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="1709384.1 people"
                               value={1709384.1}
@@ -21534,7 +21534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="38.2 %"
                               value={38.2}
@@ -21601,7 +21601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="65.3 %"
                               value={65.3}
@@ -21716,7 +21716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="77.2 ˚F"
                               value={77.2}
@@ -21783,7 +21783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="91.3 ˚F"
                               value={91.3}
@@ -21963,7 +21963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="38.2 %"
                               value={38.2}
@@ -22030,7 +22030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="65.3 %"
                               value={65.3}
@@ -22145,7 +22145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="77.2 ˚F"
                               value={77.2}
@@ -22212,7 +22212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                               size="SMALLWIDE"
                               title="91.3 ˚F"
                               value={91.3}
@@ -22392,7 +22392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                               size="MEDIUM"
                               title="13634.56 MWh"
                               value={13634.56}
@@ -22441,7 +22441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                               size="MEDIUM"
                               title="1047.2 MWh"
                               value={1047.2}
@@ -22490,7 +22490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                               size="MEDIUM"
                               title="314.5 MWh"
                               value={314.5}
@@ -22579,7 +22579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="red"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Severe "
                               value="Severe"
@@ -22626,7 +22626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="green"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Low "
                               value="Low"
@@ -22673,7 +22673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="orange"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="High "
                               value="High"
@@ -22760,7 +22760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Low "
                               value="Low"
@@ -22833,7 +22833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Severe "
                               value="Severe"
@@ -22906,7 +22906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Elevated "
                               value="Elevated"
@@ -23084,7 +23084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                               size="MEDIUM"
                               title="13634.56 MWh"
                               value={13634.56}
@@ -23133,7 +23133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                               size="MEDIUM"
                               title="1047.2 MWh"
                               value={1047.2}
@@ -23182,7 +23182,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                               size="MEDIUM"
                               title="314.5 MWh"
                               value={314.5}
@@ -23271,7 +23271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="red"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Severe "
                               value="Severe"
@@ -23318,7 +23318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="green"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Low "
                               value="Low"
@@ -23365,7 +23365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color="orange"
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="High "
                               value="High"
@@ -23452,7 +23452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Low "
                               value="Low"
@@ -23525,7 +23525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Severe "
                               value="Severe"
@@ -23598,7 +23598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             color={null}
                           >
                             <span
-                              className="ValueRenderer__AttributeValue-f4stpz-1 ggSRiD"
+                              className="ValueRenderer__AttributeValue-f4stpz-1 ecuAUH"
                               size="MEDIUM"
                               title="Elevated "
                               value="Elevated"
@@ -23839,7 +23839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="89 %"
                             value={89}
@@ -23888,7 +23888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="76 %"
                             value={76}
@@ -23937,7 +23937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 bPIroF"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 faMSew"
                             size="MEDIUM"
                             title="21.4 mb"
                             value={21.4}
@@ -24029,7 +24029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -24118,7 +24118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color="green"
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 kfJuOL"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 qSkS"
                             size="SMALL"
                             title="62.1 %"
                             value={62.1}
@@ -24246,7 +24246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 geVBiS"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 hrmfxW"
                             size="SMALL"
                             title="76 %"
                             value={76}
@@ -24338,7 +24338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="35 "
                             value={35}
@@ -24417,7 +24417,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
                   >
                     <div
-                      className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+                      className="ValueCard__AttributeWrapper-hyxf2q-1 eGXBSf"
                       size="SMALL"
                     >
                       <div
@@ -24430,7 +24430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 hBikcJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 wLszP"
                             size="SMALL"
                             title="Bad "
                             value="Bad"
@@ -24476,7 +24476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         </div>
                       </div>
                       <div
-                        className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                        className="ValueCard__AttributeLabel-hyxf2q-4 iJHIKN"
                         size="SMALL"
                       />
                     </div>
@@ -24545,7 +24545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 jwuoby"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
                             size="SMALL"
                             title="13572 "
                             value={13572}
@@ -24796,7 +24796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           color={null}
                         >
                           <span
-                            className="ValueRenderer__AttributeValue-f4stpz-1 gFCurJ"
+                            className="ValueRenderer__AttributeValue-f4stpz-1 jRoLEg"
                             size="SMALLWIDE"
                             title="Healthy "
                             value="Healthy"

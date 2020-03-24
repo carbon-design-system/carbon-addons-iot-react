@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
+import find from 'lodash/find';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -126,14 +127,14 @@ const shouldLabelWrap = ({ title, isVertical }) => {
 const AttributeLabel = styled.div`
   ${props => `line-height: ${determineLabelFontSize(props)}rem;`}
   ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
-  text-align: ${props => getLabelAlignment(props)};
+  text-align: ${props => (props.shouldDoubleWrap ? 'left' : getLabelAlignment(props))};
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUM) &&
     `padding-top: 0.25rem;`};
   ${props =>
     !(props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.SMALLWIDE) &&
     `padding-left: 0.5rem`};
-  order: ${props => (props.isVertical ? 0 : 2)};
+  order: ${props => (props.shouldDoubleWrap || props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
   ${props => (shouldLabelWrap(props) ? `` : `white-space: nowrap;`)}
@@ -226,6 +227,12 @@ const ValueCard = ({
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
+  const shouldDoubleWrap =
+    content.attributes.length === 1 &&
+    !content.attributes[0].unit &&
+    find(values, value => typeof value === 'string') &&
+    Object.keys(values).length === 1;
+
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
@@ -255,7 +262,7 @@ const ValueCard = ({
             id={id}
             {...others}
           >
-            <ContentWrapper layout={layout}>
+            <ContentWrapper shouldDoubleWrap={shouldDoubleWrap} layout={layout}>
               {dataState && <DataStateRenderer dataState={dataState} size={newSize} id={id} />}
               {!dataState &&
                 attributes.map((attribute, i) => (
@@ -266,7 +273,7 @@ const ValueCard = ({
                   >
                     <AttributeWrapper
                       layout={layout}
-                      isVertical={isVertical}
+                      isVertical={shouldDoubleWrap || isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
                       isMini={isMini}
                       size={newSize}
@@ -274,7 +281,7 @@ const ValueCard = ({
                     >
                       <Attribute
                         attributeCount={attributes.length}
-                        isVertical={isVertical}
+                        isVertical={shouldDoubleWrap || isVertical}
                         layout={layout}
                         isSmall={
                           newSize === CARD_SIZES.SMALL &&
@@ -306,11 +313,12 @@ const ValueCard = ({
                       {isMini && <Spacer />}
                       <AttributeLabel
                         title={attribute.label}
-                        isVertical={isVertical}
+                        isVertical={shouldDoubleWrap || isVertical}
                         layout={layout}
                         isMini={isMini}
                         attributeCount={attributes.length}
                         size={newSize}
+                        shouldDoubleWrap={shouldDoubleWrap}
                       >
                         {attribute.label}
                       </AttributeLabel>
@@ -320,7 +328,7 @@ const ValueCard = ({
                     newSize !== CARD_SIZES.SMALLWIDE ? (
                       <AttributeWrapper
                         layout={layout}
-                        isVertical={isVertical}
+                        isVertical={shouldDoubleWrap || isVertical}
                         isSmall={attribute.secondaryValue !== undefined}
                         isMini={isMini}
                         size={newSize}

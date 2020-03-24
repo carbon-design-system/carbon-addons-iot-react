@@ -72,6 +72,7 @@ const AttributeValue = styled.span`
     props.unit
       ? `white-space: nowrap; text-overflow: ellipsis;`
       : `display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: break-word;`};
+  ${props => !props.hasWords && 'word-break: break-all;'}
   overflow: hidden;
 `;
 
@@ -129,6 +130,11 @@ const ValueRenderer = ({
   } else if (isNil(value)) {
     renderValue = '--';
   }
+
+  const hasWordsCheck = string =>
+    typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
+  const hasWords = hasWordsCheck(renderValue);
+
   return (
     <Attribute
       unit={unit}
@@ -150,6 +156,7 @@ const ValueRenderer = ({
         isMini={isMini}
         value={value}
         unit={unit}
+        hasWords={hasWords}
       >
         {renderValue}
       </AttributeValue>
