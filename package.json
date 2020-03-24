@@ -14,7 +14,7 @@
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build": "yarn build:pre && rollup -c",
+    "build": "cross-env BABEL_ENV='production' yarn build:pre && rollup -c",
     "build:pre": "rimraf lib storybook-static",
     "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
