@@ -1,5 +1,5 @@
 const { BABEL_ENV } = process.env;
-console.log('Here it is', BABEL_ENV);
+
 module.exports = function generateConfig(api) {
   api.cache(true);
   return {
