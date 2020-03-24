@@ -17,6 +17,7 @@ module.exports = function generateConfig(api) {
     ],
     ignore: ['__mocks__'],
     plugins: [
+      'transform-react-remove-prop-types',
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',

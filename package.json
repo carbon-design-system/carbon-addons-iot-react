@@ -148,6 +148,7 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "coveralls": "^3.0.2",
     "cross-env": "^6.0.3",
     "css-loader": "^2.1.0",
