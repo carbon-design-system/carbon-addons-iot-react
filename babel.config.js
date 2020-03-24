@@ -9,6 +9,7 @@ module.exports = function generateConfig(api) {
             browsers: ['last 2 version', 'ie >= 11'],
           },
           useBuiltIns: 'usage',
+          // modules: false,
           corejs: 2,
         },
       ],
@@ -17,6 +18,7 @@ module.exports = function generateConfig(api) {
     ],
     ignore: ['__mocks__'],
     plugins: [
+      ['transform-react-remove-prop-types', { removeImport: true }],
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',
@@ -24,12 +26,7 @@ module.exports = function generateConfig(api) {
       '@babel/plugin-syntax-import-meta',
       '@babel/plugin-proposal-class-properties',
       '@babel/plugin-proposal-json-strings',
-      [
-        '@babel/plugin-proposal-decorators',
-        {
-          legacy: true,
-        },
-      ],
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
       '@babel/plugin-proposal-function-sent',
       '@babel/plugin-proposal-export-namespace-from',
       '@babel/plugin-proposal-numeric-separator',
@@ -37,12 +34,7 @@ module.exports = function generateConfig(api) {
       '@babel/plugin-proposal-export-default-from',
       '@babel/plugin-proposal-logical-assignment-operators',
       '@babel/plugin-proposal-optional-chaining',
-      [
-        '@babel/plugin-proposal-pipeline-operator',
-        {
-          proposal: 'minimal',
-        },
-      ],
+      ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
       '@babel/plugin-proposal-nullish-coalescing-operator',
       '@babel/plugin-proposal-do-expressions',
       'dev-expression',

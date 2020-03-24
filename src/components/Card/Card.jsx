@@ -3,6 +3,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import styled from 'styled-components';
 import SizeMe from 'react-sizeme';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import {
@@ -248,7 +249,7 @@ const Card = props => {
                 style={
                   !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
                 }
-                className={className}
+                className={classnames(`${iotPrefix}--card`, className)}
               >
                 {!hideHeader && (
                   <CardHeader>

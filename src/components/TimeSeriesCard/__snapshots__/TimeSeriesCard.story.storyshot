@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -100,7 +100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -179,7 +179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -334,7 +334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -413,7 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -492,7 +492,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -571,7 +571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -650,7 +650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -729,7 +729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -808,7 +808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -887,7 +887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-Pressure"
       >
         <div
@@ -966,7 +966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1045,7 +1045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1124,7 +1124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1203,7 +1203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1282,7 +1282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1361,7 +1361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1440,7 +1440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1519,7 +1519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1598,7 +1598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1677,7 +1677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="facility-temperature"
       >
         <div
@@ -1756,7 +1756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -1835,7 +1835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -1914,7 +1914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -1993,7 +1993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2072,7 +2072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2151,7 +2151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2230,7 +2230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2309,7 +2309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2388,7 +2388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2467,7 +2467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2546,7 +2546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2625,7 +2625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2704,7 +2704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2783,7 +2783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div
@@ -2920,7 +2920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
         id="facility-temperature"
       >
         <div

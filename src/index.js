@@ -4,7 +4,7 @@ import sizeMe from 'react-sizeme';
 sizeMe.noPlaceholders = true;
 
 // Styles
-export styles from './styles.scss';
+// export styles from './styles.scss';
 
 // Components
 export AddCard from './components/AddCard';

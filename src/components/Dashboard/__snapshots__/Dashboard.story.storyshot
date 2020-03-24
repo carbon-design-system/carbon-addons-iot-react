@@ -61,7 +61,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -242,7 +242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -322,7 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -402,7 +402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 id="section-card"
                 style={
                   Object {
@@ -433,7 +433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -516,7 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -599,7 +599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -705,7 +705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -785,7 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
                 id="GaugeCard"
                 style={
                   Object {
@@ -939,7 +939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -1045,7 +1045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="facility-temperature-timeseries"
                 style={
                   Object {
@@ -1175,7 +1175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="alert-table1"
                 style={
                   Object {
@@ -1679,7 +1679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="facility-multi-timeseries"
                 style={
                   Object {
@@ -1809,7 +1809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="floor map picture"
                 style={
                   Object {
@@ -2225,7 +2225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -2406,7 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -2486,7 +2486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -2566,7 +2566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 id="section-card"
                 style={
                   Object {
@@ -2597,7 +2597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -2680,7 +2680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -2763,7 +2763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -2869,7 +2869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -2949,7 +2949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
                 id="GaugeCard"
                 style={
                   Object {
@@ -3103,7 +3103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -3209,7 +3209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="facility-temperature-timeseries"
                 style={
                   Object {
@@ -3339,7 +3339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="alert-table1"
                 style={
                   Object {
@@ -3843,7 +3843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="facility-multi-timeseries"
                 style={
                   Object {
@@ -3973,7 +3973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="floor map picture"
                 style={
                   Object {
@@ -4421,7 +4421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -4602,7 +4602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -4682,7 +4682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -4762,7 +4762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 id="section-card"
                 style={
                   Object {
@@ -4793,7 +4793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -4876,7 +4876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -4959,7 +4959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -5065,7 +5065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -5145,7 +5145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
                 id="GaugeCard"
                 style={
                   Object {
@@ -5299,7 +5299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -5405,7 +5405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="facility-temperature-timeseries"
                 style={
                   Object {
@@ -5535,7 +5535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="alert-table1"
                 style={
                   Object {
@@ -6039,7 +6039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="facility-multi-timeseries"
                 style={
                   Object {
@@ -6169,7 +6169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="floor map picture"
                 style={
                   Object {
@@ -6585,7 +6585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             }
           >
             <div
-              className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+              className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
               id="expandedcard"
               style={
                 Object {
@@ -6766,7 +6766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="expandedcard"
                 style={
                   Object {
@@ -7023,7 +7023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             }
           >
             <div
-              className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+              className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
               id="expandedcard"
               style={
                 Object {
@@ -7201,7 +7201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="expandedcard"
                 style={
                   Object {
@@ -9032,7 +9032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -9213,7 +9213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -9293,7 +9293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -9373,7 +9373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 id="section-card"
                 style={
                   Object {
@@ -9404,7 +9404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -9487,7 +9487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -9570,7 +9570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -9676,7 +9676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -9756,7 +9756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
                 id="GaugeCard"
                 style={
                   Object {
@@ -9910,7 +9910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -10016,7 +10016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="facility-temperature-timeseries"
                 style={
                   Object {
@@ -10146,7 +10146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="alert-table1"
                 style={
                   Object {
@@ -10648,7 +10648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="facility-multi-timeseries"
                 style={
                   Object {
@@ -10778,7 +10778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="floor map picture"
                 style={
                   Object {
@@ -11202,7 +11202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -11277,7 +11277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -11354,7 +11354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -11431,7 +11431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -11508,7 +11508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -11585,7 +11585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -11664,7 +11664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -11808,7 +11808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -11883,7 +11883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -11960,7 +11960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -12037,7 +12037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -12114,7 +12114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -12191,7 +12191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -12270,7 +12270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -12414,7 +12414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12491,7 +12491,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12571,7 +12571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -12648,7 +12648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -12793,7 +12793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -12870,7 +12870,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -12950,7 +12950,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -13027,7 +13027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -13172,7 +13172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -13275,7 +13275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -13378,7 +13378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -13481,7 +13481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -13649,7 +13649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -13752,7 +13752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -13855,7 +13855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -13958,7 +13958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14126,7 +14126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -14203,7 +14203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -14280,7 +14280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14357,7 +14357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14434,7 +14434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -14576,7 +14576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -14653,7 +14653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -14730,7 +14730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -14807,7 +14807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -14884,7 +14884,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -15026,7 +15026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -15101,7 +15101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -15178,7 +15178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -15255,7 +15255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -15332,7 +15332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -15409,7 +15409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -15488,7 +15488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -15567,7 +15567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,176px)",
@@ -15644,7 +15644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,336px)",
@@ -15724,7 +15724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,336px)",
@@ -15801,7 +15801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,336px)",
@@ -15881,7 +15881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,336px)",
@@ -15984,7 +15984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,496px)",
@@ -16087,7 +16087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,496px)",
@@ -16190,7 +16190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,496px)",
@@ -16293,7 +16293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,496px)",
@@ -16370,7 +16370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,656px)",
@@ -16447,7 +16447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,656px)",
@@ -16524,7 +16524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,656px)",
@@ -16601,7 +16601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,656px)",
@@ -16743,7 +16743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -16818,7 +16818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -16895,7 +16895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -16972,7 +16972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,16px)",
@@ -17049,7 +17049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,176px)",
@@ -17126,7 +17126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,176px)",
@@ -17205,7 +17205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,176px)",
@@ -17284,7 +17284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,176px)",
@@ -17361,7 +17361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,336px)",
@@ -17441,7 +17441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,336px)",
@@ -17518,7 +17518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,336px)",
@@ -17598,7 +17598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,336px)",
@@ -17701,7 +17701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,496px)",
@@ -17804,7 +17804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,496px)",
@@ -17907,7 +17907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,496px)",
@@ -18010,7 +18010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,496px)",
@@ -18087,7 +18087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,656px)",
@@ -18164,7 +18164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,656px)",
@@ -18241,7 +18241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,656px)",
@@ -18318,7 +18318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(964px,656px)",
@@ -18460,7 +18460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -18581,7 +18581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -18700,7 +18700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -18886,7 +18886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19007,7 +19007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19126,7 +19126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -19312,7 +19312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19433,7 +19433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19552,7 +19552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -19738,7 +19738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -19859,7 +19859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -19978,7 +19978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -20164,7 +20164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -20337,7 +20337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20575,7 +20575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -20748,7 +20748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -20986,7 +20986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -21164,7 +21164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -21336,7 +21336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -21651,7 +21651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   style={
                     Object {
                       "MozTransform": "translate(16px,16px)",
@@ -21829,7 +21829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   style={
                     Object {
                       "MozTransform": "translate(332px,16px)",
@@ -22001,7 +22001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   style={
                     Object {
                       "MozTransform": "translate(648px,16px)",
@@ -22376,7 +22376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               }
             >
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 style={
                   Object {
                     "MozTransform": "translate(16px,16px)",
@@ -22557,7 +22557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,16px)",
@@ -22637,7 +22637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,16px)",
@@ -22717,7 +22717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 id="section-card"
                 style={
                   Object {
@@ -22748,7 +22748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(332px,176px)",
@@ -22831,7 +22831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,176px)",
@@ -22914,7 +22914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(964px,176px)",
@@ -23020,7 +23020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(16px,336px)",
@@ -23100,7 +23100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card iot--gauge-card Card__CardWrapper-v5r71h-0 bAafuV"
                 id="GaugeCard"
                 style={
                   Object {
@@ -23254,7 +23254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                 style={
                   Object {
                     "MozTransform": "translate(648px,336px)",
@@ -23360,7 +23360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="facility-temperature-timeseries"
                 style={
                   Object {
@@ -23490,7 +23490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="alert-table1"
                 style={
                   Object {
@@ -23994,7 +23994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 izWJSI"
                 id="facility-multi-timeseries"
                 style={
                   Object {
@@ -24124,7 +24124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
-                className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                 id="floor map picture"
                 style={
                   Object {
@@ -24530,7 +24530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   id="viewDashboards"
                   style={
                     Object {
@@ -24601,7 +24601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   id="connectDevices"
                   style={
                     Object {
@@ -24672,7 +24672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bHPJyP"
                   id="monitorEntities"
                   style={
                     Object {
@@ -24730,7 +24730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   id="trackUsage"
                   style={
                     Object {
@@ -24795,7 +24795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
+                  className="iot--card react-grid-item cssTransforms Card__CardWrapper-v5r71h-0 bAafuV"
                   id="administerUsers"
                   style={
                     Object {
@@ -24860,7 +24860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
                   content={
                     Object {
                       "data": Array [
@@ -25043,7 +25043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   </div>
                 </div>
                 <div
-                  className="Card__CardWrapper-v5r71h-0 bHPJyP"
+                  className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
                   content={
                     Object {
                       "data": Array [

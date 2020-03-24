@@ -1,22 +1,27 @@
 {
   "name": "carbon-addons-iot-react",
-  "main": "lib/index.js",
+  "main": "lib/src/index.js",
+  "module": "es/src/index.js",
+  "files": [
+    "lib/**/*",
+    "es/**/*",
+    "umd/**/*",
+    "scss/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
-  "files": [
-    "lib"
-  ],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build": "yarn build:pre && rollup -c",
-    "build:pre": "rimraf lib storybook-static",
+    "build": "yarn build:pre && yarn build:main",
+    "build:pre": "rimraf lib es umd scss storybook-static",
     "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
+    "build:main": "rollup -c ",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn lint:javascript && yarn lint:stylelint",
@@ -148,6 +153,7 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "coveralls": "^3.0.2",
     "cross-env": "^6.0.3",
     "css-loader": "^2.1.0",
@@ -210,5 +216,6 @@
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
   },
+  "sideEffects": false,
   "version": "0.0.0-development"
 }

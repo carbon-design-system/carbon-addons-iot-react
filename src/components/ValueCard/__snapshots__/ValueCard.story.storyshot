@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 jFCThr"
+        className="iot--card Card__CardWrapper-v5r71h-0 jFCThr"
       >
         <div
           className="iot--card--header"
@@ -223,7 +223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 hUpcuU"
+        className="iot--card Card__CardWrapper-v5r71h-0 hUpcuU"
       >
         <div
           className="iot--card--header"
@@ -365,7 +365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 gmysZp"
+        className="iot--card Card__CardWrapper-v5r71h-0 gmysZp"
       >
         <div
           className="iot--card--header"
@@ -557,7 +557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
   >
     <div>
       <div
-        className="Card__CardWrapper-v5r71h-0 jFCThr"
+        className="iot--card Card__CardWrapper-v5r71h-0 jFCThr"
         style={
           Object {
             "width": "252px",
@@ -771,7 +771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -927,7 +927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -1083,7 +1083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -1158,7 +1158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
       >
         <div
           className="iot--card--header"
@@ -1469,7 +1469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
       >
         <div
           className="iot--card--header"
@@ -1878,7 +1878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -1993,7 +1993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -2149,7 +2149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -2305,7 +2305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -2518,7 +2518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -2674,7 +2674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -2965,7 +2965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -3178,7 +3178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -3293,7 +3293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card Card__CardWrapper-v5r71h-0 bHPJyP"
       >
         <div
           className="iot--card--header"
@@ -3506,7 +3506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -3618,7 +3618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -3730,7 +3730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -3875,7 +3875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4013,7 +4013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4125,7 +4125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4240,7 +4240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4352,7 +4352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4464,7 +4464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4537,7 +4537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4649,7 +4649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4761,7 +4761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -4917,7 +4917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -5055,7 +5055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"
@@ -5211,7 +5211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bAafuV"
+        className="iot--card Card__CardWrapper-v5r71h-0 bAafuV"
       >
         <div
           className="iot--card--header"

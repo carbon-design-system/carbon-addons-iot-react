@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="image-hotspots"
       >
         <div
@@ -373,7 +373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="image-hotspots"
       >
         <div
@@ -737,7 +737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="image-hotspots"
       >
         <div
@@ -845,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="image-hotspots"
       >
         <div
@@ -953,7 +953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="image-hotspots"
       >
         <div
@@ -1187,7 +1187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card Card__CardWrapper-v5r71h-0 izWJSI"
         id="image-hotspots"
       >
         <div
