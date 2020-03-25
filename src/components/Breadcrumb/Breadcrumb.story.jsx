@@ -23,12 +23,13 @@ const props = () => ({
 
 const PolyfillWarning = () => (
   <p style={{ marginTop: '5rem' }}>
-    Note: This prop utilizes a{' '}
+    Note: `hasOverflow` utilizes a{' '}
     <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">ResizeObserver</a> to
-    detect changes to the container width. A{' '}
-    <a href="https://www.npmjs.com/package/resize-observer-polyfill">polyfill</a> will likely need
-    to be added to your application due to{' '}
-    <a href="https://caniuse.com/#feat=resizeobserver">current browser support</a>.
+    detect changes to the container width. This library does not provide a{' '}
+    <a href="https://www.npmjs.com/package/resize-observer-polyfill">polyfill</a>, it will likely
+    need to be added to your application due to{' '}
+    <a href="https://caniuse.com/#feat=resizeobserver">current browser support</a>. This story will
+    not demonstrate the `hasOverflow` functionality in browsers without support for ResizeObserver.
   </p>
 );
 
@@ -83,9 +84,8 @@ storiesOf('Watson IoT/Breadcrumb', module)
     }
   )
   .add(
-    'with useResizeObserver',
+    'hasOverflow',
     () => {
-      // const containerWidth = number('container width', 584);
       return (
         <>
           <div style={{ width: '50vw', border: '1px solid', padding: '1rem' }}>
@@ -125,7 +125,7 @@ storiesOf('Watson IoT/Breadcrumb', module)
     {
       info: {
         text: `
-          Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'useResizeObserver'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
+          Breadcrumbs can be automatically collapsed into an overflow menu by toggling 'hasOverflow'. Note, this requires the containing application to provide a polyfill for ResizeObserver!
         `,
       },
     }
