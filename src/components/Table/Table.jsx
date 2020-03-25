@@ -116,7 +116,6 @@ const propTypes = {
       ),
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
-      rowActionColumn: PropTypes.shape({ minWidth: PropTypes.string }),
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -203,7 +202,6 @@ export const defaultProps = baseProps => ({
       isSelectAllSelected: false,
       selectedIds: [],
       rowActions: [],
-      rowActionColumn: { minWidth: '40px' },
       sort: {},
       ordering: baseProps.columns && baseProps.columns.map(i => ({ columnId: i.id })),
       loadingState: {

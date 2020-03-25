@@ -422,9 +422,6 @@ Map {
             "rowCount": 5,
           },
           "ordering": undefined,
-          "rowActionColumn": Object {
-            "minWidth": "40px",
-          },
           "rowActions": Array [],
           "selectedIds": Array [],
           "sort": Object {},
@@ -1063,16 +1060,6 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
-                  },
-                  "rowActionColumn": Object {
-                    "args": Array [
-                      Object {
-                        "minWidth": Object {
-                          "type": "string",
-                        },
-                      },
-                    ],
-                    "type": "shape",
                   },
                   "rowActions": Object {
                     "args": Array [
