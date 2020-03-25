@@ -136,8 +136,15 @@ export const TableCardPropTypes = {
         severity: PropTypes.oneOf([1, 2, 3]),
         /** optional overrides for color and icon */
         color: PropTypes.string,
+        /** Custom threshold icon name */
         icon: PropTypes.string,
+        /** Custom threshold label text */
         label: PropTypes.string,
+        /** Optionally shows threshold severity label text. Shows by default */
+        showSeverityLabel: PropTypes.bool,
+        /** Optionally changes threshold severity label text */
+        severityLabel: PropTypes.string,
+        /** Shows column when there is no data */
         showOnContent: PropTypes.bool,
       })
     ),
