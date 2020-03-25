@@ -7,6 +7,7 @@ import { Breadcrumb as CarbonBreadcrumb } from 'carbon-components-react';
 import warning from 'warning';
 
 import { OverflowMenuItem, OverflowMenu } from '../../index';
+import { browserSupports } from '../../utils/componentUtilityFunctions';
 
 const propTypes = {
   /**
@@ -52,6 +53,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   const [afterOverflowItems, setAfterOverflowItems] = useState(childrenItems.slice(1));
   const [prevChildren, setPrevChildren] = useState([]);
 
+  const browserSupportsResizeObserver = browserSupports('ResizeObserver');
   useResizeObserver({
     useDefaults: false,
     ref: breadcrumbRef,
@@ -59,7 +61,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
 
   if (__DEV__) {
     warning(
-      typeof ResizeObserver !== 'undefined' && hasOverflow,
+      browserSupportsResizeObserver && hasOverflow,
       'You have set hasOverflow to true, but the current browser does not support ResizeObserver. You will need to include a ResizeObserver polyfill for hasOverflow to function properly.'
     );
   }
@@ -109,7 +111,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
       className={classnames('breadcrumb--container', {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
-      ref={typeof ResizeObserver !== 'undefined' ? breadcrumbRef : null}
+      ref={browserSupportsResizeObserver ? breadcrumbRef : null}
       data-testid="overflow"
     >
       {hasOverflow ? (
