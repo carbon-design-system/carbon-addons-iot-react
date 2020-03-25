@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { OverflowMenuHorizontal20 } from '@carbon/icons-react';
 import { Breadcrumb as CarbonBreadcrumb } from 'carbon-components-react';
+import warning from 'warning';
 
 import { OverflowMenuItem, OverflowMenu } from '../../index';
+import { browserSupports } from '../../utils/componentUtilityFunctions';
 
 const propTypes = {
   /**
@@ -46,16 +48,27 @@ const defaultProps = {
 const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   const childrenItems = Children.map(children, child => child);
   const breakingWidth = useRef([]);
-  const { ref: breadcrumbRef } = useResizeObserver({
-    useDefaults: false,
-  });
+  const breadcrumbRef = useRef(null);
   const [overflowItems, setOverflowItems] = useState([]);
   const [afterOverflowItems, setAfterOverflowItems] = useState(childrenItems.slice(1));
   const [prevChildren, setPrevChildren] = useState([]);
 
+  const browserSupportsResizeObserver = browserSupports('ResizeObserver');
+  useResizeObserver({
+    useDefaults: false,
+    ref: breadcrumbRef,
+  });
+
+  if (__DEV__) {
+    warning(
+      browserSupportsResizeObserver && hasOverflow,
+      'You have set hasOverflow to true, but the current browser does not support ResizeObserver. You will need to include a ResizeObserver polyfill for hasOverflow to function properly.'
+    );
+  }
+
   useEffect(
     () => {
-      if (hasOverflow) {
+      if (hasOverflow && breadcrumbRef.current) {
         setOverflowItems([]);
         setAfterOverflowItems(childrenItems.slice(1));
         setPrevChildren(children);
@@ -66,7 +79,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   /** update breadcrumbs  */
   useEffect(
     () => {
-      if (hasOverflow) {
+      if (hasOverflow && breadcrumbRef.current) {
         // The visible list is overflowing
         if (breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth) {
           // Record the width of the list
@@ -98,7 +111,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
       className={classnames('breadcrumb--container', {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
       })}
-      ref={breadcrumbRef}
+      ref={browserSupportsResizeObserver ? breadcrumbRef : null}
       data-testid="overflow"
     >
       {hasOverflow ? (
