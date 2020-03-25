@@ -67,22 +67,6 @@ describe('TableHead', () => {
     expect(lastTableHeader.find('.bx--table-header-label').getDOMNode().innerHTML).toEqual('');
   });
 
-  test('row action column header can get an application defined min-width', () => {
-    const myProps = {
-      ...commonTableHeadProps,
-      options: {
-        hasRowActions: true,
-      },
-      tableState: { ...commonTableHeadProps.tableState, rowActionColumn: { minWidth: '200px' } },
-    };
-    const wrapper = mount(<TableHead {...myProps} />);
-    const rowActionCol = wrapper.find(
-      `TableHeader.${iotPrefix}--table-header-row-action-column th`
-    );
-
-    expect(rowActionCol.props().style['--row-action-min-width']).toEqual('200px');
-  });
-
   test('make sure data-column is set for width', () => {
     const myProps = { ...commonTableHeadProps };
     const wrapper = mount(<TableHead {...myProps} />);

@@ -62,6 +62,6 @@
   }
 
   .#{$iot-prefix}--table-header-row-action-column {
-    min-width: var(--row-action-min-width);
+    min-width: 40px;
   }
 }

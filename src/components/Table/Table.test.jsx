@@ -362,47 +362,4 @@ describe('Table', () => {
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
   });
-
-  test('expect row action column to get a min-width', () => {
-    const wrapper = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={{
-          hasSearch: true,
-          hasRowActions: true,
-        }}
-        view={{
-          table: {},
-        }}
-      />
-    );
-    const rowActionColWithDefaultWidth = wrapper.find(
-      `TableHeader.${iotPrefix}--table-header-row-action-column th`
-    );
-    expect(rowActionColWithDefaultWidth.props().style['--row-action-min-width']).toEqual('40px');
-
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={{
-          hasSearch: true,
-          hasRowActions: true,
-        }}
-        view={{
-          table: {
-            rowActionColumn: { minWidth: '200px' },
-          },
-        }}
-      />
-    );
-
-    const rowActionColCustomWidth = wrapper2.find(
-      `TableHeader.${iotPrefix}--table-header-row-action-column th`
-    );
-    expect(rowActionColCustomWidth.props().style['--row-action-min-width']).toEqual('200px');
-  });
 });
