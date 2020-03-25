@@ -9537,7 +9537,13 @@ Map {
                         ],
                         "type": "oneOf",
                       },
+                      "severityLabel": Object {
+                        "type": "string",
+                      },
                       "showOnContent": Object {
+                        "type": "bool",
+                      },
+                      "showSeverityLabel": Object {
                         "type": "bool",
                       },
                       "value": Object {
