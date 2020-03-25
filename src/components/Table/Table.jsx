@@ -76,7 +76,7 @@ const propTypes = {
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
       })
     ),
     toolbar: PropTypes.shape({
@@ -339,6 +339,7 @@ const Table = props => {
       options.hasColumnSelection ||
       actions.toolbar.onDownloadCSV ||
       secondaryTitle ||
+      view.toolbar.customToolbarContent ||
       tooltip ? (
         <TableToolbar
           tableId={id}

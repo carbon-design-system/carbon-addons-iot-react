@@ -280,17 +280,17 @@ Map {
               "args": Array [
                 Object {
                   "buttonLabel": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                   "buttonLabelWithFilters": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                   "message": Object {
                     "isRequired": true,
-                    "type": "string",
+                    "type": "node",
                   },
                   "messageWithFilters": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                 },
               ],
@@ -549,8 +549,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -919,8 +932,21 @@ Map {
                         "type": "string",
                       },
                       "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                          ],
+                        ],
                         "isRequired": true,
-                        "type": "string",
+                        "type": "oneOfType",
                       },
                     },
                   ],
@@ -966,17 +992,17 @@ Map {
                           "args": Array [
                             Object {
                               "buttonLabel": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                               "buttonLabelWithFilters": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                               "message": Object {
                                 "isRequired": true,
-                                "type": "string",
+                                "type": "node",
                               },
                               "messageWithFilters": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                             },
                           ],
@@ -1286,8 +1312,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -1510,8 +1549,21 @@ Map {
                         "type": "string",
                       },
                       "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                            Object {
+                              "type": "bool",
+                            },
+                          ],
+                        ],
                         "isRequired": true,
-                        "type": "string",
+                        "type": "oneOfType",
                       },
                     },
                   ],
@@ -1652,8 +1704,21 @@ Map {
                             "args": Array [
                               Object {
                                 "id": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                    ],
+                                  ],
                                   "isRequired": true,
-                                  "type": "string",
+                                  "type": "oneOfType",
                                 },
                                 "text": Object {
                                   "isRequired": true,
@@ -3959,6 +4024,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -3995,6 +4078,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -5732,6 +5818,11 @@ Map {
       "isLazyLoading": false,
       "isLoading": false,
       "layout": "HORIZONTAL",
+      "onMouseDown": undefined,
+      "onMouseUp": undefined,
+      "onScroll": undefined,
+      "onTouchEnd": undefined,
+      "onTouchStart": undefined,
       "rowHeight": Object {
         "lg": 144,
         "max": 144,
@@ -5742,6 +5833,7 @@ Map {
       },
       "showOverflow": false,
       "size": "MEDIUM",
+      "testID": "Card",
       "timeRange": undefined,
       "title": undefined,
       "toolbar": undefined,
@@ -6366,6 +6458,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -6407,6 +6517,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -7200,6 +7313,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -7241,6 +7372,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -7940,6 +8074,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -7981,6 +8133,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -8658,6 +8813,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -8699,6 +8872,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -9252,7 +9428,6 @@ Map {
                         "type": "string",
                       },
                       "label": Object {
-                        "isRequired": true,
                         "type": "string",
                       },
                       "priority": Object {
@@ -9276,7 +9451,7 @@ Map {
               "type": "arrayOf",
             },
             "emptyMessage": Object {
-              "type": "string",
+              "type": "node",
             },
             "expandedRows": Object {
               "args": Array [
@@ -9313,6 +9488,9 @@ Map {
                 Object {
                   "args": Array [
                     Object {
+                      "color": Object {
+                        "type": "string",
+                      },
                       "comparison": Object {
                         "args": Array [
                           Array [
@@ -9330,6 +9508,9 @@ Map {
                         "isRequired": true,
                         "type": "string",
                       },
+                      "icon": Object {
+                        "type": "string",
+                      },
                       "label": Object {
                         "type": "string",
                       },
@@ -9343,7 +9524,13 @@ Map {
                         ],
                         "type": "oneOf",
                       },
+                      "severityLabel": Object {
+                        "type": "string",
+                      },
                       "showOnContent": Object {
+                        "type": "bool",
+                      },
+                      "showSeverityLabel": Object {
                         "type": "bool",
                       },
                       "value": Object {
@@ -9482,6 +9669,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -9512,6 +9717,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -10375,6 +10583,24 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -10416,6 +10642,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -11164,6 +11393,24 @@ Map {
         "isRequired": true,
         "type": "func",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
       "rowHeight": Object {
         "args": Array [
           Object {
@@ -11205,6 +11452,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [

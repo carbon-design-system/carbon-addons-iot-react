@@ -2536,6 +2536,7 @@ export const tableData = [
       count: 1.2039201932,
       hour: 1563877570000,
       long_description: 'long description for a given event payload',
+      pressure: 0,
     },
   },
   {
@@ -2545,6 +2546,7 @@ export const tableData = [
       count: 1.10329291,
       hour: 1563873970000,
       long_description: 'long description for a given event payload',
+      pressure: 2,
     },
   },
   {
@@ -2565,6 +2567,7 @@ export const tableData = [
       hour: 1563877570000,
       other_description: 'other description for a given event payload',
       long_description: 'long description for a given event payload',
+      pressure: 0,
     },
   },
   {
@@ -2583,6 +2586,7 @@ export const tableData = [
       alert: 'AHI001 proccess need to optimize.',
       count: 30,
       hour: 1563874210000,
+      pressure: 68,
     },
   },
   {
@@ -2591,6 +2595,7 @@ export const tableData = [
       alert: 'AHI001 proccess need to optimize',
       count: 9,
       hour: 1563870610000,
+      pressure: 0,
     },
   },
   {
@@ -2599,6 +2604,7 @@ export const tableData = [
       alert: 'AHI001 proccess need to optimize adjust Y variables',
       count: 7,
       hour: 1563870610000,
+      pressure: 0,
     },
   },
   {
@@ -2607,6 +2613,7 @@ export const tableData = [
       alert: 'AHI001 proccess need to optimize adjust Y variables',
       count: 0,
       hour: 1563873970000,
+      pressure: 0,
     },
   },
   {
@@ -2615,6 +2622,7 @@ export const tableData = [
       alert: 'AHI010 proccess need to optimize adjust Y variables',
       count: 2,
       hour: 1563873970000,
+      pressure: 0,
     },
   },
   {
@@ -2623,6 +2631,7 @@ export const tableData = [
       alert: 'AHI010 proccess need to optimize adjust Y variables',
       count: 5,
       hour: 1563877570000,
+      pressure: 1,
     },
   },
 ];

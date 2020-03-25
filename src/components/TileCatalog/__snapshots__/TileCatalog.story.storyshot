@@ -13,16 +13,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
         className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
       >
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -34,7 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -46,7 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -70,7 +70,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -82,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -94,7 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -118,7 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -130,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -186,10 +186,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
         className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
@@ -928,13 +928,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
       }
     >
       <div
-        className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+        className="iot--tile-catalog"
       >
         <div
-          className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+          className="iot--tile-catalog--header"
         />
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           In error state
         </div>
@@ -980,10 +980,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
         className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
@@ -1715,16 +1715,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
         className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
       >
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1736,7 +1736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1748,7 +1748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1760,7 +1760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1772,7 +1772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1784,7 +1784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1796,7 +1796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1808,7 +1808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1820,7 +1820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1832,7 +1832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1888,10 +1888,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
         className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
@@ -2581,10 +2581,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       >
         <div
           className="bx--toolbar-action bx--toolbar-search-container-expandable"
