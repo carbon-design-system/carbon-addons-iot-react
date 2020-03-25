@@ -13,6 +13,81 @@ const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
 const extensions = ['.mjs', '.js', '.jsx', '.json'];
+const globals = {
+  classnames: 'classNames',
+  'prop-types': 'PropTypes',
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'carbon-icons': 'CarbonIcons',
+  '@carbon/icons-react': 'CarbonIconsReact',
+  'carbon-components': 'CarbonComponents',
+  'carbon-components-react': 'CarbonComponentsReact',
+  'styled-components': 'styled',
+  d3: 'd3',
+};
+const external = [
+  'react',
+  'react-dom',
+  'styled-components',
+  'prop-types',
+  'carbon-components-react',
+  'carbon-icons',
+  '@carbon/icons',
+  '@carbon/icons-react',
+  'carbon-components',
+  'd3',
+];
+const plugins = [
+  resolve({ browser: true, extensions }),
+
+  commonjs({
+    namedExports: {
+      'react-js': ['isValidElementType'],
+      'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
+        'Header',
+        'HeaderName',
+        'HeaderMenu',
+        'HeaderMenuButton',
+        'HeaderGlobalBar',
+        'HeaderGlobalAction',
+        'SkipToContent',
+        'HeaderMenuItem',
+        'HeaderNavigation',
+        'HeaderPanel',
+        'SideNav',
+        'SideNavItems',
+        'SideNavLink',
+        'SideNavMenu',
+        'SideNavMenuItem',
+        'SideNavFooter',
+      ],
+    },
+
+    include: 'node_modules/**',
+  }),
+  babel({
+    extensions,
+    exclude: 'node_modules/**',
+  }),
+  replace({
+    'process.env.NODE_ENV': JSON.stringify(env),
+  }),
+  json({
+    // All JSON files will be parsed by default,
+    // but you can also specifically include/exclude files
+    exclude: ['node_modules'],
+    // for tree-shaking, properties will be declared as
+    // variables, using either `var` or `const`
+    preferConst: true, // Default: false
+    // specify indentation for the generated default export —
+    // defaults to '\t'
+    indent: '  ',
+    // ignores indent and generates the smallest code
+    compact: true, // Default: false
+    // generate a named export for every property of the JSON object
+    namedExports: true, // Default: true
+  }),
+];
 
 export default [
   // CommonJS
@@ -25,49 +100,56 @@ export default [
         name: 'CarbonAddonsIoTReact',
         format: 'cjs',
         globals: {
-          classnames: 'classNames',
-          'prop-types': 'PropTypes',
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'carbon-icons': 'CarbonIcons',
-          '@carbon/icons-react': 'CarbonIconsReact',
-          'carbon-components': 'CarbonComponents',
-          'carbon-components-react': 'CarbonComponentsReact',
-          'styled-components': 'styled',
-          d3: 'd3',
+          ...globals,
         },
       },
+    ],
+    external,
+    plugins: [...plugins, ...prodSettings],
+  },
+  // ESM
+  {
+    input: 'src/index.js',
+    preserveModules: true,
+    output: [
       {
         dir: 'es',
         format: 'esm',
         globals: {
-          classnames: 'classNames',
-          'prop-types': 'PropTypes',
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'carbon-icons': 'CarbonIcons',
-          '@carbon/icons-react': 'CarbonIconsReact',
-          'carbon-components': 'CarbonComponents',
-          'carbon-components-react': 'CarbonComponentsReact',
-          'styled-components': 'styled',
-          d3: 'd3',
+          ...globals,
         },
       },
     ],
-    external: [
-      'react',
-      'react-dom',
-      'styled-components',
-      'prop-types',
-      'carbon-components-react',
-      'carbon-icons',
-      '@carbon/icons',
-      '@carbon/icons-react',
-      'carbon-components',
-      'd3',
+    external,
+    plugins: [...plugins, ...prodSettings],
+  },
+  // UMD
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: 'umd/index.umd.js',
+        name: 'CarbonAddonsIoTReact',
+        format: 'umd',
+        globals: {
+          ...globals,
+        },
+      },
+    ],
+    external,
+    plugins: [...plugins, ...prodSettings],
+  },
+
+  // styles
+  {
+    input: 'src/styles.scss',
+    output: [
+      {
+        dir: 'tmp',
+        format: 'esm',
+      },
     ],
     plugins: [
-      resolve({ browser: true, extensions }),
       postcss({
         extract: 'lib/css/carbon-addons-iot-react.css',
         sourceMap: true,
@@ -91,156 +173,22 @@ export default [
             src: ['src/components/**/*.scss', '!src/components/**/*.story.scss'],
             dest: ['lib/scss', 'scss'],
           },
+          // react-resizable
+          {
+            src: [
+              'node_modules/react-resizable/css/**/*.css',
+              'node_modules/react-grid-layout/css/**/*.css',
+            ],
+            dest: ['es/node_modules', 'lib/node_modules'],
+          },
+          // compiled css
+          {
+            src: ['lib/css/**/*.css'],
+            dest: ['css', 'umd'],
+          },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
       }),
-      commonjs({
-        namedExports: {
-          'react-js': ['isValidElementType'],
-          'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
-            'Header',
-            'HeaderName',
-            'HeaderMenu',
-            'HeaderMenuButton',
-            'HeaderGlobalBar',
-            'HeaderGlobalAction',
-            'SkipToContent',
-            'HeaderMenuItem',
-            'HeaderNavigation',
-            'HeaderPanel',
-            'SideNav',
-            'SideNavItems',
-            'SideNavLink',
-            'SideNavMenu',
-            'SideNavMenuItem',
-            'SideNavFooter',
-          ],
-        },
-
-        include: 'node_modules/**',
-      }),
-      babel({
-        extensions,
-        exclude: 'node_modules/**',
-      }),
-      replace({
-        'process.env.NODE_ENV': JSON.stringify(env),
-      }),
-      json({
-        // All JSON files will be parsed by default,
-        // but you can also specifically include/exclude files
-        exclude: ['node_modules'],
-
-        // for tree-shaking, properties will be declared as
-        // variables, using either `var` or `const`
-        preferConst: true, // Default: false
-
-        // specify indentation for the generated default export —
-        // defaults to '\t'
-        indent: '  ',
-
-        // ignores indent and generates the smallest code
-        compact: true, // Default: false
-
-        // generate a named export for every property of the JSON object
-        namedExports: true, // Default: true
-      }),
-      ...prodSettings,
-    ],
-  },
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        file: 'umd/index.umd.js',
-        name: 'CarbonAddonsIoTReact',
-        format: 'umd',
-        globals: {
-          classnames: 'classNames',
-          'prop-types': 'PropTypes',
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'carbon-icons': 'CarbonIcons',
-          '@carbon/icons-react': 'CarbonIconsReact',
-          'carbon-components': 'CarbonComponents',
-          'carbon-components-react': 'CarbonComponentsReact',
-          'styled-components': 'styled',
-          d3: 'd3',
-        },
-      },
-    ],
-    external: [
-      'react',
-      'react-dom',
-      'styled-components',
-      'prop-types',
-      'carbon-components-react',
-      'carbon-icons',
-      '@carbon/icons',
-      '@carbon/icons-react',
-      'carbon-components',
-      'd3',
-    ],
-    plugins: [
-      resolve({ browser: true, extensions }),
-      postcss({
-        extract: 'umd/carbon-addons-iot-react.css',
-        sourceMap: true,
-        use: ['sass'],
-        plugins: [autoprefixer],
-      }),
-      commonjs({
-        namedExports: {
-          'react-js': ['isValidElementType'],
-          'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
-            'Header',
-            'HeaderName',
-            'HeaderMenu',
-            'HeaderMenuButton',
-            'HeaderGlobalBar',
-            'HeaderGlobalAction',
-            'SkipToContent',
-            'HeaderMenuItem',
-            'HeaderNavigation',
-            'HeaderPanel',
-            'SideNav',
-            'SideNavItems',
-            'SideNavLink',
-            'SideNavMenu',
-            'SideNavMenuItem',
-            'SideNavFooter',
-          ],
-        },
-
-        include: 'node_modules/**',
-      }),
-      babel({
-        extensions,
-        exclude: 'node_modules/**',
-      }),
-      replace({
-        'process.env.NODE_ENV': JSON.stringify(env),
-      }),
-      json({
-        // All JSON files will be parsed by default,
-        // but you can also specifically include/exclude files
-        exclude: ['node_modules'],
-
-        // for tree-shaking, properties will be declared as
-        // variables, using either `var` or `const`
-        preferConst: true, // Default: false
-
-        // specify indentation for the generated default export —
-        // defaults to '\t'
-        indent: '  ',
-
-        // ignores indent and generates the smallest code
-        compact: true, // Default: false
-
-        // generate a named export for every property of the JSON object
-        namedExports: true, // Default: true
-      }),
-      ...prodSettings,
     ],
   },
 ];

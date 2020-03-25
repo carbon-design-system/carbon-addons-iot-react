@@ -6,6 +6,8 @@ lib
 es
 umd
 scss
+css
+tmp
 storybook-static
 
 # Dependency directory

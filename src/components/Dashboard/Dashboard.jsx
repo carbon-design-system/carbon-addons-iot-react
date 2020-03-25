@@ -1,7 +1,5 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import 'react-grid-layout/css/styles.css';
-import 'react-resizable/css/styles.css';
 import omit from 'lodash/omit';
 
 import DashboardHeader from './DashboardHeader';

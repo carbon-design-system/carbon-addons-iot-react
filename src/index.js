@@ -3,9 +3,6 @@ import sizeMe from 'react-sizeme';
 
 sizeMe.noPlaceholders = true;
 
-// Styles
-export styles from './styles.scss';
-
 // Components
 export AddCard from './components/AddCard';
 export { AccordionItem } from './components/Accordion';

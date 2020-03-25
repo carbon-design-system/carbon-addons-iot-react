@@ -11,15 +11,17 @@
     "lib/**/*",
     "es/**/*",
     "umd/**/*",
-    "scss/**/*"
+    "scss/**/*",
+    "css/**/*"
   ],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build": "cross-env BABEL_ENV='production' yarn build:pre && rollup -c",
-    "build:pre": "rimraf lib es umd scss storybook-static",
+    "build": "cross-env BABEL_ENV='production' yarn build:pre && rollup -c && yarn build:post",
+    "build:pre": "rimraf lib es umd scss css tmp storybook-static",
+    "build:post": "rimraf tmp",
     "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
