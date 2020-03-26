@@ -35,23 +35,14 @@ const DataStateRenderer = ({ dataState, size, id }) => {
 
   const withTooltip = (element, triggerId) => {
     return (
-      <div style={{ position: 'relative' }} data-floating-menu-container>
-        <Tooltip
-          showIcon={false}
-          triggerText={element}
-          triggerId={triggerId}
-          tooltipId={`${triggerId}-tooltip`}
-          menuOffset={menuBody => {
-            const container = menuBody.closest('[data-floating-menu-container]');
-            return {
-              top: -container.getBoundingClientRect().y - window.pageYOffset + 7,
-              left: -container.getBoundingClientRect().x - window.pageXOffset,
-            };
-          }}
-        >
-          <TooltipContent tooltipContent={dataState} />
-        </Tooltip>
-      </div>
+      <Tooltip
+        showIcon={false}
+        triggerText={element}
+        triggerId={triggerId}
+        tooltipId={`${triggerId}-tooltip`}
+      >
+        <TooltipContent tooltipContent={dataState} />
+      </Tooltip>
     );
   };
 

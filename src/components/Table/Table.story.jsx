@@ -343,7 +343,7 @@ export const initialState = {
             id: 'drilldown',
             renderIcon: Arrow,
             iconDescription: 'Drill in',
-            labelText: 'Drill in',
+            labelText: 'Drill in to find out more after observing',
           }
         : null,
       {

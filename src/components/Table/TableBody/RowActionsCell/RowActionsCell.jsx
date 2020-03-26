@@ -167,83 +167,85 @@ class RowActionsCell extends React.Component {
           isRowExpanded={isRowExpanded}
           className={`${iotPrefix}--row-actions-container`}
         >
-          {rowActionsError ? (
-            <RowActionsError
-              actionFailedText={actionFailedText}
-              learnMoreText={learnMoreText}
-              dismissText={dismissText}
-              rowActionsError={rowActionsError}
-              onClearError={onClearError}
-            />
-          ) : isRowActionRunning ? (
-            <Fragment>
-              <Loading small withOverlay={false} />
-              {inProgressText}
-            </Fragment>
-          ) : (
-            <Fragment>
-              {actions
-                .filter(action => !action.isOverflow)
-                .map(({ id: actionId, labelText, ...others }) => (
-                  <Button
-                    {...others}
+          <div className={`${iotPrefix}--row-actions-container__background`}>
+            {rowActionsError ? (
+              <RowActionsError
+                actionFailedText={actionFailedText}
+                learnMoreText={learnMoreText}
+                dismissText={dismissText}
+                rowActionsError={rowActionsError}
+                onClearError={onClearError}
+              />
+            ) : isRowActionRunning ? (
+              <Fragment>
+                <Loading small withOverlay={false} />
+                {inProgressText}
+              </Fragment>
+            ) : (
+              <Fragment>
+                {actions
+                  .filter(action => !action.isOverflow)
+                  .map(({ id: actionId, labelText, ...others }) => (
+                    <Button
+                      {...others}
+                      iconDescription={overflowMenuAria}
+                      key={`${tableId}-${id}-row-actions-button-${actionId}`}
+                      data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
+                      kind="ghost"
+                      className={classnames({
+                        [`${iotPrefix}--row-actions-cell-btn--icononly`]: !labelText,
+                      })}
+                      onClick={e => onClick(e, id, actionId, onApplyRowAction)}
+                    >
+                      {labelText}
+                    </Button>
+                  ))}
+                {hasOverflow ? (
+                  <StyledOverflowMenu
+                    id={`${tableId}-${id}-row-actions-cell-overflow`}
+                    data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
+                    flipped
+                    ariaLabel={overflowMenuAria}
+                    onClick={event => event.stopPropagation()}
+                    isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
-                    key={`${tableId}-${id}-row-actions-button-${actionId}`}
-                    data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
-                    kind="ghost"
-                    className={classnames({
-                      [`${iotPrefix}--row-actions-cell-btn--icononly`]: !labelText,
-                    })}
-                    onClick={e => onClick(e, id, actionId, onApplyRowAction)}
+                    isOpen={isOpen}
+                    onOpen={this.handleOpen}
+                    onClose={this.handleClose}
                   >
-                    {labelText}
-                  </Button>
-                ))}
-              {hasOverflow ? (
-                <StyledOverflowMenu
-                  id={`${tableId}-${id}-row-actions-cell-overflow`}
-                  data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                  flipped
-                  ariaLabel={overflowMenuAria}
-                  onClick={event => event.stopPropagation()}
-                  isRowExpanded={isRowExpanded}
-                  iconDescription={overflowMenuAria}
-                  isOpen={isOpen}
-                  onOpen={this.handleOpen}
-                  onClose={this.handleClose}
-                >
-                  {actions
-                    .filter(action => action.isOverflow)
-                    .map(action => (
-                      <OverflowMenuItem
-                        key={`${id}-row-actions-button-${action.id}`}
-                        onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                        requireTitle
-                        itemText={
-                          action.renderIcon ? (
-                            <OverflowMenuContent>
-                              {typeof action.renderIcon === 'string' ? (
-                                <StyledIcon
-                                  icon={action.renderIcon}
-                                  description={action.labelText}
-                                  iconTitle={action.labelText}
-                                />
-                              ) : (
-                                <action.renderIcon />
-                              )}
-                              {action.labelText}
-                            </OverflowMenuContent>
-                          ) : (
-                            action.labelText
-                          )
-                        }
-                        disabled={action.disabled}
-                      />
-                    ))}
-                </StyledOverflowMenu>
-              ) : null}
-            </Fragment>
-          )}
+                    {actions
+                      .filter(action => action.isOverflow)
+                      .map(action => (
+                        <OverflowMenuItem
+                          key={`${id}-row-actions-button-${action.id}`}
+                          onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                          requireTitle
+                          itemText={
+                            action.renderIcon ? (
+                              <OverflowMenuContent>
+                                {typeof action.renderIcon === 'string' ? (
+                                  <StyledIcon
+                                    icon={action.renderIcon}
+                                    description={action.labelText}
+                                    iconTitle={action.labelText}
+                                  />
+                                ) : (
+                                  <action.renderIcon />
+                                )}
+                                {action.labelText}
+                              </OverflowMenuContent>
+                            ) : (
+                              action.labelText
+                            )
+                          }
+                          disabled={action.disabled}
+                        />
+                      ))}
+                  </StyledOverflowMenu>
+                ) : null}
+              </Fragment>
+            )}
+          </div>
         </RowActionsContainer>
       </StyledTableCell>
     ) : null;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 
@@ -11,43 +11,6 @@ import { tableColumns, tableData, actions1, actions2 } from '../../utils/sample'
 import TableCard from './TableCard';
 
 storiesOf('Watson IoT/TableCard', module)
-  .add('size - large', () => {
-    const size = CARD_SIZES.LARGE;
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TableCard
-          title={text('title', 'Open Alerts')}
-          id="table-list"
-          tooltip={text('Tooltip text', "Here's a Tooltip")}
-          content={{
-            columns: tableColumns,
-            sort: 'DESC',
-          }}
-          values={tableData}
-          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
-        />
-      </div>
-    );
-  })
-  .add('size - large-wide with tooltip', () => {
-    const size = CARD_SIZES.LARGEWIDE;
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TableCard
-          title={text('title', 'Open Alerts')}
-          id="table-list"
-          tooltip={text('Tooltip text', "X-Large Card's Tooltip")}
-          content={{
-            columns: tableColumns,
-          }}
-          values={tableData}
-          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
-        />
-      </div>
-    );
-  })
   .add('table with multiple actions', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
@@ -109,25 +72,35 @@ storiesOf('Watson IoT/TableCard', module)
         severity: 1,
         icon: 'bee',
         color: 'black',
-        label: 'Pressure Sev',
-      },
-      {
-        dataSourceId: 'count',
-        comparison: '<',
-        value: 5,
-        severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+        label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+        showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+        severityLabel: text('Custom Pressure Critical Label', ''),
       },
       {
         dataSourceId: 'count',
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+        label: text('Custom Count Severity Header', ''),
+        showSeverityLabel: boolean('Show Count Threshold Labels', true),
+        severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
       },
       {
         dataSourceId: 'count',
         comparison: '=',
         value: 7,
         severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+        showSeverityLabel: boolean('Show Count Threshold Labels', true),
+        severityLabel: text('Custom Count Moderate Label', ''),
+      },
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        label: 'Custom Pressure Severity Header',
+        showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+        severityLabel: text('Custom Pressure Critical Label', ''),
       },
     ];
 
@@ -191,26 +164,34 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '<',
           value: 5,
           severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+          label: text('Custom Count Severity Header', ''),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Low Label', ''),
         },
         {
           dataSourceId: 'count',
           comparison: '>=',
           value: 10,
           severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-          label: 'Count Sev',
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
         },
         {
           dataSourceId: 'count',
           comparison: '=',
           value: 7,
           severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Moderate Label', ''),
         },
         {
           dataSourceId: 'pressure',
           comparison: '>=',
           value: 10,
           severity: 1,
-          label: 'Pressure Sev',
+          label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Pressure Critical Label', ''),
         },
       ];
 
@@ -263,27 +244,34 @@ storiesOf('Watson IoT/TableCard', module)
           comparison: '<',
           value: 5,
           severity: 3, // High threshold, medium, or low used for sorting and defined filtration
+          label: text('Custom Count Severity Header', ''),
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Low Label', ''),
         },
         {
           dataSourceId: 'count',
           comparison: '>=',
           value: 10,
           severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-          label: 'Count Sev',
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
         },
         {
           dataSourceId: 'count',
           comparison: '=',
           value: 7,
           severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+          showSeverityLabel: boolean('Show Count Threshold Labels', true),
+          severityLabel: text('Custom Count Moderate Label', ''),
         },
         {
           dataSourceId: 'pressure',
           comparison: '>=',
           value: 10,
           severity: 1,
-          label: 'Pressure Sev',
-          showOnContent: true,
+          label: text('Custom Pressure Severity Header', ''),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Pressure Critical Label', ''),
         },
       ];
 
@@ -312,6 +300,44 @@ storiesOf('Watson IoT/TableCard', module)
       },
     }
   )
+  .add('with matching thresholds', () => {
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open Alerts')}
+          id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
+          content={{
+            columns: tableColumns,
+            expandedRows: [{}],
+            thresholds: [
+              {
+                dataSourceId: 'count',
+                comparison: '>',
+                value: 0,
+                severity: 3,
+                label: text('Custom Count Severity Header', ''),
+                showSeverityLabel: boolean('Show Count Threshold Labels', true),
+                severityLabel: text('Custom Count Low Label', ''),
+              },
+              {
+                dataSourceId: 'count',
+                comparison: '>',
+                value: 2,
+                severity: 1,
+                showSeverityLabel: boolean('Show Count Threshold Labels', true),
+                severityLabel: text('Custom Count Critical Label', ''),
+              },
+            ],
+          }}
+          values={tableData.map(i => ({ id: i.id, values: i.values }))}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('table with custom column sort', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
@@ -388,7 +414,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('no row actions', () => {
-    const size = CARD_SIZES.LARGE;
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -407,7 +433,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('empty table', () => {
-    const size = CARD_SIZES.LARGE;
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -425,7 +451,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('editable', () => {
-    const size = CARD_SIZES.LARGE;
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -445,7 +471,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add('editable with expanded rows', () => {
-    const size = CARD_SIZES.LARGE;
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -465,29 +491,7 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
-  .add('with matching thresholds', () => {
-    const size = CARD_SIZES.LARGE;
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TableCard
-          title={text('title', 'Open Alerts')}
-          id="table-list"
-          tooltip={text('Tooltip text', "Here's a Tooltip")}
-          content={{
-            columns: tableColumns,
-            expandedRows: [{}],
-            thresholds: [
-              { dataSourceId: 'count', comparison: '>', value: 0, severity: 3, label: 'Severity' },
-              { dataSourceId: 'count', comparison: '>', value: 2, severity: 1, label: 'Severity' },
-            ],
-          }}
-          values={tableData.map(i => ({ id: i.id, values: i.values }))}
-          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-          size={size}
-        />
-      </div>
-    );
-  })
+
   .add('i18n', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
 
@@ -504,7 +508,6 @@ storiesOf('Watson IoT/TableCard', module)
         comparison: '>=',
         value: 10,
         severity: 1, // High threshold, medium, or low used for sorting and defined filtration
-        label: 'Count Sev',
       },
       {
         dataSourceId: 'count',
@@ -517,7 +520,6 @@ storiesOf('Watson IoT/TableCard', module)
         comparison: '>=',
         value: 10,
         severity: 1,
-        label: 'Pressure Sev',
       },
     ];
 
