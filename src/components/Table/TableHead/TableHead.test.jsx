@@ -10,11 +10,6 @@ import TableHeader from './TableHeader';
 
 const { iotPrefix } = settings;
 
-const originalGetBoundingClientRect = Object.getOwnPropertyDescriptor(
-  HTMLElement.prototype,
-  'getBoundingClientRect'
-);
-
 const commonTableHeadProps = {
   /** List of columns */
   columns: [
@@ -182,6 +177,10 @@ describe('TableHead', () => {
     let columns;
     let myActions;
     let myProps;
+    const originalGetBoundingClientRect = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'getBoundingClientRect'
+    );
 
     beforeEach(() => {
       ordering = [
