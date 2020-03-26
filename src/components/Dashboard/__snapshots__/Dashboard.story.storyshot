@@ -131,7 +131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -180,7 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -229,7 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -321,7 +321,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -410,7 +410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -538,7 +538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -630,7 +630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -2407,7 +2407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -2456,7 +2456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -2505,7 +2505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -2597,7 +2597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -2686,7 +2686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -2814,7 +2814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -2906,7 +2906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -3113,7 +3113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -4715,7 +4715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -4764,7 +4764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -4813,7 +4813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -4905,7 +4905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -4994,7 +4994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -5122,7 +5122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -5214,7 +5214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -5421,7 +5421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -9474,7 +9474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -9523,7 +9523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -9572,7 +9572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -9664,7 +9664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -9753,7 +9753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -9881,7 +9881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -9973,7 +9973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -10180,7 +10180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -11753,7 +11753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -11837,7 +11837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -11923,7 +11923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12009,7 +12009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12095,7 +12095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12292,7 +12292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12441,7 +12441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12525,7 +12525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12611,7 +12611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12697,7 +12697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12783,7 +12783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -12980,7 +12980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13129,7 +13129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13215,7 +13215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13304,7 +13304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13390,7 +13390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13544,7 +13544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13630,7 +13630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13719,7 +13719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13805,7 +13805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -13959,7 +13959,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14071,7 +14071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14183,7 +14183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14295,7 +14295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14472,7 +14472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14584,7 +14584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14696,7 +14696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -14808,7 +14808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -15975,7 +15975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16059,7 +16059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16145,7 +16145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16231,7 +16231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16317,7 +16317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16407,7 +16407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16495,7 +16495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16579,7 +16579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16665,7 +16665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16754,7 +16754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16840,7 +16840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -16929,7 +16929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -17041,7 +17041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -17153,7 +17153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -17265,7 +17265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -17872,7 +17872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -17956,7 +17956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18042,7 +18042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18128,7 +18128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18214,7 +18214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18304,7 +18304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18392,7 +18392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18476,7 +18476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18562,7 +18562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18651,7 +18651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18737,7 +18737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18826,7 +18826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -18938,7 +18938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -19050,7 +19050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -19162,7 +19162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -19769,7 +19769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -19810,7 +19810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -19899,7 +19899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -19940,7 +19940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20027,7 +20027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20068,7 +20068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20222,7 +20222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20263,7 +20263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20352,7 +20352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20393,7 +20393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20480,7 +20480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20521,7 +20521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20675,7 +20675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20716,7 +20716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20805,7 +20805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20846,7 +20846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20933,7 +20933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -20974,7 +20974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21128,7 +21128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21169,7 +21169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21258,7 +21258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21299,7 +21299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21386,7 +21386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21427,7 +21427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21581,7 +21581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21648,7 +21648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21763,7 +21763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -21830,7 +21830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -22010,7 +22010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -22077,7 +22077,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -22192,7 +22192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -22259,7 +22259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.25rem",
@@ -22439,7 +22439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22488,7 +22488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22537,7 +22537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22626,7 +22626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22673,7 +22673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22720,7 +22720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22807,7 +22807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22880,7 +22880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -22953,7 +22953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23131,7 +23131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23180,7 +23180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23229,7 +23229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23318,7 +23318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23365,7 +23365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23412,7 +23412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23499,7 +23499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23572,7 +23572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23645,7 +23645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </span>
                           </div>
                           <span
-                            className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                            className="iot--value-card__attribute-unit"
                             style={
                               Object {
                                 "--default-font-size": "1.5rem",
@@ -23886,7 +23886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -23935,7 +23935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -23984,7 +23984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.5rem",
@@ -24076,7 +24076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -24165,7 +24165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -24293,7 +24293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -24385,7 +24385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
@@ -24592,7 +24592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </span>
                         </div>
                         <span
-                          className="iot--value-card__attribute-unit iot--value-card__attribute-unit--not-wrappable"
+                          className="iot--value-card__attribute-unit"
                           style={
                             Object {
                               "--default-font-size": "1.25rem",
