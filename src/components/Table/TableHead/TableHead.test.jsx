@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { act } from 'react-dom/test-utils';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { settings } from '../../../constants/Settings';
@@ -236,9 +235,9 @@ describe('TableHead', () => {
 
       // Hide col1. The width of col1 is proportionally distributed over
       // the remaining visible columns.
-      act(() => {
-        onColumnToggleFunc('col1', orderingAfterTogleHide);
-      });
+
+      onColumnToggleFunc('col1', orderingAfterTogleHide);
+
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '100px' },
         { id: 'col2', name: 'Column 2', width: '150px' },
@@ -270,9 +269,8 @@ describe('TableHead', () => {
 
       // Show col1. The width needed for col1 is proportionally subtracted from
       // the other visible columns.
-      act(() => {
-        onColumnToggleFunc('col1', orderingAfterTogleShow);
-      });
+      onColumnToggleFunc('col1', orderingAfterTogleShow);
+
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '100px' },
         { id: 'col2', name: 'Column 2', width: '50px' },
