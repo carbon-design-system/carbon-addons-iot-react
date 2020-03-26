@@ -20,6 +20,13 @@
   margin-right: $carbon--spacing-02;
 }
 
+.#{$iot-prefix}--value-card__attribute-unit--not-wrappable {
+  padding-left: 0.25rem;
+  padding-bottom: 0.8rem;
+  align-self: flex-end;
+  margin-right: $carbon--spacing-02;
+}
+
 .#{$iot-prefix}--value-card__attribute-unit--wrappable-compact {
   font-size: $carbon--spacing-05;
 }

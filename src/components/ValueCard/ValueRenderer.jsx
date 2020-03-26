@@ -69,7 +69,7 @@ const AttributeValue = styled.span`
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   /* autoprefixer: ignore next */
   ${props =>
-    props.unit
+    props.allowedToWrap
       ? `white-space: nowrap; text-overflow: ellipsis;`
       : `display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: break-word;`};
   ${props => !props.hasWords && 'word-break: break-all;'}
@@ -155,7 +155,7 @@ const ValueRenderer = ({
         isSmall={isSmall}
         isMini={isMini}
         value={value}
-        unit={unit}
+        allowedToWrap={allowedToWrap}
         hasWords={hasWords}
       >
         {renderValue}

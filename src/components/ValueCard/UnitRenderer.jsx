@@ -31,6 +31,7 @@ const UnitRenderer = ({ unit, layout, isMini, allowedToWrap, wrapCompact }) => {
       style={{ '--default-font-size': layout === CARD_LAYOUTS.HORIZONTAL ? '1.25rem' : '1.5rem' }}
       className={classNames(bemBase, {
         [`${bemBase}--wrappable`]: allowedToWrap,
+        [`${bemBase}--not-wrappable`]: !allowedToWrap,
         [`${bemBase}--wrappable-compact`]: wrapCompact,
         [`${bemBase}--mini`]: isMini,
       })}

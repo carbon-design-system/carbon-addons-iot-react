@@ -134,7 +134,7 @@ const AttributeLabel = styled.div`
   ${props =>
     !(props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.SMALLWIDE) &&
     `padding-left: 0.5rem`};
-  order: ${props => (props.shouldDoubleWrap || props.isVertical ? 0 : 2)};
+  order: ${props => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;
   ${props => (shouldLabelWrap(props) ? `` : `white-space: nowrap;`)}
@@ -198,14 +198,14 @@ const determineAttributes = (size, attributes) => {
   return attributes.slice(0, attributeCount);
 };
 
-const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
+const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleWrap) => {
   switch (size) {
     case CARD_SIZES.SMALLWIDE:
       return layout === CARD_LAYOUTS.HORIZONTAL;
     case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
-      return !measuredSize || measuredSize.width < 300;
+      return shouldDoubleWrap || (!measuredSize || measuredSize.width < 300);
   }
 };
 
@@ -229,7 +229,6 @@ const ValueCard = ({
 
   const shouldDoubleWrap =
     content.attributes.length === 1 &&
-    !content.attributes[0].unit &&
     find(values, value => typeof value === 'string') &&
     Object.keys(values).length === 1;
 
@@ -244,7 +243,8 @@ const ValueCard = ({
           newSize,
           layout,
           content ? content.attributes : [],
-          measuredSize
+          measuredSize,
+          shouldDoubleWrap
         );
 
         // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
@@ -262,7 +262,7 @@ const ValueCard = ({
             id={id}
             {...others}
           >
-            <ContentWrapper shouldDoubleWrap={shouldDoubleWrap} layout={layout}>
+            <ContentWrapper layout={layout}>
               {dataState && <DataStateRenderer dataState={dataState} size={newSize} id={id} />}
               {!dataState &&
                 attributes.map((attribute, i) => (
@@ -273,7 +273,7 @@ const ValueCard = ({
                   >
                     <AttributeWrapper
                       layout={layout}
-                      isVertical={shouldDoubleWrap || isVertical}
+                      isVertical={isVertical}
                       isSmall={attribute.secondaryValue !== undefined}
                       isMini={isMini}
                       size={newSize}
@@ -281,7 +281,7 @@ const ValueCard = ({
                     >
                       <Attribute
                         attributeCount={attributes.length}
-                        isVertical={shouldDoubleWrap || isVertical}
+                        isVertical={isVertical}
                         layout={layout}
                         isSmall={
                           newSize === CARD_SIZES.SMALL &&
@@ -313,7 +313,7 @@ const ValueCard = ({
                       {isMini && <Spacer />}
                       <AttributeLabel
                         title={attribute.label}
-                        isVertical={shouldDoubleWrap || isVertical}
+                        isVertical={isVertical}
                         layout={layout}
                         isMini={isMini}
                         attributeCount={attributes.length}
@@ -328,7 +328,7 @@ const ValueCard = ({
                     newSize !== CARD_SIZES.SMALLWIDE ? (
                       <AttributeWrapper
                         layout={layout}
-                        isVertical={shouldDoubleWrap || isVertical}
+                        isVertical={isVertical}
                         isSmall={attribute.secondaryValue !== undefined}
                         isMini={isMini}
                         size={newSize}
