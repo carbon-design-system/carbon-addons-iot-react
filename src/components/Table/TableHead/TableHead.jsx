@@ -327,7 +327,6 @@ const TableHead = ({
       )}
       {activeBar === 'column' && (
         <ColumnHeaderRow
-          erRow
           columns={columns.map(column => ({
             id: column.id,
             name: column.name,
