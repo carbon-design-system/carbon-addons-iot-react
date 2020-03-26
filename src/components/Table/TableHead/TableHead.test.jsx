@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { settings } from '../../../constants/Settings';
 
@@ -279,6 +280,39 @@ describe('TableHead', () => {
         { id: 'col3', name: 'Column 3', width: '50px' },
       ]);
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+    });
+
+    test('the last visible column should never have a resize handle', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: false },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+      getBoundingClientRectSpy.mockReturnValue({ width: 100 });
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const resizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+      expect(resizeHandles).toHaveLength(2);
+      const lastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
+      expect(lastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+
+      // Hide the last column (use shortcut via props)
+      const orderingAfterToggleHide = cloneDeep(myProps.tableState.ordering).map(col =>
+        col.columnId === 'col3' ? { ...col, isHidden: true } : col
+      );
+      wrapper.setProps({
+        ...myProps,
+        tableState: { ...myProps.tableState, ordering: orderingAfterToggleHide },
+      });
+      wrapper.update();
+      const updatedResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+      expect(updatedResizeHandles).toHaveLength(1);
+
+      const modLastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
+      expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
     });
   });
 });

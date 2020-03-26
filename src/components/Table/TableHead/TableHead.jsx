@@ -225,6 +225,8 @@ const TableHead = ({
     [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]
   );
 
+  const lastVisibleColumn = ordering.filter(col => !col.isHidden).slice(-1)[0];
+
   return (
     <CarbonTableHead
       className={classnames({ lightweight })}
@@ -257,7 +259,7 @@ const TableHead = ({
           </TableHeader>
         ) : null}
 
-        {ordering.map((item, i) => {
+        {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
           const align =
@@ -290,7 +292,7 @@ const TableHead = ({
               })}
             >
               <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
-              {hasResize && i < ordering.length - 1 ? (
+              {hasResize && item !== lastVisibleColumn ? (
                 <ColumnResize
                   onResize={onManualColumnResize}
                   ref={columnResizeRefs[matchingColumnMeta.id]}
