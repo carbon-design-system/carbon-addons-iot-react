@@ -60,4 +60,8 @@
   .#{$iot-prefix}--table-header-resize {
     word-break: break-all;
   }
+
+  .#{$iot-prefix}--table-header-row-action-column {
+    min-width: 40px;
+  }
 }
