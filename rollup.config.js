@@ -38,7 +38,7 @@ const external = [
   'd3',
 ];
 const plugins = [
-  resolve({ browser: true, extensions }),
+  resolve({ mainFields: ['module', 'main'], extensions }),
 
   commonjs({
     namedExports: {
@@ -66,7 +66,6 @@ const plugins = [
     include: 'node_modules/**',
   }),
   babel({
-    extensions,
     exclude: 'node_modules/**',
   }),
   replace({
@@ -90,30 +89,21 @@ const plugins = [
 ];
 
 export default [
-  // CommonJS
+  // CommonJS & ESM
   {
     input: 'src/index.js',
     preserveModules: true,
     output: [
+      // {
+      //   dir: 'lib',
+      //   name: 'CarbonAddonsIoTReact',
+      //   format: 'cjs',
+      //   globals: {
+      //     ...globals,
+      //   },
+      // },
       {
-        dir: 'lib',
-        name: 'CarbonAddonsIoTReact',
-        format: 'cjs',
-        globals: {
-          ...globals,
-        },
-      },
-    ],
-    external,
-    plugins: [...plugins, ...prodSettings],
-  },
-  // ESM
-  {
-    input: 'src/index.js',
-    preserveModules: true,
-    output: [
-      {
-        dir: 'es',
+        dir: 'lib/es',
         format: 'esm',
         globals: {
           ...globals,
@@ -124,23 +114,22 @@ export default [
     plugins: [...plugins, ...prodSettings],
   },
   // UMD
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        file: 'umd/index.umd.js',
-        name: 'CarbonAddonsIoTReact',
-        format: 'umd',
-        globals: {
-          ...globals,
-        },
-      },
-    ],
-    external,
-    plugins: [...plugins, ...prodSettings],
-  },
-
-  // styles
+  // {
+  //   input: 'src/index.js',
+  //   output: [
+  //     {
+  //       file: 'lib/umd/carbon-addons-iot-react.js',
+  //       name: 'CarbonAddonsIoTReact',
+  //       format: 'umd',
+  //       globals: {
+  //         ...globals,
+  //       },
+  //     },
+  //   ],
+  //   external,
+  //   plugins: [...plugins, ...prodSettings],
+  // },
+  // Compile styles
   {
     input: 'src/styles.scss',
     output: [
@@ -160,18 +149,18 @@ export default [
         flatten: false,
         targets: [
           // Sass entrypoint
-          { src: 'src/styles.scss', dest: ['lib/scss', 'scss'] },
+          { src: 'src/styles.scss', dest: ['lib/scss'] },
 
           // Sass globals
           {
             src: 'src/globals',
-            dest: ['lib/scss', 'scss'],
+            dest: ['lib/scss'],
           },
 
           // Sass components
           {
             src: ['src/components/**/*.scss', '!src/components/**/*.story.scss'],
-            dest: ['lib/scss', 'scss'],
+            dest: ['lib/scss'],
           },
           // react-resizable
           {
@@ -179,12 +168,7 @@ export default [
               'node_modules/react-resizable/css/**/*.css',
               'node_modules/react-grid-layout/css/**/*.css',
             ],
-            dest: ['es/node_modules', 'lib/node_modules'],
-          },
-          // compiled css
-          {
-            src: ['lib/css/**/*.css'],
-            dest: ['css', 'umd'],
+            dest: ['lib/es/node_modules', 'lib/node_modules'],
           },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
