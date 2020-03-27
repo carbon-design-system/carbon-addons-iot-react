@@ -9,6 +9,8 @@ import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
 
+const packageJson = require('./package.json');
+
 const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
@@ -24,46 +26,53 @@ const globals = {
   'carbon-components-react': 'CarbonComponentsReact',
   'styled-components': 'styled',
   d3: 'd3',
+  'react-sizeme': 'ReactSizeme',
+  'element-resize-detector': 'ElementResizeDetector',
+  lodash: 'lodash',
 };
 const external = [
-  'react',
-  'react-dom',
-  'styled-components',
-  'prop-types',
-  'carbon-components-react',
-  'carbon-icons',
-  '@carbon/icons',
+  ...Object.keys(packageJson.peerDependencies),
+  ...Object.keys(packageJson.dependencies),
+  'lodash/isNil',
+  'lodash/isEmpty',
+  'lodash/uniqBy',
+  'lodash/groupBy',
+  'lodash/omit',
+  'lodash/merge',
+  'lodash/some',
+  'lodash/find',
+  'lodash/cloneDeep',
+  'lodash/debounce',
+  'lodash/pick',
+  'lodash/get',
+  'lodash/memoize',
+  'lodash/capitalize',
+  'lodash/escapeRegExp',
+  'lodash/filter',
+  'lodash/every',
+  'lodash/delay',
+  'lodash/union',
+  'moment/min/moment-with-locales.min',
   '@carbon/icons-react',
-  'carbon-components',
-  'd3',
 ];
 const plugins = [
   resolve({ mainFields: ['module', 'main'], extensions }),
 
   commonjs({
     namedExports: {
-      'react-js': ['isValidElementType'],
-      'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
-        'Header',
-        'HeaderName',
-        'HeaderMenu',
-        'HeaderMenuButton',
-        'HeaderGlobalBar',
-        'HeaderGlobalAction',
-        'SkipToContent',
-        'HeaderMenuItem',
-        'HeaderNavigation',
-        'HeaderPanel',
-        'SideNav',
-        'SideNavItems',
-        'SideNavLink',
-        'SideNavMenu',
-        'SideNavMenuItem',
-        'SideNavFooter',
+      'react/index.js': [
+        'Children',
+        'Component',
+        'PureComponent',
+        'Fragment',
+        'PropTypes',
+        'createElement',
       ],
+      'react-dom/index.js': ['render'],
+      'react-is/index.js': ['isForwardRef'],
     },
 
-    include: 'node_modules/**',
+    include: '/node_modules/',
   }),
   babel({
     exclude: 'node_modules/**',
@@ -98,16 +107,10 @@ export default [
       //   dir: 'lib',
       //   name: 'CarbonAddonsIoTReact',
       //   format: 'cjs',
-      //   globals: {
-      //     ...globals,
-      //   },
       // },
       {
-        dir: 'lib/es',
+        dir: 'es',
         format: 'esm',
-        globals: {
-          ...globals,
-        },
       },
     ],
     external,
@@ -149,18 +152,18 @@ export default [
         flatten: false,
         targets: [
           // Sass entrypoint
-          { src: 'src/styles.scss', dest: ['lib/scss'] },
+          { src: 'src/styles.scss', dest: ['lib/scss', 'scss'] },
 
           // Sass globals
           {
             src: 'src/globals',
-            dest: ['lib/scss'],
+            dest: ['lib/scss', 'scss'],
           },
 
           // Sass components
           {
             src: ['src/components/**/*.scss', '!src/components/**/*.story.scss'],
-            dest: ['lib/scss'],
+            dest: ['lib/scss', 'scss'],
           },
           // react-resizable
           {
@@ -168,7 +171,7 @@ export default [
               'node_modules/react-resizable/css/**/*.css',
               'node_modules/react-grid-layout/css/**/*.css',
             ],
-            dest: ['lib/es/node_modules', 'lib/node_modules'],
+            dest: ['es/node_modules', 'lib/node_modules'],
           },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging

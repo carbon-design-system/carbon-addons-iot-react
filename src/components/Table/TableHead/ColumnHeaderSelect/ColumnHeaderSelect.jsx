@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
 import { Button } from 'carbon-components-react';
-import Draggable from '@carbon/icons-react/lib/draggable/16';
+import Draggable from '@carbon/icons-react/es/draggable/16';
 import classNames from 'classnames';
 
 const ColumnHeaderSelect = ({

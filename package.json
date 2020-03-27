@@ -1,14 +1,18 @@
 {
   "name": "carbon-addons-iot-react",
   "main": "lib/src/index.js",
-  "module": "lib/es/src/index.js",
+  "module": "es/src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "es/**/*",
+    "umd/**/*",
+    "scss/**/*",
+    "css/**/*"
   ],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
@@ -16,7 +20,7 @@
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
     "build": "cross-env BABEL_ENV='production' yarn build:pre && rollup -c && yarn build:post",
-    "build:pre": "rimraf lib tmp storybook-static",
+    "build:pre": "rimraf lib es umd css scss tmp storybook-static",
     "build:post": "rimraf tmp",
     "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
@@ -191,7 +195,7 @@
     "react-test-renderer": "^16.8.6",
     "rimraf": "^3.0.0",
     "rollup": "^1.1.0",
-    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^3.2.0",
     "rollup-plugin-filesize": "^6.0.0",
