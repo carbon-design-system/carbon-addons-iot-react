@@ -1,5 +1,6 @@
 import React, { Fragment, useRef, useMemo, useCallback } from 'react';
-import moment from 'moment/min/moment-with-locales.min';
+import moment from 'moment';
+import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import styled from 'styled-components';
