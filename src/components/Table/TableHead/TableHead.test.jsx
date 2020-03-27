@@ -8,6 +8,8 @@ import TableHead from './TableHead';
 import TableHeader from './TableHeader';
 
 const { iotPrefix } = settings;
+const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+const mockGetBoundingClientRect = jest.fn();
 
 const commonTableHeadProps = {
   /** List of columns */
@@ -171,15 +173,14 @@ describe('TableHead', () => {
   });
 
   describe('Column resizing active', () => {
-    let getBoundingClientRectSpy;
     let ordering;
     let columns;
     let myActions;
     let myProps;
-    const originalGetBoundingClientRect = Object.getOwnPropertyDescriptor(
-      HTMLElement.prototype,
-      'getBoundingClientRect'
-    );
+
+    beforeAll(() => {
+      Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    });
 
     beforeEach(() => {
       ordering = [
@@ -205,25 +206,14 @@ describe('TableHead', () => {
         options: { hasResize: true },
         actions: myActions,
       };
-
-      getBoundingClientRectSpy = jest.fn();
-      Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {
-        writable: true,
-        configurable: true,
-        value: getBoundingClientRectSpy,
-      });
     });
 
     afterAll(() => {
-      Object.defineProperty(
-        HTMLElement.prototype,
-        'getBoundingClientRect',
-        originalGetBoundingClientRect
-      );
+      Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
     });
 
     test('toggle hide column correctly updates the column widths of visible columns', () => {
-      getBoundingClientRectSpy.mockReturnValue({ width: 100 });
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
       const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
@@ -256,7 +246,7 @@ describe('TableHead', () => {
         ],
       };
 
-      getBoundingClientRectSpy.mockReturnValue({ width: 100 });
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
       const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
@@ -288,7 +278,7 @@ describe('TableHead', () => {
           { columnId: 'col3', isHidden: false },
         ],
       };
-      getBoundingClientRectSpy.mockReturnValue({ width: 100 });
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
       const resizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
