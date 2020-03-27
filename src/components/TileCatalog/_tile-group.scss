@@ -1,16 +1,17 @@
+@import '~carbon-components/scss/globals/scss/vars';
 @import '../../globals/vars';
 
 .#{$iot-prefix}--tile-group {
   display: flex;
   flex-flow: row wrap;
   > * {
-    border: 1px solid #dfe3e6;
+    border: 1px solid $ui-03;
     flex: 1 1 33.33%;
     min-width: 300px;
   }
 
   > label {
-    border: 1px solid #dfe3e6;
+    border: 1px solid $ui-03;
     outline-offset: -1px;
   }
   overflow-y: hidden;
@@ -23,10 +24,10 @@
   padding: 0px;
   border-top: 0px;
   border-bottom: 0px;
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: $two-pane) {
     display: flex;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: $three-pane) {
     flex: 1 1 66.66%;
     display: flex;
   }
