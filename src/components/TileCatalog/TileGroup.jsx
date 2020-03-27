@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tile } from 'carbon-components-react';
-import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 
@@ -16,8 +15,8 @@ const defaultProps = {
 };
 
 /** this component just exists to make the last tile look good in a responsive flex container */
-const TileGroup = ({ tiles, className }) => (
-  <div className={classNames(className, `${iotPrefix}--tile-group`)}>
+const TileGroup = ({ tiles }) => (
+  <div className={`${iotPrefix}--tile-group`}>
     {tiles}
     <Tile className={`${iotPrefix}--greedy-tile`} />
   </div>

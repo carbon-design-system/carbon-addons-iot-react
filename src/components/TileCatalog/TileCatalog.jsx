@@ -131,7 +131,6 @@ const TileCatalog = ({
                 : tile.value}
             </RadioTile>
           ))}
-          className={className}
         />
       ) : (
         <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
