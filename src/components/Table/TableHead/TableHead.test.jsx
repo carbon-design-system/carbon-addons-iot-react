@@ -59,8 +59,13 @@ describe('TableHead', () => {
       },
     };
     const wrapper = mount(<TableHead {...myProps} />);
-    const emptyTableHeader = wrapper.find('TableHeader .bx--table-header-label').last();
-    expect(emptyTableHeader).toEqual({});
+    const lastTableHeader = wrapper.find('TableHeader').last();
+
+    expect(lastTableHeader.getDOMNode().className).toEqual(
+      `${iotPrefix}--table-header-row-action-column`
+    );
+
+    expect(lastTableHeader.find('.bx--table-header-label').getDOMNode().innerHTML).toEqual('');
   });
 
   test('make sure data-column is set for width', () => {
