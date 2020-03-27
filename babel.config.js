@@ -11,7 +11,7 @@ module.exports = function generateConfig(api) {
             browsers: ['last 2 version', 'ie >= 11'],
           },
           useBuiltIns: 'usage',
-          modules: false,
+          modules: BABEL_ENV === 'production' ? false : 'auto',
           corejs: 2,
         },
       ],

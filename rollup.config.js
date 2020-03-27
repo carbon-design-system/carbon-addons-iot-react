@@ -70,13 +70,6 @@ const globals = {
 // ];
 
 const external = id => {
-  console.log(
-    'ID FROM ROLLUP',
-    id,
-    Object.keys(packageJson.peerDependencies).some(element => id.includes(element)),
-    Object.keys(packageJson.dependencies).some(element => id.includes(element)),
-    Object.keys(packageJson.peerDependencies)
-  );
   return (
     Object.keys(packageJson.peerDependencies).some(element => id === element) ||
     Object.keys(packageJson.dependencies).some(element => id === element) ||
