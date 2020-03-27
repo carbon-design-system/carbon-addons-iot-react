@@ -12,11 +12,13 @@ const ColumnHeaderSelect = ({
   isHidden,
   children,
   onClick,
+  isOver,
 }) => {
   return (
     <Button
       className={classNames('column-header__btn', 'column-header__select', {
         'column-header__select--hidden': isHidden,
+        'column-header__select--isOver': isOver,
       })}
       kind="secondary"
       key={columnId}
