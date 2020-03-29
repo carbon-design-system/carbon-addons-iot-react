@@ -128,11 +128,11 @@ export default [
     input: 'src/index.js',
     preserveModules: true,
     output: [
-      // {
-      //   dir: 'lib',
-      //   name: 'CarbonAddonsIoTReact',
-      //   format: 'cjs',
-      // },
+      {
+        dir: 'lib',
+        name: 'CarbonAddonsIoTReact',
+        format: 'cjs',
+      },
       {
         dir: 'es',
         format: 'esm',
@@ -141,22 +141,6 @@ export default [
     external,
     plugins: [...plugins, ...prodSettings],
   },
-  // UMD
-  // {
-  //   input: 'src/index.js',
-  //   output: [
-  //     {
-  //       file: 'lib/umd/carbon-addons-iot-react.js',
-  //       name: 'CarbonAddonsIoTReact',
-  //       format: 'umd',
-  //       globals: {
-  //         ...globals,
-  //       },
-  //     },
-  //   ],
-  //   external,
-  //   plugins: [...plugins, ...prodSettings],
-  // },
   // Compile styles
   {
     input: 'src/styles.scss',
@@ -173,6 +157,23 @@ export default [
         use: ['sass'],
         plugins: [autoprefixer],
       }),
+    ],
+  },
+  // UMD
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: 'umd/carbon-addons-iot-react.js',
+        name: 'CarbonAddonsIoTReact',
+        format: 'umd',
+        globals: {
+          ...globals,
+        },
+      },
+    ],
+    external,
+    plugins: [
       copy({
         flatten: false,
         targets: [
@@ -198,9 +199,16 @@ export default [
             ],
             dest: ['es/node_modules', 'lib/node_modules'],
           },
+          // Copy CSS
+          {
+            src: ['lib/css/'],
+            dest: ['./'],
+          },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
       }),
+      ...plugins,
+      ...prodSettings,
     ],
   },
 ];

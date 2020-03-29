@@ -2,6 +2,7 @@
   "name": "carbon-addons-iot-react",
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
+  "unpkg": "es/src/carbon-addons-iot-react.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
@@ -19,7 +20,7 @@
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build": "cross-env BABEL_ENV='production' yarn build:pre && rollup -c && yarn build:post",
+    "build": "cross-env BABEL_ENV='production' NODE_ENV='production'  yarn build:pre && rollup -c && yarn build:post",
     "build:pre": "rimraf lib es umd css scss tmp storybook-static",
     "build:post": "rimraf tmp",
     "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
