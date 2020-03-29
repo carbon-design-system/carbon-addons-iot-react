@@ -8,7 +8,6 @@ import postcss from 'rollup-plugin-postcss';
 import copy from 'rollup-plugin-copy';
 import autoprefixer from 'autoprefixer';
 import json from 'rollup-plugin-json';
-import autoExternal from 'rollup-plugin-auto-external';
 
 const packageJson = require('./package.json');
 
@@ -98,7 +97,7 @@ const plugins = [
 
     include: '/node_modules/',
   }),
-  autoExternal(),
+
   babel({
     exclude: 'node_modules/**',
   }),

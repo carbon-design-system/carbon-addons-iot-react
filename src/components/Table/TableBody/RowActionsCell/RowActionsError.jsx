@@ -8,6 +8,7 @@ import { RowActionErrorPropTypes } from '../../TablePropTypes';
 
 const StyledSpan = styled.span`
   margin-left: 0.5rem;
+  line-height: 1.875rem;
 `;
 
 const StyledTitle = styled.p`
