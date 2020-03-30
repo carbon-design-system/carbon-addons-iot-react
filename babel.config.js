@@ -20,7 +20,9 @@ module.exports = function generateConfig(api) {
     ],
     ignore: ['__mocks__'],
     plugins: [
-      ...(BABEL_ENV === 'production' ? ['transform-react-remove-prop-types'] : []),
+      ...(BABEL_ENV === 'production'
+        ? ['transform-react-remove-prop-types', { mode: 'unsafe-wrap' }]
+        : []),
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',
