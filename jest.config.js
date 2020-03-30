@@ -113,6 +113,8 @@ module.exports = {
     // https://github.com/storybookjs/storybook/pull/9795#issuecomment-587808019
     // either way, this can be removed in the future
     'react-syntax-highlighter/dist/esm/(.*)': 'react-syntax-highlighter/dist/cjs/$1',
+
+    // rewrite carbon-components(-react) es imports to lib/cjs imports because jest doesn't support es modules
     '@carbon/icons-react/es/(.*)': '@carbon/icons-react/lib/$1',
     'carbon-components-react/es/(.*)': 'carbon-components-react/lib/$1',
   },
