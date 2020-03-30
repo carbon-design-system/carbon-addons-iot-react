@@ -57,29 +57,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             width={20}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <rect
-              height="1.2"
-              width="16"
-              x="2"
-              y="14.8"
-            />
-            <rect
-              height="1.2"
-              width="16"
-              x="2"
-              y="11.2"
-            />
-            <rect
-              height="1.2"
-              width="16"
-              x="2"
-              y="7.6"
-            />
-            <rect
-              height="1.2"
-              width="16"
-              x="2"
-              y="4"
+            <path
+              d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
             />
           </svg>
         </button>
@@ -195,8 +174,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12"
+                  <path
+                    d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
                   />
                 </svg>
               </div>
@@ -321,8 +300,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12"
+                  <path
+                    d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
                   />
                 </svg>
               </div>

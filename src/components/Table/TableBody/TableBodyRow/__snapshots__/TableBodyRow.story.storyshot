@@ -426,8 +426,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                   />
                 </svg>
               </button>
@@ -577,8 +577,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                   />
                 </svg>
               </button>
@@ -667,24 +667,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "willChange": "transform",
                         }
                       }
-                      viewBox="0 0 32 32"
+                      viewBox="0 0 16 16"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <circle
-                        cx="16"
+                        cx="8"
+                        cy="3"
+                        r="1"
+                      />
+                      <circle
+                        cx="8"
                         cy="8"
-                        r="2"
+                        r="1"
                       />
                       <circle
-                        cx="16"
-                        cy="16"
-                        r="2"
-                      />
-                      <circle
-                        cx="16"
-                        cy="24"
-                        r="2"
+                        cx="8"
+                        cy="13"
+                        r="1"
                       />
                       <title>
                         More actions
@@ -779,8 +779,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                   />
                 </svg>
               </button>
@@ -946,8 +946,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
                   />
                 </svg>
               </button>

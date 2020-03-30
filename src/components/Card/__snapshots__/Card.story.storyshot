@@ -883,24 +883,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     "willChange": "transform",
                   }
                 }
-                viewBox="0 0 32 32"
+                viewBox="0 0 16 16"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <circle
-                  cx="16"
+                  cx="8"
+                  cy="3"
+                  r="1"
+                />
+                <circle
+                  cx="8"
                   cy="8"
-                  r="2"
+                  r="1"
                 />
                 <circle
-                  cx="16"
-                  cy="16"
-                  r="2"
-                />
-                <circle
-                  cx="16"
-                  cy="24"
-                  r="2"
+                  cx="8"
+                  cy="13"
+                  r="1"
                 />
                 <title>
                   open and close list of options
@@ -1997,11 +1997,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                  />
                   <path
-                    d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                    d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                   />
                   <path
                     d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
