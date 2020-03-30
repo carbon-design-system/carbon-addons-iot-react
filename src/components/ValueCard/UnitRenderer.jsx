@@ -24,13 +24,24 @@ const defaultProps = {
 };
 
 /** This components job is determining how to render different kinds units */
-const UnitRenderer = ({ unit, layout, isMini, allowedToWrap, wrapCompact }) => {
+const UnitRenderer = ({
+  value,
+  unit,
+  layout,
+  isMini,
+  allowedToWrap,
+  wrapCompact,
+  attributeCount, // eslint-disable-line
+}) => {
   const bemBase = `${iotPrefix}--value-card__attribute-unit`;
+  const notAllowedToWrap = typeof value === 'string' && !allowedToWrap && attributeCount === 1;
+
   const unitElement = (
     <span
       style={{ '--default-font-size': layout === CARD_LAYOUTS.HORIZONTAL ? '1.25rem' : '1.5rem' }}
       className={classNames(bemBase, {
         [`${bemBase}--wrappable`]: allowedToWrap,
+        [`${bemBase}--not-wrappable`]: notAllowedToWrap,
         [`${bemBase}--wrappable-compact`]: wrapCompact,
         [`${bemBase}--mini`]: isMini,
       })}

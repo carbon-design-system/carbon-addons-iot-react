@@ -77,6 +77,7 @@ class ColumnHeaderRow extends Component {
       hasColumnSelectionConfig: PropTypes.bool,
     }).isRequired,
     onChangeOrdering: PropTypes.func.isRequired,
+    onColumnToggle: PropTypes.func.isRequired,
     onColumnSelectionConfig: PropTypes.func,
     columnSelectionConfigText: PropTypes.string,
   };
@@ -95,8 +96,9 @@ class ColumnHeaderRow extends Component {
   };
 
   toggleColumn = id => {
-    const { ordering, onChangeOrdering } = this.props;
-    onChangeOrdering(
+    const { ordering, onColumnToggle } = this.props;
+    onColumnToggle(
+      id,
       ordering.map(i => ({
         columnId: i.columnId,
         isHidden: i.columnId === id ? !i.isHidden : i.isHidden,

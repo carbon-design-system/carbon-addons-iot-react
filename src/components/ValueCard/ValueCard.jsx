@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
+import find from 'lodash/find';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -126,7 +127,7 @@ const shouldLabelWrap = ({ title, isVertical }) => {
 const AttributeLabel = styled.div`
   ${props => `line-height: ${determineLabelFontSize(props)}rem;`}
   ${props => `font-size: ${determineLabelFontSize(props)}rem;`};
-  text-align: ${props => getLabelAlignment(props)};
+  text-align: ${props => (props.shouldDoubleWrap ? 'left' : getLabelAlignment(props))};
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUM) &&
     `padding-top: 0.25rem;`};
@@ -197,14 +198,14 @@ const determineAttributes = (size, attributes) => {
   return attributes.slice(0, attributeCount);
 };
 
-const isLabelAboveValue = (size, layout, attributes, measuredSize) => {
+const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleWrap) => {
   switch (size) {
     case CARD_SIZES.SMALLWIDE:
       return layout === CARD_LAYOUTS.HORIZONTAL;
     case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
-      return !measuredSize || measuredSize.width < 300;
+      return shouldDoubleWrap || (!measuredSize || measuredSize.width < 300);
   }
 };
 
@@ -226,6 +227,11 @@ const ValueCard = ({
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
+  const shouldDoubleWrap =
+    content.attributes.length === 1 &&
+    find(values, value => typeof value === 'string') &&
+    Object.keys(values).length === 1;
+
   return (
     <withSize.SizeMe>
       {({ size: measuredSize }) => {
@@ -237,7 +243,8 @@ const ValueCard = ({
           newSize,
           layout,
           content ? content.attributes : [],
-          measuredSize
+          measuredSize,
+          shouldDoubleWrap
         );
 
         // Determine if we are in "mini mode" (all rendered content in attribute is the same height)
@@ -311,6 +318,7 @@ const ValueCard = ({
                         isMini={isMini}
                         attributeCount={attributes.length}
                         size={newSize}
+                        shouldDoubleWrap={shouldDoubleWrap}
                       >
                         {attribute.label}
                       </AttributeLabel>
