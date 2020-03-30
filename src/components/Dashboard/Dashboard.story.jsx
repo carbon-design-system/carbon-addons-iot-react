@@ -707,6 +707,14 @@ storiesOf('Watson IoT/Dashboard', module)
             attributes: [{ dataSourceId: 'v', unit: v[2] }],
           },
           values: { v: v[1] },
+          dataState:
+            idx === 5
+              ? {
+                  type: 'NO_DATA',
+                  label: 'No data available for this score at this time',
+                  description: 'The last successful score was 68',
+                }
+              : undefined,
         }))}
       />,
       <Dashboard

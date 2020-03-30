@@ -21,8 +21,10 @@ const propTypes = {
     moderateLabel: PropTypes.string,
     lowLabel: PropTypes.string,
   }).isRequired,
-  /** Optionally hides the threshold's label */
-  showLabel: PropTypes.bool,
+  /** Optionally shows threshold severity label text. Shows by default */
+  showSeverityLabel: PropTypes.bool,
+  /** Optionally changes threshold severity label text */
+  severityLabel: PropTypes.string,
   /** optional function that returns an icon node for an icon name */
   renderIconByName: PropTypes.func,
 };
@@ -32,11 +34,21 @@ const defaultProps = {
   title: null,
   icon: null,
   color: null,
-  showLabel: true,
+  showSeverityLabel: true,
+  severityLabel: null,
   renderIconByName: null,
 };
 
-const ThresholdIcon = ({ severity, strings, title, icon, color, showLabel, renderIconByName }) => {
+const ThresholdIcon = ({
+  severity,
+  strings,
+  title,
+  icon,
+  color,
+  showSeverityLabel,
+  severityLabel,
+  renderIconByName,
+}) => {
   let iconToRender;
   let stringToRender = '';
 
@@ -131,8 +143,10 @@ const ThresholdIcon = ({ severity, strings, title, icon, color, showLabel, rende
   return (
     <div className={`${iotPrefix}--threshold-icon--wrapper`} title={title}>
       {iconToRender}
-      {showLabel ? (
-        <span className={`${iotPrefix}--threshold-icon--text`}>{stringToRender}</span>
+      {showSeverityLabel ? (
+        <span className={`${iotPrefix}--threshold-icon--text`}>
+          {severityLabel || stringToRender}
+        </span>
       ) : null}
     </div>
   );

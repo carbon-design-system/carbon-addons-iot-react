@@ -4418,9 +4418,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           className="bx--table-header-label"
                         >
                           <span
-                            title="Pressure Sev"
+                            title="Pressure __Severity__"
                           >
-                            Pressure Sev
+                            Pressure __Severity__
                           </span>
                         </span>
                         <svg
@@ -16620,6 +16620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
+                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -16967,9 +16968,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           className="bx--table-header-label"
                         >
                           <span
-                            title="Pressure Sev"
+                            title="Custom Pressure Severity Header"
                           >
-                            Pressure Sev
+                            Custom Pressure Severity Header
                           </span>
                         </span>
                         <svg
@@ -17707,7 +17708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           <span
                             className="iot--threshold-icon--text"
                           >
-                            Critical
+                            Custom Critical
                           </span>
                         </div>
                       </span>
@@ -18486,7 +18487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           <span
                             className="iot--threshold-icon--text"
                           >
-                            Critical
+                            Custom Critical
                           </span>
                         </div>
                       </span>
@@ -19143,6 +19144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
+                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -19421,9 +19423,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           className="bx--table-header-label"
                         >
                           <span
-                            title="Pressure Sev"
+                            title="Pressure Severity"
                           >
-                            Pressure Sev
+                            Pressure Severity
                           </span>
                         </span>
                         <svg
@@ -19531,6 +19533,230 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI010 proccess need to optimize adjust Y variables"
+                        >
+                          AHI010 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="iot--threshold-icon--wrapper"
+                          title="count: 2 < 5"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#FDD13A"
+                                  id="background-color"
+                                  r="7"
+                                />
+                                <path
+                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
+                                  fill="#FFFFFF"
+                                  id="symbol-color"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="iot--threshold-icon--text"
+                          >
+                            Low
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI005 Asset failure"
+                        >
+                          AHI005 Asset failure
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="iot--threshold-icon--wrapper"
+                          title="count: 1.2039201932 < 5"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#FDD13A"
+                                  id="background-color"
+                                  r="7"
+                                />
+                                <path
+                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
+                                  fill="#FFFFFF"
+                                  id="symbol-color"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="iot--threshold-icon--text"
+                          >
+                            Low
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-iconColumn-pressure"
                       offset={0}
                     >
                       <span
@@ -19742,7 +19968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           <span
                             className="iot--threshold-icon--text"
                           >
-                            Critical
+                            Custom Critical
                           </span>
                         </div>
                       </span>
@@ -19803,6 +20029,293 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           </span>
                         </div>
                       </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI001 proccess need to optimize adjust Y variables"
+                        >
+                          AHI001 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-8-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI001 proccess need to optimize adjust Y variables"
+                        >
+                          AHI001 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-8-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-8-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="iot--threshold-icon--wrapper"
+                          title="count: 7 = 7"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M15.7894601,14.2675131 C15.5195241,14.7230623 15.029513,15.0024208 14.5000526,15.0025132 L1.53339891,15.0021846 C0.996512233,15.0159597 0.493279942,14.7413061 0.202531324,14.2625132 C-0.0652585874,13.7984115 -0.0652585874,13.2266148 0.189272648,12.78623 L6.68470115,0.787539475 C6.94639352,0.302404679 7.45295465,2.66453526e-15 8.00391648,2.66453526e-15 C8.55487831,2.66453526e-15 9.06143944,0.302404679 9.3224242,0.78623001 L15.8183281,12.7858011 C16.0707419,13.2512161 16.0592142,13.8153414 15.7894601,14.2675131 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <path
+                                  d="M14.941052,13.2599875 L8.44460575,1.26245909 C8.35737079,1.1007808 8.18850902,1 8.00484631,1 C7.82118359,1 7.65232182,1.1007808 7.56508686,1.26245909 L1.06864057,13.2599875 C0.979373004,13.4146562 0.979373004,13.6052158 1.06864057,13.7598845 C1.16167713,13.9128935 1.32942924,14.0044259 1.50840001,13.9998351 L14.5012926,13.9998351 C14.6777297,13.9998043 14.8410746,13.906704 14.9310575,13.7548855 C15.0215326,13.6032635 15.0253318,13.4151411 14.941052,13.2599875 Z"
+                                  fill="#FC7B1E"
+                                  id="background-color"
+                                />
+                                <path
+                                  d="M7.50084897,5.75 L8.50084897,5.75 L8.50084897,9.75 L7.50084897,9.75 L7.50084897,5.75 Z M8.00084897,12.5 C7.58663541,12.5 7.25084897,12.1642136 7.25084897,11.75 C7.25084897,11.3357864 7.58663541,11 8.00084897,11 C8.41506253,11 8.75084897,11.3357864 8.75084897,11.75 C8.75084897,12.1642136 8.41506253,12.5 8.00084897,12.5 Z"
+                                  fill="#FFFFFF"
+                                  id="symbol-color"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="iot--threshold-icon--text"
+                          >
+                            Moderate
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-8-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
+                    </td>
+                  </tr>
+                  <tr
+                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+                    onClick={[Function]}
+                  >
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-9-alert"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="AHI001 proccess need to optimize adjust Y variables"
+                        >
+                          AHI001 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-9-hour"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <span
+                          title="10/28/2018 07:34"
+                        >
+                          10/28/2018 07:34
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-9-iconColumn-count"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      >
+                        <div
+                          className="iot--threshold-icon--wrapper"
+                          title="count: 0 < 5"
+                        >
+                          <svg
+                            height="16px"
+                            version="1.1"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                          >
+                            <g
+                              fill="none"
+                              fillRule="evenodd"
+                              id="Artboard-Copy"
+                              stroke="none"
+                              strokeWidth="1"
+                            >
+                              <g
+                                id="Group"
+                              >
+                                <path
+                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
+                                  fill="#FFFFFF"
+                                  id="outline-color"
+                                />
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  fill="#FDD13A"
+                                  id="background-color"
+                                  r="7"
+                                />
+                                <path
+                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
+                                  fill="#FFFFFF"
+                                  id="symbol-color"
+                                />
+                              </g>
+                            </g>
+                          </svg>
+                          <span
+                            className="iot--threshold-icon--text"
+                          >
+                            Low
+                          </span>
+                        </div>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                      data-column="iconColumn-pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-9-iconColumn-pressure"
+                      offset={0}
+                    >
+                      <span
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      />
                     </td>
                   </tr>
                   <tr
@@ -20054,7 +20567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           <span
                             className="iot--threshold-icon--text"
                           >
-                            Critical
+                            Custom Critical
                           </span>
                         </div>
                       </span>
@@ -20209,7 +20722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text"
                 >
-                  1–5 of 5 items
+                  1–10 of 11 items
                 </span>
               </div>
               <div
@@ -20225,7 +20738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       className="bx--label bx--visually-hidden"
                       htmlFor="bx-pagination-select-25"
                     >
-                      Page number, of 1 pages
+                      Page number, of 2 pages
                     </label>
                     <div
                       className="bx--select-input--inline__wrapper"
@@ -20247,6 +20760,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                             value={1}
                           >
                             1
+                          </option>
+                          <option
+                            className="bx--select-option"
+                            disabled={false}
+                            hidden={false}
+                            value={2}
+                          >
+                            2
                           </option>
                         </select>
                         <svg
@@ -20275,7 +20796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <span
                   className="bx--pagination__text"
                 >
-                  1 of 1 pages
+                  1 of 2 pages
                 </span>
                 <button
                   aria-label="Previous page"
@@ -20305,8 +20826,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
                 <button
                   aria-label="Next page"
-                  className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index"
-                  disabled={true}
+                  className="bx--pagination__button bx--pagination__button--forward"
+                  disabled={false}
                   onClick={[Function]}
                   type="button"
                 >
@@ -20649,6 +21170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
+                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -21000,9 +21522,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           className="bx--table-header-label"
                         >
                           <span
-                            title="Pressure Sev"
+                            title="Custom Pressure Severity Header"
                           >
-                            Pressure Sev
+                            Custom Pressure Severity Header
                           </span>
                         </span>
                         <svg
@@ -21326,54 +21848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <div
-                          className="iot--threshold-icon--wrapper"
-                          title="count: 2 < 5"
-                        >
-                          <svg
-                            height="16px"
-                            version="1.1"
-                            viewBox="0 0 16 16"
-                            width="16px"
-                          >
-                            <g
-                              fill="none"
-                              fillRule="evenodd"
-                              id="Artboard-Copy"
-                              stroke="none"
-                              strokeWidth="1"
-                            >
-                              <g
-                                id="Group"
-                              >
-                                <path
-                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                                  fill="#FFFFFF"
-                                  id="outline-color"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#FDD13A"
-                                  id="background-color"
-                                  r="7"
-                                />
-                                <path
-                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                                  fill="#FFFFFF"
-                                  id="symbol-color"
-                                />
-                              </g>
-                            </g>
-                          </svg>
-                          <span
-                            className="iot--threshold-icon--text"
-                          >
-                            Low
-                          </span>
-                        </div>
-                      </span>
+                      />
                     </td>
                     <td
                       align="start"
@@ -21510,54 +21985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <div
-                          className="iot--threshold-icon--wrapper"
-                          title="count: 1.2 < 5"
-                        >
-                          <svg
-                            height="16px"
-                            version="1.1"
-                            viewBox="0 0 16 16"
-                            width="16px"
-                          >
-                            <g
-                              fill="none"
-                              fillRule="evenodd"
-                              id="Artboard-Copy"
-                              stroke="none"
-                              strokeWidth="1"
-                            >
-                              <g
-                                id="Group"
-                              >
-                                <path
-                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                                  fill="#FFFFFF"
-                                  id="outline-color"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#FDD13A"
-                                  id="background-color"
-                                  r="7"
-                                />
-                                <path
-                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                                  fill="#FFFFFF"
-                                  id="symbol-color"
-                                />
-                              </g>
-                            </g>
-                          </svg>
-                          <span
-                            className="iot--threshold-icon--text"
-                          >
-                            Low
-                          </span>
-                        </div>
-                      </span>
+                      />
                     </td>
                     <td
                       align="start"
@@ -21694,54 +22122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <div
-                          className="iot--threshold-icon--wrapper"
-                          title="count: 1.1 < 5"
-                        >
-                          <svg
-                            height="16px"
-                            version="1.1"
-                            viewBox="0 0 16 16"
-                            width="16px"
-                          >
-                            <g
-                              fill="none"
-                              fillRule="evenodd"
-                              id="Artboard-Copy"
-                              stroke="none"
-                              strokeWidth="1"
-                            >
-                              <g
-                                id="Group"
-                              >
-                                <path
-                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                                  fill="#FFFFFF"
-                                  id="outline-color"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#FDD13A"
-                                  id="background-color"
-                                  r="7"
-                                />
-                                <path
-                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                                  fill="#FFFFFF"
-                                  id="symbol-color"
-                                />
-                              </g>
-                            </g>
-                          </svg>
-                          <span
-                            className="iot--threshold-icon--text"
-                          >
-                            Low
-                          </span>
-                        </div>
-                      </span>
+                      />
                     </td>
                     <td
                       align="start"
@@ -21920,7 +22301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           <span
                             className="iot--threshold-icon--text"
                           >
-                            Critical
+                            Custom Critical
                           </span>
                         </div>
                       </span>
@@ -22414,54 +22795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <div
-                          className="iot--threshold-icon--wrapper"
-                          title="count: 0 < 5"
-                        >
-                          <svg
-                            height="16px"
-                            version="1.1"
-                            viewBox="0 0 16 16"
-                            width="16px"
-                          >
-                            <g
-                              fill="none"
-                              fillRule="evenodd"
-                              id="Artboard-Copy"
-                              stroke="none"
-                              strokeWidth="1"
-                            >
-                              <g
-                                id="Group"
-                              >
-                                <path
-                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                                  fill="#FFFFFF"
-                                  id="outline-color"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#FDD13A"
-                                  id="background-color"
-                                  r="7"
-                                />
-                                <path
-                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                                  fill="#FFFFFF"
-                                  id="symbol-color"
-                                />
-                              </g>
-                            </g>
-                          </svg>
-                          <span
-                            className="iot--threshold-icon--text"
-                          >
-                            Low
-                          </span>
-                        </div>
-                      </span>
+                      />
                     </td>
                     <td
                       align="start"
@@ -22598,54 +22932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <span
                         className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
-                      >
-                        <div
-                          className="iot--threshold-icon--wrapper"
-                          title="count: 3 < 5"
-                        >
-                          <svg
-                            height="16px"
-                            version="1.1"
-                            viewBox="0 0 16 16"
-                            width="16px"
-                          >
-                            <g
-                              fill="none"
-                              fillRule="evenodd"
-                              id="Artboard-Copy"
-                              stroke="none"
-                              strokeWidth="1"
-                            >
-                              <g
-                                id="Group"
-                              >
-                                <path
-                                  d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                                  fill="#FFFFFF"
-                                  id="outline-color"
-                                />
-                                <circle
-                                  cx="8"
-                                  cy="8"
-                                  fill="#FDD13A"
-                                  id="background-color"
-                                  r="7"
-                                />
-                                <path
-                                  d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                                  fill="#FFFFFF"
-                                  id="symbol-color"
-                                />
-                              </g>
-                            </g>
-                          </svg>
-                          <span
-                            className="iot--threshold-icon--text"
-                          >
-                            Low
-                          </span>
-                        </div>
-                      </span>
+                      />
                     </td>
                     <td
                       align="start"
@@ -22859,7 +23146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           <span
                             className="iot--threshold-icon--text"
                           >
-                            Critical
+                            Custom Critical
                           </span>
                         </div>
                       </span>
@@ -23506,6 +23793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       open={false}
                       tabIndex={0}
+                      title="Open and close list of options"
                     >
                       <svg
                         aria-label="open and close list of options"
@@ -23546,15 +23834,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     type="button"
                   >
                     <svg
-                      aria-hidden={true}
+                      description="Expand to fullscreen"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       style={
                         Object {
                           "willChange": "transform",
                         }
                       }
+                      title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
@@ -23677,9 +23967,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           className="bx--table-header-label"
                         >
                           <span
-                            title="Severity"
+                            title="Count Severity"
                           >
-                            Severity
+                            Count Severity
                           </span>
                         </span>
                         <svg

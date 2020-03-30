@@ -11,3 +11,15 @@
     }
   }
 }
+
+.#{$iot-prefix}--row-actions-container__background {
+  padding-left: 24px;
+  z-index: 0;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
+  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} 16px);
+}

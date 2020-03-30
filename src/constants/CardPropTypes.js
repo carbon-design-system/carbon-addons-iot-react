@@ -140,8 +140,10 @@ export const TableCardPropTypes = {
         icon: PropTypes.string,
         /** Custom threshold label text */
         label: PropTypes.string,
-        /** Shows threshold label next to icon */
-        showLabel: PropTypes.bool,
+        /** Optionally shows threshold severity label text. Shows by default */
+        showSeverityLabel: PropTypes.bool,
+        /** Optionally changes threshold severity label text */
+        severityLabel: PropTypes.string,
         /** Shows column when there is no data */
         showOnContent: PropTypes.bool,
       })
