@@ -4187,6 +4187,65 @@ Map {
       },
     },
   },
+  "TimePickerSpinner" => Object {
+    "defaultProps": Object {
+      "children": null,
+      "defaultTimegroup": "HOURS",
+      "disabled": false,
+      "is12hour": false,
+      "onChange": null,
+      "onClick": null,
+      "spinner": false,
+      "value": "",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "defaultTimegroup": Object {
+        "args": Array [
+          Array [
+            "HOURS",
+            "MINUTES",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "is12hour": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "spinner": Object {
+        "type": "bool",
+      },
+      "value": Object {
+        "type": "string",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
@@ -7425,6 +7484,10 @@ Map {
   "TimeSeriesCard" => Object {
     "defaultProps": Object {
       "chartType": "LINE",
+      "content": Object {
+        "includeZeroOnXaxis": true,
+        "includeZeroOnYaxis": true,
+      },
       "i18n": Object {
         "alertDetected": "Alert detected:",
       },
@@ -7899,6 +7962,12 @@ Map {
                 ],
               ],
               "type": "oneOf",
+            },
+            "includeZeroOnXaxis": Object {
+              "type": "bool",
+            },
+            "includeZeroOnYaxis": Object {
+              "type": "bool",
             },
             "series": Object {
               "args": Array [

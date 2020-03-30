@@ -343,7 +343,7 @@ export const initialState = {
             id: 'drilldown',
             renderIcon: Arrow,
             iconDescription: 'Drill in',
-            labelText: 'Drill in',
+            labelText: 'Drill in to find out more after observing',
           }
         : null,
       {
@@ -501,7 +501,7 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Stateful Example with expansion',
+    'Stateful Example with expansion and column resize',
     () => (
       <FullWidthWrapper>
         <StatefulTable
@@ -513,6 +513,7 @@ storiesOf('Watson IoT/Table', module)
           }}
           isSortable
           lightweight={boolean('lightweight', false)}
+          options={{ ...initialState.options, hasResize: true }}
         />
       </FullWidthWrapper>
     ),
@@ -1303,16 +1304,21 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with resize and initial column widths',
+    'with resize, hasColumnSelection and initial column widths',
     () => (
-      <Table
-        options={{ hasResize: true }}
+      <StatefulTable
+        options={{ hasResize: true, hasColumnSelection: true }}
         columns={tableColumns.map((i, idx) => ({
-          width: idx % 2 === 0 ? '100px' : '100px',
+          width: idx % 2 === 0 ? '100px' : '200px',
           ...i,
         }))}
         data={tableData}
         actions={actions}
+        view={{
+          table: {
+            ordering: defaultOrdering,
+          },
+        }}
       />
     ),
     {

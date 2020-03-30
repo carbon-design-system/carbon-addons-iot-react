@@ -8,7 +8,6 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 /* eslint-disable */
 import TimeSeriesCard, {
   determinePrecision,
-  formatChartData,
   valueFormatter,
   handleTooltip,
 } from './TimeSeriesCard';
@@ -29,7 +28,7 @@ const timeSeriesCardProps = {
     yLabel: 'Temperature (˚F)',
     timeDataSourceId: 'timestamp',
   },
-  values: getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100),
+  values: getIntervalChartData('hour', 1, { min: 50, max: 100 }, 100),
   interval: 'hour',
   breakpoint: 'lg',
   size: 'LARGE',

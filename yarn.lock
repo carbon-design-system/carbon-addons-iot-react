@@ -1972,24 +1972,28 @@
   resolved "https://registry.yarnpkg.com/@base2/pretty-print-object/-/pretty-print-object-1.0.0.tgz#860ce718b0b73f4009e153541faff2cb6b85d047"
   integrity sha512-4Th98KlMHr5+JkxfcoDT//6vY8vM+iSPrLNpHhRyLx2CFYi8e2RfqPLdpbnpo0Q5lQC5hNB79yes07zb02fvCw==
 
-"@carbon/charts-react@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.29.0.tgz#89223751fc51e037c0c1fb10711fffa5bc6d1eca"
-  integrity sha512-uwFv7sGtA8wSZYQmSB297yLtW9lILbNrD9/grbZQnYHKkOUFZStoJs/wU+46yGoPGvbRfXnPGoPsIVfi8F8Vhg==
+"@carbon/charts-react@^0.30.5":
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.30.5.tgz#74bfe1bc15cdd37b41f180f31a9dfe3a1c127887"
+  integrity sha512-p35StjL/XNBvLWiVSfhB+Kpg9MNA4pGSKyQxNhMW7+mGUWsRATqYBRwPZ1XjxzN/Vx9dhg5FsKSq+JpUPwHvwg==
   dependencies:
-    "@carbon/charts" "^0.29.0"
+    "@carbon/charts" "^0.30.5"
 
-"@carbon/charts@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.29.0.tgz#8ea1c6449de741465ea574b51bf94ba11d35b6ef"
-  integrity sha512-QWD73L5dHI1JU5S87VIJWuvKzdpOXZ7g9pnWQ4BiFtzjFfplZnEnRQT6d/b4n4kmZ4Oze4i0ekI5kMlNs5MWGQ==
+"@carbon/charts@^0.30.5":
+  version "0.30.5"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.30.5.tgz#e503c93ca93ea0a31c417fad7a399e88343877e8"
+  integrity sha512-IrPwKIpU61RnKVKgD3zfrLKoag8To2M4WtZ/3gszQdE816TbLhURI28RaYQlUvqcu3nPIWo+jnhAHjb7Xh5XPw==
   dependencies:
+    "@carbon/colors" "10.4.0"
     "@carbon/utils-position" "1.1.1"
-    babel-polyfill "6.26.0"
-    carbon-components "10.5.0"
     date-fns "2.8.1"
     lodash-es "4.17.15"
     resize-observer-polyfill "1.5.0"
+
+"@carbon/colors@10.4.0":
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.4.0.tgz#8c21127926bc389dcb4d415b55d4eae278f3d525"
+  integrity sha512-UERU07hWXAjsaWu6JPJDyJnwVLkJr+8wTvFrbCkubCfl/MZjKoyLgz0CNypu8hSg8ZaDUzl/NfXMgRpprzuSjQ==
 
 "@carbon/colors@10.7.0", "@carbon/colors@^10.7.0":
   version "10.7.0"
@@ -5636,16 +5640,6 @@ carbon-components-react@7.9.1:
     react-is "^16.8.6"
     warning "^3.0.0"
     window-or-global "^1.0.1"
-
-carbon-components@10.5.0:
-  version "10.5.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.5.0.tgz#f9d0d4da57b41ba958a30745cb4ada902e491345"
-  integrity sha512-ptsULtugjrrnj7rb2BYK3KAvNjbTdphh62OmOMNaLLswB7jA7S3rnXJrOOWt8o7PeEad3U0ewW49G9OlbpX+mg==
-  dependencies:
-    carbon-icons "^7.0.7"
-    flatpickr "4.6.1"
-    lodash.debounce "^4.0.8"
-    warning "^3.0.0"
 
 carbon-components@10.9.1:
   version "10.9.1"

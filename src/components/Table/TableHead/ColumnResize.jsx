@@ -4,29 +4,31 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../../constants/Settings';
 
+import { MIN_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
+
 const propTypes = {
-  allColumns: PropTypes.shape({
-    width: PropTypes.number,
-    index: PropTypes.number,
-    id: PropTypes.string,
-    visible: PropTypes.boolean,
-  }).isRequired,
+  currentColumnWidths: PropTypes.objectOf(
+    PropTypes.shape({
+      width: PropTypes.number,
+      id: PropTypes.string,
+    })
+  ).isRequired,
   columnId: PropTypes.string.isRequired,
   onResize: PropTypes.func.isRequired,
+  ordering: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const dragHandleWidth = 4;
 const { iotPrefix } = settings;
 
 const getColumnDragBounds = (myColumn, siblingColumn) => {
-  const minColumnWidth = 32;
   return {
-    minColumnWidth,
-    left: document.dir === 'rtl' ? minColumnWidth - siblingColumn.width : minColumnWidth,
+    MIN_COLUMN_WIDTH,
+    left: document.dir === 'rtl' ? MIN_COLUMN_WIDTH - siblingColumn.width : MIN_COLUMN_WIDTH,
     right:
       document.dir === 'rtl'
-        ? myColumn.width - minColumnWidth
-        : myColumn.width + siblingColumn.width - minColumnWidth,
+        ? myColumn.width - MIN_COLUMN_WIDTH
+        : myColumn.width + siblingColumn.width - MIN_COLUMN_WIDTH,
   };
 };
 
@@ -43,8 +45,14 @@ const getUpdatedColumnWidths = (dropXPos, myColumn, affectedSiblingColumn) => {
   ];
 };
 
+const findNextVisibleSibling = (ordering, myColIndex, currentColumnWidths) => {
+  const nextColIndex = ordering.findIndex((col, i) => i > myColIndex && !col.isHidden);
+  const nextColId = ordering[nextColIndex].columnId;
+  return currentColumnWidths[nextColId];
+};
+
 const ColumnResize = React.forwardRef((props, ref) => {
-  const { allColumns, columnId } = props;
+  const { currentColumnWidths, columnId, ordering } = props;
   const [startX, setStartX] = useState(0);
   const [leftPosition, setLeftPosition] = useState(0);
   const [columnIsBeingResized, setColumnIsBeingResized] = useState(false);
@@ -52,15 +60,11 @@ const ColumnResize = React.forwardRef((props, ref) => {
   const [affectedSiblingColumn, setAffectedSiblingColumn] = useState();
 
   const setAffectedColumns = () => {
-    const myCol = allColumns[columnId];
-    const sortedVisibleColumns = Object.keys(allColumns)
-      .map(key => allColumns[key])
-      .filter(col => col.visible)
-      .sort((a, b) => a.index - b.index);
-    const myColumnVisiblePosition = sortedVisibleColumns.findIndex(col => col.id === columnId);
-
+    const myCol = currentColumnWidths[columnId];
+    const myColIndex = ordering.findIndex(col => col.columnId === columnId);
+    const siblingColumn = findNextVisibleSibling(ordering, myColIndex, currentColumnWidths);
     setMyColumn(myCol);
-    setAffectedSiblingColumn(sortedVisibleColumns[myColumnVisiblePosition + 1]);
+    setAffectedSiblingColumn(siblingColumn);
   };
 
   const onMouseDown = e => {
