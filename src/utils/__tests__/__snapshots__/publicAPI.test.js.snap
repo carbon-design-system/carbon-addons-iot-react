@@ -7484,6 +7484,10 @@ Map {
   "TimeSeriesCard" => Object {
     "defaultProps": Object {
       "chartType": "LINE",
+      "content": Object {
+        "includeZeroOnXaxis": true,
+        "includeZeroOnYaxis": true,
+      },
       "i18n": Object {
         "alertDetected": "Alert detected:",
       },
@@ -7958,6 +7962,12 @@ Map {
                 ],
               ],
               "type": "oneOf",
+            },
+            "includeZeroOnXaxis": Object {
+              "type": "bool",
+            },
+            "includeZeroOnYaxis": Object {
+              "type": "bool",
             },
             "series": Object {
               "args": Array [

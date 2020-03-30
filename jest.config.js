@@ -64,7 +64,7 @@ module.exports = {
       statements: 70,
       branches: 50,
       lines: 69,
-      functions: 77,
+      functions: 76.47,
     },
     './src/components/Page/EditPage.jsx': {
       statements: 63,
