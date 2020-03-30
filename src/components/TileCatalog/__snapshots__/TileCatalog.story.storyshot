@@ -19,7 +19,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <div
           className="bx--tile iot--tile-catalog--empty-tile"
@@ -142,7 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
     </div>
@@ -192,7 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={true}
@@ -867,7 +867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div
@@ -986,7 +986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={false}
@@ -1661,7 +1661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div
@@ -1721,7 +1721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <div
           className="bx--tile iot--tile-catalog--empty-tile"
@@ -1844,7 +1844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
     </div>
@@ -1894,7 +1894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={true}
@@ -2473,7 +2473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div
@@ -2662,7 +2662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         </div>
       </div>
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={true}
@@ -3241,7 +3241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div

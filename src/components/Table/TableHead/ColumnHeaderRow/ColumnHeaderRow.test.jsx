@@ -19,6 +19,7 @@ const commonTableHeadProps = {
     hasRowExpansion: false,
   },
   onChangeOrdering: jest.fn(),
+  onColumnToggle: jest.fn(),
 };
 
 const wrapInTestContext = (DecoratedComponent, props) =>
