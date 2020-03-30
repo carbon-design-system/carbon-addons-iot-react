@@ -30,43 +30,6 @@ const globals = {
   'element-resize-detector': 'ElementResizeDetector',
   lodash: 'lodash',
 };
-// const external = [
-//   ...Object.keys(packageJson.peerDependencies),
-//   ...Object.keys(packageJson.dependencies),
-//   'lodash/isNil',
-//   'lodash/isEmpty',
-//   'lodash/uniqBy',
-//   'lodash/groupBy',
-//   'lodash/omit',
-//   'lodash/merge',
-//   'lodash/some',
-//   'lodash/find',
-//   'lodash/cloneDeep',
-//   'lodash/debounce',
-//   'lodash/pick',
-//   'lodash/get',
-//   'lodash/memoize',
-//   'lodash/capitalize',
-//   'lodash/escapeRegExp',
-//   'lodash/filter',
-//   'lodash/every',
-//   'lodash/delay',
-//   'lodash/union',
-//   'moment/min/moment-with-locales.min',
-//   '@carbon/icons-react',
-//   'core-js/modules/*',
-//   'core-js/modules/es6.promise',
-//   'core-js/modules/es6.array.sort',
-//   'core-js/modules/es6.array.find',
-//   'core-js/modules/es6.array.fill',
-//   'core-js/modules/es6.array.find-index',
-//   'core-js/modules/es6.array.iterator',
-//   'core-js/modules/es7.array.includes',
-//   'core-js/modules/es6.regexp.replace',
-//   'core-js/modules/es6.regexp.split',
-//   'core-js/modules/es6.regexp.search',
-//   'core-js/modules/es6.regexp.to-string',
-// ];
 
 const external = id => {
   return (
@@ -201,7 +164,7 @@ export default [
           // Copy CSS
           {
             src: ['lib/css/'],
-            dest: ['./'],
+            dest: ['./', 'umd'],
           },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
