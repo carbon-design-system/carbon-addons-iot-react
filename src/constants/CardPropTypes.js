@@ -90,8 +90,14 @@ export const TimeSeriesCardPropTypes = {
       TimeSeriesDatasetPropTypes,
       PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
     ]).isRequired,
+    /** Custom X-axis label */
     xLabel: PropTypes.string,
+    /** Custom Y-axis label */
     yLabel: PropTypes.string,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnXaxis: PropTypes.bool,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnYaxis: PropTypes.bool,
     /** Which attribute is the time attribute */
     timeDataSourceId: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
