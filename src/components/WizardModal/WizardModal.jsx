@@ -142,7 +142,7 @@ class WizardModal extends Component {
         sendingData={
           (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
         }
-        className={`${iotPrefix}-wizard-modal__footer`}
+        className={`${iotPrefix}--wizard-modal__footer`}
       />
     );
   };
@@ -155,7 +155,7 @@ class WizardModal extends Component {
     return (
       <ComposedModal
         {...other}
-        className={classNames(`${iotPrefix}-wizard-modal`, className)}
+        className={classNames(`${iotPrefix}--wizard-modal`, className)}
         footer={this.renderFooter()}
       >
         <ProgressIndicator
@@ -163,7 +163,7 @@ class WizardModal extends Component {
           currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : undefined}
           onClickItem={this.handleClick}
         />
-        <div className={`${iotPrefix}-wizard-modal__content`}>{steps[stepIndex].content}</div>
+        <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
       </ComposedModal>
     );
   }
