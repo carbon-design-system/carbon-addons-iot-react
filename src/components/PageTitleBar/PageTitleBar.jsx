@@ -77,6 +77,9 @@ const PageTitleBar = ({
 }) => {
   //
   const titleBarContent = content || tabs;
+  // do typecheck to support old markup with surrounding 'p' tag
+  const tooltipDescription = typeof description === 'string' ? <p>{description}</p> : description;
+
   return (
     <div className={classNames(className, 'page-title-bar')}>
       {isLoading ? (
@@ -105,7 +108,7 @@ const PageTitleBar = ({
                       tooltipId="tooltip"
                       renderIcon={Information20}
                     >
-                      <p>{description}</p>
+                      {tooltipDescription}
                     </Tooltip>
                   ) : null}
                   {editable ? (

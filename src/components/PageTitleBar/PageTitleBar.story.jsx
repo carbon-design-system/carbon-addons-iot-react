@@ -24,6 +24,13 @@ export const commonPageTitleBarProps = {
   ),
 };
 
+const NodeTooltip = () => (
+  <div>
+    Descriptive text about this page and what the user can or should do on it{' '}
+    <button type="button">Even Buttons</button>
+  </div>
+);
+
 export const pageTitleBarBreadcrumb = [
   <a href="/">Home</a>,
   <a href="/">Type</a>,
@@ -42,10 +49,10 @@ storiesOf('Watson IoT/PageTitleBar', module)
       description={commonPageTitleBarProps.description}
     />
   ))
-  .add('with tooltip description', () => (
+  .add('with tooltip description as node', () => (
     <PageTitleBar
       title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
+      description={<NodeTooltip />}
       breadcrumb={pageTitleBarBreadcrumb}
       collapsed
     />
