@@ -126,7 +126,8 @@ export default [
     input: 'src/index.js',
     output: [
       {
-        file: 'umd/carbon-addons-iot-react.js',
+        // output to tmp folder until umd build can be fixed.
+        file: 'tmp/carbon-addons-iot-react.js',
         name: 'CarbonAddonsIoTReact',
         format: 'umd',
         globals: {
@@ -164,7 +165,7 @@ export default [
           // Copy CSS
           {
             src: ['lib/css/'],
-            dest: ['./', 'umd'],
+            dest: ['./'],
           },
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
