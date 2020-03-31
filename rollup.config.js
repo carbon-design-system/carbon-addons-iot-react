@@ -107,11 +107,11 @@ export default [
     ],
   },
   // Copy all styles to various directories.
+  // UMD
   {
     input: 'src/index.js',
     output: [
       {
-        // output to tmp folder until umd build can be fixed.
         file: 'umd/carbon-addons-iot-react.js',
         name: 'CarbonAddonsIoTReact',
         format: 'umd',
