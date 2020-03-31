@@ -67,9 +67,13 @@ const AttributeValue = styled.span`
   padding-bottom: 0.25rem;
   font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
-  white-space: nowrap;
+  /* autoprefixer: ignore next */
+  ${props =>
+    props.allowedToWrap
+      ? `white-space: nowrap; text-overflow: ellipsis;`
+      : `display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow-wrap: break-word;`};
+  ${props => !props.hasWords && 'word-break: break-all;'}
   overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 const StyledBoolean = styled.span`
@@ -126,6 +130,11 @@ const ValueRenderer = ({
   } else if (isNil(value)) {
     renderValue = '--';
   }
+
+  const hasWordsCheck = string =>
+    typeof string === 'string' ? string.trim().indexOf(' ') >= 0 : false;
+  const hasWords = hasWordsCheck(renderValue);
+
   return (
     <Attribute
       unit={unit}
@@ -146,6 +155,8 @@ const ValueRenderer = ({
         isSmall={isSmall}
         isMini={isMini}
         value={value}
+        allowedToWrap={allowedToWrap}
+        hasWords={hasWords}
       >
         {renderValue}
       </AttributeValue>

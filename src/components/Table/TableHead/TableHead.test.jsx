@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { settings } from '../../../constants/Settings';
 
@@ -7,6 +8,8 @@ import TableHead from './TableHead';
 import TableHeader from './TableHeader';
 
 const { iotPrefix } = settings;
+const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+const mockGetBoundingClientRect = jest.fn();
 
 const commonTableHeadProps = {
   /** List of columns */
@@ -156,5 +159,152 @@ describe('TableHead', () => {
     tableHeaderResizeHandles.first().simulate('mouseMove');
     tableHeaderResizeHandles.first().simulate('mouseUp');
     expect(tableHeaderResizeHandles).toHaveLength(2);
+  });
+
+  test('fixed column widths for non-resizable columns', () => {
+    const myProps = {
+      ...commonTableHeadProps,
+      columns: [{ id: 'col1', name: 'Column 1', width: '101' }],
+      tableState: {
+        ...commonTableHeadProps.tableState,
+        ordering: [{ columnId: 'col1', isHidden: false }],
+      },
+      options: { hasResize: false },
+    };
+
+    const wrapper = mount(<TableHead {...myProps} />);
+    const tableHeader = wrapper.find(TableHeader).first();
+    expect(tableHeader.prop('width')).toBe('101');
+  });
+
+  describe('Column resizing active', () => {
+    let ordering;
+    let columns;
+    let myActions;
+    let myProps;
+
+    beforeAll(() => {
+      Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    });
+
+    beforeEach(() => {
+      ordering = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+      columns = [
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '100px' },
+      ];
+
+      myActions = { onChangeOrdering: jest.fn(), onColumnResize: jest.fn() };
+      myProps = {
+        ...commonTableHeadProps,
+        columns,
+        tableState: {
+          ...commonTableHeadProps.tableState,
+          ordering,
+          activeBar: 'column',
+        },
+        options: { hasResize: true },
+        actions: myActions,
+      };
+    });
+
+    afterAll(() => {
+      Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    });
+
+    test('toggle hide column correctly updates the column widths of visible columns', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
+      const orderingAfterTogleHide = [
+        { columnId: 'col1', isHidden: true },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+
+      // Hide col1. The width of col1 is proportionally distributed over
+      // the remaining visible columns.
+
+      onColumnToggleFunc('col1', orderingAfterTogleHide);
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '150px' },
+        { id: 'col3', name: 'Column 3', width: '150px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleHide);
+    });
+
+    test('toggle show column correctly updates the column widths of visible columns', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
+
+      const orderingAfterTogleShow = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+
+      // Show col1. The width needed for col1 is proportionally subtracted from
+      // the other visible columns.
+      onColumnToggleFunc('col1', orderingAfterTogleShow);
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '50px' },
+        { id: 'col3', name: 'Column 3', width: '50px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+    });
+
+    test('the last visible column should never have a resize handle', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: false },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const resizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+      expect(resizeHandles).toHaveLength(2);
+      const lastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
+      expect(lastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+
+      // Hide the last column (use shortcut via props)
+      const orderingAfterToggleHide = cloneDeep(myProps.tableState.ordering).map(col =>
+        col.columnId === 'col3' ? { ...col, isHidden: true } : col
+      );
+      wrapper.setProps({
+        ...myProps,
+        tableState: { ...myProps.tableState, ordering: orderingAfterToggleHide },
+      });
+      wrapper.update();
+      const updatedResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
+      expect(updatedResizeHandles).toHaveLength(1);
+
+      const modLastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
+      expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+    });
   });
 });

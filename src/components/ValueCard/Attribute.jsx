@@ -196,6 +196,7 @@ const Attribute = ({
               isMini={isMini}
               allowedToWrap={allowWrap}
               wrapCompact={wrapCompact}
+              attributeCount={attributeCount}
             />
             {!isNil(secondaryValue) && (!measuredSize || measuredSize.width > 100) ? (
               <AttributeSecondaryValue

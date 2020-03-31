@@ -32,6 +32,7 @@ export PageTitleBar from './components/PageTitleBar/PageTitleBar';
 export HierarchyList from './components/List/HierarchyList';
 export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
+export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';

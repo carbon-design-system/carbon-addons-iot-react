@@ -86,11 +86,11 @@ carbon-addons-iot-react/
 
 Compiled CSS files are provided for ease of use getting started.
 
-A sass entrypoint is available at `lib/scss/styles.scss` for use in your project.
+A sass entrypoint is available at `scss/styles.scss` for use in your project.
 
 Using sass files (instead of the compiled .css) infers usage of a SCSS pre-processor. All Sass files use the `*.scss` file extension. For transpiling Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor prefixes are automatically added to your output CSS.
 
-Feedback and improvement requests regarding this configuration would be appreciated, [please contribute to this issue](https://github.com/IBM/carbon-addons-iot-react/issues/426).
+Feedback and improvement requests regarding this configuration would be appreciated, [please open an issue](https://github.com/IBM/carbon-addons-iot-react/issues/new?assignees=&labels=%3Ahammer%3A++Enhancement&template=feature-request-or-enhancement.md&title=%5BComponentName%5D+request_title).
 
 ## Dependencies
 
