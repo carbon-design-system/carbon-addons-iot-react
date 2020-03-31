@@ -1,47 +1,47 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--wizard-modal {
-  .bx--modal-container {
+  .#{$prefix}--modal-container {
     min-width: 410px;
   }
 
-  .bx--progress {
+  .#{$prefix}--progress {
     /* need to pad some space for the focus outlines*/
     padding: 3px;
   }
-  .bx--progress-step {
+  .#{$prefix}--progress-step {
     max-width: 150px;
   }
   > div + div {
-    padding-top: 1rem;
+    padding-top: $spacing-05;
   }
 
-  .bx--modal-content {
+  .#{$prefix}--modal-content {
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 $spacing-05;
   }
 
   .#{$iot-prefix}--wizard-modal__content {
-    padding-top: 1rem;
-    padding-left: 1rem;
+    padding-top: $spacing-05;
+    padding-left: $spacing-05;
     padding-bottom: 7rem;
   }
 }
 
 html[dir='rtl'] {
   .#{$iot-prefix}--wizard-modal {
-    .bx--modal-header,
-    .bx--modal-content {
+    .#{$prefix}--modal-header,
+    .#{$prefix}--modal-content {
       padding-left: 20%;
-      padding-right: 3rem;
+      padding-right: $spacing-09;
     }
-    .bx--progress-step svg {
+    .#{$prefix}--progress-step svg {
       margin-right: 0;
-      margin-left: 0.5rem;
+      margin-left: $spacing-03;
     }
 
     .#{$iot-prefix}--wizard-modal__content {
-      padding-right: 1rem;
+      padding-right: $spacing-05;
       padding-left: 0;
     }
     .#{$iot-prefix}--wizard-modal__footer {
