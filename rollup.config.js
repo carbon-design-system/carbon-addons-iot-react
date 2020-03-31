@@ -121,7 +121,7 @@ export default [
       }),
     ],
   },
-  // UMD
+  // Copy all styles to various directories.
   {
     input: 'src/index.js',
     output: [
