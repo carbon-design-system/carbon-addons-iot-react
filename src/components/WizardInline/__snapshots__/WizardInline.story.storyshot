@@ -82,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="bx--progress wizard-inline-progress-indicator  iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -373,7 +373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="bx--progress wizard-inline-progress-indicator  iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -664,7 +664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="bx--progress wizard-inline-progress-indicator  iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -996,7 +996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="bx--progress wizard-inline-progress-indicator  iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1278,7 +1278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="bx--progress wizard-inline-progress-indicator  iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li
@@ -1569,7 +1569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <ul
-          className="bx--progress wizard-inline-progress-indicator  iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+          className="bx--progress wizard-inline-progress-indicator iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
           onChange={[Function]}
         >
           <li

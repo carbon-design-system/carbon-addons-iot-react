@@ -2,34 +2,34 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--progress-indicator {
-  .bx--skeleton .bx--progress-step {
+  .#{$prefix}--skeleton .#{$prefix}--progress-step {
     flex: unset;
   }
 }
 
 html[dir='rtl'] {
   .#{$iot-prefix}--progress-indicator {
-    .bx--progress-step svg {
+    .#{$prefix}--progress-step svg {
       margin-right: 0;
       margin-left: 0.5rem;
     }
-    .bx--progress-optional {
+    .#{$prefix}--progress-optional {
       margin-right: 1.5rem;
       margin-left: 0;
       right: 0;
       left: unset;
     }
-    .bx--progress-line {
+    .#{$prefix}--progress-line {
       right: 0;
       left: unset;
     }
-    &.bx--progress--vertical .bx--progress-step svg {
+    &.#{$prefix}--progress--vertical .#{$prefix}--progress-step svg {
       margin-right: 0.563rem;
     }
   }
 
   // for the skeleton
-  .bx--progress-step--incomplete svg {
+  .#{$prefix}--progress-step--incomplete svg {
     margin-right: 0;
     margin-left: 0.5rem;
   }
