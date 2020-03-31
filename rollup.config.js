@@ -15,21 +15,6 @@ const env = process.env.NODE_ENV || 'development';
 const prodSettings = env === 'development' ? [] : [uglify(), filesize()];
 
 const extensions = ['.mjs', '.js', '.jsx', '.json'];
-const globals = {
-  classnames: 'classNames',
-  'prop-types': 'PropTypes',
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'carbon-icons': 'CarbonIcons',
-  '@carbon/icons-react': 'CarbonIconsReact',
-  'carbon-components': 'CarbonComponents',
-  'carbon-components-react': 'CarbonComponentsReact',
-  'styled-components': 'styled',
-  d3: 'd3',
-  'react-sizeme': 'ReactSizeme',
-  'element-resize-detector': 'ElementResizeDetector',
-  lodash: 'lodash',
-};
 
 const external = id => {
   return (
@@ -127,16 +112,90 @@ export default [
     output: [
       {
         // output to tmp folder until umd build can be fixed.
-        file: 'tmp/carbon-addons-iot-react.js',
+        file: 'umd/carbon-addons-iot-react.js',
         name: 'CarbonAddonsIoTReact',
         format: 'umd',
         globals: {
-          ...globals,
+          classnames: 'classNames',
+          'prop-types': 'PropTypes',
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'carbon-icons': 'CarbonIcons',
+          '@carbon/icons-react': 'CarbonIconsReact',
+          'carbon-components': 'CarbonComponents',
+          'carbon-components-react': 'CarbonComponentsReact',
+          'styled-components': 'styled',
+          d3: 'd3',
         },
       },
     ],
-    external,
+    external: [
+      'react',
+      'react-dom',
+      'styled-components',
+      'prop-types',
+      'carbon-components-react',
+      'carbon-icons',
+      '@carbon/icons',
+      '@carbon/icons-react',
+      'carbon-components',
+      'd3',
+    ],
     plugins: [
+      resolve({
+        browser: true,
+        extensions: ['.mjs', '.js', '.jsx', '.json'],
+      }),
+      commonjs({
+        namedExports: {
+          'react-js': ['isValidElementType'],
+          'node_modules/carbon-components-react/lib/components/UIShell/index.js': [
+            'Header',
+            'HeaderName',
+            'HeaderMenu',
+            'HeaderMenuButton',
+            'HeaderGlobalBar',
+            'HeaderGlobalAction',
+            'SkipToContent',
+            'HeaderMenuItem',
+            'HeaderNavigation',
+            'HeaderPanel',
+            'SideNav',
+            'SideNavItems',
+            'SideNavLink',
+            'SideNavMenu',
+            'SideNavMenuItem',
+            'SideNavFooter',
+          ],
+        },
+
+        include: 'node_modules/**',
+      }),
+      babel({
+        exclude: 'node_modules/**',
+      }),
+      replace({
+        'process.env.NODE_ENV': JSON.stringify(env),
+      }),
+      json({
+        // All JSON files will be parsed by default,
+        // but you can also specifically include/exclude files
+        exclude: ['node_modules'],
+
+        // for tree-shaking, properties will be declared as
+        // variables, using either `var` or `const`
+        preferConst: true, // Default: false
+
+        // specify indentation for the generated default export —
+        // defaults to '\t'
+        indent: '  ',
+
+        // ignores indent and generates the smallest code
+        compact: true, // Default: false
+
+        // generate a named export for every property of the JSON object
+        namedExports: true, // Default: true
+      }),
       copy({
         flatten: false,
         targets: [
@@ -170,7 +229,6 @@ export default [
         ],
         verbose: env !== 'development', // logs the file copy list on production builds for easier debugging
       }),
-      ...plugins,
       ...prodSettings,
     ],
   },

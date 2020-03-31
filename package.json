@@ -2,6 +2,7 @@
   "name": "carbon-addons-iot-react",
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
+  "unpkg": "umd/carbon-addons-iot-react.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
