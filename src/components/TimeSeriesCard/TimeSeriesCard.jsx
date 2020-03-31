@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useMemo, useCallback } from 'react';
+import React, { useRef, useMemo, useCallback } from 'react';
 import moment from 'moment/min/moment-with-locales.min';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
@@ -182,12 +182,21 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
 
 const TimeSeriesCard = ({
   title,
-  content: { series, timeDataSourceId = 'timestamp', alertRanges, xLabel, yLabel, unit, chartType },
+  content: {
+    series,
+    timeDataSourceId = 'timestamp',
+    alertRanges,
+    xLabel,
+    yLabel,
+    includeZeroOnXaxis,
+    includeZeroOnYaxis,
+    unit,
+    chartType,
+  },
   size,
   interval,
   isEditable,
   values: valuesProp,
-
   locale,
   i18n: { alertDetected, noDataLabel },
   i18n,
@@ -368,7 +377,7 @@ const TimeSeriesCard = ({
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
-        <Fragment>
+        <>
           <LineChartWrapper
             size={newSize}
             isEditable={isEditable}
@@ -394,6 +403,7 @@ const TimeSeriesCard = ({
                       max: maxTicksPerSize,
                       formatter: formatTick,
                     },
+                    includeZero: includeZeroOnXaxis,
                   },
                   left: {
                     title: yLabel,
@@ -405,6 +415,7 @@ const TimeSeriesCard = ({
                       ? { primary: true }
                       : { secondary: true }),
                     stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
+                    includeZero: includeZeroOnYaxis,
                   },
                 },
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
@@ -462,7 +473,7 @@ const TimeSeriesCard = ({
               i18n={i18n}
             />
           ) : null}
-        </Fragment>
+        </>
       ) : null}
     </Card>
   );
@@ -478,6 +489,10 @@ TimeSeriesCard.defaultProps = {
   },
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',
+  content: {
+    includeZeroOnXaxis: true,
+    includeZeroOnYaxis: true,
+  },
 };
 
 export default TimeSeriesCard;
