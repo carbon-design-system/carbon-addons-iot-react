@@ -2439,7 +2439,7 @@ export const generateData = (quantity, intInterval, decimals) => {
 
 /**
  *
- * @param {*} interval
+ * @param {string} interval time-based
  * @param {*} quantity
  * @param {*} intInterval
  * @param {*} decimals
