@@ -61,6 +61,13 @@ const TableToolbarSearch = ({
     [focusTarget]
   );
 
+  useEffect(
+    () => {
+      setExpanded(defaultValue && defaultValue !== '');
+    },
+    [defaultValue]
+  );
+
   const handleExpand = (event, val) => {
     setExpanded(val);
     if (onExpand) {
