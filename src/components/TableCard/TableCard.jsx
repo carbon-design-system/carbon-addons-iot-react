@@ -7,7 +7,7 @@ import uniqBy from 'lodash/uniqBy';
 import find from 'lodash/find';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
-import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
+import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/20';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';

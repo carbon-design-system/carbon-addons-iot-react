@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderGlobalBar } from 'carbon-components-react/lib/components/UIShell';
+import { HeaderGlobalBar } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 
 import HeaderAction from './HeaderAction/HeaderAction';
