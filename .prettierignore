@@ -1,3 +1,9 @@
-lib/
 node_modules/
 coverage/
+lib/
+es/
+umd/
+tmp/
+storybook-static/
+results/
+examples/
