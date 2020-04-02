@@ -1,4 +1,5 @@
-@import '~@carbon/charts/styles.css';
+@import '~@carbon/charts/styles/styles.scss';
+@import './vars';
 
 html[dir='rtl'] .chart-holder {
   .legend-item {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
-import Close from '@carbon/icons-react/lib/close/20';
+import Close from '@carbon/icons-react/es/close/20';
 
 const StyledDivWizardHeader = styled.div`
   display: flex;

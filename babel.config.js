@@ -1,3 +1,5 @@
+const { BABEL_ENV } = process.env;
+
 module.exports = function generateConfig(api) {
   api.cache(true);
   return {
@@ -9,6 +11,7 @@ module.exports = function generateConfig(api) {
             browsers: ['last 2 version', 'ie >= 11'],
           },
           useBuiltIns: 'usage',
+          modules: BABEL_ENV === 'production' ? false : 'auto',
           corejs: 2,
         },
       ],
@@ -17,6 +20,9 @@ module.exports = function generateConfig(api) {
     ],
     ignore: ['__mocks__'],
     plugins: [
+      ...(BABEL_ENV === 'production'
+        ? ['transform-react-remove-prop-types', { mode: 'unsafe-wrap' }]
+        : []),
       'babel-plugin-lodash',
       'babel-plugin-styled-components',
       'babel-plugin-react-docgen',

@@ -7,7 +7,7 @@ import uniqBy from 'lodash/uniqBy';
 import find from 'lodash/find';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
-import OverFlowMenuIcon from '@carbon/icons-react/lib/overflow-menu--vertical/20';
+import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/20';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -212,6 +212,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
       const currentThresholdIndex = highestSeverityThreshold.findIndex(
         currentThreshold => currentThreshold.dataSourceId === threshold.dataSourceId
       );
+
       if (
         // If I don't have a threshold currently for this column
         currentThresholdIndex < 0
@@ -374,15 +375,15 @@ const TableCard = ({
    */
   const generateThresholdColumn = columnId => {
     // Need to find the index of the dataSource regardless of uniqueThresholds ordering
-    const thresholdIndex = uniqueThresholds.findIndex(
+    const uniqueThresholdIndex = uniqueThresholds.findIndex(
       threshold => threshold.dataSourceId === columnId
     );
     return {
       id: `iconColumn-${columnId}`,
-      label: uniqueThresholds[thresholdIndex].label
-        ? uniqueThresholds[thresholdIndex].label
+      label: uniqueThresholds[uniqueThresholdIndex].label
+        ? uniqueThresholds[uniqueThresholdIndex].label
         : `${capitalize(columnId)} ${strings.severityLabel}`,
-      width: uniqueThresholds[thresholdIndex].width,
+      width: uniqueThresholds[uniqueThresholdIndex].width,
       isSortable: true,
       renderDataFunction: renderThresholdIcon,
       priority: 1,
@@ -408,25 +409,32 @@ const TableCard = ({
 
   // Don't add the icon column in sample mode
   if (!isEditable) {
-    const indexes = columns
-      .map((column, index) =>
-        uniqueThresholds.filter(item => item.dataSourceId === column.dataSourceId)[0]
-          ? { i: index, columnId: column.dataSourceId } // Find the column and put the threshold next to it
-          : null
-      )
-      .filter(i => !isNil(i));
-    indexes.forEach(({ i, columnId }, index) => {
-      columnsUpdated.splice(index !== 0 ? i + 1 : i, 0, generateThresholdColumn(columnId));
+    // Add the new threshold columns to the existing columns
+    uniqueThresholds.forEach(threshold => {
+      const columnIndex = columnsUpdated.findIndex(
+        column => column.dataSourceId === threshold.dataSourceId
+      );
+      // If columnIndex is not -1, there was a match so add the column. Otherwise, skip the column as it will be added
+      // in the next call
+      if (columnIndex !== -1) {
+        columnsUpdated.splice(columnIndex, 0, generateThresholdColumn(threshold.dataSourceId));
+      }
     });
+
     // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
-    const missingThresholdColumns = uniqueThresholds.filter(
-      threshold => !find(columnsUpdated, column => threshold.dataSourceId === column.dataSourceId)
-    );
-    columnsUpdated.splice(
-      columnsUpdated.length,
-      0,
-      ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
-    );
+    const missingThresholdColumns = uniqueThresholds.filter(threshold => {
+      return !find(columnsUpdated, column => {
+        return threshold.dataSourceId === column.dataSourceId;
+      });
+    });
+
+    if (missingThresholdColumns.length > 0) {
+      columnsUpdated.splice(
+        columnsUpdated.length,
+        0,
+        ...missingThresholdColumns.map(({ dataSourceId }) => generateThresholdColumn(dataSourceId))
+      );
+    }
   }
 
   const newColumns = thresholds ? columnsUpdated : columns;

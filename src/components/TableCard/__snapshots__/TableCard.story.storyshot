@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -1408,7 +1408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -3159,7 +3159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -3805,7 +3805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -6328,7 +6328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -7749,7 +7749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -9390,7 +9390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -10811,7 +10811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -12825,7 +12825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -14610,7 +14610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -16354,7 +16354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -18878,7 +18878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -20904,7 +20904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"
@@ -23527,7 +23527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="table-list"
         role="presentation"

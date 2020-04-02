@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -188,7 +188,7 @@ describe('TableCard', () => {
     );
     expect(wrapper2.find('TableCell .myCustomRenderedCell').length).toBe(0);
   });
-  test('threshold colums should render in correct column regardless of order', () => {
+  test('threshold columns should render in correct column regardless of order', () => {
     // The pressure header comes after the count header, but the ordering should not matter when
     // it comes to rendering the threshold columns
     const customThresholds = [
@@ -237,6 +237,70 @@ describe('TableCard', () => {
     expect(getByTitle('Count Severity')).toBeInTheDocument();
     expect(queryByTitle('Pressure Severity')).not.toBeInTheDocument();
     expect(getByTitle('Pressure Sev')).toBeInTheDocument();
+  });
+  test('threshold columns should render in correct column regardless of quantity', () => {
+    // If there are more than 2 thresholds, they should still render to the left of the datasource column
+    const customThresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '<',
+        value: 5,
+        severity: 3,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2,
+      },
+      {
+        dataSourceId: 'hour',
+        comparison: '<',
+        value: 1563877570000,
+        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+      },
+    ];
+    // First the component needs to be rendered. getByTitle doesn't need to be used
+    // eslint-disable-next-line no-unused-vars
+    const { getByTitle } = render(
+      <TableCard
+        id="table-list"
+        title="Open Alerts"
+        content={{
+          columns: tableColumns,
+          thresholds: customThresholds,
+        }}
+        values={tableData}
+        size={CARD_SIZES.LARGEWIDE}
+      />
+    );
+
+    // Then get all of the th elements. This is how the ordering will be determined
+    const tableHeader = document.getElementsByTagName('th');
+    // The within function comes in SUPER handy here
+    const countSeverityIndex = 1;
+    const { getByText } = within(tableHeader[countSeverityIndex]);
+    expect(getByText('Count Severity')).toBeTruthy();
+
+    const hourSeverityIndex = 3;
+    const { getByText: getByTextHour } = within(tableHeader[hourSeverityIndex]);
+    expect(getByTextHour('Hour Severity')).toBeTruthy();
+
+    const pressureSeverityIndex = 5;
+    const { getByText: getByTextPressure } = within(tableHeader[pressureSeverityIndex]);
+    expect(getByTextPressure('Pressure Severity')).toBeTruthy();
   });
   test('threshold icon labels should not display when showSeverityLabel is false', () => {
     const customThresholds = [

@@ -5,7 +5,7 @@ import {
   SideNavMenu,
   SideNavMenuItem,
   // SideNavSwitcher,
-} from 'carbon-components-react//lib/components/UIShell';
+} from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from 'carbon-components-react';
-import { ButtonKinds } from 'carbon-components-react/lib/prop-types/types';
+import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
 import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
