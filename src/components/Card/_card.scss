@@ -82,3 +82,8 @@ html[dir='rtl'] .#{$iot-prefix}--card--header .#{$iot-prefix}--card--toolbar {
   text-align: center;
   line-height: 1.3;
 }
+
+// Change background for charts in Cards
+.#{$iot-prefix}--card .#{$prefix}--chart-holder {
+  background-color: $ui-01;
+}

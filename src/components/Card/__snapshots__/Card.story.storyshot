@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-basic"
         role="presentation"
@@ -184,7 +184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="render-prop-basic"
         role="presentation"
@@ -353,7 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-error"
         role="presentation"
@@ -446,7 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-error-small"
         role="presentation"
@@ -531,7 +531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
     }
   >
     <div
-      className="iot--card--wrapper"
+      className="iot--card iot--card--wrapper"
       data-testid="Card"
       id="mycard"
       role="presentation"
@@ -831,7 +831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-with-loading"
         role="presentation"
@@ -967,7 +967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-with-loading"
         role="presentation"
@@ -1085,7 +1085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-SMALL"
         role="presentation"
@@ -1142,7 +1142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-SMALLWIDE"
         role="presentation"
@@ -1251,7 +1251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-MEDIUMTHIN"
         role="presentation"
@@ -1360,7 +1360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-MEDIUM"
         role="presentation"
@@ -1469,7 +1469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-MEDIUMWIDE"
         role="presentation"
@@ -1578,7 +1578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-LARGETHIN"
         role="presentation"
@@ -1687,7 +1687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-LARGE"
         role="presentation"
@@ -1796,7 +1796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-size-gallery-LARGEWIDE"
         role="presentation"
@@ -1941,7 +1941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-basic"
         role="presentation"
@@ -2147,7 +2147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-empty"
         role="presentation"
@@ -2292,7 +2292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-with-loading"
         role="presentation"
@@ -2410,7 +2410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
       }
     >
       <div
-        className="iot--card--wrapper"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="facilitycard-with-loading"
         role="presentation"
