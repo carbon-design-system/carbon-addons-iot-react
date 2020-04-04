@@ -4,7 +4,7 @@ import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
 
 import Button from '../Button';
 
-import PageTitleBar from './PageTitleBar';
+import PageTitleBar, { TooltipDescription } from './PageTitleBar';
 import { commonPageTitleBarProps, pageTitleBarBreadcrumb } from './PageTitleBar.story';
 
 describe('PageTitleBar', () => {
@@ -115,5 +115,21 @@ describe('PageTitleBar', () => {
   test('Renders loading state as expected', () => {
     const wrapper = mount(<PageTitleBar title={commonPageTitleBarProps.title} isLoading />);
     expect(wrapper.find(SkeletonText)).toHaveLength(1);
+  });
+
+  test('Should render p tag for legacy support', () => {
+    const wrapper = mount(<TooltipDescription description={commonPageTitleBarProps.description} />);
+    expect(wrapper.find('p')).toHaveLength(1);
+  });
+
+  test('Should not render p tag', () => {
+    const NodeTooltip = () => (
+      <div>
+        Descriptive text about this page and what the user can or should do on it{' '}
+        <button type="button">Even Buttons</button>
+      </div>
+    );
+    const wrapper = mount(<TooltipDescription description={<NodeTooltip />} />);
+    expect(wrapper.find('p')).toHaveLength(0);
   });
 });

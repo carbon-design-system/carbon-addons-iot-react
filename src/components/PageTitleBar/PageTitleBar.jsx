@@ -60,6 +60,12 @@ const defaultProps = {
   content: undefined,
 };
 
+// do typecheck to support old markup with surrounding 'p' tag
+// eslint-disable-next-line
+export const TooltipDescription = ({ description }) => {
+  return typeof description === 'string' ? <p>{description}</p> : description;
+};
+
 const PageTitleBar = ({
   title,
   description,
@@ -77,10 +83,6 @@ const PageTitleBar = ({
 }) => {
   //
   const titleBarContent = content || tabs;
-  // do typecheck to support old markup with surrounding 'p' tag
-  const TooltipDescription = () => {
-    return typeof description === 'string' ? <p>{description}</p> : description;
-  };
 
   return (
     <div className={classNames(className, 'page-title-bar')}>
@@ -110,7 +112,7 @@ const PageTitleBar = ({
                       tooltipId="tooltip"
                       renderIcon={Information20}
                     >
-                      {<TooltipDescription />}
+                      {<TooltipDescription description={description} />}
                     </Tooltip>
                   ) : null}
                   {editable ? (
