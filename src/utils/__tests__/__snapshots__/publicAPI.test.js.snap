@@ -397,6 +397,7 @@ Map {
         "hasSearch": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
+        "wrapCellText": undefined,
       },
       "secondaryTitle": null,
       "title": null,
@@ -904,6 +905,9 @@ Map {
               "type": "bool",
             },
             "useAutoTableLayoutForResize": Object {
+              "type": "bool",
+            },
+            "wrapCellText": Object {
               "type": "bool",
             },
           },
@@ -1520,6 +1524,14 @@ Map {
               ],
               "type": "oneOf",
             },
+            "truncateCellText": Object {
+              "isRequired": true,
+              "type": "bool",
+            },
+            "wrapCellText": Object {
+              "isRequired": true,
+              "type": "bool",
+            },
           },
         ],
         "type": "shape",
@@ -2002,6 +2014,14 @@ Map {
       },
       "totalColumns": Object {
         "type": "number",
+      },
+      "truncateCellText": Object {
+        "isRequired": true,
+        "type": "bool",
+      },
+      "wrapCellText": Object {
+        "isRequired": true,
+        "type": "bool",
       },
     },
   },

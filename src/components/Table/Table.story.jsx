@@ -39,6 +39,8 @@ const STATUS = {
   BROKEN: 'BROKEN',
 };
 
+const selectTextWrapping = [undefined, true, false];
+
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {
     case STATUS.RUNNING:
@@ -375,6 +377,7 @@ export const initialState = {
     hasRowActions: true,
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
+    wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
   },
   view: {
     filters: [
@@ -430,6 +433,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
             hasRowExpansion: false,
+            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
           }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
         />
@@ -513,7 +517,11 @@ storiesOf('Watson IoT/Table', module)
           }}
           isSortable
           lightweight={boolean('lightweight', false)}
-          options={{ ...initialState.options, hasResize: true }}
+          options={{
+            ...initialState.options,
+            hasResize: true,
+            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          }}
         />
       </FullWidthWrapper>
     ),
@@ -592,6 +600,7 @@ storiesOf('Watson IoT/Table', module)
               ...initialState.options,
               hasRowNesting: true,
               hasFilter: true,
+              wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
             }}
             view={{
               ...initialState.view,
@@ -1272,6 +1281,7 @@ storiesOf('Watson IoT/Table', module)
         hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
         hasRowExpansion: false,
         hasResize: true,
+        wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
       }}
       view={{ table: { selectedIds: array('selectedIds', []) } }}
     />
@@ -1281,7 +1291,10 @@ storiesOf('Watson IoT/Table', module)
     () => (
       <FullWidthWrapper>
         <Table
-          options={{ hasResize: true }}
+          options={{
+            hasResize: true,
+            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          }}
           columns={tableColumns.map((i, idx) => ({
             width: idx % 2 === 0 ? '100px' : '200px',
             ...i,
@@ -1307,7 +1320,11 @@ storiesOf('Watson IoT/Table', module)
     'with resize, hasColumnSelection and initial column widths',
     () => (
       <StatefulTable
-        options={{ hasResize: true, hasColumnSelection: true }}
+        options={{
+          hasResize: true,
+          hasColumnSelection: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+        }}
         columns={tableColumns.map((i, idx) => ({
           width: idx % 2 === 0 ? '100px' : '200px',
           ...i,
@@ -1332,7 +1349,10 @@ storiesOf('Watson IoT/Table', module)
     'with resize and no initial column width',
     () => (
       <Table
-        options={{ hasResize: true }}
+        options={{
+          hasResize: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+        }}
         columns={tableColumns}
         data={tableData}
         actions={actions}
@@ -1351,13 +1371,17 @@ storiesOf('Watson IoT/Table', module)
       <React.Fragment>
         <p>
           <strong>Note!</strong> <br />
-          For this configuration to work, the table must be wrapped in a container that has a with
+          For this configuration to work, the table must be wrapped in a container that has a width
           defined in other than %. <br />
           E.g. the FullWidthWrapper used by the storybook examples.
         </p>
         <FullWidthWrapper>
           <Table
-            options={{ hasResize: true, useAutoTableLayoutForResize: true }}
+            options={{
+              hasResize: true,
+              useAutoTableLayoutForResize: true,
+              wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            }}
             columns={tableColumns}
             data={tableData}
             actions={actions}
@@ -1378,7 +1402,11 @@ storiesOf('Watson IoT/Table', module)
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <FullWidthWrapper>
         <Table
-          options={{ hasResize: false, hasColumnSelection: true }}
+          options={{
+            hasResize: false,
+            hasColumnSelection: true,
+            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          }}
           columns={tableColumns.map((i, idx) => ({
             width: idx % 2 === 0 ? '20rem' : '10rem',
             ...i,
@@ -1408,7 +1436,15 @@ storiesOf('Watson IoT/Table', module)
         );
       }, []);
       return (
-        <Table options={{ hasResize: true }} columns={columns} data={tableData} actions={actions} />
+        <Table
+          options={{
+            hasResize: true,
+            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          }}
+          columns={columns}
+          data={tableData}
+          actions={actions}
+        />
       );
     })
   )
@@ -1480,7 +1516,11 @@ storiesOf('Watson IoT/Table', module)
       <div style={{ width: '800px' }}>
         <Table
           columns={tableColumns.concat(tableColumnsConcat)}
-          options={{ hasFilter: true, hasPagination: true }}
+          options={{
+            hasFilter: true,
+            hasPagination: true,
+            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          }}
           data={tableData}
           actions={actions}
           view={{
@@ -1494,7 +1534,7 @@ storiesOf('Watson IoT/Table', module)
       </div>
     );
   })
-  .add('horizontal scroll - full width', () => {
+  .add('horizontal scroll - full width - no wrap', () => {
     const tableColumnsConcat = [
       { id: 'test2', name: 'Test 2' },
       { id: 'test3', name: 'Test 3' },
@@ -1507,7 +1547,11 @@ storiesOf('Watson IoT/Table', module)
     return (
       <Table
         columns={tableColumns.concat(tableColumnsConcat)}
-        options={{ hasFilter: true, hasPagination: true }}
+        options={{
+          hasFilter: true,
+          hasPagination: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+        }}
         data={tableData}
         actions={actions}
         view={{

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
@@ -62,6 +62,7 @@ const propTypes = {
     hasResize: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
+    wrapCellText: PropTypes.bool,
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -183,6 +184,7 @@ export const defaultProps = baseProps => ({
     hasResize: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
+    wrapCellText: undefined,
   },
   view: {
     pagination: {
@@ -291,6 +293,28 @@ const Table = props => {
     ...others
   } = merge({}, defaultProps(props), props);
 
+  const [, forceUpdateCellTextWidth] = useState(0);
+
+  const useCellTextTruncate = useMemo(
+    () =>
+      options
+        ? (options.hasResize && !options.useAutoTableLayoutForResize) ||
+          columns.some(col => col.hasOwnProperty('width'))
+        : undefined,
+    [options, columns]
+  );
+
+  const useCellTextWrapping = useMemo(
+    () => {
+      if (options) {
+        const wrapByDefault = !useCellTextTruncate;
+        return options.wrapCellText === undefined ? wrapByDefault : options.wrapCellText;
+      }
+      return undefined;
+    },
+    [options, useCellTextTruncate]
+  );
+
   const handleClearFilters = () => {
     if (actions.toolbar && actions.toolbar.onClearAllFilters) {
       actions.toolbar.onClearAllFilters();
@@ -298,6 +322,13 @@ const Table = props => {
     if (actions.toolbar && actions.toolbar.onApplySearch) {
       actions.toolbar.onApplySearch('');
     }
+  };
+
+  const handleOnColumnResize = resizedCols => {
+    if (actions.table && actions.table.onColumnResize) {
+      actions.table.onColumnResize(resizedCols);
+    }
+    forceUpdateCellTextWidth(n => !n);
   };
 
   const minItemInView =
@@ -313,6 +344,7 @@ const Table = props => {
   const visibleColumns = columns.filter(
     c => !(view.table.ordering.find(o => o.columnId === c.id) || { isHidden: false }).isHidden
   );
+
   const totalColumns =
     visibleColumns.length +
     (options.hasRowSelection === 'multi' ? 1 : 0) +
@@ -406,15 +438,19 @@ const Table = props => {
             {...others}
             i18n={i18n}
             lightweight={lightweight}
-            options={pick(
-              options,
-              'hasRowSelection',
-              'hasRowExpansion',
-              'hasRowActions',
-              'hasColumnSelectionConfig',
-              'hasResize',
-              'useAutoTableLayoutForResize'
-            )}
+            options={{
+              ...pick(
+                options,
+                'hasRowSelection',
+                'hasRowExpansion',
+                'hasRowActions',
+                'hasColumnSelectionConfig',
+                'hasResize',
+                'useAutoTableLayoutForResize'
+              ),
+              wrapCellText: useCellTextWrapping,
+              truncateCellText: useCellTextTruncate,
+            }}
             columns={columns}
             filters={view.filters}
             actions={{
@@ -424,9 +460,9 @@ const Table = props => {
                 'onSelectAll',
                 'onChangeSort',
                 'onChangeOrdering',
-                'onColumnSelectionConfig',
-                'onColumnResize'
+                'onColumnSelectionConfig'
               ),
+              onColumnResize: handleOnColumnResize,
             }}
             selectAllText={i18n.selectAllAria}
             clearFilterText={i18n.clearFilterAria}
@@ -480,6 +516,8 @@ const Table = props => {
                 'shouldExpandOnRowClick',
                 'shouldLazyRender'
               )}
+              wrapCellText={useCellTextWrapping}
+              truncateCellText={useCellTextTruncate}
               ordering={view.table.ordering}
               actions={pick(
                 actions.table,
