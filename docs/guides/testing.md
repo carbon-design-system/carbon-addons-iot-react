@@ -35,7 +35,7 @@ Internal components will utilize any available id props to attempt to provide a 
 
 ```jsx
 function InternalTableCell({ tableId, columnId, rowId }) {
-  return <td data-testid={`${tableId}-${columnId}-${rowId}`}>Example</td>;
+  return <td data-testid={`InternalTableCell-${tableId}-${columnId}-${rowId}`}>Example</td>;
 }
 ```
 
