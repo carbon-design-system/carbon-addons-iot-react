@@ -1,0 +1,55 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--wizard-modal {
+  .#{$prefix}--modal-container {
+    min-width: 410px;
+  }
+
+  .#{$prefix}--progress {
+    /* need to pad some space for the focus outlines*/
+    padding: 3px;
+  }
+  .#{$prefix}--progress-step {
+    max-width: 150px;
+  }
+  > div + div {
+    padding-top: $spacing-05;
+  }
+
+  .#{$prefix}--modal-content {
+    width: 100%;
+    padding: 0 $spacing-05;
+  }
+
+  .#{$iot-prefix}--wizard-modal__content {
+    padding-top: $spacing-05;
+    padding-left: $spacing-05;
+    padding-bottom: 7rem;
+  }
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--wizard-modal {
+    .#{$prefix}--modal-header,
+    .#{$prefix}--modal-content {
+      padding-left: 20%;
+      padding-right: $spacing-09;
+    }
+    .#{$prefix}--progress-step svg {
+      margin-right: 0;
+      margin-left: $spacing-03;
+    }
+
+    .#{$iot-prefix}--wizard-modal__content {
+      padding-right: $spacing-05;
+      padding-left: 0;
+    }
+    .#{$iot-prefix}--wizard-modal__footer {
+      .#{$iot-prefix}--btn {
+        text-align: right;
+        padding-left: 60px; // fixed values to invert $button-padding of Carbon's theme-tokens.scss
+        padding-right: 12px;
+      }
+    }
+  }
+}
