@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Warn from '@carbon/icons-react/lib/warning--alt/16';
+import Warn from '@carbon/icons-react/es/warning--alt/16';
 import styled from 'styled-components';
 import { Tooltip, Button } from 'carbon-components-react';
 
@@ -8,6 +8,7 @@ import { RowActionErrorPropTypes } from '../../TablePropTypes';
 
 const StyledSpan = styled.span`
   margin-left: 0.5rem;
+  line-height: 1.875rem;
 `;
 
 const StyledTitle = styled.p`

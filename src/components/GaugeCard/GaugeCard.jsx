@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
-import { CardPropTypes, GaugeCardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes, GaugeCardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 

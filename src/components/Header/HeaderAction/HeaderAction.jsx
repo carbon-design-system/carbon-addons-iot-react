@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { settings } from 'carbon-components';
-import { HeaderGlobalAction } from 'carbon-components-react/lib/components/UIShell';
+import { HeaderGlobalAction } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 
 import { keyCodes } from '../../../constants/KeyCodeConstants';

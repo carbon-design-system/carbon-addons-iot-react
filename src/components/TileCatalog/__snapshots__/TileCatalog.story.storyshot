@@ -13,16 +13,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -34,7 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -46,7 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -70,7 +70,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -82,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -94,7 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -118,7 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -130,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -142,7 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
     </div>
@@ -186,13 +186,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={true}
@@ -245,10 +245,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -270,10 +270,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile with really long title that should wrap"
@@ -282,7 +282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -341,10 +341,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -366,10 +366,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile2"
@@ -378,7 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -437,10 +437,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -462,10 +462,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile3"
@@ -474,7 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Tile contents
                 </div>
@@ -533,10 +533,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -558,10 +558,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile4"
@@ -570,7 +570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -629,10 +629,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -654,10 +654,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile5"
@@ -666,7 +666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -725,10 +725,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -750,10 +750,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile6"
@@ -762,7 +762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -821,10 +821,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -846,10 +846,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile7"
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -867,7 +867,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div
@@ -928,13 +928,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
       }
     >
       <div
-        className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+        className="iot--tile-catalog"
       >
         <div
-          className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+          className="iot--tile-catalog--header"
         />
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           In error state
         </div>
@@ -980,13 +980,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={false}
@@ -1039,10 +1039,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1064,10 +1064,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile with really long title that should wrap"
@@ -1076,7 +1076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -1135,10 +1135,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1160,10 +1160,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile2"
@@ -1172,7 +1172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -1231,10 +1231,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1256,10 +1256,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile3"
@@ -1268,7 +1268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Tile contents
                 </div>
@@ -1327,10 +1327,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1352,10 +1352,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile4"
@@ -1364,7 +1364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -1423,10 +1423,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1448,10 +1448,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile5"
@@ -1460,7 +1460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -1519,10 +1519,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1544,10 +1544,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile6"
@@ -1556,7 +1556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -1615,10 +1615,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1640,10 +1640,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile7"
@@ -1652,7 +1652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -1661,7 +1661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div
@@ -1715,16 +1715,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1736,7 +1736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1748,7 +1748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1760,7 +1760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1772,7 +1772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1784,7 +1784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1796,7 +1796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1808,7 +1808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1820,7 +1820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1832,7 +1832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileCatalog__StyledEmptyTile-sc-1rp8b9f-2 bhInDp"
+          className="bx--tile iot--tile-catalog--empty-tile"
         >
           <p
             className="bx--skeleton__text"
@@ -1844,7 +1844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           />
         </div>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
     </div>
@@ -1888,13 +1888,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       />
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={true}
@@ -1947,10 +1947,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -1972,10 +1972,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile with really long title that should wrap"
@@ -1984,7 +1984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2043,10 +2043,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2068,10 +2068,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile2"
@@ -2080,7 +2080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2139,10 +2139,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2164,10 +2164,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile3"
@@ -2176,7 +2176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Tile contents
                 </div>
@@ -2235,10 +2235,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2260,10 +2260,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile4"
@@ -2272,7 +2272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2331,10 +2331,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2356,10 +2356,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile5"
@@ -2368,7 +2368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2427,10 +2427,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2452,10 +2452,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile6"
@@ -2464,7 +2464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2473,7 +2473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div
@@ -2581,10 +2581,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
     }
   >
     <div
-      className="TileCatalog__StyledContainerDiv-sc-1rp8b9f-0 gnhFOD"
+      className="iot--tile-catalog"
     >
       <div
-        className="TileCatalog__StyledCatalogHeader-sc-1rp8b9f-1 fcqrLo"
+        className="iot--tile-catalog--header"
       >
         <div
           className="bx--toolbar-action bx--toolbar-search-container-expandable"
@@ -2662,7 +2662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
         </div>
       </div>
       <div
-        className="TileGroup__StyledTiles-eak4ed-0 bztVSF"
+        className="iot--tile-group"
       >
         <input
           checked={true}
@@ -2715,10 +2715,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2740,10 +2740,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile with really long title that should wrap"
@@ -2752,7 +2752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2811,10 +2811,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2836,10 +2836,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile2"
@@ -2848,7 +2848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -2907,10 +2907,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -2932,10 +2932,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile3"
@@ -2944,7 +2944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Tile contents
                 </div>
@@ -3003,10 +3003,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -3028,10 +3028,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile4"
@@ -3040,7 +3040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -3099,10 +3099,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -3124,10 +3124,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile5"
@@ -3136,7 +3136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -3195,10 +3195,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             className="bx--tile-content"
           >
             <div
-              className="CatalogContent__SampleTile-ewhoqc-0 fGbFFm"
+              className="iot--sample-tile"
             >
               <div
-                className="CatalogContent__SampleTileIcon-ewhoqc-1 bUtNbv"
+                className="iot--sample-tile-icon"
               >
                 <svg
                   aria-hidden={true}
@@ -3220,10 +3220,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 </svg>
               </div>
               <div
-                className="CatalogContent__SampleTileContents-ewhoqc-3 jiLgiJ"
+                className="iot--sample-tile-contents"
               >
                 <div
-                  className="CatalogContent__SampleTileTitle-ewhoqc-2 hHDEru"
+                  className="iot--sample-tile-title"
                 >
                   <span
                     title="Test Tile6"
@@ -3232,7 +3232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   </span>
                 </div>
                 <div
-                  className="CatalogContent__SampleTileDescription-ewhoqc-4 kFPOSR"
+                  className="iot--sample-tile-description"
                 >
                   Really long string with lots of lots of text too much to show on one line and when it wraps it might cause some interesting issues especially if it starts vertically wrapping outside of tile bounds at the bottom of the tile
                 </div>
@@ -3241,7 +3241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           </span>
         </label>
         <div
-          className="bx--tile TileGroup__StyledGreedyTile-eak4ed-1 eTCDyV"
+          className="bx--tile iot--greedy-tile"
         />
       </div>
       <div

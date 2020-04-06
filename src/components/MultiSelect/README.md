@@ -21,7 +21,7 @@ your terminal with [npm](https://www.npmjs.com/):
 npm i carbon-components carbon-components-react carbon-icons --save
 ```
 
-If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
+If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following command
 instead:
 
 ```bash

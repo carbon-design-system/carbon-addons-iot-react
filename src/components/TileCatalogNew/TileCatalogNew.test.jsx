@@ -129,7 +129,7 @@ describe('TileCatalogNew tests', () => {
     const { getByText, getAllByRole } = render(
       <TileCatalogNew
         title="Test Tile Catalog"
-        tiles={getTiles(8, 'Tile')}
+        tiles={getTiles(20, 'Tile')}
         numColumns={2}
         numRows={2}
       />
@@ -137,9 +137,41 @@ describe('TileCatalogNew tests', () => {
     const buttons = getAllByRole('button');
     fireEvent.click(buttons[buttons.length - 2]);
     fireEvent.click(buttons[0]);
-    expect(getByText('Tile 1')).toBeTruthy();
-    expect(getByText('Tile 2')).toBeTruthy();
-    expect(getByText('Tile 3')).toBeTruthy();
-    expect(getByText('Tile 4')).toBeTruthy();
+    expect(getByText('Tile 13')).toBeTruthy();
+    expect(getByText('Tile 14')).toBeTruthy();
+    expect(getByText('Tile 15')).toBeTruthy();
+    expect(getByText('Tile 16')).toBeTruthy();
+  });
+
+  test('TileCatalogNew with large page numbers', () => {
+    const { getByText, getByLabelText } = render(
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(60, 'Tile')}
+        numColumns={2}
+        numRows={2}
+      />
+    );
+    fireEvent.change(getByLabelText('select page number'), { target: { value: 14 } });
+    expect(getByText('Tile 53')).toBeTruthy();
+    expect(getByText('Tile 54')).toBeTruthy();
+    expect(getByText('Tile 55')).toBeTruthy();
+    expect(getByText('Tile 56')).toBeTruthy();
+  });
+
+  test('TileCatalogNew with large page numbers and mid page number was selected', () => {
+    const { getByText, getByLabelText } = render(
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(60, 'Tile')}
+        numColumns={2}
+        numRows={2}
+      />
+    );
+    fireEvent.change(getByLabelText('select page number'), { target: { value: 7 } });
+    expect(getByText('Tile 25')).toBeTruthy();
+    expect(getByText('Tile 26')).toBeTruthy();
+    expect(getByText('Tile 27')).toBeTruthy();
+    expect(getByText('Tile 28')).toBeTruthy();
   });
 });

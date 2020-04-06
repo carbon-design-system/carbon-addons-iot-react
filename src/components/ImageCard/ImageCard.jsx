@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import Image32 from '@carbon/icons-react/lib/image/32';
+import Image32 from '@carbon/icons-react/es/image/32';
 
-import { ImageCardPropTypes, CardPropTypes } from '../../constants/PropTypes';
+import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';

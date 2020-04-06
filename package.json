@@ -1,21 +1,28 @@
 {
   "name": "carbon-addons-iot-react",
-  "main": "lib/index.js",
+  "main": "lib/src/index.js",
+  "module": "es/src/index.js",
+  "unpkg": "umd/carbon-addons-iot-react.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/IBM/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
   "files": [
-    "lib"
+    "lib/**/*",
+    "es/**/*",
+    "umd/**/*",
+    "scss/**/*",
+    "css/**/*"
   ],
   "bugs": {
     "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
-    "build": "yarn build:pre && rollup -c",
-    "build:pre": "rimraf lib storybook-static",
+    "build": "cross-env BABEL_ENV='production' NODE_ENV='production'  yarn build:pre && rollup -c && yarn build:post",
+    "build:pre": "rimraf lib es umd css scss tmp storybook-static",
+    "build:post": "rimraf tmp",
     "build:storybook": "NODE_OPTIONS='--max-old-space-size=16384' build-storybook -s public/production",
     "format": "prettier --write \"**/*.{scss,css,js,jsx,md,ts}\"",
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
@@ -65,8 +72,8 @@
     ]
   },
   "dependencies": {
-    "@carbon/charts": "^0.29.0",
-    "@carbon/charts-react": "^0.29.0",
+    "@carbon/charts": "^0.30.5",
+    "@carbon/charts-react": "^0.30.5",
     "@carbon/colors": "10.7.0",
     "@carbon/icons": "10.6.1",
     "@carbon/icons-react": "10.6.1",
@@ -91,6 +98,7 @@
     "react-sizeme": "^2.6.3",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
+    "rollup-plugin-auto-external": "^2.0.0",
     "styled-components": "^4.1.3",
     "use-deep-compare-effect": "^1.2.0",
     "use-resize-observer": "^5.0.0",
@@ -127,14 +135,14 @@
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
     "@ibma/aat": "https://able.ibm.com/tools/dist/ibma-aat-2.0.8.tgz",
-    "@storybook/addon-a11y": "^5.3.13",
-    "@storybook/addon-actions": "^5.3.13",
-    "@storybook/addon-info": "^5.3.13",
-    "@storybook/addon-knobs": "^5.3.13",
-    "@storybook/addon-links": "^5.3.13",
-    "@storybook/addon-storyshots": "^5.3.13",
-    "@storybook/addons": "^5.3.13",
-    "@storybook/react": "^5.3.13",
+    "@storybook/addon-a11y": "^5.3.17",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-info": "^5.3.17",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addon-storyshots": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/react": "^5.3.17",
     "@testing-library/dom": "^6.10.1",
     "@testing-library/jest-dom": "^5.0.2",
     "@testing-library/react": "^9.3.2",
@@ -148,6 +156,7 @@
     "babel-plugin-react-docgen": "^2.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "coveralls": "^3.0.2",
     "cross-env": "^6.0.3",
     "css-loader": "^2.1.0",
@@ -188,7 +197,7 @@
     "react-test-renderer": "^16.8.6",
     "rimraf": "^3.0.0",
     "rollup": "^1.1.0",
-    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-copy": "^3.2.0",
     "rollup-plugin-filesize": "^6.0.0",
@@ -198,7 +207,7 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.1.0",
-    "rollup-plugin-uglify": "^6.0.1",
+    "rollup-plugin-uglify": "^6.0.4",
     "sass-loader": "^7.1.0",
     "semantic-release": "^16.0.0-beta.39",
     "storybook-addon-rtl": "^0.2.2",
@@ -210,5 +219,6 @@
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
   },
+  "sideEffects": false,
   "version": "0.0.0-development"
 }

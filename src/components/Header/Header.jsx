@@ -3,10 +3,10 @@ import {
   HeaderMenuButton,
   HeaderName,
   SkipToContent,
-} from 'carbon-components-react/lib/components/UIShell';
+} from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import React from 'react';
-import AppSwitcher from '@carbon/icons-react/lib/app-switcher/20';
+import AppSwitcher from '@carbon/icons-react/es/app-switcher/20';
 
 import { settings } from '../../constants/Settings';
 

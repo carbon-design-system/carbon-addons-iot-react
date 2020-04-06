@@ -2,7 +2,6 @@
 
 exports[`Public API should only change with a semver change 1`] = `
 Map {
-  "styles" => Object {},
   "AddCard" => Object {
     "propTypes": Object {
       "onClick": Object {
@@ -280,17 +279,17 @@ Map {
               "args": Array [
                 Object {
                   "buttonLabel": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                   "buttonLabelWithFilters": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                   "message": Object {
                     "isRequired": true,
-                    "type": "string",
+                    "type": "node",
                   },
                   "messageWithFilters": Object {
-                    "type": "string",
+                    "type": "node",
                   },
                 },
               ],
@@ -992,17 +991,17 @@ Map {
                           "args": Array [
                             Object {
                               "buttonLabel": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                               "buttonLabelWithFilters": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                               "message": Object {
                                 "isRequired": true,
-                                "type": "string",
+                                "type": "node",
                               },
                               "messageWithFilters": Object {
-                                "type": "string",
+                                "type": "node",
                               },
                             },
                           ],
@@ -4024,6 +4023,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -4063,6 +4077,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -4165,6 +4182,65 @@ Map {
       },
       "title": Object {
         "isRequired": true,
+        "type": "string",
+      },
+    },
+  },
+  "TimePickerSpinner" => Object {
+    "defaultProps": Object {
+      "children": null,
+      "defaultTimegroup": "HOURS",
+      "disabled": false,
+      "is12hour": false,
+      "onChange": null,
+      "onClick": null,
+      "spinner": false,
+      "value": "",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "defaultTimegroup": Object {
+        "args": Array [
+          Array [
+            "HOURS",
+            "MINUTES",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "is12hour": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "spinner": Object {
+        "type": "bool",
+      },
+      "value": Object {
         "type": "string",
       },
     },
@@ -5800,6 +5876,11 @@ Map {
       "isLazyLoading": false,
       "isLoading": false,
       "layout": "HORIZONTAL",
+      "onMouseDown": undefined,
+      "onMouseUp": undefined,
+      "onScroll": undefined,
+      "onTouchEnd": undefined,
+      "onTouchStart": undefined,
       "rowHeight": Object {
         "lg": 144,
         "max": 144,
@@ -5810,6 +5891,7 @@ Map {
       },
       "showOverflow": false,
       "size": "MEDIUM",
+      "testID": "Card",
       "timeRange": undefined,
       "title": undefined,
       "toolbar": undefined,
@@ -6434,6 +6516,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -6478,6 +6575,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -7271,6 +7371,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -7315,6 +7430,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -7365,6 +7483,10 @@ Map {
   "TimeSeriesCard" => Object {
     "defaultProps": Object {
       "chartType": "LINE",
+      "content": Object {
+        "includeZeroOnXaxis": false,
+        "includeZeroOnYaxis": false,
+      },
       "i18n": Object {
         "alertDetected": "Alert detected:",
       },
@@ -7840,6 +7962,12 @@ Map {
               ],
               "type": "oneOf",
             },
+            "includeZeroOnXaxis": Object {
+              "type": "bool",
+            },
+            "includeZeroOnYaxis": Object {
+              "type": "bool",
+            },
             "series": Object {
               "args": Array [
                 Array [
@@ -8014,6 +8142,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -8058,6 +8201,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -8735,6 +8881,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -8779,6 +8940,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -9332,7 +9496,6 @@ Map {
                         "type": "string",
                       },
                       "label": Object {
-                        "isRequired": true,
                         "type": "string",
                       },
                       "priority": Object {
@@ -9356,7 +9519,7 @@ Map {
               "type": "arrayOf",
             },
             "emptyMessage": Object {
-              "type": "string",
+              "type": "node",
             },
             "expandedRows": Object {
               "args": Array [
@@ -9429,7 +9592,13 @@ Map {
                         ],
                         "type": "oneOf",
                       },
+                      "severityLabel": Object {
+                        "type": "string",
+                      },
                       "showOnContent": Object {
+                        "type": "bool",
+                      },
+                      "showSeverityLabel": Object {
                         "type": "bool",
                       },
                       "value": Object {
@@ -9568,6 +9737,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -9601,6 +9785,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -10464,6 +10651,21 @@ Map {
         ],
         "type": "oneOf",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -10508,6 +10710,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [
@@ -11256,6 +11461,21 @@ Map {
         "isRequired": true,
         "type": "func",
       },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
       "renderIconByName": Object {
         "type": "func",
       },
@@ -11300,6 +11520,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "testID": Object {
+        "type": "string",
       },
       "timeRange": Object {
         "args": Array [

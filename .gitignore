@@ -3,6 +3,12 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 lib
+es
+scss
+umd
+css
+tmp
+storybook-static
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
@@ -22,7 +28,7 @@ storybook-static
 # log files
 *.log
 
-# We don't use npm, we use yarn
+# We don't use npm, we use Yarn Classic
 package-lock.json
 
 # Mac OS Specific files

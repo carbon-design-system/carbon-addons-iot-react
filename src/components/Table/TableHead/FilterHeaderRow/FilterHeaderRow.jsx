@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
-import Close from '@carbon/icons-react/lib/close/16';
+import Close from '@carbon/icons-react/es/close/16';
 import styled from 'styled-components';
 import memoize from 'lodash/memoize';
 

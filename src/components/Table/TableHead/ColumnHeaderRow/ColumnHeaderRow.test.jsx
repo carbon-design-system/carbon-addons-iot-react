@@ -19,6 +19,7 @@ const commonTableHeadProps = {
     hasRowExpansion: false,
   },
   onChangeOrdering: jest.fn(),
+  onColumnToggle: jest.fn(),
 };
 
 const wrapInTestContext = (DecoratedComponent, props) =>
@@ -44,7 +45,7 @@ describe('TableHead', () => {
     const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col2']").instance();
     backend.simulateBeginDrag([dragSource.getHandlerId()]);
     backend.simulateHover([dropTarget.getHandlerId()]);
-    backend.simulateEndDrag();
+    backend.simulateDrop();
     expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalled();
   });
   it('does not reorder columns when placed upon themselves', () => {
@@ -54,7 +55,7 @@ describe('TableHead', () => {
     const dropTarget = wrapper.find("DropTarget(ColumnHeaderSelect)[columnId='col1']").instance();
     backend.simulateBeginDrag([dragSource.getHandlerId()]);
     backend.simulateHover([dropTarget.getHandlerId()]);
-    backend.simulateEndDrag();
+    backend.simulateDrop();
     expect(commonTableHeadProps.onChangeOrdering).toHaveBeenCalledWith([
       { columnId: 'col2', isHidden: false },
       { columnId: 'col1', isHidden: false },

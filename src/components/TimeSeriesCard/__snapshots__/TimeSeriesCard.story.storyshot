@@ -21,25 +21,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -100,25 +112,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -179,28 +203,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
-            className="Card__EmptyMessageWrapper-v5r71h-3 hrQFeA"
+            className="iot--card--empty-message-wrapper"
+            style={
+              Object {
+                "--card-content-padding": "16px",
+              }
+            }
           >
             No data is available for this time range.
           </div>
@@ -255,25 +296,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -334,25 +387,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -413,25 +478,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 bJyHEu"
@@ -492,25 +569,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -571,25 +660,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -650,25 +751,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -729,25 +842,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -808,25 +933,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -887,25 +1024,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-Pressure"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Pressure"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Pressure
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -966,25 +1115,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1045,25 +1206,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1124,25 +1297,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1203,25 +1388,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1282,25 +1479,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1361,25 +1570,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1440,25 +1661,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1519,25 +1752,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1598,25 +1843,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1677,25 +1934,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 izWJSI"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "624px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 flVXpj"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "576px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1756,25 +2025,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1835,25 +2116,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1914,25 +2207,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -1993,25 +2298,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2072,25 +2389,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2151,25 +2480,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2230,25 +2571,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2309,25 +2662,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2388,25 +2753,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2467,25 +2844,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2546,25 +2935,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2625,25 +3026,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2704,25 +3117,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2783,39 +3208,40 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
           <div
-            className="iot--card--toolbar card--toolbar"
+            className="iot--card--toolbar"
           >
             <div
-              className="CardToolbar__ToolbarDateRangeWrapper-sc-1ekh8ti-1 eWLmmw"
+              className="iot--card--toolbar-date-range-wrapper"
             >
-              <div
-                className="card--toolbar-timerange-label CardRangePicker__TimeRangeLabel-ns6bu0-0 QmRa"
-                id="timeRange"
-              >
-                Last 7 days
-              </div>
               <button
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="card--toolbar-action bx--overflow-menu"
+                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
@@ -2859,7 +3285,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           </div>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
@@ -2920,25 +3351,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
       }
     >
       <div
-        className="Card__CardWrapper-v5r71h-0 bHPJyP"
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
         id="facility-temperature"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "304px",
+          }
+        }
       >
         <div
           className="iot--card--header"
         >
           <span
-            className="card--title"
+            className="iot--card--title"
             title="Temperature"
           >
             <div
-              className="title--text"
+              className="iot--card--title--text"
             >
               Temperature
             </div>
           </span>
         </div>
         <div
-          className="Card__CardContent-v5r71h-1 hxiPNM"
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "256px",
+            }
+          }
         >
           <div
             className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"

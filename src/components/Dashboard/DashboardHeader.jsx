@@ -4,6 +4,9 @@ import { SkeletonText, Icon } from 'carbon-components-react';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** title of the dashboard */
@@ -83,7 +86,7 @@ const DashboardHeader = ({
             action.icon ? (
               <div
                 id={`action-icon--${action.id}`}
-                className="card--toolbar-action"
+                className={`${iotPrefix}--card--toolbar-action`}
                 key={action.id}
                 tabIndex={0}
                 role="button"

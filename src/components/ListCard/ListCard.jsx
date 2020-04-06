@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
-import { CardPropTypes } from '../../constants/PropTypes';
+import { CardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 
 const ListCard = ({

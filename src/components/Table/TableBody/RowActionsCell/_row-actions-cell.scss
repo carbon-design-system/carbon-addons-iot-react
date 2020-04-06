@@ -1,0 +1,25 @@
+@import '../../../../globals/vars';
+
+.#{$iot-prefix}--row-actions-container {
+  > * {
+    margin-left: 0.75rem;
+  }
+  .#{$iot-prefix}--row-actions-cell-btn--icononly {
+    margin-left: 0;
+    .bx--btn__icon {
+      margin-left: 0;
+    }
+  }
+}
+
+.#{$iot-prefix}--row-actions-container__background {
+  padding-left: 24px;
+  z-index: 0;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
+  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} 16px);
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
 import { Button } from 'carbon-components-react';
-import Draggable from '@carbon/icons-react/lib/draggable/16';
+import Draggable from '@carbon/icons-react/es/draggable/16';
 import classNames from 'classnames';
 
 const ColumnHeaderSelect = ({
@@ -12,11 +12,13 @@ const ColumnHeaderSelect = ({
   isHidden,
   children,
   onClick,
+  isOver,
 }) => {
   return (
     <Button
       className={classNames('column-header__btn', 'column-header__select', {
         'column-header__select--hidden': isHidden,
+        'column-header__select--isOver': isOver,
       })}
       kind="secondary"
       key={columnId}
@@ -66,7 +68,7 @@ const cardSource = {
 };
 
 const cardTarget = {
-  hover(props, monitor) {
+  drop(props, monitor) {
     const dragIndex = monitor.getItem().index;
     const hoverIndex = props.index;
     // Don't replace items with themselves

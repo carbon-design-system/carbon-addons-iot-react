@@ -1,53 +1,17 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { RadioTile, Tile, SkeletonText, DataTable } from 'carbon-components-react';
-import Bee32 from '@carbon/icons-react/lib/bee/32';
+import Bee32 from '@carbon/icons-react/es/bee/32';
+import classNames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
-import { COLORS } from '../../styles/styles';
+import { settings } from '../../constants/Settings';
 
 import TileGroup from './TileGroup';
 
+const { iotPrefix } = settings;
+
 const { TableToolbarSearch } = DataTable;
-
-const StyledContainerDiv = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-`;
-
-const StyledCatalogHeader = styled.div`
-  background: ${COLORS.gray10};
-
-  display: flex;
-  height: 3rem;
-
-  .bx--toolbar-action:active:not([disabled]) {
-    outline-color: transparent;
-  }
-
-  .bx--toolbar-search-container-expandable {
-    max-width: 40%;
-    padding: 0;
-    width: auto;
-  }
-
-  .bx--search-input:focus {
-    width: 100%;
-  }
-`;
-
-const StyledEmptyTile = styled(Tile)`
-  &&& {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    > * {
-      padding-bottom: 0.5rem;
-    }
-  }
-`;
 
 export const propTypes = {
   /** Is the data actively loading? */
@@ -128,8 +92,8 @@ const TileCatalog = ({
   const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
   return (
-    <StyledContainerDiv className={className}>
-      <StyledCatalogHeader>
+    <div className={classNames(className, `${iotPrefix}--tile-catalog`)}>
+      <div className={`${iotPrefix}--tile-catalog--header`}>
         {search && search.placeHolderText ? (
           <TableToolbarSearch
             size="sm"
@@ -140,13 +104,13 @@ const TileCatalog = ({
             id={`${id}-searchbox`}
           />
         ) : null}
-      </StyledCatalogHeader>
+      </div>
       {isLoading ? ( // generate empty tiles for first page
         <TileGroup
           tiles={[...Array(pageSize)].map((val, index) => (
-            <StyledEmptyTile key={`emptytile-${index}`}>
+            <Tile className={`${iotPrefix}--tile-catalog--empty-tile`} key={`emptytile-${index}`}>
               <SkeletonText />
-            </StyledEmptyTile>
+            </Tile>
           ))}
           totalTiles={totalTiles}
         />
@@ -169,19 +133,19 @@ const TileCatalog = ({
           ))}
         />
       ) : (
-        <StyledEmptyTile>
+        <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
           {error || (
             <Fragment>
               <Bee32 />
               <p>{(search && search.noMatchesFoundText) || 'No matches found'}</p>
             </Fragment>
           )}
-        </StyledEmptyTile>
+        </Tile>
       )}
       {!isLoading && tiles.length > 0 && !error && pagination ? (
         <SimplePagination {...pagination} maxPage={Math.ceil(totalTiles / pageSize)} />
       ) : null}
-    </StyledContainerDiv>
+    </div>
   );
 };
 TileCatalog.propTypes = propTypes;
