@@ -39,6 +39,7 @@ In the following sections, you'll find specific details for our packages and the
 | [A class name, id, or other selector is added, changed, or removed](#a-class-name-id-or-other-selector-is-added-changed-or-removed)        | `minor`     |
 | [A `data-testid` attribute is added](#a-data-testid-attribute-is-added)                                                                    | `minor`     |
 | [A `data-testid` attribute default prop value is changed or removed](#a-data-testid-attribute-default-prop-value-is-changed-or-removed)    | `major`     |
+| [The DOM node that an `data-testid` corresponds to is changed](#the-dom-node-that-an-data-testid-corresponds-to-is-changed)                | `major`     |
 
 ### Examples
 
@@ -287,6 +288,33 @@ ExportedComponent.defaultProps = {
   message: '',
 - testID: 'ExportedComponent',
 + testID: 'ExportedComponentNewName',
+};
+```
+
+#### The DOM node that an `data-testid` corresponds to is changed
+
+semver bump: **major**
+
+```diff
+function ExportedComponent({ testID, message }) {
+  return (
+-  <>
++  <div data-testid={testID}>
+      <span>{message}</span>
+-      <span data-testid={testID}>{message}</span>
++      <span>{message}</span>
+-  </>
++  <div/>
+  );
+}
+
+ExportedComponent.propTypes = {
+  message: PropTypes.string,
+  testID: PropTypes.string,
+};
+ExportedComponent.defaultProps = {
+  message: '',
+  testID: 'ExportedComponent',
 };
 ```
 
