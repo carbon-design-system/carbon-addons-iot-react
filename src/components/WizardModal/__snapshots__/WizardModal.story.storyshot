@@ -71,7 +71,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress   ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
             onChange={[Function]}
           >
             <li
@@ -290,7 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress   ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
             onChange={[Function]}
           >
             <li
@@ -516,7 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress   ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
             onChange={[Function]}
           >
             <li

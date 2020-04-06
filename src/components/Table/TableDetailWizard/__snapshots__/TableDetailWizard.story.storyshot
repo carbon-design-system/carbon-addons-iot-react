@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             width={250}
           >
             <ul
-              className="bx--progress  bx--progress--vertical ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 fvWusc"
+              className="bx--progress bx--progress--vertical iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 fvWusc"
               onChange={[Function]}
             >
               <li
@@ -323,7 +323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             width={250}
           >
             <ul
-              className="bx--progress  bx--progress--vertical ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 fvWusc"
+              className="bx--progress bx--progress--vertical iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 fvWusc"
               onChange={[Function]}
             >
               <li
@@ -598,7 +598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             width={250}
           >
             <ul
-              className="bx--progress  bx--progress--vertical ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 fvWusc"
+              className="bx--progress bx--progress--vertical iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 fvWusc"
               onChange={[Function]}
             >
               <li
