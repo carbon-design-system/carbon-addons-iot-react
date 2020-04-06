@@ -1,6 +1,6 @@
 import delay from 'lodash/delay';
 import moment from 'moment';
-import { sortStates } from 'carbon-components-react/lib/components/DataTable/state/sorting';
+import { sortStates } from 'carbon-components-react/es/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
 import isNil from 'lodash/isNil';
 

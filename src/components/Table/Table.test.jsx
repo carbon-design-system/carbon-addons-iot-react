@@ -347,7 +347,7 @@ describe('Table', () => {
         view={{
           toolbar: {
             search: {
-              defaultValue: 'toyota',
+              defaultValue: '',
             },
           },
         }}
@@ -355,11 +355,19 @@ describe('Table', () => {
     );
 
     expect(wrapper.find('.bx--search-input')).toHaveLength(1);
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('toyota');
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
     wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
     wrapper.update();
 
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
+    wrapper.update();
+
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 });

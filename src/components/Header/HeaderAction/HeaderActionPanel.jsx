@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import cn from 'classnames';
-import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/lib/components/UIShell';
+import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
 
 import { APP_SWITCHER } from '../Header';
 

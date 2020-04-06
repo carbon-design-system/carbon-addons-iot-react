@@ -1,9 +1,9 @@
-import ChevronDownGlyph from '@carbon/icons-react/lib/chevron--down';
+import ChevronDownGlyph from '@carbon/icons-react/es/chevron--down';
 import { settings } from 'carbon-components';
 import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { HeaderMenuItem } from 'carbon-components-react/lib/components/UIShell';
+import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
 import { ChildContentPropTypes } from '../Header';
 

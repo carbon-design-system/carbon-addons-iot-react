@@ -308,9 +308,14 @@ const Card = props => {
                 dimensions={dimensions}
                 isExpanded={isExpanded}
                 style={
-                  !isExpanded ? style : { height: 'calc(100% - 50px)', width: 'calc(100% - 50px)' }
+                  !isExpanded
+                    ? style
+                    : {
+                        height: 'calc(100% - 50px)',
+                        width: 'calc(100% - 50px)',
+                      }
                 }
-                className={className}
+                className={classNames(`${iotPrefix}--card`, className)}
               >
                 {!hideHeader && (
                   <CardHeader>
@@ -347,7 +352,9 @@ const Card = props => {
                     ''
                   ) : isLoading ? (
                     <div
-                      style={{ '--card-content-padding': `${CARD_CONTENT_PADDING}px` }}
+                      style={{
+                        '--card-content-padding': `${CARD_CONTENT_PADDING}px`,
+                      }}
                       className={`${iotPrefix}--card--skeleton-wrapper`}
                     >
                       <OptimizedSkeletonText
@@ -369,7 +376,10 @@ const Card = props => {
                       {isSM ? strings.noDataShortLabel : strings.noDataLabel}
                     </EmptyMessageWrapper>
                   ) : typeof children === 'function' ? ( // pass the measured size down to the children if it's an render function
-                    children(getChildSize(cardSize, title), { cardToolbar, ...props })
+                    children(getChildSize(cardSize, title), {
+                      cardToolbar,
+                      ...props,
+                    })
                   ) : (
                     children
                   )}
