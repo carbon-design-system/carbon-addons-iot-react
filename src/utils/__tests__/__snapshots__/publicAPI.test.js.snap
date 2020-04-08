@@ -12365,6 +12365,7 @@ Map {
       "iconPosition": "left",
       "isFullHeight": false,
       "isLargeRow": false,
+      "isLoading": false,
       "pagination": null,
       "search": null,
       "selectedId": null,
@@ -12421,6 +12422,9 @@ Map {
         "type": "bool",
       },
       "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {
@@ -12537,6 +12541,7 @@ Map {
       },
       "isFullHeight": false,
       "isLargeRow": false,
+      "isLoading": false,
       "pageSize": null,
     },
     "propTypes": Object {
@@ -12574,6 +12579,9 @@ Map {
         "type": "bool",
       },
       "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {

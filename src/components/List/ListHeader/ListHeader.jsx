@@ -1,7 +1,7 @@
 import React from 'react';
-import { Search } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
+import { Search } from '../../Search';
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -16,6 +16,8 @@ const propTypes = {
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
   }),
+  /** optional skeleton to be rendered while loading data */
+  isLoading: PropTypes.bool.isRequired,
 };
 
 const defaultProps = {
@@ -29,16 +31,18 @@ const defaultProps = {
   },
 };
 
-const ListHeader = ({ title, buttons, search, i18n }) => {
+const ListHeader = ({ title, buttons, search, i18n, isLoading }) => {
   return (
     <div className={`${iotPrefix}--list-header-container`}>
       {title || (buttons && buttons.length > 0) ? (
         <div className={`${iotPrefix}--list-header`}>
           <div className={`${iotPrefix}--list-header--title`}>{title}</div>
-          <div className={`${iotPrefix}--list-header--btn-container`}>{buttons}</div>
+          <div className={`${iotPrefix}--list-header--btn-container`}>
+            {!isLoading ? buttons : null}
+          </div>
         </div>
       ) : null}
-      {search && (
+      {search && !isLoading ? (
         <div className={`${iotPrefix}--list-header--search`}>
           <Search
             placeHolderText={i18n.searchPlaceHolderText}
@@ -48,7 +52,7 @@ const ListHeader = ({ title, buttons, search, i18n }) => {
             labelText={i18n.searchPlaceHolderText}
           />
         </div>
-      )}
+      ) : null}
     </div>
   );
 };

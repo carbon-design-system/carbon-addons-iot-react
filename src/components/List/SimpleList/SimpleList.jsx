@@ -26,6 +26,8 @@ const propTypes = {
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
   isLargeRow: PropTypes.bool,
+  /** optional skeleton to be rendered while loading data */
+  isLoading: PropTypes.bool,
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
@@ -47,6 +49,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     pageOfPagesText: page => `Page ${page}`,
   },
+  isLoading: false,
 };
 
 const SimpleList = ({
@@ -58,6 +61,7 @@ const SimpleList = ({
   isFullHeight,
   pageSize,
   isLargeRow,
+  isLoading,
 }) => {
   const [searchValue, setSearchValue] = useState(null);
   const [filteredItems, setFilteredItems] = useState(items);
@@ -150,6 +154,7 @@ const SimpleList = ({
       selectedIds={selectedIds}
       handleSelect={handleSelect}
       isLargeRow={isLargeRow}
+      isLoading={isLoading}
     />
   );
 };

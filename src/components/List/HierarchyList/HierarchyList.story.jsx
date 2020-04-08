@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
 
 import { Button } from '../../..';
@@ -61,6 +61,7 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'sm')}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -101,6 +102,7 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         ]}
         hasSearch
         pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ));
