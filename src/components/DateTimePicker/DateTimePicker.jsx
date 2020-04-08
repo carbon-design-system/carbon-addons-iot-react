@@ -113,9 +113,33 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
-  /** triggered on input click */
+  /** triggered on cancel */
   onCancel: PropTypes.func,
-  /** triggered on input click */
+  /** triggered on apply with this returning object */
+  /*
+  {
+    kind: String // the type of selection, one of PICKER_KINDS (PRESET, RELATIVE, ABSOLUTE)
+    preset: {
+      label: String // the label of the selected preset
+      offset: Number // the offset in minute
+    },
+    relative: {
+      start: Date // the start point in time
+      end: Date // the end point in time
+      lastNumber: Number // quantity of interval
+      lastInterval: String // one of INTERVAL_VALUES
+      relativeToWhen: String // one of RELATIVE_VALUES, indicates to what point in time the selection is relative to
+      relativeToTime: String // in the HH:MM format
+    },
+    absolute: {
+      start: Date // the start point in time
+      end: Date // the end point in time
+      startDate: String // start date in the mask or default format
+      startTime: String // in the HH:MM format
+      endDate:  // end date in the mask or default format
+      endTime: String // in the HH:MM format
+    },
+  } */
   onApply: PropTypes.func,
 };
 
@@ -239,6 +263,7 @@ const DateTimePicker = ({
   const parseValue = value => {
     setCurrentValue(value);
     let readableValue = '';
+    const returnValue = { ...value };
     switch (value.kind) {
       case PICKER_KINDS.RELATIVE: {
         let endDate = moment();
@@ -258,23 +283,37 @@ const DateTimePicker = ({
             value.relative.lastNumber,
             value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
           );
+        returnValue.relative.start = new Date(startDate.valueOf());
+        returnValue.relative.end = new Date(endDate.valueOf());
         readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} to ${moment(
           endDate
         ).format('YYYY-MM-DD HH:mm')}`;
         break;
       }
-      case PICKER_KINDS.ABSOLUTE:
-        readableValue = `${moment(value.absolute.start).format('YYYY-MM-DD')} ${
-          value.absolute.startTime ? value.absolute.startTime : '00:00'
-        } to ${moment(value.absolute.end).format('YYYY-MM-DD')} ${
-          value.absolute.endTime ? value.absolute.endTime : '00:00'
-        }`;
+      case PICKER_KINDS.ABSOLUTE: {
+        const startDate = moment(value.absolute.start);
+        if (value.absolute.startTime) {
+          startDate.hours(value.absolute.startTime.split(':')[0]);
+          startDate.minutes(value.absolute.startTime.split(':')[1]);
+        }
+        returnValue.absolute.start = new Date(startDate.valueOf());
+        const endDate = moment(value.absolute.end);
+        if (value.absolute.endTime) {
+          endDate.hours(value.absolute.endTime.split(':')[0]);
+          endDate.minutes(value.absolute.endTime.split(':')[1]);
+        }
+        returnValue.absolute.end = new Date(endDate.valueOf());
+        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} to ${moment(
+          endDate
+        ).format('YYYY-MM-DD HH:mm')}`;
         break;
+      }
       default:
         readableValue = value.preset.label;
         break;
     }
     setHumanValue(readableValue);
+    return { readableValue, ...returnValue };
   };
 
   const renderValue = (clickedPreset = null) => {
@@ -293,8 +332,10 @@ const DateTimePicker = ({
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
     }
-    parseValue(value);
-    return value;
+    return {
+      ...value,
+      ...parseValue(value),
+    };
   };
 
   useEffect(
