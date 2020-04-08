@@ -29,7 +29,7 @@ export const PICKER_KINDS = {
   ABSOLUTE: 'ABSOLUTE',
 };
 
-export const PRESETS_VALUES = [
+export const PRESET_VALUES = [
   {
     label: 'Last 30 minutes',
     offset: 30,
@@ -141,11 +141,31 @@ const propTypes = {
     },
   } */
   onApply: PropTypes.func,
+  /** All the labels that need translation */
+  i18n: PropTypes.shape({
+    toLabel: PropTypes.string,
+    toNowLabel: PropTypes.string,
+    presetLabels: PropTypes.string,
+    intervalLabels: PropTypes.string,
+    relativeLabels: PropTypes.string,
+    customRangeLinkLabel: PropTypes.string,
+    customRangeLabel: PropTypes.string,
+    relativeLabel: PropTypes.string,
+    lastLabel: PropTypes.string,
+    invalidNumberLabel: PropTypes.string,
+    relativeToLabel: PropTypes.string,
+    absoluteLabel: PropTypes.string,
+    startTimeLabel: PropTypes.string,
+    endTimeLabel: PropTypes.string,
+    applyBtnLabel: PropTypes.string,
+    cancelBtnLabel: PropTypes.string,
+    backBtnLabel: PropTypes.string,
+  }),
 };
 
 const defaultProps = {
   defaultValue: null,
-  presets: PRESETS_VALUES,
+  presets: PRESET_VALUES,
   intervals: [
     {
       label: 'minutes',
@@ -174,10 +194,6 @@ const defaultProps = {
   ],
   relatives: [
     {
-      label: '',
-      value: '',
-    },
-    {
       label: 'Yesterday',
       value: RELATIVE_VALUES.YESTERDAY,
     },
@@ -185,12 +201,35 @@ const defaultProps = {
       label: 'Today',
       value: RELATIVE_VALUES.TODAY,
     },
+    {
+      label: '',
+      value: '',
+    },
   ],
   expanded: false,
   disabled: false,
   showRelativeOption: true,
   onCancel: null,
   onApply: null,
+  i18n: {
+    toLabel: 'to',
+    toNowLabel: 'to Now',
+    presetLabels: 'Last 30 minutes|Last 1 hour|Last 6 hours|Last 12 hours|Last 24 hours',
+    intervalLabels: 'minutes|hours|days|weeks|months|years',
+    relativeLabels: 'Yesterday|Today',
+    customRangeLinkLabel: 'Custom Range',
+    customRangeLabel: 'Custom range',
+    relativeLabel: 'Relative',
+    lastLabel: 'Last',
+    invalidNumberLabel: 'Number is not valid',
+    relativeToLabel: 'Relative to',
+    absoluteLabel: 'Absolute',
+    startTimeLabel: 'Start time',
+    endTimeLabel: 'End time',
+    applyBtnLabel: 'Apply',
+    cancelBtnLabel: 'Cancel',
+    backBtnLabel: 'Back',
+  },
 };
 
 const DateTimePicker = ({
@@ -203,8 +242,14 @@ const DateTimePicker = ({
   showRelativeOption,
   onCancel,
   onApply,
+  i18n,
   ...others
 }) => {
+  const strings = {
+    ...defaultProps.i18n,
+    ...i18n,
+  };
+
   const [isExpanded, setIsExpanded] = useState(expanded);
   const [customRangeKind, setCustomRangeKind] = useState(
     showRelativeOption ? PICKER_KINDS.RELATIVE : PICKER_KINDS.ABSOLUTE
@@ -285,9 +330,9 @@ const DateTimePicker = ({
           );
         returnValue.relative.start = new Date(startDate.valueOf());
         returnValue.relative.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} to ${moment(
-          endDate
-        ).format('YYYY-MM-DD HH:mm')}`;
+        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} ${
+          strings.toLabel
+        } ${moment(endDate).format('YYYY-MM-DD HH:mm')}`;
         break;
       }
       case PICKER_KINDS.ABSOLUTE: {
@@ -303,9 +348,9 @@ const DateTimePicker = ({
           endDate.minutes(value.absolute.endTime.split(':')[1]);
         }
         returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} to ${moment(
-          endDate
-        ).format('YYYY-MM-DD HH:mm')}`;
+        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} ${
+          strings.toLabel
+        } ${moment(endDate).format('YYYY-MM-DD HH:mm')}`;
         break;
       }
       default:
@@ -456,7 +501,7 @@ const DateTimePicker = ({
       if (currentValue.kind === PICKER_KINDS.PRESET) {
         return `${moment()
           .subtract(currentValue.preset.offset, 'minutes')
-          .format('YYYY-MM-DD HH:mm')} to Now`;
+          .format('YYYY-MM-DD HH:mm')} ${strings.toNowLabel}`;
       }
     }
     return '';
@@ -545,7 +590,7 @@ const DateTimePicker = ({
                   onClick={toggleIsCustomRange}
                   className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
                 >
-                  Custom Range
+                  {strings.customRangeLinkLabel}
                 </ListItem>
                 {presets.map((preset, i) => {
                   return (
@@ -560,7 +605,7 @@ const DateTimePicker = ({
                         }
                       )}
                     >
-                      {preset.label}
+                      {strings.presetLabels.split('|')[i] || preset.label}
                     </ListItem>
                   );
                 })}
@@ -569,7 +614,7 @@ const DateTimePicker = ({
               <div>
                 {showRelativeOption ? (
                   <FormGroup
-                    legendText="Custom range"
+                    legendText={strings.customRangeLabel}
                     className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                   >
                     <RadioButtonGroup
@@ -580,12 +625,12 @@ const DateTimePicker = ({
                       <RadioButton
                         value={PICKER_KINDS.RELATIVE}
                         id="relative"
-                        labelText="Relative"
+                        labelText={strings.relativeLabel}
                       />
                       <RadioButton
                         value={PICKER_KINDS.ABSOLUTE}
                         id="absolute"
-                        labelText="Absolute"
+                        labelText={strings.absoluteLabel}
                       />
                     </RadioButtonGroup>
                   </FormGroup>
@@ -593,13 +638,13 @@ const DateTimePicker = ({
                 {customRangeKind === PICKER_KINDS.RELATIVE ? (
                   <div>
                     <FormGroup
-                      legendText="Last"
+                      legendText={strings.lastLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
                       <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                         <NumberInput
                           id="last-number"
-                          invalidText="Number is not valid"
+                          invalidText={strings.invalidNumberLabel}
                           step={1}
                           min={0}
                           value={relativeValue ? relativeValue.lastNumber : 0}
@@ -616,14 +661,18 @@ const DateTimePicker = ({
                         >
                           {intervals.map((interval, i) => {
                             return (
-                              <SelectItem key={i} value={interval.value} text={interval.label} />
+                              <SelectItem
+                                key={i}
+                                value={interval.value}
+                                text={strings.intervalLabels.split('|')[i] || interval.label}
+                              />
                             );
                           })}
                         </Select>
                       </div>
                     </FormGroup>
                     <FormGroup
-                      legendText="Relative to"
+                      legendText={strings.relativeToLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
                       <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
@@ -636,7 +685,11 @@ const DateTimePicker = ({
                         >
                           {relatives.map((relative, i) => {
                             return (
-                              <SelectItem key={i} value={relative.value} text={relative.label} />
+                              <SelectItem
+                                key={i}
+                                value={relative.value}
+                                text={strings.relativeLabels.split('|')[i] || relative.label}
+                              />
                             );
                           })}
                         </Select>
@@ -681,7 +734,7 @@ const DateTimePicker = ({
                       <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                         <TimePickerSpinner
                           id="start-time"
-                          labelText="Start time"
+                          labelText={strings.startTimeLabel}
                           value={absoluteValue ? absoluteValue.startTime : '00:00'}
                           onChange={onAbsoluteStartTimeChange}
                           spinner
@@ -689,7 +742,7 @@ const DateTimePicker = ({
                         />
                         <TimePickerSpinner
                           id="end-time"
-                          labelText="End time"
+                          labelText={strings.endTimeLabel}
                           value={absoluteValue ? absoluteValue.endTime : '00:00'}
                           onChange={onAbsoluteEndTimeChange}
                           spinner
@@ -710,7 +763,7 @@ const DateTimePicker = ({
                 {...others}
                 onClick={toggleIsCustomRange}
               >
-                Back
+                {strings.backBtnLabel}
               </Button>
             ) : (
               <Button
@@ -719,7 +772,7 @@ const DateTimePicker = ({
                 onClick={onCancelClick}
                 {...others}
               >
-                Cancel
+                {strings.cancelBtnLabel}
               </Button>
             )}
             <Button
@@ -728,7 +781,7 @@ const DateTimePicker = ({
               {...others}
               onClick={onApplyClick}
             >
-              Apply
+              {strings.applyBtnLabel}
             </Button>
           </div>
         </div>

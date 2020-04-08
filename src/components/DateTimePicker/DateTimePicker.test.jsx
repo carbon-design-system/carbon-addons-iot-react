@@ -5,7 +5,7 @@ import moment from 'moment';
 import DateTimePicker, {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
-  PRESETS_VALUES,
+  PRESET_VALUES,
   PICKER_KINDS,
 } from './DateTimePicker';
 
@@ -13,6 +13,12 @@ const dateTimePickerProps = {
   id: 'datetimepicker',
   onCancel: jest.fn(),
   onApply: jest.fn(),
+};
+
+const i18n = {
+  presetLabels: 'Last 30 minutes|Missed in translation',
+  intervalLabels: 'minutes|Missed in translation',
+  relativeLabels: 'Missed in translation',
 };
 
 const defaultRelativeValue = {
@@ -33,9 +39,9 @@ describe('DateTimePicker tests', () => {
   jest.useFakeTimers();
 
   test('it should have the first preset as value', () => {
-    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} i18n={i18n} />);
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESETS_VALUES[0].label);
+    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
   });
 
   test('onApply should be called', () => {
@@ -58,10 +64,10 @@ describe('DateTimePicker tests', () => {
 
   test('it should render with a predefined preset', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={PRESETS_VALUES[1]} />
+      <DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
     );
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
-    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESETS_VALUES[1].label);
+    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[1].label);
   });
 
   test('it should render with a predefined relative range', () => {
