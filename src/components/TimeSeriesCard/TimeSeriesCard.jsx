@@ -491,8 +491,8 @@ TimeSeriesCard.defaultProps = {
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',
   content: {
-    includeZeroOnXaxis: true,
-    includeZeroOnYaxis: true,
+    includeZeroOnXaxis: false,
+    includeZeroOnYaxis: false,
   },
 };
 

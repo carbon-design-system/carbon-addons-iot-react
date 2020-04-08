@@ -1,43 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import classNames from 'classnames';
 import isNil from 'lodash/isNil';
 
 import ComposedModal from '../ComposedModal/ComposedModal';
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 import WizardFooter from '../WizardInline/WizardFooter/WizardFooter';
+import { settings } from '../../constants/Settings';
 
-const StyledModal = styled(ComposedModal)`
-   {
-    .bx--modal-container {
-      min-width: 410px;
-    }
-
-    .bx--progress {
-      /* need to pad some space for the focus outlines*/
-      padding: 3px;
-    }
-    .bx--progress-step {
-      max-width: 150px;
-    }
-    > div + div {
-      padding-top: 1rem;
-    }
-
-    .bx--modal-content {
-      width: 100%;
-      padding: 0 1rem;
-    }
-  }
-`;
-
-const StyledWizardContent = styled.div`
-   {
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-bottom: 7rem;
-  }
-`;
+const { iotPrefix } = settings;
 
 /**
  * Extends ComposedModal to add wizard, refer to that component for common props
@@ -171,6 +142,7 @@ class WizardModal extends Component {
         sendingData={
           (typeof sendingData === 'boolean' && sendingData) || typeof sendingData === 'string'
         }
+        className={`${iotPrefix}--wizard-modal__footer`}
       />
     );
   };
@@ -181,14 +153,18 @@ class WizardModal extends Component {
     const items = steps.map((step, index) => ({ id: index, label: step.label }));
     const { step: stepIndex } = this.state;
     return (
-      <StyledModal {...other} className={className} footer={this.renderFooter()}>
+      <ComposedModal
+        {...other}
+        className={classNames(`${iotPrefix}--wizard-modal`, className)}
+        footer={this.renderFooter()}
+      >
         <ProgressIndicator
           items={items}
           currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : undefined}
           onClickItem={this.handleClick}
         />
-        <StyledWizardContent>{steps[stepIndex].content}</StyledWizardContent>
-      </StyledModal>
+        <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
+      </ComposedModal>
     );
   }
 }

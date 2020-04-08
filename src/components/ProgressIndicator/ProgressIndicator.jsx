@@ -5,6 +5,11 @@ import {
   ProgressStep,
 } from 'carbon-components-react';
 import styled from 'styled-components';
+import classnames from 'classnames';
+
+import { settings } from '../../constants/Settings';
+
+const { prefix, iotPrefix } = settings;
 
 const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
@@ -105,10 +110,13 @@ const ProgressIndicator = ({
   ]);
   // Only recalculate current step if inputs change
   const currentStep = matchingIndex > -1 ? matchingIndex : 0;
-
   return (
     <StyledProgressIndicator
-      className={[className, isVerticalMode ? 'bx--progress--vertical' : ''].join(' ')}
+      className={classnames(
+        className,
+        isVerticalMode ? `${prefix}--progress--vertical` : '',
+        `${iotPrefix}--progress-indicator`
+      )}
       onChange={handleChange}
       currentIndex={currentStep}
       isVerticalMode={isVerticalMode}
