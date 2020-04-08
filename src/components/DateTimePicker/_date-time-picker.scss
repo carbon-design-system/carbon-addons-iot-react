@@ -93,6 +93,10 @@
       cursor: pointer;
       outline: none;
       white-space: nowrap;
+      & > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .#{$iot-prefix}--date-time-picker__icon {
         position: absolute;
         top: 0;

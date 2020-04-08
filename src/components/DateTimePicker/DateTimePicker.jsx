@@ -86,6 +86,8 @@ const propTypes = {
       endTime: PropTypes.string,
     }),
   }),
+  /** the moment.js format for the human readable interval value */
+  dateTimeMask: PropTypes.string,
   /** a list of options to for the default presets */
   presets: PropTypes.arrayOf(
     PropTypes.shape({
@@ -165,6 +167,7 @@ const propTypes = {
 
 const defaultProps = {
   defaultValue: null,
+  dateTimeMask: 'YYYY-MM-DD HH:mm',
   presets: PRESET_VALUES,
   intervals: [
     {
@@ -234,6 +237,7 @@ const defaultProps = {
 
 const DateTimePicker = ({
   defaultValue,
+  dateTimeMask,
   presets,
   intervals,
   relatives,
@@ -330,9 +334,9 @@ const DateTimePicker = ({
           );
         returnValue.relative.start = new Date(startDate.valueOf());
         returnValue.relative.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} ${
-          strings.toLabel
-        } ${moment(endDate).format('YYYY-MM-DD HH:mm')}`;
+        readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+          endDate
+        ).format(dateTimeMask)}`;
         break;
       }
       case PICKER_KINDS.ABSOLUTE: {
@@ -348,9 +352,9 @@ const DateTimePicker = ({
           endDate.minutes(value.absolute.endTime.split(':')[1]);
         }
         returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${moment(startDate).format('YYYY-MM-DD HH:mm')} ${
-          strings.toLabel
-        } ${moment(endDate).format('YYYY-MM-DD HH:mm')}`;
+        readableValue = `${moment(startDate).format(dateTimeMask)} ${strings.toLabel} ${moment(
+          endDate
+        ).format(dateTimeMask)}`;
         break;
       }
       default:
@@ -557,7 +561,7 @@ const DateTimePicker = ({
           tabIndex={0}
         >
           {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
-            <span>{humanValue}</span>
+            <span title={humanValue}>{humanValue}</span>
           ) : humanValue ? (
             <TooltipDefinition
               align="start"

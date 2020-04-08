@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { select } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -46,7 +46,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker />
+        <DateTimePicker dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')} />
       </div>
     );
   })
