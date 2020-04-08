@@ -12,7 +12,7 @@ module.exports = function generateConfig(api) {
           },
           useBuiltIns: 'usage',
           modules: BABEL_ENV === 'production' ? false : 'auto',
-          corejs: 2,
+          corejs: 3,
         },
       ],
       '@babel/preset-react',
@@ -51,6 +51,7 @@ module.exports = function generateConfig(api) {
       ],
       '@babel/plugin-proposal-nullish-coalescing-operator',
       '@babel/plugin-proposal-do-expressions',
+      '@babel/plugin-transform-runtime',
       'dev-expression',
     ],
     env: {
