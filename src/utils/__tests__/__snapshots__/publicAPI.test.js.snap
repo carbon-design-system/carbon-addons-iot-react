@@ -3350,6 +3350,7 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "isFullHeight": false,
+      "isLoading": false,
       "onSelect": null,
       "pageSize": null,
       "title": null,
@@ -3392,6 +3393,9 @@ Map {
         "type": "shape",
       },
       "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {
@@ -12365,6 +12369,7 @@ Map {
       "iconPosition": "left",
       "isFullHeight": false,
       "isLargeRow": false,
+      "isLoading": false,
       "pagination": null,
       "search": null,
       "selectedId": null,
@@ -12421,6 +12426,9 @@ Map {
         "type": "bool",
       },
       "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {
@@ -12537,6 +12545,7 @@ Map {
       },
       "isFullHeight": false,
       "isLargeRow": false,
+      "isLoading": false,
       "pageSize": null,
     },
     "propTypes": Object {
@@ -12574,6 +12583,9 @@ Map {
         "type": "bool",
       },
       "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {

@@ -30,6 +30,8 @@ const propTypes = {
   }),
   /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
+  /** optional skeleton to be rendered while loading data */
+  isLoading: PropTypes.bool,
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
@@ -50,6 +52,7 @@ const defaultProps = {
     close: 'Close',
   },
   isFullHeight: false,
+  isLoading: false,
   pageSize: null,
   defaultSelectedId: null,
   onSelect: null,
@@ -125,6 +128,7 @@ const HierarchyList = ({
   items,
   i18n,
   isFullHeight,
+  isLoading,
   pageSize,
   defaultSelectedId,
   onSelect,
@@ -285,6 +289,7 @@ const HierarchyList = ({
       i18n={i18n}
       pagination={hasPagination ? pagination : null}
       isFullHeight={isFullHeight}
+      isLoading={isLoading}
       selectedId={selectedId}
       selectedIds={selectedIds}
       handleSelect={handleSelect}

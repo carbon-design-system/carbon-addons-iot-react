@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import filterDeep from 'deepdash/filterDeep';
@@ -124,6 +124,7 @@ storiesOf('Watson IoT Experimental/List', module)
             content: { value: key },
           })
         )}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -140,6 +141,7 @@ storiesOf('Watson IoT Experimental/List', module)
             },
           })
         )}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -158,6 +160,7 @@ storiesOf('Watson IoT Experimental/List', module)
             },
           })
         )}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -186,6 +189,7 @@ storiesOf('Watson IoT Experimental/List', module)
             },
           })
         )}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -209,6 +213,7 @@ storiesOf('Watson IoT Experimental/List', module)
             },
           })
         )}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -252,6 +257,7 @@ storiesOf('Watson IoT Experimental/List', module)
           'MLB_American League_New York Yankees',
         ]}
         toggleExpansion={action('toggleExpansion')}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -291,6 +297,7 @@ storiesOf('Watson IoT Experimental/List', module)
           })),
         ]}
         expandedIds={['New York Yankees', 'Atlanta Braves']}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -454,6 +461,7 @@ storiesOf('Watson IoT Experimental/List', module)
                 setExpandedIds(expandedIds.concat([id]));
               }
             }}
+            isLoading={boolean('isLoading', false)}
           />
         </div>
       );
