@@ -205,7 +205,7 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleW
     case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
-      return shouldDoubleWrap || (!measuredSize || measuredSize.width < 300);
+      return shouldDoubleWrap || !measuredSize || measuredSize.width < 300;
   }
 };
 
