@@ -11,7 +11,7 @@ const PageTitleBarPropTypes = {
   /** Title of the page  */
   title: PropTypes.node.isRequired,
   /** Details about what the page shows */
-  description: PropTypes.node,
+  description: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   /** Optional node to render in the right side of the PageTitleBar
    *  NOTE: Deprecated in favor of extraContent
    */
@@ -61,7 +61,7 @@ const defaultProps = {
 };
 
 // do typecheck to support old markup with surrounding 'p' tag
-// eslint-disable-next-line
+// eslint-disable-next-line react/prop-types
 export const TooltipDescription = ({ description }) => {
   return typeof description === 'string' ? <p>{description}</p> : description;
 };
