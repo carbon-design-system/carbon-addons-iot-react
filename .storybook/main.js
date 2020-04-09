@@ -38,6 +38,7 @@ module.exports = {
     config.module.rules.push({
       test: /\.s?css$/,
       exclude: [/coverage/],
+      sideEffects: true,
       use: [
         // Creates `style` nodes from JS strings
         { loader: 'style-loader' },

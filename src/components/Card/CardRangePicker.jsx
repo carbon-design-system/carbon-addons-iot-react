@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import EventSchedule from '@carbon/icons-react/lib/event--schedule/20';
+import EventSchedule from '@carbon/icons-react/es/event--schedule/20';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classNames from 'classnames';
 

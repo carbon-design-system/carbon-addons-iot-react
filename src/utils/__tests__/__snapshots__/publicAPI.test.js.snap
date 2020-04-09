@@ -2,7 +2,6 @@
 
 exports[`Public API should only change with a semver change 1`] = `
 Map {
-  "styles" => Object {},
   "AddCard" => Object {
     "propTypes": Object {
       "onClick": Object {
@@ -7505,8 +7504,8 @@ Map {
     "defaultProps": Object {
       "chartType": "LINE",
       "content": Object {
-        "includeZeroOnXaxis": true,
-        "includeZeroOnYaxis": true,
+        "includeZeroOnXaxis": false,
+        "includeZeroOnYaxis": false,
       },
       "i18n": Object {
         "alertDetected": "Alert detected:",

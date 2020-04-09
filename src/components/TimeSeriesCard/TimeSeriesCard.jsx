@@ -1,5 +1,6 @@
 import React, { useRef, useMemo, useCallback } from 'react';
-import moment from 'moment/min/moment-with-locales.min';
+import moment from 'moment';
+import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import styled from 'styled-components';
@@ -490,8 +491,8 @@ TimeSeriesCard.defaultProps = {
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',
   content: {
-    includeZeroOnXaxis: true,
-    includeZeroOnYaxis: true,
+    includeZeroOnXaxis: false,
+    includeZeroOnYaxis: false,
   },
 };
 
