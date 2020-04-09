@@ -147,6 +147,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     toLabel: PropTypes.string,
     toNowLabel: PropTypes.string,
+    calendarLabel: PropTypes.string,
     presetLabels: PropTypes.string,
     intervalLabels: PropTypes.string,
     relativeLabels: PropTypes.string,
@@ -217,6 +218,7 @@ const defaultProps = {
   i18n: {
     toLabel: 'to',
     toNowLabel: 'to Now',
+    calendarLabel: 'Calendar',
     presetLabels: 'Last 30 minutes|Last 1 hour|Last 6 hours|Last 12 hours|Last 24 hours',
     intervalLabels: 'minutes|hours|days|weeks|months|years',
     relativeLabels: 'Yesterday|Today',
@@ -505,7 +507,7 @@ const DateTimePicker = ({
       if (currentValue.kind === PICKER_KINDS.PRESET) {
         return `${moment()
           .subtract(currentValue.preset.offset, 'minutes')
-          .format('YYYY-MM-DD HH:mm')} ${strings.toNowLabel}`;
+          .format(dateTimeMask)} ${strings.toNowLabel}`;
       }
     }
     return '';
@@ -572,7 +574,10 @@ const DateTimePicker = ({
               {humanValue}
             </TooltipDefinition>
           ) : null}
-          <Calendar16 aria-label="Calendar" className={`${iotPrefix}--date-time-picker__icon`} />
+          <Calendar16
+            aria-label={strings.calendarLabel}
+            className={`${iotPrefix}--date-time-picker__icon`}
+          />
         </div>
         <div
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {

@@ -73,10 +73,6 @@ const TimePickerSpinner = ({
       timeGroups.push('00');
     }
     let groupValue = Number(timeGroups[currentTimeGroup]);
-    if (Number.isNaN(groupValue)) {
-      groupValue = 0;
-    }
-
     const maxForGroup = currentTimeGroup === 0 ? (is12hour ? 12 : 23) : 59;
 
     if (direction === 'down') {
@@ -129,6 +125,14 @@ const TimePickerSpinner = ({
         break;
       default:
         break;
+    }
+  };
+
+  const onInputBlur = e => {
+    const target = e.currentTarget;
+    const regex = /[^\d:]/g;
+    if (target.value.search(regex) > -1) {
+      setPickerValue(target.value.replace(regex, ''));
     }
   };
 
@@ -203,6 +207,7 @@ const TimePickerSpinner = ({
         value={pickerValue}
         onKeyDown={onInputKeyDown}
         onKeyUp={onInputKeyUp}
+        onBlur={onInputBlur}
         disabled={disabled}
         {...others}
       >

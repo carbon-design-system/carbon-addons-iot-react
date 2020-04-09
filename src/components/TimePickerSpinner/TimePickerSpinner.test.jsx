@@ -57,6 +57,10 @@ describe('TimePickerSpinner tests', () => {
   test('work with strings', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} value="xyz" spinner />);
 
+    wrapper.find('input').simulate('blur');
+
+    expect(wrapper.find('input').props().value).toEqual('');
+
     wrapper
       .find('.iot--time-picker__controls--btn.down-icon')
       .first()
