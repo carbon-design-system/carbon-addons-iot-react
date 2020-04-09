@@ -70,6 +70,8 @@ Any change to `dependencies` (including version bumps) will impact consumers tha
 
 Commits must follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/IBM/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
 
+For more information on what type of change commit should be labeled a `BREAKING CHANGE`, `feat`, or `fix`, please read [the versioning documentation](https://github.com/IBM/carbon-addons-iot-react/blob/master/docs/guides/versioning.md).
+
 Commits are preferred but not required to contain a link to an issue. If you choose to link commits to an issue, the 72 character limit can be avoided by placing the link in the body of the commit. Example:
 
 ```sh
