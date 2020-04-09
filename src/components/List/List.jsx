@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
+import { SkeletonText } from '../SkeletonText';
 
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
@@ -36,6 +37,8 @@ const propTypes = {
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
   isLargeRow: PropTypes.bool,
+  /** optional skeleton to be rendered while loading data */
+  isLoading: PropTypes.bool,
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   /** i18n strings */
@@ -64,6 +67,7 @@ const defaultProps = {
   buttons: [],
   isFullHeight: false,
   isLargeRow: false,
+  isLoading: false,
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
@@ -95,6 +99,7 @@ const List = forwardRef((props, ref) => {
     toggleExpansion,
     iconPosition,
     isLargeRow,
+    isLoading,
   } = props;
   const selectedItemRef = ref;
   const renderItemAndChildren = (item, level) => {
@@ -149,6 +154,7 @@ const List = forwardRef((props, ref) => {
         buttons={buttons}
         search={search}
         i18n={i18n}
+        isLoading={isLoading}
       />
       <div
         className={classnames(
@@ -159,9 +165,13 @@ const List = forwardRef((props, ref) => {
           `${iotPrefix}--list--content`
         )}
       >
-        {listItems}
+        {!isLoading ? (
+          listItems
+        ) : (
+          <SkeletonText className={`${iotPrefix}--list--skeleton`} width="90%" />
+        )}
       </div>
-      {pagination !== null ? (
+      {pagination && !isLoading ? (
         <div className={`${iotPrefix}--list--page`}>
           <SimplePagination {...pagination} />
         </div>
