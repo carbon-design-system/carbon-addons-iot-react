@@ -110,6 +110,5 @@ module.exports = {
     // rewrite carbon-components(-react) es imports to lib/cjs imports because jest doesn't support es modules
     '@carbon/icons-react/es/(.*)': '@carbon/icons-react/lib/$1',
     'carbon-components-react/es/(.*)': 'carbon-components-react/lib/$1',
-    'react-syntax-highlighter/dist/esm/(.*)': 'react-syntax-highlighter/dist/cjs/$1',
   },
 };
