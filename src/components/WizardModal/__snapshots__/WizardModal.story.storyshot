@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible WizardModal__StyledModal-sc-4j7w2v-0 eknHny ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -71,7 +71,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress   ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
             onChange={[Function]}
           >
             <li
@@ -159,7 +159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </li>
           </ul>
           <div
-            className="WizardModal__StyledWizardContent-sc-4j7w2v-1 gdiPpx"
+            className="iot--wizard-modal__content"
           >
             page 1
           </div>
@@ -168,7 +168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
         >
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -232,7 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI WizardModal__StyledModal-sc-4j7w2v-0 eknHny ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -290,7 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress   ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
             onChange={[Function]}
           >
             <li
@@ -378,7 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </li>
           </ul>
           <div
-            className="WizardModal__StyledWizardContent-sc-4j7w2v-1 gdiPpx"
+            className="iot--wizard-modal__content"
           >
             page 1
           </div>
@@ -394,7 +394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </p>
           </div>
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
@@ -458,7 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible WizardModal__StyledModal-sc-4j7w2v-0 eknHny ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -516,7 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress   ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
+            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
             onChange={[Function]}
           >
             <li
@@ -636,7 +636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </li>
           </ul>
           <div
-            className="WizardModal__StyledWizardContent-sc-4j7w2v-1 gdiPpx"
+            className="iot--wizard-modal__content"
           >
             page 3
           </div>
@@ -645,7 +645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
         >
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
           >
             <button
               className="iot--btn bx--btn bx--btn--secondary"
