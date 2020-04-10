@@ -105,7 +105,7 @@ const PageTitleBar = ({
                       tooltipId="tooltip"
                       renderIcon={Information20}
                     >
-                      <p>{description}</p>
+                      {typeof description === 'string' ? <p>{description}</p> : description}
                     </Tooltip>
                   ) : null}
                   {editable ? (
