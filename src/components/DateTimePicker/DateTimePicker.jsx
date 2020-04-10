@@ -268,6 +268,7 @@ const DateTimePicker = ({
   const [selectedPreset, setSelectedPreset] = useState(null);
 
   const [currentValue, setCurrentValue] = useState(null);
+  const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
 
   const [relativeValue, setRelativeValue] = useState(null);
@@ -445,22 +446,46 @@ const DateTimePicker = ({
     renderValue(preset);
   };
 
+  const resetRelativeValue = () => {
+    setRelativeValue({
+      lastNumber: 0,
+      lastInterval: intervals[0].value,
+      relativeToWhen: '',
+      relativeToTime: '',
+    });
+  };
+
+  const resetAbsoluteValue = () => {
+    setAbsoluteValue({
+      startDate: '',
+      startTime: '00:00',
+      endDate: '',
+      endTime: '00:00',
+    });
+  };
+
   const parseDefaultValue = () => {
-    if (defaultValue !== null) {
-      if (defaultValue.hasOwnProperty('offset')) {
+    const parsableValue = lastAppliedValue || defaultValue;
+
+    if (parsableValue !== null) {
+      if (parsableValue.hasOwnProperty('offset')) {
         // preset
-        onPresetClick(defaultValue);
+        resetAbsoluteValue();
+        resetRelativeValue();
+        onPresetClick(parsableValue);
       }
-      if (defaultValue.hasOwnProperty('lastNumber')) {
+      if (parsableValue.hasOwnProperty('lastNumber')) {
         // relative
+        resetAbsoluteValue();
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.RELATIVE);
-        setRelativeValue(defaultValue);
+        setRelativeValue(parsableValue);
       }
 
-      if (defaultValue.hasOwnProperty('startDate')) {
+      if (parsableValue.hasOwnProperty('startDate')) {
         // absolute
-        const absolute = { ...defaultValue };
+        const absolute = { ...parsableValue };
+        resetRelativeValue();
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
         if (!absolute.hasOwnProperty('start')) {
@@ -489,6 +514,8 @@ const DateTimePicker = ({
   const onCancelClick = () => {
     setIsExpanded(false);
     parseDefaultValue();
+
+    /* istanbul ignore else */
     if (onCancel) {
       onCancel();
     }
@@ -497,6 +524,20 @@ const DateTimePicker = ({
   const onApplyClick = () => {
     setIsExpanded(false);
     const value = renderValue();
+
+    switch (value.kind) {
+      case PICKER_KINDS.ABSOLUTE:
+        setLastAppliedValue(value.absolute);
+        break;
+      case PICKER_KINDS.RELATIVE:
+        setLastAppliedValue(value.relative);
+        break;
+      default:
+        setLastAppliedValue(value.preset);
+        break;
+    }
+
+    /* istanbul ignore else */
     if (onApply) {
       onApply(value);
     }
@@ -627,7 +668,7 @@ const DateTimePicker = ({
                     className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                   >
                     <RadioButtonGroup
-                      defaultSelected={customRangeKind}
+                      valueSelected={customRangeKind}
                       onChange={onCustomRangeChange}
                       name="radiogroup"
                     >

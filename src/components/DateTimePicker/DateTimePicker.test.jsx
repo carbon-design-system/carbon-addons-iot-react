@@ -117,6 +117,12 @@ describe('DateTimePicker tests', () => {
         .first()
         .text()
     ).toEqual(`${today.format('YYYY-MM-DD')} 14:09 to ${today.format('YYYY-MM-DD')} 14:30`);
+
+    wrapper
+      .find('.iot--date-time-picker__menu-btn-apply')
+      .first()
+      .simulate('click');
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
   test('it should render with a predefined absolute range', () => {
@@ -154,6 +160,12 @@ describe('DateTimePicker tests', () => {
         .first()
         .text()
     ).toEqual('2020-04-01 13:34 to 2020-04-06 11:49');
+
+    wrapper
+      .find('.iot--date-time-picker__menu-btn-apply')
+      .first()
+      .simulate('click');
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
   test('it should switch from relative to absolute', () => {
@@ -168,6 +180,18 @@ describe('DateTimePicker tests', () => {
       .simulate('change', { target: { value: PICKER_KINDS.ABSOLUTE } });
 
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(4);
+  });
+
+  test('it should not show the relative option', () => {
+    const wrapper = mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={defaultAbsoluteValue}
+        showRelativeOption={false}
+      />
+    );
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
   });
 
   test('it should switch from relative to presets', () => {
