@@ -11,7 +11,7 @@ const PageTitleBarPropTypes = {
   /** Title of the page  */
   title: PropTypes.node.isRequired,
   /** Details about what the page shows */
-  description: PropTypes.node,
+  description: PropTypes.oneOf(PropTypes.element, PropTypes.string),
   /** Optional node to render in the right side of the PageTitleBar
    *  NOTE: Deprecated in favor of extraContent
    */
