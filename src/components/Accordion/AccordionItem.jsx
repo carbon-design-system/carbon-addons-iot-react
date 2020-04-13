@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { AccordionItem as CarbonAccordionItem } from 'carbon-components-react';
 
 // same default used in carbon. adding to avoid prop type validation issues.
-const defaultRenderExpando = props => <button type="button" {...props} />;
+// const defaultRenderExpando = props => <button type="button" {...props} />;
 
 const AccordionItem = ({ children, ...props }) => {
   const { open } = props;
@@ -45,6 +45,8 @@ AccordionItem.propTypes = {
    * The callback function to render the expando button.
    * Can be a React component class.
    */
+  // Carbon provides default
+  // eslint-disable-next-line react/require-default-props
   renderExpando: PropTypes.func,
 
   /**
@@ -72,7 +74,6 @@ AccordionItem.defaultProps = {
   children: null,
   className: null,
   title: null,
-  renderExpando: defaultRenderExpando,
   iconDescription: 'Open/Close',
   open: false,
   onClick: () => {},
