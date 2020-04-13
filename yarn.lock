@@ -1859,22 +1859,17 @@
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.9.0.tgz#5aa9eb0826ad7f8610c35d30166859299100b2e2"
   integrity sha512-XJKPTqqcrgssqsBF4tvgWX/9/3AuH33PYLTxz4A1rhhUcsYlojAGmZsuJ6/JKRMEUoSrtHJrbg/Z4owvPGHp7w==
 
-"@carbon/icon-helpers@10.4.0":
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.4.0.tgz#771ba51efcaa9d2be03800f8e0f50c7aa779febf"
-  integrity sha512-52H97nT0Hv3mneNaDXBELt/shrO9AUZIpX5TuxRUcdva0xqLNnjhsLw0PTytjQRw3yNCLmDw8hOutzlReXCleQ==
-
-"@carbon/icon-helpers@^10.7.0":
+"@carbon/icon-helpers@^10.6.0", "@carbon/icon-helpers@^10.7.0":
   version "10.7.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.7.0.tgz#7ad56c3f377bfaa687ccca0b0813011606d6cb28"
   integrity sha512-zIswRvP4JyZOq7+4A4/ro7K05xVNid/+HxBOSM1ApuqcXg1e1Vl9fg37+rGY/in9v7vVgsmA8s5Arlx1mJzPIw==
 
-"@carbon/icons-react@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.6.1.tgz#2fdc14947c874875b96a0c58fd438a1ed38d599e"
-  integrity sha512-VeCMLGekMIpLoutyCMk4U1zXUkmzIWZFZbDAGpFbT+OgZuCI1ba5YfiwUV16ldXaSZH7zWmwUQs72t6Kx4fofg==
+"@carbon/icons-react@10.9.3":
+  version "10.9.3"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.9.3.tgz#45eccb733b6c36edfab9513e32dc2a2bd8c9e24a"
+  integrity sha512-B+BiOioUSkpiDJB68vLOQ3spjL74o5DAPPkLPwEd3UXggiypjKLaNhCN4hBxESorc+os0mG0zbV7czNatAKYrQ==
   dependencies:
-    "@carbon/icon-helpers" "10.4.0"
+    "@carbon/icon-helpers" "^10.6.0"
 
 "@carbon/icons-react@^10.9.3":
   version "10.10.0"
@@ -1883,10 +1878,10 @@
   dependencies:
     "@carbon/icon-helpers" "^10.7.0"
 
-"@carbon/icons@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@carbon/icons/-/icons-10.6.1.tgz#1b7a84c4d03bd30e9575d39d4b98ba3e6fa04297"
-  integrity sha512-g7ciJbLN3l7oiZrWpKOiCDRDIAMG3oEf4STaFDRnqKP9pv4jpqoitSkzXDo9L8EmVi9Mp8IV8tAMlAp7DVZuHQ==
+"@carbon/icons@10.9.3":
+  version "10.9.3"
+  resolved "https://registry.yarnpkg.com/@carbon/icons/-/icons-10.9.3.tgz#1e6f9cf705251964fa948f047bfe70f38c1312f2"
+  integrity sha512-BMgK8OYq/yh2h5RpfrzzMNoNkX6Nul0nfYEQX8OfLqhiRCcA3Dx1SEqfm7dQj1Cz7ndQdfqp3DT+xDHTNIodoQ==
 
 "@carbon/import-once@^10.3.0":
   version "10.3.0"
