@@ -86,19 +86,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             <svg
               aria-hidden={true}
               focusable="false"
-              height={6}
+              height={16}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 10 6"
-              width={10}
+              viewBox="0 0 16 16"
+              width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -110,36 +105,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             role="tablist"
           >
             <li
+              aria-controls="undefined__panel"
+              aria-selected={true}
               className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={true}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={true}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={0}
               >
                 Tab 1
               </a>
             </li>
             <li
+              aria-controls="undefined__panel"
+              aria-selected={false}
               className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={false}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={false}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={-1}
               >
                 Tab 2
@@ -151,6 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
+          role="tabpanel"
           selected={true}
         >
           <div
@@ -167,6 +161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
+          role="tabpanel"
           selected={false}
         >
           <div
@@ -302,19 +297,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             <svg
               aria-hidden={true}
               focusable="false"
-              height={6}
+              height={16}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 10 6"
-              width={10}
+              viewBox="0 0 16 16"
+              width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -326,36 +316,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             role="tablist"
           >
             <li
+              aria-controls="undefined__panel"
+              aria-selected={true}
               className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={true}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={true}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={0}
               >
                 Tab 1
               </a>
             </li>
             <li
+              aria-controls="undefined__panel"
+              aria-selected={false}
               className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={false}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={false}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={-1}
               >
                 Tab 2
@@ -367,6 +355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
+          role="tabpanel"
           selected={true}
         >
           <div
@@ -383,6 +372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
+          role="tabpanel"
           selected={false}
         >
           <div
@@ -505,19 +495,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             <svg
               aria-hidden={true}
               focusable="false"
-              height={6}
+              height={16}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 10 6"
-              width={10}
+              viewBox="0 0 16 16"
+              width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -529,36 +514,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             role="tablist"
           >
             <li
+              aria-controls="undefined__panel"
+              aria-selected={false}
               className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={false}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={false}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={-1}
               >
                 Tab 1
               </a>
             </li>
             <li
+              aria-controls="undefined__panel"
+              aria-selected={true}
               className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={true}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={true}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={0}
               >
                 Tab 2
@@ -570,6 +553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
+          role="tabpanel"
           selected={false}
         >
           <div
@@ -586,6 +570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
+          role="tabpanel"
           selected={true}
         >
           <div
@@ -708,19 +693,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             <svg
               aria-hidden={true}
               focusable="false"
-              height={6}
+              height={16}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
-              viewBox="0 0 10 6"
-              width={10}
+              viewBox="0 0 16 16"
+              width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -732,36 +712,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
             role="tablist"
           >
             <li
+              aria-controls="undefined__panel"
+              aria-selected={true}
               className="bx--tabs__nav-item bx--tabs__nav-item--selected"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={true}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={true}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={0}
               >
                 Tab 1
               </a>
             </li>
             <li
+              aria-controls="undefined__panel"
+              aria-selected={false}
               className="bx--tabs__nav-item"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="presentation"
-              selected={false}
+              role="tab"
               tabIndex={-1}
             >
               <a
-                aria-selected={false}
                 className="bx--tabs__nav-link"
                 href="#"
-                role="tab"
                 tabIndex={-1}
               >
                 Tab 2
@@ -773,6 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={false}
           className="bx--tab-content"
           hidden={false}
+          role="tabpanel"
           selected={true}
         >
           <div
@@ -789,6 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
           aria-hidden={true}
           className="bx--tab-content"
           hidden={true}
+          role="tabpanel"
           selected={false}
         >
           <div

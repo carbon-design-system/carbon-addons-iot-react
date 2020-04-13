@@ -22,7 +22,6 @@ Map {
       "onClick": [Function],
       "onHeadingClick": [Function],
       "open": false,
-      "renderExpando": [Function],
       "title": null,
     },
     "propTypes": Object {
@@ -12953,7 +12952,6 @@ Map {
         "args": Array [
           Array [
             "sm",
-            "lg",
             "xl",
           ],
         ],
@@ -13287,7 +13285,22 @@ Map {
         },
       },
     },
-    "TableExpandHeader": Object {},
+    "TableExpandHeader": Object {
+      "propTypes": Object {
+        "ariaLabel": [Function],
+        "children": Object {
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "expandIconDescription": Object {
+          "type": "string",
+        },
+        "isExpanded": [Function],
+        "onExpand": [Function],
+      },
+    },
     "TableExpandRow": Object {
       "defaultProps": Object {
         "expandHeader": "expand",
@@ -13355,6 +13368,9 @@ Map {
         },
         "className": Object {
           "type": "string",
+        },
+        "colSpan": Object {
+          "type": "number",
         },
         "isSortHeader": Object {
           "type": "bool",
@@ -13536,6 +13552,7 @@ Map {
     "TableToolbarSearch": Object {
       "defaultProps": Object {
         "persistent": false,
+        "tabIndex": "0",
         "translateWithId": [Function],
       },
       "propTypes": Object {
@@ -13566,6 +13583,19 @@ Map {
         },
         "searchContainerClasses": Object {
           "type": "string",
+        },
+        "tabIndex": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "number",
+              },
+              Object {
+                "type": "string",
+              },
+            ],
+          ],
+          "type": "oneOfType",
         },
         "translateWithId": Object {
           "isRequired": true,
@@ -13815,6 +13845,9 @@ Map {
       "type": "text",
     },
     "propTypes": Object {
+      "disabled": Object {
+        "type": "bool",
+      },
       "iconDescription": Object {
         "type": "string",
       },
@@ -13822,9 +13855,22 @@ Map {
         "isRequired": true,
         "type": "string",
       },
+      "invalid": Object {
+        "type": "bool",
+      },
       "labelText": Object {
         "isRequired": true,
         "type": "node",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "pattern": [Function],
+      "type": Object {
+        "type": "string",
       },
     },
   },
@@ -14033,7 +14079,6 @@ Map {
         "args": Array [
           Array [
             "sm",
-            "lg",
             "xl",
           ],
         ],
@@ -14154,6 +14199,9 @@ Map {
       },
       "name": Object {
         "type": "string",
+      },
+      "onChange": Object {
+        "type": "func",
       },
       "onClick": Object {
         "type": "func",
@@ -14496,6 +14544,9 @@ Map {
       "inline": Object {
         "type": "bool",
       },
+      "visited": Object {
+        "type": "bool",
+      },
     },
   },
   "ListItem" => Object {
@@ -14535,7 +14586,6 @@ Map {
   },
   "Modal" => Object {
     "defaultProps": Object {
-      "focusTrap": true,
       "hasScrollingContent": false,
       "iconDescription": "close the modal",
       "modalHeading": "",
@@ -14558,9 +14608,7 @@ Map {
       "danger": Object {
         "type": "bool",
       },
-      "focusTrap": Object {
-        "type": "bool",
-      },
+      "focusTrap": [Function],
       "hasForm": Object {
         "type": "bool",
       },
@@ -14917,7 +14965,6 @@ Map {
           "args": Array [
             Array [
               "sm",
-              "lg",
               "xl",
             ],
           ],
@@ -15118,7 +15165,6 @@ Map {
         "args": Array [
           Array [
             "sm",
-            "lg",
             "xl",
           ],
         ],
@@ -15171,7 +15217,6 @@ Map {
         "type": "bool",
       },
       "iconDescription": Object {
-        "isRequired": true,
         "type": "string",
       },
       "kind": Object {
@@ -15197,6 +15242,9 @@ Map {
       },
       "role": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "statusIconDescription": Object {
         "type": "string",
       },
       "subtitle": Object {
@@ -15233,7 +15281,6 @@ Map {
         "type": "bool",
       },
       "iconDescription": Object {
-        "isRequired": true,
         "type": "string",
       },
       "kind": Object {
@@ -15259,6 +15306,9 @@ Map {
       },
       "role": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "statusIconDescription": Object {
         "type": "string",
       },
       "subtitle": Object {
@@ -15554,6 +15604,7 @@ Map {
   "ProgressStep" => Object {
     "defaultProps": Object {
       "renderLabel": [Function],
+      "translateWithId": [Function],
     },
     "propTypes": Object {
       "className": Object {
@@ -15595,6 +15646,9 @@ Map {
       },
       "tooltipId": Object {
         "type": "string",
+      },
+      "translateWithId": Object {
+        "type": "func",
       },
     },
   },
@@ -15842,6 +15896,15 @@ Map {
       "onChange": Object {
         "type": "func",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
     "render": [Function],
   },
@@ -15948,7 +16011,7 @@ Map {
       "maxLabel": "",
       "minLabel": "",
       "step": 1,
-      "stepMuliplier": 4,
+      "stepMultiplier": 4,
     },
     "propTypes": Object {
       "ariaLabelInput": Object {
@@ -16007,7 +16070,8 @@ Map {
       "step": Object {
         "type": "number",
       },
-      "stepMuliplier": Object {
+      "stepMuliplier": [Function],
+      "stepMultiplier": Object {
         "type": "number",
       },
       "value": Object {
@@ -16019,16 +16083,13 @@ Map {
   "StructuredListWrapper" => Object {
     "defaultProps": Object {
       "ariaLabel": "Structured list section",
-      "border": false,
       "selection": false,
     },
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
       },
-      "border": Object {
-        "type": "bool",
-      },
+      "border": [Function],
       "children": Object {
         "type": "node",
       },
@@ -16176,9 +16237,6 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
-      "handleTabAnchorFocus": Object {
-        "type": "func",
-      },
       "handleTabClick": Object {
         "type": "func",
       },
@@ -16187,6 +16245,9 @@ Map {
       },
       "href": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "id": Object {
         "type": "string",
       },
       "index": Object {
@@ -16257,6 +16318,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "hidden": Object {
+        "type": "bool",
       },
       "iconDescription": Object {
         "isRequired": true,
@@ -16434,6 +16498,7 @@ Map {
         "light": false,
         "onChange": [Function],
         "onClick": [Function],
+        "size": "",
       },
       "propTypes": Object {
         "className": Object {
@@ -16487,6 +16552,9 @@ Map {
         "placeholder": Object {
           "type": "string",
         },
+        "size": Object {
+          "type": "string",
+        },
         "tooltipAlignment": Object {
           "args": Array [
             Array [
@@ -16534,6 +16602,7 @@ Map {
         "light": false,
         "onChange": [Function],
         "onClick": [Function],
+        "size": "",
       },
       "propTypes": Object {
         "className": Object {
@@ -16591,6 +16660,9 @@ Map {
           "type": "string",
         },
         "showPasswordLabel": Object {
+          "type": "string",
+        },
+        "size": Object {
           "type": "string",
         },
         "tooltipAlignment": Object {
@@ -16691,6 +16763,15 @@ Map {
       "placeholder": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "type": Object {
         "type": "string",
       },
@@ -16755,7 +16836,6 @@ Map {
     "defaultProps": Object {
       "handleClick": [Function],
       "handleKeyDown": [Function],
-      "iconDescription": "Tile checkmark",
       "light": false,
       "onChange": [Function],
       "selected": false,
@@ -16770,9 +16850,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "id": Object {
         "type": "string",
       },
@@ -16868,7 +16946,6 @@ Map {
   },
   "RadioTile" => Object {
     "defaultProps": Object {
-      "iconDescription": "Tile checkmark",
       "light": false,
       "onChange": [Function],
       "tabIndex": 0,
@@ -16883,9 +16960,7 @@ Map {
       "defaultChecked": Object {
         "type": "bool",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "id": Object {
         "type": "string",
       },
@@ -17311,6 +17386,8 @@ Map {
         "args": Array [
           Array [
             "top",
+            "right",
+            "left",
             "bottom",
           ],
         ],
@@ -17474,9 +17551,6 @@ Map {
     },
   },
   "CodeSnippetSkeleton" => Object {
-    "defaultProps": Object {
-      "type": "single",
-    },
     "propTypes": Object {
       "className": Object {
         "type": "string",
@@ -18015,7 +18089,7 @@ Map {
     "propTypes": Object {
       "children": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "node",
       },
       "className": Object {
         "type": "string",

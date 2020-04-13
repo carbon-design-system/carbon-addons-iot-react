@@ -73,8 +73,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  <polygon
+                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                   />
                 </svg>
               </button>
@@ -88,15 +88,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <li
             className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
           >
-            <div
+            <button
               className="bx--progress-step-button bx--progress-step-button--unclickable"
               onKeyDown={[Function]}
-              role="button"
               tabIndex={-1}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Current
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="10"
+                />
                 <path
-                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                  d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
                 />
                 <title>
                   First step
@@ -110,25 +127,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Device Information step goes here
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -138,25 +167,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Long step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -166,25 +207,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Final step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -194,7 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
         </ul>
         <div
@@ -364,8 +417,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  <polygon
+                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                   />
                 </svg>
               </button>
@@ -379,32 +432,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <li
             className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
+              <span
+                className="bx--assistive-text"
+              >
+                Complete
+              </span>
               <svg
                 aria-hidden={true}
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 16 16"
+                viewBox="0 0 32 32"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                 />
-                <path
-                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                <polygon
+                  points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
                 />
                 <title>
                   First step
@@ -418,20 +470,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button bx--progress-step-button--unclickable"
               onKeyDown={[Function]}
-              role="button"
               tabIndex={-1}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Current
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="10"
+                />
                 <path
-                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                  d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
                 />
                 <title>
                   Device Information step goes here
@@ -445,25 +514,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Long step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -473,25 +554,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Final step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -501,7 +594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
         </ul>
         <div
@@ -655,8 +748,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  <polygon
+                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                   />
                 </svg>
               </button>
@@ -670,32 +763,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <li
             className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
+              <span
+                className="bx--assistive-text"
+              >
+                Complete
+              </span>
               <svg
                 aria-hidden={true}
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 16 16"
+                viewBox="0 0 32 32"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                 />
-                <path
-                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                <polygon
+                  points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
                 />
                 <title>
                   First step
@@ -709,37 +801,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
+              <span
+                className="bx--assistive-text"
+              >
+                Complete
+              </span>
               <svg
                 aria-hidden={true}
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 16 16"
+                viewBox="0 0 32 32"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                 />
-                <path
-                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                <polygon
+                  points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
                 />
                 <title>
                   Device Information step goes here
@@ -753,37 +844,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
+              <span
+                className="bx--assistive-text"
+              >
+                Complete
+              </span>
               <svg
                 aria-hidden={true}
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 16 16"
+                viewBox="0 0 32 32"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                 />
-                <path
-                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                <polygon
+                  points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
                 />
                 <title>
                   Long step
@@ -797,20 +887,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button bx--progress-step-button--unclickable"
               onKeyDown={[Function]}
-              role="button"
               tabIndex={-1}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Current
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="10"
+                />
                 <path
-                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                  d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
                 />
                 <title>
                   Final step
@@ -824,7 +931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
         </ul>
         <div
@@ -987,8 +1094,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  <polygon
+                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                   />
                 </svg>
               </button>
@@ -1002,15 +1109,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <li
             className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button bx--progress-step-button--unclickable"
               onKeyDown={[Function]}
-              role="button"
               tabIndex={-1}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Current
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="10"
+                />
                 <path
-                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                  d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
                 />
                 <title>
                   First step
@@ -1024,25 +1148,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Device Information step goes here
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1052,25 +1188,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Long step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1080,25 +1228,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Final step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1108,7 +1268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
         </ul>
         <div
@@ -1269,8 +1429,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  <polygon
+                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                   />
                 </svg>
               </button>
@@ -1284,32 +1444,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <li
             className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
+              <span
+                className="bx--assistive-text"
+              >
+                Complete
+              </span>
               <svg
                 aria-hidden={true}
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 16 16"
+                viewBox="0 0 32 32"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                 />
-                <path
-                  d="M7 10.8L4.5 8.3 5.3 7.5 7 9.2 10.7 5.5 11.5 6.3z"
+                <polygon
+                  points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
                 />
                 <title>
                   First step
@@ -1323,20 +1482,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button bx--progress-step-button--unclickable"
               onKeyDown={[Function]}
-              role="button"
               tabIndex={-1}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Current
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="10"
+                />
                 <path
-                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                  d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
                 />
                 <title>
                   Device Information step goes here
@@ -1350,25 +1526,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Long step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1378,25 +1566,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Final step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1406,7 +1606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
         </ul>
         <div
@@ -1560,8 +1760,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4l6.6 6.6L8 22.6 9.4 24l6.6-6.6 6.6 6.6 1.4-1.4-6.6-6.6L24 9.4z"
+                  <polygon
+                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                   />
                 </svg>
               </button>
@@ -1575,15 +1775,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <li
             className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button bx--progress-step-button--unclickable"
               onKeyDown={[Function]}
-              role="button"
               tabIndex={-1}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Current
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="10"
+                />
                 <path
-                  d="M 7, 7 m -7, 0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0"
+                  d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
                 />
                 <title>
                   First step
@@ -1597,25 +1814,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Device Information step goes here
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1625,25 +1854,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Long step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1653,25 +1894,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
           <li
             className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 IPBkT"
           >
-            <div
+            <button
               className="bx--progress-step-button"
               onClick={[Function]}
               onKeyDown={[Function]}
-              role="button"
               tabIndex={0}
             >
-              <svg>
+              <span
+                className="bx--assistive-text"
+              >
+                Incomplete
+              </span>
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                />
                 <title>
                   Final step
                 </title>
-                <path
-                  d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 13c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"
-                />
               </svg>
               <p
                 className="bx--progress-label"
@@ -1681,11 +1934,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               <span
                 className="bx--progress-line"
               />
-            </div>
+            </button>
           </li>
         </ul>
         <div
-          className="bx--inline-notification bx--inline-notification--error WizardInline__StyledMessageBox-sc-8orpb0-2 jGtpBI"
+          className="WizardInline__StyledMessageBox-sc-8orpb0-2 jGtpBI bx--inline-notification bx--inline-notification--error"
           kind="error"
           role="alert"
         >
@@ -1698,11 +1951,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
               viewBox="0 0 20 20"
               width={20}
               xmlns="http://www.w3.org/2000/svg"
@@ -1716,7 +1964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 opacity="0"
               />
               <title>
-                closes notification
+                error icon
               </title>
             </svg>
             <div
@@ -1748,17 +1996,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               height={20}
               preserveAspectRatio="xMidYMid meet"
               role="img"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
               viewBox="0 0 32 32"
               width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              <polygon
+                points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
               />
             </svg>
           </button>
@@ -1867,7 +2110,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           "minWidth": "30rem",
         }
       }
-      timeout={0}
     >
       <svg
         aria-hidden={true}
@@ -1875,11 +2117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
         focusable="false"
         height={20}
         preserveAspectRatio="xMidYMid meet"
-        style={
-          Object {
-            "willChange": "transform",
-          }
-        }
         viewBox="0 0 20 20"
         width={20}
         xmlns="http://www.w3.org/2000/svg"
@@ -1893,7 +2130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           opacity="0"
         />
         <title>
-          
+          warning icon
         </title>
       </svg>
       <div

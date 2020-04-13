@@ -894,7 +894,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       
                       <div
                         aria-describedby={null}
-                        aria-haspopup="true"
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -912,17 +911,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
                           role={null}
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
+                          <polygon
+                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
+                          />
                           <path
-                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -1202,13 +1199,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last 7 days
@@ -1238,10 +1235,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -1310,7 +1307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             Cancel
@@ -1348,11 +1345,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
-                            role="search"
                             tabIndex="0"
                           >
                             <div
+                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
                               className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
                             >
                               <svg
                                 aria-hidden={true}
@@ -1360,11 +1358,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                style={
-                                  Object {
-                                    "willChange": "transform",
-                                  }
-                                }
                                 viewBox="0 0 16 16"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -1376,6 +1369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               <label
                                 className="bx--label"
                                 htmlFor="table-for-card-alert-table1-toolbar-search"
+                                id="table-for-card-alert-table1-toolbar-search-search"
                               >
                                 Search
                               </label>
@@ -1389,6 +1383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 onChange={[Function]}
                                 placeholder="Search"
                                 role="searchbox"
+                                tabIndex="-1"
                                 type="text"
                                 value=""
                               />
@@ -1403,17 +1398,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 16 16"
+                                  viewBox="0 0 32 32"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
+                                  <polygon
+                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                                   />
                                 </svg>
                               </button>
@@ -1443,11 +1433,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            <polygon
+                              points="26 15 24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15"
                             />
                             <path
-                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
+                              d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
                         </div>
@@ -1475,7 +1465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
+                              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
                         </div>
@@ -1504,10 +1494,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                               />
                               <path
-                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                               />
                             </svg>
                           </button>
@@ -1569,8 +1559,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -1589,8 +1579,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -1638,8 +1631,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -1658,8 +1651,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -1707,8 +1703,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -1727,8 +1723,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -1763,7 +1762,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                                    d="M16,10a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0V16A6,6,0,0,0,16,10Zm-4.25,7.87h8.5v4.25h-8.5ZM16,28.25A4.27,4.27,0,0,1,11.75,24v-.13h8.5V24A4.27,4.27,0,0,1,16,28.25Zm4.25-12.13h-8.5V16a4.25,4.25,0,0,1,8.5,0Z"
+                                  />
+                                  <path
+                                    d="M30.66,19.21,24,13v9.1a4,4,0,0,0,8,0A3.83,3.83,0,0,0,30.66,19.21ZM28,24.35a2.25,2.25,0,0,1-2.25-2.25V17l3.72,3.47h0A2.05,2.05,0,0,1,30.2,22,2.25,2.25,0,0,1,28,24.35Z"
+                                  />
+                                  <path
+                                    d="M0,22.1a4,4,0,0,0,8,0V13L1.34,19.21A3.88,3.88,0,0,0,0,22.1Zm2.48-1.56h0L6.25,17v5.1a2.25,2.25,0,0,1-4.5,0A2.05,2.05,0,0,1,2.48,20.54Z"
+                                  />
+                                  <path
+                                    d="M15,5.5A3.5,3.5,0,1,0,11.5,9,3.5,3.5,0,0,0,15,5.5Zm-5.25,0A1.75,1.75,0,1,1,11.5,7.25,1.77,1.77,0,0,1,9.75,5.5Z"
+                                  />
+                                  <path
+                                    d="M20.5,2A3.5,3.5,0,1,0,24,5.5,3.5,3.5,0,0,0,20.5,2Zm0,5.25A1.75,1.75,0,1,1,22.25,5.5,1.77,1.77,0,0,1,20.5,7.25Z"
                                   />
                                 </svg>
                                 <p>
@@ -1848,13 +1859,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last year
@@ -1884,10 +1895,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -1969,10 +1980,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -2035,7 +2046,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-35-65"
                             className="bx--tooltip__label"
                             id="hotspot-35-65"
@@ -2072,7 +2082,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-25"
                             className="bx--tooltip__label"
                             id="hotspot-45-25"
@@ -2114,7 +2123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-50"
                             className="bx--tooltip__label"
                             id="hotspot-45-50"
@@ -2156,7 +2164,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-75"
                             className="bx--tooltip__label"
                             id="hotspot-45-75"
@@ -3170,7 +3177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       
                       <div
                         aria-describedby={null}
-                        aria-haspopup="true"
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -3188,17 +3194,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
                           role={null}
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
+                          <polygon
+                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
+                          />
                           <path
-                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -3478,13 +3482,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last 7 days
@@ -3514,10 +3518,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -3586,7 +3590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             Cancel
@@ -3624,11 +3628,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
-                            role="search"
                             tabIndex="0"
                           >
                             <div
+                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
                               className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
                             >
                               <svg
                                 aria-hidden={true}
@@ -3636,11 +3641,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                style={
-                                  Object {
-                                    "willChange": "transform",
-                                  }
-                                }
                                 viewBox="0 0 16 16"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -3652,6 +3652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               <label
                                 className="bx--label"
                                 htmlFor="table-for-card-alert-table1-toolbar-search"
+                                id="table-for-card-alert-table1-toolbar-search-search"
                               >
                                 Search
                               </label>
@@ -3665,6 +3666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 onChange={[Function]}
                                 placeholder="Search"
                                 role="searchbox"
+                                tabIndex="-1"
                                 type="text"
                                 value=""
                               />
@@ -3679,17 +3681,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 16 16"
+                                  viewBox="0 0 32 32"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
+                                  <polygon
+                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                                   />
                                 </svg>
                               </button>
@@ -3719,11 +3716,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            <polygon
+                              points="26 15 24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15"
                             />
                             <path
-                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
+                              d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
                         </div>
@@ -3751,7 +3748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
+                              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
                         </div>
@@ -3780,10 +3777,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                               />
                               <path
-                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                               />
                             </svg>
                           </button>
@@ -3845,8 +3842,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -3865,8 +3862,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -3914,8 +3914,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -3934,8 +3934,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -3983,8 +3986,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -4003,8 +4006,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -4039,7 +4045,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                                    d="M16,10a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0V16A6,6,0,0,0,16,10Zm-4.25,7.87h8.5v4.25h-8.5ZM16,28.25A4.27,4.27,0,0,1,11.75,24v-.13h8.5V24A4.27,4.27,0,0,1,16,28.25Zm4.25-12.13h-8.5V16a4.25,4.25,0,0,1,8.5,0Z"
+                                  />
+                                  <path
+                                    d="M30.66,19.21,24,13v9.1a4,4,0,0,0,8,0A3.83,3.83,0,0,0,30.66,19.21ZM28,24.35a2.25,2.25,0,0,1-2.25-2.25V17l3.72,3.47h0A2.05,2.05,0,0,1,30.2,22,2.25,2.25,0,0,1,28,24.35Z"
+                                  />
+                                  <path
+                                    d="M0,22.1a4,4,0,0,0,8,0V13L1.34,19.21A3.88,3.88,0,0,0,0,22.1Zm2.48-1.56h0L6.25,17v5.1a2.25,2.25,0,0,1-4.5,0A2.05,2.05,0,0,1,2.48,20.54Z"
+                                  />
+                                  <path
+                                    d="M15,5.5A3.5,3.5,0,1,0,11.5,9,3.5,3.5,0,0,0,15,5.5Zm-5.25,0A1.75,1.75,0,1,1,11.5,7.25,1.77,1.77,0,0,1,9.75,5.5Z"
+                                  />
+                                  <path
+                                    d="M20.5,2A3.5,3.5,0,1,0,24,5.5,3.5,3.5,0,0,0,20.5,2Zm0,5.25A1.75,1.75,0,1,1,22.25,5.5,1.77,1.77,0,0,1,20.5,7.25Z"
                                   />
                                 </svg>
                                 <p>
@@ -4124,13 +4142,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last year
@@ -4160,10 +4178,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -4245,10 +4263,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -4311,7 +4329,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-35-65"
                             className="bx--tooltip__label"
                             id="hotspot-35-65"
@@ -4348,7 +4365,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-25"
                             className="bx--tooltip__label"
                             id="hotspot-45-25"
@@ -4390,7 +4406,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-50"
                             className="bx--tooltip__label"
                             id="hotspot-45-50"
@@ -4432,7 +4447,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-75"
                             className="bx--tooltip__label"
                             id="hotspot-45-75"
@@ -5478,7 +5492,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       
                       <div
                         aria-describedby={null}
-                        aria-haspopup="true"
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -5496,17 +5509,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
                           role={null}
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
+                          <polygon
+                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
+                          />
                           <path
-                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -5786,13 +5797,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last 7 days
@@ -5822,10 +5833,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -5894,7 +5905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             Cancel
@@ -5932,11 +5943,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
-                            role="search"
                             tabIndex="0"
                           >
                             <div
+                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
                               className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
                             >
                               <svg
                                 aria-hidden={true}
@@ -5944,11 +5956,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                style={
-                                  Object {
-                                    "willChange": "transform",
-                                  }
-                                }
                                 viewBox="0 0 16 16"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -5960,6 +5967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               <label
                                 className="bx--label"
                                 htmlFor="table-for-card-alert-table1-toolbar-search"
+                                id="table-for-card-alert-table1-toolbar-search-search"
                               >
                                 Search
                               </label>
@@ -5973,6 +5981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 onChange={[Function]}
                                 placeholder="Search"
                                 role="searchbox"
+                                tabIndex="-1"
                                 type="text"
                                 value=""
                               />
@@ -5987,17 +5996,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 16 16"
+                                  viewBox="0 0 32 32"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
+                                  <polygon
+                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                                   />
                                 </svg>
                               </button>
@@ -6027,11 +6031,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            <polygon
+                              points="26 15 24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15"
                             />
                             <path
-                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
+                              d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
                         </div>
@@ -6059,7 +6063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
+                              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
                         </div>
@@ -6088,10 +6092,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                               />
                               <path
-                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                               />
                             </svg>
                           </button>
@@ -6153,8 +6157,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -6173,8 +6177,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -6222,8 +6229,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -6242,8 +6249,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -6291,8 +6301,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -6311,8 +6321,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -6347,7 +6360,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                                    d="M16,10a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0V16A6,6,0,0,0,16,10Zm-4.25,7.87h8.5v4.25h-8.5ZM16,28.25A4.27,4.27,0,0,1,11.75,24v-.13h8.5V24A4.27,4.27,0,0,1,16,28.25Zm4.25-12.13h-8.5V16a4.25,4.25,0,0,1,8.5,0Z"
+                                  />
+                                  <path
+                                    d="M30.66,19.21,24,13v9.1a4,4,0,0,0,8,0A3.83,3.83,0,0,0,30.66,19.21ZM28,24.35a2.25,2.25,0,0,1-2.25-2.25V17l3.72,3.47h0A2.05,2.05,0,0,1,30.2,22,2.25,2.25,0,0,1,28,24.35Z"
+                                  />
+                                  <path
+                                    d="M0,22.1a4,4,0,0,0,8,0V13L1.34,19.21A3.88,3.88,0,0,0,0,22.1Zm2.48-1.56h0L6.25,17v5.1a2.25,2.25,0,0,1-4.5,0A2.05,2.05,0,0,1,2.48,20.54Z"
+                                  />
+                                  <path
+                                    d="M15,5.5A3.5,3.5,0,1,0,11.5,9,3.5,3.5,0,0,0,15,5.5Zm-5.25,0A1.75,1.75,0,1,1,11.5,7.25,1.77,1.77,0,0,1,9.75,5.5Z"
+                                  />
+                                  <path
+                                    d="M20.5,2A3.5,3.5,0,1,0,24,5.5,3.5,3.5,0,0,0,20.5,2Zm0,5.25A1.75,1.75,0,1,1,22.25,5.5,1.77,1.77,0,0,1,20.5,7.25Z"
                                   />
                                 </svg>
                                 <p>
@@ -6432,13 +6457,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last year
@@ -6468,10 +6493,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -6553,10 +6578,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -6619,7 +6644,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-35-65"
                             className="bx--tooltip__label"
                             id="hotspot-35-65"
@@ -6656,7 +6680,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-25"
                             className="bx--tooltip__label"
                             id="hotspot-45-25"
@@ -6698,7 +6721,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-50"
                             className="bx--tooltip__label"
                             id="hotspot-45-50"
@@ -6740,7 +6762,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-75"
                             className="bx--tooltip__label"
                             id="hotspot-45-75"
@@ -6978,10 +6999,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                        d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                       />
                       <path
-                        d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                        d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                       />
                     </svg>
                   </button>
@@ -7168,10 +7189,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -7434,10 +7455,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                        d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                       />
                       <path
-                        d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                        d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                       />
                     </svg>
                   </button>
@@ -7608,7 +7629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             Cancel
@@ -7646,11 +7667,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
-                            role="search"
                             tabIndex="0"
                           >
                             <div
+                              aria-labelledby="table-for-card-expandedcard-toolbar-search-search"
                               className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
                             >
                               <svg
                                 aria-hidden={true}
@@ -7658,11 +7680,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                style={
-                                  Object {
-                                    "willChange": "transform",
-                                  }
-                                }
                                 viewBox="0 0 16 16"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -7674,6 +7691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               <label
                                 className="bx--label"
                                 htmlFor="table-for-card-expandedcard-toolbar-search"
+                                id="table-for-card-expandedcard-toolbar-search-search"
                               >
                                 Search
                               </label>
@@ -7686,6 +7704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 onChange={[Function]}
                                 placeholder="Search"
                                 role="searchbox"
+                                tabIndex="-1"
                                 type="text"
                                 value=""
                               />
@@ -7700,17 +7719,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 16 16"
+                                  viewBox="0 0 32 32"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
+                                  <polygon
+                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                                   />
                                 </svg>
                               </button>
@@ -7740,11 +7754,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            <polygon
+                              points="26 15 24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15"
                             />
                             <path
-                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
+                              d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
                         </div>
@@ -7772,7 +7786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
+                              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
                         </div>
@@ -7801,10 +7815,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                               />
                               <path
-                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                               />
                             </svg>
                           </button>
@@ -7866,8 +7880,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -7886,8 +7900,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -7935,8 +7952,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -7955,8 +7972,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -8004,8 +8024,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -8024,8 +8044,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -8073,8 +8096,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -8093,8 +8116,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -8142,8 +8168,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -8162,8 +8188,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -9135,17 +9164,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 16 16"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                  <polygon
+                                    points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
                                   />
                                 </svg>
                               </div>
@@ -9169,7 +9193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <label
                               className="bx--label bx--visually-hidden"
-                              htmlFor="bx-pagination-select-3"
+                              htmlFor="bx-pagination-select-1-right"
                             >
                               Page number, of 4 pages
                             </label>
@@ -9182,7 +9206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <select
                                   className="bx--select-input"
-                                  id="bx-pagination-select-3"
+                                  id="bx-pagination-select-1-right"
                                   onChange={[Function]}
                                   value={1}
                                 >
@@ -9225,17 +9249,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 16 16"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                  <polygon
+                                    points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
                                   />
                                 </svg>
                               </div>
@@ -9259,17 +9278,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={24}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={24}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M19 23L11 16 19 9 19 23z"
+                            <polygon
+                              points="20,24 10,16 20,8"
                             />
                           </svg>
                         </button>
@@ -9285,17 +9299,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={24}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={24}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M13 9L21 16 13 23 13 9z"
+                            <polygon
+                              points="12,8 22,16 12,24"
                             />
                           </svg>
                         </button>
@@ -10237,7 +10246,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       
                       <div
                         aria-describedby={null}
-                        aria-haspopup="true"
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -10255,17 +10263,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
                           role={null}
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
+                          <polygon
+                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
+                          />
                           <path
-                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -10545,13 +10551,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last 7 days
@@ -10581,10 +10587,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -10653,7 +10659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             Cancel
@@ -10691,11 +10697,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
-                            role="search"
                             tabIndex="0"
                           >
                             <div
+                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
                               className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
                             >
                               <svg
                                 aria-hidden={true}
@@ -10703,11 +10710,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                style={
-                                  Object {
-                                    "willChange": "transform",
-                                  }
-                                }
                                 viewBox="0 0 16 16"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -10719,6 +10721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               <label
                                 className="bx--label"
                                 htmlFor="table-for-card-alert-table1-toolbar-search"
+                                id="table-for-card-alert-table1-toolbar-search-search"
                               >
                                 Search
                               </label>
@@ -10732,6 +10735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 onChange={[Function]}
                                 placeholder="Search"
                                 role="searchbox"
+                                tabIndex="-1"
                                 type="text"
                                 value=""
                               />
@@ -10746,17 +10750,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 16 16"
+                                  viewBox="0 0 32 32"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
+                                  <polygon
+                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                                   />
                                 </svg>
                               </button>
@@ -10786,11 +10785,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            <polygon
+                              points="26 15 24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15"
                             />
                             <path
-                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
+                              d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
                         </div>
@@ -10818,7 +10817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
+                              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
                         </div>
@@ -10845,10 +10844,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                               />
                               <path
-                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                               />
                             </svg>
                           </button>
@@ -10910,8 +10909,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -10930,8 +10929,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -10979,8 +10981,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -10999,8 +11001,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -11048,8 +11053,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -11068,8 +11073,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -11104,7 +11112,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                                    d="M16,10a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0V16A6,6,0,0,0,16,10Zm-4.25,7.87h8.5v4.25h-8.5ZM16,28.25A4.27,4.27,0,0,1,11.75,24v-.13h8.5V24A4.27,4.27,0,0,1,16,28.25Zm4.25-12.13h-8.5V16a4.25,4.25,0,0,1,8.5,0Z"
+                                  />
+                                  <path
+                                    d="M30.66,19.21,24,13v9.1a4,4,0,0,0,8,0A3.83,3.83,0,0,0,30.66,19.21ZM28,24.35a2.25,2.25,0,0,1-2.25-2.25V17l3.72,3.47h0A2.05,2.05,0,0,1,30.2,22,2.25,2.25,0,0,1,28,24.35Z"
+                                  />
+                                  <path
+                                    d="M0,22.1a4,4,0,0,0,8,0V13L1.34,19.21A3.88,3.88,0,0,0,0,22.1Zm2.48-1.56h0L6.25,17v5.1a2.25,2.25,0,0,1-4.5,0A2.05,2.05,0,0,1,2.48,20.54Z"
+                                  />
+                                  <path
+                                    d="M15,5.5A3.5,3.5,0,1,0,11.5,9,3.5,3.5,0,0,0,15,5.5Zm-5.25,0A1.75,1.75,0,1,1,11.5,7.25,1.77,1.77,0,0,1,9.75,5.5Z"
+                                  />
+                                  <path
+                                    d="M20.5,2A3.5,3.5,0,1,0,24,5.5,3.5,3.5,0,0,0,20.5,2Zm0,5.25A1.75,1.75,0,1,1,22.25,5.5,1.77,1.77,0,0,1,20.5,7.25Z"
                                   />
                                 </svg>
                                 <p>
@@ -11189,13 +11209,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last year
@@ -11225,10 +11245,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -11310,10 +11330,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -11376,7 +11396,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-35-65"
                             className="bx--tooltip__label"
                             id="hotspot-35-65"
@@ -11413,7 +11432,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-25"
                             className="bx--tooltip__label"
                             id="hotspot-45-25"
@@ -11455,7 +11473,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-50"
                             className="bx--tooltip__label"
                             id="hotspot-45-50"
@@ -11497,7 +11514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-75"
                             className="bx--tooltip__label"
                             id="hotspot-45-75"
@@ -12176,7 +12192,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="iot--data-state-grid__icon-xsmall-number-5"
                             className="bx--tooltip__label"
                             id="iot--data-state-grid__icon-xsmall-number-5"
@@ -12205,10 +12220,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1zm-.9 5h1.8v8h-1.8V6zm.9 13.2c-.7 0-1.2-.6-1.2-1.2s.6-1.2 1.2-1.2 1.2.6 1.2 1.2-.5 1.2-1.2 1.2z"
+                                d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11C23,5.9,18.1,1,12,1z M11.1,6h1.8v8h-1.8V6z M12,19.2	c-0.7,0-1.2-0.6-1.2-1.2s0.6-1.2,1.2-1.2s1.2,0.6,1.2,1.2S12.7,19.2,12,19.2z"
                               />
                               <path
-                                d="M13.2 18c0 .7-.6 1.2-1.2 1.2s-1.2-.6-1.2-1.2.6-1.2 1.2-1.2 1.2.5 1.2 1.2zm-.3-12h-1.8v8h1.8V6z"
+                                d="M13.2,18c0,0.7-0.6,1.2-1.2,1.2s-1.2-0.6-1.2-1.2s0.6-1.2,1.2-1.2S13.2,17.3,13.2,18z M12.9,6	h-1.8v8h1.8V6z"
                                 data-icon-path="inner-path"
                                 fill="none"
                                 opacity="0"
@@ -12864,7 +12879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="iot--data-state-grid__icon-xsmall-number-5"
                             className="bx--tooltip__label"
                             id="iot--data-state-grid__icon-xsmall-number-5"
@@ -12893,10 +12907,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1zm-.9 5h1.8v8h-1.8V6zm.9 13.2c-.7 0-1.2-.6-1.2-1.2s.6-1.2 1.2-1.2 1.2.6 1.2 1.2-.5 1.2-1.2 1.2z"
+                                d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11C23,5.9,18.1,1,12,1z M11.1,6h1.8v8h-1.8V6z M12,19.2	c-0.7,0-1.2-0.6-1.2-1.2s0.6-1.2,1.2-1.2s1.2,0.6,1.2,1.2S12.7,19.2,12,19.2z"
                               />
                               <path
-                                d="M13.2 18c0 .7-.6 1.2-1.2 1.2s-1.2-.6-1.2-1.2.6-1.2 1.2-1.2 1.2.5 1.2 1.2zm-.3-12h-1.8v8h1.8V6z"
+                                d="M13.2,18c0,0.7-0.6,1.2-1.2,1.2s-1.2-0.6-1.2-1.2s0.6-1.2,1.2-1.2S13.2,17.3,13.2,18z M12.9,6	h-1.8v8h1.8V6z"
                                 data-icon-path="inner-path"
                                 fill="none"
                                 opacity="0"
@@ -24649,7 +24663,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       
                       <div
                         aria-describedby={null}
-                        aria-haspopup="true"
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -24667,17 +24680,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
                           role={null}
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 16 16"
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
+                          <polygon
+                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
+                          />
                           <path
-                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -24957,13 +24968,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last 7 days
@@ -24993,10 +25004,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -25065,7 +25076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                             disabled={false}
                             onClick={[Function]}
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             Cancel
@@ -25103,11 +25114,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
-                            role="search"
                             tabIndex="0"
                           >
                             <div
+                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
                               className="bx--search bx--search--sm table-toolbar-search"
+                              role="search"
                             >
                               <svg
                                 aria-hidden={true}
@@ -25115,11 +25127,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                style={
-                                  Object {
-                                    "willChange": "transform",
-                                  }
-                                }
                                 viewBox="0 0 16 16"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
@@ -25131,6 +25138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               <label
                                 className="bx--label"
                                 htmlFor="table-for-card-alert-table1-toolbar-search"
+                                id="table-for-card-alert-table1-toolbar-search-search"
                               >
                                 Search
                               </label>
@@ -25144,6 +25152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 onChange={[Function]}
                                 placeholder="Search"
                                 role="searchbox"
+                                tabIndex="-1"
                                 type="text"
                                 value=""
                               />
@@ -25158,17 +25167,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={16}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
-                                  viewBox="0 0 16 16"
+                                  viewBox="0 0 32 32"
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M12 4.7L11.3 4 8 7.3 4.7 4 4 4.7 7.3 8 4 11.3 4.7 12 8 8.7 11.3 12 12 11.3 8.7 8z"
+                                  <polygon
+                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                                   />
                                 </svg>
                               </button>
@@ -25198,11 +25202,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <path
-                              d="M26 15l-1.41-1.41L17 21.17V2h-2v19.17l-7.59-7.58L6 15l10 10 10-10z"
+                            <polygon
+                              points="26 15 24.59 13.59 17 21.17 17 2 15 2 15 21.17 7.41 13.59 6 15 16 25 26 15"
                             />
                             <path
-                              d="M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4z"
+                              d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
                         </div>
@@ -25230,7 +25234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             xmlns="http://www.w3.org/2000/svg"
                           >
                             <path
-                              d="M18 28h-4a2 2 0 0 1-2-2v-7.59L4.59 11A2 2 0 0 1 4 9.59V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v3.59a2 2 0 0 1-.59 1.41L20 18.41V26a2 2 0 0 1-2 2zM6 6v3.59l8 8V26h4v-8.41l8-8V6z"
+                              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
                         </div>
@@ -25259,10 +25263,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                               />
                               <path
-                                d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                               />
                             </svg>
                           </button>
@@ -25324,8 +25328,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -25344,8 +25348,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -25393,8 +25400,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -25413,8 +25420,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -25462,8 +25472,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M16 4L6 14l1.41 1.41L15 7.83V30h2V7.83l7.59 7.58L26 14 16 4z"
+                                  <polygon
+                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
                                   />
                                 </svg>
                                 <svg
@@ -25482,8 +25492,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <path
-                                    d="M26.59 20.59L23 24.17V4h-2v20.17l-3.59-3.58L16 22l6 6 6-6-1.41-1.41zM10 4l-6 6 1.41 1.41L9 7.83V28h2V7.83l3.59 3.58L16 10l-6-6z"
+                                  <polygon
+                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
+                                  />
+                                  <polygon
+                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
                                   />
                                 </svg>
                               </button>
@@ -25518,7 +25531,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 10a6 6 0 0 0-6 6v8a6 6 0 0 0 12 0v-8a6 6 0 0 0-6-6zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0 1 11.75 24v-.13h8.5V24A4.27 4.27 0 0 1 16 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 0 1 8.5 0zm10.41 3.09L24 13v9.1a4 4 0 0 0 8 0 3.83 3.83 0 0 0-1.34-2.89zM28 24.35a2.25 2.25 0 0 1-2.25-2.25V17l3.72 3.47A2.05 2.05 0 0 1 30.2 22a2.25 2.25 0 0 1-2.2 2.35zM0 22.1a4 4 0 0 0 8 0V13l-6.66 6.21A3.88 3.88 0 0 0 0 22.1zm2.48-1.56L6.25 17v5.1a2.25 2.25 0 0 1-4.5 0 2.05 2.05 0 0 1 .73-1.56zM15 5.5A3.5 3.5 0 1 0 11.5 9 3.5 3.5 0 0 0 15 5.5zm-5.25 0a1.75 1.75 0 1 1 1.75 1.75A1.77 1.77 0 0 1 9.75 5.5zM20.5 2A3.5 3.5 0 1 0 24 5.5 3.5 3.5 0 0 0 20.5 2zm0 5.25a1.75 1.75 0 1 1 1.75-1.75 1.77 1.77 0 0 1-1.75 1.75z"
+                                    d="M16,10a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0V16A6,6,0,0,0,16,10Zm-4.25,7.87h8.5v4.25h-8.5ZM16,28.25A4.27,4.27,0,0,1,11.75,24v-.13h8.5V24A4.27,4.27,0,0,1,16,28.25Zm4.25-12.13h-8.5V16a4.25,4.25,0,0,1,8.5,0Z"
+                                  />
+                                  <path
+                                    d="M30.66,19.21,24,13v9.1a4,4,0,0,0,8,0A3.83,3.83,0,0,0,30.66,19.21ZM28,24.35a2.25,2.25,0,0,1-2.25-2.25V17l3.72,3.47h0A2.05,2.05,0,0,1,30.2,22,2.25,2.25,0,0,1,28,24.35Z"
+                                  />
+                                  <path
+                                    d="M0,22.1a4,4,0,0,0,8,0V13L1.34,19.21A3.88,3.88,0,0,0,0,22.1Zm2.48-1.56h0L6.25,17v5.1a2.25,2.25,0,0,1-4.5,0A2.05,2.05,0,0,1,2.48,20.54Z"
+                                  />
+                                  <path
+                                    d="M15,5.5A3.5,3.5,0,1,0,11.5,9,3.5,3.5,0,0,0,15,5.5Zm-5.25,0A1.75,1.75,0,1,1,11.5,7.25,1.77,1.77,0,0,1,9.75,5.5Z"
+                                  />
+                                  <path
+                                    d="M20.5,2A3.5,3.5,0,1,0,24,5.5,3.5,3.5,0,0,0,20.5,2Zm0,5.25A1.75,1.75,0,1,1,22.25,5.5,1.77,1.77,0,0,1,20.5,7.25Z"
                                   />
                                 </svg>
                                 <p>
@@ -25603,13 +25628,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                            d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                          />
+                          <polygon
+                            points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                           />
                           <path
-                            d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                          />
-                          <path
-                            d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                            d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
                             Last year
@@ -25639,10 +25664,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -25724,10 +25749,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                         />
                         <path
-                          d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                         />
                       </svg>
                     </button>
@@ -25790,7 +25815,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-35-65"
                             className="bx--tooltip__label"
                             id="hotspot-35-65"
@@ -25827,7 +25851,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-25"
                             className="bx--tooltip__label"
                             id="hotspot-45-25"
@@ -25869,7 +25892,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-50"
                             className="bx--tooltip__label"
                             id="hotspot-45-50"
@@ -25911,7 +25933,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         >
                           <div
                             aria-describedby={null}
-                            aria-haspopup="true"
                             aria-labelledby="hotspot-45-75"
                             className="bx--tooltip__label"
                             id="hotspot-45-75"
@@ -26110,7 +26131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     }
                   >
                     <a
-                      className="bx--link bx--tile bx--tile--clickable"
+                      className="bx--tile bx--tile--clickable"
                       href="https://internetofthings.ibmcloud.com"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -26189,7 +26210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     }
                   >
                     <a
-                      className="bx--link bx--tile bx--tile--clickable"
+                      className="bx--tile bx--tile--clickable"
                       href="https://internetofthings.ibmcloud.com"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -26371,7 +26392,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M16 18H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2zM6 6v10h10V6zm20 6v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm0 12v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zm-10 2v4h-4v-4h4m0-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2z"
+                            d="M16,18H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H16a2,2,0,0,1,2,2V16A2,2,0,0,1,16,18ZM6,6V16H16V6Z"
+                          />
+                          <path
+                            d="M26,12v4H22V12h4m0-2H22a2,2,0,0,0-2,2v4a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V12a2,2,0,0,0-2-2Z"
+                          />
+                          <path
+                            d="M26,22v4H22V22h4m0-2H22a2,2,0,0,0-2,2v4a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V22a2,2,0,0,0-2-2Z"
+                          />
+                          <path
+                            d="M16,22v4H12V22h4m0-2H12a2,2,0,0,0-2,2v4a2,2,0,0,0,2,2h4a2,2,0,0,0,2-2V22a2,2,0,0,0-2-2Z"
                           />
                         </svg>
                       </div>
@@ -26444,7 +26474,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M31 30h-2v-3a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3v3h-2v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zm-7-18a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm-9 12h-2v-3a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v3H1v-3a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5zM8 4a3 3 0 1 1-3 3 3 3 0 0 1 3-3m0-2a5 5 0 1 0 5 5 5 5 0 0 0-5-5z"
+                            d="M31,30H29V27a3,3,0,0,0-3-3H22a3,3,0,0,0-3,3v3H17V27a5,5,0,0,1,5-5h4a5,5,0,0,1,5,5Z"
+                          />
+                          <path
+                            d="M24,12a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,24,10Z"
+                          />
+                          <path
+                            d="M15,22H13V19a3,3,0,0,0-3-3H6a3,3,0,0,0-3,3v3H1V19a5,5,0,0,1,5-5h4a5,5,0,0,1,5,5Z"
+                          />
+                          <path
+                            d="M8,4A3,3,0,1,1,5,7,3,3,0,0,1,8,4M8,2a5,5,0,1,0,5,5A5,5,0,0,0,8,2Z"
                           />
                         </svg>
                       </div>
