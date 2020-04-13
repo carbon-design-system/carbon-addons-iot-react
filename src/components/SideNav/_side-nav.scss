@@ -150,6 +150,7 @@ button.#{$prefix}--side-nav__link {
 }
 
 .#{$prefix}--side-nav__menu[role='menu'] .#{$prefix}--side-nav__link[role='menuitem'] {
+  font-weight: 400;
   height: 2rem;
   min-height: 2rem;
   padding-left: 2rem;
@@ -195,9 +196,4 @@ html[dir='rtl'] {
     left: auto;
     right: 0;
   }
-}
-
-// to allow for buttons since carbon qualifies thier styles with a tag
-.#{$prefix}--side-nav__menu[role='menu'] .#{$prefix}--side-nav__link[role='menuitem'] {
-  font-weight: 400;
 }
