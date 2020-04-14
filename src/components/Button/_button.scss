@@ -12,3 +12,9 @@
     stroke: $carbon--gray-50;
   }
 }
+
+html[dir='rtl'] .#{$iot-prefix}--btn {
+  text-align: right;
+  padding-left: 60px; // fixed values to invert $button-padding of Carbon's theme-tokens.scss
+  padding-right: 12px;
+}
