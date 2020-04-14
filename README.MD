@@ -38,14 +38,16 @@
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install carbon-addons-iot-react
+npm install carbon-addons-iot-react d3
 ```
 
 If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following command instead:
 
 ```bash
-yarn add carbon-addons-iot-react
+yarn add carbon-addons-iot-react d3
 ```
+
+> _Note `d3` is a peer dependency due to the usage of `@carbon/charts` in various components._
 
 You can then import any component that you need by doing the following in your project:
 

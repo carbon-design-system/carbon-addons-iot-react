@@ -34,4 +34,4 @@ date, the better!_
 
 What resources do you have to assist this effort?
 
-_Carbon Add-ons for Watson IoT is a collaborative system. We encourage teams to build components and submit them for integration._
+_Carbon add-ons for Watson IoT is a collaborative system. We encourage teams to build components and submit them for integration._
