@@ -30,6 +30,25 @@ export const pageTitleBarBreadcrumb = [
   <span>Instance</span>,
 ];
 
+const NodeTooltip = () => (
+  <div>
+    <p>Descriptive text about this page and what the user can or should do on it </p>
+    <div
+      style={{
+        display: 'flex',
+        'align-items': 'center',
+        'justify-content': 'space-between',
+        'padding-top': '1rem',
+      }}
+    >
+      <a href="/">Link one</a>
+      <Button renderIcon={Add24} onClick={action('click')}>
+        Take an action
+      </Button>
+    </div>
+  </div>
+);
+
 storiesOf('Watson IoT/PageTitleBar', module)
   .addDecorator(storyFn => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>)
   .add('base', () => <PageTitleBar title={commonPageTitleBarProps.title} />)
@@ -42,10 +61,10 @@ storiesOf('Watson IoT/PageTitleBar', module)
       description={commonPageTitleBarProps.description}
     />
   ))
-  .add('with tooltip description', () => (
+  .add('with tooltip description with node', () => (
     <PageTitleBar
       title={commonPageTitleBarProps.title}
-      description={commonPageTitleBarProps.description}
+      description={<NodeTooltip />}
       breadcrumb={pageTitleBarBreadcrumb}
       collapsed
     />
