@@ -274,6 +274,8 @@ const DateTimePicker = ({
   const [relativeValue, setRelativeValue] = useState(null);
   const [absoluteValue, setAbsoluteValue] = useState(null);
 
+  const [focusOnFirstField, setFocusOnFirstField] = useState(true);
+
   const dateTimePickerBaseValue = {
     kind: '',
     preset: {
@@ -404,16 +406,29 @@ const DateTimePicker = ({
     setIsExpanded(!isExpanded);
   };
 
-  let focusOnFirstField = true;
+  useEffect(
+    () => {
+      /* istanbul ignore next */
+      if (
+        datePickerRef.current &&
+        datePickerRef.current.inputField &&
+        datePickerRef.current.toInputField
+      ) {
+        if (focusOnFirstField) {
+          datePickerRef.current.inputField.focus();
+        } else {
+          datePickerRef.current.toInputField.focus();
+        }
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [focusOnFirstField]
+  );
+
   /* istanbul ignore next */
   const onDatePickerChange = range => {
     if (range.length > 1) {
-      focusOnFirstField = !focusOnFirstField;
-    }
-    if (focusOnFirstField && datePickerRef.current.inputField) {
-      datePickerRef.current.inputField.focus();
-    } else {
-      datePickerRef.current.toInputField.focus();
+      setFocusOnFirstField(!focusOnFirstField);
     }
 
     const newAbsolute = { ...absoluteValue };
@@ -472,6 +487,7 @@ const DateTimePicker = ({
         // preset
         resetAbsoluteValue();
         resetRelativeValue();
+        setCustomRangeKind(PICKER_KINDS.RELATIVE);
         onPresetClick(parsableValue);
       }
       if (parsableValue.hasOwnProperty('lastNumber')) {
@@ -497,6 +513,9 @@ const DateTimePicker = ({
         setAbsoluteValue(absolute);
       }
     } else {
+      resetAbsoluteValue();
+      resetRelativeValue();
+      setCustomRangeKind(PICKER_KINDS.RELATIVE);
       onPresetClick(presets[0]);
     }
   };
