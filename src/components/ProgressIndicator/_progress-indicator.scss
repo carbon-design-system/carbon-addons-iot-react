@@ -5,6 +5,33 @@
   .#{$prefix}--skeleton .#{$prefix}--progress-step {
     flex: unset;
   }
+
+  &.#{$prefix}--progress--vertical {
+    .#{$prefix}--progress-label {
+      text-align: left;
+    }
+
+    .#{$prefix}--progress-step-button {
+      // display: inline-flex;
+      text-align: left;
+      padding: 0 0.5rem; // use token
+      width: 100%;
+
+      .#{$prefix}--progress-step--current svg,
+      svg {
+        margin-left: 0;
+        width: 1rem;
+      }
+
+      .#{$prefix}--progress-label {
+        max-width: calc(100% - 2.2rem);
+      }
+    }
+
+    .#{$prefix}--progress-line {
+      top: 0;
+    }
+  }
 }
 
 html[dir='rtl'] {
