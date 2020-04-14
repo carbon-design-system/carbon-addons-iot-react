@@ -58,7 +58,7 @@ const links = [
     linkContent: 'Devices',
   },
   {
-    isEnabled: false,
+    isEnabled: true,
     icon: Dashboard,
     metaData: {
       label: 'Dashboards',
@@ -67,6 +67,25 @@ const links = [
       target: '_blank',
     },
     linkContent: 'Dashboards',
+    childContent: [
+      {
+        metaData: {
+          label: 'Link 1',
+          title: 'Link 1',
+          onClick: action('inner menu click'),
+          element: 'button',
+        },
+        content: 'Link 1',
+      },
+      {
+        metaData: {
+          label: 'Link 2',
+          title: 'Link 2',
+          onClick: action('inner menu click'),
+        },
+        content: 'Link 2',
+      },
+    ],
   },
   {
     isEnabled: true,
@@ -84,7 +103,7 @@ const links = [
           onClick: action('inner menu click'),
           element: 'button',
         },
-        content: 'Yet another link',
+        content: 'Link 3',
         isActive: true,
       },
     ],
