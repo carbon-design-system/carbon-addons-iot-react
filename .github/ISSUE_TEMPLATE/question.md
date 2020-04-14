@@ -8,8 +8,8 @@ assignees: ''
 
 <!--
 
-Hi there! 👋 Hope everything is going okay using the Carbon Addons
-for Watson IoT components. It looks like you might have a question
+Hi there! 👋 Hope everything is going okay using the Carbon add-ons for
+Watson IoT components. It looks like you might have a question
 about our work, so we wanted to share a couple resources that you could
 use if you haven't tried them yet 🙂
 

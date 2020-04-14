@@ -1,7 +1,7 @@
 import React from 'react';
 import { Add16, Close16, Edit16 } from '@carbon/icons-react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
@@ -120,6 +120,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           }}
           buttons={buttonsToRender}
           items={getListItems(30)}
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -143,6 +144,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           }}
           buttons={buttonsToRender}
           items={getListItems(3)}
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -163,6 +165,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           }}
           buttons={buttonsToRender}
           items={getListItems(3)}
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -187,6 +190,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           buttons={buttonsToRender}
           items={getListItems(20)}
           pageSize="xl"
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -207,6 +211,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           buttons={buttonsToRender}
           items={getListItems(20)}
           pageSize="sm"
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -225,6 +230,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           }}
           buttons={buttonsToRender}
           items={listItemsWithEmptyRow}
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -245,6 +251,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           items={getFatRowListItems(20)}
           pageSize="sm"
           isLargeRow
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -264,6 +271,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           buttons={buttonsToRender}
           items={getListItemsWithActions(5)}
           pageSize="sm"
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -283,6 +291,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           buttons={buttonsToRender}
           items={getListItemsWithOverflowMenu(5)}
           pageSize="sm"
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -304,6 +313,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           items={getFatRowListItemsWithActions(5)}
           pageSize="sm"
           isLargeRow
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
@@ -324,6 +334,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
           items={getFatRowListItemsWithOverflowMenu(5)}
           pageSize="sm"
           isLargeRow
+          isLoading={boolean('isLoading', false)}
         />
       </div>
     )),
