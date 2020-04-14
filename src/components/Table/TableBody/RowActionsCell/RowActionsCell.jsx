@@ -163,8 +163,6 @@ class RowActionsCell extends React.Component {
       rowActionsError,
       onClearError,
       inProgressText,
-      hasDivider,
-      isDelete,
     } = this.props;
     const { isOpen } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
