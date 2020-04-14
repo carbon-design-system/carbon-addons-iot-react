@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { DataTable } from 'carbon-components-react';
-import { Add32, Edit16 } from '@carbon/icons-react';
+import { Add32, Edit16, Delete16 } from '@carbon/icons-react';
 
 import TableBodyRow from './TableBodyRow';
 
@@ -50,7 +50,8 @@ storiesOf('Watson IoT/TableBodyRow', module)
       isExpanded={boolean('isExpanded', false)}
       rowActions={[
         { id: 'add', renderIcon: Add32 },
-        { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
+        { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit', hasDivider: true, isDelete: false},
+        { id: 'delete', renderIcon: Delete16, isOverflow: true, labelText: 'Delete', hasDivider: false, isDelete: true},
       ]}
       options={{ hasRowActions: true, hasRowExpansion: true }}
     />
