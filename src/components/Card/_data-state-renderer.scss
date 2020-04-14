@@ -1,7 +1,7 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--data-state-container {
-  // the custom property (CSS var) is defined in ValueCard.jsx
+  // the custom property (CSS var) is defined in the Card that is using it
   padding: 0 var(--container-padding);
   width: inherit;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import { CARD_LAYOUTS, VALUE_CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_LAYOUTS, CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 
 import Attribute from './Attribute';
@@ -58,7 +58,7 @@ describe('ValueCard', () => {
         content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
         size={CARD_SIZES.SMALL}
         dataState={{
-          type: VALUE_CARD_DATA_STATE.NO_DATA,
+          type: CARD_DATA_STATE.NO_DATA,
           label: '-',
           description: '-',
         }}
