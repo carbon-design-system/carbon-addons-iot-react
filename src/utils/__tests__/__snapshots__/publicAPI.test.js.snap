@@ -4072,6 +4072,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -5898,6 +5899,7 @@ Map {
         "xl": 144,
         "xs": 144,
       },
+      "showOverflow": false,
       "size": "MEDIUM",
       "testID": "Card",
       "timeRange": undefined,
@@ -6561,6 +6563,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -7413,6 +7416,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -8181,6 +8185,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -8917,6 +8922,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -9770,6 +9776,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -10681,6 +10688,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -11488,6 +11496,7 @@ Map {
         ],
         "type": "shape",
       },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [

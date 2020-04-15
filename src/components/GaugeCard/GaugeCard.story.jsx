@@ -76,13 +76,13 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
     };
 
     return (
-      <div style={{ margin: 20 }}>
+      <div style={{ width: '142px', margin: 60 }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}
           id="GaugeCard"
           title={text('Text', 'Health')}
-          size={select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM)}
+          size={select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL)}
           values={{
             usage: number('Gauge value', 81),
             usageTrend: '12%',
