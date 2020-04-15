@@ -85,3 +85,10 @@
 .#{$iot-prefix}--data-state-default-warning-icon {
   fill: $carbon--yellow-30;
 }
+
+html[dir='rtl'] .#{$iot-prefix}--data-state-grid {
+  & > *:first-child {
+    margin-right: 0;
+    margin-left: $spacing-03;
+  }
+}
