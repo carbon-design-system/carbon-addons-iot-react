@@ -90,6 +90,7 @@ const determineLabelFontSize = ({ size, layout, attributeCount, isVertical }) =>
     case CARD_SIZES.SMALLWIDE:
       fontSize = 0.875;
       break;
+    case CARD_SIZES.MEDIUMTHIN:
     case CARD_SIZES.MEDIUM:
       fontSize = isVertical && attributeCount > 2 ? 0.875 : 1;
       break;
@@ -156,11 +157,11 @@ const determineLayout = (size, attributes, measuredWidth) => {
           ? CARD_LAYOUTS.VERTICAL
           : CARD_LAYOUTS.HORIZONTAL;
       break;
+    case CARD_SIZES.MEDIUM:
     case CARD_SIZES.MEDIUMTHIN:
       layout = CARD_LAYOUTS.VERTICAL;
       break;
     case CARD_SIZES.LARGETHIN:
-    case CARD_SIZES.MEDIUM:
     case CARD_SIZES.MEDIUMWIDE:
       if (attributes.length > 2) {
         layout = CARD_LAYOUTS.VERTICAL;
@@ -283,7 +284,9 @@ const ValueCard = ({
                         isVertical={isVertical}
                         layout={layout}
                         isSmall={
-                          newSize === CARD_SIZES.SMALL &&
+                          (newSize === CARD_SIZES.SMALL ||
+                            newSize === CARD_SIZES.SMALLWIDE ||
+                            newSize === CARD_SIZES.MEDIUMTHIN) &&
                           (attribute.secondaryValue !== undefined || attribute.label !== undefined)
                         }
                         isMini={isMini}

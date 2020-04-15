@@ -15,6 +15,7 @@ describe('ValueCard', () => {
       <ValueCard
         content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
         values={{ v: 'value' }}
+        size={CARD_SIZES.LARGE}
       />
     );
     expect(wrapper.find(Attribute).prop('layout')).toEqual(CARD_LAYOUTS.HORIZONTAL);
@@ -30,6 +31,7 @@ describe('ValueCard', () => {
             { label: 'title4', dataSourceId: 'v4' },
           ],
         }}
+        size={CARD_SIZES.LARGE}
         values={{ v: 'value' }}
       />
     );

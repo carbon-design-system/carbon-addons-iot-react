@@ -467,8 +467,8 @@ storiesOf('Watson IoT/ValueCard', module)
       </div>
     );
   })
-  .add('medium / vertical /  3', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  .add('mediumthin / vertical /  3', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
     return (
       <div style={{ width: text('cardWidth', `120px`), margin: 20 }}>
         <ValueCard
@@ -659,7 +659,7 @@ storiesOf('Watson IoT/ValueCard', module)
               { label: 'Utilization', dataSourceId: 'utilization', unit: '%' },
               { label: 'CPU', dataSourceId: 'cpu', unit: '%' },
               { label: 'Humidity', dataSourceId: 'humidity', unit: '%' },
-              { label: 'Air flow', dataSourceId: 'air_flow', unit: '%' },
+              { label: 'Location', dataSourceId: 'location' },
               { label: 'Air quality', dataSourceId: 'air_quality', unit: '%' },
             ]),
           }}
@@ -671,7 +671,7 @@ storiesOf('Watson IoT/ValueCard', module)
             utilization: number('utilization', 76),
             humidity: number('humidity', 76),
             cpu: number('cpu', 76),
-            air_flow: number('air_flow', 76),
+            location: text('location', 'Australia'),
             air_quality: number('air_quality', 76),
           }}
         />
