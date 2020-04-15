@@ -1,5 +1,5 @@
 @import '../../globals/vars';
-@import '@carbon/motion/scss/motion.scss';
+@import '~@carbon/motion/scss/motion.scss';
 
 .#{$iot-prefix}--date-time-picker {
   padding: 0 $spacing-05 $spacing-05;
