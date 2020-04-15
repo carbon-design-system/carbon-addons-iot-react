@@ -79,6 +79,7 @@
     "@carbon/icons": "10.9.3",
     "@carbon/icons-react": "10.9.3",
     "@carbon/layout": "10.7.1",
+    "@carbon/motion": "10.6.0",
     "@carbon/themes": "10.10.3",
     "carbon-components": "10.10.3",
     "carbon-components-react": "7.10.3",

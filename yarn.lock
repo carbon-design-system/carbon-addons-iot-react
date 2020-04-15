@@ -1898,6 +1898,11 @@
   resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.9.0.tgz#e7fe51850b9cfdbf9d330986ad0e779a877df49d"
   integrity sha512-TbLTYGqCciL2CaFPnnwKOKw7LzThx5YkabM4kaXNRZxF3l7LLmegGxWIejQeq7aeYgOZIeHX6DlpFXI/5YaTuw==
 
+"@carbon/motion@10.6.0":
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/@carbon/motion/-/motion-10.6.0.tgz#3b03628e9aad22f5275dd6d33973fa32904221db"
+  integrity sha512-AByB+GXw3JpalElLuEHibj0fzDbQD1SpJO8x3HIxSbhZDjyAEK7z9v4SfhJ6/fe34zySNtG3YFbVt4nHc/dYVQ==
+
 "@carbon/themes@10.10.3":
   version "10.10.3"
   resolved "https://registry.yarnpkg.com/@carbon/themes/-/themes-10.10.3.tgz#1bf09122306587edbbf2a855346e8ac383176022"
