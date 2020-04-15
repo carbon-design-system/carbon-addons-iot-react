@@ -396,7 +396,7 @@ Map {
         "hasSearch": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
-        "wrapCellText": "auto",
+        "wrapCellText": "always",
       },
       "secondaryTitle": null,
       "title": null,

@@ -1548,7 +1548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Alert"
                                   >
                                     Alert
@@ -1618,7 +1618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Hour"
                                   >
                                     Hour
@@ -1688,7 +1688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Pressure"
                                   >
                                     Pressure
@@ -3827,7 +3827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Alert"
                                   >
                                     Alert
@@ -3897,7 +3897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Hour"
                                   >
                                     Hour
@@ -3967,7 +3967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Pressure"
                                   >
                                     Pressure
@@ -6138,7 +6138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Alert"
                                   >
                                     Alert
@@ -6208,7 +6208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Hour"
                                   >
                                     Hour
@@ -6278,7 +6278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Pressure"
                                   >
                                     Pressure
@@ -7854,7 +7854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Timestamp"
                                   >
                                     Timestamp
@@ -7924,7 +7924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Campus"
                                   >
                                     Campus
@@ -7994,7 +7994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="People"
                                   >
                                     People
@@ -8064,7 +8064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Headcount"
                                   >
                                     Headcount
@@ -8134,7 +8134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="capacity"
                                   >
                                     capacity
@@ -8193,7 +8193,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-timestamp"
@@ -8204,7 +8204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8213,7 +8213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-Campus_EGL"
@@ -8226,7 +8226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-peopleCount_EnterpriseBuilding_mean"
@@ -8237,7 +8237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8246,7 +8246,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-headCount_EnterpriseBuilding_mean"
@@ -8257,7 +8257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8266,7 +8266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-capacity_EnterpriseBuilding_mean"
@@ -8277,7 +8277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8291,7 +8291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-timestamp"
@@ -8302,7 +8302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8311,7 +8311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-Campus_EGL"
@@ -8324,7 +8324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-peopleCount_EnterpriseBuilding_mean"
@@ -8335,7 +8335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8344,7 +8344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-headCount_EnterpriseBuilding_mean"
@@ -8355,7 +8355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8364,7 +8364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-capacity_EnterpriseBuilding_mean"
@@ -8375,7 +8375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8389,7 +8389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-timestamp"
@@ -8400,7 +8400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8409,7 +8409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-Campus_EGL"
@@ -8422,7 +8422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-peopleCount_EnterpriseBuilding_mean"
@@ -8433,7 +8433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8442,7 +8442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-headCount_EnterpriseBuilding_mean"
@@ -8453,7 +8453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8462,7 +8462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-capacity_EnterpriseBuilding_mean"
@@ -8473,7 +8473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8487,7 +8487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-timestamp"
@@ -8498,7 +8498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8507,7 +8507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-Campus_EGL"
@@ -8520,7 +8520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-peopleCount_EnterpriseBuilding_mean"
@@ -8531,7 +8531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8540,7 +8540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-headCount_EnterpriseBuilding_mean"
@@ -8551,7 +8551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8560,7 +8560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-capacity_EnterpriseBuilding_mean"
@@ -8571,7 +8571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8585,7 +8585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-timestamp"
@@ -8596,7 +8596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8605,7 +8605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-Campus_EGL"
@@ -8618,7 +8618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-peopleCount_EnterpriseBuilding_mean"
@@ -8629,7 +8629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8638,7 +8638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-headCount_EnterpriseBuilding_mean"
@@ -8649,7 +8649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8658,7 +8658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-capacity_EnterpriseBuilding_mean"
@@ -8669,7 +8669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8683,7 +8683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-timestamp"
@@ -8694,7 +8694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8703,7 +8703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-Campus_EGL"
@@ -8716,7 +8716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-peopleCount_EnterpriseBuilding_mean"
@@ -8727,7 +8727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8736,7 +8736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-headCount_EnterpriseBuilding_mean"
@@ -8747,7 +8747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8756,7 +8756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-capacity_EnterpriseBuilding_mean"
@@ -8767,7 +8767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8781,7 +8781,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-timestamp"
@@ -8792,7 +8792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8801,7 +8801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-Campus_EGL"
@@ -8814,7 +8814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-peopleCount_EnterpriseBuilding_mean"
@@ -8825,7 +8825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8834,7 +8834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-headCount_EnterpriseBuilding_mean"
@@ -8845,7 +8845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8854,7 +8854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-capacity_EnterpriseBuilding_mean"
@@ -8865,7 +8865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8879,7 +8879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-7-timestamp"
@@ -8890,7 +8890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8899,7 +8899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-7-Campus_EGL"
@@ -8912,7 +8912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-7-peopleCount_EnterpriseBuilding_mean"
@@ -8923,7 +8923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8932,7 +8932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-7-headCount_EnterpriseBuilding_mean"
@@ -8943,7 +8943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -8952,7 +8952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-7-capacity_EnterpriseBuilding_mean"
@@ -8963,7 +8963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -8977,7 +8977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-8-timestamp"
@@ -8988,7 +8988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8997,7 +8997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-8-Campus_EGL"
@@ -9010,7 +9010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-8-peopleCount_EnterpriseBuilding_mean"
@@ -9021,7 +9021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -9030,7 +9030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-8-headCount_EnterpriseBuilding_mean"
@@ -9041,7 +9041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -9050,7 +9050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-8-capacity_EnterpriseBuilding_mean"
@@ -9061,7 +9061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -9075,7 +9075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-9-timestamp"
@@ -9086,7 +9086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -9095,7 +9095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-9-Campus_EGL"
@@ -9108,7 +9108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-9-peopleCount_EnterpriseBuilding_mean"
@@ -9119,7 +9119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -9128,7 +9128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-9-headCount_EnterpriseBuilding_mean"
@@ -9139,7 +9139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={240}
                                 >
                                   240
@@ -9148,7 +9148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--truncate"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-9-capacity_EnterpriseBuilding_mean"
@@ -9159,7 +9159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate"
+                                  className=""
                                   title={300}
                                 >
                                   300
@@ -10993,7 +10993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Alert"
                                   >
                                     Alert
@@ -11063,7 +11063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Hour"
                                   >
                                     Hour
@@ -11133,7 +11133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Pressure"
                                   >
                                     Pressure
@@ -25410,7 +25410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Alert"
                                   >
                                     Alert
@@ -25480,7 +25480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Hour"
                                   >
                                     Hour
@@ -25550,7 +25550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate"
+                                    className=""
                                     title="Pressure"
                                   >
                                     Pressure

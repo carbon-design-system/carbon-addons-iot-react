@@ -184,7 +184,7 @@ export const defaultProps = baseProps => ({
     hasResize: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
-    wrapCellText: 'auto',
+    wrapCellText: 'always',
   },
   view: {
     pagination: {
@@ -298,8 +298,9 @@ const Table = props => {
   const useCellTextTruncate = useMemo(
     () =>
       options
-        ? (options.hasResize && !options.useAutoTableLayoutForResize) ||
-          columns.some(col => col.hasOwnProperty('width'))
+        ? options.wrapCellText !== 'always' &&
+          ((options.hasResize && !options.useAutoTableLayoutForResize) ||
+            columns.some(col => col.hasOwnProperty('width')))
         : undefined,
     [options, columns]
   );
