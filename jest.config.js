@@ -83,6 +83,7 @@ module.exports = {
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 76 },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': { branches: 76 },
+    './src/components/DateTimePicker/DateTimePicker.jsx': { branches: 67 },
   },
   globals: {
     __DEV__: false,

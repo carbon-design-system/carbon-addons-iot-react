@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -237,7 +238,7 @@ const defaultProps = {
   },
 };
 
-const DateTimePicker = ({
+const __unstableDateTimePicker = ({
   defaultValue,
   dateTimeMask,
   presets,
@@ -298,7 +299,6 @@ const DateTimePicker = ({
 
   useEffect(() => {
     window.setTimeout(() => {
-      /* istanbul ignore next */
       if (datePickerRef && datePickerRef.current) {
         datePickerRef.current.cal.open();
         // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
@@ -314,6 +314,15 @@ const DateTimePicker = ({
     }, 0);
   });
 
+  /**
+   * Parses a value object into a human readable value
+   * @param {Object} value - the currently selected value
+   * @param {string} value.kind - preset/relative/absolute
+   * @param {Object} value.preset - the preset selection
+   * @param {Object} value.relative - the relative time selection
+   * @param {Object} value.absolute - the absolute time selection
+   * @returns {Object} a human readable value and a furtherly augmented value object
+   */
   const parseValue = value => {
     setCurrentValue(value);
     let readableValue = '';
@@ -370,6 +379,13 @@ const DateTimePicker = ({
     return { readableValue, ...returnValue };
   };
 
+  /**
+   * Transforms a default or selected value into a full blown returnable object
+   * @param {Object} [preset] clicked preset
+   * @param {string} preset.label preset label
+   * @param {number} preset.offset preset offset in minutes
+   * @returns {Object} the augmented value itself and the human readable value
+   */
   const renderValue = (clickedPreset = null) => {
     const value = { ...dateTimePickerBaseValue };
     if (isCustomRange) {
@@ -408,7 +424,6 @@ const DateTimePicker = ({
 
   useEffect(
     () => {
-      /* istanbul ignore next */
       if (
         datePickerRef.current &&
         datePickerRef.current.inputField &&
@@ -425,7 +440,6 @@ const DateTimePicker = ({
     [focusOnFirstField]
   );
 
-  /* istanbul ignore next */
   const onDatePickerChange = range => {
     if (range.length > 1) {
       setFocusOnFirstField(!focusOnFirstField);
@@ -441,7 +455,6 @@ const DateTimePicker = ({
 
   const onDatePickerClose = (range, single, flatpickr) => {
     // force it to stay open
-    /* istanbul ignore next */
     if (flatpickr) {
       flatpickr.open();
     }
@@ -534,7 +547,6 @@ const DateTimePicker = ({
     setIsExpanded(false);
     parseDefaultValue();
 
-    /* istanbul ignore else */
     if (onCancel) {
       onCancel();
     }
@@ -556,12 +568,16 @@ const DateTimePicker = ({
         break;
     }
 
-    /* istanbul ignore else */
     if (onApply) {
       onApply(value);
     }
   };
 
+  /**
+   * Get an alternative human readable value for a preset to show in tooltips and dropdown
+   * ie. 'Last 30 minutes' displays '2020-04-01 11:30 to Now' on the tooltip
+   * @returns {string} an interval string, starting point in time to now
+   */
   const getIntervalValue = () => {
     if (currentValue) {
       if (currentValue.kind === PICKER_KINDS.PRESET) {
@@ -859,7 +875,7 @@ const DateTimePicker = ({
   );
 };
 
-DateTimePicker.propTypes = propTypes;
-DateTimePicker.defaultProps = defaultProps;
+__unstableDateTimePicker.propTypes = propTypes;
+__unstableDateTimePicker.defaultProps = defaultProps;
 
-export default DateTimePicker;
+export default __unstableDateTimePicker;

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
@@ -6,7 +7,8 @@ import { action } from '@storybook/addon-actions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
-import DateTimePicker, { INTERVAL_VALUES, RELATIVE_VALUES } from './DateTimePicker';
+// eslint-disable-next-line no-unused-vars
+import __unstableDateTimePicker, { INTERVAL_VALUES, RELATIVE_VALUES } from './DateTimePicker';
 
 const customPresets = [
   {
@@ -46,7 +48,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')} />
+        <__unstableDateTimePicker dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')} />
       </div>
     );
   })
@@ -54,7 +56,11 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker defaultValue={customPresets[3]} onApply={action('onApply')} />
+        <__unstableDateTimePicker
+          defaultValue={customPresets[3]}
+          onApply={action('onApply')}
+          onCancel={action('onCancel')}
+        />
       </div>
     );
   })
@@ -62,7 +68,11 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker defaultValue={defaultRelativeValue} onApply={action('onApply')} />
+        <__unstableDateTimePicker
+          defaultValue={defaultRelativeValue}
+          onApply={action('onApply')}
+          onCancel={action('onCancel')}
+        />
       </div>
     );
   })
@@ -70,7 +80,11 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker defaultValue={defaultAbsoluteValue} onApply={action('onApply')} />
+        <__unstableDateTimePicker
+          defaultValue={defaultAbsoluteValue}
+          onApply={action('onApply')}
+          onCancel={action('onCancel')}
+        />
       </div>
     );
   })
@@ -78,10 +92,11 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker
+        <__unstableDateTimePicker
           defaultValue={defaultAbsoluteValue}
           showRelativeOption={false}
           onApply={action('onApply')}
+          onCancel={action('onCancel')}
         />
       </div>
     );
