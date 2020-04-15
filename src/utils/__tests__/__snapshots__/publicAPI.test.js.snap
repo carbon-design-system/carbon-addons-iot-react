@@ -3304,7 +3304,15 @@ Map {
         "type": "node",
       },
       "description": Object {
-        "type": "node",
+        "args": Array [
+          Object {
+            "type": "element",
+          },
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "oneOf",
       },
       "editable": Object {
         "type": "bool",
