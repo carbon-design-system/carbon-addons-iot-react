@@ -377,9 +377,9 @@ describe('Table', () => {
     const wrapper = mount(
       <Table columns={tableColumns} data={[tableData[0]]} options={{ hasResize: true }} />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toBeFalsy();
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
     expect(wrapper.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toBeFalsy();
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('auto');
     expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeTruthy();
 
     const wrapper2 = mount(
@@ -389,9 +389,9 @@ describe('Table', () => {
         options={{ hasResize: false }}
       />
     );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toBeFalsy();
+    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
     expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toBeFalsy();
+    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('auto');
     expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeTruthy();
   });
 
@@ -403,35 +403,35 @@ describe('Table', () => {
         options={{ hasResize: true, useAutoTableLayoutForResize: true }}
       />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toBeTruthy();
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toBeTruthy();
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('auto');
   });
 
   test('cells should wrap by default when columns have no widths nor are resizable', () => {
     const wrapper = mount(<Table columns={tableColumns} data={[tableData[0]]} />);
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toBeTruthy();
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toBeTruthy();
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('auto');
   });
 
-  test('cells should always wrap when wrapCellText is true', () => {
+  test('cells should always wrap when wrapCellText is always', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
         data={[tableData[0]]}
-        options={{ hasResize: true, wrapCellText: true }}
+        options={{ hasResize: true, wrapCellText: 'always' }}
       />
     );
-    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toBeTruthy();
-    expect(wrapper.find(TableHead).prop('options').wrapCellText).toBeTruthy();
+    expect(wrapper.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
+    expect(wrapper.find(TableHead).prop('options').wrapCellText).toEqual('always');
 
     const wrapper2 = mount(
       <Table
         columns={tableColumns.map(col => ({ ...col, width: '100px' }))}
         data={[tableData[0]]}
-        options={{ wrapCellText: true }}
+        options={{ wrapCellText: 'always' }}
       />
     );
-    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toBeTruthy();
-    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toBeTruthy();
+    expect(wrapper2.find(TableBodyRow).prop('options').wrapCellText).toEqual('always');
+    expect(wrapper2.find(TableHead).prop('options').wrapCellText).toEqual('always');
   });
 });

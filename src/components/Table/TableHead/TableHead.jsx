@@ -34,7 +34,7 @@ const propTypes = {
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
-    wrapCellText: PropTypes.bool.isRequired,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
   /** List of columns */

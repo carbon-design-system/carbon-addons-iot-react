@@ -1548,7 +1548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Alert"
                                   >
                                     Alert
@@ -1618,7 +1618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Hour"
                                   >
                                     Hour
@@ -1688,7 +1688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Pressure"
                                   >
                                     Pressure
@@ -3827,7 +3827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Alert"
                                   >
                                     Alert
@@ -3897,7 +3897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Hour"
                                   >
                                     Hour
@@ -3967,7 +3967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Pressure"
                                   >
                                     Pressure
@@ -6138,7 +6138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Alert"
                                   >
                                     Alert
@@ -6208,7 +6208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Hour"
                                   >
                                     Hour
@@ -6278,7 +6278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Pressure"
                                   >
                                     Pressure
@@ -7854,7 +7854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Timestamp"
                                   >
                                     Timestamp
@@ -7924,7 +7924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Campus"
                                   >
                                     Campus
@@ -7994,7 +7994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="People"
                                   >
                                     People
@@ -8064,7 +8064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Headcount"
                                   >
                                     Headcount
@@ -8134,7 +8134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="capacity"
                                   >
                                     capacity
@@ -8204,7 +8204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8237,7 +8237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8257,7 +8257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8277,7 +8277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8302,7 +8302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8335,7 +8335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8355,7 +8355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8375,7 +8375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8400,7 +8400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8433,7 +8433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8453,7 +8453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8473,7 +8473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8498,7 +8498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8531,7 +8531,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8551,7 +8551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8571,7 +8571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8596,7 +8596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8629,7 +8629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8649,7 +8649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8669,7 +8669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8694,7 +8694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8727,7 +8727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8747,7 +8747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8767,7 +8767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8792,7 +8792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8825,7 +8825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8845,7 +8845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8865,7 +8865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8890,7 +8890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -8923,7 +8923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -8943,7 +8943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -8963,7 +8963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -8988,7 +8988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -9021,7 +9021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -9041,7 +9041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -9061,7 +9061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -9086,7 +9086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={1569819600000}
                                 >
                                   1569819600000
@@ -9119,7 +9119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={150.5335383714}
                                 >
                                   150.5335383714
@@ -9139,7 +9139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={240}
                                 >
                                   240
@@ -9159,7 +9159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                               >
                                 <span
-                                  className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                  className="iot--table__cell-text--truncate"
                                   title={300}
                                 >
                                   300
@@ -10993,7 +10993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Alert"
                                   >
                                     Alert
@@ -11063,7 +11063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Hour"
                                   >
                                     Hour
@@ -11133,7 +11133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Pressure"
                                   >
                                     Pressure
@@ -25410,7 +25410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Alert"
                                   >
                                     Alert
@@ -25480,7 +25480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Hour"
                                   >
                                     Hour
@@ -25550,7 +25550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   className="bx--table-header-label"
                                 >
                                   <span
-                                    className="iot--table__cell-text--truncate iot--table__cell-text--no-wrap"
+                                    className="iot--table__cell-text--truncate"
                                     title="Pressure"
                                   >
                                     Pressure

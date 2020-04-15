@@ -45,7 +45,7 @@ const propTypes = {
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.bool,
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.bool.isRequired,
+  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,

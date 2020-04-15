@@ -9,7 +9,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
-  wrapText: PropTypes.bool.isRequired,
+  wrapText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   allowTooltip: PropTypes.bool,
 };
@@ -25,8 +25,8 @@ const isElementTruncated = element => element.offsetWidth < element.scrollWidth;
 const TableCellRenderer = ({ children, wrapText, allowTooltip, truncateCellText }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
-    [`${iotPrefix}--table__cell-text--truncate`]: !wrapText && truncateCellText,
-    [`${iotPrefix}--table__cell-text--no-wrap`]: !wrapText,
+    [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
+    [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
   });
 
   const [useTooltip, setUseTooltip] = useState(false);

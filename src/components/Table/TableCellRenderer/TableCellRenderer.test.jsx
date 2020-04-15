@@ -28,41 +28,41 @@ describe('TableCellRenderer', () => {
 
   test('truncates only for truncateCellText={true}', () => {
     const wrapper = mount(
-      <TableCellRenderer wrapText={false} truncateCellText>
+      <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(1);
 
     const wrapper2 = mount(
-      <TableCellRenderer wrapText={false} truncateCellText={false}>
+      <TableCellRenderer wrapText="never" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
     expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
   });
 
-  test('does not truncat when wrapText={true}', () => {
+  test('does not truncat when wrapText={always}', () => {
     const wrapper = mount(
-      <TableCellRenderer wrapText truncateCellText>
+      <TableCellRenderer wrapText="always" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
   });
 
-  test('does not allow wrap when wrapText={false}', () => {
+  test('does not allow wrap when wrapText={never}', () => {
     const wrapper = mount(
-      <TableCellRenderer wrapText={false} truncateCellText={false}>
+      <TableCellRenderer wrapText="never" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
   });
 
-  test('allows wrap when wrapText={true}', () => {
+  test('allows wrap when wrapText={always}', () => {
     const wrapper = mount(
-      <TableCellRenderer wrapText truncateCellText={false}>
+      <TableCellRenderer wrapText="always" truncateCellText={false}>
         {cellText}
       </TableCellRenderer>
     );
@@ -75,22 +75,22 @@ describe('TableCellRenderer', () => {
         <tbody>
           <tr>
             <td>
-              <TableCellRenderer wrapText={false} truncateCellText>
+              <TableCellRenderer wrapText="never" truncateCellText>
                 {'my string'}
               </TableCellRenderer>
             </td>
             <td>
-              <TableCellRenderer wrapText={false} truncateCellText>
+              <TableCellRenderer wrapText="never" truncateCellText>
                 {true}
               </TableCellRenderer>
             </td>
             <td>
-              <TableCellRenderer wrapText={false} truncateCellText>
+              <TableCellRenderer wrapText="never" truncateCellText>
                 {127}
               </TableCellRenderer>
             </td>
             <td>
-              <TableCellRenderer wrapText={false} truncateCellText>
+              <TableCellRenderer wrapText="never" truncateCellText>
                 <div>a div</div>
               </TableCellRenderer>
             </td>
@@ -106,7 +106,7 @@ describe('TableCellRenderer', () => {
     setScrollWidth(20);
 
     const wrapper = mount(
-      <TableCellRenderer wrapText={false} truncateCellText>
+      <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
@@ -117,7 +117,7 @@ describe('TableCellRenderer', () => {
     setOffsetWidth(20);
     setScrollWidth(10);
     const wrapper2 = mount(
-      <TableCellRenderer wrapText={false} truncateCellText>
+      <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
       </TableCellRenderer>
     );
@@ -135,7 +135,7 @@ describe('TableCellRenderer', () => {
 
     const cellText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
     const wrapper = mount(
-      <TableCellRenderer wrapText={false} truncateCellText allowTooltip={false}>
+      <TableCellRenderer wrapText="never" truncateCellText allowTooltip={false}>
         {cellText}
       </TableCellRenderer>
     );

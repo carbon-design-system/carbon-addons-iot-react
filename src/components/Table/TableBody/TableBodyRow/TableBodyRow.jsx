@@ -51,7 +51,7 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
-    wrapCellText: PropTypes.bool.isRequired,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
 

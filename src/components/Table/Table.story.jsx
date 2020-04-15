@@ -39,7 +39,7 @@ const STATUS = {
   BROKEN: 'BROKEN',
 };
 
-const selectTextWrapping = [undefined, true, false];
+const selectTextWrapping = ['always', 'never', 'auto'];
 
 const renderStatusIcon = ({ value: status }) => {
   switch (status) {
@@ -377,7 +377,7 @@ export const initialState = {
     hasRowActions: true,
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
-    wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+    wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
   },
   view: {
     filters: [
@@ -433,7 +433,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
             hasRowExpansion: false,
-            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
           }}
           view={{ table: { selectedIds: array('selectedIds', []) } }}
         />
@@ -520,7 +520,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             ...initialState.options,
             hasResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
           }}
         />
       </FullWidthWrapper>
@@ -600,7 +600,7 @@ storiesOf('Watson IoT/Table', module)
               ...initialState.options,
               hasRowNesting: true,
               hasFilter: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
             }}
             view={{
               ...initialState.view,
@@ -1281,7 +1281,7 @@ storiesOf('Watson IoT/Table', module)
         hasRowSelection: select('hasRowSelection', ['multi', 'single'], 'multi'),
         hasRowExpansion: false,
         hasResize: true,
-        wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+        wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
       }}
       view={{ table: { selectedIds: array('selectedIds', []) } }}
     />
@@ -1293,7 +1293,7 @@ storiesOf('Watson IoT/Table', module)
         <Table
           options={{
             hasResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
           }}
           columns={tableColumns.map((i, idx) => ({
             width: idx % 2 === 0 ? '100px' : '200px',
@@ -1323,7 +1323,7 @@ storiesOf('Watson IoT/Table', module)
         options={{
           hasResize: true,
           hasColumnSelection: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
         }}
         columns={tableColumns.map((i, idx) => ({
           width: idx % 2 === 0 ? '100px' : '200px',
@@ -1351,7 +1351,7 @@ storiesOf('Watson IoT/Table', module)
       <Table
         options={{
           hasResize: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
         }}
         columns={tableColumns}
         data={tableData}
@@ -1380,7 +1380,7 @@ storiesOf('Watson IoT/Table', module)
             options={{
               hasResize: true,
               useAutoTableLayoutForResize: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
             }}
             columns={tableColumns}
             data={tableData}
@@ -1405,7 +1405,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             hasResize: false,
             hasColumnSelection: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
           }}
           columns={tableColumns.map((i, idx) => ({
             width: idx % 2 === 0 ? '20rem' : '10rem',
@@ -1439,7 +1439,7 @@ storiesOf('Watson IoT/Table', module)
         <Table
           options={{
             hasResize: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
           }}
           columns={columns}
           data={tableData}
@@ -1519,7 +1519,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             hasFilter: true,
             hasPagination: true,
-            wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
           }}
           data={tableData}
           actions={actions}
@@ -1550,7 +1550,7 @@ storiesOf('Watson IoT/Table', module)
         options={{
           hasFilter: true,
           hasPagination: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, undefined),
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'auto'),
         }}
         data={tableData}
         actions={actions}

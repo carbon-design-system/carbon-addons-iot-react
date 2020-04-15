@@ -62,7 +62,7 @@ const propTypes = {
     hasResize: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
-    wrapCellText: PropTypes.bool,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
   }),
 
   /** Initial state of the table, should be updated via a local state wrapper component implementation or via a central store/redux see StatefulTable component for an example */
@@ -184,7 +184,7 @@ export const defaultProps = baseProps => ({
     hasResize: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
-    wrapCellText: undefined,
+    wrapCellText: 'auto',
   },
   view: {
     pagination: {
@@ -302,17 +302,6 @@ const Table = props => {
           columns.some(col => col.hasOwnProperty('width'))
         : undefined,
     [options, columns]
-  );
-
-  const useCellTextWrapping = useMemo(
-    () => {
-      if (options) {
-        const wrapByDefault = !useCellTextTruncate;
-        return options.wrapCellText === undefined ? wrapByDefault : options.wrapCellText;
-      }
-      return undefined;
-    },
-    [options, useCellTextTruncate]
   );
 
   const handleClearFilters = () => {
@@ -448,7 +437,7 @@ const Table = props => {
                 'hasResize',
                 'useAutoTableLayoutForResize'
               ),
-              wrapCellText: useCellTextWrapping,
+              wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
             }}
             columns={columns}
@@ -516,7 +505,7 @@ const Table = props => {
                 'shouldExpandOnRowClick',
                 'shouldLazyRender'
               )}
-              wrapCellText={useCellTextWrapping}
+              wrapCellText={options.wrapCellText}
               truncateCellText={useCellTextTruncate}
               ordering={view.table.ordering}
               actions={pick(
