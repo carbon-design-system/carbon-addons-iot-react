@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { AccordionItem as CarbonAccordionItem } from 'carbon-components-react';
 
-// same default used in carbon. adding to avoid prop type validation issues.
-// const defaultRenderExpando = props => <button type="button" {...props} />;
-
 const AccordionItem = ({ children, ...props }) => {
   const { open } = props;
   const [openState, setOpenState] = useState(open);
