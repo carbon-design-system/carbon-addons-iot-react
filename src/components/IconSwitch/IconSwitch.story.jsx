@@ -5,7 +5,7 @@ import List16 from '@carbon/icons-react/lib/list/16';
 import List20 from '@carbon/icons-react/lib/list/20';
 import List24 from '@carbon/icons-react/lib/list/24';
 
-import IconSwitch, { ICON_SWITCH_SIZES } from '.';
+import IconSwitch, { ICON_SWITCH_SIZES } from './IconSwitch';
 
 const listIcons = {
   [ICON_SWITCH_SIZES.small]: List16,

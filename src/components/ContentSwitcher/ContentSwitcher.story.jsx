@@ -9,7 +9,7 @@ import Code20 from '@carbon/icons-react/lib/code/20';
 import List24 from '@carbon/icons-react/lib/list/24';
 import Code24 from '@carbon/icons-react/lib/code/24';
 
-import IconSwitch, { ICON_SWITCH_SIZES } from '../IconSwitch';
+import IconSwitch, { ICON_SWITCH_SIZES } from '../IconSwitch/IconSwitch';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
