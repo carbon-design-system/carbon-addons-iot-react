@@ -15,6 +15,8 @@
 
     &__full-height {
       overflow-y: unset;
+      // The content will be the only div that stretches to accomodate the full height
+      height: 100%;
     }
   }
 
@@ -35,4 +37,8 @@
       margin-right: auto;
     }
   }
+}
+
+.#{$iot-prefix}--list--skeleton {
+  margin: $spacing-03 0 $spacing-03 $spacing-05;
 }
