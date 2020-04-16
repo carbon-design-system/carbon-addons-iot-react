@@ -323,7 +323,7 @@ export const CardPropTypes = {
   /** sets the CardWrapper CSS overflow to visible */
   showOverflow: deprecate(
     PropTypes.bool,
-    '\nThe prop `showOverflow` for Card has been deprecated. It was previously needed for a custom positioned tooltip in the ValueCard, but the ValueCard now uses the default positioning of the tooltip. The `iot--card--wrapper--overflowing` class has been removed, target `data-testid="iot--card--wrapper"` instead.'
+    '\nThe prop `showOverflow` for Card has been deprecated. It was previously needed for a custom positioned tooltip in the ValueCard, but the ValueCard now uses the default positioning of the tooltip. The `iot--card--wrapper--overflowing` class has been removed. For automated testing, you can target `data-testid="Card"` instead.'
   ),
   size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
