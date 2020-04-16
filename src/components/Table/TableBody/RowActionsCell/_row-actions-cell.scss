@@ -1,5 +1,9 @@
 @import '../../../../globals/vars';
 
+@mixin backgroundGradient($color) {
+  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
+}
+
 .#{$iot-prefix}--row-actions-container {
   > * {
     margin-left: 0.75rem;
@@ -18,8 +22,27 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
+  opacity: 0;
+  @include backgroundGradient($hover-ui);
 }
 
-.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
-  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} 16px);
+.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background,
+.#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
+  opacity: 1;
+}
+
+.#{$prefix}--data-table tbody tr {
+  &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
+    @include backgroundGradient(#ffffff);
+  }
+
+  &.bx--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
+    // The color #cacaca does not appear to have a name in carbon
+    @include backgroundGradient(#cacaca);
+  }
+
+  &.bx--data-table--selected:not(:hover)
+    .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
+    @include backgroundGradient($carbon--gray-20);
+  }
 }
