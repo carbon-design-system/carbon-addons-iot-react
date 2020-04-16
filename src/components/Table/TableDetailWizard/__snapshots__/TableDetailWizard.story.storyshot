@@ -38,11 +38,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
               viewBox="0 0 32 32"
               width={20}
               xmlns="http://www.w3.org/2000/svg"
@@ -349,11 +344,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
               viewBox="0 0 32 32"
               width={20}
               xmlns="http://www.w3.org/2000/svg"
@@ -664,11 +654,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
               viewBox="0 0 32 32"
               width={20}
               xmlns="http://www.w3.org/2000/svg"

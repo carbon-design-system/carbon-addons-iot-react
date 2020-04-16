@@ -1189,11 +1189,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -1224,11 +1219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -1424,11 +1414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -1455,11 +1440,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -1483,11 +1463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={20}
@@ -1550,11 +1525,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1570,11 +1540,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1622,11 +1587,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1642,11 +1602,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1694,11 +1649,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1714,11 +1664,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1752,11 +1697,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={32}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={32}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -1849,11 +1789,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -1884,11 +1819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -1969,11 +1899,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -3472,11 +3397,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -3507,11 +3427,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -3707,11 +3622,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3738,11 +3648,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3766,11 +3671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={20}
@@ -3833,11 +3733,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -3853,11 +3748,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -3905,11 +3795,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -3925,11 +3810,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -3977,11 +3857,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -3997,11 +3872,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -4035,11 +3905,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={32}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={32}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -4132,11 +3997,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -4167,11 +4027,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -4252,11 +4107,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -5787,11 +5637,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -5822,11 +5667,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -6022,11 +5862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -6053,11 +5888,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -6081,11 +5911,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={20}
@@ -6148,11 +5973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6168,11 +5988,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6220,11 +6035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6240,11 +6050,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6292,11 +6097,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6312,11 +6112,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6350,11 +6145,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={32}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={32}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -6447,11 +6237,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -6482,11 +6267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -6567,11 +6347,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -6988,11 +6763,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={20}
@@ -7178,11 +6948,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -7444,11 +7209,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={20}
@@ -7745,11 +7505,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -7776,11 +7531,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -7804,11 +7554,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={20}
@@ -7871,11 +7616,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -7891,11 +7631,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -7943,11 +7678,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -7963,11 +7693,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -8015,11 +7740,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -8035,11 +7755,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -8087,11 +7802,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -8107,11 +7817,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -8159,11 +7864,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -8179,11 +7879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -10541,11 +10236,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -10576,11 +10266,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -10776,11 +10461,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -10807,11 +10487,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -10834,11 +10509,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               focusable="false"
                               height={20}
                               preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               viewBox="0 0 32 32"
                               width={20}
                               xmlns="http://www.w3.org/2000/svg"
@@ -10900,11 +10570,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -10920,11 +10585,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -10972,11 +10632,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -10992,11 +10647,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -11044,11 +10694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -11064,11 +10709,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -11102,11 +10742,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={32}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={32}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -11199,11 +10834,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -11234,11 +10864,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -11319,11 +10944,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -12210,11 +11830,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               focusable="false"
                               height={24}
                               preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               viewBox="0 0 24 24"
                               width={24}
                               xmlns="http://www.w3.org/2000/svg"
@@ -12897,11 +12512,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               focusable="false"
                               height={24}
                               preserveAspectRatio="xMidYMid meet"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               viewBox="0 0 24 24"
                               width={24}
                               xmlns="http://www.w3.org/2000/svg"
@@ -24958,11 +24568,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -24993,11 +24598,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -25193,11 +24793,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -25224,11 +24819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
-                            style={
-                              Object {
-                                "willChange": "transform",
-                              }
-                            }
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -25252,11 +24842,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               height={20}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              style={
-                                Object {
-                                  "willChange": "transform",
-                                }
-                              }
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={20}
@@ -25319,11 +24904,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25339,11 +24919,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25391,11 +24966,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25411,11 +24981,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25463,11 +25028,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25483,11 +25043,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   height={20}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={20}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25521,11 +25076,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   focusable="false"
                                   height={32}
                                   preserveAspectRatio="xMidYMid meet"
-                                  style={
-                                    Object {
-                                      "willChange": "transform",
-                                    }
-                                  }
                                   viewBox="0 0 32 32"
                                   width={32}
                                   xmlns="http://www.w3.org/2000/svg"
@@ -25618,11 +25168,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
@@ -25653,11 +25198,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -25738,11 +25278,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={20}
@@ -26382,11 +25917,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={32}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={32}
                           xmlns="http://www.w3.org/2000/svg"
@@ -26464,11 +25994,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           height={32}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={32}
                           xmlns="http://www.w3.org/2000/svg"

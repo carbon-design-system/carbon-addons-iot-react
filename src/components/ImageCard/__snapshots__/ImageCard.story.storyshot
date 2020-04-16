@@ -58,11 +58,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -419,11 +414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -514,11 +504,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                       focusable="false"
                       height={25}
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       title=""
                       viewBox="0 0 32 32"
                       width={25}
@@ -650,11 +635,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                       focusable="false"
                       height={25}
                       preserveAspectRatio="xMidYMid meet"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       title=""
                       viewBox="0 0 32 32"
                       width={25}
@@ -804,11 +784,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -930,11 +905,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -1056,11 +1026,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -1303,11 +1268,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -1343,11 +1303,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 focusable="false"
                 height={250}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={250}
                 xmlns="http://www.w3.org/2000/svg"

@@ -92,11 +92,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     viewBox="0 0 24 24"
                     width={24}
                     xmlns="http://www.w3.org/2000/svg"
@@ -277,11 +272,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     viewBox="0 0 24 24"
                     width={24}
                     xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +414,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     style={
                       Object {
                         "fill": "orange",
-                        "willChange": "transform",
                       }
                     }
                     viewBox="0 0 32 32"
@@ -610,11 +599,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                     focusable="false"
                     height={24}
                     preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     viewBox="0 0 24 24"
                     width={24}
                     xmlns="http://www.w3.org/2000/svg"
@@ -4023,11 +4007,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       tabIndex="0"
                       title="< 5"
                       viewBox="0 0 32 32"

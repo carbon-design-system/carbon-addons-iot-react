@@ -71,11 +71,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +101,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -234,11 +224,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -269,11 +254,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -619,11 +599,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       onKeyDown={[Function]}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
@@ -654,11 +629,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     height={20}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     title="Expand to fullscreen"
                     viewBox="0 0 32 32"
                     width={20}
@@ -999,11 +969,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -1187,11 +1152,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1296,11 +1256,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1405,11 +1360,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1514,11 +1464,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1623,11 +1568,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1732,11 +1672,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -1841,11 +1776,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -2026,11 +1956,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -2061,11 +1986,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
@@ -2189,11 +2109,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
@@ -2452,11 +2367,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
