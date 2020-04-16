@@ -109,6 +109,7 @@ const CustomLink = ({ children, href, ...other }) => (
 );
 
 storiesOf('Watson IoT/Button', module)
+  .addDecorator(withKnobs)
   .add('loading', () => (
     <Button {...ButtonProps} loading>
       Test Button
@@ -120,7 +121,6 @@ storiesOf('Watson IoT/Button', module)
     </Button>
   ))
   .add('not loading', () => <Button {...ButtonProps}>Test Button</Button>)
-  .addDecorator(withKnobs)
   .add(
     'Default',
     () => {
