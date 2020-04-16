@@ -31,7 +31,6 @@ const OptimizedSkeletonText = React.memo(SkeletonText);
 const CardWrapper = ({
   children,
   dimensions,
-  showOverflow,
   id,
   style,
   className,
@@ -57,9 +56,7 @@ const CardWrapper = ({
       onTouchEnd={onTouchEnd}
       onTouchStart={onTouchStart}
       onScroll={onScroll}
-      className={classNames(className, `${iotPrefix}--card--wrapper`, {
-        [`${iotPrefix}--card--wrapper--overflowing`]: showOverflow,
-      })}
+      className={classNames(className, `${iotPrefix}--card--wrapper`)}
       {...validOthers}
     >
       {children}
@@ -110,7 +107,6 @@ const EmptyMessageWrapper = props => {
 CardWrapper.propTypes = {
   children: PropTypes.node.isRequired,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
-  showOverflow: CardPropTypes.showOverflow.isRequired,
   id: CardPropTypes.id,
   style: PropTypes.objectOf(PropTypes.string),
   testID: CardPropTypes.testID,

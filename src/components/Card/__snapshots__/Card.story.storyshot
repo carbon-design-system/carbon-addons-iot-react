@@ -673,6 +673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       className="bx--table-header-label"
                     >
                       <span
+                        className=""
                         title="String"
                       >
                         String
@@ -695,6 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       className="bx--table-header-label"
                     >
                       <span
+                        className=""
                         title="Date"
                       >
                         Date
@@ -712,16 +714,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 >
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                    className="data-table-start"
                     data-column="value1"
                     data-offset={0}
                     id="cell-my table-rowid-0-value1"
                     offset={0}
                   >
                     <span
-                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                     >
                       <span
+                        className=""
                         title="my value"
                       >
                         my value
@@ -730,16 +733,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   </td>
                   <td
                     align="start"
-                    className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+                    className="data-table-start"
                     data-column="timestamp"
                     data-offset={0}
                     id="cell-my table-rowid-0-timestamp"
                     offset={0}
                   >
                     <span
-                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                      className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
                     >
                       <span
+                        className=""
                         title={12341231231}
                       >
                         12341231231
