@@ -26,9 +26,24 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.(js|jsx)$/,
-      exclude: [/node_modules/, /coverage/],
+      exclude: [
+        path.resolve(__dirname, 'node_modules'),
+        path.resolve(__dirname, 'coverage'),
+        path.resolve(__dirname, 'lib'),
+        path.resolve(__dirname, 'css'),
+        path.resolve(__dirname, 'es'),
+        path.resolve(__dirname, 'scss'),
+        path.resolve(__dirname, 'umd'),
+        path.resolve(__dirname, 'results'),
+      ],
+      include: [path.resolve(__dirname, 'src')],
       use: 'babel-loader',
     });
+    config.optimization = {
+      splitChunks: {
+        chunks: 'all',
+      },
+    };
 
     // Remove the existing css rule
     // https://github.com/storybookjs/storybook/issues/6319#issuecomment-477852640
