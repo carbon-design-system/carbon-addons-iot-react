@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Bee16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
-import { VALUE_CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 
 import DataStateRenderer, { TooltipContent } from './DataStateRenderer';
 
@@ -11,7 +11,7 @@ const { iotPrefix } = settings;
 
 function getDataStateProp() {
   return {
-    type: VALUE_CARD_DATA_STATE.NO_DATA,
+    type: CARD_DATA_STATE.NO_DATA,
     label: 'No data available for this score at this time',
     description: 'My description text',
     extraTooltipText: 'Lorem ipsum dolor sit amet',
@@ -43,7 +43,7 @@ describe('ValueCard', () => {
     const myDataState = getDataStateProp();
     const wrapperNoData = mount(
       <DataStateRenderer
-        dataState={{ ...myDataState, type: VALUE_CARD_DATA_STATE.NO_DATA }}
+        dataState={{ ...myDataState, type: CARD_DATA_STATE.NO_DATA }}
         size={size}
       />
     );
@@ -51,10 +51,7 @@ describe('ValueCard', () => {
     expect(wrapperNoData.find(`svg.${iotPrefix}--data-state-default-error-icon`)).toHaveLength(0);
 
     const wrapperError = mount(
-      <DataStateRenderer
-        dataState={{ ...myDataState, type: VALUE_CARD_DATA_STATE.ERROR }}
-        size={size}
-      />
+      <DataStateRenderer dataState={{ ...myDataState, type: CARD_DATA_STATE.ERROR }} size={size} />
     );
     expect(wrapperError.find(`svg.${iotPrefix}--data-state-default-error-icon`)).toHaveLength(1);
     expect(wrapperError.find(`svg.${iotPrefix}--data-state-default-warning-icon`)).toHaveLength(0);

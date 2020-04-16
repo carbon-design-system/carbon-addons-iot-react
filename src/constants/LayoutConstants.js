@@ -221,7 +221,7 @@ export const TIME_SERIES_TYPES = {
   LINE: 'LINE',
 };
 
-export const VALUE_CARD_DATA_STATE = { NO_DATA: 'NO_DATA', ERROR: 'ERROR' };
+export const CARD_DATA_STATE = { NO_DATA: 'NO_DATA', ERROR: 'ERROR' };
 
 export const BAR_CHART_TYPES = {
   SIMPLE: 'SIMPLE',

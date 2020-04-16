@@ -5,11 +5,7 @@ import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
-import {
-  CARD_SIZES,
-  CARD_CONTENT_PADDING,
-  VALUE_CARD_DATA_STATE,
-} from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_CONTENT_PADDING, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
 const dsPrefix = `${iotPrefix}--data-state`;
@@ -50,9 +46,9 @@ const DataStateRenderer = ({ dataState, size, id }) => {
     const { type } = dataState;
     let { icon } = dataState;
     if (!icon) {
-      if (type === VALUE_CARD_DATA_STATE.ERROR) {
+      if (type === CARD_DATA_STATE.ERROR) {
         icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
-      } else if (type === VALUE_CARD_DATA_STATE.NO_DATA) {
+      } else if (type === CARD_DATA_STATE.NO_DATA) {
         icon = <WarningFilled24 className={`${dsPrefix}-default-warning-icon`} />;
       }
     }
