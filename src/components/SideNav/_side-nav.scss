@@ -110,6 +110,11 @@ a.#{$prefix}--side-nav__link > .#{$prefix}--side-nav__link-text {
     .#{$prefix}--side-nav__link {
       background-color: $inverse-02;
     }
+
+    .#{$prefix}--side-nav__link[role='menuitem']:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover,
+    a.#{$prefix}--side-nav__link[role='menuitem']:not(.#{$prefix}--side-nav__link--current):not([aria-current='page']):hover {
+      background-color: $gray-70;
+    }
   }
 
   &:not(.#{$prefix}--side-nav__item--active) {
@@ -145,6 +150,7 @@ button.#{$prefix}--side-nav__link {
 }
 
 .#{$prefix}--side-nav__menu[role='menu'] .#{$prefix}--side-nav__link[role='menuitem'] {
+  font-weight: 400;
   height: 2rem;
   min-height: 2rem;
   padding-left: 2rem;
@@ -155,12 +161,12 @@ button.#{$prefix}--side-nav__link {
   padding-left: 4.5rem;
 }
 
-.#{$prefix}--side-nav__items .#{$prefix}--side-nav__item > *,
+.#{$prefix}--side-nav__items .#{$prefix}--side-nav__item > *:not([class='bx--side-nav__menu']),
 .#{$prefix}--side-nav__items
   .#{$prefix}--side-nav__item
   .#{$prefix}--side-nav__menu[role='menu']
   .#{$prefix}--side-nav__menu-item
-  > * {
+  > *:not([class='bx--side-nav__menu']) {
   height: 3rem;
 }
 

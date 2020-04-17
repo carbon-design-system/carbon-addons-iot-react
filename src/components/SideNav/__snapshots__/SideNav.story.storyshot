@@ -247,6 +247,111 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             </a>
           </li>
           <li
+            className="bx--side-nav__item bx--side-nav__item--icon bx--side-nav__item--large"
+          >
+            <button
+              aria-expanded={false}
+              aria-haspopup="true"
+              className="bx--side-nav__submenu"
+              onClick={[Function]}
+              type="button"
+            >
+              <div
+                className="bx--side-nav__icon"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={24}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 21h2v5h-2zm-4-5h2v10h-2zm-9 10a5.006 5.006 0 0 1-5-5h2a3 3 0 1 0 3-3v-2a5 5 0 0 1 0 10z"
+                  />
+                  <path
+                    d="M28 2H4a2.002 2.002 0 0 0-2 2v24a2.002 2.002 0 0 0 2 2h24a2.003 2.003 0 0 0 2-2V4a2.002 2.002 0 0 0-2-2zm0 9H14V4h14zM12 4v7H4V4zM4 28V13h24l.002 15z"
+                  />
+                </svg>
+              </div>
+              <span
+                className="bx--side-nav__submenu-title"
+              >
+                Dashboards
+              </span>
+              <div
+                className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+              >
+                <svg
+                  aria-hidden={true}
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "willChange": "transform",
+                    }
+                  }
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                  />
+                </svg>
+              </div>
+            </button>
+            <ul
+              className="bx--side-nav__menu"
+              role="menu"
+            >
+              <li
+                className="bx--side-nav__menu-item"
+                role="none"
+              >
+                <button
+                  className="bx--side-nav__link"
+                  label="Link 1"
+                  onClick={[Function]}
+                  role="menuitem"
+                  title="Link 1"
+                >
+                  <span
+                    className="bx--side-nav__link-text"
+                  >
+                    Link 1
+                  </span>
+                </button>
+              </li>
+              <li
+                className="bx--side-nav__menu-item"
+                role="none"
+              >
+                <a
+                  className="bx--side-nav__link"
+                  label="Link 2"
+                  onClick={[Function]}
+                  role="menuitem"
+                  title="Link 2"
+                >
+                  <span
+                    className="bx--side-nav__link-text"
+                  >
+                    Link 2
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li
             className="bx--side-nav__item bx--side-nav__item--active bx--side-nav__item--icon bx--side-nav__item--large"
           >
             <button
@@ -324,7 +429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   <span
                     className="bx--side-nav__link-text"
                   >
-                    Yet another link
+                    Link 3
                   </span>
                 </button>
               </li>
