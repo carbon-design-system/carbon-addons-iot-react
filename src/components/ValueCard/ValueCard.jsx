@@ -218,6 +218,7 @@ const ValueCard = ({
   i18n,
   dataState,
   id,
+  type,
   ...others
 }) => {
   const availableActions = {
