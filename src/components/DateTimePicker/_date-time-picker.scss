@@ -77,9 +77,7 @@
     cursor: pointer;
     color: $carbon--gray-100;
     outline: 2px solid transparent;
-    transition-property: background-color;
-    transition-duration: 70ms;
-    transition-timing-function: carbon--motion(standard);
+    transition: background-color $duration--fast-01 carbon--motion(standard);
     .#{$iot-prefix}--date-time-picker__field {
       background: none;
       -webkit-appearance: none;
@@ -106,9 +104,7 @@
         right: $spacing-05;
         bottom: 0;
         height: 100%;
-        transition-property: trasform;
-        transition-duration: 70ms;
-        transition-timing-function: carbon--motion(standard);
+        transition: transform $duration--fast-01 carbon--motion(standard);
         cursor: pointer;
       }
     }
