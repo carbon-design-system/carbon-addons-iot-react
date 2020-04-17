@@ -20,7 +20,7 @@ Steps to reproduce the behavior:
 4. See error
 
 > Please create a reduced test case in CodeSandbox:
-> https://codesandbox.io/s/codesandbox-yxbkg
+> https://codesandbox.io/s/github/IBM/carbon-addons-iot-react/tree/master/examples/codesandbox
 
 ### Expected behavior
 
@@ -30,7 +30,7 @@ A clear and concise description of what you expected to happen.
 
 - OS: [e.g. MacOS, Windows]
 - Browser: [e.g. chrome, safari]
-- `carbon-addons-iot-react` version: [e.g. `v2.7.1`]
+- `carbon-addons-iot-react` version: [e.g. `v2.60.0`]
 
 ### Additional context
 

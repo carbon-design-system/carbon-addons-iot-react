@@ -31,7 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onClick={[Function]}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
@@ -60,16 +60,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </td>
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String
@@ -180,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onClick={[Function]}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
@@ -209,16 +210,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </td>
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String
@@ -325,16 +327,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           >
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String
@@ -434,16 +437,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </td>
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String
@@ -585,16 +589,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </td>
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String
@@ -787,16 +792,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </td>
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String
@@ -954,16 +960,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </td>
             <td
               align="start"
-              className="data-table-start TableBodyRow__StyledTableCellRow-sc-103itxu-5 jsPLxS"
+              className="data-table-start"
               data-column="string"
               data-offset={0}
               id="cell-tableId-rowId-string"
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-6 NDiCc"
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
               >
                 <span
+                  className="iot--table__cell-text--no-wrap"
                   title="My String"
                 >
                   My String

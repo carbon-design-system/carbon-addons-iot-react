@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+import deprecate from '../internal/deprecate';
 import { bundledIconNames } from '../utils/bundledIcons';
 
 import {
@@ -8,7 +9,7 @@ import {
   TIME_SERIES_TYPES,
   CARD_SIZES,
   LEGACY_CARD_SIZES,
-  VALUE_CARD_DATA_STATE,
+  CARD_DATA_STATE,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
@@ -63,7 +64,7 @@ export const ValueCardPropTypes = {
   values: PropTypes.oneOfType([PropTypes.object, PropTypes.arrayOf(PropTypes.object)]),
   /** DataState will override the cards default empty state and error string */
   dataState: PropTypes.shape({
-    type: PropTypes.oneOf([VALUE_CARD_DATA_STATE.NO_DATA, VALUE_CARD_DATA_STATE.ERROR]).isRequired,
+    type: PropTypes.oneOf([CARD_DATA_STATE.NO_DATA, CARD_DATA_STATE.ERROR]).isRequired,
     icon: PropTypes.element,
     label: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -322,7 +323,10 @@ export const CardPropTypes = {
   /** should hide the header */
   hideHeader: PropTypes.bool,
   /** sets the CardWrapper CSS overflow to visible */
-  showOverflow: PropTypes.bool,
+  showOverflow: deprecate(
+    PropTypes.bool,
+    '\nThe prop `showOverflow` for Card has been deprecated. It was previously needed for a custom positioned tooltip in the ValueCard, but the ValueCard now uses the default positioning of the tooltip. The `iot--card--wrapper--overflowing` class has been removed. For automated testing, you can target `data-testid="Card"` instead.'
+  ),
   size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
