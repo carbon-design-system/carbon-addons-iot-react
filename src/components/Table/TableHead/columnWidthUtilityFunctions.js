@@ -5,7 +5,8 @@ import cloneDeep from 'lodash/cloneDeep';
  * of a table's column widths.
  */
 
-export const MIN_COLUMN_WIDTH = 32;
+// This width must be able to fit the elipsis of a truncated text + sort arrows
+export const MIN_COLUMN_WIDTH = 62;
 
 function isColumnVisible(ordering, columnId) {
   return !ordering.find(orderedCol => orderedCol.columnId === columnId).isHidden;
@@ -76,6 +77,29 @@ function calculateWidthOnHide(currentColumnWidths, ordering, colToHideId) {
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 }
+
+/**
+ * If the table isn't wide enough for all columns that has a defined width
+ * the browser will will shrink the last column instead of keeping its defined width.
+ * This function adjusts the column width to the initial width if that one is larger.
+ * @param {*} ordering
+ * @param {*} columns
+ * @param {*} measuredWidths
+ */
+export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
+  const visibleCols = ordering.filter(col => !col.isHidden);
+  const lastIndex = visibleCols.length - 1;
+  const lastColumn = columns.find(col => col.id === visibleCols[lastIndex].columnId);
+  const fixedWidth = lastColumn.width ? parseInt(lastColumn.width, 10) : 0;
+  const measuredWidth = measuredWidths[lastIndex].width;
+
+  let result = measuredWidths;
+  if (measuredWidth < fixedWidth) {
+    result = cloneDeep(measuredWidths);
+    result[lastIndex].width = fixedWidth;
+  }
+  return result;
+};
 
 /**
  * Creates a widths map based on current columns state + any changes in visibility or width

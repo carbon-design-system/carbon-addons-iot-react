@@ -1,5 +1,6 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import 'TableHead/table-head';
+@import 'TableCellRenderer/table-cell-renderer';
 @import '../../globals/vars';
 
 table.#{$prefix}--side-nav--data-table {
@@ -8,6 +9,10 @@ table.#{$prefix}--side-nav--data-table {
 
 .#{$iot-prefix}--data-table--fixed {
   table-layout: fixed;
+}
+
+.#{$iot-prefix}--table__cell--truncate {
+  max-width: 0;
 }
 
 .#{$iot-prefix}--data-table--resize td {

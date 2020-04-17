@@ -23,6 +23,10 @@ const tableBodyRowProps = {
     'onRowExpanded',
     'onClearRowError'
   ),
+  options: {
+    wrapCellText: 'never',
+    truncateCellText: false,
+  },
 };
 
 const TableDecorator = storyFn => (
@@ -41,7 +45,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
       {...tableBodyRowProps}
       isExpanded={boolean('isExpanded', false)}
       rowActions={[{ id: 'add', renderIcon: Add32 }]}
-      options={{ hasRowActions: true, hasRowExpansion: true }}
+      options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
     />
   ))
   .add('row actions with overflow', () => (
@@ -56,7 +60,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
         { id: 'test3', renderIcon: Stop16, isOverflow: true, labelText: 'Test 3'},
         { id: 'delete', renderIcon: Delete16, isOverflow: true, labelText: 'Delete', isDelete: true},
       ]}
-      options={{ hasRowActions: true, hasRowExpansion: true }}
+      options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
     />
   ))
   .add('is not selectable', () => (
@@ -64,21 +68,21 @@ storiesOf('Watson IoT/TableBodyRow', module)
       {...tableBodyRowProps}
       isSelectable={boolean('isSelectable', false)}
       rowActions={[{ id: 'add', renderIcon: Add32 }]}
-      options={{ hasRowActions: true, hasRowSelection: 'multi' }}
+      options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowSelection: 'multi' }}
     />
   ))
   .add('is selectable', () => (
     <TableBodyRow
       {...tableBodyRowProps}
       rowActions={[{ id: 'add', renderIcon: Add32 }]}
-      options={{ hasRowActions: true, hasRowSelection: 'multi' }}
+      options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowSelection: 'multi' }}
     />
   ))
   .add('rowActions running', () => (
     <TableBodyRow
       {...tableBodyRowProps}
       rowActions={[{ id: 'add', renderIcon: Add32 }]}
-      options={{ hasRowActions: true, hasRowExpansion: true }}
+      options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
       isRowActionRunning
       isExpanded={boolean('isExpanded', false)}
     />
@@ -87,7 +91,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
     <TableBodyRow
       {...tableBodyRowProps}
       rowActions={[{ id: 'add', renderIcon: Add32 }]}
-      options={{ hasRowActions: true, hasRowExpansion: true }}
+      options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
       rowActionsError={{
         title: 'Import failed:',
         message: 'Model type not currently supported.',

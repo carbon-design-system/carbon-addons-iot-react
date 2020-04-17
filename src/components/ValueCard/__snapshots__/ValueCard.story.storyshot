@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper iot--card--wrapper--overflowing"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -209,7 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper iot--card--wrapper--overflowing"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -355,7 +355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
       }
     >
       <div
-        className="iot--card iot--card--wrapper iot--card--wrapper--overflowing"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
@@ -533,7 +533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
   >
     <div>
       <div
-        className="iot--card iot--card--wrapper iot--card--wrapper--overflowing"
+        className="iot--card iot--card--wrapper"
         data-testid="Card"
         id="myStoryId"
         role="presentation"
