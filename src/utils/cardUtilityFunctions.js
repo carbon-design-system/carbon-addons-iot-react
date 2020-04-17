@@ -126,7 +126,7 @@ export const getUpdatedCardSize = oldSize => {
 // re-usable variable fetcher that returns an array of variables
 // variables are identified by surrounding curly braces i.e. {deviceid}
 export const getVariables = value => {
-  let variables = value && typeof value === 'string' ? value.match(/{[a-zA-Z]*}/g) : null;
+  let variables = value && typeof value === 'string' ? value.match(/{[a-zA-Z0-9_-]+}/g) : null;
   if (variables) {
     variables = variables.map(variable => variable.replace(/[{}]/g, ''));
   }
