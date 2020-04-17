@@ -354,6 +354,7 @@ export const initialState = {
         iconDescription: 'Add',
         labelText: 'Add',
         isOverflow: true,
+        hasDivider: true,
       },
       {
         id: 'delete',
@@ -361,6 +362,7 @@ export const initialState = {
         labelText: 'Delete',
         isOverflow: true,
         iconDescription: 'Delete',
+        isDelete: true,
       },
     ].filter(i => i),
   })),
@@ -886,6 +888,7 @@ storiesOf('Watson IoT/Table', module)
               iconDescription: 'Add',
               labelText: 'Add',
               isOverflow: true,
+              hasDivider: true,
             },
             {
               id: 'delete',
@@ -893,6 +896,7 @@ storiesOf('Watson IoT/Table', module)
               iconDescription: 'Delete',
               labelText: 'Delete',
               isOverflow: true,
+              isDelete: true,
             },
           ].filter(i => i),
         }))}
