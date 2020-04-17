@@ -99,6 +99,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           />
         </li>
       </ul>
+      <p
+        className="netlify-link"
+      >
+        <a
+          href="https://www.netlify.com"
+        >
+          This site is powered by Netlify
+        </a>
+      </p>
     </div>
   </div>
   <button
