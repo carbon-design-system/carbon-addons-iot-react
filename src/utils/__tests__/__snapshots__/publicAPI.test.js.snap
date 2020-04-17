@@ -4113,9 +4113,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -6606,9 +6604,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -7461,9 +7457,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -8232,9 +8226,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -8971,9 +8963,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -9827,9 +9817,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -10741,9 +10729,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -11551,9 +11537,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [

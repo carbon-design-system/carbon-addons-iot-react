@@ -81,7 +81,7 @@ describe('Card testcases', () => {
   test('additional prop based elements', () => {
     let wrapper = mount(<Card {...cardProps} size={CARD_SIZES.LARGE} tooltip={tooltipElement} />);
     // tooltip prop will render a tooltip in the header
-    expect(wrapper.find(Tooltip)).toHaveLength(1);
+    expect(wrapper.find(`.${iotPrefix}--card--header`).find(Tooltip)).toHaveLength(1);
     // without the isLoading prop SkeletonWrapper should not be rendered
     expect(wrapper.find(`.${iotPrefix}--card--skeleton-wrapper`)).toHaveLength(0);
     // with the isLoading prop SkeletonWrapper should  be rendered

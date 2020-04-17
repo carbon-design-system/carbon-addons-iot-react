@@ -3,29 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16 } from '@carbon/icons-react';
 
-import { CARD_SIZES, VALUE_CARD_DATA_STATE } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
+import { getDataStateProp } from '../Card/Card.story';
 
 import ValueCard from './ValueCard';
-
-function getDataStateProp() {
-  return {
-    label: text('dataState : Label', 'No data available for this score at this time'),
-    description: text(
-      'dataState : Description',
-      'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.'
-    ),
-    extraTooltipText: text(
-      'dataState : ExtraTooltipText',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    ),
-    learnMoreElement: (
-      <a className="bx--link" href="#top">
-        Learn more
-      </a>
-    ),
-  };
-}
 
 storiesOf('Watson IoT/ValueCard', module)
   .add('small / basic', () => {
@@ -760,11 +742,7 @@ storiesOf('Watson IoT/ValueCard', module)
     const width = text('cardWidth', `${getCardMinSize('lg', CARD_SIZES.MEDIUM).x}px`);
 
     const myDataState = {
-      type: select(
-        'dataState : Type',
-        Object.keys(VALUE_CARD_DATA_STATE),
-        VALUE_CARD_DATA_STATE.NO_DATA
-      ),
+      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
       ...getDataStateProp(),
       learnMoreElement: (
         <button
@@ -797,11 +775,7 @@ storiesOf('Watson IoT/ValueCard', module)
   .add('data state - no data - custom icon - large', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     const myDataState = {
-      type: select(
-        'dataState : Type',
-        Object.keys(VALUE_CARD_DATA_STATE),
-        VALUE_CARD_DATA_STATE.NO_DATA
-      ),
+      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.NO_DATA),
       ...getDataStateProp(),
       icon: (
         <Bee16 style={{ fill: 'orange' }}>
@@ -827,11 +801,7 @@ storiesOf('Watson IoT/ValueCard', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const myDataState = {
       ...getDataStateProp(),
-      type: select(
-        'dataState : Type',
-        Object.keys(VALUE_CARD_DATA_STATE),
-        VALUE_CARD_DATA_STATE.ERROR
-      ),
+      type: select('dataState : Type', Object.keys(CARD_DATA_STATE), CARD_DATA_STATE.ERROR),
     };
 
     return (
@@ -851,8 +821,8 @@ storiesOf('Watson IoT/ValueCard', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     const dataStateType = select(
       'dataStateType',
-      Object.keys(VALUE_CARD_DATA_STATE),
-      VALUE_CARD_DATA_STATE.ERROR
+      Object.keys(CARD_DATA_STATE),
+      CARD_DATA_STATE.ERROR
     );
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('sm', size).x}px`), margin: 20 }}>

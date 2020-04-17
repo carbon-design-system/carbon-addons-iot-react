@@ -9,6 +9,23 @@ import Table from '../Table/Table';
 
 import Card from './Card';
 
+export const getDataStateProp = () => ({
+  label: text('dataState : Label', 'No data available for this score at this time'),
+  description: text(
+    'dataState : Description',
+    'The last successful score was 68 at 13:21 - 10/21/2019 but wait, there is more, according to the latest test results this line is too long.'
+  ),
+  extraTooltipText: text(
+    'dataState : ExtraTooltipText',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  ),
+  learnMoreElement: (
+    <a className="bx--link" href="#top">
+      Learn more
+    </a>
+  ),
+});
+
 storiesOf('Watson IoT/Card', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
