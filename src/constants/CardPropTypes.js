@@ -178,6 +178,8 @@ export const TableCardPropTypes = {
       ),
     })
   ),
+  /** Variable name / value pairs to be replaced in Card */
+  cardVariables: PropTypes.object,
   i18n: PropTypes.shape({
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,

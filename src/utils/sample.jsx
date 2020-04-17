@@ -2524,7 +2524,22 @@ export const tableColumns = [
   {
     dataSourceId: 'pressure',
     label: 'Pressure',
-    priority: 2,
+    linkTemplate: {
+      displayValue: 'external',
+      href:
+        'https://169.60.85.66/maximo/ui/{blob}?additionalevent=useqbe&additionaleventvalue=assetnum={UNIQUEASSETID}&event=loadapp&value=asset&forcereload=true',
+      target: '_blank',
+    },
+  },
+  {
+    dataSourceId: 'deviceId',
+    label: 'Device',
+    linkTemplate: {
+      displayValue: 'external',
+      href:
+        'https://169.60.85.66/maximo/ui/login?additionalevent=useqbe&additionaleventvalue=assetnum={UNIQUEASSETID}&event=loadapp&value=asset&forcereload=true',
+      target: '_blank',
+    },
   },
 ];
 
