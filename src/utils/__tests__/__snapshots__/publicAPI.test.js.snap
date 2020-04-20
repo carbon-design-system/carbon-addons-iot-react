@@ -15,16 +15,6 @@ Map {
     },
   },
   "AccordionItem" => Object {
-    "defaultProps": Object {
-      "children": null,
-      "className": null,
-      "iconDescription": "Open/Close",
-      "onClick": [Function],
-      "onHeadingClick": [Function],
-      "open": false,
-      "renderExpando": [Function],
-      "title": null,
-    },
     "propTypes": Object {
       "children": Object {
         "type": "node",
