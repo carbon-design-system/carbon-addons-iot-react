@@ -4,9 +4,9 @@ import isNil from 'lodash/isNil';
 import Image32 from '@carbon/icons-react/es/image/32';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { getUpdatedCardSize, handleVariables } from '../../utils/cardUtilityFunctions';
 
 import ImageHotspots from './ImageHotspots';
 
@@ -33,9 +33,9 @@ const defaultProps = {
 };
 
 const ImageCard = ({
-  title,
-  content,
-  values,
+  title: titleProp,
+  content: contentProp,
+  values: valuesProp,
   size,
   onCardAction,
   isEditable,
@@ -46,6 +46,13 @@ const ImageCard = ({
   renderIconByName,
   ...others
 }) => {
+  const { title, content, values } = handleVariables(
+    CARD_TYPES.IMAGE,
+    titleProp,
+    contentProp,
+    valuesProp,
+    others
+  );
   const { src } = content;
   const hotspots = values ? values.hotspots || [] : [];
 

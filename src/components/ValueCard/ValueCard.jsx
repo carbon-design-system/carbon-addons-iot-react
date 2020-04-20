@@ -6,12 +6,18 @@ import filter from 'lodash/filter';
 import find from 'lodash/find';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
-import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
+import {
+  CARD_LAYOUTS,
+  CARD_SIZES,
+  CARD_CONTENT_PADDING,
+  CARD_TYPES,
+} from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
 import {
   determineMaxValueCardAttributeCount,
   getUpdatedCardSize,
+  handleVariables,
 } from '../../utils/cardUtilityFunctions';
 import DataStateRenderer from '../Card/DataStateRenderer';
 
@@ -211,10 +217,10 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleW
 };
 
 const ValueCard = ({
-  title,
-  content,
+  title: titleProp,
+  content: contentProp,
   size,
-  values,
+  values: valuesProp,
   isEditable,
   i18n,
   dataState,
@@ -225,6 +231,14 @@ const ValueCard = ({
     expand: false,
     ...others.availableActions,
   };
+  const { title, content, values } = handleVariables(
+    CARD_TYPES.VALUE,
+    titleProp,
+    contentProp,
+    valuesProp,
+    others
+  );
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
