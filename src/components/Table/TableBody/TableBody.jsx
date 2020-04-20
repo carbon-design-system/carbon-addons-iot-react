@@ -45,6 +45,8 @@ const propTypes = {
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.bool,
   hasRowActions: PropTypes.bool,
+  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
+  truncateCellText: PropTypes.bool.isRequired,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
   shouldExpandOnRowClick: PropTypes.bool,
@@ -111,6 +113,8 @@ const TableBody = ({
   shouldExpandOnRowClick,
   shouldLazyRender,
   ordering,
+  wrapCellText,
+  truncateCellText,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -159,6 +163,8 @@ const TableBody = ({
           hasRowNesting,
           hasRowActions,
           shouldExpandOnRowClick,
+          wrapCellText,
+          truncateCellText,
         }}
         nestingLevel={nestingLevel}
         nestingChildCount={row.children ? row.children.length : 0}

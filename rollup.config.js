@@ -22,7 +22,8 @@ const external = id => {
     Object.keys(packageJson.dependencies).some(element => id === element) ||
     id.includes('lodash/') ||
     id.includes('core-js/') ||
-    id.includes('moment/')
+    id.includes('moment/') ||
+    id.includes('@babel/runtime')
   );
 };
 const plugins = [
@@ -48,6 +49,7 @@ const plugins = [
 
   babel({
     exclude: 'node_modules/**',
+    runtimeHelpers: true,
   }),
   replace({
     'process.env.NODE_ENV': JSON.stringify(env),
@@ -173,6 +175,7 @@ export default [
       }),
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify(env),

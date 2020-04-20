@@ -396,6 +396,7 @@ Map {
         "hasSearch": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
+        "wrapCellText": "always",
       },
       "secondaryTitle": null,
       "title": null,
@@ -904,6 +905,16 @@ Map {
             },
             "useAutoTableLayoutForResize": Object {
               "type": "bool",
+            },
+            "wrapCellText": Object {
+              "args": Array [
+                Array [
+                  "always",
+                  "never",
+                  "auto",
+                ],
+              ],
+              "type": "oneOf",
             },
           },
         ],
@@ -1519,6 +1530,21 @@ Map {
               ],
               "type": "oneOf",
             },
+            "truncateCellText": Object {
+              "isRequired": true,
+              "type": "bool",
+            },
+            "wrapCellText": Object {
+              "args": Array [
+                Array [
+                  "always",
+                  "never",
+                  "auto",
+                ],
+              ],
+              "isRequired": true,
+              "type": "oneOf",
+            },
           },
         ],
         "type": "shape",
@@ -2001,6 +2027,21 @@ Map {
       },
       "totalColumns": Object {
         "type": "number",
+      },
+      "truncateCellText": Object {
+        "isRequired": true,
+        "type": "bool",
+      },
+      "wrapCellText": Object {
+        "args": Array [
+          Array [
+            "always",
+            "never",
+            "auto",
+          ],
+        ],
+        "isRequired": true,
+        "type": "oneOf",
       },
     },
   },
@@ -3305,7 +3346,15 @@ Map {
         "type": "node",
       },
       "description": Object {
-        "type": "node",
+        "args": Array [
+          Object {
+            "type": "element",
+          },
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "oneOf",
       },
       "editable": Object {
         "type": "bool",
@@ -3350,6 +3399,7 @@ Map {
         "searchPlaceHolderText": "Enter a value",
       },
       "isFullHeight": false,
+      "isLoading": false,
       "onSelect": null,
       "pageSize": null,
       "title": null,
@@ -3392,6 +3442,9 @@ Map {
         "type": "shape",
       },
       "isFullHeight": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {
@@ -4060,9 +4113,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -6855,9 +6906,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -7710,9 +7759,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -8481,9 +8528,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -9220,9 +9265,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -10076,9 +10119,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -10990,9 +11031,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -11800,9 +11839,7 @@ Map {
         ],
         "type": "shape",
       },
-      "showOverflow": Object {
-        "type": "bool",
-      },
+      "showOverflow": [Function],
       "size": Object {
         "args": Array [
           Array [
@@ -12667,6 +12704,7 @@ Map {
       "iconPosition": "left",
       "isFullHeight": false,
       "isLargeRow": false,
+      "isLoading": false,
       "pagination": null,
       "search": null,
       "selectedId": null,
@@ -12723,6 +12761,9 @@ Map {
         "type": "bool",
       },
       "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {
@@ -12839,6 +12880,7 @@ Map {
       },
       "isFullHeight": false,
       "isLargeRow": false,
+      "isLoading": false,
       "pageSize": null,
     },
     "propTypes": Object {
@@ -12876,6 +12918,9 @@ Map {
         "type": "bool",
       },
       "isLargeRow": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
         "type": "bool",
       },
       "items": Object {
