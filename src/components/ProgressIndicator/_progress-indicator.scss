@@ -2,35 +2,23 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--progress-indicator {
-  .#{$prefix}--skeleton .#{$prefix}--progress-step {
-    flex: unset;
+  .#{$prefix}--progress-optional {
+    position: absolute;
+    text-align: start;
   }
-}
-
-html[dir='rtl'] {
-  .#{$iot-prefix}--progress-indicator {
-    .#{$prefix}--progress-step svg {
+  &.#{$prefix}--progress--vertical .#{$prefix}--progress-optional {
+    margin-left: 2rem;
+  }
+  &.#{$prefix}--progress--vertical .#{$prefix}--progress-step-button {
+    display: list-item;
+  }
+  .#{$prefix}--skeleton {
+    .#{$prefix}--progress-step {
+      flex: unset;
+    }
+    .#{$prefix}--progress-step--incomplete svg {
       margin-right: 0;
       margin-left: 0.5rem;
     }
-    .#{$prefix}--progress-optional {
-      margin-right: 1.5rem;
-      margin-left: 0;
-      right: 0;
-      left: unset;
-    }
-    .#{$prefix}--progress-line {
-      right: 0;
-      left: unset;
-    }
-    &.#{$prefix}--progress--vertical .#{$prefix}--progress-step svg {
-      margin-right: 0.563rem;
-    }
-  }
-
-  // for the skeleton
-  .#{$prefix}--progress-step--incomplete svg {
-    margin-right: 0;
-    margin-left: 0.5rem;
   }
 }

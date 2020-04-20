@@ -20,6 +20,7 @@ export const content = [
     id="step1"
     label="Step 1"
     key="step1"
+    secondaryLabel="Optional label"
     onClose={() => {}}
     onSubmit={() => {}}
     onNext={() => {}}

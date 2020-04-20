@@ -132,12 +132,20 @@ const PageWizard = ({
           }
         >
           <ProgressIndicator
-            className={isProgressIndicatorVertical ? `${carbonPrefix}--progress--vertical` : null}
+            className={classNames(
+              `${iotPrefix}--progress-indicator`,
+              isProgressIndicatorVertical ? `${carbonPrefix}--progress--vertical` : null
+            )}
             currentIndex={currentStepIdx}
             onChange={idx => setStep(steps[idx].id)}
           >
             {steps.map((step, idx) => (
-              <ProgressStep key={idx} description={step.description} label={step.label} />
+              <ProgressStep
+                key={idx}
+                description={step.description}
+                label={step.label}
+                secondaryLabel={step.secondaryLabel}
+              />
             ))}
           </ProgressIndicator>
         </div>
