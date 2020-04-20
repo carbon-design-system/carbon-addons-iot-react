@@ -36,6 +36,39 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
+  .add(
+    'With links',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableColumns,
+            }}
+            values={tableData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property. 
+                  2 additional properties can be configured within the linkTemplate object: href and target</p> 
+              <p>href is the url the link will use. This property is required.</p>
+              <p>target is whether you would like to open the link in a new window or not. 
+                  This property defaults to opening in the current window. Use '_blank' to open in a new window
+              </p>
+    `,
+      },
+    }
+  )
   .add('table with single actions', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 

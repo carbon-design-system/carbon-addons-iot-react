@@ -222,7 +222,6 @@ const TableCard = ({
   isEditable,
   i18n,
   tooltip,
-  cardVariables,
   ...others
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
@@ -332,6 +331,7 @@ const TableCard = ({
   // If a column has a linkTemplate, format the column to render a link
   const columnsWithFormattedLinks = columns.map(column => {
     const { linkTemplate } = column;
+    console.log(column);
     if (linkTemplate) {
       return {
         ...column,

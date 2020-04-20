@@ -542,23 +542,29 @@ storiesOf('Watson IoT/Dashboard', module)
       id: `row-${index}`,
       values: {
         timestamp: 1569819600000,
-        deviceid: 'Campus_EGL',
+        campus: 'Campus_EGL',
         peopleCount_EnterpriseBuilding_mean: 150.5335383714,
         headCount_EnterpriseBuilding_mean: 240,
         capacity_EnterpriseBuilding_mean: 300,
         allocatedSeats_EnterpriseBuilding_mean: 240,
+        link: 'Custom link',
       },
     }));
+    const onFetchData = card => {
+      console.log('fetching');
+      const cardVariables = [{ url: 'ibm' }];
+      return { ...card, cardVariables };
+    };
     return (
       <FullWidthWrapper>
-        {' '}
         <Dashboard
           title="Expandable card, click expand to expand table"
+          onFetchData={onFetchData}
           cards={[
             {
               title: 'Expanded card',
               id: `expandedcard`,
-              size: CARD_SIZES.LARGE,
+              size: CARD_SIZES.LARGEWIDE,
               type: CARD_TYPES.TABLE,
               content: {
                 columns: [
@@ -567,6 +573,14 @@ storiesOf('Watson IoT/Dashboard', module)
                   { dataSourceId: 'peopleCount_EnterpriseBuilding_mean', label: 'People' },
                   { dataSourceId: 'headCount_EnterpriseBuilding_mean', label: 'Headcount' },
                   { dataSourceId: 'capacity_EnterpriseBuilding_mean', label: 'capacity' },
+                  {
+                    dataSourceId: 'link',
+                    label: 'Custom Link',
+                    linkTemplate: {
+                      href: 'www.{url}.com',
+                      target: '_blank',
+                    },
+                  },
                 ],
               },
               values: data,
