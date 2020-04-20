@@ -16,7 +16,8 @@
   margin-bottom: 1rem;
 }
 
-.bx--accordion {
+.bx--accordion,
+.netlify-link {
   padding-top: 2rem;
 }
 

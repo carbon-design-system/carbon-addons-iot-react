@@ -13,8 +13,8 @@ import {
   determineMaxValueCardAttributeCount,
   getUpdatedCardSize,
 } from '../../utils/cardUtilityFunctions';
+import DataStateRenderer from '../Card/DataStateRenderer';
 
-import DataStateRenderer from './DataStateRenderer';
 import Attribute from './Attribute';
 
 const ContentWrapper = styled.div`
@@ -258,7 +258,6 @@ const ValueCard = ({
             availableActions={availableActions}
             isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
-            showOverflow={!!dataState}
             i18n={i18n}
             id={id}
             {...others}
