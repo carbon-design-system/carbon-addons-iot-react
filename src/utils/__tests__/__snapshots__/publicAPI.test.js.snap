@@ -14,34 +14,6 @@ Map {
       },
     },
   },
-  "AccordionItem" => Object {
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "iconDescription": Object {
-        "type": "string",
-      },
-      "onClick": Object {
-        "type": "func",
-      },
-      "onHeadingClick": Object {
-        "type": "func",
-      },
-      "open": Object {
-        "type": "bool",
-      },
-      "renderExpando": Object {
-        "type": "func",
-      },
-      "title": Object {
-        "type": "node",
-      },
-    },
-  },
   "Button" => Object {
     "defaultProps": Object {
       "children": null,
@@ -12736,6 +12708,35 @@ Map {
     "large": "large",
     "small": "small",
   },
+  "AccordionItemDefer" => Object {
+    "defaultProps": undefined,
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "onHeadingClick": Object {
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "renderExpando": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "node",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
@@ -12755,6 +12756,34 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+    },
+  },
+  "AccordionItem" => Object {
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "iconDescription": Object {
+        "type": "string",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "onHeadingClick": Object {
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "renderExpando": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "node",
       },
     },
   },
