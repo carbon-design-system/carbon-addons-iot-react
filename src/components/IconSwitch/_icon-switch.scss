@@ -1,8 +1,8 @@
 @import '../../globals/vars';
 
-$icon-switch-size-small: 32px;
-$icon-switch-size-default: 40px;
-$icon-switch-size-large: 48px;
+$icon-switch-size-small: $spacing-07;
+$icon-switch-size-default: $spacing-08;
+$icon-switch-size-large: $spacing-09;
 
 .#{$iot-prefix}--icon-switch {
   border: 0;
