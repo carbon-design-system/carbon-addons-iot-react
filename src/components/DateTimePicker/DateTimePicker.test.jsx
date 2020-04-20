@@ -17,9 +17,9 @@ const dateTimePickerProps = {
 };
 
 const i18n = {
-  presetLabels: 'Last 30 minutes|Missed in translation',
-  intervalLabels: 'minutes|Missed in translation',
-  relativeLabels: 'Missed in translation',
+  presetLabels: ['Last 30 minutes', 'Missed in translation'],
+  intervalLabels: ['minutes', 'Missed in translation'],
+  relativeLabels: ['Missed in translation'],
 };
 
 const defaultRelativeValue = {

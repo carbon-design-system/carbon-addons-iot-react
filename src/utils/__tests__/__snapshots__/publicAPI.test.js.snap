@@ -4311,12 +4311,28 @@ Map {
         "customRangeLabel": "Custom range",
         "customRangeLinkLabel": "Custom Range",
         "endTimeLabel": "End time",
-        "intervalLabels": "minutes|hours|days|weeks|months|years",
+        "intervalLabels": Array [
+          "minutes",
+          "hours",
+          "days",
+          "weeks",
+          "months",
+          "years",
+        ],
         "invalidNumberLabel": "Number is not valid",
         "lastLabel": "Last",
-        "presetLabels": "Last 30 minutes|Last 1 hour|Last 6 hours|Last 12 hours|Last 24 hours",
+        "presetLabels": Array [
+          "Last 30 minutes",
+          "Last 1 hour",
+          "Last 6 hours",
+          "Last 12 hours",
+          "Last 24 hours",
+        ],
         "relativeLabel": "Relative",
-        "relativeLabels": "Yesterday|Today",
+        "relativeLabels": Array [
+          "Yesterday",
+          "Today",
+        ],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
         "toLabel": "to",
@@ -4500,7 +4516,12 @@ Map {
               "type": "string",
             },
             "intervalLabels": Object {
-              "type": "string",
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "invalidNumberLabel": Object {
               "type": "string",
@@ -4509,13 +4530,23 @@ Map {
               "type": "string",
             },
             "presetLabels": Object {
-              "type": "string",
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "relativeLabel": Object {
               "type": "string",
             },
             "relativeLabels": Object {
-              "type": "string",
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
             },
             "relativeToLabel": Object {
               "type": "string",

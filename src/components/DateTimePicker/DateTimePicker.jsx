@@ -149,9 +149,9 @@ const propTypes = {
     toLabel: PropTypes.string,
     toNowLabel: PropTypes.string,
     calendarLabel: PropTypes.string,
-    presetLabels: PropTypes.string,
-    intervalLabels: PropTypes.string,
-    relativeLabels: PropTypes.string,
+    presetLabels: PropTypes.arrayOf(PropTypes.string),
+    intervalLabels: PropTypes.arrayOf(PropTypes.string),
+    relativeLabels: PropTypes.arrayOf(PropTypes.string),
     customRangeLinkLabel: PropTypes.string,
     customRangeLabel: PropTypes.string,
     relativeLabel: PropTypes.string,
@@ -220,9 +220,15 @@ const defaultProps = {
     toLabel: 'to',
     toNowLabel: 'to Now',
     calendarLabel: 'Calendar',
-    presetLabels: 'Last 30 minutes|Last 1 hour|Last 6 hours|Last 12 hours|Last 24 hours',
-    intervalLabels: 'minutes|hours|days|weeks|months|years',
-    relativeLabels: 'Yesterday|Today',
+    presetLabels: [
+      'Last 30 minutes',
+      'Last 1 hour',
+      'Last 6 hours',
+      'Last 12 hours',
+      'Last 24 hours',
+    ],
+    intervalLabels: ['minutes', 'hours', 'days', 'weeks', 'months', 'years'],
+    relativeLabels: ['Yesterday', 'Today'],
     customRangeLinkLabel: 'Custom Range',
     customRangeLabel: 'Custom range',
     relativeLabel: 'Relative',
@@ -690,7 +696,7 @@ const __unstableDateTimePicker = ({
                         }
                       )}
                     >
-                      {strings.presetLabels.split('|')[i] || preset.label}
+                      {strings.presetLabels[i] || preset.label}
                     </ListItem>
                   );
                 })}
@@ -749,7 +755,7 @@ const __unstableDateTimePicker = ({
                               <SelectItem
                                 key={i}
                                 value={interval.value}
-                                text={strings.intervalLabels.split('|')[i] || interval.label}
+                                text={strings.intervalLabels[i] || interval.label}
                               />
                             );
                           })}
@@ -773,7 +779,7 @@ const __unstableDateTimePicker = ({
                               <SelectItem
                                 key={i}
                                 value={relative.value}
-                                text={strings.relativeLabels.split('|')[i] || relative.label}
+                                text={strings.relativeLabels[i] || relative.label}
                               />
                             );
                           })}
