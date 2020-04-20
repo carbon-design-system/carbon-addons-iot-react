@@ -75,6 +75,9 @@ export const AboutStorybook = () => (
         </StructuredListWrapper>
       </AccordionItem>
     </Accordion>
+    <p className="netlify-link">
+      <a href="https://www.netlify.com">This site is powered by Netlify</a>
+    </p>
   </div>
 );
 
