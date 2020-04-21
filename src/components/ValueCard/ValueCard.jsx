@@ -6,18 +6,13 @@ import filter from 'lodash/filter';
 import find from 'lodash/find';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
-import {
-  CARD_LAYOUTS,
-  CARD_SIZES,
-  CARD_CONTENT_PADDING,
-  CARD_TYPES,
-} from '../../constants/LayoutConstants';
+import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { COLORS } from '../../styles/styles';
 import Card from '../Card/Card';
 import {
   determineMaxValueCardAttributeCount,
   getUpdatedCardSize,
-  handleVariables,
+  handleValueCardVariables,
 } from '../../utils/cardUtilityFunctions';
 import DataStateRenderer from '../Card/DataStateRenderer';
 
@@ -231,8 +226,7 @@ const ValueCard = ({
     expand: false,
     ...others.availableActions,
   };
-  const { title, content, values } = handleVariables(
-    CARD_TYPES.VALUE,
+  const { title, content, values } = handleValueCardVariables(
     titleProp,
     contentProp,
     valuesProp,

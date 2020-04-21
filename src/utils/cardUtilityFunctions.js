@@ -147,6 +147,215 @@ export const replaceVariables = (variables, values, target) => {
   return updatedTarget;
 };
 
+export const handleValueCardVariables = (title, content, values, card) => {
+  const updatedCard = {
+    title,
+    content,
+    values,
+    ...card,
+  };
+  if (!updatedCard.cardVariables) {
+    return updatedCard;
+  }
+  const { cardVariables } = updatedCard;
+
+  // check for title variables and replace them
+  const titleVariables = getVariables(title);
+  if (titleVariables) {
+    const updatedTitle = replaceVariables(titleVariables, cardVariables, title);
+    updatedCard.title = updatedTitle || title;
+  }
+
+  const { attributes } = updatedCard.content;
+  attributes?.forEach((attribute, i) => {
+    const { label, unit, thresholds } = attribute;
+
+    // check for variables in the labels and replace them
+    const labelVariables = getVariables(label);
+    if (labelVariables) {
+      const updatedLabel = replaceVariables(labelVariables, cardVariables, label);
+      updatedCard.content.attributes[i].label = updatedLabel;
+    }
+    // check for variables in the units and replace them
+    const unitVariables = getVariables(unit);
+    if (unitVariables) {
+      const updatedUnit = replaceVariables(unitVariables, cardVariables, unit);
+      updatedCard.content.attributes[i].unit = updatedUnit;
+    }
+    thresholds?.forEach((threshold, x) => {
+      const { value } = threshold;
+      // check for variables in each threshold value and replace them
+      const thresholdValueVariables = getVariables(value);
+      if (thresholdValueVariables) {
+        const updatedThresholdValue = replaceVariables(
+          thresholdValueVariables,
+          cardVariables,
+          value
+        );
+        updatedCard.content.attributes[i].thresholds[x].value = updatedThresholdValue;
+      }
+    });
+  });
+
+  return updatedCard;
+};
+
+export const handleImageCardVariables = (cardType, title, content, values, card) => {
+  const updatedCard = {
+    title,
+    content,
+    values,
+    ...card,
+  };
+  if (!updatedCard.cardVariables) {
+    return updatedCard;
+  }
+  const { cardVariables } = updatedCard;
+
+  // check for title variables on all cards and replace them
+  const titleVariables = getVariables(title);
+  if (titleVariables) {
+    const updatedTitle = replaceVariables(titleVariables, cardVariables, title);
+    updatedCard.title = updatedTitle || title;
+  }
+
+  if (cardType === CARD_TYPES.IMAGE) {
+    const { hotspots } = updatedCard.content;
+    hotspots?.forEach((hotspot, i) => {
+      const { thresholds } = hotspot;
+      if (hotspot.title) {
+        // check for variables in the hotspot title and replace them
+        const hotspotTitleVariables = getVariables(hotspot.title);
+        if (hotspotTitleVariables) {
+          const updatedHotspotTitle = replaceVariables(
+            hotspotTitleVariables,
+            cardVariables,
+            hotspot.title
+          );
+          updatedCard.content.hotspots[i].content.title = updatedHotspotTitle;
+        }
+      }
+      if (thresholds) {
+        thresholds.forEach((threshold, x) => {
+          const { value } = threshold;
+          // check for variables in each threshold value and replace them
+          const thresholdValueVariables = getVariables(value);
+          if (thresholdValueVariables) {
+            const updatedThresholdValue = replaceVariables(
+              thresholdValueVariables,
+              cardVariables,
+              value
+            );
+            updatedCard.content.hotspots[i].thresholds[x].value = updatedThresholdValue;
+          }
+        });
+      }
+      const { attributes } = hotspot.content;
+      if (attributes) {
+        attributes.forEach((attribute, j) => {
+          const { label, unit } = attribute;
+          // check for variables in the lables and replace them
+          const labelVariables = getVariables(label);
+          if (labelVariables) {
+            const updatedLabel = replaceVariables(labelVariables, cardVariables, label);
+            updatedCard.content.hotspots[i].content.attributes[j].label = updatedLabel;
+          }
+          // check for variables in the units and replace them
+          const unitVariables = getVariables(unit);
+          if (unitVariables) {
+            const updatedUnit = replaceVariables(unitVariables, cardVariables, unit);
+            updatedCard.content.hotspots[i].content.attributes[j].unit = updatedUnit;
+          }
+        });
+      }
+    });
+    values.hotspots.forEach((hotspot, v) => {
+      if (typeof hotspot.content === 'string') {
+        const labelVariables = getVariables(hotspot.content);
+        if (labelVariables) {
+          const updatedLabel = replaceVariables(labelVariables, cardVariables, hotspot.content);
+          updatedCard.values.hotspots[v].content = updatedLabel;
+        }
+      }
+    });
+  }
+
+  return updatedCard;
+};
+
+export const handleTableCardVariables = (title, content, values, card) => {
+  const updatedCard = {
+    title,
+    content,
+    values,
+    ...card,
+  };
+  if (!updatedCard.cardVariables) {
+    return updatedCard;
+  }
+  const { cardVariables } = updatedCard;
+
+  // check for title variables on all cards and replace them
+  const titleVariables = getVariables(title);
+  if (titleVariables) {
+    const updatedTitle = replaceVariables(titleVariables, cardVariables, title);
+    updatedCard.title = updatedTitle || title;
+  }
+
+  const { columns, thresholds } = updatedCard.content;
+  columns.forEach((column, i) => {
+    const { linkTemplate } = column;
+    if (linkTemplate) {
+      const { href, displayValue } = linkTemplate;
+      // Check for variables in the hrefs
+      const hrefVariables = getVariables(href);
+      if (hrefVariables) {
+        const updatedHref = replaceVariables(hrefVariables, cardVariables, href);
+        updatedCard.content.columns[i].linkTemplate.href = updatedHref;
+      }
+      // Check for variables in the display values
+      const displayValueVariables = getVariables(displayValue);
+      if (displayValueVariables) {
+        const updatedDisplayValue = replaceVariables(
+          displayValueVariables,
+          cardVariables,
+          displayValue
+        );
+        updatedCard.content.columns[i].linkTemplate.displayValue = updatedDisplayValue;
+      }
+    }
+  });
+  if (thresholds) {
+    thresholds.forEach((threshold, x) => {
+      const { label, severityLabel, value } = threshold;
+      // Check if there are variables in the threshold labels
+      const thresholdLabelVariables = getVariables(label);
+      if (thresholdLabelVariables) {
+        const updatedLabel = replaceVariables(thresholdLabelVariables, cardVariables, label);
+        updatedCard.content.thresholds[x].label = updatedLabel;
+      }
+      // Check if there are variables in the threshold severity labels
+      const severityLabelVariables = getVariables(severityLabel);
+      if (severityLabelVariables) {
+        const updatedSeverityLabel = replaceVariables(
+          severityLabelVariables,
+          cardVariables,
+          severityLabel
+        );
+        updatedCard.content.thresholds[x].severityLabel = updatedSeverityLabel;
+      }
+      // Check if there are variables in the threshold values
+      const thresholdValueVariables = getVariables(value);
+      if (thresholdValueVariables) {
+        const updatedValue = replaceVariables(thresholdValueVariables, cardVariables, value);
+        updatedCard.content.thresholds[x].value = updatedValue;
+      }
+    });
+  }
+
+  return updatedCard;
+};
+
 export const handleVariables = (cardType, title, content, values, card) => {
   const updatedCard = {
     title,
@@ -247,6 +456,15 @@ export const handleVariables = (cardType, title, content, values, card) => {
             updatedCard.content.hotspots[i].content.attributes[j].unit = updatedUnit;
           }
         });
+      }
+    });
+    values.hotspots.forEach((hotspot, v) => {
+      if (typeof hotspot.content === 'string') {
+        const labelVariables = getVariables(hotspot.content);
+        if (labelVariables) {
+          const updatedLabel = replaceVariables(labelVariables, cardVariables, hotspot.content);
+          updatedCard.values.hotspots[v].content = updatedLabel;
+        }
       }
     });
   }

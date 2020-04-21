@@ -165,6 +165,8 @@ const CardRenderer = React.memo(
       [card, onFetchData, originalDataSource && originalDataSource.range, timeGrain] // eslint-disable-line
     );
 
+    console.log(card);
+
     const commonCardProps = {
       ...card, // pass all the card props, including the card data to the card
       style: cardProp.style, // these come from grid layout and not state
