@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 
@@ -147,6 +147,100 @@ storiesOf('Watson IoT/TableCard', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           tooltip={text('Tooltip text', "Here's a Tooltip")}
+          content={{
+            columns: tableCustomColumns,
+            thresholds,
+            expandedRows: [
+              {
+                id: 'long_description',
+                label: 'Description',
+              },
+              {
+                id: 'other_description',
+                label: 'Other Description',
+              },
+              {
+                id: 'pressure',
+                label: 'Pressure',
+              },
+              {
+                id: 'temperature',
+                label: 'Temperature',
+              },
+            ],
+          }}
+          values={tableData}
+          onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+          size={size}
+          renderIconByName={(name, props = {}) =>
+            name === 'bee' ? (
+              <Bee16 {...props}>
+                <title>{props.title}</title>
+              </Bee16>
+            ) : (
+              <span>Unknown</span>
+            )
+          }
+        />
+      </div>
+    );
+  })
+  .add('table with variables, thresholds, precision and expanded rows', () => {
+    const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+
+    const thresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        icon: 'bee',
+        color: 'black',
+        label: text('Custom Pressure Severity Header', 'Custom Pressure Severity Header'),
+        showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+        severityLabel: text('Custom Pressure Critical Label', ''),
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '>=',
+        value: 10,
+        severity: 1, // High threshold, medium, or low used for sorting and defined filtration
+        label: text('Custom Count Severity Header', ''),
+        showSeverityLabel: boolean('Show Count Threshold Labels', true),
+        severityLabel: text('Custom Count Critical Label', 'Custom Critical'),
+      },
+      {
+        dataSourceId: 'count',
+        comparison: '=',
+        value: 7,
+        severity: 2, // High threshold, medium, or low used for sorting and defined filtration
+        showSeverityLabel: boolean('Show Count Threshold Labels', true),
+        severityLabel: text('Custom Count Moderate Label', ''),
+      },
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 10,
+        severity: 1,
+        label: 'Custom Pressure Severity Header',
+        showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+        severityLabel: text('Custom Pressure Critical Label', ''),
+      },
+    ];
+
+    const tableCustomColumns = tableColumns.map(item =>
+      item.dataSourceId === 'count' ? { ...item, precision: 1 } : { ...item }
+    );
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TableCard
+          title={text('title', 'Open {not-working} Alerts')}
+          id="table-list"
+          tooltip={text('Tooltip text', "Here's a Tooltip")}
+          cardVariables={object('variables', {
+            'not-working': 'working',
+          })}
           content={{
             columns: tableCustomColumns,
             thresholds,

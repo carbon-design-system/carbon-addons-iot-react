@@ -12,6 +12,7 @@ import Card from '../Card/Card';
 import {
   determineMaxValueCardAttributeCount,
   getUpdatedCardSize,
+  handleValueCardVariables,
 } from '../../utils/cardUtilityFunctions';
 import DataStateRenderer from '../Card/DataStateRenderer';
 
@@ -206,15 +207,15 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleW
     case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
-      return shouldDoubleWrap || (!measuredSize || measuredSize.width < 300);
+      return shouldDoubleWrap || !measuredSize || measuredSize.width < 300;
   }
 };
 
 const ValueCard = ({
-  title,
-  content,
+  title: titleProp,
+  content: contentProp,
   size,
-  values,
+  values: valuesProp,
   isEditable,
   i18n,
   dataState,
@@ -225,6 +226,13 @@ const ValueCard = ({
     expand: false,
     ...others.availableActions,
   };
+  const { title, content, values } = handleValueCardVariables(
+    titleProp,
+    contentProp,
+    valuesProp,
+    others
+  );
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 

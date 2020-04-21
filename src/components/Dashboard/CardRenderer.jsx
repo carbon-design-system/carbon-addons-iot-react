@@ -14,11 +14,7 @@ import ListCard from '../ListCard/ListCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
 import Card from '../Card/Card';
 import { CARD_TYPES, CARD_ACTIONS } from '../../constants/LayoutConstants';
-import {
-  determineCardRange,
-  compareGrains,
-  handleVariables,
-} from '../../utils/cardUtilityFunctions';
+import { determineCardRange, compareGrains } from '../../utils/cardUtilityFunctions';
 
 /**
  *
@@ -169,10 +165,10 @@ const CardRenderer = React.memo(
       [card, onFetchData, originalDataSource && originalDataSource.range, timeGrain] // eslint-disable-line
     );
 
-    const updatedCard = handleVariables(card);
+    console.log(card);
 
     const commonCardProps = {
-      ...updatedCard, // pass all the card props, including the card data to the card
+      ...card, // pass all the card props, including the card data to the card
       style: cardProp.style, // these come from grid layout and not state
       className: cardProp.className, // these come from grid layout and not state
       key: cardProp.id,
