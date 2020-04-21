@@ -641,9 +641,15 @@ Map {
                           "disabled": Object {
                             "type": "bool",
                           },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
                           },
                           "isOverflow": Object {
                             "type": "bool",
@@ -1931,9 +1937,15 @@ Map {
                           "disabled": Object {
                             "type": "bool",
                           },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
                           },
                           "isOverflow": Object {
                             "type": "bool",
