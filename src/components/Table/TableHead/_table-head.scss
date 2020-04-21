@@ -84,4 +84,8 @@ html[dir='rtl'] {
       right: auto;
     }
   }
+
+  .#{$prefix}--list-box__menu-item__option {
+    text-align: right;
+  }
 }
