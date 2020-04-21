@@ -529,4 +529,16 @@ describe('Table', () => {
     expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
     expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
   });
+
+  it('table should get row-actions HTML class only when rowActions are enabled', () => {
+    const wrapper = mount(
+      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: true }} />
+    );
+    expect(wrapper.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeTruthy();
+
+    const wrapper2 = mount(
+      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: false }} />
+    );
+    expect(wrapper2.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeFalsy();
+  });
 });
