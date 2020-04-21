@@ -94,6 +94,8 @@ export List from './components/List/List';
 
 export SimpleList from './components/List/SimpleList/SimpleList';
 
+export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitch';
+
 // Carbon proxy
 export {
   Accordion,

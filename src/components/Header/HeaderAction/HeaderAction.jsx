@@ -55,7 +55,8 @@ const HeaderAction = ({ item, index }) => {
     // Handle keydowns for opening and closing the menus
     if (
       (event.keyCode === keyCodes.ESC && isExpanded) ||
-      (event.keyCode === keyCodes.SPACE || event.keyCode === keyCodes.ENTER)
+      event.keyCode === keyCodes.SPACE ||
+      event.keyCode === keyCodes.ENTER
     ) {
       event.stopPropagation();
       event.preventDefault();
