@@ -295,7 +295,7 @@ export const handleTableCardVariables = (title, content, values, card) => {
   }
   const { cardVariables } = updatedCard;
 
-  // check for title variables on all cards and replace them
+  // check for title variables and replace them
   const titleVariables = getVariables(title);
   if (titleVariables) {
     const updatedTitle = replaceVariables(titleVariables, cardVariables, title);
