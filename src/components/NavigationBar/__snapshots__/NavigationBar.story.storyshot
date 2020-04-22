@@ -18,7 +18,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
       To interact with the workarea, click the New Entity Type button. To close the workarea, click the Cancel button or finish the flow.
     </div>
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
     >
       <div
         className="page-title-bar"
@@ -229,7 +229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     }
   >
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
     >
       <div
         className="page-title-bar"
@@ -427,7 +427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     }
   >
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
     >
       <div
         className="page-title-bar"
@@ -625,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
     }
   >
     <div
-      className="NavigationBar__StyledNavigationContainer-bw68kq-0 cAEAQd"
+      className="NavigationBar__StyledNavigationContainer-bw68kq-0 evLeOn"
     >
       <div
         className="page-title-bar"
