@@ -11,7 +11,7 @@ const StyledDivWizardHeader = styled.div`
   border-right: 1px solid #dadada8c;
 
   .bx--progress {
-    padding: 30px 50px 0px 80px;
+    padding: 1rem 1rem 1rem 4rem;
   }
 `;
 

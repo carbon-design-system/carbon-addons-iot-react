@@ -93,44 +93,44 @@ describe('SimpleList component tests', () => {
   });
 
   test('SimpleList when hasSearch', () => {
-    const { getByLabelText, getByTitle, queryByTitle } = render(
+    const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: '5' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
     expect(getByTitle('Item 5')).toBeTruthy();
     expect(queryByTitle('Item 1')).toBeFalsy();
   });
 
   test('SimpleList when hasSearch and item values are empty', () => {
-    const { getByLabelText, queryByTitle } = render(
+    const { getAllByLabelText, queryByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: '5' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
     expect(queryByTitle('Item 1')).toBeFalsy();
   });
 
   test('SimpleList when hasSearch and pagination', () => {
-    const { getByLabelText, getByTitle, queryByTitle } = render(
+    const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} pageSize="sm" />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: '5' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
     expect(getByTitle('Item 5')).toBeTruthy();
     expect(queryByTitle('Item 1')).toBeFalsy();
   });
 
   test('SimpleList when search large row', () => {
-    const { getByLabelText, getByTitle } = render(
+    const { getAllByLabelText, getByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getFatRowListItems(5)} />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: '5' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
     expect(getByTitle('Item 5')).toBeTruthy();
   });
 
   test('SimpleList when search term is empty should return all items', () => {
-    const { getByLabelText, getByTitle } = render(
+    const { getAllByLabelText, getByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: ' ' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: ' ' } });
     expect(getByTitle('Item 1')).toBeTruthy();
     expect(getByTitle('Item 2')).toBeTruthy();
     expect(getByTitle('Item 3')).toBeTruthy();
@@ -139,10 +139,10 @@ describe('SimpleList component tests', () => {
   });
 
   test('SimpleList when search input is undefined should return all items', () => {
-    const { getByLabelText, getByTitle } = render(
+    const { getAllByLabelText, getByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
-    fireEvent.change(getByLabelText('Enter a value'));
+    fireEvent.change(getAllByLabelText('Enter a value')[0]);
     expect(getByTitle('Item 1')).toBeTruthy();
     expect(getByTitle('Item 2')).toBeTruthy();
     expect(getByTitle('Item 3')).toBeTruthy();
