@@ -57,13 +57,6 @@ const OverflowMenuContent = styled.div`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-  & {
-    margin-right: 0.5rem;
-    width: 1rem;
-  }
-`;
-
 const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
   <OverflowMenu {...other} />
 ))`
@@ -217,6 +210,7 @@ class RowActionsCell extends React.Component {
                       .filter(action => action.isOverflow)
                       .map(action => (
                         <OverflowMenuItem
+                          className={`${iotPrefix}--action-overflow-item`}
                           key={`${id}-row-actions-button-${action.id}`}
                           onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                           requireTitle
@@ -224,7 +218,7 @@ class RowActionsCell extends React.Component {
                             action.renderIcon ? (
                               <OverflowMenuContent>
                                 {typeof action.renderIcon === 'string' ? (
-                                  <StyledIcon
+                                  <Icon
                                     icon={action.renderIcon}
                                     description={action.labelText}
                                     iconTitle={action.labelText}

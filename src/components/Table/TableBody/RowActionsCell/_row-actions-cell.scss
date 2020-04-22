@@ -2,24 +2,36 @@
 
 .#{$iot-prefix}--row-actions-container {
   > * {
-    margin-left: 0.75rem;
+    margin-left: $spacing-04;
   }
   .#{$iot-prefix}--row-actions-cell-btn--icononly {
     margin-left: 0;
-    .bx--btn__icon {
+
+    .#{$prefix}--btn__icon {
       margin-left: 0;
     }
   }
 }
 
 .#{$iot-prefix}--row-actions-container__background {
-  padding-left: 24px;
-  z-index: 0;
+  align-items: center;
   display: flex;
   flex-shrink: 0;
-  align-items: center;
+  padding-left: $spacing-06;
+  z-index: 0;
 }
 
 .#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
-  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} 16px);
+  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} $spacing-05);
+}
+
+.#{$iot-prefix}--action-overflow-item {
+  svg {
+    margin-right: $spacing-03;
+
+    html[dir='rtl'] & {
+      margin-left: $spacing-03;
+      margin-right: 0;
+    }
+  }
 }
