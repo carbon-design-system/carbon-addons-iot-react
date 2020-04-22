@@ -5,7 +5,6 @@ exports[`Header testcases should render 1`] = `
   <header
     aria-label="main header"
     class="bx--header custom-class-name"
-    role="banner"
   >
     <a
       class="bx--skip-to-content"
@@ -29,8 +28,29 @@ exports[`Header testcases should render 1`] = `
         width="20"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+        <rect
+          height="1.2"
+          width="16"
+          x="2"
+          y="14.8"
+        />
+        <rect
+          height="1.2"
+          width="16"
+          x="2"
+          y="11.2"
+        />
+        <rect
+          height="1.2"
+          width="16"
+          x="2"
+          y="7.6"
+        />
+        <rect
+          height="1.2"
+          width="16"
+          x="2"
+          y="4"
         />
       </svg>
     </button>
@@ -74,7 +94,7 @@ exports[`Header testcases should render 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"
+              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
             />
             <circle
               cx="16"
@@ -82,7 +102,7 @@ exports[`Header testcases should render 1`] = `
               r="1.5"
             />
             <path
-              d="M17 8h-1.5a4.49 4.49 0 0 0-4.5 4.5v.5h2v-.5a2.5 2.5 0 0 1 2.5-2.5H17a2.5 2.5 0 0 1 0 5h-2v4.5h2V17a4.5 4.5 0 0 0 0-9z"
+              d="M17,8H15.5A4.49,4.49,0,0,0,11,12.5V13h2v-.5A2.5,2.5,0,0,1,15.5,10H17a2.5,2.5,0,0,1,0,5H15v4.5h2V17a4.5,4.5,0,0,0,0-9Z"
             />
           </svg>
         </button>
@@ -122,10 +142,10 @@ exports[`Header testcases should render 1`] = `
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                     />
                     <path
-                      d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                      d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                     />
                   </svg>
                 </span>
@@ -163,10 +183,10 @@ exports[`Header testcases should render 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
               />
               <path
-                d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
               />
             </svg>
           </a>
@@ -180,7 +200,6 @@ exports[`Header testcases should render 1`] = `
                 class="bx--header__menu-item"
                 href="http://google.com"
                 rel="noopener noreferrer"
-                role="menuitem"
                 tabindex="0"
                 target="_blank"
                 title="this is a title"
@@ -197,7 +216,6 @@ exports[`Header testcases should render 1`] = `
             >
               <button
                 class="bx--header__menu-item"
-                role="menuitem"
                 tabindex="0"
               >
                 <span
@@ -217,10 +235,10 @@ exports[`Header testcases should render 1`] = `
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                        d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                       />
                       <path
-                        d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                        d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                       />
                     </svg>
                   </span>
