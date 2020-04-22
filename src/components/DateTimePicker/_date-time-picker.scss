@@ -26,6 +26,7 @@
   }
 
   .flatpickr-calendar.open {
+    padding-bottom: 0;
     position: unset !important;
     top: unset !important;
     left: unset !important;
@@ -65,18 +66,18 @@
   }
 
   .#{$iot-prefix}--date-time-picker__box {
-    outline-offset: -2px;
+    outline-offset: -0.125rem;
     position: relative;
     list-style: none;
     display: block;
-    background-color: #ffffff;
+    background-color: $ui-01;
     border: none;
     border-bottom: 1px solid $carbon--gray-50;
     width: 100%;
     height: $spacing-08;
     cursor: pointer;
     color: $carbon--gray-100;
-    outline: 2px solid transparent;
+    outline: 0.125rem solid transparent;
     transition: background-color $duration--fast-01 carbon--motion(standard);
     .#{$iot-prefix}--date-time-picker__field {
       background: none;
@@ -111,7 +112,7 @@
     .#{$iot-prefix}--date-time-picker__menu {
       display: none;
       cursor: default;
-      box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
       position: absolute;
       left: 0;
       right: 0;
