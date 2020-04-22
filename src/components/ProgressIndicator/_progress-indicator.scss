@@ -2,23 +2,77 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--progress-indicator {
-  .#{$prefix}--progress-optional {
-    position: absolute;
-    text-align: start;
-  }
-  &.#{$prefix}--progress--vertical .#{$prefix}--progress-optional {
-    margin-left: 2rem;
-  }
-  &.#{$prefix}--progress--vertical .#{$prefix}--progress-step-button {
-    display: list-item;
-  }
-  .#{$prefix}--skeleton {
-    .#{$prefix}--progress-step {
-      flex: unset;
+  &.#{$prefix}--progress--vertical {
+    .#{$prefix}--progress-step-button {
+      display: list-item;
+      padding: 0 $spacing-03;
+      text-align: left;
+      width: 100%;
     }
+
+    .#{$prefix}--progress-label {
+      max-width: calc(100% - 2.2rem);
+    }
+
+    .#{$prefix}--progress-optional {
+      margin-left: ($spacing-06 + 0.563rem);
+    }
+  }
+
+  .#{$prefix}--progress-step--current svg,
+  svg {
+    width: $carbon--spacing-05;
+  }
+
+  .#{$prefix}--progress-line {
+    top: 0;
+  }
+}
+
+.#{$prefix}--skeleton {
+  .#{$prefix}--progress-step {
+    flex: unset;
+  }
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--progress-indicator {
+    &.#{$prefix}--progress--vertical {
+      .#{$prefix}--progress-step-button {
+        text-align: right;
+      }
+
+      .#{$prefix}--progress-optional {
+        margin-right: ($spacing-06 + 0.563rem);
+      }
+
+      .#{$prefix}--progress-step svg {
+        margin-right: 0.563rem;
+      }
+    }
+
+    .#{$prefix}--progress-step svg {
+      margin-right: 0;
+      margin-left: $spacing-03;
+    }
+
+    .#{$prefix}--progress-optional {
+      margin-right: $spacing-06;
+      margin-left: 0;
+      right: 0;
+      left: unset;
+    }
+
+    .#{$prefix}--progress-line {
+      right: 0;
+      left: unset;
+    }
+  }
+
+  .#{$prefix}--skeleton {
     .#{$prefix}--progress-step--incomplete svg {
       margin-right: 0;
-      margin-left: 0.5rem;
+      margin-left: $spacing-03;
     }
   }
 }
