@@ -550,16 +550,10 @@ storiesOf('Watson IoT/Dashboard', module)
         link: 'Custom link',
       },
     }));
-    const onFetchData = card => {
-      console.log('fetching');
-      const cardVariables = [{ url: 'ibm' }];
-      return { ...card, cardVariables };
-    };
     return (
       <FullWidthWrapper>
         <Dashboard
           title="Expandable card, click expand to expand table"
-          onFetchData={onFetchData}
           cards={[
             {
               title: 'Expanded card',
@@ -576,10 +570,6 @@ storiesOf('Watson IoT/Dashboard', module)
                   {
                     dataSourceId: 'link',
                     label: 'Custom Link',
-                    linkTemplate: {
-                      href: 'www.{url}.com',
-                      target: '_blank',
-                    },
                   },
                 ],
               },

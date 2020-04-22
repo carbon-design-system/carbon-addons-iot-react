@@ -306,22 +306,12 @@ export const handleTableCardVariables = (title, content, values, card) => {
   columns.forEach((column, i) => {
     const { linkTemplate } = column;
     if (linkTemplate) {
-      const { href, displayValue } = linkTemplate;
+      const { href } = linkTemplate;
       // Check for variables in the hrefs
       const hrefVariables = getVariables(href);
       if (hrefVariables) {
         const updatedHref = replaceVariables(hrefVariables, cardVariables, href);
         updatedCard.content.columns[i].linkTemplate.href = updatedHref;
-      }
-      // Check for variables in the display values
-      const displayValueVariables = getVariables(displayValue);
-      if (displayValueVariables) {
-        const updatedDisplayValue = replaceVariables(
-          displayValueVariables,
-          cardVariables,
-          displayValue
-        );
-        updatedCard.content.columns[i].linkTemplate.displayValue = updatedDisplayValue;
       }
     }
   });
@@ -474,22 +464,12 @@ export const handleVariables = (cardType, title, content, values, card) => {
     columns.forEach((column, i) => {
       const { linkTemplate } = column;
       if (linkTemplate) {
-        const { href, displayValue } = linkTemplate;
+        const { href } = linkTemplate;
         // Check for variables in the hrefs
         const hrefVariables = getVariables(href);
         if (hrefVariables) {
           const updatedHref = replaceVariables(hrefVariables, cardVariables, href);
           updatedCard.content.columns[i].linkTemplate.href = updatedHref;
-        }
-        // Check for variables in the display values
-        const displayValueVariables = getVariables(displayValue);
-        if (displayValueVariables) {
-          const updatedDisplayValue = replaceVariables(
-            displayValueVariables,
-            cardVariables,
-            displayValue
-          );
-          updatedCard.content.columns[i].linkTemplate.displayValue = updatedDisplayValue;
         }
       }
     });

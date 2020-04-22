@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, boolean, object } from '@storybook/addon-knobs';
+import { text, select, boolean, object, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 
@@ -39,20 +39,36 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'With links',
     () => {
-      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+      const cardVariables = object('Dynamic link variable', { assetId: '11112' });
+      const tableLinkColumns = [
+        {
+          dataSourceId: 'pressure',
+          label: 'Pressure',
+        },
+        {
+          dataSourceId: 'deviceId',
+          label: 'Link',
+          linkTemplate: {
+            href: text('href', 'https://ibm.com/{assetId}'),
+            target: select('target', ['_blank', null], '_blank'),
+          },
+        },
+      ];
 
       return (
         <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
           <TableCard
-            title={text('title', 'Open Alerts')}
+            title={text('title', 'Open Alerts {assetId}')}
             id="table-list"
             tooltip={text('Tooltip text', "Here's a Tooltip")}
             content={{
-              columns: tableColumns,
+              columns: tableLinkColumns,
             }}
             values={tableData}
             onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
+            cardVariables={cardVariables}
           />
         </div>
       );
@@ -64,6 +80,70 @@ storiesOf('Watson IoT/TableCard', module)
               <p>href is the url the link will use. This property is required.</p>
               <p>target is whether you would like to open the link in a new window or not. 
                   This property defaults to opening in the current window. Use '_blank' to open in a new window
+              </p>
+    `,
+      },
+    }
+  )
+  .add(
+    'With dynamic variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+      const cardVariables = object('Dynamic link variable', {
+        assetId: '11112',
+        devicePressureThreshold: 1,
+      });
+      const tableLinkColumns = [
+        {
+          dataSourceId: 'pressure',
+          label: 'Pressure',
+        },
+        {
+          dataSourceId: 'deviceId',
+          label: 'Link',
+          linkTemplate: {
+            href: text('href', 'https://ibm.com/{assetId}'),
+            target: select('target', ['_blank', null], '_blank'),
+          },
+        },
+      ];
+
+      const thresholds = [
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: text('Custom threshold value', '{devicePressureThreshold}'),
+          severity: 1,
+          label: text('Custom Pressure Severity Header', '{assetId} Pressure'),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Critical Label', '{assetId} Critical'),
+        },
+      ];
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Asset {assetId} Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableLinkColumns,
+              thresholds,
+            }}
+            values={tableData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+            cardVariables={cardVariables}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `<p>Dynamic variables can be added to the title, linkTemplate, threshold severityLabel, threshold label, and threshold value.</p> 
+              <p>The string value of the variable must be wrapped with curly braces. For example, {variableName}</p>
+              <p>A cardVariable object must be supplied to TableCard where the keys will be the variable name and the value will be 
+                  what is inserted
               </p>
     `,
       },
