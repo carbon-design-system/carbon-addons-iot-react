@@ -54,11 +54,23 @@ storiesOf('Watson IoT/TableBodyRow', module)
       isExpanded={boolean('isExpanded', false)}
       rowActions={[
         { id: 'add', renderIcon: Add32 },
-        { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit', },
-        { id: 'test1', renderIcon: Stop16, isOverflow: true, labelText: 'Test 1', hasDivider: true},
-        { id: 'test2', renderIcon: Stop16, isOverflow: true, labelText: 'Test 2'},
-        { id: 'test3', renderIcon: Stop16, isOverflow: true, labelText: 'Test 3'},
-        { id: 'delete', renderIcon: Delete16, isOverflow: true, labelText: 'Delete', isDelete: true},
+        { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
+        {
+          id: 'test1',
+          renderIcon: Stop16,
+          isOverflow: true,
+          labelText: 'Test 1',
+          hasDivider: true,
+        },
+        { id: 'test2', renderIcon: Stop16, isOverflow: true, labelText: 'Test 2' },
+        { id: 'test3', renderIcon: Stop16, isOverflow: true, labelText: 'Test 3' },
+        {
+          id: 'delete',
+          renderIcon: Delete16,
+          isOverflow: true,
+          labelText: 'Delete',
+          isDelete: true,
+        },
       ]}
       options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
     />

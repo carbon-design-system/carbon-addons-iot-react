@@ -4307,6 +4307,339 @@ Map {
       },
     },
   },
+  "__unstableDateTimePicker" => Object {
+    "defaultProps": Object {
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
+      "defaultValue": null,
+      "disabled": false,
+      "expanded": false,
+      "i18n": Object {
+        "absoluteLabel": "Absolute",
+        "applyBtnLabel": "Apply",
+        "backBtnLabel": "Back",
+        "calendarLabel": "Calendar",
+        "cancelBtnLabel": "Cancel",
+        "customRangeLabel": "Custom range",
+        "customRangeLinkLabel": "Custom Range",
+        "endTimeLabel": "End time",
+        "intervalLabels": Array [
+          "minutes",
+          "hours",
+          "days",
+          "weeks",
+          "months",
+          "years",
+        ],
+        "invalidNumberLabel": "Number is not valid",
+        "lastLabel": "Last",
+        "presetLabels": Array [
+          "Last 30 minutes",
+          "Last 1 hour",
+          "Last 6 hours",
+          "Last 12 hours",
+          "Last 24 hours",
+        ],
+        "relativeLabel": "Relative",
+        "relativeLabels": Array [
+          "Yesterday",
+          "Today",
+        ],
+        "relativeToLabel": "Relative to",
+        "startTimeLabel": "Start time",
+        "toLabel": "to",
+        "toNowLabel": "to Now",
+      },
+      "intervals": Array [
+        Object {
+          "label": "minutes",
+          "value": "MINUTES",
+        },
+        Object {
+          "label": "hours",
+          "value": "HOURS",
+        },
+        Object {
+          "label": "days",
+          "value": "DAYS",
+        },
+        Object {
+          "label": "weeks",
+          "value": "WEEKS",
+        },
+        Object {
+          "label": "months",
+          "value": "MONTHS",
+        },
+        Object {
+          "label": "years",
+          "value": "YEARS",
+        },
+      ],
+      "onApply": null,
+      "onCancel": null,
+      "presets": Array [
+        Object {
+          "label": "Last 30 minutes",
+          "offset": 30,
+        },
+        Object {
+          "label": "Last 1 hour",
+          "offset": 60,
+        },
+        Object {
+          "label": "Last 6 hours",
+          "offset": 360,
+        },
+        Object {
+          "label": "Last 12 hours",
+          "offset": 720,
+        },
+        Object {
+          "label": "Last 24 hours",
+          "offset": 1440,
+        },
+      ],
+      "relatives": Array [
+        Object {
+          "label": "Yesterday",
+          "value": "YESTERDAY",
+        },
+        Object {
+          "label": "Today",
+          "value": "TODAY",
+        },
+        Object {
+          "label": "",
+          "value": "",
+        },
+      ],
+      "showRelativeOption": true,
+    },
+    "propTypes": Object {
+      "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultValue": Object {
+        "args": Array [
+          Object {
+            "absolute": Object {
+              "args": Array [
+                Object {
+                  "endDate": Object {
+                    "args": Array [
+                      [Function],
+                    ],
+                    "type": "instanceOf",
+                  },
+                  "endTime": Object {
+                    "type": "string",
+                  },
+                  "startDate": Object {
+                    "args": Array [
+                      [Function],
+                    ],
+                    "type": "instanceOf",
+                  },
+                  "startTime": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "kind": Object {
+              "args": Array [
+                Array [
+                  "PRESET",
+                  "RELATIVE",
+                  "ABSOLUTE",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "preset": Object {
+              "args": Array [
+                Object {
+                  "label": Object {
+                    "type": "string",
+                  },
+                  "offset": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "relative": Object {
+              "args": Array [
+                Object {
+                  "lastInterval": Object {
+                    "type": "string",
+                  },
+                  "lastNumber": Object {
+                    "type": "number",
+                  },
+                  "relativeToTime": Object {
+                    "type": "string",
+                  },
+                  "relativeToWhen": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "expanded": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "absoluteLabel": Object {
+              "type": "string",
+            },
+            "applyBtnLabel": Object {
+              "type": "string",
+            },
+            "backBtnLabel": Object {
+              "type": "string",
+            },
+            "calendarLabel": Object {
+              "type": "string",
+            },
+            "cancelBtnLabel": Object {
+              "type": "string",
+            },
+            "customRangeLabel": Object {
+              "type": "string",
+            },
+            "customRangeLinkLabel": Object {
+              "type": "string",
+            },
+            "endTimeLabel": Object {
+              "type": "string",
+            },
+            "intervalLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "invalidNumberLabel": Object {
+              "type": "string",
+            },
+            "lastLabel": Object {
+              "type": "string",
+            },
+            "presetLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "relativeLabel": Object {
+              "type": "string",
+            },
+            "relativeLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "relativeToLabel": Object {
+              "type": "string",
+            },
+            "startTimeLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
+              "type": "string",
+            },
+            "toNowLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "intervals": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onApply": Object {
+        "type": "func",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "presets": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "offset": Object {
+                  "type": "number",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "relatives": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "showRelativeOption": Object {
+        "type": "bool",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
