@@ -105,6 +105,10 @@ const propTypes = {
   learnMoreText: PropTypes.string, // eslint-disable-line
   /** I18N label for dismiss */
   dismissText: PropTypes.string, // eslint-disable-line
+  /** `true` to make this menu item a divider. */
+  hasDivider: PropTypes.bool,
+  /** `true` to make this menu item a "danger button". */
+  isDelete: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -115,6 +119,8 @@ const defaultProps = {
   overflowMenuAria: 'More actions',
   inProgressText: 'In progress',
   onClearError: null,
+  hasDivider: false,
+  isDelete: false,
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -220,6 +226,8 @@ class RowActionsCell extends React.Component {
                           key={`${id}-row-actions-button-${action.id}`}
                           onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                           requireTitle
+                          hasDivider={action.hasDivider}
+                          isDelete={action.isDelete}
                           itemText={
                             action.renderIcon ? (
                               <OverflowMenuContent>
