@@ -73,10 +73,6 @@ const TimePickerSpinner = ({
       timeGroups.push('00');
     }
     let groupValue = Number(timeGroups[currentTimeGroup]);
-    if (Number.isNaN(groupValue)) {
-      groupValue = 0;
-    }
-
     const maxForGroup = currentTimeGroup === 0 ? (is12hour ? 12 : 23) : 59;
 
     if (direction === 'down') {
@@ -86,7 +82,11 @@ const TimePickerSpinner = ({
     }
 
     timeGroups[currentTimeGroup] = groupValue.toString().padStart(2, '0');
-    setPickerValue(timeGroups.join(':'));
+    const newValue = timeGroups.join(':');
+    setPickerValue(newValue);
+    if (onChange) {
+      onChange(newValue);
+    }
     window.setTimeout(() => {
       if (focusTarget) {
         focusTarget.selectionStart = keyUpOrDownPosition;
@@ -106,9 +106,12 @@ const TimePickerSpinner = ({
   };
 
   const onInputChange = e => {
-    setPickerValue(e.currentTarget.value);
+    const {
+      currentTarget: { value: currentValue },
+    } = e;
+    setPickerValue(currentValue);
     if (onChange) {
-      onChange(e);
+      onChange(currentValue, e);
     }
   };
 
@@ -125,11 +128,33 @@ const TimePickerSpinner = ({
     }
   };
 
+  const onInputBlur = e => {
+    const target = e.currentTarget;
+    const regex = /[^\d:]/g;
+    if (target.value.search(regex) > -1) {
+      setPickerValue(target.value.replace(regex, ''));
+    }
+  };
+
+  let lastSelectionStart = -1;
   const onInputKeyUp = e => {
     switch (e.keyCode) {
       case keyCodes.LEFT:
       case keyCodes.RIGHT:
         setCurrentTimeGroup(e.currentTarget.selectionStart <= 2 ? 0 : 1);
+
+        // this is to fix the event hijacking from sibling components, ie. DatePicker
+        // in this case we need to set the proper cursor position artificially
+        if (e.currentTarget.selectionStart === lastSelectionStart) {
+          if (e.keyCode === keyCodes.LEFT) {
+            e.currentTarget.selectionStart -= 1;
+          } else {
+            e.currentTarget.selectionStart += 1;
+          }
+          e.currentTarget.selectionEnd = e.currentTarget.selectionStart;
+        }
+        lastSelectionStart = e.currentTarget.selectionStart;
+
         break;
       case keyCodes.UP:
         handleArrowClick('up');
@@ -182,6 +207,7 @@ const TimePickerSpinner = ({
         value={pickerValue}
         onKeyDown={onInputKeyDown}
         onKeyUp={onInputKeyUp}
+        onBlur={onInputBlur}
         disabled={disabled}
         {...others}
       >
