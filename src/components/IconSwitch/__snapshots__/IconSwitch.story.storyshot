@@ -38,17 +38,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
           height={20}
           preserveAspectRatio="xMidYMid meet"
           role="img"
-          style={
-            Object {
-              "willChange": "transform",
-            }
-          }
           viewBox="0 0 32 32"
           width={20}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M10 6h18v2H10zm0 18h18v2H10zm0-9h18v2H10zm-6 0h2v2H4zm0-9h2v2H4zm0 18h2v2H4z"
+          <rect
+            height="2"
+            width="18"
+            x="10"
+            y="6"
+          />
+          <rect
+            height="2"
+            width="18"
+            x="10"
+            y="24"
+          />
+          <rect
+            height="2"
+            width="18"
+            x="10"
+            y="15"
+          />
+          <rect
+            height="2"
+            width="2"
+            x="4"
+            y="15"
+          />
+          <rect
+            height="2"
+            width="2"
+            x="4"
+            y="6"
+          />
+          <rect
+            height="2"
+            width="2"
+            x="4"
+            y="24"
           />
         </svg>
       </button>
@@ -73,17 +101,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
           height={20}
           preserveAspectRatio="xMidYMid meet"
           role="img"
-          style={
-            Object {
-              "willChange": "transform",
-            }
-          }
           viewBox="0 0 32 32"
           width={20}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M31 16l-7 7-1.41-1.41L28.17 16l-5.58-5.59L24 9l7 7zM1 16l7-7 1.41 1.41L3.83 16l5.58 5.59L8 23l-7-7zm11.42 9.484L17.64 6l1.932.517L14.352 26z"
+          <polygon
+            points="31 16 24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16"
+          />
+          <polygon
+            points="1 16 8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16"
+          />
+          <rect
+            height="2"
+            transform="rotate(-75 15.996 16)"
+            width="20.17"
+            x="5.91"
+            y="15"
           />
         </svg>
       </button>
@@ -148,17 +181,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
         height={20}
         preserveAspectRatio="xMidYMid meet"
         role="img"
-        style={
-          Object {
-            "willChange": "transform",
-          }
-        }
         viewBox="0 0 32 32"
         width={20}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M10 6h18v2H10zm0 18h18v2H10zm0-9h18v2H10zm-6 0h2v2H4zm0-9h2v2H4zm0 18h2v2H4z"
+        <rect
+          height="2"
+          width="18"
+          x="10"
+          y="6"
+        />
+        <rect
+          height="2"
+          width="18"
+          x="10"
+          y="24"
+        />
+        <rect
+          height="2"
+          width="18"
+          x="10"
+          y="15"
+        />
+        <rect
+          height="2"
+          width="2"
+          x="4"
+          y="15"
+        />
+        <rect
+          height="2"
+          width="2"
+          x="4"
+          y="6"
+        />
+        <rect
+          height="2"
+          width="2"
+          x="4"
+          y="24"
         />
       </svg>
     </button>
@@ -222,17 +283,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/IconS
         height={20}
         preserveAspectRatio="xMidYMid meet"
         role="img"
-        style={
-          Object {
-            "willChange": "transform",
-          }
-        }
         viewBox="0 0 32 32"
         width={20}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M10 6h18v2H10zm0 18h18v2H10zm0-9h18v2H10zm-6 0h2v2H4zm0-9h2v2H4zm0 18h2v2H4z"
+        <rect
+          height="2"
+          width="18"
+          x="10"
+          y="6"
+        />
+        <rect
+          height="2"
+          width="18"
+          x="10"
+          y="24"
+        />
+        <rect
+          height="2"
+          width="18"
+          x="10"
+          y="15"
+        />
+        <rect
+          height="2"
+          width="2"
+          x="4"
+          y="15"
+        />
+        <rect
+          height="2"
+          width="2"
+          x="4"
+          y="6"
+        />
+        <rect
+          height="2"
+          width="2"
+          x="4"
+          y="24"
         />
       </svg>
     </button>
