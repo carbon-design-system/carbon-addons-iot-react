@@ -27,3 +27,9 @@ table.#{$prefix}--side-nav--data-table {
     overflow-x: auto;
   }
 }
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--expanded-tablerow > td * {
+    text-align: right;
+  }
+}

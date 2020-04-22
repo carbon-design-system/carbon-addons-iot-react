@@ -488,7 +488,7 @@ const TableBodyRow = ({
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
-          <StyledExpansionTableRow>
+          <StyledExpansionTableRow className={`${iotPrefix}--expanded-tablerow`}>
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </StyledExpansionTableRow>
         )}
