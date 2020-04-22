@@ -68,7 +68,7 @@ describe('TileGallery tests', () => {
 
     const wrapper = mount(<TileGalleryItem title="title" mode="grid" onClick={onClick} />);
 
-    wrapper.find('a.bx--link').simulate('click', { target: {} });
+    wrapper.simulate('click', { target: {} });
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });

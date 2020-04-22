@@ -140,17 +140,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <rect
+                  height="2"
+                  width="28"
+                  x="2"
+                  y="26"
+                />
                 <path
-                  d="M2 27h28v2H2zM25.41 9a2 2 0 0 0 0-2.83l-3.58-3.58a2 2 0 0 0-2.83 0l-15 15V24h6.41zm-5-5L24 7.59l-3 3L17.41 7zM6 22v-3.59l10-10L19.59 12l-10 10z"
+                  d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                 />
               </svg>
             </div>
@@ -174,20 +175,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M12 12h2v12h-2zm6 0h2v12h-2z"
+                <rect
+                  height="12"
+                  width="2"
+                  x="12"
+                  y="12"
+                />
+                <rect
+                  height="12"
+                  width="2"
+                  x="18"
+                  y="12"
                 />
                 <path
-                  d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z"
+                  d="M4,6V8H6V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V8h2V6ZM8,28V8H24V28Z"
+                />
+                <rect
+                  height="2"
+                  width="8"
+                  x="12"
+                  y="2"
                 />
               </svg>
             </div>
@@ -372,17 +383,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     onClick={[Function]}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
+                    viewBox="0 0 32 32"
                     width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"
+                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
                     />
                     <title>
                       Icon description
@@ -504,17 +510,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     onClick={[Function]}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
-                    viewBox="0 0 16 16"
+                    viewBox="0 0 32 32"
                     width={16}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13,2h-2V1h-1v1H6V1H5v1H3C2.4,2,2,2.4,2,3v10c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1V3C14,2.4,13.6,2,13,2z M13,13H3V6h10V13z M13,5H3V3h2v1h1V3h4v1h1V3h2V5z"
+                      d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
                     />
                     <title>
                       Icon description
@@ -547,17 +548,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <rect
+                  height="2"
+                  width="28"
+                  x="2"
+                  y="26"
+                />
                 <path
-                  d="M2 27h28v2H2zM25.41 9a2 2 0 0 0 0-2.83l-3.58-3.58a2 2 0 0 0-2.83 0l-15 15V24h6.41zm-5-5L24 7.59l-3 3L17.41 7zM6 22v-3.59l10-10L19.59 12l-10 10z"
+                  d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                 />
               </svg>
             </div>
@@ -581,20 +583,30 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M12 12h2v12h-2zm6 0h2v12h-2z"
+                <rect
+                  height="12"
+                  width="2"
+                  x="12"
+                  y="12"
+                />
+                <rect
+                  height="12"
+                  width="2"
+                  x="18"
+                  y="12"
                 />
                 <path
-                  d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20zm4-26h8v2h-8z"
+                  d="M4,6V8H6V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V8h2V6ZM8,28V8H24V28Z"
+                />
+                <rect
+                  height="2"
+                  width="8"
+                  x="12"
+                  y="2"
                 />
               </svg>
             </div>
@@ -618,17 +630,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M28.59 13.31L30 11.9 20 2l-1.31 1.42 1.18 1.18-11.49 9.72-1.72-1.71L5.25 14l5.66 5.68L2 28.58 3.41 30l8.91-8.91L18 26.75l1.39-1.42-1.71-1.71 9.72-11.49zM16.26 22.2L9.8 15.74 21.29 6 26 10.71z"
+                  d="M28.59,13.31,30,11.9,20,2,18.69,3.42,19.87,4.6,8.38,14.32,6.66,12.61,5.25,14l5.66,5.68L2,28.58,3.41,30l8.91-8.91L18,26.75l1.39-1.42-1.71-1.71L27.4,12.13ZM16.26,22.2,9.8,15.74,21.29,6,26,10.71Z"
                 />
               </svg>
             </div>
