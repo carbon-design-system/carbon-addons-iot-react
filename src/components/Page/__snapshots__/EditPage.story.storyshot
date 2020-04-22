@@ -498,7 +498,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             "minWidth": "30rem",
           }
         }
-        timeout={0}
       >
         <svg
           aria-hidden={true}
@@ -506,11 +505,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           focusable="false"
           height={20}
           preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "willChange": "transform",
-            }
-          }
           viewBox="0 0 20 20"
           width={20}
           xmlns="http://www.w3.org/2000/svg"
@@ -524,7 +518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             opacity="0"
           />
           <title>
-            
+            warning icon
           </title>
         </svg>
         <div
