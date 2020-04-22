@@ -81,8 +81,6 @@
     transition: background-color $duration--fast-01 carbon--motion(standard);
     .#{$iot-prefix}--date-time-picker__field {
       background: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       appearance: none;
       border: 0;
       width: 100%;
