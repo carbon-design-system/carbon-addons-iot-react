@@ -71,23 +71,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -106,21 +101,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                 />
                 <path
-                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                 />
               </svg>
             </button>
@@ -234,23 +224,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -269,21 +254,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                 />
                 <path
-                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                 />
               </svg>
             </button>
@@ -566,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   className="bx--batch-summary__cancel bx--btn bx--btn--primary"
                   disabled={false}
                   onClick={[Function]}
-                  tabIndex={0}
+                  tabIndex={-1}
                   type="button"
                 >
                   Cancel
@@ -619,23 +599,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       onKeyDown={[Function]}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                        d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                      />
+                      <polygon
+                        points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                       />
                       <path
-                        d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                      />
-                      <path
-                        d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                        d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                       />
                       <title>
                         open and close list of options
@@ -654,21 +629,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     height={20}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     title="Expand to fullscreen"
                     viewBox="0 0 32 32"
                     width={20}
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                      d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                     />
                     <path
-                      d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                      d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                     />
                   </svg>
                 </button>
@@ -882,29 +852,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 16 16"
+                viewBox="0 0 32 32"
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <circle
-                  cx="8"
-                  cy="3"
-                  r="1"
-                />
-                <circle
-                  cx="8"
+                  cx="16"
                   cy="8"
-                  r="1"
+                  r="2"
                 />
                 <circle
-                  cx="8"
-                  cy="13"
-                  r="1"
+                  cx="16"
+                  cy="16"
+                  r="2"
+                />
+                <circle
+                  cx="16"
+                  cy="24"
+                  r="2"
                 />
                 <title>
                   open and close list of options
@@ -1008,21 +973,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                 />
                 <path
-                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                 />
               </svg>
             </button>
@@ -1196,23 +1156,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1305,23 +1260,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1414,23 +1364,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1523,23 +1468,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1632,23 +1572,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1741,23 +1676,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1850,23 +1780,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -1974,7 +1899,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               
               <div
                 aria-describedby={null}
-                aria-haspopup="true"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -1992,17 +1916,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
                   role={null}
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <polygon
+                    points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
+                  />
                   <path
-                    d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                    d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
                   />
                   <path
                     d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -2038,23 +1960,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -2073,21 +1990,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 title="Expand to fullscreen"
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M28 4H10a2.006 2.006 0 0 0-2 2v14a2.006 2.006 0 0 0 2 2h18a2.006 2.006 0 0 0 2-2V6a2.006 2.006 0 0 0-2-2zm0 16H10V6h18z"
+                  d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
                 />
                 <path
-                  d="M18 26H4V16h2v-2H4a2.006 2.006 0 0 0-2 2v10a2.006 2.006 0 0 0 2 2h14a2.006 2.006 0 0 0 2-2v-2h-2z"
+                  d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
                 />
               </svg>
             </button>
@@ -2201,23 +2113,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options
@@ -2464,23 +2371,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   onKeyDown={[Function]}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M21 30a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"
+                    d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                  />
+                  <polygon
+                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
                   />
                   <path
-                    d="M22.59 25L20 22.41V18h2v3.59l2 2L22.59 25z"
-                  />
-                  <path
-                    d="M28 6a2 2 0 0 0-2-2h-4V2h-2v2h-8V2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h4v-2H6V6h4v2h2V6h8v2h2V6h4v6h2z"
+                    d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                   />
                   <title>
                     open and close list of options

@@ -764,7 +764,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
               
               <div
                 aria-describedby={null}
-                aria-haspopup="true"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -780,20 +779,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                  <polygon
+                    points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
                   />
                   <path
-                    d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                    d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
+                  />
+                  <path
+                    d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
                   />
                 </svg>
               </div>
@@ -928,7 +925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
               
               <div
                 aria-describedby={null}
-                aria-haspopup="true"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -944,20 +940,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                  <polygon
+                    points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
                   />
                   <path
-                    d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                    d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
+                  />
+                  <path
+                    d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
                   />
                 </svg>
               </div>
@@ -1036,7 +1030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
             "minWidth": "30rem",
           }
         }
-        timeout={0}
       >
         <svg
           aria-hidden={true}
@@ -1044,11 +1037,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
           focusable="false"
           height={20}
           preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "willChange": "transform",
-            }
-          }
           viewBox="0 0 20 20"
           width={20}
           xmlns="http://www.w3.org/2000/svg"
@@ -1062,7 +1050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hero 
             opacity="0"
           />
           <title>
-            
+            warning icon
           </title>
         </svg>
         <div
