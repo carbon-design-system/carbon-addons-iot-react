@@ -11,7 +11,7 @@ const timePickerProps = {
   onChange: jest.fn(),
 };
 
-describe('TimePicker tests', () => {
+describe('TimePickerSpinner tests', () => {
   jest.useFakeTimers();
 
   test('show/hide spinner', () => {
@@ -39,6 +39,7 @@ describe('TimePicker tests', () => {
 
     wrapper.find('input').simulate('focus');
     wrapper.find('input').simulate('keyup', { keyCode: keyCodes.LEFT });
+    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.RIGHT });
     wrapper.find('input').simulate('keyup', { keyCode: keyCodes.UP });
     wrapper.find('input').simulate('keyup', { keyCode: keyCodes.ESC });
     expect(wrapper.find('input').props().value).toEqual('01:00');
@@ -55,6 +56,10 @@ describe('TimePicker tests', () => {
 
   test('work with strings', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} value="xyz" spinner />);
+
+    wrapper.find('input').simulate('blur');
+
+    expect(wrapper.find('input').props().value).toEqual('');
 
     wrapper
       .find('.iot--time-picker__controls--btn.down-icon')

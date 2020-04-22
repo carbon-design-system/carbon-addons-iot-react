@@ -5,16 +5,42 @@
   .#{$prefix}--skeleton .#{$prefix}--progress-step {
     flex: unset;
   }
+
+  &.#{$prefix}--progress--vertical {
+    .#{$prefix}--progress-label {
+      text-align: left;
+    }
+
+    .#{$prefix}--progress-step-button {
+      padding: 0 $spacing-03;
+      text-align: left;
+      width: 100%;
+
+      .#{$prefix}--progress-step--current svg,
+      svg {
+        margin-left: 0;
+        width: 1rem;
+      }
+
+      .#{$prefix}--progress-label {
+        max-width: calc(100% - 2.2rem);
+      }
+    }
+
+    .#{$prefix}--progress-line {
+      top: 0;
+    }
+  }
 }
 
 html[dir='rtl'] {
   .#{$iot-prefix}--progress-indicator {
     .#{$prefix}--progress-step svg {
       margin-right: 0;
-      margin-left: 0.5rem;
+      margin-left: $spacing-03;
     }
     .#{$prefix}--progress-optional {
-      margin-right: 1.5rem;
+      margin-right: $spacing-06;
       margin-left: 0;
       right: 0;
       left: unset;
@@ -31,6 +57,6 @@ html[dir='rtl'] {
   // for the skeleton
   .#{$prefix}--progress-step--incomplete svg {
     margin-right: 0;
-    margin-left: 0.5rem;
+    margin-left: $spacing-03;
   }
 }

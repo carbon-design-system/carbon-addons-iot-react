@@ -22,7 +22,6 @@ const StyledNavigationContainer = styled.div`
       @media (min-width: 42em) {
         a.bx--tabs__nav-link {
           height: 100%;
-          line-height: calc(3rem - 1.125rem);
         }
       }
     }

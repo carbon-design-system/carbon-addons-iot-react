@@ -82,3 +82,36 @@
     display: none;
   }
 }
+
+.#{$prefix}--header__menu-item:not(svg) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: $shell-header-text-02;
+  padding: 0 mini-units(2);
+  // Used for links that are directly in the menubar to span the full height
+  height: 100%;
+  // Text styles
+  font-size: rem(14px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: rem(18px);
+  // Reset link styles and make sure the text isn't selectable
+  text-decoration: none;
+  user-select: none;
+  // Used for focus styles
+  border: 2px solid transparent;
+  transition: background-color $duration--fast-02, border-color $duration--fast-02,
+    color $duration--fast-02;
+}
+
+button.#{$prefix}--header__menu-item {
+  background: none;
+  width: 100%;
+
+  &:focus {
+    border-color: #fff;
+    color: #f4f4f4;
+    outline: none;
+  }
+}
