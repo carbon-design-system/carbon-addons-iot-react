@@ -29,6 +29,7 @@
 .#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background,
 .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
   opacity: 1;
+  transition: opacity $duration--fast-02 motion(entrance, productive);
 }
 
 .#{$prefix}--data-table tbody tr {
