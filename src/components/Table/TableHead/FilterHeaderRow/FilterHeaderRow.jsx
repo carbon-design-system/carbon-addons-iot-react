@@ -309,6 +309,7 @@ class FilterHeaderRow extends Component {
 
             return (
               <StyledTableHeader
+                className={`${iotPrefix}--tableheader-filter`}
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}

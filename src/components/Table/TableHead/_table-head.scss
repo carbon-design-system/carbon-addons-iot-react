@@ -11,6 +11,7 @@
   .#{$prefix}--table-header-label {
     display: flex;
     user-select: none;
+    overflow: hidden;
   }
   .column-header__btn {
     margin: 0 $spacing-05 $spacing-05 0;
@@ -69,23 +70,8 @@
   .#{$iot-prefix}--table-header-row-action-column {
     min-width: 40px;
   }
-}
 
-.#{$iot-prefix}--filterheader-combo .#{$prefix}--list-box__field {
-  overflow: visible;
-}
-
-html[dir='rtl'] {
-  .#{$iot-prefix}--column-header {
-    padding: calc(0.375rem - 3px) $spacing-05 calc(0.375rem - 3px) 3.75rem;
-
-    svg {
-      left: $spacing-05;
-      right: auto;
-    }
-  }
-
-  .#{$prefix}--list-box__menu-item__option {
-    text-align: right;
+  .#{$iot-prefix}--tableheader-filter > #{$prefix}--table-header-label {
+    overflow: visible;
   }
 }
