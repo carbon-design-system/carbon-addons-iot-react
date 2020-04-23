@@ -22,7 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-0 isjrOb"
+            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fAdmMh"
             onClick={[Function]}
           >
             <td
@@ -81,7 +81,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -172,7 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
             onClick={[Function]}
           >
             <td
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -322,7 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
             onClick={[Function]}
           >
             <td
@@ -397,7 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -458,7 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -549,7 +549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -610,7 +610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 fZFuiw"
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -649,7 +649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="More actions"
-                    className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eSvzkA bx--overflow-menu"
+                    className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eOkQBK bx--overflow-menu"
                     data-testid="tableId-rowId-row-actions-cell-overflow"
                     id="tableId-rowId-row-actions-cell-overflow"
                     onClick={[Function]}
@@ -752,7 +752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -813,7 +813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 eQPybn"
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -920,7 +920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 iObQTv"
+            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -981,7 +981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 eQPybn"
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
               >
                 <div
                   className="iot--row-actions-container__background"
