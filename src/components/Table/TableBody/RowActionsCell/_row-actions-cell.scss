@@ -34,7 +34,7 @@
 
 .#{$prefix}--data-table tbody tr {
   &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
-    @include backgroundGradient(#ffffff);
+    @include backgroundGradient($ui-01);
   }
 
   &.bx--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
