@@ -113,6 +113,7 @@ export const mockActions = {
     onApplyBatchAction: jest.fn(),
     onApplySearch: jest.fn(),
     onDownloadCSV: jest.fn(),
+    onShowRowEdit: jest.fn(),
   },
   table: {
     onRowSelected: jest.fn(),
@@ -335,6 +336,44 @@ describe('Table', () => {
     expect(filterButton).toBeTruthy();
     fireEvent.keyDown(filterButton, { keyCode: keyCodes.ENTER });
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
+  });
+
+  test('enter key or mouse click should trigger rowEdit toolbar', () => {
+    const { getByTestId } = render(
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={{ hasRowEdit: true }}
+        tableState={tableState}
+      />
+    );
+
+    const rowEditButton = getByTestId('row-edit-button');
+    expect(rowEditButton).toBeTruthy();
+    fireEvent.keyDown(rowEditButton, { keyCode: keyCodes.ESC });
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(0);
+
+    fireEvent.keyDown(rowEditButton, { keyCode: keyCodes.ENTER });
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(rowEditButton);
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(2);
+  });
+
+  test('rowEdit toolbar should contain external rowEditBarButtons', () => {
+    const { getByTestId } = render(
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={{ hasRowEdit: true }}
+        tableState={{
+          ...tableState,
+          activeBar: 'rowEdit',
+          rowEditBarButtons: <button type="button" data-testid="row-edit-bar-button" />,
+        }}
+      />
+    );
+
+    const rowEditBarButton = getByTestId('row-edit-bar-button');
+    expect(rowEditBarButton).toBeTruthy();
   });
 
   test('toolbar search should render with default value', () => {

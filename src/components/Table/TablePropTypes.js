@@ -224,3 +224,6 @@ export const TableSearchPropTypes = PropTypes.shape({
   onChange: PropTypes.func,
   onExpand: PropTypes.func,
 });
+
+/** Which toolbar is currently active */
+export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);

@@ -8,7 +8,8 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
 import Delete from '@carbon/icons-react/lib/delete/20';
 import { Add20 } from '@carbon/icons-react';
-import { Tooltip } from 'carbon-components-react';
+import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
+import cloneDeep from 'lodash/cloneDeep';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -310,6 +311,7 @@ const actions = {
   toolbar: {
     onApplyFilter: action('onApplyFilter'),
     onToggleFilter: action('onToggleFilter'),
+    onShowRowEdit: action('onShowRowEdit'),
     onToggleColumnSelection: action('onToggleColumnSelection'),
     /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
     onClearAllFilters: action('onClearAllFilters'),
@@ -379,6 +381,7 @@ export const initialState = {
     hasRowActions: true,
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
+    hasRowEdit: true,
     wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
   },
   view: {
@@ -419,6 +422,7 @@ export const initialState = {
           iconDescription: 'Delete',
         },
       ],
+      rowEditBarButtons: <div>App implementation of rowEdit bar buttons expected</div>,
     },
   },
 };
@@ -665,6 +669,191 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
+    'Basic table with full rowEdit example',
+    () => {
+      return React.createElement(() => {
+        const [showRowEditBar, setShowRowEditBar] = useState(false);
+        const [currentData, setCurrentData] = useState(tableData);
+        const [rowEditedData, setRowEditedData] = useState([]);
+        const [previousData, setPreviousData] = useState([]);
+        const [showToast, setShowToast] = useState(false);
+
+        const onDataChange = (e, columnId, rowId) => {
+          const newValue = e.currentTarget ? e.currentTarget.value : e;
+          rowEditedData.find(row => row.id === rowId).values[columnId] = newValue;
+        };
+
+        const onShowRowEdit = () => {
+          setRowEditedData(cloneDeep(currentData));
+          setShowRowEditBar(true);
+          setShowToast(false);
+        };
+        const onCancelRowEdit = () => {
+          setRowEditedData([]);
+          setShowRowEditBar(false);
+        };
+        const onSaveRowEdit = () => {
+          setShowToast(true);
+          setPreviousData(currentData);
+          setCurrentData(rowEditedData);
+          setRowEditedData([]);
+          setShowRowEditBar(false);
+        };
+        const onUndoRowEdit = () => {
+          setCurrentData(previousData);
+          setPreviousData([]);
+          setShowToast(false);
+        };
+
+        // The app should handle i18n and button enable state, e.g. that the save button
+        // is disabled when the input controls are pristine.
+        const rowEditBarButtons = (
+          <React.Fragment>
+            <Button
+              key="cancel"
+              style={{ marginRight: '8px' }}
+              size="small"
+              kind="tertiary"
+              onClick={onCancelRowEdit}
+            >
+              Cancel
+            </Button>
+            <Button key="save" size="small" onClick={onSaveRowEdit}>
+              Save
+            </Button>
+          </React.Fragment>
+        );
+
+        // This is a simplified example.
+        // The app should handle input validation and types like dates, select etc
+        const editDataFunction = ({ value, columnId, rowId }) => {
+          const id = `${columnId}-${rowId}`;
+          return React.isValidElement(value) ? (
+            value
+          ) : typeof value === 'boolean' ? (
+            <Checkbox
+              defaultChecked={value}
+              id={id}
+              labelText=""
+              hideLabel
+              onChange={e => onDataChange(e, columnId, rowId)}
+            />
+          ) : (
+            <TextInput
+              id={id}
+              onChange={e => onDataChange(e, columnId, rowId)}
+              type="text"
+              light
+              defaultValue={value}
+              labelText=""
+              hideLabel
+            />
+          );
+        };
+
+        const myToast = (
+          <ToastNotification
+            style={{ position: 'absolute', zIndex: '1' }}
+            hideCloseButton={false}
+            kind="success"
+            notificationType="inline"
+            role="alert"
+            subtitle={
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <span>Changed your mind?</span>
+                <Button
+                  style={{ color: 'white', marginLeft: '12px' }}
+                  kind="ghost"
+                  onClick={onUndoRowEdit}
+                  size="small"
+                  type="button"
+                >
+                  Undo edits
+                </Button>
+              </div>
+            }
+            timeout={5000}
+            title="Your changes have been saved."
+          />
+        );
+
+        return (
+          <div>
+            {showToast ? myToast : null}
+            <Table
+              secondaryTitle="My editable table"
+              view={{
+                toolbar: {
+                  activeBar: showRowEditBar ? 'rowEdit' : undefined,
+                  rowEditBarButtons,
+                },
+              }}
+              data={currentData}
+              actions={{
+                table: {},
+                toolbar: { onShowRowEdit },
+              }}
+              options={{ hasRowEdit: true }}
+              columns={tableColumns.map(i => ({ ...i, editDataFunction }))}
+            />
+          </div>
+        );
+      });
+    },
+    {
+      info: {
+        text: `
+
+        This table has editable rows. It is wrapped in a component that handles the state of the table data and 
+        the active bar to serve as a simple example of how to use the 'hasRowEdit' functionality with your own data store.
+
+        Each column that should have editable row cells must have an editDataFunction prop defined.
+
+        <br />
+
+        ~~~js
+
+        view = {
+          toolbar: {
+            activeBar: // conditionally set to 'rowEdit' using onShowRowEdit action
+            rowEditBarButtons: // JSX to show save and cancel buttons in the rowEdit bar
+          }
+        }
+
+        actions = {
+          toolbar: { onShowRowEdit: () => {
+            // Update your state
+          } },
+        }        
+
+        options = {
+          hasRowEdit: true,
+          columns={columns.map(i => ({
+            ...i,
+            editDataFunction: () => { 
+              // Your edit data function here.. 
+            },
+          }))}          
+        }
+
+        The editDataFunction is called with this payload
+        {
+           value: PropTypes.any (current cell value),
+           columnId: PropTypes.string,
+           rowId: PropTypes.string,
+           row: the full data for this rowPropTypes.object like this {col: value, col2: value}
+        }
+        ~~~
+
+        <br />
+
+        `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
     'basic `dumb` table',
     () => (
       <Table
@@ -675,6 +864,7 @@ storiesOf('Watson IoT/Table', module)
           hasSearch: boolean('hasSearch', false),
           hasFilter: boolean('hasFilter', false),
           hasPagination: boolean('hasPagination', false),
+          hasRowEdit: boolean('hasRowEdit', false),
         }}
       />
     ),

@@ -17,6 +17,7 @@ import {
   TableSearchPropTypes,
   I18NPropTypes,
   RowActionsStatePropTypes,
+  ActiveTableToolbarPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -82,7 +83,7 @@ const propTypes = {
     ),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
-      activeBar: PropTypes.oneOf(['filter', 'column']),
+      activeBar: ActiveTableToolbarPropType,
       /** optional content to render inside the toolbar  */
       customToolbarContent: PropTypes.node,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
@@ -98,6 +99,8 @@ const propTypes = {
       search: TableSearchPropTypes,
       /** is the toolbar currently disabled */
       isDisabled: PropTypes.bool,
+      /** buttons to be shown with when activeBar is 'rowEdit' */
+      rowEditBarButtons: PropTypes.node,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -134,6 +137,7 @@ const propTypes = {
     toolbar: PropTypes.shape({
       onApplyFilter: PropTypes.func,
       onToggleFilter: PropTypes.func,
+      onShowRowEdit: PropTypes.func,
       onToggleColumnSelection: PropTypes.func,
       /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
@@ -217,6 +221,7 @@ export const defaultProps = baseProps => ({
     pagination: { onChangePage: defaultFunction('actions.pagination.onChangePage') },
     toolbar: {
       onToggleFilter: defaultFunction('actions.toolbar.onToggleFilter'),
+      onShowRowEdit: defaultFunction('actions.toolbar.onShowRowEdit'),
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
@@ -352,6 +357,8 @@ const Table = props => {
       !isNil(view.toolbar.search.value) &&
       view.toolbar.search.value !== '');
 
+  const rowEditMode = view.toolbar.activeBar === 'rowEdit';
+
   return (
     <TableContainer
       style={style}
@@ -363,6 +370,7 @@ const Table = props => {
       options.hasRowActions ||
       options.hasRowCountInHeader ||
       options.hasColumnSelection ||
+      options.hasRowEdit ||
       actions.toolbar.onDownloadCSV ||
       secondaryTitle ||
       view.toolbar.customToolbarContent ||
@@ -393,6 +401,7 @@ const Table = props => {
             'onClearAllFilters',
             'onToggleColumnSelection',
             'onToggleFilter',
+            'onShowRowEdit',
             'onApplySearch',
             'onDownloadCSV'
           )}
@@ -402,7 +411,8 @@ const Table = props => {
             'hasFilter',
             'hasSearch',
             'hasRowSelection',
-            'hasRowCountInHeader'
+            'hasRowCountInHeader',
+            'hasRowEdit'
           )}
           tableState={{
             totalSelected: view.table.selectedIds.length,
@@ -414,6 +424,7 @@ const Table = props => {
               'search',
               'activeBar',
               'customToolbarContent',
+              'rowEditBarButtons',
               'isDisabled'
             ),
           }}
@@ -514,6 +525,7 @@ const Table = props => {
               wrapCellText={options.wrapCellText}
               truncateCellText={useCellTextTruncate}
               ordering={view.table.ordering}
+              rowEditMode={rowEditMode}
               actions={pick(
                 actions.table,
                 'onRowSelected',
@@ -561,6 +573,7 @@ const Table = props => {
           itemRangeText={i18n.itemsRangeWithTotal}
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
+          preventInteraction={rowEditMode}
         />
       ) : null}
     </TableContainer>

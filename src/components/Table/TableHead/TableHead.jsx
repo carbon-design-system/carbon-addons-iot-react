@@ -8,7 +8,12 @@ import isEmpty from 'lodash/isEmpty';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
-import { TableColumnsPropTypes, I18NPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
+import {
+  TableColumnsPropTypes,
+  I18NPropTypes,
+  defaultI18NPropTypes,
+  ActiveTableToolbarPropType,
+} from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
@@ -51,7 +56,7 @@ const propTypes = {
   /** Current state of the table */
   tableState: PropTypes.shape({
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter']),
+    activeBar: ActiveTableToolbarPropType,
     /** What's currently selected in the table? */
     selection: PropTypes.shape({
       isSelectAllIndeterminate: PropTypes.bool,
@@ -158,6 +163,7 @@ const TableHead = ({
   i18n,
 }) => {
   const filterBarActive = activeBar === 'filter';
+  const rowEditBarActive = activeBar === 'rowEdit';
   const initialColumnWidths = {};
   const columnRef = generateOrderedColumnRefs(ordering);
   const columnResizeRefs = generateOrderedColumnRefs(ordering);
@@ -256,6 +262,7 @@ const TableHead = ({
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
+              disabled={rowEditBarActive}
               id="select-all"
               labelText={selectAllText}
               hideLabel
@@ -277,7 +284,7 @@ const TableHead = ({
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
-              isSortable={matchingColumnMeta.isSortable}
+              isSortable={matchingColumnMeta.isSortable && !rowEditBarActive}
               isSortHeader={hasSort}
               ref={columnRef[matchingColumnMeta.id]}
               thStyle={{
