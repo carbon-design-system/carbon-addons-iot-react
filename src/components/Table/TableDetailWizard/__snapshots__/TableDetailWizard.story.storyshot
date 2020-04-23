@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 fSDZCW"
+          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -316,7 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 fSDZCW"
+          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -591,7 +591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 fSDZCW"
+          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
