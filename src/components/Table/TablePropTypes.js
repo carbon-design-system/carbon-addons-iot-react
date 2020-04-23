@@ -23,6 +23,8 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     labelText: PropTypes.string,
     /** Action should go into the overflow menu, not be rendered inline in the row */
     isOverflow: PropTypes.bool,
+    hasDivider: PropTypes.bool,
+    isDelete: PropTypes.bool,
   })
 );
 

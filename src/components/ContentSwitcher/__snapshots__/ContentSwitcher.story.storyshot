@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ContentSwitcher icons 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--content-switcher iot--content-switcher--icon"
+      onChange={[Function]}
+      role="tablist"
+    >
+      <button
+        className="iot--icon-switch iot--icon-switch--default bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+        disabled={false}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="bx--assistive-text"
+        >
+          Graphical View
+        </span>
+        <svg
+          aria-hidden="true"
+          aria-label="Graphical View"
+          className="bx--btn__icon"
+          focusable="false"
+          height={20}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          style={
+            Object {
+              "willChange": "transform",
+            }
+          }
+          viewBox="0 0 32 32"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 6h18v2H10zm0 18h18v2H10zm0-9h18v2H10zm-6 0h2v2H4zm0-9h2v2H4zm0 18h2v2H4z"
+          />
+        </svg>
+      </button>
+      <button
+        className="iot--icon-switch iot--icon-switch--default iot--icon-switch--unselected bx--btn bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top"
+        disabled={false}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="bx--assistive-text"
+        >
+          Source View
+        </span>
+        <svg
+          aria-hidden="true"
+          aria-label="Source View"
+          className="bx--btn__icon"
+          focusable="false"
+          height={20}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          style={
+            Object {
+              "willChange": "transform",
+            }
+          }
+          viewBox="0 0 32 32"
+          width={20}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M31 16l-7 7-1.41-1.41L28.17 16l-5.58-5.59L24 9l7 7zM1 16l7-7 1.41 1.41L3.83 16l5.58 5.59L8 23l-7-7zm11.42 9.484L17.64 6l1.932.517L14.352 26z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

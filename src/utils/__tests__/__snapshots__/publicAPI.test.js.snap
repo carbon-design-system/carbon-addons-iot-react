@@ -22,7 +22,6 @@ Map {
       "onClick": [Function],
       "onHeadingClick": [Function],
       "open": false,
-      "renderExpando": [Function],
       "title": null,
     },
     "propTypes": Object {
@@ -641,9 +640,15 @@ Map {
                           "disabled": Object {
                             "type": "bool",
                           },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
                           },
                           "isOverflow": Object {
                             "type": "bool",
@@ -1931,9 +1936,15 @@ Map {
                           "disabled": Object {
                             "type": "bool",
                           },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
                           },
                           "isOverflow": Object {
                             "type": "bool",
@@ -4293,6 +4304,339 @@ Map {
       },
       "value": Object {
         "type": "string",
+      },
+    },
+  },
+  "__unstableDateTimePicker" => Object {
+    "defaultProps": Object {
+      "dateTimeMask": "YYYY-MM-DD HH:mm",
+      "defaultValue": null,
+      "disabled": false,
+      "expanded": false,
+      "i18n": Object {
+        "absoluteLabel": "Absolute",
+        "applyBtnLabel": "Apply",
+        "backBtnLabel": "Back",
+        "calendarLabel": "Calendar",
+        "cancelBtnLabel": "Cancel",
+        "customRangeLabel": "Custom range",
+        "customRangeLinkLabel": "Custom Range",
+        "endTimeLabel": "End time",
+        "intervalLabels": Array [
+          "minutes",
+          "hours",
+          "days",
+          "weeks",
+          "months",
+          "years",
+        ],
+        "invalidNumberLabel": "Number is not valid",
+        "lastLabel": "Last",
+        "presetLabels": Array [
+          "Last 30 minutes",
+          "Last 1 hour",
+          "Last 6 hours",
+          "Last 12 hours",
+          "Last 24 hours",
+        ],
+        "relativeLabel": "Relative",
+        "relativeLabels": Array [
+          "Yesterday",
+          "Today",
+        ],
+        "relativeToLabel": "Relative to",
+        "startTimeLabel": "Start time",
+        "toLabel": "to",
+        "toNowLabel": "to Now",
+      },
+      "intervals": Array [
+        Object {
+          "label": "minutes",
+          "value": "MINUTES",
+        },
+        Object {
+          "label": "hours",
+          "value": "HOURS",
+        },
+        Object {
+          "label": "days",
+          "value": "DAYS",
+        },
+        Object {
+          "label": "weeks",
+          "value": "WEEKS",
+        },
+        Object {
+          "label": "months",
+          "value": "MONTHS",
+        },
+        Object {
+          "label": "years",
+          "value": "YEARS",
+        },
+      ],
+      "onApply": null,
+      "onCancel": null,
+      "presets": Array [
+        Object {
+          "label": "Last 30 minutes",
+          "offset": 30,
+        },
+        Object {
+          "label": "Last 1 hour",
+          "offset": 60,
+        },
+        Object {
+          "label": "Last 6 hours",
+          "offset": 360,
+        },
+        Object {
+          "label": "Last 12 hours",
+          "offset": 720,
+        },
+        Object {
+          "label": "Last 24 hours",
+          "offset": 1440,
+        },
+      ],
+      "relatives": Array [
+        Object {
+          "label": "Yesterday",
+          "value": "YESTERDAY",
+        },
+        Object {
+          "label": "Today",
+          "value": "TODAY",
+        },
+        Object {
+          "label": "",
+          "value": "",
+        },
+      ],
+      "showRelativeOption": true,
+    },
+    "propTypes": Object {
+      "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultValue": Object {
+        "args": Array [
+          Object {
+            "absolute": Object {
+              "args": Array [
+                Object {
+                  "endDate": Object {
+                    "args": Array [
+                      [Function],
+                    ],
+                    "type": "instanceOf",
+                  },
+                  "endTime": Object {
+                    "type": "string",
+                  },
+                  "startDate": Object {
+                    "args": Array [
+                      [Function],
+                    ],
+                    "type": "instanceOf",
+                  },
+                  "startTime": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "kind": Object {
+              "args": Array [
+                Array [
+                  "PRESET",
+                  "RELATIVE",
+                  "ABSOLUTE",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "preset": Object {
+              "args": Array [
+                Object {
+                  "label": Object {
+                    "type": "string",
+                  },
+                  "offset": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "relative": Object {
+              "args": Array [
+                Object {
+                  "lastInterval": Object {
+                    "type": "string",
+                  },
+                  "lastNumber": Object {
+                    "type": "number",
+                  },
+                  "relativeToTime": Object {
+                    "type": "string",
+                  },
+                  "relativeToWhen": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "expanded": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "absoluteLabel": Object {
+              "type": "string",
+            },
+            "applyBtnLabel": Object {
+              "type": "string",
+            },
+            "backBtnLabel": Object {
+              "type": "string",
+            },
+            "calendarLabel": Object {
+              "type": "string",
+            },
+            "cancelBtnLabel": Object {
+              "type": "string",
+            },
+            "customRangeLabel": Object {
+              "type": "string",
+            },
+            "customRangeLinkLabel": Object {
+              "type": "string",
+            },
+            "endTimeLabel": Object {
+              "type": "string",
+            },
+            "intervalLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "invalidNumberLabel": Object {
+              "type": "string",
+            },
+            "lastLabel": Object {
+              "type": "string",
+            },
+            "presetLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "relativeLabel": Object {
+              "type": "string",
+            },
+            "relativeLabels": Object {
+              "args": Array [
+                Object {
+                  "type": "string",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "relativeToLabel": Object {
+              "type": "string",
+            },
+            "startTimeLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
+              "type": "string",
+            },
+            "toNowLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "intervals": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "onApply": Object {
+        "type": "func",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "presets": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "offset": Object {
+                  "type": "number",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "relatives": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "label": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "showRelativeOption": Object {
+        "type": "bool",
       },
     },
   },
@@ -12670,6 +13014,82 @@ Map {
       },
     },
   },
+  "IconSwitch" => Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "className": undefined,
+      "name": "",
+      "selected": false,
+      "size": "default",
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "index": Object {
+        "isRequired": true,
+        "type": "number",
+      },
+      "name": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "number",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "onClick": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onKeyDown": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "isRequired": true,
+        "type": "oneOfType",
+      },
+      "selected": Object {
+        "type": "bool",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "small",
+            "default",
+            "large",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "text": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+    },
+    "render": [Function],
+  },
+  "ICON_SWITCH_SIZES" => Object {
+    "default": "default",
+    "large": "large",
+    "small": "small",
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
@@ -12986,7 +13406,6 @@ Map {
         "args": Array [
           Array [
             "sm",
-            "lg",
             "xl",
           ],
         ],
@@ -13320,7 +13739,22 @@ Map {
         },
       },
     },
-    "TableExpandHeader": Object {},
+    "TableExpandHeader": Object {
+      "propTypes": Object {
+        "ariaLabel": [Function],
+        "children": Object {
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "expandIconDescription": Object {
+          "type": "string",
+        },
+        "isExpanded": [Function],
+        "onExpand": [Function],
+      },
+    },
     "TableExpandRow": Object {
       "defaultProps": Object {
         "expandHeader": "expand",
@@ -13388,6 +13822,9 @@ Map {
         },
         "className": Object {
           "type": "string",
+        },
+        "colSpan": Object {
+          "type": "number",
         },
         "isSortHeader": Object {
           "type": "bool",
@@ -13569,6 +14006,7 @@ Map {
     "TableToolbarSearch": Object {
       "defaultProps": Object {
         "persistent": false,
+        "tabIndex": "0",
         "translateWithId": [Function],
       },
       "propTypes": Object {
@@ -13599,6 +14037,19 @@ Map {
         },
         "searchContainerClasses": Object {
           "type": "string",
+        },
+        "tabIndex": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "number",
+              },
+              Object {
+                "type": "string",
+              },
+            ],
+          ],
+          "type": "oneOfType",
         },
         "translateWithId": Object {
           "isRequired": true,
@@ -13848,6 +14299,9 @@ Map {
       "type": "text",
     },
     "propTypes": Object {
+      "disabled": Object {
+        "type": "bool",
+      },
       "iconDescription": Object {
         "type": "string",
       },
@@ -13855,9 +14309,22 @@ Map {
         "isRequired": true,
         "type": "string",
       },
+      "invalid": Object {
+        "type": "bool",
+      },
       "labelText": Object {
         "isRequired": true,
         "type": "node",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "pattern": [Function],
+      "type": Object {
+        "type": "string",
       },
     },
   },
@@ -14066,7 +14533,6 @@ Map {
         "args": Array [
           Array [
             "sm",
-            "lg",
             "xl",
           ],
         ],
@@ -14187,6 +14653,9 @@ Map {
       },
       "name": Object {
         "type": "string",
+      },
+      "onChange": Object {
+        "type": "func",
       },
       "onClick": Object {
         "type": "func",
@@ -14529,6 +14998,9 @@ Map {
       "inline": Object {
         "type": "bool",
       },
+      "visited": Object {
+        "type": "bool",
+      },
     },
   },
   "ListItem" => Object {
@@ -14568,7 +15040,6 @@ Map {
   },
   "Modal" => Object {
     "defaultProps": Object {
-      "focusTrap": true,
       "hasScrollingContent": false,
       "iconDescription": "close the modal",
       "modalHeading": "",
@@ -14591,9 +15062,7 @@ Map {
       "danger": Object {
         "type": "bool",
       },
-      "focusTrap": Object {
-        "type": "bool",
-      },
+      "focusTrap": [Function],
       "hasForm": Object {
         "type": "bool",
       },
@@ -14950,7 +15419,6 @@ Map {
           "args": Array [
             Array [
               "sm",
-              "lg",
               "xl",
             ],
           ],
@@ -15151,7 +15619,6 @@ Map {
         "args": Array [
           Array [
             "sm",
-            "lg",
             "xl",
           ],
         ],
@@ -15204,7 +15671,6 @@ Map {
         "type": "bool",
       },
       "iconDescription": Object {
-        "isRequired": true,
         "type": "string",
       },
       "kind": Object {
@@ -15230,6 +15696,9 @@ Map {
       },
       "role": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "statusIconDescription": Object {
         "type": "string",
       },
       "subtitle": Object {
@@ -15266,7 +15735,6 @@ Map {
         "type": "bool",
       },
       "iconDescription": Object {
-        "isRequired": true,
         "type": "string",
       },
       "kind": Object {
@@ -15292,6 +15760,9 @@ Map {
       },
       "role": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "statusIconDescription": Object {
         "type": "string",
       },
       "subtitle": Object {
@@ -15587,6 +16058,7 @@ Map {
   "ProgressStep" => Object {
     "defaultProps": Object {
       "renderLabel": [Function],
+      "translateWithId": [Function],
     },
     "propTypes": Object {
       "className": Object {
@@ -15628,6 +16100,9 @@ Map {
       },
       "tooltipId": Object {
         "type": "string",
+      },
+      "translateWithId": Object {
+        "type": "func",
       },
     },
   },
@@ -15875,6 +16350,15 @@ Map {
       "onChange": Object {
         "type": "func",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
     "render": [Function],
   },
@@ -15981,7 +16465,7 @@ Map {
       "maxLabel": "",
       "minLabel": "",
       "step": 1,
-      "stepMuliplier": 4,
+      "stepMultiplier": 4,
     },
     "propTypes": Object {
       "ariaLabelInput": Object {
@@ -16040,7 +16524,8 @@ Map {
       "step": Object {
         "type": "number",
       },
-      "stepMuliplier": Object {
+      "stepMuliplier": [Function],
+      "stepMultiplier": Object {
         "type": "number",
       },
       "value": Object {
@@ -16052,16 +16537,13 @@ Map {
   "StructuredListWrapper" => Object {
     "defaultProps": Object {
       "ariaLabel": "Structured list section",
-      "border": false,
       "selection": false,
     },
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
       },
-      "border": Object {
-        "type": "bool",
-      },
+      "border": [Function],
       "children": Object {
         "type": "node",
       },
@@ -16209,9 +16691,6 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
-      "handleTabAnchorFocus": Object {
-        "type": "func",
-      },
       "handleTabClick": Object {
         "type": "func",
       },
@@ -16220,6 +16699,9 @@ Map {
       },
       "href": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "id": Object {
         "type": "string",
       },
       "index": Object {
@@ -16290,6 +16772,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "hidden": Object {
+        "type": "bool",
       },
       "iconDescription": Object {
         "isRequired": true,
@@ -16467,6 +16952,7 @@ Map {
         "light": false,
         "onChange": [Function],
         "onClick": [Function],
+        "size": "",
       },
       "propTypes": Object {
         "className": Object {
@@ -16520,6 +17006,9 @@ Map {
         "placeholder": Object {
           "type": "string",
         },
+        "size": Object {
+          "type": "string",
+        },
         "tooltipAlignment": Object {
           "args": Array [
             Array [
@@ -16567,6 +17056,7 @@ Map {
         "light": false,
         "onChange": [Function],
         "onClick": [Function],
+        "size": "",
       },
       "propTypes": Object {
         "className": Object {
@@ -16624,6 +17114,9 @@ Map {
           "type": "string",
         },
         "showPasswordLabel": Object {
+          "type": "string",
+        },
+        "size": Object {
           "type": "string",
         },
         "tooltipAlignment": Object {
@@ -16724,6 +17217,15 @@ Map {
       "placeholder": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "type": Object {
         "type": "string",
       },
@@ -16788,7 +17290,6 @@ Map {
     "defaultProps": Object {
       "handleClick": [Function],
       "handleKeyDown": [Function],
-      "iconDescription": "Tile checkmark",
       "light": false,
       "onChange": [Function],
       "selected": false,
@@ -16803,9 +17304,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "id": Object {
         "type": "string",
       },
@@ -16901,7 +17400,6 @@ Map {
   },
   "RadioTile" => Object {
     "defaultProps": Object {
-      "iconDescription": "Tile checkmark",
       "light": false,
       "onChange": [Function],
       "tabIndex": 0,
@@ -16916,9 +17414,7 @@ Map {
       "defaultChecked": Object {
         "type": "bool",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "id": Object {
         "type": "string",
       },
@@ -17344,6 +17840,8 @@ Map {
         "args": Array [
           Array [
             "top",
+            "right",
+            "left",
             "bottom",
           ],
         ],
@@ -17507,9 +18005,6 @@ Map {
     },
   },
   "CodeSnippetSkeleton" => Object {
-    "defaultProps": Object {
-      "type": "single",
-    },
     "propTypes": Object {
       "className": Object {
         "type": "string",
@@ -18048,7 +18543,7 @@ Map {
     "propTypes": Object {
       "children": Object {
         "isRequired": true,
-        "type": "string",
+        "type": "node",
       },
       "className": Object {
         "type": "string",

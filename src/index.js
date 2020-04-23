@@ -33,6 +33,7 @@ export HierarchyList from './components/List/HierarchyList';
 export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
+export __unstableDateTimePicker from './components/DateTimePicker/DateTimePicker';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -92,6 +93,8 @@ export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
 export List from './components/List/List';
 
 export SimpleList from './components/List/SimpleList/SimpleList';
+
+export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitch';
 
 // Carbon proxy
 export {
