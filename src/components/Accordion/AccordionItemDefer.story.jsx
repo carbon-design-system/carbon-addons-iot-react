@@ -9,6 +9,13 @@ import { Accordion, AccordionItem } from '.';
 export default {
   title: 'Watson IoT/AccordionItemDefer',
   component: AccordionItemDefer,
+  parameters: {
+    info: {
+      text: `
+      AccordionItemDefer can be used in place of a normal AccordionItem and it has the same proptypes signature. AccordionItemDefer waits to render the content/children until the accordion item is opened. Content/children are not removed or unmounted when the accordion item closes.
+      `,
+    },
+  },
 };
 
 export const WithDeferredContentRendering = () => (

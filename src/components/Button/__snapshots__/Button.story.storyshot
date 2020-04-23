@@ -37,7 +37,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         href="#"
         onClick={[Function]}
         onFocus={[Function]}
-        role="button"
         tabIndex={0}
       >
         Link
@@ -49,7 +48,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         href="#"
         onClick={[Function]}
         onFocus={[Function]}
-        role="button"
         tabIndex={0}
         type="button"
       >
@@ -62,7 +60,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         href="#"
         onClick={[Function]}
         onFocus={[Function]}
-        role="button"
         tabIndex={0}
         type="button"
       >
@@ -129,17 +126,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         height={16}
         preserveAspectRatio="xMidYMid meet"
         role="img"
-        style={
-          Object {
-            "willChange": "transform",
-          }
-        }
-        viewBox="0 0 16 16"
+        viewBox="0 0 32 32"
         width={16}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M9 7V3H7v4H3v2h4v4h2V9h4V7z"
+        <polygon
+          points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
         />
       </svg>
     </button>

@@ -23,7 +23,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
       <header
         aria-label="main header"
         className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
-        role="banner"
       >
         <a
           className="bx--skip-to-content"
@@ -44,17 +43,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "willChange": "transform",
-              }
-            }
             viewBox="0 0 20 20"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="14.8"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="11.2"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="7.6"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="4"
             />
           </svg>
         </button>
@@ -85,17 +100,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
-              style={
-                Object {
-                  "willChange": "transform",
-                }
-              }
               viewBox="0 0 32 32"
               width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M28.7 20.3L26 17.6V13a10.07 10.07 0 0 0-9-10V1h-2v2a10.15 10.15 0 0 0-9 10v4.6l-2.7 2.7a.91.91 0 0 0-.3.7v3a.94.94 0 0 0 1 1h7a5 5 0 0 0 10 0h7a.94.94 0 0 0 1-1v-3a.91.91 0 0 0-.3-.7zM16 28a3 3 0 0 1-3-3h6a3 3 0 0 1-3 3zm11-5H5v-1.6l2.7-2.7A.91.91 0 0 0 8 18v-5a8 8 0 0 1 16 0v5a.91.91 0 0 0 .3.7l2.7 2.7z"
+                d="M28.7,20.3,26,17.6V13A10.07,10.07,0,0,0,17,3V1H15V3A10.15,10.15,0,0,0,6,13v4.6L3.3,20.3A.91.91,0,0,0,3,21v3a.94.94,0,0,0,1,1h7a5,5,0,0,0,10,0h7a.94.94,0,0,0,1-1V21A.91.91,0,0,0,28.7,20.3ZM16,28a3,3,0,0,1-3-3h6A3,3,0,0,1,16,28Zm11-5H5V21.4l2.7-2.7A.91.91,0,0,0,8,18V13a8,8,0,0,1,16,0v5a.91.91,0,0,0,.3.7L27,21.4Z"
               />
             </svg>
           </button>
@@ -122,17 +132,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
                 viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12z"
+                  d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                 />
                 <circle
                   cx="16"
@@ -140,7 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                   r="1.5"
                 />
                 <path
-                  d="M17 8h-1.5a4.49 4.49 0 0 0-4.5 4.5v.5h2v-.5a2.5 2.5 0 0 1 2.5-2.5H17a2.5 2.5 0 0 1 0 5h-2v4.5h2V17a4.5 4.5 0 0 0 0-9z"
+                  d="M17,8H15.5A4.49,4.49,0,0,0,11,12.5V13h2v-.5A2.5,2.5,0,0,1,15.5,10H17a2.5,2.5,0,0,1,0,5H15v4.5h2V17a4.5,4.5,0,0,0,0-9Z"
                 />
               </svg>
             </button>
@@ -183,20 +188,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                         focusable="false"
                         height={20}
                         preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         viewBox="0 0 32 32"
                         width={20}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                         />
                         <path
-                          d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                          d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                         />
                       </svg>
                     </span>
@@ -232,20 +232,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                   />
                   <path
-                    d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                   />
                 </svg>
               </a>
@@ -259,7 +254,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                     className="bx--header__menu-item"
                     href="http://google.com"
                     rel="noopener noreferrer"
-                    role="menuitem"
                     tabIndex={0}
                     target="_blank"
                     title="this is a title"
@@ -277,7 +271,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
-                    role="menuitem"
                     tabIndex={0}
                   >
                     <span
@@ -292,20 +285,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                           focusable="false"
                           height={20}
                           preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                           />
                           <path
-                            d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                            d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                           />
                         </svg>
                       </span>
@@ -338,17 +326,63 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                 focusable="false"
                 height={20}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 20 20"
+                viewBox="0 0 32 32"
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M15.5 15.5H18V18h-2.5zm-6.75 0h2.5V18h-2.5zM2 15.5h2.5V18H2zm13.5-6.75H18v2.5h-2.5zm-6.75 0h2.5v2.5h-2.5zM2 8.75h2.5v2.5H2zM15.5 2H18v2.5h-2.5zM8.75 2h2.5v2.5h-2.5zM2 2h2.5v2.5H2z"
+                <rect
+                  height="4"
+                  width="4"
+                  x="14"
+                  y="4"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="4"
+                  y="4"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="24"
+                  y="4"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="14"
+                  y="14"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="4"
+                  y="14"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="24"
+                  y="14"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="14"
+                  y="24"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="4"
+                  y="24"
+                />
+                <rect
+                  height="4"
+                  width="4"
+                  x="24"
+                  y="24"
                 />
               </svg>
             </button>
@@ -426,7 +460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
     <header
       aria-label="main header"
       className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
-      role="banner"
     >
       <a
         className="bx--skip-to-content"
@@ -447,17 +480,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
           focusable="false"
           height={20}
           preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "willChange": "transform",
-            }
-          }
           viewBox="0 0 20 20"
           width={20}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+          <rect
+            height="1.2"
+            width="16"
+            x="2"
+            y="14.8"
+          />
+          <rect
+            height="1.2"
+            width="16"
+            x="2"
+            y="11.2"
+          />
+          <rect
+            height="1.2"
+            width="16"
+            x="2"
+            y="7.6"
+          />
+          <rect
+            height="1.2"
+            width="16"
+            x="2"
+            y="4"
           />
         </svg>
       </button>
@@ -488,20 +537,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "willChange": "transform",
-              }
-            }
             viewBox="0 0 32 32"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
             />
             <path
-              d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+              d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
             />
           </svg>
         </button>
@@ -557,7 +601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
       <header
         aria-label="main header"
         className="bx--header custom-class-name Headerstory__StyledHeader-st8jpc-0 hyHMot"
-        role="banner"
       >
         <a
           className="bx--skip-to-content"
@@ -578,17 +621,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
             focusable="false"
             height={20}
             preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "willChange": "transform",
-              }
-            }
             viewBox="0 0 20 20"
             width={20}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="14.8"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="11.2"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="7.6"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="4"
             />
           </svg>
         </button>
@@ -634,20 +693,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                   focusable="false"
                   height={20}
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                   />
                   <path
-                    d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                    d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                   />
                 </svg>
               </a>
@@ -661,7 +715,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                     className="bx--header__menu-item"
                     href="http://google.com"
                     rel="noopener noreferrer"
-                    role="menuitem"
                     tabIndex={0}
                     target="_blank"
                     title="this is a title"
@@ -679,7 +732,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                   <button
                     className="bx--header__menu-item"
                     onClick={[Function]}
-                    role="menuitem"
                     tabIndex={0}
                   >
                     <span
@@ -694,20 +746,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                           focusable="false"
                           height={20}
                           preserveAspectRatio="xMidYMid meet"
-                          style={
-                            Object {
-                              "willChange": "transform",
-                            }
-                          }
                           viewBox="0 0 32 32"
                           width={20}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-6 24.38v-2A3.22 3.22 0 0 1 13 21h6a3.22 3.22 0 0 1 3 3.39v2a11.92 11.92 0 0 1-12 0zm14-1.46v-.61A5.21 5.21 0 0 0 19 19h-6a5.2 5.2 0 0 0-5 5.31v.59a12 12 0 1 1 16 0z"
+                            d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2ZM10,26.38v-2A3.22,3.22,0,0,1,13,21h6a3.22,3.22,0,0,1,3,3.39v2a11.92,11.92,0,0,1-12,0Zm14-1.46v-.61A5.21,5.21,0,0,0,19,19H13a5.2,5.2,0,0,0-5,5.31s0,0,0,0v.59a12,12,0,1,1,16,0Z"
                           />
                           <path
-                            d="M16 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"
+                            d="M16,7a5,5,0,1,0,5,5A5,5,0,0,0,16,7Zm0,8a3,3,0,1,1,3-3A3,3,0,0,1,16,15Z"
                           />
                         </svg>
                       </span>
