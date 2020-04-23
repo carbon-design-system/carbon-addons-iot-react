@@ -158,10 +158,9 @@ export const replaceVariables = (variables, cardVariables, target) => {
 
 /**
  * Replace variables from the list of variables that are found on the target with their corresponding value
- * @param {array} variables - Array of variables to be replaced
- * @param {object} values - Object with variable properties and replacement values, i.e. { manufacturer: 'Rentech', sensor: 3 }
- * @param {string} target - The raw string to insert variable values into
- * @return {array} updatedTarget - the new string with the updated variable values
+ * @param {string} title - Card title
+ * @param {object} cardVariables - Object with variable properties and replacement values, i.e. { manufacturer: 'Rentech', sensor: 3 }
+ * @return {string} - An updated title string with the values replaced, or the original title if there were no variables found
  */
 export const handleTitleVariables = (title, cardVariables) => {
   const titleVariables = getVariables(title);
