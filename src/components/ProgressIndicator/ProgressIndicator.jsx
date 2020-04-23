@@ -17,10 +17,10 @@ const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   &&& {
     display: ${props => (!props.isVerticalMode ? `inline-flex` : '')};
 
-    .bx--progress-step--complete {
+    .${prefix}--progress-step--complete {
       cursor: pointer;
     }
-    .bx--progress-step--incomplete {
+    .${prefix}--progress-step--incomplete {
       cursor: pointer;
     }
   }
@@ -47,7 +47,7 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
       const { isVerticalMode, stepWidth } = props;
       return isVerticalMode
         ? `
-        .bx--progress-step-button {
+        .${prefix}--progress-step-button {
         flex-flow: initial;
       }
       height: ${stepWidth ? `${stepWidth}rem` : 'inherit'};
@@ -57,32 +57,6 @@ const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...ot
     }}
   }
 `;
-
-const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
-
-const propTypes = {
-  /** array of item objects with id and labels */
-  items: PropTypes.arrayOf(PropTypes.shape({ id: IDPropTypes, label: PropTypes.string.isRequired }))
-    .isRequired,
-  /** id of current step */
-  currentItemId: IDPropTypes,
-  /** function on click, usually to set the currentItemId */
-  onClickItem: PropTypes.func,
-  /** false to hide labels on non-current steps */
-  showLabels: PropTypes.bool,
-  /** width of step in px */
-  stepWidth: PropTypes.number,
-  /** progress indicator is vertical */
-  isVerticalMode: PropTypes.bool,
-};
-
-const defaultProps = {
-  onClickItem: null,
-  showLabels: true,
-  stepWidth: null,
-  currentItemId: null,
-  isVerticalMode: false,
-};
 
 /**
  * This component extends the default Carbon ProgressIndicator.
@@ -112,14 +86,11 @@ const ProgressIndicator = ({
   const currentStep = matchingIndex > -1 ? matchingIndex : 0;
   return (
     <StyledProgressIndicator
-      className={classnames(
-        className,
-        isVerticalMode ? `${prefix}--progress--vertical` : '',
-        `${iotPrefix}--progress-indicator`
-      )}
+      className={classnames(className, `${iotPrefix}--progress-indicator`)}
       onChange={handleChange}
       currentIndex={currentStep}
       isVerticalMode={isVerticalMode}
+      vertical={isVerticalMode}
     >
       {items.map(({ id, label, secondaryLabel, description }) => (
         <StyledProgressStep
@@ -137,6 +108,30 @@ const ProgressIndicator = ({
   );
 };
 
-ProgressIndicator.propTypes = propTypes;
-ProgressIndicator.defaultProps = defaultProps;
+const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
+
+ProgressIndicator.propTypes = {
+  /** array of item objects with id and labels */
+  items: PropTypes.arrayOf(PropTypes.shape({ id: IDPropTypes, label: PropTypes.string.isRequired }))
+    .isRequired,
+  /** id of current step */
+  currentItemId: IDPropTypes,
+  /** function on click, usually to set the currentItemId */
+  onClickItem: PropTypes.func,
+  /** false to hide labels on non-current steps */
+  showLabels: PropTypes.bool,
+  /** width of step in px */
+  stepWidth: PropTypes.number,
+  /** progress indicator is vertical */
+  isVerticalMode: PropTypes.bool,
+};
+
+ProgressIndicator.defaultProps = {
+  onClickItem: null,
+  showLabels: true,
+  stepWidth: null,
+  currentItemId: null,
+  isVerticalMode: false,
+};
+
 export default ProgressIndicator;

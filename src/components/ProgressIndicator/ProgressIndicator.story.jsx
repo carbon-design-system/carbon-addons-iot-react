@@ -11,7 +11,7 @@ const items = [
   {
     id: 'step1',
     label: 'First step',
-    secondaryLabel: 'secondary label',
+    secondaryLabel: 'Optional label',
     description: 'This is displayed when step icon is hovered',
   },
   {
@@ -42,7 +42,7 @@ class ProgressIndicatorExample extends Component {
         onChange={this.setItem}
         onClickItem={this.setItem}
         currentItemId={currentItemId}
-        showLabels={boolean('showlabels', true)}
+        showLabels={boolean('showLabels', true)}
         isVerticalMode={boolean('isVerticalMode', false)}
       />
     );

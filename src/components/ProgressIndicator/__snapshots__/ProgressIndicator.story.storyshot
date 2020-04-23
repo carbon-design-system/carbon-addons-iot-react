@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -647,7 +647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -940,7 +940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"

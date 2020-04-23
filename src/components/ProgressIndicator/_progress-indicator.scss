@@ -8,6 +8,12 @@
       padding: 0 $spacing-03;
       text-align: left;
       width: 100%;
+      min-height: unset;
+    }
+
+    .#{$prefix}--progress-step svg {
+      margin-left: 0.563rem;
+      margin-right: $spacing-03;
     }
 
     .#{$prefix}--progress-label {
@@ -15,13 +21,8 @@
     }
 
     .#{$prefix}--progress-optional {
-      margin-left: ($spacing-06 + 0.563rem);
+      margin-left: ($spacing-06 + 1.1rem);
     }
-  }
-
-  .#{$prefix}--progress-step--current svg,
-  svg {
-    width: $carbon--spacing-05;
   }
 
   .#{$prefix}--progress-line {
@@ -33,32 +34,6 @@
   .#{$prefix}--progress-step {
     flex: unset;
   }
-
-  &.#{$prefix}--progress--vertical {
-    .#{$prefix}--progress-label {
-      text-align: left;
-    }
-
-    .#{$prefix}--progress-step-button {
-      padding: 0 $spacing-03;
-      text-align: left;
-      width: 100%;
-
-      .#{$prefix}--progress-step--current svg,
-      svg {
-        margin-left: 0;
-        width: 1rem;
-      }
-
-      .#{$prefix}--progress-label {
-        max-width: calc(100% - 2.2rem);
-      }
-    }
-
-    .#{$prefix}--progress-line {
-      top: 0;
-    }
-  }
 }
 
 html[dir='rtl'] {
@@ -69,7 +44,7 @@ html[dir='rtl'] {
       }
 
       .#{$prefix}--progress-optional {
-        margin-right: ($spacing-06 + 0.563rem);
+        margin-right: ($spacing-06 + 1.1rem);
       }
 
       .#{$prefix}--progress-step svg {
