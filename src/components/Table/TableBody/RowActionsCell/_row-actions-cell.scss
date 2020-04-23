@@ -39,7 +39,7 @@
 
   &.bx--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
     // The color #cacaca does not appear to have a name in carbon
-    @include backgroundGradient(#cacaca);
+    @include backgroundGradient($hover-selected-ui);
   }
 
   &.bx--data-table--selected:not(:hover)
