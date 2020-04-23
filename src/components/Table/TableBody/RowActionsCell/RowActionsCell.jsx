@@ -33,10 +33,6 @@ const RowActionsContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    > * {
-      opacity: ${props => (props.visible ? 1 : 0)};
-    }
-
     /* If the actions are focused on, they should show up */
     > *:focus {
       opacity: 1;
@@ -64,15 +60,12 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
-const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
-  <OverflowMenu {...other} />
-))`
+const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu {...other} />)`
   &&& {
     margin-left: 0.5rem;
     svg {
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
   }
   &&&:hover > svg {
     fill: ${COLORS.blue};
@@ -169,11 +162,14 @@ class RowActionsCell extends React.Component {
     return actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
-          visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
           className={`${iotPrefix}--row-actions-container`}
         >
-          <div className={`${iotPrefix}--row-actions-container__background`}>
+          <div
+            className={classnames(`${iotPrefix}--row-actions-container__background`, {
+              [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
+            })}
+          >
             {rowActionsError ? (
               <RowActionsError
                 actionFailedText={actionFailedText}
@@ -215,7 +211,6 @@ class RowActionsCell extends React.Component {
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
-                    isOpen={isOpen}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                   >
