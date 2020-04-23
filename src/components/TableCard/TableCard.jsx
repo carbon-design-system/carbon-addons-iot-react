@@ -263,11 +263,13 @@ const TableCard = ({
   tooltip,
   ...others
 }) => {
+  /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const {
     title,
     content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
     values: data,
   } = handleTableCardVariables(titleProp, contentProp, valuesProp, others);
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 

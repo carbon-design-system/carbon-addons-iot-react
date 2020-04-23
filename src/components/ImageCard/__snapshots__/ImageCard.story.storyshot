@@ -401,12 +401,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
         >
           <span
             className="iot--card--title"
-            title="Image title variable is working"
+            title="Image title variable is {not-working}"
           >
             <div
               className="iot--card--title--text"
             >
-              Image title variable is working
+              Image title variable is {not-working}
             </div>
           </span>
           <div

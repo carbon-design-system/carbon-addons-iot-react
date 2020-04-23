@@ -2,9 +2,9 @@ import {
   determineCardRange,
   compareGrains,
   getUpdatedCardSize,
-  handleVariables,
+  handleValueCardVariables,
+  handleTableCardVariables,
 } from '../cardUtilityFunctions';
-import { CARD_TYPES } from '../../constants/LayoutConstants';
 
 describe('cardUtilityFunctions', () => {
   test('determineCardRange', () => {
@@ -24,7 +24,7 @@ describe('cardUtilityFunctions', () => {
     expect(getUpdatedCardSize('XLARGE')).toEqual('LARGEWIDE');
     expect(getUpdatedCardSize('MEDIUM')).toEqual('MEDIUM');
   });
-  test('handleVariables updates value cards with variables', () => {
+  test('handleValueCardVariables updates value cards with variables', () => {
     const valueCardPropsWithVariables = {
       title: 'Fuel {variable} flow',
       content: {
@@ -193,92 +193,14 @@ describe('cardUtilityFunctions', () => {
     const updatedTitle = 'Fuel big flow';
     const updatedValues = [];
     const { title, content, values, others } = valueCardPropsWithVariables;
-    expect(handleVariables(CARD_TYPES.VALUE, title, content, values, others)).toEqual({
+    expect(handleValueCardVariables(title, content, values, others)).toEqual({
       title: updatedTitle,
       content: updatedContent,
       values: updatedValues,
       ...others,
     });
   });
-  test('handleVariables updates image cards with variables', () => {
-    const imageCardWithVariables = {
-      title: 'Expanded {size} card',
-      content: {
-        alt: 'Sample image',
-        src: 'static/media/landscape.69143f06.jpg',
-        zoomMax: 10,
-        hotspots: [
-          {
-            icon: 'carbon-icon',
-            color: 'blue',
-            content: {
-              title: 'sensor readings',
-              attributes: [
-                {
-                  dataSourceId: 'temp_last',
-                  label: '{level} temp',
-                  unit: '{image_unit}',
-                },
-              ],
-            },
-            thresholds: [
-              {
-                dataSourceId: 'temp_last',
-                comparison: '>=',
-                value: 12,
-              },
-            ],
-          },
-        ],
-      },
-      values: [],
-      others: {
-        cardVariables: {
-          size: 'large',
-          level: 'high',
-          image_unit: 'Mwh',
-        },
-      },
-    };
-    const updatedTitle = 'Expanded large card';
-    const updatedContent = {
-      alt: 'Sample image',
-      src: 'static/media/landscape.69143f06.jpg',
-      zoomMax: 10,
-      hotspots: [
-        {
-          icon: 'carbon-icon',
-          color: 'blue',
-          content: {
-            title: 'sensor readings',
-            attributes: [
-              {
-                dataSourceId: 'temp_last',
-                label: 'high temp',
-                unit: 'Mwh',
-              },
-            ],
-          },
-          thresholds: [
-            {
-              dataSourceId: 'temp_last',
-              comparison: '>=',
-              value: 12,
-            },
-          ],
-        },
-      ],
-    };
-    const updatedValues = [];
-    const { title, content, values, others } = imageCardWithVariables;
-    expect(handleVariables(CARD_TYPES.IMAGE, title, content, values, others)).toEqual({
-      title: updatedTitle,
-      content: updatedContent,
-      values: updatedValues,
-      ...others,
-    });
-  });
-  test('handleVariables updates table cards with variables', () => {
+  test('handleTableCardVariables updates table cards with variables', () => {
     const tableCardPropsWithVariables = {
       title: 'Max and {minimum} speed',
       content: {
@@ -299,7 +221,6 @@ describe('cardUtilityFunctions', () => {
             dataSourceId: 'deviceid',
             linkTemplate: {
               href: 'www.{url}.com',
-              displayValue: '{url}',
             },
           },
           {
@@ -387,7 +308,6 @@ describe('cardUtilityFunctions', () => {
           dataSourceId: 'deviceid',
           linkTemplate: {
             href: 'www.google.com',
-            displayValue: 'google',
           },
         },
         {
@@ -418,14 +338,14 @@ describe('cardUtilityFunctions', () => {
     };
     const updatedValues = [];
     const { title, content, values, others } = tableCardPropsWithVariables;
-    expect(handleVariables(CARD_TYPES.TABLE, title, content, values, others)).toEqual({
+    expect(handleTableCardVariables(title, content, values, others)).toEqual({
       title: updatedTitle,
       content: updatedContent,
       values: updatedValues,
       ...others,
     });
   });
-  test('handleVariables returns original card when no cardVariables are specified', () => {
+  test('handleValueCardVariables returns original card when no cardVariables are specified', () => {
     const valueCardProps = {
       id: 'fuel_flow',
       size: 'SMALL',
@@ -527,7 +447,92 @@ describe('cardUtilityFunctions', () => {
       },
     };
     const { title, content, values, others } = valueCardProps;
-    expect(handleVariables(CARD_TYPES.IMAGE, title, content, [], others)).toEqual({
+    expect(handleValueCardVariables(title, content, [], others)).toEqual({
+      title,
+      content,
+      values,
+      ...others,
+    });
+  });
+  test('handleTableCardVariables returns original card when no cardVariables are specified', () => {
+    const tableCardProps = {
+      title: 'Max and min speed',
+      content: {
+        columns: [
+          {
+            dataSourceId: 'abnormal_stop_id',
+            label: 'Abnormal Stop Count',
+          },
+          {
+            dataSourceId: 'speed_id_mean',
+            label: 'Mean Speed',
+          },
+          {
+            dataSourceId: 'speed_id_max',
+            label: 'Max Speed',
+          },
+          {
+            dataSourceId: 'timestamp',
+            label: 'Time stamp',
+            type: 'TIMESTAMP',
+          },
+        ],
+        thresholds: [
+          {
+            dataSourceId: 'abnormal_stop_id',
+            comparison: '>=',
+            severity: 1,
+            value: 75,
+            label: 'Low Severity',
+            severityLabel: 'Low severity',
+            icon: 'Stop filled',
+            color: '#008000',
+          },
+        ],
+        expandedRows: [
+          {
+            dataSourceId: 'travel_time_id',
+            label: 'Mean travel time',
+          },
+        ],
+        sort: 'DESC',
+      },
+      values: [],
+      others: {
+        dataSource: {
+          attributes: [
+            {
+              aggregator: 'mean',
+              attribute: 'speed',
+              id: 'speed_id_mean',
+            },
+            {
+              aggregator: 'count',
+              attribute: 'abnormal_stop_count',
+              id: 'abnormal_stop_id',
+            },
+            {
+              aggregator: 'max',
+              attribute: 'speed',
+              id: 'speed_id_max',
+            },
+            {
+              aggregator: 'mean',
+              attribute: 'travel_time',
+              id: 'travel_time_id',
+            },
+          ],
+          range: {
+            count: -7,
+            interval: 'day',
+          },
+          timeGrain: 'day',
+          groupBy: ['deviceid'],
+        },
+      },
+    };
+    const { title, content, values, others } = tableCardProps;
+    expect(handleTableCardVariables(title, content, values, others)).toEqual({
       title,
       content,
       values,
