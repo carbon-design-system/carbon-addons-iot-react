@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 
-const { iotPrefix, prefix: carbonPrefix } = settings;
+const { iotPrefix } = settings;
 
 export const childrenPropType = PropTypes.oneOfType([
   PropTypes.arrayOf(PropTypes.node),
@@ -132,12 +132,10 @@ const PageWizard = ({
           }
         >
           <ProgressIndicator
-            className={classNames(
-              `${iotPrefix}--progress-indicator`,
-              isProgressIndicatorVertical ? `${carbonPrefix}--progress--vertical` : null
-            )}
+            className={classNames(className, `${iotPrefix}--progress-indicator`)}
             currentIndex={currentStepIdx}
             onChange={idx => setStep(steps[idx].id)}
+            vertical={isProgressIndicatorVertical}
           >
             {steps.map((step, idx) => (
               <ProgressStep

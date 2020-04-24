@@ -11,6 +11,32 @@ import { settings } from '../../constants/Settings';
 
 const { prefix, iotPrefix } = settings;
 
+const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
+
+const propTypes = {
+  /** array of item objects with id and labels */
+  items: PropTypes.arrayOf(PropTypes.shape({ id: IDPropTypes, label: PropTypes.string.isRequired }))
+    .isRequired,
+  /** id of current step */
+  currentItemId: IDPropTypes,
+  /** function on click, usually to set the currentItemId */
+  onClickItem: PropTypes.func,
+  /** false to hide labels on non-current steps */
+  showLabels: PropTypes.bool,
+  /** width of step in px */
+  stepWidth: PropTypes.number,
+  /** progress indicator is vertical */
+  isVerticalMode: PropTypes.bool,
+};
+
+const defaultProps = {
+  onClickItem: null,
+  showLabels: true,
+  stepWidth: null,
+  currentItemId: null,
+  isVerticalMode: false,
+};
+
 const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
   <CarbonProgressIndicator {...others} />
 ))`
@@ -82,6 +108,7 @@ const ProgressIndicator = ({
     items,
     currentItemId,
   ]);
+
   // Only recalculate current step if inputs change
   const currentStep = matchingIndex > -1 ? matchingIndex : 0;
   return (
@@ -108,30 +135,7 @@ const ProgressIndicator = ({
   );
 };
 
-const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
-
-ProgressIndicator.propTypes = {
-  /** array of item objects with id and labels */
-  items: PropTypes.arrayOf(PropTypes.shape({ id: IDPropTypes, label: PropTypes.string.isRequired }))
-    .isRequired,
-  /** id of current step */
-  currentItemId: IDPropTypes,
-  /** function on click, usually to set the currentItemId */
-  onClickItem: PropTypes.func,
-  /** false to hide labels on non-current steps */
-  showLabels: PropTypes.bool,
-  /** width of step in px */
-  stepWidth: PropTypes.number,
-  /** progress indicator is vertical */
-  isVerticalMode: PropTypes.bool,
-};
-
-ProgressIndicator.defaultProps = {
-  onClickItem: null,
-  showLabels: true,
-  stepWidth: null,
-  currentItemId: null,
-  isVerticalMode: false,
-};
+ProgressIndicator.propTypes = propTypes;
+ProgressIndicator.defaultProps = defaultProps;
 
 export default ProgressIndicator;

@@ -30,6 +30,10 @@
   }
 }
 
+.#{$prefix}--progress-line {
+  width: 100%;
+}
+
 .#{$prefix}--skeleton {
   .#{$prefix}--progress-step {
     flex: unset;
