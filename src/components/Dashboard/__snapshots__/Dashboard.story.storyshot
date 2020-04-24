@@ -961,6 +961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
                           "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
@@ -3165,6 +3166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
                           "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
@@ -5401,6 +5403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
                           "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
@@ -10091,6 +10094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
                           "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
@@ -24419,6 +24423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
                           "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
