@@ -16,7 +16,10 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/CardProp
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  handleTimeseriesCardVariables,
+} from '../../utils/cardUtilityFunctions';
 
 import {
   generateSampleValues,
@@ -182,22 +185,12 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
 };
 
 const TimeSeriesCard = ({
-  title,
-  content: {
-    series,
-    timeDataSourceId = 'timestamp',
-    alertRanges,
-    xLabel,
-    yLabel,
-    includeZeroOnXaxis,
-    includeZeroOnYaxis,
-    unit,
-    chartType,
-  },
+  title: titleProp,
+  content,
   size,
   interval,
   isEditable,
-  values: valuesProp,
+  values: initialValues,
   locale,
   i18n: { alertDetected, noDataLabel },
   i18n,
@@ -205,6 +198,21 @@ const TimeSeriesCard = ({
   isLazyLoading,
   ...others
 }) => {
+  const {
+    title,
+    content: {
+      series,
+      timeDataSourceId = 'timestamp',
+      alertRanges,
+      xLabel,
+      yLabel,
+      includeZeroOnXaxis,
+      includeZeroOnYaxis,
+      unit,
+      chartType,
+    },
+    values: valuesProp,
+  } = handleTimeseriesCardVariables(titleProp, content, initialValues, others);
   let chartRef = useRef();
   const previousTick = useRef();
   moment.locale(locale);

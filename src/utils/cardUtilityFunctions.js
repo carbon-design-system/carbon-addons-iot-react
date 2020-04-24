@@ -288,3 +288,58 @@ export const handleTableCardVariables = (title, content, values, card) => {
 
   return updatedCard;
 };
+
+/**
+ * Replace variables from the list of variables that are found on the target with their corresponding value
+ * @param {string} title - Title for the card
+ * @param {object} content - Contents for the card
+ * @param {string} values - Values for the card
+ * @param {object} card - The rest of the card
+ * @return {object} updatedCard - card with any found variables replaced by their coresponding values, or the original card if no variables
+ */
+export const handleTimeseriesCardVariables = (title, content, values, card) => {
+  const updatedCard = {
+    title,
+    content,
+    values,
+    ...card,
+  };
+  if (!updatedCard.cardVariables) {
+    return updatedCard;
+  }
+  const { cardVariables } = updatedCard;
+
+  // check for variables in the title and replace them
+  updatedCard.title = handleTitleVariables(title, cardVariables);
+
+  const { series, xLabel, yLabel, unit } = updatedCard.content;
+  // Check if there are variables in the x label
+  const xLabelVariables = getVariables(xLabel);
+  if (xLabelVariables) {
+    const updatedxLabel = replaceVariables(xLabelVariables, cardVariables, xLabel);
+    updatedCard.content.xLabel = updatedxLabel;
+  }
+  // Check if there are variables in the y label
+  const yLabelVariables = getVariables(yLabel);
+  if (yLabelVariables) {
+    const updatedyLabel = replaceVariables(yLabelVariables, cardVariables, yLabel);
+    updatedCard.content.yLabel = updatedyLabel;
+  }
+  // Check if there are variables in the unit
+  const unitVariables = getVariables(unit);
+  if (unitVariables) {
+    const updatedUnit = replaceVariables(unitVariables, cardVariables, unit);
+    updatedCard.content.unit = updatedUnit;
+  }
+  series?.forEach((el, i) => {
+    const { label } = el;
+    // Check if there are variables in the series labels
+    const labelVariables = getVariables(label);
+    if (labelVariables) {
+      const updatedLabel = replaceVariables(labelVariables, cardVariables, label);
+      updatedCard.content.series[i].label = updatedLabel;
+    }
+  });
+
+  return updatedCard;
+};

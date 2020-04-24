@@ -102,17 +102,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      <polygon
+                        points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                       />
                     </svg>
                   </button>
@@ -252,17 +247,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      <polygon
+                        points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                       />
                     </svg>
                   </button>
@@ -420,17 +410,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  <polygon
+                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
                   />
                 </svg>
               </button>
@@ -479,17 +464,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      <polygon
+                        points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                       />
                     </svg>
                   </button>
@@ -572,17 +552,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  <polygon
+                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
                   />
                 </svg>
               </button>
@@ -631,17 +606,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={32}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                      <polygon
+                        points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                       />
                     </svg>
                   </button>
@@ -667,29 +637,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       onKeyDown={[Function]}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
-                      viewBox="0 0 16 16"
+                      viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <circle
-                        cx="8"
-                        cy="3"
-                        r="1"
-                      />
-                      <circle
-                        cx="8"
+                        cx="16"
                         cy="8"
-                        r="1"
+                        r="2"
                       />
                       <circle
-                        cx="8"
-                        cy="13"
-                        r="1"
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
                       />
                       <title>
                         More actions
@@ -775,17 +740,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  <polygon
+                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
                   />
                 </svg>
               </button>
@@ -825,7 +785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     
                     <div
                       aria-describedby={null}
-                      aria-haspopup="true"
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -841,20 +800,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
-                        style={
-                          Object {
-                            "willChange": "transform",
-                          }
-                        }
                         viewBox="0 0 16 16"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M14.5 14h-13c-.2 0-.3-.1-.4-.2-.1-.2-.1-.3 0-.5l6.5-12c.1-.3.4-.4.6-.2.1 0 .2.1.2.2l6.5 12c.1.2.1.3 0 .5 0 .1-.2.2-.4.2zM2.3 13h11.3L8 2.5 2.3 13z"
+                          d="M14.5,14h-13c-0.2,0-0.3-0.1-0.4-0.2c-0.1-0.2-0.1-0.3,0-0.5l6.5-12C7.7,1,8,0.9,8.2,1.1c0.1,0,0.2,0.1,0.2,0.2l6.5,12	c0.1,0.2,0.1,0.3,0,0.5C14.9,13.9,14.7,14,14.5,14z M2.3,13h11.3L8,2.5L2.3,13z"
+                        />
+                        <rect
+                          height="3.5"
+                          width="1"
+                          x="7.5"
+                          y="6"
                         />
                         <path
-                          d="M7.5 6h1v3.5h-1zm.5 4.8c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8s-.4-.8-.8-.8z"
+                          d="M8,10.8c-0.4,0-0.8,0.3-0.8,0.8s0.3,0.8,0.8,0.8c0.4,0,0.8-0.3,0.8-0.8S8.4,10.8,8,10.8z"
                         />
                       </svg>
                     </div>
@@ -943,17 +903,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 16 16"
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  <polygon
+                    points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
                   />
                 </svg>
               </button>

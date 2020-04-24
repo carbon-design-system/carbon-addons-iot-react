@@ -4,6 +4,7 @@ import {
   getUpdatedCardSize,
   handleValueCardVariables,
   handleTableCardVariables,
+  handleTimeseriesCardVariables,
 } from '../cardUtilityFunctions';
 
 describe('cardUtilityFunctions', () => {
@@ -533,6 +534,77 @@ describe('cardUtilityFunctions', () => {
     };
     const { title, content, values, others } = tableCardProps;
     expect(handleTableCardVariables(title, content, values, others)).toEqual({
+      title,
+      content,
+      values,
+      ...others,
+    });
+  });
+  test('handleTimeseriesVariables updates table cards with variables', () => {
+    const timeSeriesCardPropsWithVariables = {
+      title: 'timeSeries {device}',
+      content: {
+        xLabel: '{x_label}',
+        yLabel: '{y_label}',
+        unit: '{unit}',
+        series: [
+          {
+            dataSourceId: 'airflow_mean',
+            label: '{label}',
+          },
+        ],
+      },
+      values: [],
+      others: {
+        cardVariables: {
+          x_label: 'x-axis',
+          y_label: 'y-axis',
+          device: 'air',
+          unit: 'F',
+          label: 'Airflow Mean',
+        },
+      },
+    };
+    const updatedTitle = 'timeSeries air';
+    const updatedContent = {
+      xLabel: 'x-axis',
+      yLabel: 'y-axis',
+      unit: 'F',
+      series: [
+        {
+          dataSourceId: 'airflow_mean',
+          label: 'Airflow Mean',
+        },
+      ],
+    };
+    const updatedValues = [];
+    const { title, content, values, others } = timeSeriesCardPropsWithVariables;
+    expect(handleTimeseriesCardVariables(title, content, values, others)).toEqual({
+      title: updatedTitle,
+      content: updatedContent,
+      values: updatedValues,
+      ...others,
+    });
+  });
+  test('handleTimeseriesVariables returns original card when no cardVariables are specified', () => {
+    const timeSeriesCardProps = {
+      title: 'timeSeries',
+      content: {
+        xLabel: 'x-axis',
+        yLabel: 'y-axis',
+        unit: 'F',
+        series: [
+          {
+            dataSourceId: 'airflow_mean',
+            label: 'Airflow Mean',
+          },
+        ],
+      },
+      values: [],
+      others: {},
+    };
+    const { title, content, values, others } = timeSeriesCardProps;
+    expect(handleTimeseriesCardVariables(title, content, values, others)).toEqual({
       title,
       content,
       values,
