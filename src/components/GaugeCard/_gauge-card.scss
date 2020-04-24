@@ -29,13 +29,13 @@
 .#{$iot-prefix}--gauge-fg {
   paint-order: stroke;
   stroke: var(--gauge-colors);
-  stroke-dasharray: 0 188.1910858154297;
+  stroke-dasharray: 0 var(--stroke-dash-array);
   transform: rotate(-90deg);
   transform-origin: center;
   transition: all 0.2s ease-in;
 
   .#{$iot-prefix}--gauge__loaded & {
-    stroke-dasharray: var(--stroke-dash) 188.1910858154297;
+    stroke-dasharray: var(--stroke-dash) var(--stroke-dash-array);
   }
 }
 

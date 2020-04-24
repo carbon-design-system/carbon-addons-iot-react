@@ -12,9 +12,9 @@ const { iotPrefix } = settings;
 const radius = 36;
 // radius doubled plus stroke
 const gaugeSize = radius * 2 + 8;
+// circumference of SVG.
+const circum = 2 * Math.PI * radius;
 export const getStrokeDash = (value = 0) => {
-  // circumference of SVG.
-  const circum = 2 * Math.PI * radius;
   // length of stroke to match percentage
   return (value * circum) / 100;
 };
@@ -91,7 +91,8 @@ const GaugeCard = ({
         {!dataState &&
           gauges.map((gauge, i) => {
             const { color } = getColor(gauge, values[gauge.dataSourceId]);
-            const valueLength = values[gauge.dataSourceId].toString().length;
+            const valueLength =
+              values[gauge.dataSourceId] && values[gauge.dataSourceId].toString().length;
             return (
               <React.Fragment key={`${iotPrefix}-gauge-${i}`}>
                 <svg
@@ -108,6 +109,7 @@ const GaugeCard = ({
                     '--gauge-colors': color,
                     '--gauge-bg': gauge.backgroundColor,
                     '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
+                    '--stroke-dash-array': circum,
                     '--gauge-size': `${gaugeSize}px`,
                     '--gauge-trend-color': gauge.trend.color,
                   }}
