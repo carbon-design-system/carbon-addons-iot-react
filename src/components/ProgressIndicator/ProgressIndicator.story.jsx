@@ -59,6 +59,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       onClickItem={action('onClickItem')}
       stepWidth={number('stepWidth', 9)}
       showLabels={boolean('showlabels', true)}
+      isVerticalMode={boolean('isVerticalMode', false)}
     />
   ))
   .add('presentation vertical', () => (
