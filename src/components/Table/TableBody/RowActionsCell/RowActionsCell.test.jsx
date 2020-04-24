@@ -66,4 +66,30 @@ describe('RowActionsCell', () => {
     expect(container).toHaveLength(1);
     expect(button.text()).toEqual(action.labelText);
   });
+
+  test('action container background knows when overflow menu is open (in order to stay visible)', () => {
+    const actions = [{ id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' }];
+    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
+
+    let container = wrapper.find(
+      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+    );
+    expect(container).toHaveLength(0);
+
+    const overflowMenu = wrapper.find('OverflowMenu');
+    overflowMenu.simulate('click');
+    overflowMenu.props().onOpen();
+    wrapper.update();
+    container = wrapper.find(
+      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+    );
+    expect(container).toHaveLength(1);
+
+    overflowMenu.props().onClose();
+    wrapper.update();
+    container = wrapper.find(
+      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+    );
+    expect(container).toHaveLength(0);
+  });
 });
