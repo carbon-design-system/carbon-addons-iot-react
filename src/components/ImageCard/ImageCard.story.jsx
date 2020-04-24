@@ -64,38 +64,6 @@ storiesOf('Watson IoT/ImageCard', module)
       </div>
     );
   })
-  .add(
-    'basic with variables',
-    () => {
-      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-      return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-          <ImageCard
-            title={text('title', 'Image title variable is {not-working}')}
-            id="image-hotspots"
-            cardVariables={object('variables', {
-              'not-working': 'working',
-            })}
-            content={object('content', content)}
-            values={object('values', values)}
-            breakpoint="lg"
-            size={size}
-            onCardAction={action('onCardAction')}
-          />
-        </div>
-      );
-    },
-    {
-      info: {
-        text: `
-    # Passing variables
-    To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
-    Variables in ImageCards are supported in title, hotspots titles, threshold values, unit, and label.
-    Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
-    `,
-      },
-    }
-  )
   .add('custom renderIconByName', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
     return (
