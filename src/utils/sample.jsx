@@ -2605,7 +2605,6 @@ export const tableData = [
       count: 7,
       hour: 1563870610000,
       pressure: 0,
-      deviceId: 'Link',
     },
   },
   {

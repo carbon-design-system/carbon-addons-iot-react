@@ -547,7 +547,6 @@ storiesOf('Watson IoT/Dashboard', module)
         headCount_EnterpriseBuilding_mean: 240,
         capacity_EnterpriseBuilding_mean: 300,
         allocatedSeats_EnterpriseBuilding_mean: 240,
-        link: 'Custom link',
       },
     }));
     return (
@@ -567,10 +566,6 @@ storiesOf('Watson IoT/Dashboard', module)
                   { dataSourceId: 'peopleCount_EnterpriseBuilding_mean', label: 'People' },
                   { dataSourceId: 'headCount_EnterpriseBuilding_mean', label: 'Headcount' },
                   { dataSourceId: 'capacity_EnterpriseBuilding_mean', label: 'capacity' },
-                  {
-                    dataSourceId: 'link',
-                    label: 'Custom Link',
-                  },
                 ],
               },
               values: data,
