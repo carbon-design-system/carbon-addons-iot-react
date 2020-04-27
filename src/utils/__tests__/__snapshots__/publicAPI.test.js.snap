@@ -6249,7 +6249,6 @@ Map {
         "xl": 144,
         "xs": 144,
       },
-      "showOverflow": false,
       "size": "MEDIUM",
       "testID": "Card",
       "timeRange": undefined,

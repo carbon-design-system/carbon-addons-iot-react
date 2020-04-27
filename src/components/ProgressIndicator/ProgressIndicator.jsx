@@ -11,53 +11,6 @@ import { settings } from '../../constants/Settings';
 
 const { prefix, iotPrefix } = settings;
 
-const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
-  <CarbonProgressIndicator {...others} />
-))`
-  &&& {
-    display: ${props => (!props.isVerticalMode ? `inline-flex` : '')};
-
-    .bx--progress-step--complete {
-      cursor: pointer;
-    }
-    .bx--progress-step--incomplete {
-      cursor: pointer;
-    }
-  }
-`;
-
-const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...others }) => (
-  <ProgressStep {...others} />
-))`
-  &&& {
-    width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : '')};
-    min-width: ${props =>
-      !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : ''};
-    p {
-      display: ${props => (!props.showLabel ? 'none' : '')};
-
-      &:hover::after {
-        content: attr(data-label);
-        width: 100%;
-        position: absolute;
-        top: 100%;
-      }
-    }
-    ${props => {
-      const { isVerticalMode, stepWidth } = props;
-      return isVerticalMode
-        ? `
-        .bx--progress-step-button {
-        flex-flow: initial;
-      }
-      height: ${stepWidth ? `${stepWidth}rem` : 'inherit'};
-      min-height: ${stepWidth ? `${stepWidth}rem` : '4rem'};
-      `
-        : '';
-    }}
-  }
-`;
-
 const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 
 const propTypes = {
@@ -84,6 +37,53 @@ const defaultProps = {
   isVerticalMode: false,
 };
 
+const StyledProgressIndicator = styled(({ isVerticalMode, ...others }) => (
+  <CarbonProgressIndicator {...others} />
+))`
+  &&& {
+    display: ${props => (!props.isVerticalMode ? `inline-flex` : '')};
+
+    .${prefix}--progress-step--complete {
+      cursor: pointer;
+    }
+    .${prefix}--progress-step--incomplete {
+      cursor: pointer;
+    }
+  }
+`;
+
+const StyledProgressStep = styled(({ showLabel, stepWidth, isVerticalMode, ...others }) => (
+  <ProgressStep {...others} />
+))`
+  &&& {
+    width: ${props => (!props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : '')};
+    min-width: ${props =>
+      !props.isVerticalMode && props.stepWidth ? `${props.stepWidth}rem` : ''};
+    p {
+      display: ${props => (!props.showLabel ? 'none' : '')};
+
+      &:hover::after {
+        content: attr(data-label);
+        width: 100%;
+        position: absolute;
+        top: 100%;
+      }
+    }
+    ${props => {
+      const { isVerticalMode, stepWidth } = props;
+      return isVerticalMode
+        ? `
+        .${prefix}--progress-step-button {
+        flex-flow: initial;
+      }
+      height: ${stepWidth ? `${stepWidth}rem` : 'inherit'};
+      min-height: ${stepWidth ? `${stepWidth}rem` : '3.625rem'};
+      `
+        : '';
+    }}
+  }
+`;
+
 /**
  * This component extends the default Carbon ProgressIndicator.
  * It adds the ability to hideLabels on non-current steps and set a maximum stepWidth in pixels
@@ -108,18 +108,16 @@ const ProgressIndicator = ({
     items,
     currentItemId,
   ]);
+
   // Only recalculate current step if inputs change
   const currentStep = matchingIndex > -1 ? matchingIndex : 0;
   return (
     <StyledProgressIndicator
-      className={classnames(
-        className,
-        isVerticalMode ? `${prefix}--progress--vertical` : '',
-        `${iotPrefix}--progress-indicator`
-      )}
+      className={classnames(className, `${iotPrefix}--progress-indicator`)}
       onChange={handleChange}
       currentIndex={currentStep}
       isVerticalMode={isVerticalMode}
+      vertical={isVerticalMode}
     >
       {items.map(({ id, label, secondaryLabel, description }) => (
         <StyledProgressStep
@@ -139,4 +137,5 @@ const ProgressIndicator = ({
 
 ProgressIndicator.propTypes = propTypes;
 ProgressIndicator.defaultProps = defaultProps;
+
 export default ProgressIndicator;
