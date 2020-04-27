@@ -4,6 +4,7 @@ import { text, number, select, boolean } from '@storybook/addon-knobs';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getDataStateProp } from '../Card/Card.story';
+import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import GaugeCard from './GaugeCard';
 
@@ -50,7 +51,7 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
     };
 
     return (
-      <div style={{ width: '142px', margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: 60 }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}
@@ -76,7 +77,7 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
     };
 
     return (
-      <div style={{ width: '142px', margin: 60 }}>
+      <div style={{ width: '252px', margin: 60 }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}
