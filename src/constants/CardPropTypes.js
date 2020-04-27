@@ -71,6 +71,7 @@ export const ValueCardPropTypes = {
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
   }),
+  cardVariables: PropTypes.object,
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
@@ -109,6 +110,7 @@ export const TimeSeriesCardPropTypes = {
   }),
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
+  cardVariables: PropTypes.object,
 };
 
 export const TableCardPropTypes = {
@@ -189,6 +191,7 @@ export const TableCardPropTypes = {
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
   }),
+  cardVariables: PropTypes.object,
 };
 
 export const BarChartCardPropTypes = {

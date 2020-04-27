@@ -7423,6 +7423,9 @@ Map {
         ],
         "type": "shape",
       },
+      "cardVariables": Object {
+        "type": "object",
+      },
       "content": Object {
         "args": Array [
           Object {
@@ -8303,6 +8306,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "cardVariables": Object {
+        "type": "object",
       },
       "content": Object {
         "args": Array [
@@ -9832,6 +9838,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "cardVariables": Object {
+        "type": "object",
       },
       "content": Object {
         "args": Array [
