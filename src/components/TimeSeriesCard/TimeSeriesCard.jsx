@@ -5,6 +5,7 @@ import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import filter from 'lodash/filter';
 import memoize from 'lodash/memoize';
@@ -96,18 +97,34 @@ export const determinePrecision = (size, value, defaultPrecision) => {
  * @returns {object} with a labels array and a datasets array
  */
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
-  return {
-    labels: [...new Set(values.map(val => val[timeDataSourceId]))],
-    datasets: series.map(({ dataSourceId, dataFilter = {}, label, color }) => ({
-      label,
-      ...(color ? { fillColors: [color] } : {}),
-      data:
-        filter(values, dataFilter) &&
-        filter(values, dataFilter) // have to filter out null values from the dataset, as it causes Carbon Charts to break
-          .filter(i => !isNil(i[dataSourceId]))
-          .map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
-    })),
-  };
+  const labels = [...new Set(values.map(val => val[timeDataSourceId]))];
+  const data = [];
+  // Series is the different groups of data
+  series.forEach(({ dataSourceId, dataFilter = {}, label, color }) => {
+    // Labels are the unique timestamps
+    labels.forEach(dataLabel => {
+      // First filter based on on the dataFilter
+      const filteredData = filter(values, dataFilter);
+      if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
+        filteredData
+          .filter(dataItem => {
+            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === dataLabel;
+          })
+          .forEach(dataItem =>
+            data.push({
+              date: new Date(dataItem[timeDataSourceId]),
+              value: dataItem[dataSourceId],
+              label,
+              color: { ...(color ? { fillColors: [color] } : {}) },
+              group: dataLabel,
+            })
+          );
+      }
+    });
+  });
+  console.log(data);
+  return data;
 };
 
 /**
@@ -396,10 +413,8 @@ const TimeSeriesCard = ({
                 axes: {
                   bottom: {
                     title: xLabel,
+                    mapsTo: 'date',
                     scaleType: 'time',
-                    ...(chartType !== TIME_SERIES_TYPES.BAR
-                      ? { primary: true }
-                      : { secondary: true }),
                     ticks: {
                       max: maxTicksPerSize,
                       formatter: formatTick,
@@ -408,13 +423,11 @@ const TimeSeriesCard = ({
                   },
                   left: {
                     title: yLabel,
+                    mapsTo: 'value',
                     formatter: axisValue => valueFormatter(axisValue, newSize, unit),
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
                       : {}),
-                    ...(chartType === TIME_SERIES_TYPES.BAR
-                      ? { primary: true }
-                      : { secondary: true }),
                     stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
                     includeZero: includeZeroOnYaxis,
                   },

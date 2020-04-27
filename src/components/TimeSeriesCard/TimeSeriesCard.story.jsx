@@ -1225,7 +1225,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               acc.push({
                 ...dataPoint,
                 temperature: dataPoint.temperature / 2,
-                ENTITY_ID: 'Sensor2-2',
+                ENTITY_ID: 'Sensor2-3',
               });
               return acc;
             },
