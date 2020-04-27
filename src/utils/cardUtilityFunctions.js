@@ -2,8 +2,6 @@ import warning from 'warning';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
-/* eslint-disable no-unused-expressions */
-
 /**
  * determine time range from drop down action
  * range - requested range from card dropdown action
@@ -191,6 +189,7 @@ export const handleValueCardVariables = (title, content, values, card) => {
   updatedCard.title = handleTitleVariables(title, cardVariables);
 
   const { attributes } = updatedCard.content;
+  // eslint-disable-next-line no-unused-expressions
   attributes?.forEach((attribute, i) => {
     const { label, unit, thresholds } = attribute;
 
@@ -206,6 +205,7 @@ export const handleValueCardVariables = (title, content, values, card) => {
       const updatedUnit = replaceVariables(unitVariables, cardVariables, unit);
       updatedCard.content.attributes[i].unit = updatedUnit;
     }
+    // eslint-disable-next-line no-unused-expressions
     thresholds?.forEach((threshold, x) => {
       const { value } = threshold;
       // check for variables in each threshold value and replace them
@@ -260,6 +260,7 @@ export const handleTableCardVariables = (title, content, values, card) => {
       }
     }
   });
+  // eslint-disable-next-line no-unused-expressions
   thresholds?.forEach((threshold, x) => {
     const { label, severityLabel, value } = threshold;
     // Check if there are variables in the threshold labels
@@ -331,6 +332,7 @@ export const handleTimeseriesCardVariables = (title, content, values, card) => {
     const updatedUnit = replaceVariables(unitVariables, cardVariables, unit);
     updatedCard.content.unit = updatedUnit;
   }
+  // eslint-disable-next-line no-unused-expressions
   series?.forEach((el, i) => {
     const { label } = el;
     // Check if there are variables in the series labels
