@@ -220,9 +220,6 @@ describe('cardUtilityFunctions', () => {
           },
           {
             dataSourceId: 'deviceid',
-            linkTemplate: {
-              href: 'www.{url}.com',
-            },
           },
           {
             dataSourceId: 'timestamp',
@@ -307,9 +304,6 @@ describe('cardUtilityFunctions', () => {
         },
         {
           dataSourceId: 'deviceid',
-          linkTemplate: {
-            href: 'www.google.com',
-          },
         },
         {
           dataSourceId: 'timestamp',
