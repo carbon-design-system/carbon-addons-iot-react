@@ -1674,69 +1674,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 </svg>
                               </button>
                             </th>
-                            <th
-                              aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                              scope="col"
-                              style={
-                                Object {
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              <button
-                                align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                                data-column="deviceId"
-                                id="column-deviceId"
-                                onClick={[Function]}
-                                width=""
-                              >
-                                <span
-                                  className="bx--table-header-label"
-                                >
-                                  <span
-                                    className=""
-                                    title="Link"
-                                  >
-                                    Link
-                                  </span>
-                                </span>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
-                                  />
-                                </svg>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon-unsorted"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
-                                  />
-                                  <polygon
-                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
-                                  />
-                                </svg>
-                              </button>
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -1747,7 +1684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
-                              colSpan={4}
+                              colSpan={3}
                             >
                               <div
                                 className="empty-table-cell--default"
@@ -3942,69 +3879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 </svg>
                               </button>
                             </th>
-                            <th
-                              aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                              scope="col"
-                              style={
-                                Object {
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              <button
-                                align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                                data-column="deviceId"
-                                id="column-deviceId"
-                                onClick={[Function]}
-                                width=""
-                              >
-                                <span
-                                  className="bx--table-header-label"
-                                >
-                                  <span
-                                    className=""
-                                    title="Link"
-                                  >
-                                    Link
-                                  </span>
-                                </span>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
-                                  />
-                                </svg>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon-unsorted"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
-                                  />
-                                  <polygon
-                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
-                                  />
-                                </svg>
-                              </button>
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -4015,7 +3889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
-                              colSpan={4}
+                              colSpan={3}
                             >
                               <div
                                 className="empty-table-cell--default"
@@ -6242,69 +6116,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 </svg>
                               </button>
                             </th>
-                            <th
-                              aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                              scope="col"
-                              style={
-                                Object {
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              <button
-                                align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                                data-column="deviceId"
-                                id="column-deviceId"
-                                onClick={[Function]}
-                                width=""
-                              >
-                                <span
-                                  className="bx--table-header-label"
-                                >
-                                  <span
-                                    className=""
-                                    title="Link"
-                                  >
-                                    Link
-                                  </span>
-                                </span>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
-                                  />
-                                </svg>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon-unsorted"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
-                                  />
-                                  <polygon
-                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
-                                  />
-                                </svg>
-                              </button>
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -6315,7 +6126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
-                              colSpan={4}
+                              colSpan={3}
                             >
                               <div
                                 className="empty-table-cell--default"
@@ -11260,69 +11071,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 </svg>
                               </button>
                             </th>
-                            <th
-                              aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                              scope="col"
-                              style={
-                                Object {
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              <button
-                                align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                                data-column="deviceId"
-                                id="column-deviceId"
-                                onClick={[Function]}
-                                width=""
-                              >
-                                <span
-                                  className="bx--table-header-label"
-                                >
-                                  <span
-                                    className=""
-                                    title="Link"
-                                  >
-                                    Link
-                                  </span>
-                                </span>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
-                                  />
-                                </svg>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon-unsorted"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
-                                  />
-                                  <polygon
-                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
-                                  />
-                                </svg>
-                              </button>
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -11333,7 +11081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
-                              colSpan={4}
+                              colSpan={3}
                             >
                               <div
                                 className="empty-table-cell--default"
@@ -25654,69 +25402,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 </svg>
                               </button>
                             </th>
-                            <th
-                              aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
-                              scope="col"
-                              style={
-                                Object {
-                                  "width": undefined,
-                                }
-                              }
-                            >
-                              <button
-                                align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
-                                data-column="deviceId"
-                                id="column-deviceId"
-                                onClick={[Function]}
-                                width=""
-                              >
-                                <span
-                                  className="bx--table-header-label"
-                                >
-                                  <span
-                                    className=""
-                                    title="Link"
-                                  >
-                                    Link
-                                  </span>
-                                </span>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="16 4 6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4"
-                                  />
-                                </svg>
-                                <svg
-                                  aria-label="Sort rows by this header in ascending order"
-                                  className="bx--table-sort__icon-unsorted"
-                                  focusable="false"
-                                  height={20}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="27.6,20.6 24,24.2 24,4 22,4 22,24.2 18.4,20.6 17,22 23,28 29,22"
-                                  />
-                                  <polygon
-                                    points="9,4 3,10 4.4,11.4 8,7.8 8,28 10,28 10,7.8 13.6,11.4 15,10"
-                                  />
-                                </svg>
-                              </button>
-                            </th>
                           </tr>
                         </thead>
                         <tbody
@@ -25727,7 +25412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
                           >
                             <td
-                              colSpan={4}
+                              colSpan={3}
                             >
                               <div
                                 className="empty-table-cell--default"

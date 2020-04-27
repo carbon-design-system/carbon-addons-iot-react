@@ -2524,14 +2524,7 @@ export const tableColumns = [
   {
     dataSourceId: 'pressure',
     label: 'Pressure',
-  },
-  {
-    dataSourceId: 'deviceId',
-    label: 'Link',
-    linkTemplate: {
-      href: 'https://ibm-{deviceId}.com/',
-      target: '_blank',
-    },
+    priority: 2,
   },
 ];
 
@@ -2544,7 +2537,6 @@ export const tableData = [
       hour: 1563877570000,
       long_description: 'long description for a given event payload',
       pressure: 0,
-      deviceId: 'Link',
     },
   },
   {
@@ -2555,7 +2547,6 @@ export const tableData = [
       hour: 1563873970000,
       long_description: 'long description for a given event payload',
       pressure: 2,
-      deviceId: 'Link',
     },
   },
   {
@@ -2566,7 +2557,6 @@ export const tableData = [
       hour: 1564756946000,
       long_description: 'long description for a given event payload',
       pressure: 10,
-      deviceId: 'Link',
     },
   },
   {
@@ -2578,7 +2568,6 @@ export const tableData = [
       other_description: 'other description for a given event payload',
       long_description: 'long description for a given event payload',
       pressure: 0,
-      deviceId: 'Link',
     },
   },
   {
@@ -2589,7 +2578,6 @@ export const tableData = [
       hour: 1563874210000,
       pressure: 10,
       temperature: 80,
-      deviceId: 'Link',
     },
   },
   {
@@ -2599,7 +2587,6 @@ export const tableData = [
       count: 30,
       hour: 1563874210000,
       pressure: 68,
-      deviceId: 'Link',
     },
   },
   {
@@ -2609,7 +2596,6 @@ export const tableData = [
       count: 9,
       hour: 1563870610000,
       pressure: 0,
-      deviceId: 'Link',
     },
   },
   {
@@ -2629,7 +2615,6 @@ export const tableData = [
       count: 0,
       hour: 1563873970000,
       pressure: 0,
-      deviceId: 'Link',
     },
   },
   {
@@ -2639,7 +2624,6 @@ export const tableData = [
       count: 2,
       hour: 1563873970000,
       pressure: 0,
-      deviceId: 'Link',
     },
   },
   {
@@ -2649,7 +2633,6 @@ export const tableData = [
       count: 5,
       hour: 1563877570000,
       pressure: 1,
-      deviceId: 'Link',
     },
   },
 ];

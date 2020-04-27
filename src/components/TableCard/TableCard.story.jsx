@@ -56,6 +56,10 @@ storiesOf('Watson IoT/TableCard', module)
         },
       ];
 
+      const tableLinkData = tableData.slice(0);
+      // eslint-disable-next-line no-return-assign, no-param-reassign
+      tableLinkData.forEach(row => (row.values.deviceId = 'Link'));
+
       return (
         <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
           <TableCard
@@ -65,7 +69,7 @@ storiesOf('Watson IoT/TableCard', module)
             content={{
               columns: tableLinkColumns,
             }}
-            values={tableData}
+            values={tableLinkData}
             onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
             cardVariables={cardVariables}
@@ -88,16 +92,14 @@ storiesOf('Watson IoT/TableCard', module)
   .add(
     'With dynamic variables',
     () => {
-      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
       const cardVariables = object('Dynamic link variable', {
         assetId: '11112',
         devicePressureThreshold: 1,
       });
+
       const tableLinkColumns = [
-        {
-          dataSourceId: 'pressure',
-          label: 'Pressure',
-        },
+        ...tableColumns,
         {
           dataSourceId: 'deviceId',
           label: 'Link',
@@ -107,6 +109,10 @@ storiesOf('Watson IoT/TableCard', module)
           },
         },
       ];
+
+      const tableLinkData = tableData.slice(0);
+      // eslint-disable-next-line no-return-assign, no-param-reassign
+      tableLinkData.forEach(row => (row.values.deviceId = 'Link'));
 
       const thresholds = [
         {
@@ -130,7 +136,7 @@ storiesOf('Watson IoT/TableCard', module)
               columns: tableLinkColumns,
               thresholds,
             }}
-            values={tableData}
+            values={tableLinkData}
             onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
             size={size}
             cardVariables={cardVariables}
@@ -265,55 +271,6 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
-  .add(
-    'With dynamic variables',
-    () => {
-      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
-      const cardVariables = object('Dynamic link variable', {
-        assetId: '11112',
-        devicePressureThreshold: 1,
-      });
-
-      const thresholds = [
-        {
-          dataSourceId: 'pressure',
-          comparison: '>=',
-          value: text('Custom threshold value', '{devicePressureThreshold}'),
-          severity: 1,
-          label: text('Custom Pressure Severity Header', '{assetId} Pressure'),
-          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
-          severityLabel: text('Custom Critical Label', '{assetId} Critical'),
-        },
-      ];
-      return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-          <TableCard
-            title={text('title', 'Asset {assetId} Open Alerts')}
-            id="table-list"
-            tooltip={text('Tooltip text', "Here's a Tooltip")}
-            content={{
-              columns: tableColumns,
-              thresholds,
-            }}
-            values={tableData}
-            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
-            size={size}
-            cardVariables={cardVariables}
-          />
-        </div>
-      );
-    },
-    {
-      info: {
-        text: `<p>Dynamic variables can be added to the title, threshold severityLabel, threshold label, and threshold value.</p> 
-              <p>The string value of the variable must be wrapped with curly braces. For example, {variableName}</p>
-              <p>A cardVariable object must be supplied to TableCard where the keys will be the variable name and the value will be 
-                  what is inserted
-              </p>
-    `,
-      },
-    }
-  )
   .add(
     'table with thresholds',
     () => {

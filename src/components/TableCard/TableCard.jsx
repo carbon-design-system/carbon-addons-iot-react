@@ -338,7 +338,6 @@ const TableCard = ({
   // If a column has a linkTemplate, format the column to render a link
   const columnsWithFormattedLinks = columns.map(column => {
     const { linkTemplate } = column;
-    console.log(column);
     if (linkTemplate) {
       return {
         ...column,
