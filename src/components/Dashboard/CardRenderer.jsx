@@ -76,6 +76,7 @@ const CardRenderer = React.memo(
     ...cardProp // pass through the card props
   }) => {
     const { dataSource, availableActions, type } = cardProp;
+
     /**
      * Local state for the card, keeps track of whether it is loading or not, and the current state of the Range Selector
      * And which data range is being requested.
@@ -164,8 +165,6 @@ const CardRenderer = React.memo(
       },
       [card, onFetchData, originalDataSource && originalDataSource.range, timeGrain] // eslint-disable-line
     );
-
-    console.log(card);
 
     const commonCardProps = {
       ...card, // pass all the card props, including the card data to the card

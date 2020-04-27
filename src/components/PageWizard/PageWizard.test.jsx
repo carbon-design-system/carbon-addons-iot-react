@@ -22,7 +22,7 @@ describe('PageWizard tests', () => {
     // The error should show
     expect(getByText('My Custom Error')).toBeDefined();
     // The first close is the SVG
-    fireEvent.click(getAllByTitle(i18n.close)[1]);
+    fireEvent.click(getAllByTitle(i18n.close)[0]);
     // The error should go away
     expect(mocks.onClearError).toHaveBeenCalledTimes(1);
     expect(queryByText('My Custom Error')).toBeNull();

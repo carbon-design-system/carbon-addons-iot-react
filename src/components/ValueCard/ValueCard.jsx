@@ -226,6 +226,8 @@ const ValueCard = ({
     expand: false,
     ...others.availableActions,
   };
+
+  /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const { title, content, values } = handleValueCardVariables(
     titleProp,
     contentProp,
