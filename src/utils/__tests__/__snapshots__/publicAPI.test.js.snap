@@ -3321,14 +3321,16 @@ Map {
       },
       "description": Object {
         "args": Array [
-          Object {
-            "type": "element",
-          },
-          Object {
-            "type": "string",
-          },
+          Array [
+            Object {
+              "type": "element",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
         ],
-        "type": "oneOf",
+        "type": "oneOfType",
       },
       "editable": Object {
         "type": "bool",
@@ -6247,7 +6249,6 @@ Map {
         "xl": 144,
         "xs": 144,
       },
-      "showOverflow": false,
       "size": "MEDIUM",
       "testID": "Card",
       "timeRange": undefined,
