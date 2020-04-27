@@ -247,19 +247,7 @@ export const handleTableCardVariables = (title, content, values, card) => {
   // check for variables in the title and replace them
   updatedCard.title = handleTitleVariables(title, cardVariables);
 
-  const { columns, thresholds } = updatedCard.content;
-  columns.forEach((column, i) => {
-    const { linkTemplate } = column;
-    if (linkTemplate) {
-      const { href } = linkTemplate;
-      // Check for variables in the hrefs
-      const hrefVariables = getVariables(href);
-      if (hrefVariables) {
-        const updatedHref = replaceVariables(hrefVariables, cardVariables, href);
-        updatedCard.content.columns[i].linkTemplate.href = updatedHref;
-      }
-    }
-  });
+  const { thresholds } = updatedCard.content;
   // eslint-disable-next-line no-unused-expressions
   thresholds?.forEach((threshold, x) => {
     const { label, severityLabel, value } = threshold;
