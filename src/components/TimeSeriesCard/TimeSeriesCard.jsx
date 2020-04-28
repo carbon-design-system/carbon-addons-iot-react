@@ -94,36 +94,36 @@ export const determinePrecision = (size, value, defaultPrecision) => {
  * @param {array} series, an array of lines to create in our chart
  * @param {array} values, the array of values from our data layer
  *
+ * TODO: Handle empty data lines gracefully and notify the user of data lines that did not
+ * match the dataFilter
+ *
  * @returns {object} with a labels array and a datasets array
  */
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
-  const labels = [...new Set(values.map(val => val[timeDataSourceId]))];
+  const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
   const data = [];
   // Series is the different groups of data
-  series.forEach(({ dataSourceId, dataFilter = {}, label, color }) => {
-    // Labels are the unique timestamps
-    labels.forEach(dataLabel => {
+  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+    timestamps.forEach(timestamp => {
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
       if (!isEmpty(filteredData)) {
         // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
           .filter(dataItem => {
-            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === dataLabel;
+            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp;
           })
           .forEach(dataItem =>
             data.push({
               date: new Date(dataItem[timeDataSourceId]),
               value: dataItem[dataSourceId],
-              label,
-              color: { ...(color ? { fillColors: [color] } : {}) },
-              group: dataLabel,
+              group: label,
             })
           );
       }
     });
   });
-  console.log(data);
+
   return data;
 };
 
@@ -289,6 +289,12 @@ const TimeSeriesCard = ({
     [isEditable, series]
   );
 
+  // Set the colors for each dataset
+  const colors = { identifier: 'group', scale: {} };
+  series.forEach(dataset => {
+    colors.scale[dataset.label] = dataset.color;
+  });
+
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
       const matchingAlertRange = findMatchingAlertRange(alertRanges, data);
@@ -445,6 +451,7 @@ const TimeSeriesCard = ({
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
+                color: colors,
               }}
               width="100%"
               height="100%"

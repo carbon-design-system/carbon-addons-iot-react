@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
-import uniqBy from 'lodash/uniqBy';
+import isEmpty from 'lodash/isEmpty';
 import groupBy from 'lodash/groupBy';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
@@ -26,54 +26,87 @@ const { iotPrefix } = settings;
  * @returns {object} with a labels array and a datasets array
  */
 export const formatChartData = (series, values) => {
-  let labels = [];
-  let datasets = [];
+  const data = [];
   if (!isNil(values)) {
     if (series.groupDataSourceId) {
       // grouped and stacked
-      labels = uniqBy(values, series.groupDataSourceId).map(x => x[series.groupDataSourceId]);
       const groupedDatasets = groupBy(values, series.labelDataSourceId);
-      Object.keys(groupedDatasets).forEach(dataset => {
-        datasets.push({
-          label: dataset,
-          ...(series.colors && series.colors[datasets.length]
-            ? { fillColors: [series.colors[datasets.length]] }
-            : {}),
-          data: series.timeDataSourceId
-            ? groupedDatasets[dataset].map(d => ({
+      if (!isEmpty(groupedDatasets)) {
+        console.log(groupedDatasets);
+        Object.keys(groupedDatasets).forEach(dataset => {
+          groupedDatasets[dataset].forEach(d => {
+            // Time-based
+            if (series.timeDataSourceId) {
+              data.push({
+                group: dataset,
+                key: d[series.groupDataSourceId],
                 date: new Date(d[series.timeDataSourceId]),
                 value: d[series.dataSourceId],
-              }))
-            : groupedDatasets[dataset].map(d => d[series.dataSourceId]),
+              });
+            } else {
+              // Not time-based
+              data.push({
+                group: dataset,
+                key: d[series.groupDataSourceId],
+                value: d[series.dataSourceId],
+              });
+            }
+          });
+        });
+      }
+    } else if (series.labelDataSourceId) {
+      values.forEach(v => {
+        data.push({
+          group: v[series.labelDataSourceId],
+          value: v[series.dataSourceId],
         });
       });
-    } else if (series.labelDataSourceId) {
-      // single bars
-      labels = values.map(v => v[series.labelDataSourceId]);
-      datasets = [
-        {
-          ...(series.colors ? { fillColors: series.colors } : {}),
-          data: values.map(v => v[series.dataSourceId]),
-        },
-      ];
     } else if (series.timeDataSourceId) {
       // timestamp
-      labels = values.map(v => v[series.timeDataSourceId]);
-      datasets = [
-        {
-          ...(series.colors ? { fillColors: series.colors } : {}),
-          data: values.map(v => ({
-            date: new Date(v[series.timeDataSourceId]),
-            value: v[series.dataSourceId],
-          })),
-        },
-      ];
+      values.forEach(v => {
+        data.push({
+          group: v[series.dataSourceId],
+          date: new Date(v[series.timeDataSourceId]),
+          value: v[series.dataSourceId],
+        });
+      });
     }
+  }
+  return data;
+};
+
+export const mapValuesToAxes = (series, layout) => {
+  // Determine which values the axes map to
+  let bottomAxesMapsTo;
+  let leftAxesMapsTo;
+  if (layout === BAR_CHART_LAYOUTS.VERTICAL) {
+    if (series?.timeDataSourceId) {
+      bottomAxesMapsTo = 'date';
+      leftAxesMapsTo = 'group';
+    } else if (series?.groupDataSourceId) {
+      bottomAxesMapsTo = 'key';
+      leftAxesMapsTo = 'value';
+    } // not group or time-based
+    else {
+      bottomAxesMapsTo = 'group';
+      leftAxesMapsTo = 'value';
+    }
+  } // if horizontal and time-based
+  else if (series?.timeDataSourceId) {
+    bottomAxesMapsTo = 'group';
+    leftAxesMapsTo = 'date';
+  } else if (series?.groupDataSourceId) {
+    bottomAxesMapsTo = 'value';
+    leftAxesMapsTo = 'key';
+  } // if horizontal, not time-based or group
+  else {
+    bottomAxesMapsTo = 'value';
+    leftAxesMapsTo = 'group';
   }
 
   return {
-    labels,
-    datasets,
+    bottomAxesMapsTo,
+    leftAxesMapsTo,
   };
 };
 
@@ -100,8 +133,8 @@ const BarChartCard = ({
   if (series && series.dataSourceId && (series.labelDataSourceId || series.timeDataSourceId)) {
     chartData = formatChartData(series, values);
   }
-
-  const isAllValuesEmpty = chartData.datasets.every(set => set.data.every(value => isNil(value)));
+  const isAllValuesEmpty = isEmpty(chartData);
+  console.log(chartData);
 
   let ChartComponent = SimpleBarChart;
 
@@ -112,6 +145,16 @@ const BarChartCard = ({
   }
 
   const scaleType = series && series.timeDataSourceId ? 'time' : 'labels';
+
+  // // Set the colors for each dataset
+  // const colors = { identifier: 'group', scale: {} };
+  // series.forEach(dataset => {
+  //   colors.scale[dataset.label] = dataset.color;
+  // });
+
+  const axesMap = mapValuesToAxes(series, layout);
+  // console.log(bottomAxesMapsTo);
+  // console.log(leftAxesMapsTo);
 
   return (
     <Card
@@ -125,44 +168,42 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
-        <Fragment>
-          <div className={classnames(`${iotPrefix}--bar-chart-container`, className)}>
-            <ChartComponent
-              data={chartData}
-              options={{
-                animations: false,
-                accessibility: true,
-                axes: {
-                  bottom: {
-                    title: xLabel,
-                    scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
-                    primary: true,
-                    stacked:
-                      chartType === BAR_CHART_TYPES.STACKED &&
-                      layout === BAR_CHART_LAYOUTS.HORIZONTAL,
-                  },
-                  left: {
-                    title: yLabel,
-                    scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
-                    secondary: true,
-                    stacked:
-                      chartType === BAR_CHART_TYPES.STACKED &&
-                      layout === BAR_CHART_LAYOUTS.VERTICAL,
-                  },
+        <div className={classnames(`${iotPrefix}--bar-chart-container`, className)}>
+          <ChartComponent
+            data={chartData}
+            options={{
+              animations: false,
+              accessibility: true,
+              axes: {
+                bottom: {
+                  title: xLabel,
+                  mapsTo: axesMap.bottomAxesMapsTo,
+                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+                  stacked:
+                    chartType === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL,
                 },
-                legend: { position: 'bottom', enabled: chartData.datasets.length > 1 },
-                containerResizable: true,
-                tooltip: {
-                  gridline: {
-                    enabled: false,
-                  },
+                left: {
+                  title: yLabel,
+                  mapsTo: axesMap.leftAxesMapsTo,
+                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+                  stacked:
+                    chartType === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
                 },
-              }}
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </Fragment>
+              },
+              legend: { position: 'bottom', enabled: chartData.length > 1 },
+              containerResizable: true,
+              tooltip: {
+                gridline: {
+                  enabled: false,
+                },
+              },
+              // color: colors,
+            }}
+            width="100%"
+            height="100%"
+          />
+        </div>
       ) : null}
     </Card>
   );

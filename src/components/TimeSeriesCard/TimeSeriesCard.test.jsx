@@ -3,9 +3,8 @@ import { mount } from 'enzyme';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, COLORS } from '../../constants/LayoutConstants';
 
-/* eslint-disable */
 import TimeSeriesCard, {
   determinePrecision,
   valueFormatter,
@@ -44,7 +43,7 @@ describe('TimeSeriesCard tests', () => {
     expect(wrapper.find('LineChart')).toHaveLength(1);
   });
   test('shows table with data when expanded', () => {
-    let wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} isExpanded />);
+    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} isExpanded />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
     // Carbon Table should be there
     expect(wrapper.find(Table)).toHaveLength(1);
@@ -82,5 +81,54 @@ describe('TimeSeriesCard tests', () => {
     expect(updatedTooltip).not.toEqual(defaultTooltip);
     expect(updatedTooltip).toContain('<ul');
     expect(updatedTooltip).toContain('2017');
+  });
+  test('show line chart when only 1 color is set', () => {
+    const timeSeriesCardWithOneColorProps = {
+      title: 'Temperature',
+      id: 'facility-temperature',
+      isLoading: false,
+      content: {
+        series: [
+          {
+            label: 'Temperature Device 1',
+            dataSourceId: 'temperature',
+            dataFilter: {
+              ENTITY_ID: 'Sensor2-1',
+            },
+            color: COLORS.MAGENTA,
+          },
+          {
+            label: 'Temperature Device 2',
+            dataSourceId: 'temperature',
+            dataFilter: {
+              ENTITY_ID: 'Sensor2-3',
+            },
+            // no color set here
+          },
+        ],
+        xLabel: 'Time',
+        yLabel: 'Temperature (˚F)',
+        timeDataSourceId: 'timestamp',
+      },
+      values: getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
+        (acc, dataPoint) => {
+          // make "two devices worth of data" so that we can filter
+          acc.push(dataPoint);
+          acc.push({
+            ...dataPoint,
+            temperature: dataPoint.temperature / 2,
+            ENTITY_ID: 'Sensor2-3',
+          });
+          return acc;
+        },
+        []
+      ),
+      interval: 'hour',
+      breakpoint: 'lg',
+      size: 'LARGE',
+      onCardAction: () => {},
+    };
+    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
+    expect(wrapper.find('LineChart')).toHaveLength(1);
   });
 });

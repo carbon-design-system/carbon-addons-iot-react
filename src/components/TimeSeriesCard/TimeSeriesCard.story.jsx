@@ -1206,7 +1206,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 label: 'Temperature Device 2',
                 dataSourceId: 'temperature',
                 dataFilter: {
-                  ENTITY_ID: 'Sensor2-2',
+                  ENTITY_ID: 'Sensor2-3',
                 },
                 color: text('color2', COLORS.BLUE),
               },
