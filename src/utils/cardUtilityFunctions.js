@@ -157,7 +157,10 @@ export const replaceVariables = (variables, cardVariables, target, card) => {
     // Need to update the target with all lower-case variables for case-insesitivity
     updatedTarget = updatedTarget.replace(variableRegex, insensitiveVariable);
 
-    if (typeof insensitiveCardVariables[insensitiveVariable] === 'string') {
+    if (
+      typeof insensitiveCardVariables[insensitiveVariable] === 'string' ||
+      typeof insensitiveCardVariables[insensitiveVariable] === 'number'
+    ) {
       const insensitiveVariableRegex = new RegExp(`{${insensitiveVariable}}`, 'g');
       updatedTarget = updatedTarget.replace(
         insensitiveVariableRegex,
