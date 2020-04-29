@@ -7424,7 +7424,25 @@ Map {
         "type": "shape",
       },
       "cardVariables": Object {
-        "type": "object",
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [
@@ -8308,7 +8326,25 @@ Map {
         "type": "shape",
       },
       "cardVariables": Object {
-        "type": "object",
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [
@@ -9840,7 +9876,25 @@ Map {
         "type": "shape",
       },
       "cardVariables": Object {
-        "type": "object",
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [
