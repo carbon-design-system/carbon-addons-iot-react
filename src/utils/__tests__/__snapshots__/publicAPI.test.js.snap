@@ -3904,6 +3904,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "groupDataSourceId": Object {
+              "type": "string",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -3915,30 +3918,70 @@ Map {
             },
             "series": Object {
               "args": Array [
-                Object {
-                  "colors": Object {
+                Array [
+                  Object {
+                    "color": Object {
+                      "type": "string",
+                    },
+                    "colors": [Function],
+                    "dataFilter": Object {
+                      "args": Array [
+                        Object {
+                          "type": "any",
+                        },
+                      ],
+                      "type": "objectOf",
+                    },
+                    "dataSourceId": Object {
+                      "type": "string",
+                    },
+                    "groupDataSourceId": [Function],
+                    "label": Object {
+                      "isRequired": true,
+                      "type": "string",
+                    },
+                    "labelDataSourceId": [Function],
+                    "timeDataSourceId": Object {
+                      "type": "string",
+                    },
+                  },
+                  Object {
                     "args": Array [
                       Object {
-                        "type": "string",
+                        "color": Object {
+                          "type": "string",
+                        },
+                        "colors": [Function],
+                        "dataFilter": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "objectOf",
+                        },
+                        "dataSourceId": Object {
+                          "type": "string",
+                        },
+                        "groupDataSourceId": [Function],
+                        "label": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "labelDataSourceId": [Function],
+                        "timeDataSourceId": Object {
+                          "type": "string",
+                        },
                       },
                     ],
                     "type": "arrayOf",
                   },
-                  "dataSourceId": Object {
-                    "type": "string",
-                  },
-                  "groupDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "labelDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
-                },
+                ],
               ],
-              "type": "shape",
+              "type": "oneOfType",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
             "type": Object {
               "args": Array [

@@ -6,6 +6,8 @@ import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConsta
 
 import BarChartCard from './BarChartCard';
 
+const COLORS = ['yellow', 'blue', 'red', 'green'];
+
 const barChartCardProps = {
   title: 'Sample',
   id: 'sample-bar-chart',
@@ -13,11 +15,44 @@ const barChartCardProps = {
   content: {
     xLabel: 'Cities',
     yLabel: 'Particles',
-    series: {
-      labelDataSourceId: 'city',
-      dataSourceId: 'particles',
-    },
-    layout: BAR_CHART_LAYOUTS.VERTICAL,
+    series: [
+      {
+        labelDataSourceId: 'city',
+        dataSourceId: 'particles',
+        color: COLORS[0],
+        label: 'Amsterdam',
+        dataFilter: {
+          city: 'Amsterdam',
+        },
+      },
+      {
+        labelDataSourceId: 'city',
+        dataSourceId: 'particles',
+        color: COLORS[1],
+        label: 'New York',
+        dataFilter: {
+          city: 'New York',
+        },
+      },
+      {
+        labelDataSourceId: 'city',
+        dataSourceId: 'particles',
+        color: COLORS[2],
+        label: 'Bangkok',
+        dataFilter: {
+          city: 'Bangkok',
+        },
+      },
+      {
+        labelDataSourceId: 'city',
+        dataSourceId: 'particles',
+        color: COLORS[3],
+        label: 'San Francisco',
+        dataFilter: {
+          city: 'San Francisco',
+        },
+      },
+    ],
   },
   values: barChartData.quarters.filter(q => q.quarter === '2020-Q1'),
   breakpoint: 'lg',
@@ -52,11 +87,29 @@ describe('BarChartCard tests', () => {
       <BarChartCard
         {...barChartCardProps}
         content={{
-          series: {
-            groupDataSourceId: 'quarter',
-            labelDataSourceId: 'city',
-            dataSourceId: 'particles',
-          },
+          series: [
+            {
+              label: 'Amsterdam',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'Amsterdam' },
+            },
+            {
+              label: 'New York',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'New York' },
+            },
+            {
+              label: 'Bangkok',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'Bangkok' },
+            },
+            {
+              label: 'San Francisco',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'San Francisco' },
+            },
+          ],
+          groupDataSourceId: 'quarter',
           chartType: BAR_CHART_TYPES.GROUPED,
         }}
         values={barChartData.quarters}
@@ -70,11 +123,29 @@ describe('BarChartCard tests', () => {
       <BarChartCard
         {...barChartCardProps}
         content={{
-          series: {
-            groupDataSourceId: 'quarter',
-            labelDataSourceId: 'city',
-            dataSourceId: 'particles',
-          },
+          series: [
+            {
+              label: 'Amsterdam',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'Amsterdam' },
+            },
+            {
+              label: 'New York',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'New York' },
+            },
+            {
+              label: 'Bangkok',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'Bangkok' },
+            },
+            {
+              label: 'San Francisco',
+              dataSourceId: 'particles',
+              dataFilter: { city: 'San Francisco' },
+            },
+          ],
+          groupDataSourceId: 'quarter',
           chartType: BAR_CHART_TYPES.STACKED,
         }}
         values={barChartData.quarters}
@@ -90,10 +161,13 @@ describe('BarChartCard tests', () => {
         content={{
           xLabel: 'Date',
           yLabel: 'Particles',
-          series: {
-            dataSourceId: 'particles',
-            timeDataSourceId: 'timestamp',
-          },
+          series: [
+            {
+              dataSourceId: 'particles',
+              label: 'Particles',
+            },
+          ],
+          timeDataSourceId: 'timestamp',
         }}
         values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
       />
@@ -108,10 +182,44 @@ describe('BarChartCard tests', () => {
         content={{
           xLabel: 'Date',
           yLabel: 'Particles',
-          series: {
-            dataSourceId: 'particles',
-            timeDataSourceId: 'timestamp',
-          },
+          series: [
+            {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              color: COLORS[0],
+              label: 'Amsterdam',
+              dataFilter: {
+                city: 'Amsterdam',
+              },
+            },
+            {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              color: COLORS[1],
+              label: 'New York',
+              dataFilter: {
+                city: 'New York',
+              },
+            },
+            {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              color: COLORS[2],
+              label: 'Bangkok',
+              dataFilter: {
+                city: 'Bangkok',
+              },
+            },
+            {
+              labelDataSourceId: 'city',
+              dataSourceId: 'particles',
+              color: COLORS[3],
+              label: 'San Francisco',
+              dataFilter: {
+                city: 'San Francisco',
+              },
+            },
+          ],
           layout: BAR_CHART_LAYOUTS.HORIZONTAL,
         }}
         values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
