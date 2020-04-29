@@ -192,12 +192,12 @@ storiesOf('Watson IoT/TableCard', module)
     },
     {
       info: {
-        text: `<p>Dynamic variables can be added to the title, threshold severityLabel, threshold label, and threshold value.</p> 
-              <p>The string value of the variable must be wrapped with curly braces. For example, {variableName}</p>
-              <p>A cardVariable object must be supplied to TableCard where the keys will be the variable name and the value will be 
-                  what is inserted
-              </p>
-    `,
+        text: `
+      # Passing variables
+      To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+      Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+      Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+      `,
       },
     }
   )

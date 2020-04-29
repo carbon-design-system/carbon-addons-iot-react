@@ -7438,6 +7438,9 @@ Map {
                 Object {
                   "type": "number",
                 },
+                Object {
+                  "type": "bool",
+                },
               ],
             ],
             "type": "oneOfType",
@@ -8339,6 +8342,9 @@ Map {
                 },
                 Object {
                   "type": "number",
+                },
+                Object {
+                  "type": "bool",
                 },
               ],
             ],
@@ -9889,6 +9895,9 @@ Map {
                 },
                 Object {
                   "type": "number",
+                },
+                Object {
+                  "type": "bool",
                 },
               ],
             ],

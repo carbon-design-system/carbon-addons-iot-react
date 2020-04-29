@@ -72,7 +72,7 @@ export const ValueCardPropTypes = {
     learnMoreElement: PropTypes.element,
   }),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
 };
 
@@ -113,7 +113,7 @@ export const TimeSeriesCardPropTypes = {
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
 };
 
@@ -196,7 +196,7 @@ export const TableCardPropTypes = {
     downloadIconDescription: PropTypes.string,
   }),
   cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
 };
 
