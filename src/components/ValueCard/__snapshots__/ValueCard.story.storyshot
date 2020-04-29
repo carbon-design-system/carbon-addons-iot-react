@@ -4725,6 +4725,134 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / with variables 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "margin": 20,
+          "width": "252px",
+        }
+      }
+    >
+      <div
+        className="iot--card iot--card--wrapper"
+        data-testid="Card"
+        id="facilitycard"
+        role="presentation"
+        style={
+          Object {
+            "--card-default-height": "144px",
+          }
+        }
+      >
+        <div
+          className="iot--card--header"
+        >
+          <span
+            className="iot--card--title"
+            title="Title variable is working"
+          >
+            <div
+              className="iot--card--title--text"
+            >
+              Title variable is working
+            </div>
+          </span>
+        </div>
+        <div
+          className="iot--card--content"
+          style={
+            Object {
+              "--card-content-height": "96px",
+            }
+          }
+        >
+          <div
+            className="ValueCard__ContentWrapper-hyxf2q-0 kwZDrJ"
+          >
+            <div
+              className="ValueCard__AttributeWrapper-hyxf2q-1 emVGjx"
+              size="SMALL"
+            >
+              <div
+                className="Attribute__StyledAttribute-dhraql-0 eCIOAU"
+                label="label variable is working"
+                size="SMALL"
+              >
+                <div
+                  className="ValueRenderer__Attribute-f4stpz-0 hqoUNX"
+                  color={null}
+                >
+                  <span
+                    className="ValueRenderer__AttributeValue-f4stpz-1 ciICRO"
+                    size="SMALL"
+                    title="88 %"
+                    value={88}
+                  >
+                    88
+                  </span>
+                </div>
+                <span
+                  className="iot--value-card__attribute-unit"
+                  style={
+                    Object {
+                      "--default-font-size": "1.25rem",
+                    }
+                  }
+                >
+                  %
+                </span>
+              </div>
+              <div
+                className="ValueCard__AttributeLabel-hyxf2q-4 cAOhas"
+                size="SMALL"
+                title="label variable is working"
+              >
+                label variable is working
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ValueCard small / wrapping 1`] = `
 <div
   className="storybook-container"

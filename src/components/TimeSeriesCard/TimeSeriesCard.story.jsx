@@ -17,7 +17,6 @@ const getIntervalChartData = memoize(getFakeData);
 storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('medium / single point - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -29,7 +28,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: text('xLabel', 'Time'),
@@ -47,9 +45,54 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
+  .add(
+    'medium / single point - with variables',
+    () => {
+      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TimeSeriesCard
+            title={text('title', 'Temperature {not-working}')}
+            id="facility-temperature"
+            isLoading={boolean('isLoading', false)}
+            cardVariables={object('Variables', {
+              'not-working': 'working',
+            })}
+            content={object('content', {
+              series: [
+                {
+                  label: 'Temperature {not-working}',
+                  dataSourceId: 'temperature',
+                },
+              ],
+              xLabel: text('xLabel', 'Time {not-working}'),
+              yLabel: text('yLabel', 'Temperature {not-working} (˚F)'),
+              includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
+              includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+              timeDataSourceId: 'timestamp',
+            })}
+            values={getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100)}
+            interval="hour"
+            breakpoint="lg"
+            size={size}
+            onCardAction={action('onCardAction')}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+      # Passing variables
+      To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+      Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+      Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+      `,
+      },
+    }
+  )
   .add('medium / single line - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
