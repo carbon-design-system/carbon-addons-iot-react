@@ -17,7 +17,11 @@ import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
 import TableHeader from './TableHeader';
 import ColumnResize from './ColumnResize';
-import { createNewWidthsMap, calculateWidthsOnToggle } from './columnWidthUtilityFunctions';
+import {
+  createNewWidthsMap,
+  calculateWidthsOnToggle,
+  adjustLastColumnWidth,
+} from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -30,6 +34,8 @@ const propTypes = {
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
+    truncateCellText: PropTypes.bool.isRequired,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -125,7 +131,7 @@ const generateOrderedColumnRefs = ordering =>
 
 const TableHead = ({
   options,
-  options: { hasRowExpansion, hasRowSelection, hasResize },
+  options: { hasRowExpansion, hasRowSelection, hasResize, wrapCellText, truncateCellText },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -218,7 +224,8 @@ const TableHead = ({
     () => {
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
         const measuredWidths = measureColumnWidths();
-        const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, measuredWidths);
+        const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
+        const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
         setCurrentColumnWidths(newWidthsMap);
       }
     },
@@ -291,7 +298,13 @@ const TableHead = ({
                 [`${iotPrefix}--table-header-resize`]: hasResize,
               })}
             >
-              <TableCellRenderer>{matchingColumnMeta.name}</TableCellRenderer>
+              <TableCellRenderer
+                wrapText={wrapCellText}
+                truncateCellText={truncateCellText}
+                allowTooltip={false}
+              >
+                {matchingColumnMeta.name}
+              </TableCellRenderer>
               {hasResize && item !== lastVisibleColumn ? (
                 <ColumnResize
                   onResize={onManualColumnResize}

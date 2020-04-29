@@ -12,29 +12,10 @@ React.Fragment = ({ children }) => children;
 
 const StyledHeader = styled(Header)`
    {
-    .bx--header__menu .bx--header__menu-item[role='menuitem'] {
-      align-items: center;
-      border: 0.125rem solid transparent;
-      color: #f3f3f3;
+    .bx--text-truncate--end span {
       display: flex;
-      padding: 1rem;
-      height: 100%;
-      font-size: 0.875rem;
-      font-weight: 400;
-      letter-spacing: 0;
-      line-height: 1.125rem;
-      text-decoration: none;
-      user-select: none;
-    }
-
-    button.bx--header__menu-item {
-      background: none;
       width: 100%;
-    }
-
-    .bx--text-truncate--end * {
-      display: inline-block;
-      vertical-align: middle;
+      justify-content: space-between;
     }
 
     .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {

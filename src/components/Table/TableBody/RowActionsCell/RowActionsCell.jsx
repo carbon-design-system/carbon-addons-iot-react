@@ -33,10 +33,6 @@ const RowActionsContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
 
-    > * {
-      opacity: ${props => (props.visible ? 1 : 0)};
-    }
-
     /* If the actions are focused on, they should show up */
     > *:focus {
       opacity: 1;
@@ -64,15 +60,12 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
-const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
-  <OverflowMenu {...other} />
-))`
+const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu {...other} />)`
   &&& {
     margin-left: 0.5rem;
     svg {
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
   }
   &&&:hover > svg {
     fill: ${COLORS.blue};
@@ -105,6 +98,10 @@ const propTypes = {
   learnMoreText: PropTypes.string, // eslint-disable-line
   /** I18N label for dismiss */
   dismissText: PropTypes.string, // eslint-disable-line
+  /** `true` to make this menu item a divider. */
+  hasDivider: PropTypes.bool,
+  /** `true` to make this menu item a "danger button". */
+  isDelete: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -115,6 +112,8 @@ const defaultProps = {
   overflowMenuAria: 'More actions',
   inProgressText: 'In progress',
   onClearError: null,
+  hasDivider: false,
+  isDelete: false,
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -163,11 +162,14 @@ class RowActionsCell extends React.Component {
     return actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
-          visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
           className={`${iotPrefix}--row-actions-container`}
         >
-          <div className={`${iotPrefix}--row-actions-container__background`}>
+          <div
+            className={classnames(`${iotPrefix}--row-actions-container__background`, {
+              [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
+            })}
+          >
             {rowActionsError ? (
               <RowActionsError
                 actionFailedText={actionFailedText}
@@ -209,7 +211,6 @@ class RowActionsCell extends React.Component {
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
-                    isOpen={isOpen}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                   >
@@ -220,6 +221,8 @@ class RowActionsCell extends React.Component {
                           key={`${id}-row-actions-button-${action.id}`}
                           onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                           requireTitle
+                          hasDivider={action.hasDivider}
+                          isDelete={action.isDelete}
                           itemText={
                             action.renderIcon ? (
                               <OverflowMenuContent>

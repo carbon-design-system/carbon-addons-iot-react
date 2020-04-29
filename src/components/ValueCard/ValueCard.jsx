@@ -13,8 +13,8 @@ import {
   determineMaxValueCardAttributeCount,
   getUpdatedCardSize,
 } from '../../utils/cardUtilityFunctions';
+import DataStateRenderer from '../Card/DataStateRenderer';
 
-import DataStateRenderer from './DataStateRenderer';
 import Attribute from './Attribute';
 
 const ContentWrapper = styled.div`
@@ -206,7 +206,7 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleW
     case CARD_SIZES.MEDIUM:
       return attributes.length === 1 || !measuredSize || measuredSize.width < 300;
     default:
-      return shouldDoubleWrap || (!measuredSize || measuredSize.width < 300);
+      return shouldDoubleWrap || !measuredSize || measuredSize.width < 300;
   }
 };
 
@@ -259,7 +259,6 @@ const ValueCard = ({
             availableActions={availableActions}
             isEmpty={isEmpty(values) && !dataState}
             isEditable={isEditable}
-            showOverflow={!!dataState}
             i18n={i18n}
             id={id}
             {...others}

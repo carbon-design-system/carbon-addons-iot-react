@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
@@ -15,7 +16,7 @@ import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFu
 import { COLORS } from '../../../../styles/styles';
 
 const { TableRow, TableExpandRow, TableCell } = DataTable;
-const { prefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 const propTypes = {
   /** What column ordering is currently applied to the table */
@@ -50,6 +51,8 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
+    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
+    truncateCellText: PropTypes.bool.isRequired,
   }),
 
   /** The unique row id */
@@ -115,10 +118,6 @@ const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...oth
     ${props => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
     :hover {
       td {
-        /* show the row actions if the table row is hovered over */
-        div > *:not(label) {
-          opacity: 1;
-        }
         ${props =>
           props.isSelectable === false
             ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
@@ -196,13 +195,6 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     td {
       div .bx--btn--ghost:hover {
         background: ${COLORS.gray20};
-      }
-    }
-    :hover {
-      td {
-        div > *:not(label) {
-          opacity: 1;
-        }
       }
     }
 
@@ -322,22 +314,6 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
   }
 `;
 
-const StyledTableCellRow = styled(TableCell)`
-  &&& {
-    ${props => {
-      const { width } = props;
-      return width !== undefined
-        ? `
-        min-width: ${width};
-        max-width: ${width};
-        white-space: nowrap;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-      `
-        : null;
-    }}
-`;
-
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${props => props.nestingOffset}px;
@@ -356,6 +332,8 @@ const TableBodyRow = ({
     hasRowActions,
     hasRowNesting,
     shouldExpandOnRowClick,
+    wrapCellText,
+    truncateCellText,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -412,18 +390,24 @@ const TableBodyRow = ({
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find(column => column.id === col.columnId);
+        // initialColumnWidth for the table body cells is needed for tables that have fixed column widths
+        // and table-layout:auto combination so that cell content can be truncated
+        const initialColumnWidth = matchingColumnMeta && matchingColumnMeta.width;
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         return !col.isHidden ? (
-          <StyledTableCellRow
+          <TableCell
             id={`cell-${tableId}-${id}-${col.columnId}`}
             key={col.columnId}
             data-column={col.columnId}
             data-offset={offset}
             offset={offset}
             align={align}
-            className={`data-table-${align}`}
+            className={classNames(`data-table-${align}`, {
+              [`${iotPrefix}--table__cell--truncate`]: truncateCellText,
+            })}
+            width={initialColumnWidth}
           >
             <StyledNestedSpan nestingOffset={offset}>
               {col.renderDataFunction ? (
@@ -435,10 +419,12 @@ const TableBodyRow = ({
                   row: values,
                 })
               ) : (
-                <TableCellRenderer>{values[col.columnId]}</TableCellRenderer>
+                <TableCellRenderer wrapText={wrapCellText} truncateCellText={truncateCellText}>
+                  {values[col.columnId]}
+                </TableCellRenderer>
               )}
             </StyledNestedSpan>
-          </StyledTableCellRow>
+          </TableCell>
         ) : null;
       })}
       {hasRowActions && rowActions && rowActions.length > 0 ? (

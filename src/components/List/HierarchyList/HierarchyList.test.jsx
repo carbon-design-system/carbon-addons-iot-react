@@ -184,10 +184,10 @@ describe('HierarchyList', () => {
   });
 
   test('found search result categories should be expanded', () => {
-    const { getByLabelText, getByTitle, queryByTitle } = render(
+    const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: 'jd' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: 'jd' } });
     /** Need to wait for the element to be removed because the search function
         has a debouncing timeout */
     // eslint-disable-next-line
@@ -206,10 +206,10 @@ describe('HierarchyList', () => {
   });
 
   test('all items should return if search value is empty string', async () => {
-    const { getByLabelText, getByTitle, queryByTitle } = render(
+    const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" />
     );
-    fireEvent.change(getByLabelText('Enter a value'), { target: { value: 'jd davis' } });
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: 'jd davis' } });
     /** Need to wait for the element to be removed because the search function
         has a debouncing timeout */
     // eslint-disable-next-line
@@ -226,7 +226,7 @@ describe('HierarchyList', () => {
       expect(getByTitle('JD Davis')).toBeInTheDocument();
 
       // Change search to empty string
-      fireEvent.change(getByLabelText('Enter a value'), { target: { value: '' } });
+      fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '' } });
       /** Need to wait for an element to appear because the search function
       has a debouncing timeout */
       const braves = await waitForElement(() => getByTitle('Atlanta Braves'));

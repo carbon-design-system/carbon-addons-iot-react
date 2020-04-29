@@ -5,7 +5,6 @@ sizeMe.noPlaceholders = true;
 
 // Components
 export AddCard from './components/AddCard';
-export { AccordionItem } from './components/Accordion';
 export Button from './components/Button';
 export Breadcrumb, { BreadcrumbItem, BreadcrumbSkeleton } from './components/Breadcrumb';
 export ComposedModal from './components/ComposedModal';
@@ -33,6 +32,7 @@ export HierarchyList from './components/List/HierarchyList';
 export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
+export __unstableDateTimePicker from './components/DateTimePicker/DateTimePicker';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -93,10 +93,14 @@ export List from './components/List/List';
 
 export SimpleList from './components/List/SimpleList/SimpleList';
 
+export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitch';
+
+export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
+
 // Carbon proxy
 export {
   Accordion,
-  // AccordionItem,
+  AccordionItem,
   Checkbox,
   CodeSnippet,
   ComboBox,

@@ -319,7 +319,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   
                   <div
                     aria-describedby={null}
-                    aria-haspopup="true"
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -337,20 +336,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
                       />
                       <path
-                        d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
                       />
                     </svg>
                   </div>
@@ -386,19 +383,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               <svg
                 aria-hidden={true}
                 focusable="false"
-                height={6}
+                height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 10 6"
-                width={10}
+                viewBox="0 0 16 16"
+                width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+                <polygon
+                  points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
                 />
                 <title>
                   show menu options
@@ -410,54 +402,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               role="tablist"
             >
               <li
+                aria-controls="undefined__panel"
+                aria-selected={true}
                 className="bx--tabs__nav-item bx--tabs__nav-item--selected"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="presentation"
-                selected={true}
+                role="tab"
                 tabIndex={-1}
               >
                 <a
-                  aria-selected={true}
                   className="bx--tabs__nav-link"
                   href="#"
-                  role="tab"
                   tabIndex={0}
                 >
                   Tab 1
                 </a>
               </li>
               <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
                 className="bx--tabs__nav-item"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="presentation"
-                selected={false}
+                role="tab"
                 tabIndex={-1}
               >
                 <a
-                  aria-selected={false}
                   className="bx--tabs__nav-link"
                   href="#"
-                  role="tab"
                   tabIndex={-1}
                 >
                   Tab 2
                 </a>
               </li>
               <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
                 className="bx--tabs__nav-item"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="presentation"
-                selected={false}
+                role="tab"
                 tabIndex={-1}
               >
                 <a
-                  aria-selected={false}
                   className="bx--tabs__nav-link"
                   href="#"
-                  role="tab"
                   tabIndex={-1}
                 >
                   Tab 3
@@ -469,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             aria-hidden={false}
             className="bx--tab-content"
             hidden={false}
+            role="tabpanel"
             selected={true}
           >
             <div>
@@ -479,6 +469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             aria-hidden={true}
             className="bx--tab-content"
             hidden={true}
+            role="tabpanel"
             selected={false}
           >
             <div>
@@ -489,6 +480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             aria-hidden={true}
             className="bx--tab-content"
             hidden={true}
+            role="tabpanel"
             selected={false}
           >
             <div>
@@ -653,17 +645,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     height={20}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     viewBox="0 0 32 32"
                     width={20}
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <rect
+                      height="2"
+                      width="28"
+                      x="2"
+                      y="26"
+                    />
                     <path
-                      d="M2 27h28v2H2zM25.41 9a2 2 0 0 0 0-2.83l-3.58-3.58a2 2 0 0 0-2.83 0l-15 15V24h6.41zm-5-5L24 7.59l-3 3L17.41 7zM6 22v-3.59l10-10L19.59 12l-10 10z"
+                      d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                     />
                   </svg>
                 </button>
@@ -788,7 +781,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   
                   <div
                     aria-describedby={null}
-                    aria-haspopup="true"
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -806,20 +798,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
                       />
                       <path
-                        d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
                       />
                     </svg>
                   </div>
@@ -844,17 +834,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     height={20}
                     preserveAspectRatio="xMidYMid meet"
                     role="img"
-                    style={
-                      Object {
-                        "willChange": "transform",
-                      }
-                    }
                     viewBox="0 0 32 32"
                     width={20}
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <rect
+                      height="2"
+                      width="28"
+                      x="2"
+                      y="26"
+                    />
                     <path
-                      d="M2 27h28v2H2zM25.41 9a2 2 0 0 0 0-2.83l-3.58-3.58a2 2 0 0 0-2.83 0l-15 15V24h6.41zm-5-5L24 7.59l-3 3L17.41 7zM6 22v-3.59l10-10L19.59 12l-10 10z"
+                      d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                     />
                   </svg>
                 </button>
@@ -903,17 +894,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </button>
@@ -947,19 +933,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               <svg
                 aria-hidden={true}
                 focusable="false"
-                height={6}
+                height={16}
                 preserveAspectRatio="xMidYMid meet"
-                style={
-                  Object {
-                    "willChange": "transform",
-                  }
-                }
-                viewBox="0 0 10 6"
-                width={10}
+                viewBox="0 0 16 16"
+                width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+                <polygon
+                  points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
                 />
                 <title>
                   show menu options
@@ -971,54 +952,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
               role="tablist"
             >
               <li
+                aria-controls="undefined__panel"
+                aria-selected={true}
                 className="bx--tabs__nav-item bx--tabs__nav-item--selected"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="presentation"
-                selected={true}
+                role="tab"
                 tabIndex={-1}
               >
                 <a
-                  aria-selected={true}
                   className="bx--tabs__nav-link"
                   href="#"
-                  role="tab"
                   tabIndex={0}
                 >
                   Tab 1
                 </a>
               </li>
               <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
                 className="bx--tabs__nav-item"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="presentation"
-                selected={false}
+                role="tab"
                 tabIndex={-1}
               >
                 <a
-                  aria-selected={false}
                   className="bx--tabs__nav-link"
                   href="#"
-                  role="tab"
                   tabIndex={-1}
                 >
                   Tab 2
                 </a>
               </li>
               <li
+                aria-controls="undefined__panel"
+                aria-selected={false}
                 className="bx--tabs__nav-item"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="presentation"
-                selected={false}
+                role="tab"
                 tabIndex={-1}
               >
                 <a
-                  aria-selected={false}
                   className="bx--tabs__nav-link"
                   href="#"
-                  role="tab"
                   tabIndex={-1}
                 >
                   Tab 3
@@ -1030,6 +1008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             aria-hidden={false}
             className="bx--tab-content"
             hidden={false}
+            role="tabpanel"
             selected={true}
           >
             <div>
@@ -1040,6 +1019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             aria-hidden={true}
             className="bx--tab-content"
             hidden={true}
+            role="tabpanel"
             selected={false}
           >
             <div>
@@ -1050,6 +1030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
             aria-hidden={true}
             className="bx--tab-content"
             hidden={true}
+            role="tabpanel"
             selected={false}
           >
             <div>
@@ -1128,7 +1109,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   
                   <div
                     aria-describedby={null}
-                    aria-haspopup="true"
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -1146,20 +1126,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
                       />
                       <path
-                        d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
                       />
                     </svg>
                   </div>
@@ -1209,17 +1187,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   focusable="false"
                   height={24}
                   preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "willChange": "transform",
-                    }
-                  }
                   viewBox="0 0 32 32"
                   width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15V7h-2v8H7v2h8v8h2v-8h8v-2h-8z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </button>
@@ -1255,7 +1228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with tooltip description 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageTitleBar with tooltip description with node 1`] = `
 <div
   className="storybook-container"
 >
@@ -1338,7 +1311,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   
                   <div
                     aria-describedby={null}
-                    aria-haspopup="true"
                     className="bx--tooltip__trigger"
                     onBlur={[Function]}
                     onClick={[Function]}
@@ -1356,20 +1328,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
                       role={null}
-                      style={
-                        Object {
-                          "willChange": "transform",
-                        }
-                      }
                       viewBox="0 0 32 32"
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M17 22v-9h-4v2h2v7h-3v2h8v-2h-3zM16 7a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 16 7z"
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
                       />
                       <path
-                        d="M16 30a14 14 0 1 1 14-14 14 14 0 0 1-14 14zm0-26a12 12 0 1 0 12 12A12 12 0 0 0 16 4z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
                       />
                     </svg>
                   </div>
