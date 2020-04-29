@@ -142,8 +142,8 @@ export const getVariables = value => {
  * @param {string} target - The raw string to insert variable values into
  * @return {array} updatedTarget - the new string with the updated variable values
  */
-export const replaceVariables = (variables, cardVariables, target, card) => {
-  let updatedTarget = target;
+export const replaceVariables = (variables, cardVariables, target) => {
+  let updatedTarget = JSON.stringify(target);
 
   // Need to create a copy of cardVariables with all lower-case keys
   const insensitiveCardVariables = Object.keys(cardVariables).reduce((acc, variable) => {
@@ -153,9 +153,9 @@ export const replaceVariables = (variables, cardVariables, target, card) => {
 
   variables.forEach(variable => {
     const insensitiveVariable = variable.toLowerCase();
-    const variableRegex = new RegExp(`${variable}`, 'g');
+    const variableRegex = new RegExp(`{${variable}}`, 'g');
     // Need to update the target with all lower-case variables for case-insesitivity
-    updatedTarget = updatedTarget.replace(variableRegex, insensitiveVariable);
+    updatedTarget = updatedTarget.replace(variableRegex, `{${insensitiveVariable}}`);
 
     if (
       typeof insensitiveCardVariables[insensitiveVariable] === 'string' ||
@@ -168,22 +168,18 @@ export const replaceVariables = (variables, cardVariables, target, card) => {
       );
     } else if (typeof insensitiveCardVariables[insensitiveVariable] === 'function') {
       const callback = insensitiveCardVariables[insensitiveVariable];
-      updatedTarget = callback(variable, card);
+      updatedTarget = callback(variable, target);
     }
   });
-  return updatedTarget;
+  return JSON.parse(updatedTarget);
 };
 
 /**
- * Replace variables from the list of variables that are found on the target with their corresponding value
- * @param {string} title - Card title
- * @param {object} cardVariables - Object with variable properties and replacement values, i.e. { manufacturer: 'Rentech', sensor: 3 }
- * @return {string} - An updated title string with the values replaced, or the original title if there were no variables found
+ *
+ * @param {object} card
+ * @returns {array} an array of unique variable values
  */
-export const handleTitleVariables = (title, cardVariables) => {
-  const titleVariables = getVariables(title);
-  return titleVariables ? replaceVariables(titleVariables, cardVariables, title) : title;
-};
+export const getCardVariables = card => [...new Set(getVariables(JSON.stringify(card)))];
 
 /**
  * Replace variables from the list of variables that are found on the target with their corresponding value
@@ -193,7 +189,7 @@ export const handleTitleVariables = (title, cardVariables) => {
  * @param {object} card - The rest of the card
  * @return {object} updatedCard - card with any found variables replaced by their coresponding values, or the original card if no variables
  */
-export const handleValueCardVariables = (title, content, values, card) => {
+export const handleCardVariables = (title, content, values, card) => {
   const updatedCard = {
     title,
     content,
@@ -205,163 +201,7 @@ export const handleValueCardVariables = (title, content, values, card) => {
   }
   const { cardVariables } = updatedCard;
 
-  // check for variables in the title and replace them
-  updatedCard.title = handleTitleVariables(title, cardVariables);
+  const variablesArray = getCardVariables(updatedCard);
 
-  const { attributes } = updatedCard.content;
-  // eslint-disable-next-line no-unused-expressions
-  attributes?.forEach((attribute, i) => {
-    const { label, unit, thresholds } = attribute;
-
-    // check for variables in the labels and replace them
-    const labelVariables = getVariables(label);
-    if (labelVariables) {
-      const updatedLabel = replaceVariables(labelVariables, cardVariables, label, updatedCard);
-      updatedCard.content.attributes[i].label = updatedLabel;
-    }
-    // check for variables in the units and replace them
-    const unitVariables = getVariables(unit);
-    if (unitVariables) {
-      const updatedUnit = replaceVariables(unitVariables, cardVariables, unit, updatedCard);
-      updatedCard.content.attributes[i].unit = updatedUnit;
-    }
-    // eslint-disable-next-line no-unused-expressions
-    thresholds?.forEach((threshold, x) => {
-      const { value } = threshold;
-      // check for variables in each threshold value and replace them
-      const thresholdValueVariables = getVariables(value);
-      if (thresholdValueVariables) {
-        const updatedThresholdValue = replaceVariables(
-          thresholdValueVariables,
-          cardVariables,
-          value,
-          updatedCard
-        );
-        updatedCard.content.attributes[i].thresholds[x].value = updatedThresholdValue;
-      }
-    });
-  });
-
-  return updatedCard;
-};
-
-/**
- * Replace variables from the list of variables that are found on the target with their corresponding value
- * @param {string} title - Title for the card
- * @param {object} content - Content for the card
- * @param {string} values - Values for the card
- * @param {object} card - The rest of the card
- * @return {object} updatedCard - card with any found variables replaced by their coresponding values, or the original card if no variables
- */
-export const handleTableCardVariables = (title, content, values, card) => {
-  const updatedCard = {
-    title,
-    content,
-    values,
-    ...card,
-  };
-  if (!updatedCard.cardVariables) {
-    return updatedCard;
-  }
-  const { cardVariables } = updatedCard;
-
-  // check for variables in the title and replace them
-  updatedCard.title = handleTitleVariables(title, cardVariables);
-
-  const { thresholds } = updatedCard.content;
-  // eslint-disable-next-line no-unused-expressions
-  thresholds?.forEach((threshold, x) => {
-    const { label, severityLabel, value } = threshold;
-    // Check if there are variables in the threshold labels
-    const thresholdLabelVariables = getVariables(label);
-    if (thresholdLabelVariables) {
-      const updatedLabel = replaceVariables(
-        thresholdLabelVariables,
-        cardVariables,
-        label,
-        updatedCard
-      );
-      updatedCard.content.thresholds[x].label = updatedLabel;
-    }
-    // Check if there are variables in the threshold severity labels
-    const severityLabelVariables = getVariables(severityLabel);
-    if (severityLabelVariables) {
-      const updatedSeverityLabel = replaceVariables(
-        severityLabelVariables,
-        cardVariables,
-        severityLabel,
-        updatedCard
-      );
-      updatedCard.content.thresholds[x].severityLabel = updatedSeverityLabel;
-    }
-    // Check if there are variables in the threshold values
-    const thresholdValueVariables = getVariables(value);
-    if (thresholdValueVariables) {
-      const updatedValue = replaceVariables(
-        thresholdValueVariables,
-        cardVariables,
-        value,
-        updatedCard
-      );
-      updatedCard.content.thresholds[x].value = updatedValue;
-    }
-  });
-
-  return updatedCard;
-};
-
-/**
- * Replace variables from the list of variables that are found on the target with their corresponding value
- * @param {string} title - Title for the card
- * @param {object} content - Contents for the card
- * @param {string} values - Values for the card
- * @param {object} card - The rest of the card
- * @return {object} updatedCard - card with any found variables replaced by their coresponding values, or the original card if no variables
- */
-export const handleTimeseriesCardVariables = (title, content, values, card) => {
-  const updatedCard = {
-    title,
-    content,
-    values,
-    ...card,
-  };
-  if (!updatedCard.cardVariables) {
-    return updatedCard;
-  }
-  const { cardVariables } = updatedCard;
-
-  // check for variables in the title and replace them
-  updatedCard.title = handleTitleVariables(title, cardVariables);
-
-  const { series, xLabel, yLabel, unit } = updatedCard.content;
-  // Check if there are variables in the x label
-  const xLabelVariables = getVariables(xLabel);
-  if (xLabelVariables) {
-    const updatedxLabel = replaceVariables(xLabelVariables, cardVariables, xLabel, updatedCard);
-    updatedCard.content.xLabel = updatedxLabel;
-  }
-  // Check if there are variables in the y label
-  const yLabelVariables = getVariables(yLabel);
-  if (yLabelVariables) {
-    const updatedyLabel = replaceVariables(yLabelVariables, cardVariables, yLabel, updatedCard);
-    updatedCard.content.yLabel = updatedyLabel;
-  }
-  // Check if there are variables in the unit
-  const unitVariables = getVariables(unit);
-  if (unitVariables) {
-    const updatedUnit = replaceVariables(unitVariables, cardVariables, unit, updatedCard);
-    updatedCard.content.unit = updatedUnit;
-  }
-  // eslint-disable-next-line no-unused-expressions
-  series?.forEach((el, i) => {
-    const { label } = el;
-    // Check if there are variables in the series labels
-    const labelVariables = getVariables(label);
-    if (labelVariables) {
-      const updatedLabel = replaceVariables(labelVariables, cardVariables, label, updatedCard);
-      updatedCard.content.series[i].label = updatedLabel;
-    }
-  });
-
-  return updatedCard;
+  return replaceVariables(variablesArray, cardVariables, updatedCard);
 };

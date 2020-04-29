@@ -12,7 +12,7 @@ import Card from '../Card/Card';
 import {
   determineMaxValueCardAttributeCount,
   getUpdatedCardSize,
-  handleValueCardVariables,
+  handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
 import DataStateRenderer from '../Card/DataStateRenderer';
 
@@ -228,7 +228,7 @@ const ValueCard = ({
   };
 
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
-  const { title, content, values } = handleValueCardVariables(
+  const { title, content, values } = handleCardVariables(
     titleProp,
     contentProp,
     valuesProp,

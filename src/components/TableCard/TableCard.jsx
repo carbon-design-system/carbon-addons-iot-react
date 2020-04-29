@@ -16,7 +16,7 @@ import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
-import { getUpdatedCardSize, handleTableCardVariables } from '../../utils/cardUtilityFunctions';
+import { getUpdatedCardSize, handleCardVariables } from '../../utils/cardUtilityFunctions';
 
 import ThresholdIcon from './ThresholdIcon';
 
@@ -268,7 +268,7 @@ const TableCard = ({
     title,
     content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
     values: data,
-  } = handleTableCardVariables(titleProp, contentProp, valuesProp, others);
+  } = handleCardVariables(titleProp, contentProp, valuesProp, others);
 
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
