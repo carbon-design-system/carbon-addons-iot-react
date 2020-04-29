@@ -291,9 +291,13 @@ const TimeSeriesCard = ({
 
   // Set the colors for each dataset
   const colors = { identifier: 'group', scale: {} };
-  series.forEach(dataset => {
-    colors.scale[dataset.label] = dataset.color;
-  });
+  if (Array.isArray(series)) {
+    series.forEach(dataset => {
+      colors.scale[dataset.label] = dataset.color;
+    });
+  } else {
+    colors.scale[series.label] = series.color;
+  }
 
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {

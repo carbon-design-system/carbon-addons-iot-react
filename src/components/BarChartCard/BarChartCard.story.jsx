@@ -9,7 +9,7 @@ import { barChartData } from '../../utils/barChartDataSample';
 
 import BarChartCard from './BarChartCard';
 
-const COLORS = ['#d91e28', '#ff832c', '#fdd13a', '#feeaaa'];
+const COLORS = ['yellow', 'blue', 'red', 'green'];
 
 storiesOf('Watson IoT Experimental/BarChartCard', module)
   .add('Simple bar', () => {
@@ -23,11 +23,44 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
           content={object('content', {
             xLabel: 'Cities',
             yLabel: 'Particles',
-            series: {
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[0],
+                label: 'Amsterdam',
+                dataFilter: {
+                  city: 'Amsterdam',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[1],
+                label: 'New York',
+                dataFilter: {
+                  city: 'New York',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[2],
+                label: 'Bangkok',
+                dataFilter: {
+                  city: 'Bangkok',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[3],
+                label: 'San Francisco',
+                dataFilter: {
+                  city: 'San Francisco',
+                },
+              },
+            ],
           })}
           values={object('values', barChartData.quarters.filter(q => q.quarter === '2020-Q1'))}
           size={size}
@@ -50,11 +83,44 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
           content={object('content', {
             xLabel: 'Cities',
             yLabel: 'Particles',
-            series: {
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[0],
+                label: 'Amsterdam',
+                dataFilter: {
+                  city: 'Amsterdam',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[1],
+                label: 'New York',
+                dataFilter: {
+                  city: 'New York',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[2],
+                label: 'Bangkok',
+                dataFilter: {
+                  city: 'Bangkok',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[3],
+                label: 'San Francisco',
+                dataFilter: {
+                  city: 'San Francisco',
+                },
+              },
+            ],
           })}
           values={object('values', barChartData.quarters.filter(a => a.quarter === 'NOT_VALID'))}
           size={size}
@@ -76,11 +142,44 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
             layout: BAR_CHART_LAYOUTS.HORIZONTAL,
             xLabel: 'Cities',
             yLabel: 'Particles',
-            series: {
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[0],
+                label: 'Amsterdam',
+                dataFilter: {
+                  city: 'Amsterdam',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[1],
+                label: 'New York',
+                dataFilter: {
+                  city: 'New York',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[2],
+                label: 'Bangkok',
+                dataFilter: {
+                  city: 'Bangkok',
+                },
+              },
+              {
+                labelDataSourceId: 'city',
+                dataSourceId: 'particles',
+                color: COLORS[3],
+                label: 'San Francisco',
+                dataFilter: {
+                  city: 'San Francisco',
+                },
+              },
+            ],
           })}
           values={object('values', barChartData.quarters.filter(a => a.quarter === '2020-Q1'))}
           size={size}
@@ -102,11 +201,13 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
             layout: BAR_CHART_LAYOUTS.VERTICAL,
             xLabel: 'Date',
             yLabel: 'Particles',
-            series: {
-              dataSourceId: 'particles',
-              timeDataSourceId: 'timestamp',
-              colors: COLORS,
-            },
+            series: [
+              {
+                dataSourceId: 'particles',
+                label: 'Particles',
+              },
+            ],
+            timeDataSourceId: 'timestamp',
           })}
           values={object('values', barChartData.timestamps.filter(t => t.city === 'Amsterdam'))}
           size={size}
@@ -128,12 +229,29 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
             chartType: BAR_CHART_TYPES.GROUPED,
             xLabel: 'Quarters',
             yLabel: 'Particles',
-            series: {
-              groupDataSourceId: 'quarter',
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                label: 'Amsterdam',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Amsterdam' },
+              },
+              {
+                label: 'New York',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'New York' },
+              },
+              {
+                label: 'Bangkok',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Bangkok' },
+              },
+              {
+                label: 'San Francisco',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'San Francisco' },
+              },
+            ],
+            groupDataSourceId: 'quarter',
           })}
           values={barChartData.quarters}
           size={size}
@@ -156,12 +274,29 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
             layout: BAR_CHART_LAYOUTS.HORIZONTAL,
             xLabel: 'Particles',
             yLabel: 'Quarters',
-            series: {
-              groupDataSourceId: 'quarter',
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                label: 'Amsterdam',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Amsterdam' },
+              },
+              {
+                label: 'New York',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'New York' },
+              },
+              {
+                label: 'Bangkok',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Bangkok' },
+              },
+              {
+                label: 'San Francisco',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'San Francisco' },
+              },
+            ],
+            groupDataSourceId: 'quarter',
           })}
           values={barChartData.quarters}
           size={size}
@@ -183,12 +318,29 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
             chartType: BAR_CHART_TYPES.STACKED,
             xLabel: 'Quarters',
             yLabel: 'Particles',
-            series: {
-              groupDataSourceId: 'quarter',
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                label: 'Amsterdam',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Amsterdam' },
+              },
+              {
+                label: 'New York',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'New York' },
+              },
+              {
+                label: 'Bangkok',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Bangkok' },
+              },
+              {
+                label: 'San Francisco',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'San Francisco' },
+              },
+            ],
+            groupDataSourceId: 'quarter',
           })}
           values={barChartData.quarters}
           size={size}
@@ -211,12 +363,29 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
             layout: BAR_CHART_LAYOUTS.HORIZONTAL,
             xLabel: 'Particles',
             yLabel: 'Quarters',
-            series: {
-              groupDataSourceId: 'quarter',
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              colors: COLORS,
-            },
+            series: [
+              {
+                label: 'Amsterdam',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Amsterdam' },
+              },
+              {
+                label: 'New York',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'New York' },
+              },
+              {
+                label: 'Bangkok',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Bangkok' },
+              },
+              {
+                label: 'San Francisco',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'San Francisco' },
+              },
+            ],
+            groupDataSourceId: 'quarter',
           })}
           values={barChartData.quarters}
           size={size}
@@ -236,15 +405,32 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             chartType: BAR_CHART_TYPES.STACKED,
-            xLabel: 'Particles',
-            yLabel: 'Quarters',
-            series: {
-              groupDataSourceId: 'timestamp',
-              labelDataSourceId: 'city',
-              dataSourceId: 'particles',
-              timeDataSourceId: 'timestamp',
-              colors: COLORS,
-            },
+            xLabel: 'Dates',
+            yLabel: 'Particles',
+            series: [
+              {
+                label: 'Amsterdam',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Amsterdam' },
+              },
+              {
+                label: 'New York',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'New York' },
+              },
+              {
+                label: 'Bangkok',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'Bangkok' },
+              },
+              {
+                label: 'San Francisco',
+                dataSourceId: 'particles',
+                dataFilter: { city: 'San Francisco' },
+              },
+            ],
+            groupDataSourceId: 'quarter',
+            timeDataSourceId: 'timestamp',
           })}
           values={barChartData.timestamps}
           size={size}

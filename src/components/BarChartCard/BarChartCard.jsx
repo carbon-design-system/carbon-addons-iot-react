@@ -5,7 +5,7 @@ import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
-import groupBy from 'lodash/groupBy';
+import filter from 'lodash/filter';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
@@ -25,77 +25,190 @@ const { iotPrefix } = settings;
  *
  * @returns {object} with a labels array and a datasets array
  */
-export const formatChartData = (series, values) => {
+export const formatChartData = (series, values, groupDataSourceId, timeDataSourceId) => {
   const data = [];
   if (!isNil(values)) {
-    if (series.groupDataSourceId) {
+    if (series.groupDataSourceId || groupDataSourceId) {
       // grouped and stacked
-      const groupedDatasets = groupBy(values, series.labelDataSourceId);
+      const groupedDatasets = [
+        ...new Set(
+          values.map(val => {
+            if (groupDataSourceId) {
+              return val[groupDataSourceId];
+            }
+            // old prop
+            return val[series.groupDataSourceId];
+          })
+        ),
+      ];
+
+      // Make sure groupedDatasets returned values
       if (!isEmpty(groupedDatasets)) {
-        console.log(groupedDatasets);
-        Object.keys(groupedDatasets).forEach(dataset => {
-          groupedDatasets[dataset].forEach(d => {
-            // Time-based
-            if (series.timeDataSourceId) {
-              data.push({
-                group: dataset,
-                key: d[series.groupDataSourceId],
-                date: new Date(d[series.timeDataSourceId]),
-                value: d[series.dataSourceId],
-              });
-            } else {
-              // Not time-based
-              data.push({
-                group: dataset,
-                key: d[series.groupDataSourceId],
-                value: d[series.dataSourceId],
+        groupedDatasets.forEach(group => {
+          if (Array.isArray(series)) {
+            // Series is an array of bar datasets
+            series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+              const filteredBarData = values.filter(val => val[groupDataSourceId] === group);
+              const filteredGroupedBarData = filter(filteredBarData, dataFilter);
+              if (!isEmpty(filteredBarData)) {
+                filteredGroupedBarData.forEach(barData => {
+                  // Time-based
+                  if (timeDataSourceId) {
+                    data.push({
+                      group: label,
+                      key: barData[groupDataSourceId],
+                      date: new Date(barData[timeDataSourceId]),
+                      value: barData[dataSourceId],
+                    });
+                  } else {
+                    // Not time-based
+                    data.push({
+                      group: label,
+                      key: barData[groupDataSourceId],
+                      value: barData[dataSourceId],
+                    });
+                  }
+                });
+              }
+            });
+          } // Series is not an array so treat it as a single bar
+          else {
+            const filteredBarData = values.filter(val => val[groupDataSourceId] === group);
+            const filteredGroupedBarData = filter(filteredBarData, series.dataFilter);
+            if (!isEmpty(filteredBarData)) {
+              filteredGroupedBarData.forEach(barData => {
+                // Time-based
+                if (timeDataSourceId) {
+                  data.push({
+                    group: series.label,
+                    key: barData[groupDataSourceId],
+                    date: new Date(barData[timeDataSourceId]),
+                    value: barData[series.dataSourceId],
+                  });
+                } else {
+                  // Not time-based
+                  data.push({
+                    group: series.label,
+                    key: barData[groupDataSourceId],
+                    value: barData[series.dataSourceId],
+                  });
+                }
               });
             }
+          }
+        });
+      }
+    } else if (series.timeDataSourceId || timeDataSourceId) {
+      // Get unique timestamps
+      const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
+      // timestamp
+      if (Array.isArray(series)) {
+        // Series is an array of bar datasets
+        series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+          if (!isEmpty(timestamps)) {
+            timestamps.forEach(timestamp => {
+              const filteredData = filter(values, dataFilter);
+              if (!isEmpty(filteredData)) {
+                filteredData
+                  .filter(dataItem => {
+                    return (
+                      !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp
+                    );
+                  })
+                  .forEach(dataItem => {
+                    data.push({
+                      date: new Date(dataItem[timeDataSourceId]),
+                      value: dataItem[dataSourceId],
+                      group: label,
+                    });
+                  });
+              }
+            });
+          }
+        });
+      } else if (!isEmpty(timestamps)) {
+        timestamps.forEach(timestamp => {
+          const filteredData = filter(values, series.dataFilter);
+          if (!isEmpty(filteredData)) {
+            filteredData
+              .filter(dataItem => {
+                return (
+                  !isNil(dataItem[series.dataSourceId]) && dataItem[timeDataSourceId] === timestamp
+                );
+              })
+              .forEach(dataItem => {
+                data.push({
+                  date: new Date(dataItem[timeDataSourceId]),
+                  value: dataItem[series.dataSourceId],
+                  group: series.label,
+                });
+              });
+          }
+        });
+      }
+    } else if (Array.isArray(series)) {
+      // Series is an array of bar datasets
+      series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+        const filteredBarData = filter(values, dataFilter);
+        if (!isEmpty(filteredBarData)) {
+          filteredBarData.forEach(barData => {
+            data.push({
+              group: label,
+              value: barData[dataSourceId],
+            });
+          });
+        }
+      });
+    } // Series is not an array so treat it as a single bar
+    else {
+      const filteredBarData = filter(values, series.dataFilter);
+      if (!isEmpty(filteredBarData)) {
+        filteredBarData.forEach(barData => {
+          data.push({
+            group: series.label,
+            key: barData[groupDataSourceId],
+            value: barData[series.dataSourceId],
           });
         });
       }
-    } else if (series.labelDataSourceId) {
-      values.forEach(v => {
-        data.push({
-          group: v[series.labelDataSourceId],
-          value: v[series.dataSourceId],
-        });
-      });
-    } else if (series.timeDataSourceId) {
-      // timestamp
-      values.forEach(v => {
-        data.push({
-          group: v[series.dataSourceId],
-          date: new Date(v[series.timeDataSourceId]),
-          value: v[series.dataSourceId],
-        });
-      });
     }
   }
   return data;
 };
 
-export const mapValuesToAxes = (series, layout) => {
+/**
+ * Maps values to left and bottom axes based on whether layout is vertical
+ * or horizontal, and if the series is grouped or time-based
+ *
+ * @param {Object} series the definition of the plotted series
+ * @param {string} layout vertical or horizontal
+ *
+ * @returns {object} { bottomAxesMapsTo: string, leftAxesMapsTo: string }
+ */
+export const mapValuesToAxes = (series, layout, groupDataSourceId, timeDataSourceId) => {
   // Determine which values the axes map to
   let bottomAxesMapsTo;
   let leftAxesMapsTo;
   if (layout === BAR_CHART_LAYOUTS.VERTICAL) {
-    if (series?.timeDataSourceId) {
+    // if vertical and time-based
+    if (timeDataSourceId) {
       bottomAxesMapsTo = 'date';
-      leftAxesMapsTo = 'group';
-    } else if (series?.groupDataSourceId) {
+      leftAxesMapsTo = 'value';
+    } // if vertical and group-based
+    else if (groupDataSourceId) {
       bottomAxesMapsTo = 'key';
       leftAxesMapsTo = 'value';
-    } // not group or time-based
+    } // if vertical and not group or time-based
     else {
       bottomAxesMapsTo = 'group';
       leftAxesMapsTo = 'value';
     }
   } // if horizontal and time-based
-  else if (series?.timeDataSourceId) {
-    bottomAxesMapsTo = 'group';
+  else if (timeDataSourceId) {
+    bottomAxesMapsTo = 'value';
     leftAxesMapsTo = 'date';
-  } else if (series?.groupDataSourceId) {
+  } // if horizontal and group-based
+  else if (groupDataSourceId) {
     bottomAxesMapsTo = 'value';
     leftAxesMapsTo = 'key';
   } // if horizontal, not time-based or group
@@ -119,6 +232,8 @@ const BarChartCard = ({
     chartType = BAR_CHART_TYPES.SIMPLE,
     series,
     data, // unmapped in propTypes, feeds already formatted data to the charting library
+    groupDataSourceId,
+    timeDataSourceId,
   },
   size,
   values,
@@ -129,10 +244,14 @@ const BarChartCard = ({
   className,
   ...others
 }) => {
-  let chartData = data;
-  if (series && series.dataSourceId && (series.labelDataSourceId || series.timeDataSourceId)) {
-    chartData = formatChartData(series, values);
+  let chartData;
+  if (data) {
+    chartData = data;
+  } else {
+    /** This caches the chart value */
+    chartData = formatChartData(series, values, groupDataSourceId, timeDataSourceId);
   }
+
   const isAllValuesEmpty = isEmpty(chartData);
   console.log(chartData);
 
@@ -144,17 +263,28 @@ const BarChartCard = ({
     ChartComponent = StackedBarChart;
   }
 
-  const scaleType = series && series.timeDataSourceId ? 'time' : 'labels';
+  const scaleType = series && (series.timeDataSourceId || timeDataSourceId) ? 'time' : 'labels';
 
-  // // Set the colors for each dataset
-  // const colors = { identifier: 'group', scale: {} };
-  // series.forEach(dataset => {
-  //   colors.scale[dataset.label] = dataset.color;
-  // });
+  // Set the colors for each dataset
+  const colors = { identifier: 'group', scale: {} };
+  // If colors is an array, it is the deprecated format
+  // TODO: remove this first conditional block in next major version
+  const datasetGroups = [...new Set(chartData.map(dataset => dataset.group))];
+  if (series.colors) {
+    datasetGroups.forEach((dataset, index) => {
+      colors.scale[dataset] = series.colors[index];
+    });
+  } else if (Array.isArray(series)) {
+    series.forEach(dataset => {
+      colors.scale[dataset.label] = dataset.color;
+    });
+  } else {
+    colors.scale[series.label] = series.color;
+  }
 
-  const axesMap = mapValuesToAxes(series, layout);
-  // console.log(bottomAxesMapsTo);
-  // console.log(leftAxesMapsTo);
+  // console.log(colors);
+
+  const axesMap = mapValuesToAxes(series, layout, groupDataSourceId, timeDataSourceId);
 
   return (
     <Card
