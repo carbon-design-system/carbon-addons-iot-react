@@ -219,6 +219,7 @@ const ValueCard = ({
   i18n,
   dataState,
   id,
+  locale,
   ...others
 }) => {
   const availableActions = {
@@ -284,6 +285,7 @@ const ValueCard = ({
                         attributeCount={attributes.length}
                         isVertical={isVertical}
                         layout={layout}
+                        locale={locale}
                         isSmall={
                           (newSize === CARD_SIZES.SMALL ||
                             newSize === CARD_SIZES.SMALLWIDE ||
@@ -353,6 +355,7 @@ ValueCard.propTypes = { ...CardPropTypes, ...ValueCardPropTypes };
 
 ValueCard.defaultProps = {
   size: CARD_SIZES.MEDIUM,
+  locale: 'en',
 };
 
 export default ValueCard;

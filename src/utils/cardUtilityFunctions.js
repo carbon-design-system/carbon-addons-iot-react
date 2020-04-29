@@ -122,3 +122,29 @@ export const getUpdatedCardSize = oldSize => {
   }
   return newSize;
 };
+
+export const formatNumberWithPrecision = (value, precision, locale) =>
+  value > 1000000000000
+    ? `${(value / 1000000000000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}T`
+    : value > 1000000000
+    ? `${(value / 1000000000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}B`
+    : value > 1000000
+    ? `${(value / 1000000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}M`
+    : value > 1000
+    ? `${(value / 1000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}K`
+    : value.toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      });

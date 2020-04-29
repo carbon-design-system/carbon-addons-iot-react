@@ -1,4 +1,9 @@
-import { determineCardRange, compareGrains, getUpdatedCardSize } from '../cardUtilityFunctions';
+import {
+  determineCardRange,
+  compareGrains,
+  getUpdatedCardSize,
+  formatNumberWithPrecision,
+} from '../cardUtilityFunctions';
 
 describe('cardUtilityFunctions', () => {
   test('determineCardRange', () => {
@@ -17,5 +22,10 @@ describe('cardUtilityFunctions', () => {
     expect(getUpdatedCardSize('TALL')).toEqual('LARGETHIN');
     expect(getUpdatedCardSize('XLARGE')).toEqual('LARGEWIDE');
     expect(getUpdatedCardSize('MEDIUM')).toEqual('MEDIUM');
+  });
+  test('formatNumberWithPrecision', () => {
+    expect(formatNumberWithPrecision(3.45, 1, 'fr')).toEqual('3,5'); // decimal separator should be comma
+    expect(formatNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
+    expect(formatNumberWithPrecision(35000, 2, 'en')).toEqual('35.00K'); // K separator
   });
 });
