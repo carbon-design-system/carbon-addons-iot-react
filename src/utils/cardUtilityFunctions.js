@@ -123,7 +123,13 @@ export const getUpdatedCardSize = oldSize => {
   return newSize;
 };
 
-export const formatNumberWithPrecision = (value, precision, locale) =>
+/**
+ * This function provides common value formatting across all card types
+ * @param {number} value, the value the card will display
+ * @param {number} precision, how many decimal values to display configured at the attribute level
+ * @param {string} locale, the local browser locale because locales use different decimal separators
+ */
+export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =>
   value > 1000000000000
     ? `${(value / 1000000000000).toLocaleString(locale, {
         minimumFractionDigits: precision,
