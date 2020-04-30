@@ -102,7 +102,7 @@ export const determinePrecision = (size, value, defaultPrecision) => {
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
   const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
   const data = [];
-  // Series is the different groups of data
+  // Series is the different groups of datasets
   series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
     timestamps.forEach(timestamp => {
       // First filter based on on the dataFilter

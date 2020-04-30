@@ -195,41 +195,14 @@ const BarChartDatasetPropType = {
   /** the attribute in values to map to */
   dataSourceId: PropTypes.string,
   /** the attribute in values to group by */
-  groupDataSourceId: deprecate(
-    PropTypes.string,
-    '\nThe prop `groupDataSourceId` for BarChartCard has been deprecated and moved to the content prop in favor of keeping prop consistency with TimeSeriesCard.'
-  ),
+  groupDataSourceId: PropTypes.string,
   /** the attribute in values to display the bars for */
-  labelDataSourceId: deprecate(
-    PropTypes.string,
-    '\nThe prop `labelDataSourceId` for BarChartCard has been deprecated in favor of `dataFilter` to keep prop consistency with TimeSeriesCard.'
-  ),
-  /** optional filter to apply to this particular line */
-  dataFilter: PropTypes.objectOf(PropTypes.any),
+  labelDataSourceId: PropTypes.string,
   /** the attribute that is the time attribute */
   timeDataSourceId: PropTypes.string,
   /** an array of colors (hex or named) for the chart */
-  colors: deprecate(
-    PropTypes.arrayOf(PropTypes.string),
-    '\nThe prop `colors` for BarChartCard has been deprecated in favor of keeping prop consistency with TimeSeriesCard.'
-  ),
-  /** optional param to set the color of this dataset */
-  color: PropTypes.string,
-  /** optional name of the dataset group */
-  label: PropTypes.string.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string),
 };
-
-// export const TimeSeriesDatasetPropTypes = PropTypes.shape({
-//   label: PropTypes.string.isRequired,
-//   /** the attribute in values to map to */
-//   dataSourceId: PropTypes.string.isRequired,
-//   /** optional filter to apply to this particular line */
-//   dataFilter: PropTypes.objectOf(PropTypes.any),
-//   /** optional units to put in the legend */
-//   unit: PropTypes.string,
-//   /** optional param to set the colors */
-//   color: PropTypes.string,
-// });
 
 export const BarChartCardPropTypes = {
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
@@ -240,14 +213,7 @@ export const BarChartCardPropTypes = {
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
-    series: PropTypes.oneOfType([
-      BarChartDatasetPropType,
-      PropTypes.arrayOf(BarChartDatasetPropType),
-    ]),
-    /** the attribute that is the time attribute i.e. 'timestamp' */
-    timeDataSourceId: PropTypes.string,
-    /** the attribute in values to group by */
-    groupDataSourceId: PropTypes.string,
+    series: BarChartDatasetPropType,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
