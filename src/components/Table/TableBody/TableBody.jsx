@@ -76,7 +76,7 @@ const defaultProps = {
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand.',
   clickToCollapseAria: 'Click to collapse.',
-  locale: 'en',
+  locale: null,
   rows: [],
   expandedRows: [],
   rowActionsState: [],

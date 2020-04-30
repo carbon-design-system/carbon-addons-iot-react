@@ -344,7 +344,7 @@ Map {
       },
       "id": "Table",
       "lightweight": false,
-      "locale": "en",
+      "locale": null,
       "options": Object {
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
@@ -1635,7 +1635,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
-      "locale": "en",
+      "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
       "rows": Array [],

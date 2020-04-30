@@ -160,7 +160,7 @@ const propTypes = {
       onColumnResize: PropTypes.func,
     }).isRequired,
   }),
-  /** what locale should we use to format values, defaults to 'en' */
+  /** what locale should we use to format table values if left empty no locale formatting happens */
   locale: PropTypes.string,
   i18n: I18NPropTypes,
 };
@@ -232,7 +232,7 @@ export const defaultProps = baseProps => ({
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
     },
   },
-  locale: 'en',
+  locale: null,
   i18n: {
     /** pagination */
     pageBackwardAria: 'Previous page',

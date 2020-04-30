@@ -19,7 +19,7 @@ const propTypes = {
 const defaultProps = {
   children: null,
   allowTooltip: true,
-  locale: 'en',
+  locale: null,
 };
 
 const isElementTruncated = element => element.offsetWidth < element.scrollWidth;
@@ -63,7 +63,7 @@ const TableCellRenderer = ({ children, wrapText, allowTooltip, truncateCellText,
   const cellContent =
     typeof children === 'string' || typeof children === 'number' ? (
       <span className={myClasses} title={children} ref={mySpanRef}>
-        {typeof children === 'number'
+        {typeof children === 'number' && locale
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
           : children}
       </span>
