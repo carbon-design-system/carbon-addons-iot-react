@@ -32,6 +32,45 @@ storiesOf('Watson IoT/ValueCard', module)
       </div>
     );
   })
+  .add(
+    'small / with variables',
+    () => {
+      const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+      return (
+        <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+          <ValueCard
+            title={text('title', 'Title variable is {not-working}')}
+            id="facilitycard"
+            cardVariables={object('variables', {
+              'not-working': 'working',
+            })}
+            content={{
+              attributes: object('attributes', [
+                {
+                  dataSourceId: 'occupancy',
+                  unit: '%',
+                  label: 'label variable is {not-working}',
+                },
+              ]),
+            }}
+            breakpoint="lg"
+            size={size}
+            values={{ occupancy: number('occupancy', 88) }}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+      # Passing variables
+      To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+      Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+      Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+      `,
+      },
+    }
+  )
   .add('small / long', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (
@@ -54,7 +93,6 @@ storiesOf('Watson IoT/ValueCard', module)
       </div>
     );
   })
-
   .add(
     'small / wrapping',
     () => {

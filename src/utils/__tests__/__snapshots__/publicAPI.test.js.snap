@@ -7431,6 +7431,30 @@ Map {
         ],
         "type": "shape",
       },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
       "content": Object {
         "args": Array [
           Object {
@@ -8314,6 +8338,30 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [
@@ -9850,6 +9898,30 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [

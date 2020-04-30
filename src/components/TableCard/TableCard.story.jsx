@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 
@@ -152,6 +152,55 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
+  .add(
+    'With dynamic variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+      const cardVariables = object('Dynamic link variable', {
+        assetId: '11112',
+        devicePressureThreshold: 1,
+      });
+
+      const thresholds = [
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: text('Custom threshold value', '{devicePressureThreshold}'),
+          severity: 1,
+          label: text('Custom Pressure Severity Header', '{assetId} Pressure'),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Critical Label', '{assetId} Critical'),
+        },
+      ];
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Asset {assetId} Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableColumns,
+              thresholds,
+            }}
+            values={tableData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+            cardVariables={cardVariables}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `
+      # Passing variables
+      To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+      Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+      Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+      `,
+      },
+    }
+  )
   .add(
     'table with thresholds',
     () => {
