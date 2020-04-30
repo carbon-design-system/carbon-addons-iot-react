@@ -81,6 +81,7 @@ const propTypes = {
   precision: PropTypes.number,
   /** Number of attributes that the parent ValueCard is trying to display */
   attributeCount: PropTypes.number.isRequired,
+  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -94,6 +95,7 @@ const defaultProps = {
   label: null,
   renderIconByName: null,
   secondaryValue: null,
+  locale: 'en',
 };
 
 /**
@@ -114,6 +116,7 @@ const Attribute = ({
   label,
   renderIconByName,
   size, // eslint-disable-line
+  locale,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -188,6 +191,7 @@ const Attribute = ({
               color={valueColor}
               allowedToWrap={allowWrap}
               wrapCompact={wrapCompact}
+              locale={locale}
             />
             <UnitRenderer
               value={value}

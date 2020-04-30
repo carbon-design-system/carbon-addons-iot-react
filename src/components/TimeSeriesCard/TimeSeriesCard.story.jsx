@@ -972,26 +972,26 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
+          title={text('title', 'Pressure')}
+          id="facility-pressure"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
             series: [
               {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
+                label: 'Pressure',
+                dataSourceId: 'pressure',
                 color: text('color', COLORS.MAGENTA),
               },
             ],
-            unit: '˚F',
+            unit: 'm/sec',
             xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature'),
+            yLabel: text('yLabel', 'Pressure'),
             includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
             includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
             timeDataSourceId: 'timestamp',
           })}
-          locale="sq"
-          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
+          locale={select('locale', ['fr', 'en'], 'fr')}
+          values={getIntervalChartData('day', 12, { min: 10, max: 100000 }, 100)}
           interval="day"
           breakpoint="lg"
           size={size}

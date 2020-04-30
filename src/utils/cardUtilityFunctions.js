@@ -124,6 +124,37 @@ export const getUpdatedCardSize = oldSize => {
 };
 
 /**
+ * This function provides common value formatting across all card types
+ * @param {number} value, the value the card will display
+ * @param {number} precision, how many decimal values to display configured at the attribute level
+ * @param {string} locale, the local browser locale because locales use different decimal separators
+ */
+export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =>
+  value > 1000000000000
+    ? `${(value / 1000000000000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}T`
+    : value > 1000000000
+    ? `${(value / 1000000000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}B`
+    : value > 1000000
+    ? `${(value / 1000000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}M`
+    : value > 1000
+    ? `${(value / 1000).toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      })}K`
+    : value.toLocaleString(locale, {
+        minimumFractionDigits: precision,
+        maximumFractionDigits: precision,
+      });
+/**
  * Find variables in a string that are identified by surrounding curly braces
  * @param {string} value - A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`
  * @return {array} variables - an array of variables, i.e. ['manufacturer', 'sensor']

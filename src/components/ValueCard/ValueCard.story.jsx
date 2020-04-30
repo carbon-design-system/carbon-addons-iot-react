@@ -997,4 +997,27 @@ storiesOf('Watson IoT/ValueCard', module)
         />
       </div>
     );
+  })
+  .add('locale', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Occupancy')}
+          id="facilitycard"
+          content={{
+            attributes: object('attributes', [
+              {
+                dataSourceId: 'occupancy',
+                unit: '%',
+              },
+            ]),
+          }}
+          breakpoint="lg"
+          size={size}
+          locale={select('locale', ['de', 'fr', 'en'], 'fr')}
+          values={{ occupancy: number('occupancy', 0.05) }}
+        />
+      </div>
+    );
   });

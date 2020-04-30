@@ -17,8 +17,12 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/CardProp
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
-import { getUpdatedCardSize, handleCardVariables } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
+import {
+  getUpdatedCardSize,
+  formatNumberWithPrecision,
+  handleCardVariables,
+} from '../../utils/cardUtilityFunctions';
 
 import {
   generateSampleValues,
@@ -129,20 +133,11 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
  * @param {string} size card size
  * @param {string} unit any optional units to show
  */
-export const valueFormatter = (value, size, unit) => {
+export const valueFormatter = (value, size, unit, locale) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
-    renderValue =
-      value > 1000000000000
-        ? `${(value / 1000000000000).toFixed(precision)}T`
-        : value > 1000000000
-        ? `${(value / 1000000000).toFixed(precision)}B`
-        : value > 1000000
-        ? `${(value / 1000000).toFixed(precision)}M`
-        : value > 1000
-        ? `${(value / 1000).toFixed(precision)}K`
-        : value.toFixed(precision);
+    renderValue = formatNumberWithPrecision(value, precision, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }
@@ -443,9 +438,11 @@ const TimeSeriesCard = ({
                     includeZero: includeZeroOnXaxis,
                   },
                   left: {
-                    title: yLabel,
+                    title: `${yLabel} ${unit ? `(${unit})` : ''}`,
                     mapsTo: 'value',
-                    formatter: axisValue => valueFormatter(axisValue, newSize, unit),
+                    ticks: {
+                      formatter: axisValue => valueFormatter(axisValue, newSize, null, locale),
+                    },
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
                       : {}),
@@ -456,7 +453,8 @@ const TimeSeriesCard = ({
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
                 containerResizable: true,
                 tooltip: {
-                  formatter: tooltipValue => valueFormatter(tooltipValue, newSize, unit),
+                  valueFormatter: tooltipValue =>
+                    valueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
                     handleTooltip(...args, alertRanges, alertDetected, locale),
                   gridline: {

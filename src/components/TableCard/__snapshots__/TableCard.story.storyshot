@@ -6263,7 +6263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={5}
+                          title="5"
                         >
                           5
                         </span>
@@ -6283,9 +6283,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -6421,7 +6421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={2}
+                          title="2"
                         >
                           2
                         </span>
@@ -6441,9 +6441,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -6519,7 +6519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <div
                           className="iot--threshold-icon--wrapper"
-                          title="count: 1.2039201932 < 5"
+                          title="count: 1,204 < 5"
                         >
                           <svg
                             height="16px"
@@ -6579,9 +6579,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={1.2039201932}
+                          title="1,204"
                         >
-                          1.2039201932
+                          1,204
                         </span>
                       </span>
                     </td>
@@ -6599,9 +6599,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -6677,7 +6677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <div
                           className="iot--threshold-icon--wrapper"
-                          title="count: 1.10329291 < 5"
+                          title="count: 1,103 < 5"
                         >
                           <svg
                             height="16px"
@@ -6737,9 +6737,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={1.10329291}
+                          title="1,103"
                         >
-                          1.10329291
+                          1,103
                         </span>
                       </span>
                     </td>
@@ -6757,9 +6757,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -6893,7 +6893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={30}
+                          title="30"
                         >
                           30
                         </span>
@@ -6913,9 +6913,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -7049,7 +7049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={5}
+                          title="5"
                         >
                           5
                         </span>
@@ -7069,9 +7069,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -7205,7 +7205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={7}
+                          title="7"
                         >
                           7
                         </span>
@@ -7225,9 +7225,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -7363,7 +7363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={0}
+                          title="0"
                         >
                           0
                         </span>
@@ -7383,9 +7383,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -7521,7 +7521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={3}
+                          title="3"
                         >
                           3
                         </span>
@@ -7541,9 +7541,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>
@@ -7722,7 +7722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title={10}
+                          title="10"
                         >
                           10
                         </span>
@@ -7742,9 +7742,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       >
                         <span
                           className=""
-                          title="10/28/2018 07:34"
+                          title="28/10/2018 07:34"
                         >
-                          10/28/2018 07:34
+                          28/10/2018 07:34
                         </span>
                       </span>
                     </td>

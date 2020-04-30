@@ -16,7 +16,11 @@ import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
-import { getUpdatedCardSize, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  handleCardVariables,
+  formatNumberWithPrecision,
+} from '../../utils/cardUtilityFunctions';
 
 import ThresholdIcon from './ThresholdIcon';
 
@@ -148,6 +152,7 @@ const StyledExpandedDiv = styled.div`
 
 const defaultProps = {
   size: CARD_SIZES.LARGE,
+  locale: 'en',
   values: [],
   i18n: {
     criticalLabel: 'Critical',
@@ -230,19 +235,11 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
     }, []);
 };
 
-const determinePrecisionAndValue = (precision, value) => {
+const determinePrecisionAndValue = (precision = 0, value, locale) => {
   const precisionDefined = Number.isInteger(value) ? 0 : precision;
 
   if (typeof value === 'number') {
-    return value > 1000000000000
-      ? `${(value / 1000000000000).toFixed(precisionDefined)}T`
-      : value > 1000000000
-      ? `${(value / 1000000000).toFixed(precisionDefined)}B`
-      : value > 1000000
-      ? `${(value / 1000000).toFixed(precisionDefined)}M`
-      : value > 1000
-      ? `${(value / 1000).toFixed(precisionDefined)}K`
-      : value.toFixed(precisionDefined);
+    return formatNumberWithPrecision(value, precisionDefined, locale);
   }
   if (isNil(value)) {
     return '--';
@@ -261,8 +258,11 @@ const TableCard = ({
   isEditable,
   i18n,
   tooltip,
+  locale,
   ...others
 }) => {
+  // Set the locale
+  moment.locale(locale);
   /** Searches for variables and updates the card if it is passed the cardVariables prop */
   const {
     title,
@@ -544,25 +544,29 @@ const TableCard = ({
 
             // if column have custom precision value
             const precisionUpdated = filteredPrecisionColumns.length
-              ? Object.keys(i.values)
-                  .map(value => {
-                    const precision = filteredPrecisionColumns.find(
-                      item => item.dataSourceId === value
-                    );
+              ? Object.keys(i.values).reduce((acc, value) => {
+                  const precision = filteredPrecisionColumns.find(
+                    item => item.dataSourceId === value
+                  );
 
-                    return precision
-                      ? {
-                          [value]: determinePrecisionAndValue(precision.precision, i.values[value]),
-                        }
-                      : null;
-                  })
-                  .filter(v => v)[0]
+                  // If I find a precision column it should override the normal
+                  if (precision) {
+                    acc[value] = determinePrecisionAndValue(
+                      precision.precision,
+                      i.values[value],
+                      locale
+                    );
+                  }
+
+                  return acc;
+                }, {})
               : null;
 
             return {
               id: i.id,
               values: {
                 ...iconColumns,
+                ...action,
                 ...i.values,
                 ...action,
                 ...timestampUpdated,
@@ -581,6 +585,7 @@ const TableCard = ({
       filteredPrecisionColumns,
       thresholds,
       tableData,
+      locale,
     ]
   );
 

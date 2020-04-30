@@ -4052,6 +4052,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -6875,6 +6878,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -6966,6 +6972,7 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "locale": "en",
       "size": "MEDIUM",
     },
     "propTypes": Object {
@@ -7751,6 +7758,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -8545,6 +8555,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -9282,6 +9295,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -9422,6 +9438,7 @@ Map {
         "timeRangeLabel": "Time range",
         "weeklyLabel": "Weekly",
       },
+      "locale": "en",
       "size": "LARGE",
       "values": Array [],
     },
@@ -10159,6 +10176,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -11072,6 +11092,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -11879,6 +11902,9 @@ Map {
       "loadData": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
