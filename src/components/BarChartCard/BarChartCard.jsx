@@ -23,7 +23,7 @@ const { iotPrefix } = settings;
  * @param {array} series.colors, an array of HEX colors to be used for the chart
  * @param {array} values, the array of values from our data layer
  *
- * @returns {object} with a labels array and a datasets array
+ * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
  */
 export const formatChartData = (series, values) => {
   const data = [];
@@ -131,6 +131,22 @@ export const mapValuesToAxes = (series, layout) => {
   };
 };
 
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @param {Array<string>} datasetNames unique dataset bar names
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = (series, datasetNames) => {
+  const colors = { identifier: 'group', scale: {} };
+  if (series.colors) {
+    series.colors.forEach((color, index) => {
+      colors.scale[datasetNames[index]] = color;
+    });
+  }
+  return colors;
+};
+
 const BarChartCard = ({
   title,
   content: {
@@ -170,13 +186,8 @@ const BarChartCard = ({
   const axes = mapValuesToAxes(series, layout);
 
   // Set the colors for each dataset
-  const colors = { identifier: 'group', scale: {} };
-  if (series.colors) {
-    const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
-    series.colors.forEach((color, index) => {
-      colors.scale[uniqueDatasets[index]] = color;
-    });
-  }
+  const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
+  const colors = formatColors(series, uniqueDatasets);
 
   return (
     <Card

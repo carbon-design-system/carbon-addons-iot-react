@@ -3916,26 +3916,31 @@ Map {
               "type": "oneOf",
             },
             "series": Object {
-              "colors": Object {
-                "args": Array [
-                  Object {
+              "args": Array [
+                Object {
+                  "colors": Object {
+                    "args": Array [
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "dataSourceId": Object {
                     "type": "string",
                   },
-                ],
-                "type": "arrayOf",
-              },
-              "dataSourceId": Object {
-                "type": "string",
-              },
-              "groupDataSourceId": Object {
-                "type": "string",
-              },
-              "labelDataSourceId": Object {
-                "type": "string",
-              },
-              "timeDataSourceId": Object {
-                "type": "string",
-              },
+                  "groupDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "labelDataSourceId": Object {
+                    "type": "string",
+                  },
+                  "timeDataSourceId": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
             },
             "type": Object {
               "args": Array [

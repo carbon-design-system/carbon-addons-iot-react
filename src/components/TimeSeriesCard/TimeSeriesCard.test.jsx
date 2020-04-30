@@ -3,12 +3,15 @@ import { mount } from 'enzyme';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
-import { CARD_SIZES, COLORS } from '../../constants/LayoutConstants';
+import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, {
   determinePrecision,
   valueFormatter,
   handleTooltip,
+  formatChartData,
+  formatColors,
 } from './TimeSeriesCard';
 
 const timeSeriesCardProps = {
@@ -36,17 +39,26 @@ const timeSeriesCardProps = {
 
 describe('TimeSeriesCard tests', () => {
   test('does not show line chart when loading', () => {
-    let wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} isLoading />);
+    let wrapper = mount(
+      <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />
+    );
     expect(wrapper.find('LineChart')).toHaveLength(0);
 
-    wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} />);
+    wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
   });
   test('shows table with data when expanded', () => {
-    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} isExpanded />);
+    const wrapper = mount(
+      <TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUMTHIN} />
+    );
     expect(wrapper.find('LineChart')).toHaveLength(1);
     // Carbon Table should be there
     expect(wrapper.find(Table)).toHaveLength(1);
+  });
+  test('shows bar chart when chartLayout is set to bar', () => {
+    timeSeriesCardProps.content.chartType = TIME_SERIES_TYPES.BAR;
+    const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
+    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
   test('determine precision', () => {
     expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
@@ -130,5 +142,155 @@ describe('TimeSeriesCard tests', () => {
     };
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
+  });
+  test('formatChartData returns properly formatted data without dataFilter set', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+      },
+    ];
+
+    expect(
+      formatChartData(
+        'timestamp',
+        series,
+        barChartData.timestamps.filter(data => data.city === 'Amsterdam')
+      )
+    ).toEqual([
+      {
+        date: new Date('2020-02-09T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 44700,
+      },
+      {
+        date: new Date('2020-02-10T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 45000,
+      },
+      {
+        date: new Date('2020-02-11T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 51200,
+      },
+      {
+        date: new Date('2020-02-12T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 56500,
+      },
+    ]);
+  });
+  test('formatChartData returns properly formatted data with dataFilter set', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+        dataFilter: {
+          city: 'Amsterdam',
+        },
+        color: COLORS.MAGENTA,
+      },
+      {
+        label: 'New York',
+        dataSourceId: 'particles',
+        dataFilter: {
+          city: 'New York',
+        },
+        // no color set here
+      },
+    ];
+
+    expect(formatChartData('timestamp', series, barChartData.timestamps)).toEqual([
+      {
+        date: new Date('2020-02-09T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 44700,
+      },
+      {
+        date: new Date('2020-02-10T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 45000,
+      },
+      {
+        date: new Date('2020-02-11T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 51200,
+      },
+      {
+        date: new Date('2020-02-12T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 56500,
+      },
+      {
+        date: new Date('2020-02-09T16:23:45.000Z'),
+        group: 'New York',
+        value: 52800,
+      },
+      {
+        date: new Date('2020-02-10T16:23:45.000Z'),
+        group: 'New York',
+        value: 36500,
+      },
+      {
+        date: new Date('2020-02-11T16:23:45.000Z'),
+        group: 'New York',
+        value: 44200,
+      },
+      {
+        date: new Date('2020-02-12T16:23:45.000Z'),
+        group: 'New York',
+        value: 45300,
+      },
+    ]);
+  });
+  test('formatChartData returns empty array if no data matches dataFilter', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+        dataFilter: {
+          city: 'Not Amsterdam',
+        },
+      },
+    ];
+
+    expect(
+      formatChartData(
+        'timestamp',
+        series,
+        barChartData.timestamps.filter(data => data.city === 'Amsterdam')
+      )
+    ).toEqual([]);
+  });
+  test('formatColors returns correct format if series is array', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+        color: 'blue',
+      },
+      {
+        label: 'New York',
+        dataSourceId: 'particles',
+        color: 'yellow',
+      },
+    ];
+
+    expect(formatColors(series)).toEqual({
+      identifier: 'group',
+      scale: { Amsterdam: 'blue', 'New York': 'yellow' },
+    });
+  });
+  test('formatColors returns correct format if series is object', () => {
+    const series = {
+      label: 'Amsterdam',
+      dataSourceId: 'particles',
+      color: 'blue',
+    };
+
+    expect(formatColors(series)).toEqual({
+      identifier: 'group',
+      scale: { Amsterdam: 'blue' },
+    });
   });
 });

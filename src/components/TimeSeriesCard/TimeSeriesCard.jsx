@@ -18,6 +18,7 @@ import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 import { getUpdatedCardSize, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import { settings } from '../../constants/Settings';
 
 import {
   generateSampleValues,
@@ -26,13 +27,7 @@ import {
   findMatchingAlertRange,
 } from './timeSeriesUtils';
 
-const StyledTable = styled(StatefulTable)`
-  position: absolute;
-  top: 55%;
-  height: 45%;
-  width: 100%;
-  overflow-y: scroll;
-`;
+const { iotPrefix } = settings;
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -198,6 +193,23 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
   return updatedTooltip;
 };
 
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = series => {
+  const colors = { identifier: 'group', scale: {} };
+  if (Array.isArray(series)) {
+    series.forEach(dataset => {
+      colors.scale[dataset.label] = dataset.color;
+    });
+  } else {
+    colors.scale[series.label] = series.color;
+  }
+  return colors;
+};
+
 const TimeSeriesCard = ({
   title: titleProp,
   content,
@@ -210,6 +222,7 @@ const TimeSeriesCard = ({
   i18n,
   isExpanded,
   isLazyLoading,
+  isLoading,
   ...others
 }) => {
   const {
@@ -295,14 +308,7 @@ const TimeSeriesCard = ({
   );
 
   // Set the colors for each dataset
-  const colors = { identifier: 'group', scale: {} };
-  if (Array.isArray(series)) {
-    series.forEach(dataset => {
-      colors.scale[dataset.label] = dataset.color;
-    });
-  } else {
-    colors.scale[series.label] = series.color;
-  }
+  const colors = formatColors(series);
 
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
@@ -409,7 +415,7 @@ const TimeSeriesCard = ({
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
     >
-      {!others.isLoading && !isAllValuesEmpty ? (
+      {!isLoading && !isAllValuesEmpty ? (
         <>
           <LineChartWrapper
             size={newSize}
@@ -467,7 +473,8 @@ const TimeSeriesCard = ({
             />
           </LineChartWrapper>
           {isExpanded ? (
-            <StyledTable
+            <StatefulTable
+              className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
               isExpanded={isExpanded}

@@ -222,7 +222,7 @@ export const BarChartCardPropTypes = {
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
-    series: BarChartDatasetPropType,
+    series: PropTypes.shape(BarChartDatasetPropType),
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
