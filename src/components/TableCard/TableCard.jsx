@@ -16,7 +16,7 @@ import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { getUpdatedCardSize, handleCardVariables } from '../../utils/cardUtilityFunctions';
 
 import ThresholdIcon from './ThresholdIcon';
 
@@ -252,17 +252,24 @@ const determinePrecisionAndValue = (precision, value) => {
 
 const TableCard = ({
   id,
-  title,
+  title: titleProp,
   isExpanded,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
+  content: contentProp,
   size,
   onCardAction,
-  values: data,
+  values: valuesProp,
   isEditable,
   i18n,
   tooltip,
   ...others
 }) => {
+  /** Searches for variables and updates the card if it is passed the cardVariables prop */
+  const {
+    title,
+    content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
+    values: data,
+  } = handleCardVariables(titleProp, contentProp, valuesProp, others);
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 

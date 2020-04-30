@@ -3321,14 +3321,16 @@ Map {
       },
       "description": Object {
         "args": Array [
-          Object {
-            "type": "element",
-          },
-          Object {
-            "type": "string",
-          },
+          Array [
+            Object {
+              "type": "element",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
         ],
-        "type": "oneOf",
+        "type": "oneOfType",
       },
       "editable": Object {
         "type": "bool",
@@ -6242,7 +6244,6 @@ Map {
         "xl": 144,
         "xs": 144,
       },
-      "showOverflow": false,
       "size": "MEDIUM",
       "testID": "Card",
       "timeRange": undefined,
@@ -7418,6 +7419,30 @@ Map {
         ],
         "type": "shape",
       },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
       "content": Object {
         "args": Array [
           Object {
@@ -8298,6 +8323,30 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [
@@ -9827,6 +9876,30 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
       },
       "content": Object {
         "args": Array [

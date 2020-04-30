@@ -11,7 +11,7 @@ const items = [
   {
     id: 'step1',
     label: 'First step',
-    secondaryLabel: 'secondary label',
+    secondaryLabel: 'Optional label',
     description: 'This is displayed when step icon is hovered',
   },
   {
@@ -42,7 +42,7 @@ class ProgressIndicatorExample extends Component {
         onChange={this.setItem}
         onClickItem={this.setItem}
         currentItemId={currentItemId}
-        showLabels={boolean('showlabels', true)}
+        showLabels={boolean('showLabels', true)}
         isVerticalMode={boolean('isVerticalMode', false)}
       />
     );
@@ -59,6 +59,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       onClickItem={action('onClickItem')}
       stepWidth={number('stepWidth', 9)}
       showLabels={boolean('showlabels', true)}
+      isVerticalMode={boolean('isVerticalMode', false)}
     />
   ))
   .add('presentation vertical', () => (
@@ -75,6 +76,8 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       items={items}
       currentItemId={select('id', items.map(item => item.id), items[1].id)}
       onClickItem={action('onClickItem')}
+      showLabels={false}
+      isVerticalMode={boolean('isVerticalMode', false)}
     />
   ))
   .add('skeleton', () => <ProgressIndicatorSkeleton />, {
