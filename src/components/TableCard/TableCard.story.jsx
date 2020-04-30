@@ -272,6 +272,71 @@ storiesOf('Watson IoT/TableCard', module)
     );
   })
   .add(
+    'With dynamic variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+      const cardVariables = object('Dynamic link variable', {
+        assetId: '11112',
+        devicePressureThreshold: 1,
+      });
+
+      const tableLinkColumns = [
+        ...tableColumns,
+        {
+          dataSourceId: 'deviceId',
+          label: 'Link',
+          linkTemplate: {
+            href: text('href', 'https://ibm.com/{assetId}'),
+            target: select('target', ['_blank', null], '_blank'),
+          },
+        },
+      ];
+
+      const tableLinkData = tableData.slice(0);
+      // eslint-disable-next-line no-return-assign, no-param-reassign
+      tableLinkData.forEach(row => (row.values.deviceId = 'Link'));
+
+      const thresholds = [
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: text('Custom threshold value', '{devicePressureThreshold}'),
+          severity: 1,
+          label: text('Custom Pressure Severity Header', '{assetId} Pressure'),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Critical Label', '{assetId} Critical'),
+        },
+      ];
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Asset {assetId} Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableLinkColumns,
+              thresholds,
+            }}
+            values={tableLinkData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+            cardVariables={cardVariables}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: ` # Passing variables
+        To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+        Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+        Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+        `,
+      },
+    }
+  )
+  .add(
     'table with thresholds',
     () => {
       const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);

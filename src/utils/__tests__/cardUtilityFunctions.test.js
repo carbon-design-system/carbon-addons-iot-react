@@ -2,9 +2,7 @@ import {
   determineCardRange,
   compareGrains,
   getUpdatedCardSize,
-  handleValueCardVariables,
-  handleTableCardVariables,
-  handleTimeseriesCardVariables,
+  handleCardVariables,
 } from '../cardUtilityFunctions';
 
 describe('cardUtilityFunctions', () => {
@@ -25,7 +23,7 @@ describe('cardUtilityFunctions', () => {
     expect(getUpdatedCardSize('XLARGE')).toEqual('LARGEWIDE');
     expect(getUpdatedCardSize('MEDIUM')).toEqual('MEDIUM');
   });
-  test('handleValueCardVariables updates value cards with variables', () => {
+  test('handleCardVariables updates value cards with variables', () => {
     const valueCardPropsWithVariables = {
       title: 'Fuel {variable} flow',
       content: {
@@ -194,14 +192,14 @@ describe('cardUtilityFunctions', () => {
     const updatedTitle = 'Fuel big flow';
     const updatedValues = [];
     const { title, content, values, others } = valueCardPropsWithVariables;
-    expect(handleValueCardVariables(title, content, values, others)).toEqual({
+    expect(handleCardVariables(title, content, values, others)).toEqual({
       title: updatedTitle,
       content: updatedContent,
       values: updatedValues,
       ...others,
     });
   });
-  test('handleTableCardVariables updates table cards with variables', () => {
+  test('handleCardVariables updates table cards with variables', () => {
     const tableCardPropsWithVariables = {
       title: 'Max and {minimum} speed',
       content: {
@@ -339,14 +337,14 @@ describe('cardUtilityFunctions', () => {
     };
     const updatedValues = [];
     const { title, content, values, others } = tableCardPropsWithVariables;
-    expect(handleTableCardVariables(title, content, values, others)).toEqual({
+    expect(handleCardVariables(title, content, values, others)).toEqual({
       title: updatedTitle,
       content: updatedContent,
       values: updatedValues,
       ...others,
     });
   });
-  test('handleValueCardVariables returns original card when no cardVariables are specified', () => {
+  test('handleCardVariables returns original card when no value cardVariables are specified', () => {
     const valueCardProps = {
       id: 'fuel_flow',
       size: 'SMALL',
@@ -448,14 +446,14 @@ describe('cardUtilityFunctions', () => {
       },
     };
     const { title, content, values, others } = valueCardProps;
-    expect(handleValueCardVariables(title, content, [], others)).toEqual({
+    expect(handleCardVariables(title, content, [], others)).toEqual({
       title,
       content,
       values,
       ...others,
     });
   });
-  test('handleTableCardVariables returns original card when no cardVariables are specified', () => {
+  test('handleCardVariables returns original card when no table cardVariables are specified', () => {
     const tableCardProps = {
       title: 'Max and min speed',
       content: {
@@ -533,14 +531,60 @@ describe('cardUtilityFunctions', () => {
       },
     };
     const { title, content, values, others } = tableCardProps;
-    expect(handleTableCardVariables(title, content, values, others)).toEqual({
+    expect(handleCardVariables(title, content, values, others)).toEqual({
       title,
       content,
       values,
       ...others,
     });
   });
-  test('handleTimeseriesVariables updates table cards with variables', () => {
+  test('handleCardVariables updates cards with variables when there are case discrepancies in cardVariables', () => {
+    const timeSeriesCardPropsWithVariables = {
+      title: 'timeSeries {device}',
+      content: {
+        xLabel: '{x_label}',
+        yLabel: '{y_label}',
+        unit: '{unit}',
+        series: [
+          {
+            dataSourceId: 'airflow_mean',
+            label: '{label}',
+          },
+        ],
+      },
+      values: [],
+      others: {
+        cardVariables: {
+          x_labEL: 'x-axis',
+          y_label: 'y-axis',
+          deVice: 'air',
+          unit: 'F',
+          Label: 'Airflow Mean',
+        },
+      },
+    };
+    const updatedTitle = 'timeSeries air';
+    const updatedContent = {
+      xLabel: 'x-axis',
+      yLabel: 'y-axis',
+      unit: 'F',
+      series: [
+        {
+          dataSourceId: 'airflow_mean',
+          label: 'Airflow Mean',
+        },
+      ],
+    };
+    const updatedValues = [];
+    const { title, content, values, others } = timeSeriesCardPropsWithVariables;
+    expect(handleCardVariables(title, content, values, others)).toEqual({
+      title: updatedTitle,
+      content: updatedContent,
+      values: updatedValues,
+      ...others,
+    });
+  });
+  test('handleCardVariables updates timeseries cards with variables', () => {
     const timeSeriesCardPropsWithVariables = {
       title: 'timeSeries {device}',
       content: {
@@ -579,14 +623,14 @@ describe('cardUtilityFunctions', () => {
     };
     const updatedValues = [];
     const { title, content, values, others } = timeSeriesCardPropsWithVariables;
-    expect(handleTimeseriesCardVariables(title, content, values, others)).toEqual({
+    expect(handleCardVariables(title, content, values, others)).toEqual({
       title: updatedTitle,
       content: updatedContent,
       values: updatedValues,
       ...others,
     });
   });
-  test('handleTimeseriesVariables returns original card when no cardVariables are specified', () => {
+  test('handleCardVariables returns original card when no cardVariables are specified', () => {
     const timeSeriesCardProps = {
       title: 'timeSeries',
       content: {
@@ -604,7 +648,7 @@ describe('cardUtilityFunctions', () => {
       others: {},
     };
     const { title, content, values, others } = timeSeriesCardProps;
-    expect(handleTimeseriesCardVariables(title, content, values, others)).toEqual({
+    expect(handleCardVariables(title, content, values, others)).toEqual({
       title,
       content,
       values,

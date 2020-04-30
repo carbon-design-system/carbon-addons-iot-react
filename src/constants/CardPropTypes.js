@@ -71,6 +71,9 @@ export const ValueCardPropTypes = {
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
   }),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
@@ -109,6 +112,9 @@ export const TimeSeriesCardPropTypes = {
   }),
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
 };
 
 export const TableCardPropTypes = {
@@ -179,8 +185,6 @@ export const TableCardPropTypes = {
       ),
     })
   ),
-  /** Variable name / value pairs to be replaced in Card */
-  cardVariables: PropTypes.object,
   i18n: PropTypes.shape({
     criticalLabel: PropTypes.string,
     moderateLabel: PropTypes.string,
@@ -191,6 +195,9 @@ export const TableCardPropTypes = {
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
   }),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
 };
 
 export const BarChartCardPropTypes = {
