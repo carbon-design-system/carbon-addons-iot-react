@@ -578,8 +578,11 @@ storiesOf('Watson IoT/TableCard', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           tooltip={text('Tooltip text', "Here's a Tooltip")}
+          locale={select('locale', ['fr', 'en'], 'fr')}
           content={{
-            columns: tableColumns,
+            columns: tableColumns.map(item =>
+              item.dataSourceId === 'count' ? { ...item, precision: 3 } : { ...item }
+            ),
             thresholds,
           }}
           values={tableData}

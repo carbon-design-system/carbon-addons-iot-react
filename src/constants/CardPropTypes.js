@@ -410,4 +410,6 @@ export const CardPropTypes = {
   onScroll: PropTypes.func,
   /** For testing */
   testID: PropTypes.string,
+  /** the locale of the card, needed for number and date formatting */
+  locale: PropTypes.string,
 };
