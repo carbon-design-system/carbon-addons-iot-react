@@ -51,6 +51,7 @@ const propTypes = {
   rowActionsState: RowActionsStatePropTypes,
   shouldExpandOnRowClick: PropTypes.bool,
   shouldLazyRender: PropTypes.bool,
+  locale: PropTypes.string,
 
   actions: PropTypes.shape({
     onRowSelected: PropTypes.func,
@@ -75,6 +76,7 @@ const defaultProps = {
   overflowMenuAria: 'More actions',
   clickToExpandAria: 'Click to expand.',
   clickToCollapseAria: 'Click to collapse.',
+  locale: 'en',
   rows: [],
   expandedRows: [],
   rowActionsState: [],
@@ -115,6 +117,7 @@ const TableBody = ({
   ordering,
   wrapCellText,
   truncateCellText,
+  locale,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -156,6 +159,7 @@ const TableBody = ({
         columns={columns}
         tableId={tableId}
         id={row.id}
+        locale={locale}
         totalColumns={totalColumns}
         options={{
           hasRowSelection,
