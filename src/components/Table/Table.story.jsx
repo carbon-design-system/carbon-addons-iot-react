@@ -1613,6 +1613,10 @@ storiesOf('Watson IoT/Table', module)
         view={{
           filters: [],
           table: {
+            sort: {
+              columnId: 'number',
+              direction: 'DESC',
+            },
             rowActions: [
               {
                 rowId: 'row-1',
@@ -1625,6 +1629,7 @@ storiesOf('Watson IoT/Table', module)
             ],
           },
         }}
+        locale={select('locale', ['fr', 'en'], 'fr')}
         i18n={{
           /** pagination */
           pageBackwardAria: text('i18n.pageBackwardAria', '__Previous page__'),
