@@ -96,7 +96,11 @@ const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
-/** This components job is determining how to render different kinds of card values */
+/**
+ * This components job is determining how to render different kinds of card values.
+ * It handles precision, font size, styling in a consistent way for card values.
+ *
+ */
 const ValueRenderer = ({
   value,
   size,
