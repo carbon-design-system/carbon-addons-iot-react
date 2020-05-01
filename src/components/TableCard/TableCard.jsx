@@ -1,10 +1,9 @@
 import React, { useMemo, useCallback } from 'react';
-import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem, Icon, Link } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
-import find from 'lodash/find';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/20';
@@ -16,6 +15,7 @@ import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
+import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
   handleCardVariables,
@@ -24,27 +24,7 @@ import {
 
 import ThresholdIcon from './ThresholdIcon';
 
-const StyledOverflowMenu = styled(OverflowMenu)`
-  &&& {
-    margin-left: 10px;
-    opacity: 1;
-    overflow-y: hidden;
-    display: flex;
-    align-items: center;
-
-    .bx--overflow-menu__icon {
-      transform: none;
-    }
-  }
-`;
-
-const StyledActionIcon = styled(Icon)`
-  cursor: pointer;
-  margin-left: 11px;
-  &:hover {
-    fill: rgb(61, 112, 178);
-  }
-`;
+const { iotPrefix } = settings;
 
 const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
   <StatefulTable {...rest} data={data} />
@@ -129,25 +109,6 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
       }
     }
   }
-`;
-
-const StyledExpandedRowContent = styled.div`
-  padding-left: 35px;
-  padding-bottom: 8px;
-  padding-top: 24px;
-
-  p {
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-`;
-
-const StyledExpandedDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  margin-bottom: 16px;
 `;
 
 const defaultProps = {
@@ -282,7 +243,8 @@ const TableCard = ({
   const renderActionCell = cellItem => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
-      <StyledActionIcon
+      <Icon
+        className={`${iotPrefix}--table-card--action-icon`}
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -295,7 +257,8 @@ const TableCard = ({
         description={actionList[0].label}
       />
     ) : actionList && actionList.length > 1 ? (
-      <StyledOverflowMenu
+      <OverflowMenu
+        className={`${iotPrefix}--table-card--overflow-menu`}
         floatingMenu
         renderIcon={() => (
           <OverFlowMenuIcon fill="#5a6872" description={i18n.overflowMenuIconDescription} />
@@ -317,7 +280,7 @@ const TableCard = ({
             />
           );
         })}
-      </StyledOverflowMenu>
+      </OverflowMenu>
     ) : null;
   };
 
@@ -372,13 +335,30 @@ const TableCard = ({
 
   const hasActionColumn = data.filter(i => i.actions).length > 0;
 
+  // If a column has a linkTemplate, format the column to render a link
+  const columnsWithFormattedLinks = columns.map(column => {
+    const { linkTemplate } = column;
+    if (linkTemplate) {
+      return {
+        ...column,
+        // eslint-disable-next-line react/prop-types
+        renderDataFunction: ({ value }) => (
+          <Link href={linkTemplate.href} target={linkTemplate.target ? linkTemplate.target : null}>
+            {value}
+          </Link>
+        ),
+      };
+    }
+    return column;
+  });
+
   // filter to get the indexes for each one
-  const columnsUpdated = cloneDeep(columns);
+  const columnsUpdated = cloneDeep(columnsWithFormattedLinks);
 
   /**
    * Generates a threshold column based off the uniqueThreshold's value
    * @param {string} columnId AKA dataSourceId
-   * @returns {Object} new threshold column
+   * @returns {Object} new column with rendered threshold
    */
   const generateThresholdColumn = columnId => {
     // Need to find the index of the dataSource regardless of uniqueThresholds ordering
@@ -430,9 +410,7 @@ const TableCard = ({
 
     // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
     const missingThresholdColumns = uniqueThresholds.filter(threshold => {
-      return !find(columnsUpdated, column => {
-        return threshold.dataSourceId === column.dataSourceId;
-      });
+      return !columnsUpdated.find(column => threshold.dataSourceId === column.dataSourceId);
     });
 
     if (missingThresholdColumns.length > 0) {
@@ -444,7 +422,7 @@ const TableCard = ({
     }
   }
 
-  const newColumns = thresholds ? columnsUpdated : columns;
+  const newColumns = thresholds ? columnsUpdated : columnsWithFormattedLinks;
 
   const columnsToRender = useMemo(
     () =>
@@ -602,23 +580,32 @@ const TableCard = ({
             return {
               rowId: dataItem.id,
               content: (
-                <StyledExpandedRowContent key={`${dataItem.id}-expanded`}>
+                <div
+                  key={`${dataItem.id}-expanded`}
+                  className={`${iotPrefix}--table-card--expanded-row-content`}
+                >
                   {expandedItem.length ? (
                     expandedItem.map((item, index) => (
-                      <StyledExpandedDiv key={`${item.id}-expanded-${index}`}>
+                      <div
+                        key={`${item.id}-expanded-${index}`}
+                        className={`${iotPrefix}--table-card--expanded`}
+                      >
                         <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                           {item ? item.label : '--'}
                         </p>
                         <span>{item ? dataItem.values[item.id] : null}</span>
-                      </StyledExpandedDiv>
+                      </div>
                     ))
                   ) : (
-                    <StyledExpandedDiv key={`${dataItem.id}-expanded`}>
+                    <div
+                      key={`${dataItem.id}-expanded`}
+                      className={`${iotPrefix}--table-card--expanded`}
+                    >
                       {' '}
                       <p key={`${dataItem.id}-label`}>--</p>
-                    </StyledExpandedDiv>
+                    </div>
                   )}
-                </StyledExpandedRowContent>
+                </div>
               ),
             };
           })
