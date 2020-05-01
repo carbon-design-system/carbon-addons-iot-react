@@ -42,6 +42,37 @@ $icon-switch-size-large: $spacing-09;
   &--unselected {
     background-color: $text-04;
     color: $interactive-02;
+
+    &.#{$prefix}--btn {
+      &:focus {
+        &:hover {
+          svg {
+            fill: $text-04;
+          }
+        }
+        &:not(:active) {
+          svg {
+            fill: $text-02;
+          }
+          &:hover {
+            svg {
+              fill: $text-04;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.#{$prefix}--btn {
+    &:not(:focus) {
+      &:hover {
+        &.#{$prefix}--tooltip__trigger {
+          .#{$prefix}--assistive-text {
+            z-index: (z('floating') * 2);
+          }
+        }
+      }
+    }
   }
 }
 
