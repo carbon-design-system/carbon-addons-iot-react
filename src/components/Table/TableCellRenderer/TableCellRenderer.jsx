@@ -62,7 +62,15 @@ const TableCellRenderer = ({ children, wrapText, allowTooltip, truncateCellText,
 
   const cellContent =
     typeof children === 'string' || typeof children === 'number' ? (
-      <span className={myClasses} title={children} ref={mySpanRef}>
+      <span
+        className={myClasses}
+        title={
+          typeof children === 'number' && locale
+            ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
+            : children
+        }
+        ref={mySpanRef}
+      >
         {typeof children === 'number' && locale
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
           : children}
