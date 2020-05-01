@@ -10,6 +10,7 @@ import {
 } from 'carbon-components-react';
 import styled from 'styled-components';
 import classnames from 'classnames';
+import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
@@ -189,7 +190,7 @@ class RowActionsCell extends React.Component {
                   .filter(action => !action.isOverflow)
                   .map(({ id: actionId, labelText, ...others }) => (
                     <Button
-                      {...others}
+                      {...omit(others, ['isOverflow'])}
                       iconDescription={overflowMenuAria}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}

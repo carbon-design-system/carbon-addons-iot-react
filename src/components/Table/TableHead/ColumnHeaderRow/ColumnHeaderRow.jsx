@@ -122,7 +122,7 @@ class ColumnHeaderRow extends Component {
       <StyledColumnSelectTableRow>
         {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
         {hasRowExpansion ? <StyledTableHeader /> : null}
-        <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}>
+        <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)} scope="col">
           <StyledColumnSelectWrapper>
             {ordering.map((c, idx) => (
               <ColumnHeaderSelect
