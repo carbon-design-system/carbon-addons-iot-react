@@ -146,4 +146,12 @@ describe('TableCellRenderer', () => {
     setOffsetWidth(0);
     setScrollWidth(0);
   });
+
+  test('locale formats numbers', () => {
+    const wrapper = mount(<TableCellRenderer locale="fr">{35.6}</TableCellRenderer>);
+    expect(wrapper.text()).toContain('35,6'); // french locale should have commas for decimals
+
+    const wrapper2 = mount(<TableCellRenderer locale="en">{35.1234567}</TableCellRenderer>);
+    expect(wrapper2.text()).toContain('35.1234567'); // no limit on the count of decimals
+  });
 });
