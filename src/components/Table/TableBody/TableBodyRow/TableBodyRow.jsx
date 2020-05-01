@@ -118,10 +118,6 @@ const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...oth
     ${props => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
     :hover {
       td {
-        /* show the row actions if the table row is hovered over */
-        div > *:not(label) {
-          opacity: 1;
-        }
         ${props =>
           props.isSelectable === false
             ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
@@ -199,13 +195,6 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     td {
       div .bx--btn--ghost:hover {
         background: ${COLORS.gray20};
-      }
-    }
-    :hover {
-      td {
-        div > *:not(label) {
-          opacity: 1;
-        }
       }
     }
 
@@ -337,6 +326,7 @@ const TableBodyRow = ({
   totalColumns,
   ordering,
   columns,
+  locale,
   options: {
     hasRowSelection,
     hasRowExpansion,
@@ -430,7 +420,11 @@ const TableBodyRow = ({
                   row: values,
                 })
               ) : (
-                <TableCellRenderer wrapText={wrapCellText} truncateCellText={truncateCellText}>
+                <TableCellRenderer
+                  wrapText={wrapCellText}
+                  truncateCellText={truncateCellText}
+                  locale={locale}
+                >
                   {values[col.columnId]}
                 </TableCellRenderer>
               )}

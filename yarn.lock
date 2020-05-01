@@ -1826,17 +1826,17 @@
   resolved "https://registry.yarnpkg.com/@base2/pretty-print-object/-/pretty-print-object-1.0.0.tgz#860ce718b0b73f4009e153541faff2cb6b85d047"
   integrity sha512-4Th98KlMHr5+JkxfcoDT//6vY8vM+iSPrLNpHhRyLx2CFYi8e2RfqPLdpbnpo0Q5lQC5hNB79yes07zb02fvCw==
 
-"@carbon/charts-react@^0.30.5":
-  version "0.30.5"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.30.5.tgz#74bfe1bc15cdd37b41f180f31a9dfe3a1c127887"
-  integrity sha512-p35StjL/XNBvLWiVSfhB+Kpg9MNA4pGSKyQxNhMW7+mGUWsRATqYBRwPZ1XjxzN/Vx9dhg5FsKSq+JpUPwHvwg==
+"@carbon/charts-react@^0.30.18":
+  version "0.30.18"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.30.18.tgz#524f10eacaaa482da2aa7bd1e1ef408e5e497ae8"
+  integrity sha512-bBJFRQVUHlbIF3LBhnaLXT7aqQIc3WnqlfMOiWWsRDoz/fPr+7BHV+O0/FvKOJoo0Mq2uzWiyrKJW9bdl7/XTA==
   dependencies:
-    "@carbon/charts" "^0.30.5"
+    "@carbon/charts" "^0.30.18"
 
-"@carbon/charts@^0.30.5":
-  version "0.30.5"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.30.5.tgz#e503c93ca93ea0a31c417fad7a399e88343877e8"
-  integrity sha512-IrPwKIpU61RnKVKgD3zfrLKoag8To2M4WtZ/3gszQdE816TbLhURI28RaYQlUvqcu3nPIWo+jnhAHjb7Xh5XPw==
+"@carbon/charts@^0.30.18":
+  version "0.30.18"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.30.18.tgz#11567fdd0a95dde77d8f014587ca67ae5973c4ac"
+  integrity sha512-0JSH4P/rjvkZ+ZOXBNxnUibQ3m3FeJpUztRrDKNkDRbWaSBiVDIaw97AscW6L7wvU95YpnW14Xc4otP4N7IeiA==
   dependencies:
     "@carbon/colors" "10.4.0"
     "@carbon/utils-position" "1.1.1"
@@ -1864,7 +1864,7 @@
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.7.0.tgz#7ad56c3f377bfaa687ccca0b0813011606d6cb28"
   integrity sha512-zIswRvP4JyZOq7+4A4/ro7K05xVNid/+HxBOSM1ApuqcXg1e1Vl9fg37+rGY/in9v7vVgsmA8s5Arlx1mJzPIw==
 
-"@carbon/icons-react@^10.10.0", "@carbon/icons-react@^10.9.3":
+"@carbon/icons-react@10.10.0", "@carbon/icons-react@^10.9.3":
   version "10.10.0"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.10.0.tgz#b8d61709583be1310ca5f2bdabfbdab2c0f6a892"
   integrity sha512-8H7RRUnvfZUlwad95Au+aR7CynIQwVcJ9OYEdEz4i16IdqFpWHql4RAb1jemLq6Q3kaHCpW4qKLDDLv8lWGu6g==
@@ -8931,6 +8931,11 @@ fstream@^1.0.0, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
+
+full-icu@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/full-icu/-/full-icu-1.3.1.tgz#e67fdf58523f1d1e0d9143b1542fe2024c1c8997"
+  integrity sha512-VMtK//85QJomhk3cXOCksNwOYaw1KWnYTS37GYGgyf7A3ajdBoPGhaJuJWAH2S2kq8GZeXkdKn+3Mfmgy11cVw==
 
 function-bind@^1.0.2, function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"

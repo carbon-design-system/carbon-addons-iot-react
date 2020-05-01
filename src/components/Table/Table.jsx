@@ -160,6 +160,8 @@ const propTypes = {
       onColumnResize: PropTypes.func,
     }).isRequired,
   }),
+  /** what locale should we use to format table values if left empty no locale formatting happens */
+  locale: PropTypes.string,
   i18n: I18NPropTypes,
 };
 
@@ -230,6 +232,7 @@ export const defaultProps = baseProps => ({
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
     },
   },
+  locale: null,
   i18n: {
     /** pagination */
     pageBackwardAria: 'Previous page',
@@ -280,6 +283,7 @@ const Table = props => {
     columns,
     data,
     expandedData,
+    locale,
     view,
     actions,
     options,
@@ -480,6 +484,7 @@ const Table = props => {
             <TableBody
               tableId={id}
               rows={visibleData}
+              locale={locale}
               rowActionsState={view.table.rowActions}
               expandedRows={expandedData}
               columns={visibleColumns}
