@@ -5,6 +5,7 @@ import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
+import isEmpty from 'lodash/isEmpty';
 import omit from 'lodash/omit';
 import filter from 'lodash/filter';
 import memoize from 'lodash/memoize';
@@ -16,6 +17,7 @@ import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/CardProp
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
+import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
   formatNumberWithPrecision,
@@ -29,13 +31,7 @@ import {
   findMatchingAlertRange,
 } from './timeSeriesUtils';
 
-const StyledTable = styled(StatefulTable)`
-  position: absolute;
-  top: 55%;
-  height: 45%;
-  width: 100%;
-  overflow-y: scroll;
-`;
+const { iotPrefix } = settings;
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -97,21 +93,37 @@ export const determinePrecision = (size, value, defaultPrecision) => {
  * @param {array} series, an array of lines to create in our chart
  * @param {array} values, the array of values from our data layer
  *
+ * TODO: Handle empty data lines gracefully and notify the user of data lines that did not
+ * match the dataFilter
+ *
  * @returns {object} with a labels array and a datasets array
  */
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
-  return {
-    labels: [...new Set(values.map(val => val[timeDataSourceId]))],
-    datasets: series.map(({ dataSourceId, dataFilter = {}, label, color }) => ({
-      label,
-      ...(color ? { fillColors: [color] } : {}),
-      data:
-        filter(values, dataFilter) &&
-        filter(values, dataFilter) // have to filter out null values from the dataset, as it causes Carbon Charts to break
-          .filter(i => !isNil(i[dataSourceId]))
-          .map(i => ({ date: new Date(i[timeDataSourceId]), value: i[dataSourceId] })),
-    })),
-  };
+  const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
+  const data = [];
+  // Series is the different groups of datasets
+  series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
+    timestamps.forEach(timestamp => {
+      // First filter based on on the dataFilter
+      const filteredData = filter(values, dataFilter);
+      if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
+        filteredData
+          .filter(dataItem => {
+            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+          })
+          .forEach(dataItem =>
+            data.push({
+              date: new Date(dataItem[timeDataSourceId]),
+              value: dataItem[dataSourceId],
+              group: label,
+            })
+          );
+      }
+    });
+  });
+
+  return data;
 };
 
 /**
@@ -176,6 +188,23 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
   return updatedTooltip;
 };
 
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = series => {
+  const colors = { identifier: 'group', scale: {} };
+  if (Array.isArray(series)) {
+    series.forEach(dataset => {
+      colors.scale[dataset.label] = dataset.color;
+    });
+  } else {
+    colors.scale[series.label] = series.color;
+  }
+  return colors;
+};
+
 const TimeSeriesCard = ({
   title: titleProp,
   content,
@@ -188,6 +217,7 @@ const TimeSeriesCard = ({
   i18n,
   isExpanded,
   isLazyLoading,
+  isLoading,
   ...others
 }) => {
   const {
@@ -271,6 +301,9 @@ const TimeSeriesCard = ({
       })),
     [isEditable, series]
   );
+
+  // Set the colors for each dataset
+  const colors = formatColors(series);
 
   const handleStrokeColor = (datasetLabel, label, data, originalStrokeColor) => {
     if (!isNil(data)) {
@@ -377,7 +410,7 @@ const TimeSeriesCard = ({
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
     >
-      {!others.isLoading && !isAllValuesEmpty ? (
+      {!isLoading && !isAllValuesEmpty ? (
         <>
           <LineChartWrapper
             size={newSize}
@@ -396,10 +429,8 @@ const TimeSeriesCard = ({
                 axes: {
                   bottom: {
                     title: xLabel,
+                    mapsTo: 'date',
                     scaleType: 'time',
-                    ...(chartType !== TIME_SERIES_TYPES.BAR
-                      ? { primary: true }
-                      : { secondary: true }),
                     ticks: {
                       max: maxTicksPerSize,
                       formatter: formatTick,
@@ -408,15 +439,13 @@ const TimeSeriesCard = ({
                   },
                   left: {
                     title: `${yLabel} ${unit ? `(${unit})` : ''}`,
+                    mapsTo: 'value',
                     ticks: {
                       formatter: axisValue => valueFormatter(axisValue, newSize, null, locale),
                     },
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
                       : {}),
-                    ...(chartType === TIME_SERIES_TYPES.BAR
-                      ? { primary: true }
-                      : { secondary: true }),
                     stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
                     includeZero: includeZeroOnYaxis,
                   },
@@ -435,13 +464,15 @@ const TimeSeriesCard = ({
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
+                color: colors,
               }}
               width="100%"
               height="100%"
             />
           </LineChartWrapper>
           {isExpanded ? (
-            <StyledTable
+            <StatefulTable
+              className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
               isExpanded={isExpanded}
