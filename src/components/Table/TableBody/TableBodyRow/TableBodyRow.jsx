@@ -326,6 +326,7 @@ const TableBodyRow = ({
   totalColumns,
   ordering,
   columns,
+  locale,
   options: {
     hasRowSelection,
     hasRowExpansion,
@@ -419,7 +420,11 @@ const TableBodyRow = ({
                   row: values,
                 })
               ) : (
-                <TableCellRenderer wrapText={wrapCellText} truncateCellText={truncateCellText}>
+                <TableCellRenderer
+                  wrapText={wrapCellText}
+                  truncateCellText={truncateCellText}
+                  locale={locale}
+                >
                   {values[col.columnId]}
                 </TableCellRenderer>
               )}
