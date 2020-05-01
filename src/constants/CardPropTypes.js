@@ -102,7 +102,7 @@ export const TimeSeriesCardPropTypes = {
     includeZeroOnXaxis: PropTypes.bool,
     /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
     includeZeroOnYaxis: PropTypes.bool,
-    /** Which attribute is the time attribute */
+    /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -200,6 +200,19 @@ export const TableCardPropTypes = {
   ),
 };
 
+const BarChartDatasetPropType = {
+  /** the attribute in values to map to */
+  dataSourceId: PropTypes.string,
+  /** the attribute in values to group by */
+  groupDataSourceId: PropTypes.string,
+  /** the attribute in values to display the bars for */
+  labelDataSourceId: PropTypes.string,
+  /** the attribute that is the time attribute */
+  timeDataSourceId: PropTypes.string,
+  /** an array of colors (hex or named) for the chart */
+  colors: PropTypes.arrayOf(PropTypes.string),
+};
+
 export const BarChartCardPropTypes = {
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   content: PropTypes.shape({
@@ -209,18 +222,7 @@ export const BarChartCardPropTypes = {
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
-    series: PropTypes.shape({
-      /** the attribute in values to map to */
-      dataSourceId: PropTypes.string,
-      /** the attribute in values to group by */
-      groupDataSourceId: PropTypes.string,
-      /** the attribute in values to display the bars for */
-      labelDataSourceId: PropTypes.string,
-      /** the attribute that is the time attribute */
-      timeDataSourceId: PropTypes.string,
-      /** an array of HEX colors for the chart */
-      colors: PropTypes.arrayOf(PropTypes.string),
-    }),
+    series: PropTypes.shape(BarChartDatasetPropType),
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
