@@ -542,7 +542,7 @@ storiesOf('Watson IoT/Dashboard', module)
       id: `row-${index}`,
       values: {
         timestamp: 1569819600000,
-        deviceid: 'Campus_EGL',
+        campus: 'Campus_EGL',
         peopleCount_EnterpriseBuilding_mean: 150.5335383714,
         headCount_EnterpriseBuilding_mean: 240,
         capacity_EnterpriseBuilding_mean: 300,
@@ -551,14 +551,13 @@ storiesOf('Watson IoT/Dashboard', module)
     }));
     return (
       <FullWidthWrapper>
-        {' '}
         <Dashboard
           title="Expandable card, click expand to expand table"
           cards={[
             {
               title: 'Expanded card',
               id: `expandedcard`,
-              size: CARD_SIZES.LARGE,
+              size: CARD_SIZES.LARGEWIDE,
               type: CARD_TYPES.TABLE,
               content: {
                 columns: [
