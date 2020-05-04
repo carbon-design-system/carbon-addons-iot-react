@@ -1,4 +1,5 @@
 import warning from 'warning';
+import isNil from 'lodash/isNil';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
@@ -131,29 +132,54 @@ export const getUpdatedCardSize = oldSize => {
  */
 export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =>
   value > 1000000000000
-    ? `${(value / 1000000000000).toLocaleString(locale, {
-        minimumFractionDigits: precision,
-        maximumFractionDigits: precision,
-      })}T`
+    ? `${(value / 1000000000000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}T`
     : value > 1000000000
-    ? `${(value / 1000000000).toLocaleString(locale, {
-        minimumFractionDigits: precision,
-        maximumFractionDigits: precision,
-      })}B`
+    ? `${(value / 1000000000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}B`
     : value > 1000000
-    ? `${(value / 1000000).toLocaleString(locale, {
-        minimumFractionDigits: precision,
-        maximumFractionDigits: precision,
-      })}M`
+    ? `${(value / 1000000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}M`
     : value > 1000
-    ? `${(value / 1000).toLocaleString(locale, {
-        minimumFractionDigits: precision,
-        maximumFractionDigits: precision,
-      })}K`
-    : value.toLocaleString(locale, {
-        minimumFractionDigits: precision,
-        maximumFractionDigits: precision,
-      });
+    ? `${(value / 1000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}K`
+    : value.toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      );
 /**
  * Find variables in a string that are identified by surrounding curly braces
  * @param {string} value - A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`

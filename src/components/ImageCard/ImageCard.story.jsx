@@ -56,7 +56,22 @@ storiesOf('Watson IoT/ImageCard', module)
           title={text('title', 'Image')}
           id="image-hotspots"
           content={object('content', content)}
-          values={object('values', values)}
+          values={object('values', {
+            hotspots: [
+              {
+                x: 35,
+                y: 65,
+                icon: 'arrowDown',
+                color: 'purple',
+                content: {
+                  title: 'My Device',
+                  description: 'Description',
+                  values: { deviceid: '73000', temperature: 35.05 },
+                  attributes: [{ dataSourceId: 'temperature', label: 'Temp', precision: 2 }],
+                },
+              },
+            ],
+          })}
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}

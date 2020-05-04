@@ -4,14 +4,16 @@ import styled from 'styled-components';
 import { Tooltip } from 'carbon-components-react';
 
 import CardIcon from './CardIcon';
+import ImageHotspotContent, { ImageHotspotContentPropTypes } from './ImageHotspotContent';
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
   x: PropTypes.number.isRequired,
   /** percentage from the top of the image to show this hotspot */
   y: PropTypes.number.isRequired,
-  /** the content of the hotspot */
-  content: PropTypes.element.isRequired,
+  /** the content of the hotspot, either a react element or an object to use the default hotspot */
+  content: PropTypes.oneOfType([PropTypes.element, PropTypes.shape(ImageHotspotContentPropTypes)])
+    .isRequired,
   /** points to one of our enumerated icon names (ex. caretUp, edit, close)
    * TODO: add support for the carbon icon object (svgData, viewBox, width, height)
    */
@@ -25,6 +27,8 @@ export const propTypes = {
   height: PropTypes.number,
   /** optional function to provide icon based on name */
   renderIconByName: PropTypes.func,
+  /** locale string to pass through */
+  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -34,6 +38,7 @@ const defaultProps = {
   width: 25,
   height: 25,
   renderIconByName: null,
+  locale: null,
 };
 
 const StyledHotspot = styled(({ className, children }) => (
@@ -81,6 +86,7 @@ const Hotspot = ({
   width,
   height,
   renderIconByName,
+  locale,
   ...others
 }) => {
   const defaultIcon = (
@@ -128,7 +134,11 @@ const Hotspot = ({
         triggerId={`hotspot-${x}-${y}`}
         tooltipId={`hotspot-${x}-${y}`}
       >
-        {content}
+        {React.isValidElement(content) ? (
+          content
+        ) : (
+          <ImageHotspotContent {...content} locale={locale} />
+        )}
       </Tooltip>
     </StyledHotspot>
   );
