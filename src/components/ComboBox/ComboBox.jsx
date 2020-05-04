@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox as CarbonComboBox } from 'carbon-components-react';
 import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+
+import CarbonComboBox from './CarbonComboBox';
 
 const { iotPrefix } = settings;
 const propTypes = {

@@ -4,13 +4,122 @@ import Downshift from 'downshift';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
 import { Checkmark16, WarningFilled16 } from '@carbon/icons-react';
-import ListBox from 'carbon-components-react';
+import ListBox from 'carbon-components-react/es/components/ListBox';
 
-import { match, keys } from '../../internal/keyboard';
-import setupGetInstanceId from '../../tools/setupGetInstanceId';
+const keys = {
+  Tab: {
+    key: 'Tab',
+    which: 9,
+    keyCode: 9,
+  },
+  Enter: {
+    key: 'Enter',
+    which: 13,
+    keyCode: 13,
+  },
+  Escape: {
+    key: [
+      'Escape',
+      // IE11 Escape
+      'Esc',
+    ],
+    which: 27,
+    keyCode: 27,
+  },
+  Space: {
+    key: ' ',
+    which: 32,
+    keyCode: 32,
+  },
+  PageUp: {
+    key: 'PageUp',
+    which: 33,
+    keyCode: 33,
+  },
+  PageDown: {
+    key: 'PageDown',
+    which: 34,
+    keyCode: 34,
+  },
+  End: {
+    key: 'End',
+    which: 35,
+    keyCode: 35,
+  },
+  Home: {
+    key: 'Home',
+    which: 36,
+    keyCode: 36,
+  },
+  ArrowLeft: {
+    key: 'ArrowLeft',
+    which: 37,
+    keyCode: 37,
+  },
+  ArrowUp: {
+    key: 'ArrowUp',
+    which: 38,
+    keyCode: 38,
+  },
+  ArrowRight: {
+    key: 'ArrowRight',
+    which: 39,
+    keyCode: 39,
+  },
+  ArrowDown: {
+    key: 'ArrowDown',
+    which: 40,
+    keyCode: 40,
+  },
+};
 
 const ListBoxPropTypes = ListBox.propTypes;
 const { prefix } = settings;
+
+/**
+ * Check to see if the given key matches the corresponding keyboard event. Also
+ * supports passing in the value directly if you can't used the given event.
+ *
+ * @example
+ * import * as keys from '../keys';
+ * import { matches } from '../match';
+ *
+ * function handleOnKeyDown(event) {
+ *   if (match(event, keys.Enter) {
+ *     // ...
+ *   }
+ * }
+ *
+ * @param {Event|number|string} eventOrCode
+ * @param {Key} key
+ * @returns {boolean}
+ */
+export function match(eventOrCode, { key, which, keyCode } = {}) {
+  if (typeof eventOrCode === 'string') {
+    return eventOrCode === key;
+  }
+
+  if (typeof eventOrCode === 'number') {
+    return eventOrCode === which || eventOrCode === keyCode;
+  }
+
+  if (eventOrCode.key && Array.isArray(key)) {
+    return key.indexOf(eventOrCode.key) !== -1;
+  }
+
+  return eventOrCode.key === key || eventOrCode.which === which || eventOrCode.keyCode === keyCode;
+}
+
+/**
+ * Generic utility to initialize a method that will return a unique instance id
+ * for a component.
+ */
+export function setupGetInstanceId() {
+  let instanceId = 0;
+  return function getInstanceId() {
+    return ++instanceId;
+  };
+}
 
 const defaultItemToString = item => {
   if (typeof item === 'string') {
@@ -53,6 +162,7 @@ const findHighlightedIndex = ({ items, itemToString }, inputValue) => {
 
 const getInstanceId = setupGetInstanceId();
 
+/* eslint react/require-default-props: 0 */
 export default class ComboBox extends React.Component {
   static propTypes = {
     /**
@@ -85,7 +195,7 @@ export default class ComboBox extends React.Component {
      * We try to stay as generic as possible here to allow individuals to pass
      * in a collection of whatever kind of data structure they prefer
      */
-    items: PropTypes.array.isRequired,
+    items: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 
     /**
      * Helper function passed to downshift that allows the library to render a
@@ -250,6 +360,7 @@ export default class ComboBox extends React.Component {
 
   onToggleClick = isOpen => event => {
     if (event.target === this.textInput.current && isOpen) {
+      // eslint-disable-next-line no-param-reassign
       event.preventDownshiftDefault = true;
       event.persist();
     }
@@ -263,8 +374,8 @@ export default class ComboBox extends React.Component {
       items,
       itemToString,
       itemToElement,
-      titleText,
-      helperText,
+      titleText, // eslint-disable-line react/prop-types
+      helperText, // eslint-disable-line react/prop-types
       placeholder,
       initialSelectedItem,
       selectedItem,
@@ -282,6 +393,7 @@ export default class ComboBox extends React.Component {
       direction,
       ...rest
     } = this.props;
+    const { inputValue } = this.state;
     const className = cx(`${prefix}--combo-box`, containerClassName, {
       [`${prefix}--list-box--up`]: direction === 'top',
     });
@@ -293,6 +405,7 @@ export default class ComboBox extends React.Component {
       : `combobox-helper-text-${this.comboBoxInstanceId}`;
     const comboBoxLabelId = `combobox-label-${this.comboBoxInstanceId}`;
     const title = titleText ? (
+      // eslint-disable-next-line jsx-a11y/label-has-for
       <label id={comboBoxLabelId} htmlFor={id} className={titleClasses}>
         {titleText}
       </label>
@@ -308,7 +421,7 @@ export default class ComboBox extends React.Component {
     const wrapperClasses = cx(`${prefix}--list-box__wrapper`);
     const comboBoxA11yId = `combobox-a11y-${this.comboBoxInstanceId}`;
     const inputClasses = cx(`${prefix}--text-input`, {
-      [`${prefix}--text-input--empty`]: !this.state.inputValue,
+      [`${prefix}--text-input--empty`]: !inputValue,
     });
 
     // needs to be Capitalized for react to render it correctly
@@ -319,7 +432,7 @@ export default class ComboBox extends React.Component {
         onChange={this.handleOnChange}
         onInputValueChange={this.handleOnInputValueChange}
         onStateChange={this.handleOnStateChange}
-        inputValue={this.state.inputValue || ''}
+        inputValue={inputValue || ''}
         itemToString={itemToString}
         defaultSelectedItem={initialSelectedItem}
         selectedItem={selectedItem}
@@ -330,8 +443,8 @@ export default class ComboBox extends React.Component {
           getItemProps,
           getRootProps,
           isOpen,
-          inputValue,
-          selectedItem,
+          inputValue, // eslint-disable-line no-shadow
+          selectedItem, // eslint-disable-line no-shadow
           highlightedIndex,
           clearSelection,
           toggleMenu,
@@ -374,7 +487,7 @@ export default class ComboBox extends React.Component {
                   id,
                   placeholder,
                   onKeyDown: event => {
-                    event.stopPropagation();
+                    // event.stopPropagation();
 
                     if (match(event, keys.Enter)) {
                       toggleMenu();

@@ -86,6 +86,7 @@
     "carbon-icons": "7.0.7",
     "classnames": "^2.2.5",
     "core-js": "3.6.4",
+    "downshift": "^1.31.14",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
     "lodash": "^4.17.13",
