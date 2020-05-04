@@ -54,6 +54,23 @@ describe('ImageHotspotContent', () => {
     expect(getAllByText(/--/)).toHaveLength(1);
     expect(queryAllByText(/Celsius/)).toHaveLength(0);
   });
+  test('precision tests', () => {
+    const { getAllByText } = render(
+      <ImageHotspotContent
+        title={<span>My hotspot</span>}
+        values={{ deviceid: '73000', temperature: 35.05, humidity: 0, accuracy: 0.1245 }}
+        attributes={[
+          { dataSourceId: 'deviceid', label: 'Device' },
+          { dataSourceId: 'temperature', label: 'Temp' },
+          { dataSourceId: 'humidity', label: 'Humidity' },
+          { dataSourceId: 'accuracy', label: 'Accuracy' },
+        ]}
+      />
+    );
+    expect(getAllByText(/35.1/)).toHaveLength(1);
+    expect(getAllByText(/^0$/)).toHaveLength(1);
+    expect(getAllByText(/0.125/)).toHaveLength(1);
+  });
   test('units', () => {
     const { getAllByText } = render(
       <ImageHotspotContent

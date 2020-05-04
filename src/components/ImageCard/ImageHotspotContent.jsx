@@ -135,7 +135,17 @@ const ImageHotspotContent = ({
               }}
             >
               {typeof value === 'number'
-                ? formatNumberWithPrecision(value, precision, locale)
+                ? formatNumberWithPrecision(
+                    value,
+                    !isNil(precision)
+                      ? precision
+                      : Math.abs(value) < 1
+                      ? value === 0
+                        ? 0
+                        : 3 // for small decimals give 3 spots
+                      : 1, // otherwise 1 spot if precision isn't set
+                    locale
+                  )
                 : value}
               {unit && value !== '--' && (
                 <span>
