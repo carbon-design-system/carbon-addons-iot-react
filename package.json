@@ -34,7 +34,7 @@
     "start": "yarn storybook",
     "storybook": "start-storybook -p 3000 -s public/development",
     "test": "yarn test:a11y && yarn test:base",
-    "test:base": "cross-env TZ=America/Chicago node --inspect-brk --expose-gc ./node_modules/jest/bin/jest.js --testPathPattern='.*\\.test\\.js(x)?' --coverage",
+    "test:base": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --coverage",
     "test:a11y": "cross-env TZ=America/Chicago jest --forceExit --testPathPattern='.*\\.a11y\\.js(x)?'",
     "test:watch": "cross-env TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
     "test:update": "cross-env TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
