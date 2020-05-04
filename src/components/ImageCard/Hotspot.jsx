@@ -137,7 +137,7 @@ const Hotspot = ({
         {React.isValidElement(content) ? (
           content
         ) : (
-          <ImageHotspotContent {...content} locale={locale} />
+          <ImageHotspotContent {...content} locale={locale} renderIconByName={renderIconByName} />
         )}
       </Tooltip>
     </StyledHotspot>
