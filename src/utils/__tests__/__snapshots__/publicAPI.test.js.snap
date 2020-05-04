@@ -8668,6 +8668,7 @@ Map {
       "i18n": Object {
         "loadingDataLabel": "Loading hotspot data",
       },
+      "locale": "en",
     },
     "propTypes": Object {
       "availableActions": Object {

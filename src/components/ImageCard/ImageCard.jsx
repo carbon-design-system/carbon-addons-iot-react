@@ -30,6 +30,7 @@ const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
   },
+  locale: 'en',
 };
 
 const ImageCard = ({
