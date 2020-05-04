@@ -20,7 +20,7 @@ import CardIcon from './CardIcon';
 
 const { iotPrefix } = settings;
 
-export const ImageHotspotContentPropTypes = {
+export const HotspotContentPropTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   description: PropTypes.string,
   values: PropTypes.objectOf(PropTypes.any),
@@ -64,7 +64,7 @@ const defaultProps = {
   locale: 'en',
 };
 
-const ImageHotspotContent = ({
+const HotspotContent = ({
   title,
   description,
   attributes,
@@ -161,6 +161,6 @@ const ImageHotspotContent = ({
   </div>
 );
 
-ImageHotspotContent.propTypes = ImageHotspotContentPropTypes;
-ImageHotspotContent.defaultProps = defaultProps;
-export default ImageHotspotContent;
+HotspotContent.propTypes = HotspotContentPropTypes;
+HotspotContent.defaultProps = defaultProps;
+export default HotspotContent;

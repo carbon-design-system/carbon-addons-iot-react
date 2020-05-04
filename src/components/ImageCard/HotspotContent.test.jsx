@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ImageHotspotContent from './ImageHotspotContent';
+import HotspotContent from './HotspotContent';
 
-describe('ImageHotspotContent', () => {
+describe('HotspotContent', () => {
   test('basic attributes', () => {
     const { getAllByText } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title="My hotspot"
         description="My hotspot description"
         values={{ deviceid: '73000', temperature: 35.05 }}
@@ -27,7 +27,7 @@ describe('ImageHotspotContent', () => {
   });
   test('can support react element for title', () => {
     const { getAllByText } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title={<span>My hotspot</span>}
         values={{ deviceid: '73000', temperature: 35.05 }}
         attributes={[
@@ -41,7 +41,7 @@ describe('ImageHotspotContent', () => {
   });
   test('empty values show --', () => {
     const { getAllByText, queryAllByText } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title={<span>My hotspot</span>}
         values={{ deviceid: '73000' }}
         attributes={[
@@ -56,7 +56,7 @@ describe('ImageHotspotContent', () => {
   });
   test('precision tests', () => {
     const { getAllByText } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title={<span>My hotspot</span>}
         values={{ deviceid: '73000', temperature: 35.05, humidity: 0, accuracy: 0.1245 }}
         attributes={[
@@ -73,7 +73,7 @@ describe('ImageHotspotContent', () => {
   });
   test('units', () => {
     const { getAllByText } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title={<span>My hotspot</span>}
         values={{ deviceid: '73000', temperature: 35.05 }}
         attributes={[
@@ -87,7 +87,7 @@ describe('ImageHotspotContent', () => {
   });
   test('locale formatting', () => {
     const { getAllByText } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title="My hotspot"
         description="My hotspot description"
         values={{ deviceid: '73000', temperature: 35.05 }}
@@ -105,7 +105,7 @@ describe('ImageHotspotContent', () => {
   });
   test('attribute thresholds', () => {
     const { getAllByTitle } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title="My hotspot"
         description="My hotspot description"
         values={{ deviceid: '73000', temperature: 35.05 }}
@@ -126,7 +126,7 @@ describe('ImageHotspotContent', () => {
   });
   test('hotspot threshold', () => {
     const { getAllByTitle } = render(
-      <ImageHotspotContent
+      <HotspotContent
         title="My hotspot"
         description="My hotspot description"
         values={{ deviceid: '73000', temperature: 35.05 }}
@@ -153,7 +153,7 @@ describe('ImageHotspotContent', () => {
   test('custom render Icon By Name', () => {
     const mockRenderIconByName = jest.fn().mockReturnValue(<span />);
     render(
-      <ImageHotspotContent
+      <HotspotContent
         title="My hotspot"
         description="My hotspot description"
         values={{ deviceid: '73000', temperature: 35.05 }}
