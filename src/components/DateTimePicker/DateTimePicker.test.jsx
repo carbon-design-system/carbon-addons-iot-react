@@ -37,7 +37,9 @@ const defaultAbsoluteValue = {
 };
 
 describe('DateTimePicker tests', () => {
-  jest.useFakeTimers();
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
 
   test('it should have the first preset as value', () => {
     const wrapper = mount(<__unstableDateTimePicker {...dateTimePickerProps} i18n={i18n} />);

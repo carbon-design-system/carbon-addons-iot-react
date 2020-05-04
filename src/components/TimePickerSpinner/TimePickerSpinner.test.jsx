@@ -12,7 +12,9 @@ const timePickerProps = {
 };
 
 describe('TimePickerSpinner tests', () => {
-  jest.useFakeTimers();
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
 
   test('show/hide spinner', () => {
     let wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);

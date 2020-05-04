@@ -127,8 +127,12 @@ export const mockActions = {
 };
 
 describe('Table', () => {
-  beforeEach(() => {
+  const originalConsoleError = console.error;
+  beforeAll(() => {
     console.error = jest.fn();
+  });
+  afterAll(() => {
+    console.error = originalConsoleError;
   });
 
   const options = {

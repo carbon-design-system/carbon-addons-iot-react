@@ -205,7 +205,7 @@ describe('HierarchyList', () => {
     });
   });
 
-  test('all items should return if search value is empty string', async () => {
+  test('all items should return if search value is empty string', () => {
     const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" />
     );

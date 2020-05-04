@@ -8,8 +8,6 @@ import TableHead from './TableHead';
 import TableHeader from './TableHeader';
 
 const { iotPrefix } = settings;
-const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
-const mockGetBoundingClientRect = jest.fn();
 
 const commonTableHeadProps = {
   /** List of columns */
@@ -182,6 +180,8 @@ describe('TableHead', () => {
     let columns;
     let myActions;
     let myProps;
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn();
 
     beforeAll(() => {
       Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;

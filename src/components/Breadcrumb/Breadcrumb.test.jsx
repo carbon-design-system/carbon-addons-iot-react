@@ -8,9 +8,6 @@ const commonProps = {
   onClick: () => console.log('clicked'),
 };
 
-const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'clientWidth');
-const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
-
 describe('Breadcrumb', () => {
   test('overflows when container is smaller than breadcrumbs', () => {
     const { container } = render(
@@ -25,6 +22,12 @@ describe('Breadcrumb', () => {
 });
 
 describe('Breadcrumb with overflow', () => {
+  const originalOffsetHeight = Object.getOwnPropertyDescriptor(
+    HTMLElement.prototype,
+    'clientWidth'
+  );
+  const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
+
   beforeAll(() => {
     Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
       writable: true,
@@ -39,8 +42,8 @@ describe('Breadcrumb with overflow', () => {
   });
 
   afterAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'clientWidth', originalOffsetHeight);
-    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalOffsetWidth);
+    delete HTMLElement.prototype.clientWidth;
+    delete HTMLElement.prototype.scrollWidth;
   });
 
   test('overflows when container is smaller than breadcrumbs', () => {

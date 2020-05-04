@@ -7,24 +7,32 @@ import TableCellRenderer from './TableCellRenderer';
 
 const { iotPrefix, prefix } = settings;
 
-const setOffsetWidth = width => {
-  Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
-    writable: false,
-    configurable: true,
-    value: width,
-  });
-};
-
-const setScrollWidth = width => {
-  Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
-    writable: false,
-    configurable: true,
-    value: width,
-  });
-};
-
 describe('TableCellRenderer', () => {
   const cellText = 'This text is not actually measured';
+
+  const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
+  const originalScrollWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
+
+  const setOffsetWidth = width => {
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+      writable: false,
+      configurable: true,
+      value: width,
+    });
+  };
+
+  const setScrollWidth = width => {
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+      writable: false,
+      configurable: true,
+      value: width,
+    });
+  };
+
+  afterAll(() => {
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
+  });
 
   test('truncates only for truncateCellText={true}', () => {
     const wrapper = mount(
