@@ -18,3 +18,9 @@
 # the repository and any of its subdirectories.
 
 * @bryancboyd @scottdickerson @davidicus @tay1orjones @leetosc @cgirani @stuckless @tomklapiscak @filipecorrea @jessieyan @blechner @sstone2423
+
+#####
+# Release team should be notified of Public API changes in the system
+
+**/publicAPI.test.js @tay1orjones @davidicus
+**/publicAPI.test.js.snap @tay1orjones @davidicus

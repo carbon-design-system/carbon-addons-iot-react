@@ -63,7 +63,7 @@ const SimpleList = ({
   isLargeRow,
   isLoading,
 }) => {
-  const [searchValue, setSearchValue] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
 
   const numberOfItems = filteredItems.length;
