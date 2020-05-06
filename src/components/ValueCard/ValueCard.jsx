@@ -211,6 +211,15 @@ const isLabelAboveValue = (size, layout, attributes, measuredSize, shouldDoubleW
   }
 };
 
+/**
+ * This components responsibilities include:
+ * Rendering the attribute groups
+ * Determining the layout
+ * determining the wrapping rules (should be moved to attribute)
+ * determining the position of the label (should be moved to attribute)
+ * determines the data to render
+ * completing the card variables
+ */
 const ValueCard = ({
   title: titleProp,
   content: contentProp,
