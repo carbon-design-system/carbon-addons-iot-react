@@ -89,6 +89,7 @@ module.exports = {
     __DEV__: false,
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
+  testEnvironment: 'jest-environment-jsdom-sixteen',
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTest.js'],
   testMatch: [
     '<rootDir>/**/__tests__/**/*.js?(x)',
