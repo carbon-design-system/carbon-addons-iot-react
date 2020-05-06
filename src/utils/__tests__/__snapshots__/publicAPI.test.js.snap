@@ -18661,6 +18661,7 @@ Map {
   "determineCardRange" => Object {},
   "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
+  "formatNumberWithPrecision" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",
