@@ -58,15 +58,26 @@ describe('Breadcrumb with overflow', () => {
   });
 
   describe('has dev console warning(s)', () => {
-    const originalConsole = console.error;
     const originalDev = window.__DEV__;
     const originalResizeObserver = window.ResizeObserver;
 
-    // Applies only to tests in this describe block
+    beforeAll(() => {
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+    });
+
     beforeEach(() => {
       window.__DEV__ = true;
       window.ResizeObserver = undefined;
-      console.error = jest.fn();
+    });
+
+    afterEach(() => {
+      console.error.mockClear();
+      window.__DEV__ = originalDev;
+      window.ResizeObserver = originalResizeObserver;
+    });
+
+    afterAll(() => {
+      console.error.mockRestore();
     });
 
     test('when ResizeObserver is not supported in the current environment', () => {
@@ -78,13 +89,6 @@ describe('Breadcrumb with overflow', () => {
         </Breadcrumb>
       );
       expect(console.error).toHaveBeenCalledTimes(1);
-    });
-
-    afterEach(() => {
-      // restore to original values
-      window.__DEV__ = originalDev;
-      window.ResizeObserver = originalResizeObserver;
-      console.error = originalConsole;
     });
   });
 });

@@ -6,12 +6,14 @@ import FilterHeaderRow from './FilterHeaderRow';
 describe('FilterHeaderRow', () => {
   const commonFilterProps = { onApplyFilter: jest.fn() };
 
-  const originalConsoleError = console.error;
-  beforeEach(() => {
-    console.error = jest.fn();
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
   afterEach(() => {
-    console.error = originalConsoleError;
+    console.error.mockClear();
+  });
+  afterAll(() => {
+    console.error.mockRestore();
   });
 
   test('text input change updates state', () => {

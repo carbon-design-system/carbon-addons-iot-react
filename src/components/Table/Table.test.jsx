@@ -127,12 +127,14 @@ export const mockActions = {
 };
 
 describe('Table', () => {
-  const originalConsoleError = console.error;
   beforeAll(() => {
-    console.error = jest.fn();
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+  afterEach(() => {
+    console.error.mockClear();
   });
   afterAll(() => {
-    console.error = originalConsoleError;
+    console.error.mockRestore();
   });
 
   const options = {

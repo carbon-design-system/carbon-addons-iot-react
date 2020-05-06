@@ -91,7 +91,7 @@ ListCard.propTypes = {
       link: PropTypes.string,
       extraContent: PropTypes.element,
     })
-  ).isRequired,
+  ),
   isLoading: PropTypes.bool,
   hasMoreData: PropTypes.bool,
   loadData: PropTypes.func.isRequired,
@@ -102,6 +102,7 @@ ListCard.defaultProps = {
   isLoading: false,
   hasMoreData: false,
   layout: '',
+  data: [],
 };
 
 ListCard.displayName = 'ListCard';
