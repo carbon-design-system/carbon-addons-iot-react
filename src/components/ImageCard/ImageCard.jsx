@@ -30,6 +30,7 @@ const defaultProps = {
   i18n: {
     loadingDataLabel: 'Loading hotspot data',
   },
+  locale: 'en',
 };
 
 const ImageCard = ({
@@ -44,6 +45,7 @@ const ImageCard = ({
   isLoading,
   i18n: { loadingDataLabel, ...otherLabels },
   renderIconByName,
+  locale,
   ...others
 }) => {
   const { src } = content;
@@ -97,6 +99,7 @@ const ImageCard = ({
                     isHotspotDataLoading={isLoading}
                     loadingHotspotsLabel={loadingDataLabel}
                     renderIconByName={renderIconByName}
+                    locale={locale}
                   />
                 ) : (
                   <p>Error retrieving image.</p>
