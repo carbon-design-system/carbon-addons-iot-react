@@ -2,9 +2,11 @@ import React, { useMemo, useState } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
+import omit from 'lodash/omit';
 
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 import ImageControls from './ImageControls';
+import HotspotContent from './HotspotContent';
 
 const propTypes = {
   /** source of the local image file to display */
@@ -367,12 +369,22 @@ const ImageHotspots = ({
       hotspots.map(hotspot => {
         return (
           <Hotspot
-            {...hotspot}
+            {...omit(hotspot, 'content')}
+            content={
+              React.isValidElement(hotspot.content) ? (
+                hotspot.content
+              ) : (
+                <HotspotContent
+                  {...hotspot.content}
+                  locale={locale}
+                  renderIconByName={renderIconByName}
+                />
+              )
+            }
             key={`${hotspot.x}-${hotspot.y}`}
             style={hotspotsStyle}
             offsetX={image.offsetX}
             offsetY={image.offsetY}
-            locale={locale}
             renderIconByName={renderIconByName}
           />
         );

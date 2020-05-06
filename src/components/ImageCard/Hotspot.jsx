@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Tooltip } from 'carbon-components-react';
 
+import { HotspotContentPropTypes } from './HotspotContent';
 import CardIcon from './CardIcon';
-import HotspotContent, { HotspotContentPropTypes } from './HotspotContent';
 
 export const propTypes = {
   /** percentage from the left of the image to show this hotspot */
@@ -27,8 +27,6 @@ export const propTypes = {
   height: PropTypes.number,
   /** optional function to provide icon based on name */
   renderIconByName: PropTypes.func,
-  /** locale string to pass through */
-  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -38,7 +36,6 @@ const defaultProps = {
   width: 25,
   height: 25,
   renderIconByName: null,
-  locale: null,
 };
 
 const StyledHotspot = styled(({ className, children }) => (
@@ -86,7 +83,6 @@ const Hotspot = ({
   width,
   height,
   renderIconByName,
-  locale,
   ...others
 }) => {
   const defaultIcon = (
@@ -134,11 +130,7 @@ const Hotspot = ({
         triggerId={`hotspot-${x}-${y}`}
         tooltipId={`hotspot-${x}-${y}`}
       >
-        {React.isValidElement(content) ? (
-          content
-        ) : (
-          <HotspotContent {...content} locale={locale} renderIconByName={renderIconByName} />
-        )}
+        {content}
       </Tooltip>
     </StyledHotspot>
   );
