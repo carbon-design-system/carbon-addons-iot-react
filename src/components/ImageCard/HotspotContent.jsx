@@ -79,7 +79,7 @@ const HotspotContent = ({
     ) : React.isValidElement(title) ? (
       title
     ) : null}
-    {description && <p>{description}</p>}
+    {description && <p className={`${iotPrefix}--hotspot-content-description`}>{description}</p>}
     {attributes.map(({ thresholds, dataSourceId, label, unit, precision }) => {
       // look for attribute specific thresholds first
       let attributeThresholdMatch = null;
@@ -115,24 +115,22 @@ const HotspotContent = ({
           />
         ) : null;
       return (
-        <div key={`attribute-${dataSourceId}`} style={{ display: 'flex', alignItems: 'center' }}>
-          <div style={{ flex: 1, paddingRight: 20 }}>
-            <span style={{ fontWeight: 'bold' }}>{label}:</span>
+        <div
+          key={`attribute-${dataSourceId}`}
+          className={`${iotPrefix}--hotspot-content-attribute`}
+        >
+          <div className={`${iotPrefix}--hotspot-content-label-section`}>
+            <span className={`${iotPrefix}--hotspot-content-label`}>{label}:</span>
           </div>
-          <div
-            style={{
-              flex: 0,
-              whiteSpace: 'nowrap',
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
+          <div className={`${iotPrefix}--hotspot-content-threshold-section`}>
             {thresholdIcon}
             <span
               style={{
-                paddingLeft: thresholdIcon ? 5 : 0,
-                color: !thresholdIcon && thresholdMatch ? thresholdMatch.color : 'inherit ',
+                '--threshold-color':
+                  !thresholdIcon && thresholdMatch ? thresholdMatch.color : 'inherit ',
+                '--threshold-padding': thresholdIcon ? '0.25rem' : '0rem',
               }}
+              className={`${iotPrefix}--hotspot-content-threshold`}
             >
               {typeof value === 'number'
                 ? formatNumberWithPrecision(
@@ -148,10 +146,7 @@ const HotspotContent = ({
                   )
                 : value}
               {unit && value !== '--' && (
-                <span>
-                  &nbsp;
-                  {unit}
-                </span>
+                <span className={`${iotPrefix}--hotspot-content-unit`}>{unit}</span>
               )}
             </span>
           </div>

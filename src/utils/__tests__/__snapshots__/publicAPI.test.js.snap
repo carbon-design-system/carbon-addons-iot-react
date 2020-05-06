@@ -4025,20 +4025,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -6851,20 +6837,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -7731,20 +7703,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
@@ -9269,20 +9227,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -10150,20 +10094,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
@@ -11066,20 +10996,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -11878,20 +11794,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
