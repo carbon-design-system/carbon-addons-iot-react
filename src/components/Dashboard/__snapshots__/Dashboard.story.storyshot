@@ -957,44 +957,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-bg": "#e0e0e0",
                           "--gauge-colors": "#f1c21b",
                           "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
+                          "--gauge-size": "80px",
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
+                          "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
                       <circle
                         className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <circle
                         className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <text
-                        className="iot--gauge-value"
+                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
                         id="gauge-label"
                         textAnchor="middle"
-                        x={34}
+                        x={40}
                         y="33"
                       >
                         <tspan>
-                          73%
+                          73
                         </tspan>
-                      </text>
-                      <text
-                        className="iot--gauge-rating"
-                        textAnchor="middle"
-                        x={34}
-                        y="48"
-                      >
                         <tspan>
-                          Fair
+                          %
                         </tspan>
                       </text>
                     </svg>
@@ -1243,7 +1237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -1281,7 +1275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -1846,7 +1840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -3168,44 +3162,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-bg": "#e0e0e0",
                           "--gauge-colors": "#f1c21b",
                           "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
+                          "--gauge-size": "80px",
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
+                          "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
                       <circle
                         className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <circle
                         className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <text
-                        className="iot--gauge-value"
+                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
                         id="gauge-label"
                         textAnchor="middle"
-                        x={34}
+                        x={40}
                         y="33"
                       >
                         <tspan>
-                          73%
+                          73
                         </tspan>
-                      </text>
-                      <text
-                        className="iot--gauge-rating"
-                        textAnchor="middle"
-                        x={34}
-                        y="48"
-                      >
                         <tspan>
-                          Fair
+                          %
                         </tspan>
                       </text>
                     </svg>
@@ -3454,7 +3442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -3492,7 +3480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -4057,7 +4045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -5411,44 +5399,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-bg": "#e0e0e0",
                           "--gauge-colors": "#f1c21b",
                           "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
+                          "--gauge-size": "80px",
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
+                          "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
                       <circle
                         className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <circle
                         className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <text
-                        className="iot--gauge-value"
+                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
                         id="gauge-label"
                         textAnchor="middle"
-                        x={34}
+                        x={40}
                         y="33"
                       >
                         <tspan>
-                          73%
+                          73
                         </tspan>
-                      </text>
-                      <text
-                        className="iot--gauge-rating"
-                        textAnchor="middle"
-                        x={34}
-                        y="48"
-                      >
                         <tspan>
-                          Fair
+                          %
                         </tspan>
                       </text>
                     </svg>
@@ -5697,7 +5679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -5735,7 +5717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -6300,7 +6282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -6796,7 +6778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                   size="LARGE"
                 >
                   <div
@@ -7242,7 +7224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                   size="LARGE"
                 >
                   <div
@@ -7295,9 +7277,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
     }
   >
     <div
-      style={Object {}}
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
     >
-       
       <div>
         <div
           className="dashboard--header"
@@ -7368,7 +7353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     "msTransform": "translate(16px,16px)",
                     "position": "absolute",
                     "transform": "translate(16px,16px)",
-                    "width": "616px",
+                    "width": "1248px",
                   }
                 }
                 type="TABLE"
@@ -7382,7 +7367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -7912,7 +7897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           aria-live="polite"
                         >
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -7929,9 +7914,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -7962,7 +7947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -7982,7 +7967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8002,7 +7987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8010,7 +7995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8027,9 +8012,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8060,7 +8045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8080,7 +8065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8100,7 +8085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8108,7 +8093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8125,9 +8110,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8158,7 +8143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8178,7 +8163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8198,7 +8183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8206,7 +8191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8223,9 +8208,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8256,7 +8241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8276,7 +8261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8296,7 +8281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8304,7 +8289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8321,9 +8306,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8354,7 +8339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8374,7 +8359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8394,7 +8379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8402,7 +8387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8419,9 +8404,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8452,7 +8437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8472,7 +8457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8492,7 +8477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8500,7 +8485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8517,9 +8502,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8550,7 +8535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8570,7 +8555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8590,7 +8575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8598,7 +8583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8615,9 +8600,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8648,7 +8633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8668,7 +8653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8688,7 +8673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8696,7 +8681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8713,9 +8698,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8746,7 +8731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8766,7 +8751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8786,7 +8771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8794,7 +8779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 hdodpz"
+                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 kJwmjb"
                             onClick={[Function]}
                           >
                             <td
@@ -8811,9 +8796,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8844,7 +8829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8864,7 +8849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8884,7 +8869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -10108,44 +10093,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-bg": "#e0e0e0",
                           "--gauge-colors": "#f1c21b",
                           "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
+                          "--gauge-size": "80px",
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
+                          "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
                       <circle
                         className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <circle
                         className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <text
-                        className="iot--gauge-value"
+                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
                         id="gauge-label"
                         textAnchor="middle"
-                        x={34}
+                        x={40}
                         y="33"
                       >
                         <tspan>
-                          73%
+                          73
                         </tspan>
-                      </text>
-                      <text
-                        className="iot--gauge-rating"
-                        textAnchor="middle"
-                        x={34}
-                        y="48"
-                      >
                         <tspan>
-                          Fair
+                          %
                         </tspan>
                       </text>
                     </svg>
@@ -10394,7 +10373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -10432,7 +10411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -10995,7 +10974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -24443,44 +24422,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           "--gauge-bg": "#e0e0e0",
                           "--gauge-colors": "#f1c21b",
                           "--gauge-max-value": 100,
-                          "--gauge-size": "68px",
+                          "--gauge-size": "80px",
                           "--gauge-trend-color": undefined,
                           "--gauge-value": 73,
-                          "--stroke-dash": 137.60175822723292,
+                          "--stroke-dash": 165.12210987267954,
+                          "--stroke-dash-array": 226.1946710584651,
                         }
                       }
                     >
                       <circle
                         className="iot--gauge-bg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <circle
                         className="iot--gauge-fg"
-                        cx={34}
-                        cy={34}
-                        r={30}
+                        cx={40}
+                        cy={40}
+                        r={36}
                       />
                       <text
-                        className="iot--gauge-value"
+                        className="iot--gauge-value iot--gauge-value__centered iot--gauge-value-lg"
                         id="gauge-label"
                         textAnchor="middle"
-                        x={34}
+                        x={40}
                         y="33"
                       >
                         <tspan>
-                          73%
+                          73
                         </tspan>
-                      </text>
-                      <text
-                        className="iot--gauge-rating"
-                        textAnchor="middle"
-                        x={34}
-                        y="48"
-                      >
                         <tspan>
-                          Fair
+                          %
                         </tspan>
                       </text>
                     </svg>
@@ -24729,7 +24702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -24767,7 +24740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -25332,7 +25305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div

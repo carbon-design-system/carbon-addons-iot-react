@@ -1,5 +1,9 @@
 @import '../../../../globals/vars';
 
+@mixin backgroundGradient($color) {
+  background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
+}
+
 .#{$iot-prefix}--row-actions-container {
   > * {
     margin-left: $spacing-04;
@@ -33,5 +37,29 @@
       margin-left: $spacing-03;
       margin-right: 0;
     }
+  }
+  align-items: center;
+  opacity: 0;
+  @include backgroundGradient($hover-ui);
+}
+
+.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background,
+.#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
+  opacity: 1;
+  transition: opacity $duration--fast-02 motion(entrance, productive);
+}
+
+.#{$prefix}--data-table tbody tr {
+  &:not(:hover) .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
+    @include backgroundGradient($ui-01);
+  }
+
+  &.bx--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
+    @include backgroundGradient($hover-selected-ui);
+  }
+
+  &.bx--data-table--selected:not(:hover)
+    .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
+    @include backgroundGradient($carbon--gray-20);
   }
 }

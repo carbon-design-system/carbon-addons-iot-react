@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 
@@ -36,6 +36,59 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
+  .add(
+    'With links',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+      const cardVariables = object('Dynamic link variable', { assetId: '11112' });
+      const tableLinkColumns = [
+        {
+          dataSourceId: 'pressure',
+          label: 'Pressure',
+        },
+        {
+          dataSourceId: 'deviceId',
+          label: 'Link',
+          linkTemplate: {
+            href: text('href', 'https://ibm.com/{assetId}'),
+            target: select('target', ['_blank', null], '_blank'),
+          },
+        },
+      ];
+
+      const tableLinkData = tableData.slice(0);
+      // eslint-disable-next-line no-return-assign, no-param-reassign
+      tableLinkData.forEach(row => (row.values.deviceId = 'Link'));
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Open Alerts {assetId}')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableLinkColumns,
+            }}
+            values={tableLinkData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+            cardVariables={cardVariables}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: `<p>Links can added by providing a linkTemplate prop to the content.columns[i] property. 
+                  2 additional properties can be configured within the linkTemplate object: href and target</p> 
+              <p>href is the url the link will use. This property is required.</p>
+              <p>target is whether you would like to open the link in a new window or not. 
+                  This property defaults to opening in the current window. Use '_blank' to open in a new window
+              </p>
+    `,
+      },
+    }
+  )
   .add('table with single actions', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
@@ -152,6 +205,71 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
+  .add(
+    'With dynamic variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+      const cardVariables = object('Dynamic link variable', {
+        assetId: '11112',
+        devicePressureThreshold: 1,
+      });
+
+      const tableLinkColumns = [
+        ...tableColumns,
+        {
+          dataSourceId: 'deviceId',
+          label: 'Link',
+          linkTemplate: {
+            href: text('href', 'https://ibm.com/{assetId}'),
+            target: select('target', ['_blank', null], '_blank'),
+          },
+        },
+      ];
+
+      const tableLinkData = tableData.slice(0);
+      // eslint-disable-next-line no-return-assign, no-param-reassign
+      tableLinkData.forEach(row => (row.values.deviceId = 'Link'));
+
+      const thresholds = [
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: text('Custom threshold value', '{devicePressureThreshold}'),
+          severity: 1,
+          label: text('Custom Pressure Severity Header', '{assetId} Pressure'),
+          showSeverityLabel: boolean('Show Pressure Threshold Label', true),
+          severityLabel: text('Custom Critical Label', '{assetId} Critical'),
+        },
+      ];
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Asset {assetId} Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableLinkColumns,
+              thresholds,
+            }}
+            values={tableLinkData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+            cardVariables={cardVariables}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: ` # Passing variables
+        To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+        Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+        Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+        `,
+      },
+    }
+  )
   .add(
     'table with thresholds',
     () => {
@@ -529,8 +647,11 @@ storiesOf('Watson IoT/TableCard', module)
           title={text('title', 'Open Alerts')}
           id="table-list"
           tooltip={text('Tooltip text', "Here's a Tooltip")}
+          locale={select('locale', ['fr', 'en'], 'fr')}
           content={{
-            columns: tableColumns,
+            columns: tableColumns.map(item =>
+              item.dataSourceId === 'count' ? { ...item, precision: 3 } : { ...item }
+            ),
             thresholds,
           }}
           values={tableData}

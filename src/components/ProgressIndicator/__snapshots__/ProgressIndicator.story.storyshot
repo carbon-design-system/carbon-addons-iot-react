@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -310,7 +310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
       onChange={[Function]}
     >
       <li
-        className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+        className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
       >
         <button
           className="bx--progress-step-button"
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -402,7 +402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
       >
         <button
           className="bx--progress-step-button"
@@ -442,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
       >
         <button
           className="bx--progress-step-button"
@@ -482,7 +482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
       >
         <button
           className="bx--progress-step-button"
@@ -522,7 +522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
       >
         <button
           className="bx--progress-step-button"
@@ -647,7 +647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -899,7 +899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
       onChange={[Function]}
     >
       <li
-        className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fdqlBz"
+        className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
       >
         <button
           className="bx--progress-step-button bx--progress-step-button--unclickable"
@@ -940,7 +940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <p
             className="bx--progress-optional"
           >
-            secondary label
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -948,7 +948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fdqlBz"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
       >
         <button
           className="bx--progress-step-button"
@@ -988,7 +988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fdqlBz"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
       >
         <button
           className="bx--progress-step-button"
@@ -1028,7 +1028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fdqlBz"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
       >
         <button
           className="bx--progress-step-button"
@@ -1068,7 +1068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fdqlBz"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
       >
         <button
           className="bx--progress-step-button"
@@ -1108,7 +1108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fdqlBz"
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
       >
         <button
           className="bx--progress-step-button"

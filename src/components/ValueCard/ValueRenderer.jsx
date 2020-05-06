@@ -5,7 +5,7 @@ import isNil from 'lodash/isNil';
 import classNames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { getUpdatedCardSize, formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -25,6 +25,7 @@ const propTypes = {
   allowedToWrap: PropTypes.bool.isRequired,
   /** Makes the value and the unit smaller */
   wrapCompact: PropTypes.bool,
+  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -35,6 +36,7 @@ const defaultProps = {
   color: null,
   isVertical: false,
   wrapCompact: false,
+  locale: 'en',
 };
 
 const Attribute = styled.div`
@@ -94,7 +96,11 @@ const determinePrecision = (size, value, precision) => {
   return precision;
 };
 
-/** This components job is determining how to render different kinds of card values */
+/**
+ * This components job is determining how to render different kinds of card values.
+ * It handles precision, font size, styling in a consistent way for card values.
+ *
+ */
 const ValueRenderer = ({
   value,
   size,
@@ -107,6 +113,7 @@ const ValueRenderer = ({
   isVertical,
   allowedToWrap,
   wrapCompact,
+  locale,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
@@ -117,16 +124,7 @@ const ValueRenderer = ({
     renderValue = <StyledBoolean>{value.toString()}</StyledBoolean>;
   }
   if (typeof value === 'number') {
-    renderValue =
-      value > 1000000000000
-        ? `${(value / 1000000000000).toFixed(precision)}T`
-        : value > 1000000000
-        ? `${(value / 1000000000).toFixed(precision)}B`
-        : value > 1000000
-        ? `${(value / 1000000).toFixed(precision)}M`
-        : value > 1000
-        ? `${(value / 1000).toFixed(precision)}K`
-        : value.toFixed(precision);
+    renderValue = formatNumberWithPrecision(value, precision, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }

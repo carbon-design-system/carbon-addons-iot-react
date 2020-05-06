@@ -9,12 +9,12 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 // r value of the circle in SVG
-const radius = 30;
+const radius = 36;
 // radius doubled plus stroke
 const gaugeSize = radius * 2 + 8;
+// circumference of SVG.
+const circum = 2 * Math.PI * radius;
 export const getStrokeDash = (value = 0) => {
-  // circumference of SVG.
-  const circum = 2 * Math.PI * radius;
   // length of stroke to match percentage
   return (value * circum) / 100;
 };
@@ -90,7 +90,9 @@ const GaugeCard = ({
         {dataState && <DataStateRenderer dataState={dataState} size={size} id={id} />}
         {!dataState &&
           gauges.map((gauge, i) => {
-            const { color, grade } = getColor(gauge, values[gauge.dataSourceId]);
+            const { color } = getColor(gauge, values[gauge.dataSourceId]);
+            const valueLength =
+              values[gauge.dataSourceId] && values[gauge.dataSourceId].toString().length;
             return (
               <React.Fragment key={`${iotPrefix}-gauge-${i}`}>
                 <svg
@@ -107,6 +109,7 @@ const GaugeCard = ({
                     '--gauge-colors': color,
                     '--gauge-bg': gauge.backgroundColor,
                     '--stroke-dash': getStrokeDash(values[gauge.dataSourceId]) || 0,
+                    '--stroke-dash-array': circum,
                     '--gauge-size': `${gaugeSize}px`,
                     '--gauge-trend-color': gauge.trend.color,
                   }}
@@ -125,22 +128,19 @@ const GaugeCard = ({
                   />
                   <text
                     id="gauge-label"
-                    className={classnames(`${iotPrefix}--gauge-value`, {
-                      [`${iotPrefix}--gauge-value__centered`]: !grade,
-                    })}
+                    className={classnames(
+                      `${iotPrefix}--gauge-value`,
+                      `${iotPrefix}--gauge-value__centered`,
+                      { [`${iotPrefix}--gauge-value-sm`]: valueLength === 4 },
+                      { [`${iotPrefix}--gauge-value-md`]: valueLength === 3 },
+                      { [`${iotPrefix}--gauge-value-lg`]: valueLength <= 2 }
+                    )}
                     x={gaugeSize / 2}
                     y="33"
                     textAnchor="middle"
                   >
-                    <tspan>{values[gauge.dataSourceId] + gauge.units}</tspan>
-                  </text>
-                  <text
-                    className={`${iotPrefix}--gauge-rating`}
-                    x={gaugeSize / 2}
-                    y="48"
-                    textAnchor="middle"
-                  >
-                    <tspan>{grade}</tspan>
+                    <tspan>{values[gauge.dataSourceId]}</tspan>
+                    <tspan>{gauge.units}</tspan>
                   </text>
                 </svg>
 

@@ -13,7 +13,7 @@
   font-size: inherit;
   height: var(--gauge-size);
   min-width: var(--gauge-size);
-  stroke-width: 5px;
+  stroke-width: 8px;
   width: var(--gauge-size);
 
   text {
@@ -29,19 +29,46 @@
 .#{$iot-prefix}--gauge-fg {
   paint-order: stroke;
   stroke: var(--gauge-colors);
-  stroke-dasharray: 0 188.1910858154297;
+  stroke-dasharray: 0 var(--stroke-dash-array);
   transform: rotate(-90deg);
   transform-origin: center;
   transition: all 0.2s ease-in;
 
   .#{$iot-prefix}--gauge__loaded & {
-    stroke-dasharray: var(--stroke-dash) 188.1910858154297;
+    stroke-dasharray: var(--stroke-dash) var(--stroke-dash-array);
   }
 }
 
-.#{$iot-prefix}--gauge-value__centered {
-  transform: translateY(6px);
+.#{$iot-prefix}--gauge-value-sm {
+  &.#{$iot-prefix}--gauge-value__centered {
+    transform: translateY(0.75rem);
+  }
+
+  tspan:first-of-type {
+    font-size: 1rem;
+  }
 }
+
+.#{$iot-prefix}--gauge-value-md {
+  &.#{$iot-prefix}--gauge-value__centered {
+    transform: translateY(0.75rem);
+  }
+
+  tspan:first-of-type {
+    font-size: 1.25rem;
+  }
+}
+
+.#{$iot-prefix}--gauge-value-lg {
+  &.#{$iot-prefix}--gauge-value__centered {
+    transform: translateY(1rem);
+  }
+
+  tspan:first-of-type {
+    font-size: 1.75rem;
+  }
+}
+
 .#{$iot-prefix}--meter__centered::after {
   display: none;
 }
@@ -83,7 +110,7 @@
   p {
     // --gauge-trend-color: blue;
     color: var(--gauge-trend-color);
-    font-size: inherit;
+    font-size: 0.875rem;
     position: relative;
   }
 }

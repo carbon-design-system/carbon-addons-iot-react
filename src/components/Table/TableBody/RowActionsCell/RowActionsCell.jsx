@@ -10,6 +10,7 @@ import {
 } from 'carbon-components-react';
 import styled from 'styled-components';
 import classnames from 'classnames';
+import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
@@ -32,10 +33,6 @@ const RowActionsContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-    > * {
-      opacity: ${props => (props.visible ? 1 : 0)};
-    }
 
     /* If the actions are focused on, they should show up */
     > *:focus {
@@ -65,7 +62,6 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
     svg {
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-    opacity: ${props => (props.isOpen || props.isRowExpanded ? 1 : 0)};
   }
   &&&:hover > svg {
     fill: ${COLORS.blue};
@@ -162,11 +158,14 @@ class RowActionsCell extends React.Component {
     return actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
-          visible={isRowExpanded || isRowActionRunning || rowActionsError}
           isRowExpanded={isRowExpanded}
           className={`${iotPrefix}--row-actions-container`}
         >
-          <div className={`${iotPrefix}--row-actions-container__background`}>
+          <div
+            className={classnames(`${iotPrefix}--row-actions-container__background`, {
+              [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
+            })}
+          >
             {rowActionsError ? (
               <RowActionsError
                 actionFailedText={actionFailedText}
@@ -186,7 +185,7 @@ class RowActionsCell extends React.Component {
                   .filter(action => !action.isOverflow)
                   .map(({ id: actionId, labelText, ...others }) => (
                     <Button
-                      {...others}
+                      {...omit(others, ['isOverflow'])}
                       iconDescription={overflowMenuAria}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
@@ -208,7 +207,6 @@ class RowActionsCell extends React.Component {
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
-                    isOpen={isOpen}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                   >

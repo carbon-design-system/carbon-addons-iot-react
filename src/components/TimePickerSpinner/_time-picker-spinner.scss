@@ -37,9 +37,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // vertically center controls within parent container on IE11
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 2px;
 
     .#{$iot-prefix}--time-picker__controls--btn {
       border: none;
