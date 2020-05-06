@@ -100,6 +100,7 @@ const defaultProps = {
 
 /**
  * An attribute has a Value, Units and maybe a Threshold or Trend.
+ * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
   attributeCount,

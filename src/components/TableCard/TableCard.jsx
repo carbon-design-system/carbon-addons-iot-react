@@ -670,6 +670,7 @@ const TableCard = ({
               hasFilter,
               hasRowExpansion,
             }}
+            locale={locale}
             expandedData={expandedRowsFormatted}
             actions={{
               table: {

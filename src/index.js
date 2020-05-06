@@ -276,6 +276,7 @@ export {
   determineCardRange,
   determineMaxValueCardAttributeCount,
   compareGrains,
+  formatNumberWithPrecision,
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
