@@ -22,29 +22,40 @@ const defaultProps = {
   wrapperClassName: null,
 };
 
-const ComboWrapper = props => {
-  const handleOnKeypress = evt => {
-    // let uid = items.length;
-    // if (!items.includes(inputValue)) {
-    //   items.push({
-    //     id: `id-${(uid += 1)}`,
-    //     text: inputValue || '',
-    //   });
-    //   setSelectedItem(inputValue);
-    // }
-
-    // if (evt.keycode === )
-    console.log('Selected: ', evt.key);
-    // comboOnChange(value);
-  };
-
-  return <div onKeyDown={evt => handleOnKeypress(evt)}>{props.children}</div>;
-};
-
 const ComboBox = ({ inline, loading, wrapperClassName, ...comboProps }) => {
+  const comboRef = React.createRef();
   const { items } = comboProps;
   const [selectedItem, setSelectedItem] = useState(null);
   const [inputValue, setInputValue] = useState(items[0]);
+  const ComboWrapper = props => {
+    const handleOnKeypress = evt => {
+      // let uid = items.length;
+      // if (!items.includes(inputValue)) {
+      //   items.push({
+      //     id: `id-${(uid += 1)}`,
+      //     text: inputValue || '',
+      //   });
+      //   setSelectedItem(inputValue);
+      // }
+
+      if (evt.key === 'Enter') {
+        console.log('Selected: ', evt.key, comboRef.current.textInput.current.value);
+        const currentValue = comboRef.current.textInput.current.value;
+        let uid = items.length;
+        if (!items.includes(currentValue)) {
+          items.push({
+            id: `id-${(uid += 1)}`,
+            text: currentValue || '',
+            selected: true,
+          });
+          setSelectedItem(inputValue);
+        }
+      }
+    };
+
+    return <div onKeyDown={evt => handleOnKeypress(evt)}>{props.children}</div>;
+  };
+
   const handleInputChange = (value, name) => {
     // let uid = items.length;
     // items.push({
@@ -52,7 +63,7 @@ const ComboBox = ({ inline, loading, wrapperClassName, ...comboProps }) => {
     //   text: value,
     // });
     setInputValue(value);
-    console.log('value: ', name, value);
+    console.log('value: ', name, comboRef);
     // comboOnChange(value);
   };
 
@@ -83,30 +94,31 @@ const ComboBox = ({ inline, loading, wrapperClassName, ...comboProps }) => {
   //   onChange={this.fieldChange.bind(this, parm)}
   // />;
 
-  const handleOnChange = evt => {
+  const handleOnChange = selectedItem => {
     // let uid = items.length;
     // if (!items.includes(inputValue)) {
     //   items.push({
     //     id: `id-${(uid += 1)}`,
     //     text: inputValue || '',
     //   });
-    //   setSelectedItem(inputValue);
+    setSelectedItem(selectedItem.selectedItem);
     // }
 
     // if (evt.keycode === )
-    console.log('CHanged: ', evt);
+    console.log('CHanged: ', selectedItem.selectedItem);
     // comboOnChange(value);
   };
   return (
     <ComboWrapper>
       <CarbonComboBox
         {...comboProps}
+        ref={comboRef}
         light
-        // selectedItem={selectedItem || null}
+        selectedItem={selectedItem}
         items={items}
         // onKeyPress={value => handleInputChange(value, 'keypress')}
         itemToString={item => (item ? item.text : '')}
-        onChange={value => handleInputChange(value, 'onchange')}
+        onChange={handleOnChange}
         // onInputChange={value => handleInputChange(value, 'inputchange')}
         className={classNames(comboProps.className, `${iotPrefix}--combo-box`)}
         disabled={comboProps.disabled || (loading !== undefined && loading !== false)}

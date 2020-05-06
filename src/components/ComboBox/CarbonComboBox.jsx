@@ -73,7 +73,10 @@ const keys = {
   },
 };
 
-const ListBoxPropTypes = ListBox.propTypes;
+const ListBoxPropTypes = {
+  ListBoxType: PropTypes.oneOf(['default', 'inline']),
+  ListBoxSize: PropTypes.oneOf(['sm', 'xl']),
+};
 const { prefix } = settings;
 
 /**
@@ -434,6 +437,7 @@ export default class ComboBox extends React.Component {
         onStateChange={this.handleOnStateChange}
         inputValue={inputValue || ''}
         itemToString={itemToString}
+        initialIsOpen={false}
         defaultSelectedItem={initialSelectedItem}
         selectedItem={selectedItem}
       >
@@ -487,8 +491,9 @@ export default class ComboBox extends React.Component {
                   id,
                   placeholder,
                   onKeyDown: event => {
-                    // event.stopPropagation();
-
+                    if (match(event, keys.Space)) {
+                      event.stopPropagation();
+                    }
                     if (match(event, keys.Enter)) {
                       toggleMenu();
                     }
