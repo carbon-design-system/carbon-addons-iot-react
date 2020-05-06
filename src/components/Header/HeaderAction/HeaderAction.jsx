@@ -116,7 +116,7 @@ const HeaderAction = ({ item, index }) => {
       className={`${carbonPrefix}--header-action-btn`}
       key={`menu-item-${item.label}-global-${index}`}
       aria-label={item.label}
-      onClick={item.onClick}
+      onClick={item.onClick || (() => {})}
     >
       {item.btnContent}
     </HeaderGlobalAction>
