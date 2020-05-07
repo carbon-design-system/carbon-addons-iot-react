@@ -28,6 +28,7 @@ describe('cardUtilityFunctions', () => {
     expect(formatNumberWithPrecision(3.45, 1, 'fr')).toEqual('3,5'); // decimal separator should be comma
     expect(formatNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
     expect(formatNumberWithPrecision(35000, 2, 'en')).toEqual('35.00K'); // K separator
+    expect(formatNumberWithPrecision(35000, null, 'en')).toEqual('35K'); // K separator
   });
   test('handleCardVariables updates value cards with variables', () => {
     const valueCardPropsWithVariables = {

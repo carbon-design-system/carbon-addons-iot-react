@@ -115,6 +115,8 @@ export const TimeSeriesCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
+  /** Interval for time series configuration used for formatting the x-axis */
+  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
 };
 
 export const TableCardPropTypes = {
@@ -352,8 +354,6 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
-  /** Interval for time series configuration */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
