@@ -11155,6 +11155,7 @@ Map {
   },
   "ListCard" => Object {
     "defaultProps": Object {
+      "data": Array [],
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
@@ -11678,7 +11679,6 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "hasMoreData": Object {
