@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Tooltip } from 'carbon-components-react';
 
+import { HotspotContentPropTypes } from './HotspotContent';
 import CardIcon from './CardIcon';
 
 export const propTypes = {
@@ -10,8 +11,9 @@ export const propTypes = {
   x: PropTypes.number.isRequired,
   /** percentage from the top of the image to show this hotspot */
   y: PropTypes.number.isRequired,
-  /** the content of the hotspot */
-  content: PropTypes.element.isRequired,
+  /** the content of the hotspot, either a react element or an object to use the default hotspot */
+  content: PropTypes.oneOfType([PropTypes.element, PropTypes.shape(HotspotContentPropTypes)])
+    .isRequired,
   /** points to one of our enumerated icon names (ex. caretUp, edit, close)
    * TODO: add support for the carbon icon object (svgData, viewBox, width, height)
    */

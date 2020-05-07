@@ -135,7 +135,6 @@ export const defaultProps = {
   title: undefined,
   toolbar: undefined,
   hideHeader: false,
-  showOverflow: false,
   timeRange: undefined,
   isLoading: false,
   isEmpty: false,

@@ -1,4 +1,5 @@
 import warning from 'warning';
+import isNil from 'lodash/isNil';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
@@ -121,4 +122,140 @@ export const getUpdatedCardSize = oldSize => {
     newSize = changedSize;
   }
   return newSize;
+};
+
+/**
+ * This function provides common value formatting across all card types
+ * @param {number} value, the value the card will display
+ * @param {number} precision, how many decimal values to display configured at the attribute level
+ * @param {string} locale, the local browser locale because locales use different decimal separators
+ */
+export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =>
+  value > 1000000000000
+    ? `${(value / 1000000000000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}T`
+    : value > 1000000000
+    ? `${(value / 1000000000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}B`
+    : value > 1000000
+    ? `${(value / 1000000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}M`
+    : value > 1000
+    ? `${(value / 1000).toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      )}K`
+    : value.toLocaleString(
+        locale,
+        !isNil(precision)
+          ? {
+              minimumFractionDigits: precision,
+              maximumFractionDigits: precision,
+            }
+          : undefined
+      );
+/**
+ * Find variables in a string that are identified by surrounding curly braces
+ * @param {string} value - A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`
+ * @return {array} variables - an array of variables, i.e. ['manufacturer', 'sensor']
+ */
+export const getVariables = value => {
+  // an array of instances of a substring surrounded by curly braces
+  const variables = value && typeof value === 'string' ? value.match(/{[a-zA-Z0-9_-]+}/g) : null;
+  // if there are variables found, trim the curly braces from each and return
+  return variables ? variables.map(variable => variable.replace(/[{}]/g, '')) : null;
+};
+
+/**
+ * Replace variables from the list of variables that are found on the target with their corresponding value
+ * @param {array} variables - Array of variables to be replaced
+ * @param {object} cardVariables - Object with variable properties and replacement values, i.e. { manufacturer: 'Rentech', sensor: 3 }
+ * @param {string} target - The raw string to insert variable values into
+ * @return {array} updatedTarget - the new string with the updated variable values
+ */
+export const replaceVariables = (variables, cardVariables, target) => {
+  let updatedTarget = JSON.stringify(target);
+
+  // Need to create a copy of cardVariables with all lower-case keys
+  const insensitiveCardVariables = Object.keys(cardVariables).reduce((acc, variable) => {
+    acc[variable.toLowerCase()] = cardVariables[variable];
+    return acc;
+  }, {});
+
+  variables.forEach(variable => {
+    const insensitiveVariable = variable.toLowerCase();
+    const variableRegex = new RegExp(`{${variable}}`, 'g');
+    // Need to update the target with all lower-case variables for case-insesitivity
+    updatedTarget = updatedTarget.replace(variableRegex, `{${insensitiveVariable}}`);
+
+    if (typeof insensitiveCardVariables[insensitiveVariable] === 'function') {
+      const callback = insensitiveCardVariables[insensitiveVariable];
+      updatedTarget = callback(variable, target);
+    } else {
+      const insensitiveVariableRegex = new RegExp(`{${insensitiveVariable}}`, 'g');
+      updatedTarget = updatedTarget.replace(
+        insensitiveVariableRegex,
+        insensitiveCardVariables[insensitiveVariable]
+      );
+    }
+  });
+  return JSON.parse(updatedTarget);
+};
+
+/**
+ *
+ * @param {object} card
+ * @returns {array} an array of unique variable values
+ */
+export const getCardVariables = card => [...new Set(getVariables(JSON.stringify(card)))];
+
+/**
+ * Replace variables from the list of variables that are found on the target with their corresponding value
+ * @param {string} title - Title for the card
+ * @param {object} content - Contents for the card
+ * @param {string} values - Values for the card
+ * @param {object} card - The rest of the card
+ * @return {object} updatedCard - card with any found variables replaced by their coresponding values, or the original card if no variables
+ */
+export const handleCardVariables = (title, content, values, card) => {
+  const updatedCard = {
+    title,
+    content,
+    values,
+    ...card,
+  };
+  if (!updatedCard.cardVariables) {
+    return updatedCard;
+  }
+  const { cardVariables } = updatedCard;
+
+  const variablesArray = getCardVariables(updatedCard);
+
+  return replaceVariables(variablesArray, cardVariables, updatedCard);
 };

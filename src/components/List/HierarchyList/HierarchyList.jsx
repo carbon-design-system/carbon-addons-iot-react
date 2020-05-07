@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import debounce from 'lodash/debounce';
@@ -255,11 +255,9 @@ const HierarchyList = ({
   /**
    * Searching the nested items array is computationally expensive so delay the
    * search by 150ms which is a reasonable amount of time for a single word to
-   * be typed. UseRef is needed because the component is being re-rendered on
-   * search value changes, meaning the onChange event is being thrown away. The
-   * ref holds on to the last event's information the event.target.value
+   * be typed.
    */
-  const delayedSearch = useRef(debounce(textInput => handleSearch(textInput), 150)).current;
+  const delayedSearch = useCallback(debounce(textInput => handleSearch(textInput), 150), [items]);
 
   return (
     <List

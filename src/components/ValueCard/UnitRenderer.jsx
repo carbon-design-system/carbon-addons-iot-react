@@ -23,7 +23,10 @@ const defaultProps = {
   wrapCompact: false,
 };
 
-/** This components job is determining how to render different kinds units */
+/**
+ * This components job is determining how to render different kinds of units
+ *
+ */
 const UnitRenderer = ({
   value,
   unit,
