@@ -268,7 +268,7 @@ describe('Header testcases', () => {
     const menuTrigger = getByTestId('menuitem');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESC });
+    fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESCAPE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 });

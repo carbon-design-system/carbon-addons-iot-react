@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { screen, render, fireEvent } from '@testing-library/react';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
 
@@ -11,49 +12,61 @@ const timePickerProps = {
   onChange: jest.fn(),
 };
 
-describe('TimePickerSpinner tests', () => {
+describe('TimePickerSpinner', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
-
-  test('show/hide spinner', () => {
-    let wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
-    expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(2);
-
-    wrapper = mount(<TimePickerSpinner {...timePickerProps} />);
-    expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(0);
+  afterEach(() => {
+    jest.clearAllTimers();
   });
 
-  test('increment/decrement value', () => {
-    const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
+  test('with spinner', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner />);
+    expect(screen.queryAllByRole('button')).toHaveLength(2);
+  });
 
-    wrapper
-      .find('.iot--time-picker__controls--btn.up-icon')
-      .first()
-      .simulate('click');
-    expect(wrapper.find('input').props().value).toEqual('01:00');
+  test('without spinner', () => {
+    render(<TimePickerSpinner {...timePickerProps} />);
+    expect(screen.queryAllByRole('button')).toHaveLength(0);
+  });
 
-    wrapper
-      .find('.iot--time-picker__controls--btn.down-icon')
-      .first()
-      .simulate('click');
-    expect(wrapper.find('input').props().value).toEqual('00:00');
+  test('increment/decrement value via buttons', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner />);
 
-    wrapper.find('input').simulate('focus');
-    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.LEFT });
-    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.RIGHT });
-    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.UP });
-    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.ESC });
-    expect(wrapper.find('input').props().value).toEqual('01:00');
+    fireEvent.click(screen.queryByRole('button', { name: /Increment hours/i }));
+    expect(screen.getByRole('textbox').value).toEqual('01:00');
 
-    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.DOWN });
-    expect(wrapper.find('input').props().value).toEqual('00:00');
+    fireEvent.click(screen.queryByRole('button', { name: /Decrement hours/i }));
+    expect(screen.getByRole('textbox').value).toEqual('00:00');
+  });
 
-    wrapper
-      .find('input')
-      .simulate('keyup', { keyCode: keyCodes.RIGHT, currentTarget: { selectionStart: 3 } });
-    wrapper.find('input').simulate('keyup', { keyCode: keyCodes.UP });
-    expect(wrapper.find('input').props().value).toEqual('01:00');
+  // Note: JSDOM follows the whatwg spec of keyboard events which may not follow
+  // the current or expected behvaior of keyboard interaction in browsers.
+  // The following test covers the keyboard interaction at a base level, but
+  // needs to be improved by testing keyboard focus/interactions in-browser via cypress or similar.
+  test('increment/decrement value via keyboard', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner />);
+
+    screen.getByRole('textbox').focus();
+
+    fireEvent.keyUp(document.activeElement || document.body, {
+      key: 'ArrowLeft',
+      code: 'ArrowLeft',
+      keyCode: keyCodes.LEFT,
+    });
+    fireEvent.keyUp(document.activeElement || document.body, {
+      key: 'ArrowUp',
+      code: 'ArrowUp',
+      keyCode: keyCodes.UP,
+    });
+    expect(screen.getByRole('textbox').value).toEqual('01:00');
+
+    fireEvent.keyUp(document.activeElement || document.body, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+      keyCode: keyCodes.DOWN,
+    });
+    expect(screen.getByRole('textbox').value).toEqual('00:00');
   });
 
   test('work with strings', () => {
@@ -70,6 +83,10 @@ describe('TimePickerSpinner tests', () => {
     expect(wrapper.find('input').props().value).toEqual('23:00');
   });
 
+  // NOTE: enzyme's `simulate` doesn't really simulate anything.
+  // The following test covers the keyboard interaction at a base level, but
+  // needs to be improved by testing keyboard focus/interactions in-browser
+  // via cypress or similar.
   test('show indicator', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
 
@@ -95,7 +112,7 @@ describe('TimePickerSpinner tests', () => {
 
     wrapper.find('input').simulate('keydown', { keyCode: keyCodes.DOWN });
     wrapper.find('input').simulate('keydown', { keyCode: keyCodes.UP });
-    wrapper.find('input').simulate('keydown', { keyCode: keyCodes.ESC });
+    wrapper.find('input').simulate('keydown', { keyCode: keyCodes.ESCAPE });
     expect(wrapper.find('input').props().value).toEqual('01:00');
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 0);
 
