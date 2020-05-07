@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';
@@ -46,6 +48,16 @@ describe('TimeSeriesCard tests', () => {
 
     wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
+  });
+  test('does not fail to render if no data is given', () => {
+    // For whatever reason, these devices do not give back real data so the No data message
+    // should render instead of the line graph
+    const emptyValues = [{ deviceid: 'robot1' }, { deviceid: 'robot2' }];
+    const { getByText } = render(
+      <TimeSeriesCard {...timeSeriesCardProps} values={emptyValues} size={CARD_SIZES.MEDIUM} />
+    );
+
+    expect(getByText('No data is available for this time range.')).toBeInTheDocument();
   });
   test('shows table with data when expanded', () => {
     const wrapper = mount(
