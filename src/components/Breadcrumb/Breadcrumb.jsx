@@ -60,10 +60,17 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   });
 
   if (__DEV__) {
-    warning(
-      browserSupportsResizeObserver && hasOverflow,
-      'You have set hasOverflow to true, but the current browser does not support ResizeObserver. You will need to include a ResizeObserver polyfill for hasOverflow to function properly.'
-    );
+    if (hasOverflow) {
+      warning(
+        browserSupportsResizeObserver,
+        'You have set hasOverflow to true, but the current browser does not support ResizeObserver. You will need to include a ResizeObserver polyfill for hasOverflow to function properly.'
+      );
+    } else {
+      warning(
+        !browserSupportsResizeObserver,
+        'Your browser supports ResizeObserver. Set hasOverflow to true to leverage mobile functionality.'
+      );
+    }
   }
 
   useEffect(
@@ -114,7 +121,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
       ref={browserSupportsResizeObserver ? breadcrumbRef : null}
       data-testid="overflow"
     >
-      {hasOverflow ? (
+      {hasOverflow && browserSupportsResizeObserver ? (
         <CarbonBreadcrumb className={className} {...other}>
           {childrenItems[0]}
           {overflowItems.length > 0 && (
