@@ -30,9 +30,9 @@ const defaultRelativeValue = {
 };
 
 const defaultAbsoluteValue = {
-  startDate: '04/01/2020',
+  startDate: '2020-04-01',
   startTime: '12:34',
-  endDate: '04/06/2020',
+  endDate: '2020-04-06',
   endTime: '10:49',
 };
 
