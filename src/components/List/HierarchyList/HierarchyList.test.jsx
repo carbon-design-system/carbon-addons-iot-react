@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  render,
-  fireEvent,
-  waitForElementToBeRemoved,
-  waitForElement,
-} from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import debounce from 'lodash/debounce';
-// https://github.com/facebook/jest/issues/3465#issuecomment-449007170
-jest.mock('lodash/debounce', () => fn => fn);
 
 import { sampleHierarchy } from '../List.story';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
+// https://github.com/facebook/jest/issues/3465#issuecomment-449007170
+jest.mock('lodash/debounce', () => fn => fn);
 
 describe('HierarchyList', () => {
   const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;

@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 /* eslint-disable*/
 import { Tooltip } from 'carbon-components-react';
-import { render, fireEvent, waitForElement } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { Popup20 } from '@carbon/icons-react';
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import CardRangePicker from './CardRangePicker';
@@ -131,9 +131,9 @@ describe('Card testcases', () => {
       .props.onClick();
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.OPEN_EXPANDED_CARD);
   });
-  test('card editable actions', async done => {
+  test('card editable actions', async () => {
     const mockOnCardAction = jest.fn();
-    const { getByRole, getByTitle, getByText } = render(
+    const { getByTitle, getByText } = render(
       <Card
         {...cardProps}
         isEditable
@@ -145,23 +145,22 @@ describe('Card testcases', () => {
     );
     fireEvent.click(getByTitle('Open and close list of options'));
     // Click on the first overflow menu item
-    const firstMenuItem = await waitForElement(() => getByText('Edit card'));
+    const firstMenuItem = await waitFor(() => getByText('Edit card'));
     fireEvent.click(firstMenuItem);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.EDIT_CARD);
     mockOnCardAction.mockClear();
     // Reopen menu
     fireEvent.click(getByTitle('Open and close list of options'));
-    const secondElement = await waitForElement(() => getByText('Clone card'));
+    const secondElement = await waitFor(() => getByText('Clone card'));
     fireEvent.click(secondElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLONE_CARD);
 
     // Reopen menu
     fireEvent.click(getByTitle('Open and close list of options'));
     mockOnCardAction.mockClear();
-    const thirdElement = await waitForElement(() => getByText('Delete card'));
+    const thirdElement = await waitFor(() => getByText('Delete card'));
     fireEvent.click(thirdElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.DELETE_CARD);
-    done();
   });
   test('card toolbar renders in header only when there are actions', () => {
     const wrapperWithActions = mount(
