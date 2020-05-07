@@ -121,7 +121,26 @@ const onClick = (e, id, action, onApplyRowAction) => {
 class RowActionsCell extends React.Component {
   state = {
     isOpen: false,
+    ltr: true,
   };
+
+  componentDidMount() {
+    // this is latest changes
+    console.log('load:', document.dir);
+    if (document.dir === 'rtl') {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
+
+  componentDidUpdate(prevProp, prevState) {
+    // this is latest changes
+    const { ltr } = this.state;
+    const isLtr = document.dir === 'ltr';
+    console.log('updated:', prevState, ltr, document.dir);
+    if (prevState.ltr !== isLtr) {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
 
   handleOpen = () => {
     const { isOpen } = this.state;
@@ -153,7 +172,7 @@ class RowActionsCell extends React.Component {
       onClearError,
       inProgressText,
     } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, ltr } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
     return actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
@@ -202,7 +221,7 @@ class RowActionsCell extends React.Component {
                   <StyledOverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                    flipped
+                    flipped={ltr}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}

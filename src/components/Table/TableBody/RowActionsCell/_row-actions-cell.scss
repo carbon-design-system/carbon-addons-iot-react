@@ -21,8 +21,10 @@
   align-items: center;
   display: flex;
   flex-shrink: 0;
+  opacity: 0;
   padding-left: $spacing-06;
   z-index: 0;
+  @include backgroundGradient($hover-ui);
 }
 
 .#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
@@ -38,9 +40,6 @@
       margin-right: 0;
     }
   }
-  align-items: center;
-  opacity: 0;
-  @include backgroundGradient($hover-ui);
 }
 
 .#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background,
@@ -61,5 +60,20 @@
   &.bx--data-table--selected:not(:hover)
     .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
     @include backgroundGradient($carbon--gray-20);
+  }
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--row-actions-container__background {
+    margin-left: unset;
+    margin-right: 0.75rem;
+    padding-left: unset;
+    padding-right: 24px;
+
+    .#{$prefix}--btn__icon {
+      margin-left: unset;
+      margin-right: 0.5rem;
+      transform: rotate(180deg);
+    }
   }
 }
