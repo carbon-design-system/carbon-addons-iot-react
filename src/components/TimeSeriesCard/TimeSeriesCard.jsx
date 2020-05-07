@@ -435,7 +435,7 @@ const TimeSeriesCard = ({
                     includeZero: includeZeroOnXaxis,
                   },
                   left: {
-                    title: `${yLabel} ${unit ? `(${unit})` : ''}`,
+                    title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
                     mapsTo: 'value',
                     ticks: {
                       formatter: axisValue => valueFormatter(axisValue, newSize, null, locale),
