@@ -405,8 +405,9 @@ const TimeSeriesCard = ({
       isEditable={isEditable}
       isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
+      isLoading={isLoading}
     >
-      {!isLoading && !isChartDataEmpty ? (
+      {!isChartDataEmpty ? (
         <>
           <LineChartWrapper
             size={newSize}

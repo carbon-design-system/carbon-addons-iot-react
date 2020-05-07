@@ -45,9 +45,11 @@ describe('TimeSeriesCard tests', () => {
       <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />
     );
     expect(wrapper.find('LineChart')).toHaveLength(0);
+    expect(wrapper.find('SkeletonText')).toHaveLength(1);
 
     wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUM} />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
+    expect(wrapper.find('SkeletonText')).toHaveLength(0);
   });
   test('does not fail to render if no data is given', () => {
     // For whatever reason, these devices do not give back real data so the No data message
