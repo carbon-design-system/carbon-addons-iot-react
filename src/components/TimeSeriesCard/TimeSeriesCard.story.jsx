@@ -30,10 +30,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 dataSourceId: 'temperature',
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100)}
@@ -65,10 +65,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                   dataSourceId: 'temperature',
                 },
               ],
-              xLabel: text('xLabel', 'Time {not-working}'),
-              yLabel: text('yLabel', 'Temperature {not-working} (˚F)'),
-              includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-              includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+              xLabel: 'Time {not-working}',
+              yLabel: 'Temperature {not-working} (˚F)',
+              includeZeroOnXaxis: true,
+              includeZeroOnYaxis: true,
               timeDataSourceId: 'timestamp',
             })}
             values={getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100)}
@@ -107,10 +107,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
@@ -139,10 +139,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
 
-            xLabel: text('xLabel', 'Time t'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time t',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
@@ -172,10 +172,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
@@ -204,10 +204,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
 
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
@@ -235,10 +235,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100)}
@@ -281,10 +281,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100)}
@@ -316,10 +316,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('year', 2, { min: 10, max: 100 }, 100)}
@@ -361,10 +361,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.TEAL),
               },
             ],
-            xLabel: text('xLabel', ''),
-            yLabel: text('yLabel', ''),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: '',
+            yLabel: '',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
@@ -391,10 +391,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('minute', 15, { min: 10, max: 100 }, 100)}
@@ -422,10 +422,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 24, { min: 10, max: 100 }, 100)}
@@ -453,10 +453,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
@@ -484,10 +484,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
@@ -515,10 +515,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
@@ -550,10 +550,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
@@ -585,10 +585,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 color: COLORS.TEAL,
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
@@ -621,10 +621,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 color: text('color', COLORS.TEAL),
               },
             ],
-            xLabel: text('xLabel', ''),
-            yLabel: text('yLabel', ''),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: '',
+            yLabel: '',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
@@ -653,10 +653,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
             unit: '˚F',
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
@@ -689,8 +689,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 color: text('color', COLORS.TEAL),
               },
             ],
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
@@ -745,10 +745,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
             alertRanges: [
               {
@@ -791,8 +791,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
             timeDataSourceId: 'timestamp',
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
           })}
           range="day"
           interval="hour"
@@ -820,10 +820,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 // color: text('color', COLORS.PURPLE),
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature (˚F)'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
@@ -862,9 +862,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 color: COLORS.TEAL,
               },
             ],
-            xLabel: text('xLabel', 'Time'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
@@ -894,10 +894,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
             unit: '˚F',
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
             chartType: TIME_SERIES_TYPES.BAR,
           })}
@@ -940,10 +940,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
             unit: '˚F',
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Temperature'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Temperature',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
@@ -984,10 +984,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
             unit: 'm/sec',
-            xLabel: text('xLabel', 'Time'),
-            yLabel: text('yLabel', 'Pressure'),
-            includeZeroOnXaxis: boolean('Include Zero On X-Axis', true),
-            includeZeroOnYaxis: boolean('Include Zero On Y-Axis', true),
+            xLabel: 'Time',
+            yLabel: 'Pressure',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
           locale={select('locale', ['fr', 'en'], 'fr')}
