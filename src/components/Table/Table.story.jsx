@@ -826,15 +826,14 @@ storiesOf('Watson IoT/Table', module)
           } },
         }        
 
-        options = {
-          hasRowEdit: true,
-          columns={columns.map(i => ({
-            ...i,
-            editDataFunction: () => { 
-              // Your edit data function here.. 
-            },
-          }))}          
-        }
+        options = { hasRowEdit: true }
+
+        columns={columns.map(i => ({
+          ...i,
+          editDataFunction: () => { 
+            // Your edit data function here.. 
+          },
+        }))}             
 
         The editDataFunction is called with this payload
         {
