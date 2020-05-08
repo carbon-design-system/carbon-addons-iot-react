@@ -415,16 +415,16 @@ const TableBodyRow = ({
             width={initialColumnWidth}
           >
             <StyledNestedSpan nestingOffset={offset}>
-              {col.renderDataFunction ? (
-                col.renderDataFunction({
-                  // Call the column renderer if it's provided
+              {col.editDataFunction && rowEditMode ? (
+                col.editDataFunction({
                   value: values[col.columnId],
                   columnId: col.columnId,
                   rowId: id,
                   row: values,
                 })
-              ) : col.editDataFunction && rowEditMode ? (
-                col.editDataFunction({
+              ) : col.renderDataFunction ? (
+                col.renderDataFunction({
+                  // Call the column renderer if it's provided
                   value: values[col.columnId],
                   columnId: col.columnId,
                   rowId: id,
