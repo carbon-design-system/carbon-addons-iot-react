@@ -81,6 +81,22 @@ describe('Header testcases', () => {
     ],
   };
 
+  const HeaderPropsWithoutOnClick = {
+    user: 'JohnDoe@ibm.com',
+    tenant: 'TenantId: Acme',
+    url: 'http://localhost:8989',
+    className: 'custom-class-name',
+    appName: 'Watson IoT Platform ',
+    skipto: 'skip',
+    actionItems: [
+      {
+        label: 'user',
+        onCLick: undefined,
+        btnContent: <Avatar fill="white" description="Icon" />,
+      },
+    ],
+  };
+
   it('should render', () => {
     const { container } = render(<Header {...HeaderProps} />);
     expect(container).toMatchSnapshot();
@@ -265,5 +281,11 @@ describe('Header testcases', () => {
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESCAPE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  test('onClick event on empty onClick prop', () => {
+    const { getByLabelText } = render(<Header {...HeaderPropsWithoutOnClick} />);
+    const menuItem = getByLabelText('user');
+    fireEvent.click(menuItem);
   });
 });

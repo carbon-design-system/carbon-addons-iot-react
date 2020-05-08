@@ -13,12 +13,12 @@ const getListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: { value: `Item ${idx + 1}` },
       isSelectable: true,
     }));
 
-const listItemsWithEmptyRow = getListItems(5).concat({ id: 6, content: { value: '' } });
+const listItemsWithEmptyRow = getListItems(5).concat({ id: '6', content: { value: '' } });
 
 const rowActions = [
   <Edit16 onClick={action('edit')} />,
@@ -39,7 +39,7 @@ const getListItemsWithActions = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
         rowActions,
@@ -50,7 +50,7 @@ const getListItemsWithOverflowMenu = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
         rowActions: rowActionsOverFlowMenu,
@@ -61,7 +61,7 @@ const getFatRowListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
@@ -73,7 +73,7 @@ const getFatRowListItemsWithActions = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
@@ -85,7 +85,7 @@ const getFatRowListItemsWithOverflowMenu = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
@@ -175,7 +175,6 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
       },
     }
   )
-
   .add(
     'list with overflow grow',
     withReadme(SimpleListREADME, () => (
@@ -196,7 +195,6 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
     )),
     { info: { text: `` } }
   )
-
   .add(
     'list with pageSize',
     withReadme(SimpleListREADME, () => (
