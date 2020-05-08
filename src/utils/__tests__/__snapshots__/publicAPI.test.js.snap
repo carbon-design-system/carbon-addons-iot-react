@@ -317,6 +317,7 @@ Map {
         "columnSelectionConfig": "Manage Columns",
         "currentPage": [Function],
         "downloadIconDescription": "Download table content",
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -746,6 +747,9 @@ Map {
               "type": "string",
             },
             "downloadIconDescription": Object {
+              "type": "string",
+            },
+            "editButtonAria": Object {
               "type": "string",
             },
             "filterAria": Object {
@@ -1208,6 +1212,7 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "currentPage": [Function],
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -1407,6 +1412,9 @@ Map {
               "type": "string",
             },
             "downloadIconDescription": Object {
+              "type": "string",
+            },
+            "editButtonAria": Object {
               "type": "string",
             },
             "filterAria": Object {
@@ -2099,6 +2107,7 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "currentPage": [Function],
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
