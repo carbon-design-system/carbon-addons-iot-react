@@ -69,6 +69,19 @@ describe('TimePickerSpinner', () => {
     expect(screen.getByRole('textbox').value).toEqual('00:00');
   });
 
+  test('value is not modified on unrelated keystroke', () => {
+    render(<TimePickerSpinner {...timePickerProps} spinner />);
+
+    screen.getByRole('textbox').focus();
+
+    fireEvent.keyUp(document.activeElement || document.body, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: keyCodes.ESCAPE,
+    });
+    expect(screen.getByRole('textbox').value).toEqual('');
+  });
+
   test('work with strings', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} value="xyz" spinner />);
 
@@ -104,6 +117,7 @@ describe('TimePickerSpinner', () => {
     upButton.simulate('mouseover');
     upButton.simulate('mouseout');
     upButton.simulate('blur');
+    upButton.simulate('mouseout');
     expect(
       wrapper
         .find('.iot--time-picker__wrapper')

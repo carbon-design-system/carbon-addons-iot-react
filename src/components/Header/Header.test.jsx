@@ -51,6 +51,7 @@ describe('Header testcases', () => {
       {
         label: 'user',
         btnContent: <Avatar fill="white" description="Icon" />,
+        menuLinkName: 'a menu link name',
         childContent: [
           {
             metaData: {

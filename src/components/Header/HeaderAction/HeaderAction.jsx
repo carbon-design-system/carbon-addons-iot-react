@@ -123,8 +123,5 @@ const HeaderAction = ({ item, index }) => {
 };
 
 HeaderAction.propTypes = HeaderActionPropTypes;
-HeaderAction.defaultProps = {
-  item: { onClick: () => {} },
-};
 
 export default HeaderAction;
