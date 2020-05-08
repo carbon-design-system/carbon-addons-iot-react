@@ -218,6 +218,7 @@
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.10.0",
     "weak": "^1.0.1",
+    "weak-napi": "^2.0.1",
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
   },

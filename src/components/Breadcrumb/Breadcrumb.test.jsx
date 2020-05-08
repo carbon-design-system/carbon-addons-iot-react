@@ -22,12 +22,6 @@ describe('Breadcrumb', () => {
 });
 
 describe('Breadcrumb with overflow', () => {
-  const originalOffsetHeight = Object.getOwnPropertyDescriptor(
-    HTMLElement.prototype,
-    'clientWidth'
-  );
-  const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
-
   beforeAll(() => {
     Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
       writable: true,

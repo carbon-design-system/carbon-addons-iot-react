@@ -62,9 +62,12 @@ const GaugeCard = ({
 }) => {
   const [loadedState, setLoadedState] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setLoadedState(true);
     }, 1000);
+    return () => {
+      clearTimeout(timeout);
+    };
   }, []);
 
   const myStyles = dataState
@@ -190,7 +193,7 @@ GaugeCard.defaultProps = {
       },
     ],
   },
-  values: [],
+  values: {},
 };
 
 GaugeCard.displayName = 'GaugeCard';

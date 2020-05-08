@@ -10272,7 +10272,7 @@ Map {
       },
       "description": null,
       "isLoading": false,
-      "values": Array [],
+      "values": Object {},
     },
     "displayName": "GaugeCard",
     "propTypes": Object {

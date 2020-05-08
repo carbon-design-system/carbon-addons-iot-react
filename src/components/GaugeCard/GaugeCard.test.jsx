@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 
 import GaugeCard, { getColor } from './GaugeCard';
 
@@ -44,7 +44,6 @@ const content = {
       dataSourceId: 'usage',
       units: '%',
       minimumValue: 0,
-      maximumValue: 100,
       color: 'orange',
       backgroundColor: '#e0e0e0',
       shape: 'circle',
@@ -99,9 +98,7 @@ const content = {
   ],
 };
 
-describe('GaugeCard testcases', () => {
-  const { container } = render(<GaugeCard content={content} />);
-
+describe('GaugeCard', () => {
   it('Threshold color should be green', () => {
     expect(getColor(content.gauges[2], 90).color).toEqual('green');
   });
@@ -110,7 +107,10 @@ describe('GaugeCard testcases', () => {
     expect(getColor(content.gauges[2], 4).color).toEqual('red');
   });
 
-  it('value should be zero', () => {
+  it('value should be zero', async () => {
+    jest.useFakeTimers();
+    const { container } = render(<GaugeCard content={content} />);
+    await waitFor(() => container.querySelector('.iot--gauge-trend'));
     expect(container.querySelector('.iot--gauge-trend')).toEqual(null);
   });
 });

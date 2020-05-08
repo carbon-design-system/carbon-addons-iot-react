@@ -303,22 +303,28 @@ const __unstableDateTimePicker = ({
     },
   };
 
-  useEffect(() => {
-    window.setTimeout(() => {
-      if (datePickerRef && datePickerRef.current) {
-        datePickerRef.current.cal.open();
-        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-        // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
-        if (typeof wrapper !== 'undefined' && wrapper !== null) {
-          const dp = document
-            .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
-            .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerRef.current.cal.calendarContainer);
+  useEffect(
+    () => {
+      const timeout = setTimeout(() => {
+        if (datePickerRef && datePickerRef.current) {
+          datePickerRef.current.cal.open();
+          // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
+          // the only way to display the calendar inline is to reparent its DOM to our component
+          const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
+          if (typeof wrapper !== 'undefined' && wrapper !== null) {
+            const dp = document
+              .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
+              .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
+            dp.appendChild(datePickerRef.current.cal.calendarContainer);
+          }
         }
-      }
-    }, 0);
-  });
+      }, 0);
+      return () => {
+        clearTimeout(timeout);
+      };
+    },
+    [datePickerRef]
+  );
 
   /**
    * Parses a value object into a human readable value

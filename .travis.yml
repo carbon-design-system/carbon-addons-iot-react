@@ -23,7 +23,7 @@ install:
 
 script:
   - yarn lint
-  - travis_wait yarn test --runInBand --ci --logHeapUsage --coverage && cat ./coverage/lcov.info | yarn run coveralls && rm -rf ./coverage # report coveralls status
+  - travis_wait yarn test --maxWorkers=2 --ci --logHeapUsage --coverage && cat ./coverage/lcov.info | yarn run coveralls && rm -rf ./coverage # report coveralls status
 
 after_success:
   - yarn publish-npm

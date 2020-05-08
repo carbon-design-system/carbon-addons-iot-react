@@ -93,14 +93,13 @@ describe('Header testcases', () => {
   it('sidepanel should render', () => {
     const headerPanel = {
       className: 'header-panel',
-      /* eslint-disable */
 
       content: React.forwardRef((props, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" ref={ref} {...props}>
           Header panel content
         </a>
       )),
-      /* eslint-enable */
     };
     const { queryAllByLabelText } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     expect(queryAllByLabelText(APP_SWITCHER).length).toBeGreaterThan(0);
@@ -168,14 +167,13 @@ describe('Header testcases', () => {
   it('App switcher opens', () => {
     const headerPanel = {
       className: 'header-panel',
-      /* eslint-disable */
-
+      // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" ref={ref} {...props}>
           Header panel content
         </a>
       )),
-      /* eslint-enable */
     };
     const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
@@ -190,17 +188,16 @@ describe('Header testcases', () => {
     );
   });
 
-  test('onClick expands', () => {
+  it('onClick expands', () => {
     const headerPanel = {
       className: 'header-panel',
-      /* eslint-disable */
-
+      // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" ref={ref} {...props}>
           Header panel content
         </a>
       )),
-      /* eslint-enable */
     };
     const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
@@ -209,17 +206,16 @@ describe('Header testcases', () => {
     expect(menuItem.getAttribute('aria-expanded')).toBeTruthy();
   });
 
-  test('onKeyDown expands with enter', () => {
+  it('onKeyDown expands with enter', () => {
     const headerPanel = {
       className: 'header-panel',
-      /* eslint-disable */
-
+      // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" ref={ref} {...props}>
           Header panel content
         </a>
       )),
-      /* eslint-enable */
     };
     const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = getByTestId('menuitem');
@@ -229,17 +225,16 @@ describe('Header testcases', () => {
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
-  test('onKeyDown expands with space', () => {
+  it('onKeyDown expands with space', () => {
     const headerPanel = {
       className: 'header-panel',
-      /* eslint-disable */
-
+      // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" ref={ref} {...props}>
           Header panel content
         </a>
       )),
-      /* eslint-enable */
     };
     const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = getByTitle('help');
@@ -249,17 +244,16 @@ describe('Header testcases', () => {
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
-  test('onKeyDown esc on parent closes an open menu', () => {
+  it('onKeyDown esc on parent closes an open menu', () => {
     const headerPanel = {
       className: 'header-panel',
-      /* eslint-disable */
-
+      // eslint-disable-next-line react/no-multi-comp
       content: React.forwardRef((props, ref) => (
+        // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a href="#" ref={ref} {...props}>
           Header panel content
         </a>
       )),
-      /* eslint-enable */
     };
     const { getByTestId, getByRole } = render(
       <Header {...HeaderProps} headerPanel={headerPanel} />
