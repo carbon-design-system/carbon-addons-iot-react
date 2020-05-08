@@ -287,5 +287,6 @@ describe('Header testcases', () => {
     const { getByLabelText } = render(<Header {...HeaderPropsWithoutOnClick} />);
     const menuItem = getByLabelText('user');
     fireEvent.click(menuItem);
+    expect(getByLabelText('user')).toBeTruthy();
   });
 });
