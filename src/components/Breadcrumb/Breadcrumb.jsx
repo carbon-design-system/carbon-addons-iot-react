@@ -59,20 +59,16 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
     ref: breadcrumbRef,
   });
 
-  if (__DEV__) {
-    if (hasOverflow) {
-      warning(
-        browserSupportsResizeObserver,
-        'You have set hasOverflow to true, but the current browser does not support ResizeObserver. You will need to include a ResizeObserver polyfill for hasOverflow to function properly.'
-      );
-    }
+  if (__DEV__ && hasOverflow) {
+    warning(
+      browserSupportsResizeObserver,
+      'You have set hasOverflow to true, but the current browser does not support ResizeObserver. You will need to include a ResizeObserver polyfill for hasOverflow to function properly.'
+    );
   }
-
-  const useOverflow = browserSupportsResizeObserver && hasOverflow;
 
   useEffect(
     () => {
-      if (useOverflow && breadcrumbRef.current) {
+      if (browserSupportsResizeObserver && hasOverflow && breadcrumbRef.current) {
         setOverflowItems([]);
         setAfterOverflowItems(childrenItems.slice(1));
         setPrevChildren(children);
@@ -83,7 +79,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
   /** update breadcrumbs  */
   useEffect(
     () => {
-      if (useOverflow && breadcrumbRef.current) {
+      if (browserSupportsResizeObserver && hasOverflow && breadcrumbRef.current) {
         // The visible list is overflowing
         if (breadcrumbRef.current.clientWidth < breadcrumbRef.current.scrollWidth) {
           // Record the width of the list
@@ -118,7 +114,7 @@ const Breadcrumb = ({ children, className, hasOverflow, ...other }) => {
       ref={browserSupportsResizeObserver ? breadcrumbRef : null}
       data-testid="overflow"
     >
-      {useOverflow ? (
+      {browserSupportsResizeObserver && hasOverflow ? (
         <CarbonBreadcrumb className={className} {...other}>
           {childrenItems[0]}
           {overflowItems.length > 0 && (
