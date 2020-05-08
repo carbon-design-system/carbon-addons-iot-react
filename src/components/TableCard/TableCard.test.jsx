@@ -4,9 +4,9 @@ import { render, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { tableColumns, tableData, actions2 } from '../../utils/sample';
+import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
 
-import TableCard, { findMatchingThresholds } from './TableCard';
+import TableCard, { findMatchingThresholds, createColumnsWithFormattedLinks } from './TableCard';
 
 describe('TableCard', () => {
   const thresholds = [
@@ -53,6 +53,11 @@ describe('TableCard', () => {
       { airflow_mean: null }
     );
     expect(zeroMatchingThreshold2).toHaveLength(0);
+  });
+  test('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {
+    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
+    const columnsWithlinks = columnsWithFormattedLinks.filter(column => column.renderDataFunction);
+    expect(columnsWithlinks).toHaveLength(1);
   });
   test('Clicked row actions', () => {
     const onCardAction = jest.fn();
