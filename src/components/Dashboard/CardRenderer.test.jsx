@@ -123,7 +123,7 @@ const cardValues = [
 const onClick = jest.fn();
 
 describe('CardRenderer testcases', () => {
-  test('load card data', async () => {
+  it('load card data', async () => {
     let state = {
       dataSource: {},
       hasLoaded: false,
@@ -140,7 +140,7 @@ describe('CardRenderer testcases', () => {
     expect(state.hasLoaded).toEqual(true);
   });
 
-  test('expanded card rendered', async () => {
+  it('expanded card rendered', async () => {
     const { getByTitle } = render(
       <Dashboard
         title="My Dashboard"

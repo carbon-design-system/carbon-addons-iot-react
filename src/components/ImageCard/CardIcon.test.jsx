@@ -15,7 +15,7 @@ describe('CardIcon', () => {
     // globally this is false, but we need it true so the warning pops
     global.__DEV__ = false;
   });
-  test('validate default', () => {
+  it('validate default', () => {
     render(<CardIcon icon="bogus" title="title" color="#FFFFFF" />);
     expect(spy.console).toHaveBeenCalled();
   });

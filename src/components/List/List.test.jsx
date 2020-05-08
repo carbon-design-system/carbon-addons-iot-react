@@ -14,29 +14,29 @@ describe('List component tests', () => {
         isSelectable: true,
       }));
 
-  test('List when pagination is null', () => {
+  it('List when pagination is null', () => {
     const renderedElement = render(<List title="list" items={getListItems(5)} />);
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
-  test('List to have default handleSelect', () => {
+  it('List to have default handleSelect', () => {
     expect(List.defaultProps.handleSelect).toBeDefined();
     List.defaultProps.handleSelect();
   });
 
-  test('List to have default toggleExpansion', () => {
+  it('List to have default toggleExpansion', () => {
     expect(List.defaultProps.toggleExpansion).toBeDefined();
     List.defaultProps.toggleExpansion();
   });
 
-  test('List when selectedIds is set', () => {
+  it('List when selectedIds is set', () => {
     const renderedElement = render(
       <List title="list" items={getListItems(5)} selectedIds={['1', '2']} />
     );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
-  test('List hasChildren and expanded', () => {
+  it('List hasChildren and expanded', () => {
     const { getByTitle } = render(
       <List
         title="list"

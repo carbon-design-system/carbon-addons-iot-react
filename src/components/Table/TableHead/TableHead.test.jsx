@@ -32,13 +32,13 @@ const commonTableHeadProps = {
 };
 
 describe('TableHead', () => {
-  test('columns should render', () => {
+  it('columns should render', () => {
     const wrapper = mount(<TableHead {...commonTableHeadProps} />);
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(3);
   });
 
-  test('columns should render extra column for multi select', () => {
+  it('columns should render extra column for multi select', () => {
     const myProps = {
       ...commonTableHeadProps,
       options: {
@@ -51,7 +51,7 @@ describe('TableHead', () => {
     expect(tableHeaders).toHaveLength(4);
   });
 
-  test('hasRowActions flag creates empty TableHeader', () => {
+  it('hasRowActions flag creates empty TableHeader', () => {
     const myProps = {
       ...commonTableHeadProps,
       options: {
@@ -68,14 +68,14 @@ describe('TableHead', () => {
     expect(lastTableHeader.find('.bx--table-header-label').getDOMNode().innerHTML).toEqual('');
   });
 
-  test('make sure data-column is set for width', () => {
+  it('make sure data-column is set for width', () => {
     const myProps = { ...commonTableHeadProps };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find('th[data-column="col1"]');
     expect(tableHeaders).toHaveLength(1);
   });
 
-  test('activeBar set to "filter" shows FilterHeaderRow', () => {
+  it('activeBar set to "filter" shows FilterHeaderRow', () => {
     const myProps = { ...commonTableHeadProps, tableState: { ...commonTableHeadProps.tableState } };
     myProps.tableState.activeBar = 'filter';
     let wrapper = mount(<TableHead {...myProps} />);
@@ -86,14 +86,14 @@ describe('TableHead', () => {
     expect(wrapper.exists('FilterHeaderRow')).toBeFalsy();
   });
 
-  test('activeBar set to "column" shows ColumnHeaderRow', () => {
+  it('activeBar set to "column" shows ColumnHeaderRow', () => {
     const myProps = { ...commonTableHeadProps, tableState: { ...commonTableHeadProps.tableState } };
     myProps.tableState.activeBar = 'column';
     const wrapper = mount(<TableHead {...myProps} />);
     expect(wrapper.exists('ColumnHeaderRow')).toBeTruthy();
   });
 
-  test('check has resize if has resize is true ', () => {
+  it('check has resize if has resize is true ', () => {
     const myProps = { ...commonTableHeadProps, options: { hasResize: true } };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
@@ -101,14 +101,14 @@ describe('TableHead', () => {
     expect(tableHeaders).toHaveLength(2);
   });
 
-  test('check not resize if has resize is false ', () => {
+  it('check not resize if has resize is false ', () => {
     const myProps = { ...commonTableHeadProps, options: { hasResize: false } };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(0);
   });
 
-  test('check hidden item is not shown ', () => {
+  it('check hidden item is not shown ', () => {
     const myProps = {
       ...commonTableHeadProps,
       tableState: {
@@ -127,7 +127,7 @@ describe('TableHead', () => {
     expect(tableHeaders).toHaveLength(2);
   });
 
-  test('header renders with resizing columns when columns are empty on initial render', () => {
+  it('header renders with resizing columns when columns are empty on initial render', () => {
     const wrapper = mount(
       <TableHead
         columns={[]}
@@ -159,7 +159,7 @@ describe('TableHead', () => {
     expect(tableHeaderResizeHandles).toHaveLength(2);
   });
 
-  test('fixed column widths for non-resizable columns', () => {
+  it('fixed column widths for non-resizable columns', () => {
     const myProps = {
       ...commonTableHeadProps,
       columns: [{ id: 'col1', name: 'Column 1', width: '101' }],
@@ -217,7 +217,7 @@ describe('TableHead', () => {
       Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
     });
 
-    test('toggle hide column correctly updates the column widths of visible columns', () => {
+    it('toggle hide column correctly updates the column widths of visible columns', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
@@ -241,7 +241,7 @@ describe('TableHead', () => {
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleHide);
     });
 
-    test('toggle show column correctly updates the column widths of visible columns', () => {
+    it('toggle show column correctly updates the column widths of visible columns', () => {
       myProps.tableState = {
         ...myProps.tableState,
         ordering: [
@@ -274,7 +274,7 @@ describe('TableHead', () => {
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
-    test('the last visible column should never have a resize handle', () => {
+    it('the last visible column should never have a resize handle', () => {
       myProps.tableState = {
         ...myProps.tableState,
         ordering: [

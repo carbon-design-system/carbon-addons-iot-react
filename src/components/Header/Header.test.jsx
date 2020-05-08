@@ -283,7 +283,7 @@ describe('Header testcases', () => {
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
-  test('onClick event on empty onClick prop', () => {
+  it('onClick event on empty onClick prop', () => {
     const { getByLabelText } = render(<Header {...HeaderPropsWithoutOnClick} />);
     const menuItem = getByLabelText('user');
     fireEvent.click(menuItem);

@@ -8,7 +8,7 @@ import { itemsAndComponents } from './WizardInline.story';
 const fakeBlurb = faker.lorem.sentence();
 
 describe('WizardInline tests', () => {
-  test('blurb prop', () => {
+  it('blurb prop', () => {
     let wrapper = shallow(
       <WizardInline
         title="Wizard Title"
@@ -29,7 +29,7 @@ describe('WizardInline tests', () => {
     );
     expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
   });
-  test('deprecation notice', () => {
+  it('deprecation notice', () => {
     // globally this is false, but we need it true so the warning pops
     global.__DEV__ = true;
 

@@ -142,7 +142,7 @@ describe('Table', () => {
     },
   ];
 
-  test('handles row collapse', () => {
+  it('handles row collapse', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -160,7 +160,7 @@ describe('Table', () => {
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
-  test('handles row expansion', () => {
+  it('handles row expansion', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -177,7 +177,7 @@ describe('Table', () => {
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
-  test('handles column sort', () => {
+  it('handles column sort', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -191,7 +191,7 @@ describe('Table', () => {
     expect(mockActions.table.onChangeSort).toHaveBeenCalled();
   });
 
-  test('custom emptystate only renders with no filters', () => {
+  it('custom emptystate only renders with no filters', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -228,7 +228,7 @@ describe('Table', () => {
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
   });
 
-  test('validate row count function ', () => {
+  it('validate row count function ', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -257,7 +257,7 @@ describe('Table', () => {
     expect(renderItemRangeField).toContain('items');
   });
 
-  test('validate show/hide hasRowCountInHeader property ', () => {
+  it('validate show/hide hasRowCountInHeader property ', () => {
     const tableHeaderWrapper = mount(
       <TableToolbar actions={mockActions} options={options} tableState={tableState} />
     );
@@ -277,7 +277,7 @@ describe('Table', () => {
     expect(renderRowCountLabel2).toHaveLength(0);
   });
 
-  test('enter key should trigger onDownload', () => {
+  it('enter key should trigger onDownload', () => {
     const { getByTestId } = render(
       <TableToolbar actions={mockActions.toolbar} options={options2} tableState={tableState} />
     );
@@ -288,7 +288,7 @@ describe('Table', () => {
     expect(mockActions.toolbar.onDownloadCSV).toHaveBeenCalledTimes(1);
   });
 
-  test('enter key should trigger onColumnSelection', () => {
+  it('enter key should trigger onColumnSelection', () => {
     const { getByTestId } = render(
       <TableToolbar
         actions={mockActions.toolbar}
@@ -303,7 +303,7 @@ describe('Table', () => {
     expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(1);
   });
 
-  test('enter key should trigger onFilter', () => {
+  it('enter key should trigger onFilter', () => {
     const { getByTestId } = render(
       <TableToolbar
         actions={mockActions.toolbar}
@@ -318,7 +318,7 @@ describe('Table', () => {
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
 
-  test('toolbar search should render with default value', () => {
+  it('toolbar search should render with default value', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -354,7 +354,7 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
-  test('cells should always wrap by default', () => {
+  it('cells should always wrap by default', () => {
     const wrapper = mount(
       <Table columns={tableColumns} data={[tableData[0]]} options={{ hasResize: true }} />
     );
@@ -376,7 +376,7 @@ describe('Table', () => {
     expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
   });
 
-  test('cells should truncate with wrapCellText:auto if resize or fixed col widths', () => {
+  it('cells should truncate with wrapCellText:auto if resize or fixed col widths', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -398,7 +398,7 @@ describe('Table', () => {
     expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeTruthy();
   });
 
-  test('cells should wrap (not truncate) with wrapCellText:auto if no resize nor fixed col widths', () => {
+  it('cells should wrap (not truncate) with wrapCellText:auto if no resize nor fixed col widths', () => {
     const wrapper3 = mount(
       <Table
         columns={tableColumns}
@@ -412,7 +412,7 @@ describe('Table', () => {
     expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('auto');
   });
 
-  test('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {
+  it('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}
@@ -426,7 +426,7 @@ describe('Table', () => {
     expect(wrapper.find(TableHead).prop('options').truncateCellText).toBeFalsy();
   });
 
-  test('cells should always wrap when wrapCellText is always', () => {
+  it('cells should always wrap when wrapCellText is always', () => {
     const wrapper = mount(
       <Table
         columns={tableColumns}

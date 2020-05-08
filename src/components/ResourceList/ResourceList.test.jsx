@@ -27,7 +27,7 @@ const resourceData = [
 
 describe('Resource List', () => {
   // handle click function test
-  test('onRowClick', () => {
+  it('onRowClick', () => {
     const onRowClick = jest.fn();
     const wrapper = mount(
       <ResourceList
@@ -44,7 +44,7 @@ describe('Resource List', () => {
       .simulate('click');
     expect(onRowClick.mock.calls).toHaveLength(1);
   });
-  test('customAction', () => {
+  it('customAction', () => {
     const actionClick = jest.fn();
     const wrapper = mount(
       <ResourceList
@@ -63,7 +63,7 @@ describe('Resource List', () => {
       .simulate('click');
     expect(actionClick.mock.calls).toHaveLength(1);
   });
-  test('extraContent', () => {
+  it('extraContent', () => {
     const wrapper = mount(
       <ResourceList
         design="normal"

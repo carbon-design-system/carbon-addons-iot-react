@@ -69,7 +69,7 @@ describe('TableHead', () => {
 });
 
 describe('ColumnHeaderRow test', () => {
-  test('when hasRowExpansion set to true', () => {
+  it('when hasRowExpansion set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasRowExpansion: true },
@@ -82,7 +82,7 @@ describe('ColumnHeaderRow test', () => {
     expect(getByText('Column 2').textContent).toContain('Column 2');
   });
 
-  test('when ordering is empty, no columns are displayed', () => {
+  it('when ordering is empty, no columns are displayed', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       ordering: [],
@@ -94,7 +94,7 @@ describe('ColumnHeaderRow test', () => {
     expect(renderedElement.container.innerHTML).toContain('colspan="2"');
   });
 
-  test('when hasRowActions set to true', () => {
+  it('when hasRowActions set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,
       options: { ...commonTableHeadProps.options, hasRowActions: true },
@@ -108,7 +108,7 @@ describe('ColumnHeaderRow test', () => {
     expect(renderedElement.container.innerHTML).toContain('colspan="3"');
   });
 
-  test('column selection config renders and fires callback on click', () => {
+  it('column selection config renders and fires callback on click', () => {
     const onColumnSelectionConfig = jest.fn();
     const tableHeadProps = {
       ...commonTableHeadProps,

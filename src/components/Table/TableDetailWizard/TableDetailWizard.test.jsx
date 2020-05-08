@@ -5,7 +5,7 @@ import TableDetailWizard from './TableDetailWizard';
 import { itemsAndComponents } from './TableDetailWizard.story';
 
 describe('TableDetailWizard tests', () => {
-  test('Error dialog', () => {
+  it('Error dialog', () => {
     const onClearError = jest.fn();
     const errorString = 'There is an error';
 
@@ -23,7 +23,7 @@ describe('TableDetailWizard tests', () => {
     );
     expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(errorString);
   });
-  test('Handle Clear error', () => {
+  it('Handle Clear error', () => {
     const onClearError = jest.fn();
     const errorString = 'There is an error';
 
@@ -42,7 +42,7 @@ describe('TableDetailWizard tests', () => {
     wrapper.find('NotificationButton').simulate('click');
     expect(onClearError.mock.calls).toHaveLength(1);
   });
-  test('Handle current item empty', () => {
+  it('Handle current item empty', () => {
     const wrapper = mount(
       <TableDetailWizard
         currentItemId=""

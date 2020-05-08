@@ -7,7 +7,7 @@ import PageWizard from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
 
 describe('PageWizard tests', () => {
-  test('error states', () => {
+  it('error states', () => {
     const i18n = {
       close: 'Close',
     };
@@ -28,12 +28,12 @@ describe('PageWizard tests', () => {
     expect(queryByText('My Custom Error')).toBeNull();
   });
 
-  test('currentStepId prop', () => {
+  it('currentStepId prop', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content}</PageWizard>);
     expect(wrapper.find('PageWizardStep').prop('id')).toEqual('step1');
   });
 
-  test('button events during first step (no validation)', () => {
+  it('button events during first step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),
       onClose: jest.fn(),
@@ -53,7 +53,7 @@ describe('PageWizard tests', () => {
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
-  test('button events during middle step (no validation)', () => {
+  it('button events during middle step (no validation)', () => {
     const mocks = {
       onBack: jest.fn(),
       onNext: jest.fn(),
@@ -73,7 +73,7 @@ describe('PageWizard tests', () => {
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
-  test('button events during final step (no validation)', () => {
+  it('button events during final step (no validation)', () => {
     const mocks = {
       onBack: jest.fn(),
       onSubmit: jest.fn(),
@@ -93,7 +93,7 @@ describe('PageWizard tests', () => {
     expect(mocks.onSubmit).toHaveBeenCalledTimes(1);
   });
 
-  test('validation in first step', () => {
+  it('validation in first step', () => {
     const mocks = {
       onNext: jest.fn(),
     };
@@ -121,7 +121,7 @@ describe('PageWizard tests', () => {
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
-  test('progress indicator should not render if there is only 1 step', () => {
+  it('progress indicator should not render if there is only 1 step', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
     expect(wrapper.find(ProgressIndicator)).toHaveLength(0);
   });

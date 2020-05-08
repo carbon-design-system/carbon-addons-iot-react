@@ -18,7 +18,7 @@ describe('RowActionsCell', () => {
   beforeEach(() => {
     mockApplyRowAction.mockClear();
   });
-  test('click handler', () => {
+  it('click handler', () => {
     const actions = [{ id: 'addAction', renderIcon: Add32, iconDescription: 'See more' }];
     const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
     const button = wrapper.find('.bx--btn');
@@ -27,7 +27,7 @@ describe('RowActionsCell', () => {
     button.at(0).simulate('click');
     expect(mockApplyRowAction).toHaveBeenCalledTimes(1);
   });
-  test('custom SVG in button', () => {
+  it('custom SVG in button', () => {
     const actions = [
       { id: 'addAction', renderIcon: () => <svg title="my svg" />, iconDescription: 'See more' },
     ];
@@ -39,7 +39,7 @@ describe('RowActionsCell', () => {
     expect(mockApplyRowAction).toHaveBeenCalledTimes(1);
   });
 
-  test('overflow menu trigger has ID', () => {
+  it('overflow menu trigger has ID', () => {
     const actions = [
       { id: 'add', renderIcon: Add32, iconDescription: 'See more' },
       { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
@@ -50,7 +50,7 @@ describe('RowActionsCell', () => {
     expect(button).toHaveLength(1);
   });
 
-  test('actions are wrapped in special gradient background container', () => {
+  it('actions are wrapped in special gradient background container', () => {
     const action = {
       id: 'addAction',
       renderIcon: Add32,
@@ -67,7 +67,7 @@ describe('RowActionsCell', () => {
     expect(button.text()).toEqual(action.labelText);
   });
 
-  test('action container background knows when overflow menu is open (in order to stay visible)', () => {
+  it('action container background knows when overflow menu is open (in order to stay visible)', () => {
     const actions = [{ id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' }];
     const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
 

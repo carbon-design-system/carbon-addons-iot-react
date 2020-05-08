@@ -19,7 +19,7 @@ const tableRowProps = {
 };
 
 describe('TableBodyRow', () => {
-  test('shouldExpandOnRowClick', () => {
+  it('shouldExpandOnRowClick', () => {
     // Should expand
     const tableRowExpandByDefault = mount(
       <TableBodyRow
@@ -59,7 +59,7 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowClicked).toHaveBeenCalled();
     expect(mockActions.onRowExpanded).not.toHaveBeenCalled();
   });
-  test('verify rendering with undefined column', () => {
+  it('verify rendering with undefined column', () => {
     const tableRowPropsWithUndefined = {
       tableId: 'tableId',
       totalColumns: 1,
@@ -73,7 +73,7 @@ describe('TableBodyRow', () => {
     );
     expect(wrapper).toBeDefined();
   });
-  test('verify custom cell renderer', () => {
+  it('verify custom cell renderer', () => {
     const customRenderDataFunction = ({ value, columnId, rowId, row }) => (
       <div id={value}>
         {value} {columnId} {rowId} {JSON.stringify(row)}
@@ -104,7 +104,7 @@ describe('TableBodyRow', () => {
     expect(customCell.text()).toContain('value2');
   });
 
-  test('hasRowMultiSelect', () => {
+  it('hasRowMultiSelect', () => {
     const mockRowSelection = jest.fn();
     const mockRowClicked = jest.fn();
     const tableRowPropsWithSelection = {
@@ -124,7 +124,7 @@ describe('TableBodyRow', () => {
     expect(mockRowSelection).toHaveBeenCalled();
   });
 
-  test('hasRowSingleSelection', () => {
+  it('hasRowSingleSelection', () => {
     const tableBodyRow = mount(
       <TableBodyRow
         options={{ hasRowSelection: 'single' }}

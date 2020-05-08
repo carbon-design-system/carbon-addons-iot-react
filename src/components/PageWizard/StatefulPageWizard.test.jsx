@@ -5,7 +5,7 @@ import StatefulPageWizard from './StatefulPageWizard';
 import { content } from './PageWizard.story';
 
 describe('StatefulPageWizard tests', () => {
-  test('button events during first step (no validation)', () => {
+  it('button events during first step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),
       onClose: jest.fn(),
@@ -30,7 +30,7 @@ describe('StatefulPageWizard tests', () => {
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
-  test('button events during second step (no validation)', () => {
+  it('button events during second step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),
       onBack: jest.fn(),
@@ -59,7 +59,7 @@ describe('StatefulPageWizard tests', () => {
     expect(mocks.onNext).toHaveBeenCalledTimes(2);
   });
 
-  test('button events during final step (no validation)', () => {
+  it('button events during final step (no validation)', () => {
     const mocks = {
       onBack: jest.fn(),
       onNext: jest.fn(),
@@ -90,7 +90,7 @@ describe('StatefulPageWizard tests', () => {
     expect(mocks.onSubmit).toHaveBeenCalledTimes(1);
   });
 
-  test('step indicator to go to a specific step', () => {
+  it('step indicator to go to a specific step', () => {
     const mocks = {
       setStep: jest.fn(),
     };
@@ -106,7 +106,7 @@ describe('StatefulPageWizard tests', () => {
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
-  test('without setting currentStepId', () => {
+  it('without setting currentStepId', () => {
     const mocks = {
       setStep: jest.fn(),
     };
@@ -118,7 +118,7 @@ describe('StatefulPageWizard tests', () => {
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
-  test("not passing onBack function doesn't blow things up", () => {
+  it('not passing onBack function does not blow things up', () => {
     const i18n = {
       back: 'Back',
       next: 'Next',
