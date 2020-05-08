@@ -71,3 +71,7 @@
     min-width: 40px;
   }
 }
+
+.#{$prefix}--data-table--sort thead tr:first-child th {
+  padding: 0 $spacing-05;
+}

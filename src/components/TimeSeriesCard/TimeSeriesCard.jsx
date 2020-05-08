@@ -24,12 +24,7 @@ import {
   handleCardVariables,
 } from '../../utils/cardUtilityFunctions';
 
-import {
-  generateSampleValues,
-  isValuesEmpty,
-  formatGraphTick,
-  findMatchingAlertRange,
-} from './timeSeriesUtils';
+import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
 
@@ -101,6 +96,7 @@ export const determinePrecision = (size, value, defaultPrecision) => {
 export const formatChartData = (timeDataSourceId = 'timestamp', series, values) => {
   const timestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
   const data = [];
+
   // Series is the different groups of datasets
   series.forEach(({ dataSourceId, dataFilter = {}, label }) => {
     timestamps.forEach(timestamp => {
@@ -243,8 +239,6 @@ const TimeSeriesCard = ({
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval)
     : valuesProp;
 
-  const isAllValuesEmpty = isValuesEmpty(values, timeDataSourceId);
-
   // Unfortunately the API returns the data out of order sometimes
   const valueSort = useMemo(
     () =>
@@ -351,6 +345,8 @@ const TimeSeriesCard = ({
     valueSort,
   ]);
 
+  const isChartDataEmpty = isEmpty(chartData);
+
   const { tableData, columnNames } = useMemo(
     () => {
       let maxColumnNames = [];
@@ -407,10 +403,11 @@ const TimeSeriesCard = ({
       {...others}
       isExpanded={isExpanded}
       isEditable={isEditable}
-      isEmpty={isAllValuesEmpty}
+      isEmpty={isChartDataEmpty}
       isLazyLoading={isLazyLoading || (valueSort && valueSort.length > 200)}
+      isLoading={isLoading}
     >
-      {!isLoading && !isAllValuesEmpty ? (
+      {!isChartDataEmpty ? (
         <>
           <LineChartWrapper
             size={newSize}
@@ -438,7 +435,7 @@ const TimeSeriesCard = ({
                     includeZero: includeZeroOnXaxis,
                   },
                   left: {
-                    title: `${yLabel} ${unit ? `(${unit})` : ''}`,
+                    title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
                     mapsTo: 'value',
                     ticks: {
                       formatter: axisValue => valueFormatter(axisValue, newSize, null, locale),
