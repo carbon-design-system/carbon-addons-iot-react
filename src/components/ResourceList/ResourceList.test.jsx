@@ -25,7 +25,7 @@ const resourceData = [
   },
 ];
 
-describe('Resource List', () => {
+describe('ResourceList', () => {
   // handle click function test
   it('onRowClick', () => {
     const onRowClick = jest.fn();

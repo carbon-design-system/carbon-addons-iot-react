@@ -142,7 +142,7 @@ let wrapper = mount(
     onDashboardAction={onClick}
   />
 );
-describe('Dashboard testcases', () => {
+describe('Dashboard', () => {
   it('verify dashboard still renders with bad layout', () => {
     // should still render even with incorrect layout
     expect(wrapper).toBeDefined();

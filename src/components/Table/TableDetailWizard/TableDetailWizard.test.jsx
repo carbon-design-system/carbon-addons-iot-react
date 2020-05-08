@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import TableDetailWizard from './TableDetailWizard';
 import { itemsAndComponents } from './TableDetailWizard.story';
 
-describe('TableDetailWizard tests', () => {
+describe('TableDetailWizard', () => {
   it('Error dialog', () => {
     const onClearError = jest.fn();
     const errorString = 'There is an error';

@@ -6,7 +6,7 @@ import { ProgressIndicator } from 'carbon-components-react';
 import PageWizard from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
 
-describe('PageWizard tests', () => {
+describe('PageWizard', () => {
   it('error states', () => {
     const i18n = {
       close: 'Close',

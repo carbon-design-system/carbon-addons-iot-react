@@ -9,7 +9,7 @@ import TileGalleryViewSwitcher from './TileGalleryViewSwitcher';
 import TileGallery from './TileGallery';
 import StatefulTileGallery from './StatefulTileGallery';
 
-describe('TileGallery tests', () => {
+describe('TileGallery', () => {
   it('TileGalleryItem mode list', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="list" />);
 

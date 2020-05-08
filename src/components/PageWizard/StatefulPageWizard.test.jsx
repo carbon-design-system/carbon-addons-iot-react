@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 import StatefulPageWizard from './StatefulPageWizard';
 import { content } from './PageWizard.story';
 
-describe('StatefulPageWizard tests', () => {
+describe('StatefulPageWizard', () => {
   it('button events during first step (no validation)', () => {
     const mocks = {
       onNext: jest.fn(),

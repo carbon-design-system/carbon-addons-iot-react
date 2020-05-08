@@ -39,7 +39,7 @@ const timeSeriesCardProps = {
   onCardAction: () => {},
 };
 
-describe('TimeSeriesCard tests', () => {
+describe('TimeSeriesCard', () => {
   it('does not show line chart when loading', () => {
     let wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />

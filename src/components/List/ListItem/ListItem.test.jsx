@@ -4,7 +4,7 @@ import { Add16, Edit16 } from '@carbon/icons-react';
 
 import ListItem from './ListItem';
 
-describe('ListItem component tests', () => {
+describe('ListItem', () => {
   it('test ListItem gets rendered', () => {
     const { getByText } = render(<ListItem id="1" value="test" />);
     expect(getByText('test')).toBeTruthy();

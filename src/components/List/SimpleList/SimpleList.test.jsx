@@ -38,7 +38,7 @@ const getEmptyListItems = num =>
       isSelectable: true,
     }));
 
-describe('SimpleList component tests', () => {
+describe('SimpleList', () => {
   it('Simple List when pageSize is set to sm', () => {
     const { getByTitle } = render(
       <SimpleList title="Simple list" items={getListItems(5)} pageSize="sm" />

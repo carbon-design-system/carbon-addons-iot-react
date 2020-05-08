@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import TileCatalog from './TileCatalog';
 import { commonTileCatalogProps } from './TileCatalog.story';
 
-describe('TileCatalog tests', () => {
+describe('TileCatalog', () => {
   it('error prop', () => {
     // If we have data, never show the error state
     const wrapper = shallow(<TileCatalog {...commonTileCatalogProps} error="In error state" />);

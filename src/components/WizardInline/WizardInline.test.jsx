@@ -7,7 +7,7 @@ import { itemsAndComponents } from './WizardInline.story';
 
 const fakeBlurb = faker.lorem.sentence();
 
-describe('WizardInline tests', () => {
+describe('WizardInline', () => {
   it('blurb prop', () => {
     let wrapper = shallow(
       <WizardInline

@@ -17,7 +17,7 @@ const getTiles = num => {
   return tiles;
 };
 
-describe('TileCatalogNew tests', () => {
+describe('TileCatalogNew', () => {
   it('TileCatalogNew gets rendered', () => {
     const { getByText } = render(
       <TileCatalogNew

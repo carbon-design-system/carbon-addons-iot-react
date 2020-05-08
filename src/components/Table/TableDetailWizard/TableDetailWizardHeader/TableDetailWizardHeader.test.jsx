@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import TableDetailWizardHeader from './TableDetailWizardHeader';
 
-describe('TableDetailWizardHeader tests', () => {
+describe('TableDetailWizardHeader', () => {
   it('Close Header', () => {
     const onClose = jest.fn();
 

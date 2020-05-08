@@ -122,7 +122,7 @@ const cardValues = [
 
 const onClick = jest.fn();
 
-describe('CardRenderer testcases', () => {
+describe('CardRenderer', () => {
   it('load card data', async () => {
     let state = {
       dataSource: {},

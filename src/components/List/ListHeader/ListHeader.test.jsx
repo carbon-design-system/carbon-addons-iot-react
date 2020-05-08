@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import ListHeader from './ListHeader';
 
-describe('ListHeader tests', () => {
+describe('ListHeader', () => {
   it('ListHeader gets rendered', () => {
     const { getByText } = render(<ListHeader title="List Header" i18n={{}} />);
     expect(getByText('List Header')).toBeTruthy();

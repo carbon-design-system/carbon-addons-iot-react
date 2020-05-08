@@ -68,7 +68,7 @@ describe('TableHead', () => {
   });
 });
 
-describe('ColumnHeaderRow test', () => {
+describe('ColumnHeaderRow', () => {
   it('when hasRowExpansion set to true', () => {
     const tableHeadProps = {
       ...commonTableHeadProps,

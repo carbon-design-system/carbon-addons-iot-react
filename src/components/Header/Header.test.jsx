@@ -10,7 +10,7 @@ import Header, { APP_SWITCHER } from './Header';
 
 React.Fragment = ({ children }) => children;
 
-describe('Header testcases', () => {
+describe('Header', () => {
   const onClick = jest.fn();
   const HeaderProps = {
     user: 'JohnDoe@ibm.com',

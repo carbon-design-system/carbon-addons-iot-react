@@ -19,7 +19,7 @@ const cardProps = {
   id: 'my card',
 };
 
-describe('Card testcases', () => {
+describe('Card', () => {
   it('small', () => {
     const wrapper = mount(<Card {...cardProps} size={CARD_SIZES.SMALL} />);
 

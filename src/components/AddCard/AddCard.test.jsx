@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 
 import AddCard from './AddCard';
 
-describe('Add Card testcases', () => {
+describe('AddCard', () => {
   it('onClick', () => {
     const onClick = jest.fn();
     const wrapper = mount(<AddCard title="My Title" onClick={onClick} />);

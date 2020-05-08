@@ -24,7 +24,7 @@ import {
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
-describe('table reducer testcases', () => {
+describe('table reducer', () => {
   it('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
   });
@@ -65,7 +65,7 @@ describe('table reducer testcases', () => {
       expect(updatedState.view.table.filteredData.length).toBeLessThan(initialState.data.length);
     });
   });
-  describe('pagination tests', () => {
+  describe('pagination', () => {
     it('TABLE_PAGE_CHANGE ', () => {
       const updatedState = tableReducer(initialState, tablePageChange({ page: 3, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(3);

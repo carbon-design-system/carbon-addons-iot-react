@@ -25,7 +25,7 @@ const barChartCardProps = {
   onCardAction: () => {},
 };
 
-describe('BarChartCard tests', () => {
+describe('BarChartCard', () => {
   it('does not show bar chart when loading', () => {
     let wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);

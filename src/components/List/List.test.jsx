@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import List from './List';
 import { sampleHierarchy } from './List.story';
 
-describe('List component tests', () => {
+describe('List', () => {
   const getListItems = num =>
     Array(num)
       .fill(0)
