@@ -4025,20 +4025,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -6851,20 +6837,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -7731,20 +7703,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
@@ -8668,6 +8626,7 @@ Map {
       "i18n": Object {
         "loadingDataLabel": "Loading hotspot data",
       },
+      "locale": "en",
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -9267,20 +9226,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
@@ -10149,20 +10094,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
@@ -11065,20 +10996,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -11877,20 +11794,6 @@ Map {
       },
       "id": Object {
         "type": "string",
-      },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
       },
       "isEditable": Object {
         "type": "bool",
@@ -18758,6 +18661,7 @@ Map {
   "determineCardRange" => Object {},
   "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
+  "formatNumberWithPrecision" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

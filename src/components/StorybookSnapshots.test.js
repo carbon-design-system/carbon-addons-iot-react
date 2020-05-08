@@ -16,6 +16,8 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   const spy = {};
   beforeAll(done => {
     ReactDOM.findDOMNode = jest.fn(); // needed for this issue: https://github.com/facebook/react/issues/7371
+
+    ReactDOM.createPortal = node => node; // needed for tooltips in this issue https://github.com/facebook/react/issues/11565
     // TODO: remove once carbon PR is merged
     spy.console = jest.spyOn(console, 'error').mockImplementation(e => {
       if (
