@@ -83,6 +83,7 @@ describe('SimpleList component tests', () => {
   });
 
   // this is a failing test, opened defect at https://github.com/IBM/carbon-addons-iot-react/issues/1149
+  // eslint-disable-next-line jest/no-commented-out-tests
   // test('the first item is properly unselected via keyboard', () => {
   //   const { getAllByRole } = render(<SimpleList title="Simple list" items={getListItems(1)} />);
   //   fireEvent.keyPress(getAllByRole('button')[0], { key: 'Enter', charCode: 13 });

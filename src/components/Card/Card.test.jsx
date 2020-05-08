@@ -46,7 +46,7 @@ describe('Card testcases', () => {
 
     const childRenderInNoTitleCard = jest.fn();
 
-    mount(<Card size={CARD_SIZES.MEDIUM} children={childRenderInNoTitleCard} />);
+    mount(<Card size={CARD_SIZES.MEDIUM}>{childRenderInNoTitleCard}</Card>);
     expect(childRenderInNoTitleCard).toHaveBeenCalledWith(
       {
         width: 0,
