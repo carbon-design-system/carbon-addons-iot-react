@@ -211,4 +211,30 @@ describe('DateTimePicker tests', () => {
 
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(0);
   });
+
+  test('it should keep preset value when switching from presets to relative and back', () => {
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
+    wrapper
+      .find('.iot--date-time-picker__field')
+      .first()
+      .simulate('click');
+    // if you are wondering about hostNodes https://github.com/enzymejs/enzyme/issues/836#issuecomment-401260477
+    expect(
+      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+    ).toHaveLength(1);
+
+    wrapper
+      .find('.iot--date-time-picker__listitem--custom')
+      .first()
+      .simulate('click');
+
+    wrapper
+      .find('.iot--date-time-picker__menu-btn-back')
+      .first()
+      .simulate('click');
+
+    expect(
+      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+    ).toHaveLength(1);
+  });
 });
