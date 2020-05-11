@@ -13,11 +13,13 @@ const { iotPrefix } = settings;
  * It also hides the Items per page and x of x items text if the total width of the pagination bar is less than 500 px
  */
 const SizedPagination = sizeMe({ noPlaceholder: true })(
-  ({ isItemPerPageHidden, size, className, ...rest }) => (
+  ({ isItemPerPageHidden, size, className, preventInteraction, disabled, ...rest }) => (
     <Pagination
       {...rest}
+      disabled={preventInteraction || disabled}
       className={classnames(className, `${iotPrefix}--pagination`, {
         [`${iotPrefix}--pagination--hide-page`]: isItemPerPageHidden,
+        [`${iotPrefix}--pagination--hide-select`]: preventInteraction,
       })}
       style={{ '--pagination-text-display': size?.width && size?.width < 500 ? 'none' : 'flex' }}
     />
@@ -26,9 +28,13 @@ const SizedPagination = sizeMe({ noPlaceholder: true })(
 
 SizedPagination.propTypes = {
   isItemPerPageHidden: PropTypes.bool,
+  // It is currently not possible to completely disable the carbon pagination
+  // therefor we use this prop to combine disable and hiding of controls.
+  preventInteraction: PropTypes.bool,
 };
 SizedPagination.defaultProps = {
   isItemPerPageHidden: false,
+  preventInteraction: false,
 };
 
 export default SizedPagination;
