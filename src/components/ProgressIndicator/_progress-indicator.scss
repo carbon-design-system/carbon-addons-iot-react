@@ -1,6 +1,207 @@
 @import '~carbon-components/scss/components/progress-indicator/progress-indicator';
 @import '../../globals/vars';
 
+$IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+
+.#{$iot-prefix}--progress {
+  html[dir='rtl'] & {
+    float: right;
+    text-align: right;
+    width: 100%;
+
+    .step-button {
+      text-align: right;
+    }
+
+    .step-icon {
+      left: unset;
+      right: 0;
+      text-align: right;
+    }
+
+    .label {
+      left: unset;
+      right: $spacing-07;
+      text-align: right;
+    }
+
+    .label-optional {
+      left: unset;
+      right: $spacing-07;
+      text-align: right;
+    }
+
+    .line {
+      left: unset;
+      right: 11px;
+      text-align: right;
+    }
+  }
+
+  .label {
+    position: absolute;
+    font-family: $IBMPlexSans;
+    font-size: 14px;
+    color: #161616;
+    letter-spacing: 0.16px;
+    line-height: 18px;
+    left: $spacing-07;
+    top: 3px;
+    cursor: pointer;
+
+    &:hover {
+      color: #0f62fe;
+      text-decoration: underline;
+    }
+
+    &-optional {
+      @extend .label;
+      font-size: $spacing-04;
+      color: #525252;
+      letter-spacing: 0.32px;
+      line-height: $spacing-05;
+      top: 21px;
+      pointer-events: none;
+    }
+  }
+
+  .label-sub {
+    @extend .label;
+    top: 0;
+
+    &-optional {
+      @extend .label-sub;
+      top: 18px;
+    }
+  }
+
+  .line {
+    position: absolute;
+    flex: 1 1 auto;
+    width: $spacing-01;
+    height: 100%;
+    background-color: #e0e0e0;
+    top: $spacing-06;
+    left: 11px;
+
+    &-complete {
+      @extend .line;
+      background-color: #0f62fe;
+    }
+
+    &-sub {
+      @extend .line;
+      top: $spacing-05;
+
+      &-complete {
+        @extend .line-sub;
+        background-color: #0f62fe;
+      }
+    }
+  }
+
+  @mixin icon($border-color, $background-color: unset, $color: unset) {
+    .step-icon {
+      position: absolute;
+      width: $spacing-06;
+      height: $spacing-06;
+      top: 0;
+      left: 0;
+
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border: $spacing-01 solid $border-color;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: $color;
+      background-color: $background-color;
+      cursor: pointer;
+
+      //Checkmark fill color
+      svg {
+        fill: $color;
+      }
+
+      //Icon label
+      p {
+        font-family: $IBMPlexSans;
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: $spacing-06;
+      }
+
+      &-sub {
+        @extend .step-icon;
+        width: $spacing-05;
+        height: $spacing-05;
+        margin-left: $spacing-02;
+        margin-right: $spacing-02;
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .step-button {
+    display: flex;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    min-height: $layout-05;
+    padding: 0;
+    margin: 0;
+
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    cursor: default;
+    overflow: hidden;
+    outline: none;
+    border: none;
+  }
+
+  @mixin disableClick() {
+    .step-button {
+      @extend .step-button;
+      pointer-events: none;
+    }
+  }
+
+  .step-current {
+    @include icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
+    // @include disableClick();
+  }
+
+  .step-complete {
+    @include icon($border-color: #0f62fe, $color: #0f62fe);
+  }
+
+  .step-incomplete {
+    @include icon(#171717);
+    //@include disableClick();
+  }
+
+  .step-disabled {
+    @include icon(#bebebe, $color: #c6c6c6);
+    @include disableClick();
+
+    .label {
+      @extend .label;
+      color: #c6c6c6;
+    }
+  }
+
+  .step-invalid {
+    @include icon($border-color: #dd3b41, $color: #dd3b41);
+    //@include disableClick();
+  }
+}
+
 .#{$iot-prefix}--progress-indicator {
   &.#{$prefix}--progress--vertical {
     .#{$prefix}--progress-step {

@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { ProgressIndicatorSkeleton } from 'carbon-components-react';
 
 import ProgressIndicator from './ProgressIndicator';
+import { IotProgressIndicator } from './IotProgressIndicator';
 
 const items = [
   {
@@ -17,12 +18,18 @@ const items = [
   {
     id: 'step2',
     label: 'Second Step',
+    secondaryLabel: 'Optional label',
+    children: [
+      { id: 'step2_substep1', label: 'Sub Step 1' },
+      { id: 'step2_substep2', label: 'Sub Step 2', secondaryLabel: 'Optional label' },
+      { id: 'step2_substep3', label: 'Sub Step 3' },
+    ],
   },
-  { id: 'step3', label: 'Third Step' },
-  { id: 'step4', label: 'Fourth Step' },
-  { id: 'step5', label: 'Fifth Step' },
-  { id: 'step6', label: 'Sixth Step' },
+  { id: 'step3', label: 'Third Step', secondaryLabel: 'Optional label', disabled: true },
+  { id: 'step4', label: 'Fourth Step', secondaryLabel: 'Optional label', invalid: true },
+  { id: 'step5', label: 'Fifth Step', secondaryLabel: 'Optional label' },
 ];
+
 class ProgressIndicatorExample extends Component {
   state = {
     currentItemId: 'step1',
@@ -51,6 +58,15 @@ class ProgressIndicatorExample extends Component {
 
 /* Adds the stories */
 storiesOf('Watson IoT/ProgressIndicator', module)
+  .add('IoT ProgressIndicator', () => (
+    <IotProgressIndicator
+      items={items}
+      currentItemId={select('id', items.map(item => item.id), items[4].id)}
+      onClickItem={action('onClickItem')}
+      showLabels={boolean('showlabels', true)}
+      isVerticalMode={boolean('isVerticalMode', false)}
+    />
+  ))
   .add('Stateful', () => <ProgressIndicatorExample />)
   .add('presentation', () => (
     <ProgressIndicator

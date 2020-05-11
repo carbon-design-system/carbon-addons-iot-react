@@ -1,5 +1,345 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ProgressIndicator IoT ProgressIndicator 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <ul
+      className="iot--progress"
+      data-testid="progress-indicator-testid"
+      onChange={[Function]}
+    >
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line-complete"
+          />
+          <div
+            className="step-icon"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <p
+            className="label"
+            value="This is displayed when step icon is hovered"
+          >
+            First step
+          </p>
+          <p
+            className="label-optional"
+          >
+            Optional label
+          </p>
+        </button>
+      </li>
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line-complete"
+          />
+          <div
+            className="step-icon"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <p
+            className="label"
+            value="Second Step"
+          >
+            Second Step
+          </p>
+          <p
+            className="label-optional"
+          >
+            Optional label
+          </p>
+        </button>
+      </li>
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line-sub-complete"
+          />
+          <div
+            className="step-icon-sub"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <p
+            className="label-sub"
+            value="Sub Step 1"
+          >
+            Sub Step 1
+          </p>
+        </button>
+      </li>
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line-sub-complete"
+          />
+          <div
+            className="step-icon-sub"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <p
+            className="label-sub"
+            value="Sub Step 2"
+          >
+            Sub Step 2
+          </p>
+          <p
+            className="label-sub-optional"
+          >
+            Optional label
+          </p>
+        </button>
+      </li>
+      <li
+        className=""
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line-sub"
+          />
+          <div
+            className="step-icon-sub"
+          />
+          <p
+            className="label-sub"
+            value="Sub Step 3"
+          >
+            Sub Step 3
+          </p>
+        </button>
+      </li>
+      <li
+        className="step-disabled"
+      >
+        <button
+          aria-disabled={true}
+          className="step-button"
+          disabled={true}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line"
+          />
+          <div
+            className="step-icon"
+          >
+            <p>
+              3
+            </p>
+          </div>
+          <p
+            className="label"
+            value="Third Step"
+          >
+            Third Step
+          </p>
+          <p
+            className="label-optional"
+          >
+            Optional label
+          </p>
+        </button>
+      </li>
+      <li
+        className="step-invalid"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="line"
+          />
+          <div
+            className="step-icon"
+          >
+            <p>
+              !
+            </p>
+          </div>
+          <p
+            className="label"
+            value="Fourth Step"
+          >
+            Fourth Step
+          </p>
+          <p
+            className="label-optional"
+          >
+            Optional label
+          </p>
+        </button>
+      </li>
+      <li
+        className="step-current"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="step-icon"
+          >
+            <p>
+              5
+            </p>
+          </div>
+          <p
+            className="label"
+            value="Fifth Step"
+          >
+            Fifth Step
+          </p>
+          <p
+            className="label-optional"
+          >
+            Optional label
+          </p>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ProgressIndicator Stateful 1`] = `
 <div
   className="storybook-container"
@@ -100,6 +440,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -139,6 +484,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
+          </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -180,6 +530,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -220,45 +575,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <span
-            className="bx--progress-line"
-          />
-        </button>
-      </li>
-      <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
-      >
-        <button
-          className="bx--progress-step-button"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Incomplete
-          </span>
-          <svg
-            aria-hidden={true}
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-            />
-            <title>
-              Sixth Step
-            </title>
-          </svg>
           <p
-            className="bx--progress-label"
+            className="bx--progress-optional"
           >
-            Sixth Step
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -396,6 +716,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -435,6 +760,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
+          </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -476,6 +806,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -516,45 +851,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <span
-            className="bx--progress-line"
-          />
-        </button>
-      </li>
-      <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
-      >
-        <button
-          className="bx--progress-step-button"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Incomplete
-          </span>
-          <svg
-            aria-hidden={true}
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-            />
-            <title>
-              Sixth Step
-            </title>
-          </svg>
           <p
-            className="bx--progress-label"
+            className="bx--progress-optional"
           >
-            Sixth Step
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -689,6 +989,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -728,6 +1033,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
+          </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -769,6 +1079,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -809,45 +1124,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <span
-            className="bx--progress-line"
-          />
-        </button>
-      </li>
-      <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
-      >
-        <button
-          className="bx--progress-step-button"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Incomplete
-          </span>
-          <svg
-            aria-hidden={true}
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-            />
-            <title>
-              Sixth Step
-            </title>
-          </svg>
           <p
-            className="bx--progress-label"
+            className="bx--progress-optional"
           >
-            Sixth Step
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -982,6 +1262,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -1021,6 +1306,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
+          </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -1062,6 +1352,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
+          <p
+            className="bx--progress-optional"
+          >
+            Optional label
+          </p>
           <span
             className="bx--progress-line"
           />
@@ -1102,45 +1397,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <span
-            className="bx--progress-line"
-          />
-        </button>
-      </li>
-      <li
-        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
-      >
-        <button
-          className="bx--progress-step-button"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="bx--assistive-text"
-          >
-            Incomplete
-          </span>
-          <svg
-            aria-hidden={true}
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-            />
-            <title>
-              Sixth Step
-            </title>
-          </svg>
           <p
-            className="bx--progress-label"
+            className="bx--progress-optional"
           >
-            Sixth Step
+            Optional label
           </p>
           <span
             className="bx--progress-line"
