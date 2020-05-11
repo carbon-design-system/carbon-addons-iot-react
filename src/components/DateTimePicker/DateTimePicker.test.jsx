@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
