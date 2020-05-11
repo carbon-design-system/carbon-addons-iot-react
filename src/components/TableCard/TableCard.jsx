@@ -209,6 +209,13 @@ const determinePrecisionAndValue = (precision = 0, value, locale) => {
   return '--';
 };
 
+/**
+ * Updates the hrefs in each column to be us-able links. If href variables are on a table that has row specific values, the user
+ * should not pass in a cardVariables object as each variable with have multiple values.
+ * @param {array} card - Array of TableCard columns
+ * @param {object} card - object of cardVariables
+ * @return {array} array of columns with formatted links and updated variable values
+ */
 export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
   return columns.map(column => {
     const { linkTemplate } = column;
