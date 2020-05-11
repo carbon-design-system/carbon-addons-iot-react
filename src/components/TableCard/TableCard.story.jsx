@@ -275,6 +275,87 @@ storiesOf('Watson IoT/TableCard', module)
     }
   )
   .add(
+    'With row specific link variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+
+      const tableLinkColumns = [
+        ...tableColumns,
+        {
+          dataSourceId: 'deviceId',
+          label: 'deviceId',
+        },
+        {
+          dataSourceId: 'Link',
+          label: 'Link',
+          linkTemplate: {
+            href: text('href', 'https://ibm.com/{deviceId}'),
+            target: select('target', ['_blank', null], '_blank'),
+          },
+        },
+      ];
+
+      const tableLinkData = tableData.slice(0);
+      // introduce row specific deviceId data
+      const deviceidRowData = [
+        '73000',
+        '73000',
+        '73001',
+        '73000',
+        '73002',
+        '73004',
+        '73004',
+        '73003',
+        '73005',
+        '73003',
+        '73005',
+      ];
+      tableLinkData.forEach((row, i) => {
+        // eslint-disable-next-line no-return-assign, no-param-reassign
+        row.values.deviceId = deviceidRowData[i];
+        // eslint-disable-next-line no-return-assign, no-param-reassign
+        row.values.Link = 'Link';
+      });
+
+      const thresholds = [
+        {
+          dataSourceId: 'pressure',
+          comparison: '>=',
+          value: 1,
+          severity: 1,
+          label: 'Pressure',
+          showSeverityLabel: true,
+          severityLabel: 'Critical',
+        },
+      ];
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title={text('title', 'Asset Open Alerts')}
+            id="table-list"
+            tooltip={text('Tooltip text', "Here's a Tooltip")}
+            content={{
+              columns: tableLinkColumns,
+              thresholds,
+            }}
+            values={tableLinkData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: ` # Passing variables
+        To pass row-specific variables in a TableCard href (ie a variable that has a different value per row),
+              do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
+        `,
+      },
+    }
+  )
+  .add(
     'table with thresholds',
     () => {
       const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
