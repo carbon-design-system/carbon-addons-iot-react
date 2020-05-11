@@ -91,6 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
           <button
             aria-label="alerts"
             className="bx--header-action-btn bx--header__action"
+            onClick={[Function]}
             type="button"
           >
             <svg
@@ -528,6 +529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
         <button
           aria-label="user"
           className="bx--header-action-btn bx--header__action"
+          onClick={[Function]}
           type="button"
         >
           <svg

@@ -2,9 +2,11 @@ import React, { useMemo, useState } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 import PropTypes from 'prop-types';
 import { InlineLoading } from 'carbon-components-react';
+import omit from 'lodash/omit';
 
 import Hotspot, { propTypes as HotspotPropTypes } from './Hotspot';
 import ImageControls from './ImageControls';
+import HotspotContent from './HotspotContent';
 
 const propTypes = {
   /** source of the local image file to display */
@@ -27,6 +29,8 @@ const propTypes = {
   zoomMax: PropTypes.number,
   renderIconByName: PropTypes.func,
   i18n: PropTypes.objectOf(PropTypes.string),
+  /** locale string to pass for formatting */
+  locale: PropTypes.string,
 };
 
 const defaultProps = {
@@ -45,6 +49,7 @@ const defaultProps = {
     zoomOut: 'Zoom out',
     zoomToFit: 'Zoom to fit',
   },
+  locale: null,
 };
 
 export const startDrag = (event, element, cursor, setCursor) => {
@@ -288,6 +293,7 @@ const ImageHotspots = ({
   isHotspotDataLoading,
   zoomMax,
   renderIconByName,
+  locale,
 }) => {
   // Image needs to be stored in state because we're dragging it around when zoomed in, and we need to keep track of when it loads
   const [image, setImage] = useState({});
@@ -363,7 +369,18 @@ const ImageHotspots = ({
       hotspots.map(hotspot => {
         return (
           <Hotspot
-            {...hotspot}
+            {...omit(hotspot, 'content')}
+            content={
+              React.isValidElement(hotspot.content) ? (
+                hotspot.content
+              ) : (
+                <HotspotContent
+                  {...hotspot.content}
+                  locale={locale}
+                  renderIconByName={renderIconByName}
+                />
+              )
+            }
             key={`${hotspot.x}-${hotspot.y}`}
             style={hotspotsStyle}
             offsetX={image.offsetX}
@@ -372,7 +389,7 @@ const ImageHotspots = ({
           />
         );
       }),
-    [hotspots, hotspotsStyle, image.offsetX, image.offsetY, renderIconByName]
+    [hotspots, hotspotsStyle, image.offsetX, image.offsetY, locale, renderIconByName]
   );
 
   if (imageLoaded) {
