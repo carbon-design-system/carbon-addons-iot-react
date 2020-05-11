@@ -4269,7 +4269,7 @@ Map {
       },
     },
   },
-  "__unstableDateTimePicker" => Object {
+  "DateTimePicker" => Object {
     "defaultProps": Object {
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "defaultValue": null,
