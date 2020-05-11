@@ -11,6 +11,7 @@ export const mockActions = {
     onApplyBatchAction: jest.fn(),
     onApplySearch: jest.fn(),
     onDownloadCSV: jest.fn(),
+    onShowRowEdit: jest.fn(),
   },
   table: {
     onRowSelected: jest.fn(),

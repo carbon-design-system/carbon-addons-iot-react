@@ -1,9 +1,8 @@
-/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
 
-import __unstableDateTimePicker, {
+import DateTimePicker, {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
   PRESET_VALUES,
@@ -42,14 +41,14 @@ describe('DateTimePicker', () => {
   });
 
   it('should have the first preset as value', () => {
-    const wrapper = mount(<__unstableDateTimePicker {...dateTimePickerProps} i18n={i18n} />);
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} i18n={i18n} />);
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
   });
 
   it('should call onApply', () => {
-    const wrapper = mount(<__unstableDateTimePicker {...dateTimePickerProps} />);
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     wrapper
       .find('.iot--date-time-picker__menu-btn-apply')
       .first()
@@ -59,7 +58,7 @@ describe('DateTimePicker', () => {
   });
 
   it('onCancel should be called', () => {
-    const wrapper = mount(<__unstableDateTimePicker {...dateTimePickerProps} />);
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     wrapper
       .find('.iot--date-time-picker__menu-btn-cancel')
       .first()
@@ -70,7 +69,7 @@ describe('DateTimePicker', () => {
 
   it('it should render with a predefined preset', () => {
     const wrapper = mount(
-      <__unstableDateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
+      <DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -79,7 +78,7 @@ describe('DateTimePicker', () => {
 
   it('it should render with a predefined relative range', () => {
     const wrapper = mount(
-      <__unstableDateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
+      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -137,7 +136,7 @@ describe('DateTimePicker', () => {
 
   it('it should render with a predefined absolute range', () => {
     const wrapper = mount(
-      <__unstableDateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
+      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -182,7 +181,7 @@ describe('DateTimePicker', () => {
 
   it('it should switch from relative to absolute', () => {
     const wrapper = mount(
-      <__unstableDateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
+      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -197,7 +196,7 @@ describe('DateTimePicker', () => {
 
   it('it should not show the relative option', () => {
     const wrapper = mount(
-      <__unstableDateTimePicker
+      <DateTimePicker
         {...dateTimePickerProps}
         defaultValue={defaultAbsoluteValue}
         showRelativeOption={false}
@@ -210,7 +209,7 @@ describe('DateTimePicker', () => {
 
   it('it should switch from relative to presets', () => {
     const wrapper = mount(
-      <__unstableDateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
+      <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -225,5 +224,31 @@ describe('DateTimePicker', () => {
       .simulate('click');
     jest.runAllTimers();
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(0);
+  });
+
+  test('it should keep preset value when switching from presets to relative and back', () => {
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
+    wrapper
+      .find('.iot--date-time-picker__field')
+      .first()
+      .simulate('click');
+    // if you are wondering about hostNodes https://github.com/enzymejs/enzyme/issues/836#issuecomment-401260477
+    expect(
+      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+    ).toHaveLength(1);
+
+    wrapper
+      .find('.iot--date-time-picker__listitem--custom')
+      .first()
+      .simulate('click');
+
+    wrapper
+      .find('.iot--date-time-picker__menu-btn-back')
+      .first()
+      .simulate('click');
+
+    expect(
+      wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
+    ).toHaveLength(1);
   });
 });

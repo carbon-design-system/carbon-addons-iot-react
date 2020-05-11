@@ -300,6 +300,7 @@ Map {
         "toolbar": Object {
           "onApplyBatchAction": [Function],
           "onCancelBatchAction": [Function],
+          "onShowRowEdit": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
         },
@@ -316,6 +317,7 @@ Map {
         "columnSelectionConfig": "Manage Columns",
         "currentPage": [Function],
         "downloadIconDescription": "Download table content",
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -469,6 +471,9 @@ Map {
                     "type": "func",
                   },
                   "onDownloadCSV": Object {
+                    "type": "func",
+                  },
+                  "onShowRowEdit": Object {
                     "type": "func",
                   },
                   "onToggleColumnSelection": Object {
@@ -742,6 +747,9 @@ Map {
               "type": "string",
             },
             "downloadIconDescription": Object {
+              "type": "string",
+            },
+            "editButtonAria": Object {
               "type": "string",
             },
             "filterAria": Object {
@@ -1115,8 +1123,9 @@ Map {
                   "activeBar": Object {
                     "args": Array [
                       Array [
-                        "filter",
                         "column",
+                        "filter",
+                        "rowEdit",
                       ],
                     ],
                     "type": "oneOf",
@@ -1152,6 +1161,9 @@ Map {
                   },
                   "isDisabled": Object {
                     "type": "bool",
+                  },
+                  "rowEditBarButtons": Object {
+                    "type": "node",
                   },
                   "search": Object {
                     "args": Array [
@@ -1200,6 +1212,7 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "currentPage": [Function],
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -1401,6 +1414,9 @@ Map {
             "downloadIconDescription": Object {
               "type": "string",
             },
+            "editButtonAria": Object {
+              "type": "string",
+            },
             "filterAria": Object {
               "type": "string",
             },
@@ -1532,6 +1548,7 @@ Map {
                 Array [
                   "column",
                   "filter",
+                  "rowEdit",
                 ],
               ],
               "type": "oneOf",
@@ -1638,6 +1655,7 @@ Map {
       "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
+      "rowEditMode": false,
       "rows": Array [],
       "selectRowAria": "Select row",
       "selectedIds": Array [],
@@ -1877,6 +1895,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "rowEditMode": Object {
+        "type": "bool",
+      },
       "rows": Object {
         "args": Array [
           Object {
@@ -2086,6 +2107,7 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "currentPage": [Function],
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -2128,6 +2150,9 @@ Map {
             "onClearAllFilters": Object {
               "type": "func",
             },
+            "onShowRowEdit": Object {
+              "type": "func",
+            },
             "onToggleColumnSelection": Object {
               "type": "func",
             },
@@ -2149,6 +2174,9 @@ Map {
               "type": "string",
             },
             "columnSelectionButtonAria": Object {
+              "type": "string",
+            },
+            "editButtonAria": Object {
               "type": "string",
             },
             "filterAscending": Object {
@@ -2189,6 +2217,9 @@ Map {
               "type": "bool",
             },
             "hasRowCountInHeader": [Function],
+            "hasRowEdit": Object {
+              "type": "bool",
+            },
             "hasSearch": Object {
               "type": "bool",
             },
@@ -2212,6 +2243,7 @@ Map {
                 Array [
                   "column",
                   "filter",
+                  "rowEdit",
                 ],
               ],
               "type": "oneOf",
@@ -2257,6 +2289,9 @@ Map {
             },
             "isDisabled": Object {
               "type": "bool",
+            },
+            "rowEditBarButtons": Object {
+              "type": "node",
             },
             "search": Object {
               "args": Array [
@@ -4269,7 +4304,7 @@ Map {
       },
     },
   },
-  "__unstableDateTimePicker" => Object {
+  "DateTimePicker" => Object {
     "defaultProps": Object {
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "defaultValue": null,
