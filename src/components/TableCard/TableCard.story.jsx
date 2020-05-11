@@ -268,7 +268,8 @@ storiesOf('Watson IoT/TableCard', module)
         To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
         Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
         Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
-        Note: if using row specific variables in a TableCard href (ie a variable that has a different value per row), you will need to NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
+        Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
+              do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
         `,
       },
     }
