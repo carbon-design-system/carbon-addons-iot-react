@@ -123,14 +123,18 @@ describe('StatefulWizardInline', () => {
     const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
     expect(element.prop('currentIndex')).toEqual(0);
   });
-  test('Handle nextItem undefined', () => {
+  test('onNext not triggered if nextItem is undefined', () => {
     const mockNext = jest.fn();
-    mount(
+    const wrapper = mount(
       <StatefulTableDetailWizard
         {...commonWizardProps}
         currentItemId={itemsAndComponents[itemsAndComponents.length - 1].id}
         onNext={mockNext}
       />
     );
+    const cancelAndNextButtons = wrapper.find('.bx--btn');
+    expect(cancelAndNextButtons).toHaveLength(3);
+    cancelAndNextButtons.at(2).simulate('click');
+    expect(mockNext).not.toHaveBeenCalled();
   });
 });

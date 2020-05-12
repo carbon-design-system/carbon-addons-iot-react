@@ -35,8 +35,8 @@ const mockScrollEvent = {
   target: { scrollHeight: 100, scrollTop: 0, clientHeight: 100 },
 };
 
-describe('ListCard tests', () => {
-  test('LoadData', () => {
+describe('ListCard', () => {
+  test('calls loadData callback on scroll', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
@@ -44,6 +44,7 @@ describe('ListCard tests', () => {
     );
 
     wrapper.find('Card').prop('onScroll')(mockScrollEvent);
+    expect(onLoadData).toHaveBeenCalled();
   });
 
   test('LoadData when data is null', () => {

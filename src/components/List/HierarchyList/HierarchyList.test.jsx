@@ -1,20 +1,31 @@
 import React from 'react';
-import {
-  render,
-  fireEvent,
-  waitForElementToBeRemoved,
-  waitForElement,
-} from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import debounce from 'lodash/debounce';
 
 import { sampleHierarchy } from '../List.story';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
+// https://github.com/facebook/jest/issues/3465#issuecomment-449007170
+jest.mock('lodash/debounce', () => fn => fn);
 
 describe('HierarchyList', () => {
-  // Mock the scroll function as its not implemented in jsdom
-  // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
-  window.HTMLElement.prototype.scrollIntoView = jest.fn();
+  const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+
+  beforeEach(() => {
+    // Mock the scroll function as its not implemented in jsdom
+    // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+  });
+
+  afterEach(() => {
+    window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+  });
+
+  afterAll(() => {
+    // this is likely unecessary, but should help ensure that everything from this file is garbage collected after completion
+    debounce.mockRestore();
+  });
 
   const items = [
     ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
@@ -188,57 +199,47 @@ describe('HierarchyList', () => {
       <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />
     );
     fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: 'jd' } });
-    /** Need to wait for the element to be removed because the search function
-        has a debouncing timeout */
-    // eslint-disable-next-line
-    waitForElementToBeRemoved(() => queryByTitle('New York Yankees')).then(() => {
-      // Category containing value should appear
-      expect(getByTitle('New York Mets')).toBeInTheDocument();
-      // Yankees are not worthy
-      expect(queryByTitle('New York Yankees')).not.toBeInTheDocument();
-      expect(queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
-      expect(queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
-      expect(queryByTitle('Houston Astros')).not.toBeInTheDocument();
-      expect(queryByTitle('Washington Nationals')).not.toBeInTheDocument();
-      // Found item should appear
-      expect(getByTitle('JD Davis')).toBeInTheDocument();
-    });
+
+    // Category containing value should appear
+    expect(getByTitle('New York Mets')).toBeInTheDocument();
+    // Yankees are not worthy
+    expect(queryByTitle('New York Yankees')).not.toBeInTheDocument();
+    expect(queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+    expect(queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
+    expect(queryByTitle('Houston Astros')).not.toBeInTheDocument();
+    expect(queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+    // Found item should appear
+    expect(getByTitle('JD Davis')).toBeInTheDocument();
   });
 
-  test('all items should return if search value is empty string', async () => {
+  test('all items should return if search value is empty string', () => {
     const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" />
     );
     fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: 'jd davis' } });
-    /** Need to wait for the element to be removed because the search function
-        has a debouncing timeout */
-    // eslint-disable-next-line
-    waitForElementToBeRemoved(() => queryByTitle('New York Yankees')).then(async () => {
-      // Category containing value should appear
-      expect(getByTitle('New York Mets')).toBeInTheDocument();
-      // Yankees are not worthy
-      expect(queryByTitle('New York Yankees')).not.toBeInTheDocument();
-      expect(queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
-      expect(queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
-      expect(queryByTitle('Houston Astros')).not.toBeInTheDocument();
-      expect(queryByTitle('Washington Nationals')).not.toBeInTheDocument();
-      // Found item should appear
-      expect(getByTitle('JD Davis')).toBeInTheDocument();
 
-      // Change search to empty string
-      fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '' } });
-      /** Need to wait for an element to appear because the search function
-      has a debouncing timeout */
-      const braves = await waitForElement(() => getByTitle('Atlanta Braves'));
-      // All categories should appear
-      expect(getByTitle('New York Mets')).toBeInTheDocument();
-      expect(braves).toBeInTheDocument();
-      expect(queryByTitle('Chicago White Sox')).toBeInTheDocument();
-      expect(queryByTitle('Houston Astros')).toBeInTheDocument();
-      expect(queryByTitle('Washington Nationals')).toBeInTheDocument();
-      // Yankees are ... unfortunately worthy as well
-      expect(getByTitle('New York Yankees')).toBeInTheDocument();
-    });
+    // Category containing value should appear
+    expect(getByTitle('New York Mets')).toBeInTheDocument();
+    // Yankees are not worthy
+    expect(queryByTitle('New York Yankees')).not.toBeInTheDocument();
+    expect(queryByTitle('Atlanta Braves')).not.toBeInTheDocument();
+    expect(queryByTitle('Chicago White Sox')).not.toBeInTheDocument();
+    expect(queryByTitle('Houston Astros')).not.toBeInTheDocument();
+    expect(queryByTitle('Washington Nationals')).not.toBeInTheDocument();
+    // Found item should appear
+    expect(getByTitle('JD Davis')).toBeInTheDocument();
+
+    // Change search to empty string
+    fireEvent.change(getAllByLabelText('Enter a value')[0], { target: { value: '' } });
+
+    // All categories should appear
+    expect(getByTitle('New York Mets')).toBeInTheDocument();
+    expect(getByTitle('Atlanta Braves')).toBeInTheDocument();
+    expect(queryByTitle('Chicago White Sox')).toBeInTheDocument();
+    expect(queryByTitle('Houston Astros')).toBeInTheDocument();
+    expect(queryByTitle('Washington Nationals')).toBeInTheDocument();
+    // Yankees are ... unfortunately worthy as well
+    expect(getByTitle('New York Yankees')).toBeInTheDocument();
   });
 
   test('parent items of defaultSelectedId should be expanded', () => {

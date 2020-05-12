@@ -5,8 +5,15 @@ import FilterHeaderRow from './FilterHeaderRow';
 
 describe('FilterHeaderRow', () => {
   const commonFilterProps = { onApplyFilter: jest.fn() };
-  beforeEach(() => {
-    console.error = jest.fn();
+
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+  afterEach(() => {
+    console.error.mockClear();
+  });
+  afterAll(() => {
+    console.error.mockRestore();
   });
 
   test('text input change updates state', () => {

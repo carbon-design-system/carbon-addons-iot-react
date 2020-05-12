@@ -29,51 +29,58 @@ const defaultRelativeValue = {
 };
 
 const defaultAbsoluteValue = {
-  startDate: '04/01/2020',
+  startDate: '2020-04-01',
   startTime: '12:34',
-  endDate: '04/06/2020',
+  endDate: '2020-04-06',
   endTime: '10:49',
 };
 
-describe('DateTimePicker tests', () => {
-  jest.useFakeTimers();
+describe('DateTimePicker', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
 
-  test('it should have the first preset as value', () => {
+  it('should have the first preset as value', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} i18n={i18n} />);
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
   });
 
-  test('onApply should be called', () => {
+  it('should call onApply', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     wrapper
       .find('.iot--date-time-picker__menu-btn-apply')
       .first()
       .simulate('click');
+    jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  test('onCancel should be called', () => {
+  it('onCancel should be called', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     wrapper
       .find('.iot--date-time-picker__menu-btn-cancel')
       .first()
       .simulate('click');
+    jest.runAllTimers();
     expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
   });
 
-  test('it should render with a predefined preset', () => {
+  it('it should render with a predefined preset', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
     );
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[1].label);
   });
 
-  test('it should render with a predefined relative range', () => {
+  it('it should render with a predefined relative range', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
 
     wrapper
@@ -87,6 +94,7 @@ describe('DateTimePicker tests', () => {
       .simulate('change', { target: { value: RELATIVE_VALUES.YESTERDAY } });
 
     const today = moment();
+    jest.runAllTimers();
     expect(
       wrapper
         .find('.iot--date-time-picker__field')
@@ -98,7 +106,7 @@ describe('DateTimePicker tests', () => {
       .find('.bx--number__control-btn.up-icon')
       .first()
       .simulate('click');
-
+    jest.runAllTimers();
     expect(
       wrapper
         .find('.iot--date-time-picker__field')
@@ -110,7 +118,7 @@ describe('DateTimePicker tests', () => {
       .find('.iot--time-picker__controls--btn.up-icon')
       .first()
       .simulate('click');
-
+    jest.runAllTimers();
     expect(
       wrapper
         .find('.iot--date-time-picker__field')
@@ -122,13 +130,15 @@ describe('DateTimePicker tests', () => {
       .find('.iot--date-time-picker__menu-btn-apply')
       .first()
       .simulate('click');
+    jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  test('it should render with a predefined absolute range', () => {
+  it('it should render with a predefined absolute range', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
     );
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(
       wrapper
@@ -141,7 +151,7 @@ describe('DateTimePicker tests', () => {
       .find('.iot--time-picker__controls--btn.up-icon')
       .first()
       .simulate('click');
-
+    jest.runAllTimers();
     expect(
       wrapper
         .find('.iot--date-time-picker__field')
@@ -153,7 +163,7 @@ describe('DateTimePicker tests', () => {
       .find('.iot--time-picker__controls--btn.up-icon')
       .at(1)
       .simulate('click');
-
+    jest.runAllTimers();
     expect(
       wrapper
         .find('.iot--date-time-picker__field')
@@ -165,24 +175,26 @@ describe('DateTimePicker tests', () => {
       .find('.iot--date-time-picker__menu-btn-apply')
       .first()
       .simulate('click');
+    jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  test('it should switch from relative to absolute', () => {
+  it('it should switch from relative to absolute', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
 
     wrapper
       .find('.bx--radio-button')
       .at(1)
       .simulate('change', { target: { value: PICKER_KINDS.ABSOLUTE } });
-
+    jest.runAllTimers();
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(4);
   });
 
-  test('it should not show the relative option', () => {
+  it('it should not show the relative option', () => {
     const wrapper = mount(
       <DateTimePicker
         {...dateTimePickerProps}
@@ -190,14 +202,16 @@ describe('DateTimePicker tests', () => {
         showRelativeOption={false}
       />
     );
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
   });
 
-  test('it should switch from relative to presets', () => {
+  it('it should switch from relative to presets', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
+    jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     wrapper
       .find('.iot--date-time-picker__field')
@@ -208,7 +222,7 @@ describe('DateTimePicker tests', () => {
       .find('.iot--date-time-picker__menu-btn-back')
       .first()
       .simulate('click');
-
+    jest.runAllTimers();
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(0);
   });
 

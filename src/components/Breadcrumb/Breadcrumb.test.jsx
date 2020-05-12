@@ -8,9 +8,6 @@ const commonProps = {
   onClick: () => console.log('clicked'),
 };
 
-const originalOffsetHeight = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'clientWidth');
-const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollWidth');
-
 describe('Breadcrumb', () => {
   test('overflows when container is smaller than breadcrumbs', () => {
     const { container } = render(
@@ -39,8 +36,8 @@ describe('Breadcrumb with overflow', () => {
   });
 
   afterAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'clientWidth', originalOffsetHeight);
-    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalOffsetWidth);
+    delete HTMLElement.prototype.clientWidth;
+    delete HTMLElement.prototype.scrollWidth;
   });
 
   test('overflows when container is smaller than breadcrumbs', () => {
@@ -55,15 +52,26 @@ describe('Breadcrumb with overflow', () => {
   });
 
   describe('has dev console warning(s)', () => {
-    const originalConsole = console.error;
     const originalDev = window.__DEV__;
     const originalResizeObserver = window.ResizeObserver;
 
-    // Applies only to tests in this describe block
+    beforeAll(() => {
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+    });
+
     beforeEach(() => {
       window.__DEV__ = true;
       window.ResizeObserver = undefined;
-      console.error = jest.fn();
+    });
+
+    afterEach(() => {
+      console.error.mockClear();
+      window.__DEV__ = originalDev;
+      window.ResizeObserver = originalResizeObserver;
+    });
+
+    afterAll(() => {
+      console.error.mockRestore();
     });
 
     test('when ResizeObserver is not supported in the current environment', () => {
@@ -75,13 +83,6 @@ describe('Breadcrumb with overflow', () => {
         </Breadcrumb>
       );
       expect(console.error).toHaveBeenCalledTimes(1);
-    });
-
-    afterEach(() => {
-      // restore to original values
-      window.__DEV__ = originalDev;
-      window.ResizeObserver = originalResizeObserver;
-      console.error = originalConsole;
     });
   });
 });

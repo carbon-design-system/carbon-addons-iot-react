@@ -7,6 +7,7 @@ import { Add20 } from '@carbon/icons-react';
 import { keyCodes } from '../../constants/KeyCodeConstants';
 import { settings } from '../../constants/Settings';
 
+import { mockActions } from './Table.test.helpers';
 import Table from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
@@ -100,36 +101,15 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
-export const mockActions = {
-  pagination: {
-    onChangePage: jest.fn(),
-  },
-  toolbar: {
-    onApplyFilter: jest.fn(),
-    onToggleFilter: jest.fn(),
-    onToggleColumnSelection: jest.fn(),
-    onClearAllFilters: jest.fn(),
-    onCancelBatchAction: jest.fn(),
-    onApplyBatchAction: jest.fn(),
-    onApplySearch: jest.fn(),
-    onDownloadCSV: jest.fn(),
-    onShowRowEdit: jest.fn(),
-  },
-  table: {
-    onRowSelected: jest.fn(),
-    onRowClicked: jest.fn(),
-    onRowExpanded: jest.fn(),
-    onSelectAll: jest.fn(),
-    onChangeSort: jest.fn(),
-    onApplyRowAction: jest.fn(),
-    onEmptyStateAction: jest.fn(),
-    onChangeOrdering: jest.fn(),
-  },
-};
-
 describe('Table', () => {
-  beforeEach(() => {
-    console.error = jest.fn();
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+  afterEach(() => {
+    console.error.mockClear();
+  });
+  afterAll(() => {
+    console.error.mockRestore();
   });
 
   const options = {

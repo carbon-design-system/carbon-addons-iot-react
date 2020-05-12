@@ -9,8 +9,6 @@ import SideNav from './SideNav';
 React.Fragment = ({ children }) => children;
 
 describe('SideNav testcases', () => {
-  // it.skip('skip this suite', () => {});
-  /* eslint-disable */
   const links = [
     {
       icon: () => (
@@ -147,7 +145,6 @@ describe('SideNav testcases', () => {
     },
   ];
 
-  /* eslint-enable */
   let mockProps;
 
   beforeEach(() => {

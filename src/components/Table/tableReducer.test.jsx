@@ -28,7 +28,7 @@ describe('table reducer testcases', () => {
   test('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
   });
-  describe('row action tests', () => {
+  test('row action tests', () => {
     const updatedRowActionState = tableReducer(initialState, tableRowActionStart('row-1'));
     const newRowActions = updatedRowActionState.view.table.rowActions;
     expect(newRowActions).toHaveLength(1);

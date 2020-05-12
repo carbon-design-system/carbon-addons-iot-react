@@ -5,7 +5,7 @@ import pick from 'lodash/pick';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
-import { mockActions } from './Table.test';
+import { mockActions } from './Table.test.helpers';
 import { initialState } from './Table.story';
 
 describe('stateful table with real reducer', () => {

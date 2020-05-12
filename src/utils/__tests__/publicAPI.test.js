@@ -50,7 +50,7 @@ beforeEach(() => {
     // function. This getter function should return the type of the prop type
     // and also specify the `isRequired` field so PropTypes.string.isRequired
     // works as intended
-    /* eslint-disable no-restricted-syntax */
+    // eslint-disable-next-line no-restricted-syntax
     for (const type of primitive) {
       Object.defineProperty(PropTypes, type, {
         get() {
@@ -75,6 +75,7 @@ beforeEach(() => {
     // and have it return the prop type information as a result of calling the
     // prop-type. We'll also need to define the `isRequired` field similar to
     // how we used it in the primitive prop types
+    // eslint-disable-next-line no-restricted-syntax
     for (const type of complex) {
       // eslint-disable-next-line func-names
       PropTypes[type] = function(...args) {
@@ -97,7 +98,6 @@ beforeEach(() => {
         return value;
       };
     }
-    /* eslint-enable no-restricted-syntax */
 
     return PropTypes;
   });

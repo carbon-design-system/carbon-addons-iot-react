@@ -80,7 +80,7 @@ describe('TimeSeriesCard tests', () => {
     expect(determinePrecision(CARD_SIZES.SMALL, 1.45, 1)).toEqual(1);
     expect(determinePrecision(CARD_SIZES.LARGE, 1.45, 1)).toEqual(1);
   });
-  test('valueFormatter', () => {
+  it('valueFormatter', () => {
     // Small should get 3 precision
     expect(valueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
     // default precision
@@ -95,7 +95,7 @@ describe('TimeSeriesCard tests', () => {
     // nil
     expect(valueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
   });
-  test('handleTooltip should add date', () => {
+  it('handleTooltip should add date', () => {
     const defaultTooltip = '<li>existing tooltip</li>';
     // the date is from 2017
     const updatedTooltip = handleTooltip(

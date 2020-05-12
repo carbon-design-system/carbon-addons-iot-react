@@ -4,7 +4,7 @@ import React from 'react';
 import StatefulTable from './StatefulTable';
 import EmptyTable from './EmptyTable/EmptyTable';
 import Table from './Table';
-import { mockActions } from './Table.test';
+import { mockActions } from './Table.test.helpers';
 import { initialState } from './Table.story';
 
 const mockDispatch = jest.fn();
@@ -18,6 +18,10 @@ jest.mock('react', () => {
   };
 });
 describe('StatefulTable tests with Mock reducer', () => {
+  afterAll(() => {
+    jest.unmock('react');
+    jest.resetModules();
+  });
   test('check renders nested table', () => {
     const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
     expect(statefulTable.find(Table)).toHaveLength(1);
@@ -69,9 +73,5 @@ describe('StatefulTable tests with Mock reducer', () => {
         expect(mockAction).toHaveBeenCalled()
       )
     );
-  });
-  afterAll(() => {
-    jest.unmock('react');
-    jest.resetModules();
   });
 });
