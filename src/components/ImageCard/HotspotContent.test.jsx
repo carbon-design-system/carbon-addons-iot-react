@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import HotspotContent from './HotspotContent';
 
 describe('HotspotContent', () => {
-  test('basic attributes', () => {
+  it('basic attributes', () => {
     const { getAllByText } = render(
       <HotspotContent
         title="My hotspot"
@@ -25,7 +25,7 @@ describe('HotspotContent', () => {
     // should be english formatted
     expect(getAllByText(/35.05/)).toHaveLength(1);
   });
-  test('can support react element for title', () => {
+  it('can support react element for title', () => {
     const { getAllByText } = render(
       <HotspotContent
         title={<span>My hotspot</span>}
@@ -39,7 +39,7 @@ describe('HotspotContent', () => {
     // check the titles first
     expect(getAllByText(/My hotspot/)).toHaveLength(1);
   });
-  test('empty values show --', () => {
+  it('empty values show --', () => {
     const { getAllByText, queryAllByText } = render(
       <HotspotContent
         title={<span>My hotspot</span>}
@@ -54,7 +54,7 @@ describe('HotspotContent', () => {
     expect(getAllByText(/--/)).toHaveLength(1);
     expect(queryAllByText(/Celsius/)).toHaveLength(0);
   });
-  test('precision tests', () => {
+  it('precision tests', () => {
     const { getAllByText } = render(
       <HotspotContent
         title={<span>My hotspot</span>}
@@ -71,7 +71,7 @@ describe('HotspotContent', () => {
     expect(getAllByText(/^0$/)).toHaveLength(1);
     expect(getAllByText(/0.125/)).toHaveLength(1);
   });
-  test('units', () => {
+  it('units', () => {
     const { getAllByText } = render(
       <HotspotContent
         title={<span>My hotspot</span>}
@@ -85,7 +85,7 @@ describe('HotspotContent', () => {
     // values should render units
     expect(getAllByText(/Celsius/)).toHaveLength(1);
   });
-  test('locale formatting', () => {
+  it('locale formatting', () => {
     const { getAllByText } = render(
       <HotspotContent
         title="My hotspot"
@@ -103,7 +103,7 @@ describe('HotspotContent', () => {
     // should be french formatted
     expect(getAllByText(/35,05/)).toHaveLength(1);
   });
-  test('attribute thresholds', () => {
+  it('attribute thresholds', () => {
     const { getAllByTitle } = render(
       <HotspotContent
         title="My hotspot"
@@ -124,7 +124,7 @@ describe('HotspotContent', () => {
     // threshold should be found and french formatted
     expect(getAllByTitle(/temperature > 0,05/)).toHaveLength(2);
   });
-  test('hotspot threshold', () => {
+  it('hotspot threshold', () => {
     const { getAllByTitle } = render(
       <HotspotContent
         title="My hotspot"
@@ -150,7 +150,7 @@ describe('HotspotContent', () => {
     // threshold should be found
     expect(getAllByTitle(/temperature > 0.05/)).toHaveLength(2);
   });
-  test('custom render Icon By Name', () => {
+  it('custom render Icon By Name', () => {
     const mockRenderIconByName = jest.fn().mockReturnValue(<span />);
     render(
       <HotspotContent

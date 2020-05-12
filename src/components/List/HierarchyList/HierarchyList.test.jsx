@@ -60,7 +60,7 @@ describe('HierarchyList', () => {
     })),
   ];
 
-  test('searchForNestedItemValues should return results for single nested list', () => {
+  it('searchForNestedItemValues should return results for single nested list', () => {
     const foundValue = searchForNestedItemValues(items, 'jd');
     expect(foundValue).toEqual([
       {
@@ -83,12 +83,12 @@ describe('HierarchyList', () => {
     ]);
   });
 
-  test('searchForNestedItemValues should not return results for single nested list', () => {
+  it('searchForNestedItemValues should not return results for single nested list', () => {
     const foundValue = searchForNestedItemValues(items, 'abcdefg');
     expect(foundValue).toEqual([]);
   });
 
-  test('searchForNestedItemIds should return results for single nested list', () => {
+  it('searchForNestedItemIds should return results for single nested list', () => {
     const foundValue = searchForNestedItemIds(items, 'New York Mets_JD Davis');
     expect(foundValue).toEqual([
       {
@@ -111,12 +111,12 @@ describe('HierarchyList', () => {
     ]);
   });
 
-  test('searchNestedItems should not return results for single nested list', () => {
+  it('searchNestedItems should not return results for single nested list', () => {
     const foundValue = searchForNestedItemIds(items, 'abcdefg');
     expect(foundValue).toEqual([]);
   });
 
-  test('clicking expansion caret should expand item', () => {
+  it('clicking expansion caret should expand item', () => {
     const { getByTitle, getAllByRole } = render(
       <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
     );
@@ -134,7 +134,7 @@ describe('HierarchyList', () => {
     expect(getByTitle('Washington Nationals')).toBeInTheDocument();
   });
 
-  test('clicking expansion caret should collapse expanded item', () => {
+  it('clicking expansion caret should collapse expanded item', () => {
     const { getByTitle, getAllByRole, queryByTitle } = render(
       <HierarchyList items={items} title="Hierarchy List" pageSize="xl" />
     );
@@ -166,7 +166,7 @@ describe('HierarchyList', () => {
     expect(getByTitle('Washington Nationals')).toBeInTheDocument();
   });
 
-  test('clicking nextpage should display the second page', () => {
+  it('clicking nextpage should display the second page', () => {
     const { getByTitle, queryByTitle, getAllByRole } = render(
       <HierarchyList items={items} title="Hierarchy List" pageSize="sm" />
     );
@@ -194,7 +194,7 @@ describe('HierarchyList', () => {
     expect(queryByTitle('Houston Astros')).not.toBeInTheDocument();
   });
 
-  test('found search result categories should be expanded', () => {
+  it('found search result categories should be expanded', () => {
     const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />
     );
@@ -212,7 +212,7 @@ describe('HierarchyList', () => {
     expect(getByTitle('JD Davis')).toBeInTheDocument();
   });
 
-  test('all items should return if search value is empty string', () => {
+  it('all items should return if search value is empty string', () => {
     const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <HierarchyList items={items} hasSearch title="Hierarchy List" />
     );
@@ -242,7 +242,7 @@ describe('HierarchyList', () => {
     expect(getByTitle('New York Yankees')).toBeInTheDocument();
   });
 
-  test('parent items of defaultSelectedId should be expanded', () => {
+  it('parent items of defaultSelectedId should be expanded', () => {
     const { getByTitle, queryByTitle } = render(
       <HierarchyList
         items={items}
@@ -266,7 +266,7 @@ describe('HierarchyList', () => {
     expect(queryByTitle('Gary Sanchez')).not.toBeInTheDocument();
   });
 
-  test('clicking item should fire onSelect', () => {
+  it('clicking item should fire onSelect', () => {
     const onSelect = jest.fn();
     const { getByTitle, getAllByRole } = render(
       <HierarchyList items={items} title="Hierarchy List" pageSize="xl" onSelect={onSelect} />

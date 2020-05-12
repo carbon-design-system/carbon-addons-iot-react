@@ -50,7 +50,7 @@ describe('File Drop', () => {
   afterEach(() => {
     window.FileReader = originalFileReader;
   });
-  test('handleChange and addNewFiles', () => {
+  it('handleChange and addNewFiles', () => {
     // If I call handleChange it should update my state with files
     expect(wrapper.state('files')).toEqual([]);
     const instance = wrapper.instance();
@@ -64,7 +64,7 @@ describe('File Drop', () => {
     expect(instance.readFileContent).toHaveBeenCalled();
   });
   // handle click function test
-  test('handleClick', () => {
+  it('handleClick', () => {
     const mockFileNamesNodes = [{ innerText: 'fileToClear' }];
 
     wrapper.instance().clearFile = jest.fn().mockImplementationOnce();
@@ -73,7 +73,7 @@ describe('File Drop', () => {
     wrapper.instance().handleClick(null, 0);
     expect(wrapper.instance().clearFile).toHaveBeenCalledWith('fileToClear');
   });
-  test('fileType', () => {
+  it('fileType', () => {
     const textWrapper = mount(<FileDrop {...commonProps} fileType="TEXT" />);
     const textInstance = textWrapper.instance();
     const binaryWrapper = mount(<FileDrop {...commonProps} fileType="BINARY" />);
@@ -84,12 +84,12 @@ describe('File Drop', () => {
     expect(mockFileReader.readAsBinaryString).toHaveBeenCalled();
   });
   // Example of how to trigger from direct instance call
-  test('fileDragHover', () => {
+  it('fileDragHover', () => {
     wrapper.instance().fileDragHover(mockHoverEvent);
     expect(wrapper.state('hover')).toBe(true);
   });
   // Example of how to click on an element
-  test('fileDrop', () => {
+  it('fileDrop', () => {
     const dragAndDropWrapper = mount(<FileDrop {...dragAndDropProps} />);
     // console.log(`drag and drop version: ${dragAndDropWrapper.debug()}`)
     const instance = dragAndDropWrapper.instance();
@@ -103,13 +103,13 @@ describe('File Drop', () => {
     expect(instance.addNewFiles).toHaveBeenCalled();
   });
   // Example of how to clear an element
-  test('fileDrop clearFile', () => {
+  it('fileDrop clearFile', () => {
     wrapper.setState({ files: mockFiles });
     expect(wrapper.state('files')).toHaveLength(1);
     wrapper.instance().clearFile(mockFiles[0].name);
     expect(wrapper.state('files')).toHaveLength(0);
   });
-  test('readFileContent', () => {
+  it('readFileContent', () => {
     const instance = wrapper.instance();
     expect(instance.readers).toEqual({});
     instance.handleFileError = jest.fn().mockImplementationOnce();
@@ -118,7 +118,7 @@ describe('File Drop', () => {
     expect(Object.keys(instance.readers)).toHaveLength(1);
     expect(instance.readers.fakeFileName).toBeDefined();
   });
-  test('handleFileErro', () => {
+  it('handleFileErro', () => {
     const instance = wrapper.instance();
     instance.readers = { fakeFileError: 'fake File Reader' };
     expect(commonProps.onError).not.toHaveBeenCalled();
@@ -126,7 +126,7 @@ describe('File Drop', () => {
     expect(Object.keys(instance.readers)).toHaveLength(0);
     expect(commonProps.onError).toHaveBeenCalled();
   });
-  test('handleFileLoad', () => {
+  it('handleFileLoad', () => {
     const instance = wrapper.instance();
     wrapper.setState({ files: mockFiles });
     expect(wrapper.state('files')[0].contents).toEqual(null);
@@ -136,7 +136,7 @@ describe('File Drop', () => {
     expect(wrapper.state('files')[0].contents).toEqual('resultFromFileReader');
   });
   // We should not include duplicated files in the state
-  test('addNewFiles - not include duplicate files', () => {
+  it('addNewFiles - not include duplicate files', () => {
     const instance = wrapper.instance();
     wrapper.setState({ files: mockFiles });
     expect(wrapper.state('files')).toHaveLength(1);

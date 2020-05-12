@@ -8,7 +8,7 @@ import SideNav from './SideNav';
 
 React.Fragment = ({ children }) => children;
 
-describe('SideNav testcases', () => {
+describe('SideNav', () => {
   const links = [
     {
       icon: () => (

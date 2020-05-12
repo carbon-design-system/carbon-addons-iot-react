@@ -25,8 +25,8 @@ const barChartCardProps = {
   onCardAction: () => {},
 };
 
-describe('BarChartCard tests', () => {
-  test('does not show bar chart when loading', () => {
+describe('BarChartCard', () => {
+  it('does not show bar chart when loading', () => {
     let wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
 
@@ -34,7 +34,7 @@ describe('BarChartCard tests', () => {
     expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
   });
 
-  test('does not show bar chart when empty data', () => {
+  it('does not show bar chart when empty data', () => {
     let wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -47,7 +47,7 @@ describe('BarChartCard tests', () => {
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
   });
 
-  test('shows groupedBarChart on grouped data', () => {
+  it('shows groupedBarChart on grouped data', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -65,7 +65,7 @@ describe('BarChartCard tests', () => {
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
   });
 
-  test('shows stackedBarChart on stacked data', () => {
+  it('shows stackedBarChart on stacked data', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -83,7 +83,7 @@ describe('BarChartCard tests', () => {
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
 
-  test('shows a timeSeries chart', () => {
+  it('shows a timeSeries chart', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -101,7 +101,7 @@ describe('BarChartCard tests', () => {
     expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
   });
 
-  test('shows a horizontal chart', () => {
+  it('shows a horizontal chart', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -119,7 +119,7 @@ describe('BarChartCard tests', () => {
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
   });
-  test('mapValuesToAxes returns axes for non-timebased group charts ', () => {
+  it('mapValuesToAxes returns axes for non-timebased group charts ', () => {
     const series = {
       groupDataSourceId: 'quarter',
       labelDataSourceId: 'city',
@@ -136,7 +136,7 @@ describe('BarChartCard tests', () => {
       leftAxesMapsTo: 'value',
     });
   });
-  test('mapValuesToAxes returns axes for timebased group charts ', () => {
+  it('mapValuesToAxes returns axes for timebased group charts ', () => {
     const series = {
       groupDataSourceId: 'quarter',
       labelDataSourceId: 'city',
@@ -154,7 +154,7 @@ describe('BarChartCard tests', () => {
       leftAxesMapsTo: 'value',
     });
   });
-  test('mapValuesToAxes returns axes for non-timebased and non-group charts AKA simple', () => {
+  it('mapValuesToAxes returns axes for non-timebased and non-group charts AKA simple', () => {
     const series = {
       labelDataSourceId: 'city',
       dataSourceId: 'particles',
@@ -170,7 +170,7 @@ describe('BarChartCard tests', () => {
       leftAxesMapsTo: 'value',
     });
   });
-  test('formatChartData returns formatted data for group-based chart', () => {
+  it('formatChartData returns formatted data for group-based chart', () => {
     const series = {
       groupDataSourceId: 'quarter',
       labelDataSourceId: 'city',
@@ -260,7 +260,7 @@ describe('BarChartCard tests', () => {
       },
     ]);
   });
-  test('formatChartData returns formatted data for time-based and group-based chart', () => {
+  it('formatChartData returns formatted data for time-based and group-based chart', () => {
     const series = {
       groupDataSourceId: 'timestamp',
       labelDataSourceId: 'city',
@@ -367,7 +367,7 @@ describe('BarChartCard tests', () => {
       },
     ]);
   });
-  test('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
+  it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
     const series = {
       labelDataSourceId: 'city',
       dataSourceId: 'particles',
@@ -440,7 +440,7 @@ describe('BarChartCard tests', () => {
       },
     ]);
   });
-  test('formatChartData returns formatted data for time-based, non-group chart', () => {
+  it('formatChartData returns formatted data for time-based, non-group chart', () => {
     const series = {
       dataSourceId: 'particles',
       timeDataSourceId: 'timestamp',
@@ -529,7 +529,7 @@ describe('BarChartCard tests', () => {
       },
     ]);
   });
-  test('formatColors returns correct format if series is array', () => {
+  it('formatColors returns correct format if series is array', () => {
     const series = {
       dataSourceId: 'particles',
       timeDataSourceId: 'timestamp',

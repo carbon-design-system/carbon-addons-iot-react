@@ -36,7 +36,7 @@ const mockScrollEvent = {
 };
 
 describe('ListCard', () => {
-  test('calls loadData callback on scroll', () => {
+  it('calls loadData callback on scroll', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
@@ -47,7 +47,7 @@ describe('ListCard', () => {
     expect(onLoadData).toHaveBeenCalled();
   });
 
-  test('LoadData when data is null', () => {
+  it('LoadData when data is null', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(
@@ -57,7 +57,7 @@ describe('ListCard', () => {
     expect(wrapper.find('InlineLoading')).toHaveLength(0);
   });
 
-  test('Inline Loading', () => {
+  it('Inline Loading', () => {
     const onLoadData = jest.fn();
 
     const wrapper = mount(

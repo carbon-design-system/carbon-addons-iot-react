@@ -39,8 +39,8 @@ const timeSeriesCardProps = {
   onCardAction: () => {},
 };
 
-describe('TimeSeriesCard tests', () => {
-  test('does not show line chart when loading', () => {
+describe('TimeSeriesCard', () => {
+  it('does not show line chart when loading', () => {
     let wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardProps} isLoading size={CARD_SIZES.MEDIUM} />
     );
@@ -51,7 +51,7 @@ describe('TimeSeriesCard tests', () => {
     expect(wrapper.find('LineChart')).toHaveLength(1);
     expect(wrapper.find('SkeletonText')).toHaveLength(0);
   });
-  test('does not fail to render if no data is given', () => {
+  it('does not fail to render if no data is given', () => {
     // For whatever reason, these devices do not give back real data so the No data message
     // should render instead of the line graph
     const emptyValues = [{ deviceid: 'robot1' }, { deviceid: 'robot2' }];
@@ -61,7 +61,7 @@ describe('TimeSeriesCard tests', () => {
 
     expect(getByText('No data is available for this time range.')).toBeInTheDocument();
   });
-  test('shows table with data when expanded', () => {
+  it('shows table with data when expanded', () => {
     const wrapper = mount(
       <TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUMTHIN} />
     );
@@ -69,12 +69,12 @@ describe('TimeSeriesCard tests', () => {
     // Carbon Table should be there
     expect(wrapper.find(Table)).toHaveLength(1);
   });
-  test('shows bar chart when chartLayout is set to bar', () => {
+  it('shows bar chart when chartLayout is set to bar', () => {
     timeSeriesCardProps.content.chartType = TIME_SERIES_TYPES.BAR;
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
-  test('determine precision', () => {
+  it('determine precision', () => {
     expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
     expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
     expect(determinePrecision(CARD_SIZES.SMALL, 1.45, 1)).toEqual(1);
@@ -108,7 +108,7 @@ describe('TimeSeriesCard tests', () => {
     expect(updatedTooltip).toContain('<ul');
     expect(updatedTooltip).toContain('2017');
   });
-  test('show line chart when only 1 color is set', () => {
+  it('show line chart when only 1 color is set', () => {
     const timeSeriesCardWithOneColorProps = {
       title: 'Temperature',
       id: 'facility-temperature',
@@ -157,7 +157,7 @@ describe('TimeSeriesCard tests', () => {
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardWithOneColorProps} />);
     expect(wrapper.find('LineChart')).toHaveLength(1);
   });
-  test('formatChartData returns properly formatted data without dataFilter set', () => {
+  it('formatChartData returns properly formatted data without dataFilter set', () => {
     const series = [
       {
         label: 'Amsterdam',
@@ -194,7 +194,7 @@ describe('TimeSeriesCard tests', () => {
       },
     ]);
   });
-  test('formatChartData returns properly formatted data with dataFilter set', () => {
+  it('formatChartData returns properly formatted data with dataFilter set', () => {
     const series = [
       {
         label: 'Amsterdam',
@@ -257,7 +257,7 @@ describe('TimeSeriesCard tests', () => {
       },
     ]);
   });
-  test('formatChartData returns empty array if no data matches dataFilter', () => {
+  it('formatChartData returns empty array if no data matches dataFilter', () => {
     const series = [
       {
         label: 'Amsterdam',
@@ -276,7 +276,7 @@ describe('TimeSeriesCard tests', () => {
       )
     ).toEqual([]);
   });
-  test('formatColors returns correct format if series is array', () => {
+  it('formatColors returns correct format if series is array', () => {
     const series = [
       {
         label: 'Amsterdam',
@@ -295,7 +295,7 @@ describe('TimeSeriesCard tests', () => {
       scale: { Amsterdam: 'blue', 'New York': 'yellow' },
     });
   });
-  test('formatColors returns correct format if series is object', () => {
+  it('formatColors returns correct format if series is object', () => {
     const series = {
       label: 'Amsterdam',
       dataSourceId: 'particles',

@@ -9,7 +9,7 @@ const commonProps = {
 };
 
 describe('Button', () => {
-  test('loading', () => {
+  it('loading', () => {
     const wrapper = mount(
       <Button loading {...commonProps}>
         Click Me

@@ -4,13 +4,13 @@ import { Add16, Edit16 } from '@carbon/icons-react';
 
 import ListItem from './ListItem';
 
-describe('ListItem component tests', () => {
-  test('test ListItem gets rendered', () => {
+describe('ListItem', () => {
+  it('test ListItem gets rendered', () => {
     const { getByText } = render(<ListItem id="1" value="test" />);
     expect(getByText('test')).toBeTruthy();
   });
 
-  test('ListItem with large row and secondary value', () => {
+  it('ListItem with large row and secondary value', () => {
     const { getByText } = render(
       <ListItem id="1" value="test" secondaryValue="second" isLargeRow />
     );
@@ -18,7 +18,7 @@ describe('ListItem component tests', () => {
     expect(getByText('second')).toBeTruthy();
   });
 
-  test('ListItem when isSelectable set to true', () => {
+  it('ListItem when isSelectable set to true', () => {
     const onSelect = jest.fn();
     const { getAllByRole } = render(
       <ListItem id="1" value="test" isSelectable onSelect={onSelect} />
@@ -27,28 +27,28 @@ describe('ListItem component tests', () => {
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
-  test('ListItem when isSelectable is set to true and onClick will trigger onSelect', () => {
+  it('ListItem when isSelectable is set to true and onClick will trigger onSelect', () => {
     const onSelect = jest.fn();
     const { getAllByRole } = render(<ListItem id="1" value="" isSelectable onSelect={onSelect} />);
     fireEvent.click(getAllByRole('button')[0]);
     expect(onSelect).toHaveBeenCalledTimes(1);
   });
 
-  test('ListItem when is Expandable set to true', () => {
+  it('ListItem when is Expandable set to true', () => {
     const onExpand = jest.fn();
     const { getAllByRole } = render(<ListItem id="1" value="" isExpandable onExpand={onExpand} />);
     fireEvent.keyPress(getAllByRole('button')[0], { key: 'Enter', charCode: 13 });
     expect(onExpand).toHaveBeenCalledTimes(1);
   });
 
-  test('ListItem when is Expandable set to true and onClick will trigger onExpand', () => {
+  it('ListItem when is Expandable set to true and onClick will trigger onExpand', () => {
     const onExpand = jest.fn();
     const { getAllByRole } = render(<ListItem id="1" value="" isExpandable onExpand={onExpand} />);
     fireEvent.click(getAllByRole('button')[0]);
     expect(onExpand).toHaveBeenCalledTimes(1);
   });
 
-  test('ListItem with Icon', () => {
+  it('ListItem with Icon', () => {
     const onClick = jest.fn();
     const { getByTitle } = render(
       <ListItem
@@ -62,7 +62,7 @@ describe('ListItem component tests', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  test('ListItem with rowActions', () => {
+  it('ListItem with rowActions', () => {
     const rowActionOnClick = jest.fn();
     const rowActions = [<Edit16 title="iconTitle" onClick={rowActionOnClick} />];
     const { getByTitle } = render(<ListItem id="1" value="test" rowActions={rowActions} />);

@@ -142,18 +142,18 @@ let wrapper = mount(
     onDashboardAction={onClick}
   />
 );
-describe('Dashboard testcases', () => {
-  test('verify dashboard still renders with bad layout', () => {
+describe('Dashboard', () => {
+  it('verify dashboard still renders with bad layout', () => {
     // should still render even with incorrect layout
     expect(wrapper).toBeDefined();
   });
 
-  test('verify onDashboardAction is called on click', () => {
+  it('verify onDashboardAction is called on click', () => {
     wrapper.find('#action-icon--edit').simulate('click');
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
 
-  test('verify onDashboardAction is called on enter keydown', () => {
+  it('verify onDashboardAction is called on enter keydown', () => {
     wrapper = mount(
       <Dashboard
         title="My Dashboard"
@@ -173,7 +173,7 @@ describe('Dashboard testcases', () => {
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
 
-  test('verify onFetchData is called by each card if loading changes to true', () => {
+  it('verify onFetchData is called by each card if loading changes to true', () => {
     return new Promise(async (done, reject) => {
       try {
         const mockOnFetchData = jest.fn().mockImplementation(card => Promise.resolve(card));
@@ -226,7 +226,7 @@ describe('Dashboard testcases', () => {
       }
     });
   });
-  test('verify onLayoutChange is called when the dashboard renders', () => {
+  it('verify onLayoutChange is called when the dashboard renders', () => {
     const mockOnLayoutChange = jest.fn();
 
     wrapper = mount(

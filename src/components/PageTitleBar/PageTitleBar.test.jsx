@@ -8,21 +8,21 @@ import PageTitleBar from './PageTitleBar';
 import { commonPageTitleBarProps, pageTitleBarBreadcrumb } from './PageTitleBar.story';
 
 describe('PageTitleBar', () => {
-  test('Renders common props as expected', () => {
+  it('Renders common props as expected', () => {
     const wrapper = mount(<PageTitleBar {...commonPageTitleBarProps} />);
     expect(wrapper.find('.page-title-bar-title--text h2')).toHaveLength(1);
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(1);
     expect(wrapper.find(Button)).toHaveLength(1);
   });
 
-  test('Renders breadrumbs as expected', () => {
+  it('Renders breadrumbs as expected', () => {
     const wrapper = mount(
       <PageTitleBar {...commonPageTitleBarProps} breadcrumb={pageTitleBarBreadcrumb} />
     );
     expect(wrapper.find('.page-title-bar-breadcrumb')).toHaveLength(1);
   });
 
-  test('Renders tooltip as expected', () => {
+  it('Renders tooltip as expected', () => {
     const wrapper = mount(
       <PageTitleBar
         title={commonPageTitleBarProps.title}
@@ -35,7 +35,7 @@ describe('PageTitleBar', () => {
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
   });
 
-  test('Renders content and tooltip as expected', () => {
+  it('Renders content and tooltip as expected', () => {
     const wrapper = mount(
       <PageTitleBar
         title={commonPageTitleBarProps.title}
@@ -54,7 +54,7 @@ describe('PageTitleBar', () => {
     expect(wrapper.find('.page-title-bar-content')).toHaveLength(1);
   });
 
-  test('Does not render tooltip when no description', () => {
+  it('Does not render tooltip when no description', () => {
     const wrapper = mount(
       <PageTitleBar
         title={commonPageTitleBarProps.title}
@@ -66,7 +66,7 @@ describe('PageTitleBar', () => {
     expect(wrapper.find('.page-title-bar-description')).toHaveLength(0);
   });
 
-  test('Does not render tooltip when no description with content', () => {
+  it('Does not render tooltip when no description with content', () => {
     const wrapper = mount(
       <PageTitleBar
         title={commonPageTitleBarProps.title}
@@ -112,7 +112,7 @@ describe('PageTitleBar', () => {
     });
   });
 
-  test('Renders loading state as expected', () => {
+  it('Renders loading state as expected', () => {
     const wrapper = mount(<PageTitleBar title={commonPageTitleBarProps.title} isLoading />);
     expect(wrapper.find(SkeletonText)).toHaveLength(1);
   });

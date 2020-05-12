@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import PageWorkArea from './PageWorkArea';
 
 describe('PageWorkArea', () => {
-  test('isOpen', () => {
+  it('isOpen', () => {
     const wrapper = mount(<PageWorkArea isOpen={false}>Hi</PageWorkArea>);
     expect(wrapper.find('div')).toHaveLength(0);
     const wrapper2 = mount(<PageWorkArea isOpen>Hi</PageWorkArea>);

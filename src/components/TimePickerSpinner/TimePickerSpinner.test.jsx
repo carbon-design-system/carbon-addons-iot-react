@@ -20,17 +20,17 @@ describe('TimePickerSpinner', () => {
     jest.clearAllTimers();
   });
 
-  test('with spinner', () => {
+  it('with spinner', () => {
     render(<TimePickerSpinner {...timePickerProps} spinner />);
     expect(screen.queryAllByRole('button')).toHaveLength(2);
   });
 
-  test('without spinner', () => {
+  it('without spinner', () => {
     render(<TimePickerSpinner {...timePickerProps} />);
     expect(screen.queryAllByRole('button')).toHaveLength(0);
   });
 
-  test('increment/decrement value via buttons', () => {
+  it('increment/decrement value via buttons', () => {
     render(<TimePickerSpinner {...timePickerProps} spinner />);
 
     fireEvent.click(screen.queryByRole('button', { name: /Increment hours/i }));
@@ -44,7 +44,7 @@ describe('TimePickerSpinner', () => {
   // the current or expected behvaior of keyboard interaction in browsers.
   // The following test covers the keyboard interaction at a base level, but
   // needs to be improved by testing keyboard focus/interactions in-browser via cypress or similar.
-  test('increment/decrement value via keyboard', () => {
+  it('increment/decrement value via keyboard', () => {
     render(<TimePickerSpinner {...timePickerProps} spinner />);
 
     screen.getByRole('textbox').focus();
@@ -69,7 +69,7 @@ describe('TimePickerSpinner', () => {
     expect(screen.getByRole('textbox').value).toEqual('00:00');
   });
 
-  test('value is not modified on unrelated keystroke', () => {
+  it('value is not modified on unrelated keystroke', () => {
     render(<TimePickerSpinner {...timePickerProps} spinner />);
 
     screen.getByRole('textbox').focus();
@@ -82,7 +82,7 @@ describe('TimePickerSpinner', () => {
     expect(screen.getByRole('textbox').value).toEqual('');
   });
 
-  test('work with strings', () => {
+  it('work with strings', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} value="xyz" spinner />);
 
     wrapper.find('input').simulate('blur');
@@ -100,7 +100,7 @@ describe('TimePickerSpinner', () => {
   // The following test covers the keyboard interaction at a base level, but
   // needs to be improved by testing keyboard focus/interactions in-browser
   // via cypress or similar.
-  test('show indicator', () => {
+  it('show indicator', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
 
     const upButton = wrapper.find('.iot--time-picker__controls--btn.up-icon').first();
@@ -138,19 +138,19 @@ describe('TimePickerSpinner', () => {
     downButton.simulate('blur');
   });
 
-  test('onClick should be called', () => {
+  it('onClick should be called', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
     wrapper.find('input').simulate('click');
     expect(timePickerProps.onClick).toHaveBeenCalled();
   });
 
-  test('onChange should be called', () => {
+  it('onChange should be called', () => {
     const wrapper = mount(<TimePickerSpinner {...timePickerProps} spinner />);
     wrapper.find('input').simulate('change');
     expect(timePickerProps.onChange).toHaveBeenCalled();
   });
 
-  test('12-hour picker', () => {
+  it('12-hour picker', () => {
     const wrapper = mount(
       <TimePickerSpinner {...timePickerProps} value="12:00" spinner is12hour />
     );
@@ -161,7 +161,7 @@ describe('TimePickerSpinner', () => {
     expect(wrapper.find('input').props().value).toEqual('00:00');
   });
 
-  test('default timeGroup to minutes', () => {
+  it('default timeGroup to minutes', () => {
     const wrapper = mount(
       <TimePickerSpinner
         {...timePickerProps}
@@ -177,7 +177,7 @@ describe('TimePickerSpinner', () => {
     expect(wrapper.find('input').props().value).toEqual('12:01');
   });
 
-  test('flip minutes back to 59 after hitting 0', () => {
+  it('flip minutes back to 59 after hitting 0', () => {
     const wrapper = mount(
       <TimePickerSpinner
         {...timePickerProps}
