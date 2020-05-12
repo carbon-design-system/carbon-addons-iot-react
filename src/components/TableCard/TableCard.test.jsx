@@ -4,9 +4,9 @@ import { render, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { tableColumns, tableData, actions2 } from '../../utils/sample';
+import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
 
-import TableCard, { findMatchingThresholds } from './TableCard';
+import TableCard, { findMatchingThresholds, createColumnsWithFormattedLinks } from './TableCard';
 
 describe('TableCard', () => {
   const thresholds = [
@@ -53,6 +53,82 @@ describe('TableCard', () => {
       { airflow_mean: null }
     );
     expect(zeroMatchingThreshold2).toHaveLength(0);
+  });
+  test('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {
+    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
+    const columnsWithlinks = columnsWithFormattedLinks.filter(column => column.renderDataFunction);
+    expect(columnsWithlinks).toHaveLength(1);
+  });
+  test('Row specific link variables populate correctly', () => {
+    const tableLinkColumns = [
+      ...tableColumns,
+      {
+        dataSourceId: 'deviceId',
+        label: 'deviceId',
+      },
+      {
+        dataSourceId: 'Link',
+        label: 'Link',
+        linkTemplate: {
+          href: 'https://ibm.com/{deviceId}',
+          target: '_blank',
+        },
+      },
+    ];
+
+    // introduce row specific deviceId data
+    const deviceidRowData = [
+      '73000',
+      '73000',
+      '73001',
+      '73000',
+      '73002',
+      '73004',
+      '73004',
+      '73003',
+      '73005',
+      '73003',
+      '73005',
+    ];
+
+    const tableLinkData = tableData.map((row, i) => {
+      return {
+        ...row,
+        values: {
+          ...row.values,
+          deviceId: deviceidRowData[i],
+          Link: 'Link',
+        },
+      };
+    });
+
+    const thresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 1,
+        severity: 1,
+        label: 'Pressure',
+        showSeverityLabel: true,
+        severityLabel: 'Critical',
+      },
+    ];
+
+    const { getAllByText } = render(
+      <TableCard
+        title="Asset Open Alerts"
+        id="table-list"
+        tooltip="Here's a Tooltip"
+        content={{
+          columns: tableLinkColumns,
+          thresholds,
+        }}
+        values={tableLinkData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+    expect(getAllByText('Link').length).toEqual(11);
+    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73005');
   });
   test('Clicked row actions', () => {
     const onCardAction = jest.fn();
