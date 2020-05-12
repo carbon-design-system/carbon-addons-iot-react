@@ -244,7 +244,7 @@ const defaultProps = {
   },
 };
 
-const __unstableDateTimePicker = ({
+const DateTimePicker = ({
   defaultValue,
   dateTimeMask,
   presets,
@@ -478,7 +478,6 @@ const __unstableDateTimePicker = ({
 
   const toggleIsCustomRange = () => {
     setIsCustomRange(!isCustomRange);
-    setSelectedPreset(null);
   };
 
   const onPresetClick = preset => {
@@ -567,7 +566,6 @@ const __unstableDateTimePicker = ({
   const onApplyClick = () => {
     setIsExpanded(false);
     const value = renderValue();
-
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
         setLastAppliedValue(value.absolute);
@@ -887,7 +885,7 @@ const __unstableDateTimePicker = ({
   );
 };
 
-__unstableDateTimePicker.propTypes = propTypes;
-__unstableDateTimePicker.defaultProps = defaultProps;
+DateTimePicker.propTypes = propTypes;
+DateTimePicker.defaultProps = defaultProps;
 
-export default __unstableDateTimePicker;
+export default DateTimePicker;

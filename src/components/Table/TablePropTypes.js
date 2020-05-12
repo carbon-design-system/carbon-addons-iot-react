@@ -148,6 +148,7 @@ export const I18NPropTypes = PropTypes.shape({
   columnSelectionButtonAria: PropTypes.string,
   columnSelectionConfig: PropTypes.string,
   filterButtonAria: PropTypes.string,
+  editButtonAria: PropTypes.string,
   clearFilterAria: PropTypes.string,
   filterAria: PropTypes.string,
   downloadIconDescription: PropTypes.string,
@@ -193,6 +194,7 @@ export const defaultI18NPropTypes = {
   columnSelectionButtonAria: 'Column Selection',
   columnSelectionConfig: 'Manage columns',
   filterButtonAria: 'Filters',
+  editButtonAria: 'Edit rows',
   searchLabel: 'Search',
   searchPlaceholder: 'Search',
   clearFilterAria: 'Clear filter',
@@ -224,3 +226,6 @@ export const TableSearchPropTypes = PropTypes.shape({
   onChange: PropTypes.func,
   onExpand: PropTypes.func,
 });
+
+/** Which toolbar is currently active */
+export const ActiveTableToolbarPropType = PropTypes.oneOf(['column', 'filter', 'rowEdit']);

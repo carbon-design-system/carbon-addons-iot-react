@@ -318,6 +318,44 @@ describe('Table', () => {
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
 
+  it('enter key or mouse click should trigger rowEdit toolbar', () => {
+    const { getByTestId } = render(
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={{ hasRowEdit: true }}
+        tableState={tableState}
+      />
+    );
+
+    const rowEditButton = getByTestId('row-edit-button');
+    expect(rowEditButton).toBeTruthy();
+    fireEvent.keyDown(rowEditButton, { keyCode: keyCodes.ESC });
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(0);
+
+    fireEvent.keyDown(rowEditButton, { keyCode: keyCodes.ENTER });
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(rowEditButton);
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(2);
+  });
+
+  it('rowEdit toolbar should contain external rowEditBarButtons', () => {
+    const { getByTestId } = render(
+      <TableToolbar
+        actions={mockActions.toolbar}
+        options={{ hasRowEdit: true }}
+        tableState={{
+          ...tableState,
+          activeBar: 'rowEdit',
+          rowEditBarButtons: <button type="button" data-testid="row-edit-bar-button" />,
+        }}
+      />
+    );
+
+    const rowEditBarButton = getByTestId('row-edit-bar-button');
+    expect(rowEditBarButton).toBeTruthy();
+  });
+
   it('toolbar search should render with default value', () => {
     const wrapper = mount(
       <Table
