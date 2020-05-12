@@ -61,7 +61,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
   .add('IoT ProgressIndicator', () => (
     <IotProgressIndicator
       items={items}
-      currentItemId={select('id', items.map(item => item.id), items[4].id)}
+      currentItemId={select('id', items.map(item => item.id), items[0].id)}
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={boolean('isVerticalMode', false)}

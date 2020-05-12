@@ -145,7 +145,6 @@ export const IotProgressStep = ({
     [`step-invalid`]: invalid && !disabled,
   });
 
-
   return (
     <li className={classes} style={getStepWidth()}>
       <StepButton />
@@ -202,18 +201,18 @@ export const IotProgressIndicator = ({
     let newList = [];
     let stepNumber = 1;
 
-    itemsList.forEach((item, idx) => {
+    itemsList.forEach(item => {
       if (item.children) {
         const newVal = Object.assign({}, item);
         delete newVal.children;
-        newVal["stepNumber"] = stepNumber;
-        newVal["level"] = level;
+        newVal.stepNumber = stepNumber;
+        newVal.level = level;
         newList.push(newVal);
         stepNumber += 1;
         newList = newList.concat(flattenItems(item.children, level + 1));
       } else {
-        item["stepNumber"] = stepNumber;
-        item["level"] = level;
+        item.stepNumber = stepNumber;
+        item.level = level;
         newList.push(item);
         stepNumber += 1;
       }
@@ -242,6 +241,38 @@ export const IotProgressIndicator = ({
     }
   };
 
+  const stepList = newList => {
+    const list = [];
+
+    newList.forEach(
+      ({ id, label, secondaryLabel, description, disabled, invalid, stepNumber, level }, index) => {
+        list.push(
+          <IotProgressStep
+            id={id}
+            key={id}
+            label={label}
+            secondaryLabel={secondaryLabel}
+            description={description || label}
+            index={index}
+            currentStep={currentStep}
+            currentIndex={currentIndex}
+            onChange={handleChange}
+            level={level}
+            stepNumber={stepNumber}
+            vertical={isVerticalMode}
+            showLabel={showLabels}
+            stepWidth={stepWidth}
+            lastItem={newItems[newItems.length - 1].id === id}
+            disabled={disabled}
+            invalid={invalid}
+          />
+        );
+      }
+    );
+
+    return list;
+  };
+
   const classes = classnames({
     [`${iotPrefix}--progress`]: true,
     [`${iotPrefix}--progress--vertical`]: isVerticalMode,
@@ -250,27 +281,7 @@ export const IotProgressIndicator = ({
 
   return (
     <ul className={classes} data-testid="progress-indicator-testid" onChange={handleChange}>
-      {newItems.map(({ id, label, secondaryLabel, description, disabled, invalid, stepNumber, level }, index) => {
-        <IotProgressStep
-          id={id}
-          key={id}
-          label={label}
-          secondaryLabel={secondaryLabel}
-          description={description || label}
-          index={index}
-          currentStep={currentStep}
-          currentIndex={currentIndex}
-          onChange={handleChange}
-          level={level}
-          stepNumber={stepNumber}
-          vertical={isVerticalMode}
-          showLabel={showLabels}
-          stepWidth={stepWidth}
-          lastItem={((newItems[newItems.length - 1].id) == id) ? true : false}
-          disabled={disabled}
-          invalid={invalid}
-        />
-      })}
+      {stepList(newItems)}
     </ul>
   );
 };
