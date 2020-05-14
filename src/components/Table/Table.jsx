@@ -231,7 +231,7 @@ export const defaultProps = baseProps => ({
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
       onRowClicked: defaultFunction('actions.table.onRowClicked'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
-      onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
+      onEmptyStateAction: null,
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),

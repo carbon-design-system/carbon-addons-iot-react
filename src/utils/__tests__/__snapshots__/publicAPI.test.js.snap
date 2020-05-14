@@ -293,7 +293,7 @@ Map {
           "onChangeSort": [Function],
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
-          "onEmptyStateAction": [Function],
+          "onEmptyStateAction": null,
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
         },
