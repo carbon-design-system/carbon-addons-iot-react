@@ -13,7 +13,7 @@ describe('cardUtilityFunctions', () => {
     // default precisions
     expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
     expect(determinePrecision(CARD_SIZES.SMALL, 0.125)).toBeUndefined();
-    //For small card sizes always trust the passed precision
+    // For small card sizes always trust the passed precision
     expect(determinePrecision(CARD_SIZES.SMALL, 11.45, 1)).toEqual(1);
     expect(determinePrecision(CARD_SIZES.SMALL, 0.125, 2)).toEqual(2);
     // For integers no precision
