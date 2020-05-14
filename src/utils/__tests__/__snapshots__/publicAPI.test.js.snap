@@ -319,7 +319,6 @@ Map {
         "downloadIconDescription": "Download table content",
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
-        "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
         "emptyMessageWithFilters": "No results match the current filters",
         "filterAria": "Filter",

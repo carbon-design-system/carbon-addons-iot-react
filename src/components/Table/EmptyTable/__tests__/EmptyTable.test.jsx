@@ -1,7 +1,7 @@
-import EmptyTable from '../EmptyTable';
-
 import React from 'react';
 import { render } from '@testing-library/react';
+
+import EmptyTable from '../EmptyTable';
 
 const commonTableProps = {
   id: 'tableid',
@@ -33,21 +33,6 @@ describe('EmptyTable', () => {
         emptyState={{
           message: 'I am empty',
           buttonLabel: 'clickme',
-        }}
-        onEmptyStateAction={jest.fn()}
-      />
-    );
-    expect(queryAllByText('I am empty')).toHaveLength(1);
-    expect(queryAllByText('clickme')).toHaveLength(1);
-  });
-  it('empty state action with custom filtered button', () => {
-    const { queryAllByText } = render(
-      <EmptyTable
-        {...commonTableProps}
-        isFiltered
-        emptyState={{
-          message: 'I am empty',
-          buttonLabelWithFilters: 'clickme',
         }}
         onEmptyStateAction={jest.fn()}
       />

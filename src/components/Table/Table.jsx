@@ -275,7 +275,6 @@ export const defaultProps = baseProps => ({
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
-    emptyButtonLabelWithFilters: 'Clear all filters',
     downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
@@ -554,7 +553,11 @@ const Table = props => {
                     }
               }
               onEmptyStateAction={
-                isFiltered ? handleClearFilters : actions.table.onEmptyStateAction
+                isFiltered && i18n.emptyButtonLabelWithFilters
+                  ? handleClearFilters // show clear filters
+                  : !isFiltered && actions.table.onEmptyStateAction
+                  ? actions.table.onEmptyStateAction
+                  : undefined // if not filtered then show normal empty state
               }
             />
           )}

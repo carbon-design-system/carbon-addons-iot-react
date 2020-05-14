@@ -1717,13 +1717,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 <p>
                                   There are no alerts in this range.
                                 </p>
-                                <button
-                                  className="bx--btn bx--btn--primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  tabIndex={0}
-                                  type="button"
-                                />
                               </div>
                             </td>
                           </tr>
@@ -3929,13 +3922,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 <p>
                                   There are no alerts in this range.
                                 </p>
-                                <button
-                                  className="bx--btn bx--btn--primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  tabIndex={0}
-                                  type="button"
-                                />
                               </div>
                             </td>
                           </tr>
@@ -6173,13 +6159,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 <p>
                                   There are no alerts in this range.
                                 </p>
-                                <button
-                                  className="bx--btn bx--btn--primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  tabIndex={0}
-                                  type="button"
-                                />
                               </div>
                             </td>
                           </tr>
@@ -10872,13 +10851,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 <p>
                                   __There is no data__
                                 </p>
-                                <button
-                                  className="bx--btn bx--btn--primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  tabIndex={0}
-                                  type="button"
-                                />
                               </div>
                             </td>
                           </tr>
@@ -25210,13 +25182,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 <p>
                                   There are no alerts in this range.
                                 </p>
-                                <button
-                                  className="bx--btn bx--btn--primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                  tabIndex={0}
-                                  type="button"
-                                />
                               </div>
                             </td>
                           </tr>
