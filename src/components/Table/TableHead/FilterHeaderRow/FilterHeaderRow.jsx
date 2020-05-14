@@ -185,17 +185,14 @@ class FilterHeaderRow extends Component {
     onApplyFilter(this.state);
   };
 
-  handleClearFilter = (event, column) => {
-    // when a user clicks or hits ENTER, we'll clear the input
-    if (event.keyCode === 13 || !event.keyCode) {
-      this.setState(
-        state => ({
-          ...state,
-          [column.id]: '',
-        }),
-        this.handleApplyFilter
-      );
-    }
+  handleClearFilter = column => {
+    this.setState(
+      state => ({
+        ...state,
+        [column.id]: '',
+      }),
+      this.handleApplyFilter
+    );
   };
 
   handleTranslation = id => {
@@ -231,13 +228,12 @@ class FilterHeaderRow extends Component {
           .map((c, i) => {
             const column = columns.find(item => c.columnId === item.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
-            const filterColumnOptions = options => {
+            const filterColumnOptions = memoize(options => {
               options.sort((a, b) => {
                 return a.text.localeCompare(b.text, { sensitivity: 'base' });
               });
               return options;
-            };
-            const memoizeColumnOptions = memoize(filterColumnOptions);
+            });
 
             // undefined check has the effect of making isFilterable default to true
             // if unspecified
@@ -249,7 +245,7 @@ class FilterHeaderRow extends Component {
                   id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
-                  items={memoizeColumnOptions(column.options)}
+                  items={filterColumnOptions(column.options)}
                   itemToString={item => (item ? item.text : '')}
                   initialSelectedItem={{
                     id: columnStateValue,
@@ -278,9 +274,9 @@ class FilterHeaderRow extends Component {
                     light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
                     title={this.state[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
-                    onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
-                    onBlur={this.handleApplyFilter}
-                    onChange={event => this.setState({ [column.id]: event.target.value })}
+                    onChange={event =>
+                      this.setState({ [column.id]: event.target.value }, this.handleApplyFilter)
+                    }
                     value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
                   />
                   {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
@@ -288,12 +284,12 @@ class FilterHeaderRow extends Component {
                       role="button"
                       className="bx--list-box__selection"
                       tabIndex="0"
-                      onClick={event => {
-                        this.handleClearFilter(event, column);
+                      onClick={() => {
+                        this.handleClearFilter(column);
                       }}
-                      onKeyDown={event => {
-                        this.handleClearFilter(event, column);
-                      }}
+                      onKeyDown={event =>
+                        handleEnterKeyDown(event, () => this.handleClearFilter(column))
+                      }
                       title={clearFilterText}
                     >
                       <Close description={clearFilterText} />
