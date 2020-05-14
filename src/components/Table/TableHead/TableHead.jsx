@@ -342,7 +342,6 @@ const TableHead = ({
           openMenuText={openMenuText}
           closeMenuText={closeMenuText}
           ordering={ordering}
-          key={JSON.stringify(filters)}
           filters={filters}
           tableOptions={options}
           onApplyFilter={onApplyFilter}
