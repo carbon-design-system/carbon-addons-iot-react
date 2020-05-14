@@ -9,7 +9,6 @@ import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutCon
 import { barChartData } from '../../utils/barChartDataSample';
 
 import TimeSeriesCard, {
-  determinePrecision,
   valueFormatter,
   handleTooltip,
   formatChartData,
@@ -73,12 +72,6 @@ describe('TimeSeriesCard', () => {
     timeSeriesCardProps.content.chartType = TIME_SERIES_TYPES.BAR;
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
-  });
-  it('determine precision', () => {
-    expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
-    expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
-    expect(determinePrecision(CARD_SIZES.SMALL, 1.45, 1)).toEqual(1);
-    expect(determinePrecision(CARD_SIZES.LARGE, 1.45, 1)).toEqual(1);
   });
   it('valueFormatter', () => {
     // Small should get 3 precision
