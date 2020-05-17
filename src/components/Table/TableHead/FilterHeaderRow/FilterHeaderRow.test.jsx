@@ -16,7 +16,7 @@ describe('FilterHeaderRow', () => {
     console.error.mockRestore();
   });
 
-  test('text input change updates state', () => {
+  it('text input change updates state', () => {
     const wrapper = mount(
       <FilterHeaderRow
         {...commonFilterProps}
@@ -28,7 +28,7 @@ describe('FilterHeaderRow', () => {
     expect(wrapper.state()).toEqual({ col1: 'mytext' });
   });
 
-  test('each column is marked with data-column', () => {
+  it('each column is marked with data-column', () => {
     const wrapper = mount(
       <FilterHeaderRow
         {...commonFilterProps}
@@ -40,7 +40,7 @@ describe('FilterHeaderRow', () => {
     expect(columns).toHaveLength(1);
   });
 
-  test('input blur fires apply filter callback', () => {
+  it('input blur fires apply filter callback', () => {
     const wrapper = mount(
       <FilterHeaderRow
         {...commonFilterProps}
@@ -56,7 +56,7 @@ describe('FilterHeaderRow', () => {
     expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith(desiredState);
   });
 
-  test('text input clear button clears filter', () => {
+  it('text input clear button clears filter', () => {
     const wrapper = mount(
       <FilterHeaderRow
         {...commonFilterProps}
@@ -69,7 +69,7 @@ describe('FilterHeaderRow', () => {
     expect(wrapper.state()).toEqual({ col1: '' });
   });
 
-  test('filter input is hidden when isFilterable is false', () => {
+  it('filter input is hidden when isFilterable is false', () => {
     const wrapper = mount(
       <FilterHeaderRow
         {...commonFilterProps}

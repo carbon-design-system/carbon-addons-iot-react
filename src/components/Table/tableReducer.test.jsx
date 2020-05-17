@@ -24,12 +24,13 @@ import {
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
 
-describe('table reducer testcases', () => {
-  test('nothing', () => {
+describe('table reducer', () => {
+  it('nothing', () => {
     expect(tableReducer(undefined, { type: 'BOGUS' })).toEqual({});
   });
   test('row action tests', () => {
     // TODO: Add tests for edit
+  it('row action tests', () => {
     const updatedRowActionState = tableReducer(initialState, tableRowActionStart('row-1'));
     const newRowActions = updatedRowActionState.view.table.rowActions;
     expect(newRowActions).toHaveLength(1);
@@ -52,10 +53,10 @@ describe('table reducer testcases', () => {
     expect(newRowActions3).toHaveLength(0);
   });
   describe('filter tests', () => {
-    test('TABLE_FILTER_CLEAR', () => {
+    it('TABLE_FILTER_CLEAR', () => {
       expect(tableReducer(initialState, tableFilterClear()).view.filters).toEqual([]);
     });
-    test('TABLE_FILTER_APPLY filter should filter data', () => {
+    it('TABLE_FILTER_APPLY filter should filter data', () => {
       const updatedState = tableReducer(
         initialState,
         tableFilterApply({ [tableColumns[0].id]: '1' })
@@ -66,22 +67,22 @@ describe('table reducer testcases', () => {
       expect(updatedState.view.table.filteredData.length).toBeLessThan(initialState.data.length);
     });
   });
-  describe('pagination tests', () => {
-    test('TABLE_PAGE_CHANGE ', () => {
+  describe('pagination', () => {
+    it('TABLE_PAGE_CHANGE ', () => {
       const updatedState = tableReducer(initialState, tablePageChange({ page: 3, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(3);
     });
-    test('TABLE_PAGE_CHANGE with invalid page', () => {
+    it('TABLE_PAGE_CHANGE with invalid page', () => {
       const updatedState = tableReducer(initialState, tablePageChange({ page: 65, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(1);
     });
   });
   describe('toolbar actions', () => {
-    test('TABLE_TOOLBAR_TOGGLE ', () => {
+    it('TABLE_TOOLBAR_TOGGLE ', () => {
       const updatedState = tableReducer(initialState, tableToolbarToggle('column'));
       expect(updatedState.view.toolbar.activeBar).toEqual('column');
     });
-    test('TABLE_SEARCH_APPLY filter should search data', () => {
+    it('TABLE_SEARCH_APPLY filter should search data', () => {
       const searchString = 'searchString';
       const updatedState = tableReducer(initialState, tableSearchApply(searchString));
       // Apply the search
@@ -90,7 +91,7 @@ describe('table reducer testcases', () => {
     });
   });
   describe('table actions', () => {
-    test('TABLE_ACTION_CANCEL ', () => {
+    it('TABLE_ACTION_CANCEL ', () => {
       const tableWithSelection = tableReducer(initialState, tableRowSelectAll(true));
       // All should be selected
       expect(tableWithSelection.view.table.selectedIds.length).toEqual(initialState.data.length);
@@ -100,7 +101,7 @@ describe('table reducer testcases', () => {
       expect(tableAfterCancel.view.table.isSelectAllSelected).toEqual(false);
       expect(tableAfterCancel.view.table.isSelectAllIndeterminate).toEqual(false);
     });
-    test('TABLE_ACTION_APPLY ', () => {
+    it('TABLE_ACTION_APPLY ', () => {
       // Select everything first
       const tableWithSelection = tableReducer(initialState, tableRowSelectAll(true));
 
@@ -127,7 +128,7 @@ describe('table reducer testcases', () => {
     });
   });
   describe('table column actions', () => {
-    test('TABLE_COLUMN_SORT', () => {
+    it('TABLE_COLUMN_SORT', () => {
       const sortColumnAction = tableColumnSort(tableColumns[0].id);
       // First sort ASC
       expect(initialState.view.table.sort).toBeUndefined();
@@ -155,7 +156,7 @@ describe('table reducer testcases', () => {
         tableSortedNone.view.table.filteredData
       );
     });
-    test('TABLE_COLUMN_SORT custom sort function', () => {
+    it('TABLE_COLUMN_SORT custom sort function', () => {
       const sortColumnAction = tableColumnSort(tableColumns[4].id);
       const mockSortFunction = jest.fn().mockReturnValue(initialState.data);
       // Splice in our custom mock sort function
@@ -167,7 +168,7 @@ describe('table reducer testcases', () => {
       tableReducer(initialState, sortColumnAction);
       expect(mockSortFunction).toHaveBeenCalled();
     });
-    test('TABLE_COLUMN_ORDER', () => {
+    it('TABLE_COLUMN_ORDER', () => {
       expect(initialState.view.table.ordering[0].isHidden).toBe(false);
       // Hide the first column
       const columnHideAction = tableColumnOrder([{ columnId: tableColumns[0].id, isHidden: true }]);
@@ -176,7 +177,7 @@ describe('table reducer testcases', () => {
     });
   });
   describe('Table Row Operations', () => {
-    test('TABLE_ROW_SELECT', () => {
+    it('TABLE_ROW_SELECT', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
 
       // Negative case where I unselect a row
@@ -206,7 +207,7 @@ describe('table reducer testcases', () => {
       expect(tableWithUnSelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithUnSelectedRow.view.table.isSelectAllIndeterminate).toEqual(false);
     });
-    test('TABLE_ROW_SELECT--SINGLE', () => {
+    it('TABLE_ROW_SELECT--SINGLE', () => {
       // set the table to single select
       const updatedInitialState = {
         ...initialState,
@@ -247,7 +248,7 @@ describe('table reducer testcases', () => {
       expect(tableWithPreviouslySelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithPreviouslySelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
     });
-    test('TABLE_ROW_SELECT_ALL', () => {
+    it('TABLE_ROW_SELECT_ALL', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
       // Select all
       const tableWithSelectedAll = tableReducer(initialState, tableRowSelectAll(true));
@@ -262,7 +263,7 @@ describe('table reducer testcases', () => {
       expect(tableWithUnSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
       expect(tableWithUnSelectedAll.view.table.isSelectAllSelected).toEqual(false);
     });
-    test('TABLE_ROW_EXPAND', () => {
+    it('TABLE_ROW_EXPAND', () => {
       expect(initialState.view.table.expandedIds).toEqual([]);
       // Expanded row
       const tableWithExpandedRow = tableReducer(initialState, tableRowExpand('row-1', true));
@@ -271,7 +272,7 @@ describe('table reducer testcases', () => {
       const tableWithCollapsedRow = tableReducer(initialState, tableRowExpand('row-1', false));
       expect(tableWithCollapsedRow.view.table.expandedIds).toEqual([]);
     });
-    test('REGISTER_TABLE', () => {
+    it('REGISTER_TABLE', () => {
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
       const tableWithFilteredData = tableReducer(
@@ -317,7 +318,7 @@ describe('table reducer testcases', () => {
 });
 
 describe('filter, search and sort', () => {
-  test('filterData', () => {
+  it('filterData', () => {
     const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
@@ -327,7 +328,7 @@ describe('filter, search and sort', () => {
     expect(filterData(mockData, [numberFilter])).toHaveLength(1);
   });
 
-  test('filterData with custom comparison', () => {
+  it('filterData with custom comparison', () => {
     const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
@@ -359,7 +360,7 @@ describe('filter, search and sort', () => {
     ).toHaveLength(1);
   });
 
-  test('searchData', () => {
+  it('searchData', () => {
     const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
     expect(searchData(mockData, 10)).toHaveLength(1);
     expect(searchData(mockData, 'string')).toHaveLength(1);
@@ -367,7 +368,7 @@ describe('filter, search and sort', () => {
     expect(searchData(mockData, 'STRING')).toHaveLength(1);
   });
 
-  test('filterSearchAndSort', () => {
+  it('filterSearchAndSort', () => {
     const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
     expect(filterSearchAndSort(mockData)).toHaveLength(1);
     expect(filterSearchAndSort(mockData, {}, { value: 10 })).toHaveLength(1);
@@ -379,7 +380,7 @@ describe('filter, search and sort', () => {
       filterSearchAndSort(mockData, {}, {}, [{ columnId: 'string', value: 'none' }])
     ).toHaveLength(0);
   });
-  test('filterSearchAndSort with custom sort function', () => {
+  it('filterSearchAndSort with custom sort function', () => {
     const mockData = [
       { values: { number: 10, node: <Add20 />, severity: 'High', null: null } },
       { values: { number: 10, node: <Add20 />, severity: 'Low', null: null } },

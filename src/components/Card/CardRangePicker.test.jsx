@@ -16,7 +16,7 @@ describe('CardRangePicker', () => {
   const last24HoursLabel = 'Last 24 Hours';
   const thisWeekLabel = 'This week';
 
-  test('card editable actions', async () => {
+  it('card editable actions', async () => {
     const { getByTitle, getByText } = render(
       <CardRangePicker
         i18n={{
@@ -55,7 +55,7 @@ describe('CardRangePicker', () => {
     });
   });
 
-  test('show time range label when enough space', () => {
+  it('show time range label when enough space', () => {
     const wrapper = mount(
       <CardRangePicker
         i18n={{

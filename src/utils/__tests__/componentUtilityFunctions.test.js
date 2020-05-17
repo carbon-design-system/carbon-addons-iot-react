@@ -41,7 +41,7 @@ const mockCsvData = [
 ];
 
 describe('componentUtilityFunctions', () => {
-  test('getSortedData', () => {
+  it('getSortedData', () => {
     expect(getSortedData(mockData, 'string', 'DESC')[0].values.string).toEqual('string3');
     expect(getSortedData(mockData, 'string', 'ASC')[0].values.string).toEqual('string');
     expect(getSortedData(mockData, 'number', 'DESC')[0].values.number).toEqual(100);
@@ -54,7 +54,7 @@ describe('componentUtilityFunctions', () => {
     expect(getSortedData(mockData, 'null', 'ASC')[1].values.null).toEqual(3);
     expect(getSortedData(mockData, 'null', 'ASC')[2].values.null).toBeUndefined();
   });
-  test('canFit', () => {
+  it('canFit', () => {
     expect(canFit(0, 0, 1, 1, [[1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])).toEqual(
       false
     );
@@ -62,7 +62,7 @@ describe('componentUtilityFunctions', () => {
       true
     );
   });
-  test('filterValidAttributes allow HTML attributes, event handlers, react lib', () => {
+  it('filterValidAttributes allow HTML attributes, event handlers, react lib', () => {
     // HTML
     expect(filterValidAttributes({ alt: 'my alt text', draggable: 'true' })).toEqual({
       alt: 'my alt text',
@@ -86,7 +86,7 @@ describe('componentUtilityFunctions', () => {
     // Other props
     expect(filterValidAttributes({ myProp: 'test', someProp: 'test2' })).toEqual({});
   });
-  test('csv should display 0 value', () => {
+  it('csv should display 0 value', () => {
     const csv = generateCsv(mockCsvData);
     const splitCsv = csv.split(',');
 

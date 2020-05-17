@@ -10,7 +10,7 @@ import ValueCard from './ValueCard';
 const { iotPrefix } = settings;
 
 describe('ValueCard', () => {
-  test('fail over to vertical layouts when not enough space', () => {
+  it('fail over to vertical layouts when not enough space', () => {
     const wrapper = mount(
       <ValueCard
         content={{ attributes: [{ label: 'title', dataSourceId: 'v' }] }}
@@ -43,7 +43,7 @@ describe('ValueCard', () => {
     ).toEqual(CARD_LAYOUTS.VERTICAL);
   });
 
-  test('DataState prop shows DataState elements instead of content', () => {
+  it('DataState prop shows DataState elements instead of content', () => {
     const wrapperWithoutDataState = mount(
       <ValueCard
         title="Health score"
@@ -70,7 +70,7 @@ describe('ValueCard', () => {
     expect(wrapperWithDataState.find(`.${iotPrefix}--data-state-container`)).toHaveLength(1);
   });
 
-  test('Id is passed down to the card', () => {
+  it('Id is passed down to the card', () => {
     const wrapper = mount(
       <ValueCard
         id="myIdTest"

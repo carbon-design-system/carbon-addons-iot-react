@@ -67,7 +67,7 @@ describe('DateTimePicker', () => {
     expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
   });
 
-  it('it should render with a predefined preset', () => {
+  it('should render with a predefined preset', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
     );
@@ -76,7 +76,7 @@ describe('DateTimePicker', () => {
     expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[1].label);
   });
 
-  it('it should render with a predefined relative range', () => {
+  it('should render with a predefined relative range', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
@@ -134,7 +134,7 @@ describe('DateTimePicker', () => {
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  it('it should render with a predefined absolute range', () => {
+  it('should render with a predefined absolute range', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />
     );
@@ -179,7 +179,7 @@ describe('DateTimePicker', () => {
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  it('it should switch from relative to absolute', () => {
+  it('should switch from relative to absolute', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
@@ -194,7 +194,7 @@ describe('DateTimePicker', () => {
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(4);
   });
 
-  it('it should not show the relative option', () => {
+  it('should not show the relative option', () => {
     const wrapper = mount(
       <DateTimePicker
         {...dateTimePickerProps}
@@ -207,7 +207,7 @@ describe('DateTimePicker', () => {
     expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
   });
 
-  it('it should switch from relative to presets', () => {
+  it('should switch from relative to presets', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
     );
@@ -226,7 +226,7 @@ describe('DateTimePicker', () => {
     expect(wrapper.find('.iot--time-picker__controls--btn')).toHaveLength(0);
   });
 
-  test('it should keep preset value when switching from presets to relative and back', () => {
+  it('should keep preset value when switching from presets to relative and back', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     wrapper
       .find('.iot--date-time-picker__field')

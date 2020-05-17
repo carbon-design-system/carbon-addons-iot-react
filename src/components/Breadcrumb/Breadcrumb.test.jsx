@@ -9,7 +9,7 @@ const commonProps = {
 };
 
 describe('Breadcrumb', () => {
-  test('overflows when container is smaller than breadcrumbs', () => {
+  it('overflows when container is smaller than breadcrumbs', () => {
     const { container } = render(
       <Breadcrumb {...commonProps} hasOverflow>
         <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
@@ -40,7 +40,7 @@ describe('Breadcrumb with overflow', () => {
     delete HTMLElement.prototype.scrollWidth;
   });
 
-  test('overflows when container is smaller than breadcrumbs', () => {
+  it('overflows when container is smaller than breadcrumbs', () => {
     const { container } = render(
       <Breadcrumb {...commonProps} hasOverflow>
         <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>
@@ -74,7 +74,7 @@ describe('Breadcrumb with overflow', () => {
       console.error.mockRestore();
     });
 
-    test('when ResizeObserver is not supported in the current environment', () => {
+    it('when ResizeObserver is not supported in the current environment', () => {
       render(
         <Breadcrumb {...commonProps} hasOverflow>
           <BreadcrumbItem href="#">Breadcrumb 1</BreadcrumbItem>

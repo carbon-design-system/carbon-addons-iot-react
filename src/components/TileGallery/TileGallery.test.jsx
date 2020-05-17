@@ -9,8 +9,8 @@ import TileGalleryViewSwitcher from './TileGalleryViewSwitcher';
 import TileGallery from './TileGallery';
 import StatefulTileGallery from './StatefulTileGallery';
 
-describe('TileGallery tests', () => {
-  test('TileGalleryItem mode list', () => {
+describe('TileGallery', () => {
+  it('TileGalleryItem mode list', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="list" />);
 
     expect(
@@ -20,7 +20,7 @@ describe('TileGallery tests', () => {
         .hasClass('tile-list-title')
     ).toEqual(true);
   });
-  test('TileGalleryItem mode list with node description', () => {
+  it('TileGalleryItem mode list with node description', () => {
     const descriptionNode = <div>Test node</div>;
     const wrapper = mount(
       <TileGalleryItem title="title" mode="list" description={descriptionNode} />
@@ -28,7 +28,7 @@ describe('TileGallery tests', () => {
 
     expect(wrapper.find('div.description-card').contains(descriptionNode)).toEqual(true);
   });
-  test('TileGalleryItem mode card', () => {
+  it('TileGalleryItem mode card', () => {
     const wrapper = mount(<TileGalleryItem title="title" mode="grid" />);
 
     expect(
@@ -38,7 +38,7 @@ describe('TileGallery tests', () => {
         .hasClass('tile-card-title')
     ).toEqual(true);
   });
-  test('TileGalleryItem mode card with node description', () => {
+  it('TileGalleryItem mode card with node description', () => {
     const descriptionNode = <div>Test node</div>;
 
     const wrapper = mount(
@@ -47,7 +47,7 @@ describe('TileGallery tests', () => {
 
     expect(wrapper.find('div.description-card').contains(descriptionNode)).toEqual(true);
   });
-  test('TileGalleryItem afterContent', () => {
+  it('TileGalleryItem afterContent', () => {
     const wrapper = shallow(
       <TileGalleryItem title="title" afterContent={<div>after content</div>} />
     );
@@ -59,11 +59,11 @@ describe('TileGallery tests', () => {
 
     expect(wrapper.find('div.overflow-menu')).toHaveLength(1);
   });
-  test('TileGalleryItem - have default onClick', () => {
+  it('TileGalleryItem - have default onClick', () => {
     expect(TileGalleryItem.defaultProps.onClick).toBeDefined();
     expect(TileGalleryItem.defaultProps.onClick()).toBe(undefined);
   });
-  test('TileGalleryItem - simulate onClick', () => {
+  it('TileGalleryItem - simulate onClick', () => {
     const onClick = jest.fn();
 
     const wrapper = mount(<TileGalleryItem title="title" mode="grid" onClick={onClick} />);
@@ -72,11 +72,11 @@ describe('TileGallery tests', () => {
 
     expect(onClick).toHaveBeenCalledTimes(1);
   });
-  test('TileGallerySection - have default onClick', () => {
+  it('TileGallerySection - have default onClick', () => {
     expect(TileGallerySection.defaultProps.onClick).toBeDefined();
     expect(TileGallerySection.defaultProps.onClick()).toBe(undefined);
   });
-  test('TileGallerySection', () => {
+  it('TileGallerySection', () => {
     const onClick = jest.fn();
 
     const wrapper = mount(
@@ -94,7 +94,7 @@ describe('TileGallery tests', () => {
     expect(wrapper.find('AccordionItem').props().open).toEqual(false);
     expect(onClick).toHaveBeenCalledTimes(1);
   });
-  test('TileGallerySection - no accordion', () => {
+  it('TileGallerySection - no accordion', () => {
     const wrapper = mount(
       <TileGallerySection>
         <TileGalleryItem title="title" />
@@ -103,11 +103,11 @@ describe('TileGallery tests', () => {
 
     expect(wrapper.find('Accordion')).toHaveLength(0);
   });
-  test('TileGallerySearch - have default onChange', () => {
+  it('TileGallerySearch - have default onChange', () => {
     expect(TileGallerySearch.defaultProps.onChange).toBeDefined();
     expect(TileGallerySearch.defaultProps.onChange()).toBe(undefined);
   });
-  test('TileGallerySearch - simulate search', () => {
+  it('TileGallerySearch - simulate search', () => {
     const onChange = jest.fn();
 
     const wrapper = mount(<TileGallerySearch onChange={onChange} />);
@@ -116,11 +116,11 @@ describe('TileGallery tests', () => {
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });
-  test('TileGalleryViewSwitcher - have default onChange', () => {
+  it('TileGalleryViewSwitcher - have default onChange', () => {
     expect(TileGalleryViewSwitcher.defaultProps.onChange).toBeDefined();
     expect(TileGalleryViewSwitcher.defaultProps.onChange()).toBe(undefined);
   });
-  test('TileGalleryViewSwitcher - simulate change', () => {
+  it('TileGalleryViewSwitcher - simulate change', () => {
     const onChange = jest.fn();
 
     const wrapper = mount(<TileGalleryViewSwitcher onChange={onChange} />);
@@ -132,7 +132,7 @@ describe('TileGallery tests', () => {
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });
-  test('TileGallery', () => {
+  it('TileGallery', () => {
     const wrapper = mount(
       <TileGallery>
         <TileGallerySection>
@@ -143,7 +143,7 @@ describe('TileGallery tests', () => {
 
     expect(wrapper.find('TileGallerySection').props().isOpen).toEqual(true);
   });
-  test('StatefulTileGallery', () => {
+  it('StatefulTileGallery', () => {
     const searchValue = 'description';
 
     const wrapper = mount(

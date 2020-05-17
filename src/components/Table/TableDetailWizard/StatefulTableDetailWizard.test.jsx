@@ -13,7 +13,7 @@ const commonWizardProps = {
 };
 
 describe('StatefulWizardInline', () => {
-  test('onNext', () => {
+  it('onNext', () => {
     const mockNext = jest.fn();
     const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} onNext={mockNext} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
@@ -21,7 +21,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).toHaveBeenCalled();
   });
-  test('setItem', () => {
+  it('setItem', () => {
     const mockSetItem = jest.fn();
     const wrapper = mount(
       <StatefulTableDetailWizard {...commonWizardProps} setItem={mockSetItem} />
@@ -31,14 +31,14 @@ describe('StatefulWizardInline', () => {
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).toHaveBeenCalled();
   });
-  test('error', () => {
+  it('error', () => {
     const wrapper = mount(
       <StatefulTableDetailWizard {...commonWizardProps} error="I'm in error" />
     );
     const progressIndicatorButtons = wrapper.find('InlineNotification');
     expect(progressIndicatorButtons).toHaveLength(1);
   });
-  test('error clear error', () => {
+  it('error clear error', () => {
     const mockClearError = jest.fn();
     const wrapper = mount(
       <StatefulTableDetailWizard
@@ -52,7 +52,7 @@ describe('StatefulWizardInline', () => {
     clearErrorButton.simulate('click');
     expect(mockClearError).toHaveBeenCalled();
   });
-  test('setItem not triggered if invalid', () => {
+  it('setItem not triggered if invalid', () => {
     const mockSetItem = jest.fn();
     const wrapper = mount(
       <StatefulTableDetailWizard
@@ -70,7 +70,7 @@ describe('StatefulWizardInline', () => {
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();
   });
-  test('onNext not triggered if invalid', () => {
+  it('onNext not triggered if invalid', () => {
     const mockNext = jest.fn();
     const wrapper = mount(
       <StatefulTableDetailWizard
@@ -88,7 +88,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).not.toHaveBeenCalled();
   });
-  test('onClose', () => {
+  it('onClose', () => {
     const mockClose = jest.fn();
     const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} onClose={mockClose} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
@@ -96,7 +96,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(1).simulate('click');
     expect(mockClose).toHaveBeenCalled();
   });
-  test('onClose Top', () => {
+  it('onClose Top', () => {
     const mockClose = jest.fn();
     const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} onClose={mockClose} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
@@ -104,7 +104,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(0).simulate('click');
     expect(mockClose).toHaveBeenCalled();
   });
-  test('onBack', () => {
+  it('onBack', () => {
     const mockBack = jest.fn();
     const wrapper = mount(
       <StatefulTableDetailWizard
@@ -118,12 +118,12 @@ describe('StatefulWizardInline', () => {
     backAndNextButtons.at(1).simulate('click');
     expect(mockBack).toHaveBeenCalled();
   });
-  test('Handle currentItemId empty', () => {
+  it('Handle currentItemId empty', () => {
     const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} currentItemId="" />);
     const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
     expect(element.prop('currentIndex')).toEqual(0);
   });
-  test('onNext not triggered if nextItem is undefined', () => {
+  it('onNext not triggered if nextItem is undefined', () => {
     const mockNext = jest.fn();
     const wrapper = mount(
       <StatefulTableDetailWizard

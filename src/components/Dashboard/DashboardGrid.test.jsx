@@ -6,7 +6,7 @@ jest.mock('../../utils/componentUtilityFunctions.js'); // this happens automatic
 const componentUtilityFunctions = require('../../utils/componentUtilityFunctions.js');
 
 describe('DashboardGrid', () => {
-  test('findLayoutOrGenerate', () => {
+  it('findLayoutOrGenerate', () => {
     // if no layouts exist they should be generated
     findLayoutOrGenerate({}, [{ id: 'mycard', size: CARD_SIZES.MEDIUM }]);
     expect(componentUtilityFunctions.getLayout).toHaveBeenCalled();

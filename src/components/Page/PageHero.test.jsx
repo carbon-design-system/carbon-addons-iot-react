@@ -11,9 +11,9 @@ const commonPageHeroProps = {
   rightContent: <div>Right Content</div>,
 };
 
-describe('Page Hero', () => {
+describe('PageHero', () => {
   // handle click function test
-  test('onClick switcher', () => {
+  it('onClick switcher', () => {
     const commonSwitchProps = {
       onChange: jest.fn(),
       options: [

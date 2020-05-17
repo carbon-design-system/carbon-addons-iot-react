@@ -34,7 +34,7 @@ describe('TableCellRenderer', () => {
     Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
   });
 
-  test('truncates only for truncateCellText={true}', () => {
+  it('truncates only for truncateCellText={true}', () => {
     const wrapper = mount(
       <TableCellRenderer wrapText="never" truncateCellText>
         {cellText}
@@ -50,7 +50,7 @@ describe('TableCellRenderer', () => {
     expect(wrapper2.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
   });
 
-  test('does not truncat when wrapText={always}', () => {
+  it('does not truncat when wrapText={always}', () => {
     const wrapper = mount(
       <TableCellRenderer wrapText="always" truncateCellText>
         {cellText}
@@ -59,7 +59,7 @@ describe('TableCellRenderer', () => {
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(0);
   });
 
-  test('does not allow wrap when wrapText={never}', () => {
+  it('does not allow wrap when wrapText={never}', () => {
     const wrapper = mount(
       <TableCellRenderer wrapText="never" truncateCellText={false}>
         {cellText}
@@ -68,7 +68,7 @@ describe('TableCellRenderer', () => {
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(1);
   });
 
-  test('allows wrap when wrapText={always}', () => {
+  it('allows wrap when wrapText={always}', () => {
     const wrapper = mount(
       <TableCellRenderer wrapText="always" truncateCellText={false}>
         {cellText}
@@ -77,7 +77,7 @@ describe('TableCellRenderer', () => {
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--no-wrap`)).toHaveLength(0);
   });
 
-  test('only truncates children that are strings, numbers or booleans', () => {
+  it('only truncates children that are strings, numbers or booleans', () => {
     const wrapper = mount(
       <table>
         <tbody>
@@ -109,7 +109,7 @@ describe('TableCellRenderer', () => {
     expect(wrapper.find(`.${iotPrefix}--table__cell-text--truncate`)).toHaveLength(3);
   });
 
-  test('only shows tooltip if text is actually truncated', () => {
+  it('only shows tooltip if text is actually truncated', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
@@ -137,7 +137,7 @@ describe('TableCellRenderer', () => {
     setScrollWidth(0);
   });
 
-  test('does not show tooltip with allowTooltip={false}', () => {
+  it('does not show tooltip with allowTooltip={false}', () => {
     setOffsetWidth(10);
     setScrollWidth(20);
 
@@ -155,7 +155,7 @@ describe('TableCellRenderer', () => {
     setScrollWidth(0);
   });
 
-  test('locale formats numbers', () => {
+  it('locale formats numbers', () => {
     const wrapper = mount(<TableCellRenderer locale="fr">{35.6}</TableCellRenderer>);
     expect(wrapper.text()).toContain('35,6'); // french locale should have commas for decimals
 

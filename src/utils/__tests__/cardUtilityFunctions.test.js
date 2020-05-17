@@ -7,16 +7,16 @@ import {
 } from '../cardUtilityFunctions';
 
 describe('cardUtilityFunctions', () => {
-  test('determineCardRange', () => {
+  it('determineCardRange', () => {
     expect(determineCardRange('last24Hours').type).toEqual('rolling');
     expect(determineCardRange('thisWeek').type).toEqual('periodToDate');
   });
-  test('compareGrains', () => {
+  it('compareGrains', () => {
     expect(compareGrains('day', 'day')).toEqual(0);
     expect(compareGrains('hour', 'day')).toEqual(-1);
     expect(compareGrains('week', 'day')).toEqual(1);
   });
-  test('GetUpdatedCardSize', () => {
+  it('GetUpdatedCardSize', () => {
     expect(getUpdatedCardSize('XSMALL')).toEqual('SMALL');
     expect(getUpdatedCardSize('XSMALLWIDE')).toEqual('SMALLWIDE');
     expect(getUpdatedCardSize('WIDE')).toEqual('MEDIUMWIDE');
@@ -24,13 +24,13 @@ describe('cardUtilityFunctions', () => {
     expect(getUpdatedCardSize('XLARGE')).toEqual('LARGEWIDE');
     expect(getUpdatedCardSize('MEDIUM')).toEqual('MEDIUM');
   });
-  test('formatNumberWithPrecision', () => {
+  it('formatNumberWithPrecision', () => {
     expect(formatNumberWithPrecision(3.45, 1, 'fr')).toEqual('3,5'); // decimal separator should be comma
     expect(formatNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
     expect(formatNumberWithPrecision(35000, 2, 'en')).toEqual('35.00K'); // K separator
     expect(formatNumberWithPrecision(35000, null, 'en')).toEqual('35K'); // K separator
   });
-  test('handleCardVariables updates value cards with variables', () => {
+  it('handleCardVariables updates value cards with variables', () => {
     const valueCardPropsWithVariables = {
       title: 'Fuel {variable} flow',
       content: {
@@ -206,7 +206,7 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  test('handleCardVariables updates table cards with variables', () => {
+  it('handleCardVariables updates table cards with variables', () => {
     const tableCardPropsWithVariables = {
       title: 'Max and {minimum} speed',
       content: {
@@ -351,7 +351,7 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  test('handleCardVariables returns original card when no value cardVariables are specified', () => {
+  it('handleCardVariables returns original card when no value cardVariables are specified', () => {
     const valueCardProps = {
       id: 'fuel_flow',
       size: 'SMALL',
@@ -460,7 +460,7 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  test('handleCardVariables returns original card when no table cardVariables are specified', () => {
+  it('handleCardVariables returns original card when no table cardVariables are specified', () => {
     const tableCardProps = {
       title: 'Max and min speed',
       content: {
@@ -545,7 +545,7 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  test('handleCardVariables updates cards with variables when there are case discrepancies in cardVariables', () => {
+  it('handleCardVariables updates cards with variables when there are case discrepancies in cardVariables', () => {
     const timeSeriesCardPropsWithVariables = {
       title: 'timeSeries {device}',
       content: {
@@ -591,7 +591,7 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  test('handleCardVariables updates timeseries cards with variables', () => {
+  it('handleCardVariables updates timeseries cards with variables', () => {
     const timeSeriesCardPropsWithVariables = {
       title: 'timeSeries {device}',
       content: {
@@ -637,7 +637,7 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  test('handleCardVariables returns original card when no cardVariables are specified', () => {
+  it('handleCardVariables returns original card when no cardVariables are specified', () => {
     const timeSeriesCardProps = {
       title: 'timeSeries',
       content: {

@@ -38,8 +38,8 @@ const getEmptyListItems = num =>
       isSelectable: true,
     }));
 
-describe('SimpleList component tests', () => {
-  test('Simple List when pageSize is set to sm', () => {
+describe('SimpleList', () => {
+  it('Simple List when pageSize is set to sm', () => {
     const { getByTitle } = render(
       <SimpleList title="Simple list" items={getListItems(5)} pageSize="sm" />
     );
@@ -50,7 +50,7 @@ describe('SimpleList component tests', () => {
     expect(getByTitle('Item 5')).toBeTruthy();
   });
 
-  test('Simple List when pageSize is set to lg', () => {
+  it('Simple List when pageSize is set to lg', () => {
     const { getByTitle } = render(
       <SimpleList title="Simple list" items={getListItems(5)} pageSize="lg" />
     );
@@ -61,7 +61,7 @@ describe('SimpleList component tests', () => {
     expect(getByTitle('Item 5')).toBeTruthy();
   });
 
-  test('Simple List when pageSize is set to xl', () => {
+  it('Simple List when pageSize is set to xl', () => {
     const { getByTitle } = render(
       <SimpleList title="Simple list" items={getListItems(5)} pageSize="xl" />
     );
@@ -72,7 +72,7 @@ describe('SimpleList component tests', () => {
     expect(getByTitle('Item 5')).toBeTruthy();
   });
 
-  test('the first item is selectable via keyboard', () => {
+  it('the first item is selectable via keyboard', () => {
     const { getAllByRole } = render(<SimpleList title="Simple list" items={getListItems(1)} />);
     fireEvent.keyPress(getAllByRole('button')[0], { key: 'Enter', charCode: 13 });
     expect(getAllByRole('button')[0]).toBeInTheDocument();
@@ -84,7 +84,7 @@ describe('SimpleList component tests', () => {
 
   // this is a failing test, opened defect at https://github.com/IBM/carbon-addons-iot-react/issues/1149
   // eslint-disable-next-line jest/no-commented-out-tests
-  // test('the first item is properly unselected via keyboard', () => {
+  // it('the first item is properly unselected via keyboard', () => {
   //   const { getAllByRole } = render(<SimpleList title="Simple list" items={getListItems(1)} />);
   //   fireEvent.keyPress(getAllByRole('button')[0], { key: 'Enter', charCode: 13 });
   //   fireEvent.keyPress(getAllByRole('button')[0], { key: 'Enter', charCode: 13 });
@@ -95,7 +95,7 @@ describe('SimpleList component tests', () => {
   //   ).toEqual(false);
   // });
 
-  test('SimpleList when click on next page', () => {
+  it('SimpleList when click on next page', () => {
     const { getAllByRole, getByTitle } = render(
       <SimpleList items={getListItems(10)} title="Simple List" pageSize="sm" />
     );
@@ -109,7 +109,7 @@ describe('SimpleList component tests', () => {
     expect(getByTitle('Item 10')).toBeTruthy();
   });
 
-  test('SimpleList when hasSearch', () => {
+  it('SimpleList when hasSearch', () => {
     const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
@@ -118,7 +118,7 @@ describe('SimpleList component tests', () => {
     expect(queryByTitle('Item 1')).toBeFalsy();
   });
 
-  test('SimpleList when hasSearch and item values are empty', () => {
+  it('SimpleList when hasSearch and item values are empty', () => {
     const { getAllByLabelText, queryByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />
     );
@@ -126,7 +126,7 @@ describe('SimpleList component tests', () => {
     expect(queryByTitle('Item 1')).toBeFalsy();
   });
 
-  test('SimpleList when hasSearch and pagination', () => {
+  it('SimpleList when hasSearch and pagination', () => {
     const { getAllByLabelText, getByTitle, queryByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} pageSize="sm" />
     );
@@ -135,7 +135,7 @@ describe('SimpleList component tests', () => {
     expect(queryByTitle('Item 1')).toBeFalsy();
   });
 
-  test('SimpleList when search large row', () => {
+  it('SimpleList when search large row', () => {
     const { getAllByLabelText, getByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getFatRowListItems(5)} />
     );
@@ -143,7 +143,7 @@ describe('SimpleList component tests', () => {
     expect(getByTitle('Item 5')).toBeTruthy();
   });
 
-  test('SimpleList when search term is empty should return all items', () => {
+  it('SimpleList when search term is empty should return all items', () => {
     const { getAllByLabelText, getByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );
@@ -155,7 +155,7 @@ describe('SimpleList component tests', () => {
     expect(getByTitle('Item 5')).toBeTruthy();
   });
 
-  test('SimpleList when search input is undefined should return all items', () => {
+  it('SimpleList when search input is undefined should return all items', () => {
     const { getAllByLabelText, getByTitle } = render(
       <SimpleList title="Simple list" hasSearch items={getListItems(5)} />
     );

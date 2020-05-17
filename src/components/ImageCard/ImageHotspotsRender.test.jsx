@@ -28,7 +28,7 @@ afterAll(() => {
 });
 
 describe('render tests for the image hotspots component', () => {
-  test('minimap rendering', () => {
+  it('minimap rendering', () => {
     const { getByAltText, queryByAltText, getByTitle } = render(
       <div style={{ maxWidth: '50px', maxHeight: '50px', width: '50px', height: '50px' }}>
         <ImageHotspots
