@@ -6,6 +6,7 @@ import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/20';
 import Add from '@carbon/icons-react/lib/add/20';
+import Edit from '@carbon/icons-react/lib/edit/20';
 import Delete from '@carbon/icons-react/lib/delete/20';
 import { Add20 } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
@@ -351,6 +352,15 @@ export const initialState = {
           }
         : null,
       {
+        id: 'edit',
+        renderIcon: Edit,
+        labelText: 'Edit',
+        isOverflow: true,
+        iconDescription: 'Edit',
+        isDelete: false,
+        isEdit: true,
+      },
+      {
         id: 'Add',
         renderIcon: Add,
         iconDescription: 'Add',
@@ -673,10 +683,24 @@ storiesOf('Watson IoT/Table', module)
     () => {
       return React.createElement(() => {
         const [showRowEditBar, setShowRowEditBar] = useState(false);
-        const [currentData, setCurrentData] = useState(tableData);
+        const startingData = tableData.map(i => ({
+          ...i,
+          rowActions: [
+            {
+              id: 'edit',
+              renderIcon: Edit,
+              iconDescription: 'Edit',
+              labelText: 'Edit',
+              isOverflow: true,
+              isEdit: true,
+            },
+          ],
+        }));
+        const [currentData, setCurrentData] = useState(startingData);
         const [rowEditedData, setRowEditedData] = useState([]);
         const [previousData, setPreviousData] = useState([]);
         const [showToast, setShowToast] = useState(false);
+        const [rowActionsState, setRowActionsState] = useState([]);
 
         const onDataChange = (e, columnId, rowId) => {
           const newValue = e.currentTarget ? e.currentTarget.value : e;
@@ -703,6 +727,13 @@ storiesOf('Watson IoT/Table', module)
           setCurrentData(previousData);
           setPreviousData([]);
           setShowToast(false);
+        };
+
+        const onApplyRowAction = (action, rowId) => {
+          if (action === 'edit') {
+            // TODO: Show Save Cancel buttons. Design needed.
+            setRowActionsState([...rowActionsState, { rowId, isEditMode: true }]);
+          }
         };
 
         // The app should handle i18n and button enable state, e.g. that the save button
@@ -787,13 +818,14 @@ storiesOf('Watson IoT/Table', module)
                   activeBar: showRowEditBar ? 'rowEdit' : undefined,
                   rowEditBarButtons,
                 },
+                table: { rowActions: rowActionsState },
               }}
               data={currentData}
               actions={{
-                table: {},
+                table: { onApplyRowAction },
                 toolbar: { onShowRowEdit },
               }}
-              options={{ hasRowEdit: true }}
+              options={{ hasRowEdit: true, hasRowActions: true, hasPagination: true }}
               columns={tableColumns.map(i => ({ ...i, editDataFunction }))}
             />
           </div>

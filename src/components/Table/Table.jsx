@@ -359,6 +359,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
+  const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
 
   return (
     <TableContainer
@@ -420,14 +421,14 @@ const Table = props => {
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
             totalItemsCount: view.pagination.totalItems,
+            isDisabled: singleRowEditMode || view.toolbar.isDisabled,
             ...pick(
               view.toolbar,
               'batchActions',
               'search',
               'activeBar',
               'customToolbarContent',
-              'rowEditBarButtons',
-              'isDisabled'
+              'rowEditBarButtons'
             ),
           }}
         />
@@ -478,6 +479,7 @@ const Table = props => {
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
             tableState={{
+              isDisabled: rowEditMode || singleRowEditMode,
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
               ...view.table,
@@ -575,7 +577,7 @@ const Table = props => {
           itemRangeText={i18n.itemsRangeWithTotal}
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
-          preventInteraction={rowEditMode}
+          preventInteraction={rowEditMode || singleRowEditMode}
         />
       ) : null}
     </TableContainer>

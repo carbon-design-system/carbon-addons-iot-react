@@ -115,18 +115,20 @@ const defaultProps = {
   rowEditMode: false,
 };
 
-const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
+const StyledTableRow = styled(({ isSelectable, rowEditMode, ...others }) => (
+  <TableRow {...others} />
+))`
   &&& {
     ${props => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
     :hover {
       td {
         ${props =>
-          props.isSelectable === false
+          props.isSelectable === false && !props.rowEditMode
             ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
             : ``} /* turn off hover states if the row is set not selectable */
       }
       ${props =>
-        props.isSelectable === false
+        props.isSelectable === false && !props.rowEditMode
           ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
           : ``} /* turn off hover states if the row is set not selectable */
     }
@@ -542,6 +544,7 @@ const TableBodyRow = ({
       key={id}
       isSelected={isSelected}
       isSelectable={isSelectable}
+      rowEditMode={rowEditMode}
       onClick={() => {
         if (isSelectable !== false) {
           if (hasRowSelection === 'single') {

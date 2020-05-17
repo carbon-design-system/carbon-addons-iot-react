@@ -25,6 +25,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     isOverflow: PropTypes.bool,
     hasDivider: PropTypes.bool,
     isDelete: PropTypes.bool,
+    isEdit: PropTypes.bool,
   })
 );
 

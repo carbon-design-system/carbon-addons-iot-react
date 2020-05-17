@@ -70,6 +70,10 @@
   .#{$iot-prefix}--table-header-row-action-column {
     min-width: 40px;
   }
+
+  .#{$iot-prefix}--clear-filters-button--disabled {
+    @include disabled-icon-button();
+  }
 }
 
 .#{$prefix}--data-table--sort thead tr:first-child th {

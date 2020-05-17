@@ -19,6 +19,7 @@ import {
   tableRowExpand,
   tableColumnOrder,
   tableRowActionStart,
+  tableRowActionEdit,
   tableRowActionComplete,
   tableRowActionError,
 } from './tableActionCreators';
@@ -157,12 +158,20 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onApplyRowAction: async (actionId, rowId) => {
-        dispatch(tableRowActionStart(rowId));
-        try {
-          await callbackParent(onApplyRowAction, actionId, rowId);
-          dispatch(tableRowActionComplete(rowId));
-        } catch (error) {
-          dispatch(tableRowActionError(rowId, error));
+        const action = state.data
+          .find(row => row.id === rowId)
+          .rowActions.find(currentAction => currentAction.id === actionId);
+        if (action.isEdit) {
+          dispatch(tableRowActionEdit(rowId));
+          callbackParent(onApplyRowAction, actionId, rowId);
+        } else {
+          dispatch(tableRowActionStart(rowId));
+          try {
+            await callbackParent(onApplyRowAction, actionId, rowId);
+            dispatch(tableRowActionComplete(rowId));
+          } catch (error) {
+            dispatch(tableRowActionError(rowId, error));
+          }
         }
       },
       onClearRowError: rowId => {

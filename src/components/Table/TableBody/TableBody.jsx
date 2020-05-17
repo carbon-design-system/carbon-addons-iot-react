@@ -137,13 +137,15 @@ const TableBody = ({
     const shouldShowChildren =
       hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
     const myRowActionState = rowActionsState.find(rowAction => rowAction.rowId === row.id);
+    const singleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
+
     const rowElement = (
       <TableBodyRow
         key={row.id}
         isExpanded={isRowExpanded}
         isSelectable={row.isSelectable}
         isSelected={selectedIds.includes(row.id)}
-        rowEditMode={rowEditMode}
+        rowEditMode={rowEditMode || singleRowEditMode}
         rowDetails={
           isRowExpanded && expandedRows.find(j => j.rowId === row.id)
             ? expandedRows.find(j => j.rowId === row.id).content
