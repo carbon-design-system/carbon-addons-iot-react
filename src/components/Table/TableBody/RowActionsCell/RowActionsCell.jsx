@@ -126,7 +126,6 @@ class RowActionsCell extends React.Component {
 
   componentDidMount() {
     // this is latest changes
-    console.log('load:', document.dir);
     if (document.dir === 'rtl') {
       this.setState(state => ({ ltr: !state.ltr }));
     }
@@ -136,7 +135,6 @@ class RowActionsCell extends React.Component {
     // this is latest changes
     const { ltr } = this.state;
     const isLtr = document.dir === 'ltr';
-    console.log('updated:', prevState, ltr, document.dir);
     if (prevState.ltr !== isLtr) {
       this.setState(state => ({ ltr: !state.ltr }));
     }
