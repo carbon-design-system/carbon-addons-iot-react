@@ -31,6 +31,14 @@
   }
 }
 
+.#{$iot-prefix}--header__subtitle {
+  @include type-style('body-short-01');
+  border-left: $icon-02 1px solid;
+  padding: $spacing-01 $spacing-05;
+  color: $disabled-02;
+  margin-left: $spacing-05;
+}
+
 .#{$prefix}--header-action-btn {
   height: 3rem;
   width: 3rem;
