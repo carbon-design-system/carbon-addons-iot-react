@@ -285,8 +285,8 @@ const DateTimePicker = ({
     },
     relative: {
       lastNumber: null,
-      lastInterval: null,
-      relativeToWhen: null,
+      lastInterval: intervals[0].value,
+      relativeToWhen: relatives[0].value,
       relativeToTime: null,
     },
     absolute: {
@@ -495,20 +495,22 @@ const DateTimePicker = ({
 
   const parseDefaultValue = () => {
     const parsableValue = lastAppliedValue || defaultValue;
-
+    const currentCustomRangeKind = showRelativeOption
+      ? PICKER_KINDS.RELATIVE
+      : PICKER_KINDS.ABSOLUTE;
     if (parsableValue !== null) {
       if (parsableValue.hasOwnProperty('offset')) {
         // preset
         resetAbsoluteValue();
         resetRelativeValue();
-        setCustomRangeKind(PICKER_KINDS.RELATIVE);
+        setCustomRangeKind(currentCustomRangeKind);
         onPresetClick(parsableValue);
       }
       if (parsableValue.hasOwnProperty('lastNumber')) {
         // relative
         resetAbsoluteValue();
         setIsCustomRange(true);
-        setCustomRangeKind(PICKER_KINDS.RELATIVE);
+        setCustomRangeKind(currentCustomRangeKind);
         setRelativeValue(parsableValue);
       }
 
@@ -529,7 +531,7 @@ const DateTimePicker = ({
     } else {
       resetAbsoluteValue();
       resetRelativeValue();
-      setCustomRangeKind(PICKER_KINDS.RELATIVE);
+      setCustomRangeKind(currentCustomRangeKind);
       onPresetClick(presets[0]);
     }
   };
@@ -738,7 +740,7 @@ const DateTimePicker = ({
                     </RadioButtonGroup>
                   </FormGroup>
                 ) : null}
-                {customRangeKind === PICKER_KINDS.RELATIVE ? (
+                {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
                   <div>
                     <FormGroup
                       legendText={strings.lastLabel}

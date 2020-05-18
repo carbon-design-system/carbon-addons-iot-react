@@ -101,7 +101,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <DateTimePicker
-          defaultValue={defaultAbsoluteValue}
+          defaultValue={customPresets[3]}
           showRelativeOption={false}
           onApply={action('onApply')}
           onCancel={action('onCancel')}
