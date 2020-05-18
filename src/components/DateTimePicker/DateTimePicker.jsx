@@ -330,7 +330,6 @@ const DateTimePicker = ({
    * @returns {Object} a human readable value and a furtherly augmented value object
    */
   const parseValue = value => {
-    console.log('parseValue', { value });
     setCurrentValue(value);
     let readableValue = '';
     const returnValue = { ...value };
@@ -338,7 +337,6 @@ const DateTimePicker = ({
       case PICKER_KINDS.RELATIVE: {
         let endDate = moment();
         if (value.relative.relativeToWhen !== '') {
-          console.log('ParseValue not equal', value.relative.relativeToWhen);
           endDate =
             value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
               ? moment().add(-1, INTERVAL_VALUES.DAYS)
@@ -396,7 +394,6 @@ const DateTimePicker = ({
    */
   const renderValue = (clickedPreset = null) => {
     const value = { ...dateTimePickerBaseValue };
-    console.log('renderValue', { clickedPreset, isCustomRange });
     if (isCustomRange) {
       if (customRangeKind === PICKER_KINDS.RELATIVE) {
         value.relative = relativeValue;
@@ -474,7 +471,6 @@ const DateTimePicker = ({
   };
 
   const onPresetClick = preset => {
-    console.log('onPresetClick', { preset });
     setSelectedPreset(preset.offset);
     renderValue(preset);
   };
@@ -543,10 +539,8 @@ const DateTimePicker = ({
 
     // If value was changed reset when going back to Preset
     if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
-      console.log('toggleIsCustomRange', { isCustomRange, selectedPreset });
       // parseDefaultValue();
       if (selectedPreset) {
-        console.log('if', { isCustomRange, selectedPreset });
         onPresetClick(presets.filter(x => x.offset === selectedPreset)[0]);
         resetAbsoluteValue();
         resetRelativeValue();
@@ -794,7 +788,6 @@ const DateTimePicker = ({
                           hideLabel
                         >
                           {relatives.map((relative, i) => {
-                            console.log('render', { relative, i });
                             return (
                               <SelectItem
                                 key={i}
