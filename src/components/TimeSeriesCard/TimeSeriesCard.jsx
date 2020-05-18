@@ -152,12 +152,10 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges, alertDetected) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line
-  const timeStamp = Array.isArray(data) && data[0] ? data[0].date : data.date || data.label;
-  const dateLabel = timeStamp
-    ? `<li class='datapoint-tooltip'><p class='label'>${moment(timeStamp).format(
-        'L HH:mm:ss'
-      )}</p></li>`
-    : '';
+  const timeStamp = Array.isArray(data) ? data[0].date : data.date;
+  const dateLabel = `<li class='datapoint-tooltip'>
+                        <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>
+                     </li>`;
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
     ? matchingAlertRanges
@@ -181,6 +179,7 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
     // wrap to make single a multi-tooltip
     updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
   }
+
   return updatedTooltip;
 };
 
@@ -445,6 +444,7 @@ const TimeSeriesCard = ({
                       : {}),
                     stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
                     includeZero: includeZeroOnYaxis,
+                    scaleType: 'linear',
                   },
                 },
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
@@ -454,9 +454,6 @@ const TimeSeriesCard = ({
                     valueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
                     handleTooltip(...args, alertRanges, alertDetected, locale),
-                  gridline: {
-                    enabled: false,
-                  },
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
