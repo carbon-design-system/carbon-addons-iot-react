@@ -4338,8 +4338,8 @@ Map {
         ],
         "relativeLabel": "Relative",
         "relativeLabels": Array [
-          "Yesterday",
           "Today",
+          "Yesterday",
         ],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
@@ -4398,16 +4398,12 @@ Map {
       ],
       "relatives": Array [
         Object {
-          "label": "Yesterday",
-          "value": "YESTERDAY",
-        },
-        Object {
           "label": "Today",
           "value": "TODAY",
         },
         Object {
-          "label": "",
-          "value": "",
+          "label": "Yesterday",
+          "value": "YESTERDAY",
         },
       ],
       "showRelativeOption": true,
