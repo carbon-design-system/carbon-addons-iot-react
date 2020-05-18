@@ -228,12 +228,13 @@ class FilterHeaderRow extends Component {
           .map((c, i) => {
             const column = columns.find(item => c.columnId === item.id);
             const columnStateValue = this.state[column.id]; // eslint-disable-line
-            const filterColumnOptions = memoize(options => {
+            const filterColumnOptions = options => {
               options.sort((a, b) => {
                 return a.text.localeCompare(b.text, { sensitivity: 'base' });
               });
               return options;
-            });
+            };
+            const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
 
             // undefined check has the effect of making isFilterable default to true
             // if unspecified
@@ -245,7 +246,7 @@ class FilterHeaderRow extends Component {
                   id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
-                  items={filterColumnOptions(column.options)}
+                  items={memoizeColumnOptions(column.options)}
                   itemToString={item => (item ? item.text : '')}
                   initialSelectedItem={{
                     id: columnStateValue,
