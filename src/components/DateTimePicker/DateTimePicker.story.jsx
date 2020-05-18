@@ -48,7 +48,15 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <DateTimePicker dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')} />
+        <DateTimePicker
+          dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+          relatives={[
+            {
+              label: 'Yesterday',
+              value: RELATIVE_VALUES.YESTERDAY,
+            },
+          ]}
+        />
       </div>
     );
   })
