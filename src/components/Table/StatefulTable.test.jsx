@@ -5,11 +5,11 @@ import pick from 'lodash/pick';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
-import { mockActions } from './Table.test';
+import { mockActions } from './Table.test.helpers';
 import { initialState } from './Table.story';
 
 describe('stateful table with real reducer', () => {
-  test('verify stateful table can support loading state', () => {
+  it('verify stateful table can support loading state', () => {
     const statefulTable = mount(
       <StatefulTable
         {...merge({}, initialState, { view: { table: { loadingState: { isLoading: true } } } })}
@@ -18,7 +18,7 @@ describe('stateful table with real reducer', () => {
     );
     expect(statefulTable.find(TableSkeletonWithHeaders)).toHaveLength(1);
   });
-  test('stateful table verify page change', () => {
+  it('stateful table verify page change', () => {
     const statefulTable = mount(
       <StatefulTable
         {...merge(

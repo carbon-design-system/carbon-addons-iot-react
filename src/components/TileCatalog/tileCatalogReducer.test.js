@@ -45,7 +45,7 @@ const tiles = [
 ];
 
 describe('tileCatalogReducer', () => {
-  test('pageChange', () => {
+  it('pageChange', () => {
     const pageChangeAction = { type: TILE_ACTIONS.PAGE_CHANGE, payload: 2 };
     const existingState = {
       page: 1,
@@ -65,7 +65,7 @@ describe('tileCatalogReducer', () => {
     expect(newState.startingIndex).toEqual(5);
     expect(newState.endingIndex).toEqual(9);
   });
-  test('search', () => {
+  it('search', () => {
     const searchAction = { type: TILE_ACTIONS.SEARCH, payload: 'Tile6' };
     const existingState = {
       page: 2,
@@ -87,7 +87,7 @@ describe('tileCatalogReducer', () => {
     expect(newState.startingIndex).toEqual(0);
     expect(newState.endingIndex).toEqual(4);
   });
-  test('select', () => {
+  it('select', () => {
     const selectAction = { type: TILE_ACTIONS.SELECT, payload: 'test2' };
     const existingState = {
       page: 1,
@@ -113,7 +113,7 @@ describe('tileCatalogReducer', () => {
   });
 });
 describe('determineInitialState', () => {
-  test('defaults', () => {
+  it('defaults', () => {
     const initialState = determineInitialState({ tiles });
     expect(initialState.pageSize).toEqual(10);
     expect(initialState.page).toEqual(1);
@@ -121,7 +121,7 @@ describe('determineInitialState', () => {
     expect(initialState.endingIndex).toEqual(9);
     expect(initialState.selectedTileId).toEqual(tiles[0].id);
   });
-  test('setting from pagination', () => {
+  it('setting from pagination', () => {
     const initialState = determineInitialState({ tiles, pagination: { pageSize: 5, page: 2 } });
     expect(initialState.pageSize).toEqual(5);
     expect(initialState.page).toEqual(2);
@@ -129,7 +129,7 @@ describe('determineInitialState', () => {
     expect(initialState.endingIndex).toEqual(9);
     expect(initialState.selectedTileId).toEqual(tiles[5].id);
   });
-  test('setting search', () => {
+  it('setting search', () => {
     const initialState = determineInitialState({ tiles, search: { value: 'Tile6' } });
     expect(initialState.filteredTiles).toHaveLength(1);
     expect(initialState.endingIndex).toEqual(9);

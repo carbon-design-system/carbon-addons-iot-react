@@ -8,7 +8,7 @@ import {
 } from './timeSeriesUtils';
 
 describe('timeSeriesUtils', () => {
-  test('generateSampleValues', () => {
+  it('generateSampleValues', () => {
     const sampleValues = generateSampleValues(
       [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
       'timestamp'
@@ -17,7 +17,7 @@ describe('timeSeriesUtils', () => {
     expect(sampleValues[0].temperature).toBeDefined();
     expect(sampleValues[0].pressure).toBeDefined();
   });
-  test('generateSampleValues with data Filters', () => {
+  it('generateSampleValues with data Filters', () => {
     const sampleValues = generateSampleValues(
       [
         { dataSourceId: 'temperature', dataFilter: { severity: 5 } },
@@ -31,7 +31,7 @@ describe('timeSeriesUtils', () => {
     expect(sampleValues[7].temperature).toBeDefined();
     expect(sampleValues[7].severity).toEqual(3);
   });
-  test('generateSampleValues hour', () => {
+  it('generateSampleValues hour', () => {
     const sampleValues = generateSampleValues(
       [{ dataSourceId: 'temperature' }, { dataSourceId: 'pressure' }],
       'timestamp',
@@ -70,7 +70,7 @@ describe('timeSeriesUtils', () => {
     );
     expect(sampleValues5).toHaveLength(7);
   });
-  test('generateTableSampleValues', () => {
+  it('generateTableSampleValues', () => {
     const tableSampleValues = generateTableSampleValues('test', [
       { dataSourceId: 'column1' },
       { dataSourceId: 'column2' },
@@ -83,7 +83,7 @@ describe('timeSeriesUtils', () => {
     expect(tableSampleValues[0].values).toHaveProperty('column2');
     expect(tableSampleValues[0].values).toHaveProperty('column3');
   });
-  test('formatGraphTick', () => {
+  it('formatGraphTick', () => {
     // hour different day
     expect(
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'hour', 'en', 1572912000000)
@@ -124,7 +124,7 @@ describe('timeSeriesUtils', () => {
       formatGraphTick(1572933600000, 1, [1, 2, 3, 4, 5, 6], 'month', 'en', 1572933600000)
     ).toEqual('');
   });
-  test('findMatchingAlertRange', () => {
+  it('findMatchingAlertRange', () => {
     const data = {
       date: new Date(1573073951),
     };

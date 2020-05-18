@@ -1,13 +1,14 @@
 import { mount } from 'enzyme';
 import React from 'react';
-/* eslint-disable*/
 import { Tooltip } from 'carbon-components-react';
-import { render, fireEvent, waitForElement } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { Popup20 } from '@carbon/icons-react';
+
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
+import { settings } from '../../constants/Settings';
+
 import CardRangePicker from './CardRangePicker';
 import Card from './Card';
-import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
@@ -18,18 +19,22 @@ const cardProps = {
   id: 'my card',
 };
 
-describe('Card testcases', () => {
-  test('small', () => {
+describe('Card', () => {
+  it('small', () => {
     const wrapper = mount(<Card {...cardProps} size={CARD_SIZES.SMALL} />);
 
     // small should have full header
     expect(wrapper.find(`.${iotPrefix}--card--header`)).toHaveLength(1);
   });
 
-  test('child size prop', () => {
+  it('child size prop', () => {
     const childRenderInTitleCard = jest.fn();
 
-    mount(<Card title="My Title" size={CARD_SIZES.MEDIUM} children={childRenderInTitleCard} />);
+    mount(
+      <Card title="My Title" size={CARD_SIZES.MEDIUM}>
+        {childRenderInTitleCard}
+      </Card>
+    );
     expect(childRenderInTitleCard).toHaveBeenCalledWith(
       {
         width: 0,
@@ -41,7 +46,7 @@ describe('Card testcases', () => {
 
     const childRenderInNoTitleCard = jest.fn();
 
-    mount(<Card size={CARD_SIZES.MEDIUM} children={childRenderInNoTitleCard} />);
+    mount(<Card size={CARD_SIZES.MEDIUM}>{childRenderInNoTitleCard}</Card>);
     expect(childRenderInNoTitleCard).toHaveBeenCalledWith(
       {
         width: 0,
@@ -52,7 +57,7 @@ describe('Card testcases', () => {
     );
   });
 
-  test('render icons', () => {
+  it('render icons', () => {
     let wrapper = mount(
       <Card {...cardProps} size={CARD_SIZES.SMALL} availableActions={{ range: true }} />
     );
@@ -78,7 +83,7 @@ describe('Card testcases', () => {
     expect(wrapper.find(CardRangePicker)).toHaveLength(0);
   });
 
-  test('additional prop based elements', () => {
+  it('additional prop based elements', () => {
     let wrapper = mount(<Card {...cardProps} size={CARD_SIZES.LARGE} tooltip={tooltipElement} />);
     // tooltip prop will render a tooltip in the header
     expect(wrapper.find(`.${iotPrefix}--card--header`).find(Tooltip)).toHaveLength(1);
@@ -90,16 +95,16 @@ describe('Card testcases', () => {
     );
     expect(wrapper.find(`.${iotPrefix}--card--skeleton-wrapper`)).toHaveLength(1);
   });
-  test('isExpanded', () => {
-    let wrapper = mount(
+  it('isExpanded', () => {
+    const wrapper = mount(
       <Card {...cardProps} isExpanded size={CARD_SIZES.LARGE} tooltip={tooltipElement} />
     );
-    //isExpanded renders the modal wrapper around it
+    // isExpanded renders the modal wrapper around it
     expect(wrapper.find('.bx--modal')).toHaveLength(1);
   });
-  test('card actions', () => {
+  it('card actions', () => {
     const mockOnCardAction = jest.fn();
-    let wrapper = mount(
+    const wrapper = mount(
       <Card
         {...cardProps}
         isExpanded
@@ -116,7 +121,7 @@ describe('Card testcases', () => {
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLOSE_EXPANDED_CARD);
 
     mockOnCardAction.mockClear();
-    let wrapper2 = mount(
+    const wrapper2 = mount(
       <Card
         {...cardProps}
         size={CARD_SIZES.LARGE}
@@ -131,9 +136,9 @@ describe('Card testcases', () => {
       .props.onClick();
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.OPEN_EXPANDED_CARD);
   });
-  test('card editable actions', async done => {
+  it('card editable actions', async () => {
     const mockOnCardAction = jest.fn();
-    const { getByRole, getByTitle, getByText } = render(
+    const { getByTitle, getByText } = render(
       <Card
         {...cardProps}
         isEditable
@@ -145,25 +150,24 @@ describe('Card testcases', () => {
     );
     fireEvent.click(getByTitle('Open and close list of options'));
     // Click on the first overflow menu item
-    const firstMenuItem = await waitForElement(() => getByText('Edit card'));
+    const firstMenuItem = await waitFor(() => getByText('Edit card'));
     fireEvent.click(firstMenuItem);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.EDIT_CARD);
     mockOnCardAction.mockClear();
     // Reopen menu
     fireEvent.click(getByTitle('Open and close list of options'));
-    const secondElement = await waitForElement(() => getByText('Clone card'));
+    const secondElement = await waitFor(() => getByText('Clone card'));
     fireEvent.click(secondElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLONE_CARD);
 
     // Reopen menu
     fireEvent.click(getByTitle('Open and close list of options'));
     mockOnCardAction.mockClear();
-    const thirdElement = await waitForElement(() => getByText('Delete card'));
+    const thirdElement = await waitFor(() => getByText('Delete card'));
     fireEvent.click(thirdElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.DELETE_CARD);
-    done();
   });
-  test('card toolbar renders in header only when there are actions', () => {
+  it('card toolbar renders in header only when there are actions', () => {
     const wrapperWithActions = mount(
       <Card {...cardProps} isExpanded size={CARD_SIZES.SMALL} availableActions={{ expand: true }} />
     );

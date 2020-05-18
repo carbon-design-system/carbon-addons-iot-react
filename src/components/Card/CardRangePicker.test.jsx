@@ -1,4 +1,4 @@
-import { render, fireEvent, waitForElement } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
 import { mount } from 'enzyme';
 
@@ -16,7 +16,7 @@ describe('CardRangePicker', () => {
   const last24HoursLabel = 'Last 24 Hours';
   const thisWeekLabel = 'This week';
 
-  test('card editable actions', async done => {
+  it('card editable actions', async () => {
     const { getByTitle, getByText } = render(
       <CardRangePicker
         i18n={{
@@ -30,7 +30,7 @@ describe('CardRangePicker', () => {
     );
     fireEvent.click(getByTitle(overflowMenuDescription));
     // Click on the default
-    const defaultRange = await waitForElement(() => getByText(defaultLabel));
+    const defaultRange = await waitFor(() => getByText(defaultLabel));
     fireEvent.click(defaultRange);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'default',
@@ -38,7 +38,7 @@ describe('CardRangePicker', () => {
     mockOnCardAction.mockClear();
     // Reopen menu
     fireEvent.click(getByTitle(overflowMenuDescription));
-    const last24Hours = await waitForElement(() => getByText(last24HoursLabel));
+    const last24Hours = await waitFor(() => getByText(last24HoursLabel));
     fireEvent.click(last24Hours);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'last24Hours',
@@ -48,15 +48,14 @@ describe('CardRangePicker', () => {
     // Reopen menu
     fireEvent.click(getByTitle(overflowMenuDescription));
     mockOnCardAction.mockClear();
-    const thisWeek = await waitForElement(() => getByText(thisWeekLabel));
+    const thisWeek = await waitFor(() => getByText(thisWeekLabel));
     fireEvent.click(thisWeek);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'thisWeek',
     });
-    done();
   });
 
-  test('show time range label when enough space', () => {
+  it('show time range label when enough space', () => {
     const wrapper = mount(
       <CardRangePicker
         i18n={{

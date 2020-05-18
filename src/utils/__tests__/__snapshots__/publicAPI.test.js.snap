@@ -10338,7 +10338,7 @@ Map {
       },
       "description": null,
       "isLoading": false,
-      "values": Array [],
+      "values": Object {},
     },
     "displayName": "GaugeCard",
     "propTypes": Object {
@@ -11210,6 +11210,7 @@ Map {
   },
   "ListCard" => Object {
     "defaultProps": Object {
+      "data": Array [],
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
@@ -11733,7 +11734,6 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "hasMoreData": Object {

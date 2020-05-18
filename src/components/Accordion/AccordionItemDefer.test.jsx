@@ -6,7 +6,7 @@ import AccordionItemDefer from './AccordionItemDefer';
 import { Accordion } from '.';
 
 describe('AccordionItemDefer', () => {
-  test('renders content when expanded', () => {
+  it('renders content when expanded', () => {
     const { container, getByTestId } = render(
       <Accordion>
         <AccordionItemDefer id="a" title="Title one">
@@ -22,7 +22,7 @@ describe('AccordionItemDefer', () => {
     expect(getByTestId('accordion-item-deferred').lastElementChild.childElementCount).toEqual(1);
   });
 
-  test('does not remove content when closed', () => {
+  it('does not remove content when closed', () => {
     const { container, getByTestId } = render(
       <Accordion>
         <AccordionItemDefer id="a" title="Title one" open>

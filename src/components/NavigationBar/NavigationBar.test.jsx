@@ -11,7 +11,7 @@ const commonNavigationBarProps = {
 };
 
 describe('NavigationBar', () => {
-  test('onSelectionChange', () => {
+  it('onSelectionChange', () => {
     const wrapper = mount(<NavigationBar {...commonNavigationBarProps} />);
     const tab1 = wrapper.find('[data-id="tab1"]');
     tab1.at(0).simulate('click');
