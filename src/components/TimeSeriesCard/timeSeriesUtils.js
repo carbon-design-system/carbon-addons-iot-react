@@ -1,8 +1,5 @@
 import moment from 'moment';
-import isNil from 'lodash/isNil';
-import every from 'lodash/every';
 import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
 import find from 'lodash/find';
 
 /** Generate fake values for my line chart */
@@ -59,16 +56,6 @@ export const generateSampleValues = (series, timeDataSourceId, timeGrain = 'day'
     return sampleData;
   }, []);
 };
-
-/**
- * Is every value empty except timestamp in the data
- * @param {} values
- * @param {*} timeDataSourceId
- */
-export const isValuesEmpty = (values, timeDataSourceId) =>
-  every(values, dataPoint =>
-    every(Object.values(omit(dataPoint, [timeDataSourceId])), value => isNil(value))
-  );
 
 /**
  * Generate fake data to fill table columns for the preview mode of the table in the dashboard

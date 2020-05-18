@@ -20,6 +20,7 @@ import {
   getUpdatedCardSize,
   handleCardVariables,
   formatNumberWithPrecision,
+  getVariables,
 } from '../../utils/cardUtilityFunctions';
 
 import ThresholdIcon from './ThresholdIcon';
@@ -208,6 +209,50 @@ const determinePrecisionAndValue = (precision = 0, value, locale) => {
   return '--';
 };
 
+/**
+ * Updates the hrefs in each column to be us-able links. If href variables are on a table that has row specific values, the user
+ * should not pass in a cardVariables object as each variable with have multiple values.
+ * @param {array} columns - Array of TableCard columns
+ * @param {object} cardVariables - object of cardVariables
+ * @return {array} array of columns with formatted links and updated variable values
+ */
+export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
+  return columns.map(column => {
+    const { linkTemplate } = column;
+    if (linkTemplate) {
+      let variables;
+      if (!cardVariables) {
+        // fetch variables on the href
+        variables = linkTemplate.href ? getVariables(linkTemplate.href) : [];
+      }
+      return {
+        ...column,
+        // eslint-disable-next-line react/prop-types
+        renderDataFunction: ({ value, row }) => {
+          let variableLink;
+          // if we have variables the value based on its own row's context
+          if (variables && variables.length) {
+            variableLink = linkTemplate.href;
+            variables.forEach(variable => {
+              const variableValue = row[variable];
+              variableLink = variableLink.replace(`{${variable}}`, variableValue);
+            });
+          }
+          return (
+            <Link
+              href={variableLink || linkTemplate.href}
+              target={linkTemplate.target ? linkTemplate.target : null}
+            >
+              {value}
+            </Link>
+          );
+        },
+      };
+    }
+    return column;
+  });
+};
+
 const TableCard = ({
   id,
   title: titleProp,
@@ -336,21 +381,7 @@ const TableCard = ({
   const hasActionColumn = data.filter(i => i.actions).length > 0;
 
   // If a column has a linkTemplate, format the column to render a link
-  const columnsWithFormattedLinks = columns.map(column => {
-    const { linkTemplate } = column;
-    if (linkTemplate) {
-      return {
-        ...column,
-        // eslint-disable-next-line react/prop-types
-        renderDataFunction: ({ value }) => (
-          <Link href={linkTemplate.href} target={linkTemplate.target ? linkTemplate.target : null}>
-            {value}
-          </Link>
-        ),
-      };
-    }
-    return column;
-  });
+  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns, others.cardVariables);
 
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columnsWithFormattedLinks);

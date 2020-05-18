@@ -2528,6 +2528,39 @@ export const tableColumns = [
   },
 ];
 
+export const tableColumnsWithLinks = [
+  {
+    dataSourceId: 'alert',
+    label: 'Alert',
+    priority: 1,
+  },
+  {
+    dataSourceId: 'count',
+    label: 'Count',
+    priority: 3,
+    filter: { placeholderText: 'enter a string' },
+  },
+  {
+    dataSourceId: 'hour',
+    label: 'Hour',
+    priority: 2,
+    type: 'TIMESTAMP',
+  },
+  {
+    dataSourceId: 'pressure',
+    label: 'Pressure',
+    priority: 2,
+  },
+  {
+    dataSourceId: 'manufacturer',
+    label: 'Manufacturer',
+    linkTemplate: {
+      href: 'http://ibm.com/{manufacturer}',
+      target: '_blank',
+    },
+  },
+];
+
 export const tableData = [
   {
     id: `row-1`,

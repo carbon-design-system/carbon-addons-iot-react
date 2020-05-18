@@ -47,7 +47,7 @@ const data = [
 
 describe('Structured List', () => {
   // handle click function test
-  test('onRowClick', () => {
+  it('onRowClick', () => {
     const onRowClick = jest.fn();
     const wrapper = mount(
       <ComposedStructuredList

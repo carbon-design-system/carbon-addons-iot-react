@@ -1,7 +1,7 @@
 export const keyCodes = {
   TAB: 9,
   ENTER: 13,
-  ESC: 27,
+  ESCAPE: 27,
   SPACE: 32,
   PAGEUP: 33,
   PAGEDOWN: 34,

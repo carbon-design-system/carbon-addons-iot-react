@@ -97,6 +97,7 @@ const propTypes = {
   learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
   dismissText: PropTypes.string,
+  rowEditMode: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -111,6 +112,7 @@ const defaultProps = {
   nestingLevel: 0,
   nestingChildCount: 0,
   options: {},
+  rowEditMode: false,
 };
 
 const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
@@ -347,7 +349,7 @@ const TableBodyRow = ({
   actionFailedText,
   learnMoreText,
   dismissText,
-  isSelectable,
+  isSelectable: selectable,
   values,
   nestingLevel,
   nestingChildCount,
@@ -355,7 +357,9 @@ const TableBodyRow = ({
   isRowActionRunning,
   rowActionsError,
   rowDetails,
+  rowEditMode,
 }) => {
+  const isSelectable = !rowEditMode && selectable;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
   const nestingOffset =
     hasRowSelection === 'single'
@@ -411,7 +415,14 @@ const TableBodyRow = ({
             width={initialColumnWidth}
           >
             <StyledNestedSpan nestingOffset={offset}>
-              {col.renderDataFunction ? (
+              {col.editDataFunction && rowEditMode ? (
+                col.editDataFunction({
+                  value: values[col.columnId],
+                  columnId: col.columnId,
+                  rowId: id,
+                  row: values,
+                })
+              ) : col.renderDataFunction ? (
                 col.renderDataFunction({
                   // Call the column renderer if it's provided
                   value: values[col.columnId],

@@ -244,7 +244,7 @@ const defaultProps = {
   },
 };
 
-const __unstableDateTimePicker = ({
+const DateTimePicker = ({
   defaultValue,
   dateTimeMask,
   presets,
@@ -303,22 +303,28 @@ const __unstableDateTimePicker = ({
     },
   };
 
-  useEffect(() => {
-    window.setTimeout(() => {
-      if (datePickerRef && datePickerRef.current) {
-        datePickerRef.current.cal.open();
-        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-        // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
-        if (typeof wrapper !== 'undefined' && wrapper !== null) {
-          const dp = document
-            .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
-            .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerRef.current.cal.calendarContainer);
+  useEffect(
+    () => {
+      const timeout = setTimeout(() => {
+        if (datePickerRef && datePickerRef.current) {
+          datePickerRef.current.cal.open();
+          // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
+          // the only way to display the calendar inline is to reparent its DOM to our component
+          const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
+          if (typeof wrapper !== 'undefined' && wrapper !== null) {
+            const dp = document
+              .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
+              .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
+            dp.appendChild(datePickerRef.current.cal.calendarContainer);
+          }
         }
-      }
-    }, 0);
-  });
+      }, 0);
+      return () => {
+        clearTimeout(timeout);
+      };
+    },
+    [datePickerRef]
+  );
 
   /**
    * Parses a value object into a human readable value
@@ -472,7 +478,6 @@ const __unstableDateTimePicker = ({
 
   const toggleIsCustomRange = () => {
     setIsCustomRange(!isCustomRange);
-    setSelectedPreset(null);
   };
 
   const onPresetClick = preset => {
@@ -561,7 +566,6 @@ const __unstableDateTimePicker = ({
   const onApplyClick = () => {
     setIsExpanded(false);
     const value = renderValue();
-
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
         setLastAppliedValue(value.absolute);
@@ -881,7 +885,7 @@ const __unstableDateTimePicker = ({
   );
 };
 
-__unstableDateTimePicker.propTypes = propTypes;
-__unstableDateTimePicker.defaultProps = defaultProps;
+DateTimePicker.propTypes = propTypes;
+DateTimePicker.defaultProps = defaultProps;
 
-export default __unstableDateTimePicker;
+export default DateTimePicker;

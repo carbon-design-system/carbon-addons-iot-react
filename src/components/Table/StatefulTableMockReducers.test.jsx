@@ -4,7 +4,7 @@ import React from 'react';
 import StatefulTable from './StatefulTable';
 import EmptyTable from './EmptyTable/EmptyTable';
 import Table from './Table';
-import { mockActions } from './Table.test';
+import { mockActions } from './Table.test.helpers';
 import { initialState } from './Table.story';
 
 const mockDispatch = jest.fn();
@@ -18,17 +18,21 @@ jest.mock('react', () => {
   };
 });
 describe('StatefulTable tests with Mock reducer', () => {
-  test('check renders nested table', () => {
+  afterAll(() => {
+    jest.unmock('react');
+    jest.resetModules();
+  });
+  it('check renders nested table', () => {
     const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
     expect(statefulTable.find(Table)).toHaveLength(1);
   });
-  test('check renders nested table passthrough props', () => {
+  it('check renders nested table passthrough props', () => {
     const statefulTable = mount(
       <StatefulTable {...initialState} actions={mockActions} className="custom-class" />
     );
     expect(statefulTable.find(Table).prop('className')).toEqual('custom-class');
   });
-  test('async data load', () => {
+  it('async data load', () => {
     // Need the real reducer to fire
     const statefulTable = mount(
       <StatefulTable {...initialState} data={[]} actions={mockActions} />
@@ -54,7 +58,7 @@ describe('StatefulTable tests with Mock reducer', () => {
       type: 'TABLE_REGISTER',
     });
   });
-  test('check callbacks are propagated up!', () => {
+  it('check callbacks are propagated up!', () => {
     const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
     const tableProps = statefulTable.find(Table).props();
     Object.keys(tableProps.actions).forEach(actionType =>
@@ -69,9 +73,5 @@ describe('StatefulTable tests with Mock reducer', () => {
         expect(mockAction).toHaveBeenCalled()
       )
     );
-  });
-  afterAll(() => {
-    jest.unmock('react');
-    jest.resetModules();
   });
 });

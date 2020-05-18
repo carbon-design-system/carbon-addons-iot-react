@@ -114,7 +114,7 @@ describe('ImageHotspots', () => {
     const image = container.querySelector('img');
     expect(isDOMComponent(image)).toBe(false);
   });
-  test('calculateImageHeight', () => {
+  it('calculateImageHeight', () => {
     // landscape test where image is bigger picks container height
     expect(
       calculateImageHeight(
@@ -132,7 +132,7 @@ describe('ImageHotspots', () => {
       )
     ).toEqual(200);
   });
-  test('calculateImageWidth', () => {
+  it('calculateImageWidth', () => {
     // landscape test where image is bigger picks container height
     expect(
       calculateImageWidth(
@@ -150,7 +150,7 @@ describe('ImageHotspots', () => {
       )
     ).toEqual(200);
   });
-  test('zoom', () => {
+  it('zoom', () => {
     const image = {
       initialWidth: 5000,
       width: 200,

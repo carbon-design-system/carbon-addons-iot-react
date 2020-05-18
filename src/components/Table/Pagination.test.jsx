@@ -17,7 +17,7 @@ describe('Pagination', () => {
   afterAll(() => {
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
-  test('Pagination display hides', () => {
+  it('Pagination display hides', () => {
     // Need to mock getBoundingClientRect for react-sizeme
     mockGetBoundingClientRect.mockImplementation(() => {
       return {
@@ -35,7 +35,7 @@ describe('Pagination', () => {
     rerender(<Pagination pageSizes={[10, 20, 30]} />);
     expect(queryByText('Items per page')).toBeNull();
   });
-  test('Pagination page display shows', () => {
+  it('Pagination page display shows', () => {
     // at wider widths it should show
     mockGetBoundingClientRect.mockImplementation(() => {
       return {
