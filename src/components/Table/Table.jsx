@@ -42,6 +42,10 @@ const propTypes = {
   columns: TableColumnsPropTypes.isRequired,
   /** Row value data for the body of the table */
   data: TableRowPropTypes.isRequired,
+  /** Number of total data rows to limit the table by */
+  dataRowLimit: PropTypes.number,
+  /** Callback that is called when table is limited by dataRowLimit prop */
+  dataRowLimitCallback: PropTypes.func,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
   /** Optional properties to customize how the table should be rendered */
@@ -174,6 +178,8 @@ export const defaultProps = baseProps => ({
   useZebraStyles: false,
   lightweight: false,
   title: null,
+  dataRowLimit: 50,
+  dataRowLimitCallback: null,
   tooltip: null,
   secondaryTitle: null,
   options: {
@@ -197,7 +203,7 @@ export const defaultProps = baseProps => ({
       pageSize: 10,
       pageSizes: [10, 20, 30],
       page: 1,
-      totalItems: baseProps.data && baseProps.data.length,
+      totalItems: 1,
       isItemPerPageHidden: false,
     },
     filters: [],
@@ -288,6 +294,8 @@ const Table = props => {
     id,
     columns,
     data,
+    dataRowLimit,
+    dataRowLimitCallback,
     expandedData,
     locale,
     view,
@@ -304,6 +312,31 @@ const Table = props => {
   } = merge({}, defaultProps(props), props);
 
   const [, forceUpdateCellTextWidth] = useState(0);
+  // const [loadedData, setLoadedData] = useState(data.slice(0, view.pagination.pageSize));
+  // console.log({ loadedData, dataLength: data.length });
+  // useLayoutEffect(
+  //   () => {
+  //     console.log('fired', { dataLength: data.length });
+  //     if (data.length > 1) {
+  //       if (dataRowLimit && data.length > dataRowLimit) {
+  //         setLoadedData(data.slice(0, dataRowLimit));
+  //         // setLoadedData(data);
+  //         console.log('firing off limited data', {
+  //           dataRowLimit,
+  //           lenght: data.length,
+  //           evaluates: dataRowLimit && data.length > dataRowLimit,
+  //         });
+  //       } else {
+  //         setLoadedData(data);
+  //       }
+  //     }
+  //   },
+  //   [data.length, dataRowLimit]
+  // );
+
+  if (dataRowLimitCallback && dataRowLimit && data.length > dataRowLimit) {
+    dataRowLimitCallback();
+  }
 
   const useCellTextTruncate = useMemo(
     () =>
@@ -338,6 +371,8 @@ const Table = props => {
   const maxItemInView =
     options.hasPagination && !options.hasOnlyPageData && view.pagination
       ? view.pagination.page * view.pagination.pageSize
+      : dataRowLimit
+      ? dataRowLimit
       : data.length;
   const visibleData = data.slice(minItemInView, maxItemInView);
 
@@ -365,6 +400,7 @@ const Table = props => {
       style={style}
       className={classNames(className, `${iotPrefix}--table-container`)}
     >
+      {console.log('render fired')}
       {/* If there is no items being rendered in the toolbar, don't render the toolbar */
       options.hasFilter ||
       options.hasSearch ||
@@ -566,6 +602,7 @@ const Table = props => {
       visibleData.length ? ( // don't show pagination row while loading
         <Pagination
           {...view.pagination}
+          totalItems={dataRowLimit || data.length}
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
           forwardText={i18n.pageForwardAria}
@@ -586,3 +623,10 @@ Table.propTypes = propTypes;
 Table.defaultProps = defaultProps({});
 
 export default Table;
+/*
+
+- dataRowLimit (integer) && in useEffect hoook
+- limit data that is passed to table and pagination total items
+- pop toast
+
+*/
