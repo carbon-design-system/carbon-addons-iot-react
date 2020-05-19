@@ -5,7 +5,11 @@ import isNil from 'lodash/isNil';
 import classNames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
-import { getUpdatedCardSize, formatNumberWithPrecision } from '../../utils/cardUtilityFunctions';
+import {
+  getUpdatedCardSize,
+  formatNumberWithPrecision,
+  determinePrecision,
+} from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -81,20 +85,6 @@ const AttributeValue = styled.span`
 const StyledBoolean = styled.span`
   text-transform: capitalize;
 `;
-
-const determinePrecision = (size, value, precision) => {
-  // If it's an integer don't return extra values
-  if (Number.isInteger(value)) {
-    return 0;
-  }
-  // If the card is xsmall we don't have room for decimals!
-  switch (size) {
-    case CARD_SIZES.SMALL:
-      return Math.abs(value) > 9 ? 0 : precision;
-    default:
-  }
-  return precision;
-};
 
 /**
  * This components job is determining how to render different kinds of card values.

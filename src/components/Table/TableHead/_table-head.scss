@@ -70,6 +70,10 @@
   .#{$iot-prefix}--table-header-row-action-column {
     min-width: 40px;
   }
+
+  .#{$iot-prefix}--tableheader-filter > #{$prefix}--table-header-label {
+    overflow: visible;
+  }
 }
 
 .#{$prefix}--data-table--sort thead tr:first-child th {

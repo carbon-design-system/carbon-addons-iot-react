@@ -22,6 +22,7 @@ import {
   getUpdatedCardSize,
   formatNumberWithPrecision,
   handleCardVariables,
+  determinePrecision,
 } from '../../utils/cardUtilityFunctions';
 
 import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
@@ -61,26 +62,6 @@ const LineChartWrapper = styled.div`
     }
   }
 `;
-
-/**
- * Determines how many decimals to show for a value based on the value, the available size of the card
- * @param {string} size constant that describes the size of the Table card
- * @param {any} value will be checked to determine how many decimals to show
- * @param {*} defaultPrecision Desired decimal precision, but may be overridden based on the value type or card size
- */
-export const determinePrecision = (size, value, defaultPrecision) => {
-  // If it's an integer don't return extra values
-  if (Number.isInteger(value)) {
-    return 0;
-  }
-  // If the card is xsmall we don't have room for decimals!
-  switch (size) {
-    case CARD_SIZES.SMALL:
-      return Math.abs(value) > 9 ? 0 : defaultPrecision;
-    default:
-  }
-  return defaultPrecision;
-};
 
 /**
  * Translates our raw data into a language the carbon-charts understand
