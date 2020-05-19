@@ -125,15 +125,13 @@ class RowActionsCell extends React.Component {
   };
 
   componentDidMount() {
-    // this is latest changes
     if (document.dir === 'rtl') {
       this.setState(state => ({ ltr: !state.ltr }));
     }
   }
 
   componentDidUpdate(prevProp, prevState) {
-    // this is latest changes
-    const { ltr } = this.state;
+    
     const isLtr = document.dir === 'ltr';
     if (prevState.ltr !== isLtr) {
       this.setState(state => ({ ltr: !state.ltr }));
