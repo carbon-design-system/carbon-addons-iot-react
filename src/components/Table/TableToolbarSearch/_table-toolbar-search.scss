@@ -13,3 +13,15 @@
 .#{$iot-prefix}--table-toolbar-search__expanded {
   flex: 1;
 }
+
+html[dir='rtl'] .#{$iot-prefix}--table-toolbar-search {
+  .#{$prefix}--search-magnifier {
+    left: auto;
+    right: 0;
+  }
+
+  .#{$prefix}--search-close {
+    left: 0;
+    right: auto;
+  }
+}

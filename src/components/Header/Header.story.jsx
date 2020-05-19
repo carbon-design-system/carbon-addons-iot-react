@@ -179,4 +179,9 @@ storiesOf('Watson IoT/Header', module)
         },
       ]}
     />
+  ))
+  .add('header subtitle', () => (
+    <div style={{ width: '100%', height: '100vh' }}>
+      <StyledHeader {...HeaderMenuProps} subtitle="Monitor" />
+    </div>
   ));
