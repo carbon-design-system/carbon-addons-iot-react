@@ -12,7 +12,7 @@ import { settings } from '../../constants/Settings';
 
 import HeaderActionGroup from './HeaderActionGroup';
 
-const { prefix: carbonPrefix } = settings;
+const { prefix: carbonPrefix, iotPrefix } = settings;
 
 /** common proptypes associated with child content for a header action */
 export const ChildContentPropTypes = {
@@ -48,6 +48,8 @@ const propTypes = {
   prefix: PropTypes.string,
   /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
+  /** Optional prop that provides additional app information */
+  subtitle: PropTypes.string,
   /** Add a class name to Header */
   className: PropTypes.string,
   /** Provide ID for the skip to content functionality */
@@ -70,6 +72,7 @@ const defaultProps = {
   className: 'main-header',
   skipto: '#main-content',
   headerPanel: null,
+  subtitle: null,
   url: '#',
 };
 
@@ -80,6 +83,7 @@ export const APP_SWITCHER = 'AppSwitcher';
  */
 const Header = ({
   appName,
+  subtitle,
   className,
   actionItems: actionItemsProp,
   prefix,
@@ -100,7 +104,7 @@ const Header = ({
             <AppSwitcher
               fill="white"
               description="Icon"
-              className="bx--header__menu-item bx--header__menu-title"
+              className={`${carbonPrefix}--header__menu-item ${carbonPrefix}--header__menu-title`}
             />
           ),
           childContent: [
@@ -121,6 +125,7 @@ const Header = ({
       {hasSideNav && <HeaderMenuButton aria-label="Open menu" onClick={onClickSideNavExpand} />}
       <HeaderName href={url} prefix={prefix}>
         {appName}
+        {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
       <HeaderActionGroup actionItems={actionItems} />
     </CarbonHeader>
