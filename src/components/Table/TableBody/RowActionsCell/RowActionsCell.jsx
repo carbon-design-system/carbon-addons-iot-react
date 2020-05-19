@@ -54,14 +54,9 @@ const OverflowMenuContent = styled.div`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-  & {
-    margin-right: 0.5rem;
-    width: 1rem;
-  }
-`;
-
-const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu {...other} />)`
+const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
+  <OverflowMenu {...other} />
+))`
   &&& {
     margin-left: 0.5rem;
     svg {
@@ -131,7 +126,21 @@ const onClick = (e, id, action, onApplyRowAction) => {
 class RowActionsCell extends React.Component {
   state = {
     isOpen: false,
+    ltr: true,
   };
+
+  componentDidMount() {
+    if (document.dir === 'rtl') {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
+
+  componentDidUpdate(prevProp, prevState) {
+    const isLtr = document.dir === 'ltr';
+    if (prevState.ltr !== isLtr) {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
 
   handleOpen = () => {
     const { isOpen } = this.state;
@@ -165,7 +174,7 @@ class RowActionsCell extends React.Component {
       showSingleRowEditButtons,
       singleRowEditButtons,
     } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, ltr } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
 
     return showSingleRowEditButtons ? (
@@ -219,7 +228,7 @@ class RowActionsCell extends React.Component {
                   <StyledOverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                    flipped
+                    flipped={ltr}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
@@ -231,6 +240,7 @@ class RowActionsCell extends React.Component {
                       .filter(action => action.isOverflow)
                       .map(action => (
                         <OverflowMenuItem
+                          className={`${iotPrefix}--action-overflow-item`}
                           key={`${id}-row-actions-button-${action.id}`}
                           onClick={e => onClick(e, id, action.id, onApplyRowAction)}
                           requireTitle
@@ -240,7 +250,7 @@ class RowActionsCell extends React.Component {
                             action.renderIcon ? (
                               <OverflowMenuContent>
                                 {typeof action.renderIcon === 'string' ? (
-                                  <StyledIcon
+                                  <Icon
                                     icon={action.renderIcon}
                                     description={action.labelText}
                                     iconTitle={action.labelText}

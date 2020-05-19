@@ -504,7 +504,7 @@ const TableBodyRow = ({
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
-          <StyledExpansionTableRow>
+          <StyledExpansionTableRow className={`${iotPrefix}--expanded-tablerow`}>
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </StyledExpansionTableRow>
         )}
@@ -512,6 +512,7 @@ const TableBodyRow = ({
     ) : (
       <StyledTableExpandRow
         key={id}
+        className={`${iotPrefix}--expanded-tablerow`}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
         data-nesting-offset={nestingOffset}

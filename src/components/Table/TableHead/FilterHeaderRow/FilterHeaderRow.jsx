@@ -253,6 +253,7 @@ class FilterHeaderRow extends Component {
                 <div />
               ) : column.options ? (
                 <ComboBox
+                  className={`${iotPrefix}--filterheader-combo`}
                   id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
@@ -320,6 +321,7 @@ class FilterHeaderRow extends Component {
 
             return (
               <StyledTableHeader
+                className={`${iotPrefix}--tableheader-filter`}
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}

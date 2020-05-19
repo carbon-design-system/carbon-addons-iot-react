@@ -1,12 +1,25 @@
 import {
+  determinePrecision,
   determineCardRange,
   compareGrains,
   getUpdatedCardSize,
   formatNumberWithPrecision,
   handleCardVariables,
 } from '../cardUtilityFunctions';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 describe('cardUtilityFunctions', () => {
+  it('determine precision', () => {
+    // default precisions
+    expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
+    expect(determinePrecision(CARD_SIZES.SMALL, 0.125)).toBeUndefined();
+    // For small card sizes always trust the passed precision
+    expect(determinePrecision(CARD_SIZES.SMALL, 11.45, 1)).toEqual(1);
+    expect(determinePrecision(CARD_SIZES.SMALL, 0.125, 2)).toEqual(2);
+    // For integers no precision
+    expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
+    expect(determinePrecision(CARD_SIZES.LARGE, 1.45, 1)).toEqual(1);
+  });
   it('determineCardRange', () => {
     expect(determineCardRange('last24Hours').type).toEqual('rolling');
     expect(determineCardRange('thisWeek').type).toEqual('periodToDate');

@@ -4922,6 +4922,7 @@ Map {
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
+      "subtitle": null,
       "url": "#",
     },
     "propTypes": Object {
@@ -5007,6 +5008,9 @@ Map {
         "type": "string",
       },
       "skipto": Object {
+        "type": "string",
+      },
+      "subtitle": Object {
         "type": "string",
       },
       "url": Object {
