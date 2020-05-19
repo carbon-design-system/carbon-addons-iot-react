@@ -212,6 +212,7 @@ describe('Table', () => {
         data={[]}
         actions={mockActions}
         options={options}
+        i18n={{ emptyButtonLabelWithFilters: 'Clear all filters' }}
         view={merge({}, view, {
           filters: [{ columnId: 'col', value: 'value' }],
           table: { emptyState: <div id="customEmptyState">emptyState</div> },
