@@ -7,6 +7,9 @@ import memoize from 'lodash/memoize';
 
 import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
+import { settings } from '../../../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const { TableHeader, TableRow } = DataTable;
 
@@ -243,6 +246,7 @@ class FilterHeaderRow extends Component {
                 <div />
               ) : column.options ? (
                 <ComboBox
+                  className={`${iotPrefix}--filterheader-combo`}
                   id={`column-${i}`}
                   aria-label={filterText}
                   translateWithId={this.handleTranslation}
@@ -302,6 +306,7 @@ class FilterHeaderRow extends Component {
 
             return (
               <StyledTableHeader
+                className={`${iotPrefix}--tableheader-filter`}
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}
