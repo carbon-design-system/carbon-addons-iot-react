@@ -214,6 +214,7 @@ const TimeSeriesCard = ({
   isExpanded,
   isLazyLoading,
   isLoading,
+  timeRange,
   ...others
 }) => {
   const {
@@ -395,11 +396,82 @@ const TimeSeriesCard = ({
 
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
+  // If a timeRange is set, the graph should respect it and only show that timeRange even
+  // if some values are outside of the range
+  const timeRangeDomain = [];
+  if (timeRange) {
+    // end time is always now
+    const endTime = moment();
+    // clone the endTime so that it can be mutated
+    let startTime = moment(endTime);
+    switch (timeRange) {
+      case 'last24Hours':
+        startTime.subtract(24, 'hours');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+      case 'last7Days':
+        startTime.subtract(7, 'days');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'lastMonth':
+        startTime.subtract(30, 'days');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'lastQuarter':
+        startTime.subtract(3, 'months');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'lastYear':
+        startTime.subtract(12, 'months');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisWeek':
+        startTime = moment().startOf('week');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisMonth':
+        startTime = moment().startOf('month');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisQuarter':
+        startTime = moment().startOf('quarter');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisYear':
+        startTime = moment().startOf('year');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      default:
+        startTime.subtract(24, 'hours');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+    }
+  }
+
   return (
     <Card
       title={title}
       size={newSize}
       i18n={i18n}
+      timeRange={timeRange}
       {...others}
       isExpanded={isExpanded}
       isEditable={isEditable}
@@ -433,6 +505,7 @@ const TimeSeriesCard = ({
                       formatter: formatTick,
                     },
                     includeZero: includeZeroOnXaxis,
+                    ...(!isEmpty(timeRangeDomain) ? { domain: timeRangeDomain } : {}),
                   },
                   left: {
                     title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,

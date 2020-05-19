@@ -12,8 +12,6 @@ import TimeSeriesCard from './TimeSeriesCard';
 
 const getIntervalChartData = memoize(getFakeData);
 
-// need a timeOffset to make the data always show up
-// const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('medium / single point - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
@@ -104,7 +102,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -135,7 +132,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
 
@@ -145,10 +141,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('hour', 50, { min: 10, max: 100 }, 100)}
           availableActions={{ range: true }}
-          interval="day"
-          timeRange="last7Days"
+          interval="hour"
+          timeRange="last24Hours"
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
@@ -169,7 +165,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -178,7 +173,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100)}
           interval="day"
           breakpoint="lg"
           size={size}
@@ -200,7 +195,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
 
@@ -232,7 +226,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -241,7 +234,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
           interval="month"
           breakpoint="lg"
           size={size}
@@ -263,22 +256,18 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
               {
                 label: 'Humidity',
                 dataSourceId: 'humidity',
-                // color: text('color', COLORS.PURPLE),
               },
               {
                 label: 'Ecount',
                 dataSourceId: 'ecount',
-                // color: text('color', COLORS.PURPLE),
               },
               {
-                label: 'Presurre',
+                label: 'Pressure',
                 dataSourceId: 'pressure',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -287,7 +276,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
           interval="month"
           breakpoint="lg"
           size={size}
@@ -308,12 +297,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -343,22 +330,18 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.MAGENTA),
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                // color: text('color', COLORS.TEAL),
               },
               {
                 label: 'Humidity',
                 dataSourceId: 'humidity',
-                // color: text('color', COLORS.TEAL),
               },
               {
                 label: 'Count',
                 dataSourceId: 'ecount',
-                // color: text('color', COLORS.TEAL),
               },
             ],
             xLabel: '',
@@ -388,7 +371,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -398,7 +380,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('minute', 15, { min: 10, max: 100 }, 100)}
-          interval="hour"
+          interval="minute"
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
@@ -419,7 +401,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -428,7 +409,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day', 24, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100)}
           interval="day"
           breakpoint="lg"
           size={size}
@@ -450,7 +431,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -481,7 +461,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -512,7 +491,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -542,12 +520,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -730,7 +706,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   })
   .add('highlight alert ranges', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -742,7 +717,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -817,7 +791,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
