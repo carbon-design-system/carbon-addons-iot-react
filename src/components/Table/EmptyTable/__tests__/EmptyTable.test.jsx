@@ -42,7 +42,7 @@ describe('EmptyTable', () => {
     fireEvent.click(screen.getByText('clickme'));
     expect(mockEmptyStateAction).toHaveBeenCalled();
   });
-  it('empty state action with custom filtered button calls onEmptyStateAction', () => {
+  it('empty state action with custom filtered button', () => {
     const mockEmptyStateAction = jest.fn();
     render(
       <EmptyTable
