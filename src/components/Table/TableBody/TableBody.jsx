@@ -68,6 +68,7 @@ const propTypes = {
     })
   ).isRequired,
   rowEditMode: PropTypes.bool,
+  singleRowEditButtons: PropTypes.element,
 };
 
 const defaultProps = {
@@ -90,6 +91,7 @@ const defaultProps = {
   shouldExpandOnRowClick: false,
   shouldLazyRender: false,
   rowEditMode: false,
+  singleRowEditButtons: null,
 };
 
 const TableBody = ({
@@ -121,6 +123,7 @@ const TableBody = ({
   truncateCellText,
   locale,
   rowEditMode,
+  singleRowEditButtons,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -145,7 +148,9 @@ const TableBody = ({
         isExpanded={isRowExpanded}
         isSelectable={row.isSelectable}
         isSelected={selectedIds.includes(row.id)}
-        rowEditMode={rowEditMode || singleRowEditMode}
+        rowEditMode={rowEditMode}
+        singleRowEditMode={singleRowEditMode}
+        singleRowEditButtons={singleRowEditButtons}
         rowDetails={
           isRowExpanded && expandedRows.find(j => j.rowId === row.id)
             ? expandedRows.find(j => j.rowId === row.id).content

@@ -421,6 +421,7 @@ export const initialState = {
       })),
       expandedIds: [],
       rowActions: [],
+      singleRowEditButtons: <span>singleRowEditButtons implementation needed</span>,
     },
     toolbar: {
       activeBar: 'filter',
@@ -537,6 +538,7 @@ storiesOf('Watson IoT/Table', module)
             ...initialState.options,
             hasResize: true,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            hasSingleRowEdit: true,
           }}
         />
       </FullWidthWrapper>
@@ -707,7 +709,7 @@ storiesOf('Watson IoT/Table', module)
           rowEditedData.find(row => row.id === rowId).values[columnId] = newValue;
         };
 
-        const onShowRowEdit = () => {
+        const onShowMultiRowEdit = () => {
           setRowEditedData(cloneDeep(currentData));
           setShowRowEditBar(true);
           setShowToast(false);
@@ -715,6 +717,7 @@ storiesOf('Watson IoT/Table', module)
         const onCancelRowEdit = () => {
           setRowEditedData([]);
           setShowRowEditBar(false);
+          setRowActionsState([]);
         };
         const onSaveRowEdit = () => {
           setShowToast(true);
@@ -722,6 +725,7 @@ storiesOf('Watson IoT/Table', module)
           setCurrentData(rowEditedData);
           setRowEditedData([]);
           setShowRowEditBar(false);
+          setRowActionsState([]);
         };
         const onUndoRowEdit = () => {
           setCurrentData(previousData);
@@ -731,14 +735,14 @@ storiesOf('Watson IoT/Table', module)
 
         const onApplyRowAction = (action, rowId) => {
           if (action === 'edit') {
-            // TODO: Show Save Cancel buttons. Design needed.
+            setRowEditedData(cloneDeep(currentData));
             setRowActionsState([...rowActionsState, { rowId, isEditMode: true }]);
           }
         };
 
         // The app should handle i18n and button enable state, e.g. that the save button
         // is disabled when the input controls are pristine.
-        const rowEditBarButtons = (
+        const saveCancelButtons = (
           <React.Fragment>
             <Button
               key="cancel"
@@ -816,16 +820,21 @@ storiesOf('Watson IoT/Table', module)
               view={{
                 toolbar: {
                   activeBar: showRowEditBar ? 'rowEdit' : undefined,
-                  rowEditBarButtons,
+                  rowEditBarButtons: saveCancelButtons,
                 },
-                table: { rowActions: rowActionsState },
+                table: { rowActions: rowActionsState, singleRowEditButtons: saveCancelButtons },
               }}
               data={currentData}
               actions={{
                 table: { onApplyRowAction },
-                toolbar: { onShowRowEdit },
+                toolbar: { onShowRowEdit: onShowMultiRowEdit },
               }}
-              options={{ hasRowEdit: true, hasRowActions: true, hasPagination: true }}
+              options={{
+                hasRowEdit: boolean('hasRowEdit', true),
+                hasSingleRowEdit: boolean('hasSingleRowEdit', true),
+                hasRowActions: true,
+                hasPagination: true,
+              }}
               columns={tableColumns.map(i => ({ ...i, editDataFunction }))}
             />
           </div>
@@ -837,11 +846,19 @@ storiesOf('Watson IoT/Table', module)
         text: `
 
         This table has editable rows. It is wrapped in a component that handles the state of the table data and 
-        the active bar to serve as a simple example of how to use the 'hasRowEdit' functionality with your own data store.
+        the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit' 
+        functionality with your own data store. 
+        
+        When the 'hasRowEdit' is true an edit icon will be shown in the 
+        table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
+        columns to have 'editDataFunction'. For StatefulTable this is handled automatically, for normal tables it 
+        should be handled manually as shown in this story.
 
-        Each column that should have editable row cells must have an editDataFunction prop defined.
-
-        <br />
+        The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true. 
+        Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have 
+        provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with 
+        isEditMode:true but for normal tables it should be handled manually as shown in this story.
+    
 
         ~~~js
 
@@ -853,12 +870,15 @@ storiesOf('Watson IoT/Table', module)
         }
 
         actions = {
-          toolbar: { onShowRowEdit: () => {
-            // Update your state
+          table: { onApplyRowAction: (action, rowId) => {
+            // Handle action === 'edit' to enable the rows edit mode
+          } },
+          toolbar: { onShowRowEdit: (action, rowId) => {
+            // Update your state to enable full table edit mode
           } },
         }        
 
-        options = { hasRowEdit: true }
+        options = { hasRowEdit: true, hasSingleRowEdit: true }
 
         columns={columns.map(i => ({
           ...i,
@@ -875,8 +895,6 @@ storiesOf('Watson IoT/Table', module)
            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
         }
         ~~~
-
-        <br />
 
         `,
         propTables: [Table],

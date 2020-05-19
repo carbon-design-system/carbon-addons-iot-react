@@ -61,6 +61,7 @@ const propTypes = {
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
     hasResize: PropTypes.bool,
+    hasSingleRowEdit: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
@@ -120,6 +121,7 @@ const propTypes = {
       ),
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
+      singleRowEditButtons: PropTypes.element,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -188,6 +190,7 @@ export const defaultProps = baseProps => ({
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
     hasResize: false,
+    hasSingleRowEdit: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     wrapCellText: 'always',
@@ -215,6 +218,7 @@ export const defaultProps = baseProps => ({
       loadingState: {
         rowCount: 5,
       },
+      singleRowEditButtons: null,
     },
   },
   actions: {
@@ -454,7 +458,8 @@ const Table = props => {
                 'hasRowActions',
                 'hasColumnSelectionConfig',
                 'hasResize',
-                'useAutoTableLayoutForResize'
+                'useAutoTableLayoutForResize',
+                'hasSingleRowEdit'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
@@ -501,6 +506,7 @@ const Table = props => {
               rows={visibleData}
               locale={locale}
               rowActionsState={view.table.rowActions}
+              singleRowEditButtons={view.table.singleRowEditButtons}
               expandedRows={expandedData}
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}

@@ -39,6 +39,7 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     rowId: PropTypes.string,
     isRunning: PropTypes.bool,
+    isEditMode: PropTypes.bool,
     error: RowActionErrorPropTypes,
   })
 );

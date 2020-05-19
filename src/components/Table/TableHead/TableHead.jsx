@@ -39,6 +39,7 @@ const propTypes = {
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
+    hasSingleRowEdit: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
@@ -138,7 +139,14 @@ const generateOrderedColumnRefs = ordering =>
 
 const TableHead = ({
   options,
-  options: { hasRowExpansion, hasRowSelection, hasResize, wrapCellText, truncateCellText },
+  options: {
+    hasRowExpansion,
+    hasRowSelection,
+    hasResize,
+    wrapCellText,
+    truncateCellText,
+    hasSingleRowEdit,
+  },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -327,7 +335,11 @@ const TableHead = ({
           ) : null;
         })}
         {options.hasRowActions ? (
-          <TableHeader className={`${iotPrefix}--table-header-row-action-column`} />
+          <TableHeader
+            className={classnames(`${iotPrefix}--table-header-row-action-column`, {
+              [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
+            })}
+          />
         ) : null}
       </TableRow>
       {filterBarActive && (

@@ -158,20 +158,21 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onApplyRowAction: async (actionId, rowId) => {
-        const action = state.data
-          .find(row => row.id === rowId)
-          .rowActions.find(currentAction => currentAction.id === actionId);
-        if (action.isEdit) {
-          dispatch(tableRowActionEdit(rowId));
-          callbackParent(onApplyRowAction, actionId, rowId);
-        } else {
-          dispatch(tableRowActionStart(rowId));
-          try {
-            await callbackParent(onApplyRowAction, actionId, rowId);
-            dispatch(tableRowActionComplete(rowId));
-          } catch (error) {
-            dispatch(tableRowActionError(rowId, error));
+        const action =
+          state.data &&
+          state.data
+            .find(row => row.id === rowId)
+            .rowActions.find(currentAction => currentAction.id === actionId);
+
+        dispatch(tableRowActionStart(rowId));
+        try {
+          await callbackParent(onApplyRowAction, actionId, rowId);
+          if (action.isEdit) {
+            dispatch(tableRowActionEdit(rowId));
           }
+          dispatch(tableRowActionComplete(rowId));
+        } catch (error) {
+          dispatch(tableRowActionError(rowId, error));
         }
       },
       onClearRowError: rowId => {
