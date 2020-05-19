@@ -226,11 +226,6 @@ const BarChartCard = ({
               },
               legend: { position: 'bottom', enabled: chartData.length > 1 },
               containerResizable: true,
-              tooltip: {
-                gridline: {
-                  enabled: false,
-                },
-              },
               color: colors,
             }}
             width="100%"
