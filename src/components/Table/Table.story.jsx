@@ -511,7 +511,7 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Stateful Example with expansion and column resize',
+    'Stateful Example with expansion, maxPages, and column resize',
     () => (
       <FullWidthWrapper>
         <StatefulTable
