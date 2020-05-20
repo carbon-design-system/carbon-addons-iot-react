@@ -242,7 +242,7 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
   id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
     string: getSentence(idx) + suffix,
-    date: new Date(100000000000 + 100 * idx * idx).toISOString(),
+    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
     select: selectData[idx % 3].id,
     secretField: getString(idx, 10) + suffix,
     number: idx * idx,
@@ -269,12 +269,9 @@ const getNewRow = (idx, suffix = '', withActions = false) => ({
     : undefined,
 });
 
-const tableData = Array(10000)
+const tableData = Array(100)
   .fill(0)
-  .map((i, idx) => {
-    console.log('newRow', { idx });
-    return getNewRow(idx);
-  });
+  .map((i, idx) => getNewRow(idx));
 
 /** Sample expanded row component */
 const RowExpansionContent = ({ rowId }) => (
