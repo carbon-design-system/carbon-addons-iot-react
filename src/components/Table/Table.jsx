@@ -369,7 +369,6 @@ const Table = props => {
       style={style}
       className={classNames(className, `${iotPrefix}--table-container`)}
     >
-      {console.log('render fired')}
       {/* If there is no items being rendered in the toolbar, don't render the toolbar */
       options.hasFilter ||
       options.hasSearch ||
@@ -570,7 +569,10 @@ const Table = props => {
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
         <Pagination
-          {...paginationProps}
+          pageSize={paginationProps.pageSize}
+          pageSizes={paginationProps.pageSizes}
+          page={paginationProps.page}
+          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
           totalItems={paginationProps.totalItems < maxPages ? paginationProps.totalItems : maxPages}
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
