@@ -135,21 +135,24 @@ const TableBody = ({
     [columns, ordering]
   );
 
+  const someRowHasSingleRowEditMode = rowActionsState.some(rowAction => rowAction.isEditMode);
+
   const renderRow = (row, nestingLevel = 0) => {
     const isRowExpanded = expandedIds.includes(row.id);
     const shouldShowChildren =
       hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
     const myRowActionState = rowActionsState.find(rowAction => rowAction.rowId === row.id);
-    const singleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
+    const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
+    const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
 
     const rowElement = (
       <TableBodyRow
         key={row.id}
         isExpanded={isRowExpanded}
-        isSelectable={row.isSelectable}
+        isSelectable={isSelectable}
         isSelected={selectedIds.includes(row.id)}
         rowEditMode={rowEditMode}
-        singleRowEditMode={singleRowEditMode}
+        singleRowEditMode={rowHasSingleRowEditMode}
         singleRowEditButtons={singleRowEditButtons}
         rowDetails={
           isRowExpanded && expandedRows.find(j => j.rowId === row.id)

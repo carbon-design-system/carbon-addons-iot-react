@@ -355,7 +355,7 @@ const TableBodyRow = ({
   actionFailedText,
   learnMoreText,
   dismissText,
-  isSelectable: selectable,
+  isSelectable,
   values,
   nestingLevel,
   nestingChildCount,
@@ -368,7 +368,6 @@ const TableBodyRow = ({
   singleRowEditButtons,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
-  const isSelectable = !isEditMode && selectable;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
   const nestingOffset =
     hasRowSelection === 'single'
