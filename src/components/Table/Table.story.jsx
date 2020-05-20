@@ -366,6 +366,11 @@ export const initialState = {
         iconDescription: 'Delete',
         isDelete: true,
       },
+      {
+        id: 'textOnly',
+        labelText: 'Text only dummy action',
+        isOverflow: true,
+      },
     ].filter(i => i),
   })),
   expandedData: tableData.map(data => ({
