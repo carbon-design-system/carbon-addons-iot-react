@@ -69,9 +69,9 @@ const EmptyTable = ({
           <div className="empty-table-cell--default">
             <Bee32 />
             <p>{isFiltered && messageWithFilters ? messageWithFilters : message}</p>
-            {buttonLabel && onEmptyStateAction ? (
+            {onEmptyStateAction ? (
               <Button onClick={onEmptyStateAction}>
-                {isFiltered && buttonLabelWithFilters ? buttonLabelWithFilters : buttonLabel}
+                {isFiltered ? buttonLabelWithFilters : buttonLabel}
               </Button>
             ) : null}
           </div>

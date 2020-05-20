@@ -293,7 +293,7 @@ Map {
           "onChangeSort": [Function],
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
-          "onEmptyStateAction": [Function],
+          "onEmptyStateAction": null,
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
         },
@@ -319,7 +319,6 @@ Map {
         "downloadIconDescription": "Download table content",
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
-        "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
         "emptyMessageWithFilters": "No results match the current filters",
         "filterAria": "Filter",
@@ -4342,8 +4341,8 @@ Map {
         ],
         "relativeLabel": "Relative",
         "relativeLabels": Array [
-          "Yesterday",
           "Today",
+          "Yesterday",
         ],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
@@ -4402,16 +4401,12 @@ Map {
       ],
       "relatives": Array [
         Object {
-          "label": "Yesterday",
-          "value": "YESTERDAY",
-        },
-        Object {
           "label": "Today",
           "value": "TODAY",
         },
         Object {
-          "label": "",
-          "value": "",
+          "label": "Yesterday",
+          "value": "YESTERDAY",
         },
       ],
       "showRelativeOption": true,
@@ -4896,6 +4891,7 @@ Map {
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
+      "subtitle": null,
       "url": "#",
     },
     "propTypes": Object {
@@ -4981,6 +4977,9 @@ Map {
         "type": "string",
       },
       "skipto": Object {
+        "type": "string",
+      },
+      "subtitle": Object {
         "type": "string",
       },
       "url": Object {
