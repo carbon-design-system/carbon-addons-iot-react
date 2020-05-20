@@ -516,6 +516,13 @@ storiesOf('Watson IoT/Table', module)
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 30,
+            },
+          }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
