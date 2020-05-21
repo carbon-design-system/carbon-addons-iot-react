@@ -164,7 +164,7 @@ describe('Table', () => {
         expandedData={expandedData}
         actions={mockActions}
         options={{ hasPagination: true }}
-        view={{ ...view, pagination: { ...view.pagination, maxPages: 50 } }}
+        view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
       />
     );
     expect(wrapper.find('.bx--select-option')).toHaveLength(5);

@@ -200,7 +200,7 @@ export const defaultProps = baseProps => ({
       pageSizes: [10, 20, 30],
       page: 1,
       totalItems: baseProps.data && baseProps.data.length,
-      maxPages: 1000,
+      maxPages: 100,
       isItemPerPageHidden: false,
     },
     filters: [],
@@ -576,7 +576,11 @@ const Table = props => {
           pageSizes={paginationProps.pageSizes}
           page={paginationProps.page}
           isItemPerPageHidden={paginationProps.isItemPerPageHidden}
-          totalItems={paginationProps.totalItems < maxPages ? paginationProps.totalItems : maxPages}
+          totalItems={
+            paginationProps.totalItems < maxPages * paginationProps.pageSize
+              ? paginationProps.totalItems
+              : maxPages * paginationProps.pageSize
+          }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
           forwardText={i18n.pageForwardAria}
