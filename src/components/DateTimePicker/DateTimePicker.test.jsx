@@ -207,6 +207,60 @@ describe('DateTimePicker', () => {
     expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
   });
 
+  // https://github.com/IBM/carbon-addons-iot-react/issues/1179
+  it('should not show the relative option with preset as default value', () => {
+    const wrapper = mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={PRESET_VALUES[1]}
+        showRelativeOption={false}
+      />
+    );
+    jest.runAllTimers();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+  });
+
+  it('should set the value relative to yesterday', () => {
+    const wrapper = mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        intervals={[
+          {
+            label: 'minutes',
+            value: INTERVAL_VALUES.MINUTES,
+          },
+        ]}
+        relatives={[
+          {
+            label: 'Yesterday',
+            value: RELATIVE_VALUES.YESTERDAY,
+          },
+        ]}
+      />
+    );
+    wrapper
+      .find('.iot--date-time-picker__listitem--custom')
+      .first()
+      .simulate('click');
+    const today = moment();
+    wrapper
+      .find('.bx--number__control-btn.up-icon')
+      .first()
+      .simulate('click');
+    jest.runAllTimers();
+    expect(
+      wrapper
+        .find('.iot--date-time-picker__field')
+        .first()
+        .text()
+    ).toEqual(
+      `${today.subtract(1, 'days').format('YYYY-MM-DD')} 08:56 to ${today.format(
+        'YYYY-MM-DD'
+      )} 08:57`
+    );
+  });
+
   it('should switch from relative to presets', () => {
     const wrapper = mount(
       <DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />
