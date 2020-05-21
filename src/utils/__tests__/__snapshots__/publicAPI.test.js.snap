@@ -370,7 +370,7 @@ Map {
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
-          "maxPages": 1000,
+          "maxPages": 100,
           "page": 1,
           "pageSize": 10,
           "pageSizes": Array [
