@@ -197,10 +197,10 @@ class RowActionsCell extends React.Component {
               <Fragment>
                 {actions
                   .filter(action => !action.isOverflow)
-                  .map(({ id: actionId, labelText, ...others }) => (
+                  .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
                       {...omit(others, ['isOverflow'])}
-                      iconDescription={overflowMenuAria}
+                      iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
@@ -240,7 +240,7 @@ class RowActionsCell extends React.Component {
                                 {typeof action.renderIcon === 'string' ? (
                                   <Icon icon={action.renderIcon} description={action.labelText} />
                                 ) : (
-                                  <action.renderIcon />
+                                  <action.renderIcon description={action.labelText} />
                                 )}
                                 {action.labelText}
                               </OverflowMenuContent>
