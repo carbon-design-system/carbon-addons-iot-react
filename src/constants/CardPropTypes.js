@@ -202,17 +202,16 @@ export const TableCardPropTypes = {
   ),
 };
 
+/** This dataset only supports one data attribute at a time */
 const BarChartDatasetPropType = {
-  /** the attribute in values to map to */
-  dataSourceId: PropTypes.string,
-  /** the attribute in values to group by */
-  groupDataSourceId: PropTypes.string,
-  /** the attribute in values to display the bars for */
-  labelDataSourceId: PropTypes.string,
-  /** the attribute that is the time attribute */
-  timeDataSourceId: PropTypes.string,
-  /** an array of colors (hex or named) for the chart */
-  colors: PropTypes.arrayOf(PropTypes.string),
+  /** label of the bar in the legend */
+  label: PropTypes.string.isRequired,
+  /** data attribute that will be displayed as bar height y-axis value */
+  dataSourceId: PropTypes.string.isRequired,
+  /** optional each attribute has a different color, shouldn't be set for grouped or stacked */
+  color: PropTypes.string,
+  /** optional limit this attribute value to a particular subset of the data, the values need to be grouped by this dataFilter */
+  dataFilter: PropTypes.objectOf(PropTypes.any),
 };
 
 export const BarChartCardPropTypes = {
@@ -224,7 +223,11 @@ export const BarChartCardPropTypes = {
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
-    series: PropTypes.shape(BarChartDatasetPropType),
+    series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)),
+    /** for category type bar charts this is the x-axis value */
+    categoryDataSourceId: PropTypes.string,
+    /** for time based bar charts this is the x-axis value */
+    timeDataSourceId: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
