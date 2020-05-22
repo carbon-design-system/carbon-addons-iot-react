@@ -32,6 +32,9 @@
 }
 
 .#{$iot-prefix}--action-overflow-item {
+  div {
+    width: 100%;
+  }
   svg {
     margin-right: $spacing-03;
 

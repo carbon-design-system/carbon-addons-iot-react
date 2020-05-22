@@ -131,7 +131,6 @@ class RowActionsCell extends React.Component {
   }
 
   componentDidUpdate(prevProp, prevState) {
-    
     const isLtr = document.dir === 'ltr';
     if (prevState.ltr !== isLtr) {
       this.setState(state => ({ ltr: !state.ltr }));
@@ -198,10 +197,10 @@ class RowActionsCell extends React.Component {
               <Fragment>
                 {actions
                   .filter(action => !action.isOverflow)
-                  .map(({ id: actionId, labelText, ...others }) => (
+                  .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
                       {...omit(others, ['isOverflow'])}
-                      iconDescription={overflowMenuAria}
+                      iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
@@ -232,20 +231,16 @@ class RowActionsCell extends React.Component {
                           className={`${iotPrefix}--action-overflow-item`}
                           key={`${id}-row-actions-button-${action.id}`}
                           onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                          requireTitle
+                          requireTitle={!action.renderIcon}
                           hasDivider={action.hasDivider}
                           isDelete={action.isDelete}
                           itemText={
                             action.renderIcon ? (
-                              <OverflowMenuContent>
+                              <OverflowMenuContent title={action.labelText}>
                                 {typeof action.renderIcon === 'string' ? (
-                                  <Icon
-                                    icon={action.renderIcon}
-                                    description={action.labelText}
-                                    iconTitle={action.labelText}
-                                  />
+                                  <Icon icon={action.renderIcon} description={action.labelText} />
                                 ) : (
-                                  <action.renderIcon />
+                                  <action.renderIcon description={action.labelText} />
                                 )}
                                 {action.labelText}
                               </OverflowMenuContent>
