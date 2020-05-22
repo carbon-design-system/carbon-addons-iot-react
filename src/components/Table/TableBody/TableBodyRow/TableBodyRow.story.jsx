@@ -44,7 +44,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
     <TableBodyRow
       {...tableBodyRowProps}
       isExpanded={boolean('isExpanded', false)}
-      rowActions={[{ id: 'add', renderIcon: Add32 }]}
+      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
       options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
     />
   ))
@@ -53,7 +53,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
       {...tableBodyRowProps}
       isExpanded={boolean('isExpanded', false)}
       rowActions={[
-        { id: 'add', renderIcon: Add32 },
+        { id: 'add', renderIcon: Add32, iconDescription: 'Add' },
         { id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
         {
           id: 'test1',
@@ -79,21 +79,21 @@ storiesOf('Watson IoT/TableBodyRow', module)
     <TableBodyRow
       {...tableBodyRowProps}
       isSelectable={boolean('isSelectable', false)}
-      rowActions={[{ id: 'add', renderIcon: Add32 }]}
+      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
       options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowSelection: 'multi' }}
     />
   ))
   .add('is selectable', () => (
     <TableBodyRow
       {...tableBodyRowProps}
-      rowActions={[{ id: 'add', renderIcon: Add32 }]}
+      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
       options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowSelection: 'multi' }}
     />
   ))
   .add('rowActions running', () => (
     <TableBodyRow
       {...tableBodyRowProps}
-      rowActions={[{ id: 'add', renderIcon: Add32 }]}
+      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
       options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
       isRowActionRunning
       isExpanded={boolean('isExpanded', false)}
@@ -102,7 +102,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
   .add('rowActions error', () => (
     <TableBodyRow
       {...tableBodyRowProps}
-      rowActions={[{ id: 'add', renderIcon: Add32 }]}
+      rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
       options={{ ...tableBodyRowProps.options, hasRowActions: true, hasRowExpansion: true }}
       rowActionsError={{
         title: 'Import failed:',
