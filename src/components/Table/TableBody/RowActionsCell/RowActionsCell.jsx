@@ -131,7 +131,6 @@ class RowActionsCell extends React.Component {
   }
 
   componentDidUpdate(prevProp, prevState) {
-    
     const isLtr = document.dir === 'ltr';
     if (prevState.ltr !== isLtr) {
       this.setState(state => ({ ltr: !state.ltr }));
