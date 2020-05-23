@@ -14,12 +14,23 @@ describe('TableCard', () => {
     { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
+    { comparison: '=', dataSourceId: 'airflow_status', severity: 1, value: 'High' },
   ];
   it('findMatchingThresholds', () => {
     const oneMatchingThreshold = findMatchingThresholds(
       thresholds,
       { airflow_mean: 4 },
       'airflow_mean'
+    );
+    expect(oneMatchingThreshold).toHaveLength(1);
+    // The highest severity should match
+    expect(oneMatchingThreshold[0].severity).toEqual(1);
+  });
+  it('findMatchingThresholds string value', () => {
+    const oneMatchingThreshold = findMatchingThresholds(
+      thresholds,
+      { airflow_status: 'High' },
+      'airflow_status'
     );
     expect(oneMatchingThreshold).toHaveLength(1);
     // The highest severity should match
@@ -458,7 +469,7 @@ describe('TableCard', () => {
           thresholds: customThresholds,
         }}
         values={tableData}
-        size={CARD_SIZES.LARGETHIN}
+        size={CARD_SIZES.LARGE}
       />
     );
 
