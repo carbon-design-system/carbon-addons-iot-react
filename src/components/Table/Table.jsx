@@ -74,6 +74,8 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
+      /** Number of pages rendered in pagination */
+      maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
     filters: PropTypes.arrayOf(
@@ -201,6 +203,7 @@ export const defaultProps = baseProps => ({
       pageSizes: [10, 20, 30],
       page: 1,
       totalItems: baseProps.data && baseProps.data.length,
+      maxPages: 100,
       isItemPerPageHidden: false,
     },
     filters: [],
@@ -305,6 +308,7 @@ const Table = props => {
     tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
+  const { maxPages, ...paginationProps } = view.pagination;
 
   const [, forceUpdateCellTextWidth] = useState(0);
 
@@ -576,7 +580,15 @@ const Table = props => {
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
         <Pagination
-          {...view.pagination}
+          pageSize={paginationProps.pageSize}
+          pageSizes={paginationProps.pageSizes}
+          page={paginationProps.page}
+          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
+          totalItems={
+            paginationProps.totalItems < maxPages * paginationProps.pageSize
+              ? paginationProps.totalItems
+              : maxPages * paginationProps.pageSize
+          }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
           forwardText={i18n.pageForwardAria}

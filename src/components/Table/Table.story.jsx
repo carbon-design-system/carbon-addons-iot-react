@@ -527,11 +527,18 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Stateful Example with expansion and column resize',
+    'Stateful Example with expansion, maxPages, and column resize',
     () => (
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 30,
+            },
+          }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
@@ -856,7 +863,7 @@ storiesOf('Watson IoT/Table', module)
         
         When the 'hasRowEdit' is true an edit icon will be shown in the 
         table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
-        columns to have 'editDataFunction'. For StatefulTable this is handled automatically, for normal tables it 
+        columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
         should be handled manually as shown in this story.
 
         The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true. 
@@ -881,16 +888,16 @@ storiesOf('Watson IoT/Table', module)
           toolbar: { onShowRowEdit: (action, rowId) => {
             // Update your state to enable full table edit mode
           } },
-        }        
+        }
 
         options = { hasRowEdit: true, hasSingleRowEdit: true }
 
         columns={columns.map(i => ({
           ...i,
-          editDataFunction: () => { 
-            // Your edit data function here.. 
+          editDataFunction: () => {
+            // Your edit data function here..
           },
-        }))}             
+        }))}
 
         The editDataFunction is called with this payload
         {
@@ -927,11 +934,11 @@ storiesOf('Watson IoT/Table', module)
         text: `
 
         For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-        
+
         <br />
 
         To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
-        
+
         <br />
 
         Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
