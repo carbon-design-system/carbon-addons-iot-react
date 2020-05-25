@@ -525,7 +525,7 @@ storiesOf('Watson IoT/Table', module)
             ...initialState.view,
             pagination: {
               ...initialState.view.pagination,
-              maxPages: 30,
+              maxPages: 5,
             },
           }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
