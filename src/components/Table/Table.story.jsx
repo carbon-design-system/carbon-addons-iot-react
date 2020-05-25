@@ -563,6 +563,12 @@ storiesOf('Watson IoT/Table', module)
           hasRowExpansion:true
         }
 
+        view={{
+          pagination: {
+            maxPages: 5,
+          }
+        }}
+
         ~~~
 
         <br />
