@@ -13,6 +13,39 @@
   }
 }
 
+.#{$iot-prefix}--btn:not(.#{$iot-prefix}--btn-icon-selection--selected)
+  > .#{$iot-prefix}--btn-icon-selection--recommended {
+  border: 1px solid $support-02;
+}
+
+.#{$iot-prefix}--btn-icon-selection--recommended_marker:not(.#{$iot-prefix}--btn-icon-selection--selected) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: $spacing-04 0 0 $spacing-04;
+  border-style: solid;
+  border-color: $support-02 transparent;
+}
+
+.#{$prefix}--btn--field
+  .#{$iot-prefix}--btn-icon-selection--recommended_marker:not(.#{$iot-prefix}--btn-icon-selection--selected) {
+  border-width: $spacing-03 0 0 $spacing-03;
+}
+
+.#{$prefix}--btn--sm
+  .#{$iot-prefix}--btn-icon-selection--recommended_marker:not(.#{$iot-prefix}--btn-icon-selection--selected) {
+  border-width: $spacing-02 0 0 $spacing-02;
+}
+
+.#{$iot-prefix}--btn-icon-selection--selected {
+  border-color: $focus;
+}
+
+.#{$iot-prefix}--btn-icon-selection--selected svg {
+  fill: $icon-01;
+  outline-color: transparent;
+}
+
 html[dir='rtl'] .#{$iot-prefix}--btn {
   text-align: right;
   padding-left: 60px; // fixed values to invert $button-padding of Carbon's theme-tokens.scss
