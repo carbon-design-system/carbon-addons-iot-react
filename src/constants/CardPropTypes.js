@@ -208,10 +208,8 @@ const BarChartDatasetPropType = {
   label: PropTypes.string.isRequired,
   /** data attribute that will be displayed as bar height y-axis value */
   dataSourceId: PropTypes.string.isRequired,
-  /** optional each attribute has a different color, shouldn't be set for grouped or stacked */
-  color: PropTypes.string,
-  /** optional limit this attribute value to a particular subset of the data, the values need to be grouped by this dataFilter */
-  dataFilter: PropTypes.objectOf(PropTypes.any),
+  /** optional each attribute has a different color, or use an object to set a color by category value, or an array if you don't care which category values maps to a particular color */
+  color: PropTypes.oneOf(PropTypes.string, PropTypes.objectOf(PropTypes.string), PropTypes.arrayOf(PropTypes.string),
 };
 
 export const BarChartCardPropTypes = {
