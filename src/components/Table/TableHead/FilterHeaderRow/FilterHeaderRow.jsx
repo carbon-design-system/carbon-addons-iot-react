@@ -17,6 +17,7 @@ const StyledTableHeader = styled(({ isSelectColumn, ...others }) => <TableHeader
   &&& {
     span.bx--table-header-label {
       padding-top: 0;
+      overflow: inherit;
     }
 
     .bx--form-item input {
