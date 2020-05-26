@@ -40,6 +40,28 @@ describe('DateTimePicker', () => {
     jest.useFakeTimers();
   });
 
+  afterEach(() => {
+    console.error.mockClear();
+  });
+
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+  });
+
+  it('should blow up if random default value object is passed', () => {
+    mount(<DateTimePicker {...dateTimePickerProps} defaultValue={{ this: 'that' }} />);
+    expect(console.error).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not blow up if correct object is passed as default value', () => {
+    mount(<DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />);
+    expect(console.error).toHaveBeenCalledTimes(0);
+  });
+
   it('should have the first preset as value', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} i18n={i18n} />);
     jest.runAllTimers();

@@ -68,25 +68,24 @@ export const RELATIVE_VALUES = {
 
 const propTypes = {
   /** default value for the picker */
-  defaultValue: PropTypes.shape({
-    kind: PropTypes.oneOf([PICKER_KINDS.PRESET, PICKER_KINDS.RELATIVE, PICKER_KINDS.ABSOLUTE]),
-    preset: PropTypes.shape({
-      label: PropTypes.string,
-      offset: PropTypes.number,
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      offset: PropTypes.number.isRequired,
     }),
-    relative: PropTypes.shape({
-      lastNumber: PropTypes.number,
-      lastInterval: PropTypes.string,
-      relativeToWhen: PropTypes.string,
-      relativeToTime: PropTypes.string,
+    PropTypes.shape({
+      lastNumber: PropTypes.number.isRequired,
+      lastInterval: PropTypes.string.isRequired,
+      relativeToWhen: PropTypes.string.isRequired,
+      relativeToTime: PropTypes.string.isRequired,
     }),
-    absolute: PropTypes.shape({
-      startDate: PropTypes.instanceOf(Date),
-      startTime: PropTypes.string,
-      endDate: PropTypes.instanceOf(Date),
-      endTime: PropTypes.string,
+    PropTypes.shape({
+      startDate: PropTypes.string.isRequired,
+      startTime: PropTypes.string.isRequired,
+      endDate: PropTypes.string.isRequired,
+      endTime: PropTypes.string.isRequired,
     }),
-  }),
+  ]),
   /** the moment.js format for the human readable interval value */
   dateTimeMask: PropTypes.string,
   /** a list of options to for the default presets */
