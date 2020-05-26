@@ -3966,22 +3966,36 @@ Map {
                   "args": Array [
                     Object {
                       "color": Object {
-                        "type": "string",
-                      },
-                      "dataFilter": Object {
                         "args": Array [
-                          Object {
-                            "type": "any",
-                          },
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
                         ],
-                        "type": "objectOf",
+                        "type": "oneOfType",
                       },
                       "dataSourceId": Object {
                         "isRequired": true,
                         "type": "string",
                       },
                       "label": Object {
-                        "isRequired": true,
                         "type": "string",
                       },
                     },
@@ -3989,6 +4003,7 @@ Map {
                   "type": "shape",
                 },
               ],
+              "isRequired": true,
               "type": "arrayOf",
             },
             "timeDataSourceId": Object {
