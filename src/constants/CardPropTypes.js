@@ -209,7 +209,11 @@ const BarChartDatasetPropType = {
   /** data attribute that will be displayed as bar height y-axis value */
   dataSourceId: PropTypes.string.isRequired,
   /** optional each attribute has a different color, or use an object to set a color by category value, or an array if you don't care which category values maps to a particular color */
-  color: PropTypes.oneOf(PropTypes.string, PropTypes.objectOf(PropTypes.string), PropTypes.arrayOf(PropTypes.string),
+  color: PropTypes.oneOf(
+    PropTypes.string,
+    PropTypes.objectOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.string)
+  ),
 };
 
 export const BarChartCardPropTypes = {
