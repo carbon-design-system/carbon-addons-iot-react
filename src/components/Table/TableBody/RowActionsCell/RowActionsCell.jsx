@@ -175,7 +175,9 @@ class RowActionsCell extends React.Component {
       singleRowEditButtons,
     } = this.props;
     const { isOpen, ltr } = this.state;
-    const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
+    const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
+    const hasOverflow = overflowActions.length > 0;
+    const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
 
     return showSingleRowEditButtons ? (
       <StyledTableCell key={`${id}-single-row-edit-buttons`}>
@@ -236,33 +238,33 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                   >
-                    {actions
-                      .filter(action => action.isOverflow)
-                      .map(action => (
-                        <OverflowMenuItem
-                          className={`${iotPrefix}--action-overflow-item`}
-                          key={`${id}-row-actions-button-${action.id}`}
-                          onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                          requireTitle={!action.renderIcon}
-                          hasDivider={action.hasDivider}
-                          isDelete={action.isDelete}
-                          itemText={
-                            action.renderIcon ? (
-                              <OverflowMenuContent title={action.labelText}>
-                                {typeof action.renderIcon === 'string' ? (
-                                  <Icon icon={action.renderIcon} description={action.labelText} />
-                                ) : (
-                                  <action.renderIcon description={action.labelText} />
-                                )}
-                                {action.labelText}
-                              </OverflowMenuContent>
-                            ) : (
-                              action.labelText
-                            )
-                          }
-                          disabled={action.disabled}
-                        />
-                      ))}
+                    {overflowActions.map((action, actionIndex) => (
+                      <OverflowMenuItem
+                        // We need to focus a MenuItem for the keyboard navigation to work
+                        primaryFocus={actionIndex === firstSelectableItemIndex}
+                        className={`${iotPrefix}--action-overflow-item`}
+                        key={`${id}-row-actions-button-${action.id}`}
+                        onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                        requireTitle={!action.renderIcon}
+                        hasDivider={action.hasDivider}
+                        isDelete={action.isDelete}
+                        itemText={
+                          action.renderIcon ? (
+                            <OverflowMenuContent title={action.labelText}>
+                              {typeof action.renderIcon === 'string' ? (
+                                <Icon icon={action.renderIcon} description={action.labelText} />
+                              ) : (
+                                <action.renderIcon description={action.labelText} />
+                              )}
+                              {action.labelText}
+                            </OverflowMenuContent>
+                          ) : (
+                            action.labelText
+                          )
+                        }
+                        disabled={action.disabled}
+                      />
+                    ))}
                   </StyledOverflowMenu>
                 ) : null}
               </Fragment>
