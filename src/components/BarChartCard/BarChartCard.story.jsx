@@ -11,7 +11,7 @@ import BarChartCard from './BarChartCard';
 
 const COLORS = ['blue', 'red', 'green', 'yellow'];
 
-storiesOf('Watson IoT Experimental/BarChartCard', module)
+storiesOf('Watson IoT/BarChartCard', module)
   .add('Simple bar - Vertical', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
