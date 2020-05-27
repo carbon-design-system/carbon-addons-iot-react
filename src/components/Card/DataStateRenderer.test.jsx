@@ -24,7 +24,7 @@ function getDataStateProp() {
 }
 
 describe('ValueCard', () => {
-  test('should render custom icon', () => {
+  it('should render custom icon', () => {
     const size = CARD_SIZES.SMALL;
     const myDataState = getDataStateProp();
     myDataState.icon = (
@@ -38,7 +38,7 @@ describe('ValueCard', () => {
     expect(wrapper.find(`svg.${iotPrefix}--data-state-default-error-icon`)).toHaveLength(0);
   });
 
-  test('should use default icons if no app icon is passed down', () => {
+  it('should use default icons if no app icon is passed down', () => {
     const size = CARD_SIZES.SMALL;
     const myDataState = getDataStateProp();
     const wrapperNoData = mount(
@@ -57,7 +57,7 @@ describe('ValueCard', () => {
     expect(wrapperError.find(`svg.${iotPrefix}--data-state-default-warning-icon`)).toHaveLength(0);
   });
 
-  test('should render icon, label, description for sizes not equal SMALL, SMALLWIDE or MEDIUMTHIN', () => {
+  it('should render icon, label, description for sizes not equal SMALL, SMALLWIDE or MEDIUMTHIN', () => {
     const myDataState = getDataStateProp();
     function hasLabelDescription(jsx) {
       const wrapper = mount(jsx);
@@ -77,7 +77,7 @@ describe('ValueCard', () => {
     hasLabelDescription(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.LARGEWIDE} />);
   });
 
-  test('should render only icon for size SMALL', () => {
+  it('should render only icon for size SMALL', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.SMALL} />);
 
@@ -86,7 +86,7 @@ describe('ValueCard', () => {
     expect(wrapper.find(`.${iotPrefix}--data-state-grid__description`)).toHaveLength(0);
   });
 
-  test('should render only icon for size SMALLWIDE', () => {
+  it('should render only icon for size SMALLWIDE', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(
       <DataStateRenderer dataState={myDataState} size={CARD_SIZES.SMALLWIDE} />
@@ -97,7 +97,7 @@ describe('ValueCard', () => {
     expect(wrapper.find(`.${iotPrefix}--data-state-grid__description`)).toHaveLength(0);
   });
 
-  test('should render only icon for size MEDIUMTHIN', () => {
+  it('should render only icon for size MEDIUMTHIN', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(
       <DataStateRenderer dataState={myDataState} size={CARD_SIZES.MEDIUMTHIN} />
@@ -108,7 +108,7 @@ describe('ValueCard', () => {
     expect(wrapper.find(`.${iotPrefix}--data-state-grid__description`)).toHaveLength(0);
   });
 
-  test('should contain tooltip for icon, label and description', () => {
+  it('should contain tooltip for icon, label and description', () => {
     const myDataState = getDataStateProp();
 
     const wrapper = mount(<DataStateRenderer dataState={myDataState} size={CARD_SIZES.MEDIUM} />);
@@ -128,7 +128,7 @@ describe('ValueCard', () => {
     expect(descriptionTooltipTrigger).toHaveLength(1);
   });
 
-  test('should render label, description and extra text in the tooltip when present', () => {
+  it('should render label, description and extra text in the tooltip when present', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
 
@@ -140,14 +140,14 @@ describe('ValueCard', () => {
     expect(wrapper.text()).toMatch(RegExp(`.${myDataState.extraTooltipText}.`));
   });
 
-  test('should render learn-more link as anchor link', () => {
+  it('should render learn-more link as anchor link', () => {
     const myDataState = getDataStateProp();
     const wrapper = mount(<TooltipContent tooltipContent={myDataState} />);
 
     expect(wrapper.find(`a.learn-more-link`).text()).toEqual('Learn more');
   });
 
-  test('should render learn-more link as button with onClick', () => {
+  it('should render learn-more link as button with onClick', () => {
     const onLearnMoreClick = jest.fn();
     const myDataState = getDataStateProp();
     myDataState.learnMoreElement = (
@@ -163,7 +163,7 @@ describe('ValueCard', () => {
     expect(onLearnMoreClick).toHaveBeenCalled();
   });
 
-  test('should not render extraTooltipText nor learnMoreElement when missing', () => {
+  it('should not render extraTooltipText nor learnMoreElement when missing', () => {
     const myDataState = getDataStateProp();
     delete myDataState.learnMoreElement;
     delete myDataState.extraTooltipText;

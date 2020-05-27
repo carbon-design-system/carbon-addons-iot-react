@@ -199,16 +199,12 @@ const defaultProps = {
   ],
   relatives: [
     {
-      label: 'Yesterday',
-      value: RELATIVE_VALUES.YESTERDAY,
-    },
-    {
       label: 'Today',
       value: RELATIVE_VALUES.TODAY,
     },
     {
-      label: '',
-      value: '',
+      label: 'Yesterday',
+      value: RELATIVE_VALUES.YESTERDAY,
     },
   ],
   expanded: false,
@@ -228,7 +224,7 @@ const defaultProps = {
       'Last 24 hours',
     ],
     intervalLabels: ['minutes', 'hours', 'days', 'weeks', 'months', 'years'],
-    relativeLabels: ['Yesterday', 'Today'],
+    relativeLabels: ['Today', 'Yesterday'],
     customRangeLinkLabel: 'Custom Range',
     customRangeLabel: 'Custom range',
     relativeLabel: 'Relative',
@@ -244,7 +240,7 @@ const defaultProps = {
   },
 };
 
-const __unstableDateTimePicker = ({
+const DateTimePicker = ({
   defaultValue,
   dateTimeMask,
   presets,
@@ -263,36 +259,34 @@ const __unstableDateTimePicker = ({
     ...i18n,
   };
 
+  // State
   const [isExpanded, setIsExpanded] = useState(expanded);
   const [customRangeKind, setCustomRangeKind] = useState(
     showRelativeOption ? PICKER_KINDS.RELATIVE : PICKER_KINDS.ABSOLUTE
   );
-
   const [isCustomRange, setIsCustomRange] = useState(false);
-
-  const datePickerRef = React.createRef();
-
   const [selectedPreset, setSelectedPreset] = useState(null);
-
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
-
   const [relativeValue, setRelativeValue] = useState(null);
   const [absoluteValue, setAbsoluteValue] = useState(null);
-
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
+
+  // Refs
+  const datePickerRef = React.createRef();
+  const relativeSelect = React.createRef(null);
 
   const dateTimePickerBaseValue = {
     kind: '',
     preset: {
-      label: null,
-      offset: null,
+      label: presets[0].label,
+      offset: presets[0].offset,
     },
     relative: {
       lastNumber: null,
-      lastInterval: null,
-      relativeToWhen: null,
+      lastInterval: intervals[0].value,
+      relativeToWhen: relatives[0].value,
       relativeToTime: null,
     },
     absolute: {
@@ -303,22 +297,28 @@ const __unstableDateTimePicker = ({
     },
   };
 
-  useEffect(() => {
-    window.setTimeout(() => {
-      if (datePickerRef && datePickerRef.current) {
-        datePickerRef.current.cal.open();
-        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-        // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
-        if (typeof wrapper !== 'undefined' && wrapper !== null) {
-          const dp = document
-            .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
-            .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerRef.current.cal.calendarContainer);
+  useEffect(
+    () => {
+      const timeout = setTimeout(() => {
+        if (datePickerRef && datePickerRef.current) {
+          datePickerRef.current.cal.open();
+          // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
+          // the only way to display the calendar inline is to reparent its DOM to our component
+          const wrapper = document.getElementById(`${iotPrefix}--date-time-picker__wrapper`);
+          if (typeof wrapper !== 'undefined' && wrapper !== null) {
+            const dp = document
+              .getElementById(`${iotPrefix}--date-time-picker__wrapper`)
+              .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
+            dp.appendChild(datePickerRef.current.cal.calendarContainer);
+          }
         }
-      }
-    }, 0);
-  });
+      }, 0);
+      return () => {
+        clearTimeout(timeout);
+      };
+    },
+    [datePickerRef]
+  );
 
   /**
    * Parses a value object into a human readable value
@@ -470,11 +470,6 @@ const __unstableDateTimePicker = ({
     setCustomRangeKind(kind);
   };
 
-  const toggleIsCustomRange = () => {
-    setIsCustomRange(!isCustomRange);
-    setSelectedPreset(null);
-  };
-
   const onPresetClick = preset => {
     setSelectedPreset(preset.offset);
     renderValue(preset);
@@ -484,7 +479,7 @@ const __unstableDateTimePicker = ({
     setRelativeValue({
       lastNumber: 0,
       lastInterval: intervals[0].value,
-      relativeToWhen: '',
+      relativeToWhen: relatives[0].value,
       relativeToTime: '',
     });
   };
@@ -500,20 +495,22 @@ const __unstableDateTimePicker = ({
 
   const parseDefaultValue = () => {
     const parsableValue = lastAppliedValue || defaultValue;
-
+    const currentCustomRangeKind = showRelativeOption
+      ? PICKER_KINDS.RELATIVE
+      : PICKER_KINDS.ABSOLUTE;
     if (parsableValue !== null) {
       if (parsableValue.hasOwnProperty('offset')) {
         // preset
         resetAbsoluteValue();
         resetRelativeValue();
-        setCustomRangeKind(PICKER_KINDS.RELATIVE);
+        setCustomRangeKind(currentCustomRangeKind);
         onPresetClick(parsableValue);
       }
       if (parsableValue.hasOwnProperty('lastNumber')) {
         // relative
         resetAbsoluteValue();
         setIsCustomRange(true);
-        setCustomRangeKind(PICKER_KINDS.RELATIVE);
+        setCustomRangeKind(currentCustomRangeKind);
         setRelativeValue(parsableValue);
       }
 
@@ -534,8 +531,25 @@ const __unstableDateTimePicker = ({
     } else {
       resetAbsoluteValue();
       resetRelativeValue();
-      setCustomRangeKind(PICKER_KINDS.RELATIVE);
+      setCustomRangeKind(currentCustomRangeKind);
       onPresetClick(presets[0]);
+    }
+  };
+
+  const toggleIsCustomRange = () => {
+    setIsCustomRange(!isCustomRange);
+
+    // If value was changed reset when going back to Preset
+    if (absoluteValue.startDate !== '' || relativeValue.lastNumber > 0) {
+      if (selectedPreset) {
+        onPresetClick(presets.filter(x => x.offset === selectedPreset)[0]);
+        resetAbsoluteValue();
+        resetRelativeValue();
+      } else {
+        onPresetClick(presets[0]);
+        resetAbsoluteValue();
+        resetRelativeValue();
+      }
     }
   };
 
@@ -561,7 +575,6 @@ const __unstableDateTimePicker = ({
   const onApplyClick = () => {
     setIsExpanded(false);
     const value = renderValue();
-
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
         setLastAppliedValue(value.absolute);
@@ -595,38 +608,38 @@ const __unstableDateTimePicker = ({
     return '';
   };
 
+  // Util func to update the relative value
   const changeRelativePropertyValue = (property, value) => {
     const newRelative = { ...relativeValue };
     newRelative[property] = value;
     setRelativeValue(newRelative);
   };
 
+  // on change functions that trigger a relative value update
   const onRelativeLastNumberChange = event => {
     changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
   };
-
   const onRelativeLastIntervalChange = event => {
     changeRelativePropertyValue('lastInterval', event.currentTarget.value);
   };
-
   const onRelativeToWhenChange = event => {
     changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
   };
-
   const onRelativeToTimeChange = pickerValue => {
     changeRelativePropertyValue('relativeToTime', pickerValue);
   };
 
+  // Util func to update the absolute value
   const changeAbsolutePropertyValue = (property, value) => {
     const newAbsolute = { ...absoluteValue };
     newAbsolute[property] = value;
     setAbsoluteValue(newAbsolute);
   };
 
+  // on change functions that trigger a absolute value update
   const onAbsoluteStartTimeChange = pickerValue => {
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
-
   const onAbsoluteEndTimeChange = pickerValue => {
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
@@ -726,7 +739,7 @@ const __unstableDateTimePicker = ({
                     </RadioButtonGroup>
                   </FormGroup>
                 ) : null}
-                {customRangeKind === PICKER_KINDS.RELATIVE ? (
+                {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
                   <div>
                     <FormGroup
                       legendText={strings.lastLabel}
@@ -769,6 +782,7 @@ const __unstableDateTimePicker = ({
                       <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                         <Select
                           {...others}
+                          ref={relativeSelect}
                           id="relative-to-when"
                           defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
                           onChange={onRelativeToWhenChange}
@@ -779,7 +793,10 @@ const __unstableDateTimePicker = ({
                               <SelectItem
                                 key={i}
                                 value={relative.value}
-                                text={strings.relativeLabels[i] || relative.label}
+                                text={
+                                  strings.relativeLabels.filter(x => x === relative.label)[0] ||
+                                  relative.label
+                                }
                               />
                             );
                           })}
@@ -881,7 +898,7 @@ const __unstableDateTimePicker = ({
   );
 };
 
-__unstableDateTimePicker.propTypes = propTypes;
-__unstableDateTimePicker.defaultProps = defaultProps;
+DateTimePicker.propTypes = propTypes;
+DateTimePicker.defaultProps = defaultProps;
 
-export default __unstableDateTimePicker;
+export default DateTimePicker;

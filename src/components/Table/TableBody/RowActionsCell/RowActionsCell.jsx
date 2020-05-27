@@ -10,6 +10,7 @@ import {
 } from 'carbon-components-react';
 import styled from 'styled-components';
 import classnames from 'classnames';
+import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
@@ -53,14 +54,9 @@ const OverflowMenuContent = styled.div`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-  & {
-    margin-right: 0.5rem;
-    width: 1rem;
-  }
-`;
-
-const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu {...other} />)`
+const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
+  <OverflowMenu {...other} />
+))`
   &&& {
     margin-left: 0.5rem;
     svg {
@@ -125,7 +121,21 @@ const onClick = (e, id, action, onApplyRowAction) => {
 class RowActionsCell extends React.Component {
   state = {
     isOpen: false,
+    ltr: true,
   };
+
+  componentDidMount() {
+    if (document.dir === 'rtl') {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
+
+  componentDidUpdate(prevProp, prevState) {
+    const isLtr = document.dir === 'ltr';
+    if (prevState.ltr !== isLtr) {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
 
   handleOpen = () => {
     const { isOpen } = this.state;
@@ -157,7 +167,7 @@ class RowActionsCell extends React.Component {
       onClearError,
       inProgressText,
     } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, ltr } = this.state;
     const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
     return actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
@@ -187,10 +197,10 @@ class RowActionsCell extends React.Component {
               <Fragment>
                 {actions
                   .filter(action => !action.isOverflow)
-                  .map(({ id: actionId, labelText, ...others }) => (
+                  .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
-                      {...others}
-                      iconDescription={overflowMenuAria}
+                      {...omit(others, ['isOverflow'])}
+                      iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
@@ -206,7 +216,7 @@ class RowActionsCell extends React.Component {
                   <StyledOverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                    flipped
+                    flipped={ltr}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
@@ -218,22 +228,19 @@ class RowActionsCell extends React.Component {
                       .filter(action => action.isOverflow)
                       .map(action => (
                         <OverflowMenuItem
+                          className={`${iotPrefix}--action-overflow-item`}
                           key={`${id}-row-actions-button-${action.id}`}
                           onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                          requireTitle
+                          requireTitle={!action.renderIcon}
                           hasDivider={action.hasDivider}
                           isDelete={action.isDelete}
                           itemText={
                             action.renderIcon ? (
-                              <OverflowMenuContent>
+                              <OverflowMenuContent title={action.labelText}>
                                 {typeof action.renderIcon === 'string' ? (
-                                  <StyledIcon
-                                    icon={action.renderIcon}
-                                    description={action.labelText}
-                                    iconTitle={action.labelText}
-                                  />
+                                  <Icon icon={action.renderIcon} description={action.labelText} />
                                 ) : (
-                                  <action.renderIcon />
+                                  <action.renderIcon description={action.labelText} />
                                 )}
                                 {action.labelText}
                               </OverflowMenuContent>

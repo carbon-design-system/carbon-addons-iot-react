@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
-import uniqBy from 'lodash/uniqBy';
-import groupBy from 'lodash/groupBy';
+import isEmpty from 'lodash/isEmpty';
+import capitalize from 'lodash/capitalize';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
@@ -23,58 +23,128 @@ const { iotPrefix } = settings;
  * @param {array} series.colors, an array of HEX colors to be used for the chart
  * @param {array} values, the array of values from our data layer
  *
- * @returns {object} with a labels array and a datasets array
+ * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
  */
 export const formatChartData = (series, values) => {
-  let labels = [];
-  let datasets = [];
+  const data = [];
   if (!isNil(values)) {
     if (series.groupDataSourceId) {
       // grouped and stacked
-      labels = uniqBy(values, series.groupDataSourceId).map(x => x[series.groupDataSourceId]);
-      const groupedDatasets = groupBy(values, series.labelDataSourceId);
-      Object.keys(groupedDatasets).forEach(dataset => {
-        datasets.push({
-          label: dataset,
-          ...(series.colors && series.colors[datasets.length]
-            ? { fillColors: [series.colors[datasets.length]] }
-            : {}),
-          data: series.timeDataSourceId
-            ? groupedDatasets[dataset].map(d => ({
-                date: new Date(d[series.timeDataSourceId]),
-                value: d[series.dataSourceId],
-              }))
-            : groupedDatasets[dataset].map(d => d[series.dataSourceId]),
+      const uniqueGroupNames = [...new Set(values.map(val => val[series.groupDataSourceId]))];
+      const groupedData = uniqueGroupNames.map(group =>
+        values.filter(val => val[series.groupDataSourceId] === group)
+      );
+
+      groupedData.forEach(group => {
+        group.forEach(value => {
+          data.push({
+            group: value[series.labelDataSourceId], // bar
+            value: value[series.dataSourceId], // value
+            key: value[series.groupDataSourceId],
+            ...(series.timeDataSourceId
+              ? { date: new Date(value[series.timeDataSourceId]) } // timestamp
+              : null),
+          });
         });
       });
     } else if (series.labelDataSourceId) {
       // single bars
-      labels = values.map(v => v[series.labelDataSourceId]);
-      datasets = [
-        {
-          ...(series.colors ? { fillColors: series.colors } : {}),
-          data: values.map(v => v[series.dataSourceId]),
-        },
-      ];
+      const uniqueDatasetNames = [...new Set(values.map(val => val[series.labelDataSourceId]))];
+      const labeledData = uniqueDatasetNames.map(name =>
+        values.filter(val => val[series.labelDataSourceId] === name)
+      );
+
+      labeledData.forEach(dataset => {
+        dataset.forEach(value => {
+          data.push({
+            group: value[series.labelDataSourceId], // bar
+            value: value[series.dataSourceId], // value
+          });
+        });
+      });
     } else if (series.timeDataSourceId) {
       // timestamp
-      labels = values.map(v => v[series.timeDataSourceId]);
-      datasets = [
-        {
-          ...(series.colors ? { fillColors: series.colors } : {}),
-          data: values.map(v => ({
-            date: new Date(v[series.timeDataSourceId]),
-            value: v[series.dataSourceId],
-          })),
-        },
-      ];
+      const uniqueDatasetNames = [...new Set(values.map(val => val[series.timeDataSourceId]))];
+      const labeledData = uniqueDatasetNames.map(name =>
+        values.filter(val => val[series.timeDataSourceId] === name)
+      );
+      labeledData.forEach(dataset => {
+        dataset.forEach(value => {
+          const dataDate = new Date(value[series.timeDataSourceId]);
+          data.push({
+            group: capitalize(series.dataSourceId), // bar
+            value: value[series.dataSourceId], // value
+            date: dataDate, // timestamp
+          });
+        });
+      });
     }
   }
 
+  return data;
+};
+
+/**
+ * Maps values to left and bottom axes based on whether layout is vertical
+ * or horizontal, and if the series is grouped or time-based
+ *
+ * @param {Object} series the definition of the plotted series
+ * @param {string} layout vertical or horizontal
+ *
+ * @returns {object} { bottomAxesMapsTo: string, leftAxesMapsTo: string }
+ */
+export const mapValuesToAxes = (series, layout) => {
+  // Determine which values the axes map to
+  let bottomAxesMapsTo;
+  let leftAxesMapsTo;
+  if (layout === BAR_CHART_LAYOUTS.VERTICAL) {
+    // if vertical and time-based
+    if (series.timeDataSourceId) {
+      bottomAxesMapsTo = 'date';
+      leftAxesMapsTo = 'value';
+    } // if vertical and group-based
+    else if (series.groupDataSourceId) {
+      bottomAxesMapsTo = 'key';
+      leftAxesMapsTo = 'value';
+    } // if vertical and not group or time-based
+    else {
+      bottomAxesMapsTo = 'group';
+      leftAxesMapsTo = 'value';
+    }
+  } // if horizontal and time-based
+  else if (series.timeDataSourceId) {
+    bottomAxesMapsTo = 'value';
+    leftAxesMapsTo = 'date';
+  } // if horizontal and group-based
+  else if (series.groupDataSourceId) {
+    bottomAxesMapsTo = 'value';
+    leftAxesMapsTo = 'key';
+  } // if horizontal, not time-based or group
+  else {
+    bottomAxesMapsTo = 'value';
+    leftAxesMapsTo = 'group';
+  }
+
   return {
-    labels,
-    datasets,
+    bottomAxesMapsTo,
+    leftAxesMapsTo,
   };
+};
+
+/**
+ * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
+ * @param {Array} series an array of dataset group classifications
+ * @param {Array<string>} datasetNames unique dataset bar names
+ * @returns {Object} colors - formatted
+ */
+export const formatColors = (series, datasetNames) => {
+  const colors = { identifier: 'group', scale: {} };
+  if (series.colors) {
+    series.colors.forEach((color, index) => {
+      colors.scale[datasetNames[index]] = color;
+    });
+  }
+  return colors;
 };
 
 const BarChartCard = ({
@@ -101,7 +171,7 @@ const BarChartCard = ({
     chartData = formatChartData(series, values);
   }
 
-  const isAllValuesEmpty = chartData.datasets.every(set => set.data.every(value => isNil(value)));
+  const isAllValuesEmpty = isEmpty(chartData);
 
   let ChartComponent = SimpleBarChart;
 
@@ -112,6 +182,12 @@ const BarChartCard = ({
   }
 
   const scaleType = series && series.timeDataSourceId ? 'time' : 'labels';
+
+  const axes = mapValuesToAxes(series, layout);
+
+  // Set the colors for each dataset
+  const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
+  const colors = formatColors(series, uniqueDatasets);
 
   return (
     <Card
@@ -125,44 +201,37 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
-        <Fragment>
-          <div className={classnames(`${iotPrefix}--bar-chart-container`, className)}>
-            <ChartComponent
-              data={chartData}
-              options={{
-                animations: false,
-                accessibility: true,
-                axes: {
-                  bottom: {
-                    title: xLabel,
-                    scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
-                    primary: true,
-                    stacked:
-                      chartType === BAR_CHART_TYPES.STACKED &&
-                      layout === BAR_CHART_LAYOUTS.HORIZONTAL,
-                  },
-                  left: {
-                    title: yLabel,
-                    scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
-                    secondary: true,
-                    stacked:
-                      chartType === BAR_CHART_TYPES.STACKED &&
-                      layout === BAR_CHART_LAYOUTS.VERTICAL,
-                  },
+        <div className={classnames(`${iotPrefix}--bar-chart-container`, className)}>
+          <ChartComponent
+            data={chartData}
+            options={{
+              animations: false,
+              accessibility: true,
+              axes: {
+                bottom: {
+                  title: xLabel,
+                  scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
+                  stacked:
+                    chartType === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL,
+                  mapsTo: axes.bottomAxesMapsTo,
                 },
-                legend: { position: 'bottom', enabled: chartData.datasets.length > 1 },
-                containerResizable: true,
-                tooltip: {
-                  gridline: {
-                    enabled: false,
-                  },
+                left: {
+                  title: yLabel,
+                  scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
+                  stacked:
+                    chartType === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+                  mapsTo: axes.leftAxesMapsTo,
                 },
-              }}
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </Fragment>
+              },
+              legend: { position: 'bottom', enabled: chartData.length > 1 },
+              containerResizable: true,
+              color: colors,
+            }}
+            width="100%"
+            height="100%"
+          />
+        </div>
       ) : null}
     </Card>
   );

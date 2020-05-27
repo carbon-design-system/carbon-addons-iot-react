@@ -10,7 +10,7 @@ const commonWizardProps = {
 };
 
 describe('WizardModal', () => {
-  test('handleNext', () => {
+  it('handleNext', () => {
     const mockValidateStepFunction = jest.fn();
     const wrapper = mount(
       <WizardModal
@@ -34,7 +34,7 @@ describe('WizardModal', () => {
     expect(wrapper.state('step')).toEqual(0);
     expect(mockValidateStepFunction).not.toHaveBeenCalled();
   });
-  test('validation', () => {
+  it('validation', () => {
     const wrapper = mount(
       <WizardModal
         {...commonWizardProps}
@@ -65,7 +65,7 @@ describe('WizardModal', () => {
     // step be allowed to go backwards
     expect(wrapper.state('step')).toEqual(0);
   });
-  test('submit', () => {
+  it('submit', () => {
     const mockValidateStepFunction = jest.fn();
     const wrapper = mount(
       <WizardModal
@@ -93,7 +93,7 @@ describe('WizardModal', () => {
     wrapper.instance().handleSubmit();
     expect(mockValidateStepFunction).toHaveBeenCalled();
   });
-  test('footer and buttons', () => {
+  it('footer and buttons', () => {
     const wrapper = mount(
       <WizardModal
         {...commonWizardProps}
@@ -135,7 +135,7 @@ describe('WizardModal', () => {
     expect(wrapper.find('.bx--btn--primary')).toHaveLength(1);
     wrapper.setState({ step: 2 });
   });
-  test('sendingData', () => {
+  it('sendingData', () => {
     const wrapper = mount(
       <WizardModal
         {...commonWizardProps}

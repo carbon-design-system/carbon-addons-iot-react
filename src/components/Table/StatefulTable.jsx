@@ -70,6 +70,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     onApplyFilter,
     onToggleFilter,
+    onShowRowEdit,
     onToggleColumnSelection,
     onClearAllFilters,
     onCancelBatchAction,
@@ -110,6 +111,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onToggleColumnSelection: () => {
         dispatch(tableToolbarToggle('column'));
         callbackParent(onToggleColumnSelection, 'column');
+      },
+      onShowRowEdit: () => {
+        dispatch(tableToolbarToggle('rowEdit'));
+        callbackParent(onShowRowEdit, 'rowEdit');
       },
       onClearAllFilters: () => {
         dispatch(tableFilterClear());
@@ -164,9 +169,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableRowActionComplete(rowId));
         callbackParent(onClearRowError, rowId);
       },
-      onEmptyStateAction: () =>
-        // This action doesn't update our table state, it's up to the user
-        callbackParent(onEmptyStateAction),
+      onEmptyStateAction: onEmptyStateAction
+        ? () =>
+            // This action doesn't update our table state, it's up to the user
+            callbackParent(onEmptyStateAction)
+        : null,
       onChangeOrdering: ordering => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header testcases should render 1`] = `
+exports[`Header should render 1`] = `
 <div>
   <header
     aria-label="main header"

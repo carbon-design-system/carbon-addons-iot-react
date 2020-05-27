@@ -20,7 +20,7 @@ const commonTileProps = {
 };
 
 describe('StatefulTileCatalog', () => {
-  test('handles Search', () => {
+  it('handles Search', () => {
     const mockSearch = jest.fn();
     const value = 'My Search String';
     const wrapper = mount(
@@ -34,7 +34,7 @@ describe('StatefulTileCatalog', () => {
     expect(mockSearch).toHaveBeenCalledTimes(1);
     expect(mockSearch).toHaveBeenCalledWith(value);
   });
-  test('handles Clicking on option', () => {
+  it('handles Clicking on option', () => {
     const wrapper = mount(<StatefulTileCatalog {...commonTileProps} />);
     // Need to use at to get a new ReactWrapper
     const tileInput = wrapper.find('input[type="radio"]').at(0);
@@ -43,7 +43,7 @@ describe('StatefulTileCatalog', () => {
     expect(mockOnSelection).toHaveBeenCalledTimes(1);
     expect(mockOnSelection).toHaveBeenCalledWith('test1');
   });
-  test('handles onPage', () => {
+  it('handles onPage', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
     );
@@ -54,14 +54,14 @@ describe('StatefulTileCatalog', () => {
     // Should be 2 tile choices on the last page
     expect(wrapper.find('input[type="radio"]')).toHaveLength(2);
   });
-  test('selectedTileId', () => {
+  it('selectedTileId', () => {
     const wrapper = mount(<StatefulTileCatalog {...commonTileProps} selectedTileId="test2" />);
     wrapper.update();
     const selectedTile = wrapper.find('input[checked=true]');
     expect(selectedTile).toHaveLength(1);
     expect(selectedTile.prop('id')).toEqual('test2');
   });
-  test('selectedTileId should change page', () => {
+  it('selectedTileId should change page', () => {
     const wrapper = mount(
       <StatefulTileCatalog
         {...commonTileProps}
@@ -73,7 +73,7 @@ describe('StatefulTileCatalog', () => {
     expect(wrapper.text()).toContain('Page 2');
   });
 
-  test('tiles prop change resets page', () => {
+  it('tiles prop change resets page', () => {
     const wrapper = mount(
       <StatefulTileCatalog {...commonTileProps} pagination={{ pageSize: 5 }} />
     );
@@ -112,7 +112,7 @@ describe('StatefulTileCatalog', () => {
     ).toEqual(true);
   });
 
-  test('tiles prop change should not select if isSelectedByDefault false', () => {
+  it('tiles prop change should not select if isSelectedByDefault false', () => {
     const wrapper = mount(
       <StatefulTileCatalog
         {...commonTileProps}

@@ -6,15 +6,18 @@
   "configurations": [
     {
       "type": "node",
+      "runtimeVersion": "10.15.3",
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/lib/index.js"
     },
     {
       "type": "node",
+      "runtimeVersion": "10.15.3",
       "request": "launch",
       "name": "Jest All",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "env": { "NODE_ICU_DATA": "node_modules/full-icu", "TZ": "America/Chicago" },
       "args": ["--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
@@ -25,10 +28,12 @@
     },
     {
       "type": "node",
+      "runtimeVersion": "10.15.3",
       "request": "launch",
       "name": "Jest Current File",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": ["${relativeFile}", "--config", "jest.config.js"],
+      "env": { "NODE_ICU_DATA": "node_modules/full-icu", "TZ": "America/Chicago" },
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,

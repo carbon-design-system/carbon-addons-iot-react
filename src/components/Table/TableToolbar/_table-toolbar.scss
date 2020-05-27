@@ -1,4 +1,5 @@
 @import '../../../globals/vars';
+@import './table-toolbar-svg-button';
 
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
@@ -18,33 +19,6 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.#{$iot-prefix}--tooltip-svg-wrapper {
-  background: transparent;
-  border: none;
-  display: flex;
-  cursor: pointer;
-  height: auto;
-  min-width: $spacing-09;
-  outline: 2px solid transparent;
-
-  &:hover {
-    background: #e5e5e5;
-  }
-
-  &:active,
-  &:focus {
-    outline: 2px solid #0062ff;
-    outline-offset: -2px;
-  }
-
-  svg {
-    margin: 0 auto;
-    height: auto;
-    width: auto;
-    fill: #525252;
-  }
 }
 
 .#{$iot-prefix}--table-toolbar {
@@ -67,4 +41,32 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
 .#{$iot-prefix}--table-tooltip-container {
   padding: $spacing-05 0;
+}
+
+.#{$iot-prefix}--table-row-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  padding: $spacing-03;
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--table-batch-actions {
+    .#{$prefix}--action-list {
+      left: 0;
+      right: auto;
+    }
+
+    .#{$prefix}--batch-summary {
+      left: auto;
+      margin-left: 0;
+      margin-right: $spacing-05;
+      right: 0;
+    }
+
+    .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
+      left: auto;
+      right: 0;
+    }
+  }
 }

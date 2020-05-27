@@ -95,6 +95,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
           <button
             aria-label="user"
             className="bx--header-action-btn bx--header__action"
+            onClick={[Function]}
             type="button"
           >
             <svg

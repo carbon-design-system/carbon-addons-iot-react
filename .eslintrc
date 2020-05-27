@@ -73,7 +73,10 @@
     // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
     "lodash/chaining": [2, "never"],
     "lodash/import-scope": [2, "method"],
-    "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }]
+    "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }],
+    "jest/expect-expect": "error",
+    "jest/prefer-hooks-on-top": "error",
+    "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }]
   },
   // Testcases have less eslint rules applied to them
   "overrides": [

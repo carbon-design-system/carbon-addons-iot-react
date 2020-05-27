@@ -96,7 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -241,7 +241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -387,7 +387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -458,7 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -529,7 +529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -600,7 +600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -619,7 +619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="More actions"
-                    className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-4 eOkQBK bx--overflow-menu"
+                    className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-3 etHQFk bx--overflow-menu"
                     data-testid="tableId-rowId-row-actions-cell-overflow"
                     id="tableId-rowId-row-actions-cell-overflow"
                     onClick={[Function]}
@@ -717,7 +717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
@@ -880,7 +880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}

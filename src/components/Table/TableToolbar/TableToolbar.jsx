@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Column20, Filter20, Download20 } from '@carbon/icons-react';
+import { Column20, Filter20, Download20, Edit20 } from '@carbon/icons-react';
 import { DataTable, Button, Tooltip } from 'carbon-components-react';
 import classNames from 'classnames';
 
-import { keyCodes } from '../../../constants/KeyCodeConstants';
 import deprecate from '../../../internal/deprecate';
-import { TableSearchPropTypes, defaultI18NPropTypes } from '../TablePropTypes';
+import {
+  TableSearchPropTypes,
+  defaultI18NPropTypes,
+  ActiveTableToolbarPropType,
+} from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import TableToolbarSearch from '../TableToolbarSearch/TableToolbarSearch';
+
+import TableToolbarSVGButton from './TableToolbarSVGButton';
 
 const { iotPrefix } = settings;
 
@@ -31,6 +36,7 @@ const propTypes = {
     hasFilter: PropTypes.bool,
     hasSearch: PropTypes.bool,
     hasColumnSelection: PropTypes.bool,
+    hasRowEdit: PropTypes.bool,
     /** Optional boolean to render rowCount in header
      *  NOTE: Deprecated in favor of secondaryTitle for custom use
      */
@@ -44,6 +50,7 @@ const propTypes = {
     clearAllFilters: PropTypes.string,
     columnSelectionButtonAria: PropTypes.string,
     filterButtonAria: PropTypes.string,
+    editButtonAria: PropTypes.string,
     searchLabel: PropTypes.string,
     searchPlaceholder: PropTypes.string,
     batchCancel: PropTypes.string,
@@ -62,6 +69,7 @@ const propTypes = {
     onClearAllFilters: PropTypes.func,
     onToggleColumnSelection: PropTypes.func,
     onToggleFilter: PropTypes.func,
+    onShowRowEdit: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -70,7 +78,7 @@ const propTypes = {
     /** is the toolbar currently disabled */
     isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
-    activeBar: PropTypes.oneOf(['column', 'filter']),
+    activeBar: ActiveTableToolbarPropType,
     /** total number of selected rows */
     totalSelected: PropTypes.number,
     totalItemsCount: PropTypes.number,
@@ -88,6 +96,8 @@ const propTypes = {
       })
     ),
     search: TableSearchPropTypes,
+    /** buttons to be shown with when activeBar is 'rowEdit' */
+    rowEditBarButtons: PropTypes.node,
   }).isRequired,
 };
 
@@ -105,13 +115,21 @@ const TableToolbar = ({
   i18n,
   secondaryTitle,
   tooltip,
-  options: { hasColumnSelection, hasFilter, hasSearch, hasRowSelection, hasRowCountInHeader },
+  options: {
+    hasColumnSelection,
+    hasFilter,
+    hasSearch,
+    hasRowSelection,
+    hasRowCountInHeader,
+    hasRowEdit,
+  },
   actions: {
     onCancelBatchAction,
     onApplyBatchAction,
     onClearAllFilters,
     onToggleColumnSelection,
     onToggleFilter,
+    onShowRowEdit,
     onApplySearch,
     onDownloadCSV,
   },
@@ -120,10 +138,11 @@ const TableToolbar = ({
     totalFilters,
     batchActions,
     search,
-    // activeBar,
+    activeBar,
     customToolbarContent,
     isDisabled,
     totalItemsCount,
+    rowEditBarButtons,
   },
 }) => (
   <CarbonTableToolbar className={classNames(`${iotPrefix}--table-toolbar`, className)}>
@@ -166,68 +185,50 @@ const TableToolbar = ({
         </Tooltip>
       </div>
     )}
-    <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
-      {hasSearch ? (
-        <TableToolbarSearch
-          {...search}
-          className="table-toolbar-search"
-          translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-          id={`${tableId}-toolbar-search`}
-          onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
-          disabled={isDisabled}
-        />
-      ) : null}
-      {totalFilters > 0 ? (
-        <Button kind="secondary" onClick={onClearAllFilters}>
-          {i18n.clearAllFilters}
-        </Button>
-      ) : null}
-      {onDownloadCSV ? (
-        <div
-          className={`${iotPrefix}--tooltip-svg-wrapper`}
-          onClick={onDownloadCSV}
-          role="button"
-          tabIndex={0}
-          onKeyDown={e => {
-            if (e.keyCode === keyCodes.ENTER) onDownloadCSV();
-          }}
-          data-testid="download-button"
-        >
-          <Download20 description={i18n.downloadIconDescription} />
-        </div>
-      ) : null}
-      {hasColumnSelection ? (
-        <div
-          className={`${iotPrefix}--tooltip-svg-wrapper`}
-          onClick={onToggleColumnSelection}
-          role="button"
-          tabIndex={0}
-          onKeyDown={e => {
-            if (e.keyCode === keyCodes.ENTER) onToggleColumnSelection();
-          }}
-          data-testid="column-selection-button"
-        >
-          <Column20 description={i18n.columnSelectionButtonAria} />
-        </div>
-      ) : null}
-      {hasFilter ? (
-        <div
-          className={`${iotPrefix}--tooltip-svg-wrapper`}
-          onClick={onToggleFilter}
-          role="button"
-          tabIndex={0}
-          onKeyDown={e => {
-            if (e.keyCode === keyCodes.ENTER) onToggleFilter();
-          }}
-          data-testid="filter-button"
-        >
-          <Filter20 description={i18n.filterButtonAria} />
-        </div>
-      ) : null}
+    {activeBar === 'rowEdit' ? (
+      <div className={`${iotPrefix}--table-row-edit-actions`}>{rowEditBarButtons}</div>
+    ) : (
+      <TableToolbarContent className={`${iotPrefix}--table-toolbar-content`}>
+        {hasSearch ? (
+          <TableToolbarSearch
+            {...search}
+            className="table-toolbar-search"
+            translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+            id={`${tableId}-toolbar-search`}
+            onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+            disabled={isDisabled}
+          />
+        ) : null}
+        {totalFilters > 0 ? (
+          <Button kind="secondary" onClick={onClearAllFilters}>
+            {i18n.clearAllFilters}
+          </Button>
+        ) : null}
+        {onDownloadCSV ? (
+          <TableToolbarSVGButton onClick={onDownloadCSV} testId="download-button">
+            <Download20 description={i18n.downloadIconDescription} />
+          </TableToolbarSVGButton>
+        ) : null}
+        {hasColumnSelection ? (
+          <TableToolbarSVGButton onClick={onToggleColumnSelection} testId="column-selection-button">
+            <Column20 description={i18n.columnSelectionButtonAria} />
+          </TableToolbarSVGButton>
+        ) : null}
+        {hasFilter ? (
+          <TableToolbarSVGButton onClick={onToggleFilter} testId="filter-button">
+            <Filter20 description={i18n.filterButtonAria} />
+          </TableToolbarSVGButton>
+        ) : null}
+        {hasRowEdit ? (
+          <TableToolbarSVGButton onClick={onShowRowEdit} testId="row-edit-button">
+            <Edit20 description={i18n.editButtonAria} />
+          </TableToolbarSVGButton>
+        ) : null}
 
-      {// Default card header actions should be to the right of the table-specific actions
-      customToolbarContent || null}
-    </TableToolbarContent>
+        {// Default card header actions should be to the right of the table-specific actions
+        customToolbarContent || null}
+      </TableToolbarContent>
+    )}
   </CarbonTableToolbar>
 );
 

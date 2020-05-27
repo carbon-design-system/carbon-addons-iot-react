@@ -4,9 +4,9 @@ import { render, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { tableColumns, tableData, actions2 } from '../../utils/sample';
+import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
 
-import TableCard, { findMatchingThresholds } from './TableCard';
+import TableCard, { findMatchingThresholds, createColumnsWithFormattedLinks } from './TableCard';
 
 describe('TableCard', () => {
   const thresholds = [
@@ -14,8 +14,9 @@ describe('TableCard', () => {
     { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
+    { comparison: '=', dataSourceId: 'airflow_status', severity: 1, value: 'High' },
   ];
-  test('findMatchingThresholds', () => {
+  it('findMatchingThresholds', () => {
     const oneMatchingThreshold = findMatchingThresholds(
       thresholds,
       { airflow_mean: 4 },
@@ -25,7 +26,17 @@ describe('TableCard', () => {
     // The highest severity should match
     expect(oneMatchingThreshold[0].severity).toEqual(1);
   });
-  test('findMatchingThresholds multiple columns', () => {
+  it('findMatchingThresholds string value', () => {
+    const oneMatchingThreshold = findMatchingThresholds(
+      thresholds,
+      { airflow_status: 'High' },
+      'airflow_status'
+    );
+    expect(oneMatchingThreshold).toHaveLength(1);
+    // The highest severity should match
+    expect(oneMatchingThreshold[0].severity).toEqual(1);
+  });
+  it('findMatchingThresholds multiple columns', () => {
     const twoMatchingThresholds = findMatchingThresholds(thresholds, {
       airflow_mean: 4,
       airflow_max: 5,
@@ -37,7 +48,7 @@ describe('TableCard', () => {
     expect(twoMatchingThresholds[1].severity).toEqual(1);
     expect(twoMatchingThresholds[1].dataSourceId).toEqual('airflow_max');
   });
-  test('findMatchingThresholds no column', () => {
+  it('findMatchingThresholds no column', () => {
     const thresholds = [{ comparison: '<', dataSourceId: 'airflow_mean', severity: 1, value: 4.5 }];
     const oneMatchingThreshold = findMatchingThresholds(thresholds, { airflow_mean: 4 });
     expect(oneMatchingThreshold).toHaveLength(1);
@@ -54,7 +65,83 @@ describe('TableCard', () => {
     );
     expect(zeroMatchingThreshold2).toHaveLength(0);
   });
-  test('Clicked row actions', () => {
+  it('createColumnsWithFormattedLinks adds renderDataFunction to columns with links', () => {
+    const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
+    const columnsWithlinks = columnsWithFormattedLinks.filter(column => column.renderDataFunction);
+    expect(columnsWithlinks).toHaveLength(1);
+  });
+  it('Row specific link variables populate correctly', () => {
+    const tableLinkColumns = [
+      ...tableColumns,
+      {
+        dataSourceId: 'deviceId',
+        label: 'deviceId',
+      },
+      {
+        dataSourceId: 'Link',
+        label: 'Link',
+        linkTemplate: {
+          href: 'https://ibm.com/{deviceId}',
+          target: '_blank',
+        },
+      },
+    ];
+
+    // introduce row specific deviceId data
+    const deviceidRowData = [
+      '73000',
+      '73000',
+      '73001',
+      '73000',
+      '73002',
+      '73004',
+      '73004',
+      '73003',
+      '73005',
+      '73003',
+      '73005',
+    ];
+
+    const tableLinkData = tableData.map((row, i) => {
+      return {
+        ...row,
+        values: {
+          ...row.values,
+          deviceId: deviceidRowData[i],
+          Link: 'Link',
+        },
+      };
+    });
+
+    const thresholds = [
+      {
+        dataSourceId: 'pressure',
+        comparison: '>=',
+        value: 1,
+        severity: 1,
+        label: 'Pressure',
+        showSeverityLabel: true,
+        severityLabel: 'Critical',
+      },
+    ];
+
+    const { getAllByText } = render(
+      <TableCard
+        title="Asset Open Alerts"
+        id="table-list"
+        tooltip="Here's a Tooltip"
+        content={{
+          columns: tableLinkColumns,
+          thresholds,
+        }}
+        values={tableLinkData}
+        size={CARD_SIZES.LARGE}
+      />
+    );
+    expect(getAllByText('Link').length).toEqual(11);
+    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73005');
+  });
+  it('Clicked row actions', () => {
     const onCardAction = jest.fn();
 
     const tableDataWithActions = tableData.map(item => {
@@ -83,7 +170,7 @@ describe('TableCard', () => {
       .simulate('click');
     expect(onCardAction.mock.calls).toHaveLength(1);
   });
-  test('Columns displayed XLarge', () => {
+  it('Columns displayed XLarge', () => {
     const wrapper = mount(
       <TableCard
         title="Open Alerts"
@@ -96,7 +183,7 @@ describe('TableCard', () => {
     );
     expect(wrapper.find('TableHeader').length).toBe(tableColumns.length);
   });
-  test('Columns displayed Large', () => {
+  it('Columns displayed Large', () => {
     const wrapper = mount(
       <TableCard
         title="Open Alerts"
@@ -111,7 +198,7 @@ describe('TableCard', () => {
     const totalColumns = tableColumns.filter(item => item.priority === 1 || item.priority === 2);
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length);
   });
-  test('Columns displayed Large with actions', () => {
+  it('Columns displayed Large with actions', () => {
     const tableDataWithActions = tableData.map(item => {
       return {
         ...item,
@@ -133,7 +220,7 @@ describe('TableCard', () => {
     const totalColumns = tableColumns.filter(item => item.priority === 1 || item.priority === 2);
     expect(wrapper.find('TableHeader').length).toBe(totalColumns.length + 1); // +1 for action column
   });
-  test('Columns should use custom render fuction when present', () => {
+  it('Columns should use custom render fuction when present', () => {
     const mockRenderFunc = jest.fn(() => {
       return <p className="myCustomRenderedCell" />;
     });
@@ -188,7 +275,7 @@ describe('TableCard', () => {
     );
     expect(wrapper2.find('TableCell .myCustomRenderedCell').length).toBe(0);
   });
-  test('threshold columns should render in correct column regardless of order', () => {
+  it('threshold columns should render in correct column regardless of order', () => {
     // The pressure header comes after the count header, but the ordering should not matter when
     // it comes to rendering the threshold columns
     const customThresholds = [
@@ -238,7 +325,7 @@ describe('TableCard', () => {
     expect(queryByTitle('Pressure Severity')).not.toBeInTheDocument();
     expect(getByTitle('Pressure Sev')).toBeInTheDocument();
   });
-  test('threshold columns should render in correct column regardless of quantity', () => {
+  it('threshold columns should render in correct column regardless of quantity', () => {
     // If there are more than 2 thresholds, they should still render to the left of the datasource column
     const customThresholds = [
       {
@@ -302,7 +389,7 @@ describe('TableCard', () => {
     const { getByText: getByTextPressure } = within(tableHeader[pressureSeverityIndex]);
     expect(getByTextPressure('Pressure Severity')).toBeTruthy();
   });
-  test('threshold icon labels should not display when showSeverityLabel is false', () => {
+  it('threshold icon labels should not display when showSeverityLabel is false', () => {
     const customThresholds = [
       {
         dataSourceId: 'pressure',
@@ -350,7 +437,7 @@ describe('TableCard', () => {
     expect(queryByText(/Moderate/g)).not.toBeInTheDocument();
     expect(queryByText(/Low/g)).not.toBeInTheDocument();
   });
-  test('threshold icon label should not display default strings', () => {
+  it('threshold icon label should not display default strings', () => {
     const customThresholds = [
       {
         dataSourceId: 'pressure',
@@ -382,7 +469,7 @@ describe('TableCard', () => {
           thresholds: customThresholds,
         }}
         values={tableData}
-        size={CARD_SIZES.LARGETHIN}
+        size={CARD_SIZES.LARGE}
       />
     );
 

@@ -32,7 +32,7 @@ export HierarchyList from './components/List/HierarchyList';
 export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
-export __unstableDateTimePicker from './components/DateTimePicker/DateTimePicker';
+export DateTimePicker from './components/DateTimePicker/DateTimePicker';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
@@ -276,6 +276,7 @@ export {
   determineCardRange,
   determineMaxValueCardAttributeCount,
   compareGrains,
+  formatNumberWithPrecision,
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';

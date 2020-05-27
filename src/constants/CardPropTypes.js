@@ -71,6 +71,9 @@ export const ValueCardPropTypes = {
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
   }),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
 };
 
 export const TimeSeriesDatasetPropTypes = PropTypes.shape({
@@ -99,7 +102,7 @@ export const TimeSeriesCardPropTypes = {
     includeZeroOnXaxis: PropTypes.bool,
     /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
     includeZeroOnYaxis: PropTypes.bool,
-    /** Which attribute is the time attribute */
+    /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -109,6 +112,11 @@ export const TimeSeriesCardPropTypes = {
   }),
   /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
+  /** Interval for time series configuration used for formatting the x-axis */
+  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
 };
 
 export const TableCardPropTypes = {
@@ -189,6 +197,22 @@ export const TableCardPropTypes = {
     defaultFilterStringPlaceholdText: PropTypes.string,
     downloadIconDescription: PropTypes.string,
   }),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
+};
+
+const BarChartDatasetPropType = {
+  /** the attribute in values to map to */
+  dataSourceId: PropTypes.string,
+  /** the attribute in values to group by */
+  groupDataSourceId: PropTypes.string,
+  /** the attribute in values to display the bars for */
+  labelDataSourceId: PropTypes.string,
+  /** the attribute that is the time attribute */
+  timeDataSourceId: PropTypes.string,
+  /** an array of colors (hex or named) for the chart */
+  colors: PropTypes.arrayOf(PropTypes.string),
 };
 
 export const BarChartCardPropTypes = {
@@ -200,18 +224,7 @@ export const BarChartCardPropTypes = {
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
     xLabel: PropTypes.string,
     yLabel: PropTypes.string,
-    series: PropTypes.shape({
-      /** the attribute in values to map to */
-      dataSourceId: PropTypes.string,
-      /** the attribute in values to group by */
-      groupDataSourceId: PropTypes.string,
-      /** the attribute in values to display the bars for */
-      labelDataSourceId: PropTypes.string,
-      /** the attribute that is the time attribute */
-      timeDataSourceId: PropTypes.string,
-      /** an array of HEX colors for the chart */
-      colors: PropTypes.arrayOf(PropTypes.string),
-    }),
+    series: PropTypes.shape(BarChartDatasetPropType),
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -341,8 +354,6 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
-  /** Interval for time series configuration */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
@@ -401,4 +412,6 @@ export const CardPropTypes = {
   onScroll: PropTypes.func,
   /** For testing */
   testID: PropTypes.string,
+  /** the locale of the card, needed for number and date formatting */
+  locale: PropTypes.string,
 };

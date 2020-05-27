@@ -13,7 +13,7 @@ const commonWizardProps = {
 };
 
 describe('StatefulWizardInline', () => {
-  test('onNext', () => {
+  it('onNext', () => {
     const mockNext = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} onNext={mockNext} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
@@ -21,7 +21,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).toHaveBeenCalled();
   });
-  test('setItem', () => {
+  it('setItem', () => {
     const mockSetItem = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} setItem={mockSetItem} />);
     const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
@@ -29,12 +29,12 @@ describe('StatefulWizardInline', () => {
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).toHaveBeenCalled();
   });
-  test('error', () => {
+  it('error', () => {
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} error="I'm in error" />);
     const progressIndicatorButtons = wrapper.find('InlineNotification');
     expect(progressIndicatorButtons).toHaveLength(1);
   });
-  test('error clear error', () => {
+  it('error clear error', () => {
     const mockClearError = jest.fn();
     const wrapper = mount(
       <StatefulWizardInline
@@ -48,7 +48,7 @@ describe('StatefulWizardInline', () => {
     clearErrorButton.simulate('click');
     expect(mockClearError).toHaveBeenCalled();
   });
-  test('setItem not triggered if invalid', () => {
+  it('setItem not triggered if invalid', () => {
     const mockSetItem = jest.fn();
     const wrapper = mount(
       <StatefulWizardInline
@@ -66,7 +66,7 @@ describe('StatefulWizardInline', () => {
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();
   });
-  test('onNext not triggered if invalid', () => {
+  it('onNext not triggered if invalid', () => {
     const mockNext = jest.fn();
     const wrapper = mount(
       <StatefulWizardInline
@@ -84,7 +84,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(1).simulate('click');
     expect(mockNext).not.toHaveBeenCalled();
   });
-  test('onClose', () => {
+  it('onClose', () => {
     const mockClose = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} onClose={mockClose} />);
     const cancelAndNextButtons = wrapper.find('.bx--btn');
@@ -92,7 +92,7 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(1).simulate('click');
     expect(mockClose).toHaveBeenCalled();
   });
-  test('onBack', () => {
+  it('onBack', () => {
     const mockBack = jest.fn();
     const wrapper = mount(
       <StatefulWizardInline
@@ -106,11 +106,11 @@ describe('StatefulWizardInline', () => {
     backAndNextButtons.at(1).simulate('click');
     expect(mockBack).toHaveBeenCalled();
   });
-  test('renders with inference of current item when currentItemId is not set', () => {
+  it('renders with inference of current item when currentItemId is not set', () => {
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} currentItemId={null} />);
     expect(wrapper.find('StatefulWizardInline')).toHaveLength(1);
   });
-  test('renders with no next item when currentItem is the last item', () => {
+  it('renders with no next item when currentItem is the last item', () => {
     const wrapper = mount(
       <StatefulWizardInline
         {...commonWizardProps}
@@ -119,13 +119,13 @@ describe('StatefulWizardInline', () => {
     );
     expect(wrapper.find('StatefulWizardInline')).toHaveLength(1);
   });
-  test('handleNext advances to next with no onNext callback', () => {
+  it('handleNext advances to next with no onNext callback', () => {
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} />);
     const nextButton = wrapper.find('.bx--btn').at(2);
     nextButton.simulate('click');
     expect(wrapper.find('WizardInline').props().currentItemId).toBe(itemsAndComponents[1].id);
   });
-  test('handleBack goes to previous with no onBack callback', () => {
+  it('handleBack goes to previous with no onBack callback', () => {
     const wrapper = mount(
       <StatefulWizardInline {...commonWizardProps} currentItemId={itemsAndComponents[2].id} />
     );
@@ -133,7 +133,7 @@ describe('StatefulWizardInline', () => {
     backButton.simulate('click');
     expect(wrapper.find('WizardInline').props().currentItemId).toBe(itemsAndComponents[1].id);
   });
-  test('setItem advances to the set item with no setItem callback', () => {
+  it('setItem advances to the set item with no setItem callback', () => {
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} />);
     const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
     progressIndicatorButtons.at(3).simulate('click');

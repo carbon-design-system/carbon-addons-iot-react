@@ -20,7 +20,7 @@ const commonFooterProps = {
 };
 
 describe('WizardFooter', () => {
-  test('check footer buttons', () => {
+  it('check footer buttons', () => {
     const cancelAndNextButtons = mount(<WizardFooter {...commonFooterProps} hasPrev={false} />);
     // should only have Cancel and Next button
     expect(cancelAndNextButtons.find('.bx--btn')).toHaveLength(2);

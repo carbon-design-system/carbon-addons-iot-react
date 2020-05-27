@@ -2,6 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import Add from '@carbon/icons-react/lib/add/20';
 import { iconCrash } from 'carbon-icons';
+import { render, waitFor } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
@@ -141,18 +142,18 @@ let wrapper = mount(
     onDashboardAction={onClick}
   />
 );
-describe('Dashboard testcases', () => {
-  test('verify dashboard still renders with bad layout', () => {
+describe('Dashboard', () => {
+  it('verify dashboard still renders with bad layout', () => {
     // should still render even with incorrect layout
     expect(wrapper).toBeDefined();
   });
 
-  test('verify onDashboardAction is called on click', () => {
+  it('verify onDashboardAction is called on click', () => {
     wrapper.find('#action-icon--edit').simulate('click');
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
 
-  test('verify onDashboardAction is called on enter keydown', () => {
+  it('verify onDashboardAction is called on enter keydown', () => {
     wrapper = mount(
       <Dashboard
         title="My Dashboard"
@@ -172,37 +173,60 @@ describe('Dashboard testcases', () => {
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
 
-  test('verify onFetchData is called by each card if loading changes to true', done => {
-    const mockOnFetchData = jest.fn().mockImplementation(() => Promise.resolve([]));
+  it('verify onFetchData is called by each card if loading changes to true', () => {
+    return new Promise(async (done, reject) => {
+      try {
+        const mockOnFetchData = jest.fn().mockImplementation(card => Promise.resolve(card));
 
-    const mockOnSetRefresh = jest.fn().mockImplementation(refreshDate => {
-      if (refreshDate) {
-        // Wait for the final set refresh call to exit the testcase
-        done();
+        const mockOnSetRefresh = jest.fn().mockImplementation(refreshDate => {
+          if (refreshDate) {
+            // Wait for the final set refresh call to exit the testcase
+            done();
+          }
+        });
+        const mockSetIsLoading = jest.fn();
+
+        const { rerender } = render(
+          <Dashboard
+            title="My Dashboard"
+            layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+            actions={[
+              { id: 'edit', labelText: 'Edit', icon: 'edit' },
+              { id: 'crash', labelText: 'Crash', icon: iconCrash },
+            ]}
+            cards={cardValues}
+            onDashboardAction={onClick}
+            hasLastUpdated={false}
+            onFetchData={mockOnFetchData}
+            onSetRefresh={mockOnSetRefresh}
+            setIsLoading={mockSetIsLoading}
+          />
+        );
+        rerender(
+          <Dashboard
+            isLoading
+            title="My Dashboard"
+            layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
+            actions={[
+              { id: 'edit', labelText: 'Edit', icon: 'edit' },
+              { id: 'crash', labelText: 'Crash', icon: iconCrash },
+            ]}
+            cards={cardValues}
+            onDashboardAction={onClick}
+            hasLastUpdated={false}
+            onFetchData={mockOnFetchData}
+            onSetRefresh={mockOnSetRefresh}
+            setIsLoading={mockSetIsLoading}
+          />
+        );
+
+        await waitFor(() => expect(mockOnFetchData).toHaveBeenCalledTimes(5));
+      } catch (e) {
+        reject(e);
       }
     });
-    const mockSetIsLoading = jest.fn();
-
-    wrapper = mount(
-      <Dashboard
-        title="My Dashboard"
-        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
-        actions={[
-          { id: 'edit', labelText: 'Edit', icon: 'edit' },
-          { id: 'crash', labelText: 'Crash', icon: iconCrash },
-        ]}
-        cards={cardValues}
-        onDashboardAction={onClick}
-        hasLastUpdated={false}
-        onFetchData={mockOnFetchData}
-        onSetRefresh={mockOnSetRefresh}
-        setIsLoading={mockSetIsLoading}
-      />
-    );
-    wrapper.setProps({ isLoading: true });
-    expect(mockOnFetchData).toHaveBeenCalledTimes(5);
   });
-  test('verify onLayoutChange is called when the dashboard renders', () => {
+  it('verify onLayoutChange is called when the dashboard renders', () => {
     const mockOnLayoutChange = jest.fn();
 
     wrapper = mount(

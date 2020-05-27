@@ -17,6 +17,7 @@ import {
   TableSearchPropTypes,
   I18NPropTypes,
   RowActionsStatePropTypes,
+  ActiveTableToolbarPropType,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -72,6 +73,8 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
+      /** Number of pages rendered in pagination */
+      maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
     filters: PropTypes.arrayOf(
@@ -82,7 +85,7 @@ const propTypes = {
     ),
     toolbar: PropTypes.shape({
       /** Specify which header row to display, will display default header row if null */
-      activeBar: PropTypes.oneOf(['filter', 'column']),
+      activeBar: ActiveTableToolbarPropType,
       /** optional content to render inside the toolbar  */
       customToolbarContent: PropTypes.node,
       /** Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display */
@@ -98,6 +101,8 @@ const propTypes = {
       search: TableSearchPropTypes,
       /** is the toolbar currently disabled */
       isDisabled: PropTypes.bool,
+      /** buttons to be shown with when activeBar is 'rowEdit' */
+      rowEditBarButtons: PropTypes.node,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -134,6 +139,7 @@ const propTypes = {
     toolbar: PropTypes.shape({
       onApplyFilter: PropTypes.func,
       onToggleFilter: PropTypes.func,
+      onShowRowEdit: PropTypes.func,
       onToggleColumnSelection: PropTypes.func,
       /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
@@ -160,6 +166,8 @@ const propTypes = {
       onColumnResize: PropTypes.func,
     }).isRequired,
   }),
+  /** what locale should we use to format table values if left empty no locale formatting happens */
+  locale: PropTypes.string,
   i18n: I18NPropTypes,
 };
 
@@ -192,6 +200,7 @@ export const defaultProps = baseProps => ({
       pageSizes: [10, 20, 30],
       page: 1,
       totalItems: baseProps.data && baseProps.data.length,
+      maxPages: 100,
       isItemPerPageHidden: false,
     },
     filters: [],
@@ -215,6 +224,7 @@ export const defaultProps = baseProps => ({
     pagination: { onChangePage: defaultFunction('actions.pagination.onChangePage') },
     toolbar: {
       onToggleFilter: defaultFunction('actions.toolbar.onToggleFilter'),
+      onShowRowEdit: defaultFunction('actions.toolbar.onShowRowEdit'),
       onToggleColumnSelection: defaultFunction('actions.toolbar.onToggleColumnSelection'),
       onApplyBatchAction: defaultFunction('actions.toolbar.onApplyBatchAction'),
       onCancelBatchAction: defaultFunction('actions.toolbar.onCancelBatchAction'),
@@ -224,12 +234,13 @@ export const defaultProps = baseProps => ({
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
       onRowClicked: defaultFunction('actions.table.onRowClicked'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
-      onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
+      onEmptyStateAction: null,
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
     },
   },
+  locale: null,
   i18n: {
     /** pagination */
     pageBackwardAria: 'Previous page',
@@ -251,6 +262,7 @@ export const defaultProps = baseProps => ({
     columnSelectionButtonAria: 'Column Selection',
     columnSelectionConfig: 'Manage Columns',
     filterButtonAria: 'Filters',
+    editButtonAria: 'Edit rows',
     searchLabel: 'Search',
     searchPlaceholder: 'Search',
     clearFilterAria: 'Clear filter',
@@ -266,7 +278,6 @@ export const defaultProps = baseProps => ({
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
-    emptyButtonLabelWithFilters: 'Clear all filters',
     downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
@@ -280,6 +291,7 @@ const Table = props => {
     columns,
     data,
     expandedData,
+    locale,
     view,
     actions,
     options,
@@ -292,6 +304,7 @@ const Table = props => {
     tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
+  const { maxPages, ...paginationProps } = view.pagination;
 
   const [, forceUpdateCellTextWidth] = useState(0);
 
@@ -348,6 +361,8 @@ const Table = props => {
       !isNil(view.toolbar.search.value) &&
       view.toolbar.search.value !== '');
 
+  const rowEditMode = view.toolbar.activeBar === 'rowEdit';
+
   return (
     <TableContainer
       style={style}
@@ -359,6 +374,7 @@ const Table = props => {
       options.hasRowActions ||
       options.hasRowCountInHeader ||
       options.hasColumnSelection ||
+      options.hasRowEdit ||
       actions.toolbar.onDownloadCSV ||
       secondaryTitle ||
       view.toolbar.customToolbarContent ||
@@ -371,6 +387,7 @@ const Table = props => {
             clearAllFilters: i18n.clearAllFilters,
             columnSelectionButtonAria: i18n.columnSelectionButtonAria,
             filterButtonAria: i18n.filterButtonAria,
+            editButtonAria: i18n.editButtonAria,
             searchLabel: i18n.searchLabel,
             searchPlaceholder: i18n.searchPlaceholder,
             batchCancel: i18n.batchCancel,
@@ -389,6 +406,7 @@ const Table = props => {
             'onClearAllFilters',
             'onToggleColumnSelection',
             'onToggleFilter',
+            'onShowRowEdit',
             'onApplySearch',
             'onDownloadCSV'
           )}
@@ -398,7 +416,8 @@ const Table = props => {
             'hasFilter',
             'hasSearch',
             'hasRowSelection',
-            'hasRowCountInHeader'
+            'hasRowCountInHeader',
+            'hasRowEdit'
           )}
           tableState={{
             totalSelected: view.table.selectedIds.length,
@@ -410,6 +429,7 @@ const Table = props => {
               'search',
               'activeBar',
               'customToolbarContent',
+              'rowEditBarButtons',
               'isDisabled'
             ),
           }}
@@ -480,6 +500,7 @@ const Table = props => {
             <TableBody
               tableId={id}
               rows={visibleData}
+              locale={locale}
               rowActionsState={view.table.rowActions}
               expandedRows={expandedData}
               columns={visibleColumns}
@@ -509,6 +530,7 @@ const Table = props => {
               wrapCellText={options.wrapCellText}
               truncateCellText={useCellTextTruncate}
               ordering={view.table.ordering}
+              rowEditMode={rowEditMode}
               actions={pick(
                 actions.table,
                 'onRowSelected',
@@ -535,7 +557,11 @@ const Table = props => {
                     }
               }
               onEmptyStateAction={
-                isFiltered ? handleClearFilters : actions.table.onEmptyStateAction
+                isFiltered && i18n.emptyButtonLabelWithFilters
+                  ? handleClearFilters // show clear filters
+                  : !isFiltered && actions.table.onEmptyStateAction
+                  ? actions.table.onEmptyStateAction
+                  : undefined // if not filtered then show normal empty state
               }
             />
           )}
@@ -546,7 +572,15 @@ const Table = props => {
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
         <Pagination
-          {...view.pagination}
+          pageSize={paginationProps.pageSize}
+          pageSizes={paginationProps.pageSizes}
+          page={paginationProps.page}
+          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
+          totalItems={
+            paginationProps.totalItems < maxPages * paginationProps.pageSize
+              ? paginationProps.totalItems
+              : maxPages * paginationProps.pageSize
+          }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
           forwardText={i18n.pageForwardAria}
@@ -556,6 +590,7 @@ const Table = props => {
           itemRangeText={i18n.itemsRangeWithTotal}
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
+          preventInteraction={rowEditMode}
         />
       ) : null}
     </TableContainer>

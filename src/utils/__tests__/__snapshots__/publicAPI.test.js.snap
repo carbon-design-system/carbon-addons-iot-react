@@ -293,13 +293,14 @@ Map {
           "onChangeSort": [Function],
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
-          "onEmptyStateAction": [Function],
+          "onEmptyStateAction": null,
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
         },
         "toolbar": Object {
           "onApplyBatchAction": [Function],
           "onCancelBatchAction": [Function],
+          "onShowRowEdit": [Function],
           "onToggleColumnSelection": [Function],
           "onToggleFilter": [Function],
         },
@@ -316,8 +317,8 @@ Map {
         "columnSelectionConfig": "Manage Columns",
         "currentPage": [Function],
         "downloadIconDescription": "Download table content",
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
-        "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
         "emptyMessageWithFilters": "No results match the current filters",
         "filterAria": "Filter",
@@ -344,6 +345,7 @@ Map {
       },
       "id": "Table",
       "lightweight": false,
+      "locale": null,
       "options": Object {
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
@@ -368,6 +370,7 @@ Map {
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
+          "maxPages": 100,
           "page": 1,
           "pageSize": 10,
           "pageSizes": Array [
@@ -468,6 +471,9 @@ Map {
                     "type": "func",
                   },
                   "onDownloadCSV": Object {
+                    "type": "func",
+                  },
+                  "onShowRowEdit": Object {
                     "type": "func",
                   },
                   "onToggleColumnSelection": Object {
@@ -743,6 +749,9 @@ Map {
             "downloadIconDescription": Object {
               "type": "string",
             },
+            "editButtonAria": Object {
+              "type": "string",
+            },
             "filterAria": Object {
               "type": "string",
             },
@@ -821,6 +830,9 @@ Map {
       },
       "lightweight": Object {
         "type": "bool",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "options": Object {
         "args": Array [
@@ -938,6 +950,9 @@ Map {
                 Object {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
+                  },
+                  "maxPages": Object {
+                    "type": "number",
                   },
                   "page": Object {
                     "type": "number",
@@ -1111,8 +1126,9 @@ Map {
                   "activeBar": Object {
                     "args": Array [
                       Array [
-                        "filter",
                         "column",
+                        "filter",
+                        "rowEdit",
                       ],
                     ],
                     "type": "oneOf",
@@ -1148,6 +1164,9 @@ Map {
                   },
                   "isDisabled": Object {
                     "type": "bool",
+                  },
+                  "rowEditBarButtons": Object {
+                    "type": "node",
                   },
                   "search": Object {
                     "args": Array [
@@ -1196,6 +1215,7 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "currentPage": [Function],
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -1397,6 +1417,9 @@ Map {
             "downloadIconDescription": Object {
               "type": "string",
             },
+            "editButtonAria": Object {
+              "type": "string",
+            },
             "filterAria": Object {
               "type": "string",
             },
@@ -1528,6 +1551,7 @@ Map {
                 Array [
                   "column",
                   "filter",
+                  "rowEdit",
                 ],
               ],
               "type": "oneOf",
@@ -1631,8 +1655,10 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
+      "rowEditMode": false,
       "rows": Array [],
       "selectRowAria": "Select row",
       "selectedIds": Array [],
@@ -1812,6 +1838,9 @@ Map {
       "learnMoreText": Object {
         "type": "string",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "ordering": Object {
         "args": Array [
           Object {
@@ -1868,6 +1897,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "rowEditMode": Object {
+        "type": "bool",
       },
       "rows": Object {
         "args": Array [
@@ -2078,6 +2110,7 @@ Map {
         "columnSelectionButtonAria": "Column Selection",
         "columnSelectionConfig": "Manage columns",
         "currentPage": [Function],
+        "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
         "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
@@ -2120,6 +2153,9 @@ Map {
             "onClearAllFilters": Object {
               "type": "func",
             },
+            "onShowRowEdit": Object {
+              "type": "func",
+            },
             "onToggleColumnSelection": Object {
               "type": "func",
             },
@@ -2141,6 +2177,9 @@ Map {
               "type": "string",
             },
             "columnSelectionButtonAria": Object {
+              "type": "string",
+            },
+            "editButtonAria": Object {
               "type": "string",
             },
             "filterAscending": Object {
@@ -2181,6 +2220,9 @@ Map {
               "type": "bool",
             },
             "hasRowCountInHeader": [Function],
+            "hasRowEdit": Object {
+              "type": "bool",
+            },
             "hasSearch": Object {
               "type": "bool",
             },
@@ -2204,6 +2246,7 @@ Map {
                 Array [
                   "column",
                   "filter",
+                  "rowEdit",
                 ],
               ],
               "type": "oneOf",
@@ -2249,6 +2292,9 @@ Map {
             },
             "isDisabled": Object {
               "type": "bool",
+            },
+            "rowEditBarButtons": Object {
+              "type": "node",
             },
             "search": Object {
               "args": Array [
@@ -4017,20 +4063,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -4051,6 +4083,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -4272,7 +4307,7 @@ Map {
       },
     },
   },
-  "__unstableDateTimePicker" => Object {
+  "DateTimePicker" => Object {
     "defaultProps": Object {
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "defaultValue": null,
@@ -4306,8 +4341,8 @@ Map {
         ],
         "relativeLabel": "Relative",
         "relativeLabels": Array [
-          "Yesterday",
           "Today",
+          "Yesterday",
         ],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
@@ -4366,16 +4401,12 @@ Map {
       ],
       "relatives": Array [
         Object {
-          "label": "Yesterday",
-          "value": "YESTERDAY",
-        },
-        Object {
           "label": "Today",
           "value": "TODAY",
         },
         Object {
-          "label": "",
-          "value": "",
+          "label": "Yesterday",
+          "value": "YESTERDAY",
         },
       ],
       "showRelativeOption": true,
@@ -4860,6 +4891,7 @@ Map {
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
+      "subtitle": null,
       "url": "#",
     },
     "propTypes": Object {
@@ -4945,6 +4977,9 @@ Map {
         "type": "string",
       },
       "skipto": Object {
+        "type": "string",
+      },
+      "subtitle": Object {
         "type": "string",
       },
       "url": Object {
@@ -6840,20 +6875,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -6874,6 +6895,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -6966,6 +6990,7 @@ Map {
   },
   "ValueCard" => Object {
     "defaultProps": Object {
+      "locale": "en",
       "size": "MEDIUM",
     },
     "propTypes": Object {
@@ -7424,6 +7449,30 @@ Map {
         ],
         "type": "shape",
       },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
       "content": Object {
         "args": Array [
           Object {
@@ -7693,20 +7742,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -7727,6 +7762,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -8305,6 +8343,30 @@ Map {
         ],
         "type": "shape",
       },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
       "content": Object {
         "args": Array [
           Object {
@@ -8497,6 +8559,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "locale": Object {
+        "type": "string",
+      },
       "onMouseDown": Object {
         "type": "func",
       },
@@ -8599,6 +8664,7 @@ Map {
       "i18n": Object {
         "loadingDataLabel": "Loading hotspot data",
       },
+      "locale": "en",
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -9199,20 +9265,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -9233,6 +9285,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -9374,6 +9429,7 @@ Map {
         "timeRangeLabel": "Time range",
         "weeklyLabel": "Weekly",
       },
+      "locale": "en",
       "size": "LARGE",
       "values": Array [],
     },
@@ -9834,6 +9890,30 @@ Map {
         ],
         "type": "shape",
       },
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
       "content": Object {
         "args": Array [
           Object {
@@ -10053,20 +10133,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -10087,6 +10153,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -10272,7 +10341,7 @@ Map {
       },
       "description": null,
       "isLoading": false,
-      "values": Array [],
+      "values": Object {},
     },
     "displayName": "GaugeCard",
     "propTypes": Object {
@@ -10965,20 +11034,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -10999,6 +11054,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -11155,6 +11213,7 @@ Map {
   },
   "ListCard" => Object {
     "defaultProps": Object {
+      "data": Array [],
       "hasMoreData": false,
       "isLoading": false,
       "layout": "",
@@ -11678,7 +11737,6 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "hasMoreData": Object {
@@ -11775,20 +11833,6 @@ Map {
       "id": Object {
         "type": "string",
       },
-      "interval": Object {
-        "args": Array [
-          Array [
-            "minute",
-            "hour",
-            "day",
-            "week",
-            "quarter",
-            "month",
-            "year",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "isEditable": Object {
         "type": "bool",
       },
@@ -11807,6 +11851,9 @@ Map {
       "loadData": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "locale": Object {
+        "type": "string",
       },
       "onMouseDown": Object {
         "type": "func",
@@ -18652,6 +18699,7 @@ Map {
   "determineCardRange" => Object {},
   "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
+  "formatNumberWithPrecision" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

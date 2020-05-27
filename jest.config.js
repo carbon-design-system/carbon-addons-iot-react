@@ -9,7 +9,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|TimeSeriesCard|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|HierarchyList|TableHead|ColumnResize|DateTimePicker).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -60,12 +60,6 @@ module.exports = {
       functions: 50,
     },
     './src/components/ImageCard/ImageControls.jsx': { branches: 66 },
-    './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
-      statements: 70,
-      branches: 50,
-      lines: 69,
-      functions: 76.47,
-    },
     './src/components/Page/EditPage.jsx': {
       statements: 63,
       branches: 50,
@@ -82,6 +76,9 @@ module.exports = {
     './src/components/Page/PageHero.jsx': { branches: 77 },
     './src/components/Page/PageTitle.jsx': { branches: 75 },
     './src/components/ImageCard/ImageCard.jsx': { branches: 76 },
+    './src/components/TimeSeriesCard/TimeSeriesCard.jsx': {
+      branches: 78,
+    },
     './src/components/Table/TableDetailWizard/StatefulTableDetailWizard.jsx': { branches: 76 },
     './src/components/DateTimePicker/DateTimePicker.jsx': { branches: 67 },
   },
@@ -89,6 +86,7 @@ module.exports = {
     __DEV__: false,
   },
   setupFiles: ['<rootDir>/config/jest/setup.js'],
+  testEnvironment: 'jest-environment-jsdom-sixteen',
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTest.js'],
   testMatch: [
     '<rootDir>/**/__tests__/**/*.js?(x)',

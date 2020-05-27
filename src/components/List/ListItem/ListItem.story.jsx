@@ -11,7 +11,7 @@ import ListItem from './ListItem';
 storiesOf('Watson IoT Experimental/ListItem', module)
   .add('basic w/ knobs', () => {
     const value = text('value', 'List Item');
-    const secondaryValue = text('secondaryValue', null);
+    const secondaryValue = text('secondaryValue', undefined);
     const iconName = select('icon', ['none', 'Star16', 'StarFilled16']);
     const iconComponent =
       iconName === 'Star16' ? Star16 : iconName === 'StarFilled16' ? StarFilled16 : null;
@@ -20,6 +20,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       rowActionSet === 'single'
         ? [
             <Button
+              key="list-item-edit"
               style={{ color: 'black' }}
               renderIcon={Edit16}
               hasIconOnly
@@ -41,6 +42,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     return (
       <div style={{ width: 400 }}>
         <ListItem
+          id="list-item"
           value={value}
           secondaryValue={secondaryValue}
           icon={iconComponent ? React.createElement(iconComponent) : null}
@@ -61,17 +63,18 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   })
   .add('with value', () => (
     <div style={{ width: 400 }}>
-      <ListItem value="List Item" />
+      <ListItem id="list-item" value="List Item" />
     </div>
   ))
   .add('with secondaryValue', () => (
     <div style={{ width: 400 }}>
-      <ListItem value="List Item" secondaryValue="Secondary Value" />
+      <ListItem id="list-item" value="List Item" secondaryValue="Secondary Value" />
     </div>
   ))
   .add('testing secondaryValue overflow', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item this could be a really long value that can't quite fit"
         secondaryValue="Secondary Value could also be a really, extraordinarily long value"
         isLargeRow={boolean('isLargeRow', true)}
@@ -81,6 +84,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with icon', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item"
         icon={<Star16 />}
         iconPosition={select('iconPosition', ['left', 'right'])}
@@ -90,6 +94,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isSelectable', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="Selectable List Item"
         secondaryValue={text('secondaryValue', null)}
         isSelectable
@@ -101,6 +106,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isLargeRow', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item"
         secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item"
         isLargeRow={boolean('isLargeRow', true)}
@@ -110,6 +116,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('testing isLargeRow overflow', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item this could be a reaaaaaaaaaaally really long value"
         secondaryValue="With isLargeRow, the secondary value serves primarily as a description field for the list item.  If the content is too wide for the list item, it will be visible in a tooltip."
         isLargeRow={boolean('isLargeRow', true)}
@@ -119,6 +126,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isExpandable', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="Expandable List Item"
         secondaryValue={text('secondaryValue', null)}
         isExpandable
@@ -130,6 +138,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with isCategory', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item"
         secondaryValue={text('secondaryValue', null)}
         isExpandable
@@ -141,10 +150,12 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with single row action', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item"
         secondaryValue="Secondary Value"
         rowActions={[
           <Button
+            key="list-item-edit"
             style={{ color: 'black' }}
             renderIcon={Edit16}
             hasIconOnly
@@ -160,6 +171,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
   .add('with OverflowMenu row actions', () => (
     <div style={{ width: 400 }}>
       <ListItem
+        id="list-item"
         value="List Item"
         isExpandable
         onExpand={action('onExpand')}

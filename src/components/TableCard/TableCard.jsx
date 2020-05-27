@@ -1,10 +1,9 @@
 import React, { useMemo, useCallback } from 'react';
-import { OverflowMenu, OverflowMenuItem, Icon } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem, Icon, Link } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
-import find from 'lodash/find';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/20';
@@ -16,31 +15,17 @@ import StatefulTable from '../Table/StatefulTable';
 import { generateTableSampleValues } from '../TimeSeriesCard/timeSeriesUtils';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import CardToolbar from '../Card/CardToolbar';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+import { settings } from '../../constants/Settings';
+import {
+  getUpdatedCardSize,
+  handleCardVariables,
+  formatNumberWithPrecision,
+  getVariables,
+} from '../../utils/cardUtilityFunctions';
 
 import ThresholdIcon from './ThresholdIcon';
 
-const StyledOverflowMenu = styled(OverflowMenu)`
-  &&& {
-    margin-left: 10px;
-    opacity: 1;
-    overflow-y: hidden;
-    display: flex;
-    align-items: center;
-
-    .bx--overflow-menu__icon {
-      transform: none;
-    }
-  }
-`;
-
-const StyledActionIcon = styled(Icon)`
-  cursor: pointer;
-  margin-left: 11px;
-  &:hover {
-    fill: rgb(61, 112, 178);
-  }
-`;
+const { iotPrefix } = settings;
 
 const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
   <StatefulTable {...rest} data={data} />
@@ -127,27 +112,9 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
   }
 `;
 
-const StyledExpandedRowContent = styled.div`
-  padding-left: 35px;
-  padding-bottom: 8px;
-  padding-top: 24px;
-
-  p {
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-`;
-
-const StyledExpandedDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  margin-bottom: 16px;
-`;
-
 const defaultProps = {
   size: CARD_SIZES.LARGE,
+  locale: 'en',
   values: [],
   i18n: {
     criticalLabel: 'Critical',
@@ -199,7 +166,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
         case '>':
           return parseFloat(item[dataSourceId]) > value;
         case '=':
-          return parseFloat(item[dataSourceId]) === value;
+          return parseFloat(item[dataSourceId]) === value || item[dataSourceId] === value; // need to handle the string case
         case '<=':
           return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) <= value;
         case '>=':
@@ -230,19 +197,11 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
     }, []);
 };
 
-const determinePrecisionAndValue = (precision, value) => {
+const determinePrecisionAndValue = (precision = 0, value, locale) => {
   const precisionDefined = Number.isInteger(value) ? 0 : precision;
 
   if (typeof value === 'number') {
-    return value > 1000000000000
-      ? `${(value / 1000000000000).toFixed(precisionDefined)}T`
-      : value > 1000000000
-      ? `${(value / 1000000000).toFixed(precisionDefined)}B`
-      : value > 1000000
-      ? `${(value / 1000000).toFixed(precisionDefined)}M`
-      : value > 1000
-      ? `${(value / 1000).toFixed(precisionDefined)}K`
-      : value.toFixed(precisionDefined);
+    return formatNumberWithPrecision(value, precisionDefined, locale);
   }
   if (isNil(value)) {
     return '--';
@@ -250,19 +209,73 @@ const determinePrecisionAndValue = (precision, value) => {
   return '--';
 };
 
+/**
+ * Updates the hrefs in each column to be us-able links. If href variables are on a table that has row specific values, the user
+ * should not pass in a cardVariables object as each variable with have multiple values.
+ * @param {array} columns - Array of TableCard columns
+ * @param {object} cardVariables - object of cardVariables
+ * @return {array} array of columns with formatted links and updated variable values
+ */
+export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
+  return columns.map(column => {
+    const { linkTemplate } = column;
+    if (linkTemplate) {
+      let variables;
+      if (!cardVariables) {
+        // fetch variables on the href
+        variables = linkTemplate.href ? getVariables(linkTemplate.href) : [];
+      }
+      return {
+        ...column,
+        // eslint-disable-next-line react/prop-types
+        renderDataFunction: ({ value, row }) => {
+          let variableLink;
+          // if we have variables the value based on its own row's context
+          if (variables && variables.length) {
+            variableLink = linkTemplate.href;
+            variables.forEach(variable => {
+              const variableValue = row[variable];
+              variableLink = variableLink.replace(`{${variable}}`, variableValue);
+            });
+          }
+          return (
+            <Link
+              href={variableLink || linkTemplate.href}
+              target={linkTemplate.target ? linkTemplate.target : null}
+            >
+              {value}
+            </Link>
+          );
+        },
+      };
+    }
+    return column;
+  });
+};
+
 const TableCard = ({
   id,
-  title,
+  title: titleProp,
   isExpanded,
-  content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
+  content: contentProp,
   size,
   onCardAction,
-  values: data,
+  values: valuesProp,
   isEditable,
   i18n,
   tooltip,
+  locale,
   ...others
 }) => {
+  // Set the locale
+  moment.locale(locale);
+  /** Searches for variables and updates the card if it is passed the cardVariables prop */
+  const {
+    title,
+    content: { columns = [], showHeader, expandedRows, sort, thresholds, emptyMessage },
+    values: data,
+  } = handleCardVariables(titleProp, contentProp, valuesProp, others);
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
 
@@ -275,7 +288,8 @@ const TableCard = ({
   const renderActionCell = cellItem => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
-      <StyledActionIcon
+      <Icon
+        className={`${iotPrefix}--table-card--action-icon`}
         onClick={evt => {
           evt.preventDefault();
           evt.stopPropagation();
@@ -288,7 +302,8 @@ const TableCard = ({
         description={actionList[0].label}
       />
     ) : actionList && actionList.length > 1 ? (
-      <StyledOverflowMenu
+      <OverflowMenu
+        className={`${iotPrefix}--table-card--overflow-menu`}
         floatingMenu
         renderIcon={() => (
           <OverFlowMenuIcon fill="#5a6872" description={i18n.overflowMenuIconDescription} />
@@ -310,7 +325,7 @@ const TableCard = ({
             />
           );
         })}
-      </StyledOverflowMenu>
+      </OverflowMenu>
     ) : null;
   };
 
@@ -365,13 +380,16 @@ const TableCard = ({
 
   const hasActionColumn = data.filter(i => i.actions).length > 0;
 
+  // If a column has a linkTemplate, format the column to render a link
+  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns, others.cardVariables);
+
   // filter to get the indexes for each one
-  const columnsUpdated = cloneDeep(columns);
+  const columnsUpdated = cloneDeep(columnsWithFormattedLinks);
 
   /**
    * Generates a threshold column based off the uniqueThreshold's value
    * @param {string} columnId AKA dataSourceId
-   * @returns {Object} new threshold column
+   * @returns {Object} new column with rendered threshold
    */
   const generateThresholdColumn = columnId => {
     // Need to find the index of the dataSource regardless of uniqueThresholds ordering
@@ -423,9 +441,7 @@ const TableCard = ({
 
     // Check for any threshold columns that weren't matched (if the column was hidden) and add to the end of the array
     const missingThresholdColumns = uniqueThresholds.filter(threshold => {
-      return !find(columnsUpdated, column => {
-        return threshold.dataSourceId === column.dataSourceId;
-      });
+      return !columnsUpdated.find(column => threshold.dataSourceId === column.dataSourceId);
     });
 
     if (missingThresholdColumns.length > 0) {
@@ -437,7 +453,7 @@ const TableCard = ({
     }
   }
 
-  const newColumns = thresholds ? columnsUpdated : columns;
+  const newColumns = thresholds ? columnsUpdated : columnsWithFormattedLinks;
 
   const columnsToRender = useMemo(
     () =>
@@ -537,25 +553,29 @@ const TableCard = ({
 
             // if column have custom precision value
             const precisionUpdated = filteredPrecisionColumns.length
-              ? Object.keys(i.values)
-                  .map(value => {
-                    const precision = filteredPrecisionColumns.find(
-                      item => item.dataSourceId === value
-                    );
+              ? Object.keys(i.values).reduce((acc, value) => {
+                  const precision = filteredPrecisionColumns.find(
+                    item => item.dataSourceId === value
+                  );
 
-                    return precision
-                      ? {
-                          [value]: determinePrecisionAndValue(precision.precision, i.values[value]),
-                        }
-                      : null;
-                  })
-                  .filter(v => v)[0]
+                  // If I find a precision column it should override the normal
+                  if (precision) {
+                    acc[value] = determinePrecisionAndValue(
+                      precision.precision,
+                      i.values[value],
+                      locale
+                    );
+                  }
+
+                  return acc;
+                }, {})
               : null;
 
             return {
               id: i.id,
               values: {
                 ...iconColumns,
+                ...action,
                 ...i.values,
                 ...action,
                 ...timestampUpdated,
@@ -574,6 +594,7 @@ const TableCard = ({
       filteredPrecisionColumns,
       thresholds,
       tableData,
+      locale,
     ]
   );
 
@@ -590,23 +611,32 @@ const TableCard = ({
             return {
               rowId: dataItem.id,
               content: (
-                <StyledExpandedRowContent key={`${dataItem.id}-expanded`}>
+                <div
+                  key={`${dataItem.id}-expanded`}
+                  className={`${iotPrefix}--table-card--expanded-row-content`}
+                >
                   {expandedItem.length ? (
                     expandedItem.map((item, index) => (
-                      <StyledExpandedDiv key={`${item.id}-expanded-${index}`}>
+                      <div
+                        key={`${item.id}-expanded-${index}`}
+                        className={`${iotPrefix}--table-card--expanded`}
+                      >
                         <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                           {item ? item.label : '--'}
                         </p>
                         <span>{item ? dataItem.values[item.id] : null}</span>
-                      </StyledExpandedDiv>
+                      </div>
                     ))
                   ) : (
-                    <StyledExpandedDiv key={`${dataItem.id}-expanded`}>
+                    <div
+                      key={`${dataItem.id}-expanded`}
+                      className={`${iotPrefix}--table-card--expanded`}
+                    >
                       {' '}
                       <p key={`${dataItem.id}-label`}>--</p>
-                    </StyledExpandedDiv>
+                    </div>
                   )}
-                </StyledExpandedRowContent>
+                </div>
               ),
             };
           })
@@ -671,6 +701,7 @@ const TableCard = ({
               hasFilter,
               hasRowExpansion,
             }}
+            locale={locale}
             expandedData={expandedRowsFormatted}
             actions={{
               table: {

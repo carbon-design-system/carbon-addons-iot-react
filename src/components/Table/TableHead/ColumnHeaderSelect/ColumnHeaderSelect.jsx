@@ -5,6 +5,10 @@ import { Button } from 'carbon-components-react';
 import Draggable from '@carbon/icons-react/es/draggable/16';
 import classNames from 'classnames';
 
+import { settings } from '../../../../constants/Settings';
+
+const { iotPrefix } = settings;
+
 const ColumnHeaderSelect = ({
   connectDragSource,
   connectDropTarget,
@@ -16,10 +20,15 @@ const ColumnHeaderSelect = ({
 }) => {
   return (
     <Button
-      className={classNames('column-header__btn', 'column-header__select', {
-        'column-header__select--hidden': isHidden,
-        'column-header__select--isOver': isOver,
-      })}
+      className={classNames(
+        'column-header__btn',
+        `${iotPrefix}--column-header`,
+        'column-header__select',
+        {
+          'column-header__select--hidden': isHidden,
+          'column-header__select--isOver': isOver,
+        }
+      )}
       kind="secondary"
       key={columnId}
       onClick={() => onClick()}

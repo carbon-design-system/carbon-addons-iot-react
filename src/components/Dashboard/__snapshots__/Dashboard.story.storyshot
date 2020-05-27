@@ -317,7 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -406,7 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -1237,7 +1237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -1275,7 +1275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -1840,7 +1840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -2522,7 +2522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -2611,7 +2611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -3442,7 +3442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -3480,7 +3480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -4045,7 +4045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -4759,7 +4759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -4848,7 +4848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -5679,7 +5679,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -5717,7 +5717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -6282,7 +6282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -6778,7 +6778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                   size="LARGE"
                 >
                   <div
@@ -7224,7 +7224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                   size="LARGE"
                 >
                   <div
@@ -7277,9 +7277,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
     }
   >
     <div
-      style={Object {}}
+      style={
+        Object {
+          "width": "calc(100vw - 6rem)",
+        }
+      }
     >
-       
       <div>
         <div
           className="dashboard--header"
@@ -7350,7 +7353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     "msTransform": "translate(16px,16px)",
                     "position": "absolute",
                     "transform": "translate(16px,16px)",
-                    "width": "616px",
+                    "width": "1248px",
                   }
                 }
                 type="TABLE"
@@ -7364,7 +7367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 iOfQgZ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -7911,9 +7914,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -7944,7 +7947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -7964,7 +7967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -7984,7 +7987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8009,9 +8012,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8042,7 +8045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8062,7 +8065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8082,7 +8085,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8107,9 +8110,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8140,7 +8143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8160,7 +8163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8180,7 +8183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8205,9 +8208,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8238,7 +8241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8258,7 +8261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8278,7 +8281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8303,9 +8306,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8336,7 +8339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8356,7 +8359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8376,7 +8379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8401,9 +8404,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8434,7 +8437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8454,7 +8457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8474,7 +8477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8499,9 +8502,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8532,7 +8535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8552,7 +8555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8572,7 +8575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8597,9 +8600,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8630,7 +8633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8650,7 +8653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8670,7 +8673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8695,9 +8698,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8728,7 +8731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8748,7 +8751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8768,7 +8771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -8793,9 +8796,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={1569819600000}
+                                  title="1,569,819,600,000"
                                 >
-                                  1569819600000
+                                  1,569,819,600,000
                                 </span>
                               </span>
                             </td>
@@ -8826,7 +8829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={150.5335383714}
+                                  title="150.5335383714"
                                 >
                                   150.5335383714
                                 </span>
@@ -8846,7 +8849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={240}
+                                  title="240"
                                 >
                                   240
                                 </span>
@@ -8866,7 +8869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               >
                                 <span
                                   className=""
-                                  title={300}
+                                  title="300"
                                 >
                                   300
                                 </span>
@@ -9450,7 +9453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -9539,7 +9542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -10370,7 +10373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -10408,7 +10411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -10971,7 +10974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
@@ -11638,7 +11641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="103.2 ˚F"
                               value={103.2}
                             >
-                              103
+                              103.2
                             </span>
                           </div>
                           <span
@@ -11724,7 +11727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="107324.3 kJ"
                               value={107324.3}
                             >
-                              107K
+                              107.3K
                             </span>
                           </div>
                           <span
@@ -11810,7 +11813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="1709384.1 people"
                               value={1709384.1}
                             >
-                              2M
+                              1.7M
                             </span>
                           </div>
                           <span
@@ -12320,7 +12323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="103.2 ˚F"
                               value={103.2}
                             >
-                              103
+                              103.2
                             </span>
                           </div>
                           <span
@@ -12406,7 +12409,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="107324.3 kJ"
                               value={107324.3}
                             >
-                              107K
+                              107.3K
                             </span>
                           </div>
                           <span
@@ -12492,7 +12495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="1709384.1 people"
                               value={1709384.1}
                             >
-                              2M
+                              1.7M
                             </span>
                           </div>
                           <span
@@ -12832,7 +12835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="65.3 ˚F"
                               value={65.3}
                             >
-                              65
+                              65.3
                             </span>
                           </div>
                           <span
@@ -12918,7 +12921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="48.7 ˚F"
                               value={48.7}
                             >
-                              49
+                              48.7
                             </span>
                           </div>
                           <span
@@ -13007,7 +13010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="88.1 ˚F"
                               value={88.1}
                             >
-                              88
+                              88.1
                             </span>
                           </div>
                           <span
@@ -13093,7 +13096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="103.2 ˚F"
                               value={103.2}
                             >
-                              103
+                              103.2
                             </span>
                           </div>
                           <span
@@ -13247,7 +13250,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="65.3 ˚F"
                               value={65.3}
                             >
-                              65
+                              65.3
                             </span>
                           </div>
                           <span
@@ -13333,7 +13336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="48.7 ˚F"
                               value={48.7}
                             >
-                              49
+                              48.7
                             </span>
                           </div>
                           <span
@@ -13422,7 +13425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="88.1 ˚F"
                               value={88.1}
                             >
-                              88
+                              88.1
                             </span>
                           </div>
                           <span
@@ -13508,7 +13511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="103.2 ˚F"
                               value={103.2}
                             >
-                              103
+                              103.2
                             </span>
                           </div>
                           <span
@@ -13662,7 +13665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="38.2 %"
                               value={38.2}
                             >
-                              38
+                              38.2
                             </span>
                           </div>
                           <span
@@ -13774,7 +13777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="65.3 %"
                               value={65.3}
                             >
-                              65
+                              65.3
                             </span>
                           </div>
                           <span
@@ -13886,7 +13889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="77.7 %"
                               value={77.7}
                             >
-                              78
+                              77.7
                             </span>
                           </div>
                           <span
@@ -14175,7 +14178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="38.2 %"
                               value={38.2}
                             >
-                              38
+                              38.2
                             </span>
                           </div>
                           <span
@@ -14287,7 +14290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="65.3 %"
                               value={65.3}
                             >
-                              65
+                              65.3
                             </span>
                           </div>
                           <span
@@ -14399,7 +14402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               title="77.7 %"
                               value={77.7}
                             >
-                              78
+                              77.7
                             </span>
                           </div>
                           <span
@@ -23779,7 +23782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -23868,7 +23871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             title="62.1 %"
                             value={62.1}
                           >
-                            62
+                            62.1
                           </span>
                         </div>
                         <span
@@ -24699,7 +24702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="MEDIUM"
                   >
                     <div
@@ -24737,7 +24740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-2 eoaLUB iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -25302,7 +25305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-1 eEHcwc"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
                     size="LARGE"
                   >
                     <div
