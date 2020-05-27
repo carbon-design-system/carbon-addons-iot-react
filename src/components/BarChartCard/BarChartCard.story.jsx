@@ -17,7 +17,7 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles by city')}
           id="simple-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -44,7 +44,7 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles by city')}
           id="simple-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -71,12 +71,12 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Simple bar (time series)', () => {
+  .add('Simple bar - Time series', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles over 4 days')}
           id="simple-time-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -99,12 +99,12 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Grouped bar', () => {
+  .add('Grouped bar - Vertical', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Particles and Temperature')}
+          title={text('title', 'Particles and temperature in cities')}
           id="grouped-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -121,6 +121,10 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
                 dataSourceId: 'temperature',
                 label: 'Temperature',
               },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emissions',
+              },
             ],
             categoryDataSourceId: 'city',
           })}
@@ -131,12 +135,12 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Grouped bar (horizontal)', () => {
+  .add('Grouped bar - Horizontal', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles and temperature in cities')}
           id="grouped-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -158,6 +162,10 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
                 label: 'Temperature',
                 // colors: COLORS,
               },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emissions',
+              },
             ],
             categoryDataSourceId: 'city',
           })}
@@ -168,12 +176,41 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Stacked bar', () => {
+  .add('Grouped bar - Time series', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles by city over time')}
+          id="stacked-horizontal-sample"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            type: BAR_CHART_TYPES.STACKED,
+            layout: BAR_CHART_LAYOUTS.VERTICAL,
+            xLabel: 'Dates',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+                // colors: COLORS,
+              },
+            ],
+            timeDataSourceId: 'timestamp',
+            categoryDataSourceId: 'city',
+          })}
+          values={barChartData.timestamps}
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('Stacked bar - Vertical', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <BarChartCard
+          title={text('title', 'Particles and temperature in cities')}
           id="stacked-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -192,6 +229,10 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
                 label: 'Temperature',
                 // colors: COLORS,
               },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emission',
+              },
             ],
             categoryDataSourceId: 'city',
           })}
@@ -202,12 +243,12 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Stacked bar (horizontal)', () => {
+  .add('Stacked bar - Horizontal', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles and temperature in cities')}
           id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -226,6 +267,10 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
                 label: 'Temperature',
                 // colors: COLORS,
               },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emission',
+              },
             ],
             categoryDataSourceId: 'city',
           })}
@@ -236,12 +281,12 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Stacked bar (time series)', () => {
+  .add('Stacked bar - Time series', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles / emissions over 4 days')}
           id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           content={object('content', {
@@ -275,7 +320,7 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Sample')}
+          title={text('title', 'Particles and temperature in cities')}
           id="simple-sample-no-data"
           isLoading={boolean('isLoading', false)}
           i18n={object('i18n', {
@@ -290,7 +335,7 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
                 // colors: COLORS,
               },
             ],
-            labelDataSourceId: 'city',
+            categoryDataSourceId: 'city',
             layout: BAR_CHART_LAYOUTS.VERTICAL,
           })}
           values={barChartData.quarters.filter(a => a.quarter === 'NOT_VALID')}

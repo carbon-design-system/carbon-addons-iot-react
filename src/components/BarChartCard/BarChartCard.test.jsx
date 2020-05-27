@@ -152,6 +152,7 @@ describe('BarChartCard', () => {
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
   });
+
   it('mapValuesToAxes returns axes for non-timebased group charts ', () => {
     // check horizontal layout
     expect(
@@ -168,6 +169,7 @@ describe('BarChartCard', () => {
       leftAxesMapsTo: 'value',
     });
   });
+
   it('mapValuesToAxes returns axes for timebased group charts ', () => {
     // check horizontal layout
     expect(
@@ -184,6 +186,7 @@ describe('BarChartCard', () => {
       leftAxesMapsTo: 'value',
     });
   });
+
   it('mapValuesToAxes returns axes for non-timebased and non-group charts AKA simple', () => {
     // check horizontal layout
     expect(
@@ -200,6 +203,7 @@ describe('BarChartCard', () => {
       }
     );
   });
+
   it('formatChartData returns formatted data for group-based chart', () => {
     const series = [
       {
@@ -239,6 +243,7 @@ describe('BarChartCard', () => {
       },
     ]);
   });
+
   it('formatChartData returns formatted data for time-based and group-based chart', () => {
     const series = [
       {
@@ -310,6 +315,7 @@ describe('BarChartCard', () => {
       },
     ]);
   });
+
   it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
     const series = [
       {
@@ -344,6 +350,7 @@ describe('BarChartCard', () => {
       },
     ]);
   });
+
   it('formatChartData returns formatted data for time-based, non-group chart', () => {
     const series = [
       {
@@ -382,6 +389,7 @@ describe('BarChartCard', () => {
       },
     ]);
   });
+
   it('formatColors returns correct format if color is string', () => {
     const series = [
       {
@@ -401,6 +409,7 @@ describe('BarChartCard', () => {
       scale: { Particles: 'blue', Temperature: 'yellow' },
     });
   });
+
   it('formatColors returns correct format if color is array', () => {
     const series = [
       {
@@ -417,6 +426,7 @@ describe('BarChartCard', () => {
       scale: { Particles: 'blue', Temperature: 'red', Emissions: 'green' },
     });
   });
+
   it('formatColors returns correct format if color is object', () => {
     const series = [
       {

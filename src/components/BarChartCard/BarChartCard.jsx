@@ -30,17 +30,27 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
   if (!isNil(values)) {
     // grouped or stacked
     if (type === BAR_CHART_TYPES.GROUPED || type === BAR_CHART_TYPES.STACKED) {
+      let uniqueDatasetNames;
+      let groupedData;
       // Get the unique values for each x-label grouping
-      const uniqueXAxisGroups = [...new Set(values.map(val => val[categoryDataSourceId]))];
-      const groupedData = uniqueXAxisGroups.map(group =>
-        values.filter(val => val[categoryDataSourceId] === group)
-      );
+      if (timeDataSourceId) {
+        uniqueDatasetNames = [...new Set(values.map(val => val[timeDataSourceId]))];
+        groupedData = uniqueDatasetNames.map(name =>
+          values.filter(val => val[timeDataSourceId] === name)
+        );
+      } else {
+        uniqueDatasetNames = [...new Set(values.map(val => val[categoryDataSourceId]))];
+        groupedData = uniqueDatasetNames.map(group =>
+          values.filter(val => val[categoryDataSourceId] === group)
+        );
+      }
 
       groupedData.forEach(group => {
         group.forEach(value => {
           series.forEach(dataset => {
             data.push({
-              group: dataset.label, // bar this data belongs to
+              // if there's a dataset label, use it
+              group: dataset.label ? dataset.label : value[categoryDataSourceId], // bar this data belongs to
               value: value[dataset.dataSourceId], // value
               key: timeDataSourceId ? value[timeDataSourceId] : value[categoryDataSourceId],
               ...(timeDataSourceId
@@ -50,7 +60,7 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
           });
         });
       });
-    } // single bars
+    } // single bars and not time-based
     else if (categoryDataSourceId) {
       const uniqueDatasetNames = [...new Set(values.map(val => val[categoryDataSourceId]))];
       const labeledData = uniqueDatasetNames.map(name =>
