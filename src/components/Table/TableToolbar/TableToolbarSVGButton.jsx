@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import { keyCodes } from '../../../constants/KeyCodeConstants';
@@ -9,26 +10,29 @@ const { iotPrefix } = settings;
 const propTypes = {
   onClick: PropTypes.func.isRequired,
   testId: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  renderIcon: PropTypes.func.isRequired,
+  description: PropTypes.node.isRequired,
 };
 
 /**
  * Toolbar button that accepts a Carbon react icon as children
  */
-const TableToolbarSVGButton = ({ onClick, testId, children }) => {
+const TableToolbarSVGButton = ({ onClick, testId, description, renderIcon }) => {
   return (
-    <div
+    <Button
       className={`${iotPrefix}--tooltip-svg-wrapper`}
+      hasIconOnly
       onClick={onClick}
-      role="button"
-      tabIndex={0}
+      kind="ghost"
+      renderIcon={renderIcon}
+      tooltipAlignment="center"
+      tooltipPosition="top"
       onKeyDown={e => {
         if (e.keyCode === keyCodes.ENTER) onClick();
       }}
+      iconDescription={description}
       data-testid={testId}
-    >
-      {children}
-    </div>
+    />
   );
 };
 

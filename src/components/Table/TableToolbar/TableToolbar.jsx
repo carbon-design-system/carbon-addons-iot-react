@@ -205,24 +205,36 @@ const TableToolbar = ({
           </Button>
         ) : null}
         {onDownloadCSV ? (
-          <TableToolbarSVGButton onClick={onDownloadCSV} testId="download-button">
-            <Download20 description={i18n.downloadIconDescription} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            onClick={onDownloadCSV}
+            description={i18n.downloadIconDescription}
+            testId="download-button"
+            renderIcon={Download20}
+          />
         ) : null}
         {hasColumnSelection ? (
-          <TableToolbarSVGButton onClick={onToggleColumnSelection} testId="column-selection-button">
-            <Column20 description={i18n.columnSelectionButtonAria} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            onClick={onToggleColumnSelection}
+            description={i18n.columnSelectionButtonAria}
+            testId="column-selection-button"
+            renderIcon={Column20}
+          />
         ) : null}
         {hasFilter ? (
-          <TableToolbarSVGButton onClick={onToggleFilter} testId="filter-button">
-            <Filter20 description={i18n.filterButtonAria} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            onClick={onToggleFilter}
+            description={i18n.filterButtonAria}
+            testId="filter-button"
+            renderIcon={Filter20}
+          />
         ) : null}
         {hasRowEdit ? (
-          <TableToolbarSVGButton onClick={onShowRowEdit} testId="row-edit-button">
-            <Edit20 description={i18n.editButtonAria} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            description={i18n.editButtonAria}
+            onClick={onShowRowEdit}
+            testId="row-edit-button"
+            renderIcon={Edit20}
+          />
         ) : null}
 
         {// Default card header actions should be to the right of the table-specific actions

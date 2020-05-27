@@ -53,7 +53,7 @@ const TableToolbarSearch = ({
 
   useEffect(
     () => {
-      if (focusTarget) {
+      if (focusTarget && focusTarget.current) {
         focusTarget.current.querySelector('input').focus();
         setFocusTarget(null);
       }
@@ -76,8 +76,13 @@ const TableToolbarSearch = ({
   };
 
   const onClick = e => {
-    setFocusTarget(toolbarSearch);
-    handleExpand(e, true);
+    if (
+      !expanded && // if we're not already expanded or focused
+      !focusTarget
+    ) {
+      setFocusTarget(toolbarSearch);
+      handleExpand(e, true);
+    }
   };
 
   const onBlur = e => {
@@ -97,6 +102,7 @@ const TableToolbarSearch = ({
       className={classnames(`${iotPrefix}--table-toolbar-search`, {
         [`${iotPrefix}--table-toolbar-search__expanded`]: expanded,
       })}
+      onFocus={onClick}
       onClick={onClick}
       onKeyDown={onKeyDown}
       role="button"
