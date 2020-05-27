@@ -166,7 +166,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
         case '>':
           return parseFloat(item[dataSourceId]) > value;
         case '=':
-          return parseFloat(item[dataSourceId]) === value;
+          return parseFloat(item[dataSourceId]) === value || item[dataSourceId] === value; // need to handle the string case
         case '<=':
           return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) <= value;
         case '>=':
