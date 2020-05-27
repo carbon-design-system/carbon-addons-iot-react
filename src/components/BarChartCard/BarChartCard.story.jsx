@@ -176,7 +176,7 @@ storiesOf('Watson IoT Experimental/BarChartCard', module)
       </div>
     );
   })
-  .add('Grouped bar - Time series', () => {
+  .add('Stacked bar - Time series with categories', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
