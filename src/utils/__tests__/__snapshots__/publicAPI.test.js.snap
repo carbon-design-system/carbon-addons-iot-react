@@ -370,6 +370,7 @@ Map {
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
+          "maxPages": 100,
           "page": 1,
           "pageSize": 10,
           "pageSizes": Array [
@@ -949,6 +950,9 @@ Map {
                 Object {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
+                  },
+                  "maxPages": Object {
+                    "type": "number",
                   },
                   "page": Object {
                     "type": "number",
@@ -3966,22 +3970,36 @@ Map {
                   "args": Array [
                     Object {
                       "color": Object {
-                        "type": "string",
-                      },
-                      "dataFilter": Object {
                         "args": Array [
-                          Object {
-                            "type": "any",
-                          },
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
                         ],
-                        "type": "objectOf",
+                        "type": "oneOfType",
                       },
                       "dataSourceId": Object {
                         "isRequired": true,
                         "type": "string",
                       },
                       "label": Object {
-                        "isRequired": true,
                         "type": "string",
                       },
                     },
@@ -3989,6 +4007,7 @@ Map {
                   "type": "shape",
                 },
               ],
+              "isRequired": true,
               "type": "arrayOf",
             },
             "timeDataSourceId": Object {

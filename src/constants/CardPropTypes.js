@@ -204,28 +204,34 @@ export const TableCardPropTypes = {
 
 /** This dataset only supports one data attribute at a time */
 const BarChartDatasetPropType = {
-  /** label of the bar in the legend */
-  label: PropTypes.string.isRequired,
   /** data attribute that will be displayed as bar height y-axis value */
   dataSourceId: PropTypes.string.isRequired,
-  /** optional each attribute has a different color, or use an object to set a color by category value, or an array if you don't care which category values maps to a particular color */
-  color: PropTypes.oneOf(
+  /** optional label of the bar in the legend */
+  label: PropTypes.string,
+  /** optional each attribute has a different color, or use an object to set a color by category value,
+   * or an array if you don't care which category values maps to a particular color. NOTE: If using the
+   * object option, the key must match the dataset label name */
+  color: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.objectOf(PropTypes.string),
-    PropTypes.arrayOf(PropTypes.string)
-  ),
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
 };
 
 export const BarChartCardPropTypes = {
+  /** card size */
   size: PropTypes.oneOf(Object.values(CARD_SIZES)),
   content: PropTypes.shape({
     /** the layout of the bar chart (horizontal, vertical) */
     layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
     /** the type of bar chart (simple, grouped, stacked) */
     type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
+    /** x-axis display name */
     xLabel: PropTypes.string,
+    /** y-axis display name */
     yLabel: PropTypes.string,
-    series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)),
+    /** defined dataset attributes */
+    series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)).isRequired,
     /** for category type bar charts this is the x-axis value */
     categoryDataSourceId: PropTypes.string,
     /** for time based bar charts this is the x-axis value */
@@ -233,6 +239,7 @@ export const BarChartCardPropTypes = {
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
+  /** internationalization */
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),
