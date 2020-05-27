@@ -105,7 +105,10 @@ export const TimeSeriesCardPropTypes = {
     /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
-    chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
+    chartType: deprecate(
+      PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
+      '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
+    ),
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
