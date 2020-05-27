@@ -71,7 +71,7 @@
     min-width: 40px;
   }
 
-  .#{$iot-prefix}--table-header-filter > #{$prefix}--table-header-label {
+  .#{$iot-prefix}--tableheader-filter > .#{$prefix}--table-header-label {
     overflow: visible;
   }
 }
