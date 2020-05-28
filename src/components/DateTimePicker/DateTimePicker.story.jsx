@@ -15,25 +15,6 @@ import DateTimePicker, {
   PRESET_VALUES,
 } from './DateTimePicker';
 
-// const customPresets = [
-//   {
-//     label: 'Last 30 minutes',
-//     offset: 30,
-//   },
-//   {
-//     label: 'Last 1 hour',
-//     offset: 60,
-//   },
-//   {
-//     label: 'Last 6 hours',
-//     offset: 360,
-//   },
-//   {
-//     label: 'Last 12 hours',
-//     offset: 720,
-//   },
-// ];
-
 export const defaultRelativeValue = {
   timeRangeKind: PICKER_KINDS.RELATIVE,
   timeRangeValue: {
