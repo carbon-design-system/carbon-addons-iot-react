@@ -43,10 +43,10 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
       </div>
     );
   })
-  .add('Base with tile width specification', () => {
+  .add('Dynamic resize with tile width specification', () => {
     const numOfTiles = number('number of tiles', 5);
     return (
-      <div style={{ width: '60rem' }}>
+      <div>
         <TileCatalogNew
           title="Product name"
           tiles={getTiles(
