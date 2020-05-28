@@ -63,6 +63,7 @@ export {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
+  BAR_CHART_TYPES,
 } from './constants/LayoutConstants';
 
 // Experimental
