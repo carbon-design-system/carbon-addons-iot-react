@@ -8,6 +8,7 @@ import DateTimePicker, {
   PRESET_VALUES,
   PICKER_KINDS,
 } from './DateTimePicker';
+import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.story';
 
 const dateTimePickerProps = {
   id: 'datetimepicker',
@@ -19,20 +20,6 @@ const i18n = {
   presetLabels: ['Last 30 minutes', 'Missed in translation'],
   intervalLabels: ['minutes', 'Missed in translation'],
   relativeLabels: ['Missed in translation'],
-};
-
-const defaultRelativeValue = {
-  lastNumber: 20,
-  lastInterval: INTERVAL_VALUES.MINUTES,
-  relativeToWhen: RELATIVE_VALUES.TODAY,
-  relativeToTime: '13:30',
-};
-
-const defaultAbsoluteValue = {
-  startDate: '2020-04-01',
-  startTime: '12:34',
-  endDate: '2020-04-06',
-  endTime: '10:49',
 };
 
 describe('DateTimePicker', () => {
@@ -53,12 +40,20 @@ describe('DateTimePicker', () => {
   });
 
   it('should blow up if random default value object is passed', () => {
-    mount(<DateTimePicker {...dateTimePickerProps} defaultValue={{ this: 'that' }} />);
+    mount(<DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />);
     expect(console.error).toHaveBeenCalledTimes(1);
   });
 
   it('should not blow up if correct object is passed as default value', () => {
-    mount(<DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />);
+    mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
+      />
+    );
     expect(console.error).toHaveBeenCalledTimes(0);
   });
 
@@ -91,7 +86,13 @@ describe('DateTimePicker', () => {
 
   it('should render with a predefined preset', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
