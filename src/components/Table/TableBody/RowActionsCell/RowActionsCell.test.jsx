@@ -92,4 +92,30 @@ describe('RowActionsCell', () => {
     );
     expect(container).toHaveLength(0);
   });
+
+  it('autoselects the first enabled alternative when the overflow menu is opened', () => {
+    const actions = [
+      { disabled: true, id: 'add', isOverflow: true, labelText: 'Add' },
+      { disabled: false, id: 'edit', renderIcon: Edit16, isOverflow: true, labelText: 'Edit' },
+    ];
+
+    const wrapper = mount(<RowActionsCell {...commonRowActionsProps} actions={actions} />);
+    const container = wrapper.find(
+      `.${iotPrefix}--row-actions-container .${iotPrefix}--row-actions-container__background--overflow-menu-open`
+    );
+    expect(container).toHaveLength(0);
+
+    const overflowMenu = wrapper.find('OverflowMenu');
+    overflowMenu.simulate('click');
+    overflowMenu.props().onOpen();
+    wrapper.update();
+    const menuItems = wrapper.find(
+      `.${iotPrefix}--row-actions-container .${iotPrefix}--action-overflow-item`
+    );
+    const firstMenuOption = menuItems.first();
+    const firstEnabledMenuOption = menuItems.at(2);
+
+    expect(firstMenuOption.props().primaryFocus).toEqual(false);
+    expect(firstEnabledMenuOption.props().primaryFocus).toEqual(true);
+  });
 });
