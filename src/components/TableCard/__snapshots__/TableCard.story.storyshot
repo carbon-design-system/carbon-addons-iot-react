@@ -191,7 +191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -224,7 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -2536,7 +2536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -2569,7 +2569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -3674,7 +3674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -3707,7 +3707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -6283,7 +6283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -6316,7 +6316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -7669,7 +7669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -7702,7 +7702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -9368,7 +9368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -9401,7 +9401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -9975,7 +9975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -10008,7 +10008,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -12519,7 +12519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -12552,7 +12552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -13934,7 +13934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -13967,7 +13967,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -15588,7 +15588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -15621,7 +15621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -17003,7 +17003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -17036,7 +17036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -18972,7 +18972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -19005,7 +19005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -20701,7 +20701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -20734,7 +20734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -22450,7 +22450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -22483,7 +22483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -24995,7 +24995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -25028,7 +25028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -27014,7 +27014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -27047,7 +27047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}
@@ -29629,7 +29629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </div>
                 </div>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="download-button"
                   disabled={false}
                   onClick={[Function]}
@@ -29662,7 +29662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   </svg>
                 </button>
                 <button
-                  className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                  className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                   data-testid="filter-button"
                   disabled={false}
                   onClick={[Function]}

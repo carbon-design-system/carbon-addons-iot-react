@@ -5,7 +5,7 @@ import { Button } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   onClick: PropTypes.func.isRequired,
@@ -20,16 +20,21 @@ const defaultProps = {
 };
 
 /**
- * Toolbar button that accepts a Carbon react icon as children
+ * Toolbar button that renders an icon only button
  */
 const TableToolbarSVGButton = ({ onClick, testId, className, description, isActive, ...rest }) => {
   return (
     <Button
       {...rest}
-      className={classNames(`${iotPrefix}--tooltip-svg-wrapper`, className, {
-        [`${iotPrefix}--table-toolbar-button-active`]: isActive, // https://github.com/carbon-design-system/carbon/issues/6160
-      })}
-      hasIconOnly
+      className={classNames(
+        `${prefix}--btn--icon-only`,
+        `${iotPrefix}--tooltip-svg-wrapper`,
+        className,
+        {
+          [`${iotPrefix}--table-toolbar-button-active`]: isActive, // https://github.com/carbon-design-system/carbon/issues/6160
+        }
+      )}
+      hasIconOnly={!isActive} // hide the tooltip if the button is active
       kind="ghost"
       onClick={onClick}
       tooltipAlignment="center"
