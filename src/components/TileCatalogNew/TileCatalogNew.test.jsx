@@ -143,6 +143,51 @@ describe('TileCatalogNew', () => {
     expect(getByText('Tile 16')).toBeTruthy();
   });
 
+  it('TileCatalogNew pagination does not render with only one page', () => {
+    const { queryByText } = render(
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(4, 'Tile')}
+        numColumns={2}
+        numRows={2}
+      />
+    );
+
+    expect(queryByText('Next page')).toBeNull();
+  });
+
+  it('TileCatalogNew pagination does not render with minTileWidth', () => {
+    const { queryByText } = render(
+      <TileCatalogNew title="Test Tile Catalog" tiles={getTiles(4, 'Tile')} minTileWidth="20rem" />
+    );
+
+    expect(queryByText('Next page')).toBeNull();
+  });
+
+  it('TileCatalogNew renders loading state', () => {
+    const { queryByText } = render(
+      <TileCatalogNew
+        title="Test Tile Catalog"
+        tiles={getTiles(4, 'Tile')}
+        numColumns={2}
+        numRows={2}
+        isLoading
+      />
+    );
+    expect(queryByText('Tile 1')).toBeNull();
+    expect(queryByText('Tile 2')).toBeNull();
+    expect(queryByText('Tile 3')).toBeNull();
+    expect(queryByText('Tile 4')).toBeNull();
+  });
+
+  it('TileCatalogNew renders error state', () => {
+    // trigger an error by not giving the catalog tiles
+    const { getByText } = render(
+      <TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />
+    );
+    expect(getByText('An error has occurred')).toBeTruthy();
+  });
+
   it('TileCatalogNew with large page numbers', () => {
     const { getByText, getByLabelText } = render(
       <TileCatalogNew

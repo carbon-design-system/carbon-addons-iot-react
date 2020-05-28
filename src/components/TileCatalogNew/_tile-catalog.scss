@@ -133,3 +133,9 @@
     @include type-style('label-01');
   }
 }
+
+.#{$iot-prefix}--tile-catalog--grid-container {
+  display: grid;
+  grid-template-columns: var(--columns);
+  gap: 1rem;
+}

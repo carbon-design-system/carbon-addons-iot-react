@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Select, SelectItem, DataTable } from 'carbon-components-react';
+import { Select, SelectItem, DataTable, SkeletonText, Tile } from 'carbon-components-react';
+import Bee32 from '@carbon/icons-react/es/bee/32';
 import PropTypes from 'prop-types';
-import sizeMe from 'react-sizeme';
 
 import { settings } from '../../constants/Settings';
 
@@ -13,6 +13,8 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** Title for the product */
   title: PropTypes.string.isRequired,
+  /** Min width of each tile if no col/row nums are specified */
+  minTileWidth: PropTypes.string,
   /** Number of columns to be rendered per page */
   numColumns: PropTypes.number,
   /** Number of rows to be rendered per page */
@@ -31,6 +33,10 @@ const propTypes = {
   sortOptions: PropTypes.arrayOf(PropTypes.node),
   /** Default option in sort */
   selectedSortOption: PropTypes.string,
+  /** Loading state */
+  isLoading: PropTypes.bool,
+  /** Error state */
+  error: PropTypes.string,
   /** Set to true if filter is needed */
   i18n: PropTypes.shape({
     placeHolderText: PropTypes.string,
@@ -44,13 +50,17 @@ const defaultProps = {
   onSort: () => {},
   sortOptions: [],
   selectedSortOption: '',
-  numColumns: 1,
-  numRows: 1,
+  isLoading: false,
+  error: '',
+  minTileWidth: null,
+  numColumns: 3,
+  numRows: 3,
   i18n: { searchPlaceHolderText: 'Enter a value' },
 };
 
 const TileCatalogNew = ({
   title,
+  minTileWidth,
   numColumns,
   numRows,
   tiles,
@@ -60,60 +70,80 @@ const TileCatalogNew = ({
   onSort,
   sortOptions,
   selectedSortOption,
+  isLoading,
+  error,
   i18n,
+  className,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [tileHeight, setTileHeight] = useState(0);
+  // const [tileHeight, setTileHeight] = useState(0);
 
-  const onSize = ({ height }) => {
-    setTileHeight(height);
-  };
+  // const onSize = ({ height }) => {
+  //   setTileHeight(height);
+  // };
 
-  const HeightMonitor = sizeMe({
-    monitorHeight: true,
-  })(({ content }) => <div>{content}</div>);
+  // const HeightMonitor = sizeMe({
+  //   monitorHeight: true,
+  // })(({ content }) => <div>{content}</div>);
 
-  const getTile = (rowIdx, colIdx) => {
-    const numTilesPerPage = numRows * numColumns;
-    const tileIndex = rowIdx * numColumns + colIdx + (currentPage - 1) * numTilesPerPage;
+  // const getTile = (rowIdx, colIdx) => {
+  //   const numTilesPerPage = numRows * numColumns;
+  //   const tileIndex = rowIdx * numColumns + colIdx + (currentPage - 1) * numTilesPerPage;
 
-    if (tileIndex === 0) {
-      return <HeightMonitor content={tiles[0]} onSize={onSize} />;
-    }
-    return tiles[tileIndex] !== undefined ? (
-      tiles[tileIndex]
-    ) : (
-      <div style={{ height: tileHeight }} />
-    );
-  };
+  //   if (tileIndex === 0) {
+  //     return <HeightMonitor content={tiles[0]} onSize={onSize} />;
+  //   }
+  //   return tiles[tileIndex] !== undefined ? (
+  //     tiles[tileIndex]
+  //   ) : (
+  //     <div style={{ height: tileHeight }} />
+  //   );
+  // };
+
+  // determine how many tiles to render per page
+  const isInCurrentPageRange = i =>
+    i < numColumns * numRows * currentPage && i >= numColumns * numRows * (currentPage - 1);
 
   const renderGrid = () => (
-    <div className="bx--grid">
-      {Array(numRows)
-        .fill(null)
-        .map((i, rowIdx) => (
-          <div className="bx--row">
-            {Array(numColumns)
-              .fill(null)
-              .map((j, colIdx) => (
-                <div className="bx--col">{getTile(rowIdx, colIdx)}</div>
-              ))}
-          </div>
-        ))}
+    <div
+      className={`${iotPrefix}--tile-catalog--grid-container`}
+      style={{
+        '--columns': minTileWidth
+          ? // if the user specifies a minTileWidth, we will render all tiles on one responsive page
+            `repeat(auto-fill, minmax(${minTileWidth}, 1fr))`
+          : // if the user specifies numColumns we will render exactly that number
+            `repeat(${numColumns}, 1fr)`,
+      }}
+    >
+      {tiles.map((tile, i) =>
+        isLoading ? (
+          i < 4 ? ( // limit the amount of SkeletonText to render
+            <SkeletonText />
+          ) : null
+        ) : minTileWidth || isInCurrentPageRange(i) ? (
+          <div>{tile}</div>
+        ) : null
+      )}
     </div>
   );
 
+  // only render pagination if there is no minTileWidth and there are more tiles than can fit in
+  // the bounds of our specified number of rows and columns
+  const hasPagination =
+    tiles && !minTileWidth && !isLoading
+      ? Math.ceil(tiles.length / (numRows * numColumns)) > 1
+      : null;
+
   return (
-    <div>
-      <div>
-        {/* {persistentSearch ? (
+    <div className={className}>
+      {/* <div>
+        {persistentSearch ? (
           <div className="tile-catalog--persistent-search">
             <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
           </div>
-        ) : null} */}
+        ) : null}
         <div />
-      </div>
-
+      </div> */}
       <div className={`${iotPrefix}--tile-catalog--canvas-container`}>
         <div className={`${iotPrefix}--tile-catalog--tile-canvas`}>
           {/* {featuredTile ? (
@@ -147,14 +177,27 @@ const TileCatalogNew = ({
               ) : null}
             </div>
           </div>
+          {tiles && tiles.length && !error ? (
+            <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
+          ) : (
+            <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
+              {error || (
+                <>
+                  <Bee32 />
+                  <p>An error has occurred</p>
+                </>
+              )}
+            </Tile>
+          )}
 
-          <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
           <div className={`${iotPrefix}--tile-catalog--tile-canvas--bottom`}>
-            <TilePagination
-              page={currentPage}
-              numPages={Math.ceil(tiles.length / (numRows * numColumns))}
-              onChange={newPage => setCurrentPage(newPage)}
-            />
+            {tiles && hasPagination ? (
+              <TilePagination
+                page={currentPage}
+                numPages={Math.ceil(tiles.length / (numRows * numColumns))}
+                onChange={newPage => setCurrentPage(newPage)}
+              />
+            ) : null}
           </div>
         </div>
         {/* {hasFilter ? (
