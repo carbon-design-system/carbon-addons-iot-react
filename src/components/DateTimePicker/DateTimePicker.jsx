@@ -116,6 +116,8 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
+  /** show tooltip on hover */
+  hasTooltip: PropTypes.bool,
   /** triggered on cancel */
   onCancel: PropTypes.func,
   /** triggered on apply with this returning object */
@@ -210,6 +212,7 @@ const defaultProps = {
   expanded: false,
   disabled: false,
   showRelativeOption: true,
+  hasTooltip: true,
   onCancel: null,
   onApply: null,
   i18n: {
@@ -249,6 +252,7 @@ const DateTimePicker = ({
   expanded,
   disabled,
   showRelativeOption,
+  hasTooltip,
   onCancel,
   onApply,
   i18n,
@@ -657,7 +661,9 @@ const DateTimePicker = ({
           onKeyPress={onFieldClick}
           tabIndex={0}
         >
-          {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
+          {isExpanded ||
+          !hasTooltip ||
+          (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
             <span title={humanValue}>{humanValue}</span>
           ) : humanValue ? (
             <TooltipDefinition
@@ -683,7 +689,7 @@ const DateTimePicker = ({
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
               <OrderedList nested={false}>
-                {getIntervalValue() ? (
+                {hasTooltip && getIntervalValue() ? (
                   <ListItem
                     className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                   >
