@@ -219,6 +219,7 @@ const TableToolbar = ({
         ) : null}
         {hasColumnSelection ? (
           <TableToolbarSVGButton
+            isActive={activeBar === 'column'}
             onClick={onToggleColumnSelection}
             description={i18n.columnSelectionButtonAria}
             testId="column-selection-button"
@@ -227,6 +228,7 @@ const TableToolbar = ({
         ) : null}
         {hasFilter ? (
           <TableToolbarSVGButton
+            isActive={activeBar === 'filter'}
             onClick={onToggleFilter}
             description={i18n.filterButtonAria}
             testId="filter-button"
@@ -235,6 +237,7 @@ const TableToolbar = ({
         ) : null}
         {hasRowEdit ? (
           <TableToolbarSVGButton
+            isActive={activeBar === 'rowEdit'}
             description={i18n.editButtonAria}
             onClick={onShowRowEdit}
             testId="row-edit-button"

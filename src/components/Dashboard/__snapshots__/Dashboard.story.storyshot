@@ -1387,7 +1387,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -1421,7 +1420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -3596,7 +3594,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -3630,7 +3627,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -5837,7 +5833,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -5871,7 +5866,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -7493,7 +7487,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -7527,7 +7520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -10542,7 +10534,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -10576,7 +10567,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -24875,7 +24865,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
@@ -24909,7 +24898,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
                           tabIndex={0}
                           type="button"
                         >
