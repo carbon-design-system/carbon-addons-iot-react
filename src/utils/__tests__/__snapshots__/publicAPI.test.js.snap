@@ -4417,71 +4417,83 @@ Map {
       },
       "defaultValue": Object {
         "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "label": Object {
-                    "isRequired": true,
-                    "type": "string",
-                  },
-                  "offset": Object {
-                    "isRequired": true,
-                    "type": "number",
-                  },
-                },
-              ],
-              "type": "shape",
+          Object {
+            "timeRangeKind": Object {
+              "isRequired": true,
+              "type": "string",
             },
-            Object {
+            "timeRangeValue": Object {
               "args": Array [
-                Object {
-                  "lastInterval": Object {
-                    "isRequired": true,
-                    "type": "string",
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "label": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "offset": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
                   },
-                  "lastNumber": Object {
-                    "isRequired": true,
-                    "type": "number",
+                  Object {
+                    "args": Array [
+                      Object {
+                        "lastInterval": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "lastNumber": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                        "relativeToTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "relativeToWhen": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
                   },
-                  "relativeToTime": Object {
-                    "isRequired": true,
-                    "type": "string",
+                  Object {
+                    "args": Array [
+                      Object {
+                        "endDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "endTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
                   },
-                  "relativeToWhen": Object {
-                    "isRequired": true,
-                    "type": "string",
-                  },
-                },
+                ],
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "oneOfType",
             },
-            Object {
-              "args": Array [
-                Object {
-                  "endDate": Object {
-                    "isRequired": true,
-                    "type": "string",
-                  },
-                  "endTime": Object {
-                    "isRequired": true,
-                    "type": "string",
-                  },
-                  "startDate": Object {
-                    "isRequired": true,
-                    "type": "string",
-                  },
-                  "startTime": Object {
-                    "isRequired": true,
-                    "type": "string",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-          ],
+          },
         ],
-        "type": "oneOfType",
+        "type": "exact",
       },
       "disabled": Object {
         "type": "bool",
