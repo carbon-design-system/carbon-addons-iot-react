@@ -164,8 +164,7 @@ describe('TableCard', () => {
     );
 
     wrapper
-      .find('Icon')
-      .find({ icon: { name: 'icon--edit' } })
+      .find('.iot--table-card--action-icon')
       .first()
       .simulate('click');
     expect(onCardAction.mock.calls).toHaveLength(1);

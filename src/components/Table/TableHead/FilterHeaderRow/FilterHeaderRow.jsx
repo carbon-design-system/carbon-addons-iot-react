@@ -301,7 +301,6 @@ class FilterHeaderRow extends Component {
                       title={clearFilterText}
                     >
                       <Close description={clearFilterText} />
-                      {/* <Icon icon={iconClose} description={clearFilterText} focusable="false" /> */}
                     </div>
                   ) : null}
                 </StyledFormItem>
