@@ -915,11 +915,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -1318,96 +1315,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Download table content
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -1419,21 +1415,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Filters
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -1442,7 +1446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -3120,11 +3124,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -3523,96 +3524,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Download table content
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3624,21 +3624,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Filters
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3647,7 +3655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -5357,11 +5365,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -5760,96 +5765,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Download table content
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -5861,21 +5865,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Filters
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -5884,7 +5896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -7410,95 +7422,94 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-expandedcard-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-expandedcard-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-expandedcard-toolbar-search"
+                              id="table-for-card-expandedcard-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              id="table-for-card-expandedcard-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-expandedcard-toolbar-search"
-                                id="table-for-card-expandedcard-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                id="table-for-card-expandedcard-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Download table content
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -7510,21 +7521,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Filters
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -7533,7 +7552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -8952,8 +8971,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <polygon
-                                    points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
+                                  <path
+                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                                   />
                                 </svg>
                               </div>
@@ -9037,8 +9056,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <polygon
-                                    points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
+                                  <path
+                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                                   />
                                 </svg>
                               </div>
@@ -9066,8 +9085,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={24}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <polygon
-                              points="20,24 10,16 20,8"
+                            <path
+                              d="M20 24L10 16 20 8z"
                             />
                           </svg>
                         </button>
@@ -9087,8 +9106,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={24}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <polygon
-                              points="12,8 22,16 12,24"
+                            <path
+                              d="M12 8L22 16 12 24z"
                             />
                           </svg>
                         </button>
@@ -10051,11 +10070,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -10454,96 +10470,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Download table content
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -10555,21 +10570,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Filters
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -10578,7 +10601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -24380,11 +24403,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -24783,96 +24803,95 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Download table content
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -24884,21 +24903,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          type="button"
                         >
+                          <span
+                            className="bx--assistive-text"
+                          >
+                            Filters
+                          </span>
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -24907,7 +24934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >

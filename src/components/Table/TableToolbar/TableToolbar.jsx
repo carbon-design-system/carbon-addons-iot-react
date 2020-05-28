@@ -12,7 +12,6 @@ import {
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import TableToolbarSearch from '../TableToolbarSearch/TableToolbarSearch';
 
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
@@ -21,7 +20,7 @@ const { iotPrefix } = settings;
 const {
   TableToolbar: CarbonTableToolbar,
   TableToolbarContent,
-  // TableToolbarAction,
+  TableToolbarSearch,
   TableBatchActions,
   TableBatchAction,
 } = DataTable;
@@ -192,10 +191,16 @@ const TableToolbar = ({
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
+            defaultValue={search.defaultValue || search.value}
             className="table-toolbar-search"
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
             id={`${tableId}-toolbar-search`}
-            onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+            onChange={(
+              event,
+              defaultValue // https://github.com/carbon-design-system/carbon/issues/6157
+            ) =>
+              onApplySearch(defaultValue || (event.currentTarget ? event.currentTarget.value : ''))
+            }
             disabled={isDisabled}
           />
         ) : null}

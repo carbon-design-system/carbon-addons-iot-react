@@ -97,7 +97,7 @@ export const baseTableReducer = (state = {}, action) => {
           toolbar: {
             search: {
               $set: {
-                value: action.payload,
+                defaultValue: action.payload,
               },
             },
           },

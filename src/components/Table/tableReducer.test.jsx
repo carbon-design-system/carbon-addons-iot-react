@@ -84,7 +84,7 @@ describe('table reducer', () => {
       const searchString = 'searchString';
       const updatedState = tableReducer(initialState, tableSearchApply(searchString));
       // Apply the search
-      expect(updatedState.view.toolbar.search.value).toEqual(searchString);
+      expect(updatedState.view.toolbar.search.defaultValue).toEqual(searchString);
       expect(updatedState.view.pagination.page).toEqual(1);
     });
   });

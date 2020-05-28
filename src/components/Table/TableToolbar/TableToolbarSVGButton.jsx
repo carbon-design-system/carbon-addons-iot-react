@@ -10,7 +10,7 @@ const { iotPrefix } = settings;
 const propTypes = {
   onClick: PropTypes.func.isRequired,
   testId: PropTypes.string.isRequired,
-  renderIcon: PropTypes.func.isRequired,
+  renderIcon: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   description: PropTypes.node.isRequired,
 };
 
