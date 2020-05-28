@@ -531,7 +531,10 @@ storiesOf('Watson IoT/Table', module)
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
-            toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
+            toolbar: {
+              ...actions.toolbar,
+              onDownloadCSV: () => csvDownloadHandler(initialState.data, 'my table data'),
+            },
           }}
           isSortable
           lightweight={boolean('lightweight', false)}
