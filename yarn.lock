@@ -5592,7 +5592,7 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@^7.12.0:
+carbon-components-react@7.12.0:
   version "7.12.0"
   resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.12.0.tgz#d41125e774fa40e5c5fbc1d536c1923111273f6b"
   integrity sha512-zsVD9/Dh8Rgl9LOO7vltS8AXj14eCbmSddQrDMkHeq5JSpQWtIqUAI7A7sT2uAhmowi1hk8d0BAroyGzhLHzAg==

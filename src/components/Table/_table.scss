@@ -22,7 +22,6 @@ table.#{$prefix}--side-nav--data-table {
 .#{$iot-prefix}--table-container {
   min-width: unset;
   padding-top: 0;
-  overflow: visible; // need to do this to allow tooltips to render above the table
 
   .addons-iot-table-container {
     overflow-x: auto;

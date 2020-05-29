@@ -20,11 +20,6 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   padding-top: $spacing-01;
 }
 
-// small fix to allow tooltips to show outside the toolbar if the batch action isn't active
-.#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active) ~ .#{$prefix}--toolbar-content {
-  clip-path: unset;
-}
-
 .#{$iot-prefix}--table-toolbar-content {
   flex: 1;
   font-size: 0.875rem;

@@ -12,6 +12,7 @@ const propTypes = {
   testId: PropTypes.string.isRequired,
   renderIcon: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   description: PropTypes.node.isRequired,
+  /** is the button currently 'toggled' active, used for column filters */
   isActive: PropTypes.bool,
 };
 
@@ -34,11 +35,9 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
           [`${iotPrefix}--table-toolbar-button-active`]: isActive, // https://github.com/carbon-design-system/carbon/issues/6160
         }
       )}
-      hasIconOnly={!isActive} // hide the tooltip if the button is active
       kind="ghost"
       onClick={onClick}
-      tooltipAlignment="center"
-      tooltipPosition="top"
+      title={description}
       iconDescription={description}
       data-testid={testId}
     />

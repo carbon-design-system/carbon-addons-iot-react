@@ -1383,18 +1383,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Download table content"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Download table content
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Download table content"
@@ -1416,18 +1412,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Filters"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Filters
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Filters"
@@ -3590,18 +3582,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Download table content"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Download table content
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Download table content"
@@ -3623,18 +3611,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Filters"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Filters
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Filters"
@@ -5829,18 +5813,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Download table content"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Download table content
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Download table content"
@@ -5862,18 +5842,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Filters"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Filters
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Filters"
@@ -7402,18 +7378,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Download table content"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Download table content
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Download table content"
@@ -7435,18 +7407,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Filters"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Filters
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Filters"
@@ -10449,18 +10417,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Download table content"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Download table content
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Download table content"
@@ -10482,18 +10446,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Filters"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Filters
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Filters"
@@ -24780,18 +24740,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Download table content"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Download table content
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Download table content"
@@ -24813,18 +24769,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <button
-                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
                           disabled={false}
                           onClick={[Function]}
                           tabIndex={0}
+                          title="Filters"
                           type="button"
                         >
-                          <span
-                            className="bx--assistive-text"
-                          >
-                            Filters
-                          </span>
                           <svg
                             aria-hidden="true"
                             aria-label="Filters"
