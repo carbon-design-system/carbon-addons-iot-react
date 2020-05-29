@@ -166,7 +166,7 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
         case '>':
           return parseFloat(item[dataSourceId]) > value;
         case '=':
-          return parseFloat(item[dataSourceId]) === value;
+          return parseFloat(item[dataSourceId]) === value || item[dataSourceId] === value; // need to handle the string case
         case '<=':
           return !isNil(item[dataSourceId]) && parseFloat(item[dataSourceId]) <= value;
         case '>=':
@@ -230,7 +230,7 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
         // eslint-disable-next-line react/prop-types
         renderDataFunction: ({ value, row }) => {
           let variableLink;
-          // if we have variables the value based on its own row's context
+          // if we have variables the value is based on its own row's context
           if (variables && variables.length) {
             variableLink = linkTemplate.href;
             variables.forEach(variable => {
@@ -251,6 +251,48 @@ export const createColumnsWithFormattedLinks = (columns, cardVariables) => {
     }
     return column;
   });
+};
+
+/**
+ * Updates expandedRow to have us-able links if any hrefs are found. If href variables are on a table that has row specific values, the user
+ * should not pass in a cardVariables object as each variable with have multiple values.
+ * @param {object} row - Object containing each value present on the row
+ * @param {array} expandedRow - Array of data to display when the row is expanded
+ * @param {object} cardVariables - object of cardVariables
+ * @return {array} Array of data with formatted links to display when the row is expanded
+ */
+export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
+  // if the user has given us variable values, we can assume that they don't want them to be row specific
+  if (cardVariables) {
+    return expandedRow;
+  }
+
+  const updatedExpandedRow = [];
+
+  expandedRow.forEach(item => {
+    const { linkTemplate } = item;
+    const variables = linkTemplate?.href ? getVariables(linkTemplate.href) : [];
+    let variableLink;
+    // if we have variables the value is based on its own row's context
+    if (variables && variables.length) {
+      variableLink = linkTemplate.href;
+      variables.forEach(variable => {
+        const variableValue = row[variable];
+        variableLink = variableLink.replace(`{${variable}}`, variableValue);
+      });
+    }
+    if (linkTemplate) {
+      updatedExpandedRow.push({
+        ...item,
+        linkTemplate: {
+          href: variableLink || linkTemplate.href,
+        },
+      });
+    } else {
+      updatedExpandedRow.push(item);
+    }
+  });
+  return updatedExpandedRow;
 };
 
 const TableCard = ({
@@ -608,6 +650,13 @@ const TableCard = ({
               .map(value => expandedRows.filter(item => item.id === value)[0])
               .filter(i => i);
 
+            // add links and link variables to the expandedItem
+            const formattedExpandedItems = handleExpandedItemLinks(
+              dataItem.values,
+              expandedItem,
+              others.cardVariables
+            );
+
             return {
               rowId: dataItem.id,
               content: (
@@ -615,16 +664,35 @@ const TableCard = ({
                   key={`${dataItem.id}-expanded`}
                   className={`${iotPrefix}--table-card--expanded-row-content`}
                 >
-                  {expandedItem.length ? (
-                    expandedItem.map((item, index) => (
+                  {formattedExpandedItems.length ? (
+                    formattedExpandedItems.map((item, index) => (
                       <div
                         key={`${item.id}-expanded-${index}`}
                         className={`${iotPrefix}--table-card--expanded`}
                       >
-                        <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
-                          {item ? item.label : '--'}
-                        </p>
-                        <span>{item ? dataItem.values[item.id] : null}</span>
+                        {item.linkTemplate ? (
+                          <>
+                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
+                              {item ? item.label : '--'}
+                            </p>
+                            <Link
+                              key={`${item.id}-link`}
+                              href={item.linkTemplate.href}
+                              target={item.linkTemplate.target ? item.linkTemplate.target : null}
+                            >
+                              {dataItem.values[item.id]}
+                            </Link>
+                          </>
+                        ) : (
+                          <>
+                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
+                              {item ? item.label : '--'}
+                            </p>
+                            <span key={`${item.id}-value`}>
+                              {item ? dataItem.values[item.id] : null}
+                            </span>
+                          </>
+                        )}
                       </div>
                     ))
                   ) : (
@@ -641,7 +709,7 @@ const TableCard = ({
             };
           })
         : [],
-    [expandedRows, tableData]
+    [expandedRows, others.cardVariables, tableData]
   );
 
   // is columns recieved is different from the columnsToRender show card expand

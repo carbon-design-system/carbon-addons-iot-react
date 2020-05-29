@@ -370,6 +370,7 @@ Map {
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
+          "maxPages": 100,
           "page": 1,
           "pageSize": 10,
           "pageSizes": Array [
@@ -949,6 +950,9 @@ Map {
                 Object {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
+                  },
+                  "maxPages": Object {
+                    "type": "number",
                   },
                   "page": Object {
                     "type": "number",
@@ -3948,6 +3952,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "categoryDataSourceId": Object {
+              "type": "string",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -3960,29 +3967,51 @@ Map {
             "series": Object {
               "args": Array [
                 Object {
-                  "colors": Object {
-                    "args": Array [
-                      Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "dataSourceId": Object {
+                        "isRequired": true,
                         "type": "string",
                       },
-                    ],
-                    "type": "arrayOf",
-                  },
-                  "dataSourceId": Object {
-                    "type": "string",
-                  },
-                  "groupDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "labelDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
+                      "label": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
             "type": Object {
               "args": Array [
@@ -8366,15 +8395,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "chartType": Object {
-              "args": Array [
-                Array [
-                  "BAR",
-                  "LINE",
-                ],
-              ],
-              "type": "oneOf",
-            },
+            "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
@@ -11206,6 +11227,11 @@ Map {
   "TIME_SERIES_TYPES" => Object {
     "BAR": "BAR",
     "LINE": "LINE",
+  },
+  "BAR_CHART_TYPES" => Object {
+    "GROUPED": "GROUPED",
+    "SIMPLE": "SIMPLE",
+    "STACKED": "STACKED",
   },
   "ListCard" => Object {
     "defaultProps": Object {

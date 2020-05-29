@@ -131,7 +131,6 @@ class RowActionsCell extends React.Component {
   }
 
   componentDidUpdate(prevProp, prevState) {
-    
     const isLtr = document.dir === 'ltr';
     if (prevState.ltr !== isLtr) {
       this.setState(state => ({ ltr: !state.ltr }));
@@ -169,7 +168,9 @@ class RowActionsCell extends React.Component {
       inProgressText,
     } = this.props;
     const { isOpen, ltr } = this.state;
-    const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
+    const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
+    const hasOverflow = overflowActions.length > 0;
+    const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
     return actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
@@ -198,10 +199,10 @@ class RowActionsCell extends React.Component {
               <Fragment>
                 {actions
                   .filter(action => !action.isOverflow)
-                  .map(({ id: actionId, labelText, ...others }) => (
+                  .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
                       {...omit(others, ['isOverflow'])}
-                      iconDescription={overflowMenuAria}
+                      iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
@@ -225,37 +226,33 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                   >
-                    {actions
-                      .filter(action => action.isOverflow)
-                      .map(action => (
-                        <OverflowMenuItem
-                          className={`${iotPrefix}--action-overflow-item`}
-                          key={`${id}-row-actions-button-${action.id}`}
-                          onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                          requireTitle
-                          hasDivider={action.hasDivider}
-                          isDelete={action.isDelete}
-                          itemText={
-                            action.renderIcon ? (
-                              <OverflowMenuContent>
-                                {typeof action.renderIcon === 'string' ? (
-                                  <Icon
-                                    icon={action.renderIcon}
-                                    description={action.labelText}
-                                    iconTitle={action.labelText}
-                                  />
-                                ) : (
-                                  <action.renderIcon />
-                                )}
-                                {action.labelText}
-                              </OverflowMenuContent>
-                            ) : (
-                              action.labelText
-                            )
-                          }
-                          disabled={action.disabled}
-                        />
-                      ))}
+                    {overflowActions.map((action, actionIndex) => (
+                      <OverflowMenuItem
+                        // We need to focus a MenuItem for the keyboard navigation to work
+                        primaryFocus={actionIndex === firstSelectableItemIndex}
+                        className={`${iotPrefix}--action-overflow-item`}
+                        key={`${id}-row-actions-button-${action.id}`}
+                        onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                        requireTitle={!action.renderIcon}
+                        hasDivider={action.hasDivider}
+                        isDelete={action.isDelete}
+                        itemText={
+                          action.renderIcon ? (
+                            <OverflowMenuContent title={action.labelText}>
+                              {typeof action.renderIcon === 'string' ? (
+                                <Icon icon={action.renderIcon} description={action.labelText} />
+                              ) : (
+                                <action.renderIcon description={action.labelText} />
+                              )}
+                              {action.labelText}
+                            </OverflowMenuContent>
+                          ) : (
+                            action.labelText
+                          )
+                        }
+                        disabled={action.disabled}
+                      />
+                    ))}
                   </StyledOverflowMenu>
                 ) : null}
               </Fragment>

@@ -96,7 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -241,7 +241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -458,7 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
@@ -600,7 +600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   >
                     <svg
                       aria-hidden="true"
-                      aria-label="More actions"
+                      aria-label="Add"
                       className="bx--btn__icon"
                       focusable="false"
                       height={32}
