@@ -4419,8 +4419,15 @@ Map {
         "args": Array [
           Object {
             "timeRangeKind": Object {
+              "args": Array [
+                Array [
+                  "PRESET",
+                  "RELATIVE",
+                  "ABSOLUTE",
+                ],
+              ],
               "isRequired": true,
-              "type": "string",
+              "type": "oneOf",
             },
             "timeRangeValue": Object {
               "args": Array [
