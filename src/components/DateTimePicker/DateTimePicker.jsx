@@ -68,31 +68,33 @@ export const RELATIVE_VALUES = {
 
 const propTypes = {
   /** default value for the picker */
-  defaultValue: PropTypes.exact({
-    timeRangeKind: PropTypes.oneOf([
-      PICKER_KINDS.PRESET,
-      PICKER_KINDS.RELATIVE,
-      PICKER_KINDS.ABSOLUTE,
-    ]).isRequired,
-    timeRangeValue: PropTypes.oneOfType([
-      PropTypes.shape({
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.exact({
+      timeRangeKind: PropTypes.oneOf([PICKER_KINDS.PRESET]).isRequired,
+      timeRangeValue: PropTypes.exact({
         label: PropTypes.string.isRequired,
         offset: PropTypes.number.isRequired,
-      }),
-      PropTypes.shape({
+      }).isRequired,
+    }).isRequired,
+    PropTypes.exact({
+      timeRangeKind: PropTypes.oneOf([PICKER_KINDS.RELATIVE]).isRequired,
+      timeRangeValue: PropTypes.exact({
         lastNumber: PropTypes.number.isRequired,
         lastInterval: PropTypes.string.isRequired,
         relativeToWhen: PropTypes.string.isRequired,
         relativeToTime: PropTypes.string.isRequired,
-      }),
-      PropTypes.shape({
+      }).isRequired,
+    }).isRequired,
+    PropTypes.exact({
+      timeRangeKind: PropTypes.oneOf([PICKER_KINDS.ABSOLUTE]).isRequired,
+      timeRangeValue: PropTypes.exact({
         startDate: PropTypes.string.isRequired,
         startTime: PropTypes.string.isRequired,
         endDate: PropTypes.string.isRequired,
         endTime: PropTypes.string.isRequired,
-      }),
-    ]).isRequired,
-  }),
+      }).isRequired,
+    }).isRequired,
+  ]),
   /** the moment.js format for the human readable interval value */
   dateTimeMask: PropTypes.string,
   /** a list of options to for the default presets */

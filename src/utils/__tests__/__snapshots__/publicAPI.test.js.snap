@@ -4417,22 +4417,20 @@ Map {
       },
       "defaultValue": Object {
         "args": Array [
-          Object {
-            "timeRangeKind": Object {
+          Array [
+            Object {
               "args": Array [
-                Array [
-                  "PRESET",
-                  "RELATIVE",
-                  "ABSOLUTE",
-                ],
-              ],
-              "isRequired": true,
-              "type": "oneOf",
-            },
-            "timeRangeValue": Object {
-              "args": Array [
-                Array [
-                  Object {
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "PRESET",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
                     "args": Array [
                       Object {
                         "label": Object {
@@ -4445,9 +4443,27 @@ Map {
                         },
                       },
                     ],
-                    "type": "shape",
+                    "isRequired": true,
+                    "type": "exact",
                   },
-                  Object {
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "RELATIVE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
                     "args": Array [
                       Object {
                         "lastInterval": Object {
@@ -4468,9 +4484,27 @@ Map {
                         },
                       },
                     ],
-                    "type": "shape",
+                    "isRequired": true,
+                    "type": "exact",
                   },
-                  Object {
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "ABSOLUTE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
                     "args": Array [
                       Object {
                         "endDate": Object {
@@ -4491,16 +4525,17 @@ Map {
                         },
                       },
                     ],
-                    "type": "shape",
+                    "isRequired": true,
+                    "type": "exact",
                   },
-                ],
+                },
               ],
               "isRequired": true,
-              "type": "oneOfType",
+              "type": "exact",
             },
-          },
+          ],
         ],
-        "type": "exact",
+        "type": "oneOfType",
       },
       "disabled": Object {
         "type": "bool",
