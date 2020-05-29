@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
 import styled from 'styled-components';
 import classnames from 'classnames';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import {
   TableColumnsPropTypes,
@@ -232,6 +234,9 @@ const TableHead = ({
 
   useLayoutEffect(
     () => {
+      // An initial measuring is needed since there might not be an initial value from the columns prop
+      // which means that the layout engine will have to set the widths dynamically
+      // before we know what they are.
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
         const measuredWidths = measureColumnWidths();
         const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
@@ -240,6 +245,26 @@ const TableHead = ({
       }
     },
     [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]
+  );
+
+  useDeepCompareEffect(
+    () => {
+      // We need to update the currentColumnWidths (state) only if the widths
+      // of the column prop is updated after the initial render.
+      if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
+        if (columns.every(col => col.hasOwnProperty('width'))) {
+          const propsColumnWidths = createNewWidthsMap(ordering, columns);
+          if (!isEqual(currentColumnWidths, propsColumnWidths)) {
+            setCurrentColumnWidths(propsColumnWidths);
+          }
+        }
+      }
+    },
+    // We explicitly do NOT want to trigger this effect if currentColumnWidths is modified
+    // since it would be directly overridden by the column props. This effect can be removed
+    // with issue https://github.com/IBM/carbon-addons-iot-react/issues/1224
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [hasResize, columns, ordering]
   );
 
   const lastVisibleColumn = ordering.filter(col => !col.isHidden).slice(-1)[0];
