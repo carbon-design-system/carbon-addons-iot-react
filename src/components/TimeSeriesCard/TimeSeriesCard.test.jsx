@@ -168,22 +168,22 @@ describe('TimeSeriesCard', () => {
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 44700,
+        value: 447,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 45000,
+        value: 450,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 51200,
+        value: 512,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 56500,
+        value: 565,
       },
     ]);
   });
@@ -211,42 +211,42 @@ describe('TimeSeriesCard', () => {
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 44700,
+        value: 447,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 45000,
+        value: 450,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 51200,
+        value: 512,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 56500,
+        value: 565,
       },
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'New York',
-        value: 52800,
+        value: 528,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
         group: 'New York',
-        value: 36500,
+        value: 365,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
         group: 'New York',
-        value: 44200,
+        value: 442,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
         group: 'New York',
-        value: 45300,
+        value: 453,
       },
     ]);
   });

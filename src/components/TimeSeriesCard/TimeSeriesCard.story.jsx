@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
 import memoize from 'lodash/memoize';
 
-import { COLORS, CARD_SIZES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { getIntervalChartData as getFakeData, chartData } from '../../utils/sample';
 
@@ -870,40 +870,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
           breakpoint="lg"
           values={[]}
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('bar chart', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          key="bar chart"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
-              },
-            ],
-            unit: '˚F',
-            xLabel: 'Time',
-            yLabel: 'Temperature',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
-            timeDataSourceId: 'timestamp',
-            chartType: TIME_SERIES_TYPES.BAR,
-          })}
-          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
-          interval="day"
-          breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
         />
