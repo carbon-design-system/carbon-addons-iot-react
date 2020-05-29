@@ -526,6 +526,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             ...initialState.options,
             hasResize: true,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
           }}
         />

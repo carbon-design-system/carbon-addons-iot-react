@@ -4,6 +4,7 @@ import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-reac
 import Close from '@carbon/icons-react/es/close/16';
 import styled from 'styled-components';
 import memoize from 'lodash/memoize';
+import debounce from 'lodash/debounce';
 
 import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
@@ -154,6 +155,8 @@ class FilterHeaderRow extends Component {
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
     lightweight: PropTypes.bool,
+    /** should we filter as the user types or after they press enter */
+    hasFastFilter: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -167,6 +170,7 @@ class FilterHeaderRow extends Component {
     openMenuText: 'Open menu',
     closeMenuText: 'Close menu',
     lightweight: false,
+    hasFastFilter: true,
   };
 
   state = this.props.columns.reduce(
@@ -185,14 +189,17 @@ class FilterHeaderRow extends Component {
     onApplyFilter(this.state);
   };
 
-  handleClearFilter = column => {
-    this.setState(
-      state => ({
-        ...state,
-        [column.id]: '',
-      }),
-      this.handleApplyFilter
-    );
+  handleClearFilter = (event, column) => {
+    // when a user clicks or hits ENTER, we'll clear the input
+    if (event.keyCode === 13 || !event.keyCode) {
+      this.setState(
+        state => ({
+          ...state,
+          [column.id]: '',
+        }),
+        this.handleApplyFilter
+      );
+    }
   };
 
   handleTranslation = id => {
@@ -218,6 +225,7 @@ class FilterHeaderRow extends Component {
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
       lightweight,
+      hasFastFilter,
     } = this.props;
     return isVisible ? (
       <TableRow>
@@ -275,9 +283,18 @@ class FilterHeaderRow extends Component {
                     light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
                     title={this.state[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
-                    onChange={event =>
-                      this.setState({ [column.id]: event.target.value }, this.handleApplyFilter)
-                    }
+                    onChange={event => {
+                      this.setState(
+                        { [column.id]: event.target.value },
+                        hasFastFilter ? debounce(this.handleApplyFilter, 150) : null // only apply the filter at debounced interval
+                      );
+                    }}
+                    onKeyDown={
+                      !hasFastFilter
+                        ? event => handleEnterKeyDown(event, this.handleApplyFilter)
+                        : null
+                    } // if fast filter off, then filter on key press
+                    onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
                     value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
                   />
                   {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
@@ -285,11 +302,11 @@ class FilterHeaderRow extends Component {
                       role="button"
                       className="bx--list-box__selection"
                       tabIndex="0"
-                      onClick={() => {
-                        this.handleClearFilter(column);
+                      onClick={event => {
+                        this.handleClearFilter(event, column);
                       }}
                       onKeyDown={event =>
-                        handleEnterKeyDown(event, () => this.handleClearFilter(column))
+                        handleEnterKeyDown(event, () => this.handleClearFilter(event, column))
                       }
                       title={clearFilterText}
                     >
