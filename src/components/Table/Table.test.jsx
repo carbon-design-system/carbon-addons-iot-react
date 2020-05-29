@@ -88,6 +88,19 @@ const tableData = Array(20)
     },
   }));
 
+const largeTableData = Array(100)
+  .fill(0)
+  .map((i, idx) => ({
+    id: `row-${idx}`,
+    values: {
+      string: getSentence(idx),
+      node: <Add20 />,
+      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+      select: selectData[idx % 3].id,
+      number: idx * idx,
+    },
+  }));
+
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
     <h3 key={`${rowId}-title`}>{rowId}</h3>
@@ -141,6 +154,21 @@ describe('Table', () => {
       content: <RowExpansionContent rowId="row-1" />,
     },
   ];
+
+  it('limits the number of pagination select options', () => {
+    // 100 records should have 10 pages. With max pages option we expect 5.
+    const wrapper = mount(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true }}
+        view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
+      />
+    );
+    expect(wrapper.find('.bx--select-option')).toHaveLength(5);
+  });
 
   it('handles row collapse', () => {
     const wrapper = mount(
@@ -212,6 +240,7 @@ describe('Table', () => {
         data={[]}
         actions={mockActions}
         options={options}
+        i18n={{ emptyButtonLabelWithFilters: 'Clear all filters' }}
         view={merge({}, view, {
           filters: [{ columnId: 'col', value: 'value' }],
           table: { emptyState: <div id="customEmptyState">emptyState</div> },

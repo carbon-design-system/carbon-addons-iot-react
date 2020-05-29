@@ -293,7 +293,7 @@ Map {
           "onChangeSort": [Function],
           "onColumnResize": [Function],
           "onColumnSelectionConfig": [Function],
-          "onEmptyStateAction": [Function],
+          "onEmptyStateAction": null,
           "onRowClicked": [Function],
           "onRowExpanded": [Function],
         },
@@ -319,7 +319,6 @@ Map {
         "downloadIconDescription": "Download table content",
         "editButtonAria": "Edit rows",
         "emptyButtonLabel": "Create some data",
-        "emptyButtonLabelWithFilters": "Clear all filters",
         "emptyMessage": "There is no data",
         "emptyMessageWithFilters": "No results match the current filters",
         "filterAria": "Filter",
@@ -371,6 +370,7 @@ Map {
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
+          "maxPages": 100,
           "page": 1,
           "pageSize": 10,
           "pageSizes": Array [
@@ -966,6 +966,9 @@ Map {
                 Object {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
+                  },
+                  "maxPages": Object {
+                    "type": "number",
                   },
                   "page": Object {
                     "type": "number",
@@ -3969,6 +3972,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "categoryDataSourceId": Object {
+              "type": "string",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -3981,29 +3987,51 @@ Map {
             "series": Object {
               "args": Array [
                 Object {
-                  "colors": Object {
-                    "args": Array [
-                      Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "dataSourceId": Object {
+                        "isRequired": true,
                         "type": "string",
                       },
-                    ],
-                    "type": "arrayOf",
-                  },
-                  "dataSourceId": Object {
-                    "type": "string",
-                  },
-                  "groupDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "labelDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
+                      "label": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
             "type": Object {
               "args": Array [
@@ -4358,8 +4386,8 @@ Map {
         ],
         "relativeLabel": "Relative",
         "relativeLabels": Array [
-          "Yesterday",
           "Today",
+          "Yesterday",
         ],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
@@ -4418,16 +4446,12 @@ Map {
       ],
       "relatives": Array [
         Object {
-          "label": "Yesterday",
-          "value": "YESTERDAY",
-        },
-        Object {
           "label": "Today",
           "value": "TODAY",
         },
         Object {
-          "label": "",
-          "value": "",
+          "label": "Yesterday",
+          "value": "YESTERDAY",
         },
       ],
       "showRelativeOption": true,
@@ -4912,6 +4936,7 @@ Map {
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
+      "subtitle": null,
       "url": "#",
     },
     "propTypes": Object {
@@ -4997,6 +5022,9 @@ Map {
         "type": "string",
       },
       "skipto": Object {
+        "type": "string",
+      },
+      "subtitle": Object {
         "type": "string",
       },
       "url": Object {
@@ -8387,15 +8415,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "chartType": Object {
-              "args": Array [
-                Array [
-                  "BAR",
-                  "LINE",
-                ],
-              ],
-              "type": "oneOf",
-            },
+            "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
@@ -11227,6 +11247,11 @@ Map {
   "TIME_SERIES_TYPES" => Object {
     "BAR": "BAR",
     "LINE": "LINE",
+  },
+  "BAR_CHART_TYPES" => Object {
+    "GROUPED": "GROUPED",
+    "SIMPLE": "SIMPLE",
+    "STACKED": "STACKED",
   },
   "ListCard" => Object {
     "defaultProps": Object {
