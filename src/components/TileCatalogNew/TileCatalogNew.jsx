@@ -12,7 +12,7 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   /** Title for the product */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** Min width of each tile if no col/row nums are specified */
   minTileWidth: PropTypes.string,
   /** Number of columns to be rendered per page */
@@ -45,6 +45,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  title: '',
   hasSort: false,
   hasSearch: false,
   onSearch: () => {},
@@ -125,7 +126,11 @@ const TileCatalogNew = ({
             </div>
           ) : null} */}
           <div className={`${iotPrefix}--tile-catalog--tile-canvas--header`}>
-            <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}> {title}</div>
+            {title ? (
+              <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--title`}>
+                {title}
+              </div>
+            ) : null}
             {hasSearch ? (
               <TableToolbarSearch
                 placeHolderText={i18n.searchPlaceHolderText}

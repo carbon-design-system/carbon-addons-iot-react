@@ -4221,6 +4221,7 @@ Map {
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "title": "",
     },
     "propTypes": Object {
       "error": Object {
@@ -4284,7 +4285,6 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
