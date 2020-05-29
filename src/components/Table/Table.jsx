@@ -51,7 +51,10 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
-    hasFilter: PropTypes.bool,
+    hasFilter: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['onKeyPress', 'onEnterAndBlur']),
+    ]),
     /** if true, the data prop will be assumed to only represent the currently visible page */
     hasOnlyPageData: PropTypes.bool,
     /** has simple search capability */
@@ -410,15 +413,18 @@ const Table = props => {
             'onApplySearch',
             'onDownloadCSV'
           )}
-          options={pick(
-            options,
-            'hasColumnSelection',
-            'hasFilter',
-            'hasSearch',
-            'hasRowSelection',
-            'hasRowCountInHeader',
-            'hasRowEdit'
-          )}
+          options={{
+            ...pick(
+              options,
+              'hasColumnSelection',
+
+              'hasSearch',
+              'hasRowSelection',
+              'hasRowCountInHeader',
+              'hasRowEdit'
+            ),
+            hasFilter: Boolean(options?.hasFilter),
+          }}
           tableState={{
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
@@ -489,6 +495,7 @@ const Table = props => {
                 isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
               },
             }}
+            hasFastFilter={options?.hasFilter === 'onKeyPress'}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
