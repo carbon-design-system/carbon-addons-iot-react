@@ -69,7 +69,11 @@ export const RELATIVE_VALUES = {
 const propTypes = {
   /** default value for the picker */
   defaultValue: PropTypes.exact({
-    timeRangeKind: PropTypes.string.isRequired,
+    timeRangeKind: PropTypes.oneOf([
+      PICKER_KINDS.PRESET,
+      PICKER_KINDS.RELATIVE,
+      PICKER_KINDS.ABSOLUTE,
+    ]).isRequired,
     timeRangeValue: PropTypes.oneOfType([
       PropTypes.shape({
         label: PropTypes.string.isRequired,
