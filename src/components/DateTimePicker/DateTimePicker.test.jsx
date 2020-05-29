@@ -39,22 +39,17 @@ describe('DateTimePicker', () => {
     console.error.mockRestore();
   });
 
-  it('should blow up if random default value object is passed', () => {
-    mount(<DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />);
-    expect(console.error).toHaveBeenCalledTimes(1);
-  });
-
-  it('should not blow up if correct object is passed as default value', () => {
+  it('should blow up if wrong combo of timeRangeKind and timeRangeValue is passed for defaultValue', () => {
     mount(
       <DateTimePicker
         {...dateTimePickerProps}
         defaultValue={{
-          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeKind: 'some other string',
           timeRangeValue: PRESET_VALUES[1],
         }}
       />
     );
-    expect(console.error).toHaveBeenCalledTimes(0);
+    expect(console.error).toHaveBeenCalledTimes(1);
   });
 
   it('should have the first preset as value', () => {
