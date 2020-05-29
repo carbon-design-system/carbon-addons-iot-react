@@ -4210,6 +4210,7 @@ Map {
       "hasSearch": false,
       "hasSort": false,
       "i18n": Object {
+        "error": "An error has occurred",
         "searchPlaceHolderText": "Enter a value",
       },
       "isLoading": false,
@@ -4234,6 +4235,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "error": Object {
+              "type": "string",
+            },
             "placeHolderText": Object {
               "type": "string",
             },

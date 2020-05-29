@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import TileCatalogNew from './TileCatalogNew';
 import SampleTile from './SampleTile';
@@ -19,7 +19,7 @@ const getTiles = num => {
 
 describe('TileCatalogNew', () => {
   it('TileCatalogNew gets rendered', () => {
-    const { getByText } = render(
+    render(
       <TileCatalogNew
         tiles={getTiles(2, 'Tile')}
         title="Test Tile Catalog"
@@ -27,12 +27,12 @@ describe('TileCatalogNew', () => {
         numColumns={2}
       />
     );
-    expect(getByText('Tile 1')).toBeTruthy();
-    expect(getByText('Tile 2')).toBeTruthy();
+    expect(screen.getByText('Tile 1')).toBeTruthy();
+    expect(screen.getByText('Tile 2')).toBeTruthy();
   });
 
   it('TileCatalogNew placeholder tile are rendered', () => {
-    const { getByText } = render(
+    render(
       <TileCatalogNew
         tiles={getTiles(6, 'Tile')}
         title="Test Tile Catalog"
@@ -40,8 +40,8 @@ describe('TileCatalogNew', () => {
         numColumns={2}
       />
     );
-    expect(getByText('Tile 1')).toBeTruthy();
-    expect(getByText('Tile 2')).toBeTruthy();
+    expect(screen.getByText('Tile 1')).toBeTruthy();
+    expect(screen.getByText('Tile 2')).toBeTruthy();
   });
 
   it('TileCatalogNew to have default call back function ', () => {
@@ -53,7 +53,7 @@ describe('TileCatalogNew', () => {
 
   it('TileCatalogNew hasSearch set to true', () => {
     const onSearch = jest.fn();
-    const { getByPlaceholderText } = render(
+    render(
       <TileCatalogNew
         tiles={getTiles(8, 'Tile')}
         numColumns={2}
@@ -62,7 +62,7 @@ describe('TileCatalogNew', () => {
         onSearch={onSearch}
       />
     );
-    fireEvent.change(getByPlaceholderText('Enter a value'), { target: { value: '5' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '5' } });
     expect(onSearch).toHaveBeenCalledTimes(1);
   });
 
@@ -75,7 +75,7 @@ describe('TileCatalogNew', () => {
     const selectedSortOption = 'Choose from options';
     const onSort = jest.fn();
 
-    const { getByDisplayValue } = render(
+    render(
       <TileCatalogNew
         tiles={getTiles(2, 'Tile')}
         hasSort="true"
@@ -85,12 +85,12 @@ describe('TileCatalogNew', () => {
         hasSearch="true"
       />
     );
-    fireEvent.change(getByDisplayValue('Choose from options'), { target: { value: 'Z-A' } });
+    fireEvent.change(screen.getByDisplayValue('Choose from options'), { target: { value: 'Z-A' } });
     expect(onSort).toHaveBeenCalledTimes(1);
   });
 
   it('TileCatalogNew pagination next button', () => {
-    const { getByText, getAllByRole } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(8, 'Tile')}
@@ -99,16 +99,16 @@ describe('TileCatalogNew', () => {
       />
     );
 
-    const buttons = getAllByRole('button');
+    const buttons = screen.getAllByRole('button');
     fireEvent.click(buttons[buttons.length - 1]);
-    expect(getByText('Tile 5')).toBeTruthy();
-    expect(getByText('Tile 6')).toBeTruthy();
-    expect(getByText('Tile 7')).toBeTruthy();
-    expect(getByText('Tile 8')).toBeTruthy();
+    expect(screen.getByText('Tile 6')).toBeTruthy();
+    expect(screen.getByText('Tile 5')).toBeTruthy();
+    expect(screen.getByText('Tile 7')).toBeTruthy();
+    expect(screen.getByText('Tile 8')).toBeTruthy();
   });
 
   it('TileCatalogNew pagination previous button', () => {
-    const { getByText, getAllByRole } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(8, 'Tile')}
@@ -116,17 +116,17 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    const buttons = getAllByRole('button');
+    const buttons = screen.getAllByRole('button');
     fireEvent.click(buttons[buttons.length - 1]);
     fireEvent.click(buttons[0]);
-    expect(getByText('Tile 1')).toBeTruthy();
-    expect(getByText('Tile 2')).toBeTruthy();
-    expect(getByText('Tile 3')).toBeTruthy();
-    expect(getByText('Tile 4')).toBeTruthy();
+    expect(screen.getByText('Tile 1')).toBeTruthy();
+    expect(screen.getByText('Tile 2')).toBeTruthy();
+    expect(screen.getByText('Tile 3')).toBeTruthy();
+    expect(screen.getByText('Tile 4')).toBeTruthy();
   });
 
   it('TileCatalogNew pagination number button', () => {
-    const { getByText, getAllByRole } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(20, 'Tile')}
@@ -134,17 +134,17 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    const buttons = getAllByRole('button');
+    const buttons = screen.getAllByRole('button');
     fireEvent.click(buttons[buttons.length - 2]);
     fireEvent.click(buttons[0]);
-    expect(getByText('Tile 13')).toBeTruthy();
-    expect(getByText('Tile 14')).toBeTruthy();
-    expect(getByText('Tile 15')).toBeTruthy();
-    expect(getByText('Tile 16')).toBeTruthy();
+    expect(screen.getByText('Tile 13')).toBeTruthy();
+    expect(screen.getByText('Tile 14')).toBeTruthy();
+    expect(screen.getByText('Tile 15')).toBeTruthy();
+    expect(screen.getByText('Tile 16')).toBeTruthy();
   });
 
   it('TileCatalogNew pagination does not render with only one page', () => {
-    const { queryByText } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(4, 'Tile')}
@@ -153,19 +153,19 @@ describe('TileCatalogNew', () => {
       />
     );
 
-    expect(queryByText('Next page')).toBeNull();
+    expect(screen.queryByText('Next page')).toBeNull();
   });
 
   it('TileCatalogNew pagination does not render with minTileWidth', () => {
-    const { queryByText } = render(
+    render(
       <TileCatalogNew title="Test Tile Catalog" tiles={getTiles(4, 'Tile')} minTileWidth="20rem" />
     );
 
-    expect(queryByText('Next page')).toBeNull();
+    expect(screen.queryByText('Next page')).toBeNull();
   });
 
   it('TileCatalogNew renders loading state', () => {
-    const { queryByText } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(4, 'Tile')}
@@ -174,22 +174,20 @@ describe('TileCatalogNew', () => {
         isLoading
       />
     );
-    expect(queryByText('Tile 1')).toBeNull();
-    expect(queryByText('Tile 2')).toBeNull();
-    expect(queryByText('Tile 3')).toBeNull();
-    expect(queryByText('Tile 4')).toBeNull();
+    expect(screen.queryByText('Tile 1')).toBeNull();
+    expect(screen.queryByText('Tile 2')).toBeNull();
+    expect(screen.queryByText('Tile 3')).toBeNull();
+    expect(screen.queryByText('Tile 4')).toBeNull();
   });
 
   it('TileCatalogNew renders error state', () => {
     // trigger an error by not giving the catalog tiles
-    const { getByText } = render(
-      <TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />
-    );
-    expect(getByText('An error has occurred')).toBeTruthy();
+    render(<TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />);
+    expect(screen.getByText('An error has occurred')).toBeTruthy();
   });
 
   it('TileCatalogNew with large page numbers', () => {
-    const { getByText, getByLabelText } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(60, 'Tile')}
@@ -197,15 +195,15 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    fireEvent.change(getByLabelText('select page number'), { target: { value: 14 } });
-    expect(getByText('Tile 53')).toBeTruthy();
-    expect(getByText('Tile 54')).toBeTruthy();
-    expect(getByText('Tile 55')).toBeTruthy();
-    expect(getByText('Tile 56')).toBeTruthy();
+    fireEvent.change(screen.getByLabelText('select page number'), { target: { value: 14 } });
+    expect(screen.getByText('Tile 53')).toBeTruthy();
+    expect(screen.getByText('Tile 54')).toBeTruthy();
+    expect(screen.getByText('Tile 55')).toBeTruthy();
+    expect(screen.getByText('Tile 56')).toBeTruthy();
   });
 
   it('TileCatalogNew with large page numbers and mid page number was selected', () => {
-    const { getByText, getByLabelText } = render(
+    render(
       <TileCatalogNew
         title="Test Tile Catalog"
         tiles={getTiles(60, 'Tile')}
@@ -213,10 +211,10 @@ describe('TileCatalogNew', () => {
         numRows={2}
       />
     );
-    fireEvent.change(getByLabelText('select page number'), { target: { value: 7 } });
-    expect(getByText('Tile 25')).toBeTruthy();
-    expect(getByText('Tile 26')).toBeTruthy();
-    expect(getByText('Tile 27')).toBeTruthy();
-    expect(getByText('Tile 28')).toBeTruthy();
+    fireEvent.change(screen.getByLabelText('select page number'), { target: { value: 7 } });
+    expect(screen.getByText('Tile 25')).toBeTruthy();
+    expect(screen.getByText('Tile 26')).toBeTruthy();
+    expect(screen.getByText('Tile 27')).toBeTruthy();
+    expect(screen.getByText('Tile 28')).toBeTruthy();
   });
 });

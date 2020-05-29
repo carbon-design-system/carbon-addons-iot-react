@@ -40,6 +40,7 @@ const propTypes = {
   /** Set to true if filter is needed */
   i18n: PropTypes.shape({
     placeHolderText: PropTypes.string,
+    error: PropTypes.string,
   }),
 };
 
@@ -55,7 +56,7 @@ const defaultProps = {
   minTileWidth: null,
   numColumns: 3,
   numRows: 3,
-  i18n: { searchPlaceHolderText: 'Enter a value' },
+  i18n: { searchPlaceHolderText: 'Enter a value', error: 'An error has occurred' },
 };
 
 const TileCatalogNew = ({
@@ -113,14 +114,6 @@ const TileCatalogNew = ({
 
   return (
     <div className={className}>
-      {/* <div>
-        {persistentSearch ? (
-          <div className="tile-catalog--persistent-search">
-            <Search placeHolderText="" onChange="'" size="sm" value="" labelText="" />
-          </div>
-        ) : null}
-        <div />
-      </div> */}
       <div className={`${iotPrefix}--tile-catalog--canvas-container`}>
         <div className={`${iotPrefix}--tile-catalog--tile-canvas`}>
           {/* {featuredTile ? (
@@ -161,7 +154,7 @@ const TileCatalogNew = ({
               {error || (
                 <>
                   <Bee32 />
-                  <p>An error has occurred</p>
+                  <p>{i18n.error}</p>
                 </>
               )}
             </Tile>
