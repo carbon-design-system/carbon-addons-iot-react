@@ -208,7 +208,7 @@ describe('TableHead', () => {
           ordering,
           activeBar: 'column',
         },
-        options: { hasResize: true },
+        options: { hasResize: true, wrapCellText: 'auto', truncateCellText: false },
         actions: myActions,
       };
     });
@@ -305,6 +305,34 @@ describe('TableHead', () => {
 
       const modLastTableHeader = wrapper.find(`.${iotPrefix}--table-header-resize`).last();
       expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
+    });
+
+    it('should update the column widths when column prop changes', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const wrapper = mount(<TableHead {...myProps} />);
+      expect(
+        wrapper
+          .find('.iot--table-header-resize')
+          .first()
+          .props().thStyle.width
+      ).toEqual(100);
+
+      wrapper.setProps({
+        ...myProps,
+        columns: [
+          { id: 'col1', name: 'Column 1', width: '50px' },
+          { id: 'col2', name: 'Column 2', width: '150px' },
+          { id: 'col3', name: 'Column 3', width: '100px' },
+        ],
+      });
+      wrapper.update();
+
+      expect(
+        wrapper
+          .find('.iot--table-header-resize')
+          .first()
+          .props().thStyle.width
+      ).toEqual(50);
     });
   });
 });

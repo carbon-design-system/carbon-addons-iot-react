@@ -3952,6 +3952,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "categoryDataSourceId": Object {
+              "type": "string",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -3964,29 +3967,51 @@ Map {
             "series": Object {
               "args": Array [
                 Object {
-                  "colors": Object {
-                    "args": Array [
-                      Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "dataSourceId": Object {
+                        "isRequired": true,
                         "type": "string",
                       },
-                    ],
-                    "type": "arrayOf",
-                  },
-                  "dataSourceId": Object {
-                    "type": "string",
-                  },
-                  "groupDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "labelDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
+                      "label": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
             "type": Object {
               "args": Array [
@@ -4181,19 +4206,27 @@ Map {
   },
   "TileCatalogNew" => Object {
     "defaultProps": Object {
+      "error": "",
       "hasSearch": false,
       "hasSort": false,
       "i18n": Object {
+        "error": "An error has occurred. Please make sure your catalog has content.",
         "searchPlaceHolderText": "Enter a value",
       },
-      "numColumns": 1,
-      "numRows": 1,
+      "isLoading": false,
+      "minTileWidth": null,
+      "numColumns": 3,
+      "numRows": 3,
       "onSearch": [Function],
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "title": "",
     },
     "propTypes": Object {
+      "error": Object {
+        "type": "string",
+      },
       "hasSearch": Object {
         "type": "bool",
       },
@@ -4203,12 +4236,21 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "error": Object {
+              "type": "string",
+            },
             "placeHolderText": Object {
               "type": "string",
             },
           },
         ],
         "type": "shape",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "minTileWidth": Object {
+        "type": "string",
       },
       "numColumns": Object {
         "type": "number",
@@ -4243,7 +4285,6 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -8418,15 +8459,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "chartType": Object {
-              "args": Array [
-                Array [
-                  "BAR",
-                  "LINE",
-                ],
-              ],
-              "type": "oneOf",
-            },
+            "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
@@ -11258,6 +11291,11 @@ Map {
   "TIME_SERIES_TYPES" => Object {
     "BAR": "BAR",
     "LINE": "LINE",
+  },
+  "BAR_CHART_TYPES" => Object {
+    "GROUPED": "GROUPED",
+    "SIMPLE": "SIMPLE",
+    "STACKED": "STACKED",
   },
   "ListCard" => Object {
     "defaultProps": Object {
