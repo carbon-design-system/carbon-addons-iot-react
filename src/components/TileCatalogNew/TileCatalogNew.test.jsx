@@ -183,7 +183,9 @@ describe('TileCatalogNew', () => {
   it('TileCatalogNew renders error state', () => {
     // trigger an error by not giving the catalog tiles
     render(<TileCatalogNew title="Test Tile Catalog" numColumns={2} numRows={2} />);
-    expect(screen.getByText('An error has occurred')).toBeTruthy();
+    expect(
+      screen.getByText('An error has occurred. Please make sure your catalog has content.')
+    ).toBeTruthy();
   });
 
   it('TileCatalogNew with large page numbers', () => {

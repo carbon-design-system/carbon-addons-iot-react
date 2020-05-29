@@ -57,7 +57,10 @@ const defaultProps = {
   minTileWidth: null,
   numColumns: 3,
   numRows: 3,
-  i18n: { searchPlaceHolderText: 'Enter a value', error: 'An error has occurred' },
+  i18n: {
+    searchPlaceHolderText: 'Enter a value',
+    error: 'An error has occurred. Please make sure your catalog has content.',
+  },
 };
 
 const TileCatalogNew = ({
@@ -156,12 +159,10 @@ const TileCatalogNew = ({
             <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
           ) : (
             <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
-              {error || (
-                <>
-                  <Bee32 />
-                  <p>{i18n.error}</p>
-                </>
-              )}
+              <>
+                <Bee32 />
+                <p>{error || i18n.error}</p>
+              </>
             </Tile>
           )}
 

@@ -81,6 +81,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
   })
   .add('Error', () => {
     return (
+      // Not passing in any tiles triggers an error
       <div style={{ width: '60rem' }}>
         <TileCatalogNew
           title="Product name"

@@ -4210,7 +4210,7 @@ Map {
       "hasSearch": false,
       "hasSort": false,
       "i18n": Object {
-        "error": "An error has occurred",
+        "error": "An error has occurred. Please make sure your catalog has content.",
         "searchPlaceHolderText": "Enter a value",
       },
       "isLoading": false,
