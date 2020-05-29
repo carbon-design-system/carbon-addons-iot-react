@@ -573,9 +573,6 @@ const DateTimePicker = ({
     }
 
     if (onApply) {
-      if (__DEV__) {
-        console.log('onApply callback return value', { returnValue }); // eslint-disable-line no-console
-      }
       onApply(returnValue);
     }
   };
