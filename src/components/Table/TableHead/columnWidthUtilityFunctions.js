@@ -16,12 +16,14 @@ function getTotalWidth(cols) {
   return cols.reduce((width, col) => width + col.width, 0);
 }
 
-function createWidthsMap(ordering, currentColumnWidths, adjustedCols) {
+function createWidthsMap(ordering, columnWidths, adjustedCols) {
   const newColumnWidths = {};
   ordering.forEach(orderedColumn => {
-    const current = currentColumnWidths[orderedColumn.columnId];
+    const current = Array.isArray(columnWidths)
+      ? columnWidths.find(col => col.id === orderedColumn.columnId)
+      : columnWidths[orderedColumn.columnId];
     newColumnWidths[orderedColumn.columnId] = {
-      width: current ? current.width : undefined,
+      width: current && current.width !== undefined ? parseInt(current.width, 10) : undefined,
       id: orderedColumn.columnId,
     };
   });
@@ -104,10 +106,10 @@ export const adjustLastColumnWidth = (ordering, columns, measuredWidths) => {
 /**
  * Creates a widths map based on current columns state + any changes in visibility or width
  * @param {array} ordering defining the order, via the index, and visiblity of columns
- * @param {object} currentColumnWidths map of the current column IDs and widths
+ * @param {object} currentColumnWidths map or object array of the current column IDs and widths
  * @param {array} adjustedCols contains objects with ID and modified width
  */
-export const createNewWidthsMap = (ordering, currentColumnWidths, adjustedCols) => {
+export const createNewWidthsMap = (ordering, currentColumnWidths, adjustedCols = []) => {
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 };
 
