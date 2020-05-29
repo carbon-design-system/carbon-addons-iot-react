@@ -39,6 +39,19 @@ describe('DateTimePicker', () => {
     console.error.mockRestore();
   });
 
+  it('should not blow up if correct object is passed as default value', () => {
+    mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
+      />
+    );
+    expect(console.error).toHaveBeenCalledTimes(0);
+  });
+
   it('should blow up if wrong combo of timeRangeKind and timeRangeValue is passed for defaultValue', () => {
     mount(
       <DateTimePicker
