@@ -844,7 +844,23 @@ Map {
               "type": "bool",
             },
             "hasFilter": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "onKeyPress",
+                        "onEnterAndBlur",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasOnlyPageData": Object {
               "type": "bool",
@@ -1204,6 +1220,7 @@ Map {
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
       "filterText": "Filter",
+      "hasFastFilter": true,
       "i18n": Object {
         "batchCancel": "Cancel",
         "clearAllFilters": "Clear all filters",
@@ -1374,6 +1391,9 @@ Map {
       },
       "filterText": Object {
         "type": "string",
+      },
+      "hasFastFilter": Object {
+        "type": "bool",
       },
       "i18n": Object {
         "args": Array [
