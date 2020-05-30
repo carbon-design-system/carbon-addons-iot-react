@@ -1,0 +1,39 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--view-dropdown__button-prefix {
+  display: none;
+}
+.#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
+  display: flex;
+  margin-right: $spacing-02;
+  svg {
+    margin-right: $spacing-03;
+    flex-shrink: 0;
+  }
+}
+
+.#{$iot-prefix}--view-dropdown__edited-text {
+  color: $carbon--gray-50;
+}
+
+.#{$iot-prefix}--view-dropdown__item {
+  display: flex;
+  justify-content: space-between;
+  span {
+    @include text-overflow();
+  }
+}
+
+.#{$iot-prefix}--view-dropdown__item-link {
+  color: $link-01;
+  // compensate for carbon selected checkbox space that is not needed since these
+  // link-items with custom actions will not actually be
+  margin-right: -1.5rem;
+}
+
+.#{$iot-prefix}--view-dropdown__item-link-icon {
+  color: $link-01;
+  fill: $link-01;
+  margin-left: $spacing-03;
+  flex-shrink: 0;
+}

@@ -20,6 +20,12 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   padding-top: $spacing-01;
 }
 
+// Partly implemented by https://github.com/IBM/carbon-addons-iot-react/pull/1238
+.#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active) ~ .#{$prefix}--toolbar-content {
+  clip-path: unset;
+  transform: none;
+}
+
 .#{$iot-prefix}--table-toolbar-content {
   flex: 1;
   font-size: 0.875rem;

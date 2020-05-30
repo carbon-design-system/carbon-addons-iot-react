@@ -1514,6 +1514,7 @@ storiesOf('Watson IoT/Table', module)
       options={{ hasPagination: true }}
     />
   ))
+
   .add('with loading state', () => (
     <Table
       columns={tableColumns}

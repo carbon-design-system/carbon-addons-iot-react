@@ -29,6 +29,7 @@ import Pagination from './Pagination';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  plugin: PropTypes.node,
   /** DOM ID for component */
   id: PropTypes.string,
   /** Displays smaller title in header */
