@@ -549,6 +549,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             ...initialState.options,
             hasResize: true,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
             hasSingleRowEdit: true,
           }}
@@ -1607,18 +1608,24 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with resize and no initial column width',
-    () => (
-      <Table
-        options={{
-          hasResize: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-        }}
-        columns={tableColumns}
-        data={tableData}
-        actions={actions}
-      />
-    ),
+    'with resize, onColumnResize callback and no initial column width',
+    () => {
+      return React.createElement(() => {
+        const [myColumns, setMyColumns] = useState(tableColumns);
+        const onColumnResize = cols => setMyColumns(cols);
+        return (
+          <Table
+            options={{
+              hasResize: true,
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            }}
+            columns={myColumns}
+            data={tableData}
+            actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
+          />
+        );
+      });
+    },
     {
       info: {
         source: true,

@@ -849,7 +849,23 @@ Map {
               "type": "bool",
             },
             "hasFilter": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "onKeyPress",
+                        "onEnterAndBlur",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasOnlyPageData": Object {
               "type": "bool",
@@ -1218,6 +1234,7 @@ Map {
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
       "filterText": "Filter",
+      "hasFastFilter": true,
       "i18n": Object {
         "batchCancel": "Cancel",
         "clearAllFilters": "Clear all filters",
@@ -1388,6 +1405,9 @@ Map {
       },
       "filterText": Object {
         "type": "string",
+      },
+      "hasFastFilter": Object {
+        "type": "bool",
       },
       "i18n": Object {
         "args": Array [
@@ -3982,6 +4002,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "categoryDataSourceId": Object {
+              "type": "string",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -3994,29 +4017,51 @@ Map {
             "series": Object {
               "args": Array [
                 Object {
-                  "colors": Object {
-                    "args": Array [
-                      Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "dataSourceId": Object {
+                        "isRequired": true,
                         "type": "string",
                       },
-                    ],
-                    "type": "arrayOf",
-                  },
-                  "dataSourceId": Object {
-                    "type": "string",
-                  },
-                  "groupDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "labelDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
+                      "label": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
             "type": Object {
               "args": Array [
@@ -4211,19 +4256,27 @@ Map {
   },
   "TileCatalogNew" => Object {
     "defaultProps": Object {
+      "error": "",
       "hasSearch": false,
       "hasSort": false,
       "i18n": Object {
+        "error": "An error has occurred. Please make sure your catalog has content.",
         "searchPlaceHolderText": "Enter a value",
       },
-      "numColumns": 1,
-      "numRows": 1,
+      "isLoading": false,
+      "minTileWidth": null,
+      "numColumns": 3,
+      "numRows": 3,
       "onSearch": [Function],
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "title": "",
     },
     "propTypes": Object {
+      "error": Object {
+        "type": "string",
+      },
       "hasSearch": Object {
         "type": "bool",
       },
@@ -4233,12 +4286,21 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "error": Object {
+              "type": "string",
+            },
             "placeHolderText": Object {
               "type": "string",
             },
           },
         ],
         "type": "shape",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "minTileWidth": Object {
+        "type": "string",
       },
       "numColumns": Object {
         "type": "number",
@@ -4273,7 +4335,6 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -4447,77 +4508,125 @@ Map {
       },
       "defaultValue": Object {
         "args": Array [
-          Object {
-            "absolute": Object {
+          Array [
+            Object {
               "args": Array [
                 Object {
-                  "endDate": Object {
+                  "timeRangeKind": Object {
                     "args": Array [
-                      [Function],
+                      Array [
+                        "PRESET",
+                      ],
                     ],
-                    "type": "instanceOf",
+                    "isRequired": true,
+                    "type": "oneOf",
                   },
-                  "endTime": Object {
-                    "type": "string",
-                  },
-                  "startDate": Object {
+                  "timeRangeValue": Object {
                     "args": Array [
-                      [Function],
+                      Object {
+                        "label": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "offset": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                      },
                     ],
-                    "type": "instanceOf",
-                  },
-                  "startTime": Object {
-                    "type": "string",
+                    "isRequired": true,
+                    "type": "exact",
                   },
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "exact",
             },
-            "kind": Object {
-              "args": Array [
-                Array [
-                  "PRESET",
-                  "RELATIVE",
-                  "ABSOLUTE",
-                ],
-              ],
-              "type": "oneOf",
-            },
-            "preset": Object {
+            Object {
               "args": Array [
                 Object {
-                  "label": Object {
-                    "type": "string",
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "RELATIVE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
                   },
-                  "offset": Object {
-                    "type": "number",
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "lastInterval": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "lastNumber": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                        "relativeToTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "relativeToWhen": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
                   },
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "exact",
             },
-            "relative": Object {
+            Object {
               "args": Array [
                 Object {
-                  "lastInterval": Object {
-                    "type": "string",
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "ABSOLUTE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
                   },
-                  "lastNumber": Object {
-                    "type": "number",
-                  },
-                  "relativeToTime": Object {
-                    "type": "string",
-                  },
-                  "relativeToWhen": Object {
-                    "type": "string",
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "endDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "endTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
                   },
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "exact",
             },
-          },
+          ],
         ],
-        "type": "shape",
+        "type": "oneOfType",
       },
       "disabled": Object {
         "type": "bool",
@@ -8400,15 +8509,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "chartType": Object {
-              "args": Array [
-                Array [
-                  "BAR",
-                  "LINE",
-                ],
-              ],
-              "type": "oneOf",
-            },
+            "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
@@ -11240,6 +11341,11 @@ Map {
   "TIME_SERIES_TYPES" => Object {
     "BAR": "BAR",
     "LINE": "LINE",
+  },
+  "BAR_CHART_TYPES" => Object {
+    "GROUPED": "GROUPED",
+    "SIMPLE": "SIMPLE",
+    "STACKED": "STACKED",
   },
   "ListCard" => Object {
     "defaultProps": Object {

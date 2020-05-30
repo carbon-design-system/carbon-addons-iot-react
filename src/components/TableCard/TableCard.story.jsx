@@ -617,6 +617,101 @@ storiesOf('Watson IoT/TableCard', module)
       </div>
     );
   })
+  .add(
+    'table with row expansion and link variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title="Open Alerts"
+            id="table-list"
+            tooltip="Here's a Tooltip"
+            content={{
+              columns: tableColumns,
+              expandedRows: [
+                {
+                  id: 'long_description',
+                  label: 'Description',
+                  linkTemplate: {
+                    href: text('href', 'http://ibm.com/{variable}'),
+                  },
+                },
+                {
+                  id: 'other_description',
+                  label: 'Other content to show',
+                },
+              ],
+            }}
+            values={tableData}
+            cardVariables={object('Dynamic link variable', {
+              variable: 'variable-value',
+            })}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: ` # Passing variables
+      To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+      Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+      Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+      Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
+            do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
+      `,
+      },
+    }
+  )
+  .add(
+    'table with row expansion and row specific link variables',
+    () => {
+      const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
+
+      return (
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+          <TableCard
+            title="Open Alerts"
+            id="table-list"
+            tooltip="Here's a Tooltip"
+            content={{
+              columns: tableColumns,
+              expandedRows: [
+                {
+                  id: 'long_description',
+                  label: 'Description',
+                  linkTemplate: {
+                    href: text('href', 'http://ibm.com/{pressure}'),
+                  },
+                },
+                {
+                  id: 'other_description',
+                  label: 'Other content to show',
+                },
+              ],
+            }}
+            values={tableData}
+            onCardAction={(id, type, payload) => action('onCardAction', id, type, payload)}
+            size={size}
+          />
+        </div>
+      );
+    },
+    {
+      info: {
+        text: ` # Passing variables
+      To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+      Make sure you have added a prop called 'cardVariables' to your card that is an object with key value pairs such that the key is the variable name and the value is the value to replace it with.
+      Optionally you may use a callback as the cardVariables value that will be given the variable and the card as arguments.
+      Note: if using row-specific variables in a TableCard href (ie a variable that has a different value per row),
+            do NOT pass the cardVariables prop and be sure that your table has reference to the proper value in another column
+      `,
+      },
+    }
+  )
   .add('no row actions', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 

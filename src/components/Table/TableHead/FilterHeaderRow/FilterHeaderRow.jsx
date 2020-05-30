@@ -5,6 +5,7 @@ import Close from '@carbon/icons-react/es/close/16';
 import styled from 'styled-components';
 import memoize from 'lodash/memoize';
 import classNames from 'classnames';
+import debounce from 'lodash/debounce';
 
 import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
@@ -159,6 +160,8 @@ class FilterHeaderRow extends Component {
     /** disabled filters are shown and active but cannot be modified */
     isDisabled: PropTypes.bool,
     lightweight: PropTypes.bool,
+    /** should we filter as the user types or after they press enter */
+    hasFastFilter: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -173,6 +176,7 @@ class FilterHeaderRow extends Component {
     openMenuText: 'Open menu',
     closeMenuText: 'Close menu',
     lightweight: false,
+    hasFastFilter: true,
   };
 
   state = this.props.columns.reduce(
@@ -228,6 +232,7 @@ class FilterHeaderRow extends Component {
       isVisible,
       lightweight,
       isDisabled,
+      hasFastFilter,
     } = this.props;
     return isVisible ? (
       <TableRow>
@@ -244,7 +249,7 @@ class FilterHeaderRow extends Component {
               });
               return options;
             };
-            const memoizeColumnOptions = memoize(filterColumnOptions);
+            const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
 
             // undefined check has the effect of making isFilterable default to true
             // if unspecified
@@ -287,9 +292,18 @@ class FilterHeaderRow extends Component {
                     light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
                     title={this.state[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
-                    onKeyDown={event => handleEnterKeyDown(event, this.handleApplyFilter)}
-                    onBlur={this.handleApplyFilter}
-                    onChange={event => this.setState({ [column.id]: event.target.value })}
+                    onChange={event => {
+                      this.setState(
+                        { [column.id]: event.target.value },
+                        hasFastFilter ? debounce(this.handleApplyFilter, 150) : null // only apply the filter at debounced interval
+                      );
+                    }}
+                    onKeyDown={
+                      !hasFastFilter
+                        ? event => handleEnterKeyDown(event, this.handleApplyFilter)
+                        : null
+                    } // if fast filter off, then filter on key press
+                    onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
                     value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
                     disabled={isDisabled}
                   />
@@ -305,11 +319,13 @@ class FilterHeaderRow extends Component {
                           this.handleClearFilter(event, column);
                         }
                       }}
-                      onKeyDown={event => {
-                        if (!isDisabled) {
-                          this.handleClearFilter(event, column);
-                        }
-                      }}
+                      onKeyDown={event =>
+                        handleEnterKeyDown(event, () => {
+                          if (!isDisabled) {
+                            this.handleClearFilter(event, column);
+                          }
+                        })
+                      }
                       title={clearFilterText}
                     >
                       <Close description={clearFilterText} />

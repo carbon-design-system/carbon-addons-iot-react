@@ -45,22 +45,6 @@ describe('FilterHeaderRow', () => {
     expect(columns).toHaveLength(1);
   });
 
-  it('input blur fires apply filter callback', () => {
-    const wrapper = mount(
-      <FilterHeaderRow
-        {...commonFilterProps}
-        ordering={[{ columnId: 'col1' }]}
-        columns={[{ id: 'col1' }]}
-      />
-    );
-    const desiredState = { col1: 'option1' };
-
-    wrapper.setState(desiredState);
-    wrapper.find('input').simulate('blur');
-
-    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith(desiredState);
-  });
-
   it('text input clear button clears filter', () => {
     const wrapper = mount(
       <FilterHeaderRow
