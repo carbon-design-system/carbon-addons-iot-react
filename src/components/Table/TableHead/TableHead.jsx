@@ -93,6 +93,8 @@ const propTypes = {
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
+  /** should we filter on each keypress */
+  hasFastFilter: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -107,6 +109,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  hasFastFilter: true,
 };
 
 const StyledCustomTableHeader = styled(TableHeader)`
@@ -163,6 +166,7 @@ const TableHead = ({
   closeMenuText,
   lightweight,
   i18n,
+  hasFastFilter,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const rowEditBarActive = activeBar === 'rowEdit';
@@ -361,13 +365,13 @@ const TableHead = ({
             isFilterable: !isNil(column.filter),
             width: column.width,
           }))}
+          hasFastFilter={hasFastFilter}
           clearFilterText={clearFilterText}
           filterText={filterText}
           clearSelectionText={clearSelectionText}
           openMenuText={openMenuText}
           closeMenuText={closeMenuText}
           ordering={ordering}
-          key={JSON.stringify(filters)}
           filters={filters}
           tableOptions={options}
           onApplyFilter={onApplyFilter}
