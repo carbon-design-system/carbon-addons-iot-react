@@ -426,11 +426,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -470,11 +465,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
-          </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -516,11 +506,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -561,10 +546,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <p
-            className="bx--progress-optional"
+          <span
+            className="bx--progress-line"
+          />
+        </button>
+      </li>
+      <li
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+      >
+        <button
+          className="bx--progress-step-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="bx--assistive-text"
           >
-            Optional label
+            Incomplete
+          </span>
+          <svg
+            aria-hidden={true}
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+            />
+            <title>
+              Sixth Step
+            </title>
+          </svg>
+          <p
+            className="bx--progress-label"
+          >
+            Sixth Step
           </p>
           <span
             className="bx--progress-line"
@@ -702,11 +722,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -746,11 +761,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
-          </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -792,11 +802,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -837,10 +842,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <p
-            className="bx--progress-optional"
+          <span
+            className="bx--progress-line"
+          />
+        </button>
+      </li>
+      <li
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 iunSsU"
+      >
+        <button
+          className="bx--progress-step-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="bx--assistive-text"
           >
-            Optional label
+            Incomplete
+          </span>
+          <svg
+            aria-hidden={true}
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+            />
+            <title>
+              Sixth Step
+            </title>
+          </svg>
+          <p
+            className="bx--progress-label"
+          >
+            Sixth Step
           </p>
           <span
             className="bx--progress-line"
@@ -975,11 +1015,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -1019,11 +1054,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
-          </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -1065,11 +1095,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -1110,10 +1135,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <p
-            className="bx--progress-optional"
+          <span
+            className="bx--progress-line"
+          />
+        </button>
+      </li>
+      <li
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 fHtWSy"
+      >
+        <button
+          className="bx--progress-step-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="bx--assistive-text"
           >
-            Optional label
+            Incomplete
+          </span>
+          <svg
+            aria-hidden={true}
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+            />
+            <title>
+              Sixth Step
+            </title>
+          </svg>
+          <p
+            className="bx--progress-label"
+          >
+            Sixth Step
           </p>
           <span
             className="bx--progress-line"
@@ -1248,11 +1308,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Second Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -1292,11 +1347,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="bx--progress-label"
           >
             Third Step
-          </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
           </p>
           <span
             className="bx--progress-line"
@@ -1338,11 +1388,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fourth Step
           </p>
-          <p
-            className="bx--progress-optional"
-          >
-            Optional label
-          </p>
           <span
             className="bx--progress-line"
           />
@@ -1383,10 +1428,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           >
             Fifth Step
           </p>
-          <p
-            className="bx--progress-optional"
+          <span
+            className="bx--progress-line"
+          />
+        </button>
+      </li>
+      <li
+        className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 hRXwzO"
+      >
+        <button
+          className="bx--progress-step-button"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          <span
+            className="bx--assistive-text"
           >
-            Optional label
+            Incomplete
+          </span>
+          <svg
+            aria-hidden={true}
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+            />
+            <title>
+              Sixth Step
+            </title>
+          </svg>
+          <p
+            className="bx--progress-label"
+          >
+            Sixth Step
           </p>
           <span
             className="bx--progress-line"

@@ -81,7 +81,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     width: $spacing-01;
     height: 100%;
     background-color: #e0e0e0;
-    top: $spacing-06;
+    top: $layout-02;
     left: 11px;
 
     &-complete {
@@ -141,6 +141,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
         height: $spacing-05;
         margin-left: $spacing-02;
         margin-right: $spacing-02;
+
         p {
           font-size: 12px;
         }
@@ -153,7 +154,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     position: relative;
     text-align: left;
     width: 100%;
-    min-height: $layout-05;
+    min-height: 76px;
     padding: 0;
     margin: 0;
 
@@ -256,6 +257,7 @@ html[dir='rtl'] {
       .#{$prefix}--progress-step-button {
         text-align: right;
       }
+
       .#{$prefix}--progress-optional {
         margin-right: $spacing-08;
       }

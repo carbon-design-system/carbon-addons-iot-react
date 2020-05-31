@@ -18,6 +18,23 @@ const items = [
   {
     id: 'step2',
     label: 'Second Step',
+  },
+  { id: 'step3', label: 'Third Step' },
+  { id: 'step4', label: 'Fourth Step' },
+  { id: 'step5', label: 'Fifth Step' },
+  { id: 'step6', label: 'Sixth Step' },
+];
+
+const itemsIot = [
+  {
+    id: 'step1',
+    label: 'First step',
+    secondaryLabel: 'Optional label',
+    description: 'This is displayed when step icon is hovered',
+  },
+  {
+    id: 'step2',
+    label: 'Second Step',
     secondaryLabel: 'Optional label',
     children: [
       { id: 'step2_substep1', label: 'Sub Step 1' },
@@ -60,7 +77,7 @@ class ProgressIndicatorExample extends Component {
 storiesOf('Watson IoT/ProgressIndicator', module)
   .add('IoT ProgressIndicator', () => (
     <IotProgressIndicator
-      items={items}
+      items={itemsIot}
       currentItemId="step2_substep2"
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
