@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
     }
   >
     <ul
-      className="iot--progress"
+      className="iot--progress-indicator-new"
       data-testid="iot-progress-indicator-testid"
       onChange={[Function]}
     >
@@ -26,6 +26,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -48,17 +54,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
             </svg>
           </div>
-          <p
-            className="label"
-            value="This is displayed when step icon is hovered"
+          <div
+            className="label-container"
           >
-            First step
-          </p>
-          <p
-            className="label-optional"
-          >
-            Optional label
-          </p>
+            <p
+              className="label"
+              value="This is displayed when step icon is hovered"
+            >
+              First step
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -70,6 +80,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -92,17 +108,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
             </svg>
           </div>
-          <p
-            className="label"
-            value="Second Step"
+          <div
+            className="label-container"
           >
-            Second Step
-          </p>
-          <p
-            className="label-optional"
-          >
-            Optional label
-          </p>
+            <p
+              className="label"
+              value="Second Step"
+            >
+              Second Step
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -114,6 +134,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -136,12 +162,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
             </svg>
           </div>
-          <p
-            className="label-sub"
-            value="Sub Step 1"
+          <div
+            className="label-container"
           >
-            Sub Step 1
-          </p>
+            <p
+              className="label"
+              value="Sub Step 1"
+            >
+              Sub Step 1
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -153,6 +183,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -161,17 +197,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <div
             className="step-icon-sub"
           />
-          <p
-            className="label-sub"
-            value="Sub Step 2"
+          <div
+            className="label-container"
           >
-            Sub Step 2
-          </p>
-          <p
-            className="label-sub-optional"
-          >
-            Optional label
-          </p>
+            <p
+              className="label"
+              value="Sub Step 2"
+            >
+              Sub Step 2
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -183,6 +223,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -191,12 +237,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           <div
             className="step-icon-sub"
           />
-          <p
-            className="label-sub"
-            value="Sub Step 3"
+          <div
+            className="label-container"
           >
-            Sub Step 3
-          </p>
+            <p
+              className="label"
+              value="Sub Step 3"
+            >
+              Sub Step 3
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -208,6 +258,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={true}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -220,17 +276,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               3
             </p>
           </div>
-          <p
-            className="label"
-            value="Third Step"
+          <div
+            className="label-container"
           >
-            Third Step
-          </p>
-          <p
-            className="label-optional"
-          >
-            Optional label
-          </p>
+            <p
+              className="label"
+              value="Third Step"
+            >
+              Third Step
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -242,6 +302,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -254,17 +320,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               !
             </p>
           </div>
-          <p
-            className="label"
-            value="Fourth Step"
+          <div
+            className="label-container"
           >
-            Fourth Step
-          </p>
-          <p
-            className="label-optional"
-          >
-            Optional label
-          </p>
+            <p
+              className="label"
+              value="Fourth Step"
+            >
+              Fourth Step
+            </p>
+          </div>
         </button>
       </li>
       <li
@@ -276,6 +341,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           disabled={false}
           onClick={[Function]}
           onKeyDown={[Function]}
+          style={
+            Object {
+              "height": "8rem",
+              "minHeight": "8rem",
+            }
+          }
           type="button"
         >
           <div
@@ -285,17 +356,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               5
             </p>
           </div>
-          <p
-            className="label"
-            value="Fifth Step"
+          <div
+            className="label-container"
           >
-            Fifth Step
-          </p>
-          <p
-            className="label-optional"
-          >
-            Optional label
-          </p>
+            <p
+              className="label"
+              value="Fifth Step"
+            >
+              Fifth Step
+            </p>
+          </div>
         </button>
       </li>
     </ul>

@@ -43,8 +43,8 @@ const itemsIot = [
     ],
   },
   { id: 'step3', label: 'Third Step', secondaryLabel: 'Optional label', disabled: true },
-  { id: 'step4', label: 'Fourth Step', secondaryLabel: 'Optional label', invalid: true },
-  { id: 'step5', label: 'Fifth Step', secondaryLabel: 'Optional label' },
+  { id: 'step4', label: 'Fourth Step', invalid: true },
+  { id: 'step5', label: 'Fifth Step' },
 ];
 
 class ProgressIndicatorExample extends Component {
@@ -80,6 +80,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       items={itemsIot}
       currentItemId="step2_substep2"
       onClickItem={action('onClickItem')}
+      stepWidth={number('stepWidth', 8)}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={boolean('isVerticalMode', false)}
       clickable={boolean('clickable', false)}

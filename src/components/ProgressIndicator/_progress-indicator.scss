@@ -3,50 +3,20 @@
 
 $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
-.#{$iot-prefix}--progress {
-  html[dir='rtl'] & {
-    float: right;
-    text-align: right;
-    width: 100%;
-
-    .step-button {
-      text-align: right;
-    }
-
-    .step-icon {
-      left: unset;
-      right: 0;
-      text-align: right;
-    }
-
-    .label {
-      left: unset;
-      right: $spacing-07;
-      text-align: right;
-    }
-
-    .label-optional {
-      left: unset;
-      right: $spacing-07;
-      text-align: right;
-    }
-
-    .line {
-      left: unset;
-      right: 11px;
-      text-align: right;
-    }
+.#{$iot-prefix}--progress-indicator-new {
+  .label-container {
+    position: absolute;
+    left: $spacing-07;
+    top: 0;
   }
 
   .label {
-    position: absolute;
+    position: relative;
     font-family: $IBMPlexSans;
     font-size: 14px;
     color: #161616;
     letter-spacing: 0.16px;
     line-height: 18px;
-    left: $spacing-07;
-    top: 3px;
     cursor: pointer;
 
     &:hover {
@@ -60,18 +30,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       color: #525252;
       letter-spacing: 0.32px;
       line-height: $spacing-05;
-      top: 21px;
       pointer-events: none;
-    }
-  }
-
-  .label-sub {
-    @extend .label;
-    top: 0;
-
-    &-optional {
-      @extend .label-sub;
-      top: 18px;
     }
   }
 
@@ -203,6 +162,81 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
   .step-invalid {
     @include icon($border-color: #dd3b41, $color: #dd3b41);
+  }
+
+  html[dir='rtl'] & {
+    float: right;
+    text-align: right;
+    width: 100%;
+
+    .step-button {
+      text-align: right;
+    }
+
+    .step-icon {
+      left: unset;
+      right: 0;
+      text-align: right;
+    }
+
+    .label-container {
+      right: $spacing-07;
+      text-align: right;
+    }
+
+    .line {
+      left: unset;
+      right: 11px;
+      text-align: right;
+    }
+  }
+
+  &.vertical {
+    display: flex;
+
+    .label-container {
+      left: 0;
+      top: $spacing-07;
+    }
+
+    .step-button {
+      width: 8rem;
+      height: 4rem;
+    }
+
+    .step-icon-sub {
+      top: 4px;
+      left: 0;
+      margin: 0;
+    }
+
+    .line {
+      height: 2px;
+      width: 100%;
+      left: 24px;
+      top: 11px;
+
+      &-sub {
+        left: 16px;
+      }
+    }
+
+    html[dir='rtl'] & {
+      .line {
+        left: 0;
+        right: 24px;
+
+        &-sub {
+          left: 0;
+          right: 16px;
+        }
+      }
+
+      .label-container {
+        text-align: right;
+        right: 0;
+      }
+    }
   }
 }
 

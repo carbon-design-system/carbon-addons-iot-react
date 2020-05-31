@@ -45,10 +45,10 @@ export const IotProgressStep = ({
   };
 
   const getStepWidth = () => {
-    if (stepWidth != null && stepWidth >= 0) {
+    if (stepWidth != null && stepWidth > 0) {
       return vertical
-        ? { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` }
-        : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
+        ? { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` }
+        : { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` };
     }
     return undefined;
   };
@@ -92,8 +92,7 @@ export const IotProgressStep = ({
 
   const StepLabel = () => {
     const classes = classnames({
-      [`label`]: mainStep,
-      [`label-sub`]: subStep,
+      [`label`]: mainStep || subStep,
       [`hidden`]: !showLabel && !current,
     });
 
@@ -106,8 +105,7 @@ export const IotProgressStep = ({
 
   const StepSecondaryLabel = () => {
     const classes = classnames({
-      [`label-optional`]: mainStep,
-      [`label-sub-optional`]: subStep,
+      [`label-optional`]: mainStep || subStep,
       [`hidden`]: !showLabel && !current,
     });
 
@@ -134,8 +132,10 @@ export const IotProgressStep = ({
       >
         <StepLine />
         <StepIcon />
-        <StepLabel />
-        <StepSecondaryLabel />
+        <div className="label-container">
+          <StepLabel />
+          <StepSecondaryLabel />
+        </div>
       </button>
     );
   };
@@ -185,7 +185,7 @@ IotProgressStep.defaultProps = {
   onChange: null,
   disabled: false,
   showLabel: false,
-  stepWidth: 8,
+  stepWidth: null,
   vertical: false,
   invalid: false,
   level: 0,
@@ -250,7 +250,7 @@ export const IotProgressIndicator = ({
   };
 
   const classes = classnames({
-    [`${iotPrefix}--progress`]: true,
+    [`${iotPrefix}--progress-indicator-new`]: true,
     [`vertical`]: isVerticalMode,
   });
 
