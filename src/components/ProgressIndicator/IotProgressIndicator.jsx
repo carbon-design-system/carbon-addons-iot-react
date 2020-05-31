@@ -27,13 +27,13 @@ export const IotProgressStep = ({
   level,
   stepNumber,
   lastItem,
+  clickable,
 }) => {
   const current = currentStep === id;
   const complete = currentIndex > index;
   const incomplete = currentIndex < index;
   const mainStep = level === 0;
   const subStep = level > 0;
-
   const handleClick = () => {
     onChange(id, index);
   };
@@ -42,6 +42,15 @@ export const IotProgressStep = ({
     if (matches(e, [keys.Enter, keys.Space])) {
       handleClick();
     }
+  };
+
+  const getStepWidth = () => {
+    if (stepWidth != null && stepWidth >= 0) {
+      return vertical
+        ? { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` }
+        : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
+    }
+    return undefined;
   };
 
   const StepIcon = () => {
@@ -85,6 +94,7 @@ export const IotProgressStep = ({
     const classes = classnames({
       [`label`]: mainStep,
       [`label-sub`]: subStep,
+      [`hidden`]: !showLabel && !current,
     });
 
     return (
@@ -98,6 +108,7 @@ export const IotProgressStep = ({
     const classes = classnames({
       [`label-optional`]: mainStep,
       [`label-sub-optional`]: subStep,
+      [`hidden`]: !showLabel && !current,
     });
 
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
@@ -108,7 +119,7 @@ export const IotProgressStep = ({
   const StepButton = () => {
     const classes = classnames({
       [`step-button`]: true,
-      [`optional-hidden`]: !showLabel && !current,
+      [`clickable`]: clickable,
     });
 
     return (
@@ -119,6 +130,7 @@ export const IotProgressStep = ({
         onClick={handleClick}
         onKeyDown={handleKeyDown}
         disabled={disabled}
+        style={getStepWidth()}
       >
         <StepLine />
         <StepIcon />
@@ -126,15 +138,6 @@ export const IotProgressStep = ({
         <StepSecondaryLabel />
       </button>
     );
-  };
-
-  const getStepWidth = () => {
-    if (stepWidth != null && stepWidth >= 0) {
-      return vertical
-        ? { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` }
-        : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
-    }
-    return undefined;
   };
 
   const classes = classnames({
@@ -146,7 +149,7 @@ export const IotProgressStep = ({
   });
 
   return (
-    <li className={classes} style={getStepWidth()}>
+    <li className={classes}>
       <StepButton />
     </li>
   );
@@ -169,6 +172,7 @@ IotProgressStep.propTypes = {
   level: PropTypes.number,
   stepNumber: PropTypes.number,
   lastItem: PropTypes.bool,
+  clickable: PropTypes.bool,
 };
 
 IotProgressStep.defaultProps = {
@@ -187,6 +191,7 @@ IotProgressStep.defaultProps = {
   level: 0,
   stepNumber: 0,
   lastItem: false,
+  clickable: false,
 };
 
 export const IotProgressIndicator = ({
@@ -194,8 +199,8 @@ export const IotProgressIndicator = ({
   currentItemId,
   showLabels,
   isVerticalMode,
-  spaceEqually,
   stepWidth,
+  clickable,
 }) => {
   const flattenItems = (itemsList, level = 0) => {
     let newList = [];
@@ -246,14 +251,11 @@ export const IotProgressIndicator = ({
 
   const classes = classnames({
     [`${iotPrefix}--progress`]: true,
-    [`${iotPrefix}--progress--vertical`]: isVerticalMode,
-    [`${iotPrefix}--progress--space-equal`]: spaceEqually && !isVerticalMode,
+    [`vertical`]: isVerticalMode,
   });
 
-  console.log(newItems);
-
   return (
-    <ul className={classes} data-testid="progress-indicator-testid" onChange={handleChange}>
+    <ul className={classes} data-testid="iot-progress-indicator-testid" onChange={handleChange}>
       {newItems.map(
         (
           { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
@@ -277,6 +279,7 @@ export const IotProgressIndicator = ({
             lastItem={lastItemId === id}
             disabled={disabled}
             invalid={invalid}
+            clickable={clickable}
           />
         )
       )}
@@ -299,7 +302,7 @@ IotProgressIndicator.propTypes = {
   showLabels: PropTypes.bool,
   stepWidth: PropTypes.number,
   isVerticalMode: PropTypes.bool,
-  spaceEqually: PropTypes.bool,
+  clickable: PropTypes.bool,
 };
 
 IotProgressIndicator.defaultProps = {
@@ -308,7 +311,7 @@ IotProgressIndicator.defaultProps = {
   stepWidth: null,
   currentItemId: null,
   isVerticalMode: false,
-  spaceEqually: false,
+  clickable: false,
 };
 
 export default IotProgressIndicator;

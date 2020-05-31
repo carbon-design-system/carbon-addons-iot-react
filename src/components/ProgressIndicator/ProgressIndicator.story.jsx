@@ -82,6 +82,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={boolean('isVerticalMode', false)}
+      clickable={boolean('clickable', false)}
     />
   ))
   .add('Stateful', () => <ProgressIndicatorExample />)

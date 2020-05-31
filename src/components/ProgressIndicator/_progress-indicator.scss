@@ -164,18 +164,19 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     overflow: hidden;
     outline: none;
     border: none;
+    pointer-events: none;
+
+    &.clickable {
+      pointer-events: auto;
+    }
   }
 
-  @mixin disableClick() {
-    .step-button {
-      @extend .step-button;
-      pointer-events: none;
-    }
+  .hidden {
+    visibility: hidden;
   }
 
   .step-current {
     @include icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
-    // @include disableClick();
   }
 
   .step-complete {
@@ -184,25 +185,30 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
   .step-incomplete {
     @include icon(#171717);
-    //@include disableClick();
   }
 
   .step-disabled {
     @include icon(#bebebe, $color: #c6c6c6);
-    @include disableClick();
 
     .label {
       @extend .label;
       color: #c6c6c6;
     }
+
+    .step-button {
+      @extend .step-button;
+      pointer-events: none !important;
+    }
   }
 
   .step-invalid {
     @include icon($border-color: #dd3b41, $color: #dd3b41);
-    //@include disableClick();
   }
 }
 
+/**
+* Old Progress Indicator below
+*/
 .#{$iot-prefix}--progress-indicator {
   &.#{$prefix}--progress--vertical {
     .#{$prefix}--progress-step {

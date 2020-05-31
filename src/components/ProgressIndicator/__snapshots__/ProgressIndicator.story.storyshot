@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
   >
     <ul
       className="iot--progress"
-      data-testid="progress-indicator-testid"
+      data-testid="iot-progress-indicator-testid"
       onChange={[Function]}
     >
       <li
