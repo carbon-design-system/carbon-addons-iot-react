@@ -80,9 +80,19 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       items={itemsIot}
       currentItemId="step2_substep2"
       onClickItem={action('onClickItem')}
-      stepWidth={number('stepWidth', 8)}
+      stepWidth={number('stepWidth', 6)}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={boolean('isVerticalMode', false)}
+      clickable={boolean('clickable', false)}
+    />
+  ))
+  .add('IoT ProgressIndicator Vertical', () => (
+    <IotProgressIndicator
+      items={itemsIot}
+      currentItemId="step2_substep2"
+      onClickItem={action('onClickItem')}
+      showLabels={boolean('showlabels', true)}
+      isVerticalMode={true}
       clickable={boolean('clickable', false)}
     />
   ))

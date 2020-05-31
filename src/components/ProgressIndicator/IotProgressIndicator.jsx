@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
 import { Checkmark24 } from '@carbon/icons-react';
-
+import { Tooltip } from 'carbon-components-react';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -34,6 +34,35 @@ export const IotProgressStep = ({
   const incomplete = currentIndex < index;
   const mainStep = level === 0;
   const subStep = level > 0;
+
+  const labelContainerRef = React.useRef(null);
+  const secondaryLabelContainerRef = React.useRef(null);
+  const [overflow, setOverflow] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  if (disabled) {
+    clickable = false;
+  }
+
+  useEffect(
+    () => {
+      const e = labelContainerRef.current;
+      const i = secondaryLabelContainerRef.current;
+      const hasOverflow =
+        e.offsetWidth < e.scrollWidth || (i !== null && i.offsetWidth < i.scrollWidth);
+      setOverflow(hasOverflow);
+    },
+    [stepWidth]
+  );
+
+  const labelHover = hover => {
+    if (hover && overflow) {
+      setShowTooltip(true);
+    } else {
+      setShowTooltip(false);
+    }
+  };
+
   const handleClick = () => {
     onChange(id, index);
   };
@@ -47,8 +76,8 @@ export const IotProgressStep = ({
   const getStepWidth = () => {
     if (stepWidth != null && stepWidth > 0) {
       return vertical
-        ? { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` }
-        : { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` };
+        ? { height: `${stepWidth}rem`, minHeight: `${stepWidth}rem` }
+        : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
     }
     return undefined;
   };
@@ -97,7 +126,7 @@ export const IotProgressStep = ({
     });
 
     return (
-      <p className={classes} value={description}>
+      <p className={classes} value={description} ref={labelContainerRef}>
         {label}
       </p>
     );
@@ -110,8 +139,14 @@ export const IotProgressStep = ({
     });
 
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={classes}>{secondaryLabel}</p>
+      <p className={classes} ref={secondaryLabelContainerRef}>
+        {secondaryLabel}
+      </p>
     ) : null;
+  };
+
+  const getTooltipLabel = () => {
+    return secondaryLabel ? `${label} - ${secondaryLabel}` : `${label}`;
   };
 
   const StepButton = () => {
@@ -125,17 +160,24 @@ export const IotProgressStep = ({
         className={classes}
         type="button"
         aria-disabled={disabled}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
         disabled={disabled}
         style={getStepWidth()}
+        onClick={clickable ? handleClick : null}
+        onKeyDown={clickable ? handleKeyDown : null}
       >
         <StepLine />
         <StepIcon />
-        <div className="label-container">
+        <div
+          className="label-container"
+          onMouseEnter={() => labelHover(true)}
+          onMouseLeave={() => labelHover(false)}
+        >
           <StepLabel />
           <StepSecondaryLabel />
         </div>
+        <Tooltip open={showTooltip} showIcon={false} direction="bottom">
+          {getTooltipLabel()}
+        </Tooltip>
       </button>
     );
   };

@@ -24,12 +24,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -56,6 +56,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </div>
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -69,6 +71,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Optional label
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_4pmzbh8s9mk"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -78,12 +94,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -110,6 +126,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </div>
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -123,6 +141,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Optional label
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_cbm3r3l81o6"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -132,12 +164,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -164,6 +196,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </div>
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -172,6 +206,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Sub Step 1
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_ms4f67wm0q"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -181,12 +229,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -199,6 +247,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           />
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -212,6 +262,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Optional label
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_5b4gmktgdep"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -221,12 +285,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -239,6 +303,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           />
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -247,6 +313,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Sub Step 3
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_o3iok2580rc"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -256,12 +336,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={true}
           className="step-button"
           disabled={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -278,6 +358,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </div>
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -291,6 +373,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Optional label
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_gecsy9str7q"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -300,12 +396,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -322,6 +418,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </div>
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -330,6 +428,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Fourth Step
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_iro3cxmp3e"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
       <li
@@ -339,12 +451,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           aria-disabled={false}
           className="step-button"
           disabled={false}
-          onClick={[Function]}
-          onKeyDown={[Function]}
+          onClick={null}
+          onKeyDown={null}
           style={
             Object {
-              "height": "8rem",
-              "minHeight": "8rem",
+              "minWidth": "6rem",
+              "width": "6rem",
             }
           }
           type="button"
@@ -358,6 +470,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </div>
           <div
             className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -366,6 +480,496 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               Fifth Step
             </p>
           </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_0zwbynnfm64"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+    </ul>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/ProgressIndicator IoT ProgressIndicator Vertical 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <ul
+      className="iot--progress-indicator-new vertical"
+      data-testid="iot-progress-indicator-testid"
+      onChange={[Function]}
+    >
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line-complete"
+          />
+          <div
+            className="step-icon"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="This is displayed when step icon is hovered"
+            >
+              First step
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_yeeu0b52tu"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line-complete"
+          />
+          <div
+            className="step-icon"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Second Step"
+            >
+              Second Step
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_hsnm986hkzs"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-complete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line-sub-complete"
+          />
+          <div
+            className="step-icon-sub"
+          >
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="10,15.9 4.7,10.6 3.6,11.6 8.9,16.9 10,18 20.6,7.4 19.5,6.3"
+              />
+            </svg>
+          </div>
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Sub Step 1"
+            >
+              Sub Step 1
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_djx00ck51y9"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-current"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line-sub"
+          />
+          <div
+            className="step-icon-sub"
+          />
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Sub Step 2"
+            >
+              Sub Step 2
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_pwnzboxjpj"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-incomplete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line-sub"
+          />
+          <div
+            className="step-icon-sub"
+          />
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Sub Step 3"
+            >
+              Sub Step 3
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_g5n5wx2shdu"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-disabled"
+      >
+        <button
+          aria-disabled={true}
+          className="step-button"
+          disabled={true}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line"
+          />
+          <div
+            className="step-icon"
+          >
+            <p>
+              3
+            </p>
+          </div>
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Third Step"
+            >
+              Third Step
+            </p>
+            <p
+              className="label-optional"
+            >
+              Optional label
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_5qpwfh9i3av"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-invalid"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="line"
+          />
+          <div
+            className="step-icon"
+          >
+            <p>
+              !
+            </p>
+          </div>
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Fourth Step"
+            >
+              Fourth Step
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_ermret4bgnn"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
+        </button>
+      </li>
+      <li
+        className="step-incomplete"
+      >
+        <button
+          aria-disabled={false}
+          className="step-button"
+          disabled={false}
+          onClick={null}
+          onKeyDown={null}
+          type="button"
+        >
+          <div
+            className="step-icon"
+          >
+            <p>
+              5
+            </p>
+          </div>
+          <div
+            className="label-container"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <p
+              className="label"
+              value="Fifth Step"
+            >
+              Fifth Step
+            </p>
+          </div>
+          <div
+            aria-describedby={null}
+            aria-expanded={false}
+            className="bx--tooltip__label"
+            id="__carbon-tooltip-trigger_ygh707yhj7j"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="button"
+            tabIndex={0}
+          />
         </button>
       </li>
     </ul>
