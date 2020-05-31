@@ -22,6 +22,7 @@ import {
   getUpdatedCardSize,
   formatNumberWithPrecision,
   handleCardVariables,
+  determinePrecision,
 } from '../../utils/cardUtilityFunctions';
 
 import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
@@ -61,26 +62,6 @@ const LineChartWrapper = styled.div`
     }
   }
 `;
-
-/**
- * Determines how many decimals to show for a value based on the value, the available size of the card
- * @param {string} size constant that describes the size of the Table card
- * @param {any} value will be checked to determine how many decimals to show
- * @param {*} defaultPrecision Desired decimal precision, but may be overridden based on the value type or card size
- */
-export const determinePrecision = (size, value, defaultPrecision) => {
-  // If it's an integer don't return extra values
-  if (Number.isInteger(value)) {
-    return 0;
-  }
-  // If the card is xsmall we don't have room for decimals!
-  switch (size) {
-    case CARD_SIZES.SMALL:
-      return Math.abs(value) > 9 ? 0 : defaultPrecision;
-    default:
-  }
-  return defaultPrecision;
-};
 
 /**
  * Translates our raw data into a language the carbon-charts understand
@@ -152,12 +133,10 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges, alertDetected) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line
-  const timeStamp = Array.isArray(data) && data[0] ? data[0].date : data.date || data.label;
-  const dateLabel = timeStamp
-    ? `<li class='datapoint-tooltip'><p class='label'>${moment(timeStamp).format(
-        'L HH:mm:ss'
-      )}</p></li>`
-    : '';
+  const timeStamp = Array.isArray(data) ? data[0].date : data.date;
+  const dateLabel = `<li class='datapoint-tooltip'>
+                        <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>
+                     </li>`;
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
     ? matchingAlertRanges
@@ -181,6 +160,7 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
     // wrap to make single a multi-tooltip
     updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
   }
+
   return updatedTooltip;
 };
 
@@ -445,6 +425,7 @@ const TimeSeriesCard = ({
                       : {}),
                     stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
                     includeZero: includeZeroOnYaxis,
+                    scaleType: 'linear',
                   },
                 },
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
@@ -454,9 +435,6 @@ const TimeSeriesCard = ({
                     valueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
                     handleTooltip(...args, alertRanges, alertDetected, locale),
-                  gridline: {
-                    enabled: false,
-                  },
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,

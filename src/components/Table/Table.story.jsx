@@ -366,6 +366,11 @@ export const initialState = {
         iconDescription: 'Delete',
         isDelete: true,
       },
+      {
+        id: 'textOnly',
+        labelText: 'Text only dummy action',
+        isOverflow: true,
+      },
     ].filter(i => i),
   })),
   expandedData: tableData.map(data => ({
@@ -511,11 +516,18 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Stateful Example with expansion and column resize',
+    'Stateful Example with expansion, maxPages, and column resize',
     () => (
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 5,
+            },
+          }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
@@ -526,6 +538,7 @@ storiesOf('Watson IoT/Table', module)
           options={{
             ...initialState.options,
             hasResize: true,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
           }}
         />
@@ -550,6 +563,12 @@ storiesOf('Watson IoT/Table', module)
         options = {
           hasRowExpansion:true
         }
+
+        view={{
+          pagination: {
+            maxPages: 5,
+          }
+        }}
 
         ~~~
 
@@ -804,7 +823,7 @@ storiesOf('Watson IoT/Table', module)
       info: {
         text: `
 
-        This table has editable rows. It is wrapped in a component that handles the state of the table data and 
+        This table has editable rows. It is wrapped in a component that handles the state of the table data and
         the active bar to serve as a simple example of how to use the 'hasRowEdit' functionality with your own data store.
 
         Each column that should have editable row cells must have an editDataFunction prop defined.
@@ -824,16 +843,16 @@ storiesOf('Watson IoT/Table', module)
           toolbar: { onShowRowEdit: () => {
             // Update your state
           } },
-        }        
+        }
 
         options = { hasRowEdit: true }
 
         columns={columns.map(i => ({
           ...i,
-          editDataFunction: () => { 
-            // Your edit data function here.. 
+          editDataFunction: () => {
+            // Your edit data function here..
           },
-        }))}             
+        }))}
 
         The editDataFunction is called with this payload
         {
@@ -872,11 +891,11 @@ storiesOf('Watson IoT/Table', module)
         text: `
 
         For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-        
+
         <br />
 
         To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
-        
+
         <br />
 
         Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
@@ -1539,18 +1558,24 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with resize and no initial column width',
-    () => (
-      <Table
-        options={{
-          hasResize: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-        }}
-        columns={tableColumns}
-        data={tableData}
-        actions={actions}
-      />
-    ),
+    'with resize, onColumnResize callback and no initial column width',
+    () => {
+      return React.createElement(() => {
+        const [myColumns, setMyColumns] = useState(tableColumns);
+        const onColumnResize = cols => setMyColumns(cols);
+        return (
+          <Table
+            options={{
+              hasResize: true,
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            }}
+            columns={myColumns}
+            data={tableData}
+            actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
+          />
+        );
+      });
+    },
     {
       info: {
         source: true,

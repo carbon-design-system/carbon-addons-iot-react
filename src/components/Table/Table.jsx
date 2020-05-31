@@ -51,7 +51,10 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
-    hasFilter: PropTypes.bool,
+    hasFilter: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['onKeyPress', 'onEnterAndBlur']),
+    ]),
     /** if true, the data prop will be assumed to only represent the currently visible page */
     hasOnlyPageData: PropTypes.bool,
     /** has simple search capability */
@@ -73,6 +76,8 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
+      /** Number of pages rendered in pagination */
+      maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
     filters: PropTypes.arrayOf(
@@ -198,6 +203,7 @@ export const defaultProps = baseProps => ({
       pageSizes: [10, 20, 30],
       page: 1,
       totalItems: baseProps.data && baseProps.data.length,
+      maxPages: 100,
       isItemPerPageHidden: false,
     },
     filters: [],
@@ -231,7 +237,7 @@ export const defaultProps = baseProps => ({
       onRowExpanded: defaultFunction('actions.table.onRowExpanded'),
       onRowClicked: defaultFunction('actions.table.onRowClicked'),
       onApplyRowAction: defaultFunction('actions.table.onApplyRowAction'),
-      onEmptyStateAction: defaultFunction('actions.table.onEmptyStateAction'),
+      onEmptyStateAction: null,
       onChangeOrdering: defaultFunction('actions.table.onChangeOrdering'),
       onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
       onColumnResize: defaultFunction('actions.table.onColumnResize'),
@@ -275,7 +281,6 @@ export const defaultProps = baseProps => ({
     emptyMessage: 'There is no data',
     emptyMessageWithFilters: 'No results match the current filters',
     emptyButtonLabel: 'Create some data',
-    emptyButtonLabelWithFilters: 'Clear all filters',
     downloadIconDescription: 'Download table content',
     filterNone: 'Unsort rows by this header',
     filterAscending: 'Sort rows by this header in ascending order',
@@ -302,6 +307,7 @@ const Table = props => {
     tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
+  const { maxPages, ...paginationProps } = view.pagination;
 
   const [, forceUpdateCellTextWidth] = useState(0);
 
@@ -407,15 +413,18 @@ const Table = props => {
             'onApplySearch',
             'onDownloadCSV'
           )}
-          options={pick(
-            options,
-            'hasColumnSelection',
-            'hasFilter',
-            'hasSearch',
-            'hasRowSelection',
-            'hasRowCountInHeader',
-            'hasRowEdit'
-          )}
+          options={{
+            ...pick(
+              options,
+              'hasColumnSelection',
+
+              'hasSearch',
+              'hasRowSelection',
+              'hasRowCountInHeader',
+              'hasRowEdit'
+            ),
+            hasFilter: Boolean(options?.hasFilter),
+          }}
           tableState={{
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
@@ -486,6 +495,7 @@ const Table = props => {
                 isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
               },
             }}
+            hasFastFilter={options?.hasFilter === 'onKeyPress'}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
@@ -554,7 +564,11 @@ const Table = props => {
                     }
               }
               onEmptyStateAction={
-                isFiltered ? handleClearFilters : actions.table.onEmptyStateAction
+                isFiltered && i18n.emptyButtonLabelWithFilters
+                  ? handleClearFilters // show clear filters
+                  : !isFiltered && actions.table.onEmptyStateAction
+                  ? actions.table.onEmptyStateAction
+                  : undefined // if not filtered then show normal empty state
               }
             />
           )}
@@ -565,7 +579,15 @@ const Table = props => {
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
         <Pagination
-          {...view.pagination}
+          pageSize={paginationProps.pageSize}
+          pageSizes={paginationProps.pageSizes}
+          page={paginationProps.page}
+          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
+          totalItems={
+            paginationProps.totalItems < maxPages * paginationProps.pageSize
+              ? paginationProps.totalItems
+              : maxPages * paginationProps.pageSize
+          }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
           forwardText={i18n.pageForwardAria}

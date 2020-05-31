@@ -6,7 +6,11 @@ import '@testing-library/jest-dom';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';
 
-import TableCard, { findMatchingThresholds, createColumnsWithFormattedLinks } from './TableCard';
+import TableCard, {
+  findMatchingThresholds,
+  createColumnsWithFormattedLinks,
+  handleExpandedItemLinks,
+} from './TableCard';
 
 describe('TableCard', () => {
   const thresholds = [
@@ -14,12 +18,23 @@ describe('TableCard', () => {
     { comparison: '>', dataSourceId: 'airflow_mean', severity: 1, value: 2.2 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 3, value: 4 },
     { comparison: '>', dataSourceId: 'airflow_max', severity: 1, value: 4.5 },
+    { comparison: '=', dataSourceId: 'airflow_status', severity: 1, value: 'High' },
   ];
   it('findMatchingThresholds', () => {
     const oneMatchingThreshold = findMatchingThresholds(
       thresholds,
       { airflow_mean: 4 },
       'airflow_mean'
+    );
+    expect(oneMatchingThreshold).toHaveLength(1);
+    // The highest severity should match
+    expect(oneMatchingThreshold[0].severity).toEqual(1);
+  });
+  it('findMatchingThresholds string value', () => {
+    const oneMatchingThreshold = findMatchingThresholds(
+      thresholds,
+      { airflow_status: 'High' },
+      'airflow_status'
     );
     expect(oneMatchingThreshold).toHaveLength(1);
     // The highest severity should match
@@ -58,6 +73,64 @@ describe('TableCard', () => {
     const columnsWithFormattedLinks = createColumnsWithFormattedLinks(tableColumnsWithLinks);
     const columnsWithlinks = columnsWithFormattedLinks.filter(column => column.renderDataFunction);
     expect(columnsWithlinks).toHaveLength(1);
+  });
+  it('handleExpandedItemLinks correctly applies linkTemplates and variables', () => {
+    const row = {
+      alert: 'some-alert',
+      count: 6,
+      hour: 126432112000,
+      pressure: 3,
+      deviceId: 73000,
+    };
+    const expandedRow = [
+      {
+        id: 'count',
+        label: 'Count',
+      },
+      {
+        id: 'deviceId',
+        label: 'Device link',
+        linkTemplate: {
+          href: 'http://ibm.com/{deviceId}',
+        },
+      },
+      {
+        id: 'alert',
+        label: 'Alert Description',
+        linkTemplate: {
+          href: 'http://ibm.com/',
+        },
+      },
+    ];
+    const cardVariables = {
+      variable: 'variable-value',
+    };
+
+    // with row specific variables
+    const updatedRowSpecificExpandedItems = handleExpandedItemLinks(row, expandedRow);
+    expect(updatedRowSpecificExpandedItems).toEqual([
+      {
+        id: 'count',
+        label: 'Count',
+      },
+      {
+        id: 'deviceId',
+        label: 'Device link',
+        linkTemplate: {
+          href: 'http://ibm.com/73000',
+        },
+      },
+      {
+        id: 'alert',
+        label: 'Alert Description',
+        linkTemplate: {
+          href: 'http://ibm.com/',
+        },
+      },
+    ]);
+    // if cardVariables are given, then this function should return its original data
+    const updatedExpandedItems = handleExpandedItemLinks(row, expandedRow, cardVariables);
+    expect(updatedExpandedItems).toEqual(expandedRow);
   });
   it('Row specific link variables populate correctly', () => {
     const tableLinkColumns = [
@@ -458,7 +531,7 @@ describe('TableCard', () => {
           thresholds: customThresholds,
         }}
         values={tableData}
-        size={CARD_SIZES.LARGETHIN}
+        size={CARD_SIZES.LARGE}
       />
     );
 

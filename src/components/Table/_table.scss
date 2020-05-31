@@ -27,3 +27,13 @@ table.#{$prefix}--side-nav--data-table {
     overflow-x: auto;
   }
 }
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--expanded-tablerow td:first-of-type:before {
+    left: auto;
+    right: 0;
+  }
+  .#{$iot-prefix}--expanded-tablerow > td * {
+    text-align: right;
+  }
+}
