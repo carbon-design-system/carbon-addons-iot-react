@@ -17,6 +17,7 @@ const ColumnHeaderSelect = ({
   children,
   onClick,
   isOver,
+  isDisabled,
 }) => {
   return (
     <Button
@@ -29,6 +30,7 @@ const ColumnHeaderSelect = ({
           'column-header__select--isOver': isOver,
         }
       )}
+      disabled={isDisabled}
       kind="secondary"
       key={columnId}
       onClick={() => onClick()}
@@ -37,8 +39,10 @@ const ColumnHeaderSelect = ({
       renderIcon={Draggable}
       size="small"
       ref={instance => {
-        connectDragSource(instance);
-        connectDropTarget(instance);
+        if (!isDisabled) {
+          connectDragSource(instance);
+          connectDropTarget(instance);
+        }
       }}
     >
       {children}
@@ -53,6 +57,7 @@ ColumnHeaderSelect.propTypes = {
   onClick: PropTypes.func.isRequired,
   connectDragSource: PropTypes.func.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool,
   /* these props come from react-dnd */
   index: PropTypes.number.isRequired, // eslint-disable-line
   isOver: PropTypes.bool.isRequired, // eslint-disable-line
@@ -61,6 +66,7 @@ ColumnHeaderSelect.propTypes = {
 
 ColumnHeaderSelect.defaultProps = {
   isHidden: false,
+  isDisabled: false,
   children: [],
 };
 

@@ -358,6 +358,7 @@ Map {
         "hasRowNesting": false,
         "hasRowSelection": false,
         "hasSearch": false,
+        "hasSingleRowEdit": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -389,6 +390,7 @@ Map {
           "ordering": undefined,
           "rowActions": Array [],
           "selectedIds": Array [],
+          "singleRowEditButtons": null,
           "sort": Object {},
         },
         "toolbar": Object {
@@ -617,6 +619,9 @@ Map {
                             "type": "string",
                           },
                           "isDelete": Object {
+                            "type": "bool",
+                          },
+                          "isEdit": Object {
                             "type": "bool",
                           },
                           "isOverflow": Object {
@@ -896,6 +901,9 @@ Map {
             "hasSearch": Object {
               "type": "bool",
             },
+            "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
             "shouldLazyRender": Object {
               "type": "bool",
             },
@@ -1091,6 +1099,9 @@ Map {
                               ],
                               "type": "shape",
                             },
+                            "isEditMode": Object {
+                              "type": "bool",
+                            },
                             "isRunning": Object {
                               "type": "bool",
                             },
@@ -1111,6 +1122,9 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "singleRowEditButtons": Object {
+                    "type": "element",
                   },
                   "sort": Object {
                     "args": Array [
@@ -1541,6 +1555,9 @@ Map {
               ],
               "type": "oneOf",
             },
+            "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
             "truncateCellText": Object {
               "isRequired": true,
               "type": "bool",
@@ -1608,6 +1625,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "isDisabled": Object {
+              "type": "bool",
             },
             "ordering": Object {
               "args": Array [
@@ -1684,6 +1704,7 @@ Map {
       "selectedIds": Array [],
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
+      "singleRowEditButtons": null,
       "totalColumns": 0,
     },
     "propTypes": Object {
@@ -1905,6 +1926,9 @@ Map {
                   ],
                   "type": "shape",
                 },
+                "isEditMode": Object {
+                  "type": "bool",
+                },
                 "isRunning": Object {
                   "type": "bool",
                 },
@@ -1959,6 +1983,9 @@ Map {
                             "type": "string",
                           },
                           "isDelete": Object {
+                            "type": "bool",
+                          },
+                          "isEdit": Object {
                             "type": "bool",
                           },
                           "isOverflow": Object {
@@ -2046,6 +2073,9 @@ Map {
       },
       "shouldLazyRender": Object {
         "type": "bool",
+      },
+      "singleRowEditButtons": Object {
+        "type": "element",
       },
       "tableId": Object {
         "isRequired": true,
@@ -18819,6 +18849,7 @@ Map {
     "TABLE_PAGE_CHANGE": "TABLE_PAGE_CHANGE",
     "TABLE_REGISTER": "TABLE_REGISTER",
     "TABLE_ROW_ACTION_COMPLETE": "TABLE_ROW_ACTION_COMPLETE",
+    "TABLE_ROW_ACTION_EDIT": "TABLE_ROW_ACTION_EDIT",
     "TABLE_ROW_ACTION_ERROR": "TABLE_ROW_ACTION_ERROR",
     "TABLE_ROW_ACTION_START": "TABLE_ROW_ACTION_START",
     "TABLE_ROW_CLICK": "TABLE_ROW_CLICK",
@@ -18838,6 +18869,7 @@ Map {
     "tablePageChange": Object {},
     "tableRegister": Object {},
     "tableRowActionComplete": Object {},
+    "tableRowActionEdit": Object {},
     "tableRowActionError": Object {},
     "tableRowActionStart": Object {},
     "tableRowClick": Object {},

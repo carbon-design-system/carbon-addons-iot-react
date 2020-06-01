@@ -80,11 +80,13 @@ class ColumnHeaderRow extends Component {
     onColumnToggle: PropTypes.func.isRequired,
     onColumnSelectionConfig: PropTypes.func,
     columnSelectionConfigText: PropTypes.string,
+    isDisabled: PropTypes.bool,
   };
 
   static defaultProps = {
     onColumnSelectionConfig: defaultFunction('actions.table.onColumnSelectionConfig'),
     columnSelectionConfigText: defaultI18NPropTypes.columnSelectionConfig,
+    isDisabled: false,
   };
 
   reorderColumn = (srcIndex, destIndex) => {
@@ -113,6 +115,7 @@ class ColumnHeaderRow extends Component {
       options: { hasRowSelection, hasRowExpansion, hasRowActions, hasColumnSelectionConfig },
       onColumnSelectionConfig,
       columnSelectionConfigText,
+      isDisabled,
     } = this.props;
 
     const visibleColumns = columns.filter(
@@ -132,6 +135,7 @@ class ColumnHeaderRow extends Component {
                 isHidden={c.isHidden}
                 moveItem={(srcIndex, destIndex) => this.reorderColumn(srcIndex, destIndex)}
                 onClick={() => this.toggleColumn(c.columnId)}
+                isDisabled={isDisabled}
               >
                 {columns.find(i => c.columnId === i.id).name}
               </ColumnHeaderSelect>
@@ -139,6 +143,7 @@ class ColumnHeaderRow extends Component {
           </StyledColumnSelectWrapper>
           {hasColumnSelectionConfig ? (
             <Button
+              disabled={isDisabled}
               className="column-header__btn"
               kind="ghost"
               size="small"
