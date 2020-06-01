@@ -26,3 +26,7 @@
     fill: $carbon--gray-70;
   }
 }
+
+.#{$iot-prefix}--tooltip-svg-wrapper--disabled {
+  @include disabled-icon-button();
+}
