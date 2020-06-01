@@ -477,8 +477,8 @@ const DateTimePicker = ({
     });
   };
 
-  const parseDefaultValue = () => {
-    const parsableValue = lastAppliedValue || defaultValue;
+  const parseDefaultValue = (lastValue=null) => {
+    const parsableValue = lastValue || defaultValue;
     const currentCustomRangeKind = showRelativeOption
       ? PICKER_KINDS.RELATIVE
       : PICKER_KINDS.ABSOLUTE;
@@ -549,7 +549,7 @@ const DateTimePicker = ({
 
   const onCancelClick = () => {
     setIsExpanded(false);
-    parseDefaultValue();
+    parseDefaultValue(lastAppliedValue);
 
     if (onCancel) {
       onCancel();
