@@ -4404,6 +4404,7 @@ Map {
       "defaultValue": null,
       "disabled": false,
       "expanded": false,
+      "getTooltipValue": null,
       "i18n": Object {
         "absoluteLabel": "Absolute",
         "applyBtnLabel": "Apply",
@@ -4633,6 +4634,9 @@ Map {
       },
       "expanded": Object {
         "type": "bool",
+      },
+      "getTooltipValue": Object {
+        "type": "func",
       },
       "i18n": Object {
         "args": Array [

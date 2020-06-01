@@ -124,6 +124,8 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
+  /** get the tooltip value for range selections */
+  getTooltipValue: PropTypes.func,
   /** triggered on cancel */
   onCancel: PropTypes.func,
   /** triggered on apply with returning object with similar signature to defaultValue */
@@ -194,6 +196,7 @@ const defaultProps = {
   expanded: false,
   disabled: false,
   showRelativeOption: true,
+  getTooltipValue: null,
   onCancel: null,
   onApply: null,
   i18n: {
@@ -233,6 +236,7 @@ const DateTimePicker = ({
   expanded,
   disabled,
   showRelativeOption,
+  getTooltipValue,
   onCancel,
   onApply,
   i18n,
@@ -589,6 +593,9 @@ const DateTimePicker = ({
    * @returns {string} an interval string, starting point in time to now
    */
   const getIntervalValue = () => {
+    if (getTooltipValue) {
+      return getTooltipValue();
+    }
     if (currentValue) {
       if (currentValue.kind === PICKER_KINDS.PRESET) {
         return `${moment()
