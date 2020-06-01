@@ -4,7 +4,7 @@ import {
   Edit16,
   CloseFilled16,
   CheckmarkFilled16,
-  WarningAltFilled32,
+  WarningAltFilled16,
   ArrowDown16,
   ArrowUp16,
   User16,
