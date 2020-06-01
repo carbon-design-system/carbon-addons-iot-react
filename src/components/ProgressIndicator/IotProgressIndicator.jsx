@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
 import { Checkmark24 } from '@carbon/icons-react';
 import { Tooltip } from 'carbon-components-react';
+
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -34,15 +35,12 @@ export const IotProgressStep = ({
   const incomplete = currentIndex < index;
   const mainStep = level === 0;
   const subStep = level > 0;
+  const isClickable = clickable && !disabled;
 
   const labelContainerRef = React.useRef(null);
   const secondaryLabelContainerRef = React.useRef(null);
   const [overflow, setOverflow] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
-
-  if (disabled) {
-    clickable = false;
-  }
 
   useEffect(
     () => {
@@ -80,6 +78,10 @@ export const IotProgressStep = ({
         : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
     }
     return undefined;
+  };
+
+  const getTooltipLabel = () => {
+    return secondaryLabel ? `${label} - ${secondaryLabel}` : `${label}`;
   };
 
   const StepIcon = () => {
@@ -149,40 +151,38 @@ export const IotProgressStep = ({
     ) : null;
   };
 
-  const getTooltipLabel = () => {
-    return secondaryLabel ? `${label} - ${secondaryLabel}` : `${label}`;
-  };
-
   const StepButton = () => {
     const classes = classnames({
       [`step-button`]: true,
-      [`clickable`]: clickable,
+      [`clickable`]: isClickable,
     });
 
     return (
-      <button
-        className={classes}
-        type="button"
-        aria-disabled={disabled}
-        disabled={disabled}
-        style={getStepWidth()}
-        onClick={clickable ? handleClick : null}
-        onKeyDown={clickable ? handleKeyDown : null}
-      >
-        <StepLine />
-        <StepIcon />
-        <div
-          className="label-container"
-          onMouseEnter={() => labelHover(true)}
-          onMouseLeave={() => labelHover(false)}
+      <>
+        <button
+          className={classes}
+          type="button"
+          aria-disabled={disabled}
+          disabled={disabled}
+          style={getStepWidth()}
+          onClick={isClickable ? handleClick : null}
+          onKeyDown={isClickable ? handleKeyDown : null}
         >
-          <StepLabel />
-          <StepSecondaryLabel />
-        </div>
-        <Tooltip open={showTooltip} showIcon={false} direction="bottom">
-          {getTooltipLabel()}
-        </Tooltip>
-      </button>
+          <StepLine />
+          <StepIcon />
+          <div
+            className="label-container"
+            onMouseEnter={() => labelHover(true)}
+            onMouseLeave={() => labelHover(false)}
+          >
+            <StepLabel />
+            <StepSecondaryLabel />
+            <Tooltip open={showTooltip} showIcon={false} direction={vertical ? 'right' : 'bottom'}>
+              {getTooltipLabel()}
+            </Tooltip>
+          </div>
+        </button>
+      </>
     );
   };
 

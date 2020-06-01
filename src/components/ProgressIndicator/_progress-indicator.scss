@@ -8,6 +8,11 @@ sans-serif;
 
 .#{$iot-prefix}--progress-indicator-new {
   display: flex;
+  overflow: hidden;
+
+  .#{$prefix}--tooltip__label {
+    display: list-item !important;
+  }
 
   .label-container {
     position: absolute;
@@ -18,6 +23,7 @@ sans-serif;
     white-space: nowrap;
     width: inherit;
     height: auto;
+    display: block;
   }
 
   .label {
@@ -79,7 +85,9 @@ sans-serif;
     }
   }
 
-  @mixin icon($border-color, $background-color: unset, $color: unset) {
+  @mixin icon($border-color, $background-color: unset, $color: unset, $disabled: false) {
+    overflow: hidden;
+
     .step-icon {
       position: absolute;
       width: $spacing-06;
@@ -98,7 +106,14 @@ sans-serif;
 
       color: $color;
       background-color: $background-color;
-      cursor: pointer;
+
+      @if($disabled) {
+        cursor: default;
+      }
+
+      @else {
+        cursor: pointer;
+      }
 
       //Checkmark fill color
       svg {
@@ -170,7 +185,7 @@ sans-serif;
   }
 
   .step-disabled {
-    @include icon(#bebebe, $color: #c6c6c6);
+    @include icon(#bebebe, $color: #c6c6c6, $disabled: true);
 
     .label {
       @extend .label;
@@ -214,7 +229,7 @@ sans-serif;
 
       &-sub {
         left: 0;
-        right: 16px
+        right: 16px;
       }
     }
   }
