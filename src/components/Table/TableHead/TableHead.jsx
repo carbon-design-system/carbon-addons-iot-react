@@ -41,6 +41,7 @@ const propTypes = {
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
+    hasSingleRowEdit: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
@@ -57,6 +58,8 @@ const propTypes = {
 
   /** Current state of the table */
   tableState: PropTypes.shape({
+    /** is the tableHead currently disabled */
+    isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
     activeBar: ActiveTableToolbarPropType,
     /** What's currently selected in the table? */
@@ -141,7 +144,14 @@ const generateOrderedColumnRefs = ordering =>
 
 const TableHead = ({
   options,
-  options: { hasRowExpansion, hasRowSelection, hasResize, wrapCellText, truncateCellText },
+  options: {
+    hasRowExpansion,
+    hasRowSelection,
+    hasResize,
+    wrapCellText,
+    truncateCellText,
+    hasSingleRowEdit,
+  },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -149,6 +159,7 @@ const TableHead = ({
     activeBar,
     ordering,
     filters,
+    isDisabled,
   },
   actions: {
     onSelectAll,
@@ -169,7 +180,6 @@ const TableHead = ({
   hasFastFilter,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const rowEditBarActive = activeBar === 'rowEdit';
   const initialColumnWidths = {};
   const columnRef = generateOrderedColumnRefs(ordering);
   const columnResizeRefs = generateOrderedColumnRefs(ordering);
@@ -291,7 +301,7 @@ const TableHead = ({
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
-              disabled={rowEditBarActive}
+              disabled={isDisabled}
               id="select-all"
               labelText={selectAllText}
               hideLabel
@@ -313,7 +323,7 @@ const TableHead = ({
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
-              isSortable={matchingColumnMeta.isSortable && !rowEditBarActive}
+              isSortable={matchingColumnMeta.isSortable && !isDisabled}
               isSortHeader={hasSort}
               ref={columnRef[matchingColumnMeta.id]}
               thStyle={{
@@ -354,7 +364,11 @@ const TableHead = ({
           ) : null;
         })}
         {options.hasRowActions ? (
-          <TableHeader className={`${iotPrefix}--table-header-row-action-column`} />
+          <TableHeader
+            className={classnames(`${iotPrefix}--table-header-row-action-column`, {
+              [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
+            })}
+          />
         ) : null}
       </TableRow>
       {filterBarActive && (
@@ -376,6 +390,7 @@ const TableHead = ({
           tableOptions={options}
           onApplyFilter={onApplyFilter}
           lightweight={lightweight}
+          isDisabled={isDisabled}
         />
       )}
       {activeBar === 'column' && (
@@ -391,6 +406,7 @@ const TableHead = ({
           lightweight={lightweight}
           onColumnSelectionConfig={onColumnSelectionConfig}
           columnSelectionConfigText={i18n.columnSelectionConfig}
+          isDisabled={isDisabled}
         />
       )}
     </CarbonTableHead>
