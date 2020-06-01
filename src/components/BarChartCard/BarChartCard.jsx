@@ -11,7 +11,7 @@ import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTy
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
-import { formatNumberWithPrecision, determinePrecision } from '../../utils/cardUtilityFunctions';
+import { valueFormatter } from '../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -184,24 +184,6 @@ export const formatColors = (series, datasetNames) => {
 };
 
 /**
- * Determines how to format our values for our lines
- *
- * @param {any} value any value possible, but will only special format if a number
- * @param {string} size card size
- * @param {string} unit any optional units to show
- */
-export const valueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
-  let renderValue = value;
-  if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
-  } else if (isNil(value)) {
-    renderValue = '--';
-  }
-  return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
-};
-
-/**
  * Extends default tooltip with additional date information if the graph is time-based
  * @param {object} data data object for this particular datapoint
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
@@ -287,14 +269,18 @@ const BarChartCard = ({
               accessibility: true,
               axes: {
                 bottom: {
-                  title: xLabel,
+                  title: `${xLabel || ''} ${
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+                  }`,
                   scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.HORIZONTAL,
                   mapsTo: axes.bottomAxesMapsTo,
                 },
                 left: {
-                  title: yLabel,
+                  title: `${yLabel || ''} ${
+                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+                  }`,
                   scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,

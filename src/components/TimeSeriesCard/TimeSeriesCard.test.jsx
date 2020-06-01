@@ -8,12 +8,7 @@ import { getIntervalChartData } from '../../utils/sample';
 import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
-import TimeSeriesCard, {
-  valueFormatter,
-  handleTooltip,
-  formatChartData,
-  formatColors,
-} from './TimeSeriesCard';
+import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
 
 const timeSeriesCardProps = {
   title: 'Temperature',
@@ -73,21 +68,7 @@ describe('TimeSeriesCard', () => {
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
-  it('valueFormatter', () => {
-    // Small should get 3 precision
-    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
-    // default precision
-    expect(valueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
-    // With units
-    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
-      '0.235 writes per second'
-    );
 
-    // Large numbers!
-    expect(valueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('2K');
-    // nil
-    expect(valueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
-  });
   it('handleTooltip should add date', () => {
     const defaultTooltip = '<li>existing tooltip</li>';
     // the date is from 2017

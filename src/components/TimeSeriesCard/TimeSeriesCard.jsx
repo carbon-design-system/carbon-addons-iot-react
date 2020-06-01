@@ -20,9 +20,8 @@ import StatefulTable from '../Table/StatefulTable';
 import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
-  formatNumberWithPrecision,
   handleCardVariables,
-  determinePrecision,
+  valueFormatter,
 } from '../../utils/cardUtilityFunctions';
 
 import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
@@ -101,24 +100,6 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
   });
 
   return data;
-};
-
-/**
- * Determines how to format our values for our lines
- *
- * @param {any} value any value possible, but will only special format if a number
- * @param {string} size card size
- * @param {string} unit any optional units to show
- */
-export const valueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
-  let renderValue = value;
-  if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
-  } else if (isNil(value)) {
-    renderValue = '--';
-  }
-  return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
 };
 
 const memoizedGenerateSampleValues = memoize(generateSampleValues);

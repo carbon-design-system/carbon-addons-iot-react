@@ -31,6 +31,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             ],
             categoryDataSourceId: 'city',
             layout: BAR_CHART_LAYOUTS.VERTICAL,
+            unit: 'P',
           })}
           values={barChartData.quarters.filter(q => q.quarter === '2020-Q1')}
           size={size}

@@ -239,7 +239,7 @@ export const BarChartCardPropTypes = {
     categoryDataSourceId: PropTypes.string,
     /** for time based bar charts this is the x-axis value */
     timeDataSourceId: PropTypes.string,
-    /** optional units to put in the legend */
+    /** optional units to put in the legend for all datasets */
     unit: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
