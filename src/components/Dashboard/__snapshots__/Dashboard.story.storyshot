@@ -56,7 +56,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
-                  "height": "1456px",
+                  "height": "1616px",
                 }
               }
             >
@@ -251,6 +251,85 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                data-testid="Card"
+                id="barchartcard"
+                role="presentation"
+                style={
+                  Object {
+                    "--card-default-height": "304px",
+                    "MozTransform": "translate(332px,16px)",
+                    "OTransform": "translate(332px,16px)",
+                    "WebkitTransform": "translate(332px,16px)",
+                    "height": "304px",
+                    "msTransform": "translate(332px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(332px,16px)",
+                    "width": "616px",
+                  }
+                }
+                type="BAR"
+              >
+                <div
+                  className="iot--card--header"
+                >
+                  <span
+                    className="iot--card--title"
+                    title="Bar chart"
+                  >
+                    <div
+                      className="iot--card--title--text"
+                    >
+                      Bar chart
+                    </div>
+                  </span>
+                  <div
+                    className="iot--card--toolbar"
+                  >
+                    <button
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <svg
+                        description="Expand to fullscreen"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        title="Expand to fullscreen"
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                        />
+                        <path
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--card--content"
+                  style={
+                    Object {
+                      "--card-content-height": "256px",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--bar-chart-container react-grid-item cssTransforms"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
                 className="iot--card react-grid-item cssTransforms iot--card--wrapper"
                 data-testid="Card"
                 id="facilitycard-xs"
@@ -258,13 +337,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
+                    "MozTransform": "translate(964px,16px)",
+                    "OTransform": "translate(964px,16px)",
+                    "WebkitTransform": "translate(964px,16px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,16px)",
+                    "msTransform": "translate(964px,16px)",
                     "position": "absolute",
-                    "transform": "translate(332px,16px)",
+                    "transform": "translate(964px,16px)",
                     "width": "300px",
                   }
                 }
@@ -347,13 +426,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
+                    "MozTransform": "translate(964px,176px)",
+                    "OTransform": "translate(964px,176px)",
+                    "WebkitTransform": "translate(964px,176px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,16px)",
+                    "msTransform": "translate(964px,176px)",
                     "position": "absolute",
-                    "transform": "translate(648px,16px)",
+                    "transform": "translate(964px,176px)",
                     "width": "300px",
                   }
                 }
@@ -436,13 +515,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,16px)",
-                    "OTransform": "translate(964px,16px)",
-                    "WebkitTransform": "translate(964px,16px)",
+                    "MozTransform": "translate(16px,336px)",
+                    "OTransform": "translate(16px,336px)",
+                    "WebkitTransform": "translate(16px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,16px)",
+                    "msTransform": "translate(16px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,16px)",
+                    "transform": "translate(16px,336px)",
                     "width": "300px",
                   }
                 }
@@ -475,13 +554,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,176px)",
-                    "OTransform": "translate(332px,176px)",
-                    "WebkitTransform": "translate(332px,176px)",
+                    "MozTransform": "translate(332px,336px)",
+                    "OTransform": "translate(332px,336px)",
+                    "WebkitTransform": "translate(332px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,176px)",
+                    "msTransform": "translate(332px,336px)",
                     "position": "absolute",
-                    "transform": "translate(332px,176px)",
+                    "transform": "translate(332px,336px)",
                     "width": "300px",
                   }
                 }
@@ -567,13 +646,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,176px)",
-                    "OTransform": "translate(648px,176px)",
-                    "WebkitTransform": "translate(648px,176px)",
+                    "MozTransform": "translate(648px,336px)",
+                    "OTransform": "translate(648px,336px)",
+                    "WebkitTransform": "translate(648px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,176px)",
+                    "msTransform": "translate(648px,336px)",
                     "position": "absolute",
-                    "transform": "translate(648px,176px)",
+                    "transform": "translate(648px,336px)",
                     "width": "300px",
                   }
                 }
@@ -659,13 +738,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,176px)",
-                    "OTransform": "translate(964px,176px)",
-                    "WebkitTransform": "translate(964px,176px)",
+                    "MozTransform": "translate(964px,336px)",
+                    "OTransform": "translate(964px,336px)",
+                    "WebkitTransform": "translate(964px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,176px)",
+                    "msTransform": "translate(964px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,176px)",
+                    "transform": "translate(964px,336px)",
                     "width": "300px",
                   }
                 }
@@ -774,13 +853,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(16px,336px)",
-                    "OTransform": "translate(16px,336px)",
-                    "WebkitTransform": "translate(16px,336px)",
+                    "MozTransform": "translate(16px,496px)",
+                    "OTransform": "translate(16px,496px)",
+                    "WebkitTransform": "translate(16px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(16px,336px)",
+                    "msTransform": "translate(16px,496px)",
                     "position": "absolute",
-                    "transform": "translate(16px,336px)",
+                    "transform": "translate(16px,496px)",
                     "width": "300px",
                   }
                 }
@@ -863,13 +942,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,336px)",
-                    "OTransform": "translate(332px,336px)",
-                    "WebkitTransform": "translate(332px,336px)",
+                    "MozTransform": "translate(332px,496px)",
+                    "OTransform": "translate(332px,496px)",
+                    "WebkitTransform": "translate(332px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,336px)",
+                    "msTransform": "translate(332px,496px)",
                     "position": "absolute",
-                    "transform": "translate(332px,336px)",
+                    "transform": "translate(332px,496px)",
                     "width": "300px",
                   }
                 }
@@ -1016,13 +1095,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,336px)",
-                    "OTransform": "translate(648px,336px)",
-                    "WebkitTransform": "translate(648px,336px)",
+                    "MozTransform": "translate(648px,496px)",
+                    "OTransform": "translate(648px,496px)",
+                    "WebkitTransform": "translate(648px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,336px)",
+                    "msTransform": "translate(648px,496px)",
                     "position": "absolute",
-                    "transform": "translate(648px,336px)",
+                    "transform": "translate(648px,496px)",
                     "width": "300px",
                   }
                 }
@@ -1131,13 +1210,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(964px,336px)",
-                    "OTransform": "translate(964px,336px)",
-                    "WebkitTransform": "translate(964px,336px)",
+                    "MozTransform": "translate(964px,496px)",
+                    "OTransform": "translate(964px,496px)",
+                    "WebkitTransform": "translate(964px,496px)",
                     "height": "304px",
-                    "msTransform": "translate(964px,336px)",
+                    "msTransform": "translate(964px,496px)",
                     "position": "absolute",
-                    "transform": "translate(964px,336px)",
+                    "transform": "translate(964px,496px)",
                     "width": "300px",
                   }
                 }
@@ -1254,13 +1333,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(16px,496px)",
-                    "OTransform": "translate(16px,496px)",
-                    "WebkitTransform": "translate(16px,496px)",
+                    "MozTransform": "translate(16px,656px)",
+                    "OTransform": "translate(16px,656px)",
+                    "WebkitTransform": "translate(16px,656px)",
                     "height": "624px",
-                    "msTransform": "translate(16px,496px)",
+                    "msTransform": "translate(16px,656px)",
                     "position": "absolute",
-                    "transform": "translate(16px,496px)",
+                    "transform": "translate(16px,656px)",
                     "width": "616px",
                   }
                 }
@@ -1734,13 +1813,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(648px,656px)",
-                    "OTransform": "translate(648px,656px)",
-                    "WebkitTransform": "translate(648px,656px)",
+                    "MozTransform": "translate(648px,816px)",
+                    "OTransform": "translate(648px,816px)",
+                    "WebkitTransform": "translate(648px,816px)",
                     "height": "624px",
-                    "msTransform": "translate(648px,656px)",
+                    "msTransform": "translate(648px,816px)",
                     "position": "absolute",
-                    "transform": "translate(648px,656px)",
+                    "transform": "translate(648px,816px)",
                     "width": "616px",
                   }
                 }
@@ -1857,13 +1936,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(16px,1136px)",
-                    "OTransform": "translate(16px,1136px)",
-                    "WebkitTransform": "translate(16px,1136px)",
+                    "MozTransform": "translate(16px,1296px)",
+                    "OTransform": "translate(16px,1296px)",
+                    "WebkitTransform": "translate(16px,1296px)",
                     "height": "304px",
-                    "msTransform": "translate(16px,1136px)",
+                    "msTransform": "translate(16px,1296px)",
                     "position": "absolute",
-                    "transform": "translate(16px,1136px)",
+                    "transform": "translate(16px,1296px)",
                     "width": "300px",
                   }
                 }
@@ -2261,7 +2340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
-                  "height": "1456px",
+                  "height": "1616px",
                 }
               }
             >
@@ -2456,6 +2535,85 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                data-testid="Card"
+                id="barchartcard"
+                role="presentation"
+                style={
+                  Object {
+                    "--card-default-height": "304px",
+                    "MozTransform": "translate(332px,16px)",
+                    "OTransform": "translate(332px,16px)",
+                    "WebkitTransform": "translate(332px,16px)",
+                    "height": "304px",
+                    "msTransform": "translate(332px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(332px,16px)",
+                    "width": "616px",
+                  }
+                }
+                type="BAR"
+              >
+                <div
+                  className="iot--card--header"
+                >
+                  <span
+                    className="iot--card--title"
+                    title="Bar chart"
+                  >
+                    <div
+                      className="iot--card--title--text"
+                    >
+                      Bar chart
+                    </div>
+                  </span>
+                  <div
+                    className="iot--card--toolbar"
+                  >
+                    <button
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <svg
+                        description="Expand to fullscreen"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        title="Expand to fullscreen"
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                        />
+                        <path
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--card--content"
+                  style={
+                    Object {
+                      "--card-content-height": "256px",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--bar-chart-container react-grid-item cssTransforms"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
                 className="iot--card react-grid-item cssTransforms iot--card--wrapper"
                 data-testid="Card"
                 id="facilitycard-xs"
@@ -2463,13 +2621,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
+                    "MozTransform": "translate(964px,16px)",
+                    "OTransform": "translate(964px,16px)",
+                    "WebkitTransform": "translate(964px,16px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,16px)",
+                    "msTransform": "translate(964px,16px)",
                     "position": "absolute",
-                    "transform": "translate(332px,16px)",
+                    "transform": "translate(964px,16px)",
                     "width": "300px",
                   }
                 }
@@ -2552,13 +2710,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
+                    "MozTransform": "translate(964px,176px)",
+                    "OTransform": "translate(964px,176px)",
+                    "WebkitTransform": "translate(964px,176px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,16px)",
+                    "msTransform": "translate(964px,176px)",
                     "position": "absolute",
-                    "transform": "translate(648px,16px)",
+                    "transform": "translate(964px,176px)",
                     "width": "300px",
                   }
                 }
@@ -2641,13 +2799,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,16px)",
-                    "OTransform": "translate(964px,16px)",
-                    "WebkitTransform": "translate(964px,16px)",
+                    "MozTransform": "translate(16px,336px)",
+                    "OTransform": "translate(16px,336px)",
+                    "WebkitTransform": "translate(16px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,16px)",
+                    "msTransform": "translate(16px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,16px)",
+                    "transform": "translate(16px,336px)",
                     "width": "300px",
                   }
                 }
@@ -2680,13 +2838,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,176px)",
-                    "OTransform": "translate(332px,176px)",
-                    "WebkitTransform": "translate(332px,176px)",
+                    "MozTransform": "translate(332px,336px)",
+                    "OTransform": "translate(332px,336px)",
+                    "WebkitTransform": "translate(332px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,176px)",
+                    "msTransform": "translate(332px,336px)",
                     "position": "absolute",
-                    "transform": "translate(332px,176px)",
+                    "transform": "translate(332px,336px)",
                     "width": "300px",
                   }
                 }
@@ -2772,13 +2930,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,176px)",
-                    "OTransform": "translate(648px,176px)",
-                    "WebkitTransform": "translate(648px,176px)",
+                    "MozTransform": "translate(648px,336px)",
+                    "OTransform": "translate(648px,336px)",
+                    "WebkitTransform": "translate(648px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,176px)",
+                    "msTransform": "translate(648px,336px)",
                     "position": "absolute",
-                    "transform": "translate(648px,176px)",
+                    "transform": "translate(648px,336px)",
                     "width": "300px",
                   }
                 }
@@ -2864,13 +3022,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,176px)",
-                    "OTransform": "translate(964px,176px)",
-                    "WebkitTransform": "translate(964px,176px)",
+                    "MozTransform": "translate(964px,336px)",
+                    "OTransform": "translate(964px,336px)",
+                    "WebkitTransform": "translate(964px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,176px)",
+                    "msTransform": "translate(964px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,176px)",
+                    "transform": "translate(964px,336px)",
                     "width": "300px",
                   }
                 }
@@ -2979,13 +3137,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(16px,336px)",
-                    "OTransform": "translate(16px,336px)",
-                    "WebkitTransform": "translate(16px,336px)",
+                    "MozTransform": "translate(16px,496px)",
+                    "OTransform": "translate(16px,496px)",
+                    "WebkitTransform": "translate(16px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(16px,336px)",
+                    "msTransform": "translate(16px,496px)",
                     "position": "absolute",
-                    "transform": "translate(16px,336px)",
+                    "transform": "translate(16px,496px)",
                     "width": "300px",
                   }
                 }
@@ -3068,13 +3226,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,336px)",
-                    "OTransform": "translate(332px,336px)",
-                    "WebkitTransform": "translate(332px,336px)",
+                    "MozTransform": "translate(332px,496px)",
+                    "OTransform": "translate(332px,496px)",
+                    "WebkitTransform": "translate(332px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,336px)",
+                    "msTransform": "translate(332px,496px)",
                     "position": "absolute",
-                    "transform": "translate(332px,336px)",
+                    "transform": "translate(332px,496px)",
                     "width": "300px",
                   }
                 }
@@ -3221,13 +3379,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,336px)",
-                    "OTransform": "translate(648px,336px)",
-                    "WebkitTransform": "translate(648px,336px)",
+                    "MozTransform": "translate(648px,496px)",
+                    "OTransform": "translate(648px,496px)",
+                    "WebkitTransform": "translate(648px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,336px)",
+                    "msTransform": "translate(648px,496px)",
                     "position": "absolute",
-                    "transform": "translate(648px,336px)",
+                    "transform": "translate(648px,496px)",
                     "width": "300px",
                   }
                 }
@@ -3336,13 +3494,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(964px,336px)",
-                    "OTransform": "translate(964px,336px)",
-                    "WebkitTransform": "translate(964px,336px)",
+                    "MozTransform": "translate(964px,496px)",
+                    "OTransform": "translate(964px,496px)",
+                    "WebkitTransform": "translate(964px,496px)",
                     "height": "304px",
-                    "msTransform": "translate(964px,336px)",
+                    "msTransform": "translate(964px,496px)",
                     "position": "absolute",
-                    "transform": "translate(964px,336px)",
+                    "transform": "translate(964px,496px)",
                     "width": "300px",
                   }
                 }
@@ -3459,13 +3617,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(16px,496px)",
-                    "OTransform": "translate(16px,496px)",
-                    "WebkitTransform": "translate(16px,496px)",
+                    "MozTransform": "translate(16px,656px)",
+                    "OTransform": "translate(16px,656px)",
+                    "WebkitTransform": "translate(16px,656px)",
                     "height": "624px",
-                    "msTransform": "translate(16px,496px)",
+                    "msTransform": "translate(16px,656px)",
                     "position": "absolute",
-                    "transform": "translate(16px,496px)",
+                    "transform": "translate(16px,656px)",
                     "width": "616px",
                   }
                 }
@@ -3939,13 +4097,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(648px,656px)",
-                    "OTransform": "translate(648px,656px)",
-                    "WebkitTransform": "translate(648px,656px)",
+                    "MozTransform": "translate(648px,816px)",
+                    "OTransform": "translate(648px,816px)",
+                    "WebkitTransform": "translate(648px,816px)",
                     "height": "624px",
-                    "msTransform": "translate(648px,656px)",
+                    "msTransform": "translate(648px,816px)",
                     "position": "absolute",
-                    "transform": "translate(648px,656px)",
+                    "transform": "translate(648px,816px)",
                     "width": "616px",
                   }
                 }
@@ -4062,13 +4220,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(16px,1136px)",
-                    "OTransform": "translate(16px,1136px)",
-                    "WebkitTransform": "translate(16px,1136px)",
+                    "MozTransform": "translate(16px,1296px)",
+                    "OTransform": "translate(16px,1296px)",
+                    "WebkitTransform": "translate(16px,1296px)",
                     "height": "304px",
-                    "msTransform": "translate(16px,1136px)",
+                    "msTransform": "translate(16px,1296px)",
                     "position": "absolute",
-                    "transform": "translate(16px,1136px)",
+                    "transform": "translate(16px,1296px)",
                     "width": "300px",
                   }
                 }
@@ -4498,7 +4656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
-                  "height": "1456px",
+                  "height": "1616px",
                 }
               }
             >
@@ -4693,6 +4851,85 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                data-testid="Card"
+                id="barchartcard"
+                role="presentation"
+                style={
+                  Object {
+                    "--card-default-height": "304px",
+                    "MozTransform": "translate(332px,16px)",
+                    "OTransform": "translate(332px,16px)",
+                    "WebkitTransform": "translate(332px,16px)",
+                    "height": "304px",
+                    "msTransform": "translate(332px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(332px,16px)",
+                    "width": "616px",
+                  }
+                }
+                type="BAR"
+              >
+                <div
+                  className="iot--card--header"
+                >
+                  <span
+                    className="iot--card--title"
+                    title="Bar chart"
+                  >
+                    <div
+                      className="iot--card--title--text"
+                    >
+                      Bar chart
+                    </div>
+                  </span>
+                  <div
+                    className="iot--card--toolbar"
+                  >
+                    <button
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <svg
+                        description="Expand to fullscreen"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        title="Expand to fullscreen"
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                        />
+                        <path
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--card--content"
+                  style={
+                    Object {
+                      "--card-content-height": "256px",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--bar-chart-container react-grid-item cssTransforms"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
                 className="iot--card react-grid-item cssTransforms iot--card--wrapper"
                 data-testid="Card"
                 id="facilitycard-xs"
@@ -4700,13 +4937,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
+                    "MozTransform": "translate(964px,16px)",
+                    "OTransform": "translate(964px,16px)",
+                    "WebkitTransform": "translate(964px,16px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,16px)",
+                    "msTransform": "translate(964px,16px)",
                     "position": "absolute",
-                    "transform": "translate(332px,16px)",
+                    "transform": "translate(964px,16px)",
                     "width": "300px",
                   }
                 }
@@ -4789,13 +5026,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
+                    "MozTransform": "translate(964px,176px)",
+                    "OTransform": "translate(964px,176px)",
+                    "WebkitTransform": "translate(964px,176px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,16px)",
+                    "msTransform": "translate(964px,176px)",
                     "position": "absolute",
-                    "transform": "translate(648px,16px)",
+                    "transform": "translate(964px,176px)",
                     "width": "300px",
                   }
                 }
@@ -4878,13 +5115,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,16px)",
-                    "OTransform": "translate(964px,16px)",
-                    "WebkitTransform": "translate(964px,16px)",
+                    "MozTransform": "translate(16px,336px)",
+                    "OTransform": "translate(16px,336px)",
+                    "WebkitTransform": "translate(16px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,16px)",
+                    "msTransform": "translate(16px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,16px)",
+                    "transform": "translate(16px,336px)",
                     "width": "300px",
                   }
                 }
@@ -4917,13 +5154,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,176px)",
-                    "OTransform": "translate(332px,176px)",
-                    "WebkitTransform": "translate(332px,176px)",
+                    "MozTransform": "translate(332px,336px)",
+                    "OTransform": "translate(332px,336px)",
+                    "WebkitTransform": "translate(332px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,176px)",
+                    "msTransform": "translate(332px,336px)",
                     "position": "absolute",
-                    "transform": "translate(332px,176px)",
+                    "transform": "translate(332px,336px)",
                     "width": "300px",
                   }
                 }
@@ -5009,13 +5246,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,176px)",
-                    "OTransform": "translate(648px,176px)",
-                    "WebkitTransform": "translate(648px,176px)",
+                    "MozTransform": "translate(648px,336px)",
+                    "OTransform": "translate(648px,336px)",
+                    "WebkitTransform": "translate(648px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,176px)",
+                    "msTransform": "translate(648px,336px)",
                     "position": "absolute",
-                    "transform": "translate(648px,176px)",
+                    "transform": "translate(648px,336px)",
                     "width": "300px",
                   }
                 }
@@ -5101,13 +5338,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,176px)",
-                    "OTransform": "translate(964px,176px)",
-                    "WebkitTransform": "translate(964px,176px)",
+                    "MozTransform": "translate(964px,336px)",
+                    "OTransform": "translate(964px,336px)",
+                    "WebkitTransform": "translate(964px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,176px)",
+                    "msTransform": "translate(964px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,176px)",
+                    "transform": "translate(964px,336px)",
                     "width": "300px",
                   }
                 }
@@ -5216,13 +5453,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(16px,336px)",
-                    "OTransform": "translate(16px,336px)",
-                    "WebkitTransform": "translate(16px,336px)",
+                    "MozTransform": "translate(16px,496px)",
+                    "OTransform": "translate(16px,496px)",
+                    "WebkitTransform": "translate(16px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(16px,336px)",
+                    "msTransform": "translate(16px,496px)",
                     "position": "absolute",
-                    "transform": "translate(16px,336px)",
+                    "transform": "translate(16px,496px)",
                     "width": "300px",
                   }
                 }
@@ -5305,13 +5542,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,336px)",
-                    "OTransform": "translate(332px,336px)",
-                    "WebkitTransform": "translate(332px,336px)",
+                    "MozTransform": "translate(332px,496px)",
+                    "OTransform": "translate(332px,496px)",
+                    "WebkitTransform": "translate(332px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,336px)",
+                    "msTransform": "translate(332px,496px)",
                     "position": "absolute",
-                    "transform": "translate(332px,336px)",
+                    "transform": "translate(332px,496px)",
                     "width": "300px",
                   }
                 }
@@ -5458,13 +5695,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,336px)",
-                    "OTransform": "translate(648px,336px)",
-                    "WebkitTransform": "translate(648px,336px)",
+                    "MozTransform": "translate(648px,496px)",
+                    "OTransform": "translate(648px,496px)",
+                    "WebkitTransform": "translate(648px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,336px)",
+                    "msTransform": "translate(648px,496px)",
                     "position": "absolute",
-                    "transform": "translate(648px,336px)",
+                    "transform": "translate(648px,496px)",
                     "width": "300px",
                   }
                 }
@@ -5573,13 +5810,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(964px,336px)",
-                    "OTransform": "translate(964px,336px)",
-                    "WebkitTransform": "translate(964px,336px)",
+                    "MozTransform": "translate(964px,496px)",
+                    "OTransform": "translate(964px,496px)",
+                    "WebkitTransform": "translate(964px,496px)",
                     "height": "304px",
-                    "msTransform": "translate(964px,336px)",
+                    "msTransform": "translate(964px,496px)",
                     "position": "absolute",
-                    "transform": "translate(964px,336px)",
+                    "transform": "translate(964px,496px)",
                     "width": "300px",
                   }
                 }
@@ -5696,13 +5933,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(16px,496px)",
-                    "OTransform": "translate(16px,496px)",
-                    "WebkitTransform": "translate(16px,496px)",
+                    "MozTransform": "translate(16px,656px)",
+                    "OTransform": "translate(16px,656px)",
+                    "WebkitTransform": "translate(16px,656px)",
                     "height": "624px",
-                    "msTransform": "translate(16px,496px)",
+                    "msTransform": "translate(16px,656px)",
                     "position": "absolute",
-                    "transform": "translate(16px,496px)",
+                    "transform": "translate(16px,656px)",
                     "width": "616px",
                   }
                 }
@@ -6176,13 +6413,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(648px,656px)",
-                    "OTransform": "translate(648px,656px)",
-                    "WebkitTransform": "translate(648px,656px)",
+                    "MozTransform": "translate(648px,816px)",
+                    "OTransform": "translate(648px,816px)",
+                    "WebkitTransform": "translate(648px,816px)",
                     "height": "624px",
-                    "msTransform": "translate(648px,656px)",
+                    "msTransform": "translate(648px,816px)",
                     "position": "absolute",
-                    "transform": "translate(648px,656px)",
+                    "transform": "translate(648px,816px)",
                     "width": "616px",
                   }
                 }
@@ -6299,13 +6536,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(16px,1136px)",
-                    "OTransform": "translate(16px,1136px)",
-                    "WebkitTransform": "translate(16px,1136px)",
+                    "MozTransform": "translate(16px,1296px)",
+                    "OTransform": "translate(16px,1296px)",
+                    "WebkitTransform": "translate(16px,1296px)",
                     "height": "304px",
-                    "msTransform": "translate(16px,1136px)",
+                    "msTransform": "translate(16px,1296px)",
                     "position": "absolute",
-                    "transform": "translate(16px,1136px)",
+                    "transform": "translate(16px,1296px)",
                     "width": "300px",
                   }
                 }
@@ -6706,7 +6943,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 "height": "656px",
               }
             }
-          />
+          >
+            <div
+              className="iot--card iot--bar-chart-card iot--card--wrapper"
+              data-testid="Card"
+              id="expandedcard"
+              role="presentation"
+              style={
+                Object {
+                  "--card-default-height": "624px",
+                  "MozTransform": "translate(16px,16px)",
+                  "OTransform": "translate(16px,16px)",
+                  "WebkitTransform": "translate(16px,16px)",
+                  "height": "624px",
+                  "msTransform": "translate(16px,16px)",
+                  "position": "absolute",
+                  "transform": "translate(16px,16px)",
+                  "width": "616px",
+                }
+              }
+              type="BAR"
+            >
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="Expanded card"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    Expanded card
+                  </div>
+                </span>
+                <div
+                  className="iot--card--toolbar"
+                >
+                  <button
+                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      description="Expand to fullscreen"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      title="Expand to fullscreen"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                      />
+                      <path
+                        d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                className="iot--card--content"
+                style={
+                  Object {
+                    "--card-content-height": "576px",
+                  }
+                }
+              >
+                <div
+                  className="iot--bar-chart-container react-grid-item cssTransforms"
+                >
+                  <div
+                    className="chart-holder"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -9111,7 +9428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
-                  "height": "1456px",
+                  "height": "1616px",
                 }
               }
             >
@@ -9306,6 +9623,85 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                data-testid="Card"
+                id="barchartcard"
+                role="presentation"
+                style={
+                  Object {
+                    "--card-default-height": "304px",
+                    "MozTransform": "translate(332px,16px)",
+                    "OTransform": "translate(332px,16px)",
+                    "WebkitTransform": "translate(332px,16px)",
+                    "height": "304px",
+                    "msTransform": "translate(332px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(332px,16px)",
+                    "width": "616px",
+                  }
+                }
+                type="BAR"
+              >
+                <div
+                  className="iot--card--header"
+                >
+                  <span
+                    className="iot--card--title"
+                    title="Bar chart"
+                  >
+                    <div
+                      className="iot--card--title--text"
+                    >
+                      Bar chart
+                    </div>
+                  </span>
+                  <div
+                    className="iot--card--toolbar"
+                  >
+                    <button
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <svg
+                        description="Expand to fullscreen"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        title="Expand to fullscreen"
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                        />
+                        <path
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--card--content"
+                  style={
+                    Object {
+                      "--card-content-height": "256px",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--bar-chart-container react-grid-item cssTransforms"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
                 className="iot--card react-grid-item cssTransforms iot--card--wrapper"
                 data-testid="Card"
                 id="facilitycard-xs"
@@ -9313,13 +9709,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
+                    "MozTransform": "translate(964px,16px)",
+                    "OTransform": "translate(964px,16px)",
+                    "WebkitTransform": "translate(964px,16px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,16px)",
+                    "msTransform": "translate(964px,16px)",
                     "position": "absolute",
-                    "transform": "translate(332px,16px)",
+                    "transform": "translate(964px,16px)",
                     "width": "300px",
                   }
                 }
@@ -9402,13 +9798,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
+                    "MozTransform": "translate(964px,176px)",
+                    "OTransform": "translate(964px,176px)",
+                    "WebkitTransform": "translate(964px,176px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,16px)",
+                    "msTransform": "translate(964px,176px)",
                     "position": "absolute",
-                    "transform": "translate(648px,16px)",
+                    "transform": "translate(964px,176px)",
                     "width": "300px",
                   }
                 }
@@ -9491,13 +9887,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,16px)",
-                    "OTransform": "translate(964px,16px)",
-                    "WebkitTransform": "translate(964px,16px)",
+                    "MozTransform": "translate(16px,336px)",
+                    "OTransform": "translate(16px,336px)",
+                    "WebkitTransform": "translate(16px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,16px)",
+                    "msTransform": "translate(16px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,16px)",
+                    "transform": "translate(16px,336px)",
                     "width": "300px",
                   }
                 }
@@ -9530,13 +9926,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,176px)",
-                    "OTransform": "translate(332px,176px)",
-                    "WebkitTransform": "translate(332px,176px)",
+                    "MozTransform": "translate(332px,336px)",
+                    "OTransform": "translate(332px,336px)",
+                    "WebkitTransform": "translate(332px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,176px)",
+                    "msTransform": "translate(332px,336px)",
                     "position": "absolute",
-                    "transform": "translate(332px,176px)",
+                    "transform": "translate(332px,336px)",
                     "width": "300px",
                   }
                 }
@@ -9622,13 +10018,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,176px)",
-                    "OTransform": "translate(648px,176px)",
-                    "WebkitTransform": "translate(648px,176px)",
+                    "MozTransform": "translate(648px,336px)",
+                    "OTransform": "translate(648px,336px)",
+                    "WebkitTransform": "translate(648px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,176px)",
+                    "msTransform": "translate(648px,336px)",
                     "position": "absolute",
-                    "transform": "translate(648px,176px)",
+                    "transform": "translate(648px,336px)",
                     "width": "300px",
                   }
                 }
@@ -9714,13 +10110,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,176px)",
-                    "OTransform": "translate(964px,176px)",
-                    "WebkitTransform": "translate(964px,176px)",
+                    "MozTransform": "translate(964px,336px)",
+                    "OTransform": "translate(964px,336px)",
+                    "WebkitTransform": "translate(964px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,176px)",
+                    "msTransform": "translate(964px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,176px)",
+                    "transform": "translate(964px,336px)",
                     "width": "300px",
                   }
                 }
@@ -9829,13 +10225,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(16px,336px)",
-                    "OTransform": "translate(16px,336px)",
-                    "WebkitTransform": "translate(16px,336px)",
+                    "MozTransform": "translate(16px,496px)",
+                    "OTransform": "translate(16px,496px)",
+                    "WebkitTransform": "translate(16px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(16px,336px)",
+                    "msTransform": "translate(16px,496px)",
                     "position": "absolute",
-                    "transform": "translate(16px,336px)",
+                    "transform": "translate(16px,496px)",
                     "width": "300px",
                   }
                 }
@@ -9918,13 +10314,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,336px)",
-                    "OTransform": "translate(332px,336px)",
-                    "WebkitTransform": "translate(332px,336px)",
+                    "MozTransform": "translate(332px,496px)",
+                    "OTransform": "translate(332px,496px)",
+                    "WebkitTransform": "translate(332px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,336px)",
+                    "msTransform": "translate(332px,496px)",
                     "position": "absolute",
-                    "transform": "translate(332px,336px)",
+                    "transform": "translate(332px,496px)",
                     "width": "300px",
                   }
                 }
@@ -10071,13 +10467,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,336px)",
-                    "OTransform": "translate(648px,336px)",
-                    "WebkitTransform": "translate(648px,336px)",
+                    "MozTransform": "translate(648px,496px)",
+                    "OTransform": "translate(648px,496px)",
+                    "WebkitTransform": "translate(648px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,336px)",
+                    "msTransform": "translate(648px,496px)",
                     "position": "absolute",
-                    "transform": "translate(648px,336px)",
+                    "transform": "translate(648px,496px)",
                     "width": "300px",
                   }
                 }
@@ -10186,13 +10582,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(964px,336px)",
-                    "OTransform": "translate(964px,336px)",
-                    "WebkitTransform": "translate(964px,336px)",
+                    "MozTransform": "translate(964px,496px)",
+                    "OTransform": "translate(964px,496px)",
+                    "WebkitTransform": "translate(964px,496px)",
                     "height": "304px",
-                    "msTransform": "translate(964px,336px)",
+                    "msTransform": "translate(964px,496px)",
                     "position": "absolute",
-                    "transform": "translate(964px,336px)",
+                    "transform": "translate(964px,496px)",
                     "width": "300px",
                   }
                 }
@@ -10309,13 +10705,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(16px,496px)",
-                    "OTransform": "translate(16px,496px)",
-                    "WebkitTransform": "translate(16px,496px)",
+                    "MozTransform": "translate(16px,656px)",
+                    "OTransform": "translate(16px,656px)",
+                    "WebkitTransform": "translate(16px,656px)",
                     "height": "624px",
-                    "msTransform": "translate(16px,496px)",
+                    "msTransform": "translate(16px,656px)",
                     "position": "absolute",
-                    "transform": "translate(16px,496px)",
+                    "transform": "translate(16px,656px)",
                     "width": "616px",
                   }
                 }
@@ -10787,13 +11183,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(648px,656px)",
-                    "OTransform": "translate(648px,656px)",
-                    "WebkitTransform": "translate(648px,656px)",
+                    "MozTransform": "translate(648px,816px)",
+                    "OTransform": "translate(648px,816px)",
+                    "WebkitTransform": "translate(648px,816px)",
                     "height": "624px",
-                    "msTransform": "translate(648px,656px)",
+                    "msTransform": "translate(648px,816px)",
                     "position": "absolute",
-                    "transform": "translate(648px,656px)",
+                    "transform": "translate(648px,816px)",
                     "width": "616px",
                   }
                 }
@@ -10910,13 +11306,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(16px,1136px)",
-                    "OTransform": "translate(16px,1136px)",
-                    "WebkitTransform": "translate(16px,1136px)",
+                    "MozTransform": "translate(16px,1296px)",
+                    "OTransform": "translate(16px,1296px)",
+                    "WebkitTransform": "translate(16px,1296px)",
                     "height": "304px",
-                    "msTransform": "translate(16px,1136px)",
+                    "msTransform": "translate(16px,1296px)",
                     "position": "absolute",
-                    "transform": "translate(16px,1136px)",
+                    "transform": "translate(16px,1296px)",
                     "width": "300px",
                   }
                 }
@@ -23440,7 +23836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
               style={
                 Object {
-                  "height": "1456px",
+                  "height": "1616px",
                 }
               }
             >
@@ -23635,6 +24031,85 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 </div>
               </div>
               <div
+                className="iot--card iot--bar-chart-card iot--card--wrapper"
+                data-testid="Card"
+                id="barchartcard"
+                role="presentation"
+                style={
+                  Object {
+                    "--card-default-height": "304px",
+                    "MozTransform": "translate(332px,16px)",
+                    "OTransform": "translate(332px,16px)",
+                    "WebkitTransform": "translate(332px,16px)",
+                    "height": "304px",
+                    "msTransform": "translate(332px,16px)",
+                    "position": "absolute",
+                    "transform": "translate(332px,16px)",
+                    "width": "616px",
+                  }
+                }
+                type="BAR"
+              >
+                <div
+                  className="iot--card--header"
+                >
+                  <span
+                    className="iot--card--title"
+                    title="Bar chart"
+                  >
+                    <div
+                      className="iot--card--title--text"
+                    >
+                      Bar chart
+                    </div>
+                  </span>
+                  <div
+                    className="iot--card--toolbar"
+                  >
+                    <button
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <svg
+                        description="Expand to fullscreen"
+                        focusable="false"
+                        height={20}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        title="Expand to fullscreen"
+                        viewBox="0 0 32 32"
+                        width={20}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+                        />
+                        <path
+                          d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  className="iot--card--content"
+                  style={
+                    Object {
+                      "--card-content-height": "256px",
+                    }
+                  }
+                >
+                  <div
+                    className="iot--bar-chart-container react-grid-item cssTransforms"
+                  >
+                    <div
+                      className="chart-holder"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
                 className="iot--card react-grid-item cssTransforms iot--card--wrapper"
                 data-testid="Card"
                 id="facilitycard-xs"
@@ -23642,13 +24117,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,16px)",
-                    "OTransform": "translate(332px,16px)",
-                    "WebkitTransform": "translate(332px,16px)",
+                    "MozTransform": "translate(964px,16px)",
+                    "OTransform": "translate(964px,16px)",
+                    "WebkitTransform": "translate(964px,16px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,16px)",
+                    "msTransform": "translate(964px,16px)",
                     "position": "absolute",
-                    "transform": "translate(332px,16px)",
+                    "transform": "translate(964px,16px)",
                     "width": "300px",
                   }
                 }
@@ -23731,13 +24206,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,16px)",
-                    "OTransform": "translate(648px,16px)",
-                    "WebkitTransform": "translate(648px,16px)",
+                    "MozTransform": "translate(964px,176px)",
+                    "OTransform": "translate(964px,176px)",
+                    "WebkitTransform": "translate(964px,176px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,16px)",
+                    "msTransform": "translate(964px,176px)",
                     "position": "absolute",
-                    "transform": "translate(648px,16px)",
+                    "transform": "translate(964px,176px)",
                     "width": "300px",
                   }
                 }
@@ -23820,13 +24295,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,16px)",
-                    "OTransform": "translate(964px,16px)",
-                    "WebkitTransform": "translate(964px,16px)",
+                    "MozTransform": "translate(16px,336px)",
+                    "OTransform": "translate(16px,336px)",
+                    "WebkitTransform": "translate(16px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,16px)",
+                    "msTransform": "translate(16px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,16px)",
+                    "transform": "translate(16px,336px)",
                     "width": "300px",
                   }
                 }
@@ -23859,13 +24334,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,176px)",
-                    "OTransform": "translate(332px,176px)",
-                    "WebkitTransform": "translate(332px,176px)",
+                    "MozTransform": "translate(332px,336px)",
+                    "OTransform": "translate(332px,336px)",
+                    "WebkitTransform": "translate(332px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,176px)",
+                    "msTransform": "translate(332px,336px)",
                     "position": "absolute",
-                    "transform": "translate(332px,176px)",
+                    "transform": "translate(332px,336px)",
                     "width": "300px",
                   }
                 }
@@ -23951,13 +24426,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,176px)",
-                    "OTransform": "translate(648px,176px)",
-                    "WebkitTransform": "translate(648px,176px)",
+                    "MozTransform": "translate(648px,336px)",
+                    "OTransform": "translate(648px,336px)",
+                    "WebkitTransform": "translate(648px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,176px)",
+                    "msTransform": "translate(648px,336px)",
                     "position": "absolute",
-                    "transform": "translate(648px,176px)",
+                    "transform": "translate(648px,336px)",
                     "width": "300px",
                   }
                 }
@@ -24043,13 +24518,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(964px,176px)",
-                    "OTransform": "translate(964px,176px)",
-                    "WebkitTransform": "translate(964px,176px)",
+                    "MozTransform": "translate(964px,336px)",
+                    "OTransform": "translate(964px,336px)",
+                    "WebkitTransform": "translate(964px,336px)",
                     "height": "144px",
-                    "msTransform": "translate(964px,176px)",
+                    "msTransform": "translate(964px,336px)",
                     "position": "absolute",
-                    "transform": "translate(964px,176px)",
+                    "transform": "translate(964px,336px)",
                     "width": "300px",
                   }
                 }
@@ -24158,13 +24633,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(16px,336px)",
-                    "OTransform": "translate(16px,336px)",
-                    "WebkitTransform": "translate(16px,336px)",
+                    "MozTransform": "translate(16px,496px)",
+                    "OTransform": "translate(16px,496px)",
+                    "WebkitTransform": "translate(16px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(16px,336px)",
+                    "msTransform": "translate(16px,496px)",
                     "position": "absolute",
-                    "transform": "translate(16px,336px)",
+                    "transform": "translate(16px,496px)",
                     "width": "300px",
                   }
                 }
@@ -24247,13 +24722,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(332px,336px)",
-                    "OTransform": "translate(332px,336px)",
-                    "WebkitTransform": "translate(332px,336px)",
+                    "MozTransform": "translate(332px,496px)",
+                    "OTransform": "translate(332px,496px)",
+                    "WebkitTransform": "translate(332px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(332px,336px)",
+                    "msTransform": "translate(332px,496px)",
                     "position": "absolute",
-                    "transform": "translate(332px,336px)",
+                    "transform": "translate(332px,496px)",
                     "width": "300px",
                   }
                 }
@@ -24400,13 +24875,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "144px",
-                    "MozTransform": "translate(648px,336px)",
-                    "OTransform": "translate(648px,336px)",
-                    "WebkitTransform": "translate(648px,336px)",
+                    "MozTransform": "translate(648px,496px)",
+                    "OTransform": "translate(648px,496px)",
+                    "WebkitTransform": "translate(648px,496px)",
                     "height": "144px",
-                    "msTransform": "translate(648px,336px)",
+                    "msTransform": "translate(648px,496px)",
                     "position": "absolute",
-                    "transform": "translate(648px,336px)",
+                    "transform": "translate(648px,496px)",
                     "width": "300px",
                   }
                 }
@@ -24515,13 +24990,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(964px,336px)",
-                    "OTransform": "translate(964px,336px)",
-                    "WebkitTransform": "translate(964px,336px)",
+                    "MozTransform": "translate(964px,496px)",
+                    "OTransform": "translate(964px,496px)",
+                    "WebkitTransform": "translate(964px,496px)",
                     "height": "304px",
-                    "msTransform": "translate(964px,336px)",
+                    "msTransform": "translate(964px,496px)",
                     "position": "absolute",
-                    "transform": "translate(964px,336px)",
+                    "transform": "translate(964px,496px)",
                     "width": "300px",
                   }
                 }
@@ -24638,13 +25113,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(16px,496px)",
-                    "OTransform": "translate(16px,496px)",
-                    "WebkitTransform": "translate(16px,496px)",
+                    "MozTransform": "translate(16px,656px)",
+                    "OTransform": "translate(16px,656px)",
+                    "WebkitTransform": "translate(16px,656px)",
                     "height": "624px",
-                    "msTransform": "translate(16px,496px)",
+                    "msTransform": "translate(16px,656px)",
                     "position": "absolute",
-                    "transform": "translate(16px,496px)",
+                    "transform": "translate(16px,656px)",
                     "width": "616px",
                   }
                 }
@@ -25118,13 +25593,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "624px",
-                    "MozTransform": "translate(648px,656px)",
-                    "OTransform": "translate(648px,656px)",
-                    "WebkitTransform": "translate(648px,656px)",
+                    "MozTransform": "translate(648px,816px)",
+                    "OTransform": "translate(648px,816px)",
+                    "WebkitTransform": "translate(648px,816px)",
                     "height": "624px",
-                    "msTransform": "translate(648px,656px)",
+                    "msTransform": "translate(648px,816px)",
                     "position": "absolute",
-                    "transform": "translate(648px,656px)",
+                    "transform": "translate(648px,816px)",
                     "width": "616px",
                   }
                 }
@@ -25241,13 +25716,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 style={
                   Object {
                     "--card-default-height": "304px",
-                    "MozTransform": "translate(16px,1136px)",
-                    "OTransform": "translate(16px,1136px)",
-                    "WebkitTransform": "translate(16px,1136px)",
+                    "MozTransform": "translate(16px,1296px)",
+                    "OTransform": "translate(16px,1296px)",
+                    "WebkitTransform": "translate(16px,1296px)",
                     "height": "304px",
-                    "msTransform": "translate(16px,1136px)",
+                    "msTransform": "translate(16px,1296px)",
                     "position": "absolute",
-                    "transform": "translate(16px,1136px)",
+                    "transform": "translate(16px,1296px)",
                     "width": "300px",
                   }
                 }

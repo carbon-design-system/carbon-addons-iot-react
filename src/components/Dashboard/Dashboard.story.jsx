@@ -39,6 +39,54 @@ export const originalCards = [
     },
   },
   {
+    title: 'Bar chart',
+    id: 'barchartcard',
+    size: CARD_SIZES.MEDIUMWIDE,
+    type: CARD_TYPES.BAR,
+    content: {
+      categoryDataSourceId: 'city',
+      layout: 'VERTICAL',
+      series: [
+        {
+          color: ['blue', 'red', 'green', 'yellow'],
+          dataSourceId: 'particles',
+        },
+      ],
+      xLabel: 'Cities',
+      yLabel: 'Particles',
+    },
+    values: [
+      {
+        city: 'Amsterdam',
+        emissions: 120,
+        particles: 447,
+        quarter: '2020-Q1',
+        temperature: 44,
+      },
+      {
+        city: 'New York',
+        emissions: 130,
+        particles: 528,
+        quarter: '2020-Q1',
+        temperature: 11,
+      },
+      {
+        city: 'Bangkok',
+        emissions: 30,
+        particles: 435,
+        quarter: '2020-Q1',
+        temperature: 32,
+      },
+      {
+        city: 'San Francisco',
+        emissions: 312,
+        particles: 388,
+        quarter: '2020-Q1',
+        temperature: 120,
+      },
+    ],
+  },
+  {
     title: 'Humidity',
     id: 'facilitycard-xs',
     size: CARD_SIZES.SMALL,
