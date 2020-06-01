@@ -82,8 +82,6 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   dataSourceId: PropTypes.string.isRequired,
   /** optional filter to apply to this particular line */
   dataFilter: PropTypes.objectOf(PropTypes.any),
-  /** optional units to put in the legend */
-  unit: PropTypes.string,
   /** optional param to set the colors */
   color: PropTypes.string,
 });
@@ -109,6 +107,8 @@ export const TimeSeriesCardPropTypes = {
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
       '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
     ),
+    /** optional units to put in the legend */
+    unit: PropTypes.string,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -239,6 +239,8 @@ export const BarChartCardPropTypes = {
     categoryDataSourceId: PropTypes.string,
     /** for time based bar charts this is the x-axis value */
     timeDataSourceId: PropTypes.string,
+    /** optional units to put in the legend */
+    unit: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),

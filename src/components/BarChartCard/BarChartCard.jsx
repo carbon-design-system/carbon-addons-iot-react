@@ -5,11 +5,13 @@ import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import moment from 'moment';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
+import { formatNumberWithPrecision, determinePrecision } from '../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -181,6 +183,50 @@ export const formatColors = (series, datasetNames) => {
   return colors;
 };
 
+/**
+ * Determines how to format our values for our lines
+ *
+ * @param {any} value any value possible, but will only special format if a number
+ * @param {string} size card size
+ * @param {string} unit any optional units to show
+ */
+export const valueFormatter = (value, size, unit, locale) => {
+  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
+  let renderValue = value;
+  if (typeof value === 'number') {
+    renderValue = formatNumberWithPrecision(value, precision, locale);
+  } else if (isNil(value)) {
+    renderValue = '--';
+  }
+  return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
+};
+
+/**
+ * Extends default tooltip with additional date information if the graph is time-based
+ * @param {object} data data object for this particular datapoint
+ * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
+ * @param {string} timeDatasourceId time-based attribute
+ */
+export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSourceId) => {
+  // First add the dataset name as the current implementation only shows the value
+  let updatedTooltip = defaultTooltip.replace(
+    `<p class="value">`,
+    `<p class="value">${dataOrHoveredElement.group}: `
+  );
+  // If theres a time attribute, add an extra list item with the formatted date
+  if (timeDataSourceId) {
+    const timeStamp = dataOrHoveredElement.date;
+    const dateLabel = `<li class='datapoint-tooltip'>
+                      <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>
+                   </li>`;
+
+    // wrap to make single a multi-tooltip
+    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedTooltip}</li></ul>`;
+  }
+
+  return updatedTooltip;
+};
+
 const BarChartCard = ({
   title,
   content: {
@@ -191,6 +237,7 @@ const BarChartCard = ({
     series,
     categoryDataSourceId,
     timeDataSourceId,
+    unit,
   },
   size,
   values,
@@ -257,6 +304,10 @@ const BarChartCard = ({
               legend: { position: 'bottom', enabled: chartData.length > 1 },
               containerResizable: true,
               color: colors,
+              tooltip: {
+                valueFormatter: tooltipValue => valueFormatter(tooltipValue, size, unit, locale),
+                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, locale),
+              },
             }}
             width="100%"
             height="100%"
