@@ -100,10 +100,10 @@ const TileCatalogNew = ({
       {tiles.map((tile, i) =>
         isLoading ? (
           i < 4 ? ( // limit the amount of SkeletonText to render
-            <SkeletonText />
+            <SkeletonText key={`${iotPrefix}--tile-catalog--grid-${i}`} />
           ) : null
         ) : minTileWidth || isInCurrentPageRange(i) ? (
-          <div>{tile}</div>
+          <div key={`${iotPrefix}--tile-catalog--grid-${i}`}>{tile}</div>
         ) : null
       )}
     </div>
