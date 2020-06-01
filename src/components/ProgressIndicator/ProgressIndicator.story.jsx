@@ -79,7 +79,6 @@ storiesOf('Watson IoT/ProgressIndicator', module)
     <IotProgressIndicator
       items={itemsIot}
       currentItemId="step2_substep2"
-      onClickItem={action('onClickItem')}
       stepWidth={number('stepWidth', 6)}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={boolean('isVerticalMode', false)}
@@ -90,7 +89,6 @@ storiesOf('Watson IoT/ProgressIndicator', module)
     <IotProgressIndicator
       items={itemsIot}
       currentItemId="step2_substep2"
-      onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={true}
       clickable={boolean('clickable', false)}

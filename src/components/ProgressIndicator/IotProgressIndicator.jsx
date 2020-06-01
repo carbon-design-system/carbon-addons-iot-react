@@ -105,7 +105,11 @@ export const IotProgressStep = ({
       value = <p>!</p>;
     }
 
-    return <div className={classes}>{value}</div>;
+    return (
+      <span className={classes} title={description}>
+        {value}
+      </span>
+    );
   };
 
   const StepLine = () => {
