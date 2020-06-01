@@ -11,6 +11,7 @@ import {
   TABLE_ROW_SELECT,
   TABLE_ROW_SELECT_ALL,
   TABLE_ROW_ACTION_START,
+  TABLE_ROW_ACTION_EDIT,
   TABLE_ROW_ACTION_COMPLETE,
   TABLE_ROW_ACTION_ERROR,
   TABLE_ROW_EXPAND,
@@ -149,6 +150,15 @@ export const baseTableReducer = (state = {}, action) => {
           table: {
             // add the in progress row
             rowActions: { $push: [{ rowId: action.payload, isRunning: true }] },
+          },
+        },
+      });
+    case TABLE_ROW_ACTION_EDIT:
+      return update(state, {
+        view: {
+          table: {
+            // mark the row as being in edit mode
+            rowActions: { $push: [{ rowId: action.payload, isEditMode: true }] },
           },
         },
       });

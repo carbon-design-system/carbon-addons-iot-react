@@ -25,6 +25,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     isOverflow: PropTypes.bool,
     hasDivider: PropTypes.bool,
     isDelete: PropTypes.bool,
+    isEdit: PropTypes.bool,
   })
 );
 
@@ -38,6 +39,7 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     rowId: PropTypes.string,
     isRunning: PropTypes.bool,
+    isEditMode: PropTypes.bool,
     error: RowActionErrorPropTypes,
   })
 );

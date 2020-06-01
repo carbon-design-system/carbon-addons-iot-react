@@ -6,7 +6,7 @@ import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
-import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/20';
+import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/16';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -346,7 +346,6 @@ const TableCard = ({
     ) : actionList && actionList.length > 1 ? (
       <OverflowMenu
         className={`${iotPrefix}--table-card--overflow-menu`}
-        floatingMenu
         renderIcon={() => (
           <OverFlowMenuIcon fill="#5a6872" description={i18n.overflowMenuIconDescription} />
         )}

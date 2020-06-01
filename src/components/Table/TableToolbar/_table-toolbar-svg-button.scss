@@ -10,3 +10,7 @@ button.bx--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost {
     background-color: $active-ui;
   }
 }
+
+.#{$iot-prefix}--tooltip-svg-wrapper--disabled {
+  @include disabled-icon-button();
+}

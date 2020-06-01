@@ -20,6 +20,7 @@ import {
   tableSearchApply,
   tableRowActionStart,
   tableRowActionComplete,
+  tableRowActionEdit,
   tableRowActionError,
 } from './tableActionCreators';
 import { initialState, tableColumns } from './Table.story';
@@ -49,6 +50,12 @@ describe('table reducer', () => {
     const updatedRowActionState3 = tableReducer(initialState, tableRowActionComplete('row-1'));
     const newRowActions3 = updatedRowActionState3.view.table.rowActions;
     expect(newRowActions3).toHaveLength(0);
+
+    // Enable a rows edit mode
+    const updatedRowActionState4 = tableReducer(initialState, tableRowActionEdit('row-1'));
+    const newRowActions4 = updatedRowActionState4.view.table.rowActions;
+    expect(newRowActions4[0].rowId).toEqual('row-1');
+    expect(newRowActions4[0].isEditMode).toBeTruthy();
   });
   describe('filter tests', () => {
     it('TABLE_FILTER_CLEAR', () => {

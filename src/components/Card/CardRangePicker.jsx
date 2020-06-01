@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import EventSchedule from '@carbon/icons-react/es/event--schedule/20';
+import EventSchedule from '@carbon/icons-react/es/event--schedule/16';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classNames from 'classnames';
 
@@ -67,13 +67,13 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
         ) : null}
 
         <OverflowMenu
-          iconDescription={timeBoxLabels[timeRange]}
           className={classNames(
             `${iotPrefix}--card--toolbar-action`,
             `${iotPrefix}--card--toolbar-date-range-action`
           )}
           flipped
-          title={i18n.overflowMenuDescription}
+          title={timeBoxLabels[timeRange] || i18n.selectDateRangeLabel}
+          iconDescription={timeBoxLabels[timeRange] || i18n.selectDateRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
           renderIcon={EventSchedule}
         >

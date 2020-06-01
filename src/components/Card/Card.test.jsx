@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { Tooltip } from 'carbon-components-react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import { Popup20 } from '@carbon/icons-react';
+import { Popup16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -74,7 +74,7 @@ describe('Card', () => {
 
     // should render CardRangePicker and Expand
     expect(wrapper.find(CardRangePicker)).toHaveLength(1);
-    expect(wrapper.find(Popup20)).toHaveLength(1);
+    expect(wrapper.find(Popup16)).toHaveLength(1);
 
     wrapper = mount(
       <Card {...cardProps} size={CARD_SIZES.SMALL} isEditable availableActions={{ range: true }} />

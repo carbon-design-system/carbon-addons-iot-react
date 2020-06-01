@@ -14,10 +14,13 @@ const propTypes = {
   description: PropTypes.node.isRequired,
   /** is the button currently 'toggled' active, used for column filters */
   isActive: PropTypes.bool,
+  /** is the button disabled */
+  disabled: PropTypes.bool,
 };
 
 const defaultProps = {
   isActive: false,
+  disabled: false,
 };
 
 /**

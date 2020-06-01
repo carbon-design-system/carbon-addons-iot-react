@@ -205,7 +205,7 @@ const TableToolbar = ({
           />
         ) : null}
         {totalFilters > 0 ? (
-          <Button kind="secondary" onClick={onClearAllFilters}>
+          <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
             {i18n.clearAllFilters}
           </Button>
         ) : null}
@@ -215,6 +215,7 @@ const TableToolbar = ({
             description={i18n.downloadIconDescription}
             testId="download-button"
             renderIcon={Download20}
+            disabled={isDisabled}
           />
         ) : null}
         {hasColumnSelection ? (
@@ -224,6 +225,7 @@ const TableToolbar = ({
             description={i18n.columnSelectionButtonAria}
             testId="column-selection-button"
             renderIcon={Column20}
+            disabled={isDisabled}
           />
         ) : null}
         {hasFilter ? (
@@ -233,6 +235,7 @@ const TableToolbar = ({
             description={i18n.filterButtonAria}
             testId="filter-button"
             renderIcon={Filter20}
+            disabled={isDisabled}
           />
         ) : null}
         {hasRowEdit ? (
@@ -242,6 +245,7 @@ const TableToolbar = ({
             onClick={onShowRowEdit}
             testId="row-edit-button"
             renderIcon={Edit20}
+            disabled={isDisabled}
           />
         ) : null}
 
