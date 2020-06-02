@@ -34,10 +34,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
             className="iot-simple-pagination-caret-disabled"
             description="Prev page"
             focusable="false"
-            height={20}
+            height={16}
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 32 32"
-            width={20}
+            width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
             <polygon
@@ -57,10 +57,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
             className="iot-simple-pagination-caret"
             description="Next page"
             focusable="false"
-            height={20}
+            height={16}
             preserveAspectRatio="xMidYMid meet"
             viewBox="0 0 32 32"
-            width={20}
+            width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
             <polygon
