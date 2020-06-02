@@ -26,9 +26,9 @@ package on NPM. You can install this package by running the following in your
 terminal:
 
 ```bash
-npm i carbon-components carbon-components-react carbon-icons --save
+npm i carbon-components carbon-components-react --save
 # Or, with Yarn Classic
-yarn add carbon-components carbon-components-react carbon-icons
+yarn add carbon-components carbon-components-react
 ```
 
 ## Usage
