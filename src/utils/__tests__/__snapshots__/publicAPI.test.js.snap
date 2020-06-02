@@ -655,7 +655,22 @@ Map {
                                   "type": "shape",
                                 },
                                 Object {
-                                  "type": "string",
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
+                                    ],
+                                  ],
+                                  "type": "oneOf",
                                 },
                                 Object {
                                   "type": "node",
@@ -2019,7 +2034,22 @@ Map {
                                   "type": "shape",
                                 },
                                 Object {
-                                  "type": "string",
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
+                                    ],
+                                  ],
+                                  "type": "oneOf",
                                 },
                                 Object {
                                   "type": "node",

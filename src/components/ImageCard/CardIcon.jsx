@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'carbon-components-react';
 import warning from 'warning';
 
 import icons from '../../utils/bundledIcons';
@@ -26,6 +25,8 @@ const CardIcon = ({ icon, renderIconByName, title, color, width, height, classNa
       )} so we will default to our 'help' icon.`
     );
   }
+  const Icon = icons[icon] || icons.help;
+
   return icon ? (
     renderIconByName ? (
       renderIconByName(icon, {
@@ -38,13 +39,12 @@ const CardIcon = ({ icon, renderIconByName, title, color, width, height, classNa
       })
     ) : (
       <Icon
-        icon={icons[icon] || icons.help}
         className={className}
         fill={color}
-        width={width?.toString()}
-        height={height?.toString()}
+        width={width}
+        height={height}
         title={title}
-        description={title}
+        aria-label={title}
       />
     )
   ) : null;
