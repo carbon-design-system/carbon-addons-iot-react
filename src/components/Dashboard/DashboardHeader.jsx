@@ -26,6 +26,8 @@ const propTypes = {
     PropTypes.shape({
       /** Unique id of the action */
       id: PropTypes.string.isRequired,
+      /** the description to show in the icon */
+      iconDescription: PropTypes.string,
       /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
       icon: PropTypes.oneOfType([
         PropTypes.oneOf(bundledIconNames),
