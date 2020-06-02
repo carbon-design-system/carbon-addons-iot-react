@@ -124,6 +124,8 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
+  /** show time input fields */
+  hasTimeInput: PropTypes.bool,
   /**
    * Function hook used to provide the appropriate tooltip content for the preset time
    * picker. This function takes in the currentValue and should return a string message.
@@ -199,6 +201,7 @@ const defaultProps = {
   expanded: false,
   disabled: false,
   showRelativeOption: true,
+  hasTimeInput: true,
   renderPresetTooltipText: null,
   onCancel: null,
   onApply: null,
@@ -239,6 +242,7 @@ const DateTimePicker = ({
   expanded,
   disabled,
   showRelativeOption,
+  hasTimeInput,
   renderPresetTooltipText,
   onCancel,
   onApply,
@@ -799,13 +803,15 @@ const DateTimePicker = ({
                             );
                           })}
                         </Select>
-                        <TimePickerSpinner
-                          id="relative-to-time"
-                          value={relativeValue ? relativeValue.relativeToTime : ''}
-                          onChange={onRelativeToTimeChange}
-                          spinner
-                          autoComplete="off"
-                        />
+                        {hasTimeInput ? (
+                          <TimePickerSpinner
+                            id="relative-to-time"
+                            value={relativeValue ? relativeValue.relativeToTime : ''}
+                            onChange={onRelativeToTimeChange}
+                            spinner
+                            autoComplete="off"
+                          />
+                        ) : null}
                       </div>
                     </FormGroup>
                   </div>
@@ -833,29 +839,33 @@ const DateTimePicker = ({
                         />
                       </DatePicker>
                     </div>
-                    <FormGroup
-                      legendText=""
-                      className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                    >
-                      <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
-                        <TimePickerSpinner
-                          id="start-time"
-                          labelText={strings.startTimeLabel}
-                          value={absoluteValue ? absoluteValue.startTime : '00:00'}
-                          onChange={onAbsoluteStartTimeChange}
-                          spinner
-                          autoComplete="off"
-                        />
-                        <TimePickerSpinner
-                          id="end-time"
-                          labelText={strings.endTimeLabel}
-                          value={absoluteValue ? absoluteValue.endTime : '00:00'}
-                          onChange={onAbsoluteEndTimeChange}
-                          spinner
-                          autoComplete="off"
-                        />
-                      </div>
-                    </FormGroup>
+                    {hasTimeInput ? (
+                      <FormGroup
+                        legendText=""
+                        className={`${iotPrefix}--date-time-picker__menu-formgroup`}
+                      >
+                        <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                          <TimePickerSpinner
+                            id="start-time"
+                            labelText={strings.startTimeLabel}
+                            value={absoluteValue ? absoluteValue.startTime : '00:00'}
+                            onChange={onAbsoluteStartTimeChange}
+                            spinner
+                            autoComplete="off"
+                          />
+                          <TimePickerSpinner
+                            id="end-time"
+                            labelText={strings.endTimeLabel}
+                            value={absoluteValue ? absoluteValue.endTime : '00:00'}
+                            onChange={onAbsoluteEndTimeChange}
+                            spinner
+                            autoComplete="off"
+                          />
+                        </div>
+                      </FormGroup>
+                    ) : (
+                      <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
+                    )}
                   </div>
                 )}
               </div>
