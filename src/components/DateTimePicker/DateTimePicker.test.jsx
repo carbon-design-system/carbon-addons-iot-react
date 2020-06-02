@@ -12,6 +12,7 @@ import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.sto
 
 const dateTimePickerProps = {
   id: 'datetimepicker',
+  renderPresetTooltipText: jest.fn(),
   onCancel: jest.fn(),
   onApply: jest.fn(),
 };
