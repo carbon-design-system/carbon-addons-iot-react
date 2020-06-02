@@ -30,7 +30,12 @@ const propTypes = {
   /** Call back function of sort */
   onSort: PropTypes.func,
   /** Options in sort */
-  sortOptions: PropTypes.arrayOf(PropTypes.node),
+  sortOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
   /** Default option in sort */
   selectedSortOption: PropTypes.string,
   /** Loading state */
@@ -144,12 +149,13 @@ const TileCatalogNew = ({
             <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}>
               {hasSort ? (
                 <Select
+                  id={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}
                   onChange={evt => onSort(evt.target.value)}
                   defaultValue={selectedSortOption}
                   labelText=""
                 >
                   {sortOptions.map(option => (
-                    <SelectItem text={option.text} value={option.id} />
+                    <SelectItem key={option.id} text={option.text} value={option.id} />
                   ))}
                 </Select>
               ) : null}
