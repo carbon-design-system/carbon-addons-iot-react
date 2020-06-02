@@ -235,7 +235,6 @@ storiesOf('Watson IoT Experimental/TileGallery', module)
         listText: text('i18n.listText', '__ListText__'),
         gridText: text('i18n.gridText', '__GridText__'),
         descriptionMoreInfo: text('i18n.descriptionMoreInfo', '__DescriptionMoreInfo__'),
-        arrowIconDescription: text('i18n.arrowIconDescription', '__Expand/Collapse__'),
       }}
     />
   ));
