@@ -1,12 +1,12 @@
 import React, { useMemo, useCallback } from 'react';
-import { OverflowMenu, OverflowMenuItem, Icon, Link } from 'carbon-components-react';
+import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import styled from 'styled-components';
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
-import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/20';
+import OverFlowMenuIcon from '@carbon/icons-react/es/overflow-menu--vertical/16';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -22,6 +22,7 @@ import {
   formatNumberWithPrecision,
   getVariables,
 } from '../../utils/cardUtilityFunctions';
+import icons from '../../utils/bundledIcons';
 
 import ThresholdIcon from './ThresholdIcon';
 
@@ -330,23 +331,24 @@ const TableCard = ({
   const renderActionCell = cellItem => {
     const actionList = JSON.parse(cellItem.value);
     return actionList && actionList.length === 1 ? (
-      <Icon
-        className={`${iotPrefix}--table-card--action-icon`}
-        onClick={evt => {
-          evt.preventDefault();
-          evt.stopPropagation();
-          onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
-            rowId: cellItem.rowId,
-            actionId: actionList[0].id,
-          });
-        }}
-        icon={actionList[0].icon}
-        description={actionList[0].label}
-      />
+      React.createElement(
+        typeof actionList[0].icon === 'string' ? icons[actionList[0].icon] : actionList.icon,
+        {
+          className: `${iotPrefix}--table-card--action-icon`,
+          onClick: evt => {
+            evt.preventDefault();
+            evt.stopPropagation();
+            onCardAction(id, 'TABLE_CARD_ROW_ACTION', {
+              rowId: cellItem.rowId,
+              actionId: actionList[0].id,
+            });
+          },
+          'aria-label': actionList[0].label,
+        }
+      )
     ) : actionList && actionList.length > 1 ? (
       <OverflowMenu
         className={`${iotPrefix}--table-card--overflow-menu`}
-        floatingMenu
         renderIcon={() => (
           <OverFlowMenuIcon fill="#5a6872" description={i18n.overflowMenuIconDescription} />
         )}

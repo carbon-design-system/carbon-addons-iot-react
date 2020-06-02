@@ -739,20 +739,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                              className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                               fill="red"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Bad"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Bad
-                              </title>
                               <path
-                                d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                               />
                             </svg>
                           </div>
@@ -915,11 +914,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -1096,20 +1092,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                              className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                               fill="green"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Healthy"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Healthy
-                              </title>
                               <path
-                                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              />
+                              <path
+                                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                data-icon-path="inner-path"
+                                opacity="0"
                               />
                             </svg>
                           </div>
@@ -1172,19 +1172,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last 7 days"
                       >
                         <svg
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1210,12 +1210,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1318,96 +1318,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Download table content"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -1419,21 +1413,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Filters"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -1442,7 +1439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -1454,12 +1451,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={20}
+                              height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={20}
+                              width={16}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -1775,19 +1772,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last year"
                       >
                         <svg
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -1813,12 +1810,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1893,12 +1890,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -1981,20 +1978,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M8 11.953l3.905-4.09 1.453 1.374L7 16 .635 9.238l1.452-1.376L6 11.954V0h2v11.953z"
+                              <polygon
+                                points="12.3,9.3 8.5,13.1 8.5,1 7.5,1 7.5,13.1 3.7,9.3 3,10 8,15 13,10"
                               />
                             </svg>
                           </div>
@@ -2099,20 +2095,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M5.993 4.047l-3.905 4.09L.635 6.763 6.992 0l6.366 6.762-1.452 1.376-3.913-4.092V16h-2V4.047z"
+                              <polygon
+                                points="3.7,6.7 7.5,2.9 7.5,15 8.5,15 8.5,2.9 12.3,6.7 13,6 8,1 3,6"
                               />
                             </svg>
                           </div>
@@ -2944,20 +2939,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                              className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                               fill="red"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Bad"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Bad
-                              </title>
                               <path
-                                d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                               />
                             </svg>
                           </div>
@@ -3120,11 +3114,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -3301,20 +3292,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                              className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                               fill="green"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Healthy"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Healthy
-                              </title>
                               <path
-                                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              />
+                              <path
+                                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                data-icon-path="inner-path"
+                                opacity="0"
                               />
                             </svg>
                           </div>
@@ -3377,19 +3372,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last 7 days"
                       >
                         <svg
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -3415,12 +3410,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -3523,96 +3518,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Download table content"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3624,21 +3613,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Filters"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -3647,7 +3639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -3659,12 +3651,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={20}
+                              height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={20}
+                              width={16}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -3980,19 +3972,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last year"
                       >
                         <svg
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -4018,12 +4010,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -4098,12 +4090,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -4186,20 +4178,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M8 11.953l3.905-4.09 1.453 1.374L7 16 .635 9.238l1.452-1.376L6 11.954V0h2v11.953z"
+                              <polygon
+                                points="12.3,9.3 8.5,13.1 8.5,1 7.5,1 7.5,13.1 3.7,9.3 3,10 8,15 13,10"
                               />
                             </svg>
                           </div>
@@ -4304,20 +4295,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M5.993 4.047l-3.905 4.09L.635 6.763 6.992 0l6.366 6.762-1.452 1.376-3.913-4.092V16h-2V4.047z"
+                              <polygon
+                                points="3.7,6.7 7.5,2.9 7.5,15 8.5,15 8.5,2.9 12.3,6.7 13,6 8,1 3,6"
                               />
                             </svg>
                           </div>
@@ -4463,17 +4453,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
               >
                 <svg
                   aria-label="Edit"
-                  fillRule="evenodd"
-                  height="16"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
                   role="img"
-                  viewBox="0 0 16 16"
-                  width="16"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <title>
-                    Edit
-                  </title>
+                  <rect
+                    height="2"
+                    width="28"
+                    x="2"
+                    y="26"
+                  />
                   <path
-                    d="M7.926 3.38L1.002 9.72V12h2.304l6.926-6.316L7.926 3.38zm.738-.675l2.308 2.304 1.451-1.324-2.308-2.309-1.451 1.329zM.002 9.28L9.439.639a1 1 0 0 1 1.383.03l2.309 2.309a1 1 0 0 1-.034 1.446L3.694 13H.002V9.28zM0 16.013v-1h16v1z"
+                    d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                   />
                 </svg>
               </div>
@@ -5181,20 +5176,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                              className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                               fill="red"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Bad"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Bad
-                              </title>
                               <path
-                                d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                               />
                             </svg>
                           </div>
@@ -5357,11 +5351,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -5538,20 +5529,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                              className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                               fill="green"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Healthy"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Healthy
-                              </title>
                               <path
-                                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              />
+                              <path
+                                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                data-icon-path="inner-path"
+                                opacity="0"
                               />
                             </svg>
                           </div>
@@ -5614,19 +5609,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last 7 days"
                       >
                         <svg
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -5652,12 +5647,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -5760,96 +5755,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Download table content"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -5861,21 +5850,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Filters"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -5884,7 +5876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -5896,12 +5888,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={20}
+                              height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={20}
+                              width={16}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -6217,19 +6209,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last year"
                       >
                         <svg
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -6255,12 +6247,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -6335,12 +6327,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -6423,20 +6415,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M8 11.953l3.905-4.09 1.453 1.374L7 16 .635 9.238l1.452-1.376L6 11.954V0h2v11.953z"
+                              <polygon
+                                points="12.3,9.3 8.5,13.1 8.5,1 7.5,1 7.5,13.1 3.7,9.3 3,10 8,15 13,10"
                               />
                             </svg>
                           </div>
@@ -6541,20 +6532,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M5.993 4.047l-3.905 4.09L.635 6.763 6.992 0l6.366 6.762-1.452 1.376-3.913-4.092V16h-2V4.047z"
+                              <polygon
+                                points="3.7,6.7 7.5,2.9 7.5,15 8.5,15 8.5,2.9 12.3,6.7 13,6 8,1 3,6"
                               />
                             </svg>
                           </div>
@@ -6855,12 +6845,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -7116,12 +7106,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     <svg
                       description="Expand to fullscreen"
                       focusable="false"
-                      height={20}
+                      height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       title="Expand to fullscreen"
                       viewBox="0 0 32 32"
-                      width={20}
+                      width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -7329,95 +7319,89 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-expandedcard-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-expandedcard-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-expandedcard-toolbar-search"
+                              id="table-for-card-expandedcard-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              id="table-for-card-expandedcard-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-expandedcard-toolbar-search"
-                                id="table-for-card-expandedcard-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                id="table-for-card-expandedcard-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Download table content"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -7429,21 +7413,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Filters"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -7452,7 +7439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -7464,12 +7451,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={20}
+                              height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={20}
+                              width={16}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -8871,8 +8858,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <polygon
-                                    points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
+                                  <path
+                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                                   />
                                 </svg>
                               </div>
@@ -8956,8 +8943,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <polygon
-                                    points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
+                                  <path
+                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
                                   />
                                 </svg>
                               </div>
@@ -8985,8 +8972,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={24}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <polygon
-                              points="20,24 10,16 20,8"
+                            <path
+                              d="M20 24L10 16 20 8z"
                             />
                           </svg>
                         </button>
@@ -9006,8 +8993,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             width={24}
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <polygon
-                              points="12,8 22,16 12,24"
+                            <path
+                              d="M12 8L22 16 12 24z"
                             />
                           </svg>
                         </button>
@@ -9794,20 +9781,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                              className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                               fill="red"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Bad"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Bad
-                              </title>
                               <path
-                                d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                               />
                             </svg>
                           </div>
@@ -9970,11 +9956,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -10151,20 +10134,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                              className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                               fill="green"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Healthy"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Healthy
-                              </title>
                               <path
-                                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              />
+                              <path
+                                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                data-icon-path="inner-path"
+                                opacity="0"
                               />
                             </svg>
                           </div>
@@ -10227,19 +10214,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="open and close list of options"
+                        title="Last 7 days"
                       >
                         <svg
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -10265,12 +10252,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -10373,96 +10360,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Download table content"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -10474,21 +10455,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Filters"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -10497,7 +10481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -10509,10 +10493,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             <svg
                               aria-hidden={true}
                               focusable="false"
-                              height={20}
+                              height={16}
                               preserveAspectRatio="xMidYMid meet"
                               viewBox="0 0 32 32"
-                              width={20}
+                              width={16}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -10828,19 +10812,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="open and close list of options"
+                        title="Last year"
                       >
                         <svg
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -10866,12 +10850,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -10946,12 +10930,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -11034,20 +11018,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M8 11.953l3.905-4.09 1.453 1.374L7 16 .635 9.238l1.452-1.376L6 11.954V0h2v11.953z"
+                              <polygon
+                                points="12.3,9.3 8.5,13.1 8.5,1 7.5,1 7.5,13.1 3.7,9.3 3,10 8,15 13,10"
                               />
                             </svg>
                           </div>
@@ -11152,20 +11135,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M5.993 4.047l-3.905 4.09L.635 6.763 6.992 0l6.366 6.762-1.452 1.376-3.913-4.092V16h-2V4.047z"
+                              <polygon
+                                points="3.7,6.7 7.5,2.9 7.5,15 8.5,15 8.5,2.9 12.3,6.7 13,6 8,1 3,6"
                               />
                             </svg>
                           </div>
@@ -13605,20 +13587,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 40"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 40
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -13717,20 +13698,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 70"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 70
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -13829,20 +13814,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
+                                className="Attribute__ThresholdIcon-dhraql-1 jpZiWV"
                                 fill="orange"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 80"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 80
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -13941,20 +13925,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title=">= 90"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &gt;= 90
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -14118,20 +14101,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 40"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 40
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -14230,20 +14212,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 70"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 70
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -14342,20 +14328,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
+                                className="Attribute__ThresholdIcon-dhraql-1 jpZiWV"
                                 fill="orange"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 80"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 80
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -14454,20 +14439,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title=">= 90"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &gt;= 90
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -16575,20 +16559,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 40"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 40
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -16687,20 +16670,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 70"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 70
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -16799,20 +16786,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
+                                className="Attribute__ThresholdIcon-dhraql-1 jpZiWV"
                                 fill="orange"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 80"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 80
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -16911,20 +16897,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title=">= 90"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &gt;= 90
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -18472,20 +18457,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 40"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 40
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -18584,20 +18568,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 70"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 70
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -18696,20 +18684,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
+                                className="Attribute__ThresholdIcon-dhraql-1 jpZiWV"
                                 fill="orange"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 80"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 80
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -18808,20 +18795,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title=">= 90"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &gt;= 90
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -21227,20 +21213,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 40"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 40
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -21294,20 +21279,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 70"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 70
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -21409,20 +21398,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
+                                className="Attribute__ThresholdIcon-dhraql-1 jpZiWV"
                                 fill="orange"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 80"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 80
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -21476,20 +21464,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title=">= 90"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &gt;= 90
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -21656,20 +21643,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 40"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 40"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 40
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -21723,20 +21709,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 70"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 70"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 70
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -21838,20 +21828,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="< 80"
-                                className="Attribute__ThresholdIcon-dhraql-2 jaFAIn"
+                                className="Attribute__ThresholdIcon-dhraql-1 jpZiWV"
                                 fill="orange"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="< 80"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &lt; 80
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -21905,20 +21894,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label=">= 90"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title=">= 90"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  &gt;= 90
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -22451,20 +22439,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Low"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="= Low"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  = Low
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -22524,20 +22516,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Severe"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="= Severe"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  = Severe
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -22597,20 +22588,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Elevated"
-                                className="Attribute__ThresholdIcon-dhraql-2 eSHhsI"
+                                className="Attribute__ThresholdIcon-dhraql-1 konTuN"
                                 fill="gold"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="= Elevated"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  = Elevated
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -23143,20 +23133,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Low"
-                                className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                                className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                                 fill="green"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="= Low"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  = Low
-                                </title>
                                 <path
-                                  d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                  d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                />
+                                <path
+                                  d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                  data-icon-path="inner-path"
+                                  opacity="0"
                                 />
                               </svg>
                             </div>
@@ -23216,20 +23210,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Severe"
-                                className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                                className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                                 fill="red"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="= Severe"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  = Severe
-                                </title>
                                 <path
-                                  d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                  d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                                 />
                               </svg>
                             </div>
@@ -23289,20 +23282,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <svg
                                 aria-label="= Elevated"
-                                className="Attribute__ThresholdIcon-dhraql-2 eSHhsI"
+                                className="Attribute__ThresholdIcon-dhraql-1 konTuN"
                                 fill="gold"
-                                fillRule="evenodd"
-                                height="16"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
                                 role="img"
                                 title="= Elevated"
                                 viewBox="0 0 16 16"
-                                width="16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <title>
-                                  = Elevated
-                                </title>
                                 <path
-                                  d="M.75 16a.75.75 0 0 1-.67-1.085L7.33.415a.75.75 0 0 1 1.34 0l7.25 14.5A.75.75 0 0 1 15.25 16H.75zm6.5-10v5h1.5V6h-1.5zM8 13.5A.75.75 0 1 0 8 12a.75.75 0 0 0 0 1.5z"
+                                  d="M14.9,13.3l-6.5-12C8.3,1,8,0.9,7.8,1.1c-0.1,0-0.2,0.1-0.2,0.2l-6.5,12c-0.1,0.2-0.1,0.3,0,0.5C1.2,13.9,1.3,14,1.5,14h13	c0.2,0,0.3-0.1,0.4-0.2C15,13.6,15,13.4,14.9,13.3z M7.4,5.5h1.1v4H7.4V5.5z M8,12.2c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"
                                 />
                               </svg>
                             </div>
@@ -24123,20 +24115,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Bad"
-                              className="Attribute__ThresholdIcon-dhraql-2 fleRFi"
+                              className="Attribute__ThresholdIcon-dhraql-1 hsDTnb"
                               fill="red"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Bad"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Bad
-                              </title>
                               <path
-                                d="M8 6.586L5.879 4.464 4.464 5.88 6.586 8l-2.122 2.121 1.415 1.415L8 9.414l2.121 2.122 1.415-1.415L9.414 8l2.122-2.121-1.415-1.415L8 6.586zM8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M10.7,11.5L8,8.8l-2.7,2.7l-0.8-0.8L7.2,8L4.5,5.3l0.8-0.8L8,7.2	l2.7-2.7l0.8,0.8L8.8,8l2.7,2.7L10.7,11.5z"
                               />
                             </svg>
                           </div>
@@ -24299,11 +24290,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <polygon
-                            points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                          />
                           <path
-                            d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                            d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                           />
                           <path
                             d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -24480,20 +24468,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           >
                             <svg
                               aria-label="= Healthy"
-                              className="Attribute__ThresholdIcon-dhraql-2 cdlAJy"
+                              className="Attribute__ThresholdIcon-dhraql-1 bBAohf"
                               fill="green"
-                              fillRule="evenodd"
-                              height="16"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="= Healthy"
                               viewBox="0 0 16 16"
-                              width="16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                = Healthy
-                              </title>
                               <path
-                                d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm3.293-11.332L6.75 9.21 4.707 7.168 3.293 8.582 6.75 12.04l5.957-5.957-1.414-1.414z"
+                                d="M8,1C4.1,1,1,4.1,1,8c0,3.9,3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                              />
+                              <path
+                                d="M7,11L4.3,8.3l0.9-0.8L7,9.3l4-3.9l0.9,0.8L7,11z"
+                                data-icon-path="inner-path"
+                                opacity="0"
                               />
                             </svg>
                           </div>
@@ -24556,19 +24548,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last 7 days"
                       >
                         <svg
                           aria-label="Last 7 days"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -24594,12 +24586,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -24702,96 +24694,90 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         className="bx--toolbar-content iot--table-toolbar-content"
                       >
                         <div
-                          className="iot--table-toolbar-search"
+                          className="bx--toolbar-action bx--toolbar-search-container-expandable"
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          tabIndex="-1"
+                          onFocus={[Function]}
+                          tabIndex="0"
                         >
                           <div
-                            className="bx--toolbar-action bx--toolbar-search-container-expandable"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            tabIndex="0"
+                            aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
+                            className="bx--search bx--search--sm table-toolbar-search"
+                            role="search"
                           >
-                            <div
-                              aria-labelledby="table-for-card-alert-table1-toolbar-search-search"
-                              className="bx--search bx--search--sm table-toolbar-search"
-                              role="search"
+                            <svg
+                              aria-hidden={true}
+                              className="bx--search-magnifier"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                              />
+                            </svg>
+                            <label
+                              className="bx--label"
+                              htmlFor="table-for-card-alert-table1-toolbar-search"
+                              id="table-for-card-alert-table1-toolbar-search-search"
+                            >
+                              Search
+                            </label>
+                            <input
+                              aria-hidden={true}
+                              autoComplete="off"
+                              className="bx--search-input"
+                              disabled={false}
+                              id="table-for-card-alert-table1-toolbar-search"
+                              onChange={[Function]}
+                              placeholder="Search"
+                              role="searchbox"
+                              tabIndex="-1"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              aria-label="Clear search input"
+                              className="bx--search-close bx--search-close--hidden"
+                              onClick={[Function]}
+                              type="button"
                             >
                               <svg
                                 aria-hidden={true}
-                                className="bx--search-magnifier"
                                 focusable="false"
                                 height={16}
                                 preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 32 32"
                                 width={16}
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
-                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                                 />
                               </svg>
-                              <label
-                                className="bx--label"
-                                htmlFor="table-for-card-alert-table1-toolbar-search"
-                                id="table-for-card-alert-table1-toolbar-search-search"
-                              >
-                                Search
-                              </label>
-                              <input
-                                aria-hidden={true}
-                                autoComplete="off"
-                                className="bx--search-input"
-                                disabled={false}
-                                id="table-for-card-alert-table1-toolbar-search"
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                placeholder="Search"
-                                role="searchbox"
-                                tabIndex="-1"
-                                type="text"
-                                value=""
-                              />
-                              <button
-                                aria-label="Clear search input"
-                                className="bx--search-close bx--search-close--hidden"
-                                onClick={[Function]}
-                                type="button"
-                              >
-                                <svg
-                                  aria-hidden={true}
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <polygon
-                                    points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                            </button>
                           </div>
                         </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="download-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Download table content"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Download table content"
+                            aria-hidden="true"
+                            aria-label="Download table content"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -24803,21 +24789,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"
                             />
                           </svg>
-                        </div>
-                        <div
-                          className="iot--tooltip-svg-wrapper"
+                        </button>
+                        <button
+                          className="bx--btn--icon-only iot--tooltip-svg-wrapper bx--btn bx--btn--ghost"
                           data-testid="filter-button"
+                          disabled={false}
                           onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
                           tabIndex={0}
+                          title="Filters"
+                          type="button"
                         >
                           <svg
-                            aria-hidden={true}
-                            description="Filters"
+                            aria-hidden="true"
+                            aria-label="Filters"
+                            className="bx--btn__icon"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
+                            role="img"
                             viewBox="0 0 32 32"
                             width={20}
                             xmlns="http://www.w3.org/2000/svg"
@@ -24826,7 +24815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                               d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
                             />
                           </svg>
-                        </div>
+                        </button>
                         <div
                           className="react-grid-item iot--card--toolbar"
                         >
@@ -24838,12 +24827,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             <svg
                               description="Expand to fullscreen"
                               focusable="false"
-                              height={20}
+                              height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
                               title="Expand to fullscreen"
                               viewBox="0 0 32 32"
-                              width={20}
+                              width={16}
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -25159,19 +25148,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Open and close list of options"
+                        title="Last year"
                       >
                         <svg
                           aria-label="Last year"
                           className="bx--overflow-menu__icon"
                           focusable="false"
-                          height={20}
+                          height={16}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           preserveAspectRatio="xMidYMid meet"
                           role="img"
                           viewBox="0 0 32 32"
-                          width={20}
+                          width={16}
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
@@ -25197,12 +25186,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -25277,12 +25266,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <svg
                         description="Expand to fullscreen"
                         focusable="false"
-                        height={20}
+                        height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
                         title="Expand to fullscreen"
                         viewBox="0 0 32 32"
-                        width={20}
+                        width={16}
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
@@ -25365,20 +25354,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M8 11.953l3.905-4.09 1.453 1.374L7 16 .635 9.238l1.452-1.376L6 11.954V0h2v11.953z"
+                              <polygon
+                                points="12.3,9.3 8.5,13.1 8.5,1 7.5,1 7.5,13.1 3.7,9.3 3,10 8,15 13,10"
                               />
                             </svg>
                           </div>
@@ -25483,20 +25471,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             tabIndex={0}
                           >
                             <svg
+                              aria-hidden={true}
                               aria-label=""
                               fill="blue"
-                              fillRule="evenodd"
-                              height="25"
-                              role="img"
+                              focusable="false"
+                              height={25}
+                              preserveAspectRatio="xMidYMid meet"
                               title=""
-                              viewBox="0 0 14 16"
-                              width="25"
+                              viewBox="0 0 16 16"
+                              width={25}
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <title>
-                                
-                              </title>
-                              <path
-                                d="M5.993 4.047l-3.905 4.09L.635 6.763 6.992 0l6.366 6.762-1.452 1.376-3.913-4.092V16h-2V4.047z"
+                              <polygon
+                                points="3.7,6.7 7.5,2.9 7.5,15 8.5,15 8.5,2.9 12.3,6.7 13,6 8,1 3,6"
                               />
                             </svg>
                           </div>

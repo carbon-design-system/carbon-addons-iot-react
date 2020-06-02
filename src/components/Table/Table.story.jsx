@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
-import Arrow from '@carbon/icons-react/lib/arrow--right/20';
-import Add from '@carbon/icons-react/lib/add/20';
-import Edit from '@carbon/icons-react/lib/edit/20';
-import Delete from '@carbon/icons-react/lib/delete/20';
+import Arrow from '@carbon/icons-react/lib/arrow--right/16';
+import Add from '@carbon/icons-react/lib/add/16';
+import Edit from '@carbon/icons-react/lib/edit/16';
+import Delete from '@carbon/icons-react/lib/delete/16';
 import { Add20 } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
@@ -542,7 +542,10 @@ storiesOf('Watson IoT/Table', module)
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
-            toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
+            toolbar: {
+              ...actions.toolbar,
+              onDownloadCSV: () => csvDownloadHandler(initialState.data, 'my table data'),
+            },
           }}
           isSortable
           lightweight={boolean('lightweight', false)}

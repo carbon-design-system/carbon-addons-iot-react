@@ -13,9 +13,9 @@
 }
 
 .#{$iot-prefix}--value-card__attribute-threshold-icon-container {
-  width: 1rem;
-  height: 1rem;
-  margin: 0 0 0.5rem 0.5rem;
+  width: $spacing-05;
+  height: $spacing-05;
+  margin: 0 0 $spacing-03 $spacing-03;
 }
 
 .#{$iot-prefix}--value-card__attribute-threshold-icon-container--mini {
@@ -24,4 +24,8 @@
 
 .#{$iot-prefix}--value-card__attribute-threshold-icon-container--wrappable {
   margin-left: 0;
+}
+
+.#{$iot-prefix}--value-card__attribute_trend-icon {
+  margin-right: $spacing-02;
 }
