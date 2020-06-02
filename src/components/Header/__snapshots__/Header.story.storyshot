@@ -310,59 +310,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
                 width={20}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect
-                  height="4"
-                  width="4"
-                  x="14"
-                  y="4"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="4"
-                  y="4"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="24"
-                  y="4"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="14"
-                  y="14"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="4"
-                  y="14"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="24"
-                  y="14"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="14"
-                  y="24"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="4"
-                  y="24"
-                />
-                <rect
-                  height="4"
-                  width="4"
-                  x="24"
-                  y="24"
+                <path
+                  d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
                 />
               </svg>
             </button>
