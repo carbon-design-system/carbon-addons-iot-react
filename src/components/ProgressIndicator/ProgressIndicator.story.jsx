@@ -11,7 +11,7 @@ import { IotProgressIndicator } from './IotProgressIndicator';
 const items = [
   {
     id: 'step1',
-    label: 'First step',
+    label: 'First Step',
     secondaryLabel: 'Optional label',
     description: 'This is displayed when step icon is hovered',
   },
@@ -90,7 +90,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       items={itemsIot}
       currentItemId="step2_substep2"
       showLabels={boolean('showlabels', true)}
-      isVerticalMode={true}
+      isVerticalMode
       clickable={boolean('clickable', false)}
     />
   ))

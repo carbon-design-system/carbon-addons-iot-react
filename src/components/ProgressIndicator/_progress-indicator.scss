@@ -1,10 +1,7 @@
 @import '~carbon-components/scss/components/progress-indicator/progress-indicator';
 @import '../../globals/vars';
 
-$IBMPlexSans: 'IBM Plex Sans',
-'Helvetica Neue',
-Arial,
-sans-serif;
+$IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
 .#{$iot-prefix}--progress-indicator-new {
   display: flex;
@@ -86,8 +83,6 @@ sans-serif;
   }
 
   @mixin icon($border-color, $background-color: unset, $color: unset, $disabled: false) {
-    overflow: hidden;
-
     .step-icon {
       position: absolute;
       width: $spacing-06;
@@ -98,7 +93,7 @@ sans-serif;
       border-radius: 50%;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
-      border: $spacing-01 solid $border-color;
+      border: 1.5px solid $border-color;
 
       display: flex;
       align-items: center;
@@ -107,11 +102,9 @@ sans-serif;
       color: $color;
       background-color: $background-color;
 
-      @if($disabled) {
+      @if ($disabled) {
         cursor: default;
-      }
-
-      @else {
+      } @else {
         cursor: pointer;
       }
 
@@ -173,7 +166,9 @@ sans-serif;
   }
 
   .step-current {
-    @include icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
+    &:not(.step-invalid) {
+      @include icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
+    }
   }
 
   .step-complete {
@@ -199,7 +194,14 @@ sans-serif;
   }
 
   .step-invalid {
-    @include icon($border-color: #dd3b41, $color: #dd3b41);
+    .step-icon {
+      width: $spacing-06;
+      height: $spacing-06;
+
+      svg {
+        fill: #dd3b41;
+      }
+    }
   }
 
   html[dir='rtl'] & {

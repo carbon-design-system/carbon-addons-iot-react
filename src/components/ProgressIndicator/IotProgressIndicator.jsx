@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
-import { Checkmark24 } from '@carbon/icons-react';
+import { Checkmark24, Warning24 } from '@carbon/icons-react';
 import { Tooltip } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
@@ -35,7 +35,7 @@ export const IotProgressStep = ({
   const incomplete = currentIndex < index;
   const mainStep = level === 0;
   const subStep = level > 0;
-  const isClickable = clickable && !disabled;
+  const isClickable = clickable && !disabled && !current;
 
   const labelContainerRef = React.useRef(null);
   const secondaryLabelContainerRef = React.useRef(null);
@@ -97,14 +97,14 @@ export const IotProgressStep = ({
       if (completed) {
         value = <Checkmark24 />;
       } else if (invalid) {
-        value = <p>!</p>;
+        value = <Warning24 />;
       } else {
         value = <p>{stepNumber}</p>;
       }
     } else if (completed) {
       value = <Checkmark24 />;
     } else if (invalid) {
-      value = <p>!</p>;
+      value = <Warning24 />;
     }
 
     return (
@@ -157,6 +157,8 @@ export const IotProgressStep = ({
       [`clickable`]: isClickable,
     });
 
+    const dataTestId = label.replace(/\s/g, '-').toLowerCase();
+
     return (
       <>
         <button
@@ -167,6 +169,7 @@ export const IotProgressStep = ({
           style={getStepWidth()}
           onClick={isClickable ? handleClick : null}
           onKeyDown={isClickable ? handleKeyDown : null}
+          data-testid={`step-button-${dataTestId}`}
         >
           <StepLine />
           <StepIcon />
