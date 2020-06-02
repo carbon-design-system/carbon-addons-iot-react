@@ -96,7 +96,7 @@ Feedback and improvement requests regarding this configuration would be apprecia
 
 ## Dependencies
 
-Usage of this package does not require you to install additional Carbon packages; `carbon-components`, `carbon-icons`, or `@carbon` packages (`@carbon/grid`, `@carbon-layout`, etc) as peer dependencies. You may still need these packages if you use them directly in your project.
+Usage of this package does not require you to install additional Carbon packages; `carbon-components`, `carbon-components-react`, or `@carbon` packages (`@carbon/grid`, `@carbon-layout`, etc) as peer dependencies. You may still need these packages if you use them directly in your project.
 
 ## 📚 Docs
 
