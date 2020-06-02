@@ -2412,32 +2412,6 @@ Map {
       },
     },
   },
-  "TableToolbarSearch" => Object {
-    "defaultProps": Object {
-      "defaultExpanded": false,
-      "defaultValue": "",
-      "onChange": null,
-      "onExpand": null,
-      "value": "",
-    },
-    "propTypes": Object {
-      "defaultExpanded": Object {
-        "type": "bool",
-      },
-      "defaultValue": Object {
-        "type": "string",
-      },
-      "onChange": Object {
-        "type": "func",
-      },
-      "onExpand": Object {
-        "type": "func",
-      },
-      "value": Object {
-        "type": "string",
-      },
-    },
-  },
   "WizardModal" => Object {
     "defaultProps": Object {
       "currentStepIndex": 0,
@@ -5301,6 +5275,7 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
+        "selectDateRangeLabel": "Select date range",
         "selectRowAria": "Select row",
         "selectSeverityPlaceholder": "Select a severity",
         "severityLabel": "Severity",
@@ -5585,6 +5560,9 @@ Map {
               "type": "string",
             },
             "selectAllAria": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "selectRowAria": Object {
@@ -12550,9 +12528,6 @@ Map {
   },
   "TileGallerySection" => Object {
     "defaultProps": Object {
-      "i18n": Object {
-        "arrowIconDescription": "Expand/Collapse",
-      },
       "isOpen": true,
       "onClick": [Function],
       "title": null,
@@ -12561,16 +12536,6 @@ Map {
       "children": Object {
         "isRequired": true,
         "type": "node",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "arrowIconDescription": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
       },
       "isOpen": Object {
         "type": "bool",
@@ -13280,9 +13245,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "onClick": Object {
         "type": "func",
       },
@@ -13330,9 +13293,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "onClick": Object {
         "type": "func",
       },
@@ -13448,6 +13409,7 @@ Map {
   "ComboBox" => Object {
     "defaultProps": Object {
       "ariaLabel": "Choose an item",
+      "direction": "bottom",
       "disabled": false,
       "itemToElement": null,
       "itemToString": [Function],
@@ -13461,6 +13423,15 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -13733,6 +13704,9 @@ Map {
       "closeModal": Object {
         "type": "func",
       },
+      "danger": Object {
+        "type": "bool",
+      },
       "onRequestClose": Object {
         "type": "func",
       },
@@ -13759,6 +13733,7 @@ Map {
   "ContentSwitcher" => Object {
     "defaultProps": Object {
       "selectedIndex": 0,
+      "selectionMode": "automatic",
     },
     "propTypes": Object {
       "children": Object {
@@ -13773,6 +13748,15 @@ Map {
       },
       "selectedIndex": Object {
         "type": "number",
+      },
+      "selectionMode": Object {
+        "args": Array [
+          Array [
+            "automatic",
+            "manual",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -13830,12 +13814,16 @@ Map {
     "Table": Object {
       "defaultProps": Object {
         "isSortable": false,
+        "overflowMenuOnHover": true,
       },
       "propTypes": Object {
         "className": Object {
           "type": "string",
         },
         "isSortable": Object {
+          "type": "bool",
+        },
+        "overflowMenuOnHover": Object {
           "type": "bool",
         },
         "shouldShowBorder": Object {
@@ -14179,6 +14167,15 @@ Map {
         "children": Object {
           "type": "node",
         },
+        "size": Object {
+          "args": Array [
+            Array [
+              "small",
+              "normal",
+            ],
+          ],
+          "type": "oneOf",
+        },
       },
     },
     "TableToolbarAction": Object {
@@ -14298,6 +14295,8 @@ Map {
     "defaultProps": Object {
       "filterRows": [Function],
       "locale": "en",
+      "overflowMenuOnHover": true,
+      "size": "normal",
       "sortRow": [Function],
       "translateWithId": [Function],
     },
@@ -14332,6 +14331,9 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "overflowMenuOnHover": Object {
+        "type": "bool",
+      },
       "radio": Object {
         "type": "bool",
       },
@@ -14360,6 +14362,17 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "compact",
+            "short",
+            "normal",
+            "tall",
+          ],
+        ],
+        "type": "oneOf",
       },
       "sortRow": Object {
         "type": "func",
@@ -14561,6 +14574,15 @@ Map {
         "type": "func",
       },
       "pattern": [Function],
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "type": Object {
         "type": "string",
       },
@@ -14568,6 +14590,7 @@ Map {
   },
   "Dropdown" => Object {
     "defaultProps": Object {
+      "direction": "bottom",
       "disabled": false,
       "helperText": "",
       "itemToElement": null,
@@ -14579,6 +14602,15 @@ Map {
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -14898,21 +14930,22 @@ Map {
       "onClick": Object {
         "type": "func",
       },
+      "onDelete": Object {
+        "type": "func",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "field",
+            "small",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
   },
   "FileUploaderButton" => Object {
-    "defaultProps": Object {
-      "accept": Array [],
-      "buttonKind": "primary",
-      "disableLabelChanges": false,
-      "disabled": false,
-      "labelText": "Add file",
-      "multiple": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "role": "button",
-      "tabIndex": 0,
-    },
     "propTypes": Object {
       "accept": Object {
         "args": Array [
@@ -14967,6 +15000,16 @@ Map {
       },
       "role": Object {
         "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "field",
+            "small",
+          ],
+        ],
+        "type": "oneOf",
       },
       "tabIndex": Object {
         "type": "number",
@@ -15024,7 +15067,6 @@ Map {
     "defaultProps": Object {
       "onDelete": [Function],
       "status": "uploading",
-      "uuid": "id1",
     },
     "propTypes": Object {
       "errorBody": Object {
@@ -15056,7 +15098,6 @@ Map {
         "type": "oneOf",
       },
       "uuid": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -15268,6 +15309,9 @@ Map {
       "description": Object {
         "type": "string",
       },
+      "id": Object {
+        "type": "string",
+      },
       "small": Object {
         "type": "bool",
       },
@@ -15279,7 +15323,7 @@ Map {
   "Modal" => Object {
     "defaultProps": Object {
       "hasScrollingContent": false,
-      "iconDescription": "close the modal",
+      "iconDescription": "Close",
       "modalHeading": "",
       "modalLabel": "",
       "onKeyDown": [Function],
@@ -15676,6 +15720,7 @@ Map {
     },
     "defaultProps": Object {
       "compareItems": [Function],
+      "direction": "bottom",
       "disabled": false,
       "initialSelectedItems": Array [],
       "itemToString": [Function],
@@ -15691,6 +15736,15 @@ Map {
       "compareItems": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -16998,6 +17052,7 @@ Map {
       "iconDescription": "show menu options",
       "role": "navigation",
       "selected": 0,
+      "selectionMode": "automatic",
       "triggerHref": "#",
       "type": "default",
     },
@@ -17034,6 +17089,15 @@ Map {
       "selected": Object {
         "type": "number",
       },
+      "selectionMode": Object {
+        "args": Array [
+          Array [
+            "automatic",
+            "manual",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "tabContentClassName": Object {
         "type": "string",
       },
@@ -17066,6 +17130,9 @@ Map {
       "filter": Object {
         "type": "bool",
       },
+      "onClose": Object {
+        "type": "func",
+      },
       "title": Object {
         "type": "string",
       },
@@ -17082,9 +17149,9 @@ Map {
             "gray",
             "cool-gray",
             "warm-gray",
+            "high-contrast",
           ],
         ],
-        "isRequired": true,
         "type": "oneOf",
       },
     },
@@ -17285,6 +17352,7 @@ Map {
       "render": [Function],
     },
     "PasswordInput": Object {
+      "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "className": "\${prefix}--text__input",
         "disabled": false,
@@ -17392,6 +17460,7 @@ Map {
           "type": "oneOfType",
         },
       },
+      "render": [Function],
     },
     "defaultProps": Object {
       "disabled": false,
@@ -17825,9 +17894,7 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
-      "hideLabel": Object {
-        "type": "bool",
-      },
+      "hideLabel": [Function],
       "iconDescription": Object {
         "isRequired": true,
         "type": "string",
@@ -18169,9 +18236,6 @@ Map {
             Object {
               "args": Array [
                 Object {
-                  "header": Object {
-                    "type": "node",
-                  },
                   "key": Object {
                     "type": "string",
                   },
@@ -18534,6 +18598,9 @@ Map {
       },
       "element": Object {
         "type": "elementType",
+      },
+      "isCurrentPage": Object {
+        "type": "bool",
       },
       "isSideNavExpanded": Object {
         "type": "bool",

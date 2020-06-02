@@ -12,7 +12,6 @@ import {
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import TableToolbarSearch from '../TableToolbarSearch/TableToolbarSearch';
 
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
@@ -21,7 +20,7 @@ const { iotPrefix } = settings;
 const {
   TableToolbar: CarbonTableToolbar,
   TableToolbarContent,
-  // TableToolbarAction,
+  TableToolbarSearch,
   TableBatchActions,
   TableBatchAction,
 } = DataTable;
@@ -192,10 +191,16 @@ const TableToolbar = ({
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
+            defaultValue={search.defaultValue || search.value}
             className="table-toolbar-search"
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
             id={`${tableId}-toolbar-search`}
-            onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+            onChange={(
+              event,
+              defaultValue // https://github.com/carbon-design-system/carbon/issues/6157
+            ) =>
+              onApplySearch(defaultValue || (event.currentTarget ? event.currentTarget.value : ''))
+            }
             disabled={isDisabled}
           />
         ) : null}
@@ -207,38 +212,41 @@ const TableToolbar = ({
         {onDownloadCSV ? (
           <TableToolbarSVGButton
             onClick={onDownloadCSV}
+            description={i18n.downloadIconDescription}
             testId="download-button"
+            renderIcon={Download20}
             disabled={isDisabled}
-          >
-            <Download20 description={i18n.downloadIconDescription} />
-          </TableToolbarSVGButton>
+          />
         ) : null}
         {hasColumnSelection ? (
           <TableToolbarSVGButton
+            isActive={activeBar === 'column'}
             onClick={onToggleColumnSelection}
+            description={i18n.columnSelectionButtonAria}
             testId="column-selection-button"
+            renderIcon={Column20}
             disabled={isDisabled}
-          >
-            <Column20 description={i18n.columnSelectionButtonAria} />
-          </TableToolbarSVGButton>
+          />
         ) : null}
         {hasFilter ? (
           <TableToolbarSVGButton
+            isActive={activeBar === 'filter'}
             onClick={onToggleFilter}
+            description={i18n.filterButtonAria}
             testId="filter-button"
+            renderIcon={Filter20}
             disabled={isDisabled}
-          >
-            <Filter20 description={i18n.filterButtonAria} />
-          </TableToolbarSVGButton>
+          />
         ) : null}
         {hasRowEdit ? (
           <TableToolbarSVGButton
+            isActive={activeBar === 'rowEdit'}
+            description={i18n.editButtonAria}
             onClick={onShowRowEdit}
             testId="row-edit-button"
+            renderIcon={Edit20}
             disabled={isDisabled}
-          >
-            <Edit20 description={i18n.editButtonAria} />
-          </TableToolbarSVGButton>
+          />
         ) : null}
 
         {// Default card header actions should be to the right of the table-specific actions

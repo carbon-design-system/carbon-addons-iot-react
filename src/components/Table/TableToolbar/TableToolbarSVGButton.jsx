@@ -1,45 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Button } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
-import { keyCodes } from '../../../constants/KeyCodeConstants';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   onClick: PropTypes.func.isRequired,
   testId: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  renderIcon: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  description: PropTypes.node.isRequired,
+  /** is the button currently 'toggled' active, used for column filters */
+  isActive: PropTypes.bool,
+  /** is the button disabled */
   disabled: PropTypes.bool,
 };
 
+const defaultProps = {
+  isActive: false,
+  disabled: false,
+};
+
 /**
- * Toolbar button that accepts a Carbon react icon as children
+ * Toolbar button that renders an icon only button
  */
-const TableToolbarSVGButton = ({ onClick, testId, children, disabled }) => {
-  const myClasname = `${iotPrefix}--tooltip-svg-wrapper`;
+const TableToolbarSVGButton = ({ onClick, testId, className, description, isActive, ...rest }) => {
   return (
-    <div
-      className={classNames(myClasname, { [`${myClasname}--disabled`]: disabled })}
-      onClick={e => {
-        if (!disabled) {
-          onClick(e);
+    <Button
+      {...rest}
+      className={classNames(
+        `${prefix}--btn--icon-only`,
+        `${iotPrefix}--tooltip-svg-wrapper`,
+        className,
+        {
+          [`${iotPrefix}--table-toolbar-button-active`]: isActive, // https://github.com/carbon-design-system/carbon/issues/6160
         }
-      }}
-      role="button"
-      tabIndex={disabled ? -1 : 0}
-      onKeyDown={e => {
-        if (e.keyCode === keyCodes.ENTER && !disabled) onClick();
-      }}
+      )}
+      kind="ghost"
+      onClick={onClick}
+      title={description}
+      iconDescription={description}
       data-testid={testId}
-    >
-      {children}
-    </div>
+    />
   );
 };
 
 TableToolbarSVGButton.propTypes = propTypes;
-TableToolbarSVGButton.defaultProps = { disabled: false };
+TableToolbarSVGButton.defaultProps = defaultProps;
 
 export default TableToolbarSVGButton;
