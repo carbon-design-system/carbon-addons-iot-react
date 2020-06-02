@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SkeletonText, Icon } from 'carbon-components-react';
+import { SkeletonText } from 'carbon-components-react';
 
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
@@ -101,19 +101,14 @@ const DashboardHeader = ({
                 }}
               >
                 {typeof action.icon === 'string' ? (
-                  <Icon
-                    key={`icon-${action.id}`}
-                    icon={icons[action.icon]}
-                    description={action.labelText}
-                  />
+                  React.createElement(icons[action.icon], {
+                    'aria-label': action.labelText,
+                    key: `icon-${action.id}`,
+                  })
                 ) : React.isValidElement(action.icon) ? (
                   action.icon
                 ) : (
-                  <Icon
-                    key={`icon-${action.id}`}
-                    icon={action.icon}
-                    description={action.labelText}
-                  />
+                  <action.icon aria-label={action.labelText} key={`icon-${action.id}`} />
                 )}
               </div>
             ) : (

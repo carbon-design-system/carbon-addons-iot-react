@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import { Icon } from 'carbon-components-react';
+import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
 import withSize from 'react-sizeme';
 import classNames from 'classnames';
 
@@ -10,7 +10,6 @@ import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import CardIcon from '../ImageCard/CardIcon';
-import icons from '../../utils/bundledIcons';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -26,10 +25,6 @@ const StyledAttribute = styled.div`
     !props.label || props.isVertical || props.size === CARD_SIZES.SMALL
       ? 'width: 100%'
       : 'width: 50%'};
-`;
-
-const TrendIcon = styled(Icon)`
-  margin-right: 0.25rem;
 `;
 
 const ThresholdIcon = styled(CardIcon)`
@@ -210,9 +205,9 @@ const Attribute = ({
                 isMini={isMini}
               >
                 {secondaryValue.trend && secondaryValue.trend === 'up' ? (
-                  <TrendIcon icon={icons.caretUp} description="trending up" />
+                  <CaretUp16 className={`${bemBase}_trend-icon`} aria-label="trending up" />
                 ) : secondaryValue.trend === 'down' ? (
-                  <TrendIcon icon={icons.caretDown} description="trending down" />
+                  <CaretDown16 className={`${bemBase}_trend-icon`} aria-label="trending down" />
                 ) : null}
                 {!isMini && secondaryValue.value}
               </AttributeSecondaryValue>
