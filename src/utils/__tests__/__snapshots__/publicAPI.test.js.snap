@@ -4434,6 +4434,7 @@ Map {
       "defaultValue": null,
       "disabled": false,
       "expanded": false,
+      "hasTimeInput": true,
       "i18n": Object {
         "absoluteLabel": "Absolute",
         "applyBtnLabel": "Apply",
@@ -4662,6 +4663,9 @@ Map {
         "type": "bool",
       },
       "expanded": Object {
+        "type": "bool",
+      },
+      "hasTimeInput": Object {
         "type": "bool",
       },
       "i18n": Object {
