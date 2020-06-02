@@ -200,27 +200,43 @@ const TableToolbar = ({
           />
         ) : null}
         {totalFilters > 0 ? (
-          <Button kind="secondary" onClick={onClearAllFilters}>
+          <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
             {i18n.clearAllFilters}
           </Button>
         ) : null}
         {onDownloadCSV ? (
-          <TableToolbarSVGButton onClick={onDownloadCSV} testId="download-button">
+          <TableToolbarSVGButton
+            onClick={onDownloadCSV}
+            testId="download-button"
+            disabled={isDisabled}
+          >
             <Download20 description={i18n.downloadIconDescription} />
           </TableToolbarSVGButton>
         ) : null}
         {hasColumnSelection ? (
-          <TableToolbarSVGButton onClick={onToggleColumnSelection} testId="column-selection-button">
+          <TableToolbarSVGButton
+            onClick={onToggleColumnSelection}
+            testId="column-selection-button"
+            disabled={isDisabled}
+          >
             <Column20 description={i18n.columnSelectionButtonAria} />
           </TableToolbarSVGButton>
         ) : null}
         {hasFilter ? (
-          <TableToolbarSVGButton onClick={onToggleFilter} testId="filter-button">
+          <TableToolbarSVGButton
+            onClick={onToggleFilter}
+            testId="filter-button"
+            disabled={isDisabled}
+          >
             <Filter20 description={i18n.filterButtonAria} />
           </TableToolbarSVGButton>
         ) : null}
         {hasRowEdit ? (
-          <TableToolbarSVGButton onClick={onShowRowEdit} testId="row-edit-button">
+          <TableToolbarSVGButton
+            onClick={onShowRowEdit}
+            testId="row-edit-button"
+            disabled={isDisabled}
+          >
             <Edit20 description={i18n.editButtonAria} />
           </TableToolbarSVGButton>
         ) : null}
