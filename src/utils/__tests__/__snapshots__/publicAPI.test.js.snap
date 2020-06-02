@@ -4404,7 +4404,6 @@ Map {
       "defaultValue": null,
       "disabled": false,
       "expanded": false,
-      "getTooltipValue": null,
       "i18n": Object {
         "absoluteLabel": "Absolute",
         "applyBtnLabel": "Apply",
@@ -4501,6 +4500,7 @@ Map {
           "value": "YESTERDAY",
         },
       ],
+      "renderPresetTooltipText": null,
       "showRelativeOption": true,
     },
     "propTypes": Object {
@@ -4634,9 +4634,6 @@ Map {
       },
       "expanded": Object {
         "type": "bool",
-      },
-      "getTooltipValue": Object {
-        "type": "func",
       },
       "i18n": Object {
         "args": Array [
@@ -4773,6 +4770,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "renderPresetTooltipText": Object {
+        "type": "func",
       },
       "showRelativeOption": Object {
         "type": "bool",

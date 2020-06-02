@@ -124,8 +124,11 @@ const propTypes = {
   disabled: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
-  /** get the tooltip value for range selections */
-  getTooltipValue: PropTypes.func,
+  /**
+   * Function hook used to provide the appropriate tooltip content for the preset time
+   * picker. This function takes in the currentValue and should return a string message.
+   */
+  renderPresetTooltipText: PropTypes.func,
   /** triggered on cancel */
   onCancel: PropTypes.func,
   /** triggered on apply with returning object with similar signature to defaultValue */
@@ -196,7 +199,7 @@ const defaultProps = {
   expanded: false,
   disabled: false,
   showRelativeOption: true,
-  getTooltipValue: null,
+  renderPresetTooltipText: null,
   onCancel: null,
   onApply: null,
   i18n: {
@@ -236,7 +239,7 @@ const DateTimePicker = ({
   expanded,
   disabled,
   showRelativeOption,
-  getTooltipValue,
+  renderPresetTooltipText,
   onCancel,
   onApply,
   i18n,
@@ -593,9 +596,6 @@ const DateTimePicker = ({
    * @returns {string} an interval string, starting point in time to now
    */
   const getIntervalValue = () => {
-    if (getTooltipValue) {
-      return getTooltipValue();
-    }
     if (currentValue) {
       if (currentValue.kind === PICKER_KINDS.PRESET) {
         return `${moment()
@@ -661,7 +661,7 @@ const DateTimePicker = ({
             <TooltipDefinition
               align="start"
               direction="bottom"
-              tooltipText={getIntervalValue()}
+              tooltipText={renderPresetTooltipText(currentValue) || getIntervalValue()}
               triggerClassName=""
             >
               {humanValue}
@@ -681,11 +681,11 @@ const DateTimePicker = ({
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
               <OrderedList nested={false}>
-                {getIntervalValue() ? (
+                {renderPresetTooltipText(currentValue) || getIntervalValue() ? (
                   <ListItem
                     className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                   >
-                    {getIntervalValue()}
+                    {renderPresetTooltipText(currentValue) || getIntervalValue()}
                   </ListItem>
                 ) : null}
                 <ListItem
