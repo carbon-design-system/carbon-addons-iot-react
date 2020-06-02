@@ -32,7 +32,7 @@ export default {
   edit: Edit16,
   close: CloseFilled16,
   checkmark: CheckmarkFilled16,
-  warning: WarningAltFilled32,
+  warning: WarningAltFilled16,
   arrowUp: ArrowUp16,
   arrowDown: ArrowDown16,
   user: User16,
