@@ -5285,9 +5285,9 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
-        "selectTimeRangeLabel": "Select date range",
         "selectRowAria": "Select row",
         "selectSeverityPlaceholder": "Select a severity",
+        "selectTimeRangeLabel": "Select date range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
@@ -5572,13 +5572,13 @@ Map {
             "selectAllAria": Object {
               "type": "string",
             },
-            "selectTimeRangeLabel": Object {
-              "type": "string",
-            },
             "selectRowAria": Object {
               "type": "string",
             },
             "selectSeverityPlaceholder": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "severityLabel": Object {
@@ -9592,8 +9592,8 @@ Map {
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
-        "selectTimeRangeLabel": "Select time range",
         "selectSeverityPlaceholder": "Select a severity",
+        "selectTimeRangeLabel": "Select time range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
