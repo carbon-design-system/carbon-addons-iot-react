@@ -4324,7 +4324,17 @@ Map {
       "sortOptions": Object {
         "args": Array [
           Object {
-            "type": "node",
+            "args": Array [
+              Object {
+                "id": Object {
+                  "type": "string",
+                },
+                "text": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
