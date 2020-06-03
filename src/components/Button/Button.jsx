@@ -59,6 +59,7 @@ const Button = props => {
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
       onClick={onClick}
       className={classNames(className, `${iotPrefix}--btn`, {
+        [`${iotPrefix}--btn-icon-selection`]: kind === 'icon-selection',
         [`${iotPrefix}--btn-icon-selection--recommended`]:
           kind === 'icon-selection' && !disabled && recommended,
         [`${iotPrefix}--btn-icon-selection--selected`]: kind === 'icon-selection' && selected,

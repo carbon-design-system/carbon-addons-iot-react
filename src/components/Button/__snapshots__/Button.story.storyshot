@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
     }
   >
     <button
-      className="some-class iot--btn bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
+      className="some-class iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--bottom bx--tooltip--align-center"
       disabled={false}
       onClick={[Function]}
       onFocus={[Function]}
@@ -130,8 +130,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         width={16}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <polygon
-          points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
+        <path
+          d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
         />
       </svg>
     </button>

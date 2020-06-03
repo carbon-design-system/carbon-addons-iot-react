@@ -41,8 +41,17 @@
   border-color: $focus;
 }
 
-.#{$iot-prefix}--btn-icon-selection--selected svg {
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only.#{$iot-prefix}--btn-icon-selection
+  svg
+  path {
   fill: $icon-01;
+  outline-color: transparent;
+}
+
+.#{$iot-prefix}--btn.#{$prefix}--btn.#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only.#{$iot-prefix}--btn-icon-selection.#{$iot-prefix}--btn-icon-selection--selected
+  svg
+  path {
+  fill: $interactive-01;
   outline-color: transparent;
 }
 
