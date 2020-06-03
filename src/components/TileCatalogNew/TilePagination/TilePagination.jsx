@@ -12,7 +12,7 @@ const propTypes = {
   /** total number of pages */
   numPages: PropTypes.number.isRequired,
   /** call back function receive current page number */
-  onChange: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
   /** i18n strings */
   i18n: PropTypes.shape({}),
 };
@@ -39,7 +39,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
           [`${prefix}--pagination-nav__page--disabled`]: page === 1,
         }
       )}
-      ariaDisabled="true"
+      aria-disabled="true"
     >
       <span className={`${prefix}--pagination-nav__accessibility-label`}>
         {i18n.ariaLabelPreviousPage}
@@ -47,13 +47,13 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       <svg
         focusable="false"
         preserveAspectRatio="xMidYMid meet"
-        style={{ 'will-change': 'transform' }}
+        style={{ willChange: 'transform' }}
         xmlns="http://www.w3.org/2000/svg"
         className={`${prefix}--pagination-nav__icon`}
         width="5"
         height="8"
         viewBox="0 0 5 8"
-        ariaHidden="true"
+        aria-hidden="true"
       >
         <path d="M5 8L0 4 5 0z" />
       </svg>
@@ -77,13 +77,13 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       <svg
         focusable="false"
         preserveAspectRatio="xMidYMid meet"
-        style={{ 'will-change': 'transform' }}
+        style={{ willChange: 'transform' }}
         xmlns="http://www.w3.org/2000/svg"
         className={`${prefix}--pagination-nav__icon`}
         width="5"
         height="8"
         viewBox="0 0 5 8"
-        ariaHidden="true"
+        aria-hidden="true"
       >
         <path d="M0 0L5 4 0 8z" />
       </svg>
@@ -97,8 +97,8 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         [`${prefix}--pagination-nav__page--active`]: page === pageNumber,
         [`${prefix}--pagination-nav__page--disabled`]: page === pageNumber,
       })}
-      ariaCurrent={i18n.ariaLabelPage}
-      ariaDisabled={page === pageNumber}
+      aria-current={i18n.ariaLabelPage}
+      aria-disabled={page === pageNumber}
     >
       <span className="bx--pagination-nav__accessibility-label">{i18n.ariaLabelPage}</span>
       {pageNumber}
@@ -199,7 +199,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   };
 
   return (
-    <nav className={`${prefix}--pagination-nav`} ariaLabel={i18n.ariaLabelPagination}>
+    <nav className={`${prefix}--pagination-nav`} aria-label={i18n.ariaLabelPagination}>
       <ul className={`${prefix}--pagination-nav__list`}>
         <li className={`${prefix}--pagination-nav__list-item`}>{prevButton}</li>
         <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(1)}</li>
