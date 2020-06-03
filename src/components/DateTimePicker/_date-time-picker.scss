@@ -138,6 +138,10 @@
           }
         }
 
+        .#{$iot-prefix}--date-time-picker__no-formgroup {
+          margin-bottom: $spacing-05;
+        }
+
         &.#{$iot-prefix}--date-time-picker__menu-formgroup {
           display: block;
         }

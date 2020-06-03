@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
-import NotificationOn from '@carbon/icons-react/lib/notification/20';
-import HeaderHelp from '@carbon/icons-react/lib/help/20';
-import Avatar from '@carbon/icons-react/lib/user--avatar/20';
+import NotificationOn from '@carbon/icons-react/lib/notification/16';
+import HeaderHelp from '@carbon/icons-react/lib/help/16';
+import Avatar from '@carbon/icons-react/lib/user--avatar/16';
 
 import Header from './Header';
 
