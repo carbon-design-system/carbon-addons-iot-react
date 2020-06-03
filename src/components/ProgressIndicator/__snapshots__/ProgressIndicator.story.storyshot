@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_zfzeopp2s8p"
+              id="first-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -148,7 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_cxqyrvsbt9l"
+              id="second-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -215,7 +215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_9r4brbj83n4"
+              id="sub-step-1-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -273,7 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_7t5kotvdq5t"
+              id="sub-step-2-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -326,7 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_4suvfh1db1r"
+              id="sub-step-3-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -388,7 +388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_f9h356ae0s9"
+              id="third-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -464,7 +464,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_9mu1ko4n7if"
+              id="fourth-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -518,7 +518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_erwf4gfzt68"
+              id="fifth-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -629,7 +629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_n6mpqb53j"
+              id="first-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -695,7 +695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_efbc2ejrlcn"
+              id="second-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -756,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_f3vvpi6b4v"
+              id="sub-step-1-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -808,7 +808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_3arpg53ln3s"
+              id="sub-step-2-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -855,7 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_nzriwjvklhj"
+              id="sub-step-3-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -911,7 +911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_bma8i3jrs2d"
+              id="third-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -981,7 +981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_8h07zkzpzfm"
+              id="fourth-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -1029,7 +1029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               aria-describedby={null}
               aria-expanded={false}
               className="bx--tooltip__label"
-              id="__carbon-tooltip-trigger_ti0takx996m"
+              id="fifth-step-tooltip"
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}

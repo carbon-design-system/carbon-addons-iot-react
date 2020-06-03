@@ -180,7 +180,12 @@ export const IotProgressStep = ({
           >
             <StepLabel />
             <StepSecondaryLabel />
-            <Tooltip open={showTooltip} showIcon={false} direction={vertical ? 'right' : 'bottom'}>
+            <Tooltip
+              open={showTooltip}
+              triggerId={`${dataTestId}-tooltip`}
+              showIcon={false}
+              direction={vertical ? 'right' : 'bottom'}
+            >
               {getTooltipLabel()}
             </Tooltip>
           </div>
