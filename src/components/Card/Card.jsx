@@ -174,6 +174,7 @@ export const defaultProps = {
     thisMonthLabel: 'This month',
     thisQuarterLabel: 'This quarter',
     thisYearLabel: 'This year',
+    selectDateRangeLabel: 'Select time range',
     hourlyLabel: 'Hourly',
     dailyLabel: 'Daily',
     weeklyLabel: 'Weekly',

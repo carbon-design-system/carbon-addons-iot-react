@@ -369,6 +369,7 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
+
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
@@ -398,7 +399,10 @@ export const CardPropTypes = {
     dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
+    /** If no time range is selected we should show this string as the default */
+    defaultLabel: PropTypes.string,
     // card actions
+    selectDateRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,

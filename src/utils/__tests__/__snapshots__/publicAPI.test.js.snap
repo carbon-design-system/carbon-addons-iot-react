@@ -6419,6 +6419,7 @@ Map {
         "overflowMenuDescription": "Open and close list of options",
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
+        "selectDateRangeLabel": "Select time range",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
         "thisWeekLabel": "This week",
@@ -6960,6 +6961,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -7012,6 +7016,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -7827,6 +7834,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -7879,6 +7889,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -9342,6 +9355,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -9394,6 +9410,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -9573,6 +9592,7 @@ Map {
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
+        "selectDateRangeLabel": "Select time range",
         "selectSeverityPlaceholder": "Select a severity",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
@@ -11111,6 +11131,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -11163,6 +11186,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -11915,6 +11941,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -11967,6 +11996,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
