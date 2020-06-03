@@ -36,6 +36,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
         triggerText={element}
         triggerId={triggerId}
         tooltipId={`${triggerId}-tooltip`}
+        direction="right"
       >
         <TooltipContent tooltipContent={dataState} />
       </Tooltip>
