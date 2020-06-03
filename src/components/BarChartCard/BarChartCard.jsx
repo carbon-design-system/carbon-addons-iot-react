@@ -13,7 +13,7 @@ import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTy
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
-import { valueFormatter } from '../../utils/cardUtilityFunctions';
+import { valueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
@@ -218,19 +218,10 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSour
 const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const BarChartCard = ({
-  title,
-  content: {
-    layout = BAR_CHART_LAYOUTS.VERTICAL,
-    type = BAR_CHART_TYPES.SIMPLE,
-    xLabel,
-    yLabel,
-    series,
-    categoryDataSourceId,
-    timeDataSourceId,
-    unit,
-  },
+  title: titleProp,
+  content,
   size,
-  values: valuesProp,
+  values: initialValues,
   locale,
   i18n,
   isExpanded,
@@ -241,6 +232,11 @@ const BarChartCard = ({
   ...others
 }) => {
   const { noDataLabel } = i18n;
+  const {
+    title,
+    content: { series, timeDataSourceId, categoryDataSourceId, layout, xLabel, yLabel, unit, type },
+    values: valuesProp,
+  } = handleCardVariables(titleProp, content, initialValues, others);
   console.log(valuesProp);
 
   const values = isEditable
