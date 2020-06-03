@@ -177,35 +177,6 @@ storiesOf('Watson IoT/BarChartCard', module)
       </div>
     );
   })
-  .add('Stacked bar - Time series with categories', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <BarChartCard
-          title={text('title', 'Particles by city over time')}
-          id="stacked-horizontal-sample"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            type: BAR_CHART_TYPES.STACKED,
-            layout: BAR_CHART_LAYOUTS.VERTICAL,
-            xLabel: 'Dates',
-            yLabel: 'Total',
-            series: [
-              {
-                dataSourceId: 'particles',
-                // colors: COLORS,
-              },
-            ],
-            timeDataSourceId: 'timestamp',
-            categoryDataSourceId: 'city',
-          })}
-          values={barChartData.timestamps}
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
   .add('Stacked bar - Vertical', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
@@ -290,6 +261,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles / emissions over 4 days')}
           id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
+          isExpanded
           content={object('content', {
             type: BAR_CHART_TYPES.STACKED,
             layout: BAR_CHART_LAYOUTS.VERTICAL,
@@ -308,6 +280,36 @@ storiesOf('Watson IoT/BarChartCard', module)
               },
             ],
             timeDataSourceId: 'timestamp',
+          })}
+          values={barChartData.timestamps}
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('Stacked bar - Time series with categories', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <BarChartCard
+          title={text('title', 'Particles by city over time')}
+          id="stacked-horizontal-sample"
+          isLoading={boolean('isLoading', false)}
+          isExpanded
+          content={object('content', {
+            type: BAR_CHART_TYPES.STACKED,
+            layout: BAR_CHART_LAYOUTS.VERTICAL,
+            xLabel: 'Dates',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+                // colors: COLORS,
+              },
+            ],
+            timeDataSourceId: 'timestamp',
+            categoryDataSourceId: 'city',
           })}
           values={barChartData.timestamps}
           size={size}
@@ -340,6 +342,43 @@ storiesOf('Watson IoT/BarChartCard', module)
             layout: BAR_CHART_LAYOUTS.VERTICAL,
           })}
           values={barChartData.quarters.filter(a => a.quarter === 'NOT_VALID')}
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('isExpanded', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <BarChartCard
+          title={text('title', 'Particles and temperature in cities')}
+          id="grouped-sample"
+          isLoading={boolean('isLoading', false)}
+          isExpanded
+          content={object('content', {
+            type: BAR_CHART_TYPES.GROUPED,
+            xLabel: 'Cities',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+                label: 'Particles',
+                color: 'blue',
+              },
+              {
+                dataSourceId: 'temperature',
+                label: 'Temperature',
+              },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emissions',
+              },
+            ],
+            categoryDataSourceId: 'city',
+          })}
+          values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
           size={size}
           onCardAction={action('onCardAction')}
         />

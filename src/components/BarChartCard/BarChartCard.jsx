@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
@@ -6,12 +6,16 @@ import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import moment from 'moment';
+import capitalize from 'lodash/capitalize';
+import omit from 'lodash/omit';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 import { valueFormatter } from '../../utils/cardUtilityFunctions';
+import StatefulTable from '../Table/StatefulTable';
+import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -227,9 +231,11 @@ const BarChartCard = ({
   i18n,
   isExpanded,
   isLazyLoading,
+  isEditable,
   className,
   ...others
 }) => {
+  const { noDataLabel } = i18n;
   const chartData = formatChartData(series, values, categoryDataSourceId, timeDataSourceId, type);
 
   const isAllValuesEmpty = isEmpty(chartData);
@@ -249,19 +255,130 @@ const BarChartCard = ({
   const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
   const colors = formatColors(series, uniqueDatasets);
 
+  // In expanded mode we show the data underneath the barchart in a table so need to build the columns
+  const tableColumns = useMemo(
+    () => {
+      const columns = [];
+      // First column is timestamp if there is one
+      if (timeDataSourceId) {
+        columns.push({
+          id: timeDataSourceId,
+          name: capitalize(timeDataSourceId),
+          isSortable: true,
+          type: 'TIMESTAMP',
+        });
+      } else if (categoryDataSourceId && type !== BAR_CHART_TYPES.SIMPLE) {
+        columns.push({
+          id: categoryDataSourceId,
+          name: capitalize(categoryDataSourceId),
+          isSortable: true,
+        });
+      }
+
+      // then the rest in series order
+      return columns.concat(
+        uniqueDatasets.map(datasetName => ({
+          id: datasetName,
+          name: capitalize(datasetName),
+          isSortable: true,
+          filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
+        }))
+      );
+    },
+    [
+      categoryDataSourceId,
+      i18n.defaultFilterStringPlaceholdText,
+      timeDataSourceId,
+      type,
+      uniqueDatasets,
+    ]
+  );
+
+  const tableData = [];
+  if (timeDataSourceId) {
+    // First get all of the unique timestamps
+    const uniqueTimestamps = [...new Set(values.map(val => val[timeDataSourceId]))];
+    // For each unique timestamp, get the unique value for each dataset group
+    // Each table row will consist of 1 timestamp and the corresponding values
+    // of each dataset group for that timestamp
+    uniqueTimestamps.forEach((timestamp, index) => {
+      const barTimeValue = {};
+      const filteredData = chartData.filter(data => data.date.valueOf() === timestamp);
+      filteredData.forEach(val => {
+        barTimeValue[val.group] = val.value;
+      });
+
+      tableData.push({
+        id: `dataindex-${index}`,
+        values: {
+          ...barTimeValue,
+          // format the date locally
+          [timeDataSourceId]: moment(timestamp).format('L HH:mm'),
+        },
+        isSelectable: false,
+      });
+    });
+  } else if (type === BAR_CHART_TYPES.SIMPLE) {
+    const simpleBarValue = {};
+    chartData.forEach(value => {
+      // There's only 1 row if its a simple non-timebased graph
+      simpleBarValue[value.group] = value.value;
+    });
+    tableData.push({
+      id: `dataindex-1`,
+      values: {
+        ...simpleBarValue,
+      },
+      isSelectable: false,
+    });
+  } // Format the tableData for grouped and stacked charts that are NOT time-based
+  else {
+    // First get all of the unique keys
+    const uniqueKeys = [...new Set(values.map(val => val[categoryDataSourceId]))];
+    // For each unique key, get the unique value for each dataset group
+    // Each table row will consist of 1 key and the corresponding values
+    // of each dataset group for that key
+    uniqueKeys.forEach((key, index) => {
+      const groupBarValue = {};
+      const filteredData = chartData.filter(data => data.key === key);
+      filteredData.forEach(val => {
+        groupBarValue[val.group] = val.value;
+      });
+
+      tableData.push({
+        id: `dataindex-${index}`,
+        values: {
+          ...groupBarValue,
+          [categoryDataSourceId]: key,
+        },
+        isSelectable: false,
+      });
+    });
+  }
+
   return (
     <Card
       title={title}
       className={`${iotPrefix}--bar-chart-card`}
       size={size}
       i18n={i18n}
-      {...others}
       isExpanded={isExpanded}
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading}
+      isEditable={isEditable}
+      {...others}
     >
       {!others.isLoading && !isAllValuesEmpty ? (
-        <div className={classnames(`${iotPrefix}--bar-chart-container`, className)}>
+        <div
+          className={classnames(
+            `${iotPrefix}--bar-chart-container`,
+            {
+              [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
+              [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
+            },
+            className
+          )}
+        >
           <ChartComponent
             data={chartData}
             options={{
@@ -298,6 +415,44 @@ const BarChartCard = ({
             width="100%"
             height="100%"
           />
+          {isExpanded ? (
+            <StatefulTable
+              className={`${iotPrefix}--bar-chart-card--stateful-table`}
+              columns={tableColumns}
+              data={tableData}
+              isExpanded={isExpanded}
+              options={{
+                hasPagination: true,
+                hasSearch: true,
+                hasFilter: true,
+              }}
+              actions={{
+                toolbar: {
+                  onDownloadCSV: () => csvDownloadHandler(tableData, title),
+                },
+              }}
+              view={{
+                pagination: {
+                  pageSize: 10,
+                  pageSizes: [10, 20, 30],
+                },
+                toolbar: {
+                  activeBar: null,
+                },
+                filters: [],
+                table: {
+                  sort: {
+                    columnId: timeDataSourceId,
+                    direction: 'DESC',
+                  },
+                  emptyState: {
+                    message: noDataLabel,
+                  },
+                },
+              }}
+              i18n={i18n}
+            />
+          ) : null}
         </div>
       ) : null}
     </Card>
@@ -308,6 +463,11 @@ BarChartCard.propTypes = { ...CardPropTypes, ...BarChartCardPropTypes };
 
 BarChartCard.defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
+  i18n: {
+    noDataLabel: 'No data',
+  },
+  type: BAR_CHART_TYPES.SIMPLE,
+  locale: 'en',
 };
 
 export default BarChartCard;

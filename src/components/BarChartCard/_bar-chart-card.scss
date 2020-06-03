@@ -5,6 +5,35 @@
   position: absolute;
   width: 100%;
   height: 100%;
+
+  & {
+    .chart-holder {
+      width: 100%;
+      padding-top: 0.25rem;
+    }
+    .axis-title {
+      font-weight: 500;
+    }
+    .bx--cc--chart-svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.#{$iot-prefix}--bar-chart-container--expanded {
+  padding: 0 $spacing-05 $spacing-05;
+  position: absolute;
+  width: 100%;
+  height: 55%;
+}
+
+.#{$iot-prefix}--bar-chart-container--editable {
+  & {
+    .bx--cc--tooltip {
+      display: 'none';
+    }
+  }
 }
 
 .#{$iot-prefix}--bar-chart-card {
