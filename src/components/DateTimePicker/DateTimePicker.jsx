@@ -646,6 +646,10 @@ const DateTimePicker = ({
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
+  const tooltipValue = renderPresetTooltipText
+    ? renderPresetTooltipText(currentValue)
+    : getIntervalValue();
+
   return (
     <div
       id={`${iotPrefix}--date-time-picker__wrapper`}
@@ -665,7 +669,7 @@ const DateTimePicker = ({
             <TooltipDefinition
               align="start"
               direction="bottom"
-              tooltipText={renderPresetTooltipText(currentValue) || getIntervalValue()}
+              tooltipText={tooltipValue}
               triggerClassName=""
             >
               {humanValue}
@@ -685,11 +689,11 @@ const DateTimePicker = ({
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
               <OrderedList nested={false}>
-                {renderPresetTooltipText(currentValue) || getIntervalValue() ? (
+                {tooltipValue ? (
                   <ListItem
                     className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                   >
-                    {renderPresetTooltipText(currentValue) || getIntervalValue()}
+                    {tooltipValue}
                   </ListItem>
                 ) : null}
                 <ListItem
