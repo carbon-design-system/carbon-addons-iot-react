@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import WarningAlt16 from '@carbon/icons-react';
+import { WarningAlt16 } from '@carbon/icons-react';
 import styled from 'styled-components';
 import { Tooltip, Button } from 'carbon-components-react';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
 import { g10 } from '@carbon/themes';
-import Add20 from '@carbon/icons-react';
+import { Add20 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import Information20 from '@carbon/icons-react';
+import { Information20 } from '@carbon/icons-react';
 import warning from 'warning';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 

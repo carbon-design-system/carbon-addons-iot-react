@@ -8,7 +8,7 @@ import {
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Bee32 from '@carbon/icons-react';
+import { Bee32 } from '@carbon/icons-react';
 import warning from 'warning';
 
 import { COLORS } from '../../styles/styles';

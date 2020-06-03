@@ -695,6 +695,163 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--data-table-container"
+    >
+      <table
+        className="bx--data-table bx--data-table--no-border"
+      >
+        <tbody
+          aria-live="polite"
+        >
+          <tr
+            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+            data-child-count={0}
+            data-nesting-offset={0}
+            data-parent-row={true}
+            onClick={[Function]}
+          >
+            <td
+              className="bx--table-expand"
+              headers="expand"
+            >
+              <button
+                aria-label="Click to expand."
+                className="bx--table-expand__button"
+                onClick={[Function]}
+                title="Click to expand."
+              >
+                <svg
+                  aria-label="Click to expand."
+                  className="bx--table-expand__svg"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+              </button>
+            </td>
+            <td
+              align="start"
+              className="data-table-start"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+              >
+                <span
+                  className="iot--table__cell-text--no-wrap"
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+            >
+              <div
+                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+              >
+                <div
+                  className="iot--row-actions-container__background"
+                >
+                  <div
+                    className="bx--tooltip__label"
+                    id="tooltip-error"
+                  >
+                    
+                    <div
+                      aria-describedby={null}
+                      className="bx--tooltip__trigger"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.5,14h-13c-0.2,0-0.3-0.1-0.4-0.2c-0.1-0.2-0.1-0.3,0-0.5l6.5-12C7.7,1,8,0.9,8.2,1.1c0.1,0,0.2,0.1,0.2,0.2l6.5,12	c0.1,0.2,0.1,0.3,0,0.5C14.9,13.9,14.7,14,14.5,14z M2.3,13h11.3L8,2.5L2.3,13z"
+                        />
+                        <path
+                          d="M7.5 6H8.5V9.5H7.5zM8 10.8c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.8 8 10.8z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    className="RowActionsError__StyledSpan-sc-1htz5gr-0 kSTEeW"
+                  >
+                    Action failed
+                  </span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableBodyRow rowActions running 1`] = `
 <div
   className="storybook-container"
