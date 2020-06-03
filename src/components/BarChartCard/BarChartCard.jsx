@@ -7,7 +7,7 @@ import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import moment from 'moment';
 import capitalize from 'lodash/capitalize';
-import omit from 'lodash/omit';
+import memoize from 'lodash/memoize';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
@@ -16,6 +16,8 @@ import { settings } from '../../constants/Settings';
 import { valueFormatter } from '../../utils/cardUtilityFunctions';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+
+import { generateSampleValues } from './barChartUtils';
 
 const { iotPrefix } = settings;
 
@@ -213,6 +215,8 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSour
   return updatedTooltip;
 };
 
+const memoizedGenerateSampleValues = memoize(generateSampleValues);
+
 const BarChartCard = ({
   title,
   content: {
@@ -226,17 +230,25 @@ const BarChartCard = ({
     unit,
   },
   size,
-  values,
+  values: valuesProp,
   locale,
   i18n,
   isExpanded,
   isLazyLoading,
   isEditable,
+  interval,
   className,
   ...others
 }) => {
   const { noDataLabel } = i18n;
+  console.log(valuesProp);
+
+  const values = isEditable
+    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval, categoryDataSourceId)
+    : valuesProp;
+  console.log(values);
   const chartData = formatChartData(series, values, categoryDataSourceId, timeDataSourceId, type);
+  console.log(chartData);
 
   const isAllValuesEmpty = isEmpty(chartData);
 
@@ -404,7 +416,7 @@ const BarChartCard = ({
                   mapsTo: axes.leftAxesMapsTo,
                 },
               },
-              legend: { position: 'bottom', enabled: chartData.length > 1 },
+              legend: { position: 'bottom', enabled: chartData.length > 1, clickable: !isEditable },
               containerResizable: true,
               color: colors,
               tooltip: {

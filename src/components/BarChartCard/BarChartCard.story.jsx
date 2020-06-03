@@ -20,6 +20,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles by city')}
           id="simple-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             xLabel: 'Cities',
             yLabel: 'Particles',
@@ -48,6 +50,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles by city')}
           id="simple-horizontal-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             xLabel: 'Cities',
             yLabel: 'Particles',
@@ -80,6 +84,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles over 4 days')}
           id="simple-time-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             layout: BAR_CHART_LAYOUTS.VERTICAL,
             xLabel: 'Date',
@@ -108,6 +114,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles and temperature in cities')}
           id="grouped-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.GROUPED,
             xLabel: 'Cities',
@@ -144,6 +152,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles and temperature in cities')}
           id="grouped-horizontal-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.GROUPED,
             layout: BAR_CHART_LAYOUTS.HORIZONTAL,
@@ -185,6 +195,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles and temperature in cities')}
           id="stacked-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.STACKED,
             layout: BAR_CHART_LAYOUTS.VERTICAL,
@@ -223,6 +235,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles and temperature in cities')}
           id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.STACKED,
             layout: BAR_CHART_LAYOUTS.HORIZONTAL,
@@ -261,7 +275,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles / emissions over 4 days')}
           id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
-          isExpanded
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.STACKED,
             layout: BAR_CHART_LAYOUTS.VERTICAL,
@@ -296,7 +311,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles by city over time')}
           id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
-          isExpanded
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.STACKED,
             layout: BAR_CHART_LAYOUTS.VERTICAL,
@@ -326,6 +342,8 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles and temperature in cities')}
           id="simple-sample-no-data"
           isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
           i18n={object('i18n', {
             noDataLabel: 'No data for this card.',
           })}
@@ -356,7 +374,46 @@ storiesOf('Watson IoT/BarChartCard', module)
           title={text('title', 'Particles and temperature in cities')}
           id="grouped-sample"
           isLoading={boolean('isLoading', false)}
-          isExpanded
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', true)}
+          content={object('content', {
+            type: BAR_CHART_TYPES.GROUPED,
+            xLabel: 'Cities',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+                label: 'Particles',
+                color: 'blue',
+              },
+              {
+                dataSourceId: 'temperature',
+                label: 'Temperature',
+              },
+              {
+                dataSourceId: 'emissions',
+                label: 'Emissions',
+              },
+            ],
+            categoryDataSourceId: 'city',
+          })}
+          values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('isEditable', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <BarChartCard
+          title={text('title', 'Particles and temperature in cities')}
+          id="grouped-sample"
+          isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', true)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             type: BAR_CHART_TYPES.GROUPED,
             xLabel: 'Cities',
