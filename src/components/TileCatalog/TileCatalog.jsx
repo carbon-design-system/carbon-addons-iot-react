@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { RadioTile, Tile, SkeletonText, DataTable } from 'carbon-components-react';
-import Bee32 from '@carbon/icons-react/es/bee/32';
+import Bee32 from '@carbon/icons-react';
 import classNames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';

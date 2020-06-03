@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import Info from '@carbon/icons-react/es/information/20';
+import Information20 from '@carbon/icons-react';
 import warning from 'warning';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 
@@ -131,7 +131,7 @@ const Hero = ({
                   tooltipId="hero-tooltip"
                   triggerId="hero-tooltip-trigger"
                   renderIcon={React.forwardRef((props, ref) => (
-                    <Info ref={ref} />
+                    <Information20 ref={ref} />
                   ))}
                 >
                   <p>{tooltip.message}</p>
