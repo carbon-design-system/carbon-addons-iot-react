@@ -3541,6 +3541,14 @@ Map {
   },
   "BarChartCard" => Object {
     "defaultProps": Object {
+      "content": Object {
+        "layout": "VERTICAL",
+        "type": "SIMPLE",
+      },
+      "i18n": Object {
+        "noDataLabel": "No data",
+      },
+      "locale": "en",
       "size": "MEDIUMWIDE",
     },
     "propTypes": Object {
@@ -4073,6 +4081,9 @@ Map {
               ],
               "type": "oneOf",
             },
+            "unit": Object {
+              "type": "string",
+            },
             "xLabel": Object {
               "type": "string",
             },
@@ -4203,8 +4214,6 @@ Map {
       "size": Object {
         "args": Array [
           Array [
-            "SMALL",
-            "SMALLWIDE",
             "MEDIUMTHIN",
             "MEDIUM",
             "MEDIUMWIDE",
@@ -8541,9 +8550,6 @@ Map {
                           "isRequired": true,
                           "type": "string",
                         },
-                        "unit": Object {
-                          "type": "string",
-                        },
                       },
                     ],
                     "type": "shape",
@@ -8572,9 +8578,6 @@ Map {
                               "isRequired": true,
                               "type": "string",
                             },
-                            "unit": Object {
-                              "type": "string",
-                            },
                           },
                         ],
                         "type": "shape",
@@ -8588,6 +8591,9 @@ Map {
               "type": "oneOfType",
             },
             "timeDataSourceId": Object {
+              "type": "string",
+            },
+            "unit": Object {
               "type": "string",
             },
             "xLabel": Object {

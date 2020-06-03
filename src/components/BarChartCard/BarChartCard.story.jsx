@@ -11,9 +11,13 @@ import BarChartCard from './BarChartCard';
 
 const COLORS = ['blue', 'red', 'green', 'yellow'];
 
+const acceptableSizes = Object.keys(CARD_SIZES).filter(
+  size => size.includes('MEDIUM') || size.includes('LARGE')
+);
+
 storiesOf('Watson IoT/BarChartCard', module)
   .add('Simple bar - Vertical', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -43,7 +47,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Simple bar - Horizontal', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -77,7 +81,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Simple bar - Time series', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -107,7 +111,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Grouped bar - Vertical', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -145,7 +149,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Grouped bar - Horizontal', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -188,7 +192,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Stacked bar - Vertical', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -228,7 +232,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Stacked bar - Horizontal', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -268,7 +272,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Stacked bar - Time series', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -304,7 +308,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('Stacked bar - Time series with categories', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -335,7 +339,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('No data', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -367,7 +371,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('isExpanded', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -405,7 +409,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('isEditable', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard

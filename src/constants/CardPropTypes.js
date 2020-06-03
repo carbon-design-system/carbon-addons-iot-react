@@ -223,7 +223,9 @@ const BarChartDatasetPropType = {
 
 export const BarChartCardPropTypes = {
   /** card size */
-  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
+  size: PropTypes.oneOf(
+    Object.keys(CARD_SIZES).filter(size => size.includes('MEDIUM') || size.includes('LARGE'))
+  ),
   content: PropTypes.shape({
     /** the layout of the bar chart (horizontal, vertical) */
     layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
