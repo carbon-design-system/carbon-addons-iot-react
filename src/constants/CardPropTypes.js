@@ -402,7 +402,7 @@ export const CardPropTypes = {
     /** If no time range is selected we should show this string as the default */
     defaultLabel: PropTypes.string,
     // card actions
-    selectDateRangeLabel: PropTypes.string,
+    selectTimeRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,

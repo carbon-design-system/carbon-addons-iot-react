@@ -73,8 +73,8 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
             `${iotPrefix}--card--toolbar-date-range-action`
           )}
           flipped
-          title={timeBoxLabels[timeRange] || i18n.selectDateRangeLabel}
-          iconDescription={timeBoxLabels[timeRange] || i18n.selectDateRangeLabel}
+          title={timeBoxLabels[timeRange] || i18n.selectTimeRangeLabel}
+          iconDescription={timeBoxLabels[timeRange] || i18n.selectTimeRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
           renderIcon={EventSchedule}
         >
