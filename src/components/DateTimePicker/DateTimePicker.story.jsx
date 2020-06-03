@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -48,6 +48,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
               value: RELATIVE_VALUES.YESTERDAY,
             },
           ]}
+          hasTimeInput={boolean('hasTimeInput', true)}
         />
       </div>
     );
@@ -61,6 +62,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
             timeRangeKind: PICKER_KINDS.PRESET,
             timeRangeValue: PRESET_VALUES[3],
           }}
+          hasTimeInput={boolean('hasTimeInput', true)}
           onApply={action('onApply')}
           onCancel={action('onCancel')}
         />
@@ -73,6 +75,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <DateTimePicker
           defaultValue={defaultRelativeValue}
+          hasTimeInput={boolean('hasTimeInput', true)}
           onApply={action('onApply')}
           onCancel={action('onCancel')}
         />
@@ -85,6 +88,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <DateTimePicker
           defaultValue={defaultAbsoluteValue}
+          hasTimeInput={boolean('hasTimeInput', true)}
           onApply={action('onApply')}
           onCancel={action('onCancel')}
         />
@@ -100,6 +104,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
             timeRangeKind: PICKER_KINDS.PRESET,
             timeRangeValue: PRESET_VALUES[3],
           }}
+          hasTimeInput={boolean('hasTimeInput', true)}
           showRelativeOption={false}
           onApply={action('onApply')}
           onCancel={action('onCancel')}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select, SelectItem, DataTable, SkeletonText, Tile } from 'carbon-components-react';
-import Bee32 from '@carbon/icons-react/es/bee/32';
+import { Bee32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
@@ -30,7 +30,12 @@ const propTypes = {
   /** Call back function of sort */
   onSort: PropTypes.func,
   /** Options in sort */
-  sortOptions: PropTypes.arrayOf(PropTypes.node),
+  sortOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
   /** Default option in sort */
   selectedSortOption: PropTypes.string,
   /** Loading state */
@@ -100,10 +105,10 @@ const TileCatalogNew = ({
       {tiles.map((tile, i) =>
         isLoading ? (
           i < 4 ? ( // limit the amount of SkeletonText to render
-            <SkeletonText />
+            <SkeletonText key={`${iotPrefix}--tile-catalog--grid-${i}`} />
           ) : null
         ) : minTileWidth || isInCurrentPageRange(i) ? (
-          <div>{tile}</div>
+          <div key={`${iotPrefix}--tile-catalog--grid-${i}`}>{tile}</div>
         ) : null
       )}
     </div>
@@ -144,12 +149,13 @@ const TileCatalogNew = ({
             <div className={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}>
               {hasSort ? (
                 <Select
+                  id={`${iotPrefix}--tile-catalog--tile-canvas--header--select`}
                   onChange={evt => onSort(evt.target.value)}
                   defaultValue={selectedSortOption}
                   labelText=""
                 >
                   {sortOptions.map(option => (
-                    <SelectItem text={option.text} value={option.id} />
+                    <SelectItem key={option.id} text={option.text} value={option.id} />
                   ))}
                 </Select>
               ) : null}

@@ -60,6 +60,14 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         ) &&
         !e.includes(
           'Warning: The Toolbar component has been deprecated and will be removed in the next major release of `carbon-components-react`'
+        ) &&
+        !e.includes(
+          // https://github.com/carbon-design-system/carbon/issues/6156
+          'Warning: Failed prop type: The prop `id` is marked as required in `DatePickerInput`, but its value is `undefined`'
+        ) &&
+        !e.includes(
+          // https://github.com/carbon-design-system/carbon/issues/6156
+          'Warning: Failed prop type: The prop `labelText` is marked as required in `DatePickerInput`, but its value is `undefined`'
         )
       ) {
         done.fail(e);
