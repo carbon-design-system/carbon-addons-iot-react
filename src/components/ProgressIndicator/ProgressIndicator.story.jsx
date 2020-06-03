@@ -39,7 +39,8 @@ const itemsIot = [
     children: [
       { id: 'step2_substep1', label: 'Sub Step 1' },
       { id: 'step2_substep2', label: 'Sub Step 2', secondaryLabel: 'Optional label' },
-      { id: 'step2_substep3', label: 'Sub Step 3' },
+      { id: 'step2_substep3', label: 'Sub Step 3', invalid: true },
+      { id: 'step2_substep4', label: 'Sub Step 4', invalid: true, disabled: true },
     ],
   },
   { id: 'step3', label: 'Third Step', secondaryLabel: 'Optional label', disabled: true },

@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
-import { Checkmark24, Warning24 } from '@carbon/icons-react';
+import {
+  CheckmarkOutline24,
+  CheckmarkOutline16,
+  Warning24,
+  Warning16,
+  RadioButton16,
+  CircleFilled16,
+} from '@carbon/icons-react';
 import { Tooltip } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
@@ -85,30 +92,29 @@ export const IotProgressStep = ({
   };
 
   const StepIcon = () => {
-    const classes = classnames({
-      [`step-icon`]: mainStep,
-      [`step-icon-sub`]: subStep,
-    });
-
     const completed = complete && !disabled && !invalid;
     let value;
 
     if (mainStep) {
       if (completed) {
-        value = <Checkmark24 />;
+        value = <CheckmarkOutline24 />;
       } else if (invalid) {
         value = <Warning24 />;
       } else {
         value = <p>{stepNumber}</p>;
       }
     } else if (completed) {
-      value = <Checkmark24 />;
+      value = <CheckmarkOutline16 />;
     } else if (invalid) {
-      value = <Warning24 />;
+      value = <Warning16 />;
+    } else if (current) {
+      value = <CircleFilled16 />;
+    } else {
+      value = <RadioButton16 />;
     }
 
     return (
-      <span className={classes} title={description}>
+      <span className="icon" title={description}>
         {value}
       </span>
     );
@@ -154,6 +160,8 @@ export const IotProgressStep = ({
   const StepButton = () => {
     const classes = classnames({
       [`step-button`]: true,
+      [`main-step`]: mainStep,
+      [`sub-step`]: subStep,
       [`clickable`]: isClickable,
     });
 
@@ -179,12 +187,13 @@ export const IotProgressStep = ({
             onMouseLeave={() => labelHover(false)}
           >
             <StepLabel />
-            <StepSecondaryLabel />
+            <StepSecondaryLabel tabIndex="-1" />
             <Tooltip
               open={showTooltip}
               triggerId={`${dataTestId}-tooltip`}
               showIcon={false}
               direction={vertical ? 'right' : 'bottom'}
+              tabIndex={-1}
             >
               {getTooltipLabel()}
             </Tooltip>
@@ -198,13 +207,13 @@ export const IotProgressStep = ({
     [`step-current`]: current && !disabled,
     [`step-complete`]: complete && !disabled && !invalid,
     [`step-incomplete`]: incomplete && !current && !disabled && !invalid,
-    [`step-disabled`]: disabled && !invalid,
-    [`step-invalid`]: invalid && !disabled,
+    [`step-disabled`]: disabled,
+    [`step-invalid`]: invalid,
   });
 
   return (
     <li className={classes}>
-      <StepButton />
+      <StepButton tabIndex="0" />
     </li>
   );
 };

@@ -19,7 +19,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: inherit;
-    height: auto;
+    height: 100%;
     display: block;
   }
 
@@ -35,11 +35,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-right: $spacing-02;
-
-    &:hover {
-      color: #0f62fe;
-      text-decoration: underline;
-    }
+    width: fit-content;
 
     &-optional {
       @extend .label;
@@ -48,12 +44,11 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       letter-spacing: 0.32px;
       line-height: $spacing-05;
       cursor: default !important;
-
-      &:hover {
-        color: #525252;
-        text-decoration: none;
-      }
+      margin-top: $spacing-01;
     }
+
+    transition: box-shadow $duration--fast-02 motion(standard, productive),
+      color $duration--fast-02 motion(standard, productive);
   }
 
   .line {
@@ -82,8 +77,8 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     }
   }
 
-  @mixin icon($border-color, $background-color: unset, $color: unset, $disabled: false) {
-    .step-icon {
+  @mixin numbered-icon($border-color: unset, $background-color: unset, $color: unset) {
+    .icon {
       position: absolute;
       width: $spacing-06;
       height: $spacing-06;
@@ -93,46 +88,23 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       border-radius: 50%;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
-      border: 1.5px solid $border-color;
+      border: 1.5px solid;
 
       display: flex;
       align-items: center;
       text-align: center;
 
-      color: $color;
+      border-color: $border-color;
       background-color: $background-color;
+      color: $color;
 
-      @if ($disabled) {
-        cursor: default;
-      } @else {
-        cursor: pointer;
-      }
-
-      //Checkmark fill color
-      svg {
-        fill: $color;
-      }
-
-      //Icon label
+      //icon number label
       p {
         font-family: $IBMPlexSans;
         font-weight: 600;
         margin-left: auto;
         margin-right: auto;
         line-height: $spacing-06;
-      }
-
-      &-sub {
-        @extend .step-icon;
-        width: $spacing-05;
-        height: $spacing-05;
-        top: 4px;
-        left: 0;
-        margin: 0;
-
-        p {
-          font-size: 12px;
-        }
       }
     }
   }
@@ -142,7 +114,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     position: relative;
     text-align: left;
     width: 8rem;
-    height: 4rem;
+    height: 68px;
     padding: 0;
     margin: 0;
 
@@ -159,50 +131,105 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
         cursor: pointer;
       }
     }
+
+    &:focus {
+      .label:not(.label-optional) {
+        box-shadow: 0 rem(3px) 0 0 $link-01;
+      }
+    }
+
+    &:hover {
+      .label:not(.label-optional) {
+        box-shadow: 0 rem(1px) $link-01;
+      }
+    }
+
+    &:active {
+      .label:not(.label-optional) {
+        box-shadow: 0 rem(3px) 0 0 $interactive-01;
+      }
+    }
   }
 
   .hidden {
     visibility: hidden;
   }
 
+  .sub-step {
+    .icon {
+      margin-top: 4px;
+      margin-left: 0;
+    }
+  }
+
+  //-------States
+
   .step-current {
     &:not(.step-invalid) {
-      @include icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
+      .main-step {
+        @include numbered-icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
+      }
+
+      .sub-step {
+        svg {
+          fill: #0f62fe;
+        }
+      }
     }
   }
 
   .step-complete {
-    @include icon($border-color: #0f62fe, $color: #0f62fe);
+    svg {
+      fill: #0f62fe;
+    }
   }
 
   .step-incomplete {
-    @include icon(#171717);
+    .main-step {
+      @include numbered-icon($border-color: #171717, $color: #171717);
+    }
+
+    .sub-step {
+      svg {
+        color: #171717;
+      }
+    }
   }
 
   .step-disabled {
-    @include icon(#bebebe, $color: #c6c6c6, $disabled: true);
+    &:not(.step-invalid) {
+      .main-step {
+        @include numbered-icon($border-color: #bebebe, $color: #bebebe);
+      }
+
+      .sub-step {
+        svg {
+          fill: #bebebe;
+        }
+      }
+    }
+
+    &.step-invalid {
+      svg {
+        fill: #bebebe;
+      }
+    }
 
     .label {
       @extend .label;
       color: #c6c6c6;
       cursor: default !important;
-
-      &:hover {
-        text-decoration: none;
-      }
+      box-shadow: none !important;
     }
   }
 
   .step-invalid {
-    .step-icon {
-      width: $spacing-06;
-      height: $spacing-06;
-
-      svg {
-        fill: #dd3b41;
-      }
+    svg {
+      fill: #dd3b41;
     }
   }
+
+  //---------------
 
   html[dir='rtl'] & {
     float: right;
@@ -213,7 +240,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       text-align: right;
     }
 
-    .step-icon {
+    .icon {
       left: unset;
       right: 0;
       text-align: right;
@@ -249,10 +276,8 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       height: 76px;
     }
 
-    .step-icon-sub {
-      top: 0;
-      width: $spacing-05;
-      height: $spacing-05;
+    .sub-step .icon {
+      margin-top: 0;
       margin-left: $spacing-02;
       margin-right: $spacing-02;
     }
@@ -275,12 +300,6 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       width: 100%;
 
       .step-button {
-        text-align: right;
-      }
-
-      .step-icon {
-        left: unset;
-        right: 0;
         text-align: right;
       }
 
