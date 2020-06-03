@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { number, boolean } from '@storybook/addon-knobs';
+import { number, boolean, text } from '@storybook/addon-knobs';
 
 import TileCatalogNew from './TileCatalogNew';
 import SampleTile from './SampleTile';
@@ -25,8 +25,8 @@ const getTiles = num => {
 };
 
 storiesOf('Watson IoT Experimental/TileCatalogNew', module)
-  .add('Base', () => {
-    const numOfTiles = number('number of tiles', 10);
+  .add('Base with col / row specified', () => {
+    const numOfTiles = number('number of tiles', 7);
     return (
       <div style={{ width: '60rem' }}>
         <TileCatalogNew
@@ -35,7 +35,57 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
             numOfTiles,
             <SampleTile title="Sample product tile" description="This is a sample product tile" />
           )}
-          numColumns={number('numColumns', 4)}
+          numColumns={number('numColumns', 2)}
+          numRows={number('numRows', 2)}
+          hasSearch={boolean('hasSearch', true)}
+          hasSort={boolean('hasSort', true)}
+        />
+      </div>
+    );
+  })
+  .add('Dynamic resize with tile width specification', () => {
+    const numOfTiles = number('number of tiles', 5);
+    return (
+      <div>
+        <TileCatalogNew
+          title="Product name"
+          tiles={getTiles(
+            numOfTiles,
+            <SampleTile title="Sample product tile" description="This is a sample product tile" />
+          )}
+          minTileWidth={text('minTileWidth', '15rem')}
+          hasSearch={boolean('hasSearch', true)}
+          hasSort={boolean('hasSort', true)}
+        />
+      </div>
+    );
+  })
+  .add('Loading', () => {
+    const numOfTiles = number('number of tiles', 4);
+    return (
+      <div style={{ width: '60rem' }}>
+        <TileCatalogNew
+          title="Product name"
+          tiles={getTiles(
+            numOfTiles,
+            <SampleTile title="Sample product tile" description="This is a sample product tile" />
+          )}
+          numColumns={number('numColumns', 2)}
+          numRows={number('numRows', 2)}
+          hasSearch={boolean('hasSearch', true)}
+          hasSort={boolean('hasSort', true)}
+          isLoading
+        />
+      </div>
+    );
+  })
+  .add('Error', () => {
+    return (
+      // Not passing in any tiles triggers an error
+      <div style={{ width: '60rem' }}>
+        <TileCatalogNew
+          title="Product name"
+          numColumns={number('numColumns', 2)}
           numRows={number('numRows', 2)}
           hasSearch={boolean('hasSearch', true)}
           hasSort={boolean('hasSort', true)}

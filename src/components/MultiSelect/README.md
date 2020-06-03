@@ -18,14 +18,14 @@ package on npm. You can install this package by running the following command in
 your terminal with [npm](https://www.npmjs.com/):
 
 ```bash
-npm i carbon-components carbon-components-react carbon-icons --save
+npm i carbon-components carbon-components-react --save
 ```
 
 If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following command
 instead:
 
 ```bash
-yarn add carbon-components-react carbon-components carbon-icons
+yarn add carbon-components-react carbon-components
 ```
 
 ## Usage

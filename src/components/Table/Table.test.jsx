@@ -4,7 +4,6 @@ import React from 'react';
 import merge from 'lodash/merge';
 import { Add20 } from '@carbon/icons-react';
 
-import { keyCodes } from '../../constants/KeyCodeConstants';
 import { settings } from '../../constants/Settings';
 
 import { mockActions } from './Table.test.helpers';
@@ -88,6 +87,19 @@ const tableData = Array(20)
     },
   }));
 
+const largeTableData = Array(100)
+  .fill(0)
+  .map((i, idx) => ({
+    id: `row-${idx}`,
+    values: {
+      string: getSentence(idx),
+      node: <Add20 />,
+      date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+      select: selectData[idx % 3].id,
+      number: idx * idx,
+    },
+  }));
+
 const RowExpansionContent = ({ rowId }) => (
   <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
     <h3 key={`${rowId}-title`}>{rowId}</h3>
@@ -141,6 +153,21 @@ describe('Table', () => {
       content: <RowExpansionContent rowId="row-1" />,
     },
   ];
+
+  it('limits the number of pagination select options', () => {
+    // 100 records should have 10 pages. With max pages option we expect 5.
+    const wrapper = mount(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true }}
+        view={{ ...view, pagination: { ...view.pagination, maxPages: 5 } }}
+      />
+    );
+    expect(wrapper.find('.bx--select-option')).toHaveLength(5);
+  });
 
   it('handles row collapse', () => {
     const wrapper = mount(
@@ -278,18 +305,18 @@ describe('Table', () => {
     expect(renderRowCountLabel2).toHaveLength(0);
   });
 
-  it('enter key should trigger onDownload', () => {
+  it('click should trigger onDownload', () => {
     const { getByTestId } = render(
       <TableToolbar actions={mockActions.toolbar} options={options2} tableState={tableState} />
     );
 
     const downloadButton = getByTestId('download-button');
     expect(downloadButton).toBeTruthy();
-    fireEvent.keyDown(downloadButton, { keyCode: keyCodes.ENTER });
+    fireEvent.click(downloadButton);
     expect(mockActions.toolbar.onDownloadCSV).toHaveBeenCalledTimes(1);
   });
 
-  it('enter key should trigger onColumnSelection', () => {
+  it('click should trigger onColumnSelection', () => {
     const { getByTestId } = render(
       <TableToolbar
         actions={mockActions.toolbar}
@@ -300,11 +327,11 @@ describe('Table', () => {
 
     const columnSelectButton = getByTestId('column-selection-button');
     expect(columnSelectButton).toBeTruthy();
-    fireEvent.keyDown(columnSelectButton, { keyCode: keyCodes.ENTER });
+    fireEvent.click(columnSelectButton);
     expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(1);
   });
 
-  it('enter key should trigger onFilter', () => {
+  it('click should trigger onFilter', () => {
     const { getByTestId } = render(
       <TableToolbar
         actions={mockActions.toolbar}
@@ -315,11 +342,11 @@ describe('Table', () => {
 
     const filterButton = getByTestId('filter-button');
     expect(filterButton).toBeTruthy();
-    fireEvent.keyDown(filterButton, { keyCode: keyCodes.ENTER });
+    fireEvent.click(filterButton);
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
 
-  it('enter key or mouse click should trigger rowEdit toolbar', () => {
+  it('mouse click should trigger rowEdit toolbar', () => {
     const { getByTestId } = render(
       <TableToolbar
         actions={mockActions.toolbar}
@@ -330,14 +357,9 @@ describe('Table', () => {
 
     const rowEditButton = getByTestId('row-edit-button');
     expect(rowEditButton).toBeTruthy();
-    fireEvent.keyDown(rowEditButton, { keyCode: keyCodes.ESC });
-    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(0);
-
-    fireEvent.keyDown(rowEditButton, { keyCode: keyCodes.ENTER });
-    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(1);
 
     fireEvent.click(rowEditButton);
-    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onShowRowEdit).toHaveBeenCalledTimes(1);
   });
 
   it('rowEdit toolbar should contain external rowEditBarButtons', () => {
@@ -380,17 +402,26 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
     expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
-    wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
-    wrapper.update();
+    const wrapper2 = mount(
+      <Table
+        columns={tableColumns}
+        data={tableData}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'ferrari',
+            },
+          },
+        }}
+      />
+    );
 
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
-
-    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
-    wrapper.update();
-
-    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
-    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
+    expect(wrapper2.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper2.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
   });
 
   it('cells should always wrap by default', () => {

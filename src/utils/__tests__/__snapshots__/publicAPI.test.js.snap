@@ -371,6 +371,7 @@ Map {
         "hasRowNesting": false,
         "hasRowSelection": false,
         "hasSearch": false,
+        "hasSingleRowEdit": false,
         "shouldLazyRender": false,
         "useAutoTableLayoutForResize": false,
         "wrapCellText": "always",
@@ -383,6 +384,7 @@ Map {
         "filters": Array [],
         "pagination": Object {
           "isItemPerPageHidden": false,
+          "maxPages": 100,
           "page": 1,
           "pageSize": 10,
           "pageSizes": Array [
@@ -401,6 +403,7 @@ Map {
           "ordering": undefined,
           "rowActions": Array [],
           "selectedIds": Array [],
+          "singleRowEditButtons": null,
           "sort": Object {},
         },
         "toolbar": Object {
@@ -631,6 +634,9 @@ Map {
                           "isDelete": Object {
                             "type": "bool",
                           },
+                          "isEdit": Object {
+                            "type": "bool",
+                          },
                           "isOverflow": Object {
                             "type": "bool",
                           },
@@ -662,7 +668,22 @@ Map {
                                   "type": "shape",
                                 },
                                 Object {
-                                  "type": "string",
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
+                                    ],
+                                  ],
+                                  "type": "oneOf",
                                 },
                                 Object {
                                   "type": "node",
@@ -856,7 +877,23 @@ Map {
               "type": "bool",
             },
             "hasFilter": Object {
-              "type": "bool",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "onKeyPress",
+                        "onEnterAndBlur",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "hasOnlyPageData": Object {
               "type": "bool",
@@ -890,6 +927,9 @@ Map {
               "type": "oneOf",
             },
             "hasSearch": Object {
+              "type": "bool",
+            },
+            "hasSingleRowEdit": Object {
               "type": "bool",
             },
             "shouldLazyRender": Object {
@@ -962,6 +1002,9 @@ Map {
                 Object {
                   "isItemPerPageHidden": Object {
                     "type": "bool",
+                  },
+                  "maxPages": Object {
+                    "type": "number",
                   },
                   "page": Object {
                     "type": "number",
@@ -1084,6 +1127,9 @@ Map {
                               ],
                               "type": "shape",
                             },
+                            "isEditMode": Object {
+                              "type": "bool",
+                            },
                             "isRunning": Object {
                               "type": "bool",
                             },
@@ -1104,6 +1150,9 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "singleRowEditButtons": Object {
+                    "type": "element",
                   },
                   "sort": Object {
                     "args": Array [
@@ -1213,6 +1262,7 @@ Map {
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
       "filterText": "Filter",
+      "hasFastFilter": true,
       "i18n": Object {
         "batchCancel": "Cancel",
         "clearAllFilters": "Clear all filters",
@@ -1384,6 +1434,9 @@ Map {
       "filterText": Object {
         "type": "string",
       },
+      "hasFastFilter": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -1530,6 +1583,9 @@ Map {
               ],
               "type": "oneOf",
             },
+            "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
             "truncateCellText": Object {
               "isRequired": true,
               "type": "bool",
@@ -1597,6 +1653,9 @@ Map {
                 },
               ],
               "type": "arrayOf",
+            },
+            "isDisabled": Object {
+              "type": "bool",
             },
             "ordering": Object {
               "args": Array [
@@ -1673,6 +1732,7 @@ Map {
       "selectedIds": Array [],
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
+      "singleRowEditButtons": null,
       "totalColumns": 0,
     },
     "propTypes": Object {
@@ -1894,6 +1954,9 @@ Map {
                   ],
                   "type": "shape",
                 },
+                "isEditMode": Object {
+                  "type": "bool",
+                },
                 "isRunning": Object {
                   "type": "bool",
                 },
@@ -1950,6 +2013,9 @@ Map {
                           "isDelete": Object {
                             "type": "bool",
                           },
+                          "isEdit": Object {
+                            "type": "bool",
+                          },
                           "isOverflow": Object {
                             "type": "bool",
                           },
@@ -1981,7 +2047,22 @@ Map {
                                   "type": "shape",
                                 },
                                 Object {
-                                  "type": "string",
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
+                                    ],
+                                  ],
+                                  "type": "oneOf",
                                 },
                                 Object {
                                   "type": "node",
@@ -2035,6 +2116,9 @@ Map {
       },
       "shouldLazyRender": Object {
         "type": "bool",
+      },
+      "singleRowEditButtons": Object {
+        "type": "element",
       },
       "tableId": Object {
         "isRequired": true,
@@ -2338,32 +2422,6 @@ Map {
       },
       "tooltip": Object {
         "type": "node",
-      },
-    },
-  },
-  "TableToolbarSearch" => Object {
-    "defaultProps": Object {
-      "defaultExpanded": false,
-      "defaultValue": "",
-      "onChange": null,
-      "onExpand": null,
-      "value": "",
-    },
-    "propTypes": Object {
-      "defaultExpanded": Object {
-        "type": "bool",
-      },
-      "defaultValue": Object {
-        "type": "string",
-      },
-      "onChange": Object {
-        "type": "func",
-      },
-      "onExpand": Object {
-        "type": "func",
-      },
-      "value": Object {
-        "type": "string",
       },
     },
   },
@@ -3961,6 +4019,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "categoryDataSourceId": Object {
+              "type": "string",
+            },
             "layout": Object {
               "args": Array [
                 Array [
@@ -3973,29 +4034,51 @@ Map {
             "series": Object {
               "args": Array [
                 Object {
-                  "colors": Object {
-                    "args": Array [
-                      Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "objectOf",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "dataSourceId": Object {
+                        "isRequired": true,
                         "type": "string",
                       },
-                    ],
-                    "type": "arrayOf",
-                  },
-                  "dataSourceId": Object {
-                    "type": "string",
-                  },
-                  "groupDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "labelDataSourceId": Object {
-                    "type": "string",
-                  },
-                  "timeDataSourceId": Object {
-                    "type": "string",
-                  },
+                      "label": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "timeDataSourceId": Object {
+              "type": "string",
             },
             "type": Object {
               "args": Array [
@@ -4190,19 +4273,27 @@ Map {
   },
   "TileCatalogNew" => Object {
     "defaultProps": Object {
+      "error": "",
       "hasSearch": false,
       "hasSort": false,
       "i18n": Object {
+        "error": "An error has occurred. Please make sure your catalog has content.",
         "searchPlaceHolderText": "Enter a value",
       },
-      "numColumns": 1,
-      "numRows": 1,
+      "isLoading": false,
+      "minTileWidth": null,
+      "numColumns": 3,
+      "numRows": 3,
       "onSearch": [Function],
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "title": "",
     },
     "propTypes": Object {
+      "error": Object {
+        "type": "string",
+      },
       "hasSearch": Object {
         "type": "bool",
       },
@@ -4212,12 +4303,21 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "error": Object {
+              "type": "string",
+            },
             "placeHolderText": Object {
               "type": "string",
             },
           },
         ],
         "type": "shape",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "minTileWidth": Object {
+        "type": "string",
       },
       "numColumns": Object {
         "type": "number",
@@ -4237,7 +4337,17 @@ Map {
       "sortOptions": Object {
         "args": Array [
           Object {
-            "type": "node",
+            "args": Array [
+              Object {
+                "id": Object {
+                  "type": "string",
+                },
+                "text": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
@@ -4252,7 +4362,6 @@ Map {
         "type": "arrayOf",
       },
       "title": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -4322,6 +4431,7 @@ Map {
       "defaultValue": null,
       "disabled": false,
       "expanded": false,
+      "hasTimeInput": true,
       "i18n": Object {
         "absoluteLabel": "Absolute",
         "applyBtnLabel": "Apply",
@@ -4426,82 +4536,133 @@ Map {
       },
       "defaultValue": Object {
         "args": Array [
-          Object {
-            "absolute": Object {
+          Array [
+            Object {
               "args": Array [
                 Object {
-                  "endDate": Object {
+                  "timeRangeKind": Object {
                     "args": Array [
-                      [Function],
+                      Array [
+                        "PRESET",
+                      ],
                     ],
-                    "type": "instanceOf",
+                    "isRequired": true,
+                    "type": "oneOf",
                   },
-                  "endTime": Object {
-                    "type": "string",
-                  },
-                  "startDate": Object {
+                  "timeRangeValue": Object {
                     "args": Array [
-                      [Function],
+                      Object {
+                        "label": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "offset": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                      },
                     ],
-                    "type": "instanceOf",
-                  },
-                  "startTime": Object {
-                    "type": "string",
+                    "isRequired": true,
+                    "type": "exact",
                   },
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "exact",
             },
-            "kind": Object {
-              "args": Array [
-                Array [
-                  "PRESET",
-                  "RELATIVE",
-                  "ABSOLUTE",
-                ],
-              ],
-              "type": "oneOf",
-            },
-            "preset": Object {
+            Object {
               "args": Array [
                 Object {
-                  "label": Object {
-                    "type": "string",
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "RELATIVE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
                   },
-                  "offset": Object {
-                    "type": "number",
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "lastInterval": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "lastNumber": Object {
+                          "isRequired": true,
+                          "type": "number",
+                        },
+                        "relativeToTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "relativeToWhen": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
                   },
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "exact",
             },
-            "relative": Object {
+            Object {
               "args": Array [
                 Object {
-                  "lastInterval": Object {
-                    "type": "string",
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "ABSOLUTE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
                   },
-                  "lastNumber": Object {
-                    "type": "number",
-                  },
-                  "relativeToTime": Object {
-                    "type": "string",
-                  },
-                  "relativeToWhen": Object {
-                    "type": "string",
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "endDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "endTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
                   },
                 },
               ],
-              "type": "shape",
+              "isRequired": true,
+              "type": "exact",
             },
-          },
+          ],
         ],
-        "type": "shape",
+        "type": "oneOfType",
       },
       "disabled": Object {
         "type": "bool",
       },
       "expanded": Object {
+        "type": "bool",
+      },
+      "hasTimeInput": Object {
         "type": "bool",
       },
       "i18n": Object {
@@ -5137,6 +5298,7 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
+        "selectDateRangeLabel": "Select date range",
         "selectRowAria": "Select row",
         "selectSeverityPlaceholder": "Select a severity",
         "severityLabel": "Severity",
@@ -5421,6 +5583,9 @@ Map {
               "type": "string",
             },
             "selectAllAria": Object {
+              "type": "string",
+            },
+            "selectDateRangeLabel": Object {
               "type": "string",
             },
             "selectRowAria": Object {
@@ -8379,15 +8544,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "chartType": Object {
-              "args": Array [
-                Array [
-                  "BAR",
-                  "LINE",
-                ],
-              ],
-              "type": "oneOf",
-            },
+            "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
             },
@@ -11220,6 +11377,11 @@ Map {
     "BAR": "BAR",
     "LINE": "LINE",
   },
+  "BAR_CHART_TYPES" => Object {
+    "GROUPED": "GROUPED",
+    "SIMPLE": "SIMPLE",
+    "STACKED": "STACKED",
+  },
   "ListCard" => Object {
     "defaultProps": Object {
       "data": Array [],
@@ -12389,9 +12551,6 @@ Map {
   },
   "TileGallerySection" => Object {
     "defaultProps": Object {
-      "i18n": Object {
-        "arrowIconDescription": "Expand/Collapse",
-      },
       "isOpen": true,
       "onClick": [Function],
       "title": null,
@@ -12400,16 +12559,6 @@ Map {
       "children": Object {
         "isRequired": true,
         "type": "node",
-      },
-      "i18n": Object {
-        "args": Array [
-          Object {
-            "arrowIconDescription": Object {
-              "type": "string",
-            },
-          },
-        ],
-        "type": "shape",
       },
       "isOpen": Object {
         "type": "bool",
@@ -13119,9 +13268,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "onClick": Object {
         "type": "func",
       },
@@ -13169,9 +13316,7 @@ Map {
       "className": Object {
         "type": "string",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "onClick": Object {
         "type": "func",
       },
@@ -13287,6 +13432,7 @@ Map {
   "ComboBox" => Object {
     "defaultProps": Object {
       "ariaLabel": "Choose an item",
+      "direction": "bottom",
       "disabled": false,
       "itemToElement": null,
       "itemToString": [Function],
@@ -13300,6 +13446,15 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -13572,6 +13727,9 @@ Map {
       "closeModal": Object {
         "type": "func",
       },
+      "danger": Object {
+        "type": "bool",
+      },
       "onRequestClose": Object {
         "type": "func",
       },
@@ -13598,6 +13756,7 @@ Map {
   "ContentSwitcher" => Object {
     "defaultProps": Object {
       "selectedIndex": 0,
+      "selectionMode": "automatic",
     },
     "propTypes": Object {
       "children": Object {
@@ -13612,6 +13771,15 @@ Map {
       },
       "selectedIndex": Object {
         "type": "number",
+      },
+      "selectionMode": Object {
+        "args": Array [
+          Array [
+            "automatic",
+            "manual",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -13669,12 +13837,16 @@ Map {
     "Table": Object {
       "defaultProps": Object {
         "isSortable": false,
+        "overflowMenuOnHover": true,
       },
       "propTypes": Object {
         "className": Object {
           "type": "string",
         },
         "isSortable": Object {
+          "type": "bool",
+        },
+        "overflowMenuOnHover": Object {
           "type": "bool",
         },
         "shouldShowBorder": Object {
@@ -14018,6 +14190,15 @@ Map {
         "children": Object {
           "type": "node",
         },
+        "size": Object {
+          "args": Array [
+            Array [
+              "small",
+              "normal",
+            ],
+          ],
+          "type": "oneOf",
+        },
       },
     },
     "TableToolbarAction": Object {
@@ -14137,6 +14318,8 @@ Map {
     "defaultProps": Object {
       "filterRows": [Function],
       "locale": "en",
+      "overflowMenuOnHover": true,
+      "size": "normal",
       "sortRow": [Function],
       "translateWithId": [Function],
     },
@@ -14171,6 +14354,9 @@ Map {
       "locale": Object {
         "type": "string",
       },
+      "overflowMenuOnHover": Object {
+        "type": "bool",
+      },
       "radio": Object {
         "type": "bool",
       },
@@ -14199,6 +14385,17 @@ Map {
         ],
         "isRequired": true,
         "type": "arrayOf",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "compact",
+            "short",
+            "normal",
+            "tall",
+          ],
+        ],
+        "type": "oneOf",
       },
       "sortRow": Object {
         "type": "func",
@@ -14400,6 +14597,15 @@ Map {
         "type": "func",
       },
       "pattern": [Function],
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "type": Object {
         "type": "string",
       },
@@ -14407,6 +14613,7 @@ Map {
   },
   "Dropdown" => Object {
     "defaultProps": Object {
+      "direction": "bottom",
       "disabled": false,
       "helperText": "",
       "itemToElement": null,
@@ -14418,6 +14625,15 @@ Map {
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -14737,21 +14953,22 @@ Map {
       "onClick": Object {
         "type": "func",
       },
+      "onDelete": Object {
+        "type": "func",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "field",
+            "small",
+          ],
+        ],
+        "type": "oneOf",
+      },
     },
   },
   "FileUploaderButton" => Object {
-    "defaultProps": Object {
-      "accept": Array [],
-      "buttonKind": "primary",
-      "disableLabelChanges": false,
-      "disabled": false,
-      "labelText": "Add file",
-      "multiple": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "role": "button",
-      "tabIndex": 0,
-    },
     "propTypes": Object {
       "accept": Object {
         "args": Array [
@@ -14806,6 +15023,16 @@ Map {
       },
       "role": Object {
         "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "field",
+            "small",
+          ],
+        ],
+        "type": "oneOf",
       },
       "tabIndex": Object {
         "type": "number",
@@ -14863,7 +15090,6 @@ Map {
     "defaultProps": Object {
       "onDelete": [Function],
       "status": "uploading",
-      "uuid": "id1",
     },
     "propTypes": Object {
       "errorBody": Object {
@@ -14895,7 +15121,6 @@ Map {
         "type": "oneOf",
       },
       "uuid": Object {
-        "isRequired": true,
         "type": "string",
       },
     },
@@ -15107,6 +15332,9 @@ Map {
       "description": Object {
         "type": "string",
       },
+      "id": Object {
+        "type": "string",
+      },
       "small": Object {
         "type": "bool",
       },
@@ -15118,7 +15346,7 @@ Map {
   "Modal" => Object {
     "defaultProps": Object {
       "hasScrollingContent": false,
-      "iconDescription": "close the modal",
+      "iconDescription": "Close",
       "modalHeading": "",
       "modalLabel": "",
       "onKeyDown": [Function],
@@ -15515,6 +15743,7 @@ Map {
     },
     "defaultProps": Object {
       "compareItems": [Function],
+      "direction": "bottom",
       "disabled": false,
       "initialSelectedItems": Array [],
       "itemToString": [Function],
@@ -15530,6 +15759,15 @@ Map {
       "compareItems": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
       },
       "disabled": Object {
         "type": "bool",
@@ -16837,6 +17075,7 @@ Map {
       "iconDescription": "show menu options",
       "role": "navigation",
       "selected": 0,
+      "selectionMode": "automatic",
       "triggerHref": "#",
       "type": "default",
     },
@@ -16873,6 +17112,15 @@ Map {
       "selected": Object {
         "type": "number",
       },
+      "selectionMode": Object {
+        "args": Array [
+          Array [
+            "automatic",
+            "manual",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "tabContentClassName": Object {
         "type": "string",
       },
@@ -16905,6 +17153,9 @@ Map {
       "filter": Object {
         "type": "bool",
       },
+      "onClose": Object {
+        "type": "func",
+      },
       "title": Object {
         "type": "string",
       },
@@ -16921,9 +17172,9 @@ Map {
             "gray",
             "cool-gray",
             "warm-gray",
+            "high-contrast",
           ],
         ],
-        "isRequired": true,
         "type": "oneOf",
       },
     },
@@ -17124,6 +17375,7 @@ Map {
       "render": [Function],
     },
     "PasswordInput": Object {
+      "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "className": "\${prefix}--text__input",
         "disabled": false,
@@ -17231,6 +17483,7 @@ Map {
           "type": "oneOfType",
         },
       },
+      "render": [Function],
     },
     "defaultProps": Object {
       "disabled": false,
@@ -17664,9 +17917,7 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
-      "hideLabel": Object {
-        "type": "bool",
-      },
+      "hideLabel": [Function],
       "iconDescription": Object {
         "isRequired": true,
         "type": "string",
@@ -18008,9 +18259,6 @@ Map {
             Object {
               "args": Array [
                 Object {
-                  "header": Object {
-                    "type": "node",
-                  },
                   "key": Object {
                     "type": "string",
                   },
@@ -18374,6 +18622,9 @@ Map {
       "element": Object {
         "type": "elementType",
       },
+      "isCurrentPage": Object {
+        "type": "bool",
+      },
       "isSideNavExpanded": Object {
         "type": "bool",
       },
@@ -18722,6 +18973,7 @@ Map {
     "TABLE_PAGE_CHANGE": "TABLE_PAGE_CHANGE",
     "TABLE_REGISTER": "TABLE_REGISTER",
     "TABLE_ROW_ACTION_COMPLETE": "TABLE_ROW_ACTION_COMPLETE",
+    "TABLE_ROW_ACTION_EDIT": "TABLE_ROW_ACTION_EDIT",
     "TABLE_ROW_ACTION_ERROR": "TABLE_ROW_ACTION_ERROR",
     "TABLE_ROW_ACTION_START": "TABLE_ROW_ACTION_START",
     "TABLE_ROW_CLICK": "TABLE_ROW_CLICK",
@@ -18741,6 +18993,7 @@ Map {
     "tablePageChange": Object {},
     "tableRegister": Object {},
     "tableRowActionComplete": Object {},
+    "tableRowActionEdit": Object {},
     "tableRowActionError": Object {},
     "tableRowActionStart": Object {},
     "tableRowClick": Object {},

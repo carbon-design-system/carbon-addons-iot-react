@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CaretLeft from '@carbon/icons-react/es/caret--left/20';
-import CaretRight from '@carbon/icons-react/es/caret--right/20';
+import CaretLeft from '@carbon/icons-react/es/caret--left/16';
+import CaretRight from '@carbon/icons-react/es/caret--right/16';
 
 import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';

@@ -42,8 +42,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <polygon
-                points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -348,8 +348,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <polygon
-                points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -395,8 +395,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     <path
                       d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
                     />
-                    <polygon
-                      points="14 21.5 9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5"
+                    <path
+                      d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
                     />
                     <title>
                       Identity
@@ -658,8 +658,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               width={20}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <polygon
-                points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
               />
             </svg>
           </button>
@@ -927,8 +927,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             width={20}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <polygon
-              points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
             />
           </svg>
         </button>

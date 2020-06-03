@@ -14,7 +14,6 @@ export TableHead from './components/Table/TableHead/TableHead';
 export TableBody from './components/Table/TableBody/TableBody';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
-export TableToolbarSearch from './components/Table/TableToolbarSearch/TableToolbarSearch';
 export WizardModal from './components/WizardModal';
 export WizardInline from './components/WizardInline/WizardInline';
 export StatefulWizardInline from './components/WizardInline/StatefulWizardInline';
@@ -64,6 +63,7 @@ export {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_SIZES,
   TIME_SERIES_TYPES,
+  BAR_CHART_TYPES,
 } from './constants/LayoutConstants';
 
 // Experimental

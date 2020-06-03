@@ -51,7 +51,10 @@ const propTypes = {
     hasRowExpansion: PropTypes.bool,
     hasRowNesting: PropTypes.bool,
     hasRowActions: PropTypes.bool,
-    hasFilter: PropTypes.bool,
+    hasFilter: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['onKeyPress', 'onEnterAndBlur']),
+    ]),
     /** if true, the data prop will be assumed to only represent the currently visible page */
     hasOnlyPageData: PropTypes.bool,
     /** has simple search capability */
@@ -61,6 +64,7 @@ const propTypes = {
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
     hasResize: PropTypes.bool,
+    hasSingleRowEdit: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
@@ -73,6 +77,8 @@ const propTypes = {
       pageSizes: PropTypes.arrayOf(PropTypes.number),
       page: PropTypes.number,
       totalItems: PropTypes.number,
+      /** Number of pages rendered in pagination */
+      maxPages: PropTypes.number,
       isItemPerPageHidden: PropTypes.bool,
     }),
     filters: PropTypes.arrayOf(
@@ -120,6 +126,7 @@ const propTypes = {
       ),
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
+      singleRowEditButtons: PropTypes.element,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -188,6 +195,7 @@ export const defaultProps = baseProps => ({
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
     hasResize: false,
+    hasSingleRowEdit: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     wrapCellText: 'always',
@@ -198,6 +206,7 @@ export const defaultProps = baseProps => ({
       pageSizes: [10, 20, 30],
       page: 1,
       totalItems: baseProps.data && baseProps.data.length,
+      maxPages: 100,
       isItemPerPageHidden: false,
     },
     filters: [],
@@ -215,6 +224,7 @@ export const defaultProps = baseProps => ({
       loadingState: {
         rowCount: 5,
       },
+      singleRowEditButtons: null,
     },
   },
   actions: {
@@ -301,6 +311,7 @@ const Table = props => {
     tooltip,
     ...others
   } = merge({}, defaultProps(props), props);
+  const { maxPages, ...paginationProps } = view.pagination;
 
   const [, forceUpdateCellTextWidth] = useState(0);
 
@@ -358,6 +369,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
+  const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
 
   return (
     <TableContainer
@@ -406,27 +418,30 @@ const Table = props => {
             'onApplySearch',
             'onDownloadCSV'
           )}
-          options={pick(
-            options,
-            'hasColumnSelection',
-            'hasFilter',
-            'hasSearch',
-            'hasRowSelection',
-            'hasRowCountInHeader',
-            'hasRowEdit'
-          )}
+          options={{
+            ...pick(
+              options,
+              'hasColumnSelection',
+
+              'hasSearch',
+              'hasRowSelection',
+              'hasRowCountInHeader',
+              'hasRowEdit'
+            ),
+            hasFilter: Boolean(options?.hasFilter),
+          }}
           tableState={{
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
             totalItemsCount: view.pagination.totalItems,
+            isDisabled: singleRowEditMode || view.toolbar.isDisabled,
             ...pick(
               view.toolbar,
               'batchActions',
               'search',
               'activeBar',
               'customToolbarContent',
-              'rowEditBarButtons',
-              'isDisabled'
+              'rowEditBarButtons'
             ),
           }}
         />
@@ -452,7 +467,8 @@ const Table = props => {
                 'hasRowActions',
                 'hasColumnSelectionConfig',
                 'hasResize',
-                'useAutoTableLayoutForResize'
+                'useAutoTableLayoutForResize',
+                'hasSingleRowEdit'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
@@ -477,6 +493,7 @@ const Table = props => {
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
             tableState={{
+              isDisabled: rowEditMode || singleRowEditMode,
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
               ...view.table,
@@ -485,6 +502,7 @@ const Table = props => {
                 isSelectAllIndeterminate: view.table.isSelectAllIndeterminate,
               },
             }}
+            hasFastFilter={options?.hasFilter === 'onKeyPress'}
           />
           {view.table.loadingState.isLoading ? (
             <TableSkeletonWithHeaders
@@ -498,6 +516,7 @@ const Table = props => {
               rows={visibleData}
               locale={locale}
               rowActionsState={view.table.rowActions}
+              singleRowEditButtons={view.table.singleRowEditButtons}
               expandedRows={expandedData}
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
@@ -568,7 +587,15 @@ const Table = props => {
       visibleData &&
       visibleData.length ? ( // don't show pagination row while loading
         <Pagination
-          {...view.pagination}
+          pageSize={paginationProps.pageSize}
+          pageSizes={paginationProps.pageSizes}
+          page={paginationProps.page}
+          isItemPerPageHidden={paginationProps.isItemPerPageHidden}
+          totalItems={
+            paginationProps.totalItems < maxPages * paginationProps.pageSize
+              ? paginationProps.totalItems
+              : maxPages * paginationProps.pageSize
+          }
           onChange={actions.pagination.onChangePage}
           backwardText={i18n.pageBackwardAria}
           forwardText={i18n.pageForwardAria}
@@ -578,7 +605,7 @@ const Table = props => {
           itemRangeText={i18n.itemsRangeWithTotal}
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
-          preventInteraction={rowEditMode}
+          preventInteraction={rowEditMode || singleRowEditMode}
         />
       ) : null}
     </TableContainer>

@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
-import { iconAddSolid, iconSearch } from 'carbon-icons';
 import { Add16, Search16 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
 
@@ -22,8 +21,6 @@ const icons = {
 };
 
 const iconMap = {
-  iconAddSolid,
-  iconSearch,
   Add16,
   Search16,
 };

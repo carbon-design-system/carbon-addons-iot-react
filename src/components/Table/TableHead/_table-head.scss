@@ -71,8 +71,17 @@
     min-width: 40px;
   }
 
-  .#{$iot-prefix}--tableheader-filter > #{$prefix}--table-header-label {
+  .#{$iot-prefix}--tableheader-filter > .#{$prefix}--table-header-label {
     overflow: visible;
+  }
+
+  th:last-of-type.#{$iot-prefix}--table-header-row-action-column--extra-wide {
+    min-width: 250px;
+    width: 250px; // Needed for fixed/resizable columns that don't respect min-width
+  }
+
+  .#{$iot-prefix}--clear-filters-button--disabled {
+    @include disabled-icon-button();
   }
 }
 

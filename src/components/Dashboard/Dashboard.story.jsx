@@ -7,7 +7,7 @@ import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
-import { CARD_SIZES, CARD_TYPES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import iconViewDashboards from './dashboard.svg';
@@ -481,6 +481,7 @@ storiesOf('Watson IoT/Dashboard', module)
             editCardLabel: text('editCardLabel', 'Edit card'),
             cloneCardLabel: text('cloneCardLabel', 'Clone card'),
             deleteCardLabel: text('deleteCardLabel', 'Delete card'),
+            selectDateRangeLabel: text('selectDateRangeLabel', 'Select date range'),
             criticalLabel: text('criticalLabel', 'Critical'),
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
@@ -608,14 +609,12 @@ storiesOf('Watson IoT/Dashboard', module)
             title: 'Expanded card',
             id: `expandedcard`,
             size: CARD_SIZES.LARGE,
-            type: CARD_TYPES.TIMESERIES,
-
+            type: CARD_TYPES.BAR,
             content: {
               series: [
                 {
                   dataSourceId: 'temperature',
                   label: 'Temperature Device 1',
-                  dataFilter: { ENTITY_ID: 'Sensor2-1' },
                 },
                 {
                   dataSourceId: 'temperature',
@@ -623,7 +622,7 @@ storiesOf('Watson IoT/Dashboard', module)
                   dataFilter: { ENTITY_ID: 'Sensor2-2' },
                 },
               ],
-              chartType: TIME_SERIES_TYPES.BAR,
+              categoryDataSourceId: 'ENTITY_ID',
             },
             values: data.reduce((acc, dataPoint) => {
               acc.push(dataPoint);
