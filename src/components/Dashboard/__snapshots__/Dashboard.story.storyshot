@@ -1172,10 +1172,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -1197,7 +1197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -1759,10 +1759,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -1784,7 +1784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -3367,10 +3367,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -3392,7 +3392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -3954,10 +3954,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -3979,7 +3979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -5593,10 +5593,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -5618,7 +5618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -6180,10 +6180,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -6205,7 +6205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -10190,10 +10190,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -10215,7 +10215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -10777,10 +10777,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -10802,7 +10802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -24521,10 +24521,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -24546,7 +24546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select date range
                           </title>
                         </svg>
                       </button>
@@ -25108,10 +25108,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select date range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select date range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -25133,7 +25133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select date range
                           </title>
                         </svg>
                       </button>

@@ -46,7 +46,7 @@ describe('CardRangePicker', () => {
     mockOnCardAction.mockClear();
 
     // Reopen menu
-    fireEvent.click(getAllByTitle(last24HoursLabel)[0]);
+    fireEvent.click(getAllByTitle(selectTimeRangeLabel)[0]);
     mockOnCardAction.mockClear();
     const thisWeek = await waitFor(() => getByText(thisWeekLabel));
     fireEvent.click(thisWeek);
