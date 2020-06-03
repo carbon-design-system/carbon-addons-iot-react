@@ -87,6 +87,9 @@ const CardRenderer = React.memo(
     // keep track of the expanded card id
     const [isExpanded, setIsExpanded] = useState();
 
+    // Caching for performance
+    const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line
+
     // If the dashboard has triggered a bulk load, refetch the data
     useEffect(
       () => {
@@ -173,7 +176,7 @@ const CardRenderer = React.memo(
       key: cardProp.id,
       availableActions: cachedActions,
       isExpanded,
-      i18n,
+      i18n: cachedI18N,
       isEditable,
       onCardAction: cachedOnCardAction,
       renderIconByName,

@@ -316,9 +316,6 @@ const Dashboard = ({
     [onFetchData, cards.length] // eslint-disable-line
   );
 
-  // Caching for performance
-  const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line
-
   const cachedOnBreakpointChange = useCallback(
     newBreakpoint => {
       setBreakpoint(newBreakpoint);
@@ -347,7 +344,7 @@ const Dashboard = ({
           <CardRenderer
             {...card}
             key={`renderer-${card.id}`}
-            i18n={cachedI18N}
+            i18n={{ ...i18n, ...card.i18n }} // let the card level i18n override the dashboard i18n
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
@@ -358,7 +355,7 @@ const Dashboard = ({
           />
         ) : null
       ), // eslint-disable-next-line
-    [breakpoint, cachedI18N, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
+    [breakpoint, i18n, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
   );
 
   return (
