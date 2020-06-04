@@ -122,7 +122,7 @@ describe('HotspotContent', () => {
       />
     );
     // threshold should be found and french formatted
-    expect(getAllByTitle(/temperature > 0,05/)).toHaveLength(2);
+    expect(getAllByTitle(/temperature > 0,05/)).toHaveLength(1);
   });
   it('hotspot threshold', () => {
     const { getAllByTitle } = render(
@@ -148,7 +148,7 @@ describe('HotspotContent', () => {
       />
     );
     // threshold should be found
-    expect(getAllByTitle(/temperature > 0.05/)).toHaveLength(2);
+    expect(getAllByTitle(/temperature > 0.05/)).toHaveLength(1);
   });
   it('custom render Icon By Name', () => {
     const mockRenderIconByName = jest.fn().mockReturnValue(<span />);

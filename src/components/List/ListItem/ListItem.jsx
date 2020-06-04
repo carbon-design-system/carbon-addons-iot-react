@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Icon } from 'carbon-components-react';
-import { iconChevronDown, iconChevronUp } from 'carbon-icons';
+import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../../constants/Settings';
@@ -129,10 +128,11 @@ const ListItem = ({
         onClick={handleExpansionClick}
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
-        <Icon
-          icon={expanded ? iconChevronUp : iconChevronDown}
-          description={expanded ? i18n.expand : i18n.close}
-        />
+        {expanded ? (
+          <ChevronUp16 aria-label={i18n.expand} />
+        ) : (
+          <ChevronDown16 aria-label={i18n.close} />
+        )}
       </div>
     ) : null;
 

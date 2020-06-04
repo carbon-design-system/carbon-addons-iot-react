@@ -5,7 +5,6 @@ import {
   DataTable,
   OverflowMenu,
   OverflowMenuItem,
-  Icon,
   Loading,
 } from 'carbon-components-react';
 import styled from 'styled-components';
@@ -15,6 +14,7 @@ import omit from 'lodash/omit';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
+import icons from '../../../../utils/bundledIcons';
 
 import RowActionsError from './RowActionsError';
 
@@ -252,7 +252,9 @@ class RowActionsCell extends React.Component {
                           action.renderIcon ? (
                             <OverflowMenuContent title={action.labelText}>
                               {typeof action.renderIcon === 'string' ? (
-                                <Icon icon={action.renderIcon} description={action.labelText} />
+                                React.createElement(icons[action.renderIcon], {
+                                  'aria-label': action.labelText,
+                                })
                               ) : (
                                 <action.renderIcon description={action.labelText} />
                               )}
