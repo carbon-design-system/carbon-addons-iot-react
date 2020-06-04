@@ -20,14 +20,14 @@ exports[`HeaderActionMenu should render 1`] = `
         aria-hidden="true"
         class="bx--header__menu-arrow"
         focusable="false"
-        height="6"
+        height="32"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 10 6"
-        width="10"
+        viewBox="0 0 32 32"
+        width="32"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M5 6L0 1 0.7 0.3 5 4.6 9.3 0.3 10 1z"
+          d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
         />
       </svg>
     </a>
