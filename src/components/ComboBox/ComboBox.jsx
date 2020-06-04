@@ -24,7 +24,7 @@ const defaultProps = {
 
 const ComboBox = ({ inline, loading, wrapperClassName, ...comboProps }) => {
   const comboRef = React.createRef();
-  const { items } = comboProps;
+  const { items, itemToString } = comboProps;
   const [selectedItem, setSelectedItem] = useState(null);
   const [inputValue, setInputValue] = useState(items[0]);
   const ComboWrapper = props => {
@@ -39,16 +39,24 @@ const ComboBox = ({ inline, loading, wrapperClassName, ...comboProps }) => {
       // }
 
       if (evt.key === 'Enter') {
-        console.log('Selected: ', evt.key, comboRef.current.textInput.current.value);
         const currentValue = comboRef.current.textInput.current.value;
+        console.log(
+          'Selected: ',
+          !items.includes(currentValue),
+          comboRef.current.textInput.current.value
+        );
         let uid = items.length;
-        if (!items.includes(currentValue)) {
-          items.push({
+        if (
+          items.filter(x => itemToString(x).includes(currentValue)).length < 1 &&
+          currentValue !== ''
+        ) {
+          const newItem = {
             id: `id-${(uid += 1)}`,
             text: currentValue || '',
             selected: true,
-          });
-          setSelectedItem(inputValue);
+          };
+          items.push(newItem);
+          setSelectedItem(newItem);
         }
       }
     };
@@ -114,7 +122,7 @@ const ComboBox = ({ inline, loading, wrapperClassName, ...comboProps }) => {
         {...comboProps}
         ref={comboRef}
         light
-        selectedItem={selectedItem}
+        // selectedItem={}
         items={items}
         // onKeyPress={value => handleInputChange(value, 'keypress')}
         itemToString={item => (item ? item.text : '')}
