@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
 import { Button } from 'carbon-components-react';
-import Draggable from '@carbon/icons-react/es/draggable/16';
+import { Draggable16 } from '@carbon/icons-react';
 import classNames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -36,7 +36,7 @@ const ColumnHeaderSelect = ({
       onClick={() => onClick()}
       role="presentation"
       data-ishidden={isHidden}
-      renderIcon={Draggable}
+      renderIcon={Draggable16}
       size="small"
       ref={instance => {
         if (!isDisabled) {
