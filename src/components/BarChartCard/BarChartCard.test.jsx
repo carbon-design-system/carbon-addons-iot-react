@@ -31,29 +31,22 @@ const barChartCardProps = {
 
 describe('BarChartCard', () => {
   it('does not show bar chart when loading', () => {
-    let wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
+    const wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
-
-    wrapper = mount(<BarChartCard {...barChartCardProps} />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
   });
 
   it('does not show bar chart when empty data', () => {
-    let wrapper = mount(
+    const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
         values={barChartData.quarters.filter(q => q.quarter === 'NOT_VALID')}
       />
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
-
-    wrapper = mount(<BarChartCard {...barChartCardProps} values={null} />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
   });
 
-  it('shows table and chart when isExpanded', () => {
+  it('shows table when isExpanded', () => {
     const wrapper = mount(<BarChartCard {...barChartCardProps} isExpanded />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
     expect(wrapper.find(Table)).toHaveLength(1);
   });
 
@@ -84,7 +77,7 @@ describe('BarChartCard', () => {
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
   });
 
-  it('shows stackedBarChart on stacked data', () => {
+  it('shows stackedBarChart', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -125,11 +118,12 @@ describe('BarChartCard', () => {
             },
           ],
           timeDataSourceId: 'timestamp',
+          type: BAR_CHART_TYPES.STACKED,
         }}
         values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
       />
     );
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
+    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
 
   it('shows a horizontal chart', () => {
@@ -152,10 +146,11 @@ describe('BarChartCard', () => {
           ],
           categoryDataSourceId: 'city',
           layout: BAR_CHART_LAYOUTS.HORIZONTAL,
+          type: BAR_CHART_TYPES.GROUPED,
         }}
         values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
       />
     );
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
+    expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
   });
 });

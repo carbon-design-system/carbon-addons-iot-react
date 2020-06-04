@@ -7,7 +7,12 @@ import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
-import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  CARD_TYPES,
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
+} from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import iconViewDashboards from './dashboard.svg';
@@ -44,8 +49,9 @@ export const originalCards = [
     size: CARD_SIZES.MEDIUMWIDE,
     type: CARD_TYPES.BAR,
     content: {
+      type: BAR_CHART_TYPES.SIMPLE,
       categoryDataSourceId: 'city',
-      layout: 'VERTICAL',
+      layout: BAR_CHART_TYPES.VERTICAL,
       series: [
         {
           color: ['blue', 'red', 'green', 'yellow'],
@@ -667,9 +673,10 @@ storiesOf('Watson IoT/Dashboard', module)
                 {
                   dataSourceId: 'temperature',
                   label: 'Temperature Device 2',
-                  dataFilter: { ENTITY_ID: 'Sensor2-2' },
                 },
               ],
+              type: BAR_CHART_TYPES.GROUPED,
+              layout: BAR_CHART_LAYOUTS.VERTICAL,
               categoryDataSourceId: 'ENTITY_ID',
             },
             values: data.reduce((acc, dataPoint) => {

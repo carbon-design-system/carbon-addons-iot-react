@@ -38,6 +38,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             categoryDataSourceId: 'city',
             layout: BAR_CHART_LAYOUTS.VERTICAL,
             unit: 'P',
+            type: 'SIMPLE',
           })}
           values={barChartData.quarters.filter(q => q.quarter === '2020-Q1')}
           size={size}
@@ -72,6 +73,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             ],
             categoryDataSourceId: 'city',
             layout: BAR_CHART_LAYOUTS.HORIZONTAL,
+            type: 'SIMPLE',
           })}
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
           size={size}
@@ -102,6 +104,7 @@ storiesOf('Watson IoT/BarChartCard', module)
               },
             ],
             timeDataSourceId: 'timestamp',
+            type: 'SIMPLE',
           })}
           values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
           size={size}
@@ -362,6 +365,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             ],
             categoryDataSourceId: 'city',
             layout: BAR_CHART_LAYOUTS.VERTICAL,
+            type: BAR_CHART_TYPES.SIMPLE,
           })}
           values={barChartData.quarters.filter(a => a.quarter === 'NOT_VALID')}
           size={size}

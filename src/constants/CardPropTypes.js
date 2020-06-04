@@ -230,7 +230,7 @@ export const BarChartCardPropTypes = {
     /** the layout of the bar chart (horizontal, vertical) */
     layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
     /** the type of bar chart (simple, grouped, stacked) */
-    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
+    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)).isRequired,
     /** x-axis display name */
     xLabel: PropTypes.string,
     /** y-axis display name */
@@ -238,9 +238,25 @@ export const BarChartCardPropTypes = {
     /** defined dataset attributes */
     series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)).isRequired,
     /** for category type bar charts this is the x-axis value */
-    categoryDataSourceId: PropTypes.string,
+    categoryDataSourceId: (props, propName, componentName) => {
+      let error;
+      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.timeDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`timeDataSourceId\`.`
+        );
+      }
+      return error;
+    },
     /** for time based bar charts this is the x-axis value */
-    timeDataSourceId: PropTypes.string,
+    timeDataSourceId: (props, propName, componentName) => {
+      let error;
+      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.categoryDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`categoryDataSourceId\`.`
+        );
+      }
+      return error;
+    },
     /** optional units to put in the legend for all datasets */
     unit: PropTypes.string,
   }).isRequired,

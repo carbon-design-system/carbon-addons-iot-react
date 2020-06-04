@@ -1224,7 +1224,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                 >
                   <table
                     className="bx--data-table bx--data-table--no-border"
-                    isExpanded={true}
                     title={null}
                   >
                     <thead

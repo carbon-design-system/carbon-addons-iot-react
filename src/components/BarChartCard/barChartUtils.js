@@ -367,7 +367,7 @@ export const formatTableData = (
     // of each dataset group for that timestamp
     uniqueTimestamps.forEach((timestamp, index) => {
       const barTimeValue = {};
-      const filteredData = chartData.filter(data => data.date.valueOf() === timestamp);
+      const filteredData = chartData.filter(data => data.date?.valueOf() === timestamp);
       filteredData.forEach(val => {
         barTimeValue[val.group] = val.value;
       });

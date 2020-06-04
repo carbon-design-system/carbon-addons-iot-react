@@ -4014,9 +4014,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "categoryDataSourceId": Object {
-              "type": "string",
-            },
+            "categoryDataSourceId": [Function],
             "layout": Object {
               "args": Array [
                 Array [
@@ -4072,9 +4070,7 @@ Map {
               "isRequired": true,
               "type": "arrayOf",
             },
-            "timeDataSourceId": Object {
-              "type": "string",
-            },
+            "timeDataSourceId": [Function],
             "type": Object {
               "args": Array [
                 Array [
@@ -4083,6 +4079,7 @@ Map {
                   "STACKED",
                 ],
               ],
+              "isRequired": true,
               "type": "oneOf",
             },
             "unit": Object {
