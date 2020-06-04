@@ -2240,7 +2240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="Menu"
-                className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                className="iot--card--toolbar-date-range-action bx--overflow-menu"
                 onClick={[Function]}
                 onClose={[Function]}
                 onKeyDown={[Function]}
