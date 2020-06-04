@@ -71,7 +71,7 @@ const BarChartCard = ({
   let ChartComponent = SimpleBarChart;
   if (type === BAR_CHART_TYPES.GROUPED) {
     ChartComponent = GroupedBarChart;
-  } else if (type === BAR_CHART_TYPES.STACKED) {
+  } else {
     ChartComponent = StackedBarChart;
   }
 
@@ -112,6 +112,7 @@ const BarChartCard = ({
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
+      isLoading={isLoading}
       {...others}
     >
       {!isLoading && !isAllValuesEmpty ? (

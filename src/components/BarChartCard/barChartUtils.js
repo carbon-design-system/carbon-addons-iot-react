@@ -104,7 +104,7 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
       let uniqueDatasetNames;
       let groupedData;
       // Get the unique values for each x-label grouping
-      if (timeDataSourceId) {
+      if (timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED) {
         uniqueDatasetNames = [...new Set(values.map(val => val[timeDataSourceId]))];
         groupedData = uniqueDatasetNames.map(name =>
           values.filter(val => val[timeDataSourceId] === name)
@@ -119,15 +119,21 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
       groupedData.forEach(group => {
         group.forEach(value => {
           series.forEach(dataset => {
-            data.push({
-              // if there's a dataset label, use it
-              group: dataset.label ? dataset.label : value[categoryDataSourceId], // bar this data belongs to
-              value: value[dataset.dataSourceId], // value
-              key: timeDataSourceId ? value[timeDataSourceId] : value[categoryDataSourceId],
-              ...(timeDataSourceId
-                ? { date: new Date(value[timeDataSourceId]) } // timestamp
-                : null),
-            });
+            // if value is null, don't add it to the formatted chartData
+            if (!isNil(value[dataset.dataSourceId])) {
+              data.push({
+                // if there's a dataset label, use it
+                group: dataset.label ? dataset.label : value[categoryDataSourceId], // bar this data belongs to
+                value: value[dataset.dataSourceId],
+                // grouped charts can't be time-based
+                ...(timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED
+                  ? {
+                      date: new Date(value[timeDataSourceId]), // timestamp
+                      key: value[timeDataSourceId],
+                    }
+                  : { key: value[categoryDataSourceId] }),
+              });
+            }
           });
         });
       });
@@ -140,13 +146,16 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
 
       labeledData.forEach(dataset => {
         dataset.forEach(value => {
-          data.push({
-            group: value[categoryDataSourceId], // bar this data belongs to
-            value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar
-          });
+          // if value is null, don't add it to the formatted chartData
+          if (!isNil(value[series[0].dataSourceId])) {
+            data.push({
+              group: value[categoryDataSourceId], // bar this data belongs to
+              value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar
+            });
+          }
         });
       });
-    } // time-based and not grouped
+    } // single bars and time-based
     else {
       const uniqueDatasetNames = [...new Set(values.map(val => val[timeDataSourceId]))];
       const labeledData = uniqueDatasetNames.map(name =>
@@ -154,12 +163,15 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
       );
       labeledData.forEach(dataset => {
         dataset.forEach(value => {
-          const dataDate = new Date(value[timeDataSourceId]);
-          data.push({
-            group: series[0].dataSourceId, // bar this data belongs to
-            value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar
-            date: dataDate, // timestamp
-          });
+          // if value is null, don't add it to the formatted chartData
+          if (!isNil(value[series[0].dataSourceId])) {
+            const dataDate = new Date(value[timeDataSourceId]);
+            data.push({
+              group: series[0].dataSourceId, // bar this data belongs to
+              value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar
+              date: dataDate, // timestamp
+            });
+          }
         });
       });
     }

@@ -298,6 +298,33 @@ describe('barChartUtils', () => {
     ]);
   });
 
+  it('formatChartData doesnt return null values', () => {
+    const series = [
+      {
+        dataSourceId: 'particles',
+      },
+    ];
+    const nullData = [
+      {
+        quarter: '2020-Q1',
+        city: 'Amsterdam',
+        particles: null,
+      },
+      {
+        quarter: '2020-Q1',
+        city: 'New York',
+        particles: 100,
+      },
+    ];
+    // check horizontal layout
+    expect(formatChartData(series, nullData, 'city', null, BAR_CHART_TYPES.SIMPLE)).toEqual([
+      {
+        group: 'New York',
+        value: 100,
+      },
+    ]);
+  });
+
   it('formatColors returns correct format if color is string', () => {
     const series = [
       {
