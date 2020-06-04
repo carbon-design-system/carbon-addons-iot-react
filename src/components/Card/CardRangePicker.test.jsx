@@ -11,7 +11,7 @@ const { iotPrefix } = settings;
 
 describe('CardRangePicker', () => {
   const mockOnCardAction = jest.fn();
-  const selectTimeRangeLabel = 'Select date range';
+  const selectTimeRangeLabel = 'Select time range';
   const defaultLabel = 'Default';
   const last24HoursLabel = 'Last 24 Hours';
   const thisWeekLabel = 'This week';

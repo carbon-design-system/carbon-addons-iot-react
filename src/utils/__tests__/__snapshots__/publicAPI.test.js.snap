@@ -5287,7 +5287,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
         "selectSeverityPlaceholder": "Select a severity",
-        "selectTimeRangeLabel": "Select date range",
+        "selectTimeRangeLabel": "Select time range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
