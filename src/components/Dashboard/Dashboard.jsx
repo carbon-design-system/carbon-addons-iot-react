@@ -183,7 +183,7 @@ const defaultProps = {
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
     deleteCardLabel: 'Delete card',
-    selectDateRangeLabel: 'Select date range',
+    selectDateRangeLabel: 'Select time range',
     // table card labels
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
