@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
-import Bee32 from '@carbon/icons-react/es/bee/32';
-import Edit16 from '@carbon/icons-react/es/edit/16';
+import { Bee32, Edit16 } from '@carbon/icons-react';
 
 import ResourceList from './ResourceList';
 

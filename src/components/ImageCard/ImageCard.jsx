@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import Image32 from '@carbon/icons-react/es/image/32';
+import { Image32 } from '@carbon/icons-react';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
