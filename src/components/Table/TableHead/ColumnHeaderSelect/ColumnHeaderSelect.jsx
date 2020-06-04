@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
 import { Button } from 'carbon-components-react';
-import Draggable from '@carbon/icons-react/es/draggable/16';
+import { Draggable16 } from '@carbon/icons-react';
 import classNames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -17,6 +17,7 @@ const ColumnHeaderSelect = ({
   children,
   onClick,
   isOver,
+  isDisabled,
 }) => {
   return (
     <Button
@@ -29,16 +30,19 @@ const ColumnHeaderSelect = ({
           'column-header__select--isOver': isOver,
         }
       )}
+      disabled={isDisabled}
       kind="secondary"
       key={columnId}
       onClick={() => onClick()}
       role="presentation"
       data-ishidden={isHidden}
-      renderIcon={Draggable}
+      renderIcon={Draggable16}
       size="small"
       ref={instance => {
-        connectDragSource(instance);
-        connectDropTarget(instance);
+        if (!isDisabled) {
+          connectDragSource(instance);
+          connectDropTarget(instance);
+        }
       }}
     >
       {children}
@@ -53,6 +57,7 @@ ColumnHeaderSelect.propTypes = {
   onClick: PropTypes.func.isRequired,
   connectDragSource: PropTypes.func.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool,
   /* these props come from react-dnd */
   index: PropTypes.number.isRequired, // eslint-disable-line
   isOver: PropTypes.bool.isRequired, // eslint-disable-line
@@ -61,6 +66,7 @@ ColumnHeaderSelect.propTypes = {
 
 ColumnHeaderSelect.defaultProps = {
   isHidden: false,
+  isDisabled: false,
   children: [],
 };
 

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import deprecate from '../../internal/deprecate';
+import { bundledIconNames } from '../../utils/bundledIcons';
 
 export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
@@ -14,7 +15,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
         viewBox: PropTypes.string.isRequired,
         svgData: PropTypes.object.isRequired,
       }),
-      PropTypes.string,
+      PropTypes.oneOf(bundledIconNames),
       PropTypes.node,
       PropTypes.object,
       PropTypes.func,
@@ -25,6 +26,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     isOverflow: PropTypes.bool,
     hasDivider: PropTypes.bool,
     isDelete: PropTypes.bool,
+    isEdit: PropTypes.bool,
   })
 );
 
@@ -38,6 +40,7 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     rowId: PropTypes.string,
     isRunning: PropTypes.bool,
+    isEditMode: PropTypes.bool,
     error: RowActionErrorPropTypes,
   })
 );

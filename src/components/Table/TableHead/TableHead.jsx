@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
 import styled from 'styled-components';
 import classnames from 'classnames';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import {
   TableColumnsPropTypes,
@@ -39,6 +41,7 @@ const propTypes = {
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
+    hasSingleRowEdit: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']).isRequired,
     truncateCellText: PropTypes.bool.isRequired,
   }),
@@ -55,6 +58,8 @@ const propTypes = {
 
   /** Current state of the table */
   tableState: PropTypes.shape({
+    /** is the tableHead currently disabled */
+    isDisabled: PropTypes.bool,
     /** Which toolbar is currently active */
     activeBar: ActiveTableToolbarPropType,
     /** What's currently selected in the table? */
@@ -91,6 +96,8 @@ const propTypes = {
   /** lightweight  */
   lightweight: PropTypes.bool,
   i18n: I18NPropTypes,
+  /** should we filter on each keypress */
+  hasFastFilter: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -105,6 +112,7 @@ const defaultProps = {
   i18n: {
     ...defaultI18NPropTypes,
   },
+  hasFastFilter: true,
 };
 
 const StyledCustomTableHeader = styled(TableHeader)`
@@ -136,7 +144,14 @@ const generateOrderedColumnRefs = ordering =>
 
 const TableHead = ({
   options,
-  options: { hasRowExpansion, hasRowSelection, hasResize, wrapCellText, truncateCellText },
+  options: {
+    hasRowExpansion,
+    hasRowSelection,
+    hasResize,
+    wrapCellText,
+    truncateCellText,
+    hasSingleRowEdit,
+  },
   columns,
   tableState: {
     selection: { isSelectAllIndeterminate, isSelectAllSelected },
@@ -144,6 +159,7 @@ const TableHead = ({
     activeBar,
     ordering,
     filters,
+    isDisabled,
   },
   actions: {
     onSelectAll,
@@ -161,9 +177,9 @@ const TableHead = ({
   closeMenuText,
   lightweight,
   i18n,
+  hasFastFilter,
 }) => {
   const filterBarActive = activeBar === 'filter';
-  const rowEditBarActive = activeBar === 'rowEdit';
   const initialColumnWidths = {};
   const columnRef = generateOrderedColumnRefs(ordering);
   const columnResizeRefs = generateOrderedColumnRefs(ordering);
@@ -228,6 +244,9 @@ const TableHead = ({
 
   useLayoutEffect(
     () => {
+      // An initial measuring is needed since there might not be an initial value from the columns prop
+      // which means that the layout engine will have to set the widths dynamically
+      // before we know what they are.
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
         const measuredWidths = measureColumnWidths();
         const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
@@ -236,6 +255,26 @@ const TableHead = ({
       }
     },
     [hasResize, columns, ordering, currentColumnWidths, measureColumnWidths]
+  );
+
+  useDeepCompareEffect(
+    () => {
+      // We need to update the currentColumnWidths (state) only if the widths
+      // of the column prop is updated after the initial render.
+      if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
+        if (columns.every(col => col.hasOwnProperty('width'))) {
+          const propsColumnWidths = createNewWidthsMap(ordering, columns);
+          if (!isEqual(currentColumnWidths, propsColumnWidths)) {
+            setCurrentColumnWidths(propsColumnWidths);
+          }
+        }
+      }
+    },
+    // We explicitly do NOT want to trigger this effect if currentColumnWidths is modified
+    // since it would be directly overridden by the column props. This effect can be removed
+    // with issue https://github.com/IBM/carbon-addons-iot-react/issues/1224
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [hasResize, columns, ordering]
   );
 
   const lastVisibleColumn = ordering.filter(col => !col.isHidden).slice(-1)[0];
@@ -262,7 +301,7 @@ const TableHead = ({
             {/* TODO: Replace checkbox with TableSelectAll component when onChange bug is fixed
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
-              disabled={rowEditBarActive}
+              disabled={isDisabled}
               id="select-all"
               labelText={selectAllText}
               hideLabel
@@ -284,7 +323,7 @@ const TableHead = ({
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
-              isSortable={matchingColumnMeta.isSortable && !rowEditBarActive}
+              isSortable={matchingColumnMeta.isSortable && !isDisabled}
               isSortHeader={hasSort}
               ref={columnRef[matchingColumnMeta.id]}
               thStyle={{
@@ -325,7 +364,11 @@ const TableHead = ({
           ) : null;
         })}
         {options.hasRowActions ? (
-          <TableHeader className={`${iotPrefix}--table-header-row-action-column`} />
+          <TableHeader
+            className={classnames(`${iotPrefix}--table-header-row-action-column`, {
+              [`${iotPrefix}--table-header-row-action-column--extra-wide`]: hasSingleRowEdit,
+            })}
+          />
         ) : null}
       </TableRow>
       {filterBarActive && (
@@ -336,17 +379,18 @@ const TableHead = ({
             isFilterable: !isNil(column.filter),
             width: column.width,
           }))}
+          hasFastFilter={hasFastFilter}
           clearFilterText={clearFilterText}
           filterText={filterText}
           clearSelectionText={clearSelectionText}
           openMenuText={openMenuText}
           closeMenuText={closeMenuText}
           ordering={ordering}
-          key={JSON.stringify(filters)}
           filters={filters}
           tableOptions={options}
           onApplyFilter={onApplyFilter}
           lightweight={lightweight}
+          isDisabled={isDisabled}
         />
       )}
       {activeBar === 'column' && (
@@ -362,6 +406,7 @@ const TableHead = ({
           lightweight={lightweight}
           onColumnSelectionConfig={onColumnSelectionConfig}
           columnSelectionConfigText={i18n.columnSelectionConfig}
+          isDisabled={isDisabled}
         />
       )}
     </CarbonTableHead>

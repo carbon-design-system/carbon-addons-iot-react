@@ -5,7 +5,6 @@ import {
   DataTable,
   OverflowMenu,
   OverflowMenuItem,
-  Icon,
   Loading,
 } from 'carbon-components-react';
 import styled from 'styled-components';
@@ -15,6 +14,7 @@ import omit from 'lodash/omit';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
+import icons from '../../../../utils/bundledIcons';
 
 import RowActionsError from './RowActionsError';
 
@@ -98,6 +98,9 @@ const propTypes = {
   hasDivider: PropTypes.bool,
   /** `true` to make this menu item a "danger button". */
   isDelete: PropTypes.bool,
+  /** `true` hides all the normal actions/statuses and shows the singleRowEditButtons */
+  showSingleRowEditButtons: PropTypes.bool,
+  singleRowEditButtons: PropTypes.element,
 };
 
 const defaultProps = {
@@ -110,6 +113,8 @@ const defaultProps = {
   onClearError: null,
   hasDivider: false,
   isDelete: false,
+  showSingleRowEditButtons: false,
+  singleRowEditButtons: null,
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -166,12 +171,19 @@ class RowActionsCell extends React.Component {
       rowActionsError,
       onClearError,
       inProgressText,
+      showSingleRowEditButtons,
+      singleRowEditButtons,
     } = this.props;
     const { isOpen, ltr } = this.state;
     const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
     const hasOverflow = overflowActions.length > 0;
     const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
-    return actions && actions.length > 0 ? (
+
+    return showSingleRowEditButtons ? (
+      <StyledTableCell key={`${id}-single-row-edit-buttons`}>
+        {singleRowEditButtons}
+      </StyledTableCell>
+    ) : actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
           isRowExpanded={isRowExpanded}
@@ -240,7 +252,9 @@ class RowActionsCell extends React.Component {
                           action.renderIcon ? (
                             <OverflowMenuContent title={action.labelText}>
                               {typeof action.renderIcon === 'string' ? (
-                                <Icon icon={action.renderIcon} description={action.labelText} />
+                                React.createElement(icons[action.renderIcon], {
+                                  'aria-label': action.labelText,
+                                })
                               ) : (
                                 <action.renderIcon description={action.labelText} />
                               )}
