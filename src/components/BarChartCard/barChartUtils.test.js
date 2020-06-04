@@ -7,6 +7,7 @@ import {
   formatColors,
   generateTableColumns,
   formatTableData,
+  handleTooltip,
 } from './barChartUtils';
 
 describe('barChartUtils', () => {
@@ -675,5 +676,34 @@ describe('barChartUtils', () => {
         },
       },
     ]);
+  });
+
+  it('handleTooltip returns dataset name and value', () => {
+    const simpleFormattedData = {
+      group: 'Amsterdam',
+      value: 512,
+    };
+
+    const defaultTooltip = `<p class="value">512</p>`;
+
+    expect(handleTooltip(simpleFormattedData, defaultTooltip, null)).toEqual(
+      '<p class="value">Amsterdam: 512</p>'
+    );
+  });
+
+  it('handleTooltip returns dataset name, value, and date', () => {
+    const simpleFormattedData = {
+      group: 'Amsterdam',
+      value: 512,
+      date: new Date(1581438225000),
+    };
+
+    const defaultTooltip = `<p class="value">512</p>`;
+
+    expect(handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp')).toEqual(
+      `<ul class='multi-tooltip'><li class='datapoint-tooltip'>
+                        <p class='label'>02/11/2020 10:23:45</p>
+                      </li><li><p class="value">Amsterdam: 512</p></li></ul>`
+    );
   });
 });

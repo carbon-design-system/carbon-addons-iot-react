@@ -1,5 +1,4 @@
 import moment from 'moment';
-import find from 'lodash/find';
 import isNil from 'lodash/isNil';
 import capitalize from 'lodash/capitalize';
 
@@ -46,11 +45,7 @@ export const generateSampleValues = (
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < count; i++) {
         const nextTimeStamp = now.add(1, timeGrain).valueOf();
-        const existingData = find(sampleData, { [timeDataSourceId]: nextTimeStamp });
-        if (existingData) {
-          // add the additional dataSource to the existing datapoint
-          existingData[dataSourceId] = Math.random() * 100;
-        } else if (categoryDataSourceId) {
+        if (categoryDataSourceId) {
           // 4 random datasets
           // eslint-disable-next-line no-plusplus
           for (let k = 0; k < 4; k++) {
@@ -281,7 +276,7 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSour
     const timeStamp = dataOrHoveredElement.date;
     const dateLabel = `<li class='datapoint-tooltip'>
                         <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>
-                     </li>`;
+                      </li>`;
 
     // wrap to make single a multi-tooltip
     updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedTooltip}</li></ul>`;

@@ -55,7 +55,7 @@ const BarChartCard = ({
       xLabel,
       yLabel,
       unit,
-      type = BAR_CHART_TYPES.SIMPLE,
+      type,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
