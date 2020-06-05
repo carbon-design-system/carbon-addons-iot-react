@@ -1804,6 +1804,287 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful with IotProgressIndicator 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="iot--page-wizard"
+      >
+        <div
+          className="iot--page-wizard--progress--vertical"
+        >
+          <ul
+            className="iot--progress-indicator-new vertical"
+            data-testid="iot-progress-indicator-testid"
+            onChange={[Function]}
+          >
+            <li
+              className="step-current"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button main-step"
+                data-testid="step-button-step-1"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line"
+                />
+                <span
+                  className="icon"
+                  title="Step 1"
+                >
+                  <p>
+                    1
+                  </p>
+                </span>
+                <div
+                  className="label-container"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <p
+                    className="label"
+                    value="Step 1"
+                  >
+                    Step 1
+                  </p>
+                  <p
+                    className="label-optional"
+                  >
+                    Optional label
+                  </p>
+                  <div
+                    aria-describedby={null}
+                    aria-expanded={false}
+                    className="bx--tooltip__label"
+                    id="step-1-tooltip"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={-1}
+                  />
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-incomplete"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button main-step clickable"
+                data-testid="step-button-step-2"
+                disabled={false}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <div
+                  className="line"
+                />
+                <span
+                  className="icon"
+                  title="Step 2"
+                >
+                  <p>
+                    2
+                  </p>
+                </span>
+                <div
+                  className="label-container"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <p
+                    className="label"
+                    value="Step 2"
+                  >
+                    Step 2
+                  </p>
+                  <div
+                    aria-describedby={null}
+                    aria-expanded={false}
+                    className="bx--tooltip__label"
+                    id="step-2-tooltip"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={-1}
+                  />
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-incomplete"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button main-step clickable"
+                data-testid="step-button-step-3"
+                disabled={false}
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <span
+                  className="icon"
+                  title="Step 3"
+                >
+                  <p>
+                    3
+                  </p>
+                </span>
+                <div
+                  className="label-container"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <p
+                    className="label"
+                    value="Step 3"
+                  >
+                    Step 3
+                  </p>
+                  <div
+                    aria-describedby={null}
+                    aria-expanded={false}
+                    className="bx--tooltip__label"
+                    id="step-3-tooltip"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={-1}
+                  />
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="iot--page-wizard--content"
+        >
+          <div
+            className="iot--page-wizard--step"
+            id="step1"
+          >
+            <div
+              className="iot--page-wizard--step--title"
+            >
+              Step 1: Define the data
+            </div>
+            <div
+              className="iot--page-wizard--step--description"
+            >
+              You can create summaries lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+               
+              <a
+                href="www.ibm.com"
+              >
+                An embedded link
+              </a>
+               is good to have sometimes.
+            </div>
+            <div
+              className="iot--page-wizard--step--content"
+            >
+              <h1>
+                A table could go here
+              </h1>
+              <h3>
+                Some other form items could go here
+              </h3>
+              <h4>
+                And other things here
+              </h4>
+            </div>
+            <div
+              className="iot--page-wizard--step--extra-content"
+            >
+              <h4>
+                What are time grains?
+              </h4>
+              <p>
+                Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
+              </p>
+            </div>
+            <div
+              className="iot--page-wizard--content--actions"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--secondary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--primary"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard w/ i18n 1`] = `
 <div
   className="storybook-container"

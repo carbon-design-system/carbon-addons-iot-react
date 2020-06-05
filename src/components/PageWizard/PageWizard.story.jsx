@@ -8,12 +8,14 @@ import { Button, Form, FormGroup, FormItem, Link, TextInput } from 'carbon-compo
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 import PageWizard from './PageWizard';
+import PageWizardIot from './PageWizardIot';
 import PageWizardStep from './PageWizardStep/PageWizardStep';
 import PageWizardStepContent from './PageWizardStep/PageWizardStepContent';
 import PageWizardStepDescription from './PageWizardStep/PageWizardStepDescription';
 import PageWizardStepTitle from './PageWizardStep/PageWizardStepTitle';
 import PageWizardStepExtraContent from './PageWizardStep/PageWizardStepExtraContent';
 import StatefulPageWizard from './StatefulPageWizard';
+import StatefulPageWizardIot from './StatefulPageWizardIot';
 
 export const content = [
   <PageWizardStep
@@ -161,6 +163,21 @@ export const StepValidation = ({ ...props }) => {
 };
 
 storiesOf('Watson IoT/PageWizard', module)
+  .add('stateful with IotProgressIndicator', () => (
+    <div>
+      <StatefulPageWizardIot
+        onClearError={() => {}}
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+        setStep={() => {}}
+        clickable
+      >
+        {content}
+      </StatefulPageWizardIot>
+    </div>
+  ))
   .add('stateful example', () => (
     <div>
       <StatefulPageWizard

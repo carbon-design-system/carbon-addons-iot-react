@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { keys, matches } from 'carbon-components-react/es/internal/keyboard';
@@ -15,7 +15,6 @@ import { Tooltip } from 'carbon-components-react';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
-
 const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 
 export const IotProgressStep = ({
@@ -264,6 +263,7 @@ export const IotProgressIndicator = ({
   isVerticalMode,
   stepWidth,
   clickable,
+  setStep,
 }) => {
   const flattenItems = (itemsList, level = 0) => {
     let newList = [];
@@ -292,25 +292,31 @@ export const IotProgressIndicator = ({
   const newItems = flattenItems(items);
   const lastItemId = newItems[newItems.length - 1].id;
 
-  const getInitialIndex = () => {
-    const index = newItems.findIndex(item => item.id === currentItemId);
-    return index > -1 ? index : 0;
+  const [currentStep, setCurrentStep] = useState(currentItemId);
+
+  const getCurrentIndex = () => {
+    let idx;
+    if (currentStep) {
+      const index = newItems.findIndex(item => item.id === currentStep);
+      idx = index > -1 ? index : 0;
+    } else {
+      idx = 0;
+    }
+    return idx;
   };
-
-  const [currentIndex, setCurrentIndex] = useState(getInitialIndex);
-
-  const getInitialItemId = () => {
-    return newItems[currentIndex].id;
-  };
-
-  const [currentStep, setCurrentStep] = useState(getInitialItemId);
 
   const handleChange = (step, index) => {
-    if (currentStep !== step) {
-      setCurrentStep(step);
-      setCurrentIndex(index);
+    if (step) {
+      if (currentStep !== step) {
+        setCurrentStep(step);
+        setStep && setStep(index);
+      }
+    } else {
+      setCurrentStep(currentItemId);
     }
   };
+
+  useEffect(() => handleChange(), [currentItemId]);
 
   const classes = classnames({
     [`${iotPrefix}--progress-indicator-new`]: true,
@@ -332,7 +338,7 @@ export const IotProgressIndicator = ({
             description={description || label}
             index={index}
             currentStep={currentStep}
-            currentIndex={currentIndex}
+            currentIndex={getCurrentIndex()}
             onChange={handleChange}
             level={level}
             stepNumber={stepNumber}
@@ -366,6 +372,7 @@ IotProgressIndicator.propTypes = {
   stepWidth: PropTypes.number,
   isVerticalMode: PropTypes.bool,
   clickable: PropTypes.bool,
+  setStep: PropTypes.func,
 };
 
 IotProgressIndicator.defaultProps = {
@@ -375,6 +382,7 @@ IotProgressIndicator.defaultProps = {
   currentItemId: null,
   isVerticalMode: false,
   clickable: false,
+  setStep: null,
 };
 
 export default IotProgressIndicator;
