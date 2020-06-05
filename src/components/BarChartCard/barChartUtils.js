@@ -294,6 +294,10 @@ export const formatColors = (series, datasetNames, isEditable) => {
 /**
  * Extends default tooltip with additional date information if the graph is time-based
  * and adds color of dataset if defined
+ *
+ * This function is a bit more hacky than TimeSeriesCard because carbon charts formats it differently
+ * TODO: remove the hackiness once this issue is solved: https://github.com/carbon-design-system/carbon-charts/issues/657
+ *
  * @param {object} data data object for this particular datapoint
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {string} timeDatasourceId time-based attribute
