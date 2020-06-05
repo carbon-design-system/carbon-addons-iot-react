@@ -44,6 +44,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           size={size}
           showTimeInGMT={boolean('showTimeInGMT', false)}
           onCardAction={action('onCardAction')}
+          tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
         />
       </div>
     );
@@ -85,6 +86,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             breakpoint="lg"
             size={size}
             onCardAction={action('onCardAction')}
+            tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
           />
         </div>
       );
@@ -133,6 +135,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
+          tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
         />
       </div>
     );
@@ -184,6 +187,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
           size={size}
+          tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
         />
       </div>
     );
