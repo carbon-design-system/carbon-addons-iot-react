@@ -265,6 +265,8 @@ export const IotProgressIndicator = ({
   clickable,
   setStep,
 }) => {
+  const [currentStep, setCurrentStep] = useState(currentItemId);
+
   const flattenItems = (itemsList, level = 0) => {
     let newList = [];
     let step = 1;
@@ -289,34 +291,31 @@ export const IotProgressIndicator = ({
     return newList;
   };
 
-  const newItems = flattenItems(items);
-  const lastItemId = newItems[newItems.length - 1].id;
+  const newItems = items && flattenItems(items);
 
-  const [currentStep, setCurrentStep] = useState(currentItemId);
+  const lastItemId = () => newItems[newItems.length - 1].id;
 
   const getCurrentIndex = () => {
-    let idx;
+    let idx = 0;
     if (currentStep) {
       const index = newItems.findIndex(item => item.id === currentStep);
       idx = index > -1 ? index : 0;
-    } else {
-      idx = 0;
     }
     return idx;
   };
 
   const handleChange = (step, index) => {
-    if (step) {
-      if (currentStep !== step) {
-        setCurrentStep(step);
-        setStep && setStep(index);
-      }
+    if (step && step !== currentStep) {
+      setCurrentStep(step);
+      if (setStep) setStep(index);
     } else {
       setCurrentStep(currentItemId);
     }
   };
 
   useEffect(() => handleChange(), [currentItemId]);
+
+  const hasItems = () => newItems.length > 0;
 
   const classes = classnames({
     [`${iotPrefix}--progress-indicator-new`]: true,
@@ -325,33 +324,34 @@ export const IotProgressIndicator = ({
 
   return (
     <ul className={classes} data-testid="iot-progress-indicator-testid" onChange={handleChange}>
-      {newItems.map(
-        (
-          { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
-          index
-        ) => (
-          <IotProgressStep
-            id={id}
-            key={id}
-            label={label}
-            secondaryLabel={secondaryLabel}
-            description={description || label}
-            index={index}
-            currentStep={currentStep}
-            currentIndex={getCurrentIndex()}
-            onChange={handleChange}
-            level={level}
-            stepNumber={stepNumber}
-            vertical={isVerticalMode}
-            showLabel={showLabels}
-            stepWidth={stepWidth}
-            lastItem={lastItemId === id}
-            disabled={disabled}
-            invalid={invalid}
-            clickable={clickable}
-          />
-        )
-      )}
+      {hasItems() &&
+        newItems.map(
+          (
+            { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
+            index
+          ) => (
+            <IotProgressStep
+              id={id}
+              key={id}
+              label={label}
+              secondaryLabel={secondaryLabel}
+              description={description || label}
+              index={index}
+              currentStep={currentStep}
+              currentIndex={getCurrentIndex()}
+              onChange={handleChange}
+              level={level}
+              stepNumber={stepNumber}
+              vertical={isVerticalMode}
+              showLabel={showLabels}
+              stepWidth={stepWidth}
+              lastItem={lastItemId() === id}
+              disabled={disabled}
+              invalid={invalid}
+              clickable={clickable}
+            />
+          )
+        )}
     </ul>
   );
 };
