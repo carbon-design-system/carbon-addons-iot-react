@@ -481,7 +481,7 @@ storiesOf('Watson IoT/Dashboard', module)
             editCardLabel: text('editCardLabel', 'Edit card'),
             cloneCardLabel: text('cloneCardLabel', 'Clone card'),
             deleteCardLabel: text('deleteCardLabel', 'Delete card'),
-            selectDateRangeLabel: text('selectDateRangeLabel', 'Select date range'),
+            selectDateRangeLabel: text('selectDateRangeLabel', 'Select time range'),
             criticalLabel: text('criticalLabel', 'Critical'),
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
