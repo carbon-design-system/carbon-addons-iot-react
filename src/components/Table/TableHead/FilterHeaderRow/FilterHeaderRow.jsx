@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
-import Close from '@carbon/icons-react/es/close/16';
+import { Close16 } from '@carbon/icons-react';
 import styled from 'styled-components';
 import memoize from 'lodash/memoize';
+import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 
 import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
 
-const { iotPrefix } = settings;
-
+const { iotPrefix, prefix } = settings;
 const { TableHeader, TableRow } = DataTable;
 
 const StyledTableHeader = styled(({ isSelectColumn, ...others }) => <TableHeader {...others} />)`
@@ -157,6 +157,8 @@ class FilterHeaderRow extends Component {
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
+    /** disabled filters are shown and active but cannot be modified */
+    isDisabled: PropTypes.bool,
     lightweight: PropTypes.bool,
     /** should we filter as the user types or after they press enter */
     hasFastFilter: PropTypes.bool,
@@ -166,6 +168,7 @@ class FilterHeaderRow extends Component {
     tableOptions: { hasRowSelection: 'multi' },
     filters: [],
     isVisible: true,
+    isDisabled: false,
     onApplyFilter: defaultFunction,
     filterText: 'Filter',
     clearFilterText: 'Clear filter',
@@ -228,6 +231,7 @@ class FilterHeaderRow extends Component {
       tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
       isVisible,
       lightweight,
+      isDisabled,
       hasFastFilter,
     } = this.props;
     return isVisible ? (
@@ -277,6 +281,7 @@ class FilterHeaderRow extends Component {
                     );
                   }}
                   light={lightweight}
+                  disabled={isDisabled}
                 />
               ) : (
                 <StyledFormItem>
@@ -300,22 +305,30 @@ class FilterHeaderRow extends Component {
                     } // if fast filter off, then filter on key press
                     onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
                     value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
+                    disabled={isDisabled}
                   />
                   {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
                     <div
                       role="button"
-                      className="bx--list-box__selection"
-                      tabIndex="0"
+                      className={classNames(`${prefix}--list-box__selection`, {
+                        [`${iotPrefix}--clear-filters-button--disabled`]: isDisabled,
+                      })}
+                      tabIndex={isDisabled ? '-1' : '0'}
                       onClick={event => {
-                        this.handleClearFilter(event, column);
+                        if (!isDisabled) {
+                          this.handleClearFilter(event, column);
+                        }
                       }}
                       onKeyDown={event =>
-                        handleEnterKeyDown(event, () => this.handleClearFilter(event, column))
+                        handleEnterKeyDown(event, () => {
+                          if (!isDisabled) {
+                            this.handleClearFilter(event, column);
+                          }
+                        })
                       }
                       title={clearFilterText}
                     >
-                      <Close description={clearFilterText} />
-                      {/* <Icon icon={iconClose} description={clearFilterText} focusable="false" /> */}
+                      <Close16 description={clearFilterText} />
                     </div>
                   ) : null}
                 </StyledFormItem>

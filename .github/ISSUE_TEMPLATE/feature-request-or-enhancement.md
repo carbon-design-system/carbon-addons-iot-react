@@ -2,7 +2,7 @@
 name: "Feature request or enhancement \U0001F4A1"
 about: Suggest an idea for improvement
 title: '[ComponentName] request_title'
-labels: ':hammer:  Enhancement'
+labels: 'type: enhancement :bulb:'
 assignees: ''
 ---
 

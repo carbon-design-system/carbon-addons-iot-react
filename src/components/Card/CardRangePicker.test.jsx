@@ -11,16 +11,16 @@ const { iotPrefix } = settings;
 
 describe('CardRangePicker', () => {
   const mockOnCardAction = jest.fn();
-  const overflowMenuDescription = 'Open and close list of options';
+  const selectDateRangeLabel = 'Select time range';
   const defaultLabel = 'Default';
   const last24HoursLabel = 'Last 24 Hours';
   const thisWeekLabel = 'This week';
 
   it('card editable actions', async () => {
-    const { getByTitle, getByText } = render(
+    const { getAllByTitle, getByText } = render(
       <CardRangePicker
         i18n={{
-          overflowMenuDescription,
+          selectDateRangeLabel,
           defaultLabel,
           last24HoursLabel,
           thisWeekLabel,
@@ -28,7 +28,7 @@ describe('CardRangePicker', () => {
         onCardAction={mockOnCardAction}
       />
     );
-    fireEvent.click(getByTitle(overflowMenuDescription));
+    fireEvent.click(getAllByTitle(selectDateRangeLabel)[0]);
     // Click on the default
     const defaultRange = await waitFor(() => getByText(defaultLabel));
     fireEvent.click(defaultRange);
@@ -37,7 +37,7 @@ describe('CardRangePicker', () => {
     });
     mockOnCardAction.mockClear();
     // Reopen menu
-    fireEvent.click(getByTitle(overflowMenuDescription));
+    fireEvent.click(getAllByTitle(selectDateRangeLabel)[0]);
     const last24Hours = await waitFor(() => getByText(last24HoursLabel));
     fireEvent.click(last24Hours);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
@@ -46,7 +46,7 @@ describe('CardRangePicker', () => {
     mockOnCardAction.mockClear();
 
     // Reopen menu
-    fireEvent.click(getByTitle(overflowMenuDescription));
+    fireEvent.click(getAllByTitle(last24HoursLabel)[0]);
     mockOnCardAction.mockClear();
     const thisWeek = await waitFor(() => getByText(thisWeekLabel));
     fireEvent.click(thisWeek);

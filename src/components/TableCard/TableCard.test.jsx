@@ -201,7 +201,7 @@ describe('TableCard', () => {
       />
     );
     expect(getAllByText('Link').length).toEqual(11);
-    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73005');
+    expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73003');
   });
   it('Clicked row actions', () => {
     const onCardAction = jest.fn();
@@ -226,8 +226,7 @@ describe('TableCard', () => {
     );
 
     wrapper
-      .find('Icon')
-      .find({ icon: { name: 'icon--edit' } })
+      .find('.iot--table-card--action-icon')
       .first()
       .simulate('click');
     expect(onCardAction.mock.calls).toHaveLength(1);

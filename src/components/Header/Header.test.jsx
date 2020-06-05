@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Avatar from '@carbon/icons-react/lib/user--avatar/20';
-import HeaderHelp from '@carbon/icons-react/lib/help/20';
+import { User20, Help20 } from '@carbon/icons-react';
 import '@testing-library/jest-dom/extend-expect';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
@@ -24,7 +23,7 @@ describe('Header', () => {
         label: 'help',
         hasHeaderPanel: true,
         btnContent: (
-          <HeaderHelp
+          <Help20
             fill="white"
             description="Icon"
             className="bx--header__menu-item bx--header__menu-title"
@@ -41,7 +40,7 @@ describe('Header', () => {
               <React.Fragment>
                 <span>
                   JohnDoe@ibm.com
-                  <Avatar fill="white" description="Icon" />
+                  <User20 fill="white" description="Icon" />
                 </span>
               </React.Fragment>
             ),
@@ -50,7 +49,7 @@ describe('Header', () => {
       },
       {
         label: 'user',
-        btnContent: <Avatar fill="white" description="Icon" />,
+        btnContent: <User20 fill="white" description="Icon" />,
         menuLinkName: 'a menu link name',
         childContent: [
           {
@@ -72,7 +71,7 @@ describe('Header', () => {
             content: (
               <span>
                 JohnDoe@ibm.com
-                <Avatar fill="white" description="Icon" />
+                <User20 fill="white" description="Icon" />
               </span>
             ),
           },
@@ -92,7 +91,7 @@ describe('Header', () => {
       {
         label: 'user',
         onCLick: undefined,
-        btnContent: <Avatar fill="white" description="Icon" />,
+        btnContent: <User20 fill="white" description="Icon" />,
       },
     ],
   };

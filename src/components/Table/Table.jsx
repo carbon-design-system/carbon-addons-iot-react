@@ -64,6 +64,7 @@ const propTypes = {
     shouldLazyRender: PropTypes.bool,
     hasRowCountInHeader: PropTypes.bool,
     hasResize: PropTypes.bool,
+    hasSingleRowEdit: PropTypes.bool,
     /** If true removes the "table-layout: fixed" for resizable tables  */
     useAutoTableLayoutForResize: PropTypes.bool,
     wrapCellText: PropTypes.oneOf(['always', 'never', 'auto']),
@@ -125,6 +126,7 @@ const propTypes = {
       ),
       /** what is the current state of the row actions */
       rowActions: RowActionsStatePropTypes,
+      singleRowEditButtons: PropTypes.element,
       expandedIds: PropTypes.arrayOf(PropTypes.string),
       emptyState: EmptyStatePropTypes,
       loadingState: PropTypes.shape({
@@ -193,6 +195,7 @@ export const defaultProps = baseProps => ({
     hasColumnSelection: false,
     hasColumnSelectionConfig: false,
     hasResize: false,
+    hasSingleRowEdit: false,
     useAutoTableLayoutForResize: false,
     shouldLazyRender: false,
     wrapCellText: 'always',
@@ -221,6 +224,7 @@ export const defaultProps = baseProps => ({
       loadingState: {
         rowCount: 5,
       },
+      singleRowEditButtons: null,
     },
   },
   actions: {
@@ -365,6 +369,7 @@ const Table = props => {
       view.toolbar.search.value !== '');
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
+  const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
 
   return (
     <TableContainer
@@ -429,14 +434,14 @@ const Table = props => {
             totalSelected: view.table.selectedIds.length,
             totalFilters: view.filters ? view.filters.length : 0,
             totalItemsCount: view.pagination.totalItems,
+            isDisabled: singleRowEditMode || view.toolbar.isDisabled,
             ...pick(
               view.toolbar,
               'batchActions',
               'search',
               'activeBar',
               'customToolbarContent',
-              'rowEditBarButtons',
-              'isDisabled'
+              'rowEditBarButtons'
             ),
           }}
         />
@@ -462,7 +467,8 @@ const Table = props => {
                 'hasRowActions',
                 'hasColumnSelectionConfig',
                 'hasResize',
-                'useAutoTableLayoutForResize'
+                'useAutoTableLayoutForResize',
+                'hasSingleRowEdit'
               ),
               wrapCellText: options.wrapCellText,
               truncateCellText: useCellTextTruncate,
@@ -487,6 +493,7 @@ const Table = props => {
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
             tableState={{
+              isDisabled: rowEditMode || singleRowEditMode,
               activeBar: view.toolbar.activeBar,
               filters: view.filters,
               ...view.table,
@@ -509,6 +516,7 @@ const Table = props => {
               rows={visibleData}
               locale={locale}
               rowActionsState={view.table.rowActions}
+              singleRowEditButtons={view.table.singleRowEditButtons}
               expandedRows={expandedData}
               columns={visibleColumns}
               expandedIds={view.table.expandedIds}
@@ -597,7 +605,7 @@ const Table = props => {
           itemRangeText={i18n.itemsRangeWithTotal}
           pageText={i18n.currentPage}
           pageRangeText={i18n.pageRange}
-          preventInteraction={rowEditMode}
+          preventInteraction={rowEditMode || singleRowEditMode}
         />
       ) : null}
     </TableContainer>

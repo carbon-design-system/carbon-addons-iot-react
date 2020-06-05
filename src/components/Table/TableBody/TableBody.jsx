@@ -68,6 +68,7 @@ const propTypes = {
     })
   ).isRequired,
   rowEditMode: PropTypes.bool,
+  singleRowEditButtons: PropTypes.element,
 };
 
 const defaultProps = {
@@ -90,6 +91,7 @@ const defaultProps = {
   shouldExpandOnRowClick: false,
   shouldLazyRender: false,
   rowEditMode: false,
+  singleRowEditButtons: null,
 };
 
 const TableBody = ({
@@ -121,6 +123,7 @@ const TableBody = ({
   truncateCellText,
   locale,
   rowEditMode,
+  singleRowEditButtons,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -132,18 +135,25 @@ const TableBody = ({
     [columns, ordering]
   );
 
+  const someRowHasSingleRowEditMode = rowActionsState.some(rowAction => rowAction.isEditMode);
+
   const renderRow = (row, nestingLevel = 0) => {
     const isRowExpanded = expandedIds.includes(row.id);
     const shouldShowChildren =
       hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
     const myRowActionState = rowActionsState.find(rowAction => rowAction.rowId === row.id);
+    const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
+    const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
+
     const rowElement = (
       <TableBodyRow
         key={row.id}
         isExpanded={isRowExpanded}
-        isSelectable={row.isSelectable}
+        isSelectable={isSelectable}
         isSelected={selectedIds.includes(row.id)}
         rowEditMode={rowEditMode}
+        singleRowEditMode={rowHasSingleRowEditMode}
+        singleRowEditButtons={singleRowEditButtons}
         rowDetails={
           isRowExpanded && expandedRows.find(j => j.rowId === row.id)
             ? expandedRows.find(j => j.rowId === row.id).content

@@ -98,6 +98,7 @@ const propTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
+    selectDateRangeLabel: PropTypes.string,
 
     // image card labels:
     zoomIn: PropTypes.string,
@@ -182,6 +183,7 @@ const defaultProps = {
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
     deleteCardLabel: 'Delete card',
+    selectDateRangeLabel: 'Select time range',
     // table card labels
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
