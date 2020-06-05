@@ -75,6 +75,10 @@ export const generateTableSampleValues = (id, columns) => {
  * timestamp of current value
  * index of current value
  * ticks: array of current ticks
+ * interval: the type of interval formatting to use
+ * locale: the current locale,
+ * previousTickTimestamp
+ * shouldDisplayGMT: boolean should we localize the time to the browser timezone
  */
 export const formatGraphTick = (
   timestamp,
@@ -82,10 +86,11 @@ export const formatGraphTick = (
   ticks,
   interval,
   locale = 'en',
-  previousTickTimestamp
+  previousTickTimestamp,
+  shouldDisplayGMT
 ) => {
   moment.locale(locale);
-  const currentTimestamp = moment.unix(timestamp / 1000);
+  const currentTimestamp = shouldDisplayGMT ? moment.utc(timestamp) : moment(timestamp);
 
   const sameDay = moment(previousTickTimestamp).isSame(currentTimestamp, 'day');
   const sameMonth = moment(previousTickTimestamp).isSame(currentTimestamp, 'month');

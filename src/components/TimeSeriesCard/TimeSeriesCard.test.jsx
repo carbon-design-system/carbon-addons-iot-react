@@ -92,7 +92,7 @@ describe('TimeSeriesCard', () => {
     const defaultTooltip = '<li>existing tooltip</li>';
     // the date is from 2017
     const updatedTooltip = handleTooltip(
-      { date: 1500000000000 },
+      { date: new Date(1500000000000) },
       defaultTooltip,
       [],
       'Detected alert:'
