@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Edit16 from '@carbon/icons-react/lib/edit/16';
+import Edit16 from '@carbon/icons-react';
 
 import ResourceList from './ResourceList';
 

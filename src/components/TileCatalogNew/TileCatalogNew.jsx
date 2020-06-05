@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select, SelectItem, DataTable, SkeletonText, Tile } from 'carbon-components-react';
-import Bee32 from '@carbon/icons-react/es/bee/32';
+import { Bee32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';

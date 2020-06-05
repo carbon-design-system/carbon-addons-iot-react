@@ -2,7 +2,7 @@
 name: "Bug report \U0001F41B"
 about: Create a report to help us improve
 title: '[ComponentName] bug_title'
-labels: ':bug:  Bug'
+labels: 'type: bug :bug:'
 assignees: ''
 ---
 
