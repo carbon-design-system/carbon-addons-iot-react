@@ -403,7 +403,7 @@ describe('barChartUtils', () => {
 
     expect(formatColors(series, uniqueDatasetNames)).toEqual({
       identifier: 'group',
-      scale: { Particles: '#4589ff', Temperature: '#1192e8' },
+      scale: { Particles: '#4589ff', Temperature: '#0072c3' },
     });
   });
 

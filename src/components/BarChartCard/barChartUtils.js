@@ -264,10 +264,9 @@ export const formatColors = (series, datasetNames, isEditable) => {
   }
 
   // These are the default colors from carbon charts
-  const defaultColors = [blue, cyan, green, magenta, purple, red, teal];
-  let defaultColorIndex = 0;
+  const DEFAULT_CHART_COLORS = [blue, cyan, green, magenta, purple, red, teal];
   let scale = 50;
-  console.log(datasetNames);
+
   datasetNames.forEach((dataset, index) => {
     // give default disabled colors if showing samplee preview data
     if (isEditable) {
@@ -275,16 +274,10 @@ export const formatColors = (series, datasetNames, isEditable) => {
     }
     // if the colors aren't set, give them a default color
     else if (!colors.scale[dataset]) {
-      colors.scale[dataset] = defaultColors[defaultColorIndex][scale];
-
-      if (defaultColorIndex === defaultColors.length - 1) {
-        defaultColorIndex = 0;
-      } else {
-        defaultColorIndex += 1;
-      }
+      colors.scale[dataset] = DEFAULT_CHART_COLORS[index % DEFAULT_CHART_COLORS.length][scale];
 
       // Change the scale on each iteration through the colors
-      if (defaultColorIndex === 0) {
+      if (index === 0) {
         if (scale !== 100) {
           scale += 10;
         } else {
