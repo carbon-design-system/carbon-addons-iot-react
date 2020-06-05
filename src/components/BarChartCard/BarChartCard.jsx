@@ -107,7 +107,7 @@ const BarChartCard = ({
 
   // Set the colors for each dataset
   const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
-  const colors = formatColors(series, uniqueDatasets);
+  const colors = formatColors(series, uniqueDatasets, isEditable);
 
   let tableColumns = [];
   let tableData = [];
@@ -141,7 +141,7 @@ const BarChartCard = ({
       isLoading={isLoading}
       {...others}
     >
-      {!isLoading && !isAllValuesEmpty ? (
+      {!isAllValuesEmpty ? (
         <div
           className={classnames(
             `${iotPrefix}--bar-chart-container`,
@@ -182,7 +182,7 @@ const BarChartCard = ({
               color: colors,
               tooltip: {
                 valueFormatter: tooltipValue => valueFormatter(tooltipValue, size, unit, locale),
-                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, locale),
+                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
               },
             }}
             width="100%"

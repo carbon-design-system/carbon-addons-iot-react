@@ -1,8 +1,13 @@
 import moment from 'moment';
 import isNil from 'lodash/isNil';
 import capitalize from 'lodash/capitalize';
+import { blue, cyan, green, magenta, purple, red, teal } from '@carbon/colors';
 
-import { BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
+import {
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
+  DISABLED_COLORS,
+} from '../../constants/LayoutConstants';
 
 /**
  * Generate fake, sample values for isEditable preview state
@@ -231,12 +236,14 @@ export const mapValuesToAxes = (layout, categoryDataSourceId, timeDataSourceId, 
  * @param {Array} series an array of dataset group classifications
  * @param {Array || string || Object} series[i].color
  * @param {Array<string>} datasetNames unique dataset bar names to be used if color is an object
+ * @param {Boolean} isEditable determines if this is sample, preview data or not
  *
  * @returns {Object} colors - formatted
  */
-export const formatColors = (series, datasetNames) => {
+export const formatColors = (series, datasetNames, isEditable) => {
   // first set the carbon charts config defaults
   const colors = { identifier: 'group', scale: {} };
+
   // if color is an array, order doesn't matter so just map as many as possible
   if (Array.isArray(series[0].color)) {
     series[0].color.forEach((color, index) => {
@@ -256,21 +263,63 @@ export const formatColors = (series, datasetNames) => {
     });
   }
 
+  // These are the default colors from carbon charts
+  const defaultColors = [blue, cyan, green, magenta, purple, red, teal];
+  let defaultColorIndex = 0;
+  let scale = 50;
+  console.log(datasetNames);
+  datasetNames.forEach((dataset, index) => {
+    // give default disabled colors if showing samplee preview data
+    if (isEditable) {
+      colors.scale[dataset] = DISABLED_COLORS[index % DISABLED_COLORS.length];
+    }
+    // if the colors aren't set, give them a default color
+    else if (!colors.scale[dataset]) {
+      colors.scale[dataset] = defaultColors[defaultColorIndex][scale];
+
+      if (defaultColorIndex === defaultColors.length - 1) {
+        defaultColorIndex = 0;
+      } else {
+        defaultColorIndex += 1;
+      }
+
+      // Change the scale on each iteration through the colors
+      if (defaultColorIndex === 0) {
+        if (scale !== 100) {
+          scale += 10;
+        } else {
+          // scale is a bit hard to see if its lower than 40
+          scale = 40;
+        }
+      }
+    }
+  });
+
   return colors;
 };
 
 /**
  * Extends default tooltip with additional date information if the graph is time-based
+ * and adds color of dataset if defined
  * @param {object} data data object for this particular datapoint
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {string} timeDatasourceId time-based attribute
+ * @param {Object} colors defined by the user and formatted for carbon charts
  */
-export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSourceId) => {
+export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSourceId, colors) => {
   // First add the dataset name as the current implementation only shows the value
   let updatedTooltip = defaultTooltip.replace(
-    `<p class="value">`,
-    `<p class="value">${dataOrHoveredElement.group}: `
+    `<div class="datapoint-tooltip"><p class="value">`,
+    `<p class="label">${dataOrHoveredElement.group}</p><p class="value">`
   );
+
+  updatedTooltip = updatedTooltip.replace('</div>', '');
+
+  const coloredTooltip = `<div class="datapoint-tooltip"><a style="background-color:${
+    colors.scale[dataOrHoveredElement.group]
+  }" class="tooltip-color"></a>${updatedTooltip}</div>`;
+
+  let updatedWithColorTooltip = coloredTooltip;
   // If theres a time attribute, add an extra list item with the formatted date
   if (timeDataSourceId) {
     const timeStamp = dataOrHoveredElement.date;
@@ -279,10 +328,10 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSour
                       </li>`;
 
     // wrap to make single a multi-tooltip
-    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedTooltip}</li></ul>`;
+    updatedWithColorTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${coloredTooltip}</li></ul>`;
   }
 
-  return updatedTooltip;
+  return updatedWithColorTooltip;
 };
 
 /**

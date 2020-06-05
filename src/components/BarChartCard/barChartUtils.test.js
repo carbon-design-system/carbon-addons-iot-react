@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { barChartData } from '../../utils/barChartDataSample';
 import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
@@ -340,7 +341,9 @@ describe('barChartUtils', () => {
       },
     ];
 
-    expect(formatColors(series)).toEqual({
+    const uniqueDatasetNames = ['Particles', 'Temperature'];
+
+    expect(formatColors(series, uniqueDatasetNames)).toEqual({
       identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'yellow' },
     });
@@ -376,9 +379,31 @@ describe('barChartUtils', () => {
       },
     ];
 
-    expect(formatColors(series)).toEqual({
+    const uniqueDatasetNames = ['Particles', 'Temperature'];
+
+    expect(formatColors(series, uniqueDatasetNames)).toEqual({
       identifier: 'group',
       scale: { Particles: 'blue', Temperature: 'red' },
+    });
+  });
+
+  it('formatColors returns default colors if no color is provided', () => {
+    const series = [
+      {
+        dataSourceId: 'particles',
+        label: 'Particles',
+      },
+      {
+        dataSourceId: 'temperature',
+        label: 'Temperature',
+      },
+    ];
+
+    const uniqueDatasetNames = ['Particles', 'Temperature'];
+
+    expect(formatColors(series, uniqueDatasetNames)).toEqual({
+      identifier: 'group',
+      scale: { Particles: '#4589ff', Temperature: '#1192e8' },
     });
   });
 
@@ -678,7 +703,7 @@ describe('barChartUtils', () => {
     ]);
   });
 
-  it('handleTooltip returns dataset name and value', () => {
+  it('handleTooltip returns dataset name, color and value', () => {
     const simpleFormattedData = {
       group: 'Amsterdam',
       value: 512,
@@ -686,12 +711,18 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<p class="value">512</p>`;
 
-    expect(handleTooltip(simpleFormattedData, defaultTooltip, null)).toEqual(
-      '<p class="value">Amsterdam: 512</p>'
+    const colors = {
+      scale: {
+        Amsterdam: 'blue',
+      },
+    };
+
+    expect(handleTooltip(simpleFormattedData, defaultTooltip, null, colors)).toEqual(
+      '<div class="datapoint-tooltip"><a style="background-color:blue" class="tooltip-color"></a><p class="value">512</p></div>'
     );
   });
 
-  it('handleTooltip returns dataset name, value, and date', () => {
+  it('handleTooltip returns dataset name, value, color, and date', () => {
     const simpleFormattedData = {
       group: 'Amsterdam',
       value: 512,
@@ -700,10 +731,16 @@ describe('barChartUtils', () => {
 
     const defaultTooltip = `<p class="value">512</p>`;
 
-    expect(handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp')).toEqual(
+    const colors = {
+      scale: {
+        Amsterdam: 'blue',
+      },
+    };
+
+    expect(handleTooltip(simpleFormattedData, defaultTooltip, 'timestamp', colors)).toEqual(
       `<ul class='multi-tooltip'><li class='datapoint-tooltip'>
                         <p class='label'>02/11/2020 10:23:45</p>
-                      </li><li><p class="value">Amsterdam: 512</p></li></ul>`
+                      </li><li><div class="datapoint-tooltip"><a style="background-color:blue" class="tooltip-color"></a><p class="value">512</p></div></li></ul>`
     );
   });
 });
