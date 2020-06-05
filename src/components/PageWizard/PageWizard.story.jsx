@@ -8,7 +8,6 @@ import { Button, Form, FormGroup, FormItem, Link, TextInput } from 'carbon-compo
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 import PageWizard from './PageWizard';
-import PageWizardIot from './PageWizardIot';
 import PageWizardStep from './PageWizardStep/PageWizardStep';
 import PageWizardStepContent from './PageWizardStep/PageWizardStepContent';
 import PageWizardStepDescription from './PageWizardStep/PageWizardStepDescription';
