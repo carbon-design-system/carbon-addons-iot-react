@@ -16,6 +16,8 @@ module.exports = {
       lines: 80,
     },
     './src/components/BarChartCard/BarChartCard.jsx': {
+      // TODO: Add tests for tooltip interaction and formatting when below issue is solved
+      // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 60,
     },
     './src/components/Table/TableHead/TableHead.jsx': {
