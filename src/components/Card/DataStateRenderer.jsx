@@ -29,14 +29,14 @@ TooltipContent.propTypes = { tooltipContent: ValueCardPropTypes.dataState.isRequ
 const DataStateRenderer = ({ dataState, size, id }) => {
   const { label, description } = dataState;
 
-  const withTooltip = (element, triggerId) => {
+  const withTooltip = (element, triggerId, tooltipDirection) => {
     return (
       <Tooltip
         showIcon={false}
         triggerText={element}
         triggerId={triggerId}
         tooltipId={`${triggerId}-tooltip`}
-        direction="right"
+        direction={tooltipDirection || 'bottom'}
       >
         <TooltipContent tooltipContent={dataState} />
       </Tooltip>
@@ -45,7 +45,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
 
   const renderDataStateGridIcon = () => {
     const { type } = dataState;
-    let { icon } = dataState;
+    let { icon, tooltipDirection } = dataState;
     if (!icon) {
       if (type === CARD_DATA_STATE.ERROR) {
         icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
@@ -54,7 +54,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
       }
     }
 
-    return withTooltip(icon, `${dsPrefix}-grid__icon-${id}`);
+    return withTooltip(icon, `${dsPrefix}-grid__icon-${id}`, tooltipDirection);
   };
 
   const renderDataStateGridItems = () => {
