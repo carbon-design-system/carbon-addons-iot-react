@@ -5,7 +5,6 @@ import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
-import warning from 'warning';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
@@ -32,7 +31,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
 const BarChartCard = ({
   title: titleProp,
   content,
-  size,
+  size: sizeProp,
   values: initialValues,
   locale,
   i18n,
@@ -55,10 +54,18 @@ const BarChartCard = ({
       xLabel,
       yLabel,
       unit,
-      type,
+      type = BAR_CHART_TYPES.SIMPLE,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
+
+  // Charts render incorrectly if size is too small, so change their size to MEDIUM
+  let size = sizeProp;
+  if (sizeProp === CARD_SIZES.SMALL) {
+    size = CARD_SIZES.MEDIUM;
+  } else if (sizeProp === CARD_SIZES.SMALLWIDE) {
+    size = CARD_SIZES.MEDIUMWIDE;
+  }
 
   // If editable, show sample presentation data
   const values = isEditable
