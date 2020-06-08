@@ -328,6 +328,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             series: [
               {
                 dataSourceId: 'particles',
+                label: 'blob',
                 // colors: COLORS,
               },
             ],

@@ -230,7 +230,36 @@ export const BarChartCardPropTypes = {
     /** the layout of the bar chart (horizontal, vertical) */
     layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
     /** the type of bar chart (simple, grouped, stacked) */
-    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)).isRequired,
+    type: (props, propName, componentName) => {
+      let error;
+      // Must be one of the BAR_CHART_TYPES
+      if (!Object.values(BAR_CHART_TYPES).includes(props[propName])) {
+        error = new Error(`\`${componentName}\` prop \`${propName}\` is required.`);
+      } // GROUPED charts can't have timeDataSourceId
+      else if (props[propName] === BAR_CHART_TYPES.GROUPED && props.timeDataSourceId) {
+        error = new Error(
+          `\`BarChartCard\` of type \`GROUPED\` cannot use \`timeDataSourceId\` at this time.`
+        );
+      } // STACKED charts with timeDataSourceId and categoryDataSourceId can't have datasource labels
+      else if (
+        props[propName] === BAR_CHART_TYPES.STACKED &&
+        props.timeDataSourceId &&
+        props.categoryDataSourceId
+      ) {
+        let hasDataSourceLabel = false;
+        props.series.forEach(datasource => {
+          if (datasource.label) {
+            hasDataSourceLabel = true;
+          }
+        });
+        if (hasDataSourceLabel) {
+          error = new Error(
+            `\`BarChartCard\` of type \`STACKED\` with \`categoryDataSourceId\` AND \`timeDataSourceId\` cannot use \`label\` within series. The legend labels will be created from the \`categoryDataSourceId\`.`
+          );
+        }
+      }
+      return error;
+    },
     /** x-axis display name */
     xLabel: PropTypes.string,
     /** y-axis display name */
@@ -243,6 +272,11 @@ export const BarChartCardPropTypes = {
       if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.timeDataSourceId) {
         error = new Error(
           `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`timeDataSourceId\`.`
+        );
+      } // all charts must have oneOf[categoryDataSourceId, timeDataSourceId]
+      else if (!props[propName] && !timeDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` must have \`${props[propName]}\` OR \`timeDataSourceId\`.`
         );
       }
       return error;

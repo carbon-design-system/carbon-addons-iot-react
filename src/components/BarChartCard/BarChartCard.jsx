@@ -60,31 +60,6 @@ const BarChartCard = ({
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
 
-  // Check for unique prop type errors. The conditionals must pass false to throw the prop error
-  // all charts must have oneOf[categoryDataSourceId, timeDataSourceId]
-  warning(
-    !(!categoryDataSourceId && !timeDataSourceId),
-    `\`BarChartCard\` must have \`categoryDataSourceId\` OR \`timeDataSourceId\`.`
-  );
-  // GROUPED charts can't have timeDataSourceId
-  warning(
-    !(type === BAR_CHART_TYPES.GROUPED && timeDataSourceId),
-    `\`BarChartCard\` of type \`GROUPED\` cannot use \`timeDataSourceId\`.`
-  );
-  // STACKED charts with timeDataSourceId and categoryDataSourceId can't have datasource labels
-  if (type === BAR_CHART_TYPES.STACKED && timeDataSourceId && categoryDataSourceId) {
-    let shouldNotGivePropError = true;
-    series.forEach(datasource => {
-      if (datasource.label) {
-        shouldNotGivePropError = false;
-      }
-    });
-    warning(
-      shouldNotGivePropError,
-      `\`BarChartCard\` of type \`STACKED\` with \`categoryDataSourceId\` AND \`timeDataSourceId\` cannot use \`label\` within series. The labels will be created from the \`categoryDataSourceId\`.`
-    );
-  }
-
   // If editable, show sample presentation data
   const values = isEditable
     ? memoizedGenerateSampleValues(series, timeDataSourceId, interval, categoryDataSourceId)
