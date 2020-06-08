@@ -19,8 +19,11 @@ Map {
       "children": null,
       "className": null,
       "disabled": false,
+      "hasIconOnly": false,
       "kind": "primary",
       "loading": false,
+      "recommended": false,
+      "selected": false,
     },
     "propTypes": Object {
       "children": Object {
@@ -32,6 +35,9 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
+      "hasIconOnly": Object {
+        "type": "bool",
+      },
       "kind": Object {
         "args": Array [
           Array [
@@ -41,6 +47,7 @@ Map {
             "ghost",
             "danger--primary",
             "tertiary",
+            "icon-selection",
           ],
         ],
         "type": "oneOf",
@@ -50,6 +57,12 @@ Map {
       },
       "onClick": Object {
         "type": "func",
+      },
+      "recommended": Object {
+        "type": "bool",
+      },
+      "selected": Object {
+        "type": "bool",
       },
     },
   },
