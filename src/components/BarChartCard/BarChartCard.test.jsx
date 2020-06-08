@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
+import { screen } from '@testing-library/dom';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
@@ -30,6 +32,19 @@ const barChartCardProps = {
 };
 
 describe('BarChartCard', () => {
+  const originalCreateObjectURL = global.URL.createObjectURL;
+  const originalRevokeObjectURL = global.URL.revokeObjectURL;
+
+  beforeAll(() => {
+    global.URL.createObjectURL = jest.fn();
+    global.URL.revokeObjectURL = jest.fn();
+  });
+
+  afterAll(() => {
+    global.URL.createObjectURL = originalCreateObjectURL;
+    global.URL.revokeObjectURL = originalRevokeObjectURL;
+  });
+
   it('does not show bar chart when loading', () => {
     const wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
@@ -48,6 +63,17 @@ describe('BarChartCard', () => {
   it('shows table when isExpanded', () => {
     const wrapper = mount(<BarChartCard {...barChartCardProps} isExpanded />);
     expect(wrapper.find(Table)).toHaveLength(1);
+  });
+
+  it('onCsvDownload should fire when download button is clicked', () => {
+    render(<BarChartCard {...barChartCardProps} isExpanded />);
+    // First check that the button appeared
+    const downloadBtn = screen.getByTestId('download-button');
+    expect(downloadBtn).toBeTruthy();
+    // click the button
+    fireEvent.click(downloadBtn);
+    // This means the csvDownloadHandler is firing
+    expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1);
   });
 
   it('shows groupedBarChart on grouped data', () => {

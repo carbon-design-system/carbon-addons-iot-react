@@ -16,7 +16,7 @@ module.exports = {
       lines: 80,
     },
     './src/components/BarChartCard/BarChartCard.jsx': {
-      functions: 50,
+      functions: 60,
     },
     './src/components/Table/TableHead/TableHead.jsx': {
       statements: 73,

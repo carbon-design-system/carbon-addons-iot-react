@@ -42,7 +42,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           })}
           values={barChartData.quarters.filter(q => q.quarter === '2020-Q1')}
           size={size}
-          onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );
@@ -78,6 +78,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );
@@ -109,6 +110,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true, range: true }}
         />
       </div>
     );
@@ -147,6 +149,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );
@@ -190,6 +193,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q2')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );
@@ -230,6 +234,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q3')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );
@@ -270,6 +275,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q4')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );
@@ -306,6 +312,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.timestamps}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true, range: true }}
         />
       </div>
     );
@@ -337,6 +344,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.timestamps}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true, range: true }}
         />
       </div>
     );
@@ -370,6 +378,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === 'NOT_VALID')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true, range: true }}
         />
       </div>
     );
@@ -408,6 +417,7 @@ storiesOf('Watson IoT/BarChartCard', module)
           values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
           size={size}
           onCardAction={action('onCardAction')}
+          availableActions={{ expand: true }}
         />
       </div>
     );

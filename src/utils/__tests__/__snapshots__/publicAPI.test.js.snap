@@ -4071,17 +4071,7 @@ Map {
               "type": "arrayOf",
             },
             "timeDataSourceId": [Function],
-            "type": Object {
-              "args": Array [
-                Array [
-                  "SIMPLE",
-                  "GROUPED",
-                  "STACKED",
-                ],
-              ],
-              "isRequired": true,
-              "type": "oneOf",
-            },
+            "type": [Function],
             "unit": Object {
               "type": "string",
             },
@@ -4212,19 +4202,7 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
-      "size": Object {
-        "args": Array [
-          Array [
-            "MEDIUMTHIN",
-            "MEDIUM",
-            "MEDIUMWIDE",
-            "LARGETHIN",
-            "LARGE",
-            "LARGEWIDE",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "testID": Object {
         "type": "string",
       },
