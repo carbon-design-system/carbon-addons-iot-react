@@ -12,7 +12,17 @@
       "jsx": true
     }
   },
-  "plugins": ["babel", "react", "jsx-a11y", "import", "jest", "lodash", "react-hooks", "prettier"],
+  "plugins": [
+    "babel",
+    "react",
+    "jsx-a11y",
+    "import",
+    "jest",
+    "lodash",
+    "react-hooks",
+    "prettier",
+    "unicorn"
+  ],
   "settings": {
     "react": {
       "version": "16.4" // React version, default to the latest React stable release
@@ -76,7 +86,8 @@
     "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }],
     "jest/expect-expect": "error",
     "jest/prefer-hooks-on-top": "error",
-    "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }]
+    "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }],
+    "unicorn/no-abusive-eslint-disable": "error"
   },
   // Testcases have less eslint rules applied to them
   "overrides": [

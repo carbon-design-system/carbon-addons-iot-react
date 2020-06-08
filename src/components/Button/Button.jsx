@@ -15,7 +15,7 @@ const propTypes = {
   /** Button label */
   children: PropTypes.node,
   /** click handler */
-  onClick: PropTypes.func, // eslint-disable-line
+  onClick: PropTypes.func, // eslint-disable-line react/require-default-props
   className: PropTypes.string,
   /** primary, secondary, etc from carbon */
   kind: PropTypes.oneOf(ButtonKinds),

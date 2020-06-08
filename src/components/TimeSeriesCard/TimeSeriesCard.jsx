@@ -132,7 +132,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  */
 export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges, alertDetected) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
-  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line
+  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
   const timeStamp = Array.isArray(data) ? data[0].date : data.date;
   const dateLabel = `<li class='datapoint-tooltip'>
                         <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>

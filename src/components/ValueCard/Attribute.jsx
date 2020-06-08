@@ -48,8 +48,8 @@ const AttributeSecondaryValue = styled.div`
 `;
 
 const propTypes = {
-  value: PropTypes.any, // eslint-disable-line
-  unit: PropTypes.any, // eslint-disable-line
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
+  unit: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   /** css rule */
   alignValue: PropTypes.oneOf(['flex-end', 'center']),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
@@ -111,7 +111,7 @@ const Attribute = ({
   isMini,
   label,
   renderIconByName,
-  size, // eslint-disable-line
+  size, // eslint-disable-line react/prop-types
   locale,
 }) => {
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
