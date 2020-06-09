@@ -126,6 +126,11 @@ const propTypes = {
   showRelativeOption: PropTypes.bool,
   /** show time input fields */
   hasTimeInput: PropTypes.bool,
+  /**
+   * Function hook used to provide the appropriate tooltip content for the preset time
+   * picker. This function takes in the currentValue and should return a string message.
+   */
+  renderPresetTooltipText: PropTypes.func,
   /** triggered on cancel */
   onCancel: PropTypes.func,
   /** triggered on apply with returning object with similar signature to defaultValue */
@@ -197,6 +202,7 @@ const defaultProps = {
   disabled: false,
   showRelativeOption: true,
   hasTimeInput: true,
+  renderPresetTooltipText: null,
   onCancel: null,
   onApply: null,
   i18n: {
@@ -237,6 +243,7 @@ const DateTimePicker = ({
   disabled,
   showRelativeOption,
   hasTimeInput,
+  renderPresetTooltipText,
   onCancel,
   onApply,
   i18n,
@@ -639,6 +646,10 @@ const DateTimePicker = ({
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
+  const tooltipValue = renderPresetTooltipText
+    ? renderPresetTooltipText(currentValue)
+    : getIntervalValue();
+
   return (
     <div
       id={`${iotPrefix}--date-time-picker__wrapper`}
@@ -658,7 +669,7 @@ const DateTimePicker = ({
             <TooltipDefinition
               align="start"
               direction="bottom"
-              tooltipText={getIntervalValue()}
+              tooltipText={tooltipValue}
               triggerClassName=""
             >
               {humanValue}
@@ -678,11 +689,11 @@ const DateTimePicker = ({
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
               <OrderedList nested={false}>
-                {getIntervalValue() ? (
+                {tooltipValue ? (
                   <ListItem
                     className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                   >
-                    {getIntervalValue()}
+                    {tooltipValue}
                   </ListItem>
                 ) : null}
                 <ListItem
