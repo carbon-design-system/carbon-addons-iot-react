@@ -77,7 +77,7 @@ const propTypes = {
     rollingPeriodLabel: PropTypes.string,
     last24HoursLabel: PropTypes.string,
     last7DaysLabel: PropTypes.string,
-    defaultLabel: PropTypes.string,
+    defaultLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     lastMonthLabel: PropTypes.string,
     lastQuarterLabel: PropTypes.string,
     lastYearLabel: PropTypes.string,
