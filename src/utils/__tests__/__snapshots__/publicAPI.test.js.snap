@@ -952,9 +952,6 @@ Map {
         ],
         "type": "shape",
       },
-      "plugin": Object {
-        "type": "node",
-      },
       "secondaryTitle": Object {
         "type": "string",
       },
