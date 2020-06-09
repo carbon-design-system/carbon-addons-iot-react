@@ -67,7 +67,7 @@ class WizardModal extends Component {
     },
   };
 
-  state = { step: this.props.currentStepIndex }; // eslint-disable-line
+  state = { step: this.props.currentStepIndex };
 
   handleNext = () => {
     if (this.validateCurrentStep()) {

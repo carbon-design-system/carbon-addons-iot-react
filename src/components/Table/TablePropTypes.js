@@ -163,13 +163,13 @@ export const I18NPropTypes = PropTypes.shape({
   itemSelected: PropTypes.string,
   /** Row actions in table body */
   /** I18N label for in progress */
-  inProgressText: PropTypes.string, // eslint-disable-line
+  inProgressText: PropTypes.string,
   /** I18N label for action failed */
-  actionFailedText: PropTypes.string, // eslint-disable-line
+  actionFailedText: PropTypes.string,
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line
+  learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line
+  dismissText: PropTypes.string,
   filterNone: PropTypes.string,
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,

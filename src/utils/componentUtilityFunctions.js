@@ -112,7 +112,7 @@ export const handleEnterKeyDown = (evt, callback) => {
   }
 };
 
-export const defaultFunction = name => () => console.info(`${name} not implemented`); //eslint-disable-line
+export const defaultFunction = name => () => console.info(`${name} not implemented`); // eslint-disable-line no-console
 
 export const getSortedData = (inputData, columnId, direction, isTimestampColumn) => {
   // clone inputData because sort mutates the array
@@ -175,7 +175,7 @@ export const printGrid = grid => {
     }
     result += '\n';
   }
-  console.log(result); // eslint-disable-line
+  console.log(result); // eslint-disable-line no-console
 };
 
 /**
@@ -281,7 +281,6 @@ export const getCardMinSize = (
  * @returns {Boolean} found or not
  */
 export const caseInsensitiveSearch = (keys, searchTerm) => {
-  // eslint-disable-next-line
   return keys.some(key => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };
 
@@ -300,7 +299,7 @@ export const filterValidAttributes = props =>
   Object.keys(props)
     .filter(prop => validAttributes.test(prop))
     .reduce((filteredProps, propName) => {
-      // eslint-disable-next-line
+      // eslint-disable-next-line no-param-reassign
       filteredProps[propName] = props[propName];
       return filteredProps;
     }, {});
