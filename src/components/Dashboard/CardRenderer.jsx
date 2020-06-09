@@ -9,6 +9,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import ValueCard from '../ValueCard/ValueCard';
 import ImageCard from '../ImageCard/ImageCard';
 import TableCard from '../TableCard/TableCard';
+import BarChartCard from '../BarChartCard/BarChartCard';
 import TimeSeriesCard from '../TimeSeriesCard/TimeSeriesCard';
 import ListCard from '../ListCard/ListCard';
 import GaugeCard from '../GaugeCard/GaugeCard';
@@ -115,6 +116,7 @@ const CardRenderer = React.memo(
             type === CARD_TYPES.IMAGE ||
             type === CARD_TYPES.TIMESERIES ||
             type === CARD_TYPES.TABLE ||
+            type === CARD_TYPES.BAR ||
             availableActions?.expand, // image and line chart cards should have expand
         }),
       [availableActions, dataSource, type]
@@ -188,6 +190,8 @@ const CardRenderer = React.memo(
       <TimeSeriesCard {...commonCardProps} />
     ) : type === CARD_TYPES.TABLE ? (
       <TableCard {...commonCardProps} />
+    ) : type === CARD_TYPES.BAR ? (
+      <BarChartCard {...commonCardProps} />
     ) : type === CARD_TYPES.LIST ? (
       <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
     ) : type === CARD_TYPES.GAUGE ? (

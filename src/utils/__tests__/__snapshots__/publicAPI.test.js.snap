@@ -3558,6 +3558,14 @@ Map {
   },
   "BarChartCard" => Object {
     "defaultProps": Object {
+      "content": Object {
+        "layout": "VERTICAL",
+        "type": "SIMPLE",
+      },
+      "i18n": Object {
+        "noDataLabel": "No data",
+      },
+      "locale": "en",
       "size": "MEDIUMWIDE",
     },
     "propTypes": Object {
@@ -4019,9 +4027,7 @@ Map {
       "content": Object {
         "args": Array [
           Object {
-            "categoryDataSourceId": Object {
-              "type": "string",
-            },
+            "categoryDataSourceId": [Function],
             "layout": Object {
               "args": Array [
                 Array [
@@ -4077,18 +4083,10 @@ Map {
               "isRequired": true,
               "type": "arrayOf",
             },
-            "timeDataSourceId": Object {
+            "timeDataSourceId": [Function],
+            "type": [Function],
+            "unit": Object {
               "type": "string",
-            },
-            "type": Object {
-              "args": Array [
-                Array [
-                  "SIMPLE",
-                  "GROUPED",
-                  "STACKED",
-                ],
-              ],
-              "type": "oneOf",
             },
             "xLabel": Object {
               "type": "string",
@@ -4217,21 +4215,7 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
-      "size": Object {
-        "args": Array [
-          Array [
-            "SMALL",
-            "SMALLWIDE",
-            "MEDIUMTHIN",
-            "MEDIUM",
-            "MEDIUMWIDE",
-            "LARGETHIN",
-            "LARGE",
-            "LARGEWIDE",
-          ],
-        ],
-        "type": "oneOf",
-      },
+      "size": [Function],
       "testID": Object {
         "type": "string",
       },
@@ -8576,9 +8560,6 @@ Map {
                           "isRequired": true,
                           "type": "string",
                         },
-                        "unit": Object {
-                          "type": "string",
-                        },
                       },
                     ],
                     "type": "shape",
@@ -8607,9 +8588,6 @@ Map {
                               "isRequired": true,
                               "type": "string",
                             },
-                            "unit": Object {
-                              "type": "string",
-                            },
                           },
                         ],
                         "type": "shape",
@@ -8623,6 +8601,9 @@ Map {
               "type": "oneOfType",
             },
             "timeDataSourceId": Object {
+              "type": "string",
+            },
+            "unit": Object {
               "type": "string",
             },
             "xLabel": Object {
