@@ -7,7 +7,12 @@ import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
-import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  CARD_TYPES,
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
+} from '../../constants/LayoutConstants';
 import imageFile from '../ImageCard/landscape.jpg';
 
 import iconViewDashboards from './dashboard.svg';
@@ -37,6 +42,55 @@ export const originalCards = [
       utilization: 76,
       pressure: 21.4,
     },
+  },
+  {
+    title: 'Bar chart',
+    id: 'barchartcard',
+    size: CARD_SIZES.MEDIUMWIDE,
+    type: CARD_TYPES.BAR,
+    content: {
+      type: BAR_CHART_TYPES.SIMPLE,
+      categoryDataSourceId: 'city',
+      layout: BAR_CHART_TYPES.VERTICAL,
+      series: [
+        {
+          color: ['blue', 'red', 'green', 'yellow'],
+          dataSourceId: 'particles',
+        },
+      ],
+      xLabel: 'Cities',
+      yLabel: 'Particles',
+    },
+    values: [
+      {
+        city: 'Amsterdam',
+        emissions: 120,
+        particles: 447,
+        quarter: '2020-Q1',
+        temperature: 44,
+      },
+      {
+        city: 'New York',
+        emissions: 130,
+        particles: 528,
+        quarter: '2020-Q1',
+        temperature: 11,
+      },
+      {
+        city: 'Bangkok',
+        emissions: 30,
+        particles: 435,
+        quarter: '2020-Q1',
+        temperature: 32,
+      },
+      {
+        city: 'San Francisco',
+        emissions: 312,
+        particles: 388,
+        quarter: '2020-Q1',
+        temperature: 120,
+      },
+    ],
   },
   {
     title: 'Humidity',
@@ -481,7 +535,7 @@ storiesOf('Watson IoT/Dashboard', module)
             editCardLabel: text('editCardLabel', 'Edit card'),
             cloneCardLabel: text('cloneCardLabel', 'Clone card'),
             deleteCardLabel: text('deleteCardLabel', 'Delete card'),
-            selectDateRangeLabel: text('selectDateRangeLabel', 'Select date range'),
+            selectDateRangeLabel: text('selectDateRangeLabel', 'Select time range'),
             criticalLabel: text('criticalLabel', 'Critical'),
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
@@ -619,9 +673,10 @@ storiesOf('Watson IoT/Dashboard', module)
                 {
                   dataSourceId: 'temperature',
                   label: 'Temperature Device 2',
-                  dataFilter: { ENTITY_ID: 'Sensor2-2' },
                 },
               ],
+              type: BAR_CHART_TYPES.GROUPED,
+              layout: BAR_CHART_LAYOUTS.VERTICAL,
               categoryDataSourceId: 'ENTITY_ID',
             },
             values: data.reduce((acc, dataPoint) => {
