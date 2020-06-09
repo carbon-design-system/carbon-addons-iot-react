@@ -2,12 +2,38 @@
 
 // For some reason stlyes are not being applied when I pulled in the Carbon combobox. These can be removed when we are back on to Carbon's version of combobox
 // Start of added styles to be removed
-.bx--list-box__menu {
+.#{$prefix}--list-box__menu {
   max-height: 0;
   transition: max-height 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
 }
 
-.bx--list-box--expanded .bx--list-box__menu {
+.#{$prefix}--list-box--expanded .#{$prefix}--list-box__menu {
   max-height: 8.75rem;
 }
 // end of added styles
+.#{$iot-prefix}--combobox {
+  position: relative;
+  padding-top: 2.5rem;
+  .#{$prefix}--form__helper-text,
+  .#{$prefix}--label {
+    position: absolute;
+    bottom: 100%;
+  }
+
+  .#{$prefix}--label {
+    transform: translateY(25px);
+  }
+
+  .#{$prefix}--form__helper-text {
+    transform: translateY(40px);
+  }
+
+  &-tags {
+    margin-bottom: 0.5rem;
+
+    li {
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+}

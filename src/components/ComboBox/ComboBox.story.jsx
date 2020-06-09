@@ -66,6 +66,9 @@ const itemToElement = item => {
   );
 };
 
+const shouldFilterItem = ({ item, itemToString, inputValue }) =>
+  itemToString(item).startsWith(inputValue);
+
 const ControlledComboBoxApp = props => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
   let uid = items.length;
@@ -101,7 +104,12 @@ storiesOf('ComboBox', module)
     'Default',
     () => (
       <div style={{ width: 300 }}>
-        <ComboBox items={items} itemToString={item => (item ? item.text : '')} {...props()} />
+        <ComboBox
+          shouldFilterItem={shouldFilterItem}
+          items={items}
+          itemToString={item => (item ? item.text : '')}
+          {...props()}
+        />
       </div>
     ),
     {
