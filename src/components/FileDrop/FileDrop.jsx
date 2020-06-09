@@ -271,7 +271,7 @@ class FileDrop extends React.Component {
               <Span
                 key={`${name}-${index}`}
                 className="bx--file__selected-file"
-                ref={node => (this.nodes[index] = node)} // eslint-disable-line
+                ref={node => (this.nodes[index] = node)} // eslint-disable-line no-return-assign
               >
                 <p className="bx--file-filename">{name}</p>
                 <span className="bx--file__state-container">
@@ -300,7 +300,7 @@ class FileDrop extends React.Component {
         <input
           style={{ visibility: 'hidden' }}
           type="file"
-          ref={ref => (this.fileInput = ref)} // eslint-disable-line
+          ref={ref => (this.fileInput = ref)} // eslint-disable-line no-return-assign
           accept={accept}
           multiple={multiple}
           onChange={this.handleChange}

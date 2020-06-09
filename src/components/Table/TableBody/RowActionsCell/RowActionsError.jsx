@@ -31,9 +31,9 @@ const propTypes = {
   /** I18N label for action failed */
   actionFailedText: PropTypes.string,
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line
+  learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line
+  dismissText: PropTypes.string,
   /** did an error occur */
   rowActionsError: RowActionErrorPropTypes,
   onClearError: PropTypes.func,

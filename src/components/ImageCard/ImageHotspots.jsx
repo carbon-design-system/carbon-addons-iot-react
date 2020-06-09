@@ -135,7 +135,7 @@ export const onImageLoad = (
   setOptions
 ) => {
   const { offsetWidth: initialWidth, offsetHeight: initialHeight } = imageLoaded;
-  const orientation = initialWidth > initialHeight ? 'landscape' : 'portrait'; // eslint-disable-line
+  const orientation = initialWidth > initialHeight ? 'landscape' : 'portrait';
   const ratio =
     orientation === 'landscape' ? initialWidth / initialHeight : initialHeight / initialWidth;
 
@@ -332,7 +332,7 @@ const ImageHotspots = ({
         setOptions
       );
     },
-    [container, zoomMax, image, minimap, options] // eslint-disable-line
+    [container, zoomMax, image, minimap, options]
   );
 
   const { dragging } = cursor;
