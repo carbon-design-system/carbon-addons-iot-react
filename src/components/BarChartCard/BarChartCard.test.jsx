@@ -1,10 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
+import { screen } from '@testing-library/dom';
 
+import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
 import { BAR_CHART_LAYOUTS, BAR_CHART_TYPES } from '../../constants/LayoutConstants';
 
-import BarChartCard, { mapValuesToAxes, formatChartData, formatColors } from './BarChartCard';
+import BarChartCard from './BarChartCard';
 
 const barChartCardProps = {
   title: 'Sample',
@@ -20,6 +23,7 @@ const barChartCardProps = {
     ],
     categoryDataSourceId: 'city',
     layout: BAR_CHART_LAYOUTS.VERTICAL,
+    type: BAR_CHART_TYPES.SIMPLE,
   },
   values: barChartData.quarters.filter(q => q.quarter === '2020-Q1'),
   breakpoint: 'lg',
@@ -28,25 +32,48 @@ const barChartCardProps = {
 };
 
 describe('BarChartCard', () => {
-  it('does not show bar chart when loading', () => {
-    let wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
+  const originalCreateObjectURL = global.URL.createObjectURL;
+  const originalRevokeObjectURL = global.URL.revokeObjectURL;
 
-    wrapper = mount(<BarChartCard {...barChartCardProps} />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
+  beforeAll(() => {
+    global.URL.createObjectURL = jest.fn();
+    global.URL.revokeObjectURL = jest.fn();
+  });
+
+  afterAll(() => {
+    global.URL.createObjectURL = originalCreateObjectURL;
+    global.URL.revokeObjectURL = originalRevokeObjectURL;
+  });
+
+  it('does not show bar chart when loading', () => {
+    const wrapper = mount(<BarChartCard {...barChartCardProps} isLoading />);
+    expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
   });
 
   it('does not show bar chart when empty data', () => {
-    let wrapper = mount(
+    const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
         values={barChartData.quarters.filter(q => q.quarter === 'NOT_VALID')}
       />
     );
     expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
+  });
 
-    wrapper = mount(<BarChartCard {...barChartCardProps} values={null} />);
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(0);
+  it('shows table when isExpanded', () => {
+    const wrapper = mount(<BarChartCard {...barChartCardProps} isExpanded />);
+    expect(wrapper.find(Table)).toHaveLength(1);
+  });
+
+  it('onCsvDownload should fire when download button is clicked', () => {
+    render(<BarChartCard {...barChartCardProps} isExpanded />);
+    // First check that the button appeared
+    const downloadBtn = screen.getByTestId('download-button');
+    expect(downloadBtn).toBeTruthy();
+    // click the button
+    fireEvent.click(downloadBtn);
+    // This means the csvDownloadHandler is firing
+    expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1);
   });
 
   it('shows groupedBarChart on grouped data', () => {
@@ -76,7 +103,7 @@ describe('BarChartCard', () => {
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
   });
 
-  it('shows stackedBarChart on stacked data', () => {
+  it('shows stackedBarChart', () => {
     const wrapper = mount(
       <BarChartCard
         {...barChartCardProps}
@@ -89,12 +116,10 @@ describe('BarChartCard', () => {
             {
               dataSourceId: 'particles',
               label: 'Particles',
-              // colors: COLORS,
             },
             {
               dataSourceId: 'temperature',
               label: 'Temperature',
-              // colors: COLORS,
             },
           ],
           categoryDataSourceId: 'city',
@@ -119,11 +144,12 @@ describe('BarChartCard', () => {
             },
           ],
           timeDataSourceId: 'timestamp',
+          type: BAR_CHART_TYPES.STACKED,
         }}
         values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
       />
     );
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
+    expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
 
   it('shows a horizontal chart', () => {
@@ -146,303 +172,11 @@ describe('BarChartCard', () => {
           ],
           categoryDataSourceId: 'city',
           layout: BAR_CHART_LAYOUTS.HORIZONTAL,
+          type: BAR_CHART_TYPES.GROUPED,
         }}
         values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
       />
     );
-    expect(wrapper.find('SimpleBarChart')).toHaveLength(1);
-  });
-
-  it('mapValuesToAxes returns axes for non-timebased group charts ', () => {
-    // check horizontal layout
-    expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.HORIZONTAL, 'city', null, BAR_CHART_TYPES.GROUPED)
-    ).toEqual({
-      bottomAxesMapsTo: 'value',
-      leftAxesMapsTo: 'key',
-    });
-    // check vertical layout
-    expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.VERTICAL, 'city', null, BAR_CHART_TYPES.GROUPED)
-    ).toEqual({
-      bottomAxesMapsTo: 'key',
-      leftAxesMapsTo: 'value',
-    });
-  });
-
-  it('mapValuesToAxes returns axes for timebased group charts ', () => {
-    // check horizontal layout
-    expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.HORIZONTAL, 'city', 'timestamp', BAR_CHART_TYPES.GROUPED)
-    ).toEqual({
-      bottomAxesMapsTo: 'value',
-      leftAxesMapsTo: 'date',
-    });
-    // check vertical layout
-    expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.VERTICAL, 'city', 'timestamp', BAR_CHART_TYPES.GROUPED)
-    ).toEqual({
-      bottomAxesMapsTo: 'date',
-      leftAxesMapsTo: 'value',
-    });
-  });
-
-  it('mapValuesToAxes returns axes for non-timebased and non-group charts AKA simple', () => {
-    // check horizontal layout
-    expect(
-      mapValuesToAxes(BAR_CHART_LAYOUTS.HORIZONTAL, null, null, BAR_CHART_TYPES.SIMPLE)
-    ).toEqual({
-      bottomAxesMapsTo: 'value',
-      leftAxesMapsTo: 'group',
-    });
-    // check vertical layout
-    expect(mapValuesToAxes(BAR_CHART_LAYOUTS.VERTICAL, null, null, BAR_CHART_TYPES.SIMPLE)).toEqual(
-      {
-        bottomAxesMapsTo: 'group',
-        leftAxesMapsTo: 'value',
-      }
-    );
-  });
-
-  it('formatChartData returns formatted data for group-based chart', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-        label: 'Particles',
-      },
-    ];
-    // check horizontal layout
-    expect(
-      formatChartData(
-        series,
-        barChartData.quarters.filter(a => a.quarter === '2020-Q3'),
-        'city',
-        null,
-        BAR_CHART_TYPES.GROUPED
-      )
-    ).toEqual([
-      {
-        group: 'Particles',
-        key: 'Amsterdam',
-        value: 512,
-      },
-      {
-        group: 'Particles',
-        key: 'New York',
-        value: 442,
-      },
-      {
-        group: 'Particles',
-        key: 'Bangkok',
-        value: 397,
-      },
-      {
-        group: 'Particles',
-        key: 'San Francisco',
-        value: 270,
-      },
-    ]);
-  });
-
-  it('formatChartData returns formatted data for time-based and group-based chart', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-        label: 'Particles',
-      },
-      {
-        dataSourceId: 'emissions',
-        label: 'Emissions',
-      },
-    ];
-    // check horizontal layout
-    expect(
-      formatChartData(
-        series,
-        barChartData.timestamps.filter(t => t.city === 'Amsterdam'),
-        null,
-        'timestamp',
-        BAR_CHART_TYPES.STACKED
-      )
-    ).toEqual([
-      {
-        date: new Date('2020-02-09T16:23:45.000Z'),
-        group: 'Particles',
-        key: 1581265425000,
-        value: 447,
-      },
-      {
-        date: new Date('2020-02-09T16:23:45.000Z'),
-        group: 'Emissions',
-        key: 1581265425000,
-        value: 120,
-      },
-      {
-        date: new Date('2020-02-10T16:23:45.000Z'),
-        group: 'Particles',
-        key: 1581351825000,
-        value: 450,
-      },
-      {
-        date: new Date('2020-02-10T16:23:45.000Z'),
-        group: 'Emissions',
-        key: 1581351825000,
-        value: 150,
-      },
-      {
-        date: new Date('2020-02-11T16:23:45.000Z'),
-        group: 'Particles',
-        key: 1581438225000,
-        value: 512,
-      },
-      {
-        date: new Date('2020-02-11T16:23:45.000Z'),
-        group: 'Emissions',
-        key: 1581438225000,
-        value: 170,
-      },
-      {
-        date: new Date('2020-02-12T16:23:45.000Z'),
-        group: 'Particles',
-        key: 1581524625000,
-        value: 565,
-      },
-      {
-        date: new Date('2020-02-12T16:23:45.000Z'),
-        group: 'Emissions',
-        key: 1581524625000,
-        value: 200,
-      },
-    ]);
-  });
-
-  it('formatChartData returns formatted data for simple, non-time and non-group chart', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-      },
-    ];
-    // check horizontal layout
-    expect(
-      formatChartData(
-        series,
-        barChartData.quarters.filter(q => q.quarter === '2020-Q1'),
-        'city',
-        null,
-        BAR_CHART_TYPES.SIMPLE
-      )
-    ).toEqual([
-      {
-        group: 'Amsterdam',
-        value: 447,
-      },
-      {
-        group: 'New York',
-        value: 528,
-      },
-      {
-        group: 'Bangkok',
-        value: 435,
-      },
-      {
-        group: 'San Francisco',
-        value: 388,
-      },
-    ]);
-  });
-
-  it('formatChartData returns formatted data for time-based, non-group chart', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-      },
-    ];
-    // check horizontal layout
-    expect(
-      formatChartData(
-        series,
-        barChartData.timestamps.filter(t => t.city === 'Amsterdam'),
-        null,
-        'timestamp',
-        BAR_CHART_TYPES.SIMPLE
-      )
-    ).toEqual([
-      {
-        date: new Date('2020-02-09T16:23:45.000Z'),
-        group: 'particles',
-        value: 447,
-      },
-      {
-        date: new Date('2020-02-10T16:23:45.000Z'),
-        group: 'particles',
-        value: 450,
-      },
-      {
-        date: new Date('2020-02-11T16:23:45.000Z'),
-        group: 'particles',
-        value: 512,
-      },
-      {
-        date: new Date('2020-02-12T16:23:45.000Z'),
-        group: 'particles',
-        value: 565,
-      },
-    ]);
-  });
-
-  it('formatColors returns correct format if color is string', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-        color: 'blue',
-        label: 'Particles',
-      },
-      {
-        dataSourceId: 'temperature',
-        color: 'yellow',
-        label: 'Temperature',
-      },
-    ];
-
-    expect(formatColors(series)).toEqual({
-      identifier: 'group',
-      scale: { Particles: 'blue', Temperature: 'yellow' },
-    });
-  });
-
-  it('formatColors returns correct format if color is array', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-        color: ['blue', 'red', 'green'],
-        label: 'Particles',
-      },
-    ];
-
-    const uniqueDatasetNames = ['Particles', 'Temperature', 'Emissions'];
-
-    expect(formatColors(series, uniqueDatasetNames)).toEqual({
-      identifier: 'group',
-      scale: { Particles: 'blue', Temperature: 'red', Emissions: 'green' },
-    });
-  });
-
-  it('formatColors returns correct format if color is object', () => {
-    const series = [
-      {
-        dataSourceId: 'particles',
-        color: { Particles: 'blue', Temperature: 'red' },
-        label: 'Particles',
-      },
-      {
-        dataSourceId: 'temperature',
-        label: 'Temperature',
-      },
-    ];
-
-    expect(formatColors(series)).toEqual({
-      identifier: 'group',
-      scale: { Particles: 'blue', Temperature: 'red' },
-    });
+    expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
   });
 });

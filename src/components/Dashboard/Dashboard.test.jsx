@@ -148,27 +148,10 @@ describe('Dashboard', () => {
   });
 
   it('verify onDashboardAction is called on click', () => {
-    wrapper.find('#action-icon--edit').simulate('click');
-    expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
-  });
-
-  it('verify onDashboardAction is called on enter keydown', () => {
-    wrapper = mount(
-      <Dashboard
-        title="My Dashboard"
-        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
-        actions={[
-          { id: 'edit', labelText: 'Edit', icon: 'edit' },
-          { id: 'add', labelText: 'Add', icon: <Add20 /> },
-        ]}
-        cards={cardValues}
-        onDashboardAction={onClick}
-        hasLastUpdated={false}
-      />
-    );
     wrapper
       .find('#action-icon--edit')
-      .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
+      .at(1)
+      .simulate('click');
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
 
