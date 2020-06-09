@@ -72,6 +72,15 @@ describe('DateTimePicker', () => {
     expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
   });
 
+  it('should show the user defined tooltip for preset', () => {
+    const wrapper = mount(
+      <DateTimePicker {...dateTimePickerProps} renderPresetTooltipText={() => 'User tooltip'} />
+    );
+    jest.runAllTimers();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find('.bx--assistive-text').text()).toEqual('User tooltip');
+  });
+
   it('should call onApply', () => {
     const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
     wrapper
