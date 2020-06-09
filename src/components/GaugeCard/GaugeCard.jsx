@@ -32,7 +32,7 @@ export const getColor = (gauge, value) => {
   if (gauge.thresholds) {
     gauge.thresholds.forEach(thresh => {
       if (comparisons[thresh.comparison](value, thresh.value)) {
-        color = thresh.color; /* eslint-disable-line */
+        color = thresh.color; // eslint-disable-line prefer-destructuring
         grade = thresh.label;
       }
     });
