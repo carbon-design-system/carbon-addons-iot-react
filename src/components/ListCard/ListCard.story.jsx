@@ -56,9 +56,10 @@ class ListCardSimple extends Component {
       hasMoreData: true,
     };
   }
-  /* eslint-disable */
+
   fetchMoreListItems = () => {
     setTimeout(
+      // eslint-disable-next-line func-names
       function() {
         this.setState(prevState => {
           return { isLoading: false, data: [...prevState.data, ...data2], hasMoreData: false };

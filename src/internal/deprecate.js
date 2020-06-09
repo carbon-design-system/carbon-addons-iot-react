@@ -26,7 +26,7 @@ export default function deprecate(propType, message) {
       );
     }
 
-    return propType(props, propName, componentName, ...rest); // eslint-disable-line
+    return propType(props, propName, componentName, ...rest); // eslint-disable-line consistent-return
   }
 
   return checker;

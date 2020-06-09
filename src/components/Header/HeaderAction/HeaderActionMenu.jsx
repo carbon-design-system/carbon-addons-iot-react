@@ -9,7 +9,7 @@ import { ChildContentPropTypes } from '../Header';
 
 const { prefix } = settings;
 
-// eslint-disable-next-line
+// eslint-disable-next-line react/prop-types
 const defaultRenderMenuContent = ({ ariaLabel }) => (
   <>
     {ariaLabel}
@@ -48,16 +48,15 @@ class HeaderActionMenu extends React.Component {
 
   static defaultProps = {
     renderMenuContent: defaultRenderMenuContent,
-    // eslint-disable-next-line
     isExpanded: false,
     tabIndex: null,
   };
 
   render() {
     const {
-      // eslint-disable-next-line
+      // eslint-disable-next-line react/prop-types
       'aria-label': ariaLabel,
-      // eslint-disable-next-line
+      // eslint-disable-next-line react/prop-types
       'aria-labelledby': ariaLabelledBy,
       className: customClassName,
       renderMenuContent: MenuContent,
@@ -119,7 +118,7 @@ class HeaderActionMenu extends React.Component {
   }
 }
 
-// eslint-disable-next-line
+// eslint-disable-next-line react/no-multi-comp
 export default React.forwardRef((props, ref) => {
   return <HeaderActionMenu {...props} focusRef={ref} />;
 });
