@@ -81,7 +81,7 @@ const ImageCard = ({
       {!isCardLoading
         ? (
             // Get width and height from parent card
-            { width, height } // eslint-disable-line
+            { width, height } // eslint-disable-line react/prop-types
           ) => (
             <ContentWrapper>
               {supportedSize ? (

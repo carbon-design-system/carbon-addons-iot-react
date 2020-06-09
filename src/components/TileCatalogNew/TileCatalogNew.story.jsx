@@ -161,6 +161,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
             sortOptions={sortOptions}
             onSort={id => {
               if (id === 'A-Z') {
+                // eslint-disable-next-line func-names
                 tiles.sort(function(a, b) {
                   const tileA = a.props.title.toUpperCase();
                   const tileB = b.props.title.toUpperCase();
@@ -168,6 +169,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
                   return tileA - tileB;
                 });
               } else if (id === 'Z-A') {
+                // eslint-disable-next-line func-names
                 tiles.sort(function(a, b) {
                   const tileA = a.props.title.toUpperCase();
                   const tileB = b.props.title.toUpperCase();

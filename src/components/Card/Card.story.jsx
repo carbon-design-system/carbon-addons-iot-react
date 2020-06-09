@@ -85,7 +85,7 @@ storiesOf('Watson IoT/Card', module)
           breakpoint="lg"
           availableActions={{ range: true, expand: true }}
           onCardAction={action('onCardAction')}
-          // eslint-disable-next-line
+          // eslint-disable-next-line react/no-children-prop
           children={childSize => (
             <p>
               Content width is {childSize.width} and height is {childSize.height}

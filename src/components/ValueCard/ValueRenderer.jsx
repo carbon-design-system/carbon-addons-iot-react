@@ -15,8 +15,8 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  value: PropTypes.any, // eslint-disable-line
-  unit: PropTypes.any, // eslint-disable-line
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
+  unit: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   isSmall: PropTypes.bool,
   isMini: PropTypes.bool,

@@ -159,17 +159,13 @@ const TableToolbar = ({
       ))}
     </TableBatchActions>
     {secondaryTitle ? (
-      <label // eslint-disable-line
-        className={`${iotPrefix}--table-toolbar-secondary-title`}
-      >
-        {secondaryTitle}
-      </label>
+      // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
     ) : null}
     {// Deprecated in favor of secondaryTitle for a more general use-case
     hasRowCountInHeader ? (
-      <label // eslint-disable-line
-        className={`${iotPrefix}--table-toolbar-secondary-title`}
-      >
+      // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>
         {i18n.rowCountInHeader(totalItemsCount)}
       </label>
     ) : null}

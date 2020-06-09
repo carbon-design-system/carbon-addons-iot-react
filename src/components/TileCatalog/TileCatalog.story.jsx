@@ -105,7 +105,7 @@ storiesOf('Watson IoT/TileCatalog', module)
       const [isLoading, setIsLoading] = useState(true);
       useEffect(() => {
         setTimeout(() => {
-          setTiles(commonTileCatalogProps.tiles); // eslint-disable-line
+          setTiles(commonTileCatalogProps.tiles);
           setIsLoading(false);
         }, 1000);
       }, []);

@@ -89,11 +89,11 @@ const propTypes = {
   /** I18N label for in progress */
   inProgressText: PropTypes.string,
   /** I18N label for action failed */
-  actionFailedText: PropTypes.string, // eslint-disable-line
+  actionFailedText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line
+  learnMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line
+  dismissText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** `true` to make this menu item a divider. */
   hasDivider: PropTypes.bool,
   /** `true` to make this menu item a "danger button". */
