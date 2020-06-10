@@ -93,18 +93,10 @@ const ViewDropdown = ({
         customAction: onManageViews,
         icon: Settings16,
       };
-      const dialogItems = [...(activeViewEdited ? [saveAsNewItem] : []), manageViewsItem];
+      const dialogItems = [saveAsNewItem, manageViewsItem];
       return [viewAllItem, ...views, ...dialogItems];
     },
-    [
-      activeViewEdited,
-      views,
-      onManageViews,
-      onSaveAsNewView,
-      i18n.saveAsNewView,
-      i18n.manageViews,
-      viewAllItem,
-    ]
+    [views, onManageViews, onSaveAsNewView, i18n.saveAsNewView, i18n.manageViews, viewAllItem]
   );
 
   const mySelectedItem = allItems.find(item => item.id === selectedViewId) || viewAllItem;

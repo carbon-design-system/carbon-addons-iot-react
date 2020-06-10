@@ -48,6 +48,12 @@ describe('ViewDropdown', () => {
     expect(manageViewsItem.text()).toEqual('Manage views');
   });
 
+  it('adds a "view new view" item before the "manage views" item', () => {
+    const wrapper = mount(<ViewDropdown views={myViews} actions={actions} />);
+    const saveViewItem = wrapper.find(itemSelector).at(4);
+    expect(saveViewItem.text()).toEqual('Save as new view');
+  });
+
   it('selected the proper item on init', () => {
     const wrapperWithoutInitialDefault = mount(<ViewDropdown views={myViews} actions={actions} />);
     const viewAllItem = wrapperWithoutInitialDefault.find(iotItemSelector);
@@ -83,26 +89,6 @@ describe('ViewDropdown', () => {
       `.${prefix}--list-box__field .${iotPrefix}--view-dropdown__edited-text`
     );
     expect(editedText.text()).toEqual(' - Edited');
-  });
-
-  it('adds a "Save as new view" item only when the activeViewEdited is true ', () => {
-    const wrapper = mount(<ViewDropdown views={myViews} actions={actions} />);
-    expect(
-      wrapper
-        .find(itemSelector)
-        .at(4)
-        .text()
-    ).not.toEqual('Save as new view');
-
-    wrapper.setProps({ ...wrapper.props(), activeViewEdited: true });
-    wrapper.update();
-
-    expect(
-      wrapper
-        .find(itemSelector)
-        .at(4)
-        .text()
-    ).toEqual('Save as new view');
   });
 
   it('calls the proper actions', () => {
