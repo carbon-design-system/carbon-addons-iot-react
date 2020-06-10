@@ -37,3 +37,26 @@
   margin-left: $spacing-03;
   flex-shrink: 0;
 }
+
+html[dir='rtl'] {
+  .#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
+    margin-right: 0;
+    margin-left: $spacing-02;
+    svg {
+      margin-right: 0;
+      margin-left: $spacing-03;
+    }
+  }
+
+  .#{$iot-prefix}--view-dropdown__item-link-icon {
+    margin-right: -1.5em;
+  }
+
+  .#{$iot-prefix}--view-dropdown__item-link {
+    justify-content: normal;
+    margin-right: 0;
+    span {
+      order: 2;
+    }
+  }
+}
