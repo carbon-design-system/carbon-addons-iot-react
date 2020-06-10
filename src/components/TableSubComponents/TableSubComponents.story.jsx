@@ -11,15 +11,15 @@ storiesOf('Watson IoT/TableSubComponents', module).add(
     const myViews = [
       {
         id: 'view-1',
-        text: 'View 1',
+        text: 'My saved 1',
       },
       {
         id: 'view-2',
-        text: 'View 2',
+        text: 'My saved 2',
       },
       {
         id: 'view-3',
-        text: 'View 4 with a very long name that will get truncated',
+        text: 'My saved 3 with a very long name that will get truncated',
       },
     ];
 
@@ -57,15 +57,15 @@ storiesOf('Watson IoT/TableSubComponents', module).add(
       const myViews = [
         {
           id: 'view-1',
-          text: 'View 1',
+          text: 'My saved 1',
         },
         {
           id: 'view-2',
-          text: 'View 2',
+          text: 'My saved 2',
         },
         {
           id: 'view-3',
-          text: 'View 4 with a very long name that will get truncated',
+          text: 'My saved 3 with a very long name that will get truncated',
         },
       ];
   

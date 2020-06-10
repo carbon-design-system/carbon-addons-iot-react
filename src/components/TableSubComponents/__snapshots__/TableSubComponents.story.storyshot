@@ -251,7 +251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   item={
                     Object {
                       "id": "view-1",
-                      "text": "View 1",
+                      "text": "My saved 1",
                     }
                   }
                 />
@@ -262,10 +262,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  title="View 1"
+                  title="My saved 1"
                 >
                   <span>
-                    View 1
+                    My saved 1
                   </span>
                 </div>
               </div>
@@ -295,7 +295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   item={
                     Object {
                       "id": "view-2",
-                      "text": "View 2",
+                      "text": "My saved 2",
                     }
                   }
                 />
@@ -306,10 +306,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  title="View 2"
+                  title="My saved 2"
                 >
                   <span>
-                    View 2
+                    My saved 2
                   </span>
                 </div>
               </div>
@@ -339,7 +339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   item={
                     Object {
                       "id": "view-3",
-                      "text": "View 4 with a very long name that will get truncated",
+                      "text": "My saved 3 with a very long name that will get truncated",
                     }
                   }
                 />
@@ -350,10 +350,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  title="View 4 with a very long name that will get truncated"
+                  title="My saved 3 with a very long name that will get truncated"
                 >
                   <span>
-                    View 4 with a very long name that will get truncated
+                    My saved 3 with a very long name that will get truncated
                   </span>
                 </div>
               </div>

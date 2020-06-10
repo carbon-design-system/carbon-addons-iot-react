@@ -5,10 +5,10 @@
 }
 .#{$prefix}--list-box__field .#{$iot-prefix}--view-dropdown__button-prefix {
   display: flex;
+  flex-shrink: 0;
   margin-right: $spacing-02;
   svg {
     margin-right: $spacing-03;
-    flex-shrink: 0;
   }
 }
 
