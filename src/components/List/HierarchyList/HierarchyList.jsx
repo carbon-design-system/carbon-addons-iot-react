@@ -72,7 +72,7 @@ export const searchForNestedItemValues = (items, value) => {
   cloneDeep(items).forEach(item => {
     // if the item has children, recurse and search children
     if (item.children) {
-      // eslint-disable-next-line
+      // eslint-disable-next-line no-param-reassign
       item.children = searchForNestedItemValues(item.children, value);
       // if it's children did, we still need the item
       if (item.children.length > 0) {
@@ -105,7 +105,7 @@ export const searchForNestedItemIds = (items, value) => {
   cloneDeep(items).forEach(item => {
     // if the item has children, recurse and search children
     if (item.children) {
-      // eslint-disable-next-line
+      // eslint-disable-next-line no-param-reassign
       item.children = searchForNestedItemIds(item.children, value);
       // if it's children did, we still need the item
       if (item.children.length > 0) {
@@ -153,7 +153,7 @@ const HierarchyList = ({
         node.parentNode.scrollIntoView();
       }
     },
-    // eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId]
   );
 

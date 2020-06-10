@@ -27,7 +27,6 @@ export const HeaderActionPropTypes = {
  * Consists of nav buttons that can be clicked to perform actions, open header panels (side panels),
  * or dropdown menus
  */
-// eslint-disable-next-line
 const HeaderAction = ({ item, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const parentContainerRef = useRef(null);
@@ -71,7 +70,7 @@ const HeaderAction = ({ item, index }) => {
 
   if (item.hasOwnProperty('childContent')) {
     return (
-      // eslint-disable-next-line
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         data-testid="action-btn__group"
         className={`${carbonPrefix}--header__submenu ${carbonPrefix}--header-action-btn action-btn__group`}

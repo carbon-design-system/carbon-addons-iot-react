@@ -59,9 +59,9 @@ ColumnHeaderSelect.propTypes = {
   connectDropTarget: PropTypes.func.isRequired,
   isDisabled: PropTypes.bool,
   /* these props come from react-dnd */
-  index: PropTypes.number.isRequired, // eslint-disable-line
-  isOver: PropTypes.bool.isRequired, // eslint-disable-line
-  moveItem: PropTypes.func.isRequired, // eslint-disable-line
+  index: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
+  isOver: PropTypes.bool.isRequired, // eslint-disable-line react/no-unused-prop-types
+  moveItem: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 ColumnHeaderSelect.defaultProps = {

@@ -22,7 +22,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  // eslint-disable-next-line
+  // eslint-disable-next-line react/default-props-match-prop-types
   isExpanded: false,
 };
 

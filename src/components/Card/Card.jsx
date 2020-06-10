@@ -66,11 +66,11 @@ const CardWrapper = ({
 
 /** Header components */
 export const CardHeader = (
-  { children } //eslint-disable-line
+  { children } // eslint-disable-line react/prop-types
 ) => <div className={`${iotPrefix}--card--header`}>{children}</div>;
 
 export const CardTitle = (
-  { children, title } //eslint-disable-line
+  { children, title } // eslint-disable-line react/prop-types
 ) => (
   <span className={`${iotPrefix}--card--title`} title={title}>
     {children}
@@ -110,13 +110,13 @@ CardWrapper.propTypes = {
   id: CardPropTypes.id,
   style: PropTypes.objectOf(PropTypes.string),
   testID: CardPropTypes.testID,
-  /* eslint-disable */
+  /* eslint-disable react/require-default-props */
   onMouseDown: PropTypes.func,
   onMouseUp: PropTypes.func,
   onTouchEnd: PropTypes.func,
   onTouchStart: PropTypes.func,
   onScroll: PropTypes.func,
-  /* eslint-enable */
+  /* eslint-enable react/require-default-props  */
 };
 CardWrapper.defaultProps = { id: undefined, style: undefined, testID: 'Card' };
 CardContent.propTypes = {
