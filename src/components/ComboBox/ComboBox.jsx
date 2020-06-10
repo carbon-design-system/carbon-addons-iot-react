@@ -25,6 +25,7 @@ const defaultProps = {
   wrapperClassName: null,
   closeButtonText: 'Close',
   hasMultiValue: true,
+  items: [],
 };
 
 const ComboBox = ({
@@ -52,15 +53,16 @@ const ComboBox = ({
   });
 
   const handleOnKeypress = evt => {
+    // Current value of input
+    const currentValue = comboRef.current.textInput.current.value.trim();
     // Only apply logic if user hit enter
-    if (evt.key === 'Enter') {
-      // Current value of input
-      const currentValue = comboRef.current.textInput.current.value.trim();
-      console.log({ currentValue });
-      const uid = items.length;
+    if (evt.key === 'Enter' && currentValue !== '') {
       // Check if there is already a tag for this value and return it
-      const filteredItems = tagItems.filter(x => itemToString(x).includes(currentValue));
+      const filteredTags = tagItems.filter(x => itemToString(x) === currentValue);
+      // Check if value is part of items array
+      const filteredItems = items.filter(x => itemToString(x) === currentValue);
 
+      const uid = (items.length + filteredTags.length + filteredItems.length) / Math.random();
       // create new item to add items array and tags array
       const newItem = {
         id: `id-${uid}`,
@@ -68,27 +70,23 @@ const ComboBox = ({
         selected: true,
       };
 
-      // If current value is not part of items array and is not empty string
-      if (
-        items.filter(x => itemToString(x).includes(currentValue)).length < 1 &&
-        currentValue !== ''
-      ) {
+      console.log('keys', { newItem, uid, items, filteredItems, filteredTags });
+      // If current value is not part of items array
+      if (filteredItems.length < 1) {
         // Add new item to items array and set as selected Item
         items.push(newItem);
         setSelectedItem(newItem);
-        // If component is using multiValue feature and there is not already a tag for new value
-        if (hasMultiValue && filteredItems.length < 1) {
-          // Add new value to the tags array
-          setTagItems(inputValues => [...inputValues, { ...newItem, id: `tag-${newItem.id}` }]);
-        }
       } else {
-        const chosenItem = items.filter(x => itemToString(x).includes(currentValue))[0];
-        setSelectedItem(chosenItem);
-        // If component is using multiValue feature and there is not already a tag for new value
-        if (hasMultiValue && filteredItems.length < 1) {
-          // Add new value to the tags array
-          setTagItems(inputValues => [...inputValues, { ...newItem, id: `tag-${newItem.id}` }]);
-        }
+        console.log('else block');
+
+        // Set the chosen item as selectedItem
+        setSelectedItem(filteredItems[0]);
+      }
+
+      // If component is using multiValue feature and there is not already a tag for new value
+      if (hasMultiValue && filteredTags.length < 1) {
+        // Add new value to the tags array
+        setTagItems(inputValues => [...inputValues, { ...newItem, id: `tag-${newItem.id}` }]);
       }
     }
   };
@@ -106,16 +104,17 @@ const ComboBox = ({
   };
 
   const handleOnChange = selected => {
-    // Get selected item from Combobox and set our internal state to the value
-    setSelectedItem(selected.selectedItem);
-    console.log(comboRef.current);
-    const currentValue = comboRef.current?.textInput.current.value.trim();
-    const filteredItems = tagItems.filter(x => itemToString(x).includes(currentValue));
+    const newItem = selected.selectedItem;
+    console.log('handleOnChange', selected);
+    const currentValue = itemToString(newItem);
+    const filteredItems = tagItems.filter(x => itemToString(x).startsWith(currentValue));
     // If component is using multiValue feature and the tags array does not contain new value
-    if (hasMultiValue && filteredItems.length < 1) {
+    if (hasMultiValue && filteredItems.length < 1 && newItem !== null) {
       // Add new value to tags array
-      setTagItems(inputValues => [...inputValues, selected.selectedItem]);
+      setTagItems(inputValues => [...inputValues, newItem]);
     }
+    // Get selected item from Combobox and set our internal state to the value
+    setSelectedItem(newItem);
     // Pass on value to user's onChange callback
     comboProps.onChange(selected);
   };
@@ -129,7 +128,7 @@ const ComboBox = ({
       <ul className={`${iotPrefix}--combobox-tags`}>
         {tagItems.map(item => (
           <li>
-            <Tag key={item.id} filter onClose={e => handleOnClose(e)} title={closeButtonText}>
+            <Tag key={item?.id} filter onClose={e => handleOnClose(e)} title={closeButtonText}>
               {itemToString(item)}
             </Tag>
           </li>

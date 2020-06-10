@@ -67,7 +67,7 @@ const itemToElement = item => {
 };
 
 const shouldFilterItem = ({ item, itemToString, inputValue }) =>
-  itemToString(item).startsWith(inputValue);
+  itemToString(item).includes(inputValue);
 
 const ControlledComboBoxApp = props => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
