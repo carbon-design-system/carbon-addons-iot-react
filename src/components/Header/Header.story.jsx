@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
+import { text } from '@storybook/addon-knobs';
 import NotificationOn from '@carbon/icons-react/lib/notification/16';
 import HeaderHelp from '@carbon/icons-react/lib/help/16';
 import Avatar from '@carbon/icons-react/lib/user--avatar/16';
@@ -159,7 +160,11 @@ const headerPanel = {
 storiesOf('Watson IoT/Header', module)
   .add('Header action buttons with dropdowns', () => (
     <div style={{ width: '100%', height: '100vh' }}>
-      <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+      <StyledHeader
+        {...HeaderProps}
+        headerPanel={headerPanel}
+        appSwitcherLabel={text('AppSwitcher label', 'AppSwitcher')}
+      />
       <div id="skip" />
     </div>
   ))
