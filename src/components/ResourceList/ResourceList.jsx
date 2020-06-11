@@ -111,7 +111,8 @@ class ResourceList extends Component {
     const listContent = data.map(({ id, title, description }, idx) => {
       const activeItem = id === currentItemId;
       return (
-        <label // eslint-disable-line
+        // eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control
+        <label
           key={id}
           aria-label={title}
           className={`${

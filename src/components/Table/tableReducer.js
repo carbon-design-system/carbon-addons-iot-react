@@ -80,7 +80,7 @@ export const searchData = (data, searchString) =>
     ? data.filter((
         { values } // globally check row values for a match
       ) =>
-        // eslint-disable-next-line
+        // eslint-disable-next-line array-callback-return, consistent-return
         Object.values(values).find(value => {
           if (
             typeof value === 'number' ||

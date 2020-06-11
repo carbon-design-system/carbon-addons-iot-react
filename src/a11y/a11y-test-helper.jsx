@@ -1,6 +1,6 @@
 import React from 'react';
 
-/* eslint-disable */
+// eslint-disable-next-line react/prop-types
 const HTMLWrap = ({ children }) => (
   <html lang="en">
     <head>

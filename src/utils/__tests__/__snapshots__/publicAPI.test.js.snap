@@ -4512,6 +4512,7 @@ Map {
           "value": "YESTERDAY",
         },
       ],
+      "renderPresetTooltipText": null,
       "showRelativeOption": true,
     },
     "propTypes": Object {
@@ -4784,6 +4785,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "renderPresetTooltipText": Object {
+        "type": "func",
       },
       "showRelativeOption": Object {
         "type": "bool",

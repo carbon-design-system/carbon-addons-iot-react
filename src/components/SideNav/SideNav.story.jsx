@@ -13,7 +13,7 @@ import { settings } from '../../constants/Settings';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 import SideNav from './SideNav';
-import Styles from './SideNav.story.scss'; // eslint-disable-line
+import './SideNav.story.scss';
 
 const { iotPrefix } = settings;
 
@@ -21,7 +21,6 @@ React.Fragment = ({ children }) => children;
 
 const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
-/* eslint-disable*/
 const links = [
   {
     icon: AppSwitcher,

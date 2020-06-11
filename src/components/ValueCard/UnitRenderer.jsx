@@ -8,7 +8,7 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  value: PropTypes.any, // eslint-disable-line
+  value: PropTypes.any, // eslint-disable-line react/forbid-prop-types, react/require-default-props
   unit: PropTypes.string,
   layout: PropTypes.string,
   isMini: PropTypes.bool,
@@ -34,7 +34,7 @@ const UnitRenderer = ({
   isMini,
   allowedToWrap,
   wrapCompact,
-  attributeCount, // eslint-disable-line
+  attributeCount, // eslint-disable-line react/prop-types
 }) => {
   const bemBase = `${iotPrefix}--value-card__attribute-unit`;
   const notAllowedToWrap = typeof value === 'string' && !allowedToWrap && attributeCount === 1;
