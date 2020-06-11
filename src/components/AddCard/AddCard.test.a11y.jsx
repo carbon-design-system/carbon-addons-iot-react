@@ -1,7 +1,7 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
 import { mount } from 'enzyme';
-import AAT from '@ibma/aat';
+import aChecker from 'accessibility-checker';
 /* eslint-enable import/no-extraneous-dependencies */
 
 import HTMLWrap from '../../a11y/a11y-test-helper';
@@ -16,8 +16,8 @@ describe('AddCard a11y scan', () => {
       </HTMLWrap>
     );
 
-    AAT.getCompliance(wrapper.html(), 'AddCard', data => {
-      expect(AAT.assertCompliance(data)).toEqual(0);
+    aChecker.getCompliance(wrapper.html(), 'AddCard', data => {
+      expect(aChecker.assertCompliance(data)).toEqual(0);
       done();
     });
   }, 20000);
