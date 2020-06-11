@@ -26,7 +26,7 @@ import FullWidthWrapper from '../../internal/FullWidthWrapper';
 
 const overflowComponent = (
   <OverflowMenu onClick={evt => evt.preventDefault()} style={{ height: spacing07 }}>
-    <OverflowMenuItem itemText="Edit" onClick={action('Edit')} />
+    <OverflowMenuItem itemText="Edit" onClick={action('Edit')} primaryFocus />
     <OverflowMenuItem itemText="Share" onClick={action('Share')} />
     <OverflowMenuItem itemText="Move" onClick={action('Move')} />
     <OverflowMenuItem itemText="Delete" onClick={action('Delete')} />
