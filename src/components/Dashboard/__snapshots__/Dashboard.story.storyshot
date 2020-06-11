@@ -287,17 +287,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -2561,17 +2565,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -4862,17 +4870,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -6946,17 +6958,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   className="iot--card--toolbar"
                 >
                   <button
-                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                    disabled={false}
                     onClick={[Function]}
+                    tabIndex={0}
+                    title="Expand to fullscreen"
                     type="button"
                   >
                     <svg
-                      description="Expand to fullscreen"
+                      aria-hidden="true"
+                      aria-label="Expand to fullscreen"
+                      className="bx--btn__icon"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -9618,17 +9634,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -24028,17 +24048,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
