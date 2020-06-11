@@ -270,10 +270,10 @@ const Dashboard = ({
   isLoading,
   setIsLoading,
   // TODO: remove onSetRefresh and instead listen to setIsLoading
-  onSetRefresh, // eslint-disable-line
+  onSetRefresh,
   onSetupCard,
   // TODO: fix the rendering of the lastUpdated bit, to migrate in the style from our ibm repo
-  lastUpdated, // eslint-disable-line
+  lastUpdated,
   renderIconByName,
   onFetchData,
   timeGrain,
@@ -293,7 +293,7 @@ const Dashboard = ({
         cardsLoadingRef.current = undefined;
       }
     },
-    [isLoading] // eslint-disable-line
+    [isLoading] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   // Listen to the card fetches to determine whether all cards have finished loading
@@ -313,11 +313,11 @@ const Dashboard = ({
         }
       });
     },
-    [onFetchData, cards.length] // eslint-disable-line
+    [onFetchData, cards.length] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   // Caching for performance
-  const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line
+  const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const cachedOnBreakpointChange = useCallback(
     newBreakpoint => {
@@ -331,12 +331,12 @@ const Dashboard = ({
 
   const cachedRenderIconByName = useCallback(
     renderIconByName,
-    [] //eslint-disable-line
+    [] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   const cachedOnSetupCard = useCallback(
     onSetupCard,
-    [] // eslint-disable-line
+    [] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   // Uses our shared renderer for each card that knows how to render a fixed set of card types
@@ -357,7 +357,7 @@ const Dashboard = ({
             timeGrain={timeGrain}
           />
         ) : null
-      ), // eslint-disable-next-line
+      ), // eslint-disable-next-line react-hooks/exhaustive-deps
     [breakpoint, cachedI18N, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
   );
 
