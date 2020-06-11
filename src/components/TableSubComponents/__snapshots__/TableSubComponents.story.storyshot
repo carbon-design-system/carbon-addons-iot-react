@@ -71,11 +71,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "View All",
                     }
                   }
+                  testID="ViewDropdownItem-view-all"
                 />
               }
             >
               <div
                 className="iot--view-dropdown__item"
+                data-testid="ViewDropdownItem-view-all"
                 title="View All - Edited"
               >
                 <span
@@ -168,6 +170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "View All",
                     }
                   }
+                  testID="ViewDropdownItem-view-all"
                 />
               }
             >
@@ -176,6 +179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
+                  data-testid="ViewDropdownItem-view-all"
                   title="View All - Edited"
                 >
                   <span
@@ -254,6 +258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "My saved 1",
                     }
                   }
+                  testID="ViewDropdownItem-view-1"
                 />
               }
             >
@@ -262,6 +267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
+                  data-testid="ViewDropdownItem-view-1"
                   title="My saved 1"
                 >
                   <span>
@@ -298,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "My saved 2",
                     }
                   }
+                  testID="ViewDropdownItem-view-2"
                 />
               }
             >
@@ -306,6 +313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
+                  data-testid="ViewDropdownItem-view-2"
                   title="My saved 2"
                 >
                   <span>
@@ -342,6 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "My saved 3 with a very long name that will get truncated",
                     }
                   }
+                  testID="ViewDropdownItem-view-3"
                 />
               }
             >
@@ -350,6 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
+                  data-testid="ViewDropdownItem-view-3"
                   title="My saved 3 with a very long name that will get truncated"
                 >
                   <span>
@@ -387,6 +397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "Save as new view",
                     }
                   }
+                  testID="ViewDropdownItem-save-new-view"
                 />
               }
             >
@@ -395,6 +406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item iot--view-dropdown__item-link"
+                  data-testid="ViewDropdownItem-save-new-view"
                   title="Save as new view"
                 >
                   <span>
@@ -436,6 +448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "Manage views",
                     }
                   }
+                  testID="ViewDropdownItem-manage-views"
                 />
               }
             >
@@ -444,6 +457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item iot--view-dropdown__item-link"
+                  data-testid="ViewDropdownItem-manage-views"
                   title="Manage views"
                 >
                   <span>

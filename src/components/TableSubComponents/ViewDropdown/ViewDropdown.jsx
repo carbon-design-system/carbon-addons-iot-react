@@ -48,6 +48,7 @@ const propTypes = {
       component: PropTypes.elementType,
     }),
   }),
+  testID: PropTypes.string,
 };
 
 const defaultProps = {
@@ -65,6 +66,7 @@ const defaultProps = {
   activeViewEdited: false,
   disabled: false,
   overrides: undefined,
+  testID: 'ViewDropdown',
 };
 
 const ViewDropdown = ({
@@ -75,6 +77,7 @@ const ViewDropdown = ({
   disabled,
   i18n,
   overrides,
+  testID,
 }) => {
   const viewAllItem = {
     id: 'view-all',
@@ -120,7 +123,7 @@ const ViewDropdown = ({
         return (
           <MyDropDown
             label={i18n.tableViewMenu}
-            data-testid="table-view-dropdown"
+            data-testid={testID}
             selectedItem={mySelectedItem}
             ariaLabel={i18n.ariaLabel}
             disabled={disabled}
@@ -131,6 +134,7 @@ const ViewDropdown = ({
             itemToString={itemData => {
               return (
                 <MyViewDropDownItem
+                  testID={`ViewDropdownItem-${itemData.id}`}
                   isCompact={measuredSize?.width < 200}
                   item={itemData}
                   isSelected={itemData.id === mySelectedItem.id}

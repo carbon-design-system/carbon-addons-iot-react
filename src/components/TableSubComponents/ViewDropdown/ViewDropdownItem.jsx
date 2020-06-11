@@ -18,6 +18,10 @@ const propTypes = {
     view: PropTypes.string,
     edited: PropTypes.string,
   }).isRequired,
+  testID: PropTypes.string,
+};
+const defaultProps = {
+  testID: 'ViewDropdownItem',
 };
 
 const ViewDropdownItem = ({
@@ -26,11 +30,13 @@ const ViewDropdownItem = ({
   activeViewEdited,
   i18n,
   isCompact,
+  testID,
 }) => {
   const showEdited = isSelected && activeViewEdited && !customAction;
   const editedPostfix = ` - ${i18n.edited}`;
   return (
     <div
+      data-testid={testID}
       title={`${text}${showEdited ? editedPostfix : ''}`}
       className={classNames(`${iotPrefix}--view-dropdown__item`, {
         [`${iotPrefix}--view-dropdown__item-link`]: customAction,
@@ -60,5 +66,6 @@ const ViewDropdownItem = ({
 };
 
 ViewDropdownItem.propTypes = propTypes;
+ViewDropdownItem.defaultProps = defaultProps;
 
 export default ViewDropdownItem;
