@@ -39,7 +39,7 @@ storiesOf('Watson IoT/TableSubComponents', module).add(
               onManageViews: action('onManageViews'),
               onChangeView: viewItem => {
                 setSelectedViewId(viewItem.id);
-                action('onChangeView')();
+                action('onChangeView')(viewItem);
               },
             }}
           />
