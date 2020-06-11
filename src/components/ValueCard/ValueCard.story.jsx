@@ -883,6 +883,35 @@ storiesOf('Watson IoT/ValueCard', module)
       </div>
     );
   })
+  .add('data state - error - small - tooltip direction right', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
+    const dataStateType = select(
+      'dataStateType',
+      Object.keys(CARD_DATA_STATE),
+      CARD_DATA_STATE.ERROR
+    );
+    return (
+      <div style={{ width: text('cardWidth', `${getCardMinSize('sm', size).x}px`), margin: 20 }}>
+        <ValueCard
+          title={text('title', 'Health score')}
+          id="myStoryId"
+          content={{ attributes: [{ label: 'Monthly summary', dataSourceId: 'monthlySummary' }] }}
+          dataState={{
+            type: dataStateType,
+            label: 'No data available',
+            description: 'There is no available data for this score at this time',
+            extraTooltipText:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  ',
+            learnMoreURL: 'http://www.ibm.com',
+            learnMoreText: 'Learn more',
+            tooltipDirection: 'right',
+          }}
+          breakpoint="sm"
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('long titles and values', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
     return (

@@ -70,6 +70,7 @@ export const ValueCardPropTypes = {
     description: PropTypes.string.isRequired,
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
+    tooltipDirection: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
   }),
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
@@ -439,6 +440,7 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
+
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
@@ -468,7 +470,10 @@ export const CardPropTypes = {
     dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
+    /** If no time range is selected we should show this string as the default */
+    defaultLabel: PropTypes.string,
     // card actions
+    selectTimeRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
