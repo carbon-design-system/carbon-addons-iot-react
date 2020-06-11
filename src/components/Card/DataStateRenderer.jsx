@@ -44,8 +44,8 @@ const DataStateRenderer = ({ dataState, size, id }) => {
   };
 
   const renderDataStateGridIcon = () => {
-    const { type } = dataState;
-    let { icon, tooltipDirection } = dataState;
+    const { type, tooltipDirection } = dataState;
+    let { icon } = dataState;
     if (!icon) {
       if (type === CARD_DATA_STATE.ERROR) {
         icon = <ErrorFilled24 className={`${dsPrefix}-default-error-icon`} />;
