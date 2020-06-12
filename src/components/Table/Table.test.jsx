@@ -466,6 +466,23 @@ describe('Table', () => {
     );
     expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
     expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeTruthy();
+
+    const wrapper3 = mount(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: undefined,
+          renderDataFunction: () => 'hello this is a custom rendered long string',
+        }))}
+        data={[tableData[0]]}
+        options={{ hasResize: false, wrapCellText: 'auto' }}
+      />
+    );
+    expect(
+      wrapper3
+        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
+        .first()
+    ).toHaveLength(1);
   });
 
   it('cells should wrap (not truncate) with wrapCellText:auto if no resize nor fixed col widths', () => {
