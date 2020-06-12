@@ -70,6 +70,7 @@ export const ValueCardPropTypes = {
     description: PropTypes.string.isRequired,
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
+    tooltipDirection: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
   }),
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])

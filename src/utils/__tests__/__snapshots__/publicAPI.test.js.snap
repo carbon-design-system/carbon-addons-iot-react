@@ -5460,7 +5460,17 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "node",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -7805,6 +7815,17 @@ Map {
             },
             "learnMoreElement": Object {
               "type": "element",
+            },
+            "tooltipDirection": Object {
+              "args": Array [
+                Array [
+                  "bottom",
+                  "top",
+                  "left",
+                  "right",
+                ],
+              ],
+              "type": "oneOf",
             },
             "type": Object {
               "args": Array [
