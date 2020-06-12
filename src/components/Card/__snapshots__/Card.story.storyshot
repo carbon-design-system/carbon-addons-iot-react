@@ -78,8 +78,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -235,8 +235,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -614,8 +614,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                       <path
                         d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                       />
-                      <polygon
-                        points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                      <path
+                        d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                       />
                       <path
                         d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1179,8 +1179,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1283,8 +1283,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1387,8 +1387,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1491,8 +1491,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1595,8 +1595,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1699,8 +1699,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1803,8 +1803,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -1936,11 +1936,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   width={16}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <polygon
-                    points="8.5,11 8.5,6.5 6.5,6.5 6.5,7.5 7.5,7.5 7.5,11 6,11 6,12 10,12 10,11"
-                  />
                   <path
-                    d="M8,3.5c-0.4,0-0.8,0.3-0.8,0.8S7.6,5,8,5c0.4,0,0.8-0.3,0.8-0.8S8.4,3.5,8,3.5z"
+                    d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
                   />
                   <path
                     d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
@@ -1983,8 +1980,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -2140,8 +2137,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
@@ -2398,8 +2395,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   <path
                     d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
                   />
-                  <polygon
-                    points="22.59 25 20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25"
+                  <path
+                    d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
                   />
                   <path
                     d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"

@@ -28,26 +28,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           onAnimationEnd={[Function]}
         >
           <button
+            aria-controls="accordion-item-2"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
             onKeyDown={[Function]}
-            title="Expand/Collapse"
+            title="A section without deferred content rendering"
             type="button"
           >
             <svg
-              aria-label="Expand/Collapse"
+              aria-hidden={true}
               className="bx--accordion__arrow"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               viewBox="0 0 16 16"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <polygon
-                points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
+              <path
+                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
               />
             </svg>
             <div
@@ -58,6 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           </button>
           <div
             className="bx--accordion__content"
+            id="accordion-item-2"
           >
             <p>
               This content is always rendered to the DOM, no matter if the accordion item has been open or closed.
@@ -71,26 +72,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           onAnimationEnd={[Function]}
         >
           <button
+            aria-controls="accordion-item-3"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
             onKeyDown={[Function]}
-            title="Expand/Collapse"
+            title="A section with deferred content rendering"
             type="button"
           >
             <svg
-              aria-label="Expand/Collapse"
+              aria-hidden={true}
               className="bx--accordion__arrow"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               viewBox="0 0 16 16"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <polygon
-                points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
+              <path
+                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
               />
             </svg>
             <div
@@ -101,6 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           </button>
           <div
             className="bx--accordion__content"
+            id="accordion-item-3"
           />
         </li>
       </ul>
