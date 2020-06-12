@@ -353,7 +353,7 @@ const TableCard = ({
           <OverflowMenuVertical16 fill="#5a6872" description={i18n.overflowMenuIconDescription} />
         )}
       >
-        {actionList.map(item => {
+        {actionList.map((item, i) => {
           return (
             <OverflowMenuItem
               key={item.id}
@@ -366,6 +366,7 @@ const TableCard = ({
                   actionId: item.id,
                 });
               }}
+              primaryFocus={i === 0}
             />
           );
         })}
