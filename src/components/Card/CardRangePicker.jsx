@@ -26,7 +26,9 @@ export const CardRangePickerPropTypes = {
   /** callback to handle interactions with the range picker */
   onCardAction: PropTypes.func.isRequired,
   /** set of internationalized labels */
-  i18n: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.func])).isRequired,
+  i18n: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element])
+  ).isRequired,
   cardWidth: PropTypes.number,
 };
 
