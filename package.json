@@ -199,7 +199,7 @@
     "promise": "^8.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-is": "^16.13.0",
+    "react-is": "^16.13.1",
     "react-lorem-component": "^0.13.0",
     "react-test-renderer": "^16.8.6",
     "rimraf": "^3.0.0",

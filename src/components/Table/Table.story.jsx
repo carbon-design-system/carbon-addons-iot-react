@@ -14,6 +14,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
+import FlyoutMenu from '../FlyoutMenu/FlyoutMenu';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -537,6 +538,20 @@ storiesOf('Watson IoT/Table', module)
             pagination: {
               ...initialState.view.pagination,
               maxPages: 5,
+            },
+            toolbar: {
+              activeBar: 'filter',
+              customToolbarContent: (
+                <StyledCustomToolbarContent>
+                  <FlyoutMenu
+                    triggerId="test-flyout-id"
+                    onApply={action('Flyout Menu Apply Clicked')}
+                    onCancel={action('Flyout Menu Cancel Clicked')}
+                  >
+                    Example Flyout Content
+                  </FlyoutMenu>
+                </StyledCustomToolbarContent>
+              ),
             },
           }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
