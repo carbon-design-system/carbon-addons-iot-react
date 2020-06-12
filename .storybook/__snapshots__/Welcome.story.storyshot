@@ -59,26 +59,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           onAnimationEnd={[Function]}
         >
           <button
-            aria-controls="accordion-item-1"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
             onKeyDown={[Function]}
-            title="Exports table"
+            title="Expand/Collapse"
             type="button"
           >
             <svg
-              aria-hidden={true}
+              aria-label="Expand/Collapse"
               className="bx--accordion__arrow"
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
+              role="img"
               viewBox="0 0 16 16"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+              <polygon
+                points="11,8 6,13 5.3,12.3 9.6,8 5.3,3.7 6,3"
               />
             </svg>
             <div
@@ -89,7 +89,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           </button>
           <div
             className="bx--accordion__content"
-            id="accordion-item-1"
           >
             <p>
               The following table shows a comparison of exports from carbon-components-react and this library. These are primarily used for snapshot purposes to track and ensure that as the exports change upstream in Carbon we continue to provide parity with their package.
@@ -755,18 +754,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   >
                     Form
                   </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    FluidForm
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  />
                 </div>
                 <div
                   className="bx--structured-list-row"
@@ -1923,18 +1910,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   >
                     NumberInputSkeleton
                   </div>
-                </div>
-                <div
-                  className="bx--structured-list-row"
-                >
-                  <div
-                    className="bx--structured-list-td"
-                  >
-                    PaginationSkeleton
-                  </div>
-                  <div
-                    className="bx--structured-list-td"
-                  />
                 </div>
                 <div
                   className="bx--structured-list-row"

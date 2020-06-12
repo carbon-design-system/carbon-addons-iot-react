@@ -51,8 +51,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
             width={20}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M2 14.8H18V16H2zM2 11.2H18V12.399999999999999H2zM2 7.6H18V8.799999999999999H2zM2 4H18V5.2H2z"
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="14.8"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="11.2"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="7.6"
+            />
+            <rect
+              height="1.2"
+              width="16"
+              x="2"
+              y="4"
             />
           </svg>
         </button>
@@ -90,7 +111,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M31 30H29V27a3 3 0 00-3-3H22a3 3 0 00-3 3v3H17V27a5 5 0 015-5h4a5 5 0 015 5zM24 12a3 3 0 11-3 3 3 3 0 013-3m0-2a5 5 0 105 5A5 5 0 0024 10zM15 22H13V19a3 3 0 00-3-3H6a3 3 0 00-3 3v3H1V19a5 5 0 015-5h4a5 5 0 015 5zM8 4A3 3 0 115 7 3 3 0 018 4M8 2a5 5 0 105 5A5 5 0 008 2z"
+                d="M31,30H29V27a3,3,0,0,0-3-3H22a3,3,0,0,0-3,3v3H17V27a5,5,0,0,1,5-5h4a5,5,0,0,1,5,5Z"
+              />
+              <path
+                d="M24,12a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,24,10Z"
+              />
+              <path
+                d="M15,22H13V19a3,3,0,0,0-3-3H6a3,3,0,0,0-3,3v3H1V19a5,5,0,0,1,5-5h4a5,5,0,0,1,5,5Z"
+              />
+              <path
+                d="M8,4A3,3,0,1,1,5,7,3,3,0,0,1,8,4M8,2a5,5,0,1,0,5,5A5,5,0,0,0,8,2Z"
               />
             </svg>
           </button>
@@ -131,8 +161,59 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
+                  <rect
+                    height="4"
+                    width="4"
+                    x="14"
+                    y="4"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="4"
+                    y="4"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="24"
+                    y="4"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="14"
+                    y="14"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="4"
+                    y="14"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="24"
+                    y="14"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="14"
+                    y="24"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="4"
+                    y="24"
+                  />
+                  <rect
+                    height="4"
+                    width="4"
+                    x="24"
+                    y="24"
                   />
                 </svg>
               </div>
@@ -153,8 +234,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                  <polygon
+                    points="16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12"
                   />
                 </svg>
               </div>
@@ -242,8 +323,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <rect
+                    height="5"
+                    width="2"
+                    x="24"
+                    y="21"
+                  />
+                  <rect
+                    height="10"
+                    width="2"
+                    x="20"
+                    y="16"
+                  />
                   <path
-                    d="M24 21H26V26H24zM20 16H22V26H20zM11 26a5.0059 5.0059 0 01-5-5H8a3 3 0 103-3V16a5 5 0 010 10z"
+                    d="M11,26a5.0059,5.0059,0,0,1-5-5H8a3,3,0,1,0,3-3V16a5,5,0,0,1,0,10Z"
                   />
                   <path
                     d="M28,2H4A2.002,2.002,0,0,0,2,4V28a2.0023,2.0023,0,0,0,2,2H28a2.0027,2.0027,0,0,0,2-2V4A2.0023,2.0023,0,0,0,28,2Zm0,9H14V4H28ZM12,4v7H4V4ZM4,28V13H28.0007l.0013,15Z"
@@ -267,8 +360,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                  <polygon
+                    points="16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12"
                   />
                 </svg>
               </div>
@@ -338,7 +431,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M31 30H29V27a3 3 0 00-3-3H22a3 3 0 00-3 3v3H17V27a5 5 0 015-5h4a5 5 0 015 5zM24 12a3 3 0 11-3 3 3 3 0 013-3m0-2a5 5 0 105 5A5 5 0 0024 10zM15 22H13V19a3 3 0 00-3-3H6a3 3 0 00-3 3v3H1V19a5 5 0 015-5h4a5 5 0 015 5zM8 4A3 3 0 115 7 3 3 0 018 4M8 2a5 5 0 105 5A5 5 0 008 2z"
+                    d="M31,30H29V27a3,3,0,0,0-3-3H22a3,3,0,0,0-3,3v3H17V27a5,5,0,0,1,5-5h4a5,5,0,0,1,5,5Z"
+                  />
+                  <path
+                    d="M24,12a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,24,10Z"
+                  />
+                  <path
+                    d="M15,22H13V19a3,3,0,0,0-3-3H6a3,3,0,0,0-3,3v3H1V19a5,5,0,0,1,5-5h4a5,5,0,0,1,5,5Z"
+                  />
+                  <path
+                    d="M8,4A3,3,0,1,1,5,7,3,3,0,0,1,8,4M8,2a5,5,0,1,0,5,5A5,5,0,0,0,8,2Z"
                   />
                 </svg>
               </div>
@@ -359,8 +461,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/SideN
                   width={20}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                  <polygon
+                    points="16,22 6,12 7.4,10.6 16,19.2 24.6,10.6 26,12"
                   />
                 </svg>
               </div>

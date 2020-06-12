@@ -92,8 +92,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -303,8 +303,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -501,8 +501,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options
@@ -699,8 +699,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Navig
               width={16}
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              <polygon
+                points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
               />
               <title>
                 show menu options

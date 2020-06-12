@@ -249,8 +249,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -330,8 +330,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -411,8 +411,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -492,8 +492,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -573,8 +573,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -654,8 +654,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -735,8 +735,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -938,8 +938,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1019,8 +1019,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1100,8 +1100,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1181,8 +1181,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1262,8 +1262,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1343,8 +1343,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1424,8 +1424,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1741,8 +1741,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1822,8 +1822,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1903,8 +1903,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -1984,8 +1984,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2065,8 +2065,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2146,8 +2146,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2201,8 +2201,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M20 24L10 16 20 8z"
+            <polygon
+              points="20,24 10,16 20,8"
             />
           </svg>
         </div>
@@ -2224,8 +2224,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 8L22 16 12 24z"
+            <polygon
+              points="12,8 22,16 12,24"
             />
           </svg>
         </div>
@@ -2336,8 +2336,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                <polygon
+                  points="24 9.4 22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4"
                 />
               </svg>
             </button>
@@ -2402,8 +2402,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2483,8 +2483,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2564,8 +2564,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2645,8 +2645,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2726,8 +2726,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2807,8 +2807,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
                   width={32}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </div>
@@ -2862,8 +2862,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M20 24L10 16 20 8z"
+            <polygon
+              points="20,24 10,16 20,8"
             />
           </svg>
         </div>
@@ -2885,8 +2885,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 8L22 16 12 24z"
+            <polygon
+              points="12,8 22,16 12,24"
             />
           </svg>
         </div>

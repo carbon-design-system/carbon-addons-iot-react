@@ -340,8 +340,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
+                      />
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -386,8 +389,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                <polygon
+                  points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
                 />
                 <title>
                   show menu options
@@ -646,8 +649,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     width={20}
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <rect
+                      height="2"
+                      width="28"
+                      x="2"
+                      y="26"
+                    />
                     <path
-                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                      d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                     />
                   </svg>
                 </button>
@@ -793,8 +802,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
+                      />
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -826,8 +838,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                     width={20}
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <rect
+                      height="2"
+                      width="28"
+                      x="2"
+                      y="26"
+                    />
                     <path
-                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                      d="M25.4,9c0.8-0.8,0.8-2,0-2.8c0,0,0,0,0,0l-3.6-3.6c-0.8-0.8-2-0.8-2.8,0c0,0,0,0,0,0l-15,15V24h6.4L25.4,9z M20.4,4L24,7.6	l-3,3L17.4,7L20.4,4z M6,22v-3.6l10-10l3.6,3.6l-10,10H6z"
                     />
                   </svg>
                 </button>
@@ -880,8 +898,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </button>
@@ -921,8 +939,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                 width={16}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                <polygon
+                  points="8,11 3,6 3.7,5.3 8,9.6 12.3,5.3 13,6"
                 />
                 <title>
                   show menu options
@@ -1112,8 +1130,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
+                      />
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
@@ -1170,8 +1191,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                   width={24}
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                  <polygon
+                    points="17,15 17,8 15,8 15,15 8,15 8,17 15,17 15,24 17,24 17,17 24,17 24,15"
                   />
                 </svg>
               </button>
@@ -1311,8 +1332,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageT
                       width={20}
                       xmlns="http://www.w3.org/2000/svg"
                     >
+                      <polygon
+                        points="17 22 17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22"
+                      />
                       <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                        d="M16,7a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,16,7Z"
                       />
                       <path
                         d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"

@@ -40,8 +40,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
             width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M20 24L10 16 20 8z"
+            <polygon
+              points="20,24 10,16 20,8"
             />
           </svg>
         </div>
@@ -63,8 +63,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
             width={16}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
-              d="M12 8L22 16 12 24z"
+            <polygon
+              points="12,8 22,16 12,24"
             />
           </svg>
         </div>
