@@ -5460,7 +5460,17 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "node",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "deleteCardLabel": Object {
               "type": "string",
