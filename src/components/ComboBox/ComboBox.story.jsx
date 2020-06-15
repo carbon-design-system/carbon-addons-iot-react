@@ -13,7 +13,7 @@ import Button from '../Button';
 
 import ComboBox from './ComboBox';
 
-const items = [
+export const items = [
   {
     id: 'option-0',
     text: 'Option 1',
