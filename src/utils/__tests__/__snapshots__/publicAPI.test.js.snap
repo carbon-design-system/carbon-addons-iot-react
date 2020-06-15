@@ -5043,6 +5043,7 @@ Map {
   },
   "Header" => Object {
     "defaultProps": Object {
+      "appSwitcherLabel": "AppSwitcher",
       "className": "main-header",
       "hasSideNav": true,
       "headerPanel": null,
@@ -5107,6 +5108,9 @@ Map {
       },
       "appName": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "appSwitcherLabel": Object {
         "type": "string",
       },
       "className": Object {
@@ -5460,7 +5464,17 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "node",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "deleteCardLabel": Object {
               "type": "string",
