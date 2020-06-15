@@ -4512,6 +4512,7 @@ Map {
           "value": "YESTERDAY",
         },
       ],
+      "renderPresetTooltipText": null,
       "showRelativeOption": true,
     },
     "propTypes": Object {
@@ -4784,6 +4785,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "renderPresetTooltipText": Object {
+        "type": "func",
       },
       "showRelativeOption": Object {
         "type": "bool",
@@ -5282,9 +5286,9 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
-        "selectDateRangeLabel": "Select time range",
         "selectRowAria": "Select row",
         "selectSeverityPlaceholder": "Select a severity",
+        "selectTimeRangeLabel": "Select time range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
@@ -5456,7 +5460,17 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "node",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -5569,13 +5583,13 @@ Map {
             "selectAllAria": Object {
               "type": "string",
             },
-            "selectDateRangeLabel": Object {
-              "type": "string",
-            },
             "selectRowAria": Object {
               "type": "string",
             },
             "selectSeverityPlaceholder": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "severityLabel": Object {
@@ -6416,6 +6430,7 @@ Map {
         "overflowMenuDescription": "Open and close list of options",
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
+        "selectTimeRangeLabel": "Select time range",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
         "thisWeekLabel": "This week",
@@ -6957,6 +6972,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -7009,6 +7027,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -7795,6 +7816,17 @@ Map {
             "learnMoreElement": Object {
               "type": "element",
             },
+            "tooltipDirection": Object {
+              "args": Array [
+                Array [
+                  "bottom",
+                  "top",
+                  "left",
+                  "right",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "type": Object {
               "args": Array [
                 Array [
@@ -7822,6 +7854,9 @@ Map {
               "type": "string",
             },
             "dailyLabel": Object {
+              "type": "string",
+            },
+            "defaultLabel": Object {
               "type": "string",
             },
             "deleteCardLabel": Object {
@@ -7876,6 +7911,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -9336,6 +9374,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -9388,6 +9429,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -9568,6 +9612,7 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectSeverityPlaceholder": "Select a severity",
+        "selectTimeRangeLabel": "Select time range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
@@ -11105,6 +11150,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -11157,6 +11205,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -11909,6 +11960,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -11961,6 +12015,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {

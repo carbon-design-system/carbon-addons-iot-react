@@ -526,16 +526,20 @@ storiesOf('Watson IoT/Dashboard', module)
             thisYearLabel: text('thisYearLabel', 'This year'),
             hourlyLabel: text('hourlyLabel', 'Hourly'),
             dailyLabel: text('dailyLabel', 'Daily'),
+            defaultLabel: text('default', 'Default'),
             weeklyLabel: text('weeklyLabel', 'Weekly'),
             monthlyLabel: text('monthlyLabel', 'Monthly'),
             overflowMenuDescription: text(
               'overflowMenuDescription',
               'open and close list of options'
             ),
+            // card actions
+            expandLabel: text('expandLabel', 'Expand to fullscreen'),
+            closeLabel: text('closeLabel', 'Close'),
             editCardLabel: text('editCardLabel', 'Edit card'),
             cloneCardLabel: text('cloneCardLabel', 'Clone card'),
             deleteCardLabel: text('deleteCardLabel', 'Delete card'),
-            selectDateRangeLabel: text('selectDateRangeLabel', 'Select time range'),
+            selectTimeRangeLabel: text('selectTimeRangeLabel', 'Select time range'),
             criticalLabel: text('criticalLabel', 'Critical'),
             moderateLabel: text('moderateLabel', 'Moderate'),
             lowLabel: text('lowLabel', 'Low'),
