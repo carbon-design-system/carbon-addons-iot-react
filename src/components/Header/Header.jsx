@@ -63,7 +63,11 @@ const propTypes = {
   onClickSideNavExpand: PropTypes.func,
   /** Main app switcher Header panel props */
   headerPanel: PropTypes.shape(HeaderPanelPropTypes),
+  /** App switcher label */
+  appSwitcherLabel: PropTypes.string,
 };
+
+export const APP_SWITCHER = 'AppSwitcher';
 
 const defaultProps = {
   onClickSideNavExpand: null,
@@ -74,9 +78,8 @@ const defaultProps = {
   headerPanel: null,
   subtitle: null,
   url: '#',
+  appSwitcherLabel: APP_SWITCHER,
 };
-
-export const APP_SWITCHER = 'AppSwitcher';
 
 /**
  * UI header with multiple side panels functionality and dropdowns
@@ -92,18 +95,18 @@ const Header = ({
   onClickSideNavExpand,
   headerPanel,
   url,
+  appSwitcherLabel,
 }) => {
   const actionItems = !headerPanel
     ? actionItemsProp
     : [
         ...actionItemsProp,
         {
-          label: APP_SWITCHER,
+          label: appSwitcherLabel,
           hasHeaderPanel: true,
           btnContent: (
             <AppSwitcher20
               fill="white"
-              description="Icon"
               className={`${carbonPrefix}--header__menu-item ${carbonPrefix}--header__menu-title`}
             />
           ),
