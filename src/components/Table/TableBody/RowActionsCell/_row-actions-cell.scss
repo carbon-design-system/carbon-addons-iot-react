@@ -10,11 +10,16 @@
   }
   .#{$iot-prefix}--row-actions-cell-btn--icononly {
     margin-left: 0;
+    color: unset; // black by default
 
     .#{$prefix}--btn__icon {
       margin-left: 0;
     }
   }
+}
+
+.#{$iot-prefix}--row-actions-cell-btn--icononly:hover {
+  color: $interactive-01; // blue on hover
 }
 
 .#{$iot-prefix}--row-actions-container__background {
