@@ -32,6 +32,7 @@ export BarChartCard from './components/BarChartCard/BarChartCard';
 export TileCatalogNew from './components/TileCatalogNew/TileCatalogNew';
 export TimePickerSpinner from './components/TimePickerSpinner/TimePickerSpinner';
 export DateTimePicker from './components/DateTimePicker/DateTimePicker';
+export ViewDropdown from './components/TableSubComponents/ViewDropdown/ViewDropdown';
 
 // reusable reducers
 export { baseTableReducer } from './components/Table/baseTableReducer';
