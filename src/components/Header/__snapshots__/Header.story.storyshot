@@ -301,7 +301,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Heade
               <svg
                 aria-hidden={true}
                 className="bx--header__menu-item bx--header__menu-title"
-                description="Icon"
                 fill="white"
                 focusable="false"
                 height={20}
