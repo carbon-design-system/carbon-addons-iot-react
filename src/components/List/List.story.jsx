@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
-import filterDeep from 'deepdash/filterDeep';
+import someDeep from 'deepdash/someDeep';
 
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 
@@ -349,21 +349,8 @@ storiesOf('Watson IoT Experimental/List', module)
         }
       };
 
-      const checkSelectedChildren = items => {
-        // eslint-disable-next-line consistent-return
-        const selectedChildren = filterDeep(items, (value, key) => {
-          if (selectedIds.some(id => key === id)) {
-            return true;
-          }
-        });
-        if (selectedChildren) {
-          if (Object.keys(selectedChildren).length > 0) {
-            return true;
-          }
-        }
-
-        return false;
-      };
+      const checkSelectedChildren = items =>
+        someDeep(items, (value, key) => selectedIds.some(id => key === id));
 
       const nestedItems = [
         ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
