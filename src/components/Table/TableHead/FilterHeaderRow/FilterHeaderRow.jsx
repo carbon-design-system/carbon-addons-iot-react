@@ -242,7 +242,7 @@ class FilterHeaderRow extends Component {
           .filter(c => !c.isHidden)
           .map((c, i) => {
             const column = columns.find(item => c.columnId === item.id);
-            const columnStateValue = this.state[column.id]; // eslint-disable-line
+            const columnStateValue = this.state[column.id]; // eslint-disable-line react/destructuring-assignment
             const filterColumnOptions = options => {
               options.sort((a, b) => {
                 return a.text.localeCompare(b.text, { sensitivity: 'base' });
