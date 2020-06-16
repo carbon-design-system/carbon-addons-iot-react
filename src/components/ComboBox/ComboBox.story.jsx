@@ -76,6 +76,7 @@ const ControlledComboBoxApp = props => {
     <>
       <ComboBox
         {...props}
+        type={boolean('Inline', false)}
         items={items}
         itemToString={item => (item ? item.text : '')}
         onChange={({ selectedItem }) => setSelectedItem(selectedItem)}
@@ -98,19 +99,41 @@ const ControlledComboBoxApp = props => {
   );
 };
 
+const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
+
 storiesOf('ComboBox', module)
   .addDecorator(withKnobs)
   .add(
     'Default',
     () => (
-      <div style={{ width: 300 }}>
+      <Wrapper>
         <ComboBox
           shouldFilterItem={shouldFilterItem}
           items={items}
+          initialSelectedItem="Option 1"
           itemToString={item => (item ? item.text : '')}
           {...props()}
         />
-      </div>
+      </Wrapper>
+    ),
+    {
+      info: {
+        text: 'ComboBox',
+      },
+    }
+  )
+  .add(
+    'Mult-value tags',
+    () => (
+      <Wrapper>
+        <ComboBox
+          shouldFilterItem={shouldFilterItem}
+          items={items}
+          hasMultiValue
+          itemToString={item => (item ? item.text : '')}
+          {...props()}
+        />
+      </Wrapper>
     ),
     {
       info: {
@@ -121,14 +144,14 @@ storiesOf('ComboBox', module)
   .add(
     'items as components',
     () => (
-      <div style={{ width: 300 }}>
+      <Wrapper>
         <ComboBox
           items={items}
           itemToString={item => (item ? item.text : '')}
           itemToElement={itemToElement}
           {...props()}
         />
-      </div>
+      </Wrapper>
     ),
     {
       info: {

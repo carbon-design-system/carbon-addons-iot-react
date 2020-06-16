@@ -120,11 +120,11 @@ export function match(eventOrCode, { key, which, keyCode } = {}) {
 export function setupGetInstanceId() {
   let instanceId = 0;
   return function getInstanceId() {
-    return ++instanceId;
+    return ++instanceId; // eslint-disable-line no-plusplus
   };
 }
 
-const defaultItemToString = item => {
+export const defaultItemToString = item => {
   if (typeof item === 'string') {
     return item;
   }
@@ -153,6 +153,7 @@ const findHighlightedIndex = ({ items, itemToString }, inputValue) => {
 
   const searchValue = inputValue.toLowerCase();
 
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < items.length; i++) {
     const item = itemToString(items[i]).toLowerCase();
     if (item.indexOf(searchValue) !== -1 && searchValue.length > 1) {

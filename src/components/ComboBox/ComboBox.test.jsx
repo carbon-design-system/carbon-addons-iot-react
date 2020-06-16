@@ -1,9 +1,34 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
+import { defaultItemToString } from './CarbonComboBox';
+
+const item = [
+  {
+    id: 'option-0',
+    label: 'Option 1',
+  },
+  {
+    id: 'option-1',
+    label: 'Option 2',
+  },
+  {
+    id: 'option-2',
+    label: 'Option 3',
+    selected: true,
+  },
+  {
+    id: 'option-3',
+    label: 'Option 4',
+  },
+  {
+    id: 'option-4',
+    label: 'An example option that is really long to show what should be done to handle long text',
+  },
+];
 
 const defaultProps = {
   items,
@@ -13,9 +38,14 @@ const defaultProps = {
   helperText: 'Optional helper text here',
   hasMultiValue: true,
   onChange: () => {},
+  onInputChange: () => {},
+  itemToString: item => (item ? item.text : ''),
 };
 
 describe('ComboBox', () => {
+  afterEach(() => {
+    cleanup();
+  });
   const setup = props => {
     const { container } = render(<ComboBox {...defaultProps} {...props} />);
     // Input element
@@ -32,9 +62,22 @@ describe('ComboBox', () => {
     };
   };
 
+  // Temp test to pass threshold for Carbon Combobox component. Can be removed once we are updated to carbon-components-react@7.13.0
+  it('will return a string', async () => {
+    const item = {
+      id: 'option-0',
+      label: 'Option 1',
+    };
+    expect(defaultItemToString(item)).toEqual('Option 1');
+    expect(defaultItemToString('Option 1')).toEqual('Option 1');
+  });
+
   // Hitting enter will not trigger a change if value is blank
   it('will not add tag when input is blank or add to list', async () => {
-    const { input, tags, list } = setup();
+    const { input, tags, list } = setup({
+      itemToString: defaultItemToString,
+      items: item,
+    });
 
     // Pre-check tag and list count
     expect(tags.childElementCount).toEqual(0);
@@ -126,6 +169,8 @@ describe('ComboBox', () => {
   it('will remove tag when close button is clicked', async () => {
     const { input, tags, container } = setup();
 
+    await userEvent.click(input);
+    await userEvent.click(input);
     await userEvent.type(input, 'Home{enter}');
 
     await waitFor(() => container.querySelector('.bx--tag__close-icon'));
@@ -137,13 +182,19 @@ describe('ComboBox', () => {
 
   // Tags will not be added if hasMultiValue is false
   it('will not add tag when hasMultiValue is set to false but will add to list', async () => {
-    const { input, tags, list } = setup({ hasMultiValue: false });
+    const { input, tags, list } = setup({
+      hasMultiValue: false,
+      initialSelectedItem: {
+        id: 'option-0',
+        label: 'Option 1',
+      },
+    });
 
     // Pre-check tag and list count
     expect(tags.childElementCount).toEqual(0);
     expect(list.childElementCount).toEqual(5);
 
-    await userEvent.type(input, 'Hello{enter}');
+    await userEvent.type(input, 'Hello {enter}');
 
     // Post-check tag and list count
     expect(tags.childElementCount).toEqual(0);

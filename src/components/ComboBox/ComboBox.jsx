@@ -8,6 +8,7 @@ import { settings } from '../../constants/Settings';
 import CarbonComboBox from './CarbonComboBox';
 
 const { iotPrefix } = settings;
+
 const propTypes = {
   // eslint-disable-next-line react/forbid-foreign-prop-types
   ...CarbonComboBox.propTypes,
@@ -26,7 +27,6 @@ const defaultProps = {
   closeButtonText: 'Close',
   hasMultiValue: false,
   items: [],
-  itemToString: item => (item ? item.text : ''),
 };
 
 const ComboBox = ({
@@ -35,11 +35,12 @@ const ComboBox = ({
   wrapperClassName,
   closeButtonText,
   hasMultiValue,
+  itemToString,
   ...comboProps
 }) => {
   // Ref for the combobox input
   const comboRef = React.createRef();
-  const { items, itemToString, downshiftProps } = comboProps;
+  const { items, downshiftProps } = comboProps;
   // Current selected item that shows in the input
   const [selectedItem, setSelectedItem] = useState(null);
   // Array that populates list
@@ -119,6 +120,7 @@ const ComboBox = ({
     // Pass on value to user's onChange callback
     comboProps.onChange(selected);
   };
+
   const highlightedIndex = hasMultiValue ? -1 : downshiftProps?.highlightedIndex;
   const combinedDownshiftProps = {
     ...downshiftProps,
@@ -133,9 +135,14 @@ const ComboBox = ({
       data-testid="combo-wrapper"
     >
       <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
-        {tagItems.map(item => (
+        {tagItems.map((item, idx) => (
           <li>
-            <Tag key={item?.id} filter onClose={e => handleOnClose(e)} title={closeButtonText}>
+            <Tag
+              key={`${item?.id}-${idx}`}
+              filter
+              onClose={e => handleOnClose(e)}
+              title={closeButtonText}
+            >
               {itemToString(item)}
             </Tag>
           </li>
@@ -146,10 +153,9 @@ const ComboBox = ({
         {...comboProps}
         downshiftProps={combinedDownshiftProps}
         ref={comboRef}
-        light
         selectedItem={!hasMultiValue ? selectedItem : selectedItem}
         items={listItems}
-        itemToString={item => (item ? item.text : '')}
+        itemToString={itemToString}
         onChange={handleOnChange}
         className={classNames(comboProps.className, `${iotPrefix}--combobox-input`)}
         disabled={comboProps.disabled || (loading !== undefined && loading !== false)}
