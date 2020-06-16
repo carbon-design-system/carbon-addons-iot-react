@@ -25,7 +25,6 @@ export const items = [
   {
     id: 'option-2',
     text: 'Option 3',
-    selected: true,
   },
   {
     id: 'option-3',
@@ -53,7 +52,7 @@ const props = () => ({
   invalid: boolean('Invalid (invalid)', false),
   invalidText: text('Invalid text (invalidText)', 'A valid value is required'),
   size: select('Field size (size)', sizes, undefined) || undefined,
-  onChange: action('onChange'),
+  onChange: action('fired onChange'),
 });
 
 const itemToElement = item => {
@@ -76,7 +75,6 @@ const ControlledComboBoxApp = props => {
     <>
       <ComboBox
         {...props}
-        type={boolean('Inline', false)}
         items={items}
         itemToString={item => (item ? item.text : '')}
         onChange={({ selectedItem }) => setSelectedItem(selectedItem)}
@@ -101,7 +99,7 @@ const ControlledComboBoxApp = props => {
 
 const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
 
-storiesOf('ComboBox', module)
+storiesOf('Watson IoT Experimental/ComboBox', module)
   .addDecorator(withKnobs)
   .add(
     'Default',

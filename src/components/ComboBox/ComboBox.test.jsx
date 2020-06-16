@@ -18,7 +18,6 @@ const item = [
   {
     id: 'option-2',
     label: 'Option 3',
-    selected: true,
   },
   {
     id: 'option-3',
@@ -37,15 +36,20 @@ const defaultProps = {
   titleText: 'Combobox title',
   helperText: 'Optional helper text here',
   hasMultiValue: true,
-  onChange: () => {},
+  onChange: jest.fn(),
   onInputChange: () => {},
   itemToString: item => (item ? item.text : ''),
 };
 
 describe('ComboBox', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   afterEach(() => {
     cleanup();
   });
+
   const setup = props => {
     const { container } = render(<ComboBox {...defaultProps} {...props} />);
     // Input element
@@ -110,10 +114,19 @@ describe('ComboBox', () => {
     // Check new item value is what it is supposed to be
     expect(list.lastChild.firstChild.innerHTML).toEqual('Hello');
 
+    // Check that our onChange callback was fired and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(1);
+    expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Hello');
+
     await userEvent.type(input, 'World{enter}');
     // Post-check tag and list count
     expect(tags.childElementCount).toEqual(2);
     expect(list.childElementCount).toEqual(7);
+
+    // Check that our onChange callback was fired and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(2);
+    expect(defaultProps.onChange.mock.calls[1][0][0].text).toBe('Hello');
+    expect(defaultProps.onChange.mock.calls[1][0][1].text).toBe('World');
   });
 
   // Typing the same value twice will not result in multiple tags or additions
@@ -130,6 +143,10 @@ describe('ComboBox', () => {
     // Post-check tag and list count - should only increment by 1
     expect(tags.childElementCount).toEqual(1);
     expect(list.childElementCount).toEqual(6);
+
+    // Check that our onChange callback was fired and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(1);
+    expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Hello');
   });
 
   // Check that selection from list adds tags but doesnt add duplicate to list
@@ -147,6 +164,10 @@ describe('ComboBox', () => {
     expect(list.childElementCount).toEqual(5);
     // Check value is what it is supposed to be
     expect(tags.firstChild.firstChild.firstChild.innerHTML).toEqual('Option 1');
+
+    // Check that our onChange callback was fired and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(1);
+    expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
   });
 
   // Check that selected item is only added once.
@@ -163,6 +184,9 @@ describe('ComboBox', () => {
     // Post-check tag and list count
     expect(tags.childElementCount).toEqual(1);
     expect(list.childElementCount).toEqual(5);
+
+    // Check that our onChange callback was fired only once
+    expect(defaultProps.onChange.mock.calls.length).toBe(1);
   });
 
   // Check that you can remove tag by clicking x icon
@@ -178,6 +202,10 @@ describe('ComboBox', () => {
 
     // Post-check tag count
     expect(tags.childElementCount).toEqual(0);
+
+    // Check that onChange callback was fired twice and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(2);
+    expect(defaultProps.onChange.mock.calls[1][0].length).toBe(0);
   });
 
   // Tags will not be added if hasMultiValue is false
@@ -199,5 +227,9 @@ describe('ComboBox', () => {
     // Post-check tag and list count
     expect(tags.childElementCount).toEqual(0);
     expect(list.childElementCount).toEqual(6);
+
+    // Check that our onChange callback was fired and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(1);
+    expect(defaultProps.onChange.mock.calls[0][0].text).toBe('Hello');
   });
 });

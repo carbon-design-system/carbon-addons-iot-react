@@ -97,13 +97,15 @@ export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitc
 
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 
+export ComboBox from './components/ComboBox';
+
 // Carbon proxy
 export {
   Accordion,
   AccordionItem,
   Checkbox,
   CodeSnippet,
-  ComboBox,
+  // ComboBox,
   ModalHeader,
   ModalBody,
   ModalFooter,

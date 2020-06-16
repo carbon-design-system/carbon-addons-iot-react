@@ -74,12 +74,16 @@ const ComboBox = ({
       const newItem = {
         id: `id-${uid}`,
         text: currentValue || '',
-        selected: true,
       };
+
       // If component is using multiValue feature and there is not already a tag for new value
-      if (hasMultiValue && filteredTags.length < 1) {
+      // If the value is not already part of items list use new item else use list item
+      if (hasMultiValue && filteredTags.length < 1 && filteredItems.length < 1) {
         // Add new value to the tags array
-        setTagItems(inputValues => [...inputValues, { ...newItem, id: `tag-${newItem.id}` }]);
+        setTagItems(inputValues => [...inputValues, { ...newItem, id: newItem.id }]);
+      } else if (hasMultiValue && filteredTags.length < 1) {
+        // Add new value to the tags array using the list item object
+        setTagItems(inputValues => [...inputValues, filteredItems[0]]);
       }
 
       // If current value is not part of items array
@@ -90,6 +94,23 @@ const ComboBox = ({
       } else {
         // Set the chosen item as selectedItem
         setSelectedItem(filteredItems[0]);
+      }
+
+      // Pass the combobox value to user's onChange callback
+      // If has multi value we return array otherwise just the object
+      if (hasMultiValue) {
+        // If item exist in list use list item or else use new item
+        if (filteredItems.length < 1) {
+          comboProps.onChange([...tagItems, newItem]);
+        } else if (filteredTags.length < 1) {
+          comboProps.onChange([...tagItems, filteredItems[0]]);
+        }
+      }
+      // If item exist in list use list item or else use new item
+      else if (filteredItems.length < 1) {
+        comboProps.onChange(newItem);
+      } else {
+        comboProps.onChange(filteredItems[0]);
       }
     }
   };
@@ -104,6 +125,8 @@ const ComboBox = ({
         setTagItems([...tagItems]);
       }
     });
+    // Send new value to users onChange callback
+    comboProps.onChange([...tagItems]);
   };
 
   const handleOnChange = selected => {
@@ -111,14 +134,19 @@ const ComboBox = ({
     const currentValue = itemToString(newItem);
     const filteredItems = tagItems.filter(x => itemToString(x) === currentValue);
     // If component is using multiValue feature and the tags array does not contain new value
-    if (hasMultiValue && filteredItems.length < 1 && newItem !== null) {
+    if (newItem !== null && filteredItems.length < 1 && hasMultiValue) {
       // Add new value to tags array
       setTagItems(inputValues => [...inputValues, newItem]);
+      // pass the combobox value to user's onChange callback
+      comboProps.onChange([...tagItems, newItem]);
     }
+
     // Get selected item from Combobox and set our internal state to the value
     setSelectedItem(newItem);
-    // Pass on value to user's onChange callback
-    comboProps.onChange(selected);
+    // If not using multiValue feature then just pass the selected item
+    if (!hasMultiValue) {
+      comboProps.onChange(newItem);
+    }
   };
 
   const highlightedIndex = hasMultiValue ? -1 : downshiftProps?.highlightedIndex;
@@ -136,9 +164,9 @@ const ComboBox = ({
     >
       <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
         {tagItems.map((item, idx) => (
-          <li>
+          <li key={`li-${item?.id}-${idx}`}>
             <Tag
-              key={`${item?.id}-${idx}`}
+              key={`tag-${item?.id}-${idx}`}
               filter
               onClose={e => handleOnClose(e)}
               title={closeButtonText}
