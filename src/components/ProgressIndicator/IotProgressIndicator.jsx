@@ -8,7 +8,9 @@ import {
   Warning24,
   Warning16,
   RadioButton16,
+  RadioButton24,
   CircleFilled16,
+  CircleFilled24,
 } from '@carbon/icons-react';
 import { Tooltip } from 'carbon-components-react';
 
@@ -43,18 +45,18 @@ export const IotProgressStep = ({
   const subStep = level > 0;
   const isClickable = clickable && !disabled && !current;
 
-  const labelContainerRef = React.useRef(null);
-  const secondaryLabelContainerRef = React.useRef(null);
+  const labelRef = React.useRef(null);
+  const secondaryLabelRef = React.useRef(null);
   const [overflow, setOverflow] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(
     () => {
-      const e = labelContainerRef.current;
-      const i = secondaryLabelContainerRef.current;
-      const hasOverflow =
-        e.offsetWidth < e.scrollWidth || (i !== null && i.offsetWidth < i.scrollWidth);
-      setOverflow(hasOverflow);
+      const e = labelRef.current;
+      const i = secondaryLabelRef.current;
+      const labelOverflow = e.offsetWidth < e.scrollWidth;
+      const secondaryLabelOverflow = i !== null && i.offsetWidth < i.scrollWidth;
+      setOverflow(labelOverflow || secondaryLabelOverflow);
     },
     [stepWidth]
   );
@@ -100,7 +102,18 @@ export const IotProgressStep = ({
       } else if (invalid) {
         value = <Warning24 />;
       } else {
-        value = <p>{stepNumber}</p>;
+        const number = (
+          <>
+            <text id="icon-numbered" x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">
+              {stepNumber}
+            </text>
+          </>
+        );
+        if (current) {
+          value = <CircleFilled24 children={number} />;
+        } else {
+          value = <RadioButton24 children={number} />;
+        }
       }
     } else if (completed) {
       value = <CheckmarkOutline16 />;
@@ -137,7 +150,7 @@ export const IotProgressStep = ({
     });
 
     return (
-      <p className={classes} value={description} ref={labelContainerRef}>
+      <p className={classes} value={description} ref={labelRef}>
         {label}
       </p>
     );
@@ -150,7 +163,7 @@ export const IotProgressStep = ({
     });
 
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={classes} ref={secondaryLabelContainerRef}>
+      <p className={classes} ref={secondaryLabelRef}>
         {secondaryLabel}
       </p>
     ) : null;

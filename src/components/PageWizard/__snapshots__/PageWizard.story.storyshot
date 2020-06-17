@@ -1835,9 +1835,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="icon"
                   title="Step 1"
                 >
-                  <p>
-                    1
-                  </p>
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="10"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      1
+                    </text>
+                  </svg>
                 </span>
                 <div
                   className="label-container"
@@ -1891,9 +1915,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="icon"
                   title="Step 2"
                 >
-                  <p>
-                    2
-                  </p>
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      2
+                    </text>
+                  </svg>
                 </span>
                 <div
                   className="label-container"
@@ -1939,9 +1982,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                   className="icon"
                   title="Step 3"
                 >
-                  <p>
-                    3
-                  </p>
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      3
+                    </text>
+                  </svg>
                 </span>
                 <div
                   className="label-container"

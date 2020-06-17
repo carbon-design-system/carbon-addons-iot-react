@@ -1,7 +1,10 @@
 @import '~carbon-components/scss/components/progress-indicator/progress-indicator';
 @import '../../globals/vars';
 
-$IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+$IBMPlexSans: 'IBM Plex Sans',
+'Helvetica Neue',
+Arial,
+sans-serif;
 
 .#{$iot-prefix}--progress-indicator-new {
   display: flex;
@@ -35,7 +38,8 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-right: $spacing-02;
-    width: fit-content;
+
+    width: calc(max-width);
 
     &-optional {
       @extend .label;
@@ -48,8 +52,9 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     }
 
     transition: box-shadow $duration--fast-02 motion(standard, productive),
-      color $duration--fast-02 motion(standard, productive);
+    color $duration--fast-02 motion(standard, productive);
   }
+
 
   .line {
     position: absolute;
@@ -73,38 +78,6 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       &-complete {
         @extend .line-sub;
         background-color: #0f62fe;
-      }
-    }
-  }
-
-  @mixin numbered-icon($border-color: unset, $background-color: unset, $color: unset) {
-    .icon {
-      position: absolute;
-      width: $spacing-06;
-      height: $spacing-06;
-      top: 0;
-      left: 0;
-
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border: 1.5px solid;
-
-      display: flex;
-      align-items: center;
-      text-align: center;
-
-      border-color: $border-color;
-      background-color: $background-color;
-      color: $color;
-
-      //icon number label
-      p {
-        font-family: $IBMPlexSans;
-        font-weight: 600;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: $spacing-06;
       }
     }
   }
@@ -162,12 +135,20 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
     }
   }
 
+  svg text {
+    font-size: 18px;
+  }
+
   //-------States
 
   .step-current {
     &:not(.step-invalid) {
       .main-step {
-        @include numbered-icon($border-color: #0f62fe, $background-color: #0f62fe, $color: white);
+        fill: #0f62fe;
+
+        text {
+          fill: white;
+        }
       }
 
       .sub-step {
@@ -186,7 +167,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
   .step-incomplete {
     .main-step {
-      @include numbered-icon($border-color: #171717, $color: #171717);
+      fill: #171717;
     }
 
     .sub-step {
@@ -199,7 +180,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   .step-disabled {
     &:not(.step-invalid) {
       .main-step {
-        @include numbered-icon($border-color: #bebebe, $color: #bebebe);
+        fill: #bebebe;
       }
 
       .sub-step {
@@ -228,6 +209,7 @@ $IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
       fill: #dd3b41;
     }
   }
+
 
   //---------------
 

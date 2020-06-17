@@ -479,9 +479,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="icon"
             title="Third Step"
           >
-            <p>
-              3
-            </p>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+              />
+              <text
+                dominantBaseline="middle"
+                id="icon-numbered"
+                textAnchor="middle"
+                x="50%"
+                y="55%"
+              >
+                3
+              </text>
+            </svg>
           </span>
           <div
             className="label-container"
@@ -608,9 +627,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="icon"
             title="Fifth Step"
           >
-            <p>
-              5
-            </p>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+              />
+              <text
+                dominantBaseline="middle"
+                id="icon-numbered"
+                textAnchor="middle"
+                x="50%"
+                y="55%"
+              >
+                5
+              </text>
+            </svg>
           </span>
           <div
             className="label-container"
@@ -1105,9 +1143,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="icon"
             title="Third Step"
           >
-            <p>
-              3
-            </p>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+              />
+              <text
+                dominantBaseline="middle"
+                id="icon-numbered"
+                textAnchor="middle"
+                x="50%"
+                y="55%"
+              >
+                3
+              </text>
+            </svg>
           </span>
           <div
             className="label-container"
@@ -1222,9 +1279,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             className="icon"
             title="Fifth Step"
           >
-            <p>
-              5
-            </p>
+            <svg
+              aria-hidden={true}
+              focusable="false"
+              height={24}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+              />
+              <text
+                dominantBaseline="middle"
+                id="icon-numbered"
+                textAnchor="middle"
+                x="50%"
+                y="55%"
+              >
+                5
+              </text>
+            </svg>
           </span>
           <div
             className="label-container"
