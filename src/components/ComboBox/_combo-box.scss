@@ -1,12 +1,15 @@
 @import '~carbon-components/scss/components/combo-box/combo-box';
 
 .#{$iot-prefix}--combobox {
+  display: flex;
+  flex-flow: column-reverse;
   position: relative;
   padding-top: $spacing-08;
+
   .#{$prefix}--form__helper-text,
   .#{$prefix}--label {
-    position: absolute;
     bottom: 100%;
+    position: absolute;
   }
 
   .#{$prefix}--label {

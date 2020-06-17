@@ -156,7 +156,7 @@ const findHighlightedIndex = ({ items, itemToString }, inputValue) => {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < items.length; i++) {
     const item = itemToString(items[i]).toLowerCase();
-    if (item.indexOf(searchValue) !== -1 && searchValue.length > 1) {
+    if (item.indexOf(searchValue) !== -1 && searchValue.length > 1 && item === searchValue) {
       return i;
     }
   }

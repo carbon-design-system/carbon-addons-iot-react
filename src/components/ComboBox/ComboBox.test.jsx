@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor, cleanup } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ComboBox from './ComboBox';
@@ -44,10 +44,6 @@ const defaultProps = {
 describe('ComboBox', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-  });
-
-  afterEach(() => {
-    cleanup();
   });
 
   const setup = props => {

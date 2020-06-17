@@ -42,11 +42,11 @@ const ComboBox = ({
   itemToString,
   onChange,
   items,
+  downshiftProps,
   ...comboProps
 }) => {
   // Ref for the combobox input
   const comboRef = React.createRef();
-  const { downshiftProps } = comboProps;
   // Current selected item that shows in the input
   const [selectedItem, setSelectedItem] = useState(null);
   // Array that populates list
@@ -54,11 +54,9 @@ const ComboBox = ({
   // Array that populates tags
   const [tagItems, setTagItems] = useState([]);
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     // If there are tags then clear and focus the input
-    if (tagItems.length >= 1) {
+    if (hasMultiValue) {
       setSelectedItem('');
       comboRef.current.textInput.current.focus();
     }
@@ -71,52 +69,52 @@ const ComboBox = ({
     // Only apply logic if user hit enter
     if (evt.key === 'Enter' && currentValue !== '' && currentValue !== undefined) {
       // Check if there is already a tag for this value and return it
-      const filteredTags = tagItems.filter(x => itemToString(x) === currentValue);
+      const hasNoFilteredTag = tagItems.filter(x => itemToString(x) === currentValue).length < 1;
       // Check if value is part of items array
-      const filteredItems = listItems.filter(x => itemToString(x) === currentValue);
+      const matchedItem = listItems.filter(x => itemToString(x) === currentValue)[0];
 
-      const uid = (listItems.length + filteredTags.length + filteredItems.length) / Math.random();
+      const uid = items.length / Math.random();
       // create new item to add items array and tags array
       const newItem = {
         id: `id-${uid}`,
-        text: currentValue || '',
+        text: currentValue,
       };
 
       // If component is using multiValue feature and there is not already a tag for new value
       // If the value is not already part of items list use new item else use list item
-      if (hasMultiValue && filteredTags.length < 1 && filteredItems.length < 1) {
+      if (hasMultiValue && hasNoFilteredTag && !matchedItem) {
         // Add new value to the tags array
         setTagItems(inputValues => [...inputValues, { ...newItem, id: newItem.id }]);
-      } else if (hasMultiValue && filteredTags.length < 1) {
+      } else if (hasMultiValue && hasNoFilteredTag) {
         // Add new value to the tags array using the list item object
-        setTagItems(inputValues => [...inputValues, filteredItems[0]]);
+        setTagItems(inputValues => [...inputValues, matchedItem]);
       }
 
       // If current value is not part of items array
-      if (filteredItems.length < 1) {
+      if (!matchedItem) {
         // Add new item to items array and set as selected Item
         setListItems(currentList => [...currentList, newItem]);
         setSelectedItem(newItem);
       } else {
         // Set the chosen item as selectedItem
-        setSelectedItem(filteredItems[0]);
+        setSelectedItem(matchedItem);
       }
 
       // Pass the combobox value to user's onChange callback
       // If has multi value we return array otherwise just the object
       if (hasMultiValue) {
         // If item exist in list use list item or else use new item
-        if (filteredItems.length < 1) {
+        if (!matchedItem) {
           onChange([...tagItems, newItem]);
-        } else if (filteredTags.length < 1) {
-          onChange([...tagItems, filteredItems[0]]);
+        } else if (hasNoFilteredTag) {
+          onChange([...tagItems, matchedItem]);
         }
       }
       // If item exist in list use list item or else use new item
-      else if (filteredItems.length < 1) {
+      else if (!matchedItem) {
         onChange(newItem);
       } else {
-        onChange(filteredItems[0]);
+        onChange(matchedItem);
       }
     }
   };
@@ -126,7 +124,7 @@ const ComboBox = ({
     const closedValue = e.currentTarget.parentNode.children[0].textContent;
     // If there is a tag with the same value then remove from tag array
     tagItems.forEach((item, idx) => {
-      if (itemToString(item).includes(closedValue)) {
+      if (itemToString(item) === closedValue) {
         tagItems.splice(idx, 1);
         setTagItems([...tagItems]);
       }
@@ -155,12 +153,6 @@ const ComboBox = ({
     }
   };
 
-  const highlightedIndex = hasMultiValue ? -1 : downshiftProps?.highlightedIndex;
-  const combinedDownshiftProps = {
-    ...downshiftProps,
-    highlightedIndex,
-  };
-
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
@@ -168,6 +160,18 @@ const ComboBox = ({
       onKeyDown={evt => handleOnKeypress(evt)}
       data-testid="combo-wrapper"
     >
+      <CarbonComboBox
+        data-testid="combo-box"
+        {...comboProps}
+        downshiftProps={downshiftProps}
+        ref={comboRef}
+        selectedItem={selectedItem}
+        items={listItems}
+        itemToString={itemToString}
+        onChange={handleOnChange}
+        className={classNames(comboProps.className, `${iotPrefix}--combobox-input`)}
+        disabled={comboProps.disabled || (loading !== undefined && loading !== false)}
+      />
       <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
         {tagItems.map((item, idx) => (
           <li key={`li-${item?.id}-${idx}`}>
@@ -182,18 +186,6 @@ const ComboBox = ({
           </li>
         ))}
       </ul>
-      <CarbonComboBox
-        data-testid="combo-box"
-        {...comboProps}
-        downshiftProps={combinedDownshiftProps}
-        ref={comboRef}
-        selectedItem={!hasMultiValue ? selectedItem : selectedItem}
-        items={listItems}
-        itemToString={itemToString}
-        onChange={handleOnChange}
-        className={classNames(comboProps.className, `${iotPrefix}--combobox-input`)}
-        disabled={comboProps.disabled || (loading !== undefined && loading !== false)}
-      />
     </div>
   );
 };
