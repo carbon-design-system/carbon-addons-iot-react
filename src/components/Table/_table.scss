@@ -7,6 +7,10 @@ table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
 
+.#{$iot-prefix}--data-table--row-actions {
+  height: 0;
+}
+
 .#{$iot-prefix}--data-table--fixed {
   table-layout: fixed;
 }
