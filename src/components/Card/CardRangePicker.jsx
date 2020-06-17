@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { EventSchedule16 } from '@carbon/icons-react';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classNames from 'classnames';
+import isNil from 'lodash/isNil';
 
 import { settings } from '../../constants/Settings';
 
@@ -25,7 +26,9 @@ export const CardRangePickerPropTypes = {
   /** callback to handle interactions with the range picker */
   onCardAction: PropTypes.func.isRequired,
   /** set of internationalized labels */
-  i18n: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.func])).isRequired,
+  i18n: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element])
+  ).isRequired,
   cardWidth: PropTypes.number,
 };
 
@@ -60,20 +63,17 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
   return (
     <div className={`${iotPrefix}--card--toolbar-date-range-wrapper`}>
       <ToolbarItem>
-        {timeBoxLabels[timeRange] && cardWidth > 229 ? (
+        {cardWidth > 400 ? (
           <div id="timeRange" className={`${iotPrefix}--card--toolbar-timerange-label`}>
-            {timeBoxLabels[timeRange]}
+            {timeBoxLabels[timeRange] || i18n.defaultLabel}
           </div>
         ) : null}
 
         <OverflowMenu
-          className={classNames(
-            `${iotPrefix}--card--toolbar-action`,
-            `${iotPrefix}--card--toolbar-date-range-action`
-          )}
+          className={classNames(`${iotPrefix}--card--toolbar-date-range-action`)}
           flipped
-          title={timeBoxLabels[timeRange] || i18n.selectDateRangeLabel}
-          iconDescription={timeBoxLabels[timeRange] || i18n.selectDateRangeLabel}
+          title={i18n.selectTimeRangeLabel}
+          iconDescription={i18n.selectTimeRangeLabel}
           menuOptionsClass={`${iotPrefix}--card--overflow`}
           renderIcon={EventSchedule16}
         >
@@ -81,6 +81,11 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
             key="default"
             onClick={() => handleTimeRange('default')}
             itemText={i18n.defaultLabel}
+            className={classNames({
+              [`${iotPrefix}--card--overflow-menuitem-active`]:
+                timeRange === '' || isNil(timeRange),
+            })}
+            primaryFocus
           />
           {Object.keys(timeBoxLabels)
             .filter(i => i.includes('last'))
@@ -90,6 +95,9 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
                 itemText={timeBoxLabels[i]}
+                className={classNames({
+                  [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
+                })}
               />
             ))}
           {Object.keys(timeBoxLabels)
@@ -100,6 +108,9 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
                 itemText={timeBoxLabels[i]}
+                className={classNames({
+                  [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
+                })}
               />
             ))}
         </OverflowMenu>

@@ -8,7 +8,6 @@ import { settings } from '../../../constants/Settings';
 const { iotPrefix } = settings;
 
 // internal component
-// eslint-disable-next-line
 const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
   isSelectable ? (
     <div
@@ -36,6 +35,15 @@ const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, chi
       {children}
     </div>
   );
+
+const ListItemWrapperProps = {
+  id: PropTypes.string.isRequired,
+  isLargeRow: PropTypes.bool.isRequired,
+  isSelectable: PropTypes.bool.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired,
+  children: React.Children.isRequired,
+};
 
 const ListItemPropTypes = {
   id: PropTypes.string.isRequired,
@@ -222,6 +230,7 @@ const ListItem = ({
   );
 };
 
+ListItemWrapper.propTypes = ListItemWrapperProps;
 ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;
 export default ListItem;

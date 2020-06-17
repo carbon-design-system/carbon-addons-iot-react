@@ -21,9 +21,8 @@ import StatefulTable from '../Table/StatefulTable';
 import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
-  formatNumberWithPrecision,
   handleCardVariables,
-  determinePrecision,
+  valueFormatter,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
@@ -37,8 +36,6 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   dataSourceId: PropTypes.string.isRequired,
   /** optional filter to apply to this particular line */
   dataFilter: PropTypes.objectOf(PropTypes.any),
-  /** optional units to put in the legend */
-  unit: PropTypes.string,
   /** optional param to set the colors */
   color: PropTypes.string,
 });
@@ -66,6 +63,8 @@ export const TimeSeriesCardPropTypes = {
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
       '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
     ),
+    /** optional units to put in the legend */
+    unit: PropTypes.string,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -164,24 +163,6 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
   return data;
 };
 
-/**
- * Determines how to format our values for our lines
- *
- * @param {any} value any value possible, but will only special format if a number
- * @param {string} size card size
- * @param {string} unit any optional units to show
- */
-export const valueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
-  let renderValue = value;
-  if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
-  } else if (isNil(value)) {
-    renderValue = '--';
-  }
-  return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
-};
-
 const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 /**
@@ -200,7 +181,7 @@ export const handleTooltip = (
   showTimeInGMT
 ) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
-  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line
+  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
   const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
   const dateLabel = timeStamp
     ? `<li class='datapoint-tooltip'>
