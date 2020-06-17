@@ -77,7 +77,7 @@ const propTypes = {
     rollingPeriodLabel: PropTypes.string,
     last24HoursLabel: PropTypes.string,
     last7DaysLabel: PropTypes.string,
-    defaultLabel: PropTypes.string,
+    defaultLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     lastMonthLabel: PropTypes.string,
     lastQuarterLabel: PropTypes.string,
     lastYearLabel: PropTypes.string,
@@ -98,7 +98,7 @@ const propTypes = {
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
-    selectDateRangeLabel: PropTypes.string,
+    selectTimeRangeLabel: PropTypes.string,
 
     // image card labels:
     zoomIn: PropTypes.string,
@@ -183,7 +183,7 @@ const defaultProps = {
     editCardLabel: 'Edit card',
     cloneCardLabel: 'Clone card',
     deleteCardLabel: 'Delete card',
-    selectDateRangeLabel: 'Select date range',
+    selectTimeRangeLabel: 'Select time range',
     // table card labels
     criticalLabel: 'Critical',
     moderateLabel: 'Moderate',
@@ -270,10 +270,10 @@ const Dashboard = ({
   isLoading,
   setIsLoading,
   // TODO: remove onSetRefresh and instead listen to setIsLoading
-  onSetRefresh, // eslint-disable-line
+  onSetRefresh,
   onSetupCard,
   // TODO: fix the rendering of the lastUpdated bit, to migrate in the style from our ibm repo
-  lastUpdated, // eslint-disable-line
+  lastUpdated,
   renderIconByName,
   onFetchData,
   timeGrain,
@@ -293,7 +293,7 @@ const Dashboard = ({
         cardsLoadingRef.current = undefined;
       }
     },
-    [isLoading] // eslint-disable-line
+    [isLoading] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   // Listen to the card fetches to determine whether all cards have finished loading
@@ -313,11 +313,8 @@ const Dashboard = ({
         }
       });
     },
-    [onFetchData, cards.length] // eslint-disable-line
+    [onFetchData, cards.length] // eslint-disable-line react-hooks/exhaustive-deps
   );
-
-  // Caching for performance
-  const cachedI18N = useMemo(() => i18n, []); // eslint-disable-line
 
   const cachedOnBreakpointChange = useCallback(
     newBreakpoint => {
@@ -331,12 +328,12 @@ const Dashboard = ({
 
   const cachedRenderIconByName = useCallback(
     renderIconByName,
-    [] //eslint-disable-line
+    [] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   const cachedOnSetupCard = useCallback(
     onSetupCard,
-    [] // eslint-disable-line
+    [] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
   // Uses our shared renderer for each card that knows how to render a fixed set of card types
@@ -347,7 +344,7 @@ const Dashboard = ({
           <CardRenderer
             {...card}
             key={`renderer-${card.id}`}
-            i18n={cachedI18N}
+            i18n={{ ...i18n, ...card.i18n }} // let the card level i18n override the dashboard i18n
             isLoading={isLoading}
             isEditable={isEditable}
             breakpoint={breakpoint}
@@ -357,8 +354,8 @@ const Dashboard = ({
             timeGrain={timeGrain}
           />
         ) : null
-      ), // eslint-disable-next-line
-    [breakpoint, cachedI18N, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
+      ), // eslint-disable-next-line react-hooks/exhaustive-deps
+    [breakpoint, i18n, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
   );
 
   return (

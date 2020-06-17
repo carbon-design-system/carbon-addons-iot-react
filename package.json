@@ -1,8 +1,7 @@
 {
   "name": "carbon-addons-iot-react",
   "engines": {
-    "node": "12.x",
-    "yarn": "1.x"
+    "node": "10.x || 12.x"
   },
   "main": "lib/src/index.js",
   "module": "es/src/index.js",
@@ -43,7 +42,7 @@
     "test:watch": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --testPathPattern='.*\\.test\\.js(x)?' --watch --verbose --coverage",
     "test:update": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest src/components/StorybookSnapshots.test.js src/utils/__tests__/publicAPI.test.js --updateSnapshot",
     "test:clear": "yarn test:engines && cross-env NODE_ICU_DATA=node_modules/full-icu TZ=America/Chicago jest --clearCache",
-    "test:engines": "check-node-version --package"
+    "test:engines": "check-node-version --node $(cat .nvmrc) --yarn 1.x"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
@@ -184,6 +183,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.2",
     "eslint-plugin-react-hooks": "^1.5.0",
+    "eslint-plugin-unicorn": "^20.1.0",
     "faker": "^4.1.0",
     "fast-sass-loader": "^1.5.0",
     "file-loader": "^4.0.0",

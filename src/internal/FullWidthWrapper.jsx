@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Utility component that is used to render stories at full width
+// eslint-disable-next-line react/prop-types
 const FullWidthWrapper = ({ withPadding, style, children }) => {
   const styles = withPadding
     ? { width: 'calc(100vw - 6rem)', ...style }
@@ -32,14 +33,12 @@ FullWidthWrapper.propTypes = {
   /**
    * allow for over rides and additional styles to wrapper
    */
-  style: PropTypes.object, // eslint-disable-line
-  children: PropTypes.node,
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 FullWidthWrapper.defaultProps = {
   style: null,
   withPadding: true,
-  children: null,
 };
 
 export default FullWidthWrapper;

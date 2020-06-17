@@ -70,6 +70,7 @@ export const ValueCardPropTypes = {
     description: PropTypes.string.isRequired,
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
+    tooltipDirection: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
   }),
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
@@ -82,8 +83,6 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   dataSourceId: PropTypes.string.isRequired,
   /** optional filter to apply to this particular line */
   dataFilter: PropTypes.objectOf(PropTypes.any),
-  /** optional units to put in the legend */
-  unit: PropTypes.string,
   /** optional param to set the colors */
   color: PropTypes.string,
 });
@@ -109,6 +108,8 @@ export const TimeSeriesCardPropTypes = {
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
       '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
     ),
+    /** optional units to put in the legend */
+    unit: PropTypes.string,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -223,12 +224,59 @@ const BarChartDatasetPropType = {
 
 export const BarChartCardPropTypes = {
   /** card size */
-  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (props[propName] === CARD_SIZES.SMALL || props[propName] === CARD_SIZES.SMALLWIDE) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
   content: PropTypes.shape({
     /** the layout of the bar chart (horizontal, vertical) */
     layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
     /** the type of bar chart (simple, grouped, stacked) */
-    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
+    type: (props, propName, componentName) => {
+      let error;
+      // Must be one of the BAR_CHART_TYPES
+      if (!Object.values(BAR_CHART_TYPES).includes(props[propName])) {
+        error = new Error(
+          `\`${componentName}\` prop \`${propName}\` must be \`SIMPLE\`, \`GROUPED\`, or \`STACKED\`.`
+        );
+      } // GROUPED charts can't have timeDataSourceId
+      else if (props[propName] === BAR_CHART_TYPES.GROUPED && props.timeDataSourceId) {
+        error = new Error(
+          `\`BarChartCard\` of type \`GROUPED\` cannot use \`timeDataSourceId\` at this time.`
+        );
+      } // STACKED charts with timeDataSourceId and categoryDataSourceId can't have datasource labels
+      else if (
+        props[propName] === BAR_CHART_TYPES.STACKED &&
+        props.timeDataSourceId &&
+        props.categoryDataSourceId
+      ) {
+        let hasDataSourceLabel = false;
+        props.series.forEach(datasource => {
+          if (datasource.label) {
+            hasDataSourceLabel = true;
+          }
+        });
+        if (hasDataSourceLabel) {
+          error = new Error(
+            `\`BarChartCard\` of type \`STACKED\` with \`categoryDataSourceId\` AND \`timeDataSourceId\` cannot use \`label\` within series. The legend labels will be created from the \`categoryDataSourceId\`.`
+          );
+        }
+      }
+      return error;
+    },
     /** x-axis display name */
     xLabel: PropTypes.string,
     /** y-axis display name */
@@ -236,9 +284,32 @@ export const BarChartCardPropTypes = {
     /** defined dataset attributes */
     series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)).isRequired,
     /** for category type bar charts this is the x-axis value */
-    categoryDataSourceId: PropTypes.string,
+    categoryDataSourceId: (props, propName, componentName) => {
+      let error;
+      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.timeDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`timeDataSourceId\`.`
+        );
+      } // all charts must have oneOf[categoryDataSourceId, timeDataSourceId]
+      else if (!props[propName] && !props.timeDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` must have \`${props[propName]}\` OR \`timeDataSourceId\`.`
+        );
+      }
+      return error;
+    },
     /** for time based bar charts this is the x-axis value */
-    timeDataSourceId: PropTypes.string,
+    timeDataSourceId: (props, propName, componentName) => {
+      let error;
+      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.categoryDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`categoryDataSourceId\`.`
+        );
+      }
+      return error;
+    },
+    /** optional units to put in the legend for all datasets */
+    unit: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -369,6 +440,7 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
+
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
@@ -398,7 +470,10 @@ export const CardPropTypes = {
     dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
+    /** If no time range is selected we should show this string as the default */
+    defaultLabel: PropTypes.string,
     // card actions
+    selectTimeRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,

@@ -30,7 +30,7 @@ storiesOf('Watson IoT/Card', module)
   .add('basic', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: text('width', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div style={{ width: text('width', `450px`), margin: 20 }}>
         <Card
           title={text('title', 'Card Title')}
           id="facilitycard-basic"
@@ -85,7 +85,7 @@ storiesOf('Watson IoT/Card', module)
           breakpoint="lg"
           availableActions={{ range: true, expand: true }}
           onCardAction={action('onCardAction')}
-          // eslint-disable-next-line
+          // eslint-disable-next-line react/no-children-prop
           children={childSize => (
             <p>
               Content width is {childSize.width} and height is {childSize.height}
