@@ -4,8 +4,8 @@
 .#{$iot-prefix}-flyout-menu {
   color: initial;
   background: $ui-background;
-  min-width: 300px;
-  .bx--tooltip__caret {
+
+  .#{$prefix}--tooltip__caret {
     display: none;
   }
 
@@ -16,11 +16,17 @@
     margin-top: $spacing-03;
   }
 
+  [dir='rtl'] &__submit,
   &__cancel {
     margin-right: $spacing-03;
   }
+
+  [dir='rtl'] &__cancel,
+  &__submit {
+    margin-right: 0;
+  }
 }
 
-.#{$iot-prefix}-flyout-menu.bx--tooltip {
+.#{$iot-prefix}-flyout-menu.#{$prefix}--tooltip {
   max-width: unset !important;
 }

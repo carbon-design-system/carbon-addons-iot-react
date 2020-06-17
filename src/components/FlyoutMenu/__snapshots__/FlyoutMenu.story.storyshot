@@ -21,7 +21,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
       }
     >
       <div
-        className="bx--tooltip__label"
+        className="bx--tooltip__label flyout-trigger"
         id="test-trigger-id"
       >
         <div
@@ -104,7 +104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
       }
     >
       <button
-        className="bx--btn bx--btn--primary"
+        className="iot--btn bx--btn bx--btn--primary"
         disabled={false}
         onClick={[Function]}
         style={
@@ -118,7 +118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
         Hide
       </button>
       <button
-        className="bx--btn bx--btn--primary"
+        className="story-flyout-menu-open iot--btn bx--btn bx--btn--primary"
         disabled={false}
         onClick={[Function]}
         style={
@@ -143,7 +143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Flyou
       <div
         aria-describedby={null}
         aria-expanded={false}
-        className="bx--tooltip__label"
+        className="bx--tooltip__label flyout-trigger"
         id="test-trigger-id"
         onBlur={[Function]}
         onClick={[Function]}

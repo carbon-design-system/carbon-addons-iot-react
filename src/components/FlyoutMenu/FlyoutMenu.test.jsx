@@ -1,20 +1,60 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import '@testing-library/jest-dom';
+import { waitForElement, render, waitFor } from '@testing-library/react';
 
 import FlyoutMenu from './FlyoutMenu';
 
-describe('FlyoutMenu', () => {
-  it('Renders open', () => {
-    const wrapper = shallow(<FlyoutMenu open triggerId="flyout-test" />);
+const applyButtonText = 'Apply';
+const cancelButtonText = 'Cancel';
 
-    expect(wrapper.find('.iot-flyout-menu__cancel')).toHaveLength(1);
-    expect(wrapper.find('.iot-flyout-menu__submit')).toHaveLength(1);
+describe('FlyoutMenu', () => {
+  it('Renders open', async () => {
+    const { queryByText } = render(<FlyoutMenu open triggerId="flyout-test" />);
+
+    const applyButtonTest = await waitForElement(() => queryByText(applyButtonText));
+
+    const cancelButtonTest = await waitForElement(() => queryByText(cancelButtonText));
+
+    expect(applyButtonTest).toBeTruthy();
+    expect(cancelButtonTest).toBeTruthy();
   });
 
-  it('Renders closed', () => {
-    const wrapper = mount(<FlyoutMenu open={false} triggerId="flyout-test" />);
+  it('Renders closed', async () => {
+    const { queryByText } = render(<FlyoutMenu triggerId="flyout-test" />);
 
-    expect(wrapper.find('.iot-flyout-menu__cancel')).toHaveLength(0);
-    expect(wrapper.find('.iot-flyout-menu__submit')).toHaveLength(0);
+    const applyButtonTest = await waitFor(() => queryByText(applyButtonText));
+
+    const cancelButtonTest = await waitFor(() => queryByText(cancelButtonText));
+
+    expect(applyButtonTest).toBeNull();
+    expect(cancelButtonTest).toBeNull();
+  });
+
+  it('Cancel Action', async () => {
+    const cancelAction = jest.fn();
+
+    const { queryByText } = render(
+      <FlyoutMenu open triggerId="flyout-test" onCancel={cancelAction} />
+    );
+
+    const cancelButton = await waitForElement(() => queryByText(cancelButtonText));
+
+    cancelButton.click();
+
+    expect(cancelAction).toHaveBeenCalled();
+  });
+
+  it('Submit Action', async () => {
+    const applyAction = jest.fn();
+
+    const { queryByText } = render(
+      <FlyoutMenu open triggerId="flyout-test" onApply={applyAction} />
+    );
+
+    const submitButton = await waitForElement(() => queryByText(applyButtonText));
+
+    submitButton.click();
+
+    expect(applyAction).toHaveBeenCalled();
   });
 });

@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Button, Tabs, Tab, Dropdown } from 'carbon-components-react';
+
+import Button from '../Button';
+import { Dropdown } from '../Dropdown';
+import { Tab, Tabs } from '../Tabs';
 
 import FlyoutMenu from './FlyoutMenu';
 
@@ -26,7 +29,11 @@ function UncontrolledExample() {
         <Button style={{ margin: '10px 5px' }} onClick={() => setIsOpen(false)}>
           Hide
         </Button>
-        <Button style={{ margin: '10px 5px' }} onClick={() => setIsOpen(true)}>
+        <Button
+          className="story-flyout-menu-open"
+          style={{ margin: '10px 5px' }}
+          onClick={() => setIsOpen(true)}
+        >
           Show
         </Button>
       </div>
@@ -38,6 +45,7 @@ function UncontrolledExample() {
           direction={direction}
           onCancel={action('On Cancel Clicked')}
           onApply={action('On Apply Clicked')}
+          selectorPrimaryFocus="story-flyout-menu-open"
         >
           Example Content
         </FlyoutMenu>
@@ -48,7 +56,7 @@ function UncontrolledExample() {
 
 function TabbedContent() {
   return (
-    <div style={{}}>
+    <div>
       <Tabs>
         <Tab id="tab-1" label="Label 1">
           <div>This is some stuff</div>
