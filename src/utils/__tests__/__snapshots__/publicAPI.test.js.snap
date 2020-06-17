@@ -13499,9 +13499,6 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "inline": Object {
-        "type": "bool",
-      },
       "invalid": Object {
         "type": "bool",
       },

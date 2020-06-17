@@ -13,9 +13,13 @@ const propTypes = {
   // eslint-disable-next-line react/forbid-foreign-prop-types
   ...CarbonComboBox.propTypes,
   loading: PropTypes.bool,
-  inline: PropTypes.bool,
+  // Callback that is called with the value of the input on change
+  onChange: PropTypes.func.isRequired,
+  // OPtional classname to be applied to wrapper
   wrapperClassName: PropTypes.string,
+  // String to pass for tags close button aria-label. Will be prepended to value name
   closeButtonText: PropTypes.string,
+  // Bit that will allow mult value and tag feature
   hasMultiValue: PropTypes.bool,
 };
 
@@ -36,11 +40,13 @@ const ComboBox = ({
   closeButtonText,
   hasMultiValue,
   itemToString,
+  onChange,
+  items,
   ...comboProps
 }) => {
   // Ref for the combobox input
   const comboRef = React.createRef();
-  const { items, downshiftProps } = comboProps;
+  const { downshiftProps } = comboProps;
   // Current selected item that shows in the input
   const [selectedItem, setSelectedItem] = useState(null);
   // Array that populates list
@@ -101,16 +107,16 @@ const ComboBox = ({
       if (hasMultiValue) {
         // If item exist in list use list item or else use new item
         if (filteredItems.length < 1) {
-          comboProps.onChange([...tagItems, newItem]);
+          onChange([...tagItems, newItem]);
         } else if (filteredTags.length < 1) {
-          comboProps.onChange([...tagItems, filteredItems[0]]);
+          onChange([...tagItems, filteredItems[0]]);
         }
       }
       // If item exist in list use list item or else use new item
       else if (filteredItems.length < 1) {
-        comboProps.onChange(newItem);
+        onChange(newItem);
       } else {
-        comboProps.onChange(filteredItems[0]);
+        onChange(filteredItems[0]);
       }
     }
   };
@@ -126,7 +132,7 @@ const ComboBox = ({
       }
     });
     // Send new value to users onChange callback
-    comboProps.onChange([...tagItems]);
+    onChange([...tagItems]);
   };
 
   const handleOnChange = selected => {
@@ -138,14 +144,14 @@ const ComboBox = ({
       // Add new value to tags array
       setTagItems(inputValues => [...inputValues, newItem]);
       // pass the combobox value to user's onChange callback
-      comboProps.onChange([...tagItems, newItem]);
+      onChange([...tagItems, newItem]);
     }
 
     // Get selected item from Combobox and set our internal state to the value
     setSelectedItem(newItem);
     // If not using multiValue feature then just pass the selected item
     if (!hasMultiValue) {
-      comboProps.onChange(newItem);
+      onChange(newItem);
     }
   };
 
