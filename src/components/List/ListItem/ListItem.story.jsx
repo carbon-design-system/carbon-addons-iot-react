@@ -151,8 +151,8 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     <div style={{ width: 400 }}>
       <ListItem
         id="list-item"
-        value="List Item"
-        secondaryValue="Secondary Value"
+        value={text('value', 'List Item')}
+        secondaryValue={text('secondaryValue', 'Secondary Value')}
         rowActions={[
           <Button
             key="list-item-edit"
@@ -172,8 +172,8 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     <div style={{ width: 400 }}>
       <ListItem
         id="list-item"
-        value="List Item"
-        isExpandable
+        value={text('value', 'List Item')}
+        isExpandable={boolean('isExpandable', true)}
         onExpand={action('onExpand')}
         rowActions={[
           <OverflowMenu flipped>
