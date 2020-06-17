@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import debounce from 'lodash/debounce';
 
@@ -243,7 +243,7 @@ describe('HierarchyList', () => {
   });
 
   it('parent items of defaultSelectedId should be expanded', () => {
-    const { getByTitle, queryByTitle } = render(
+    const { getByTitle, queryByTitle, rerender } = render(
       <HierarchyList
         items={items}
         title="Hierarchy List"
@@ -253,7 +253,13 @@ describe('HierarchyList', () => {
       />
     );
     // Nested item should be visible
-    expect(getByTitle('JD Davis')).toBeInTheDocument();
+    const selectedItem = getByTitle('JD Davis');
+    expect(selectedItem).toBeInTheDocument();
+
+    // Should be marked selected
+    expect(selectedItem?.parentElement?.parentElement?.parentElement?.className).toContain(
+      '__selected'
+    );
     // All other categories should be visible still
     expect(getByTitle('New York Mets')).toBeInTheDocument();
     // Yankees are unfortunately worthy too...
@@ -264,6 +270,24 @@ describe('HierarchyList', () => {
     expect(getByTitle('Washington Nationals')).toBeInTheDocument();
     // But no Yankees players should be visible
     expect(queryByTitle('Gary Sanchez')).not.toBeInTheDocument();
+
+    // Change the defaultSelectedId property
+    rerender(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        pageSize="xl"
+        defaultSelectedId="New York Yankees_Gary Sanchez"
+        hasPagination={false}
+      />
+    );
+    // TODO: The previously selected players category should still be expanded needs fix #1320
+    // expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
+    const selectedYankee = screen.getByTitle('Gary Sanchez');
+    expect(selectedYankee).toBeInTheDocument();
+    expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
+      '__selected'
+    );
   });
 
   it('clicking item should fire onSelect', () => {
