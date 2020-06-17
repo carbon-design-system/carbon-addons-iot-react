@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TableSubComponents ViewDropdown 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableViewDropdown TableViewDropdown 1`] = `
 <div
   className="storybook-container"
 >
@@ -50,7 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               htmlFor="downshift-6-input"
               id="dropdown-field-label-iot--view-dropdown"
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -58,6 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -71,13 +72,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "View All",
                     }
                   }
-                  testID="ViewDropdownItem-view-all"
+                  testID="TableViewDropdownItem-view-all"
                 />
               }
             >
               <div
                 className="iot--view-dropdown__item"
-                data-testid="ViewDropdownItem-view-all"
+                data-testid="TableViewDropdownItem-view-all"
                 title="View All - Edited"
               >
                 <span
@@ -149,7 +150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onMouseDown={[Function]}
               onMouseMove={[Function]}
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -157,6 +158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -170,7 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "View All",
                     }
                   }
-                  testID="ViewDropdownItem-view-all"
+                  testID="TableViewDropdownItem-view-all"
                 />
               }
             >
@@ -179,7 +181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  data-testid="ViewDropdownItem-view-all"
+                  data-testid="TableViewDropdownItem-view-all"
                   title="View All - Edited"
                 >
                   <span
@@ -237,7 +239,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onMouseDown={[Function]}
               onMouseMove={[Function]}
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -245,6 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -258,7 +261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "My saved 1",
                     }
                   }
-                  testID="ViewDropdownItem-view-1"
+                  testID="TableViewDropdownItem-view-1"
                 />
               }
             >
@@ -267,7 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  data-testid="ViewDropdownItem-view-1"
+                  data-testid="TableViewDropdownItem-view-1"
                   title="My saved 1"
                 >
                   <span>
@@ -283,7 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onMouseDown={[Function]}
               onMouseMove={[Function]}
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -291,6 +294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -304,7 +308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "My saved 2",
                     }
                   }
-                  testID="ViewDropdownItem-view-2"
+                  testID="TableViewDropdownItem-view-2"
                 />
               }
             >
@@ -313,7 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  data-testid="ViewDropdownItem-view-2"
+                  data-testid="TableViewDropdownItem-view-2"
                   title="My saved 2"
                 >
                   <span>
@@ -329,7 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onMouseDown={[Function]}
               onMouseMove={[Function]}
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -337,6 +341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -350,7 +355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "My saved 3 with a very long name that will get truncated",
                     }
                   }
-                  testID="ViewDropdownItem-view-3"
+                  testID="TableViewDropdownItem-view-3"
                 />
               }
             >
@@ -359,7 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item"
-                  data-testid="ViewDropdownItem-view-3"
+                  data-testid="TableViewDropdownItem-view-3"
                   title="My saved 3 with a very long name that will get truncated"
                 >
                   <span>
@@ -375,7 +380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onMouseDown={[Function]}
               onMouseMove={[Function]}
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -383,6 +388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -397,7 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "Save as new view",
                     }
                   }
-                  testID="ViewDropdownItem-save-new-view"
+                  testID="TableViewDropdownItem-save-new-view"
                 />
               }
             >
@@ -406,7 +412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item iot--view-dropdown__item-link"
-                  data-testid="ViewDropdownItem-save-new-view"
+                  data-testid="TableViewDropdownItem-save-new-view"
                   title="Save as new view"
                 >
                   <span>
@@ -422,7 +428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               onMouseDown={[Function]}
               onMouseMove={[Function]}
               title={
-                <ViewDropdownItem
+                <TableViewDropdownItem
                   activeViewEdited={true}
                   i18n={
                     Object {
@@ -430,6 +436,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "edited": "Edited",
                       "manageViews": "Manage views",
                       "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
+                      "tableViewMenu": "Table view menu",
+                      "view": "View",
+                      "viewAll": "View All",
+                    }
+                  }
+                  isCompact={false}
+                  isSelected={false}
+                  item={
+                    Object {
+                      "customAction": [Function],
+                      "id": "save-view",
+                      "text": "Save view",
+                    }
+                  }
+                  testID="TableViewDropdownItem-save-view"
+                />
+              }
+            >
+              <div
+                className="bx--list-box__menu-item__option"
+              >
+                <div
+                  className="iot--view-dropdown__item iot--view-dropdown__item-link"
+                  data-testid="TableViewDropdownItem-save-view"
+                  title="Save view"
+                >
+                  <span>
+                    Save view
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="bx--list-box__menu-item"
+              id="downshift-6-item-6"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              title={
+                <TableViewDropdownItem
+                  activeViewEdited={true}
+                  i18n={
+                    Object {
+                      "ariaLabel": "Select view",
+                      "edited": "Edited",
+                      "manageViews": "Manage views",
+                      "saveAsNewView": "Save as new view",
+                      "saveView": "Save view",
                       "tableViewMenu": "Table view menu",
                       "view": "View",
                       "viewAll": "View All",
@@ -448,7 +503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       "text": "Manage views",
                     }
                   }
-                  testID="ViewDropdownItem-manage-views"
+                  testID="TableViewDropdownItem-manage-views"
                 />
               }
             >
@@ -457,7 +512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--view-dropdown__item iot--view-dropdown__item-link"
-                  data-testid="ViewDropdownItem-manage-views"
+                  data-testid="TableViewDropdownItem-manage-views"
                   title="Manage views"
                 >
                   <span>

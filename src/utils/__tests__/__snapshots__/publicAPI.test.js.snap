@@ -4794,7 +4794,7 @@ Map {
       },
     },
   },
-  "ViewDropdown" => Object {
+  "TableViewDropdown" => Object {
     "defaultProps": Object {
       "activeViewEdited": false,
       "disabled": false,
@@ -4803,13 +4803,14 @@ Map {
         "edited": "Edited",
         "manageViews": "Manage views",
         "saveAsNewView": "Save as new view",
+        "saveView": "Save view",
         "tableViewMenu": "Table view menu",
         "view": "View",
         "viewAll": "View All",
       },
       "overrides": undefined,
       "selectedViewId": undefined,
-      "testID": "ViewDropdown",
+      "testID": "TableViewDropdown",
       "views": Array [],
     },
     "propTypes": Object {
@@ -4823,6 +4824,9 @@ Map {
               "type": "func",
             },
             "onSaveAsNewView": Object {
+              "type": "func",
+            },
+            "onSaveView": Object {
               "type": "func",
             },
           },
@@ -4849,6 +4853,9 @@ Map {
               "type": "string",
             },
             "saveAsNewView": Object {
+              "type": "string",
+            },
+            "saveView": Object {
               "type": "string",
             },
             "tableViewMenu": Object {

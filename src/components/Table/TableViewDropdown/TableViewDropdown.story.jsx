@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 
-import ViewDropdown from './ViewDropdown/ViewDropdown';
+import TableViewDropdown from './TableViewDropdown';
 
-storiesOf('Watson IoT/TableSubComponents', module).add(
-  'ViewDropdown',
+storiesOf('Watson IoT/Table/TableViewDropdown', module).add(
+  'TableViewDropdown',
   () => {
     const myViews = [
       {
@@ -30,12 +30,13 @@ storiesOf('Watson IoT/TableSubComponents', module).add(
 
       return (
         <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
-          <ViewDropdown
+          <TableViewDropdown
             selectedViewId={selectedViewId}
             activeViewEdited={boolean('activeViewEdited', true)}
             views={myViews}
             actions={{
               onSaveAsNewView: action('onSaveAsNewView'),
+              onSaveView: action('onSaveView'),
               onManageViews: action('onManageViews'),
               onChangeView: viewItem => {
                 setSelectedViewId(viewItem.id);
@@ -49,8 +50,8 @@ storiesOf('Watson IoT/TableSubComponents', module).add(
   },
   {
     info: {
-      propTables: [ViewDropdown],
-      text: `This is an example of the <ViewDropdown> table sub component. The state needs to be managed by the
+      propTables: [TableViewDropdown],
+      text: `This is an example of the <TableViewDropdown> table sub component. The state needs to be managed by the
        consuming application. 
        
        ~~~js
@@ -76,7 +77,7 @@ storiesOf('Watson IoT/TableSubComponents', module).add(
   
         return (
           <div style={{ width: select('wrapper width', ['300px', '100px'], '300px') }}>
-            <ViewDropdown
+            <TableViewDropdown
               selectedViewId={selectedViewId}
               activeViewEdited={boolean('activeViewEdited', true)}
               views={myViews}

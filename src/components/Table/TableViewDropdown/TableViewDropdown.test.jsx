@@ -5,11 +5,11 @@ import { Dropdown } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 
-import ViewDropdown from './ViewDropdown';
+import TableViewDropdown from './TableViewDropdown';
 
 const { iotPrefix, prefix } = settings;
 
-describe('ViewDropdown', () => {
+describe('TableViewDropdown', () => {
   const myViews = [
     {
       id: 'view-1',
@@ -36,31 +36,39 @@ describe('ViewDropdown', () => {
 
   it('adds a "view all" default item to the start of the list', () => {
     const wrapper = mount(
-      <ViewDropdown views={myViews} actions={actions} selectedViewId={myViews[2].id} />
+      <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[2].id} />
     );
     const viewAllItem = wrapper.find(itemSelector).first();
     expect(viewAllItem.text()).toEqual('View All');
   });
 
   it('adds a "manage views" item at the end', () => {
-    const wrapper = mount(<ViewDropdown views={myViews} actions={actions} />);
+    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
     const manageViewsItem = wrapper.find(itemSelector).last();
     expect(manageViewsItem.text()).toEqual('Manage views');
   });
 
-  it('adds a "view new view" item before the "manage views" item', () => {
-    const wrapper = mount(<ViewDropdown views={myViews} actions={actions} />);
+  it('adds a "save new view" item before the "manage views" item', () => {
+    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
     const saveViewItem = wrapper.find(itemSelector).at(4);
     expect(saveViewItem.text()).toEqual('Save as new view');
   });
 
+  it('adds a "save view" item before the "manage views" item', () => {
+    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} />);
+    const saveViewItem = wrapper.find(itemSelector).at(5);
+    expect(saveViewItem.text()).toEqual('Save view');
+  });
+
   it('selected the proper item on init', () => {
-    const wrapperWithoutInitialDefault = mount(<ViewDropdown views={myViews} actions={actions} />);
+    const wrapperWithoutInitialDefault = mount(
+      <TableViewDropdown views={myViews} actions={actions} />
+    );
     const viewAllItem = wrapperWithoutInitialDefault.find(iotItemSelector);
     expect(viewAllItem.props().title).toEqual('View All');
 
     const wrapperWithInitiallySelected = mount(
-      <ViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />
+      <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />
     );
     const view1Item = wrapperWithInitiallySelected.find(iotItemSelector);
     expect(view1Item.props().title).toEqual('View 1');
@@ -68,7 +76,7 @@ describe('ViewDropdown', () => {
 
   it('can have the selected item set externally after initial render', () => {
     const wrapper = mount(
-      <ViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />
+      <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[0].id} />
     );
     const view1Item = wrapper.find(iotItemSelector);
     expect(view1Item.props().title).toEqual('View 1');
@@ -81,7 +89,7 @@ describe('ViewDropdown', () => {
   });
 
   it('adds a "edited" postfix to selected item & title when activeViewEdited is true', () => {
-    const wrapper = mount(<ViewDropdown views={myViews} actions={actions} activeViewEdited />);
+    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} activeViewEdited />);
     const selectedItem = wrapper.find(iotItemSelector);
     expect(selectedItem.props().title).toEqual('View All - Edited');
 
@@ -99,7 +107,7 @@ describe('ViewDropdown', () => {
         // selections based on click events get reflected in the component.
         const [selectedViewId, setSelectedViewId] = useState(undefined);
         return (
-          <ViewDropdown
+          <TableViewDropdown
             views={myViews}
             actions={{
               ...actions,
@@ -139,7 +147,7 @@ describe('ViewDropdown', () => {
   });
 
   it('renders an icon for the manage views item', () => {
-    const wrapper = mount(<ViewDropdown views={myViews} actions={actions} activeViewEdited />);
+    const wrapper = mount(<TableViewDropdown views={myViews} actions={actions} activeViewEdited />);
     const manageViewsItem = wrapper.find(itemSelector).last();
     expect(manageViewsItem.exists('svg')).toBeTruthy();
   });
@@ -153,7 +161,7 @@ describe('ViewDropdown', () => {
       );
     };
     const wrapper = mount(
-      <ViewDropdown
+      <TableViewDropdown
         views={myViews}
         actions={actions}
         overrides={{ dropdown: { component: MyDropdown } }}
@@ -164,7 +172,7 @@ describe('ViewDropdown', () => {
 
   it('can be overridden to use custom Dropdown props', () => {
     const wrapper = mount(
-      <ViewDropdown
+      <TableViewDropdown
         views={myViews}
         actions={actions}
         overrides={{
@@ -185,9 +193,9 @@ describe('ViewDropdown', () => {
     expect(allItems.length).toEqual(1);
   });
 
-  it('can be overridden to use another ViewDropdownItem', () => {
+  it('can be overridden to use another TableViewDropdownItem', () => {
     const wrapper = mount(
-      <ViewDropdown
+      <TableViewDropdown
         views={myViews}
         actions={actions}
         overrides={{
@@ -201,9 +209,9 @@ describe('ViewDropdown', () => {
     expect(firstItem.text()).toEqual('myItem');
   });
 
-  it('can be overridden to use custom ViewDropdownItem props', () => {
+  it('can be overridden to use custom TableViewDropdownItem props', () => {
     const wrapper = mount(
-      <ViewDropdown
+      <TableViewDropdown
         views={myViews}
         actions={actions}
         overrides={{
@@ -213,10 +221,10 @@ describe('ViewDropdown', () => {
         }}
       />
     );
-    const firstViewDropdownItem = wrapper
+    const firstTableViewDropdownItem = wrapper
       .find(itemSelector)
       .first()
-      .find('ViewDropdownItem');
-    expect(firstViewDropdownItem.props().isCompact).toEqual(true);
+      .find('TableViewDropdownItem');
+    expect(firstTableViewDropdownItem.props().isCompact).toEqual(true);
   });
 });

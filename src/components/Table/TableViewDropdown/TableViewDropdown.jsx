@@ -6,8 +6,8 @@ import withSize from 'react-sizeme';
 
 import { settings } from '../../../constants/Settings';
 
-import ViewItemPropType from './ViewItemPropTypes';
-import ViewDropdownItem from './ViewDropdownItem';
+import TableViewItemPropType from './TableViewItemPropTypes';
+import TableViewDropdownItem from './TableViewDropdownItem';
 
 const { iotPrefix } = settings;
 
@@ -18,12 +18,13 @@ const propTypes = {
   selectedViewId: PropTypes.string,
   disabled: PropTypes.bool,
   /** An array of items representing the user generated views */
-  views: PropTypes.arrayOf(ViewItemPropType),
+  views: PropTypes.arrayOf(TableViewItemPropType),
   i18n: PropTypes.shape({
     view: PropTypes.string,
     edited: PropTypes.string,
     viewAll: PropTypes.string,
     saveAsNewView: PropTypes.string,
+    saveView: PropTypes.string,
     manageViews: PropTypes.string,
     ariaLabel: PropTypes.string,
     tableViewMenu: PropTypes.string,
@@ -32,12 +33,14 @@ const propTypes = {
   actions: PropTypes.shape({
     /** Callback for when the user selected save new View */
     onSaveAsNewView: PropTypes.func,
+    /** Callback for when the user selected save View */
+    onSaveView: PropTypes.func,
     /** Callback for when the user selected Manage views */
     onManageViews: PropTypes.func,
     /** Callback for when the current view is changed by the user */
     onChangeView: PropTypes.func,
   }).isRequired,
-  /** Used to overide the internal components and props of the ViewDropdown */
+  /** Used to overide the internal components and props of the TableViewDropdown */
   overrides: PropTypes.shape({
     dropdown: PropTypes.shape({
       props: PropTypes.object,
@@ -59,6 +62,7 @@ const defaultProps = {
     edited: 'Edited',
     viewAll: 'View All',
     saveAsNewView: 'Save as new view',
+    saveView: 'Save view',
     manageViews: 'Manage views',
     ariaLabel: 'Select view',
     tableViewMenu: 'Table view menu',
@@ -66,14 +70,14 @@ const defaultProps = {
   activeViewEdited: false,
   disabled: false,
   overrides: undefined,
-  testID: 'ViewDropdown',
+  testID: 'TableViewDropdown',
 };
 
-const ViewDropdown = ({
+const TableViewDropdown = ({
   selectedViewId,
   activeViewEdited,
   views,
-  actions: { onSaveAsNewView, onManageViews, onChangeView },
+  actions: { onSaveView, onSaveAsNewView, onManageViews, onChangeView },
   disabled,
   i18n,
   overrides,
@@ -90,21 +94,35 @@ const ViewDropdown = ({
         text: i18n.saveAsNewView,
         customAction: onSaveAsNewView,
       };
+      const saveItem = {
+        id: 'save-view',
+        text: i18n.saveView,
+        customAction: onSaveView,
+      };
       const manageViewsItem = {
         id: 'manage-views',
         text: i18n.manageViews,
         customAction: onManageViews,
         icon: Settings16,
       };
-      const dialogItems = [saveAsNewItem, manageViewsItem];
+      const dialogItems = [saveAsNewItem, saveItem, manageViewsItem];
       return [viewAllItem, ...views, ...dialogItems];
     },
-    [views, onManageViews, onSaveAsNewView, i18n.saveAsNewView, i18n.manageViews, viewAllItem]
+    [
+      i18n.saveAsNewView,
+      i18n.saveView,
+      i18n.manageViews,
+      onSaveAsNewView,
+      onSaveView,
+      onManageViews,
+      viewAllItem,
+      views,
+    ]
   );
 
   const mySelectedItem = allItems.find(item => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
-  const MyViewDropDownItem = overrides?.dropdownItem?.component || ViewDropdownItem;
+  const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
 
   const onSelectionChange = change => {
     const item = change.selectedItem;
@@ -133,8 +151,8 @@ const ViewDropdown = ({
             // https://github.com/carbon-design-system/carbon/pull/5578
             itemToString={itemData => {
               return (
-                <MyViewDropDownItem
-                  testID={`ViewDropdownItem-${itemData.id}`}
+                <MyTableViewDropDownItem
+                  testID={`TableViewDropdownItem-${itemData.id}`}
                   isCompact={measuredSize?.width < 200}
                   item={itemData}
                   isSelected={itemData.id === mySelectedItem.id}
@@ -155,7 +173,7 @@ const ViewDropdown = ({
   );
 };
 
-ViewDropdown.propTypes = propTypes;
-ViewDropdown.defaultProps = defaultProps;
+TableViewDropdown.propTypes = propTypes;
+TableViewDropdown.defaultProps = defaultProps;
 
-export default ViewDropdown;
+export default TableViewDropdown;

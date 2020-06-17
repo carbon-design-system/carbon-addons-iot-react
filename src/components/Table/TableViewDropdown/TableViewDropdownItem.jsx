@@ -5,7 +5,7 @@ import { View20 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
 
-import ViewItemPropType from './ViewItemPropTypes';
+import TableViewItemPropType from './TableViewItemPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -13,7 +13,7 @@ const propTypes = {
   isCompact: PropTypes.bool.isRequired,
   activeViewEdited: PropTypes.bool.isRequired,
   isSelected: PropTypes.bool.isRequired,
-  item: ViewItemPropType.isRequired,
+  item: TableViewItemPropType.isRequired,
   i18n: PropTypes.shape({
     view: PropTypes.string,
     edited: PropTypes.string,
@@ -21,10 +21,10 @@ const propTypes = {
   testID: PropTypes.string,
 };
 const defaultProps = {
-  testID: 'ViewDropdownItem',
+  testID: 'TableViewDropdownItem',
 };
 
-const ViewDropdownItem = ({
+const TableViewDropdownItem = ({
   item: { customAction, text, icon: Icon },
   isSelected,
   activeViewEdited,
@@ -65,7 +65,7 @@ const ViewDropdownItem = ({
   );
 };
 
-ViewDropdownItem.propTypes = propTypes;
-ViewDropdownItem.defaultProps = defaultProps;
+TableViewDropdownItem.propTypes = propTypes;
+TableViewDropdownItem.defaultProps = defaultProps;
 
-export default ViewDropdownItem;
+export default TableViewDropdownItem;
