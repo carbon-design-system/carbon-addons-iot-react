@@ -5,6 +5,7 @@ import {
   getUpdatedCardSize,
   formatNumberWithPrecision,
   handleCardVariables,
+  valueFormatter,
 } from '../cardUtilityFunctions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -674,5 +675,20 @@ describe('cardUtilityFunctions', () => {
       values,
       ...others,
     });
+  });
+  it('valueFormatter', () => {
+    // Small should get 3 precision
+    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
+    // default precision
+    expect(valueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
+    // With units
+    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
+      '0.235 writes per second'
+    );
+
+    // Large numbers!
+    expect(valueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('2K');
+    // nil
+    expect(valueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
   });
 });

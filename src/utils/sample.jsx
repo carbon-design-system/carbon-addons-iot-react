@@ -2473,7 +2473,7 @@ export const getPeriodChartData = (interval = 'day', period = 'week', intInterva
 };
 
 export const renderCustomCell = (
-  { value } // eslint-disable-line
+  { value } // eslint-disable-line react/prop-types
 ) => (
   <div>
     <svg height="10" width="10">

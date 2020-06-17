@@ -16,7 +16,7 @@ const propTypes = {
   /** Details about what the page shows */
   blurb: PropTypes.node,
   /** Whether or not we need to reserve a lot of height */
-  big: PropTypes.bool, //eslint-disable-line
+  big: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
   /** The breadcrumb to render */
   crumb: (props, propName, componentName) => {
     const { crumb, title } = props;
