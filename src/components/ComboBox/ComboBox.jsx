@@ -57,7 +57,7 @@ const ComboBox = ({
   useEffect(() => {
     // If there are tags then clear and focus the input
     if (hasMultiValue) {
-      setSelectedItem('');
+      setSelectedItem(null);
       comboRef.current.textInput.current.focus();
     }
   });

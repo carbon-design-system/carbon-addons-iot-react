@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ComboBox from './ComboBox';
@@ -72,7 +72,6 @@ describe('ComboBox', () => {
     expect(defaultItemToString('Option 1')).toEqual('Option 1');
   });
 
-  // Hitting enter will not trigger a change if value is blank
   it('will not add tag when input is blank or add to list', async () => {
     const { input, tags, list } = setup({
       itemToString: defaultItemToString,
@@ -90,7 +89,6 @@ describe('ComboBox', () => {
     expect(list.childElementCount).toEqual(5);
   });
 
-  // Adding unique value will add a new tag and add to list of items
   it('will add tags when user types in new value and adds that value to list', async () => {
     const { input, tags, list } = setup();
 
@@ -125,7 +123,6 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls[1][0][1].text).toBe('World');
   });
 
-  // Typing the same value twice will not result in multiple tags or additions
   it('will not add tag when user types in existing tag value or duplicate to list', async () => {
     const { input, tags, list } = setup();
 
@@ -145,7 +142,6 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Hello');
   });
 
-  // Check that selection from list adds tags but doesnt add duplicate to list
   it('will add tag when user selects from list but not duplicate to list', async () => {
     const { list, tags } = setup();
 
@@ -166,7 +162,6 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
   });
 
-  // Check that selected item is only added once.
   it('will not add additional tag when user selects same value from list', async () => {
     const { list, tags } = setup();
 
@@ -185,11 +180,9 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
   });
 
-  // Check that you can remove tag by clicking x icon
   it('will remove tag when close button is clicked', async () => {
     const { input, tags, container } = setup();
 
-    await userEvent.click(input);
     await userEvent.click(input);
     await userEvent.type(input, 'Home{enter}');
 
@@ -204,7 +197,21 @@ describe('ComboBox', () => {
     expect(defaultProps.onChange.mock.calls[1][0].length).toBe(0);
   });
 
-  // Tags will not be added if hasMultiValue is false
+  it('will remove tag with keyboard tabbing and entering', async () => {
+    const { input, tags } = setup();
+
+    await userEvent.click(input);
+    await userEvent.type(input, 'Home{enter}');
+
+    expect(tags.childElementCount).toEqual(1);
+
+    // tab over to tag and hit enter
+    userEvent.tab();
+    await userEvent.type(tags.querySelector('.bx--tag__close-icon'), '{enter}');
+
+    expect(tags.childElementCount).toEqual(0);
+  });
+
   it('will not add tag when hasMultiValue is set to false but will add to list', async () => {
     const { input, tags, list } = setup({
       hasMultiValue: false,
@@ -227,5 +234,30 @@ describe('ComboBox', () => {
     // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0].text).toBe('Hello');
+  });
+
+  it('will add tag when keyboard is used', async () => {
+    const { input, tags } = setup();
+
+    // Pre-check tag and list count
+    expect(tags.childElementCount).toEqual(0);
+
+    await userEvent.click(input);
+
+    fireEvent.keyDown(input, {
+      key: 'ArrowDown',
+      code: 'ArrowDown',
+      keyCode: 'ArrowDown',
+      which: 40,
+      charCode: 40,
+    });
+    await userEvent.type(input, '{enter}');
+
+    // Post-check tag and list count
+    expect(tags.childElementCount).toEqual(1);
+
+    // Check that our onChange callback was fired and passed the proper value
+    expect(defaultProps.onChange.mock.calls.length).toBe(1);
+    expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
   });
 });
