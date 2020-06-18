@@ -152,7 +152,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('hour', 50, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('day', 50, { min: 10, max: 100 }, 100)}
           availableActions={{ range: true }}
           interval="hour"
           timeRange="last24Hours"

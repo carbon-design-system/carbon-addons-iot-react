@@ -2469,10 +2469,6 @@ export const getIntervalChartData = (
         .unix() * 1000,
   }));
 
-const periods = {
-  day: '',
-};
-
 /**
  *
  * @param {string} interval time-based i.e. day, week

@@ -61,6 +61,8 @@ const propTypes = {
   // Data related properties
   /** If the overall dashboard should be using a timeGrain, we pass it here */
   timeGrain: PropTypes.string,
+  /** End of date range timestamp */
+  endDate: PropTypes.number,
   /** Property that will trigger all cards to load again */
   isLoading: PropTypes.bool,
   /** once all the cards have finished loading this will be called */
@@ -234,22 +236,25 @@ const defaultProps = {
   onFetchData: null,
   renderIconByName: null,
   timeGrain: null,
+  endDate: null,
   isLoading: false,
   setIsLoading: null,
 };
 
 /**
- * This component renders one individual dashboard from an array of properties. The passed cards are set into a grid layout based on the individual card sizes and layouts.
+ * This component renders one individual dashboard from an array of properties.
+ * The passed cards are set into a grid layout based on the individual card sizes and layouts.
  * It keeps track of the current breakpoint and passes it down to the rendered cards.
  * This dashboard only supports a fixed set of card types and uses the CardRenderer to make those determinations
- * If you want to render a custom card type you should compose your own dashboard component with the DashboardHeader, DashboardGrid, and Card components.
+ * If you want to render a custom card type you should compose your own dashboard component with the DashboardHeader,
+ * DashboardGrid, and Card components.
  *
  * Data Loading:
  * It keeps track of whether any cards are actively loading data and shows a loading spinner at the top.
  * It listens to all the cards data fetching, and updates it's overall refresh date once all cards have finished fetching data.
- * To enable your cards to fetch data, you must implement the onFetchData callback.  The callback is called with the full card prop object,
- * and then a boolean that describes whether to return timeseries data or not.  You should asynchronously return an array of values from your callback to populate your
- * cards with data.
+ * To enable your cards to fetch data, you must implement the onFetchData callback. The callback is called with the full
+ * card prop object, and then a boolean that describes whether to return timeseries data or not.  You should asynchronously
+ * return an array of values from your callback to populate your cards with data.
  */
 const Dashboard = ({
   cards,
@@ -277,6 +282,7 @@ const Dashboard = ({
   renderIconByName,
   onFetchData,
   timeGrain,
+  endDate,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
@@ -339,22 +345,21 @@ const Dashboard = ({
   // Uses our shared renderer for each card that knows how to render a fixed set of card types
   const gridContents = useMemo(
     () =>
-      cards.map(card =>
-        card ? (
-          <CardRenderer
-            {...card}
-            key={`renderer-${card.id}`}
-            i18n={{ ...i18n, ...card.i18n }} // let the card level i18n override the dashboard i18n
-            isLoading={isLoading}
-            isEditable={isEditable}
-            breakpoint={breakpoint}
-            onSetupCard={cachedOnSetupCard}
-            onFetchData={handleOnFetchData}
-            renderIconByName={cachedRenderIconByName}
-            timeGrain={timeGrain}
-          />
-        ) : null
-      ), // eslint-disable-next-line react-hooks/exhaustive-deps
+      cards.map(card => (
+        <CardRenderer
+          {...card}
+          key={`renderer-${card.id}`}
+          i18n={{ ...i18n, ...card.i18n }} // let the card level i18n override the dashboard i18n
+          isLoading={isLoading}
+          isEditable={isEditable}
+          breakpoint={breakpoint}
+          onSetupCard={cachedOnSetupCard}
+          onFetchData={handleOnFetchData}
+          renderIconByName={cachedRenderIconByName}
+          timeGrain={timeGrain}
+          endDate={endDate}
+        />
+      )), // eslint-disable-next-line react-hooks/exhaustive-deps
     [breakpoint, i18n, cards, isEditable, isLoading, handleOnFetchData, timeGrain]
   );
 

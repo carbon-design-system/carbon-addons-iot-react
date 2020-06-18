@@ -144,3 +144,79 @@ export const findMatchingAlertRange = (alertRanges, data) => {
     )
   );
 };
+
+/**
+ * If a timeRange is set, return a start and end timestamp
+ * This is used in carbon charts to determine what the start and end bounds of the data that is graphed
+ * @param {string} timeRange
+ * @param {Object<moment>} endTime the end-bound of the timeRange. expects a moment object
+ * @returns {Array<number>} startTimestamp, endTimestamp
+ */
+export const generateChartTimeRange = (timeRange, endTime) => {
+  const timeRangeDomain = [];
+  if (timeRange) {
+    // clone the endTime so that it can be mutated
+    let startTime = moment(endTime);
+    switch (timeRange) {
+      case 'last24Hours':
+        startTime.subtract(24, 'hours');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+      case 'last7Days':
+        startTime.subtract(7, 'days');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'lastMonth':
+        startTime.subtract(30, 'days');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'lastQuarter':
+        startTime.subtract(3, 'months');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'lastYear':
+        startTime.subtract(12, 'months');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisWeek':
+        startTime = moment().startOf('week');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisMonth':
+        startTime = moment().startOf('month');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisQuarter':
+        startTime = moment().startOf('quarter');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      case 'thisYear':
+        startTime = moment().startOf('year');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+
+      default:
+        startTime.subtract(24, 'hours');
+        timeRangeDomain.push(startTime.valueOf());
+        timeRangeDomain.push(endTime.valueOf());
+        break;
+    }
+  }
+  return timeRangeDomain;
+};

@@ -5,12 +5,14 @@ import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
+import moment from 'moment';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 import { valueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import { generateChartTimeRange } from '../TimeSeriesCard/timeSeriesUtils';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
@@ -41,6 +43,8 @@ const BarChartCard = ({
   isLoading,
   interval,
   className,
+  timeRange,
+  endDate,
   ...others
 }) => {
   const { noDataLabel } = i18n;
@@ -110,6 +114,9 @@ const BarChartCard = ({
     );
   }
 
+  const endDateRange = endDate ? moment(endDate) : moment();
+  const timeRangeDomain = generateChartTimeRange(timeRange, endDateRange);
+
   return (
     <Card
       title={title}
@@ -121,6 +128,7 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
       isLoading={isLoading}
+      timeRange={timeRange}
       {...others}
     >
       {!isAllValuesEmpty ? (
@@ -148,6 +156,9 @@ const BarChartCard = ({
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.HORIZONTAL,
                   mapsTo: axes.bottomAxesMapsTo,
+                  ...(!isEmpty(timeRangeDomain) && layout === BAR_CHART_LAYOUTS.VERTICAL
+                    ? { domain: timeRangeDomain }
+                    : {}),
                 },
                 left: {
                   title: `${yLabel || ''} ${
@@ -157,6 +168,9 @@ const BarChartCard = ({
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
+                  ...(!isEmpty(timeRangeDomain) && layout === BAR_CHART_LAYOUTS.HORIZONTAL
+                    ? { domain: timeRangeDomain }
+                    : {}),
                 },
               },
               legend: { position: 'bottom', enabled: chartData.length > 1, clickable: !isEditable },
