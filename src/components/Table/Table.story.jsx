@@ -2006,7 +2006,7 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with sticky header and cell tooltip calculation',
+    'with sticky header (experimental) and cell tooltip calculation',
     () => {
       const renderDataFunction = ({ value }) => (
         <div style={{ position: 'relative' }} data-floating-menu-container>
