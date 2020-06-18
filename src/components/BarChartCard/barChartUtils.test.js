@@ -265,6 +265,7 @@ describe('barChartUtils', () => {
     const series = [
       {
         dataSourceId: 'particles',
+        label: 'Particles',
       },
     ];
     // check horizontal layout
@@ -279,22 +280,22 @@ describe('barChartUtils', () => {
     ).toEqual([
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
-        group: 'particles',
+        group: 'Particles',
         value: 447,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
-        group: 'particles',
+        group: 'Particles',
         value: 450,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
-        group: 'particles',
+        group: 'Particles',
         value: 512,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
-        group: 'particles',
+        group: 'Particles',
         value: 565,
       },
     ]);
