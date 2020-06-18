@@ -4794,6 +4794,150 @@ Map {
       },
     },
   },
+  "TableViewDropdown" => Object {
+    "defaultProps": Object {
+      "activeViewEdited": false,
+      "disabled": false,
+      "i18n": Object {
+        "ariaLabel": "Select view",
+        "edited": "Edited",
+        "manageViews": "Manage views",
+        "saveAsNewView": "Save as new view",
+        "saveView": "Save view",
+        "tableViewMenu": "Table view menu",
+        "view": "View",
+        "viewAll": "View All",
+      },
+      "overrides": undefined,
+      "selectedViewId": undefined,
+      "testID": "TableViewDropdown",
+      "views": Array [],
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "onChangeView": Object {
+              "type": "func",
+            },
+            "onManageViews": Object {
+              "type": "func",
+            },
+            "onSaveAsNewView": Object {
+              "type": "func",
+            },
+            "onSaveView": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "isRequired": true,
+        "type": "shape",
+      },
+      "activeViewEdited": Object {
+        "type": "bool",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "ariaLabel": Object {
+              "type": "string",
+            },
+            "edited": Object {
+              "type": "string",
+            },
+            "manageViews": Object {
+              "type": "string",
+            },
+            "saveAsNewView": Object {
+              "type": "string",
+            },
+            "saveView": Object {
+              "type": "string",
+            },
+            "tableViewMenu": Object {
+              "type": "string",
+            },
+            "view": Object {
+              "type": "string",
+            },
+            "viewAll": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "dropdown": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "dropdownItem": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "selectedViewId": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "views": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "customAction": Object {
+                  "type": "func",
+                },
+                "icon": Object {
+                  "type": "elementType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "text": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
