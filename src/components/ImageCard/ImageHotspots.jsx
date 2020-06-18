@@ -383,13 +383,11 @@ const ImageHotspots = ({
             }
             key={`${hotspot.x}-${hotspot.y}`}
             style={hotspotsStyle}
-            offsetX={image.offsetX}
-            offsetY={image.offsetY}
             renderIconByName={renderIconByName}
           />
         );
       }),
-    [hotspots, hotspotsStyle, image.offsetX, image.offsetY, locale, renderIconByName]
+    [hotspots, hotspotsStyle, locale, renderIconByName]
   );
 
   if (imageLoaded) {
