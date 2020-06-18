@@ -167,7 +167,8 @@ export const formatChartData = (series, values, categoryDataSourceId, timeDataSo
           if (!isNil(value[series[0].dataSourceId])) {
             const dataDate = new Date(value[timeDataSourceId]);
             data.push({
-              group: series[0].dataSourceId, // bar this data belongs to
+              // Use the label if one exists
+              group: series[0].label ? series[0].label : series[0].dataSourceId, // bar this data belongs to
               value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar
               date: dataDate, // timestamp
             });
