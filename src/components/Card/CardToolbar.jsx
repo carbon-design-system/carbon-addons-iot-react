@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import { Close16, Popup16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem, Button } from 'carbon-components-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
@@ -16,7 +16,7 @@ const ToolbarSVGWrapper = props => {
   return (
     <Button
       kind="ghost"
-      className={classNames(
+      className={classnames(
         `${iotPrefix}--card--toolbar-action`,
         `${iotPrefix}--card--toolbar-svg-wrapper`,
         `${prefix}--btn--icon-only` // can't actually use the hasIconOnly prop because we don't want the tooltip
@@ -52,7 +52,7 @@ const CardToolbar = ({
   className,
 }) => {
   return isEditable ? (
-    <div className={classNames(className, `${iotPrefix}--card--toolbar`)}>
+    <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.edit || availableActions.clone || availableActions.delete) && (
         <OverflowMenu flipped title={i18n.overflowMenuDescription}>
           {availableActions.edit && (
@@ -85,7 +85,7 @@ const CardToolbar = ({
       )}
     </div>
   ) : (
-    <div className={classNames(className, `${iotPrefix}--card--toolbar`)}>
+    <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {availableActions.range ? (
         <CardRangePicker
           width={width}

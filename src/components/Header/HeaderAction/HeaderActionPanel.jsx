@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { settings } from 'carbon-components';
-import cn from 'classnames';
+import classnames from 'classnames';
 import { HeaderGlobalAction, HeaderPanel } from 'carbon-components-react/es/components/UIShell';
 
 import { APP_SWITCHER } from '../Header';
@@ -53,10 +53,10 @@ const HeaderActionPanel = ({ item, index, onToggleExpansion, isExpanded, focusRe
         aria-label="Header Panel"
         className={
           item.label !== APP_SWITCHER
-            ? cn('action-btn__headerpanel', {
+            ? classnames('action-btn__headerpanel', {
                 'action-btn__headerpanel--closed': !isExpanded,
               })
-            : cn(`${carbonPrefix}--app-switcher`, {
+            : classnames(`${carbonPrefix}--app-switcher`, {
                 [item.childContent[0].className]: item.childContent[0].className,
               })
         }

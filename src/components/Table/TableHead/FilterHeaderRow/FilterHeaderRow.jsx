@@ -4,7 +4,7 @@ import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-reac
 import { Close16 } from '@carbon/icons-react';
 import styled from 'styled-components';
 import memoize from 'lodash/memoize';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 
 import { COLORS } from '../../../../styles/styles';
@@ -310,7 +310,7 @@ class FilterHeaderRow extends Component {
                   {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
                     <div
                       role="button"
-                      className={classNames(`${prefix}--list-box__selection`, {
+                      className={classnames(`${prefix}--list-box__selection`, {
                         [`${iotPrefix}--clear-filters-button--disabled`]: isDisabled,
                       })}
                       tabIndex={isDisabled ? '-1' : '0'}
