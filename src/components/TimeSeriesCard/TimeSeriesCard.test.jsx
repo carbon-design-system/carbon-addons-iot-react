@@ -73,7 +73,7 @@ describe('TimeSeriesCard', () => {
     const defaultTooltip = '<li>existing tooltip</li>';
     // the date is from 2017
     const updatedTooltip = handleTooltip(
-      { date: 1500000000000 },
+      { date: new Date(1500000000000) },
       defaultTooltip,
       [],
       'Detected alert:'
@@ -144,6 +144,45 @@ describe('TimeSeriesCard', () => {
         'timestamp',
         series,
         barChartData.timestamps.filter(data => data.city === 'Amsterdam')
+      )
+    ).toEqual([
+      {
+        date: new Date('2020-02-09T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 447,
+      },
+      {
+        date: new Date('2020-02-10T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 450,
+      },
+      {
+        date: new Date('2020-02-11T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 512,
+      },
+      {
+        date: new Date('2020-02-12T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 565,
+      },
+    ]);
+  });
+  it('formatChartData respects dates', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+      },
+    ];
+
+    expect(
+      formatChartData(
+        undefined,
+        series,
+        barChartData.timestamps
+          .filter(data => data.city === 'Amsterdam')
+          .map(data => ({ ...data, timestamp: new Date(data.timestamp) }))
       )
     ).toEqual([
       {

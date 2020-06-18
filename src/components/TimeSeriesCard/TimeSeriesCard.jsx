@@ -1,4 +1,5 @@
 import React, { useRef, useMemo, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
@@ -13,7 +14,7 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
@@ -23,10 +24,67 @@ import {
   handleCardVariables,
   valueFormatter,
 } from '../../utils/cardUtilityFunctions';
+import deprecate from '../../internal/deprecate';
 
 import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
+
+export const TimeSeriesDatasetPropTypes = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  /** the attribute in values to map to */
+  dataSourceId: PropTypes.string.isRequired,
+  /** optional filter to apply to this particular line */
+  dataFilter: PropTypes.objectOf(PropTypes.any),
+  /** optional param to set the colors */
+  color: PropTypes.string,
+});
+
+export const TimeSeriesCardPropTypes = {
+  content: PropTypes.shape({
+    series: PropTypes.oneOfType([
+      TimeSeriesDatasetPropTypes,
+      PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
+    ]).isRequired,
+    /** Custom X-axis label */
+    xLabel: PropTypes.string,
+    /** Custom Y-axis label */
+    yLabel: PropTypes.string,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnXaxis: PropTypes.bool,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnYaxis: PropTypes.bool,
+    /** Which attribute is the time attribute i.e. 'timestamp' */
+    timeDataSourceId: PropTypes.string,
+    /** Show timestamp in browser local time or GMT */
+    showTimeInGMT: PropTypes.bool,
+    /** should it be a line chart or bar chart, default is line chart */
+    chartType: deprecate(
+      PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
+      '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
+    ),
+    /** optional units to put in the legend */
+    unit: PropTypes.string,
+  }).isRequired,
+  i18n: PropTypes.shape({
+    alertDetected: PropTypes.string,
+  }),
+  /** array of data from the backend for instance [{timestamp: Date object || ms timestamp, temperature: 35, humidity: 10}, ...] */
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      timestamp: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.instanceOf(Date),
+      ]),
+    })
+  ),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
+  /** Interval for time series configuration used for formatting the x-axis */
+  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
+};
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -90,7 +148,10 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
           })
           .forEach(dataItem =>
             data.push({
-              date: new Date(dataItem[timeDataSourceId]),
+              date:
+                dataItem[timeDataSourceId] instanceof Date
+                  ? dataItem[timeDataSourceId]
+                  : new Date(dataItem[timeDataSourceId]),
               value: dataItem[dataSourceId],
               group: label,
             })
@@ -110,14 +171,26 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
+ * @param {bool} showTimeInGMT
  */
-export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges, alertDetected) => {
+export const handleTooltip = (
+  dataOrHoveredElement,
+  defaultTooltip,
+  alertRanges,
+  alertDetected,
+  showTimeInGMT
+) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
-  const timeStamp = Array.isArray(data) ? data[0].date : data.date;
-  const dateLabel = `<li class='datapoint-tooltip'>
-                        <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>
-                     </li>`;
+  const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+  const dateLabel = timeStamp
+    ? `<li class='datapoint-tooltip'>
+                        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
+                          ? moment.utc(timeStamp)
+                          : moment(timeStamp)
+                        ).format('L HH:mm:ss')}</p>
+                     </li>`
+    : '';
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
     ? matchingAlertRanges
@@ -175,6 +248,7 @@ const TimeSeriesCard = ({
   isExpanded,
   isLazyLoading,
   isLoading,
+  showTimeInGMT,
   ...others
 }) => {
   const {
@@ -243,9 +317,17 @@ const TimeSeriesCard = ({
       const previousTimestamp = previousTick.current;
       // store current in the previous tick
       previousTick.current = timestamp;
-      return formatGraphTick(timestamp, index, ticks, interval, locale, previousTimestamp);
+      return formatGraphTick(
+        timestamp,
+        index,
+        ticks,
+        interval,
+        locale,
+        previousTimestamp,
+        showTimeInGMT
+      );
     },
-    [interval, locale]
+    [interval, locale, showTimeInGMT]
   );
 
   const lines = useMemo(
@@ -415,7 +497,7 @@ const TimeSeriesCard = ({
                   valueFormatter: tooltipValue =>
                     valueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
-                    handleTooltip(...args, alertRanges, alertDetected, locale),
+                    handleTooltip(...args, alertRanges, alertDetected, showTimeInGMT),
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
@@ -484,6 +566,7 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnXaxis: false,
     includeZeroOnYaxis: false,
   },
+  showTimeInGMT: false,
 };
 
 export default TimeSeriesCard;
