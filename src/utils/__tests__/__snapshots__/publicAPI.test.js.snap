@@ -8228,6 +8228,7 @@ Map {
         "alertDetected": "Alert detected:",
       },
       "locale": "en",
+      "showTimeInGMT": false,
       "size": "MEDIUM",
       "values": Array [],
     },
@@ -8786,6 +8787,9 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
+            "showTimeInGMT": Object {
+              "type": "bool",
+            },
             "timeDataSourceId": Object {
               "type": "string",
             },
@@ -8985,7 +8989,30 @@ Map {
       "values": Object {
         "args": Array [
           Object {
-            "type": "object",
+            "args": Array [
+              Object {
+                "timestamp": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "number",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                      Object {
+                        "args": Array [
+                          [Function],
+                        ],
+                        "type": "instanceOf",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
