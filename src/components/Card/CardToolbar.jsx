@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
-import { Close20, Popup20 } from '@carbon/icons-react';
-import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
+import { Close16, Popup16 } from '@carbon/icons-react';
+import { OverflowMenu, OverflowMenuItem, Button } from 'carbon-components-react';
 import classNames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -10,26 +10,20 @@ import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const ToolbarSVGWrapper = props => {
-  const { children, onClick } = props;
   return (
-    <button
-      type="button"
-      onClick={onClick}
+    <Button
+      kind="ghost"
       className={classNames(
         `${iotPrefix}--card--toolbar-action`,
-        `${iotPrefix}--card--toolbar-svg-wrapper`
+        `${iotPrefix}--card--toolbar-svg-wrapper`,
+        `${prefix}--btn--icon-only` // can't actually use the hasIconOnly prop because we don't want the tooltip
       )}
-    >
-      {children}
-    </button>
+      {...props}
+    />
   );
-};
-ToolbarSVGWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 const propTypes = {
@@ -67,6 +61,7 @@ const CardToolbar = ({
                 onCardAction(CARD_ACTIONS.EDIT_CARD);
               }}
               itemText={i18n.editCardLabel}
+              primaryFocus
             />
           )}
           {availableActions.clone && (
@@ -103,17 +98,21 @@ const CardToolbar = ({
       {availableActions.expand ? (
         <>
           {isExpanded ? (
-            <ToolbarSVGWrapper onClick={() => onCardAction(CARD_ACTIONS.CLOSE_EXPANDED_CARD)}>
-              <Close20 title={i18n.closeLabel} description={i18n.closeLabel} />
-            </ToolbarSVGWrapper>
+            <ToolbarSVGWrapper
+              title={i18n.closeLabel}
+              onClick={() => onCardAction(CARD_ACTIONS.CLOSE_EXPANDED_CARD)}
+              iconDescription={i18n.closeLabel}
+              renderIcon={Close16}
+            />
           ) : (
             <ToolbarSVGWrapper
+              title={i18n.expandLabel}
               onClick={() => {
                 onCardAction(CARD_ACTIONS.OPEN_EXPANDED_CARD);
               }}
-            >
-              <Popup20 title={i18n.expandLabel} description={i18n.expandLabel} />
-            </ToolbarSVGWrapper>
+              iconDescription={i18n.expandLabel}
+              renderIcon={Popup16}
+            />
           )}
         </>
       ) : null}

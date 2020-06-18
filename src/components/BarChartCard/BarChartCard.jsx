@@ -3,191 +3,112 @@ import SimpleBarChart from '@carbon/charts-react/bar-chart-simple';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
 import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
-import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
-import capitalize from 'lodash/capitalize';
+import memoize from 'lodash/memoize';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
+import { valueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import StatefulTable from '../Table/StatefulTable';
+import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+
+import {
+  generateSampleValues,
+  formatChartData,
+  mapValuesToAxes,
+  formatColors,
+  handleTooltip,
+  generateTableColumns,
+  formatTableData,
+} from './barChartUtils';
 
 const { iotPrefix } = settings;
 
-/**
- * Translates our raw data into a language the carbon-charts understand
- * @param {Object} series, the definition of the plotted series
- * @param {string} series.dataSourceId, the numeric field that identifies the value to display in the main axis
- * @param {string} series.groupDataSourceId, in case of grouped/stacked charts, the field to group by
- * @param {string} series.labelDataSourceId, the field that identifies the value to display in the secondary axis
- * @param {array} series.colors, an array of HEX colors to be used for the chart
- * @param {array} values, the array of values from our data layer
- *
- * @returns {array} of formatted values: [group: string, value: number, key: string, date: date]
- */
-export const formatChartData = (series, values) => {
-  const data = [];
-  if (!isNil(values)) {
-    if (series.groupDataSourceId) {
-      // grouped and stacked
-      const uniqueGroupNames = [...new Set(values.map(val => val[series.groupDataSourceId]))];
-      const groupedData = uniqueGroupNames.map(group =>
-        values.filter(val => val[series.groupDataSourceId] === group)
-      );
-
-      groupedData.forEach(group => {
-        group.forEach(value => {
-          data.push({
-            group: value[series.labelDataSourceId], // bar
-            value: value[series.dataSourceId], // value
-            key: value[series.groupDataSourceId],
-            ...(series.timeDataSourceId
-              ? { date: new Date(value[series.timeDataSourceId]) } // timestamp
-              : null),
-          });
-        });
-      });
-    } else if (series.labelDataSourceId) {
-      // single bars
-      const uniqueDatasetNames = [...new Set(values.map(val => val[series.labelDataSourceId]))];
-      const labeledData = uniqueDatasetNames.map(name =>
-        values.filter(val => val[series.labelDataSourceId] === name)
-      );
-
-      labeledData.forEach(dataset => {
-        dataset.forEach(value => {
-          data.push({
-            group: value[series.labelDataSourceId], // bar
-            value: value[series.dataSourceId], // value
-          });
-        });
-      });
-    } else if (series.timeDataSourceId) {
-      // timestamp
-      const uniqueDatasetNames = [...new Set(values.map(val => val[series.timeDataSourceId]))];
-      const labeledData = uniqueDatasetNames.map(name =>
-        values.filter(val => val[series.timeDataSourceId] === name)
-      );
-      labeledData.forEach(dataset => {
-        dataset.forEach(value => {
-          const dataDate = new Date(value[series.timeDataSourceId]);
-          data.push({
-            group: capitalize(series.dataSourceId), // bar
-            value: value[series.dataSourceId], // value
-            date: dataDate, // timestamp
-          });
-        });
-      });
-    }
-  }
-
-  return data;
-};
-
-/**
- * Maps values to left and bottom axes based on whether layout is vertical
- * or horizontal, and if the series is grouped or time-based
- *
- * @param {Object} series the definition of the plotted series
- * @param {string} layout vertical or horizontal
- *
- * @returns {object} { bottomAxesMapsTo: string, leftAxesMapsTo: string }
- */
-export const mapValuesToAxes = (series, layout) => {
-  // Determine which values the axes map to
-  let bottomAxesMapsTo;
-  let leftAxesMapsTo;
-  if (layout === BAR_CHART_LAYOUTS.VERTICAL) {
-    // if vertical and time-based
-    if (series.timeDataSourceId) {
-      bottomAxesMapsTo = 'date';
-      leftAxesMapsTo = 'value';
-    } // if vertical and group-based
-    else if (series.groupDataSourceId) {
-      bottomAxesMapsTo = 'key';
-      leftAxesMapsTo = 'value';
-    } // if vertical and not group or time-based
-    else {
-      bottomAxesMapsTo = 'group';
-      leftAxesMapsTo = 'value';
-    }
-  } // if horizontal and time-based
-  else if (series.timeDataSourceId) {
-    bottomAxesMapsTo = 'value';
-    leftAxesMapsTo = 'date';
-  } // if horizontal and group-based
-  else if (series.groupDataSourceId) {
-    bottomAxesMapsTo = 'value';
-    leftAxesMapsTo = 'key';
-  } // if horizontal, not time-based or group
-  else {
-    bottomAxesMapsTo = 'value';
-    leftAxesMapsTo = 'group';
-  }
-
-  return {
-    bottomAxesMapsTo,
-    leftAxesMapsTo,
-  };
-};
-
-/**
- * Formats and maps the colors to their corresponding datasets in the carbon charts tabular data format
- * @param {Array} series an array of dataset group classifications
- * @param {Array<string>} datasetNames unique dataset bar names
- * @returns {Object} colors - formatted
- */
-export const formatColors = (series, datasetNames) => {
-  const colors = { identifier: 'group', scale: {} };
-  if (series.colors) {
-    series.colors.forEach((color, index) => {
-      colors.scale[datasetNames[index]] = color;
-    });
-  }
-  return colors;
-};
+const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 const BarChartCard = ({
-  title,
-  content: {
-    xLabel,
-    yLabel,
-    layout = BAR_CHART_LAYOUTS.VERTICAL,
-    chartType = BAR_CHART_TYPES.SIMPLE,
-    series,
-    data, // unmapped in propTypes, feeds already formatted data to the charting library
-  },
-  size,
-  values,
+  title: titleProp,
+  content,
+  size: sizeProp,
+  values: initialValues,
   locale,
   i18n,
   isExpanded,
   isLazyLoading,
+  isEditable,
+  isLoading,
+  interval,
   className,
   ...others
 }) => {
-  let chartData = data;
-  if (series && series.dataSourceId && (series.labelDataSourceId || series.timeDataSourceId)) {
-    chartData = formatChartData(series, values);
+  const { noDataLabel } = i18n;
+  const {
+    title,
+    content: {
+      series,
+      timeDataSourceId,
+      categoryDataSourceId,
+      layout = BAR_CHART_LAYOUTS.VERTICAL,
+      xLabel,
+      yLabel,
+      unit,
+      type = BAR_CHART_TYPES.SIMPLE,
+    },
+    values: valuesProp,
+  } = handleCardVariables(titleProp, content, initialValues, others);
+
+  // Charts render incorrectly if size is too small, so change their size to MEDIUM
+  let size = sizeProp;
+  if (sizeProp === CARD_SIZES.SMALL) {
+    size = CARD_SIZES.MEDIUM;
+  } else if (sizeProp === CARD_SIZES.SMALLWIDE) {
+    size = CARD_SIZES.MEDIUMWIDE;
   }
+
+  // If editable, show sample presentation data
+  const values = isEditable
+    ? memoizedGenerateSampleValues(series, timeDataSourceId, interval, categoryDataSourceId)
+    : valuesProp;
+
+  const chartData = formatChartData(series, values, categoryDataSourceId, timeDataSourceId, type);
 
   const isAllValuesEmpty = isEmpty(chartData);
 
   let ChartComponent = SimpleBarChart;
-
-  if (chartType === BAR_CHART_TYPES.GROUPED) {
+  if (type === BAR_CHART_TYPES.GROUPED) {
     ChartComponent = GroupedBarChart;
-  } else if (chartType === BAR_CHART_TYPES.STACKED) {
+  } else {
     ChartComponent = StackedBarChart;
   }
 
-  const scaleType = series && series.timeDataSourceId ? 'time' : 'labels';
+  const scaleType = timeDataSourceId ? 'time' : 'labels';
 
-  const axes = mapValuesToAxes(series, layout);
+  const axes = mapValuesToAxes(layout, categoryDataSourceId, timeDataSourceId, type);
 
   // Set the colors for each dataset
   const uniqueDatasets = [...new Set(chartData.map(dataset => dataset.group))];
-  const colors = formatColors(series, uniqueDatasets);
+  const colors = formatColors(series, uniqueDatasets, isEditable);
+
+  let tableColumns = [];
+  let tableData = [];
+
+  if (!isAllValuesEmpty) {
+    tableColumns = tableColumns.concat(
+      generateTableColumns(
+        timeDataSourceId,
+        categoryDataSourceId,
+        type,
+        uniqueDatasets,
+        i18n.defaultFilterStringPlaceholdText
+      )
+    );
+
+    tableData = tableData.concat(
+      formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData)
+    );
+  }
 
   return (
     <Card
@@ -195,13 +116,24 @@ const BarChartCard = ({
       className={`${iotPrefix}--bar-chart-card`}
       size={size}
       i18n={i18n}
-      {...others}
       isExpanded={isExpanded}
       isEmpty={isAllValuesEmpty}
       isLazyLoading={isLazyLoading}
+      isEditable={isEditable}
+      isLoading={isLoading}
+      {...others}
     >
-      {!others.isLoading && !isAllValuesEmpty ? (
-        <div className={classnames(`${iotPrefix}--bar-chart-container`, className)}>
+      {!isAllValuesEmpty ? (
+        <div
+          className={classnames(
+            `${iotPrefix}--bar-chart-container`,
+            {
+              [`${iotPrefix}--bar-chart-container--expanded`]: isExpanded,
+              [`${iotPrefix}--bar-chart-container--editable`]: isEditable,
+            },
+            className
+          )}
+        >
           <ChartComponent
             data={chartData}
             options={{
@@ -209,33 +141,72 @@ const BarChartCard = ({
               accessibility: true,
               axes: {
                 bottom: {
-                  title: xLabel,
+                  title: `${xLabel || ''} ${
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL ? (unit ? `(${unit})` : '') : ''
+                  }`,
                   scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
-                    chartType === BAR_CHART_TYPES.STACKED &&
-                    layout === BAR_CHART_LAYOUTS.HORIZONTAL,
+                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.HORIZONTAL,
                   mapsTo: axes.bottomAxesMapsTo,
                 },
                 left: {
-                  title: yLabel,
+                  title: `${yLabel || ''} ${
+                    layout === BAR_CHART_LAYOUTS.VERTICAL ? (unit ? `(${unit})` : '') : ''
+                  }`,
                   scaleType: layout === BAR_CHART_LAYOUTS.HORIZONTAL ? scaleType : null,
                   stacked:
-                    chartType === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
+                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
                 },
               },
-              legend: { position: 'bottom', enabled: chartData.length > 1 },
+              legend: { position: 'bottom', enabled: chartData.length > 1, clickable: !isEditable },
               containerResizable: true,
-              tooltip: {
-                gridline: {
-                  enabled: false,
-                },
-              },
               color: colors,
+              tooltip: {
+                valueFormatter: tooltipValue => valueFormatter(tooltipValue, size, unit, locale),
+                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
+              },
             }}
             width="100%"
             height="100%"
           />
+          {isExpanded ? (
+            <StatefulTable
+              className={`${iotPrefix}--bar-chart-card--stateful-table`}
+              columns={tableColumns}
+              data={tableData}
+              options={{
+                hasPagination: true,
+                hasSearch: true,
+                hasFilter: true,
+              }}
+              actions={{
+                toolbar: {
+                  onDownloadCSV: () => csvDownloadHandler(tableData, title),
+                },
+              }}
+              view={{
+                pagination: {
+                  pageSize: 10,
+                  pageSizes: [10, 20, 30],
+                },
+                toolbar: {
+                  activeBar: null,
+                },
+                filters: [],
+                table: {
+                  sort: {
+                    columnId: timeDataSourceId,
+                    direction: 'DESC',
+                  },
+                  emptyState: {
+                    message: noDataLabel,
+                  },
+                },
+              }}
+              i18n={i18n}
+            />
+          ) : null}
         </div>
       ) : null}
     </Card>
@@ -246,6 +217,14 @@ BarChartCard.propTypes = { ...CardPropTypes, ...BarChartCardPropTypes };
 
 BarChartCard.defaultProps = {
   size: CARD_SIZES.MEDIUMWIDE,
+  i18n: {
+    noDataLabel: 'No data',
+  },
+  content: {
+    type: BAR_CHART_TYPES.SIMPLE,
+    layout: BAR_CHART_LAYOUTS.VERTICAL,
+  },
+  locale: 'en',
 };
 
 export default BarChartCard;

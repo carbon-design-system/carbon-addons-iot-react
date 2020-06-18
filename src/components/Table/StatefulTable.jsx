@@ -19,6 +19,7 @@ import {
   tableRowExpand,
   tableColumnOrder,
   tableRowActionStart,
+  tableRowActionEdit,
   tableRowActionComplete,
   tableRowActionError,
 } from './tableActionCreators';
@@ -157,9 +158,18 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onApplyRowAction: async (actionId, rowId) => {
+        const action =
+          state.data &&
+          state.data
+            .find(row => row.id === rowId)
+            .rowActions.find(currentAction => currentAction.id === actionId);
+
         dispatch(tableRowActionStart(rowId));
         try {
           await callbackParent(onApplyRowAction, actionId, rowId);
+          if (action.isEdit) {
+            dispatch(tableRowActionEdit(rowId));
+          }
           dispatch(tableRowActionComplete(rowId));
         } catch (error) {
           dispatch(tableRowActionError(rowId, error));
@@ -169,9 +179,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         dispatch(tableRowActionComplete(rowId));
         callbackParent(onClearRowError, rowId);
       },
-      onEmptyStateAction: () =>
-        // This action doesn't update our table state, it's up to the user
-        callbackParent(onEmptyStateAction),
+      onEmptyStateAction: onEmptyStateAction
+        ? () =>
+            // This action doesn't update our table state, it's up to the user
+            callbackParent(onEmptyStateAction)
+        : null,
       onChangeOrdering: ordering => {
         dispatch(tableColumnOrder(ordering));
         callbackParent(onChangeOrdering, ordering);

@@ -14,18 +14,46 @@ const propTypes = {
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */
   locale: PropTypes.string,
+  renderDataFunction: PropTypes.func,
+  columnId: PropTypes.string,
+  rowId: PropTypes.string,
+  row: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.node, PropTypes.bool])),
 };
 
 const defaultProps = {
+  row: null,
   children: null,
   allowTooltip: true,
   locale: null,
+  renderDataFunction: null,
+  columnId: null,
+  rowId: null,
 };
 
 const isElementTruncated = element => element.offsetWidth < element.scrollWidth;
 
+const renderCustomCell = (renderDataFunction, args, className) => {
+  const result = renderDataFunction(args);
+  const title = typeof result === 'string' ? result : undefined;
+  return (
+    <span className={className} title={title}>
+      {result}
+    </span>
+  );
+};
+
 /** Supports our default render decisions for primitive values */
-const TableCellRenderer = ({ children, wrapText, allowTooltip, truncateCellText, locale }) => {
+const TableCellRenderer = ({
+  children,
+  wrapText,
+  allowTooltip,
+  truncateCellText,
+  locale,
+  renderDataFunction,
+  columnId,
+  rowId,
+  row,
+}) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
     [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
@@ -60,28 +88,29 @@ const TableCellRenderer = ({ children, wrapText, allowTooltip, truncateCellText,
     [mySpanRef, children, wrapText, truncateCellText, allowTooltip]
   );
 
-  const cellContent =
-    typeof children === 'string' || typeof children === 'number' ? (
-      <span
-        className={myClasses}
-        title={
-          typeof children === 'number' && locale
-            ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
-            : children
-        }
-        ref={mySpanRef}
-      >
-        {typeof children === 'number' && locale
+  const cellContent = renderDataFunction ? (
+    renderCustomCell(renderDataFunction, { value: children, columnId, rowId, row }, myClasses)
+  ) : typeof children === 'string' || typeof children === 'number' ? (
+    <span
+      className={myClasses}
+      title={
+        typeof children === 'number' && locale
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
-          : children}
-      </span>
-    ) : typeof children === 'boolean' ? ( // handle booleans
-      <span className={myClasses} title={children.toString()}>
-        {children.toString()}
-      </span>
-    ) : (
-      children
-    );
+          : children
+      }
+      ref={mySpanRef}
+    >
+      {typeof children === 'number' && locale
+        ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
+        : children}
+    </span>
+  ) : typeof children === 'boolean' ? ( // handle booleans
+    <span className={myClasses} title={children.toString()}>
+      {children.toString()}
+    </span>
+  ) : (
+    children
+  );
 
   return useTooltip ? withTooltip(cellContent) : cellContent;
 };

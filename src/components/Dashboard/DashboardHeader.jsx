@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SkeletonText, Icon } from 'carbon-components-react';
+import { SkeletonText, Button } from 'carbon-components-react';
 
-import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
 import { settings } from '../../constants/Settings';
 
-const { iotPrefix } = settings;
+const { prefix } = settings;
 
 const propTypes = {
   /** title of the dashboard */
@@ -26,6 +25,8 @@ const propTypes = {
     PropTypes.shape({
       /** Unique id of the action */
       id: PropTypes.string.isRequired,
+      /** used as the description to show for the icon */
+      labelText: PropTypes.string,
       /** icon ultimately gets passed through all the way to <Button>, which has this same copied proptype definition for icon */
       icon: PropTypes.oneOfType([
         PropTypes.oneOf(bundledIconNames),
@@ -35,11 +36,11 @@ const propTypes = {
           viewBox: PropTypes.string.isRequired,
           svgData: PropTypes.object.isRequired,
         }),
+        PropTypes.object, // Could be a react icon name
         PropTypes.element,
       ]),
       /** Optional custom component */
       customActionComponent: PropTypes.node,
-      labelText: PropTypes.string,
     })
   ),
   /** callback invoked if a dashboard action is clicked */
@@ -84,36 +85,22 @@ const DashboardHeader = ({
         <div className="dashboard--header-actions">
           {actions.map(action =>
             action.icon ? (
-              <div
+              <Button
+                className={`${prefix}--btn--icon-only`}
                 id={`action-icon--${action.id}`}
-                className={`${iotPrefix}--card--toolbar-action`}
                 key={action.id}
-                tabIndex={0}
-                role="button"
                 onClick={() => onDashboardAction(action.id)}
-                onKeyDown={event => handleEnterKeyDown(event, () => onDashboardAction(action.id))}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  cursor: 'pointer',
-                }}
-              >
-                {typeof action.icon === 'string' ? (
-                  <Icon
-                    key={`icon-${action.id}`}
-                    icon={icons[action.icon]}
-                    description={action.labelText}
-                  />
-                ) : React.isValidElement(action.icon) ? (
-                  action.icon
-                ) : (
-                  <Icon
-                    key={`icon-${action.id}`}
-                    icon={action.icon}
-                    description={action.labelText}
-                  />
-                )}
-              </div>
+                kind="ghost"
+                title={action.labelText}
+                renderIcon={
+                  typeof action.icon === 'string' // legacy support for naming the icon by string
+                    ? icons[action.icon]
+                    : React.isValidElement(action.icon)
+                    ? props => React.cloneElement(action.icon, props)
+                    : action.icon // alternatively you can pass the
+                }
+                iconDescription={action.labelText}
+              />
             ) : (
               React.cloneElement(action.customActionComponent, { key: `icon-${action.id}` })
             )

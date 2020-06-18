@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource, DropTarget } from 'react-dnd';
 import { Button } from 'carbon-components-react';
-import Draggable from '@carbon/icons-react/es/draggable/16';
+import { Draggable16 } from '@carbon/icons-react';
 import classNames from 'classnames';
+
+import { settings } from '../../../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const ColumnHeaderSelect = ({
   connectDragSource,
@@ -13,23 +17,32 @@ const ColumnHeaderSelect = ({
   children,
   onClick,
   isOver,
+  isDisabled,
 }) => {
   return (
     <Button
-      className={classNames('column-header__btn', 'column-header__select', {
-        'column-header__select--hidden': isHidden,
-        'column-header__select--isOver': isOver,
-      })}
+      className={classNames(
+        'column-header__btn',
+        `${iotPrefix}--column-header`,
+        'column-header__select',
+        {
+          'column-header__select--hidden': isHidden,
+          'column-header__select--isOver': isOver,
+        }
+      )}
+      disabled={isDisabled}
       kind="secondary"
       key={columnId}
       onClick={() => onClick()}
       role="presentation"
       data-ishidden={isHidden}
-      renderIcon={Draggable}
+      renderIcon={Draggable16}
       size="small"
       ref={instance => {
-        connectDragSource(instance);
-        connectDropTarget(instance);
+        if (!isDisabled) {
+          connectDragSource(instance);
+          connectDropTarget(instance);
+        }
       }}
     >
       {children}
@@ -44,14 +57,16 @@ ColumnHeaderSelect.propTypes = {
   onClick: PropTypes.func.isRequired,
   connectDragSource: PropTypes.func.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
+  isDisabled: PropTypes.bool,
   /* these props come from react-dnd */
-  index: PropTypes.number.isRequired, // eslint-disable-line
-  isOver: PropTypes.bool.isRequired, // eslint-disable-line
-  moveItem: PropTypes.func.isRequired, // eslint-disable-line
+  index: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
+  isOver: PropTypes.bool.isRequired, // eslint-disable-line react/no-unused-prop-types
+  moveItem: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 ColumnHeaderSelect.defaultProps = {
   isHidden: false,
+  isDisabled: false,
   children: [],
 };
 

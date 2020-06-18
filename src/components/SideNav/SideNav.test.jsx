@@ -1,8 +1,6 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-import AppSwitcher from '@carbon/icons-react/lib/app-switcher/24';
-import Chip from '@carbon/icons-react/lib/chip/24';
-import Group from '@carbon/icons-react/lib/group/24';
+import { AppSwitcher24, Chip24, Group24 } from '@carbon/icons-react';
 
 import SideNav from './SideNav';
 
@@ -12,7 +10,7 @@ describe('SideNav', () => {
   const links = [
     {
       icon: () => (
-        <AppSwitcher
+        <AppSwitcher24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -31,7 +29,7 @@ describe('SideNav', () => {
       current: true,
       isEnabled: true,
       icon: () => (
-        <Chip
+        <Chip24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -48,7 +46,7 @@ describe('SideNav', () => {
     {
       isEnabled: true,
       icon: () => (
-        <Group
+        <Group24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -75,7 +73,7 @@ describe('SideNav', () => {
   const links2 = [
     {
       icon: () => (
-        <AppSwitcher
+        <AppSwitcher24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -95,7 +93,7 @@ describe('SideNav', () => {
   const linksDisabled = [
     {
       icon: () => (
-        <AppSwitcher
+        <AppSwitcher24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -114,7 +112,7 @@ describe('SideNav', () => {
       current: true,
       isEnabled: true,
       icon: () => (
-        <Chip
+        <Chip24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -131,7 +129,7 @@ describe('SideNav', () => {
     {
       isEnabled: true,
       icon: () => (
-        <Group
+        <Group24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"

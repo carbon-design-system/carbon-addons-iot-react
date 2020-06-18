@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import List16 from '@carbon/icons-react/lib/list/16';
+import List16 from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 

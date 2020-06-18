@@ -1,7 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import Add from '@carbon/icons-react/lib/add/20';
-import { iconCrash } from 'carbon-icons';
+import { Add20 } from '@carbon/icons-react';
 import { render, waitFor } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
@@ -135,7 +134,7 @@ let wrapper = mount(
     layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
     actions={[
       { id: 'edit', labelText: 'Edit', icon: 'edit' },
-      { id: 'add', labelText: 'Add', icon: <Add /> },
+      { id: 'add', labelText: 'Add', icon: <Add20 /> },
       { id: 'custom', labelText: 'Custom', customActionComponent: <CustomIcon /> },
     ]}
     cards={cardValues}
@@ -149,27 +148,10 @@ describe('Dashboard', () => {
   });
 
   it('verify onDashboardAction is called on click', () => {
-    wrapper.find('#action-icon--edit').simulate('click');
-    expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
-  });
-
-  it('verify onDashboardAction is called on enter keydown', () => {
-    wrapper = mount(
-      <Dashboard
-        title="My Dashboard"
-        layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
-        actions={[
-          { id: 'edit', labelText: 'Edit', icon: 'edit' },
-          { id: 'crash', labelText: 'Crash', icon: iconCrash },
-        ]}
-        cards={cardValues}
-        onDashboardAction={onClick}
-        hasLastUpdated={false}
-      />
-    );
     wrapper
       .find('#action-icon--edit')
-      .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
+      .at(1)
+      .simulate('click');
     expect(wrapper.prop('onDashboardAction')).toHaveBeenCalled();
   });
 
@@ -192,7 +174,7 @@ describe('Dashboard', () => {
             layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
             actions={[
               { id: 'edit', labelText: 'Edit', icon: 'edit' },
-              { id: 'crash', labelText: 'Crash', icon: iconCrash },
+              { id: 'add', labelText: 'Add', icon: <Add20 /> },
             ]}
             cards={cardValues}
             onDashboardAction={onClick}
@@ -209,7 +191,7 @@ describe('Dashboard', () => {
             layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
             actions={[
               { id: 'edit', labelText: 'Edit', icon: 'edit' },
-              { id: 'crash', labelText: 'Crash', icon: iconCrash },
+              { id: 'add', labelText: 'Add', icon: <Add20 /> },
             ]}
             cards={cardValues}
             onDashboardAction={onClick}
@@ -235,7 +217,7 @@ describe('Dashboard', () => {
         layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
         actions={[
           { id: 'edit', labelText: 'Edit', icon: 'edit' },
-          { id: 'crash', labelText: 'Crash', icon: iconCrash },
+          { id: 'add', labelText: 'Add', icon: <Add20 /> },
         ]}
         cards={cardValues}
         onDashboardAction={onClick}

@@ -8,13 +8,7 @@ import { getIntervalChartData } from '../../utils/sample';
 import { CARD_SIZES, COLORS, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
 import { barChartData } from '../../utils/barChartDataSample';
 
-import TimeSeriesCard, {
-  determinePrecision,
-  valueFormatter,
-  handleTooltip,
-  formatChartData,
-  formatColors,
-} from './TimeSeriesCard';
+import TimeSeriesCard, { handleTooltip, formatChartData, formatColors } from './TimeSeriesCard';
 
 const timeSeriesCardProps = {
   title: 'Temperature',
@@ -74,32 +68,12 @@ describe('TimeSeriesCard', () => {
     const wrapper = mount(<TimeSeriesCard {...timeSeriesCardProps} size={CARD_SIZES.MEDIUMWIDE} />);
     expect(wrapper.find('StackedBarChart')).toHaveLength(1);
   });
-  it('determine precision', () => {
-    expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
-    expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
-    expect(determinePrecision(CARD_SIZES.SMALL, 1.45, 1)).toEqual(1);
-    expect(determinePrecision(CARD_SIZES.LARGE, 1.45, 1)).toEqual(1);
-  });
-  it('valueFormatter', () => {
-    // Small should get 3 precision
-    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
-    // default precision
-    expect(valueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
-    // With units
-    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
-      '0.235 writes per second'
-    );
 
-    // Large numbers!
-    expect(valueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('2K');
-    // nil
-    expect(valueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
-  });
   it('handleTooltip should add date', () => {
     const defaultTooltip = '<li>existing tooltip</li>';
     // the date is from 2017
     const updatedTooltip = handleTooltip(
-      { date: 1500000000000 },
+      { date: new Date(1500000000000) },
       defaultTooltip,
       [],
       'Detected alert:'
@@ -175,22 +149,61 @@ describe('TimeSeriesCard', () => {
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 44700,
+        value: 447,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 45000,
+        value: 450,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 51200,
+        value: 512,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 56500,
+        value: 565,
+      },
+    ]);
+  });
+  it('formatChartData respects dates', () => {
+    const series = [
+      {
+        label: 'Amsterdam',
+        dataSourceId: 'particles',
+      },
+    ];
+
+    expect(
+      formatChartData(
+        undefined,
+        series,
+        barChartData.timestamps
+          .filter(data => data.city === 'Amsterdam')
+          .map(data => ({ ...data, timestamp: new Date(data.timestamp) }))
+      )
+    ).toEqual([
+      {
+        date: new Date('2020-02-09T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 447,
+      },
+      {
+        date: new Date('2020-02-10T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 450,
+      },
+      {
+        date: new Date('2020-02-11T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 512,
+      },
+      {
+        date: new Date('2020-02-12T16:23:45.000Z'),
+        group: 'Amsterdam',
+        value: 565,
       },
     ]);
   });
@@ -218,42 +231,42 @@ describe('TimeSeriesCard', () => {
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 44700,
+        value: 447,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 45000,
+        value: 450,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 51200,
+        value: 512,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
         group: 'Amsterdam',
-        value: 56500,
+        value: 565,
       },
       {
         date: new Date('2020-02-09T16:23:45.000Z'),
         group: 'New York',
-        value: 52800,
+        value: 528,
       },
       {
         date: new Date('2020-02-10T16:23:45.000Z'),
         group: 'New York',
-        value: 36500,
+        value: 365,
       },
       {
         date: new Date('2020-02-11T16:23:45.000Z'),
         group: 'New York',
-        value: 44200,
+        value: 442,
       },
       {
         date: new Date('2020-02-12T16:23:45.000Z'),
         group: 'New York',
-        value: 45300,
+        value: 453,
       },
     ]);
   });

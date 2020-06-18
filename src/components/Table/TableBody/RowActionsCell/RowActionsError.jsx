@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Warn from '@carbon/icons-react/es/warning--alt/16';
+import { WarningAlt16 } from '@carbon/icons-react';
 import styled from 'styled-components';
 import { Tooltip, Button } from 'carbon-components-react';
 
@@ -31,9 +31,9 @@ const propTypes = {
   /** I18N label for action failed */
   actionFailedText: PropTypes.string,
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line
+  learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line
+  dismissText: PropTypes.string,
   /** did an error occur */
   rowActionsError: RowActionErrorPropTypes,
   onClearError: PropTypes.func,
@@ -67,7 +67,7 @@ const RowActionsError = ({
         triggerId="tooltip-error"
         tooltipId="tooltip"
         renderIcon={React.forwardRef((props, ref) => (
-          <Warn ref={ref} />
+          <WarningAlt16 ref={ref} />
         ))}
       >
         <StyledTooltipContents>

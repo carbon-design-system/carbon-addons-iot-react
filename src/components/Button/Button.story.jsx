@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
-import { iconAddSolid, iconSearch } from 'carbon-icons';
 import { Add16, Search16 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
 
@@ -22,8 +21,6 @@ const icons = {
 };
 
 const iconMap = {
-  iconAddSolid,
-  iconSearch,
   Add16,
   Search16,
 };
@@ -34,6 +31,7 @@ const kinds = {
   'Tertiary button (tertiary)': 'tertiary',
   'Danger button (danger)': 'danger',
   'Ghost button (ghost)': 'ghost',
+  'Icon Selection button (ghost)': 'icon-selection',
 };
 
 const sizes = {
@@ -97,6 +95,30 @@ const props = {
       renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
       iconDescription: text('Icon description (iconDescription)', 'Button icon'),
       onClick: action('onClick'),
+      onFocus: action('onFocus'),
+    };
+  },
+  iconSelection: () => {
+    const iconToUse = iconMap[select('Icon (icon)', icons, 'Add16')];
+    return {
+      className: 'some-class',
+      kind: 'icon-selection',
+      recommended: boolean('Recommended (recommended)', false),
+      hasIconOnly: true,
+      disabled: boolean('Disabled (disabled)', false),
+      size: select('Button size (size)', sizes, 'default'),
+      renderIcon: !iconToUse || iconToUse.svgData ? undefined : iconToUse,
+      iconDescription: text('Icon description (iconDescription)', 'Button icon'),
+      tooltipPosition: select(
+        'Tooltip position (tooltipPosition)',
+        ['top', 'right', 'bottom', 'left'],
+        'bottom'
+      ),
+      tooltipAlignment: select(
+        'Tooltip alignment (tooltipAlignment)',
+        ['start', 'center', 'end'],
+        'center'
+      ),
       onFocus: action('onFocus'),
     };
   },
@@ -181,6 +203,24 @@ storiesOf('Watson IoT/Button', module)
     }
   )
   .add('Icon-only buttons', () => <Button {...props.iconOnly()} hasIconOnly />)
+  .add('Icon Selection buttons', () => {
+    const StatefulExample = () => {
+      const iconSelectionProps = props.iconSelection(); // eslint-disable-line react/destructuring-assignment
+      const [selected, setSelected] = useState(false);
+
+      return (
+        <Button
+          {...iconSelectionProps}
+          selected={selected}
+          onClick={() => {
+            action('onClick');
+            setSelected(!selected);
+          }}
+        />
+      );
+    };
+    return <StatefulExample />;
+  })
   .add(
     'Sets of Buttons',
     () => {

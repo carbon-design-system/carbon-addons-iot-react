@@ -18,6 +18,7 @@ import {
   TABLE_ROW_SELECT_ALL,
   TABLE_ROW_EXPAND,
   TABLE_ROW_ACTION_START,
+  TABLE_ROW_ACTION_EDIT,
   TABLE_ROW_ACTION_COMPLETE,
   TABLE_ROW_ACTION_ERROR,
   TABLE_COLUMN_ORDER,
@@ -79,7 +80,7 @@ export const searchData = (data, searchString) =>
     ? data.filter((
         { values } // globally check row values for a match
       ) =>
-        // eslint-disable-next-line
+        // eslint-disable-next-line array-callback-return, consistent-return
         Object.values(values).find(value => {
           if (
             typeof value === 'number' ||
@@ -328,6 +329,7 @@ export const tableReducer = (state = {}, action) => {
     // Actions that are handled by the base reducer
     case TABLE_PAGE_CHANGE:
     case TABLE_ROW_ACTION_START:
+    case TABLE_ROW_ACTION_EDIT:
     case TABLE_ROW_ACTION_COMPLETE:
     case TABLE_ROW_ACTION_ERROR:
     case TABLE_TOOLBAR_TOGGLE:

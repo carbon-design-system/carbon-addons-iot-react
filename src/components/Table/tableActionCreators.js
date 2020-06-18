@@ -6,6 +6,7 @@ export const TABLE_TOOLBAR_TOGGLE = 'TABLE_TOOLBAR_TOGGLE';
 export const TABLE_ACTION_CANCEL = 'TABLE_ACTION_CANCEL';
 export const TABLE_ACTION_APPLY = 'TABLE_ACTION_APPLY';
 export const TABLE_ROW_ACTION_START = 'TABLE_ROW_ACTION_START';
+export const TABLE_ROW_ACTION_EDIT = 'TABLE_ROW_ACTION_EDIT';
 export const TABLE_ROW_ACTION_COMPLETE = 'TABLE_ROW_ACTION_COMPLETE';
 export const TABLE_ROW_ACTION_ERROR = 'TABLE_ROW_ACTION_ERROR';
 export const TABLE_COLUMN_SORT = 'TABLE_COLUMN_SORT';
@@ -89,6 +90,13 @@ export const tableRowActionStart = (rowId, instanceId = null) => ({
   payload: rowId,
   instanceId,
 });
+
+export const tableRowActionEdit = (rowId, instanceId = null) => ({
+  type: TABLE_ROW_ACTION_EDIT,
+  payload: rowId,
+  instanceId,
+});
+
 export const tableRowActionComplete = (rowId, instanceId = null) => ({
   type: TABLE_ROW_ACTION_COMPLETE,
   payload: rowId,

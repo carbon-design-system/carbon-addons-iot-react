@@ -2,19 +2,23 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
-import memoize from 'lodash/memoize';
 
-import { COLORS, CARD_SIZES, TIME_SERIES_TYPES } from '../../constants/LayoutConstants';
+import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { getIntervalChartData as getFakeData, chartData } from '../../utils/sample';
+import { getIntervalChartData, chartData } from '../../utils/sample';
 
 import TimeSeriesCard from './TimeSeriesCard';
 
-const getIntervalChartData = memoize(getFakeData);
-
+// need a timeOffset to make the data always show up
+// const timeOffset = new Date().getTime() - Object.values(chartData.dataItemToMostRecentTimestamp)[0];
 storiesOf('Watson IoT/TimeSeriesCard', module)
-  .add('medium / single point - interval hour', () => {
+  .add('single point', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const interval = select(
+      'interval',
+      ['hour', 'day', 'week', 'quarter', 'month', 'year'],
+      'hour'
+    );
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -34,19 +38,25 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100)}
-          interval="hour"
+          values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
+          interval={interval}
           breakpoint="lg"
           size={size}
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           onCardAction={action('onCardAction')}
         />
       </div>
     );
   })
   .add(
-    'medium / single point - with variables',
+    'with variables',
     () => {
       const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+      const interval = select(
+        'interval',
+        ['hour', 'day', 'week', 'quarter', 'month', 'year'],
+        'hour'
+      );
       return (
         <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
           <TimeSeriesCard
@@ -69,8 +79,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               includeZeroOnYaxis: true,
               timeDataSourceId: 'timestamp',
             })}
-            values={getIntervalChartData('hour', 1, { min: 10, max: 100 }, 100)}
-            interval="hour"
+            values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
+            interval={interval}
+            showTimeInGMT={boolean('showTimeInGMT', false)}
             breakpoint="lg"
             size={size}
             onCardAction={action('onCardAction')}
@@ -152,8 +163,13 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - interval day (Week)', () => {
+  .add('single line', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const interval = select(
+      'interval',
+      ['hour', 'day', 'week', 'quarter', 'month', 'year'],
+      'hour'
+    );
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -173,8 +189,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100)}
-          interval="day"
+          values={getIntervalChartData(interval, 10, { min: 10, max: 100 }, 100)}
+          interval={interval}
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
@@ -182,7 +199,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - interval day (Month)', () => {
+  .add('multi line - (No X/Y Label)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -319,6 +336,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   })
   .add('medium / multi line - (No X/Y Label)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const interval = select(
+      'interval',
+      ['hour', 'day', 'week', 'quarter', 'month', 'year'],
+      'hour'
+    );
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <TimeSeriesCard
@@ -350,8 +372,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
-          interval="hour"
+          values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
+          interval={interval}
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
           size={size}
         />
@@ -540,8 +563,14 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('large / multi line - (Custom color)', () => {
+
+  .add('custom colors', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    const interval = select(
+      'interval',
+      ['hour', 'day', 'week', 'quarter', 'month', 'year'],
+      'hour'
+    );
     return (
       <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
         <TimeSeriesCard
@@ -567,45 +596,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
-          interval="hour"
+          values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
+          interval={interval}
           breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('large / multi line - (No X/Y Label)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
-              },
-              {
-                label: 'Pressure',
-                dataSourceId: 'pressure',
-                color: text('color', COLORS.TEAL),
-              },
-            ],
-            xLabel: '',
-            yLabel: '',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
-            timeDataSourceId: 'timestamp',
-          })}
-          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
-          interval="hour"
-          breakpoint="lg"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -639,40 +633,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           interval="day"
           breakpoint="lg"
           size={size}
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('largewide / multi line - (No X/Y Label)', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGEWIDE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
-              },
-              {
-                label: 'Pressure',
-                dataSourceId: 'pressure',
-                color: text('color', COLORS.TEAL),
-              },
-            ],
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
-            timeDataSourceId: 'timestamp',
-          })}
-          values={getIntervalChartData('minute', 12, { min: 10, max: 100 }, 100)}
-          interval="hour"
-          breakpoint="lg"
-          size={size}
         />
       </div>
     );
@@ -696,6 +658,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
           })}
           interval="hour"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
           values={[]}
           size={size}
@@ -742,6 +705,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
           breakpoint="lg"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -771,6 +735,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           range="day"
           interval="hour"
           breakpoint="lg"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           values={chartData.events.slice(0, 20)}
           size={size}
           onCardAction={action('onCardAction')}
@@ -802,6 +767,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
           breakpoint="lg"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -842,41 +808,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           })}
           interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
           breakpoint="lg"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           values={[]}
-          size={size}
-          onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('bar chart', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          key="bar chart"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-                color: text('color', COLORS.MAGENTA),
-              },
-            ],
-            unit: '˚F',
-            xLabel: 'Time',
-            yLabel: 'Temperature',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
-            timeDataSourceId: 'timestamp',
-            chartType: TIME_SERIES_TYPES.BAR,
-          })}
-          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
-          interval="day"
-          breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
         />
@@ -933,6 +866,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             []
           )}
           interval="day"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
@@ -967,6 +901,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           values={getIntervalChartData('day', 12, { min: 10, max: 100000 }, 100)}
           interval="day"
           breakpoint="lg"
+          showTimeInGMT={boolean('showTimeInGMT', false)}
           size={size}
           onCardAction={action('onCardAction')}
         />

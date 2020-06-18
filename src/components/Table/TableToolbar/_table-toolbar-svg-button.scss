@@ -1,28 +1,16 @@
 @import '../../../globals/vars';
 
-.#{$iot-prefix}--tooltip-svg-wrapper {
-  background: transparent;
-  border: none;
-  display: flex;
-  cursor: pointer;
-  height: auto;
-  min-width: $spacing-09;
-  outline: 2px solid transparent;
-
-  &:hover {
-    background: $hover-ui;
+button.#{$iot-prefix}--tooltip-svg-wrapper,
+.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost:hover {
+  color: $carbon--gray-70;
+}
+button.bx--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghost {
+  border: 0;
+  &.#{$iot-prefix}--table-toolbar-button-active:not(:hover) {
+    background-color: $active-ui;
   }
+}
 
-  &:active,
-  &:focus {
-    outline: 2px solid $focus;
-    outline-offset: -2px;
-  }
-
-  svg {
-    margin: 0 auto;
-    height: auto;
-    width: auto;
-    fill: $carbon--gray-70;
-  }
+.#{$iot-prefix}--tooltip-svg-wrapper--disabled {
+  @include disabled-icon-button();
 }

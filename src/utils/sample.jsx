@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import { iconEdit } from 'carbon-icons';
 
 export const chartData = {
   events: [
@@ -2495,7 +2494,7 @@ export const getPeriodChartData = (interval = 'day', period = 'week', intInterva
 };
 
 export const renderCustomCell = (
-  { value } // eslint-disable-line
+  { value } // eslint-disable-line react/prop-types
 ) => (
   <div>
     <svg height="10" width="10">
@@ -2522,7 +2521,7 @@ export const actions1 = [
   { id: 'openTicket', labelText: 'Open Ticket' },
 ];
 
-export const actions2 = [{ id: 'open', label: 'open', icon: iconEdit }];
+export const actions2 = [{ id: 'open', label: 'open', icon: 'edit' }];
 
 export const tableColumns = [
   {

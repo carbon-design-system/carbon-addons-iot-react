@@ -2,9 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
-import NotificationOn from '@carbon/icons-react/lib/notification/20';
-import HeaderHelp from '@carbon/icons-react/lib/help/20';
-import Avatar from '@carbon/icons-react/lib/user--avatar/20';
+import { text } from '@storybook/addon-knobs';
+import NotificationOn from '@carbon/icons-react/lib/notification/16';
+import HeaderHelp from '@carbon/icons-react/lib/help/16';
+import Avatar from '@carbon/icons-react/lib/user--avatar/16';
 
 import Header from './Header';
 
@@ -149,7 +150,7 @@ const headerPanel = {
   className: 'header-panel',
 
   content: React.forwardRef((props, ref) => (
-    // eslint-disable-next-line
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a href="#" ref={ref} {...props}>
       Header panel content
     </a>
@@ -159,7 +160,11 @@ const headerPanel = {
 storiesOf('Watson IoT/Header', module)
   .add('Header action buttons with dropdowns', () => (
     <div style={{ width: '100%', height: '100vh' }}>
-      <StyledHeader {...HeaderProps} headerPanel={headerPanel} />
+      <StyledHeader
+        {...HeaderProps}
+        headerPanel={headerPanel}
+        appSwitcherLabel={text('AppSwitcher label', 'AppSwitcher')}
+      />
       <div id="skip" />
     </div>
   ))
@@ -179,4 +184,9 @@ storiesOf('Watson IoT/Header', module)
         },
       ]}
     />
+  ))
+  .add('header subtitle', () => (
+    <div style={{ width: '100%', height: '100vh' }}>
+      <StyledHeader {...HeaderMenuProps} subtitle="Monitor" />
+    </div>
   ));

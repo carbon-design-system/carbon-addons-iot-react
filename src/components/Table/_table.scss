@@ -7,6 +7,10 @@ table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
 }
 
+.#{$iot-prefix}--data-table--row-actions {
+  height: 0;
+}
+
 .#{$iot-prefix}--data-table--fixed {
   table-layout: fixed;
 }
@@ -25,5 +29,15 @@ table.#{$prefix}--side-nav--data-table {
 
   .addons-iot-table-container {
     overflow-x: auto;
+  }
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--expanded-tablerow td:first-of-type:before {
+    left: auto;
+    right: 0;
+  }
+  .#{$iot-prefix}--expanded-tablerow > td * {
+    text-align: right;
   }
 }

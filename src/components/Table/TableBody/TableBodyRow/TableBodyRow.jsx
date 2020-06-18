@@ -98,6 +98,8 @@ const propTypes = {
   /** I18N label for dismiss */
   dismissText: PropTypes.string,
   rowEditMode: PropTypes.bool,
+  singleRowEditMode: PropTypes.bool,
+  singleRowEditButtons: PropTypes.element,
 };
 
 const defaultProps = {
@@ -113,20 +115,24 @@ const defaultProps = {
   nestingChildCount: 0,
   options: {},
   rowEditMode: false,
+  singleRowEditMode: false,
+  singleRowEditButtons: null,
 };
 
-const StyledTableRow = styled(({ isSelectable, ...others }) => <TableRow {...others} />)`
+const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
+  <TableRow {...others} />
+))`
   &&& {
     ${props => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
     :hover {
       td {
         ${props =>
-          props.isSelectable === false
+          props.isSelectable === false && !props.isEditMode
             ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
             : ``} /* turn off hover states if the row is set not selectable */
       }
       ${props =>
-        props.isSelectable === false
+        props.isSelectable === false && !props.isEditMode
           ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
           : ``} /* turn off hover states if the row is set not selectable */
     }
@@ -349,7 +355,7 @@ const TableBodyRow = ({
   actionFailedText,
   learnMoreText,
   dismissText,
-  isSelectable: selectable,
+  isSelectable,
   values,
   nestingLevel,
   nestingChildCount,
@@ -358,8 +364,10 @@ const TableBodyRow = ({
   rowActionsError,
   rowDetails,
   rowEditMode,
+  singleRowEditMode,
+  singleRowEditButtons,
 }) => {
-  const isSelectable = !rowEditMode && selectable;
+  const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
   const nestingOffset =
     hasRowSelection === 'single'
@@ -415,16 +423,8 @@ const TableBodyRow = ({
             width={initialColumnWidth}
           >
             <StyledNestedSpan nestingOffset={offset}>
-              {col.editDataFunction && rowEditMode ? (
+              {col.editDataFunction && isEditMode ? (
                 col.editDataFunction({
-                  value: values[col.columnId],
-                  columnId: col.columnId,
-                  rowId: id,
-                  row: values,
-                })
-              ) : col.renderDataFunction ? (
-                col.renderDataFunction({
-                  // Call the column renderer if it's provided
                   value: values[col.columnId],
                   columnId: col.columnId,
                   rowId: id,
@@ -435,6 +435,10 @@ const TableBodyRow = ({
                   wrapText={wrapCellText}
                   truncateCellText={truncateCellText}
                   locale={locale}
+                  renderDataFunction={col.renderDataFunction}
+                  columnId={col.columnId}
+                  rowId={id}
+                  row={values}
                 >
                   {values[col.columnId]}
                 </TableCellRenderer>
@@ -450,6 +454,8 @@ const TableBodyRow = ({
           actions={rowActions}
           isRowActionRunning={isRowActionRunning}
           isRowExpanded={isExpanded && !hasRowNesting}
+          showSingleRowEditButtons={singleRowEditMode}
+          singleRowEditButtons={singleRowEditButtons}
           overflowMenuAria={overflowMenuAria}
           inProgressText={inProgressText}
           actionFailedText={actionFailedText}
@@ -493,7 +499,7 @@ const TableBodyRow = ({
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
-          <StyledExpansionTableRow>
+          <StyledExpansionTableRow className={`${iotPrefix}--expanded-tablerow`}>
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </StyledExpansionTableRow>
         )}
@@ -501,6 +507,7 @@ const TableBodyRow = ({
     ) : (
       <StyledTableExpandRow
         key={id}
+        className={`${iotPrefix}--expanded-tablerow`}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
         data-nesting-offset={nestingOffset}
@@ -542,6 +549,7 @@ const TableBodyRow = ({
       key={id}
       isSelected={isSelected}
       isSelectable={isSelectable}
+      isEditMode={isEditMode}
       onClick={() => {
         if (isSelectable !== false) {
           if (hasRowSelection === 'single') {

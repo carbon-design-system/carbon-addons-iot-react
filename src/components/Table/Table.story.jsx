@@ -4,9 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text, number, select, array } from '@storybook/addon-knobs';
 import styled from 'styled-components';
-import Arrow from '@carbon/icons-react/lib/arrow--right/20';
-import Add from '@carbon/icons-react/lib/add/20';
-import Delete from '@carbon/icons-react/lib/delete/20';
+import Arrow from '@carbon/icons-react/lib/arrow--right/16';
+import Add from '@carbon/icons-react/lib/add/16';
+import Edit from '@carbon/icons-react/lib/edit/16';
+import Delete from '@carbon/icons-react/lib/delete/16';
 import { Add20 } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
@@ -351,6 +352,15 @@ export const initialState = {
           }
         : null,
       {
+        id: 'edit',
+        renderIcon: Edit,
+        labelText: 'Edit',
+        isOverflow: true,
+        iconDescription: 'Edit',
+        isDelete: false,
+        isEdit: true,
+      },
+      {
         id: 'Add',
         renderIcon: Add,
         iconDescription: 'Add',
@@ -365,6 +375,11 @@ export const initialState = {
         isOverflow: true,
         iconDescription: 'Delete',
         isDelete: true,
+      },
+      {
+        id: 'textOnly',
+        labelText: 'Text only dummy action',
+        isOverflow: true,
       },
     ].filter(i => i),
   })),
@@ -411,6 +426,7 @@ export const initialState = {
       })),
       expandedIds: [],
       rowActions: [],
+      singleRowEditButtons: <span>singleRowEditButtons implementation needed</span>,
     },
     toolbar: {
       activeBar: 'filter',
@@ -511,22 +527,34 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'Stateful Example with expansion and column resize',
+    'Stateful Example with expansion, maxPages, and column resize',
     () => (
       <FullWidthWrapper>
         <StatefulTable
           {...initialState}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 5,
+            },
+          }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
             ...actions,
-            toolbar: { ...actions.toolbar, onDownloadCSV: csvDownloadHandler },
+            toolbar: {
+              ...actions.toolbar,
+              onDownloadCSV: () => csvDownloadHandler(initialState.data, 'my table data'),
+            },
           }}
           isSortable
           lightweight={boolean('lightweight', false)}
           options={{
             ...initialState.options,
             hasResize: true,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            hasSingleRowEdit: true,
           }}
         />
       </FullWidthWrapper>
@@ -550,6 +578,12 @@ storiesOf('Watson IoT/Table', module)
         options = {
           hasRowExpansion:true
         }
+
+        view={{
+          pagination: {
+            maxPages: 5,
+          }
+        }}
 
         ~~~
 
@@ -673,17 +707,31 @@ storiesOf('Watson IoT/Table', module)
     () => {
       return React.createElement(() => {
         const [showRowEditBar, setShowRowEditBar] = useState(false);
-        const [currentData, setCurrentData] = useState(tableData);
+        const startingData = tableData.map(i => ({
+          ...i,
+          rowActions: [
+            {
+              id: 'edit',
+              renderIcon: Edit,
+              iconDescription: 'Edit',
+              labelText: 'Edit',
+              isOverflow: true,
+              isEdit: true,
+            },
+          ],
+        }));
+        const [currentData, setCurrentData] = useState(startingData);
         const [rowEditedData, setRowEditedData] = useState([]);
         const [previousData, setPreviousData] = useState([]);
         const [showToast, setShowToast] = useState(false);
+        const [rowActionsState, setRowActionsState] = useState([]);
 
         const onDataChange = (e, columnId, rowId) => {
           const newValue = e.currentTarget ? e.currentTarget.value : e;
           rowEditedData.find(row => row.id === rowId).values[columnId] = newValue;
         };
 
-        const onShowRowEdit = () => {
+        const onShowMultiRowEdit = () => {
           setRowEditedData(cloneDeep(currentData));
           setShowRowEditBar(true);
           setShowToast(false);
@@ -691,6 +739,7 @@ storiesOf('Watson IoT/Table', module)
         const onCancelRowEdit = () => {
           setRowEditedData([]);
           setShowRowEditBar(false);
+          setRowActionsState([]);
         };
         const onSaveRowEdit = () => {
           setShowToast(true);
@@ -698,6 +747,7 @@ storiesOf('Watson IoT/Table', module)
           setCurrentData(rowEditedData);
           setRowEditedData([]);
           setShowRowEditBar(false);
+          setRowActionsState([]);
         };
         const onUndoRowEdit = () => {
           setCurrentData(previousData);
@@ -705,9 +755,16 @@ storiesOf('Watson IoT/Table', module)
           setShowToast(false);
         };
 
+        const onApplyRowAction = (action, rowId) => {
+          if (action === 'edit') {
+            setRowEditedData(cloneDeep(currentData));
+            setRowActionsState([...rowActionsState, { rowId, isEditMode: true }]);
+          }
+        };
+
         // The app should handle i18n and button enable state, e.g. that the save button
         // is disabled when the input controls are pristine.
-        const rowEditBarButtons = (
+        const saveCancelButtons = (
           <React.Fragment>
             <Button
               key="cancel"
@@ -785,15 +842,21 @@ storiesOf('Watson IoT/Table', module)
               view={{
                 toolbar: {
                   activeBar: showRowEditBar ? 'rowEdit' : undefined,
-                  rowEditBarButtons,
+                  rowEditBarButtons: saveCancelButtons,
                 },
+                table: { rowActions: rowActionsState, singleRowEditButtons: saveCancelButtons },
               }}
               data={currentData}
               actions={{
-                table: {},
-                toolbar: { onShowRowEdit },
+                table: { onApplyRowAction },
+                toolbar: { onShowRowEdit: onShowMultiRowEdit },
               }}
-              options={{ hasRowEdit: true }}
+              options={{
+                hasRowEdit: boolean('hasRowEdit', true),
+                hasSingleRowEdit: boolean('hasSingleRowEdit', true),
+                hasRowActions: true,
+                hasPagination: true,
+              }}
               columns={tableColumns.map(i => ({ ...i, editDataFunction }))}
             />
           </div>
@@ -805,11 +868,19 @@ storiesOf('Watson IoT/Table', module)
         text: `
 
         This table has editable rows. It is wrapped in a component that handles the state of the table data and 
-        the active bar to serve as a simple example of how to use the 'hasRowEdit' functionality with your own data store.
+        the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit' 
+        functionality with your own data store. 
+        
+        When the 'hasRowEdit' is true an edit icon will be shown in the 
+        table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
+        columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
+        should be handled manually as shown in this story.
 
-        Each column that should have editable row cells must have an editDataFunction prop defined.
-
-        <br />
+        The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true. 
+        Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have 
+        provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with 
+        isEditMode:true but for normal tables it should be handled manually as shown in this story.
+    
 
         ~~~js
 
@@ -821,19 +892,22 @@ storiesOf('Watson IoT/Table', module)
         }
 
         actions = {
-          toolbar: { onShowRowEdit: () => {
-            // Update your state
+          table: { onApplyRowAction: (action, rowId) => {
+            // Handle action === 'edit' to enable the rows edit mode
           } },
-        }        
+          toolbar: { onShowRowEdit: (action, rowId) => {
+            // Update your state to enable full table edit mode
+          } },
+        }
 
-        options = { hasRowEdit: true }
+        options = { hasRowEdit: true, hasSingleRowEdit: true }
 
         columns={columns.map(i => ({
           ...i,
-          editDataFunction: () => { 
-            // Your edit data function here.. 
+          editDataFunction: () => {
+            // Your edit data function here..
           },
-        }))}             
+        }))}
 
         The editDataFunction is called with this payload
         {
@@ -843,8 +917,6 @@ storiesOf('Watson IoT/Table', module)
            row: the full data for this rowPropTypes.object like this {col: value, col2: value}
         }
         ~~~
-
-        <br />
 
         `,
         propTables: [Table],
@@ -872,11 +944,11 @@ storiesOf('Watson IoT/Table', module)
         text: `
 
         For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-        
+
         <br />
 
         To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
-        
+
         <br />
 
         Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
@@ -1539,18 +1611,24 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with resize and no initial column width',
-    () => (
-      <Table
-        options={{
-          hasResize: true,
-          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-        }}
-        columns={tableColumns}
-        data={tableData}
-        actions={actions}
-      />
-    ),
+    'with resize, onColumnResize callback and no initial column width',
+    () => {
+      return React.createElement(() => {
+        const [myColumns, setMyColumns] = useState(tableColumns);
+        const onColumnResize = cols => setMyColumns(cols);
+        return (
+          <Table
+            options={{
+              hasResize: true,
+              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            }}
+            columns={myColumns}
+            data={tableData}
+            actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
+          />
+        );
+      });
+    },
     {
       info: {
         source: true,

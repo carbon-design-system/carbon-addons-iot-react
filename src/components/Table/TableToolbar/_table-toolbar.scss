@@ -4,12 +4,6 @@
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
     flex-grow: 2;
-
-    > svg.#{$prefix}--search-magnifier {
-      height: 20px;
-      fill: $icon-02;
-      padding: 0;
-    }
   }
 }
 
@@ -48,4 +42,25 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   justify-content: flex-end;
   flex-grow: 1;
   padding: $spacing-03;
+}
+
+html[dir='rtl'] {
+  .#{$iot-prefix}--table-batch-actions {
+    .#{$prefix}--action-list {
+      left: 0;
+      right: auto;
+    }
+
+    .#{$prefix}--batch-summary {
+      left: auto;
+      margin-left: 0;
+      margin-right: $spacing-05;
+      right: 0;
+    }
+
+    .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
+      left: auto;
+      right: 0;
+    }
+  }
 }

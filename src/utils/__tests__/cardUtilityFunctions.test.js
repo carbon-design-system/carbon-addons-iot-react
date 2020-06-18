@@ -1,12 +1,26 @@
 import {
+  determinePrecision,
   determineCardRange,
   compareGrains,
   getUpdatedCardSize,
   formatNumberWithPrecision,
   handleCardVariables,
+  valueFormatter,
 } from '../cardUtilityFunctions';
+import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 describe('cardUtilityFunctions', () => {
+  it('determine precision', () => {
+    // default precisions
+    expect(determinePrecision(CARD_SIZES.SMALL, 11.45)).toEqual(0);
+    expect(determinePrecision(CARD_SIZES.SMALL, 0.125)).toBeUndefined();
+    // For small card sizes always trust the passed precision
+    expect(determinePrecision(CARD_SIZES.SMALL, 11.45, 1)).toEqual(1);
+    expect(determinePrecision(CARD_SIZES.SMALL, 0.125, 2)).toEqual(2);
+    // For integers no precision
+    expect(determinePrecision(CARD_SIZES.LARGE, 700)).toEqual(0);
+    expect(determinePrecision(CARD_SIZES.LARGE, 1.45, 1)).toEqual(1);
+  });
   it('determineCardRange', () => {
     expect(determineCardRange('last24Hours').type).toEqual('rolling');
     expect(determineCardRange('thisWeek').type).toEqual('periodToDate');
@@ -661,5 +675,20 @@ describe('cardUtilityFunctions', () => {
       values,
       ...others,
     });
+  });
+  it('valueFormatter', () => {
+    // Small should get 3 precision
+    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
+    // default precision
+    expect(valueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
+    // With units
+    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
+      '0.235 writes per second'
+    );
+
+    // Large numbers!
+    expect(valueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('2K');
+    // nil
+    expect(valueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
   });
 });

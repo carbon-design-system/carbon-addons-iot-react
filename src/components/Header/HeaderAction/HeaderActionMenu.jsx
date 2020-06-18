@@ -1,4 +1,4 @@
-import ChevronDownGlyph from '@carbon/icons-react/es/chevron--down';
+import { ChevronDown32 } from '@carbon/icons-react';
 import { settings } from 'carbon-components';
 import cx from 'classnames';
 import React from 'react';
@@ -9,11 +9,11 @@ import { ChildContentPropTypes } from '../Header';
 
 const { prefix } = settings;
 
-// eslint-disable-next-line
+// eslint-disable-next-line react/prop-types
 const defaultRenderMenuContent = ({ ariaLabel }) => (
   <>
     {ariaLabel}
-    <ChevronDownGlyph className={`${prefix}--header__menu-arrow`} />
+    <ChevronDown32 className={`${prefix}--header__menu-arrow`} />
   </>
 );
 
@@ -48,16 +48,15 @@ class HeaderActionMenu extends React.Component {
 
   static defaultProps = {
     renderMenuContent: defaultRenderMenuContent,
-    // eslint-disable-next-line
     isExpanded: false,
     tabIndex: null,
   };
 
   render() {
     const {
-      // eslint-disable-next-line
+      // eslint-disable-next-line react/prop-types
       'aria-label': ariaLabel,
-      // eslint-disable-next-line
+      // eslint-disable-next-line react/prop-types
       'aria-labelledby': ariaLabelledBy,
       className: customClassName,
       renderMenuContent: MenuContent,
@@ -119,7 +118,7 @@ class HeaderActionMenu extends React.Component {
   }
 }
 
-// eslint-disable-next-line
+// eslint-disable-next-line react/no-multi-comp
 export default React.forwardRef((props, ref) => {
   return <HeaderActionMenu {...props} focusRef={ref} />;
 });

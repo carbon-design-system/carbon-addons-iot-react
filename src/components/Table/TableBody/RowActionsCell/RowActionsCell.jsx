@@ -5,7 +5,6 @@ import {
   DataTable,
   OverflowMenu,
   OverflowMenuItem,
-  Icon,
   Loading,
 } from 'carbon-components-react';
 import styled from 'styled-components';
@@ -15,6 +14,7 @@ import omit from 'lodash/omit';
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
 import { COLORS } from '../../../../styles/styles';
+import icons from '../../../../utils/bundledIcons';
 
 import RowActionsError from './RowActionsError';
 
@@ -54,14 +54,9 @@ const OverflowMenuContent = styled.div`
   }
 `;
 
-const StyledIcon = styled(Icon)`
-  & {
-    margin-right: 0.5rem;
-    width: 1rem;
-  }
-`;
-
-const StyledOverflowMenu = styled(({ isRowExpanded, ...other }) => <OverflowMenu {...other} />)`
+const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
+  <OverflowMenu {...other} />
+))`
   &&& {
     margin-left: 0.5rem;
     svg {
@@ -94,15 +89,18 @@ const propTypes = {
   /** I18N label for in progress */
   inProgressText: PropTypes.string,
   /** I18N label for action failed */
-  actionFailedText: PropTypes.string, // eslint-disable-line
+  actionFailedText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line
+  learnMoreText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line
+  dismissText: PropTypes.string, // eslint-disable-line react/require-default-props
   /** `true` to make this menu item a divider. */
   hasDivider: PropTypes.bool,
   /** `true` to make this menu item a "danger button". */
   isDelete: PropTypes.bool,
+  /** `true` hides all the normal actions/statuses and shows the singleRowEditButtons */
+  showSingleRowEditButtons: PropTypes.bool,
+  singleRowEditButtons: PropTypes.element,
 };
 
 const defaultProps = {
@@ -115,6 +113,8 @@ const defaultProps = {
   onClearError: null,
   hasDivider: false,
   isDelete: false,
+  showSingleRowEditButtons: false,
+  singleRowEditButtons: null,
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -126,7 +126,21 @@ const onClick = (e, id, action, onApplyRowAction) => {
 class RowActionsCell extends React.Component {
   state = {
     isOpen: false,
+    ltr: true,
   };
+
+  componentDidMount() {
+    if (document.dir === 'rtl') {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
+
+  componentDidUpdate(prevProp, prevState) {
+    const isLtr = document.dir === 'ltr';
+    if (prevState.ltr !== isLtr) {
+      this.setState(state => ({ ltr: !state.ltr }));
+    }
+  }
 
   handleOpen = () => {
     const { isOpen } = this.state;
@@ -157,10 +171,19 @@ class RowActionsCell extends React.Component {
       rowActionsError,
       onClearError,
       inProgressText,
+      showSingleRowEditButtons,
+      singleRowEditButtons,
     } = this.props;
-    const { isOpen } = this.state;
-    const hasOverflow = actions && actions.filter(action => action.isOverflow).length > 0;
-    return actions && actions.length > 0 ? (
+    const { isOpen, ltr } = this.state;
+    const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
+    const hasOverflow = overflowActions.length > 0;
+    const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
+
+    return showSingleRowEditButtons ? (
+      <StyledTableCell key={`${id}-single-row-edit-buttons`}>
+        {singleRowEditButtons}
+      </StyledTableCell>
+    ) : actions && actions.length > 0 ? (
       <StyledTableCell key={`${id}-row-actions-cell`}>
         <RowActionsContainer
           isRowExpanded={isRowExpanded}
@@ -188,10 +211,10 @@ class RowActionsCell extends React.Component {
               <Fragment>
                 {actions
                   .filter(action => !action.isOverflow)
-                  .map(({ id: actionId, labelText, ...others }) => (
+                  .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
                       {...omit(others, ['isOverflow'])}
-                      iconDescription={overflowMenuAria}
+                      iconDescription={labelText || iconDescription}
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
@@ -207,7 +230,7 @@ class RowActionsCell extends React.Component {
                   <StyledOverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                    flipped
+                    flipped={ltr}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
@@ -215,36 +238,35 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                   >
-                    {actions
-                      .filter(action => action.isOverflow)
-                      .map(action => (
-                        <OverflowMenuItem
-                          key={`${id}-row-actions-button-${action.id}`}
-                          onClick={e => onClick(e, id, action.id, onApplyRowAction)}
-                          requireTitle
-                          hasDivider={action.hasDivider}
-                          isDelete={action.isDelete}
-                          itemText={
-                            action.renderIcon ? (
-                              <OverflowMenuContent>
-                                {typeof action.renderIcon === 'string' ? (
-                                  <StyledIcon
-                                    icon={action.renderIcon}
-                                    description={action.labelText}
-                                    iconTitle={action.labelText}
-                                  />
-                                ) : (
-                                  <action.renderIcon />
-                                )}
-                                {action.labelText}
-                              </OverflowMenuContent>
-                            ) : (
-                              action.labelText
-                            )
-                          }
-                          disabled={action.disabled}
-                        />
-                      ))}
+                    {overflowActions.map((action, actionIndex) => (
+                      <OverflowMenuItem
+                        // We need to focus a MenuItem for the keyboard navigation to work
+                        primaryFocus={actionIndex === firstSelectableItemIndex}
+                        className={`${iotPrefix}--action-overflow-item`}
+                        key={`${id}-row-actions-button-${action.id}`}
+                        onClick={e => onClick(e, id, action.id, onApplyRowAction)}
+                        requireTitle={!action.renderIcon}
+                        hasDivider={action.hasDivider}
+                        isDelete={action.isDelete}
+                        itemText={
+                          action.renderIcon ? (
+                            <OverflowMenuContent title={action.labelText}>
+                              {typeof action.renderIcon === 'string' ? (
+                                React.createElement(icons[action.renderIcon], {
+                                  'aria-label': action.labelText,
+                                })
+                              ) : (
+                                <action.renderIcon description={action.labelText} />
+                              )}
+                              {action.labelText}
+                            </OverflowMenuContent>
+                          ) : (
+                            action.labelText
+                          )
+                        }
+                        disabled={action.disabled}
+                      />
+                    ))}
                   </StyledOverflowMenu>
                 ) : null}
               </Fragment>

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import deprecate from '../../internal/deprecate';
+import { bundledIconNames } from '../../utils/bundledIcons';
 
 export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
@@ -14,7 +15,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
         viewBox: PropTypes.string.isRequired,
         svgData: PropTypes.object.isRequired,
       }),
-      PropTypes.string,
+      PropTypes.oneOf(bundledIconNames),
       PropTypes.node,
       PropTypes.object,
       PropTypes.func,
@@ -25,6 +26,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
     isOverflow: PropTypes.bool,
     hasDivider: PropTypes.bool,
     isDelete: PropTypes.bool,
+    isEdit: PropTypes.bool,
   })
 );
 
@@ -38,6 +40,7 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     rowId: PropTypes.string,
     isRunning: PropTypes.bool,
+    isEditMode: PropTypes.bool,
     error: RowActionErrorPropTypes,
   })
 );
@@ -160,13 +163,13 @@ export const I18NPropTypes = PropTypes.shape({
   itemSelected: PropTypes.string,
   /** Row actions in table body */
   /** I18N label for in progress */
-  inProgressText: PropTypes.string, // eslint-disable-line
+  inProgressText: PropTypes.string,
   /** I18N label for action failed */
-  actionFailedText: PropTypes.string, // eslint-disable-line
+  actionFailedText: PropTypes.string,
   /** I18N label for learn more */
-  learnMoreText: PropTypes.string, // eslint-disable-line
+  learnMoreText: PropTypes.string,
   /** I18N label for dismiss */
-  dismissText: PropTypes.string, // eslint-disable-line
+  dismissText: PropTypes.string,
   filterNone: PropTypes.string,
   filterAscending: PropTypes.string,
   filterDescending: PropTypes.string,

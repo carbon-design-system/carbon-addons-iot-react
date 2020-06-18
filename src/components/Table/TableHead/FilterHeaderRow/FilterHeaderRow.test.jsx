@@ -1,7 +1,12 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import { ComboBox, TextInput } from 'carbon-components-react';
+
+import { settings } from '../../../../constants/Settings';
 
 import FilterHeaderRow from './FilterHeaderRow';
+
+const { iotPrefix } = settings;
 
 describe('FilterHeaderRow', () => {
   const commonFilterProps = { onApplyFilter: jest.fn() };
@@ -40,22 +45,6 @@ describe('FilterHeaderRow', () => {
     expect(columns).toHaveLength(1);
   });
 
-  it('input blur fires apply filter callback', () => {
-    const wrapper = mount(
-      <FilterHeaderRow
-        {...commonFilterProps}
-        ordering={[{ columnId: 'col1' }]}
-        columns={[{ id: 'col1' }]}
-      />
-    );
-    const desiredState = { col1: 'option1' };
-
-    wrapper.setState(desiredState);
-    wrapper.find('input').simulate('blur');
-
-    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith(desiredState);
-  });
-
   it('text input clear button clears filter', () => {
     const wrapper = mount(
       <FilterHeaderRow
@@ -78,5 +67,24 @@ describe('FilterHeaderRow', () => {
       />
     );
     expect(wrapper.find('input').exists()).toEqual(false);
+  });
+
+  it('prevent filter modifications when isDisabled is true ', () => {
+    const wrapper = mount(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        isDisabled="true"
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[{ id: 'col1' }, { id: 'col2', options: [{ id: 'opt1', text: 'option1' }] }]}
+        filters={[{ columnId: 'col1', value: 'myVal' }]}
+      />
+    );
+
+    expect(wrapper.find(ComboBox).props().disabled).toEqual('true');
+    expect(wrapper.find(TextInput).props().disabled).toEqual('true');
+    expect(wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`)).toHaveLength(1);
+
+    wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`).simulate('click');
+    expect(wrapper.state().col1).toEqual('myVal');
   });
 });

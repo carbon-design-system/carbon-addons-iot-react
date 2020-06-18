@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CaretLeft from '@carbon/icons-react/es/caret--left/20';
-import CaretRight from '@carbon/icons-react/es/caret--right/20';
+import { CaretLeft16, CaretRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 import { handleEnterKeyDown } from '../../utils/componentUtilityFunctions';
@@ -66,7 +65,7 @@ const SimplePagination = ({
             onClick={hasPrev ? handlePrev : undefined}
             onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
           >
-            <CaretLeft
+            <CaretLeft16
               description={prevPageText}
               className={
                 hasPrev
@@ -86,7 +85,7 @@ const SimplePagination = ({
             onClick={hasNext ? handleNext : undefined}
             onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
           >
-            <CaretRight
+            <CaretRight16
               description={nextPageText}
               className={
                 hasNext

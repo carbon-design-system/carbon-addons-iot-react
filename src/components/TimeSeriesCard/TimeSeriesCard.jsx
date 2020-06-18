@@ -1,4 +1,5 @@
 import React, { useRef, useMemo, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
@@ -13,20 +14,77 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { TimeSeriesCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
-  formatNumberWithPrecision,
   handleCardVariables,
+  valueFormatter,
 } from '../../utils/cardUtilityFunctions';
+import deprecate from '../../internal/deprecate';
 
 import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
+
+export const TimeSeriesDatasetPropTypes = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  /** the attribute in values to map to */
+  dataSourceId: PropTypes.string.isRequired,
+  /** optional filter to apply to this particular line */
+  dataFilter: PropTypes.objectOf(PropTypes.any),
+  /** optional param to set the colors */
+  color: PropTypes.string,
+});
+
+export const TimeSeriesCardPropTypes = {
+  content: PropTypes.shape({
+    series: PropTypes.oneOfType([
+      TimeSeriesDatasetPropTypes,
+      PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
+    ]).isRequired,
+    /** Custom X-axis label */
+    xLabel: PropTypes.string,
+    /** Custom Y-axis label */
+    yLabel: PropTypes.string,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnXaxis: PropTypes.bool,
+    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
+    includeZeroOnYaxis: PropTypes.bool,
+    /** Which attribute is the time attribute i.e. 'timestamp' */
+    timeDataSourceId: PropTypes.string,
+    /** Show timestamp in browser local time or GMT */
+    showTimeInGMT: PropTypes.bool,
+    /** should it be a line chart or bar chart, default is line chart */
+    chartType: deprecate(
+      PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
+      '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
+    ),
+    /** optional units to put in the legend */
+    unit: PropTypes.string,
+  }).isRequired,
+  i18n: PropTypes.shape({
+    alertDetected: PropTypes.string,
+  }),
+  /** array of data from the backend for instance [{timestamp: Date object || ms timestamp, temperature: 35, humidity: 10}, ...] */
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      timestamp: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.instanceOf(Date),
+      ]),
+    })
+  ),
+  cardVariables: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
+  ),
+  /** Interval for time series configuration used for formatting the x-axis */
+  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
+};
 
 const LineChartWrapper = styled.div`
   padding-left: 16px;
@@ -63,26 +121,6 @@ const LineChartWrapper = styled.div`
 `;
 
 /**
- * Determines how many decimals to show for a value based on the value, the available size of the card
- * @param {string} size constant that describes the size of the Table card
- * @param {any} value will be checked to determine how many decimals to show
- * @param {*} defaultPrecision Desired decimal precision, but may be overridden based on the value type or card size
- */
-export const determinePrecision = (size, value, defaultPrecision) => {
-  // If it's an integer don't return extra values
-  if (Number.isInteger(value)) {
-    return 0;
-  }
-  // If the card is xsmall we don't have room for decimals!
-  switch (size) {
-    case CARD_SIZES.SMALL:
-      return Math.abs(value) > 9 ? 0 : defaultPrecision;
-    default:
-  }
-  return defaultPrecision;
-};
-
-/**
  * Translates our raw data into a language the carbon-charts understand
  * @param {string} timeDataSourceId, the field that identifies the timestamp value in the data
  * @param {array} series, an array of lines to create in our chart
@@ -110,7 +148,10 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
           })
           .forEach(dataItem =>
             data.push({
-              date: new Date(dataItem[timeDataSourceId]),
+              date:
+                dataItem[timeDataSourceId] instanceof Date
+                  ? dataItem[timeDataSourceId]
+                  : new Date(dataItem[timeDataSourceId]),
               value: dataItem[dataSourceId],
               group: label,
             })
@@ -122,24 +163,6 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
   return data;
 };
 
-/**
- * Determines how to format our values for our lines
- *
- * @param {any} value any value possible, but will only special format if a number
- * @param {string} size card size
- * @param {string} unit any optional units to show
- */
-export const valueFormatter = (value, size, unit, locale) => {
-  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
-  let renderValue = value;
-  if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
-  } else if (isNil(value)) {
-    renderValue = '--';
-  }
-  return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
-};
-
 const memoizedGenerateSampleValues = memoize(generateSampleValues);
 
 /**
@@ -148,15 +171,25 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
+ * @param {bool} showTimeInGMT
  */
-export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges, alertDetected) => {
+export const handleTooltip = (
+  dataOrHoveredElement,
+  defaultTooltip,
+  alertRanges,
+  alertDetected,
+  showTimeInGMT
+) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
-  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line
-  const timeStamp = Array.isArray(data) && data[0] ? data[0].date : data.date || data.label;
+  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
+  const timeStamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
   const dateLabel = timeStamp
-    ? `<li class='datapoint-tooltip'><p class='label'>${moment(timeStamp).format(
-        'L HH:mm:ss'
-      )}</p></li>`
+    ? `<li class='datapoint-tooltip'>
+                        <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
+                          ? moment.utc(timeStamp)
+                          : moment(timeStamp)
+                        ).format('L HH:mm:ss')}</p>
+                     </li>`
     : '';
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
   const matchingAlertLabels = Array.isArray(matchingAlertRanges)
@@ -181,6 +214,7 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, alertRanges,
     // wrap to make single a multi-tooltip
     updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${defaultTooltip}</li>${matchingAlertLabels}</ul>`;
   }
+
   return updatedTooltip;
 };
 
@@ -215,6 +249,7 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   timeRange,
+  showTimeInGMT,
   ...others
 }) => {
   const {
@@ -283,9 +318,17 @@ const TimeSeriesCard = ({
       const previousTimestamp = previousTick.current;
       // store current in the previous tick
       previousTick.current = timestamp;
-      return formatGraphTick(timestamp, index, ticks, interval, locale, previousTimestamp);
+      return formatGraphTick(
+        timestamp,
+        index,
+        ticks,
+        interval,
+        locale,
+        previousTimestamp,
+        showTimeInGMT
+      );
     },
-    [interval, locale]
+    [interval, locale, showTimeInGMT]
   );
 
   const lines = useMemo(
@@ -518,6 +561,7 @@ const TimeSeriesCard = ({
                       : {}),
                     stacked: chartType === TIME_SERIES_TYPES.BAR && lines.length > 1,
                     includeZero: includeZeroOnYaxis,
+                    scaleType: 'linear',
                   },
                 },
                 legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
@@ -526,10 +570,7 @@ const TimeSeriesCard = ({
                   valueFormatter: tooltipValue =>
                     valueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
-                    handleTooltip(...args, alertRanges, alertDetected, locale),
-                  gridline: {
-                    enabled: false,
-                  },
+                    handleTooltip(...args, alertRanges, alertDetected, showTimeInGMT),
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
@@ -598,6 +639,7 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnXaxis: false,
     includeZeroOnYaxis: false,
   },
+  showTimeInGMT: false,
 };
 
 export default TimeSeriesCard;

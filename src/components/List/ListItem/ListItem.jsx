@@ -1,15 +1,14 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Icon } from 'carbon-components-react';
-import { iconChevronDown, iconChevronUp } from 'carbon-icons';
+import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;
 
 // internal component
-// eslint-disable-next-line
 const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, children }) =>
   isSelectable ? (
     <div
@@ -37,6 +36,15 @@ const ListItemWrapper = ({ id, isSelectable, onSelect, selected, isLargeRow, chi
       {children}
     </div>
   );
+
+const ListItemWrapperProps = {
+  id: PropTypes.string.isRequired,
+  isLargeRow: PropTypes.bool.isRequired,
+  isSelectable: PropTypes.bool.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired,
+  children: React.Children.isRequired,
+};
 
 const ListItemPropTypes = {
   id: PropTypes.string.isRequired,
@@ -129,10 +137,11 @@ const ListItem = ({
         onClick={handleExpansionClick}
         onKeyPress={({ key }) => key === 'Enter' && handleExpansionClick()}
       >
-        <Icon
-          icon={expanded ? iconChevronUp : iconChevronDown}
-          description={expanded ? i18n.expand : i18n.close}
-        />
+        {expanded ? (
+          <ChevronUp16 aria-label={i18n.expand} />
+        ) : (
+          <ChevronDown16 aria-label={i18n.close} />
+        )}
       </div>
     ) : null;
 
@@ -176,6 +185,9 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                      rowActions
+                    ),
                   })}
                   title={value}
                 >
@@ -186,8 +198,15 @@ const ListItem = ({
               {secondaryValue ? (
                 <div
                   title={secondaryValue}
-                  className={`${iotPrefix}--list-item--content--values--value
-                   ${iotPrefix}--list-item--content--values--value__large`}
+                  className={classnames(
+                    `${iotPrefix}--list-item--content--values--value`,
+                    `${iotPrefix}--list-item--content--values--value__large`,
+                    {
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                        rowActions
+                      ),
+                    }
+                  )}
                 >
                   {secondaryValue}
                 </div>
@@ -199,6 +218,9 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                      rowActions
+                    ),
                   })}
                   title={value}
                 >
@@ -207,7 +229,11 @@ const ListItem = ({
                 {secondaryValue ? (
                   <div
                     title={secondaryValue}
-                    className={`${iotPrefix}--list-item--content--values--value`}
+                    className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                        rowActions
+                      ),
+                    })}
                   >
                     {secondaryValue}
                   </div>
@@ -222,6 +248,7 @@ const ListItem = ({
   );
 };
 
+ListItemWrapper.propTypes = ListItemWrapperProps;
 ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;
 export default ListItem;

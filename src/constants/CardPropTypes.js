@@ -6,7 +6,6 @@ import { bundledIconNames } from '../utils/bundledIcons';
 import {
   CARD_LAYOUTS,
   DASHBOARD_SIZES,
-  TIME_SERIES_TYPES,
   CARD_SIZES,
   LEGACY_CARD_SIZES,
   CARD_DATA_STATE,
@@ -70,53 +69,11 @@ export const ValueCardPropTypes = {
     description: PropTypes.string.isRequired,
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
+    tooltipDirection: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
   }),
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
-};
-
-export const TimeSeriesDatasetPropTypes = PropTypes.shape({
-  label: PropTypes.string.isRequired,
-  /** the attribute in values to map to */
-  dataSourceId: PropTypes.string.isRequired,
-  /** optional filter to apply to this particular line */
-  dataFilter: PropTypes.objectOf(PropTypes.any),
-  /** optional units to put in the legend */
-  unit: PropTypes.string,
-  /** optional param to set the colors */
-  color: PropTypes.string,
-});
-
-export const TimeSeriesCardPropTypes = {
-  content: PropTypes.shape({
-    series: PropTypes.oneOfType([
-      TimeSeriesDatasetPropTypes,
-      PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
-    ]).isRequired,
-    /** Custom X-axis label */
-    xLabel: PropTypes.string,
-    /** Custom Y-axis label */
-    yLabel: PropTypes.string,
-    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
-    includeZeroOnXaxis: PropTypes.bool,
-    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
-    includeZeroOnYaxis: PropTypes.bool,
-    /** Which attribute is the time attribute i.e. 'timestamp' */
-    timeDataSourceId: PropTypes.string,
-    /** should it be a line chart or bar chart, default is line chart */
-    chartType: PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
-  }).isRequired,
-  i18n: PropTypes.shape({
-    alertDetected: PropTypes.string,
-  }),
-  /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
-  values: PropTypes.arrayOf(PropTypes.object),
-  cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
-  ),
-  /** Interval for time series configuration used for formatting the x-axis */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
 };
 
 export const TableCardPropTypes = {
@@ -202,32 +159,114 @@ export const TableCardPropTypes = {
   ),
 };
 
+/** This dataset only supports one data attribute at a time */
 const BarChartDatasetPropType = {
-  /** the attribute in values to map to */
-  dataSourceId: PropTypes.string,
-  /** the attribute in values to group by */
-  groupDataSourceId: PropTypes.string,
-  /** the attribute in values to display the bars for */
-  labelDataSourceId: PropTypes.string,
-  /** the attribute that is the time attribute */
-  timeDataSourceId: PropTypes.string,
-  /** an array of colors (hex or named) for the chart */
-  colors: PropTypes.arrayOf(PropTypes.string),
+  /** data attribute that will be displayed as bar height y-axis value */
+  dataSourceId: PropTypes.string.isRequired,
+  /** optional label of the bar in the legend */
+  label: PropTypes.string,
+  /** optional each attribute has a different color, or use an object to set a color by category value,
+   * or an array if you don't care which category values maps to a particular color. NOTE: If using the
+   * object option, the key must match the dataset label name */
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.objectOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
 };
 
 export const BarChartCardPropTypes = {
-  size: PropTypes.oneOf(Object.values(CARD_SIZES)),
+  /** card size */
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (props[propName] === CARD_SIZES.SMALL || props[propName] === CARD_SIZES.SMALLWIDE) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`SMALL\` || \`SMALLWIDE\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
   content: PropTypes.shape({
     /** the layout of the bar chart (horizontal, vertical) */
     layout: PropTypes.oneOf(Object.values(BAR_CHART_LAYOUTS)),
     /** the type of bar chart (simple, grouped, stacked) */
-    type: PropTypes.oneOf(Object.values(BAR_CHART_TYPES)),
+    type: (props, propName, componentName) => {
+      let error;
+      // Must be one of the BAR_CHART_TYPES
+      if (!Object.values(BAR_CHART_TYPES).includes(props[propName])) {
+        error = new Error(
+          `\`${componentName}\` prop \`${propName}\` must be \`SIMPLE\`, \`GROUPED\`, or \`STACKED\`.`
+        );
+      } // GROUPED charts can't have timeDataSourceId
+      else if (props[propName] === BAR_CHART_TYPES.GROUPED && props.timeDataSourceId) {
+        error = new Error(
+          `\`BarChartCard\` of type \`GROUPED\` cannot use \`timeDataSourceId\` at this time.`
+        );
+      } // STACKED charts with timeDataSourceId and categoryDataSourceId can't have datasource labels
+      else if (
+        props[propName] === BAR_CHART_TYPES.STACKED &&
+        props.timeDataSourceId &&
+        props.categoryDataSourceId
+      ) {
+        let hasDataSourceLabel = false;
+        props.series.forEach(datasource => {
+          if (datasource.label) {
+            hasDataSourceLabel = true;
+          }
+        });
+        if (hasDataSourceLabel) {
+          error = new Error(
+            `\`BarChartCard\` of type \`STACKED\` with \`categoryDataSourceId\` AND \`timeDataSourceId\` cannot use \`label\` within series. The legend labels will be created from the \`categoryDataSourceId\`.`
+          );
+        }
+      }
+      return error;
+    },
+    /** x-axis display name */
     xLabel: PropTypes.string,
+    /** y-axis display name */
     yLabel: PropTypes.string,
-    series: PropTypes.shape(BarChartDatasetPropType),
+    /** defined dataset attributes */
+    series: PropTypes.arrayOf(PropTypes.shape(BarChartDatasetPropType)).isRequired,
+    /** for category type bar charts this is the x-axis value */
+    categoryDataSourceId: (props, propName, componentName) => {
+      let error;
+      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.timeDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`timeDataSourceId\`.`
+        );
+      } // all charts must have oneOf[categoryDataSourceId, timeDataSourceId]
+      else if (!props[propName] && !props.timeDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` must have \`${props[propName]}\` OR \`timeDataSourceId\`.`
+        );
+      }
+      return error;
+    },
+    /** for time based bar charts this is the x-axis value */
+    timeDataSourceId: (props, propName, componentName) => {
+      let error;
+      if (props[propName] && props.type === BAR_CHART_TYPES.SIMPLE && props.categoryDataSourceId) {
+        error = new Error(
+          `\`${componentName}\` of type \`SIMPLE\` can not have \`${propName}\` AND \`categoryDataSourceId\`.`
+        );
+      }
+      return error;
+    },
+    /** optional units to put in the legend for all datasets */
+    unit: PropTypes.string,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
+  /** internationalization */
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),
@@ -354,6 +393,7 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
+
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
@@ -383,7 +423,10 @@ export const CardPropTypes = {
     dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
+    /** If no time range is selected we should show this string as the default */
+    defaultLabel: PropTypes.string,
     // card actions
+    selectTimeRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,

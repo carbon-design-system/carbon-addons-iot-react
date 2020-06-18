@@ -259,3 +259,41 @@ export const handleCardVariables = (title, content, values, card) => {
 
   return replaceVariables(variablesArray, cardVariables, updatedCard);
 };
+
+/**
+ * Determines how many decimals to show for a value based on the value, the available size of the card
+ * @param {string} size constant that describes the size of the Table card
+ * @param {any} value will be checked to determine how many decimals to show
+ * @param {*} precision Desired decimal precision, will be used if specified
+ */
+export const determinePrecision = (size, value, precision) => {
+  // If it's an integer don't return extra values
+  if (Number.isInteger(value)) {
+    return 0;
+  }
+  // If the card is xsmall we don't have room for decimals!
+  switch (size) {
+    case CARD_SIZES.SMALL:
+      return !isNil(precision) ? precision : Math.abs(value) > 9 ? 0 : undefined;
+    default:
+  }
+  return precision;
+};
+
+/**
+ * Determines how to format our values for our lines
+ *
+ * @param {any} value any value possible, but will only special format if a number
+ * @param {string} size card size
+ * @param {string} unit any optional units to show
+ */
+export const valueFormatter = (value, size, unit, locale) => {
+  const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
+  let renderValue = value;
+  if (typeof value === 'number') {
+    renderValue = formatNumberWithPrecision(value, precision, locale);
+  } else if (isNil(value)) {
+    renderValue = '--';
+  }
+  return `${renderValue}${!isNil(unit) ? ` ${unit}` : ''}`;
+};

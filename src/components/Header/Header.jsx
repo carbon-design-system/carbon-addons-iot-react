@@ -6,13 +6,13 @@ import {
 } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
 import React from 'react';
-import AppSwitcher from '@carbon/icons-react/es/app-switcher/20';
+import { AppSwitcher20 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
 import HeaderActionGroup from './HeaderActionGroup';
 
-const { prefix: carbonPrefix } = settings;
+const { prefix: carbonPrefix, iotPrefix } = settings;
 
 /** common proptypes associated with child content for a header action */
 export const ChildContentPropTypes = {
@@ -48,6 +48,8 @@ const propTypes = {
   prefix: PropTypes.string,
   /** Name to follow the IBM prefix up top, left */
   appName: PropTypes.string.isRequired,
+  /** Optional prop that provides additional app information */
+  subtitle: PropTypes.string,
   /** Add a class name to Header */
   className: PropTypes.string,
   /** Provide ID for the skip to content functionality */
@@ -61,7 +63,11 @@ const propTypes = {
   onClickSideNavExpand: PropTypes.func,
   /** Main app switcher Header panel props */
   headerPanel: PropTypes.shape(HeaderPanelPropTypes),
+  /** App switcher label */
+  appSwitcherLabel: PropTypes.string,
 };
+
+export const APP_SWITCHER = 'AppSwitcher';
 
 const defaultProps = {
   onClickSideNavExpand: null,
@@ -70,16 +76,17 @@ const defaultProps = {
   className: 'main-header',
   skipto: '#main-content',
   headerPanel: null,
+  subtitle: null,
   url: '#',
+  appSwitcherLabel: APP_SWITCHER,
 };
-
-export const APP_SWITCHER = 'AppSwitcher';
 
 /**
  * UI header with multiple side panels functionality and dropdowns
  */
 const Header = ({
   appName,
+  subtitle,
   className,
   actionItems: actionItemsProp,
   prefix,
@@ -88,19 +95,19 @@ const Header = ({
   onClickSideNavExpand,
   headerPanel,
   url,
+  appSwitcherLabel,
 }) => {
   const actionItems = !headerPanel
     ? actionItemsProp
     : [
         ...actionItemsProp,
         {
-          label: APP_SWITCHER,
+          label: appSwitcherLabel,
           hasHeaderPanel: true,
           btnContent: (
-            <AppSwitcher
+            <AppSwitcher20
               fill="white"
-              description="Icon"
-              className="bx--header__menu-item bx--header__menu-title"
+              className={`${carbonPrefix}--header__menu-item ${carbonPrefix}--header__menu-title`}
             />
           ),
           childContent: [
@@ -121,6 +128,7 @@ const Header = ({
       {hasSideNav && <HeaderMenuButton aria-label="Open menu" onClick={onClickSideNavExpand} />}
       <HeaderName href={url} prefix={prefix}>
         {appName}
+        {subtitle ? <div className={`${iotPrefix}--header__subtitle`}>{subtitle}</div> : null}
       </HeaderName>
       <HeaderActionGroup actionItems={actionItems} />
     </CarbonHeader>

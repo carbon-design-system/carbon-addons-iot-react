@@ -56,7 +56,7 @@ storiesOf('Watson IoT/Dashboard Header', module)
           lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
           actions={[
             { id: 'edit', labelText: 'Edit', icon: <Edit /> },
-            { id: 'delete', labelText: 'Delete', icon: <Delete /> },
+            { id: 'delete', labelText: 'Delete', icon: Delete },
           ]}
           onDashboardAction={action('onDashboardAction')}
         />

@@ -12,7 +12,6 @@ import {
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
-import TableToolbarSearch from '../TableToolbarSearch/TableToolbarSearch';
 
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
@@ -21,7 +20,7 @@ const { iotPrefix } = settings;
 const {
   TableToolbar: CarbonTableToolbar,
   TableToolbarContent,
-  // TableToolbarAction,
+  TableToolbarSearch,
   TableBatchActions,
   TableBatchAction,
 } = DataTable;
@@ -160,17 +159,13 @@ const TableToolbar = ({
       ))}
     </TableBatchActions>
     {secondaryTitle ? (
-      <label // eslint-disable-line
-        className={`${iotPrefix}--table-toolbar-secondary-title`}
-      >
-        {secondaryTitle}
-      </label>
+      // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
     ) : null}
     {// Deprecated in favor of secondaryTitle for a more general use-case
     hasRowCountInHeader ? (
-      <label // eslint-disable-line
-        className={`${iotPrefix}--table-toolbar-secondary-title`}
-      >
+      // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+      <label className={`${iotPrefix}--table-toolbar-secondary-title`}>
         {i18n.rowCountInHeader(totalItemsCount)}
       </label>
     ) : null}
@@ -192,37 +187,62 @@ const TableToolbar = ({
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
+            defaultValue={search.defaultValue || search.value}
             className="table-toolbar-search"
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
             id={`${tableId}-toolbar-search`}
-            onChange={event => onApplySearch(event.currentTarget ? event.currentTarget.value : '')}
+            onChange={(
+              event,
+              defaultValue // https://github.com/carbon-design-system/carbon/issues/6157
+            ) =>
+              onApplySearch(defaultValue || (event.currentTarget ? event.currentTarget.value : ''))
+            }
             disabled={isDisabled}
           />
         ) : null}
         {totalFilters > 0 ? (
-          <Button kind="secondary" onClick={onClearAllFilters}>
+          <Button kind="secondary" onClick={onClearAllFilters} disabled={isDisabled}>
             {i18n.clearAllFilters}
           </Button>
         ) : null}
         {onDownloadCSV ? (
-          <TableToolbarSVGButton onClick={onDownloadCSV} testId="download-button">
-            <Download20 description={i18n.downloadIconDescription} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            onClick={onDownloadCSV}
+            description={i18n.downloadIconDescription}
+            testId="download-button"
+            renderIcon={Download20}
+            disabled={isDisabled}
+          />
         ) : null}
         {hasColumnSelection ? (
-          <TableToolbarSVGButton onClick={onToggleColumnSelection} testId="column-selection-button">
-            <Column20 description={i18n.columnSelectionButtonAria} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            isActive={activeBar === 'column'}
+            onClick={onToggleColumnSelection}
+            description={i18n.columnSelectionButtonAria}
+            testId="column-selection-button"
+            renderIcon={Column20}
+            disabled={isDisabled}
+          />
         ) : null}
         {hasFilter ? (
-          <TableToolbarSVGButton onClick={onToggleFilter} testId="filter-button">
-            <Filter20 description={i18n.filterButtonAria} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            isActive={activeBar === 'filter'}
+            onClick={onToggleFilter}
+            description={i18n.filterButtonAria}
+            testId="filter-button"
+            renderIcon={Filter20}
+            disabled={isDisabled}
+          />
         ) : null}
         {hasRowEdit ? (
-          <TableToolbarSVGButton onClick={onShowRowEdit} testId="row-edit-button">
-            <Edit20 description={i18n.editButtonAria} />
-          </TableToolbarSVGButton>
+          <TableToolbarSVGButton
+            isActive={activeBar === 'rowEdit'}
+            description={i18n.editButtonAria}
+            onClick={onShowRowEdit}
+            testId="row-edit-button"
+            renderIcon={Edit20}
+            disabled={isDisabled}
+          />
         ) : null}
 
         {// Default card header actions should be to the right of the table-specific actions

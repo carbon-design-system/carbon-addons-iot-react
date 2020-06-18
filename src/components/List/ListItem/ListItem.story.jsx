@@ -33,7 +33,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
         : rowActionSet === 'multi'
         ? [
             <OverflowMenu flipped>
-              <OverflowMenuItem itemText="Edit" />
+              <OverflowMenuItem itemText="Edit" primaryFocus />
               <OverflowMenuItem itemText="Add" />
               <OverflowMenuItem itemText="Delete" hasDivider isDelete />
             </OverflowMenu>,
@@ -151,8 +151,8 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     <div style={{ width: 400 }}>
       <ListItem
         id="list-item"
-        value="List Item"
-        secondaryValue="Secondary Value"
+        value={text('value', 'List Item')}
+        secondaryValue={text('secondaryValue', 'Secondary Value')}
         rowActions={[
           <Button
             key="list-item-edit"
@@ -172,12 +172,12 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     <div style={{ width: 400 }}>
       <ListItem
         id="list-item"
-        value="List Item"
-        isExpandable
+        value={text('value', 'List Item')}
+        isExpandable={boolean('isExpandable', true)}
         onExpand={action('onExpand')}
         rowActions={[
           <OverflowMenu flipped>
-            <OverflowMenuItem itemText="Edit" />
+            <OverflowMenuItem itemText="Edit" primaryFocus />
             <OverflowMenuItem itemText="Add" />
             <OverflowMenuItem itemText="Delete" />
             <OverflowMenuItem itemText="Danger option" hasDivider isDelete />

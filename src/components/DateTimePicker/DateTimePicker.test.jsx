@@ -8,6 +8,7 @@ import DateTimePicker, {
   PRESET_VALUES,
   PICKER_KINDS,
 } from './DateTimePicker';
+import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePicker.story';
 
 const dateTimePickerProps = {
   id: 'datetimepicker',
@@ -21,23 +22,47 @@ const i18n = {
   relativeLabels: ['Missed in translation'],
 };
 
-const defaultRelativeValue = {
-  lastNumber: 20,
-  lastInterval: INTERVAL_VALUES.MINUTES,
-  relativeToWhen: RELATIVE_VALUES.TODAY,
-  relativeToTime: '13:30',
-};
-
-const defaultAbsoluteValue = {
-  startDate: '2020-04-01',
-  startTime: '12:34',
-  endDate: '2020-04-06',
-  endTime: '10:49',
-};
-
 describe('DateTimePicker', () => {
   beforeEach(() => {
     jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    console.error.mockClear();
+  });
+
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+  });
+
+  it('should not blow up if correct object is passed as default value', () => {
+    mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
+      />
+    );
+    expect(console.error).toHaveBeenCalledTimes(0);
+  });
+
+  it('should blow up if wrong combo of timeRangeKind and timeRangeValue is passed for defaultValue', () => {
+    mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={{
+          timeRangeKind: 'some other string',
+          timeRangeValue: PRESET_VALUES[1],
+        }}
+      />
+    );
+    expect(console.error).toHaveBeenCalledTimes(1);
   });
 
   it('should have the first preset as value', () => {
@@ -45,6 +70,15 @@ describe('DateTimePicker', () => {
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
+  });
+
+  it('should show the user defined tooltip for preset', () => {
+    const wrapper = mount(
+      <DateTimePicker {...dateTimePickerProps} renderPresetTooltipText={() => 'User tooltip'} />
+    );
+    jest.runAllTimers();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find('.bx--assistive-text').text()).toEqual('User tooltip');
   });
 
   it('should call onApply', () => {
@@ -69,7 +103,13 @@ describe('DateTimePicker', () => {
 
   it('should render with a predefined preset', () => {
     const wrapper = mount(
-      <DateTimePicker {...dateTimePickerProps} defaultValue={PRESET_VALUES[1]} />
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[1],
+        }}
+      />
     );
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
@@ -205,6 +245,60 @@ describe('DateTimePicker', () => {
     jest.runAllTimers();
     expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
     expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+  });
+
+  // https://github.com/IBM/carbon-addons-iot-react/issues/1179
+  it('should not show the relative option with preset as default value', () => {
+    const wrapper = mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={PRESET_VALUES[1]}
+        showRelativeOption={false}
+      />
+    );
+    jest.runAllTimers();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find('.bx--radio-button')).toHaveLength(0);
+  });
+
+  it('should set the value relative to yesterday', () => {
+    const wrapper = mount(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        intervals={[
+          {
+            label: 'minutes',
+            value: INTERVAL_VALUES.MINUTES,
+          },
+        ]}
+        relatives={[
+          {
+            label: 'Yesterday',
+            value: RELATIVE_VALUES.YESTERDAY,
+          },
+        ]}
+      />
+    );
+    wrapper
+      .find('.iot--date-time-picker__listitem--custom')
+      .first()
+      .simulate('click');
+    const today = moment();
+    wrapper
+      .find('.bx--number__control-btn.up-icon')
+      .first()
+      .simulate('click');
+    jest.runAllTimers();
+    expect(
+      wrapper
+        .find('.iot--date-time-picker__field')
+        .first()
+        .text()
+    ).toEqual(
+      `${today.subtract(1, 'days').format('YYYY-MM-DD')} 08:56 to ${today.format(
+        'YYYY-MM-DD'
+      )} 08:57`
+    );
   });
 
   it('should switch from relative to presets', () => {
