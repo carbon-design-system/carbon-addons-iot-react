@@ -312,7 +312,7 @@ storiesOf('Watson IoT Experimental/List', module)
           if (item.id === value) {
             filteredItems.push(item.id);
             if (item.children) {
-              const children = searchNestedItems(item.children, value, true);
+              const children = searchNestedItems(item.children, item.id, true);
               filteredItems = filteredItems.concat(children);
             }
           } else if (parentMatch) {
@@ -322,25 +322,25 @@ storiesOf('Watson IoT Experimental/List', module)
         return filteredItems;
       };
 
-      const handleCheckboxChange = (event, items) => {
+      const handleCheckboxChange = (event, items, id) => {
         // If checked, add to selectedIds
         if (event.target.checked) {
           // find item and children being changed
-          const nestedIds = searchNestedItems(items, event.target.name);
+          const nestedIds = searchNestedItems(items, id);
           let tempSelectedIds = [...selectedIds];
           if (nestedIds.length > 0) {
             tempSelectedIds = tempSelectedIds.concat(nestedIds);
           } else {
-            tempSelectedIds.push(event.target.name);
+            tempSelectedIds.push(id);
           }
           setSelectedIds(tempSelectedIds);
         } // If unchecked, remove from selectedIds
         else {
           // find children
-          const deselectedNestedIds = searchNestedItems(items, event.target.name);
+          const deselectedNestedIds = searchNestedItems(items, id);
           let tempSelectedIds = [...selectedIds];
           if (deselectedNestedIds.length === 0) {
-            deselectedNestedIds.push(event.target.name);
+            deselectedNestedIds.push(id);
           }
           deselectedNestedIds.forEach(deselectedId => {
             tempSelectedIds = tempSelectedIds.filter(id => id !== deselectedId);
@@ -349,8 +349,8 @@ storiesOf('Watson IoT Experimental/List', module)
         }
       };
 
-      const checkSelectedChildren = items =>
-        someDeep(items, (value, key) => selectedIds.some(id => key === id));
+      const checkSelectedChildren = (items, parent) =>
+        someDeep(items, (value, key) => selectedIds.some(id => `${parent}-${key}` === id));
 
       const nestedItems = [
         ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
@@ -363,28 +363,30 @@ storiesOf('Watson IoT Experimental/List', module)
               <Checkbox
                 id={`${team}-checkbox`}
                 name={team}
-                onClick={e => handleCheckboxChange(e, nestedItems)}
+                onClick={e => handleCheckboxChange(e, nestedItems, team)}
                 checked={selectedIds.some(id => team === id)}
                 indeterminate={
                   selectedIds.some(id => team === id)
                     ? false
-                    : checkSelectedChildren(sampleHierarchy.MLB['American League'][team])
+                    : checkSelectedChildren(sampleHierarchy.MLB['American League'][team], team)
                 }
               />
             ),
           },
           children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
-            id: player,
+            id: `${team}-${player}`,
             isSelectable: true,
             content: {
               value: player,
               secondaryValue: sampleHierarchy.MLB['American League'][team][player],
               icon: (
                 <Checkbox
-                  id={`${player}-checkbox`}
+                  id={`${team}-${player}-checkbox`}
                   name={player}
-                  onClick={e => handleCheckboxChange(e, nestedItems)}
-                  checked={selectedIds.some(id => player === id)}
+                  onClick={e => {
+                    handleCheckboxChange(e, nestedItems, `${team}-${player}`);
+                  }}
+                  checked={selectedIds.some(id => `${team}-${player}` === id)}
                 />
               ),
             },
@@ -398,32 +400,32 @@ storiesOf('Watson IoT Experimental/List', module)
             value: team,
             icon: (
               <Checkbox
-                key={`${team}-list-item-checkbox`}
                 id={`${team}-checkbox`}
                 name={team}
-                onClick={e => handleCheckboxChange(e, nestedItems)}
+                onClick={e => handleCheckboxChange(e, nestedItems, team)}
                 checked={selectedIds.some(id => team === id)}
                 indeterminate={
                   selectedIds.some(id => team === id)
                     ? false
-                    : checkSelectedChildren(sampleHierarchy.MLB['American League'][team])
+                    : checkSelectedChildren(sampleHierarchy.MLB['National League'][team], team)
                 }
               />
             ),
           },
           children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
-            id: player,
+            id: `${team}-${player}`,
             isSelectable: true,
             content: {
               value: player,
               secondaryValue: sampleHierarchy.MLB['National League'][team][player],
               icon: (
                 <Checkbox
-                  key={`${team}-list-item-checkbox-${player}`}
-                  id={`${player}-checkbox`}
+                  id={`${team}-${player}-checkbox`}
                   name={player}
-                  onClick={e => handleCheckboxChange(e, nestedItems)}
-                  checked={selectedIds.some(id => player === id)}
+                  onClick={e => {
+                    handleCheckboxChange(e, nestedItems, `${team}-${player}`);
+                  }}
+                  checked={selectedIds.some(id => `${team}-${player}` === id)}
                 />
               ),
             },
