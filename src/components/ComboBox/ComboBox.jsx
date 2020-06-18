@@ -66,10 +66,9 @@ const ComboBox = ({
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
 
-    // Only apply logic if user hit enter
     if (evt.key === 'Enter' && currentValue !== '' && currentValue !== undefined) {
-      // Check if there is already a tag for this value and return it
-      const hasNoFilteredTag = tagItems.filter(x => itemToString(x) === currentValue).length < 1;
+      // Check that there is no existing tag
+      const hasNoExistingTag = tagItems.filter(x => itemToString(x) === currentValue).length < 1;
       // Check if value is part of items array
       const matchedItem = listItems.filter(x => itemToString(x) === currentValue)[0];
 
@@ -82,10 +81,10 @@ const ComboBox = ({
 
       // If component is using multiValue feature and there is not already a tag for new value
       // If the value is not already part of items list use new item else use list item
-      if (hasMultiValue && hasNoFilteredTag && !matchedItem) {
+      if (hasMultiValue && hasNoExistingTag && !matchedItem) {
         // Add new value to the tags array
         setTagItems(inputValues => [...inputValues, { ...newItem, id: newItem.id }]);
-      } else if (hasMultiValue && hasNoFilteredTag) {
+      } else if (hasMultiValue && hasNoExistingTag) {
         // Add new value to the tags array using the list item object
         setTagItems(inputValues => [...inputValues, matchedItem]);
       }
@@ -106,7 +105,7 @@ const ComboBox = ({
         // If item exist in list use list item or else use new item
         if (!matchedItem) {
           onChange([...tagItems, newItem]);
-        } else if (hasNoFilteredTag) {
+        } else if (hasNoExistingTag) {
           onChange([...tagItems, matchedItem]);
         }
       }
