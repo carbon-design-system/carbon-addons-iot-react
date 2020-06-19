@@ -179,55 +179,6 @@ export const StepValidationWizard = ({ ...props }) => {
   );
 };
 
-export const StepValidation = ({ ...props }) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [error, setError] = useState(null);
-
-  return (
-    <PageWizardStep
-      {...props}
-      error={error}
-      onValidate={() => {
-        if (firstName.length > 0 && lastName.length > 0) {
-          return true;
-        }
-        setError('First name and Last name cannot be empty');
-        return false;
-      }}
-    >
-      <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
-      <PageWizardStepDescription>
-        Make sure you do not try to go to the next step with an empty input! Bad things will happen.
-      </PageWizardStepDescription>
-      <PageWizardStepContent>
-        <Form>
-          <FormGroup legendText="Name">
-            <FormItem>
-              <TextInput
-                id="first-name"
-                data-testid="first-name"
-                labelText="First name"
-                value={firstName}
-                onChange={evt => setFirstName(evt.target.value)}
-              />
-            </FormItem>
-            <FormItem>
-              <TextInput
-                id="last-name"
-                data-testid="last-name"
-                labelText="Last name"
-                value={lastName}
-                onChange={evt => setLastName(evt.target.value)}
-              />
-            </FormItem>
-          </FormGroup>
-        </Form>
-      </PageWizardStepContent>
-    </PageWizardStep>
-  );
-};
-
 storiesOf('Watson IoT/PageWizard', module)
   .add('stateful example', () => (
     <div>
@@ -338,21 +289,7 @@ storiesOf('Watson IoT/PageWizard', module)
           <Link to="www.ibm.com">Something</Link>,
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
-        content={
-          <StatefulPageWizard
-            hasStickyFooter={boolean('hasStickyFooter', true)}
-            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
-            onClearError={() => {}}
-            onClose={() => {}}
-            onSubmit={() => {}}
-            onNext={() => {}}
-            onBack={() => {}}
-            setStep={() => {}}
-          >
-            <StepValidation id="step1" label="Step with validation" />
-            {content[1]}
-          </StatefulPageWizard>
-        }
+        content={<StepValidationWizard hasStickyFooter isProgressIndicatorVertical />}
       />
     </div>
   ))
@@ -367,20 +304,11 @@ storiesOf('Watson IoT/PageWizard', module)
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
         content={
-          <StatefulPageWizard
-            hasStickyFooter={boolean('hasStickyFooter', true)}
-            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
-            onClearError={() => {}}
-            onClose={() => {}}
-            onSubmit={() => {}}
-            onNext={() => {}}
-            onBack={() => {}}
-            setStep={() => {}}
+          <StepValidationWizard
+            hasStickyFooter
+            isProgressIndicatorVertical
             beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
-          >
-            <StepValidation id="step1" label="Step with validation" />
-            {content[1]}
-          </StatefulPageWizard>
+          />
         }
       />
     </div>
@@ -409,3 +337,53 @@ storiesOf('Watson IoT/PageWizard', module)
       </PageWizard>
     </div>
   ));
+
+export const StepValidation = ({ ...props }) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [error, setError] = useState(null);
+
+  return (
+    <PageWizardStep
+      {...props}
+      error={error}
+      onValidate={() => {
+        if (firstName.length > 0 && lastName.length > 0) {
+          setError(null);
+          return true;
+        }
+        setError('First name and Last name cannot be empty');
+        return false;
+      }}
+    >
+      <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
+      <PageWizardStepDescription>
+        Make sure you do not try to go to the next step with an empty input! Bad things will happen.
+      </PageWizardStepDescription>
+      <PageWizardStepContent>
+        <Form>
+          <FormGroup legendText="Name">
+            <FormItem>
+              <TextInput
+                id="first-name"
+                data-testid="first-name"
+                labelText="First name"
+                value={firstName}
+                onChange={evt => setFirstName(evt.target.value)}
+              />
+            </FormItem>
+            <FormItem>
+              <TextInput
+                id="last-name"
+                data-testid="last-name"
+                labelText="Last name"
+                value={lastName}
+                onChange={evt => setLastName(evt.target.value)}
+              />
+            </FormItem>
+          </FormGroup>
+        </Form>
+      </PageWizardStepContent>
+    </PageWizardStep>
+  );
+};
