@@ -3,22 +3,31 @@
 
 .#{$iot-prefix}-flyout-menu {
   color: initial;
-  background: $ui-background;
+  background: $ui-02;
+  box-shadow: 0;
 
   .#{$prefix}--tooltip__caret {
     display: none;
   }
 
+  &--open {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  &--light {
+    background: $ui-01;
+  }
+
   &__bottom-container {
     border-top: 1px solid $carbon--gray-40;
 
-    padding-top: $spacing-03;
-    margin-top: $spacing-03;
+    padding-top: $spacing-04;
+    margin-top: $spacing-04;
   }
 
   [dir='rtl'] &__submit,
   &__cancel {
-    margin-right: $spacing-03;
+    margin-right: $spacing-04;
   }
 
   [dir='rtl'] &__cancel,
@@ -29,4 +38,12 @@
 
 .#{$iot-prefix}-flyout-menu.#{$prefix}--tooltip {
   max-width: unset !important;
+}
+
+.#{$iot-prefix}-flyout-menu__trigger-button {
+  color: $icon-01;
+
+  > svg {
+    margin-left: 0 !important;
+  }
 }

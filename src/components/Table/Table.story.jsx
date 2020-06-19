@@ -8,7 +8,7 @@ import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import Delete from '@carbon/icons-react/lib/delete/16';
-import { Add20 } from '@carbon/icons-react';
+import { Add20, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -544,6 +544,8 @@ storiesOf('Watson IoT/Table', module)
               customToolbarContent: (
                 <StyledCustomToolbarContent>
                   <FlyoutMenu
+                    buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
+                    iconDescription="Helpful description"
                     triggerId="test-flyout-id"
                     onApply={action('Flyout Menu Apply Clicked')}
                     onCancel={action('Flyout Menu Cancel Clicked')}
