@@ -287,17 +287,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -1245,16 +1249,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -1276,23 +1280,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -1523,17 +1531,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="react-grid-item iot--card--toolbar"
                         >
                           <button
-                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                            disabled={false}
                             onClick={[Function]}
+                            tabIndex={0}
+                            title="Expand to fullscreen"
                             type="button"
                           >
                             <svg
-                              description="Expand to fullscreen"
+                              aria-hidden="true"
+                              aria-label="Expand to fullscreen"
+                              className="bx--btn__icon"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={16}
                               xmlns="http://www.w3.org/2000/svg"
@@ -1563,7 +1575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -1573,7 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -1623,7 +1635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -1633,7 +1645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -1683,7 +1695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -1693,7 +1705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -1824,16 +1836,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -1855,23 +1867,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -1941,17 +1957,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -2545,17 +2565,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -3503,16 +3527,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -3534,23 +3558,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -3781,17 +3809,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="react-grid-item iot--card--toolbar"
                         >
                           <button
-                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                            disabled={false}
                             onClick={[Function]}
+                            tabIndex={0}
+                            title="Expand to fullscreen"
                             type="button"
                           >
                             <svg
-                              description="Expand to fullscreen"
+                              aria-hidden="true"
+                              aria-label="Expand to fullscreen"
+                              className="bx--btn__icon"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={16}
                               xmlns="http://www.w3.org/2000/svg"
@@ -3821,7 +3853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -3831,7 +3863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -3881,7 +3913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -3891,7 +3923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -3941,7 +3973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -3951,7 +3983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -4082,16 +4114,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -4113,23 +4145,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -4199,17 +4235,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -4830,17 +4870,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -5788,16 +5832,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -5819,23 +5863,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -6066,17 +6114,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="react-grid-item iot--card--toolbar"
                         >
                           <button
-                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                            disabled={false}
                             onClick={[Function]}
+                            tabIndex={0}
+                            title="Expand to fullscreen"
                             type="button"
                           >
                             <svg
-                              description="Expand to fullscreen"
+                              aria-hidden="true"
+                              aria-label="Expand to fullscreen"
+                              className="bx--btn__icon"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={16}
                               xmlns="http://www.w3.org/2000/svg"
@@ -6106,7 +6158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -6116,7 +6168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -6166,7 +6218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -6176,7 +6228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -6226,7 +6278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -6236,7 +6288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -6367,16 +6419,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -6398,23 +6450,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -6484,17 +6540,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -6898,17 +6958,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   className="iot--card--toolbar"
                 >
                   <button
-                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                    disabled={false}
                     onClick={[Function]}
+                    tabIndex={0}
+                    title="Expand to fullscreen"
                     type="button"
                   >
                     <svg
-                      description="Expand to fullscreen"
+                      aria-hidden="true"
+                      aria-label="Expand to fullscreen"
+                      className="bx--btn__icon"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -7082,17 +7146,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -7343,17 +7411,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   className="iot--card--toolbar"
                 >
                   <button
-                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                    className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                    disabled={false}
                     onClick={[Function]}
+                    tabIndex={0}
+                    title="Expand to fullscreen"
                     type="button"
                   >
                     <svg
-                      description="Expand to fullscreen"
+                      aria-hidden="true"
+                      aria-label="Expand to fullscreen"
+                      className="bx--btn__icon"
                       focusable="false"
                       height={16}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      title="Expand to fullscreen"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -7688,17 +7760,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="react-grid-item iot--card--toolbar"
                         >
                           <button
-                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                            disabled={false}
                             onClick={[Function]}
+                            tabIndex={0}
+                            title="Expand to fullscreen"
                             type="button"
                           >
                             <svg
-                              description="Expand to fullscreen"
+                              aria-hidden="true"
+                              aria-label="Expand to fullscreen"
+                              className="bx--btn__icon"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={16}
                               xmlns="http://www.w3.org/2000/svg"
@@ -7728,7 +7804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7738,7 +7814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="timestamp"
                                 id="column-timestamp"
                                 onClick={[Function]}
@@ -7788,7 +7864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7798,7 +7874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="Campus_EGL"
                                 id="column-Campus_EGL"
                                 onClick={[Function]}
@@ -7848,7 +7924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7858,7 +7934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="peopleCount_EnterpriseBuilding_mean"
                                 id="column-peopleCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -7908,7 +7984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7918,7 +7994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="headCount_EnterpriseBuilding_mean"
                                 id="column-headCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -7968,7 +8044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7978,7 +8054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="capacity_EnterpriseBuilding_mean"
                                 id="column-capacity_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -9558,17 +9634,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -10516,16 +10596,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -10547,23 +10627,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -10794,15 +10878,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="react-grid-item iot--card--toolbar"
                         >
                           <button
-                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                            disabled={false}
                             onClick={[Function]}
+                            tabIndex={0}
+                            title="Expand to fullscreen"
                             type="button"
                           >
                             <svg
-                              aria-hidden={true}
+                              aria-hidden="true"
+                              aria-label="Expand to fullscreen"
+                              className="bx--btn__icon"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
+                              role="img"
                               viewBox="0 0 32 32"
                               width={16}
                               xmlns="http://www.w3.org/2000/svg"
@@ -10832,7 +10922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -10842,7 +10932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -10892,7 +10982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -10902,7 +10992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -10952,7 +11042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -10962,7 +11052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -11093,16 +11183,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -11124,23 +11214,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -11210,17 +11304,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -23950,17 +24048,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -24908,16 +25010,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last 7 days"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last 7 days"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -24939,23 +25041,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last 7 days
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -25186,17 +25292,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           className="react-grid-item iot--card--toolbar"
                         >
                           <button
-                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                            disabled={false}
                             onClick={[Function]}
+                            tabIndex={0}
+                            title="Expand to fullscreen"
                             type="button"
                           >
                             <svg
-                              description="Expand to fullscreen"
+                              aria-hidden="true"
+                              aria-label="Expand to fullscreen"
+                              className="bx--btn__icon"
                               focusable="false"
                               height={16}
                               preserveAspectRatio="xMidYMid meet"
                               role="img"
-                              title="Expand to fullscreen"
                               viewBox="0 0 32 32"
                               width={16}
                               xmlns="http://www.w3.org/2000/svg"
@@ -25226,7 +25336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -25236,7 +25346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -25286,7 +25396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -25296,7 +25406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -25346,7 +25456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -25356,7 +25466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -25487,16 +25597,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="Menu"
-                        className="iot--card--toolbar-action iot--card--toolbar-date-range-action bx--overflow-menu"
+                        className="iot--card--toolbar-date-range-action bx--overflow-menu"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
-                        title="Last year"
+                        title="Select time range"
                       >
                         <svg
-                          aria-label="Last year"
+                          aria-label="Select time range"
                           className="bx--overflow-menu__icon"
                           focusable="false"
                           height={16}
@@ -25518,23 +25628,27 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
                           />
                           <title>
-                            Last year
+                            Select time range
                           </title>
                         </svg>
                       </button>
                     </div>
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"
@@ -25604,17 +25718,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     className="iot--card--toolbar"
                   >
                     <button
-                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper"
+                      className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
+                      disabled={false}
                       onClick={[Function]}
+                      tabIndex={0}
+                      title="Expand to fullscreen"
                       type="button"
                     >
                       <svg
-                        description="Expand to fullscreen"
+                        aria-hidden="true"
+                        aria-label="Expand to fullscreen"
+                        className="bx--btn__icon"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
                         role="img"
-                        title="Expand to fullscreen"
                         viewBox="0 0 32 32"
                         width={16}
                         xmlns="http://www.w3.org/2000/svg"

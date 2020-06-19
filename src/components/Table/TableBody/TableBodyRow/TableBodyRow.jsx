@@ -430,19 +430,15 @@ const TableBodyRow = ({
                   rowId: id,
                   row: values,
                 })
-              ) : col.renderDataFunction ? (
-                col.renderDataFunction({
-                  // Call the column renderer if it's provided
-                  value: values[col.columnId],
-                  columnId: col.columnId,
-                  rowId: id,
-                  row: values,
-                })
               ) : (
                 <TableCellRenderer
                   wrapText={wrapCellText}
                   truncateCellText={truncateCellText}
                   locale={locale}
+                  renderDataFunction={col.renderDataFunction}
+                  columnId={col.columnId}
+                  rowId={id}
+                  row={values}
                 >
                   {values[col.columnId]}
                 </TableCellRenderer>

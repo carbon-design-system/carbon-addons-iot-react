@@ -4794,6 +4794,150 @@ Map {
       },
     },
   },
+  "TableViewDropdown" => Object {
+    "defaultProps": Object {
+      "activeViewEdited": false,
+      "disabled": false,
+      "i18n": Object {
+        "ariaLabel": "Select view",
+        "edited": "Edited",
+        "manageViews": "Manage views",
+        "saveAsNewView": "Save as new view",
+        "saveView": "Save view",
+        "tableViewMenu": "Table view menu",
+        "view": "View",
+        "viewAll": "View All",
+      },
+      "overrides": undefined,
+      "selectedViewId": undefined,
+      "testID": "TableViewDropdown",
+      "views": Array [],
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "onChangeView": Object {
+              "type": "func",
+            },
+            "onManageViews": Object {
+              "type": "func",
+            },
+            "onSaveAsNewView": Object {
+              "type": "func",
+            },
+            "onSaveView": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "isRequired": true,
+        "type": "shape",
+      },
+      "activeViewEdited": Object {
+        "type": "bool",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "ariaLabel": Object {
+              "type": "string",
+            },
+            "edited": Object {
+              "type": "string",
+            },
+            "manageViews": Object {
+              "type": "string",
+            },
+            "saveAsNewView": Object {
+              "type": "string",
+            },
+            "saveView": Object {
+              "type": "string",
+            },
+            "tableViewMenu": Object {
+              "type": "string",
+            },
+            "view": Object {
+              "type": "string",
+            },
+            "viewAll": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "dropdown": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "dropdownItem": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "selectedViewId": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "views": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "customAction": Object {
+                  "type": "func",
+                },
+                "icon": Object {
+                  "type": "elementType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "text": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
   "baseTableReducer" => Object {},
   "tableReducer" => Object {},
   "tileCatalogReducer" => Object {},
@@ -5043,6 +5187,7 @@ Map {
   },
   "Header" => Object {
     "defaultProps": Object {
+      "appSwitcherLabel": "AppSwitcher",
       "className": "main-header",
       "hasSideNav": true,
       "headerPanel": null,
@@ -5107,6 +5252,9 @@ Map {
       },
       "appName": Object {
         "isRequired": true,
+        "type": "string",
+      },
+      "appSwitcherLabel": Object {
         "type": "string",
       },
       "className": Object {
@@ -5286,9 +5434,9 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
-        "selectDateRangeLabel": "Select time range",
         "selectRowAria": "Select row",
         "selectSeverityPlaceholder": "Select a severity",
+        "selectTimeRangeLabel": "Select time range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
@@ -5460,7 +5608,17 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "string",
+                  },
+                  Object {
+                    "type": "node",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -5573,13 +5731,13 @@ Map {
             "selectAllAria": Object {
               "type": "string",
             },
-            "selectDateRangeLabel": Object {
-              "type": "string",
-            },
             "selectRowAria": Object {
               "type": "string",
             },
             "selectSeverityPlaceholder": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "severityLabel": Object {
@@ -6420,6 +6578,7 @@ Map {
         "overflowMenuDescription": "Open and close list of options",
         "periodToDateLabel": "Period to date",
         "rollingPeriodLabel": "Rolling period",
+        "selectTimeRangeLabel": "Select time range",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
         "thisWeekLabel": "This week",
@@ -6961,6 +7120,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -7013,6 +7175,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -7799,6 +7964,17 @@ Map {
             "learnMoreElement": Object {
               "type": "element",
             },
+            "tooltipDirection": Object {
+              "args": Array [
+                Array [
+                  "bottom",
+                  "top",
+                  "left",
+                  "right",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "type": Object {
               "args": Array [
                 Array [
@@ -7826,6 +8002,9 @@ Map {
               "type": "string",
             },
             "dailyLabel": Object {
+              "type": "string",
+            },
+            "defaultLabel": Object {
               "type": "string",
             },
             "deleteCardLabel": Object {
@@ -7880,6 +8059,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -8046,7 +8228,9 @@ Map {
         "alertDetected": "Alert detected:",
       },
       "locale": "en",
+      "showTimeInGMT": false,
       "size": "MEDIUM",
+      "tooltipDateFormatPattern": "L HH:mm:ss",
       "values": Array [],
     },
     "propTypes": Object {
@@ -8604,7 +8788,13 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
+            "showTimeInGMT": Object {
+              "type": "bool",
+            },
             "timeDataSourceId": Object {
+              "type": "string",
+            },
+            "tooltipDateFormatPattern": Object {
               "type": "string",
             },
             "unit": Object {
@@ -8803,7 +8993,30 @@ Map {
       "values": Object {
         "args": Array [
           Object {
-            "type": "object",
+            "args": Array [
+              Object {
+                "timestamp": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "number",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                      Object {
+                        "args": Array [
+                          [Function],
+                        ],
+                        "type": "instanceOf",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
@@ -9340,6 +9553,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -9392,6 +9608,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -9572,6 +9791,7 @@ Map {
         "rollingPeriodLabel": "Rolling period",
         "searchPlaceholder": "Search",
         "selectSeverityPlaceholder": "Select a severity",
+        "selectTimeRangeLabel": "Select time range",
         "severityLabel": "Severity",
         "thisMonthLabel": "This month",
         "thisQuarterLabel": "This quarter",
@@ -11109,6 +11329,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -11161,6 +11384,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {
@@ -11913,6 +12139,9 @@ Map {
             "dailyLabel": Object {
               "type": "string",
             },
+            "defaultLabel": Object {
+              "type": "string",
+            },
             "deleteCardLabel": Object {
               "type": "string",
             },
@@ -11965,6 +12194,9 @@ Map {
               "type": "string",
             },
             "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
               "type": "string",
             },
             "thisMonthLabel": Object {

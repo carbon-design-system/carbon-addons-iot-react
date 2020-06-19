@@ -5,6 +5,7 @@
 }
 
 .#{$iot-prefix}--row-actions-container {
+  height: 100%;
   > * {
     margin-left: $spacing-04;
   }
@@ -18,6 +19,7 @@
 }
 
 .#{$iot-prefix}--row-actions-container__background {
+  height: 100%;
   align-items: center;
   display: flex;
   flex-shrink: 0;

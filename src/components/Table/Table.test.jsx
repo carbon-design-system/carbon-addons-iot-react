@@ -466,6 +466,23 @@ describe('Table', () => {
     );
     expect(wrapper2.find(TableBodyRow).prop('options').truncateCellText).toBeTruthy();
     expect(wrapper2.find(TableHead).prop('options').truncateCellText).toBeTruthy();
+
+    const wrapper3 = mount(
+      <Table
+        columns={tableColumns.map(col => ({
+          ...col,
+          width: undefined,
+          renderDataFunction: () => 'hello this is a custom rendered long string',
+        }))}
+        data={[tableData[0]]}
+        options={{ hasResize: false, wrapCellText: 'auto' }}
+      />
+    );
+    expect(
+      wrapper3
+        .find('TableCell .iot--table__cell--truncate .iot--table__cell-text--truncate')
+        .first()
+    ).toHaveLength(1);
   });
 
   it('cells should wrap (not truncate) with wrapCellText:auto if no resize nor fixed col widths', () => {
@@ -528,5 +545,17 @@ describe('Table', () => {
     expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('always');
     expect(wrapper3.find(TableBodyRow).prop('options').truncateCellText).toBeFalsy();
     expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
+  });
+
+  it('table should get row-actions HTML class only when rowActions are enabled', () => {
+    const wrapper = mount(
+      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: true }} />
+    );
+    expect(wrapper.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeTruthy();
+
+    const wrapper2 = mount(
+      <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: false }} />
+    );
+    expect(wrapper2.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeFalsy();
   });
 });

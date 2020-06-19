@@ -6,7 +6,6 @@ import { bundledIconNames } from '../utils/bundledIcons';
 import {
   CARD_LAYOUTS,
   DASHBOARD_SIZES,
-  TIME_SERIES_TYPES,
   CARD_SIZES,
   LEGACY_CARD_SIZES,
   CARD_DATA_STATE,
@@ -70,56 +69,11 @@ export const ValueCardPropTypes = {
     description: PropTypes.string.isRequired,
     extraTooltipText: PropTypes.string,
     learnMoreElement: PropTypes.element,
+    tooltipDirection: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
   }),
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
-};
-
-export const TimeSeriesDatasetPropTypes = PropTypes.shape({
-  label: PropTypes.string.isRequired,
-  /** the attribute in values to map to */
-  dataSourceId: PropTypes.string.isRequired,
-  /** optional filter to apply to this particular line */
-  dataFilter: PropTypes.objectOf(PropTypes.any),
-  /** optional param to set the colors */
-  color: PropTypes.string,
-});
-
-export const TimeSeriesCardPropTypes = {
-  content: PropTypes.shape({
-    series: PropTypes.oneOfType([
-      TimeSeriesDatasetPropTypes,
-      PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
-    ]).isRequired,
-    /** Custom X-axis label */
-    xLabel: PropTypes.string,
-    /** Custom Y-axis label */
-    yLabel: PropTypes.string,
-    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
-    includeZeroOnXaxis: PropTypes.bool,
-    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
-    includeZeroOnYaxis: PropTypes.bool,
-    /** Which attribute is the time attribute i.e. 'timestamp' */
-    timeDataSourceId: PropTypes.string,
-    /** should it be a line chart or bar chart, default is line chart */
-    chartType: deprecate(
-      PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
-      '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
-    ),
-    /** optional units to put in the legend */
-    unit: PropTypes.string,
-  }).isRequired,
-  i18n: PropTypes.shape({
-    alertDetected: PropTypes.string,
-  }),
-  /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
-  values: PropTypes.arrayOf(PropTypes.object),
-  cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
-  ),
-  /** Interval for time series configuration used for formatting the x-axis */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
 };
 
 export const TableCardPropTypes = {
@@ -439,6 +393,7 @@ export const CardPropTypes = {
     'thisYear',
     '',
   ]),
+
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
@@ -468,7 +423,10 @@ export const CardPropTypes = {
     dailyLabel: PropTypes.string,
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
+    /** If no time range is selected we should show this string as the default */
+    defaultLabel: PropTypes.string,
     // card actions
+    selectTimeRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,
     cloneCardLabel: PropTypes.string,
     deleteCardLabel: PropTypes.string,
