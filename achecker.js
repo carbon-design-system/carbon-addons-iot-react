@@ -10,6 +10,6 @@ module.exports = {
     'manual',
   ],
   outputFormat: ['json'],
-  label: [process.env.TRAVIS_BRANCH],
+  label: 'master',
   outputFolder: 'results',
 };

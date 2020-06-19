@@ -54,7 +54,7 @@ const defaultProps = {
   collapsed: false,
   editable: false,
   onEdit: null,
-  i18n: { editIconDescription: 'Edit page title' },
+  i18n: { editIconDescription: 'Edit page title', tooltipIconDescription: 'More information' },
   isLoading: false,
   tabs: undefined,
   content: undefined,
@@ -70,7 +70,7 @@ const PageTitleBar = ({
   collapsed,
   editable,
   isLoading,
-  i18n: { editIconDescription },
+  i18n: { editIconDescription, tooltipIconDescription },
   onEdit,
   tabs,
   content,
@@ -104,6 +104,7 @@ const PageTitleBar = ({
                       triggerId="tooltip"
                       tooltipId="tooltip"
                       renderIcon={Information20}
+                      iconDescription={tooltipIconDescription}
                     >
                       {typeof description === 'string' ? <p>{description}</p> : description}
                     </Tooltip>

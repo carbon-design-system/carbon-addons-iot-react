@@ -1,6 +1,5 @@
 import 'jest-styled-components';
-
-const aChecker = require('accessibility-checker');
+import aChecker from 'accessibility-checker';
 
 async function toBeAccessible(node, label) {
   let results = await aChecker.getCompliance(node, label);
