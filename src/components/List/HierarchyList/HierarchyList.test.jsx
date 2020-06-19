@@ -281,8 +281,7 @@ describe('HierarchyList', () => {
         hasPagination={false}
       />
     );
-    // TODO: The previously selected players category should still be expanded needs fix #1320
-    // expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
+    expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
     const selectedYankee = screen.getByTitle('Gary Sanchez');
     expect(selectedYankee).toBeInTheDocument();
     expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
