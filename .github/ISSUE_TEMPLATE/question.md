@@ -2,7 +2,7 @@
 name: Question ❓
 about: Ask a question regarding usage or discussion about components
 title: '[ComponentName] question_title?'
-labels: 'type: question :grey_question:'
+labels: 'type: question :grey_question:, status: needs triage :mag:'
 assignees: ''
 ---
 
