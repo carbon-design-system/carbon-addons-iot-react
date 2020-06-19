@@ -5,6 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import isNil from 'lodash/isNil';
 import omit from 'lodash/omit';
 import useDeepCompareEffect from 'use-deep-compare-effect';
+import warning from 'warning';
 
 import ValueCard from '../ValueCard/ValueCard';
 import ImageCard from '../ImageCard/ImageCard';
@@ -64,6 +65,13 @@ const CardRenderer = React.memo(({ /* eslint-disable react/prop-types */
   onCardAction, i18n, isLoading, isEditable, breakpoint, onFetchData, onSetupCard, renderIconByName, timeGrain, ...cardProp }) => {
   // pass through the card props
   /* eslint-enable react/prop-types */
+  if (__DEV__) {
+    warning(
+      false,
+      'CardRenderer component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`.'
+    );
+  }
+
   const { dataSource, availableActions, type } = cardProp;
 
   /**
