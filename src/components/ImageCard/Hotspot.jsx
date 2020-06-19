@@ -126,7 +126,6 @@ const Hotspot = ({
         {...others}
         triggerText={iconToRender}
         showIcon={false}
-        clickToOpen
         triggerId={`hotspot-${x}-${y}`}
         tooltipId={`hotspot-${x}-${y}`}
       >
