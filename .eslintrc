@@ -76,23 +76,6 @@
     ],
     "no-prototype-builtins": 0, // not needed as we never mess with prototype
     "no-nested-ternary": 0,
-    "no-restricted-imports": ["warn", {
-      "paths": [{
-        "name": "classnames",
-        "importNames": ["classNames"],
-        "message": "Please use classnames from classnames instead."
-      },
-      {
-        "name": "classnames",
-        "importNames": ["cx"],
-        "message": "Please use classnames from classnames instead."
-      },
-      {
-        "name": "classnames",
-        "importNames": ["cn"],
-        "message": "Please use classnames from classnames instead."
-      }]
-    }],
     "react/jsx-one-expression-per-line": 0,
     "react/no-did-update-set-state": 0, //not needed after react 16: https://github.com/yannickcr/eslint-plugin-react/issues/1754
     "react/no-array-index-key": 0,
