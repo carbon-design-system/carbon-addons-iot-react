@@ -82,6 +82,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
         padding-right: $spacing-05;
+        &__with-actions {
+          padding-right: 0;
+          width: $spacing-05;
+        }
         &__large {
           color: $text-05;
           white-space: wrap;

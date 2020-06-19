@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 
 import { settings } from '../../../constants/Settings';
 
@@ -184,6 +185,9 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                      rowActions
+                    ),
                   })}
                   title={value}
                 >
@@ -194,8 +198,15 @@ const ListItem = ({
               {secondaryValue ? (
                 <div
                   title={secondaryValue}
-                  className={`${iotPrefix}--list-item--content--values--value
-                   ${iotPrefix}--list-item--content--values--value__large`}
+                  className={classnames(
+                    `${iotPrefix}--list-item--content--values--value`,
+                    `${iotPrefix}--list-item--content--values--value__large`,
+                    {
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                        rowActions
+                      ),
+                    }
+                  )}
                 >
                   {secondaryValue}
                 </div>
@@ -207,6 +218,9 @@ const ListItem = ({
                 <div
                   className={classnames(`${iotPrefix}--list-item--content--values--value`, {
                     [`${iotPrefix}--list-item--category`]: isCategory,
+                    [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                      rowActions
+                    ),
                   })}
                   title={value}
                 >
@@ -215,7 +229,11 @@ const ListItem = ({
                 {secondaryValue ? (
                   <div
                     title={secondaryValue}
-                    className={`${iotPrefix}--list-item--content--values--value`}
+                    className={classnames(`${iotPrefix}--list-item--content--values--value`, {
+                      [`${iotPrefix}--list-item--content--values--value__with-actions`]: !isEmpty(
+                        rowActions
+                      ),
+                    })}
                   >
                     {secondaryValue}
                   </div>
