@@ -190,7 +190,7 @@ class FilterHeaderRow extends Component {
     ),
   };
 
-  // TODO: we should really do this through a useEffect hook when we're feeling bold
+  // TODO: we should really do this through a useEffect hook when we refactor to functional component
   static getDerivedStateFromProps(props, state) {
     // If the filter props change from the outside, we need to reset the filterValues inside local state
     if (!isEqual(props.filters, state.prevPropsFilters)) {
