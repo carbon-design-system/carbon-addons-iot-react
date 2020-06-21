@@ -162,14 +162,19 @@ const HierarchyList = ({
       // Expand the parent elements of the defaultSelectedId
       if (defaultSelectedId) {
         const tempFilteredItems = searchForNestedItemIds(items, defaultSelectedId);
-        const tempExpandedIds = [];
+        const tempExpandedIds = [...expandedIds];
         // Expand the categories that have found results
         tempFilteredItems.forEach(categoryItem => {
           tempExpandedIds.push(categoryItem.id);
         });
         setExpandedIds(tempExpandedIds);
+        // If the defaultSelectedId prop is updated from the outside, we need to use it
+        if (selectedId !== defaultSelectedId) {
+          setSelectedId(defaultSelectedId);
+        }
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId, items]
   );
 
