@@ -2,6 +2,8 @@ import { mount } from 'enzyme';
 import React from 'react';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
+import { screen, render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
@@ -10,6 +12,18 @@ import { initialState } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 describe('stateful table with real reducer', () => {
+  it('should clear filters', async () => {
+    render(<StatefulTable {...initialState} actions={mockActions} />);
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.getByText('Clear all filters')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('Clear all filters'));
+    expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
+    expect(screen.queryByDisplayValue('whiteboard')).not.toBeInTheDocument();
+    expect(screen.queryByDisplayValue('option-B')).not.toBeInTheDocument();
+  });
+
   it('verify stateful table can support loading state', () => {
     const statefulTable = mount(
       <StatefulTable
