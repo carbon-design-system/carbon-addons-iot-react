@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { CaretUp16, CaretDown16 } from '@carbon/icons-react';
 import withSize from 'react-sizeme';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -144,7 +144,7 @@ const Attribute = ({
   const renderThresholdIcon = allowedToWrap => {
     return (
       <div
-        className={classNames(`${bemBase}-threshold-icon-container`, {
+        className={classnames(`${bemBase}-threshold-icon-container`, {
           [`${bemBase}-threshold-icon-container--mini`]: isMini,
           [`${bemBase}-threshold-icon-container--wrappable`]: allowedToWrap,
         })}
@@ -172,7 +172,7 @@ const Attribute = ({
             isVertical={isVertical}
             isMini={isMini}
             label={label}
-            className={classNames({ [`${bemBase}--wrappable`]: allowWrap })}
+            className={classnames({ [`${bemBase}--wrappable`]: allowWrap })}
           >
             <ValueRenderer
               value={value}
@@ -214,7 +214,7 @@ const Attribute = ({
             ) : null}
             {matchingThreshold && matchingThreshold.icon ? (
               <div
-                className={classNames(`${bemBase}-icon-container`, {
+                className={classnames(`${bemBase}-icon-container`, {
                   [`${bemBase}-icon-container--wrappable`]: allowWrap,
                 })}
               >
