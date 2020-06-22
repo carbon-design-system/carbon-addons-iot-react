@@ -8230,6 +8230,7 @@ Map {
       "locale": "en",
       "showTimeInGMT": false,
       "size": "MEDIUM",
+      "tooltipDateFormatPattern": "L HH:mm:ss",
       "values": Array [],
     },
     "propTypes": Object {
@@ -8791,6 +8792,9 @@ Map {
               "type": "bool",
             },
             "timeDataSourceId": Object {
+              "type": "string",
+            },
+            "tooltipDateFormatPattern": Object {
               "type": "string",
             },
             "unit": Object {

@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Tooltip, SkeletonText } from 'carbon-components-react';
 import SizeMe from 'react-sizeme';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
@@ -56,7 +56,7 @@ const CardWrapper = ({
       onTouchEnd={onTouchEnd}
       onTouchStart={onTouchStart}
       onScroll={onScroll}
-      className={classNames(className, `${iotPrefix}--card--wrapper`)}
+      className={classnames(className, `${iotPrefix}--card--wrapper`)}
       {...validOthers}
     >
       {children}
@@ -83,7 +83,7 @@ const CardContent = props => {
   return (
     <div
       style={{ [`--card-content-height`]: height }}
-      className={classNames(`${iotPrefix}--card--content`, {
+      className={classnames(`${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
       })}
     >
@@ -311,7 +311,7 @@ const Card = props => {
                         width: 'calc(100% - 50px)',
                       }
                 }
-                className={classNames(`${iotPrefix}--card`, className)}
+                className={classnames(`${iotPrefix}--card`, className)}
               >
                 {!hideHeader && (
                   <CardHeader>
