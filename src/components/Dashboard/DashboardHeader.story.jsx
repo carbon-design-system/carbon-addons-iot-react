@@ -7,9 +7,12 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput } from 'carbon-components-react';
 
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
+
 import DashboardHeader from './DashboardHeader';
 
-storiesOf('Watson IoT/Dashboard Header', module)
+storiesOf('Watson IoT/Dashboard Header (Deprecated)', module)
+  .add(deprecatedStoryTitle, () => <DeprecationNotice deprecatedComponentName="Dashboard" />)
   .add('basic', () => {
     return (
       <div style={{ minWidth: '1000px' }}>
