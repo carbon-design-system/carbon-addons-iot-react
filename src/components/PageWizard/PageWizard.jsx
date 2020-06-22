@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ProgressIndicator, ProgressStep } from 'carbon-components-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 
@@ -117,7 +117,7 @@ const PageWizard = ({
 
   return (
     <div
-      className={classNames(
+      className={classnames(
         isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : null,
         className,
         hasStickyFooter ? `${iotPrefix}--page-wizard__sticky` : null
@@ -132,7 +132,7 @@ const PageWizard = ({
           }
         >
           <ProgressIndicator
-            className={classNames(className, `${iotPrefix}--progress-indicator`)}
+            className={classnames(className, `${iotPrefix}--progress-indicator`)}
             currentIndex={currentStepIdx}
             onChange={idx => setStep(steps[idx].id)}
             vertical={isProgressIndicatorVertical}
