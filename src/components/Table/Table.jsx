@@ -452,6 +452,7 @@ const Table = props => {
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
+            [`${iotPrefix}--data-table--row-actions`]: options.hasRowActions,
           })}
           {...others}
         >

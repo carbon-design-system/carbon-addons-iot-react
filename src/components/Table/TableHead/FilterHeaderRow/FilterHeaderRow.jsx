@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
+import isEqual from 'lodash/isEqual';
 
 import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
@@ -179,20 +180,44 @@ class FilterHeaderRow extends Component {
     hasFastFilter: true,
   };
 
-  state = this.props.columns.reduce(
-    (acc, curr) => ({
-      ...acc,
-      [curr.id]: (this.props.filters.find(i => i.columnId === curr.id) || { value: '' }).value,
-    }),
-    {}
-  );
+  state = {
+    filterValues: this.props.columns.reduce(
+      (acc, curr) => ({
+        ...acc,
+        [curr.id]: (this.props.filters.find(i => i.columnId === curr.id) || { value: '' }).value,
+      }),
+      {}
+    ),
+  };
+
+  // TODO: we should really do this through a useEffect hook when we refactor to functional component
+  static getDerivedStateFromProps(props, state) {
+    // If the filter props change from the outside, we need to reset the filterValues inside local state
+    if (!isEqual(props.filters, state.prevPropsFilters)) {
+      const newFilters = props.columns.reduce(
+        (acc, curr) => ({
+          ...acc,
+          [curr.id]: (props.filters.find(i => i.columnId === curr.id) || { value: '' }).value,
+        }),
+        {}
+      );
+
+      if (!isEqual(newFilters, state.filterValues)) {
+        return { filterValues: newFilters, prevPropsFilters: props.filters };
+      }
+      // Need to store the updated filters from before
+      return { prevPropsFilters: props.filters };
+    }
+    return null;
+  }
 
   /**
    * take the state with the filter values and send to our listener
    */
   handleApplyFilter = () => {
     const { onApplyFilter } = this.props;
-    onApplyFilter(this.state);
+    const { filterValues } = this.state;
+    onApplyFilter(filterValues);
   };
 
   handleClearFilter = (event, column) => {
@@ -200,8 +225,10 @@ class FilterHeaderRow extends Component {
     if (event.keyCode === 13 || !event.keyCode) {
       this.setState(
         state => ({
-          ...state,
-          [column.id]: '',
+          filterValues: {
+            ...state.filterValues,
+            [column.id]: '',
+          },
         }),
         this.handleApplyFilter
       );
@@ -234,6 +261,7 @@ class FilterHeaderRow extends Component {
       isDisabled,
       hasFastFilter,
     } = this.props;
+    const { filterValues } = this.state;
     return isVisible ? (
       <TableRow>
         {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
@@ -242,7 +270,7 @@ class FilterHeaderRow extends Component {
           .filter(c => !c.isHidden)
           .map((c, i) => {
             const column = columns.find(item => c.columnId === item.id);
-            const columnStateValue = this.state[column.id]; // eslint-disable-line react/destructuring-assignment
+            const columnStateValue = filterValues[column.id]; // eslint-disable-line react/destructuring-assignment
             const filterColumnOptions = options => {
               options.sort((a, b) => {
                 return a.text.localeCompare(b.text, { sensitivity: 'base' });
@@ -258,6 +286,7 @@ class FilterHeaderRow extends Component {
                 <div />
               ) : column.options ? (
                 <ComboBox
+                  key={columnStateValue}
                   className={`${iotPrefix}--filterheader-combo`}
                   id={`column-${i}`}
                   aria-label={filterText}
@@ -274,8 +303,10 @@ class FilterHeaderRow extends Component {
                   onChange={evt => {
                     this.setState(
                       state => ({
-                        ...state,
-                        [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                        filterValues: {
+                          ...state.filterValues,
+                          [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                        },
                       }),
                       this.handleApplyFilter
                     );
@@ -291,10 +322,13 @@ class FilterHeaderRow extends Component {
                     hideLabel
                     light={lightweight}
                     placeholder={column.placeholderText || 'Type and hit enter to apply'}
-                    title={this.state[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
+                    title={filterValues[column.id] || column.placeholderText} // eslint-disable-line react/destructuring-assignment
                     onChange={event => {
+                      event.persist();
                       this.setState(
-                        { [column.id]: event.target.value },
+                        state => ({
+                          filterValues: { ...state.filterValues, [column.id]: event.target.value },
+                        }),
                         hasFastFilter ? debounce(this.handleApplyFilter, 150) : null // only apply the filter at debounced interval
                       );
                     }}
@@ -304,10 +338,10 @@ class FilterHeaderRow extends Component {
                         : null
                     } // if fast filter off, then filter on key press
                     onBlur={!hasFastFilter ? this.handleApplyFilter : null} // if fast filter off, then filter on blur
-                    value={this.state[column.id]} // eslint-disable-line react/destructuring-assignment
+                    value={filterValues[column.id]} // eslint-disable-line react/destructuring-assignment
                     disabled={isDisabled}
                   />
-                  {this.state[column.id] ? ( // eslint-disable-line react/destructuring-assignment
+                  {filterValues[column.id] ? ( // eslint-disable-line react/destructuring-assignment
                     <div
                       role="button"
                       className={classnames(`${prefix}--list-box__selection`, {
