@@ -5,14 +5,12 @@ import GroupedBarChart from '@carbon/charts-react/bar-chart-grouped';
 import classnames from 'classnames';
 import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
-import moment from 'moment';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 import { valueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
-import { generateChartTimeRange } from '../TimeSeriesCard/timeSeriesUtils';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
@@ -43,7 +41,7 @@ const BarChartCard = ({
   isLoading,
   interval,
   className,
-  timeRange,
+  domainRange,
   endDate,
   ...others
 }) => {
@@ -83,7 +81,7 @@ const BarChartCard = ({
   let ChartComponent = SimpleBarChart;
   if (type === BAR_CHART_TYPES.GROUPED) {
     ChartComponent = GroupedBarChart;
-  } else {
+  } else if (type === BAR_CHART_TYPES.STACKED) {
     ChartComponent = StackedBarChart;
   }
 
@@ -114,9 +112,6 @@ const BarChartCard = ({
     );
   }
 
-  const endDateRange = endDate ? moment(endDate) : moment();
-  const timeRangeDomain = generateChartTimeRange(timeRange, endDateRange);
-
   return (
     <Card
       title={title}
@@ -128,7 +123,6 @@ const BarChartCard = ({
       isLazyLoading={isLazyLoading}
       isEditable={isEditable}
       isLoading={isLoading}
-      timeRange={timeRange}
       {...others}
     >
       {!isAllValuesEmpty ? (
@@ -154,10 +148,12 @@ const BarChartCard = ({
                   }`,
                   scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.HORIZONTAL,
+                    type === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+                    timeDataSourceId,
                   mapsTo: axes.bottomAxesMapsTo,
-                  ...(!isEmpty(timeRangeDomain) && layout === BAR_CHART_LAYOUTS.VERTICAL
-                    ? { domain: timeRangeDomain }
+                  ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL
+                    ? { domain: domainRange }
                     : {}),
                 },
                 left: {
@@ -168,8 +164,8 @@ const BarChartCard = ({
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
-                  ...(!isEmpty(timeRangeDomain) && layout === BAR_CHART_LAYOUTS.HORIZONTAL
-                    ? { domain: timeRangeDomain }
+                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+                    ? { domain: domainRange }
                     : {}),
                 },
               },
@@ -234,6 +230,7 @@ BarChartCard.defaultProps = {
   i18n: {
     noDataLabel: 'No data',
   },
+  domainRange: null,
   content: {
     type: BAR_CHART_TYPES.SIMPLE,
     layout: BAR_CHART_LAYOUTS.VERTICAL,

@@ -122,6 +122,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
+          domainRange={[new Date(), new Date()]}
           interval="hour"
           breakpoint="lg"
           size={size}
@@ -130,8 +131,14 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - timeRange dayByHour', () => {
+  .add('medium / single line - domain range', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
+    const timestamps = data.map(d => d.timestamp);
+    const minDate = new Date(Math.min(...timestamps));
+    const day = minDate.getDay();
+    minDate.setDate(day + 10);
+
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -145,56 +152,19 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 dataSourceId: 'temperature',
               },
             ],
-
             xLabel: 'Time t',
             yLabel: 'Temperature (˚F)',
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('day', 50, { min: 10, max: 100 }, 100)}
+          values={data}
           availableActions={{ range: true }}
           interval="hour"
-          timeRange="last24Hours"
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
-        />
-      </div>
-    );
-  })
-  .add('single line', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    const interval = select(
-      'interval',
-      ['hour', 'day', 'week', 'quarter', 'month', 'year'],
-      'hour'
-    );
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-              },
-            ],
-            xLabel: 'Time',
-            yLabel: 'Temperature (˚F)',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
-            timeDataSourceId: 'timestamp',
-          })}
-          values={getIntervalChartData(interval, 10, { min: 10, max: 100 }, 100)}
-          interval={interval}
-          showTimeInGMT={boolean('showTimeInGMT', false)}
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
+          domainRange={[minDate.valueOf(), Math.max(...timestamps)]}
         />
       </div>
     );

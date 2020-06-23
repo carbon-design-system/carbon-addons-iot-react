@@ -26,16 +26,11 @@ import {
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
-import {
-  generateSampleValues,
-  formatGraphTick,
-  findMatchingAlertRange,
-  generateChartTimeRange,
-} from './timeSeriesUtils';
+import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from './timeSeriesUtils';
 
 const { iotPrefix } = settings;
 
-export const TimeSeriesDatasetPropTypes = PropTypes.shape({
+const TimeSeriesDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   /** the attribute in values to map to */
   dataSourceId: PropTypes.string.isRequired,
@@ -45,7 +40,7 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   color: PropTypes.string,
 });
 
-export const TimeSeriesCardPropTypes = {
+const TimeSeriesCardPropTypes = {
   content: PropTypes.shape({
     series: PropTypes.oneOfType([
       TimeSeriesDatasetPropTypes,
@@ -89,6 +84,10 @@ export const TimeSeriesCardPropTypes = {
   ),
   /** Interval for time series configuration used for formatting the x-axis */
   interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
+  /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
+   * can be date instance or timestamp
+   */
+  domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
 };
 
 const LineChartWrapper = styled.div`
@@ -253,9 +252,8 @@ const TimeSeriesCard = ({
   isExpanded,
   isLazyLoading,
   isLoading,
-  timeRange,
+  domainRange,
   showTimeInGMT,
-  endDate,
   ...others
 }) => {
   const {
@@ -446,15 +444,11 @@ const TimeSeriesCard = ({
   // TODO: remove in next release
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
-  const endDateRange = endDate ? moment(endDate) : moment();
-  const timeRangeDomain = generateChartTimeRange(timeRange, endDateRange);
-
   return (
     <Card
       title={title}
       size={newSize}
       i18n={i18n}
-      timeRange={timeRange}
       {...others}
       isExpanded={isExpanded}
       isEditable={isEditable}
@@ -488,7 +482,7 @@ const TimeSeriesCard = ({
                       formatter: formatTick,
                     },
                     includeZero: includeZeroOnXaxis,
-                    ...(!isEmpty(timeRangeDomain) ? { domain: timeRangeDomain } : {}),
+                    ...(domainRange ? { domain: domainRange } : {}),
                   },
                   left: {
                     title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
@@ -580,6 +574,7 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnYaxis: false,
   },
   showTimeInGMT: false,
+  domainRange: null,
 };
 
 export default TimeSeriesCard;
