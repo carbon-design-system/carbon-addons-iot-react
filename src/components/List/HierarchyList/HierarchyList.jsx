@@ -168,6 +168,10 @@ const HierarchyList = ({
           tempExpandedIds.push(categoryItem.id);
         });
         setExpandedIds(tempExpandedIds);
+        // If the defaultSelectedId prop is updated from the outside, we need to use it
+        if (selectedId !== defaultSelectedId) {
+          setSelectedId(defaultSelectedId);
+        }
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps

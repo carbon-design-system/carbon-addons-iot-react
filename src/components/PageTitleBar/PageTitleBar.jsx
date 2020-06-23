@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Information20, Edit20 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
 
@@ -78,7 +78,7 @@ const PageTitleBar = ({
   //
   const titleBarContent = content || tabs;
   return (
-    <div className={classNames(className, 'page-title-bar')}>
+    <div className={classnames(className, 'page-title-bar')}>
       {isLoading ? (
         <SkeletonText className="page-title-bar-loading" heading width="30%" />
       ) : (

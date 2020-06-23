@@ -8,7 +8,7 @@ import {
   Link,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
@@ -41,7 +41,7 @@ const ListCard = ({
   return (
     <Card id={id} title={title} size={size} onScroll={handleScroll} {...others}>
       <div
-        className={classNames('list-card', className)}
+        className={classnames('list-card', className)}
         style={{
           paddingTop: 0,
           paddingRight: CARD_CONTENT_PADDING,
