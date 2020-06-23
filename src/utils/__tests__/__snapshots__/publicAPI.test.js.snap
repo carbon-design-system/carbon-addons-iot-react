@@ -5978,6 +5978,115 @@ Map {
       },
     },
   },
+  "DashboardHeader" => Object {
+    "defaultProps": Object {
+      "actions": Array [],
+      "description": null,
+      "filter": null,
+      "hasLastUpdated": true,
+      "lastUpdated": null,
+      "lastUpdatedLabel": "Last updated:",
+      "onDashboardAction": null,
+      "title": null,
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "customActionComponent": Object {
+                  "type": "node",
+                },
+                "icon": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "args": Array [
+                          Array [
+                            "caretUp",
+                            "caretDown",
+                            "edit",
+                            "close",
+                            "checkmark",
+                            "warning",
+                            "arrowUp",
+                            "arrowDown",
+                            "user",
+                            "info",
+                            "help",
+                          ],
+                        ],
+                        "type": "oneOf",
+                      },
+                      Object {
+                        "args": Array [
+                          Object {
+                            "height": Object {
+                              "type": "string",
+                            },
+                            "svgData": Object {
+                              "isRequired": true,
+                              "type": "object",
+                            },
+                            "viewBox": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "width": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                      Object {
+                        "type": "object",
+                      },
+                      Object {
+                        "type": "element",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "labelText": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "description": Object {
+        "type": "string",
+      },
+      "filter": Object {
+        "type": "node",
+      },
+      "hasLastUpdated": Object {
+        "type": "bool",
+      },
+      "lastUpdated": Object {
+        "type": "string",
+      },
+      "lastUpdatedLabel": Object {
+        "type": "string",
+      },
+      "onDashboardAction": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
   "DashboardGrid" => Object {
     "defaultProps": Object {
       "breakpoint": "lg",
