@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SkeletonText, Button } from 'carbon-components-react';
-import warning from 'warning';
 
 import icons, { bundledIconNames } from '../../utils/bundledIcons';
 import { settings } from '../../constants/Settings';
@@ -70,13 +69,6 @@ const DashboardHeader = ({
   actions,
   onDashboardAction,
 }) => {
-  if (__DEV__) {
-    warning(
-      false,
-      'Dashboard component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`.'
-    );
-  }
-
   return (
     <div className="dashboard--header">
       <div className="dashboard--header-left">
