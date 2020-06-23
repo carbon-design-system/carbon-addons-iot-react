@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Application32, Group32 } from '@carbon/icons-react';
 import { ClickableTile } from 'carbon-components-react';
 
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
 import {
@@ -442,7 +443,8 @@ const commonDashboardProps = {
   },
 };
 
-storiesOf('Watson IoT/Dashboard', module)
+storiesOf('Watson IoT/Dashboard (Deprecated)', module)
+  .add(deprecatedStoryTitle, () => <DeprecationNotice deprecatedComponentName="Dashboard" />)
   .add(
     'basic dashboard',
     () => {
