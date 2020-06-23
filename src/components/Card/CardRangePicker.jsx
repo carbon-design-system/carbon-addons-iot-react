@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { EventSchedule16 } from '@carbon/icons-react';
 import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 
 import { settings } from '../../constants/Settings';
@@ -70,7 +70,7 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
         ) : null}
 
         <OverflowMenu
-          className={classNames(`${iotPrefix}--card--toolbar-date-range-action`)}
+          className={classnames(`${iotPrefix}--card--toolbar-date-range-action`)}
           flipped
           title={i18n.selectTimeRangeLabel}
           iconDescription={i18n.selectTimeRangeLabel}
@@ -81,7 +81,7 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
             key="default"
             onClick={() => handleTimeRange('default')}
             itemText={i18n.defaultLabel}
-            className={classNames({
+            className={classnames({
               [`${iotPrefix}--card--overflow-menuitem-active`]:
                 timeRange === '' || isNil(timeRange),
             })}
@@ -95,7 +95,7 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
                 itemText={timeBoxLabels[i]}
-                className={classNames({
+                className={classnames({
                   [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
                 })}
               />
@@ -108,7 +108,7 @@ const CardRangePicker = ({ i18n, timeRange: timeRangeProp, onCardAction, cardWid
                 hasDivider={index === 0}
                 onClick={() => handleTimeRange(i)}
                 itemText={timeBoxLabels[i]}
-                className={classNames({
+                className={classnames({
                   [`${iotPrefix}--card--overflow-menuitem-active`]: timeRange === i,
                 })}
               />

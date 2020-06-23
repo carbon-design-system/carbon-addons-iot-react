@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { RadioTile, Tile, SkeletonText, DataTable } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import SimplePagination from '../SimplePagination/SimplePagination';
 import { settings } from '../../constants/Settings';
@@ -92,7 +92,7 @@ const TileCatalog = ({
   const totalTiles = pagination && pagination.totalItems ? pagination.totalItems : 10;
 
   return (
-    <div className={classNames(className, `${iotPrefix}--tile-catalog`)}>
+    <div className={classnames(className, `${iotPrefix}--tile-catalog`)}>
       <div className={`${iotPrefix}--tile-catalog--header`}>
         {search && search.placeHolderText ? (
           <TableToolbarSearch
