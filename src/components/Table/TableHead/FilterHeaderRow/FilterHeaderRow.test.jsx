@@ -30,7 +30,7 @@ describe('FilterHeaderRow', () => {
       />
     );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
-    expect(wrapper.state()).toEqual({ col1: 'mytext' });
+    expect(wrapper.state()).toEqual({ filterValues: { col1: 'mytext' }, prevPropsFilters: [] });
   });
 
   it('each column is marked with data-column', () => {
@@ -55,7 +55,7 @@ describe('FilterHeaderRow', () => {
     );
     wrapper.find('input').simulate('change', { target: { value: 'mytext' } });
     wrapper.find('[title="Clear filter"]').simulate('click');
-    expect(wrapper.state()).toEqual({ col1: '' });
+    expect(wrapper.state()).toEqual({ filterValues: { col1: '' }, prevPropsFilters: [] });
   });
 
   it('filter input is hidden when isFilterable is false', () => {
@@ -85,6 +85,6 @@ describe('FilterHeaderRow', () => {
     expect(wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`)).toHaveLength(1);
 
     wrapper.find(`.${iotPrefix}--clear-filters-button--disabled`).simulate('click');
-    expect(wrapper.state().col1).toEqual('myVal');
+    expect(wrapper.state().filterValues.col1).toEqual('myVal');
   });
 });
