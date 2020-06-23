@@ -61,8 +61,6 @@ const propTypes = {
   // Data related properties
   /** If the overall dashboard should be using a timeGrain, we pass it here */
   timeGrain: PropTypes.string,
-  /** End of date range timestamp */
-  endDate: PropTypes.number,
   /** Property that will trigger all cards to load again */
   isLoading: PropTypes.bool,
   /** once all the cards have finished loading this will be called */
@@ -236,7 +234,6 @@ const defaultProps = {
   onFetchData: null,
   renderIconByName: null,
   timeGrain: null,
-  endDate: null,
   isLoading: false,
   setIsLoading: null,
 };
@@ -282,7 +279,6 @@ const Dashboard = ({
   renderIconByName,
   onFetchData,
   timeGrain,
-  endDate,
 }) => {
   const [breakpoint, setBreakpoint] = useState('lg');
 
@@ -357,7 +353,6 @@ const Dashboard = ({
           onFetchData={handleOnFetchData}
           renderIconByName={cachedRenderIconByName}
           timeGrain={timeGrain}
-          endDate={endDate}
         />
       )), // eslint-disable-next-line react-hooks/exhaustive-deps
     [breakpoint, i18n, cards, isEditable, isLoading, handleOnFetchData, timeGrain]

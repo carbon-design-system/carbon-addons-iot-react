@@ -2478,7 +2478,7 @@ export const getIntervalChartData = (
  */
 export const getPeriodChartData = (interval = 'day', period = 'week', intInterval, decimals) => {
   const endTime = moment();
-  const startTime = endTime.subtract(period);
+  const startTime = moment().startOf(period);
   const quantity = endTime.diff(startTime, `${interval}s`) + 1;
   return generateData(quantity, intInterval, decimals).map((i, idx) => ({
     ...i,

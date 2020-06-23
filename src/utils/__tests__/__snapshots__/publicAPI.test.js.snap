@@ -5395,7 +5395,6 @@ Map {
     "defaultProps": Object {
       "actions": Array [],
       "description": null,
-      "endDate": null,
       "filter": null,
       "hasLastUpdated": true,
       "i18n": Object {
@@ -5575,9 +5574,6 @@ Map {
       },
       "description": Object {
         "type": "string",
-      },
-      "endDate": Object {
-        "type": "number",
       },
       "filter": Object {
         "type": "node",

@@ -61,7 +61,7 @@ export const loadCardData = async (card, setCard, onFetchData, timeGrain) => {
  * for each card.
  */
 const CardRenderer = React.memo(({ /* eslint-disable react/prop-types */
-  onCardAction, i18n, isLoading, isEditable, breakpoint, onFetchData, onSetupCard, renderIconByName, timeGrain, endDate, ...cardProp }) => {
+  onCardAction, i18n, isLoading, isEditable, breakpoint, onFetchData, onSetupCard, renderIconByName, timeGrain, ...cardProp }) => {
   // pass through the card props
   /* eslint-enable react/prop-types */
   const { dataSource, availableActions, type } = cardProp;
@@ -137,7 +137,6 @@ const CardRenderer = React.memo(({ /* eslint-disable react/prop-types */
             // Use the maximum selected grain betweeen the dashboard and the current range
             timeGrain: compareGrains(timeGrain, range.timeGrain) < 1 ? range.timeGrain : timeGrain,
           },
-          timeRange: range,
         };
         // Then trigger a load of the card data
         loadCardData(cardWithUpdatedRange, setCard, onFetchData, timeGrain);
@@ -178,11 +177,11 @@ const CardRenderer = React.memo(({ /* eslint-disable react/prop-types */
   ) : type === CARD_TYPES.IMAGE ? (
     <ImageCard {...commonCardProps} error={card.setupError || card.error} />
   ) : type === CARD_TYPES.TIMESERIES ? (
-    <TimeSeriesCard {...commonCardProps} endDate={endDate} />
+    <TimeSeriesCard {...commonCardProps} />
   ) : type === CARD_TYPES.TABLE ? (
     <TableCard {...commonCardProps} />
   ) : type === CARD_TYPES.BAR ? (
-    <BarChartCard {...commonCardProps} endDate={endDate} />
+    <BarChartCard {...commonCardProps} />
   ) : type === CARD_TYPES.LIST ? (
     <ListCard {...commonCardProps} data={card.content.data} loadData={card.content.loadData} />
   ) : type === CARD_TYPES.GAUGE ? (

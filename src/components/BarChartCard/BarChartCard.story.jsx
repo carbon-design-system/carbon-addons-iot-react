@@ -112,7 +112,6 @@ storiesOf('Watson IoT/BarChartCard', module)
           size={size}
           onCardAction={action('onCardAction')}
           availableActions={{ expand: true, range: true }}
-          timeRange="thisYear"
         />
       </div>
     );
