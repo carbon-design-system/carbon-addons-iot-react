@@ -7,7 +7,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Button as CarbonButton } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
@@ -47,7 +47,7 @@ const IconSwitch = React.forwardRef((props, ref) => {
     }
   };
 
-  const classes = classNames(
+  const classes = classnames(
     className,
     `${iotPrefix}--icon-switch`,
     `${iotPrefix}--icon-switch--${size}`,

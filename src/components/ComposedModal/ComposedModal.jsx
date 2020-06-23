@@ -8,7 +8,7 @@ import {
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import warning from 'warning';
@@ -229,7 +229,7 @@ class ComposedModal extends React.Component {
         {...props}
         open={open}
         onClose={this.doNotClose}
-        className={classNames(className, {
+        className={classnames(className, {
           'error-modal': type === 'warn',
           'big-modal': isLarge,
         })}

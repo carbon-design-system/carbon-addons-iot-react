@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
@@ -417,7 +417,7 @@ const TableBodyRow = ({
             data-offset={offset}
             offset={offset}
             align={align}
-            className={classNames(`data-table-${align}`, {
+            className={classnames(`data-table-${align}`, {
               [`${iotPrefix}--table__cell--truncate`]: truncateCellText,
             })}
             width={initialColumnWidth}

@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
@@ -374,7 +374,7 @@ const Table = props => {
   return (
     <TableContainer
       style={style}
-      className={classNames(className, `${iotPrefix}--table-container`)}
+      className={classnames(className, `${iotPrefix}--table-container`)}
     >
       {/* If there is no items being rendered in the toolbar, don't render the toolbar */
       options.hasFilter ||
@@ -448,10 +448,11 @@ const Table = props => {
       ) : null}
       <div className="addons-iot-table-container">
         <CarbonTable
-          className={classNames({
+          className={classnames({
             [`${iotPrefix}--data-table--resize`]: options.hasResize,
             [`${iotPrefix}--data-table--fixed`]:
               options.hasResize && !options.useAutoTableLayoutForResize,
+            [`${iotPrefix}--data-table--row-actions`]: options.hasRowActions,
           })}
           {...others}
         >

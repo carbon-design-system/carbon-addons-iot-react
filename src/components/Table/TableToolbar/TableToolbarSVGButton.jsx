@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Button } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
@@ -30,7 +30,7 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
   return (
     <Button
       {...rest}
-      className={classNames(
+      className={classnames(
         `${prefix}--btn--icon-only`,
         `${iotPrefix}--tooltip-svg-wrapper`,
         className,
