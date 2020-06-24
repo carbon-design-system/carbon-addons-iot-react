@@ -1207,7 +1207,7 @@ storiesOf('Watson IoT/Dashboard', module)
                     href="https://internetofthings.ibmcloud.com"
                     style={{ height: '100%', padding: '0 0 0 0' }}
                   >
-                    <div style={{ padding: '12px' }}>
+                    <div style={{ padding: spacing04 }}>
                       <h4>View Dashboards</h4>
                       <br />
                       <p>View pinned dashboards to keep track of your world in IoT.</p>
@@ -1239,7 +1239,7 @@ storiesOf('Watson IoT/Dashboard', module)
                     href="https://internetofthings.ibmcloud.com"
                     style={{ height: '100%', padding: '0 0 0 0' }}
                   >
-                    <div style={{ padding: '12px' }}>
+                    <div style={{ padding: spacing04 }}>
                       <h4>Connect Devices</h4>
                       <br />
                       <p>
@@ -1269,7 +1269,7 @@ storiesOf('Watson IoT/Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ padding: '12px' }}>
+                  <div style={{ padding: spacing04 }}>
                     <h4>Monitor Entities</h4>
                     <br />
                     <p>Expore your entities and analyze their associated data.</p>
@@ -1296,7 +1296,7 @@ storiesOf('Watson IoT/Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ padding: '12px' }}>
+                  <div style={{ padding: spacing04 }}>
                     <h4>Track Usage</h4>
                     <br />
                     <div
@@ -1318,7 +1318,7 @@ storiesOf('Watson IoT/Dashboard', module)
               },
               {
                 content: (
-                  <div style={{ padding: '12px' }}>
+                  <div style={{ padding: spacing04 }}>
                     <h4>Administer Users</h4>
                     <br />
                     <div

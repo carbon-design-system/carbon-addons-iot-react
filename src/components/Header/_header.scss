@@ -59,7 +59,7 @@
 .#{$prefix}--header__menu .#{$prefix}--header__menu-item[role='menuitem'] {
   display: flex;
   align-items: center;
-  color: #c6c6c6;
+  color: $active-ui;
   height: 100%;
   font-size: 0.875rem;
   font-weight: 400;
@@ -74,7 +74,7 @@
   width: 100%;
 
   &:focus {
-    border-color: white;
+    border-color: $inverse-focus-ui;
   }
 }
 
@@ -118,7 +118,7 @@ button.#{$prefix}--header__menu-item {
   width: 100%;
 
   &:focus {
-    border-color: #fff;
+    border-color: $inverse-focus-ui;
     color: #f4f4f4;
     outline: none;
   }

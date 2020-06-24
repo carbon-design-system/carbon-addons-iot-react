@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
+import { ui03, support01, support02, support03 } from '@carbon/colors';
 
 import GaugeCard, { getColor } from './GaugeCard';
 
@@ -11,7 +12,7 @@ const content = {
       minimumValue: 0,
       maximumValue: 100,
       color: 'orange',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: ui03,
       shape: 'circle',
       trend: {
         /** the key to load the trend value from the values object. */
@@ -23,19 +24,19 @@ const content = {
         {
           comparison: '>',
           value: 0,
-          color: '#fa4d56', // red
+          color: support01, // red
           label: 'Poor',
         },
         {
           comparison: '>',
           value: 60,
-          color: '#f1c21b', // yellow
+          color: support03, // yellow
           label: 'Fair',
         },
         {
           comparison: '>',
           value: 80,
-          color: '#42be65', // green
+          color: support02, // green
           label: 'Good',
         },
       ],
@@ -45,7 +46,7 @@ const content = {
       units: '%',
       minimumValue: 0,
       color: 'orange',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: ui03,
       shape: 'circle',
       trend: {
         /** the key to load the trend value from the values object. */
@@ -60,7 +61,7 @@ const content = {
       minimumValue: 0,
       maximumValue: 100,
       color: 'orange',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: ui03,
       shape: 'circle',
       trend: {
         /** the key to load the trend value from the values object. */
@@ -72,25 +73,25 @@ const content = {
         {
           comparison: '=',
           value: 90,
-          color: 'green', // red
+          color: support01, // red
           label: 'Poor',
         },
         {
           comparison: '<',
           value: 3,
-          color: '#f1c21b', // yellow
+          color: support03, // yellow
           label: 'Fair',
         },
         {
           comparison: '<=',
           value: 4,
-          color: 'red', // green
+          color: support02, // green
           label: 'Good',
         },
         {
           comparison: '>=',
           value: 101,
-          color: '#42be65', // green
+          color: support02, // green
           label: 'Good',
         },
       ],
