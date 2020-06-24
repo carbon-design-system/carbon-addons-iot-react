@@ -121,7 +121,7 @@ const StyledCustomTableHeader = styled(TableHeader)`
       const { width } = props;
       return width !== undefined
         ? `
-       .bx--table-header-label { 
+       .bx--table-header-label {
           min-width: ${width};
           max-width: ${width};
           white-space: nowrap;
@@ -373,6 +373,7 @@ const TableHead = ({
       </TableRow>
       {filterBarActive && (
         <FilterHeaderRow
+          key={!hasFastFilter && JSON.stringify(filters)}
           columns={columns.map(column => ({
             ...column.filter,
             id: column.id,

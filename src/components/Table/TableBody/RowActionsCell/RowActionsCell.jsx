@@ -218,9 +218,7 @@ class RowActionsCell extends React.Component {
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
-                      className={classnames({
-                        [`${iotPrefix}--row-actions-cell-btn--icononly`]: !labelText,
-                      })}
+                      hasIconOnly={!labelText}
                       onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     >
                       {labelText}

@@ -58,6 +58,8 @@ export const TimeSeriesCardPropTypes = {
     timeDataSourceId: PropTypes.string,
     /** Show timestamp in browser local time or GMT */
     showTimeInGMT: PropTypes.bool,
+    /** tooltip format pattern that follows the moment formatting patterns */
+    tooltipDateFormatPattern: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: deprecate(
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -178,7 +180,8 @@ export const handleTooltip = (
   defaultTooltip,
   alertRanges,
   alertDetected,
-  showTimeInGMT
+  showTimeInGMT,
+  tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
@@ -188,7 +191,7 @@ export const handleTooltip = (
                         <p class='label'>${(showTimeInGMT // show timestamp in gmt or local time
                           ? moment.utc(timeStamp)
                           : moment(timeStamp)
-                        ).format('L HH:mm:ss')}</p>
+                        ).format(tooltipDateFormatPattern)}</p>
                      </li>`
     : '';
   const matchingAlertRanges = findMatchingAlertRange(alertRanges, data);
@@ -249,6 +252,7 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   showTimeInGMT,
+  tooltipDateFormatPattern,
   ...others
 }) => {
   const {
@@ -497,7 +501,13 @@ const TimeSeriesCard = ({
                   valueFormatter: tooltipValue =>
                     valueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
-                    handleTooltip(...args, alertRanges, alertDetected, showTimeInGMT),
+                    handleTooltip(
+                      ...args,
+                      alertRanges,
+                      alertDetected,
+                      showTimeInGMT,
+                      tooltipDateFormatPattern
+                    ),
                 },
                 getStrokeColor: handleStrokeColor,
                 getFillColor: handleFillColor,
@@ -567,6 +577,7 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnYaxis: false,
   },
   showTimeInGMT: false,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
 };
 
 export default TimeSeriesCard;

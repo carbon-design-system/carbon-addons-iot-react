@@ -87,13 +87,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
                     type="button"
                   >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add
+                    </span>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -232,13 +237,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
                     type="button"
                   >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add
+                    </span>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -449,13 +459,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
                     type="button"
                   >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add
+                    </span>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
@@ -591,13 +606,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="iot--row-actions-cell-btn--icononly bx--btn bx--btn--ghost"
+                    className="bx--btn bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
                     tabIndex={0}
                     type="button"
                   >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Add
+                    </span>
                     <svg
                       aria-hidden="true"
                       aria-label="Add"
