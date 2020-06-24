@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { spacing03 } from '@carbon/layout';
 
 import { COLORS } from '../../styles/styles';
 
@@ -11,13 +12,13 @@ const StyledPageTitle = styled.div`
 
 const StyledPageSection = styled.span`
   color: ${COLORS.blue};
-  padding-right: 0.5rem;
+  padding-right: ${spacing03};
 `;
 
 const StyledPageTitleH1 = styled.h1`
   align-items: center;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-05;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25rem;

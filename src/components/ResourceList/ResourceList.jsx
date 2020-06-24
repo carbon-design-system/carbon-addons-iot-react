@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'carbon-components-react';
 import styled from 'styled-components';
+import { spacing02 } from '@carbon/layout';
 
 import { COLORS } from '../../styles/styles';
 
@@ -20,7 +21,7 @@ const ResourceListSection = styled.section`
 
       svg {
         fill: ${COLORS.blue60};
-        margin-left: 0.25rem;
+        margin-left: ${spacing02};
       }
     }
   }
@@ -30,7 +31,7 @@ const InlineDiv = styled.div`
    {
     font-weight: normal;
     padding-left: 0px !important;
-    padding-top: 5px !important;
+    padding-top: ${spacing02} !important;
   }
 `;
 

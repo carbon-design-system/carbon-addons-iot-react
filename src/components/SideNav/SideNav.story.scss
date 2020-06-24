@@ -1,7 +1,7 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--main-content {
-  padding-top: 3rem;
+  padding-top: $spacing-09;
   height: 100%;
   transition: all 0.11s cubic-bezier(0.2, 0, 1, 0.9);
   width: 100%;

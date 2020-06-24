@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
+import { spacing05 } from '@carbon/layout';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -20,7 +21,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -59,7 +60,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         'hour'
       );
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TimeSeriesCard
             title={text('title', 'Temperature {not-working}')}
             id="facility-temperature"
@@ -110,7 +111,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -148,7 +149,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -201,7 +207,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -238,7 +249,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('large / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -271,7 +282,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('empty', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -300,7 +311,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -346,7 +357,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('empty for a range', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -377,7 +388,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('lots of dots', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -409,7 +420,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('isEditable', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -451,7 +462,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('dataFilter', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           key="dataFilter"
@@ -509,7 +520,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('locale', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Pressure')}
           id="facility-pressure"

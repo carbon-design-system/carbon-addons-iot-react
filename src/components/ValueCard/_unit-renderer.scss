@@ -21,8 +21,8 @@
 }
 
 .#{$iot-prefix}--value-card__attribute-unit--not-wrappable {
-  padding-left: 0.25rem;
-  padding-bottom: 0.8rem;
+  padding-left: $carbon--spacing-02;
+  padding-bottom: $spacing-03 + 0.05rem;
   align-self: flex-end;
   margin-right: $carbon--spacing-02;
 }

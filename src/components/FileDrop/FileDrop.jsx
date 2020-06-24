@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Filename, FileUploaderButton } from 'carbon-components-react';
+import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 
 import { COLORS } from '../../styles/styles';
@@ -28,7 +29,7 @@ const LinkButton = styled.button`
 
 const Text = styled.div`
    {
-    padding: 15px;
+    padding: ${spacing05};
     line-height: 30px;
   }
 `;

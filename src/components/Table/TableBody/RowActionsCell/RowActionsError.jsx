@@ -1,23 +1,24 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { WarningAlt16 } from '@carbon/icons-react';
+import { spacing03 } from '@carbon/layout';
 import styled from 'styled-components';
 import { Tooltip, Button } from 'carbon-components-react';
 
 import { RowActionErrorPropTypes } from '../../TablePropTypes';
 
 const StyledSpan = styled.span`
-  margin-left: 0.5rem;
+  margin-left: ${spacing03};
   line-height: 1.875rem;
 `;
 
 const StyledTitle = styled.p`
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: ${spacing03};
 `;
 
 const StyledTooltipFooter = styled.div`
-  margin-top: 0.5rem;
+  margin-top: ${spacing03};
   display: flex;
   justify-content: space-between;
   align-items: center;

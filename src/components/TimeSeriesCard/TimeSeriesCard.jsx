@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
+import { spacing02, spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
@@ -89,10 +90,10 @@ export const TimeSeriesCardPropTypes = {
 };
 
 const LineChartWrapper = styled.div`
-  padding-left: 16px;
-  padding-right: 1rem;
+  padding-left: ${spacing05};
+  padding-right: ${spacing05};
   padding-top: 0px;
-  padding-bottom: 16px;
+  padding-bottom: ${spacing05};
   position: absolute;
   width: 100%;
   height: ${props => (props.isExpanded ? '55%' : '100%')};
@@ -104,7 +105,7 @@ const LineChartWrapper = styled.div`
     }
     .chart-holder {
       width: 100%;
-      padding-top: 0.25rem;
+      padding-top: ${spacing02};
     }
     .axis-title {
       font-weight: 500;

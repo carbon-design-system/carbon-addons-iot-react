@@ -79,13 +79,13 @@
 html[dir='rtl'] {
   .#{$iot-prefix}--row-actions-container__background {
     margin-left: unset;
-    margin-right: 0.75rem;
+    margin-right: $spacing-04;
     padding-left: unset;
-    padding-right: 24px;
+    padding-right: $spacing-06;
 
     .#{$prefix}--btn__icon {
       margin-left: unset;
-      margin-right: 0.5rem;
+      margin-right: $spacing-03;
       transform: rotate(180deg);
     }
   }

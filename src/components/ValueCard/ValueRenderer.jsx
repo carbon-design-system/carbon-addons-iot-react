@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
+import { spacing02 } from '@carbon/layout';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import {
@@ -70,7 +71,7 @@ const determineFontSize = ({ value, size, isSmall, isMini, layout }) => {
 const AttributeValue = styled.span`
   line-height: ${props => (props.isMini ? '1.0rem' : props.isSmall ? '2.0rem' : '2.5rem')};
   font-size: ${props => `${determineFontSize(props)}rem`};
-  padding-bottom: 0.25rem;
+  padding-bottom: ${spacing02};
   font-weight: ${props => (props.isMini ? 'normal' : 'lighter')};
   ${props => props.layout === CARD_LAYOUTS.VERTICAL && `text-align: left;`};
   /* autoprefixer: ignore next */

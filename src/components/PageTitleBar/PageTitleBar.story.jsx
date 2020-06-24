@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Add24 } from '@carbon/icons-react';
+import { spacing05 } from '@carbon/layout';
 import { Tabs, Tab } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -14,7 +15,7 @@ export const commonPageTitleBarProps = {
   description: 'Descriptive text about this page and what the user can or should do on it',
   extraContent: (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <span style={{ marginRight: '1rem' }}>
+      <span style={{ marginRight: spacing05 }}>
         <b>Last updated:</b> yesterday
       </span>
       <Button className="some-right-content" renderIcon={Add24} onClick={action('click')}>
@@ -38,7 +39,7 @@ const NodeTooltip = () => (
         display: 'flex',
         'align-items': 'center',
         'justify-content': 'space-between',
-        'padding-top': '1rem',
+        'padding-top': spacing05,
       }}
     >
       <a href="/">Link one</a>

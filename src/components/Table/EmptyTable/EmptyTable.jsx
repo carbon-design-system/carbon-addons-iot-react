@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import { Bee32 } from '@carbon/icons-react';
+import { spacing09 } from '@carbon/layout';
 
 import { EmptyStatePropTypes } from '../TablePropTypes';
 
@@ -19,7 +20,7 @@ const StyledEmptyTableRow = styled(TableRow)`
       align-items: center;
       justify-content: middle;
       flex-direction: column;
-      padding: 3rem;
+      padding: ${spacing09};
 
       svg {
         margin: 1rem;

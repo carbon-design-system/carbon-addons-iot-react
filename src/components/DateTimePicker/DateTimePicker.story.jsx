@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { spacing06 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -39,7 +40,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
   .add('Default', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <DateTimePicker
           dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
           relatives={[
@@ -56,7 +57,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
   .add('Selected preset', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <DateTimePicker
           defaultValue={{
             timeRangeKind: PICKER_KINDS.PRESET,
@@ -72,7 +73,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
   .add('Selected relative', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <DateTimePicker
           defaultValue={defaultRelativeValue}
           hasTimeInput={boolean('hasTimeInput', true)}
@@ -85,7 +86,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
   .add('Selected absolute', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <DateTimePicker
           defaultValue={defaultAbsoluteValue}
           hasTimeInput={boolean('hasTimeInput', true)}
@@ -98,7 +99,7 @@ storiesOf('Watson IoT Experimental/DateTime Picker', module)
   .add('Without a relative option', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <DateTimePicker
           defaultValue={{
             timeRangeKind: PICKER_KINDS.PRESET,

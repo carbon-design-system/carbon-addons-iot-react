@@ -2,13 +2,14 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Tabs, Tab, Button } from 'carbon-components-react';
+import { spacing09 } from '@carbon/layout';
 
 import { COLORS, PADDING, SIZES } from '../../styles/styles';
 
 const StyledNavigationContainer = styled.div`
   position: relative;
   background-color: ${COLORS.white};
-  padding-top: 3rem;
+  padding-top: ${spacing09};
 
   ul[role='tablist'] {
     padding-left: ${PADDING.horizontalWrapPadding};

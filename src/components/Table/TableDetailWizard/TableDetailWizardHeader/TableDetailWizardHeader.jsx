@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
 import { Close20 } from '@carbon/icons-react';
+import { spacing02 } from '@carbon/layout';
 
 const StyledDivWizardHeader = styled.div`
   display: flex;
@@ -20,8 +21,8 @@ const StyledButton = styled.div`
   margin-left: auto;
 
   .bx--btn__icon {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: ${spacing02};
+    margin-right: ${spacing02};
   }
 `;
 

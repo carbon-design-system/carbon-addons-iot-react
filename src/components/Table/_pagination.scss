@@ -55,14 +55,14 @@ html[dir='rtl'] {
 
   .#{$prefix}--pagination__right .#{$prefix}--pagination__text {
     margin-left: $spacing-05;
-    margin-right: 0.0625rem;
+    margin-right: $spacing-01 - 0.0625rem;
   }
 
   .#{$iot-prefix}--pagination.#{$prefix}--pagination .#{$prefix}--select-input {
     padding: 0 $spacing-05 0 $spacing-08;
 
     @media (min-width: 42rem) {
-      padding-left: 2.25rem;
+      padding-left: $spacing-07 + 0.25rem;
     }
 
     & + svg {

@@ -3,6 +3,7 @@ import { Add16, Close16, Edit16 } from '@carbon/icons-react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
 
@@ -133,7 +134,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'tall list (isFullHeight = true)',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -155,7 +156,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'tall list (isFullHeight = false)',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -178,7 +179,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with overflow grow',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -198,7 +199,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with pageSize',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -218,7 +219,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with empty row',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -237,7 +238,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with large row',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -258,7 +259,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with multiple actions',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -278,7 +279,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with overflow menu',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -299,7 +300,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'large row list with multiple actions',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -320,7 +321,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'large row list with overflow menu',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch

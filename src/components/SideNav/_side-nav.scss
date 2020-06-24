@@ -158,12 +158,12 @@ button.#{$prefix}--side-nav__link {
 .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link[role='menuitem'] {
   height: 2rem;
   min-height: 2rem;
-  padding-left: 2rem;
+  padding-left: $spacing-07;
 }
 
 .#{$prefix}--side-nav__item.#{$prefix}--side-nav__item--icon
   .#{$prefix}--side-nav__link[role='menuitem'] {
-  padding-left: 4.5rem;
+  padding-left: $layout-05;
 }
 
 .#{$prefix}--side-nav__items .#{$prefix}--side-nav__item > *:not([class='bx--side-nav__menu']),
@@ -179,7 +179,7 @@ button.#{$prefix}--side-nav__link {
 html[dir='rtl'] {
   .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
     margin-right: unset;
-    margin-left: 1.5rem;
+    margin-left: $spacing-06;
   }
 
   .#{$prefix}--header__menu-trigger {

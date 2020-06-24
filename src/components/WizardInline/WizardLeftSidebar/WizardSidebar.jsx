@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { spacing05 } from '@carbon/layout';
 
 const propTypes = {
   sidebar: PropTypes.element,
@@ -15,7 +16,7 @@ const defaultProps = {
 const StyledSidebar = styled.div`
   min-width: ${props => `${props.width}px`};
   width: 25%;
-  padding-left: 1rem;
+  padding-left: ${spacing05};
 `;
 
 const WizardSidebar = ({ sidebar, width }) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
+import { layout05 } from '@carbon/layout';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getDataStateProp } from '../Card/Card.story';
@@ -51,7 +52,7 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
     };
 
     return (
-      <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: 60 }}>
+      <div style={{ width: `${getCardMinSize('sm', CARD_SIZES.SMALL).x}px`, margin: layout05 }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}
@@ -77,7 +78,7 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
     };
 
     return (
-      <div style={{ width: '252px', margin: 60 }}>
+      <div style={{ width: '252px', margin: layout05 }}>
         <GaugeCard
           isLoading={boolean('Is loading', false)}
           tooltip={<p>Health - of floor 8</p>}

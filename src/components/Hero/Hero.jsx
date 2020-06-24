@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Information20 } from '@carbon/icons-react';
+import { spacing06, spacing03, spacing07 } from '@carbon/layout';
 import warning from 'warning';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 
@@ -43,7 +44,7 @@ const defaultProps = {
 };
 
 const StyledHero = styled.div`
-  padding: 1.5rem 2rem 0.5rem 2rem;
+  padding: ${spacing06} ${spacing07} ${spacing03} ${spacing07};
 `;
 
 const StyledTitleSection = styled.div`
@@ -63,7 +64,7 @@ const StyledTitle = styled.div`
 `;
 
 const StyledPageDescription = styled.p`
-  margin-top: 1.5rem;
+  margin-top: ${spacing06};
   color: #171717;
   font-size: 0.875rem;
   line-height: 1.375rem;
@@ -74,7 +75,7 @@ const StyledRightContent = styled.div``;
 
 const StyledBreadcrumb = styled(Breadcrumb)`
   margin-bottom: 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: ${spacing03};
 `;
 
 const StyledBreadcrumbDiv = styled.div`

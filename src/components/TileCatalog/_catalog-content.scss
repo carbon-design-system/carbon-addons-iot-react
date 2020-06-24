@@ -26,7 +26,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
-  padding-bottom: 0.5rem;
+  padding-bottom: $spacing-03;
   max-width: calc(100vw - 20rem);
   @media screen and (min-width: $two-pane) {
     max-width: calc(100vw / 2 - 15rem);
@@ -39,7 +39,7 @@
 .#{$iot-prefix}--sample-tile-contents {
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 1rem;
+  padding: 0 $spacing-05;
   align-self: flex-start;
 }
 

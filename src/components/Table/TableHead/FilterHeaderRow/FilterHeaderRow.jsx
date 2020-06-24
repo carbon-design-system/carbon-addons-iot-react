@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
+import { spacing03, spacing07, spacing08, layout05 } from '@carbon/layout';
 import styled from 'styled-components';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
@@ -25,15 +26,15 @@ const StyledTableHeader = styled(({ isSelectColumn, ...others }) => <TableHeader
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-right: 2rem;
+      padding-right: ${spacing07};
     }
     .bx--form-item input:placeholder-shown {
-      padding-right: 0.5rem;
+      padding-right: ${spacing03};
     }
 
     .bx--list-box input[role='combobox'] {
       /* need to save enough room for clear and dropdown button */
-      padding-right: 4rem;
+      padding-right: ${layout05};
       ${props => {
         const { width } = props;
         return width !== undefined
@@ -99,7 +100,7 @@ const StyledFormItem = styled(FormItem)`
     position: relative;
 
     input {
-      padding-right: 2.5rem;
+      padding-right: ${spacing08};
     }
 
     .bx--list-box__selection {

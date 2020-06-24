@@ -3,6 +3,7 @@ import { text, boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Application32, Group32 } from '@carbon/icons-react';
+import { spacing05, spacing04, spacing09 } from '@carbon/layout';
 import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -149,7 +150,7 @@ export const originalCards = [
     availableActions: {
       delete: true,
     },
-    content: <h2 style={{ padding: '1rem' }}>Section Header</h2>,
+    content: <h2 style={{ padding: spacing05 }}>Section Header</h2>,
   },
   {
     title: 'Utilization',
@@ -402,25 +403,25 @@ export const originalCards = [
           x: 35,
           y: 65,
           icon: 'arrowDown',
-          content: <span style={{ padding: '10px' }}>Elevators</span>,
+          content: <span style={{ padding: spacing04 }}>Elevators</span>,
         },
         {
           x: 45,
           y: 25,
           color: '#0f0',
-          content: <span style={{ padding: '10px' }}>Stairs</span>,
+          content: <span style={{ padding: spacing04 }}>Stairs</span>,
         },
         {
           x: 45,
           y: 50,
           color: '#00f',
-          content: <span style={{ padding: '10px' }}>Vent Fan</span>,
+          content: <span style={{ padding: spacing04 }}>Vent Fan</span>,
         },
         {
           x: 45,
           y: 75,
           icon: 'arrowUp',
-          content: <span style={{ padding: '10px' }}>Humidity Sensor</span>,
+          content: <span style={{ padding: spacing04 }}>Humidity Sensor</span>,
         },
       ],
     },
@@ -1175,7 +1176,7 @@ storiesOf('Watson IoT/Dashboard', module)
       <FullWidthWrapper>
         {dashboards.map((dashboard, index) => [
           <div
-            style={{ width: 1056, paddingBottom: 50 }}
+            style={{ width: 1056, paddingBottom: spacing09 }}
             key={`${dashboard.props.title}-${index}-1056`}
           >
             <h1>&quot;Largest&quot; Rendering (1056px width)</h1>
@@ -1183,7 +1184,7 @@ storiesOf('Watson IoT/Dashboard', module)
             {dashboard}
           </div>,
           <div
-            style={{ width: 1057, paddingBottom: 50 }}
+            style={{ width: 1057, paddingBottom: spacing09 }}
             key={`${dashboard.props.title}-${index}-1057`}
           >
             <h1>&quot;Tightest&quot; Rendering (1057px width)</h1>

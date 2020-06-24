@@ -22,8 +22,8 @@
   .#{$prefix}--content-switcher {
     width: 10rem;
     display: flex;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: $spacing-06;
+    margin-right: $spacing-06;
   }
   .#{$prefix}--content-switcher-btn {
     padding: 0 $spacing-05;
@@ -76,11 +76,11 @@
     color: $text-01;
     .#{$prefix}--overflow-menu {
       height: $spacing-07;
-      margin-right: -0.5rem;
+      margin-right: -$spacing-03;
     }
     .#{$prefix}--inline-loading {
       flex-direction: row-reverse;
-      margin-left: 0.5rem;
+      margin-left: $spacing-03;
     }
     .#{$prefix}--inline-loading__text {
       margin-bottom: 0;
@@ -109,7 +109,7 @@
     background: $carbon--white-0;
   }
   .overflow-menu {
-    margin-top: -0.5rem;
+    margin-top: -$spacing-03;
     margin-left: auto;
   }
   &.#{$prefix}--link:hover {
@@ -131,7 +131,7 @@
       border: none;
     }
     .title-card {
-      margin-left: 0.9375rem;
+      margin-left: $spacing-05;
     }
     .description-card {
       span {
@@ -152,7 +152,7 @@
       justify-content: center;
       align-items: center;
       background: $ui-02;
-      margin-bottom: 0.9375rem;
+      margin-bottom: $spacing-05;
       position: relative;
       width: 100%;
       height: 12rem;
@@ -185,7 +185,7 @@
     .title-card {
       margin-left: $spacing-03;
       width: 11rem;
-      margin-top: 0.125rem;
+      margin-top: $spacing-01;
     }
   }
   .content-container {

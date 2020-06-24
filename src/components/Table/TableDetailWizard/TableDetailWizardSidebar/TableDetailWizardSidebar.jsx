@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { spacing06, layout05 } from '@carbon/layout';
 
 import ProgressIndicator from '../../../ProgressIndicator/ProgressIndicator';
 import WizardSidebar from '../../../WizardInline/WizardLeftSidebar/WizardSidebar';
@@ -11,7 +12,7 @@ const StyledDivWizardHeader = styled.div`
   border-right: 1px solid #dadada8c;
 
   .bx--progress {
-    padding: 1rem 1rem 1rem 4rem;
+    padding: ${spacing06} ${spacing06} ${spacing06} ${layout05};
   }
 `;
 

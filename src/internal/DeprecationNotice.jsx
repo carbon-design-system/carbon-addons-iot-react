@@ -1,6 +1,7 @@
 import { ToastNotification } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { spacing03 } from '@carbon/layout';
 
 export const deprecatedStoryTitle = '️⛔ Deprecation Notice ';
 
@@ -28,7 +29,7 @@ const DeprecationNotice = ({ deprecatedComponentName, replacementComponentName }
     notificationType="toast"
     role="alert"
     style={{
-      marginBottom: '.5rem',
+      marginBottom: spacing03,
       minWidth: '30rem',
     }}
     subtitle={`${deprecatedComponentName} has been deprecated and will be removed in the next major version of carbon-addons-iot-react.`}

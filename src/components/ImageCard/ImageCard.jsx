@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import { Image32 } from '@carbon/icons-react';
+import { spacing05 } from '@carbon/layout';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -13,7 +14,7 @@ import ImageHotspots from './ImageHotspots';
 const ContentWrapper = styled.div`
   height: 100%;
   max-height: 100%;
-  padding: 0 16px 16px 16px;
+  padding: 0 ${spacing05} ${spacing05} ${spacing05};
 `;
 
 const EmptyDiv = styled.div`

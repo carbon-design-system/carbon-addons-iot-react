@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Tooltip } from 'carbon-components-react';
+import { spacing02 } from '@carbon/layout';
 
 import { HotspotContentPropTypes } from './HotspotContent';
 import CardIcon from './CardIcon';
@@ -55,7 +56,7 @@ const StyledHotspot = styled(({ className, children }) => (
         ? `
       border: solid 1px #aaa;
       cursor: pointer;
-      padding: 4px;
+      padding: ${spacing02};
       background: white;
       opacity: 0.9;
       border-radius: 4px;

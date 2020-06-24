@@ -7,6 +7,7 @@ import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
+import { spacing01, spacing02, spacing03, spacing05 } from '@carbon/layout';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -55,13 +56,13 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
     }
 
     .bx--table-toolbar {
-      padding-bottom: 2px;
+      padding-bottom: ${spacing01};
       padding-top: 0px;
     }
     .bx--data-table th:first-of-type,
     .bx--data-table td:first-of-type {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: ${spacing05};
+      padding-right: ${spacing05};
     }
     .bx--data-table thead {
       display: ${props => (!props.showHeader ? 'none' : '')};
@@ -78,7 +79,7 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
     }
 
     .bx--toolbar-search-container {
-      margin-left: 1rem;
+      margin-left: ${spacing05};
     }
     .bx--data-table {
       ${props => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
@@ -90,8 +91,8 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
       height: 3rem;
 
       th {
-        padding-top: 5px;
-        padding-bottom: 10px;
+        padding-top: ${spacing02};
+        padding-bottom: ${spacing03 - 2};
 
         input {
           height: 2rem;
@@ -671,7 +672,7 @@ const TableCard = ({
                       >
                         {item.linkTemplate ? (
                           <>
-                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
+                            <p key={`${item.id}-label`} style={{ marginRight: spacing02 }}>
                               {item ? item.label : '--'}
                             </p>
                             <Link
@@ -684,7 +685,7 @@ const TableCard = ({
                           </>
                         ) : (
                           <>
-                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
+                            <p key={`${item.id}-label`} style={{ marginRight: spacing02 }}>
                               {item ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>

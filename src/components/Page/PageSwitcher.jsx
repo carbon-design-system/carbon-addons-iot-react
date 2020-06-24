@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const StyledContentSwitcher = styled(ContentSwitcher)`
   && {
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-05;
     justify-content: flex-start;
 
     .bx--content-switcher-btn {

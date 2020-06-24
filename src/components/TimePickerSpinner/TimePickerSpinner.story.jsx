@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean } from '@storybook/addon-knobs';
+import { spacing05 } from '@carbon/layout';
 
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
@@ -11,7 +12,7 @@ export {
 storiesOf('Watson IoT Experimental/TimePickerSpinner', module)
   .add('With spinner', () => {
     return (
-      <div style={{ margin: 20 }}>
+      <div style={{ margin: spacing05 + 4 }}>
         <TimePickerSpinner
           id="timepicker"
           value="19:33"
@@ -25,7 +26,7 @@ storiesOf('Watson IoT Experimental/TimePickerSpinner', module)
   })
   .add('Default timeGroup to minutes', () => {
     return (
-      <div style={{ margin: 20 }}>
+      <div style={{ margin: spacing05 + 4 }}>
         <TimePickerSpinner
           id="timepicker"
           value="19:33"

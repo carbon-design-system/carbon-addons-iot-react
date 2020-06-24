@@ -2,13 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object } from '@storybook/addon-knobs';
+import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 
 import ComposedModal from './ComposedModal';
 
 const CustomFooter = styled.div`
    {
-    padding: 1rem;
+    padding: ${spacing05};
   }
 `;
 

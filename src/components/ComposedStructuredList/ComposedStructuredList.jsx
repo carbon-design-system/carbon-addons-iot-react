@@ -9,6 +9,7 @@ import {
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Bee32 } from '@carbon/icons-react';
+import { spacing05 } from '@carbon/layout';
 import warning from 'warning';
 
 import { COLORS } from '../../styles/styles';
@@ -37,7 +38,7 @@ const EmptyContent = styled.div`
 
 const LoadingDiv = styled.div`
    {
-    padding-top: 16px;
+    padding-top: ${spacing05};
   }
 `;
 

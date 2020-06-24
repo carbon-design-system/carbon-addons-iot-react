@@ -5,6 +5,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { DataTable, Button } from 'carbon-components-react';
 import styled from 'styled-components';
 import { Settings16 } from '@carbon/icons-react';
+import { spacing03, spacing06 } from '@carbon/layout';
 
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
 import { defaultI18NPropTypes } from '../../TablePropTypes';
@@ -36,8 +37,8 @@ const StyledColumnSelectWrapper = styled.div`
 const StyledColumnSelectTableRow = styled(TableRow)`
   &&& {
     th {
-      padding-top: 1.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: ${spacing06};
+      padding-bottom: ${spacing03};
     }
     td {
       background-color: inherit;

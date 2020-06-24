@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
+import { spacing06 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -75,7 +76,7 @@ class ListCardSimple extends Component {
     const { size } = this.props;
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <ListCard
           {...this.props}
           data={data}
@@ -106,7 +107,7 @@ class ListCardExtraContent extends Component {
     const { size } = this.props;
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <ListCard
           {...this.props}
           data={[
@@ -172,7 +173,7 @@ class ListCardExtraContentLong extends Component {
     const { size } = this.props;
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing06 }}>
         <ListCard
           {...this.props}
           data={[

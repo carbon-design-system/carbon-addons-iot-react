@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
+import { spacing07, spacing08, spacing09 } from '@carbon/layout';
 
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
@@ -45,9 +46,9 @@ const StyledFooter = styled.div`
 `;
 
 const StyledContentContainer = styled.div`
-  padding-top: 30px;
-  padding-right: 50px;
-  padding-left: 40px;
+  padding-top: ${spacing07};
+  padding-right: ${spacing09};
+  padding-left: ${spacing08};
 `;
 
 export const propTypes = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, object, boolean } from '@storybook/addon-knobs';
+import { spacing03 } from '@carbon/layout';
 
 import ImageHotspots from './ImageHotspots';
 import landscape from './landscape.jpg';
@@ -11,7 +12,7 @@ const hotspots = [
   {
     x: 10,
     y: 20,
-    content: <span style={{ padding: '10px' }}>Hotspot1</span>,
+    content: <span style={{ padding: spacing03 }}>Hotspot1</span>,
     icon: 'warning',
     color: 'white',
     width: 20,
@@ -20,11 +21,11 @@ const hotspots = [
   {
     x: 50,
     y: 10,
-    content: <span style={{ padding: '10px' }}>Hotspot2</span>,
+    content: <span style={{ padding: spacing03 }}>Hotspot2</span>,
     icon: 'warning',
   },
-  { x: 30, y: 40, content: <span style={{ padding: '10px' }}>Hotspot3</span> },
-  { x: 50, y: 60, content: <span style={{ padding: '10px' }}>Hotspot4</span>, color: 'green' },
+  { x: 30, y: 40, content: <span style={{ padding: spacing03 }}>Hotspot3</span> },
+  { x: 50, y: 60, content: <span style={{ padding: spacing03 }}>Hotspot4</span>, color: 'green' },
 ];
 
 const componentDescription =

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text, select, boolean, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
+import { spacing05 } from '@carbon/layout';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -21,7 +22,7 @@ storiesOf('Watson IoT/TableCard', module)
       };
     });
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -61,7 +62,7 @@ storiesOf('Watson IoT/TableCard', module)
       tableLinkData.forEach(row => (row.values.deviceId = 'Link'));
 
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TableCard
             title={text('title', 'Open Alerts {assetId}')}
             id="table-list"
@@ -147,7 +148,7 @@ storiesOf('Watson IoT/TableCard', module)
       ];
 
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TableCard
             title={text('title', 'Asset Open Alerts')}
             id="table-list"
@@ -182,7 +183,7 @@ storiesOf('Watson IoT/TableCard', module)
       };
     });
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -245,7 +246,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -326,7 +327,7 @@ storiesOf('Watson IoT/TableCard', module)
       ];
 
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TableCard
             title={text('title', 'Asset {assetId} Open Alerts')}
             id="table-list"
@@ -480,7 +481,7 @@ storiesOf('Watson IoT/TableCard', module)
       ];
 
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TableCard
             title={text('title', 'Open Alerts')}
             id="table-list"
@@ -507,7 +508,7 @@ storiesOf('Watson IoT/TableCard', module)
   .add('with matching thresholds', () => {
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -550,7 +551,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -573,7 +574,7 @@ storiesOf('Watson IoT/TableCard', module)
     );
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -592,7 +593,7 @@ storiesOf('Watson IoT/TableCard', module)
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -623,7 +624,7 @@ storiesOf('Watson IoT/TableCard', module)
       const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TableCard
             title="Open Alerts"
             id="table-list"
@@ -672,7 +673,7 @@ storiesOf('Watson IoT/TableCard', module)
       const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TableCard
             title="Open Alerts"
             id="table-list"
@@ -716,7 +717,7 @@ storiesOf('Watson IoT/TableCard', module)
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -735,7 +736,7 @@ storiesOf('Watson IoT/TableCard', module)
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -753,7 +754,7 @@ storiesOf('Watson IoT/TableCard', module)
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -773,7 +774,7 @@ storiesOf('Watson IoT/TableCard', module)
     const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGE);
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"
@@ -823,7 +824,7 @@ storiesOf('Watson IoT/TableCard', module)
     ];
 
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TableCard
           title={text('title', 'Open Alerts')}
           id="table-list"

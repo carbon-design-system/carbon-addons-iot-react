@@ -12,6 +12,7 @@ import classnames from 'classnames';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import warning from 'warning';
+import { spacing04 } from '@carbon/layout';
 
 import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
@@ -49,7 +50,7 @@ const StyledModal = styled(CarbonComposedModal)`
     /* Needed for buttons when they're next to each other */
 
     .bx--modal-header__heading {
-      margin-bottom: 0.75rem;
+      margin-bottom: ${spacing04};
     }
 
     .bx--modal-content {
