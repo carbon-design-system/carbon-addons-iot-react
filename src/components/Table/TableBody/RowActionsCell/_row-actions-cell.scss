@@ -9,13 +9,6 @@
   > * {
     margin-left: $spacing-04;
   }
-  .#{$iot-prefix}--row-actions-cell-btn--icononly {
-    margin-left: 0;
-
-    .#{$prefix}--btn__icon {
-      margin-left: 0;
-    }
-  }
 }
 
 .#{$iot-prefix}--row-actions-container__background {
