@@ -425,7 +425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         onKeyDown={[Function]}
       />
       <div
-        className="ComposedStructuredList__EmptyContent-oz9xih-1 foGiwV"
+        className="ComposedStructuredList__EmptyContent-oz9xih-1 cPSxzA"
       >
         <svg
           aria-hidden={true}
@@ -442,7 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           />
         </svg>
         <div
-          className="ComposedStructuredList__LoadingDiv-oz9xih-2 bGZVQQ"
+          className="ComposedStructuredList__LoadingDiv-oz9xih-2 jMkcSi"
         >
           No data is available yet.
         </div>
@@ -525,7 +525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         onKeyDown={[Function]}
       />
       <div
-        className="ComposedStructuredList__EmptyContent-oz9xih-1 foGiwV"
+        className="ComposedStructuredList__EmptyContent-oz9xih-1 cPSxzA"
       >
         <svg
           aria-hidden={true}
@@ -542,7 +542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           />
         </svg>
         <div
-          className="ComposedStructuredList__LoadingDiv-oz9xih-2 bGZVQQ"
+          className="ComposedStructuredList__LoadingDiv-oz9xih-2 jMkcSi"
         >
           No data is available yet.
         </div>
@@ -758,7 +758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       role="alert"
       style={
         Object {
-          "marginBottom": ".5rem",
+          "marginBottom": "0.5rem",
           "minWidth": "30rem",
         }
       }

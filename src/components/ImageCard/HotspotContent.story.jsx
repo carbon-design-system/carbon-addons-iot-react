@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { text, object, select } from '@storybook/addon-knobs';
 import { Tooltip } from 'carbon-components-react';
 import { Warning16 } from '@carbon/icons-react';
+import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';
 
@@ -55,7 +56,7 @@ storiesOf('Watson IoT/HotspotContent', module)
                 label: 'Temperature',
                 precision: 3,
                 unit: 'C',
-                thresholds: [{ comparison: '>', value: 30, icon: 'Warning', color: '#FF0000' }],
+                thresholds: [{ comparison: '>', value: 30, icon: 'Warning', color: red60 }],
               },
               { dataSourceId: 'humidity', label: 'Humidity', precision: 0, unit: '%' },
             ])}
@@ -64,7 +65,7 @@ storiesOf('Watson IoT/HotspotContent', module)
               comparison: '<',
               value: 100,
               icon: 'Warning',
-              color: '#FF0000',
+              color: red60,
             })}
             renderIconByName={(icon, props) =>
               icon === 'Warning' ? (
@@ -99,7 +100,7 @@ storiesOf('Watson IoT/HotspotContent', module)
                 label: 'Temperature',
                 precision: 3,
                 unit: 'C',
-                thresholds: [{ comparison: '>', value: 30.5, icon: 'Warning', color: '#FF0000' }],
+                thresholds: [{ comparison: '>', value: 30.5, icon: 'Warning', color: red60 }],
               },
               { dataSourceId: 'humidity', label: 'Humidity', precision: 0, unit: '%' },
             ])}
@@ -109,7 +110,7 @@ storiesOf('Watson IoT/HotspotContent', module)
               comparison: '<',
               value: 100.0,
               icon: 'Warning',
-              color: '#FF0000',
+              color: red60,
             })}
             renderIconByName={(icon, props) =>
               icon === 'Warning' ? (

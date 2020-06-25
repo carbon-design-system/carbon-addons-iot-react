@@ -10698,7 +10698,7 @@ Map {
         "gauges": Array [
           Object {
             "backgroundColor": "gray",
-            "color": "yellow",
+            "color": "#f1c21b",
             "dataSourceId": null,
             "maximumValue": 100,
             "minimumValue": 0,

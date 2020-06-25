@@ -34,7 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 iynxPm"
+        className="FileDrop__Text-xfd081-2 ctUatE"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -284,7 +284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 iynxPm"
+        className="FileDrop__Text-xfd081-2 ctUatE"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -372,7 +372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 iynxPm"
+        className="FileDrop__Text-xfd081-2 ctUatE"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
@@ -460,7 +460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/FileD
         type="file"
       />
       <div
-        className="FileDrop__Text-xfd081-2 iynxPm"
+        className="FileDrop__Text-xfd081-2 ctUatE"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}

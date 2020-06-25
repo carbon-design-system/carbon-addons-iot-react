@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Application32, Group32 } from '@carbon/icons-react';
 import { spacing05, spacing04, spacing09 } from '@carbon/layout';
+import { gray20, red60, green50, yellow } from '@carbon/colors';
 import { ClickableTile } from 'carbon-components-react';
 
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -244,7 +245,7 @@ export const originalCards = [
           minimumValue: 0,
           maximumValue: 100,
           color: 'orange',
-          backgroundColor: '#e0e0e0',
+          backgroundColor: gray20,
           shape: 'circle',
           trend: {
             dataSourceId: 'usageTrend',
@@ -254,19 +255,19 @@ export const originalCards = [
             {
               comparison: '>',
               value: 0,
-              color: '#fa4d56', // red
+              color: red60, // red
               label: 'Poor',
             },
             {
               comparison: '>',
               value: 60,
-              color: '#f1c21b', // yellow
+              color: yellow, // yellow
               label: 'Fair',
             },
             {
               comparison: '>',
               value: 80,
-              color: '#42be65', // green
+              color: green50, // green
               label: 'Good',
             },
           ],

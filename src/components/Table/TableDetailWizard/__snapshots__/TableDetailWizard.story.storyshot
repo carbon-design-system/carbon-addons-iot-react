@@ -24,7 +24,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 isVzAG"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -53,7 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 oLzfx"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 iZXEvF"
         >
           <div>
             <div
@@ -330,7 +330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 isVzAG"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -359,7 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 oLzfx"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -540,7 +540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 iZXEvF"
         >
           <div>
             <div
@@ -640,7 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 isVzAG"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -669,7 +669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 oLzfx"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -847,7 +847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 iZXEvF"
         >
           <div>
             <div

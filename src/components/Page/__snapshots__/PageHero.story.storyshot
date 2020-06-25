@@ -90,7 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
           >
             <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 lewdXK"
             >
               Your Devices
             </h1>
@@ -99,7 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
           >
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 hRNCsX"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
@@ -176,7 +176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
           >
             <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 lewdXK"
             >
               Your Devices
             </h1>
@@ -185,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
           >
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 hRNCsX"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
@@ -262,13 +262,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
           >
             <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 lewdXK"
             >
               Your Devices
             </h1>
           </div>
           <div
-            className="bx--content-switcher PageSwitcher__StyledContentSwitcher-sc-1dcz28n-0 horTRL"
+            className="bx--content-switcher PageSwitcher__StyledContentSwitcher-sc-1dcz28n-0 jasjRR"
             onChange={[Function]}
             role="tablist"
           >
@@ -307,7 +307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
           >
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 hRNCsX"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
@@ -384,7 +384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageTitle__StyledPageTitle-sc-1x4wg61-0 MhXQw"
           >
             <h1
-              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 uwbjE"
+              className="PageTitle__StyledPageTitleH1-sc-1x4wg61-2 lewdXK"
             >
               <span
                 className="PageTitle__StyledPageSection-sc-1x4wg61-1 dUHWaW"
@@ -398,7 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
             className="PageHero__StyledPageHeroWrap-sc-1k4oefb-1 dymYXa"
           >
             <p
-              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 jjUFol"
+              className="PageHero__StyledPageBlurb-sc-1k4oefb-2 hRNCsX"
             >
               Your data lake displays a detailed view of the entity types that are connected in Watson IoT Platform. To explore the metrics and dimensions of your entities in more detail, select Entities. To start applying calculations and analyzing your entity data, select Data.
             </p>
@@ -467,7 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
         role="alert"
         style={
           Object {
-            "marginBottom": ".5rem",
+            "marginBottom": "0.5rem",
             "minWidth": "30rem",
           }
         }

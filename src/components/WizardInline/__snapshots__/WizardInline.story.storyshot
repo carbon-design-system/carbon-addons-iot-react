@@ -2076,7 +2076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
       role="alert"
       style={
         Object {
-          "marginBottom": ".5rem",
+          "marginBottom": "0.5rem",
           "minWidth": "30rem",
         }
       }

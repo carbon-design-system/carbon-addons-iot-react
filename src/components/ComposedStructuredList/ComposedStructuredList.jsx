@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Bee32 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
+import { gray, white } from '@carbon/colors';
 import warning from 'warning';
 
 import { COLORS } from '../../styles/styles';
@@ -24,9 +25,9 @@ const StructuredListWrapperStyled = styled(({ isFixedWidth, ...others }) => (
 
 const EmptyContent = styled.div`
    {
-    background-color: #ffffff;
+    background-color: ${white};
     text-align: center;
-    color: #5a6872;
+    color: ${gray[10]};
     font-size: 14px;
     padding-top: 90px;
     padding-bottom: 115px;

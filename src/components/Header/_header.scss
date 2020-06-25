@@ -119,7 +119,7 @@ button.#{$prefix}--header__menu-item {
 
   &:focus {
     border-color: $inverse-focus-ui;
-    color: #f4f4f4;
+    color: $ui-01;
     outline: none;
   }
 }

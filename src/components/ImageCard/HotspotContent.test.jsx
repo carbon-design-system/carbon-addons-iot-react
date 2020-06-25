@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';
 
@@ -115,7 +116,7 @@ describe('HotspotContent', () => {
             dataSourceId: 'temperature',
             label: 'Temp',
             precision: 2,
-            thresholds: [{ comparison: '>', value: 0.05, icon: 'Warning', color: '#FF0000' }],
+            thresholds: [{ comparison: '>', value: 0.05, icon: 'Warning', color: red60 }],
           },
         ]}
         locale="fr"
@@ -143,7 +144,7 @@ describe('HotspotContent', () => {
           comparison: '>',
           value: 0.05,
           icon: 'Warning',
-          color: '#FF0000',
+          color: red60,
         }}
       />
     );
@@ -170,7 +171,7 @@ describe('HotspotContent', () => {
           comparison: '>',
           value: 0.05,
           icon: 'Warning',
-          color: '#FF0000',
+          color: red60,
         }}
         renderIconByName={mockRenderIconByName}
       />

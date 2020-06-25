@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "1056px",
         }
       }
@@ -40,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -2414,7 +2414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -2439,7 +2439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -3578,7 +3578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "1056px",
         }
       }
@@ -3603,7 +3603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -6237,7 +6237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -6262,7 +6262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -7606,7 +7606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -7631,7 +7631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -9289,7 +9289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -9314,7 +9314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 fVpkmV iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -9871,7 +9871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "1056px",
         }
       }
@@ -9896,7 +9896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -12469,7 +12469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -12494,7 +12494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -13871,7 +13871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "1056px",
         }
       }
@@ -13896,7 +13896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -15505,7 +15505,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -15530,7 +15530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -16907,7 +16907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -16932,7 +16932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -18893,7 +18893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -18918,7 +18918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -20609,7 +20609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -20634,7 +20634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -22325,7 +22325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -22350,7 +22350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -24041,7 +24041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -24066,7 +24066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -25832,7 +25832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -28406,7 +28406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "1056px",
         }
       }
@@ -28431,7 +28431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -30485,7 +30485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "1056px",
         }
       }
@@ -30510,7 +30510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"
@@ -33118,7 +33118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -33143,7 +33143,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           }
         >
           <div
-            className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+            className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
           >
             <section
               aria-label="data table toolbar"

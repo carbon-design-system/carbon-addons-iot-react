@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -195,7 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "232px",
         }
       }
@@ -335,7 +335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "232px",
         }
       }
@@ -475,7 +475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -1014,7 +1014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -1191,7 +1191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -1284,7 +1284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -1608,7 +1608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "250px",
         }
       }
@@ -2030,7 +2030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -2155,7 +2155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -2283,7 +2283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -2460,7 +2460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -2637,7 +2637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -2863,7 +2863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -3040,7 +3040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -3266,7 +3266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -3394,7 +3394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -3620,7 +3620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "120px",
         }
       }
@@ -3921,7 +3921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -4046,7 +4046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -4171,7 +4171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -4324,7 +4324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -4479,7 +4479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -4604,7 +4604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -4732,7 +4732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "150px",
         }
       }
@@ -4857,7 +4857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "150px",
         }
       }
@@ -4982,7 +4982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -5110,7 +5110,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "120px",
         }
       }
@@ -5235,7 +5235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -5363,7 +5363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "300px",
         }
       }
@@ -5532,7 +5532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -5682,7 +5682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -5851,7 +5851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Value
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }

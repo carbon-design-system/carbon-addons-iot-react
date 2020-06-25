@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Information20 } from '@carbon/icons-react';
 import { spacing06, spacing03, spacing07 } from '@carbon/layout';
+import { gray100 } from '@carbon/colors';
 import warning from 'warning';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText } from 'carbon-components-react';
 
@@ -60,12 +61,12 @@ const StyledTitle = styled.div`
   font-weight: 400;
   font-size: 1.75rem;
   line-height: 2.25rem;
-  color: #171717;
+  color: ${gray100};
 `;
 
 const StyledPageDescription = styled.p`
   margin-top: ${spacing06};
-  color: #171717;
+  color: ${gray100};
   font-size: 0.875rem;
   line-height: 1.375rem;
   max-width: 40rem;

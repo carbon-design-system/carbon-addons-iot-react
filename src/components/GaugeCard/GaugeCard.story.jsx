@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 import { layout05 } from '@carbon/layout';
-import { ui03, support01, support02, support03 } from '@carbon/colors';
+import { gray20, yellow } from '@carbon/colors';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 import { getDataStateProp } from '../Card/Card.story';
@@ -20,7 +20,7 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
           minimumValue: 0,
           maximumValue: 100,
           color: 'orange',
-          backgroundColor: ui03,
+          backgroundColor: gray20,
           shape: 'circle',
           trend: {
             /** the key to load the trend value from the values object. */
@@ -32,19 +32,19 @@ storiesOf('Watson IoT Experimental/GaugeCard', module)
             {
               comparison: '>',
               value: 0,
-              color: support01, // red
+              color: 'red', // red
               label: 'Poor',
             },
             {
               comparison: '>',
               value: 60,
-              color: support03, // yellow
+              color: yellow, // yellow
               label: 'Fair',
             },
             {
               comparison: '>',
               value: 80,
-              color: support02, // green
+              color: 'green', // green
               label: select('Threshold label (> 80%)', ['Good', null], 'Good'),
             },
           ],

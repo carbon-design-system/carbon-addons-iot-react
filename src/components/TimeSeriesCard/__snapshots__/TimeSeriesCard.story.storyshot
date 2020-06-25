@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -54,7 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="LARGE"
           >
             <div
@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -145,7 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="LARGE"
           >
             <div
@@ -197,7 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -290,7 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -329,7 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="LARGE"
           >
             <div
@@ -381,7 +381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -420,7 +420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 iaRTcx"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kGvWug"
             size="MEDIUM"
           >
             <div
@@ -472,7 +472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -511,7 +511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 bSsZJL"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jbTSBO"
             size="LARGE"
           >
             <div
@@ -563,7 +563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -602,7 +602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="LARGE"
           >
             <div
@@ -654,7 +654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "520px",
         }
       }
@@ -693,7 +693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="LARGE"
           >
             <div
@@ -745,7 +745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -784,7 +784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 iaRTcx"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kGvWug"
             size="MEDIUM"
           >
             <div
@@ -836,7 +836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -875,7 +875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="MEDIUM"
           >
             <div
@@ -927,7 +927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -966,7 +966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="MEDIUM"
           >
             <div
@@ -1018,7 +1018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -1057,7 +1057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="MEDIUM"
           >
             <div
@@ -1109,7 +1109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1rem4",
           "width": "252px",
         }
       }
@@ -1148,7 +1148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
           }
         >
           <div
-            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+            className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
             size="MEDIUM"
           >
             <div
