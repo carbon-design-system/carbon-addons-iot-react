@@ -14,7 +14,7 @@ import cloneDeep from 'lodash/cloneDeep';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
-import FlyoutMenu from '../FlyoutMenu/FlyoutMenu';
+import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -544,9 +544,11 @@ storiesOf('Watson IoT/Table', module)
               customToolbarContent: (
                 <StyledCustomToolbarContent>
                   <FlyoutMenu
+                    direction={FlyoutMenuDirection.BottomEnd}
                     buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
                     iconDescription="Helpful description"
                     triggerId="test-flyout-id"
+                    transactional={boolean('Flyout Transactional', true)}
                     onApply={action('Flyout Menu Apply Clicked')}
                     onCancel={action('Flyout Menu Cancel Clicked')}
                   >

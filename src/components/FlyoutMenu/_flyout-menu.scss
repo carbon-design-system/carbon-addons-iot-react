@@ -2,19 +2,48 @@
 @import '~carbon-components/scss/globals/scss/layout';
 
 .#{$iot-prefix}-flyout-menu {
-  color: initial;
-  background: $ui-02;
-  box-shadow: 0;
+  display: flex;
 
-  .#{$prefix}--tooltip__caret {
-    display: none;
+  &.top {
+    flex-direction: column-reverse;
+  }
+
+  &.bottom {
+    flex-direction: column;
+  }
+
+  &.right,
+  [dir='rtl'] &.left {
+    flex-direction: row;
+  }
+
+  &.left,
+  [dir='rtl'] &.right {
+    flex-direction: row-reverse;
+  }
+
+  &--body {
+    color: initial;
+    background: $ui-02;
+    box-shadow: 0;
+    border-radius: 0;
+
+    .#{$prefix}--tooltip__caret {
+      display: none;
+    }
+  }
+
+  &--tooltip-anchor {
+    position: relative;
+    height: 0px;
+    width: 0px;
   }
 
   &--open {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
   }
 
-  &--light {
+  &__light {
     background: $ui-01;
   }
 
@@ -23,6 +52,11 @@
 
     padding-top: $spacing-04;
     margin-top: $spacing-04;
+  }
+
+  &__bottom-container-custom {
+    min-height: 64px;
+    width: 100%;
   }
 
   [dir='rtl'] &__submit,
@@ -36,7 +70,8 @@
   }
 }
 
-.#{$iot-prefix}-flyout-menu.#{$prefix}--tooltip {
+.#{$iot-prefix}-flyout-menu--body.#{$prefix}--tooltip {
+  min-width: unset !important;
   max-width: unset !important;
 }
 
@@ -46,4 +81,15 @@
   > svg {
     margin-left: 0 !important;
   }
+}
+
+// Removes a blue square on highlight
+.#{$iot-prefix}-flyout-menu__trigger-button.#{$prefix}--tooltip--a11y::before {
+  display: none !important;
+}
+
+// Removes Assistive Text Overlay
+.#{$iot-prefix}-flyout-menu__trigger-button.#{$prefix}--btn.bx--btn--icon-only
+  .#{$prefix}--assistive-text {
+  display: none !important;
 }

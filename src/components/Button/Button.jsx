@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
-export const propTypes = {
+const propTypes = {
   /** Show loading spinner, only new prop */
   loading: PropTypes.bool,
   /** Disable the button will be auto disabled when loading */
