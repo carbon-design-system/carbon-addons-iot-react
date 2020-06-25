@@ -42,7 +42,6 @@ const BarChartCard = ({
   interval,
   className,
   domainRange,
-  endDate,
   ...others
 }) => {
   const { noDataLabel } = i18n;
