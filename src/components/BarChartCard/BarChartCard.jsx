@@ -41,6 +41,7 @@ const BarChartCard = ({
   isLoading,
   interval,
   className,
+  domainRange,
   ...others
 }) => {
   const { noDataLabel } = i18n;
@@ -79,7 +80,7 @@ const BarChartCard = ({
   let ChartComponent = SimpleBarChart;
   if (type === BAR_CHART_TYPES.GROUPED) {
     ChartComponent = GroupedBarChart;
-  } else {
+  } else if (type === BAR_CHART_TYPES.STACKED) {
     ChartComponent = StackedBarChart;
   }
 
@@ -146,8 +147,13 @@ const BarChartCard = ({
                   }`,
                   scaleType: layout === BAR_CHART_LAYOUTS.VERTICAL ? scaleType : null,
                   stacked:
-                    type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.HORIZONTAL,
+                    type === BAR_CHART_TYPES.STACKED &&
+                    layout === BAR_CHART_LAYOUTS.HORIZONTAL &&
+                    timeDataSourceId,
                   mapsTo: axes.bottomAxesMapsTo,
+                  ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL
+                    ? { domain: domainRange }
+                    : {}),
                 },
                 left: {
                   title: `${yLabel || ''} ${
@@ -157,6 +163,9 @@ const BarChartCard = ({
                   stacked:
                     type === BAR_CHART_TYPES.STACKED && layout === BAR_CHART_LAYOUTS.VERTICAL,
                   mapsTo: axes.leftAxesMapsTo,
+                  ...(domainRange && layout === BAR_CHART_LAYOUTS.HORIZONTAL && timeDataSourceId
+                    ? { domain: domainRange }
+                    : {}),
                 },
               },
               legend: { position: 'bottom', enabled: chartData.length > 1, clickable: !isEditable },
@@ -220,6 +229,7 @@ BarChartCard.defaultProps = {
   i18n: {
     noDataLabel: 'No data',
   },
+  domainRange: null,
   content: {
     type: BAR_CHART_TYPES.SIMPLE,
     layout: BAR_CHART_LAYOUTS.VERTICAL,

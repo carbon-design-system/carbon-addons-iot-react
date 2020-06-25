@@ -7,6 +7,7 @@ import { spacing05, spacing04, spacing09 } from '@carbon/layout';
 import { gray20, red60, green50, yellow } from '@carbon/colors';
 import { ClickableTile } from 'carbon-components-react';
 
+import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import { getIntervalChartData, tableColumns, tableData } from '../../utils/sample';
 import {
@@ -444,7 +445,8 @@ const commonDashboardProps = {
   },
 };
 
-storiesOf('Watson IoT/Dashboard', module)
+storiesOf('Watson IoT/Dashboard (Deprecated)', module)
+  .add(deprecatedStoryTitle, () => <DeprecationNotice deprecatedComponentName="Dashboard" />)
   .add(
     'basic dashboard',
     () => {
