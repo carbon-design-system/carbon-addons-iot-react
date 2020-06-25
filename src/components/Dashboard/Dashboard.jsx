@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
+import warning from 'warning';
 
 import DashboardHeader from './DashboardHeader';
 import DashboardGrid, { DashboardGridPropTypes } from './DashboardGrid';
@@ -280,6 +281,13 @@ const Dashboard = ({
   onFetchData,
   timeGrain,
 }) => {
+  if (__DEV__) {
+    warning(
+      false,
+      'Dashboard component has been deprecated and will be removed in the next release of `carbon-addons-iot-react`.'
+    );
+  }
+
   const [breakpoint, setBreakpoint] = useState('lg');
 
   // Keep track of whether any cards are loading or not, (doesn't need to be in state)
