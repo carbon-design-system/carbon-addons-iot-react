@@ -218,6 +218,8 @@ class RowActionsCell extends React.Component {
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
+                      /** This can be changed to hasIconOnly once https://github.com/IBM/carbon-addons-iot-react/issues/1346
+                      is fixed */
                       className={classnames({
                         [`${iotPrefix}--row-actions-cell-btn--icononly`]: !labelText,
                       })}
