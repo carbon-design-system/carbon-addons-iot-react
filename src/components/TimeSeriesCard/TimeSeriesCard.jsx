@@ -30,7 +30,7 @@ import { generateSampleValues, formatGraphTick, findMatchingAlertRange } from '.
 
 const { iotPrefix } = settings;
 
-export const TimeSeriesDatasetPropTypes = PropTypes.shape({
+const TimeSeriesDatasetPropTypes = PropTypes.shape({
   label: PropTypes.string.isRequired,
   /** the attribute in values to map to */
   dataSourceId: PropTypes.string.isRequired,
@@ -40,7 +40,7 @@ export const TimeSeriesDatasetPropTypes = PropTypes.shape({
   color: PropTypes.string,
 });
 
-export const TimeSeriesCardPropTypes = {
+const TimeSeriesCardPropTypes = {
   content: PropTypes.shape({
     series: PropTypes.oneOfType([
       TimeSeriesDatasetPropTypes,
@@ -86,6 +86,10 @@ export const TimeSeriesCardPropTypes = {
   ),
   /** Interval for time series configuration used for formatting the x-axis */
   interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
+  /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
+   * can be date instance or timestamp
+   */
+  domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
 };
 
 const LineChartWrapper = styled.div`
@@ -251,6 +255,7 @@ const TimeSeriesCard = ({
   isExpanded,
   isLazyLoading,
   isLoading,
+  domainRange,
   showTimeInGMT,
   tooltipDateFormatPattern,
   ...others
@@ -440,6 +445,7 @@ const TimeSeriesCard = ({
     [columnNames, i18n.defaultFilterStringPlaceholdText, timeDataSourceId]
   );
 
+  // TODO: remove in next release
   const ChartComponent = chartType === TIME_SERIES_TYPES.BAR ? StackedBarChart : LineChart;
 
   return (
@@ -480,6 +486,7 @@ const TimeSeriesCard = ({
                       formatter: formatTick,
                     },
                     includeZero: includeZeroOnXaxis,
+                    ...(domainRange ? { domain: domainRange } : {}),
                   },
                   left: {
                     title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
@@ -577,6 +584,7 @@ TimeSeriesCard.defaultProps = {
     includeZeroOnYaxis: false,
   },
   showTimeInGMT: false,
+  domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
 };
 
