@@ -85,9 +85,11 @@ const SimpleList = ({
   const [selectedId, setSelectedId] = useState(null);
 
   const handleSelect = id => {
-    setSelectedId(selectedId === id ? null : id);
+    setSelectedId(selectedIds.indexOf(id) !== -1 ? null : id);
     setSelectedIds(
-      selectedId === id ? selectedIds.filter(item => item.id !== id) : [...selectedIds, id]
+      selectedIds.indexOf(id) !== -1
+        ? selectedIds.filter(item => item !== id)
+        : [...selectedIds, id]
     );
   };
 

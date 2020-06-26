@@ -2006,7 +2006,7 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with sticky header and cell tooltip calculation',
+    'with sticky header (experimental) and cell tooltip calculation',
     () => {
       const renderDataFunction = ({ value }) => (
         <div style={{ position: 'relative' }} data-floating-menu-container>
@@ -2061,7 +2061,7 @@ storiesOf('Watson IoT/Table', module)
     {
       centered: { disable: true },
       info: {
-        text: `To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
+        text: `StickyHeader is experimental. To properly render a tooltip in a table with sticky headers you need to pass a menuOffset or menuOffsetFlip calculation to <Tooltip>`,
       },
     }
   );
