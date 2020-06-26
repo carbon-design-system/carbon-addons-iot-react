@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import sizeMe from 'react-sizeme';
 
 import Pagination from './Pagination';
@@ -30,10 +30,10 @@ describe('Pagination', () => {
       };
     });
 
-    const { queryByText, rerender } = render(<Pagination pageSizes={[10, 20, 30]} />);
+    const { rerender } = render(<Pagination pageSizes={[10, 20, 30]} />);
     // Need to force it to render twice to call the sizing callback
     rerender(<Pagination pageSizes={[10, 20, 30]} />);
-    expect(queryByText('Items per page')).toBeNull();
+    expect(screen.queryByText('Items per page')).toBeNull();
   });
   it('Pagination page display shows', () => {
     // at wider widths it should show
@@ -47,9 +47,9 @@ describe('Pagination', () => {
         right: 0,
       };
     });
-    const { queryByText, rerender } = render(<Pagination pageSizes={[10, 20, 30]} />);
+    const { rerender } = render(<Pagination pageSizes={[10, 20, 30]} />);
     rerender(<Pagination pageSizes={[10, 20, 30]} />);
 
-    expect(queryByText('Items per page')).toBeDefined();
+    expect(screen.queryByText('Items per page')).toBeDefined();
   });
 });

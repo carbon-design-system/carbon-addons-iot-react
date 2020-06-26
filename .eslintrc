@@ -90,7 +90,7 @@
     "jest/prefer-hooks-on-top": "error",
     "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }],
     "unicorn/no-abusive-eslint-disable": "error",
-    "testing-library/prefer-screen-queries": "warn",
+    "testing-library/prefer-screen-queries": "error",
     "testing-library/prefer-wait-for": "error"
   },
   // Testcases have less eslint rules applied to them
