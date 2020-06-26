@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { mount } from 'enzyme';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
@@ -101,33 +101,26 @@ describe('TableSaveViewModal', () => {
       cancelButtonLabelText: 'cancel-button-label-test',
     };
 
-    const {
-      getByText,
-      getByLabelText,
-      queryByText,
-      queryByLabelText,
-      getByTitle,
-      queryByTitle,
-    } = render(<TableSaveViewModal actions={actions} open testID="my-modal" i18n={i18nTest} />);
+    render(<TableSaveViewModal actions={actions} open testID="my-modal" i18n={i18nTest} />);
 
-    expect(getByText(i18nTest.modalTitle)).toBeInTheDocument();
-    expect(getByText(i18nTest.modalBodyText)).toBeInTheDocument();
-    expect(getByLabelText(i18nTest.titleInputLabelText)).toBeInTheDocument();
-    expect(getByLabelText(i18nTest.defaultCheckboxLabelText)).toBeInTheDocument();
-    expect(getByLabelText(i18nTest.publicCheckboxLabelText)).toBeInTheDocument();
-    expect(getByTitle(i18nTest.closeIconDescription)).toBeInTheDocument();
-    expect(getByText(i18nTest.saveButtonLabelText)).toBeInTheDocument();
-    expect(getByText(i18nTest.cancelButtonLabelText)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.modalTitle)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.modalBodyText)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.titleInputLabelText)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.defaultCheckboxLabelText)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.publicCheckboxLabelText)).toBeInTheDocument();
+    expect(screen.getByTitle(i18nTest.closeIconDescription)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.saveButtonLabelText)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.cancelButtonLabelText)).toBeInTheDocument();
 
     const defaultI18n = TableSaveViewModal.defaultProps.i18n;
-    expect(queryByText(defaultI18n.modalTitle)).not.toBeInTheDocument();
-    expect(queryByText(defaultI18n.modalBodyText)).not.toBeInTheDocument();
-    expect(queryByLabelText(defaultI18n.titleInputLabelText)).not.toBeInTheDocument();
-    expect(queryByLabelText(defaultI18n.defaultCheckboxLabelText)).not.toBeInTheDocument();
-    expect(queryByLabelText(defaultI18n.publicCheckboxLabelText)).not.toBeInTheDocument();
-    expect(queryByTitle(defaultI18n.closeIconDescription)).not.toBeInTheDocument();
-    expect(queryByText(defaultI18n.saveButtonLabelText)).not.toBeInTheDocument();
-    expect(queryByText(defaultI18n.cancelButtonLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByText(defaultI18n.modalTitle)).not.toBeInTheDocument();
+    expect(screen.queryByText(defaultI18n.modalBodyText)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(defaultI18n.titleInputLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(defaultI18n.defaultCheckboxLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(defaultI18n.publicCheckboxLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByTitle(defaultI18n.closeIconDescription)).not.toBeInTheDocument();
+    expect(screen.queryByText(defaultI18n.saveButtonLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByText(defaultI18n.cancelButtonLabelText)).not.toBeInTheDocument();
   });
 
   it('has disabled Save unless the view title input has gotten a value', () => {

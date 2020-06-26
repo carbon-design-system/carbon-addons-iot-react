@@ -6,9 +6,7 @@ import { Checkbox } from '../../Checkbox';
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 
-const { prefix } = settings;
-
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 const propTypes = {
   /** Disables the form elements when true */
