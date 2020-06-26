@@ -2773,6 +2773,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    TableViewDropdown
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     baseTableReducer
                   </div>
                 </div>
@@ -2858,6 +2870,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     Dashboard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    DashboardHeader
                   </div>
                 </div>
                 <div

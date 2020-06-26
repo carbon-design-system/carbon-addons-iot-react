@@ -6,7 +6,6 @@ import { bundledIconNames } from '../utils/bundledIcons';
 import {
   CARD_LAYOUTS,
   DASHBOARD_SIZES,
-  TIME_SERIES_TYPES,
   CARD_SIZES,
   LEGACY_CARD_SIZES,
   CARD_DATA_STATE,
@@ -75,52 +74,6 @@ export const ValueCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
-};
-
-export const TimeSeriesDatasetPropTypes = PropTypes.shape({
-  label: PropTypes.string.isRequired,
-  /** the attribute in values to map to */
-  dataSourceId: PropTypes.string.isRequired,
-  /** optional filter to apply to this particular line */
-  dataFilter: PropTypes.objectOf(PropTypes.any),
-  /** optional param to set the colors */
-  color: PropTypes.string,
-});
-
-export const TimeSeriesCardPropTypes = {
-  content: PropTypes.shape({
-    series: PropTypes.oneOfType([
-      TimeSeriesDatasetPropTypes,
-      PropTypes.arrayOf(TimeSeriesDatasetPropTypes),
-    ]).isRequired,
-    /** Custom X-axis label */
-    xLabel: PropTypes.string,
-    /** Custom Y-axis label */
-    yLabel: PropTypes.string,
-    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
-    includeZeroOnXaxis: PropTypes.bool,
-    /** Optionally hide zero. Useful when chart values are not close to zero, giving a better view of the meaningful data */
-    includeZeroOnYaxis: PropTypes.bool,
-    /** Which attribute is the time attribute i.e. 'timestamp' */
-    timeDataSourceId: PropTypes.string,
-    /** should it be a line chart or bar chart, default is line chart */
-    chartType: deprecate(
-      PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
-      '\nThe prop `chartType` for Card has been deprecated. BarChartCard now handles all bar chart functionality including time-based bar charts.'
-    ),
-    /** optional units to put in the legend */
-    unit: PropTypes.string,
-  }).isRequired,
-  i18n: PropTypes.shape({
-    alertDetected: PropTypes.string,
-  }),
-  /** array of data from the backend for instance [{timestamp: 134234234234, temperature: 35, humidity: 10}, ...] */
-  values: PropTypes.arrayOf(PropTypes.object),
-  cardVariables: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
-  ),
-  /** Interval for time series configuration used for formatting the x-axis */
-  interval: PropTypes.oneOf(['minute', 'hour', 'day', 'week', 'quarter', 'month', 'year']),
 };
 
 export const TableCardPropTypes = {
@@ -317,6 +270,9 @@ export const BarChartCardPropTypes = {
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
   }),
+  /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
+   * can be date instance or timestamp */
+  domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
 };
 
 export const DonutCardPropTypes = {

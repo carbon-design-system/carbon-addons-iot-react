@@ -1,6 +1,6 @@
 import { ChevronDown32 } from '@carbon/icons-react';
 import { settings } from 'carbon-components';
-import cx from 'classnames';
+import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
@@ -72,7 +72,7 @@ class HeaderActionMenu extends React.Component {
       'aria-labelledby': ariaLabelledBy,
     };
 
-    const className = cx(`${prefix}--header__submenu`, customClassName);
+    const className = classnames(`${prefix}--header__submenu`, customClassName);
 
     // Prevents the a element from navigating to it's href target
     const handleDefaultClick = event => {
@@ -94,7 +94,7 @@ class HeaderActionMenu extends React.Component {
         <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
           aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
           aria-expanded={isExpanded}
-          className={cx(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
+          className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
           href=""
           onKeyDown={this.handleOnKeyDown}
           onClick={handleDefaultClick}

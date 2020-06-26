@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Column20, Filter20, Download20, Edit20 } from '@carbon/icons-react';
 import { DataTable, Button, Tooltip } from 'carbon-components-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import deprecate from '../../../internal/deprecate';
 import {
@@ -144,7 +144,7 @@ const TableToolbar = ({
     rowEditBarButtons,
   },
 }) => (
-  <CarbonTableToolbar className={classNames(`${iotPrefix}--table-toolbar`, className)}>
+  <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
     <TableBatchActions
       className={`${iotPrefix}--table-batch-actions`}
       onCancel={onCancelBatchAction}

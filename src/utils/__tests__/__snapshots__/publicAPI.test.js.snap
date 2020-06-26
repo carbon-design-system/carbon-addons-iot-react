@@ -3562,6 +3562,7 @@ Map {
         "layout": "VERTICAL",
         "type": "SIMPLE",
       },
+      "domainRange": null,
       "i18n": Object {
         "noDataLabel": "No data",
       },
@@ -4136,6 +4137,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "domainRange": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "object",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hideHeader": Object {
         "type": "bool",
@@ -4791,6 +4810,150 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
+      },
+    },
+  },
+  "TableViewDropdown" => Object {
+    "defaultProps": Object {
+      "activeViewEdited": false,
+      "disabled": false,
+      "i18n": Object {
+        "ariaLabel": "Select view",
+        "edited": "Edited",
+        "manageViews": "Manage views",
+        "saveAsNewView": "Save as new view",
+        "saveView": "Save view",
+        "tableViewMenu": "Table view menu",
+        "view": "View",
+        "viewAll": "View All",
+      },
+      "overrides": undefined,
+      "selectedViewId": undefined,
+      "testID": "TableViewDropdown",
+      "views": Array [],
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "onChangeView": Object {
+              "type": "func",
+            },
+            "onManageViews": Object {
+              "type": "func",
+            },
+            "onSaveAsNewView": Object {
+              "type": "func",
+            },
+            "onSaveView": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "isRequired": true,
+        "type": "shape",
+      },
+      "activeViewEdited": Object {
+        "type": "bool",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "ariaLabel": Object {
+              "type": "string",
+            },
+            "edited": Object {
+              "type": "string",
+            },
+            "manageViews": Object {
+              "type": "string",
+            },
+            "saveAsNewView": Object {
+              "type": "string",
+            },
+            "saveView": Object {
+              "type": "string",
+            },
+            "tableViewMenu": Object {
+              "type": "string",
+            },
+            "view": Object {
+              "type": "string",
+            },
+            "viewAll": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "dropdown": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "dropdownItem": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "selectedViewId": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "views": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "customAction": Object {
+                  "type": "func",
+                },
+                "icon": Object {
+                  "type": "elementType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "text": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
     },
   },
@@ -5828,6 +5991,115 @@ Map {
       },
       "timeGrain": Object {
         "type": "string",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
+  "DashboardHeader" => Object {
+    "defaultProps": Object {
+      "actions": Array [],
+      "description": null,
+      "filter": null,
+      "hasLastUpdated": true,
+      "lastUpdated": null,
+      "lastUpdatedLabel": "Last updated:",
+      "onDashboardAction": null,
+      "title": null,
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "customActionComponent": Object {
+                  "type": "node",
+                },
+                "icon": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "args": Array [
+                          Array [
+                            "caretUp",
+                            "caretDown",
+                            "edit",
+                            "close",
+                            "checkmark",
+                            "warning",
+                            "arrowUp",
+                            "arrowDown",
+                            "user",
+                            "info",
+                            "help",
+                          ],
+                        ],
+                        "type": "oneOf",
+                      },
+                      Object {
+                        "args": Array [
+                          Object {
+                            "height": Object {
+                              "type": "string",
+                            },
+                            "svgData": Object {
+                              "isRequired": true,
+                              "type": "object",
+                            },
+                            "viewBox": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "width": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                      Object {
+                        "type": "object",
+                      },
+                      Object {
+                        "type": "element",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "labelText": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "description": Object {
+        "type": "string",
+      },
+      "filter": Object {
+        "type": "node",
+      },
+      "hasLastUpdated": Object {
+        "type": "bool",
+      },
+      "lastUpdated": Object {
+        "type": "string",
+      },
+      "lastUpdatedLabel": Object {
+        "type": "string",
+      },
+      "onDashboardAction": Object {
+        "type": "func",
       },
       "title": Object {
         "type": "string",
@@ -8080,11 +8352,14 @@ Map {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
       },
+      "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
       },
       "locale": "en",
+      "showTimeInGMT": false,
       "size": "MEDIUM",
+      "tooltipDateFormatPattern": "L HH:mm:ss",
       "values": Array [],
     },
     "propTypes": Object {
@@ -8642,7 +8917,13 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
+            "showTimeInGMT": Object {
+              "type": "bool",
+            },
             "timeDataSourceId": Object {
+              "type": "string",
+            },
+            "tooltipDateFormatPattern": Object {
               "type": "string",
             },
             "unit": Object {
@@ -8696,6 +8977,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "domainRange": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "object",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hideHeader": Object {
         "type": "bool",
@@ -8841,7 +9140,30 @@ Map {
       "values": Object {
         "args": Array [
           Object {
-            "type": "object",
+            "args": Array [
+              Object {
+                "timestamp": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "number",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                      Object {
+                        "args": Array [
+                          [Function],
+                        ],
+                        "type": "instanceOf",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",

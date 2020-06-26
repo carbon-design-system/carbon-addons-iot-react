@@ -107,6 +107,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             timeDataSourceId: 'timestamp',
             type: 'SIMPLE',
           })}
+          domainRange={[1581251825000, 1581524625000]}
           values={barChartData.timestamps.filter(t => t.city === 'Amsterdam')}
           size={size}
           onCardAction={action('onCardAction')}

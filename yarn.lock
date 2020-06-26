@@ -2300,17 +2300,17 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.30.18":
-  version "0.30.18"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.30.18.tgz#524f10eacaaa482da2aa7bd1e1ef408e5e497ae8"
-  integrity sha512-bBJFRQVUHlbIF3LBhnaLXT7aqQIc3WnqlfMOiWWsRDoz/fPr+7BHV+O0/FvKOJoo0Mq2uzWiyrKJW9bdl7/XTA==
+"@carbon/charts-react@^0.32.7":
+  version "0.32.11"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.32.11.tgz#8df055dcc8f4602bed1afa6830c3ca677cfef910"
+  integrity sha512-02TGaDBHKhjZAqXTSsdr6fUB0eKICygstePCKwyAI09KLou9El0cIM82OvB0hovqOGqxuXwkiMgP2OrYVg+09A==
   dependencies:
-    "@carbon/charts" "^0.30.18"
+    "@carbon/charts" "^0.32.11"
 
-"@carbon/charts@^0.30.18":
-  version "0.30.18"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.30.18.tgz#11567fdd0a95dde77d8f014587ca67ae5973c4ac"
-  integrity sha512-0JSH4P/rjvkZ+ZOXBNxnUibQ3m3FeJpUztRrDKNkDRbWaSBiVDIaw97AscW6L7wvU95YpnW14Xc4otP4N7IeiA==
+"@carbon/charts@^0.32.11":
+  version "0.32.11"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.32.11.tgz#8efb3e22590d95e033e21b2ca6277eefd88c4d2e"
+  integrity sha512-9qdmapW6UZ5a7vgwmVhyqNTk8G0NHDk7NvdmhY9U3mz3fF4x7Cztq4W4At/cXxfCxwH3LVHmVyoxThqqYOqWVg==
   dependencies:
     "@carbon/colors" "10.4.0"
     "@carbon/utils-position" "1.1.1"
@@ -7747,10 +7747,10 @@ deep-object-diff@^1.1.0:
   resolved "https://registry.yarnpkg.com/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==
 
-deepdash@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/deepdash/-/deepdash-4.4.2.tgz#0641bbba183a97b2182b9b6f3b0376cd150af741"
-  integrity sha512-ZZ4Is/8YEy0HilZZOIE5EO7Ndc08gVRbz8/J0YnAA086j+kwovoD4TmyqlxMj+96pruYa+AGvSkCF5JRnW0g4g==
+deepdash@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/deepdash/-/deepdash-5.1.2.tgz#e848818580d5a3d835903c9a723e32b48b236903"
+  integrity sha512-HZCdKd3P9J+CpWN0mUehD98I8LlamGr3ePe1n1lFHjhMdAIAV/bC1tCMigvECpFy9+Y4T6OviFW9Xa7z1VeVng==
   dependencies:
     lodash "^4.17.15"
     lodash-es "^4.17.15"

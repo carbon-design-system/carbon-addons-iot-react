@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard basic - without last updated header 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) basic - without last updated header 1`] = `
 <div
   className="storybook-container"
 >
@@ -1575,7 +1575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -1585,7 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -1635,7 +1635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -1645,7 +1645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -1695,7 +1695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -1705,7 +1705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -2271,7 +2271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard basic dashboard 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) basic dashboard 1`] = `
 <div
   className="storybook-container"
 >
@@ -3853,7 +3853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -3863,7 +3863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -3913,7 +3913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -3923,7 +3923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -3973,7 +3973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -3983,7 +3983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -4549,7 +4549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard custom actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) custom actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -6158,7 +6158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -6168,7 +6168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -6218,7 +6218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -6228,7 +6228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -6278,7 +6278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -6288,7 +6288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -6854,7 +6854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen bar chart card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) full screen bar chart card 1`] = `
 <div
   className="storybook-container"
 >
@@ -7035,7 +7035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen image card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) full screen image card 1`] = `
 <div
   className="storybook-container"
 >
@@ -7307,7 +7307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen line card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) full screen line card 1`] = `
 <div
   className="storybook-container"
 >
@@ -7489,7 +7489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard full screen table card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) full screen table card 1`] = `
 <div
   className="storybook-container"
 >
@@ -7804,7 +7804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7814,7 +7814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="timestamp"
                                 id="column-timestamp"
                                 onClick={[Function]}
@@ -7864,7 +7864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7874,7 +7874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="Campus_EGL"
                                 id="column-Campus_EGL"
                                 onClick={[Function]}
@@ -7924,7 +7924,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7934,7 +7934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="peopleCount_EnterpriseBuilding_mean"
                                 id="column-peopleCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -7984,7 +7984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -7994,7 +7994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="headCount_EnterpriseBuilding_mean"
                                 id="column-headCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -8044,7 +8044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -8054,7 +8054,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="capacity_EnterpriseBuilding_mean"
                                 id="column-capacity_EnterpriseBuilding_mean"
                                 onClick={[Function]}
@@ -9340,7 +9340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard i18n labels 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) i18n labels 1`] = `
 <div
   className="storybook-container"
 >
@@ -10922,7 +10922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -10932,7 +10932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -10982,7 +10982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -10992,7 +10992,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -11042,7 +11042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -11052,7 +11052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -11618,7 +11618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard only value cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) only value cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -23729,7 +23729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -25336,7 +25336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           <tr>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -25346,7 +25346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
@@ -25396,7 +25396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -25406,7 +25406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
@@ -25456,7 +25456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             </th>
                             <th
                               aria-sort="none"
-                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol"
+                              className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE"
                               scope="col"
                               style={
                                 Object {
@@ -25466,7 +25466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                             >
                               <button
                                 align="start"
-                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 hxyol bx--table-sort"
+                                className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 jdOvaE bx--table-sort"
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
@@ -26032,7 +26032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard with custom cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) with custom cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -26834,6 +26834,96 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) ️⛔ Deprecation Notice  1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--toast-notification bx--toast-notification--warning"
+      kind="warning"
+      role="alert"
+      style={
+        Object {
+          "marginBottom": ".5rem",
+          "minWidth": "30rem",
+        }
+      }
+    >
+      <svg
+        aria-hidden={true}
+        className="bx--toast-notification__icon"
+        focusable="false"
+        height={20}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 20 20"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10,1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S15,1,10,1z M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1	s1,0.4,1,1S10.6,16,10,16z"
+        />
+        <path
+          d="M9.2,5h1.5v7H9.2V5z M10,16c-0.6,0-1-0.4-1-1s0.4-1,1-1s1,0.4,1,1S10.6,16,10,16z"
+          data-icon-path="inner-path"
+          opacity="0"
+        />
+        <title>
+          warning icon
+        </title>
+      </svg>
+      <div
+        className="bx--toast-notification__details"
+      >
+        <h3
+          className="bx--toast-notification__title"
+        >
+          Deprecation Notice
+        </h3>
+        <div
+          className="bx--toast-notification__subtitle"
+        >
+          Dashboard has been deprecated and will be removed in the next major version of carbon-addons-iot-react.
+        </div>
+        <div
+          className="bx--toast-notification__caption"
+        />
       </div>
     </div>
   </div>
