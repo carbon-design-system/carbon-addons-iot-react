@@ -59,7 +59,7 @@ const itemToElement = item => {
   return (
     <div>
       <span>{itemAsArray[0]}</span>
-      <span style={{ color: 'blue' }}> {itemAsArray[1]}</span>
+      <span style={{ color: 'blue' }}> {itemAsArray.splice(1, itemAsArray.length).join(' ')}</span>
     </div>
   );
 };
@@ -76,9 +76,8 @@ const ControlledComboBoxApp = props => {
         {...props}
         items={items}
         itemToString={item => (item ? item.text : '')}
-        onChange={({ selectedItem }) => setSelectedItem(selectedItem)}
+        // onChange={({ selectedItem }) => setSelectedItem(selectedItem)}
         initialSelectedItem={items[0]}
-        selectedItem={selectedItem}
       />
       <Button
         style={{ marginTop: '1rem' }}
@@ -87,7 +86,6 @@ const ControlledComboBoxApp = props => {
             id: `id-${(uid += 1)}`,
             text: `Option ${uid}`,
           });
-          setSelectedItem(items[items.length - 1]);
         }}
       >
         Add new item

@@ -106,7 +106,7 @@ describe('ComboBox', () => {
     expect(tags.firstChild.firstChild.firstChild.innerHTML).toEqual('Hello');
 
     // Check new item value is what it is supposed to be
-    expect(list.lastChild.firstChild.innerHTML).toEqual('Hello');
+    expect(list.firstChild.firstChild.innerHTML).toEqual('Hello');
 
     // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
@@ -225,7 +225,7 @@ describe('ComboBox', () => {
     expect(tags.childElementCount).toEqual(0);
     expect(list.childElementCount).toEqual(5);
 
-    await userEvent.type(input, 'Hello {enter}');
+    await userEvent.type(input, 'Hello{enter}');
 
     // Post-check tag and list count
     expect(tags.childElementCount).toEqual(0);
