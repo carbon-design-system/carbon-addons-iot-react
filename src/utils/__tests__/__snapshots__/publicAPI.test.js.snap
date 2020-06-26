@@ -13654,6 +13654,9 @@ Map {
         ],
         "type": "shape",
       },
+      "findHighlightedIndex": Object {
+        "type": "func",
+      },
       "hasMultiValue": Object {
         "type": "bool",
       },
@@ -13698,6 +13701,9 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onHighligtedIndexChange": Object {
         "type": "func",
       },
       "onInputChange": Object {
