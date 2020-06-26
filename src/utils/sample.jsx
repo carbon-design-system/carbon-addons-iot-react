@@ -2420,6 +2420,15 @@ export const chartData = {
 const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const randomDecimal = divideBy => Math.floor(Math.random() * (1000 - 100) + 100) / divideBy;
 
+/**
+ * Generates random data
+ * @param {number} quantity number of data points to create
+ * @param {Object} intInterval range of values to create
+ * @param {number} intInterval.min
+ * @param {number} intInterval.max
+ * @param {number} decimals multiple of ten to create decimals from
+ * @returns randomly generated data
+ */
 export const generateData = (quantity, intInterval, decimals) => {
   return Array(quantity)
     .fill(0)
@@ -2437,12 +2446,13 @@ export const generateData = (quantity, intInterval, decimals) => {
 };
 
 /**
- *
- * @param {string} interval time-based
- * @param {*} quantity
- * @param {*} intInterval
- * @param {*} decimals
+ * Generates time-based data
+ * @param {string} interval time-based i.e. day, week
+ * @param {number} quantity number of data points to create
+ * @param {Object} intInterval range of values to create
+ * @param {number} decimals multiple of ten to create decimals from
  * @param {integer} startingPoint (optional) starting offset for the chart
+ * @returns generated and formatted data
  */
 export const getIntervalChartData = (
   interval = 'day',
@@ -2459,6 +2469,13 @@ export const getIntervalChartData = (
         .unix() * 1000,
   }));
 
+/**
+ *
+ * @param {string} interval time-based i.e. day, week
+ * @param {string} period of time the data should be generated for
+ * @param {Object} intInterval range of values to create
+ * @param {number} decimals multiple of ten to create decimals from
+ */
 export const getPeriodChartData = (interval = 'day', period = 'week', intInterval, decimals) => {
   const endTime = moment();
   const startTime = moment().startOf(period);

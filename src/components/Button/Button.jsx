@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button as CarbonButton, Loading } from 'carbon-components-react';
 import { ButtonKinds } from 'carbon-components-react/es/prop-types/types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 
@@ -58,7 +58,7 @@ const Button = props => {
       kind={kind === 'icon-selection' ? 'ghost' : kind}
       hasIconOnly={kind === 'icon-selection' ? true : hasIconOnly}
       onClick={onClick}
-      className={classNames(className, `${iotPrefix}--btn`, {
+      className={classnames(className, `${iotPrefix}--btn`, {
         [`${iotPrefix}--btn-icon-selection`]: kind === 'icon-selection',
         [`${iotPrefix}--btn-icon-selection--recommended`]:
           kind === 'icon-selection' && !disabled && recommended,

@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import cx from 'classnames';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { settings } from 'carbon-components';
@@ -75,7 +75,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     );
   }
 
-  const className = cx(headerClassName, {
+  const className = classnames(headerClassName, {
     [`${prefix}--table-sort`]: true,
     [`${prefix}--table-sort--active`]: isSortHeader && sortDirection !== sortStates.NONE,
     [`${prefix}--table-sort--ascending`]: isSortHeader && sortDirection === sortStates.DESC,
