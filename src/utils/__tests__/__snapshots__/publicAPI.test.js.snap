@@ -3722,6 +3722,7 @@ Map {
         "layout": "VERTICAL",
         "type": "SIMPLE",
       },
+      "domainRange": null,
       "i18n": Object {
         "noDataLabel": "No data",
       },
@@ -4296,6 +4297,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "domainRange": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "object",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hideHeader": Object {
         "type": "bool",
@@ -8493,6 +8512,7 @@ Map {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
       },
+      "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
       },
@@ -9117,6 +9137,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "domainRange": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "object",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hideHeader": Object {
         "type": "bool",
