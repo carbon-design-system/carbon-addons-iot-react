@@ -289,7 +289,12 @@ storiesOf('Watson IoT/PageWizard', module)
           <Link to="www.ibm.com">Something</Link>,
           <Link to="www.ibm.com">Something Else</Link>,
         ]}
-        content={<StepValidationWizard hasStickyFooter isProgressIndicatorVertical />}
+        content={
+          <StepValidationWizard
+            hasStickyFooter={boolean('hasStickyFooter', true)}
+            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+          />
+        }
       />
     </div>
   ))
@@ -305,8 +310,8 @@ storiesOf('Watson IoT/PageWizard', module)
         ]}
         content={
           <StepValidationWizard
-            hasStickyFooter
-            isProgressIndicatorVertical
+            hasStickyFooter={boolean('hasStickyFooter', true)}
+            isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
             beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
           />
         }
