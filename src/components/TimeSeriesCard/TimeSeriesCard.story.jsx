@@ -102,13 +102,8 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       },
     }
   )
-  .add('single line', () => {
+  .add('medium / single line - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    const interval = select(
-      'interval',
-      ['hour', 'day', 'week', 'quarter', 'month', 'year'],
-      'hour'
-    );
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -120,7 +115,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -129,9 +123,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData(interval, 10, { min: 10, max: 100 }, 100)}
-          interval={interval}
-          showTimeInGMT={boolean('showTimeInGMT', false)}
+          values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
+          domainRange={[new Date(), new Date()]}
+          interval="hour"
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
@@ -140,7 +134,180 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
+  .add('medium / single line - domain range', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
+    const timestamps = data.map(d => d.timestamp);
+    const minDate = new Date(Math.min(...timestamps));
+    const day = minDate.getDay();
+    minDate.setDate(day + 10);
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time t',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={data}
+          availableActions={{ range: true }}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+          domainRange={[minDate.valueOf(), Math.max(...timestamps)]}
+        />
+      </div>
+    );
+  })
   .add('multi line - (No X/Y Label)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('medium / single line - interval month (Year/ Same Year)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('medium / multiple line - interval month (Year/ Same Year)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+              {
+                label: 'Humidity',
+                dataSourceId: 'humidity',
+              },
+              {
+                label: 'Ecount',
+                dataSourceId: 'ecount',
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('medium / single line - interval year (Two data point)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('year', 2, { min: 10, max: 100 }, 100)}
+          interval="year"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('medium / multi line - (No X/Y Label)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const interval = select(
       'interval',
@@ -158,22 +325,18 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.MAGENTA),
               },
               {
                 label: 'Pressure',
                 dataSourceId: 'pressure',
-                // color: text('color', COLORS.TEAL),
               },
               {
                 label: 'Humidity',
                 dataSourceId: 'humidity',
-                // color: text('color', COLORS.TEAL),
               },
               {
                 label: 'Count',
                 dataSourceId: 'ecount',
-                // color: text('color', COLORS.TEAL),
               },
             ],
             xLabel: '',
@@ -188,6 +351,188 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           breakpoint="lg"
           size={size}
           tooltipDateFormatPattern={text('tooltipDateFormatPattern', 'L HH:mm:ss')}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - interval hour (Same day)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('minute', 15, { min: 10, max: 100 }, 100)}
+          interval="minute"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - interval day (Week)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100)}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - interval day (Month)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
+          interval="day"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - interval month (Year/ Diff Year)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('large / single line - year interval (One data point)', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
+          interval="year"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
+  .add('large / multi line - no interval', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
         />
       </div>
     );
@@ -298,7 +643,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   })
   .add('highlight alert ranges', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    // console.log(getIntervalChartData('day', 30, { min: 10, max: 100 }, 100));
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <TimeSeriesCard
@@ -310,7 +654,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
@@ -387,7 +730,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               {
                 label: 'Temperature',
                 dataSourceId: 'temperature',
-                // color: text('color', COLORS.PURPLE),
               },
             ],
             xLabel: 'Time',
