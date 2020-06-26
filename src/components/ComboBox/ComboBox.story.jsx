@@ -76,8 +76,13 @@ const ControlledComboBoxApp = props => {
         {...props}
         items={items}
         itemToString={item => (item ? item.text : '')}
-        // onChange={({ selectedItem }) => setSelectedItem(selectedItem)}
+        onChange={changeSelection => {
+          if (changeSelection) {
+            setSelectedItem(changeSelection.selectedItem);
+          }
+        }}
         initialSelectedItem={items[0]}
+        selectedItem={selectedItem}
       />
       <Button
         style={{ marginTop: '1rem' }}
@@ -86,6 +91,7 @@ const ControlledComboBoxApp = props => {
             id: `id-${(uid += 1)}`,
             text: `Option ${uid}`,
           });
+          setSelectedItem(items[items.length - 1]);
         }}
       >
         Add new item
