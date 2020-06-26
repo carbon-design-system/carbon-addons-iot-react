@@ -28,4 +28,17 @@
       max-width: 100%;
     }
   }
+
+  &.#{$iot-prefix}--combobox-add {
+    .#{$prefix}--list-box__menu-item:first-child {
+      &::after {
+        content: attr(data-text);
+        color: $text-03;
+        position: absolute;
+        right: $spacing-03;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }

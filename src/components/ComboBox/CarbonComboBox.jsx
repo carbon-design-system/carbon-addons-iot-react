@@ -290,7 +290,14 @@ export default class ComboBox extends React.Component {
      *  Optional callback to pass the highlighted index to parent
      */
     onHighligtedIndexChange: PropTypes.func,
+    /**
+     *  Optional func to change behavior of highlighted index
+     */
     findHighlightedIndex: PropTypes.func,
+    /**
+     * String to pass to input field option
+     */
+    editOptionText: PropTypes.string,
   };
 
   static defaultProps = {
@@ -302,6 +309,7 @@ export default class ComboBox extends React.Component {
     ariaLabel: 'Choose an item',
     light: false,
     direction: 'bottom',
+    editOptionText: '+ Add',
   };
 
   static getDerivedStateFromProps(nextProps, state) {
@@ -404,6 +412,7 @@ export default class ComboBox extends React.Component {
       direction,
       onHighligtedIndexChange,
       findHighlightedIndex,
+      editOptionText,
       ...rest
     } = this.props;
     const { inputValue } = this.state;
@@ -531,6 +540,7 @@ export default class ComboBox extends React.Component {
                   return (
                     <ListBox.MenuItem
                       key={itemProps.id}
+                      data-text={editOptionText}
                       isActive={selectedItem === item}
                       isHighlighted={
                         highlightedIndex === index ||

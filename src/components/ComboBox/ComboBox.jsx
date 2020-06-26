@@ -17,6 +17,8 @@ const propTypes = {
   onChange: PropTypes.func.isRequired,
   // OPtional classname to be applied to wrapper
   wrapperClassName: PropTypes.string,
+  // String to pass to input field option
+  editOptionText: PropTypes.string,
   // String to pass for tags close button aria-label. Will be prepended to value name
   closeButtonText: PropTypes.string,
   // Bit that will allow mult value and tag feature
@@ -29,6 +31,7 @@ const defaultProps = {
   inline: false,
   wrapperClassName: null,
   closeButtonText: 'Close',
+  editOptionText: null,
   hasMultiValue: false,
   items: [],
 };
@@ -38,6 +41,7 @@ const ComboBox = ({
   loading,
   wrapperClassName,
   closeButtonText,
+  editOptionText,
   hasMultiValue,
   itemToString,
   onChange,
@@ -160,7 +164,11 @@ const ComboBox = ({
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={classNames(`${iotPrefix}--combobox`, { [wrapperClassName]: wrapperClassName })}
+      className={classNames(
+        `${iotPrefix}--combobox`,
+        { [wrapperClassName]: wrapperClassName },
+        { [`${iotPrefix}--combobox-add`]: inputValue }
+      )}
       onKeyDown={evt => handleOnKeypress(evt)}
       data-testid="combo-wrapper"
     >
@@ -174,6 +182,7 @@ const ComboBox = ({
         selectedItem={comboProps.selectedItem || selectedItem}
         items={combinedItems}
         itemToString={itemToString}
+        editOptionText={editOptionText}
         onChange={handleOnChange}
         onInputChange={handleInputChange}
         className={classNames(comboProps.className, `${iotPrefix}--combobox-input`)}

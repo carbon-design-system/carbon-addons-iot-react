@@ -13656,6 +13656,7 @@ Map {
       "closeButtonText": "Close",
       "direction": "bottom",
       "disabled": false,
+      "editOptionText": null,
       "hasMultiValue": false,
       "inline": false,
       "itemToElement": null,
@@ -13800,6 +13801,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "editOptionText": Object {
+        "type": "string",
       },
       "findHighlightedIndex": Object {
         "type": "func",
