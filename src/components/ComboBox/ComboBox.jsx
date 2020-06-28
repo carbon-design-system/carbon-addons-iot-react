@@ -86,8 +86,14 @@ const ComboBox = ({
   };
 
   const handleOnChange = ({ selectedItem: downShiftSelectedItem }) => {
-    const newItem = downShiftSelectedItem;
-    const currentValue = itemToString(newItem).trim();
+    const newItem =
+      downShiftSelectedItem &&
+      Object.keys(downShiftSelectedItem).reduce(
+        (acc, id) => ({ ...acc, [id]: downShiftSelectedItem[id].trim() }),
+        {}
+      );
+
+    const currentValue = itemToString(newItem);
     // Check that there is no existing tag
     const hasNoExistingTag = tagItems.filter(x => itemToString(x) === currentValue).length < 1;
     // Check if value is part of items array

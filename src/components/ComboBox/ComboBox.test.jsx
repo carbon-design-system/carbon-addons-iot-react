@@ -225,7 +225,7 @@ describe('ComboBox', () => {
     expect(tags.childElementCount).toEqual(0);
     expect(list.childElementCount).toEqual(5);
 
-    await userEvent.type(input, 'Hello{enter}');
+    await userEvent.type(input, 'Hello {enter}');
 
     // Post-check tag and list count
     expect(tags.childElementCount).toEqual(0);

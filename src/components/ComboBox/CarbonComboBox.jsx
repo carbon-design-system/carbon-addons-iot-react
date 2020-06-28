@@ -97,6 +97,8 @@ const { prefix } = settings;
  * @param {Key} key
  * @returns {boolean}
  */
+
+/* istanbul ignore next */
 export function match(eventOrCode, { key, which, keyCode } = {}) {
   if (typeof eventOrCode === 'string') {
     return eventOrCode === key;
@@ -145,7 +147,8 @@ const getInputValue = (props, state) => {
 
   return state.inputValue || '';
 };
-
+// Since we always provide a func this will never be hit
+/* istanbul ignore next */
 const defaultFindHighlightedIndex = ({ items, itemToString }, inputValue) => {
   if (!inputValue) {
     return -1;
