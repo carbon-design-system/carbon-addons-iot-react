@@ -31,7 +31,7 @@ const defaultProps = {
   inline: false,
   wrapperClassName: null,
   closeButtonText: 'Close',
-  editOptionText: null,
+  editOptionText: '+ Add',
   hasMultiValue: false,
   items: [],
 };
