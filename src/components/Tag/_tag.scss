@@ -7,6 +7,6 @@ html[dir='rtl'] {
   }
 
   .#{$prefix}--tag__close-icon {
-    margin: 0 0.25rem 0 0;
+    margin: 0 $spacing-02 0 0;
   }
 }
