@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
@@ -170,7 +170,7 @@ const ComboBox = ({
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={classNames(
+      className={classnames(
         `${iotPrefix}--combobox`,
         { [wrapperClassName]: wrapperClassName },
         { [`${iotPrefix}--combobox-add`]: inputValue }
@@ -191,7 +191,7 @@ const ComboBox = ({
         editOptionText={editOptionText}
         onChange={handleOnChange}
         onInputChange={handleInputChange}
-        className={classNames(comboProps.className, `${iotPrefix}--combobox-input`)}
+        className={classnames(comboProps.className, `${iotPrefix}--combobox-input`)}
         disabled={comboProps.disabled || (loading !== undefined && loading !== false)}
       />
       <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
