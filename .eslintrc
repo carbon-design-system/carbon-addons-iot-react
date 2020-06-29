@@ -92,7 +92,12 @@
   // Testcases have less eslint rules applied to them
   "overrides": [
     {
-      "files": ["**/*-fixture.{js,jsx}", "**/*.test.{js,jsx}", "**/*.story.{js,jsx}"],
+      "files": [
+        "**/*-fixture.{js,jsx}",
+        "**/*.test.{js,jsx}",
+        "**/*.test.a11y.{js,jsx}",
+        "**/*.story.{js,jsx}"
+      ],
       "rules": {
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "no-underscore-dangle": 0,
