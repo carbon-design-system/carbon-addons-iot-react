@@ -63,9 +63,6 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
   }
-  &&&:hover > svg {
-    fill: ${COLORS.blue};
-  }
 `;
 
 const propTypes = {
@@ -218,11 +215,9 @@ class RowActionsCell extends React.Component {
                       key={`${tableId}-${id}-row-actions-button-${actionId}`}
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
-                      /** This can be changed to hasIconOnly once https://github.com/IBM/carbon-addons-iot-react/issues/1346
-                      is fixed */
-                      className={classnames({
-                        [`${iotPrefix}--row-actions-cell-btn--icononly`]: !labelText,
-                      })}
+                      hasIconOnly={!labelText}
+                      tooltipPosition="left"
+                      size="small"
                       onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     >
                       {labelText}
