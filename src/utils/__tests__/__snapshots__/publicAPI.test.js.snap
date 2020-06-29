@@ -13656,7 +13656,7 @@ Map {
       "closeButtonText": "Close",
       "direction": "bottom",
       "disabled": false,
-      "editOptionText": null,
+      "editOptionText": "+ Add",
       "hasMultiValue": false,
       "inline": false,
       "itemToElement": null,
