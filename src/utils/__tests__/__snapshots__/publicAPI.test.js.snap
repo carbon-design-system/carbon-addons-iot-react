@@ -3568,6 +3568,7 @@ Map {
       "extraContent": undefined,
       "i18n": Object {
         "editIconDescription": "Edit page title",
+        "tooltipIconDescription": "More information",
       },
       "isLoading": false,
       "onEdit": null,
