@@ -1,7 +1,7 @@
 @import '../../../globals/vars';
 
 .#{$iot-prefix}--save-view-modal__body-text {
-  margin-bottom: 1.5rem;
+  margin-bottom: $spacing-06;
 }
 
 .#{$iot-prefix}--save-view-modal__view-description {
