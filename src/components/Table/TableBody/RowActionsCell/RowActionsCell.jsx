@@ -13,7 +13,6 @@ import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
-import { COLORS } from '../../../../styles/styles';
 import icons from '../../../../utils/bundledIcons';
 
 import RowActionsError from './RowActionsError';
@@ -217,6 +216,7 @@ class RowActionsCell extends React.Component {
                       kind="ghost"
                       hasIconOnly={!labelText}
                       tooltipPosition="left"
+                      tooltipAlignment="end"
                       size="small"
                       onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     >

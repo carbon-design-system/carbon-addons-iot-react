@@ -87,7 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left"
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
@@ -237,7 +237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left"
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
@@ -459,7 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left"
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
@@ -606,7 +606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   className="iot--row-actions-container__background"
                 >
                   <button
-                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left"
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
                     data-testid="tableId-rowId-row-actions-button-add"
                     disabled={false}
                     onClick={[Function]}
