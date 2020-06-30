@@ -2,6 +2,7 @@
 @import '~carbon-components/scss/globals/scss/layout';
 @import 'column-resize';
 @import 'ColumnHeaderRow/column-header-row';
+@import 'FilterHeaderRow/filter-header-row';
 
 .#{$prefix}--data-table {
   th {
