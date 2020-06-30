@@ -1754,7 +1754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       <tr>
                         <th
                           aria-sort="none"
-                          className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
                           scope="col"
                           style={
                             Object {
@@ -1764,10 +1764,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <button
                             align="start"
-                            className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz bx--table-sort"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="city"
                             id="column-city"
                             onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": undefined,
+                              }
+                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -1813,7 +1818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         </th>
                         <th
                           aria-sort="none"
-                          className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
                           scope="col"
                           style={
                             Object {
@@ -1823,10 +1828,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <button
                             align="start"
-                            className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz bx--table-sort"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="Particles"
                             id="column-Particles"
                             onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": undefined,
+                              }
+                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -1872,7 +1882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         </th>
                         <th
                           aria-sort="none"
-                          className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
                           scope="col"
                           style={
                             Object {
@@ -1882,10 +1892,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <button
                             align="start"
-                            className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz bx--table-sort"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="Temperature"
                             id="column-Temperature"
                             onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": undefined,
+                              }
+                            }
                           >
                             <span
                               className="bx--table-header-label"
@@ -1931,7 +1946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         </th>
                         <th
                           aria-sort="none"
-                          className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
                           scope="col"
                           style={
                             Object {
@@ -1941,10 +1956,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <button
                             align="start"
-                            className="table-header-label-start table-header-sortable TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz bx--table-sort"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
                             data-column="Emissions"
                             id="column-Emissions"
                             onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": undefined,
+                              }
+                            }
                           >
                             <span
                               className="bx--table-header-label"

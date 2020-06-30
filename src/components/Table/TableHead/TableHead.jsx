@@ -6,7 +6,6 @@ import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
-import styled from 'styled-components';
 import classnames from 'classnames';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
@@ -114,30 +113,6 @@ const defaultProps = {
   },
   hasFastFilter: true,
 };
-
-const StyledCustomTableHeader = styled(TableHeader)`
-  &&& {
-    ${props => {
-      const { width } = props;
-      return width !== undefined
-        ? `
-       .bx--table-header-label {
-          min-width: ${width};
-          max-width: ${width};
-          white-space: nowrap;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          text-overflow: ellipsis;
-        }
-      `
-        : '';
-    }}
-
-    vertical-align: middle;
-
-    &
-  }
-`;
 
 const generateOrderedColumnRefs = ordering =>
   ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
@@ -318,7 +293,7 @@ const TableHead = ({
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
-            <StyledCustomTableHeader
+            <TableHeader
               width={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
@@ -331,6 +306,9 @@ const TableHead = ({
                   currentColumnWidths[matchingColumnMeta.id] &&
                   currentColumnWidths[matchingColumnMeta.id].width,
               }}
+              style={{
+                '--table-header-width': initialColumnWidths[matchingColumnMeta.id],
+              }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -339,10 +317,14 @@ const TableHead = ({
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               sortDirection={hasSort ? sort.direction : 'NONE'}
               align={align}
-              className={classnames(`table-header-label-${align}`, {
-                'table-header-sortable': matchingColumnMeta.isSortable,
-                [`${iotPrefix}--table-header-resize`]: hasResize,
-              })}
+              className={classnames(
+                `table-header-label-${align}`,
+                `${iotPrefix}--table-head--table-header`,
+                {
+                  'table-header-sortable': matchingColumnMeta.isSortable,
+                  [`${iotPrefix}--table-header-resize`]: hasResize,
+                }
+              )}
             >
               <TableCellRenderer
                 wrapText={wrapCellText}
@@ -360,7 +342,7 @@ const TableHead = ({
                   ordering={ordering}
                 />
               ) : null}
-            </StyledCustomTableHeader>
+            </TableHeader>
           ) : null;
         })}
         {options.hasRowActions ? (
