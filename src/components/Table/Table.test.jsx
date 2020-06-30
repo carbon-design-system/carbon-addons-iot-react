@@ -1,8 +1,8 @@
 import { mount } from 'enzyme';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import merge from 'lodash/merge';
-import { Add20 } from '@carbon/icons-react';
+import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -85,6 +85,22 @@ const tableData = Array(20)
       select: selectData[idx % 3].id,
       number: idx * idx,
     },
+    rowActions: [
+      {
+        id: 'drilldown',
+        renderIcon: ArrowRight16,
+        iconDescription: 'Drill in',
+        labelText: 'Drill in',
+        isOverflow: true,
+      },
+      {
+        id: 'Add',
+        renderIcon: Add16,
+        iconDescription: 'Add',
+        labelText: 'Add',
+        isOverflow: true,
+      },
+    ],
   }));
 
 const largeTableData = Array(100)
@@ -127,6 +143,7 @@ describe('Table', () => {
   const options = {
     hasRowExpansion: true,
     hasRowCountInHeader: true,
+    hasRowActions: true,
   };
   const options2 = {
     hasRowExpansion: true,
@@ -497,6 +514,24 @@ describe('Table', () => {
     expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
     expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
     expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('auto');
+  });
+
+  it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
+    document.documentElement.setAttribute('dir', 'ltr');
+
+    const { getByTestId, unmount, rerender } = render(
+      <Table columns={tableColumns} data={[tableData[0]]} options={options} />
+    );
+    await fireEvent.click(getByTestId('Table-row-0-row-actions-cell-overflow'));
+    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
+
+    document.documentElement.setAttribute('dir', 'rtl');
+
+    rerender(<Table columns={tableColumns} data={[tableData[1]]} options={options} />);
+    await fireEvent.click(getByTestId('Table-row-1-row-actions-cell-overflow'));
+    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
+
+    unmount();
   });
 
   it('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {

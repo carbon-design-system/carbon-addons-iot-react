@@ -173,7 +173,6 @@ class RowActionsCell extends React.Component {
       langDir,
     } = this.props;
     const { isOpen } = this.state;
-    console.log({ direction: langDir });
     const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
     const hasOverflow = overflowActions.length > 0;
     const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
