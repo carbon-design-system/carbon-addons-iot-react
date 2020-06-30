@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import React from 'react';
 import merge from 'lodash/merge';
 import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';

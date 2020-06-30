@@ -102,7 +102,7 @@ const propTypes = {
   showSingleRowEditButtons: PropTypes.bool,
   singleRowEditButtons: PropTypes.element,
   /**
-   * direction of document
+   * Direction of document. Passed in at Table
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
 };
@@ -119,6 +119,7 @@ const defaultProps = {
   isDelete: false,
   showSingleRowEditButtons: false,
   singleRowEditButtons: null,
+  langDir: 'ltr',
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
