@@ -1,6 +1,7 @@
 @import '../../../globals/vars';
 @import '~carbon-components/scss/globals/scss/layout';
 @import 'column-resize';
+@import 'ColumnHeaderRow/column-header-row';
 
 .#{$prefix}--data-table {
   th {
