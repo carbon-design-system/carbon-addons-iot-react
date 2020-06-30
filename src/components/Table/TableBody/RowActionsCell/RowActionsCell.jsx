@@ -101,6 +101,10 @@ const propTypes = {
   /** `true` hides all the normal actions/statuses and shows the singleRowEditButtons */
   showSingleRowEditButtons: PropTypes.bool,
   singleRowEditButtons: PropTypes.element,
+  /**
+   * direction of document
+   */
+  langDir: PropTypes.oneOf(['ltr', 'rtl']),
 };
 
 const defaultProps = {
@@ -126,21 +130,14 @@ const onClick = (e, id, action, onApplyRowAction) => {
 class RowActionsCell extends React.Component {
   state = {
     isOpen: false,
-    ltr: true,
   };
 
-  componentDidMount() {
-    if (document.dir === 'rtl') {
-      this.setState(state => ({ ltr: !state.ltr }));
-    }
-  }
-
-  componentDidUpdate(prevProp, prevState) {
-    const isLtr = document.dir === 'ltr';
-    if (prevState.ltr !== isLtr) {
-      this.setState(state => ({ ltr: !state.ltr }));
-    }
-  }
+  // componentDidUpdate(prevProp, prevState) {
+  //   const isLtr = document.dir === 'ltr';
+  //   if (prevState.ltr !== isLtr) {
+  //     this.setState(state => ({ ltr: !state.ltr }));
+  //   }
+  // }
 
   handleOpen = () => {
     const { isOpen } = this.state;
@@ -173,8 +170,10 @@ class RowActionsCell extends React.Component {
       inProgressText,
       showSingleRowEditButtons,
       singleRowEditButtons,
+      langDir,
     } = this.props;
-    const { isOpen, ltr } = this.state;
+    const { isOpen } = this.state;
+    console.log({ direction: langDir });
     const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
     const hasOverflow = overflowActions.length > 0;
     const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
@@ -228,7 +227,7 @@ class RowActionsCell extends React.Component {
                   <StyledOverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                    flipped={ltr}
+                    flipped={langDir === 'ltr'}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
