@@ -158,19 +158,19 @@ const FlyoutMenu = ({
                   topOffset = caretHeight;
                   break;
                 case FlyoutMenuDirection.LeftStart:
-                  topOffset = tooltipHeight / 2 + caretHeight;
+                  topOffset = tooltipHeight / 2 + caretHeight - 1;
                   rtlOffset = 0;
                   break;
                 case FlyoutMenuDirection.LeftEnd:
-                  topOffset = -tooltipHeight / 2 + caretHeight + caretWidth;
+                  topOffset = -tooltipHeight / 2 + caretHeight + caretWidth - 1;
                   rtlOffset = 0;
                   break;
                 case FlyoutMenuDirection.RightStart:
-                  topOffset = tooltipHeight / 2;
+                  topOffset = tooltipHeight / 2 + 1;
                   rtlOffset = 0;
                   break;
                 case FlyoutMenuDirection.RightEnd:
-                  topOffset = caretWidth - tooltipHeight / 2;
+                  topOffset = caretWidth - tooltipHeight / 2 + 1;
                   rtlOffset = 0;
                   break;
                 default:
@@ -202,14 +202,12 @@ const FlyoutMenu = ({
               )}
             </div>
             <div
-              className={light ? `${iotPrefix}-flyout-menu__light` : ''}
+              className={`${iotPrefix}-flyout-menu__shadow-block${
+                light ? ` ${iotPrefix}-flyout-menu__light` : ''
+              } ${direction}`}
               style={{
                 width: buttonRef.current ? buttonRef.current.getBoundingClientRect().width : 0,
-                top: '-0.1875rem',
-                left: 0,
-                height: '0.1875rem',
-                position: 'absolute',
-                display: 'block',
+                height: buttonRef.current ? buttonRef.current.getBoundingClientRect().height : 0,
               }}
             />
           </Tooltip>
@@ -280,12 +278,12 @@ const propTypes = {
   /**
    * On Cancel button callback
    */
-  onCancel: PropTypes.func.isRequired,
+  onCancel: PropTypes.func,
 
   /**
    * On Apply button callback
    */
-  onApply: PropTypes.func.isRequired,
+  onApply: PropTypes.func,
 
   /** Set of internationalized button names */
   i18n: PropTypes.shape({
@@ -325,6 +323,8 @@ const defaultProps = {
     cancelButtonText: 'Cancel',
     applyButtonText: 'Apply',
   },
+  onCancel: null,
+  onApply: null,
   disabled: false,
   light: true,
 };

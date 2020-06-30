@@ -1,6 +1,8 @@
 @import '../../globals/vars';
 @import '~carbon-components/scss/globals/scss/layout';
 
+$shadow-block-size: 0.1875rem;
+
 .#{$iot-prefix}-flyout-menu {
   display: flex;
 
@@ -33,6 +35,60 @@
     }
   }
 
+  &__shadow-block {
+    display: block;
+    position: absolute;
+    background: $ui-02;
+
+    &.bottom-start {
+      height: $shadow-block-size !important;
+      top: -$shadow-block-size;
+      left: 0;
+    }
+
+    &.bottom-end {
+      height: $shadow-block-size !important;
+      top: -$shadow-block-size;
+      right: 0;
+    }
+
+    &.top-start {
+      height: 0.375rem !important;
+      bottom: -0.375rem;
+      left: 0;
+    }
+
+    &.top-end {
+      height: 0.375rem !important;
+      bottom: -0.375rem;
+      right: 0;
+    }
+
+    &.left-start {
+      width: $shadow-block-size !important;
+      right: -$shadow-block-size;
+      top: 0;
+    }
+
+    &.left-end {
+      width: $shadow-block-size !important;
+      right: -$shadow-block-size;
+      bottom: 0;
+    }
+
+    &.right-start {
+      width: $shadow-block-size !important;
+      left: -$shadow-block-size;
+      top: 0;
+    }
+
+    &.right-end {
+      width: $shadow-block-size !important;
+      left: -$shadow-block-size;
+      bottom: 0;
+    }
+  }
+
   &--tooltip-anchor {
     position: relative;
     height: 0px;
@@ -44,7 +100,7 @@
   }
 
   &__light {
-    background: $ui-01;
+    background: $ui-01 !important;
   }
 
   &__bottom-container {
@@ -77,6 +133,7 @@
 
 .#{$iot-prefix}-flyout-menu__trigger-button {
   color: $icon-01;
+  background: $ui-02;
 
   > svg {
     margin-left: 0 !important;
