@@ -48,7 +48,38 @@
     "extends": "stylelint-config-recommended-scss",
     "plugins": [
       "stylelint-scss"
-    ]
+    ],
+    "rules": {
+      "declaration-property-unit-blacklist": [
+        {
+          "font-size": [
+            "em",
+            "px",
+            "pt"
+          ],
+          "margin": [
+            "px",
+            "rem"
+          ]
+        },
+        {
+          "severity": "error",
+          "message": "Please refer to the Carbon guidelines for the appropriate tokens to use: https://www.carbondesignsystem.com/"
+        }
+      ],
+      "declaration-property-value-blacklist": [
+        {
+          "color": [
+            "/^#/",
+            "/^rgb/"
+          ]
+        },
+        {
+          "severity": "error",
+          "message": "Please refer to the Carbon guidelines for the appropriate tokens to use: https://www.carbondesignsystem.com/"
+        }
+      ]
+    }
   },
   "husky": {
     "hooks": {
