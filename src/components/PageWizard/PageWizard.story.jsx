@@ -424,12 +424,13 @@ export const StepValidationWizardIot = ({ ...props }) => {
       onBack={() => {}}
       setStep={() => {}}
       error={error}
-      clickable={true}
+      clickable
     >
       <PageWizardStep
         id="step1"
         key="step1"
-        label="Step with validation"
+        label="First Step"
+        secondaryLabel="With validation"
         onValidate={() => {
           if (firstName.length > 0 && lastName.length > 0) {
             setError(null);
@@ -473,7 +474,199 @@ export const StepValidationWizardIot = ({ ...props }) => {
           </Form>
         </PageWizardStepContent>
       </PageWizardStep>
-      {iotContent[1]}
+      <PageWizardStep
+        id="step2"
+        key="step2"
+        label="Second Step"
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          You can add content lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+          odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A graph could go here</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+        <PageWizardStepExtraContent>
+          <h4>What are time grains?</h4>
+          <p>
+            Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+            odio, rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies
+            justo sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur
+            tincidunt, feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex
+            dictum ante, at posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices
+            libero, eu malesuada quam.
+          </p>
+          <h4>Some more help text?</h4>
+          <p>
+            Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+            odio, rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies
+            justo sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur
+            tincidunt, feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex
+            dictum ante, at posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices
+            libero, eu malesuada quam.
+          </p>
+        </PageWizardStepExtraContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step2-substep1"
+        key="step2-substep1"
+        label="Sub Step 1"
+        subStep
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 2: Sub Step 1</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step2-substep2"
+        key="step2-substep2"
+        label="Sub Step 2"
+        secondaryLabel="Optional label"
+        subStep
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 2: Sub Step 2</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step2-substep3"
+        key="step2-substep3"
+        label="Sub Step 3"
+        subStep
+        invalid
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 2: Sub Step 3</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step2-substep4"
+        key="step2-substep4"
+        label="Sub Step 4"
+        subStep
+        disabled
+        invalid
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 2: Sub Step 4</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step3"
+        key="step3"
+        label="Third Step"
+        secondaryLabel="Optional label"
+        disabled
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step4"
+        key="step4"
+        label="Fourth Step"
+        invalid
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 4: Define your dashboard</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      <PageWizardStep
+        id="step5"
+        key="step5"
+        label="Final Step"
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Step 5: Final Step</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          eros odio, rhoncus et sapien quis, vestibulum bibendum est.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <h1>A dashboard could go here.</h1>
+          <h3>Some other form items could go here</h3>
+          <h4>And other things here</h4>
+        </PageWizardStepContent>
+      </PageWizardStep>
     </StatefulPageWizardIot>
   );
 };

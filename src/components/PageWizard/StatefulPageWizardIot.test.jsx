@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import StatefulPageWizard from './StatefulPageWizardIot';
-import { iotContent as content } from './PageWizard.story';
+import { iotContent as content, StepValidationWizardIot } from './PageWizard.story';
 
 describe('StatefulPageWizard', () => {
   it('button events during first step (no validation)', () => {
@@ -92,6 +92,7 @@ describe('StatefulPageWizard', () => {
 
   it('step indicator to go to a specific step', () => {
     const mocks = {
+      clickable: true,
       setStep: jest.fn(),
     };
 
@@ -101,7 +102,6 @@ describe('StatefulPageWizard', () => {
       </StatefulPageWizard>
     );
 
-    console.log(getByText);
     // go back to step 1
     fireEvent.click(getByText('First Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
@@ -109,6 +109,7 @@ describe('StatefulPageWizard', () => {
 
   it('without setting currentStepId', () => {
     const mocks = {
+      clickable: true,
       setStep: jest.fn(),
     };
 
@@ -132,5 +133,20 @@ describe('StatefulPageWizard', () => {
     fireEvent.click(renderedElement.getByText(i18n.back));
     fireEvent.click(renderedElement.getByText(i18n.next));
     expect(renderedElement.container.innerHTML).toBeTruthy();
+  });
+
+  it('clicking on step indicator should validate before going to step', () => {
+    const { container, getByText, queryByText } = render(<StepValidationWizardIot />);
+
+    // check that the next step won't happen if inputs aren't filled
+    fireEvent.click(getByText('Second Step'));
+    expect(getByText('First name and Last name cannot be empty')).toBeTruthy();
+
+    // fill in inputs, then try to go to step 2
+    const inputs = container.querySelectorAll('input');
+    fireEvent.change(inputs[0], { target: { value: 'firstname' } });
+    fireEvent.change(inputs[1], { target: { value: 'lastname' } });
+    fireEvent.click(getByText('Second Step'));
+    expect(queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });
