@@ -1,0 +1,40 @@
+@import '../../../globals/vars';
+@import '../../../styles';
+
+.#{$iot-prefix}--table-detail-wizard--wizard-wrapper {
+  background-color: $ui-background;
+  display: flex;
+  flex-flow: column;
+  align-items: left;
+  border: 1px solid #a2a2a28c;
+
+  .bx--inline-notification {
+    max-width: none;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+
+.#{$iot-prefix}--table-detail-wizard--wizard-container {
+  display: flex;
+}
+
+.#{$iot-prefix}--table-detail-wizard--inline-notification {
+  width: 100%;
+}
+
+.#{$iot-prefix}--table-detail-wizard--footer {
+  .bx--modal-footer {
+    justify-content: flex-end;
+
+    & > div {
+      width: 100%;
+    }
+  }
+}
+
+.#{$iot-prefix}--table-detail-wizard--content-container {
+  padding-top: 30px;
+  padding-right: 50px;
+  padding-left: 40px;
+}

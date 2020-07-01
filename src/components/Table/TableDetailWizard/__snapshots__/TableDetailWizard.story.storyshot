@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="TableDetailWizard__StyledWizardWrapper-sc-15frmjo-0 fotMIZ"
+      className="undefined iot--table-detail-wizard--wizard-wrapper"
     >
       <div
         className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
@@ -50,7 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
+        className="iot--table-detail-wizard--wizard-container"
       >
         <div
           className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="iot--table-detail-wizard--content-container"
         >
           <div>
             <div
@@ -249,7 +249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledFooter-sc-15frmjo-3 dZaQHZ"
+        className="undefined iot--table-detail-wizard--footer"
       >
         <div
           className="bx--modal-footer"
@@ -319,7 +319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="TableDetailWizard__StyledWizardWrapper-sc-15frmjo-0 fotMIZ"
+      className="undefined iot--table-detail-wizard--wizard-wrapper"
     >
       <div
         className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
@@ -356,7 +356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
+        className="iot--table-detail-wizard--wizard-container"
       >
         <div
           className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
@@ -540,7 +540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="iot--table-detail-wizard--content-container"
         >
           <div>
             <div
@@ -559,7 +559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledFooter-sc-15frmjo-3 dZaQHZ"
+        className="undefined iot--table-detail-wizard--footer"
       >
         <div
           className="bx--modal-footer"
@@ -629,7 +629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="TableDetailWizard__StyledWizardWrapper-sc-15frmjo-0 fotMIZ"
+      className="undefined iot--table-detail-wizard--wizard-wrapper"
     >
       <div
         className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
@@ -666,7 +666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
+        className="iot--table-detail-wizard--wizard-container"
       >
         <div
           className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
@@ -847,7 +847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="iot--table-detail-wizard--content-container"
         >
           <div>
             <div
@@ -865,7 +865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledMessageBox-sc-15frmjo-2 bHjJtp bx--inline-notification bx--inline-notification--error"
+        className="iot--table-detail-wizard--inline-notification bx--inline-notification bx--inline-notification--error"
         kind="error"
         role="alert"
       >
@@ -934,7 +934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </button>
       </div>
       <div
-        className="TableDetailWizard__StyledFooter-sc-15frmjo-3 dZaQHZ"
+        className="undefined iot--table-detail-wizard--footer"
       >
         <div
           className="bx--modal-footer"

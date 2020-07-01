@@ -1,54 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
 
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
-import { COLORS } from '../../../styles/styles';
+import { settings } from '../../../constants/Settings';
 
 import TableDetailWizardHeader from './TableDetailWizardHeader/TableDetailWizardHeader';
 import DetailWizardSidebar from './TableDetailWizardSidebar/TableDetailWizardSidebar';
 
-const StyledWizardWrapper = styled.div`
-  background-color: ${COLORS.gray10};
-  display: flex;
-  flex-flow: column;
-  align-items: left;
-  border: 1px solid #a2a2a28c;
-
-  .bx--inline-notification {
-    max-width: none;
-    width: calc(100% - 2rem);
-    margin: 1rem;
-  }
-`;
-
-const StyledWizardContainer = styled.div`
-  display: flex;
-`;
-
-const StyledMessageBox = styled(InlineNotification)`
-   {
-    width: 100%;
-  }
-`;
-
-const StyledFooter = styled.div`
-  .bx--modal-footer {
-    justify-content: flex-end;
-
-    & > div {
-      width: 100%;
-    }
-  }
-`;
-
-const StyledContentContainer = styled.div`
-  padding-top: 30px;
-  padding-right: 50px;
-  padding-left: 40px;
-`;
+const { iotPrefix } = settings;
 
 export const propTypes = {
   /** Title in the header */
@@ -158,9 +119,9 @@ const TableDetailWizard = ({
   };
 
   return (
-    <StyledWizardWrapper className={className}>
+    <div className={`${className} ${iotPrefix}--table-detail-wizard--wizard-wrapper`}>
       <TableDetailWizardHeader title={title} onClose={onClose} />
-      <StyledWizardContainer>
+      <div className={`${iotPrefix}--table-detail-wizard--wizard-container`}>
         <DetailWizardSidebar
           currentItemId={currentItemId}
           // only go if current step passes validation
@@ -169,19 +130,20 @@ const TableDetailWizard = ({
           showLabels={showLabels}
           stepWidth={stepWidth}
         />
-        <StyledContentContainer>
+        <div className={`${iotPrefix}--table-detail-wizard--content-container`}>
           <WizardContent component={currentItemObj.component} />
-        </StyledContentContainer>
-      </StyledWizardContainer>
+        </div>
+      </div>
       {error ? (
-        <StyledMessageBox
+        <InlineNotification
           title={error}
           subtitle=""
           kind="error"
           onCloseButtonClick={handleClearError}
+          className={`${iotPrefix}--table-detail-wizard--inline-notification`}
         />
       ) : null}
-      <StyledFooter className={className}>
+      <div className={`${className} ${iotPrefix}--table-detail-wizard--footer`}>
         <div className="bx--modal-footer">
           <WizardFooter
             backLabel={backLabel}
@@ -199,8 +161,8 @@ const TableDetailWizard = ({
             sendingData={sendingData}
           />
         </div>
-      </StyledFooter>
-    </StyledWizardWrapper>
+      </div>
+    </div>
   );
 };
 
