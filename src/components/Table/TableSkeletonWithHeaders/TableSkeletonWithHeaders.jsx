@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, SkeletonText } from 'carbon-components-react';
-import styled from 'styled-components';
 
-import { COLORS } from '../../../styles/styles';
+import { settings } from '../../../constants/Settings';
 
 const { TableBody, TableCell, TableRow } = DataTable;
+const { iotPrefix } = settings;
 
 const propTypes = {
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -23,17 +23,6 @@ const defaultProps = {
   columns: [],
 };
 
-const StyledLoadingTableRow = styled(TableRow)`
-  &&& {
-    pointer-events: none;
-
-    &:hover td {
-      border: 1px solid ${COLORS.lightGrey};
-      background: inherit;
-    }
-  }
-`;
-
 /** This component is exactly like the DataTableSkeleton component from carbon, but it shows your headers while it loads */
 const TableSkeletonWithHeaders = ({
   hasRowSelection,
@@ -43,7 +32,7 @@ const TableSkeletonWithHeaders = ({
   rowCount,
 }) => (
   <TableBody>
-    <StyledLoadingTableRow>
+    <TableRow className={`${iotPrefix}--table-skeleton-with-headers--table-row`}>
       {hasRowSelection === 'multi' ? <TableCell /> : null}
       {hasRowExpansion ? <TableCell /> : null}
       {columns.map(column => (
@@ -52,16 +41,19 @@ const TableSkeletonWithHeaders = ({
         </TableCell>
       ))}
       {hasRowActions ? <TableCell /> : null}
-    </StyledLoadingTableRow>
+    </TableRow>
     {[...Array(rowCount > 0 ? rowCount - 1 : 0)].map((row, index) => (
-      <StyledLoadingTableRow key={`skeletonRow-${index}`}>
+      <TableRow
+        key={`skeletonRow-${index}`}
+        className={`${iotPrefix}--table-skeleton-with-headers--table-row`}
+      >
         {hasRowSelection === 'multi' ? <TableCell /> : null}
         {hasRowExpansion ? <TableCell /> : null}
         {columns.map(column => (
           <TableCell key={`emptycell-${column.id}`} />
         ))}
         {hasRowActions ? <TableCell /> : null}
-      </StyledLoadingTableRow>
+      </TableRow>
     ))}
   </TableBody>
 );
