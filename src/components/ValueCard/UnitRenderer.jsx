@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -42,7 +42,7 @@ const UnitRenderer = ({
   const unitElement = (
     <span
       style={{ '--default-font-size': layout === CARD_LAYOUTS.HORIZONTAL ? '1.25rem' : '1.5rem' }}
-      className={classNames(bemBase, {
+      className={classnames(bemBase, {
         [`${bemBase}--wrappable`]: allowedToWrap,
         [`${bemBase}--not-wrappable`]: notAllowedToWrap,
         [`${bemBase}--wrappable-compact`]: wrapCompact,

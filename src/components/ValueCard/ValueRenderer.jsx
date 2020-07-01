@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';
 import {
@@ -131,7 +131,7 @@ const ValueRenderer = ({
       color={color}
       isVertical={isVertical}
       allowedToWrap={allowedToWrap}
-      className={classNames({
+      className={classnames({
         [`${iotPrefix}--value-card__attribute-value--wrappable`]: allowedToWrap,
         [`${iotPrefix}--value-card__attribute-value--wrappable-compact`]: wrapCompact,
       })}

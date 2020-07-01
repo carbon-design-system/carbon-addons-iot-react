@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import { Information20, Edit20 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
 
@@ -54,7 +54,7 @@ const defaultProps = {
   collapsed: false,
   editable: false,
   onEdit: null,
-  i18n: { editIconDescription: 'Edit page title' },
+  i18n: { editIconDescription: 'Edit page title', tooltipIconDescription: 'More information' },
   isLoading: false,
   tabs: undefined,
   content: undefined,
@@ -70,7 +70,7 @@ const PageTitleBar = ({
   collapsed,
   editable,
   isLoading,
-  i18n: { editIconDescription },
+  i18n: { editIconDescription, tooltipIconDescription },
   onEdit,
   tabs,
   content,
@@ -78,7 +78,7 @@ const PageTitleBar = ({
   //
   const titleBarContent = content || tabs;
   return (
-    <div className={classNames(className, 'page-title-bar')}>
+    <div className={classnames(className, 'page-title-bar')}>
       {isLoading ? (
         <SkeletonText className="page-title-bar-loading" heading width="30%" />
       ) : (
@@ -104,6 +104,7 @@ const PageTitleBar = ({
                       triggerId="tooltip"
                       tooltipId="tooltip"
                       renderIcon={Information20}
+                      iconDescription={tooltipIconDescription}
                     >
                       {typeof description === 'string' ? <p>{description}</p> : description}
                     </Tooltip>

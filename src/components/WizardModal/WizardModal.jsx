@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 
 import ComposedModal from '../ComposedModal/ComposedModal';
@@ -155,7 +155,7 @@ class WizardModal extends Component {
     return (
       <ComposedModal
         {...other}
-        className={classNames(`${iotPrefix}--wizard-modal`, className)}
+        className={classnames(`${iotPrefix}--wizard-modal`, className)}
         footer={this.renderFooter()}
       >
         <ProgressIndicator

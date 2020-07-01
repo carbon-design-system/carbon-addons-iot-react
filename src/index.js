@@ -12,6 +12,7 @@ export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export Table from './components/Table';
 export TableHead from './components/Table/TableHead/TableHead';
 export TableBody from './components/Table/TableBody/TableBody';
+export TableSaveViewModal from './components/Table/TableSaveViewModal/TableSaveViewModal';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';
@@ -50,6 +51,7 @@ export SideNav from './components/SideNav';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
+export DashboardHeader from './components/Dashboard/DashboardHeader';
 export DashboardGrid from './components/Dashboard/DashboardGrid';
 export Card from './components/Card/Card';
 export ValueCard from './components/ValueCard/ValueCard';

@@ -59,7 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           onAnimationEnd={[Function]}
         >
           <button
-            aria-controls="accordion-item-1"
+            aria-controls="accordion-item-3"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
           </button>
           <div
             className="bx--accordion__content"
-            id="accordion-item-1"
+            id="accordion-item-3"
           >
             <p>
               The following table shows a comparison of exports from carbon-components-react and this library. These are primarily used for snapshot purposes to track and ensure that as the exports change upstream in Carbon we continue to provide parity with their package.
@@ -2557,6 +2557,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    TableSaveViewModal
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     TableSkeletonWithHeaders
                   </div>
                 </div>
@@ -2870,6 +2882,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     Dashboard
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    DashboardHeader
                   </div>
                 </div>
                 <div

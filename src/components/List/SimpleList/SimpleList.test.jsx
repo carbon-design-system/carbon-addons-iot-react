@@ -166,4 +166,20 @@ describe('SimpleList', () => {
     expect(getByTitle('Item 4')).toBeTruthy();
     expect(getByTitle('Item 5')).toBeTruthy();
   });
+
+  it('SimpleList items should be unselectable', () => {
+    const { getAllByRole } = render(<SimpleList title="Simple list" items={getListItems(1)} />);
+
+    fireEvent.click(getAllByRole('button')[0]);
+    expect(getAllByRole('button')[0]).toBeInTheDocument();
+    expect(getAllByRole('button')[0]).toBeVisible();
+    expect(
+      getAllByRole('button')[0].className.includes(`${iotPrefix}--list-item__selected`)
+    ).toEqual(true);
+
+    fireEvent.click(getAllByRole('button')[0]);
+    expect(
+      getAllByRole('button')[0].className.includes(`${iotPrefix}--list-item__selected`)
+    ).toEqual(false);
+  });
 });
