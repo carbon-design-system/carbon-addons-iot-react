@@ -79,41 +79,22 @@ const StatefulPageWizard = ({
 
   // skip disabled steps when clicking next or prev
   const getAvailableStep = previous => {
-    let value;
-    if (previous) {
-      let idx = currentStepIndex - 1;
-      while (true) {
-        if (idx >= 0) {
-          if (steps[idx].disabled === true) {
-            if (idx !== 0) {
-              idx -= 1;
-            }
-          } else {
-            value = steps[idx];
-            break;
+    let idx = previous ? currentStepIndex - 1 : currentStepIndex + 1;
+    while (true) {
+      if (idx >= 0 && idx < steps.length) {
+        if (steps[idx].disabled === true) {
+          if (previous && idx !== 0) {
+            idx -= 1;
+          } else if (idx !== steps.length - 1) {
+            idx += 1;
           }
         } else {
-          break;
+          return steps[idx];
         }
-      }
-    } else {
-      let idx = currentStepIndex + 1;
-      while (true) {
-        if (idx < steps.length) {
-          if (steps[idx].disabled === true) {
-            if (idx !== steps.length - 1) {
-              idx += 1;
-            }
-          } else {
-            value = steps[idx];
-            break;
-          }
-        } else {
-          break;
-        }
+      } else {
+        return undefined;
       }
     }
-    return value;
   };
 
   const nextStep = getAvailableStep();

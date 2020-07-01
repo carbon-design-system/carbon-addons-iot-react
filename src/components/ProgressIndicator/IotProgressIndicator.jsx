@@ -81,9 +81,9 @@ export const IotProgressStep = ({
           </>
         );
         if (current) {
-          value = <CircleFilled24 children={number} />;
+          value = <CircleFilled24>{number}</CircleFilled24>;
         } else {
-          value = <RadioButton24 children={number} />;
+          value = <RadioButton24>{number}</RadioButton24>;
         }
       }
     } else if (completed) {
@@ -146,7 +146,7 @@ export const IotProgressStep = ({
       [`clickable`]: isClickable,
     });
 
-    //for testing purposes
+    // for testing purposes
     const dataTestIdLabel = label.replace(/\s/g, '-').toLowerCase();
     const type = mainStep ? 'main' : 'sub';
 
@@ -276,13 +276,11 @@ export const IotProgressIndicator = ({
   };
 
   const handleChange = (step, index) => {
-    if (setStep) {
-      setStep(index);
-    } else {
-      if (step && step !== currentStep) {
-        setCurrentStep(step);
+    if (step !== currentStep) {
+      if (setStep) {
+        setStep(index);
       } else {
-        setCurrentStep(currentItemId);
+        setCurrentStep(step);
       }
     }
   };
