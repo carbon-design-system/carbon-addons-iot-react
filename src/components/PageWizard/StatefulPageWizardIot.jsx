@@ -76,8 +76,55 @@ const StatefulPageWizard = ({
   const steps = React.Children.map(children, step => step.props);
   const [currentStepId, setCurrentStepId] = useState(currentStepIdProp || (steps && steps[0].id));
   const currentStepIndex = steps.findIndex(i => i.id === currentStepId);
-  const nextStep = currentStepIndex < steps.length - 1 ? steps[currentStepIndex + 1] : undefined;
-  const prevStep = currentStepIndex > 0 ? steps[currentStepIndex - 1] : undefined;
+
+  //A function to skip disabled steps when clicking next or prev
+  const getAvailableStep = previous => {
+    let value;
+    if (previous) {
+      let idx = currentStepIndex - 1;
+      while (true) {
+        if (idx >= 0) {
+          if (steps[idx].disabled === true) {
+            if (idx === 0) {
+              value = undefined;
+            } else {
+              idx--;
+            }
+          } else {
+            value = steps[idx];
+            break;
+          }
+        } else {
+          value = undefined;
+          break;
+        }
+      }
+    } else {
+      let idx = currentStepIndex + 1;
+      while (true) {
+        if (idx < steps.length) {
+          if (steps[idx].disabled === true) {
+            if (idx === steps.length - 1) {
+              value = undefined;
+            } else {
+              idx++;
+            }
+          } else {
+            value = steps[idx];
+            break;
+          }
+        } else {
+          value = undefined;
+          break;
+        }
+      }
+    }
+    return value;
+  };
+
+  const nextStep = getAvailableStep();
+  const prevStep = getAvailableStep(true);
+
   const handleNext = id => {
     setCurrentStepId(id);
     if (onNext) onNext(id);

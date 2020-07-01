@@ -119,16 +119,35 @@ const PageWizard = ({
     beforeFooterContent,
   });
 
-  const itemsArray = steps.map(({ id, label, secondaryLabel, description, disabled, invalid }) => {
-    return {
-      ...(id && { id }),
-      ...(label && { label }),
-      ...(secondaryLabel && { secondaryLabel }),
-      ...(description && { description }),
-      ...(disabled && { disabled }),
-      ...(invalid && { invalid }),
-    };
-  });
+  const newItemsArray = () => {
+    const array = [];
+    steps.forEach(({ id, label, secondaryLabel, description, subStep, disabled, invalid }) => {
+      if (!subStep) {
+        array.push({
+          ...(id && { id }),
+          ...(label && { label }),
+          ...(secondaryLabel && { secondaryLabel }),
+          ...(description && { description }),
+          ...(disabled && { disabled }),
+          ...(invalid && { invalid }),
+        });
+      } else {
+        const lastMainStep = array[array.length - 1];
+        if (!('children' in lastMainStep)) {
+          lastMainStep.children = [];
+        }
+        lastMainStep.children.push({
+          ...(id && { id }),
+          ...(label && { label }),
+          ...(secondaryLabel && { secondaryLabel }),
+          ...(description && { description }),
+          ...(disabled && { disabled }),
+          ...(invalid && { invalid }),
+        });
+      }
+    });
+    return array;
+  };
 
   return (
     <div
@@ -147,7 +166,7 @@ const PageWizard = ({
           }
         >
           <ProgressIndicator
-            items={itemsArray}
+            items={newItemsArray()}
             currentItemId={currentStepId}
             setStep={idx => setStep(steps[idx].id)}
             isVerticalMode={isProgressIndicatorVertical}

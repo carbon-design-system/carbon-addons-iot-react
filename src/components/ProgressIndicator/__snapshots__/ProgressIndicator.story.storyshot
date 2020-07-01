@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
   >
     <ul
       className="iot--progress-indicator-new"
-      data-testid="iot-progress-indicator-testid"
+      data-testid="iot-progress-indicator-new-testid"
       onChange={[Function]}
     >
       <li
@@ -23,7 +23,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-first-step"
+          data-testid="step-button-main-first-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -61,8 +61,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -75,20 +73,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="first-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -98,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-second-step"
+          data-testid="step-button-main-second-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -136,8 +120,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -150,20 +132,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="second-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -173,7 +141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-1"
+          data-testid="step-button-sub-sub-step-1"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -211,8 +179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -220,20 +186,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Sub Step 1
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-1-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -243,7 +195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-2"
+          data-testid="step-button-sub-sub-step-2"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -283,8 +235,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -297,20 +247,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-2-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -320,7 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-3"
+          data-testid="step-button-sub-sub-step-3"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -358,8 +294,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -367,20 +301,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Sub Step 3
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-3-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -390,7 +310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={true}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-4"
+          data-testid="step-button-sub-sub-step-4"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -428,8 +348,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -437,20 +355,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Sub Step 4
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-4-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -460,7 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={true}
           className="step-button main-step"
-          data-testid="step-button-third-step"
+          data-testid="step-button-main-third-step"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -504,8 +408,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -518,20 +420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="third-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -541,7 +429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-fourth-step"
+          data-testid="step-button-main-fourth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -579,8 +467,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -588,20 +474,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Fourth Step
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="fourth-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -611,7 +483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-fifth-step"
+          data-testid="step-button-main-fifth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -652,8 +524,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -661,20 +531,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Fifth Step
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="fifth-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -719,8 +575,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
     }
   >
     <ul
-      className="iot--progress-indicator-new vertical"
-      data-testid="iot-progress-indicator-testid"
+      className="iot--progress-indicator-new iot--progress-indicator-new--vertical"
+      data-testid="iot-progress-indicator-new-testid"
       onChange={[Function]}
     >
       <li
@@ -729,7 +585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-first-step"
+          data-testid="step-button-main-first-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -761,8 +617,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -775,20 +629,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="first-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -798,7 +638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-second-step"
+          data-testid="step-button-main-second-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -830,8 +670,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -844,20 +682,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="second-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -867,7 +691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-1"
+          data-testid="step-button-sub-sub-step-1"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -899,8 +723,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -908,20 +730,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Sub Step 1
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-1-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -931,7 +739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-2"
+          data-testid="step-button-sub-sub-step-2"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -965,8 +773,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -979,20 +785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-2-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -1002,7 +794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-3"
+          data-testid="step-button-sub-sub-step-3"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1034,8 +826,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -1043,20 +833,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Sub Step 3
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-3-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -1066,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={true}
           className="step-button sub-step"
-          data-testid="step-button-sub-step-4"
+          data-testid="step-button-sub-sub-step-4"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -1098,8 +874,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -1107,20 +881,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Sub Step 4
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="sub-step-4-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -1130,7 +890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={true}
           className="step-button main-step"
-          data-testid="step-button-third-step"
+          data-testid="step-button-main-third-step"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -1168,8 +928,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -1182,20 +940,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Optional label
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="third-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -1205,7 +949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-fourth-step"
+          data-testid="step-button-main-fourth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1237,8 +981,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -1246,20 +988,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Fourth Step
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="fourth-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>
@@ -1269,7 +997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         <button
           aria-disabled={false}
           className="step-button main-step"
-          data-testid="step-button-fifth-step"
+          data-testid="step-button-main-fifth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1304,8 +1032,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           </span>
           <div
             className="label-container"
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
           >
             <p
               className="label"
@@ -1313,20 +1039,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             >
               Fifth Step
             </p>
-            <div
-              aria-describedby={null}
-              aria-expanded={false}
-              className="bx--tooltip__label"
-              id="fifth-step-tooltip"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              role="button"
-              tabIndex={-1}
-            />
           </div>
         </button>
       </li>

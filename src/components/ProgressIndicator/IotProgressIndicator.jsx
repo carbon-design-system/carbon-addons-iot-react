@@ -12,7 +12,6 @@ import {
   CircleFilled16,
   CircleFilled24,
 } from '@carbon/icons-react';
-import { Tooltip } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -45,30 +44,6 @@ export const IotProgressStep = ({
   const subStep = level > 0;
   const isClickable = clickable && !disabled && !current;
 
-  const labelRef = React.useRef(null);
-  const secondaryLabelRef = React.useRef(null);
-  const [overflow, setOverflow] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  useEffect(
-    () => {
-      const e = labelRef.current;
-      const i = secondaryLabelRef.current;
-      const labelOverflow = e.offsetWidth < e.scrollWidth;
-      const secondaryLabelOverflow = i !== null && i.offsetWidth < i.scrollWidth;
-      setOverflow(labelOverflow || secondaryLabelOverflow);
-    },
-    [stepWidth]
-  );
-
-  const labelHover = hover => {
-    if (hover && overflow) {
-      setShowTooltip(true);
-    } else {
-      setShowTooltip(false);
-    }
-  };
-
   const handleClick = () => {
     onChange(id, index);
   };
@@ -86,10 +61,6 @@ export const IotProgressStep = ({
         : { width: `${stepWidth}rem`, minWidth: `${stepWidth}rem` };
     }
     return undefined;
-  };
-
-  const getTooltipLabel = () => {
-    return secondaryLabel ? `${label} - ${secondaryLabel}` : `${label}`;
   };
 
   const StepIcon = () => {
@@ -150,7 +121,7 @@ export const IotProgressStep = ({
     });
 
     return (
-      <p className={classes} value={description} ref={labelRef}>
+      <p className={classes} value={description}>
         {label}
       </p>
     );
@@ -163,9 +134,7 @@ export const IotProgressStep = ({
     });
 
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={classes} ref={secondaryLabelRef}>
-        {secondaryLabel}
-      </p>
+      <p className={classes}>{secondaryLabel}</p>
     ) : null;
   };
 
@@ -177,7 +146,9 @@ export const IotProgressStep = ({
       [`clickable`]: isClickable,
     });
 
-    const dataTestId = label.replace(/\s/g, '-').toLowerCase();
+    //for testing purposes
+    const dataTestIdLabel = label.replace(/\s/g, '-').toLowerCase();
+    const type = mainStep ? 'main' : 'sub';
 
     return (
       <>
@@ -189,26 +160,13 @@ export const IotProgressStep = ({
           style={getStepWidth()}
           onClick={isClickable ? handleClick : null}
           onKeyDown={isClickable ? handleKeyDown : null}
-          data-testid={`step-button-${dataTestId}`}
+          data-testid={`step-button-${type}-${dataTestIdLabel}`}
         >
           <StepLine />
           <StepIcon />
-          <div
-            className="label-container"
-            onMouseEnter={() => labelHover(true)}
-            onMouseLeave={() => labelHover(false)}
-          >
+          <div className="label-container">
             <StepLabel />
             <StepSecondaryLabel tabIndex="-1" />
-            <Tooltip
-              open={showTooltip}
-              triggerId={`${dataTestId}-tooltip`}
-              showIcon={false}
-              direction={vertical ? 'right' : 'bottom'}
-              tabIndex={-1}
-            >
-              {getTooltipLabel()}
-            </Tooltip>
           </div>
         </button>
       </>
@@ -332,11 +290,11 @@ export const IotProgressIndicator = ({
 
   const classes = classnames({
     [`${iotPrefix}--progress-indicator-new`]: true,
-    [`vertical`]: isVerticalMode,
+    [`${iotPrefix}--progress-indicator-new--vertical`]: isVerticalMode,
   });
 
   return (
-    <ul className={classes} data-testid="iot-progress-indicator-testid" onChange={handleChange}>
+    <ul className={classes} data-testid="iot-progress-indicator-new-testid" onChange={handleChange}>
       {hasItems() &&
         newItems.map(
           (

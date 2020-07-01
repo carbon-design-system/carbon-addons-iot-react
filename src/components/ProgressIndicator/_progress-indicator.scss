@@ -10,9 +10,10 @@ sans-serif;
   display: flex;
   overflow: hidden;
 
+  /*
   .#{$prefix}--tooltip__label {
     display: list-item !important;
-  }
+  }*/
 
   .label-container {
     position: absolute;
@@ -37,9 +38,7 @@ sans-serif;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-right: $spacing-02;
-
-    width: calc(max-width);
+    width: max-content;
 
     &-optional {
       @extend .label;
@@ -245,7 +244,7 @@ sans-serif;
     }
   }
 
-  &.vertical {
+  &.#{$iot-prefix}--progress-indicator-new--vertical {
     display: unset;
 
     .label-container {
