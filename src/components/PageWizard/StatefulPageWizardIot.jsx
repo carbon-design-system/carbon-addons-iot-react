@@ -77,17 +77,15 @@ const StatefulPageWizard = ({
   const [currentStepId, setCurrentStepId] = useState(currentStepIdProp || (steps && steps[0].id));
   const currentStepIndex = steps.findIndex(i => i.id === currentStepId);
 
-  //A function to skip disabled steps when clicking next or prev
+  //skip disabled steps when clicking next or prev
   const getAvailableStep = previous => {
-    let value;
+    let value = undefined;
     if (previous) {
       let idx = currentStepIndex - 1;
       while (true) {
         if (idx >= 0) {
           if (steps[idx].disabled === true) {
-            if (idx === 0) {
-              value = undefined;
-            } else {
+            if (idx !== 0) {
               idx--;
             }
           } else {
@@ -95,7 +93,6 @@ const StatefulPageWizard = ({
             break;
           }
         } else {
-          value = undefined;
           break;
         }
       }
@@ -104,9 +101,7 @@ const StatefulPageWizard = ({
       while (true) {
         if (idx < steps.length) {
           if (steps[idx].disabled === true) {
-            if (idx === steps.length - 1) {
-              value = undefined;
-            } else {
+            if (idx !== steps.length - 1) {
               idx++;
             }
           } else {
@@ -114,7 +109,6 @@ const StatefulPageWizard = ({
             break;
           }
         } else {
-          value = undefined;
           break;
         }
       }
@@ -129,9 +123,21 @@ const StatefulPageWizard = ({
     setCurrentStepId(id);
     if (onNext) onNext(id);
   };
+
   const handleBack = id => {
     setCurrentStepId(id);
     if (onBack) onBack(id);
+  };
+
+  const validateSteps = (start, end) => {
+    let valid = true;
+    for (let i = start; i < end; i += 1) {
+      valid = steps[i].onValidate() && valid;
+      if (valid === undefined) {
+        valid = true && valid;
+      }
+    }
+    return valid;
   };
 
   return (
@@ -141,8 +147,11 @@ const StatefulPageWizard = ({
       onNext={() => handleNext(nextStep.id)}
       currentStepId={currentStepId}
       setStep={id => {
-        setCurrentStepId(id);
-        setStep(id);
+        const idx = steps.findIndex(i => i.id === id);
+        if (idx <= currentStepIndex || validateSteps(currentStepIndex, idx)) {
+          setCurrentStepId(id);
+          setStep(id);
+        }
       }}
     >
       {children}

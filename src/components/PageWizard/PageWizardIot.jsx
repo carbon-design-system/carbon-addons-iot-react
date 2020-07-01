@@ -100,8 +100,10 @@ const PageWizard = ({
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
   const currentStepIdx = steps.findIndex(i => i.id === currentStepId);
+
   const hasPrev = currentStepIdx !== 0;
   const hasNext = currentStepIdx !== steps.length - 1;
+
   const currentStep = children.find((i, idx) => idx === currentStepIdx);
   const currentStepToRender = React.cloneElement(currentStep, {
     hasPrev,

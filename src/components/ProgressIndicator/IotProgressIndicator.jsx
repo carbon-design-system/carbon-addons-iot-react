@@ -276,11 +276,14 @@ export const IotProgressIndicator = ({
   };
 
   const handleChange = (step, index) => {
-    if (step && step !== currentStep) {
-      setCurrentStep(step);
-      if (setStep) setStep(index);
+    if (setStep) {
+      setStep(index);
     } else {
-      setCurrentStep(currentItemId);
+      if (step && step !== currentStep) {
+        setCurrentStep(step);
+      } else {
+        setCurrentStep(currentItemId);
+      }
     }
   };
 

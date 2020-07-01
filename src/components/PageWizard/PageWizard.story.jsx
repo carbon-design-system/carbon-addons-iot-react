@@ -409,6 +409,75 @@ export const StepValidationWizard = ({ ...props }) => {
   );
 };
 
+export const StepValidationWizardIot = ({ ...props }) => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [error, setError] = useState(null);
+
+  return (
+    <StatefulPageWizardIot
+      {...props}
+      onClearError={() => {}}
+      onClose={() => {}}
+      onSubmit={() => {}}
+      onNext={() => {}}
+      onBack={() => {}}
+      setStep={() => {}}
+      error={error}
+      clickable={true}
+    >
+      <PageWizardStep
+        id="step1"
+        key="step1"
+        label="Step with validation"
+        onValidate={() => {
+          if (firstName.length > 0 && lastName.length > 0) {
+            setError(null);
+            return true;
+          }
+          setError('First name and Last name cannot be empty');
+          return false;
+        }}
+        onClose={() => {}}
+        onSubmit={() => {}}
+        onNext={() => {}}
+        onBack={() => {}}
+      >
+        <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
+        <PageWizardStepDescription>
+          Make sure you do not try to go to the next step with an empty input! Bad things will
+          happen.
+        </PageWizardStepDescription>
+        <PageWizardStepContent>
+          <Form>
+            <FormGroup legendText="Name">
+              <FormItem>
+                <TextInput
+                  id="first-name"
+                  data-testid="first-name"
+                  labelText="First name"
+                  value={firstName}
+                  onChange={evt => setFirstName(evt.target.value)}
+                />
+              </FormItem>
+              <FormItem>
+                <TextInput
+                  id="last-name"
+                  data-testid="last-name"
+                  labelText="Last name"
+                  value={lastName}
+                  onChange={evt => setLastName(evt.target.value)}
+                />
+              </FormItem>
+            </FormGroup>
+          </Form>
+        </PageWizardStepContent>
+      </PageWizardStep>
+      {iotContent[1]}
+    </StatefulPageWizardIot>
+  );
+};
+
 storiesOf('Watson IoT/PageWizard', module)
   .add('stateful with IotProgressIndicator', () => (
     <div>
@@ -423,6 +492,20 @@ storiesOf('Watson IoT/PageWizard', module)
       >
         {iotContent}
       </StatefulPageWizardIot>
+    </div>
+  ))
+  .add('stateful with IotProgressIndicator & validation', () => (
+    <div>
+      <PageTitleBar
+        title="A cool PageWizard!"
+        description="The description from the PageTitleBar"
+        breadcrumb={[
+          <Link to="www.ibm.com">Home</Link>,
+          <Link to="www.ibm.com">Something</Link>,
+          <Link to="www.ibm.com">Something Else</Link>,
+        ]}
+        content={<StepValidationWizardIot />}
+      />
     </div>
   ))
   .add('With Horizontal IotProgressIndicator', () => (
