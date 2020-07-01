@@ -53,7 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="iot--table-detail-wizard--wizard-container"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="undefined iot--table-detail-wizard-sidebar--header"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -359,7 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="iot--table-detail-wizard--wizard-container"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="undefined iot--table-detail-wizard-sidebar--header"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
@@ -669,7 +669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         className="iot--table-detail-wizard--wizard-container"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="undefined iot--table-detail-wizard-sidebar--header"
         >
           <div
             className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
