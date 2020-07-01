@@ -1,5 +1,6 @@
 @import '../../../globals/vars';
 @import '../../../styles';
+@import 'TableDetailWizardHeader/table-detail-wizard-header';
 
 .#{$iot-prefix}--table-detail-wizard--wizard-wrapper {
   background-color: $ui-background;

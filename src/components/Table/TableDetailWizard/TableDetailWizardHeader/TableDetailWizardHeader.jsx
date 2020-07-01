@@ -1,42 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Button } from 'carbon-components-react';
 import { Close20 } from '@carbon/icons-react';
 
-const StyledDivWizardHeader = styled.div`
-  display: flex;
-  border-bottom: 1px solid #dadada8c;
-`;
+import { settings } from '../../../../constants/Settings';
 
-const StyledDivHeading = styled.h2`
-  padding-left: 80px;
-  font-size: 1.25rem;
-  line-height: 50px;
-  vertical-align: middle;
-`;
-
-const StyledButton = styled.div`
-  margin-left: auto;
-
-  .bx--btn__icon {
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-`;
+const { iotPrefix } = settings;
 
 const TableDetailWizardHeader = ({ title, onClose, className }) => (
-  <StyledDivWizardHeader className={className}>
-    <StyledDivHeading>{title}</StyledDivHeading>
-    <StyledButton>
+  <div className={`${className} ${iotPrefix}--table-detail-wizard-header--wrapper`}>
+    <h2 className={`${iotPrefix}--table-detail-wizard-header--heading`}>{title}</h2>
+    <div className={`${iotPrefix}--table-detail-wizard-header--button`}>
       <Button
         kind="ghost"
         renderIcon={() => <Close20 />}
         iconDescription={title}
         onClick={() => onClose()}
       />
-    </StyledButton>
-  </StyledDivWizardHeader>
+    </div>
+  </div>
 );
 
 TableDetailWizardHeader.propTypes = {

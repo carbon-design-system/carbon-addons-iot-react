@@ -16,15 +16,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       className="undefined iot--table-detail-wizard--wizard-wrapper"
     >
       <div
-        className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
+        className="undefined iot--table-detail-wizard-header--wrapper"
       >
         <h2
-          className="TableDetailWizardHeader__StyledDivHeading-sc-1pa3n63-1 eKyans"
+          className="iot--table-detail-wizard-header--heading"
         >
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="iot--table-detail-wizard-header--button"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -322,15 +322,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       className="undefined iot--table-detail-wizard--wizard-wrapper"
     >
       <div
-        className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
+        className="undefined iot--table-detail-wizard-header--wrapper"
       >
         <h2
-          className="TableDetailWizardHeader__StyledDivHeading-sc-1pa3n63-1 eKyans"
+          className="iot--table-detail-wizard-header--heading"
         >
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="iot--table-detail-wizard-header--button"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -632,15 +632,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
       className="undefined iot--table-detail-wizard--wizard-wrapper"
     >
       <div
-        className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
+        className="undefined iot--table-detail-wizard-header--wrapper"
       >
         <h2
-          className="TableDetailWizardHeader__StyledDivHeading-sc-1pa3n63-1 eKyans"
+          className="iot--table-detail-wizard-header--heading"
         >
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="iot--table-detail-wizard-header--button"
         >
           <button
             className="bx--btn bx--btn--ghost"
