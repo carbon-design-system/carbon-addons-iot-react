@@ -59,7 +59,7 @@
 .#{$prefix}--header__menu .#{$prefix}--header__menu-item[role='menuitem'] {
   display: flex;
   align-items: center;
-  color: #c6c6c6;
+  color: $active-ui;
   height: 100%;
   font-size: 0.875rem;
   font-weight: 400;
@@ -68,7 +68,8 @@
   text-decoration: none;
   user-select: none;
   border: 2px solid #0000;
-  transition: background-color 110ms, border-color 110ms, color 110ms;
+  transition: background-color $duration--fast-02, border-color $duration--fast-02,
+    color $duration--fast-02;
   justify-content: center;
   padding: 0;
   width: 100%;
@@ -100,10 +101,10 @@
   // Used for links that are directly in the menubar to span the full height
   height: 100%;
   // Text styles
-  font-size: rem(14px);
+  font-size: carbon--type-scale(1);
   font-weight: 400;
   letter-spacing: 0;
-  line-height: rem(18px);
+  line-height: carbon--type-scale(3);
   // Reset link styles and make sure the text isn't selectable
   text-decoration: none;
   user-select: none;
@@ -119,7 +120,7 @@ button.#{$prefix}--header__menu-item {
 
   &:focus {
     border-color: #fff;
-    color: #f4f4f4;
+    color: $ui-02;
     outline: none;
   }
 }

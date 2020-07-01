@@ -86,8 +86,11 @@ function formatError(errors) {
  * @type {import('stylelint').Formatter}
  */
 function formatter(results) {
-  let formattedMsg = titleText('\n!! WARNINGS !!\n\n');
+  let formattedMsg = '';
   const filesWithErrors = results.filter(filterForErrors);
+  if (filesWithErrors.length > 0) {
+    formattedMsg += titleText('\n!! WARNINGS !!\n\n');
+  }
   filesWithErrors.forEach(result => {
     const errors = result.warnings;
     const errorMessage = formatError(errors);
