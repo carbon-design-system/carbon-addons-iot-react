@@ -78,10 +78,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </span>
             </td>
             <td
-              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+              className="iot--row-actions-cell--table-cell"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+                className="iot--row-actions-container"
+                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -228,10 +229,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </span>
             </td>
             <td
-              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+              className="iot--row-actions-cell--table-cell"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+                className="iot--row-actions-container"
+                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -450,10 +452,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </span>
             </td>
             <td
-              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+              className="iot--row-actions-cell--table-cell"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+                className="iot--row-actions-container"
+                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -597,10 +600,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </span>
             </td>
             <td
-              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+              className="iot--row-actions-cell--table-cell"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+                className="iot--row-actions-container"
+                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -639,9 +643,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="More actions"
-                    className="RowActionsCell__StyledOverflowMenu-sc-1toqqj7-3 etHQFk bx--overflow-menu"
+                    className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
                     data-testid="tableId-rowId-row-actions-cell-overflow"
                     id="tableId-rowId-row-actions-cell-overflow"
+                    isRowExpanded={false}
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
@@ -790,10 +795,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </span>
             </td>
             <td
-              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+              className="iot--row-actions-cell--table-cell"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+                className="iot--row-actions-container"
+                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -947,10 +953,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               </span>
             </td>
             <td
-              className="RowActionsCell__StyledTableCell-sc-1toqqj7-0 bGkBkT"
+              className="iot--row-actions-cell--table-cell"
             >
               <div
-                className="iot--row-actions-container RowActionsCell__RowActionsContainer-sc-1toqqj7-1 jpHMyF"
+                className="iot--row-actions-container"
+                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"

@@ -1,11 +1,26 @@
 @import '../../../../globals/vars';
-
+@import '../../../../styles';
 @mixin backgroundGradient($color) {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }
 
 .#{$iot-prefix}--row-actions-container {
   height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  /* If the actions are focused on, they should show up */
+  > *:focus {
+    opacity: 1;
+  }
+
+  /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
+  .bx--loading--small {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
   > * {
     margin-left: $spacing-04;
   }
@@ -80,6 +95,27 @@ html[dir='rtl'] {
       margin-left: unset;
       margin-right: 0.5rem;
       transform: rotate(180deg);
+    }
+  }
+}
+
+.#{$iot-prefix}--row-actions-cell--table-cell {
+  &.#{$iot-prefix}--row-actions-cell--table-cell {
+    padding: 0;
+    vertical-align: middle;
+  }
+}
+
+.#{$iot-prefix}--row-actions-cell--overflow-menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.#{$iot-prefix}--row-actions-cell--overflow-menu {
+  &.#{$iot-prefix}--row-actions-cell--overflow-menu {
+    margin-left: 0.5rem;
+    &:hover > svg {
+      fill: $interactive-01;
     }
   }
 }
