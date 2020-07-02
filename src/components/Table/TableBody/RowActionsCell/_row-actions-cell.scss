@@ -119,3 +119,24 @@ html[dir='rtl'] {
     }
   }
 }
+
+.#{$iot-prefix}--row-actions-error--span {
+  margin-left: 0.5rem;
+  line-height: 1.875rem;
+}
+
+.#{$iot-prefix}--row-actions-error--title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.#{$iot-prefix}--row-actions-error--footer {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.#{$iot-prefix}--row-actions-error--tooltip {
+  font-size: 0.875rem;
+}
