@@ -840,7 +840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </div>
                   </div>
                   <span
-                    className="RowActionsError__StyledSpan-sc-1htz5gr-0 kSTEeW"
+                    className="iot--row-actions-error--span"
                   >
                     Action failed
                   </span>
