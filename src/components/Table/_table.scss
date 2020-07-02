@@ -43,3 +43,29 @@ html[dir='rtl'] {
     text-align: right;
   }
 }
+
+.#{$iot-prefix}--empty-table--table-row {
+  height: calc(100% - 3rem);
+  &:hover td {
+    background: inherit;
+  }
+  .empty-table-cell--default {
+    display: flex;
+    align-items: center;
+    justify-content: middle;
+    flex-direction: column;
+    padding: 3rem;
+
+    svg {
+      margin: 1rem;
+    }
+
+    & > * {
+      margin: 0.5rem;
+    }
+  }
+
+  td {
+    border-bottom: unset;
+  }
+}

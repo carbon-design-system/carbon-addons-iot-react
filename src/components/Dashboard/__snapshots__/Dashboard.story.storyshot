@@ -1775,7 +1775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           id="table-for-card-alert-table1"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
+                            className="iot--empty-table--table-row"
                           >
                             <td
                               colSpan={3}
@@ -4068,7 +4068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           id="table-for-card-alert-table1"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
+                            className="iot--empty-table--table-row"
                           >
                             <td
                               colSpan={3}
@@ -6388,7 +6388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           id="table-for-card-alert-table1"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
+                            className="iot--empty-table--table-row"
                           >
                             <td
                               colSpan={3}
@@ -11192,7 +11192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           id="table-for-card-alert-table1"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
+                            className="iot--empty-table--table-row"
                           >
                             <td
                               colSpan={3}
@@ -25621,7 +25621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           id="table-for-card-alert-table1"
                         >
                           <tr
-                            className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
+                            className="iot--empty-table--table-row"
                           >
                             <td
                               colSpan={3}

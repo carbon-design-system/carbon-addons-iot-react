@@ -9915,7 +9915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   id="table-for-card-table-list"
                 >
                   <tr
-                    className="EmptyTable__StyledEmptyTableRow-sc-2gw9t-0 jSTkIE"
+                    className="iot--empty-table--table-row"
                   >
                     <td
                       colSpan={3}
