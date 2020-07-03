@@ -1,22 +1,43 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 
+import '@testing-library/jest-dom/extend-expect';
 import ProgressIndicator from './ProgressIndicator';
 
-const mockItems = [{ id: 'myid', label: 'my label' }, { id: 'myid2', label: 'my label2' }];
+const mockItems = [
+  {
+    id: 'step1',
+    label: 'First Step',
+    secondaryLabel: 'Optional label',
+  },
+  {
+    id: 'step2',
+    label: 'Second Step',
+    secondaryLabel: 'Optional label',
+    children: [
+      { id: 'step2_substep1', label: 'Sub Step 1' },
+      { id: 'step2_substep2', label: 'Sub Step 2', secondaryLabel: 'Optional label' },
+      { id: 'step2_substep3', label: 'Sub Step 3' },
+      { id: 'step2_substep4', label: 'Sub Step 4', invalid: true },
+    ],
+  },
+  { id: 'step3', label: 'Third Step', secondaryLabel: 'Optional label', disabled: true },
+  { id: 'step4', label: 'Fourth Step', invalid: true },
+  { id: 'step5', label: 'Fifth Step' },
+];
 
-describe('ProgressIndicator', () => {
-  it('handleChange', () => {
-    const mockOnClickItem = jest.fn();
-    const wrapper = mount(<ProgressIndicator items={mockItems} onClickItem={mockOnClickItem} />);
-    // click the next step
-    wrapper.find('[tabIndex=0]').simulate('click');
-    expect(mockOnClickItem).toHaveBeenCalledWith('myid2');
-  });
-  it('if click item is not set it still works', () => {
-    const wrapper = mount(<ProgressIndicator items={mockItems} />);
-    // click the next step
-    wrapper.find('[tabIndex=0]').simulate('click');
-    expect(wrapper).toBeDefined();
-  });
+test('simulate onClick on clickable', () => {
+  render(<ProgressIndicator items={mockItems} clickable />);
+  const beforeClick = screen.getByTitle('First Step').children[0];
+  // screen.debug(beforeClick);
+  screen.getByTestId('step-button-main-second-step').click();
+  // const afterClick = screen.getByTitle('First Step').children[0];
+  // screen.debug(afterClick);
+  expect(screen.getByTitle('First Step').children[0]).not.toContain(beforeClick);
+});
+
+test('check last number of step', () => {
+  render(<ProgressIndicator items={mockItems} />);
+  // Check if last step is number 5
+  expect(screen.getByTitle('Fifth Step').children[0].textContent).toEqual('5');
 });

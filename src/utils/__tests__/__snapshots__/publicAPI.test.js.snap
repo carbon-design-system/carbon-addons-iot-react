@@ -3227,13 +3227,18 @@ Map {
   },
   "ProgressIndicator" => Object {
     "defaultProps": Object {
+      "clickable": false,
       "currentItemId": null,
       "isVerticalMode": false,
-      "onClickItem": null,
+      "items": null,
+      "setStep": null,
       "showLabels": true,
       "stepWidth": null,
     },
     "propTypes": Object {
+      "clickable": Object {
+        "type": "bool",
+      },
       "currentItemId": Object {
         "args": Array [
           Array [
@@ -3255,6 +3260,12 @@ Map {
           Object {
             "args": Array [
               Object {
+                "description": Object {
+                  "type": "string",
+                },
+                "disabled": Object {
+                  "type": "bool",
+                },
                 "id": Object {
                   "args": Array [
                     Array [
@@ -3268,8 +3279,14 @@ Map {
                   ],
                   "type": "oneOfType",
                 },
+                "invalid": Object {
+                  "type": "bool",
+                },
                 "label": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "secondaryLabel": Object {
                   "type": "string",
                 },
               },
@@ -3277,10 +3294,9 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
-      "onClickItem": Object {
+      "setStep": Object {
         "type": "func",
       },
       "showLabels": Object {
@@ -12644,6 +12660,7 @@ Map {
     "defaultProps": Object {
       "beforeFooterContent": null,
       "children": Array [],
+      "clickable": false,
       "currentStepId": null,
       "error": null,
       "hasStickyFooter": false,
@@ -12682,6 +12699,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "clickable": Object {
+        "type": "bool",
       },
       "currentStepId": Object {
         "type": "string",

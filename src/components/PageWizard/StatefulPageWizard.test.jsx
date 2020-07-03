@@ -72,16 +72,16 @@ describe('StatefulPageWizard', () => {
     };
 
     const { getByText } = render(
-      <StatefulPageWizard currentStepId="step3" {...mocks} i18n={i18n}>
+      <StatefulPageWizard currentStepId="step5" {...mocks} i18n={i18n}>
         {content}
       </StatefulPageWizard>
     );
 
-    // go back to step 2
+    // go back to step 4
     fireEvent.click(getByText(i18n.back));
     expect(mocks.onBack).toHaveBeenCalledTimes(1);
 
-    // reset to step 3
+    // reset to step 5
     fireEvent.click(getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
 
@@ -92,29 +92,31 @@ describe('StatefulPageWizard', () => {
 
   it('step indicator to go to a specific step', () => {
     const mocks = {
+      clickable: true,
       setStep: jest.fn(),
     };
 
     const { getByText } = render(
-      <StatefulPageWizard currentStepId="step3" {...mocks}>
+      <StatefulPageWizard currentStepId="step5" {...mocks}>
         {content}
       </StatefulPageWizard>
     );
 
     // go back to step 1
-    fireEvent.click(getByText('Step 1'));
+    fireEvent.click(getByText('First Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
   it('without setting currentStepId', () => {
     const mocks = {
+      clickable: true,
       setStep: jest.fn(),
     };
 
     const { getByText } = render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
 
-    // go back to step 1
-    fireEvent.click(getByText('Step 2'));
+    // go to fourth step
+    fireEvent.click(getByText('Fourth Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
@@ -137,14 +139,14 @@ describe('StatefulPageWizard', () => {
     const { container, getByText, queryByText } = render(<StepValidationWizard />);
 
     // check that the next step won't happen if inputs aren't filled
-    fireEvent.click(getByText('Step 2'));
+    fireEvent.click(getByText('Second Step'));
     expect(getByText('First name and Last name cannot be empty')).toBeTruthy();
 
     // fill in inputs, then try to go to step 2
     const inputs = container.querySelectorAll('input');
     fireEvent.change(inputs[0], { target: { value: 'firstname' } });
     fireEvent.change(inputs[1], { target: { value: 'lastname' } });
-    fireEvent.click(getByText('Step 2'));
+    fireEvent.click(getByText('Second Step'));
     expect(queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });

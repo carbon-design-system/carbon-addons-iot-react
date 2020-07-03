@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
-import { ProgressIndicator } from 'carbon-components-react';
 
 import PageWizard from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
@@ -83,7 +82,7 @@ describe('PageWizard', () => {
       submit: 'Submit',
     };
     const { getByText } = render(
-      <PageWizard currentStepId="step3" {...mocks} i18n={i18n}>
+      <PageWizard currentStepId="step5" {...mocks} i18n={i18n}>
         {content}
       </PageWizard>
     );
@@ -123,6 +122,6 @@ describe('PageWizard', () => {
 
   it('progress indicator should not render if there is only 1 step', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
-    expect(wrapper.find(ProgressIndicator)).toHaveLength(0);
+    expect(wrapper.find('[data-testid="iot-progress-indicator-testid"]')).toHaveLength(0);
   });
 });

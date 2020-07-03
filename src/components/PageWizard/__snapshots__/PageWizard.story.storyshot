@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Horizontal IotProgressIndicator 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Horizontal ProgressIndicator 1`] = `
 <div
   className="storybook-container"
 >
@@ -20,8 +20,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
           className="iot--page-wizard--progress--horizontal"
         >
           <ul
-            className="iot--progress-indicator-new"
-            data-testid="iot-progress-indicator-new-testid"
+            className="iot--progress-indicator"
+            data-testid="iot-progress-indicator-testid"
             onChange={[Function]}
           >
             <li
@@ -93,11 +93,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 aria-disabled={false}
-                className="step-button main-step"
+                className="step-button main-step clickable"
                 data-testid="step-button-main-second-step"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <div
@@ -147,11 +147,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 aria-disabled={false}
-                className="step-button sub-step"
+                className="step-button sub-step clickable"
                 data-testid="step-button-sub-sub-step-1"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <div
@@ -192,11 +192,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 aria-disabled={false}
-                className="step-button sub-step"
+                className="step-button sub-step clickable"
                 data-testid="step-button-sub-sub-step-2"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <div
@@ -242,11 +242,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 aria-disabled={false}
-                className="step-button sub-step"
+                className="step-button sub-step clickable"
                 data-testid="step-button-sub-sub-step-3"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <div
@@ -397,11 +397,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 aria-disabled={false}
-                className="step-button main-step"
+                className="step-button main-step clickable"
                 data-testid="step-button-main-fourth-step"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <div
@@ -445,11 +445,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
             >
               <button
                 aria-disabled={false}
-                className="step-button main-step"
+                className="step-button main-step clickable"
                 data-testid="step-button-main-final-step"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <span
@@ -489,254 +489,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
                     Final Step
                   </p>
                 </div>
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div
-          className="iot--page-wizard--content"
-        >
-          <div
-            className="iot--page-wizard--step"
-            id="step1"
-          >
-            <div
-              className="iot--page-wizard--step--title"
-            >
-              Step 1: Define the data
-            </div>
-            <div
-              className="iot--page-wizard--step--description"
-            >
-              You can create summaries lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
-               
-              <a
-                href="www.ibm.com"
-              >
-                An embedded link
-              </a>
-               is good to have sometimes.
-            </div>
-            <div
-              className="iot--page-wizard--step--content"
-            >
-              <h1>
-                A table could go here
-              </h1>
-              <h3>
-                Some other form items could go here
-              </h3>
-              <h4>
-                And other things here
-              </h4>
-            </div>
-            <div
-              className="iot--page-wizard--step--extra-content"
-            >
-              <h4>
-                What are time grains?
-              </h4>
-              <p>
-                Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
-              </p>
-            </div>
-            <div
-              className="iot--page-wizard--content--actions"
-            >
-              <button
-                className="iot--btn bx--btn bx--btn--secondary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                className="iot--btn bx--btn bx--btn--primary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard With Horizontal ProgressIndicator 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className=""
-      >
-        <div
-          className="iot--page-wizard--progress--horizontal"
-        >
-          <ul
-            className="bx--progress iot--progress-indicator"
-            onChange={[Function]}
-          >
-            <li
-              className="bx--progress-step bx--progress-step--current"
-            >
-              <button
-                className="bx--progress-step-button bx--progress-step-button--unclickable"
-                onKeyDown={[Function]}
-                tabIndex={-1}
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Current
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 1
-                </p>
-                <p
-                  className="bx--progress-optional"
-                >
-                  Optional label
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
-              </button>
-            </li>
-            <li
-              className="bx--progress-step bx--progress-step--incomplete"
-            >
-              <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Incomplete
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 2
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
-              </button>
-            </li>
-            <li
-              className="bx--progress-step bx--progress-step--incomplete"
-            >
-              <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Incomplete
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 3
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
               </button>
             </li>
           </ul>
@@ -964,87 +716,123 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               className="iot--page-wizard--progress--vertical"
             >
               <ul
-                className="bx--progress bx--progress--vertical iot--progress-indicator"
+                className="iot--progress-indicator iot--progress-indicator--vertical"
+                data-testid="iot-progress-indicator-testid"
                 onChange={[Function]}
               >
                 <li
-                  className="bx--progress-step bx--progress-step--current"
+                  className="step-current"
                 >
                   <button
-                    className="bx--progress-step-button bx--progress-step-button--unclickable"
-                    onKeyDown={[Function]}
-                    tabIndex={-1}
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-first-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Current
-                    </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="16"
-                        cy="16"
-                        r="10"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step with validation
-                    </p>
-                    <span
-                      className="bx--progress-line"
+                    <div
+                      className="line"
                     />
+                    <span
+                      className="icon"
+                      title="First Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="10"
+                        />
+                        <path
+                          d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          1
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="First Step"
+                      >
+                        First Step
+                      </p>
+                      <p
+                        className="label-optional"
+                      >
+                        With validation
+                      </p>
+                    </div>
                   </button>
                 </li>
                 <li
-                  className="bx--progress-step bx--progress-step--incomplete"
+                  className="step-incomplete"
                 >
                   <button
-                    className="bx--progress-step-button"
+                    aria-disabled={false}
+                    className="step-button main-step clickable"
+                    data-testid="step-button-main-second-step"
+                    disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    tabIndex={0}
+                    type="button"
                   >
                     <span
-                      className="bx--assistive-text"
+                      className="icon"
+                      title="Second Step"
                     >
-                      Incomplete
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          2
+                        </text>
+                      </svg>
                     </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="label-container"
                     >
-                      <path
-                        d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step 2
-                    </p>
-                    <span
-                      className="bx--progress-line"
-                    />
+                      <p
+                        className="label"
+                        value="Second Step"
+                      >
+                        Second Step
+                      </p>
+                    </div>
                   </button>
                 </li>
               </ul>
@@ -1321,87 +1109,123 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               className="iot--page-wizard--progress--vertical"
             >
               <ul
-                className="bx--progress bx--progress--vertical iot--progress-indicator"
+                className="iot--progress-indicator iot--progress-indicator--vertical"
+                data-testid="iot-progress-indicator-testid"
                 onChange={[Function]}
               >
                 <li
-                  className="bx--progress-step bx--progress-step--current"
+                  className="step-current"
                 >
                   <button
-                    className="bx--progress-step-button bx--progress-step-button--unclickable"
-                    onKeyDown={[Function]}
-                    tabIndex={-1}
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-first-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Current
-                    </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="16"
-                        cy="16"
-                        r="10"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step with validation
-                    </p>
-                    <span
-                      className="bx--progress-line"
+                    <div
+                      className="line"
                     />
+                    <span
+                      className="icon"
+                      title="First Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="10"
+                        />
+                        <path
+                          d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          1
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="First Step"
+                      >
+                        First Step
+                      </p>
+                      <p
+                        className="label-optional"
+                      >
+                        With validation
+                      </p>
+                    </div>
                   </button>
                 </li>
                 <li
-                  className="bx--progress-step bx--progress-step--incomplete"
+                  className="step-incomplete"
                 >
                   <button
-                    className="bx--progress-step-button"
+                    aria-disabled={false}
+                    className="step-button main-step clickable"
+                    data-testid="step-button-main-second-step"
+                    disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    tabIndex={0}
+                    type="button"
                   >
                     <span
-                      className="bx--assistive-text"
+                      className="icon"
+                      title="Second Step"
                     >
-                      Incomplete
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          2
+                        </text>
+                      </svg>
                     </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="label-container"
                     >
-                      <path
-                        d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step 2
-                    </p>
-                    <span
-                      className="bx--progress-line"
-                    />
+                      <p
+                        className="label"
+                        value="Second Step"
+                      >
+                        Second Step
+                      </p>
+                    </div>
                   </button>
                 </li>
               </ul>
@@ -1804,1358 +1628,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
           className="iot--page-wizard--progress--vertical"
         >
           <ul
-            className="bx--progress bx--progress--vertical iot--progress-indicator"
-            onChange={[Function]}
-          >
-            <li
-              className="bx--progress-step bx--progress-step--current"
-            >
-              <button
-                className="bx--progress-step-button bx--progress-step-button--unclickable"
-                onKeyDown={[Function]}
-                tabIndex={-1}
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Current
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 1
-                </p>
-                <p
-                  className="bx--progress-optional"
-                >
-                  Optional label
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
-              </button>
-            </li>
-            <li
-              className="bx--progress-step bx--progress-step--incomplete"
-            >
-              <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Incomplete
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 2
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
-              </button>
-            </li>
-            <li
-              className="bx--progress-step bx--progress-step--incomplete"
-            >
-              <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
-              >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Incomplete
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 3
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div
-          className="iot--page-wizard--content"
-        >
-          <div
-            className="iot--page-wizard--step"
-            id="step1"
-          >
-            <div
-              className="iot--page-wizard--step--title"
-            >
-              Step 1: Define the data
-            </div>
-            <div
-              className="iot--page-wizard--step--description"
-            >
-              You can create summaries lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est.
-               
-              <a
-                href="www.ibm.com"
-              >
-                An embedded link
-              </a>
-               is good to have sometimes.
-            </div>
-            <div
-              className="iot--page-wizard--step--content"
-            >
-              <h1>
-                A table could go here
-              </h1>
-              <h3>
-                Some other form items could go here
-              </h3>
-              <h4>
-                And other things here
-              </h4>
-            </div>
-            <div
-              className="iot--page-wizard--step--extra-content"
-            >
-              <h4>
-                What are time grains?
-              </h4>
-              <p>
-                Time grains are lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros odio, rhoncus et sapien quis, vestibulum bibendum est. Duis blandit tellus ultricies justo sagittis, tempus ornare purus tristique. Quisque nisi tortor, semper ac efficitur tincidunt, feugiat vel ligula. Aenean consequat, massa nec rhoncus vulputate, metus ex dictum ante, at posuere erat tellus vitae orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu tempus sem. Vestibulum quis consequat orci. Sed vel ultrices libero, eu malesuada quam.
-              </p>
-            </div>
-            <div
-              className="iot--page-wizard--content--actions"
-            >
-              <button
-                className="iot--btn bx--btn bx--btn--secondary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                className="iot--btn bx--btn bx--btn--primary"
-                disabled={false}
-                onClick={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful example w/ validation in PageTitleBar 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className="page-title-bar"
-      >
-        <div
-          className="page-title-bar-header"
-        >
-          <div>
-            <div
-              className="page-title-bar-breadcrumb"
-            >
-              <nav
-                aria-label="Breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb"
-                >
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link bx--link"
-                      to="www.ibm.com"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link bx--link"
-                      to="www.ibm.com"
-                    >
-                      Something
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link bx--link"
-                      to="www.ibm.com"
-                    >
-                      Something Else
-                    </a>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="page-title-bar-title"
-            >
-              <div
-                className="page-title-bar-title--text"
-              >
-                <h2>
-                  A cool PageWizard!
-                </h2>
-                <div
-                  className="bx--tooltip__label"
-                  id="tooltip"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-label="More information"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="page-title-bar-content"
-        >
-          <div
-            className="iot--page-wizard"
-          >
-            <div
-              className="iot--page-wizard--progress--vertical"
-            >
-              <ul
-                className="bx--progress bx--progress--vertical iot--progress-indicator"
-                onChange={[Function]}
-              >
-                <li
-                  className="bx--progress-step bx--progress-step--current"
-                >
-                  <button
-                    className="bx--progress-step-button bx--progress-step-button--unclickable"
-                    onKeyDown={[Function]}
-                    tabIndex={-1}
-                  >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Current
-                    </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="16"
-                        cy="16"
-                        r="10"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step with validation
-                    </p>
-                    <span
-                      className="bx--progress-line"
-                    />
-                  </button>
-                </li>
-                <li
-                  className="bx--progress-step bx--progress-step--incomplete"
-                >
-                  <button
-                    className="bx--progress-step-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    tabIndex={0}
-                  >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Incomplete
-                    </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step 2
-                    </p>
-                    <span
-                      className="bx--progress-line"
-                    />
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div
-              className="iot--page-wizard--content"
-            >
-              <div
-                className="iot--page-wizard--step"
-                id="step1"
-              >
-                <div
-                  className="iot--page-wizard--step--title"
-                >
-                  Enter some things
-                </div>
-                <div
-                  className="iot--page-wizard--step--description"
-                >
-                  Make sure you do not try to go to the next step with an empty input! Bad things will happen.
-                </div>
-                <div
-                  className="iot--page-wizard--step--content"
-                >
-                  <form
-                    className="bx--form"
-                  >
-                     
-                    <fieldset
-                      className="bx--fieldset"
-                    >
-                      <legend
-                        className="bx--label"
-                      >
-                        Name
-                      </legend>
-                      <div
-                        className="bx--form-item"
-                      >
-                        <div
-                          className="bx--form-item bx--text-input-wrapper"
-                        >
-                          <label
-                            className="bx--label"
-                            htmlFor="first-name"
-                          >
-                            First name
-                          </label>
-                          <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
-                          >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="first-name"
-                              disabled={false}
-                              id="first-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="bx--form-item"
-                      >
-                        <div
-                          className="bx--form-item bx--text-input-wrapper"
-                        >
-                          <label
-                            className="bx--label"
-                            htmlFor="last-name"
-                          >
-                            Last name
-                          </label>
-                          <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
-                          >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="last-name"
-                              disabled={false}
-                              id="last-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                     
-                  </form>
-                </div>
-                <div
-                  className="iot--page-wizard--content--actions"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful with IotProgressIndicator & validation 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className="page-title-bar"
-      >
-        <div
-          className="page-title-bar-header"
-        >
-          <div>
-            <div
-              className="page-title-bar-breadcrumb"
-            >
-              <nav
-                aria-label="Breadcrumb"
-              >
-                <ol
-                  className="bx--breadcrumb"
-                >
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link bx--link"
-                      to="www.ibm.com"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link bx--link"
-                      to="www.ibm.com"
-                    >
-                      Something
-                    </a>
-                  </li>
-                  <li
-                    className="bx--breadcrumb-item"
-                  >
-                    <a
-                      className="bx--link bx--link"
-                      to="www.ibm.com"
-                    >
-                      Something Else
-                    </a>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-            <div
-              className="page-title-bar-title"
-            >
-              <div
-                className="page-title-bar-title--text"
-              >
-                <h2>
-                  A cool PageWizard!
-                </h2>
-                <div
-                  className="bx--tooltip__label"
-                  id="tooltip"
-                >
-                  
-                  <div
-                    aria-describedby={null}
-                    aria-label="More information"
-                    className="bx--tooltip__trigger"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onFocus={[Function]}
-                    onKeyDown={[Function]}
-                    onMouseOut={[Function]}
-                    onMouseOver={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    <svg
-                      aria-hidden={true}
-                      description={null}
-                      focusable="false"
-                      height={20}
-                      preserveAspectRatio="xMidYMid meet"
-                      role={null}
-                      viewBox="0 0 32 32"
-                      width={20}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="page-title-bar-content"
-        >
-          <div
-            className="iot--page-wizard"
-          >
-            <div
-              className="iot--page-wizard--progress--vertical"
-            >
-              <ul
-                className="iot--progress-indicator-new iot--progress-indicator-new--vertical"
-                data-testid="iot-progress-indicator-new-testid"
-                onChange={[Function]}
-              >
-                <li
-                  className="step-current"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button main-step"
-                    data-testid="step-button-main-first-step"
-                    disabled={false}
-                    onClick={null}
-                    onKeyDown={null}
-                    type="button"
-                  >
-                    <div
-                      className="line"
-                    />
-                    <span
-                      className="icon"
-                      title="First Step"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="10"
-                        />
-                        <path
-                          d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                        />
-                        <text
-                          dominantBaseline="middle"
-                          id="icon-numbered"
-                          textAnchor="middle"
-                          x="50%"
-                          y="55%"
-                        >
-                          1
-                        </text>
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="First Step"
-                      >
-                        First Step
-                      </p>
-                      <p
-                        className="label-optional"
-                      >
-                        With validation
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-incomplete"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button main-step clickable"
-                    data-testid="step-button-main-second-step"
-                    disabled={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <div
-                      className="line"
-                    />
-                    <span
-                      className="icon"
-                      title="Second Step"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                        />
-                        <text
-                          dominantBaseline="middle"
-                          id="icon-numbered"
-                          textAnchor="middle"
-                          x="50%"
-                          y="55%"
-                        >
-                          2
-                        </text>
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Second Step"
-                      >
-                        Second Step
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-incomplete"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button sub-step clickable"
-                    data-testid="step-button-sub-sub-step-1"
-                    disabled={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <div
-                      className="line-sub"
-                    />
-                    <span
-                      className="icon"
-                      title="Sub Step 1"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Sub Step 1"
-                      >
-                        Sub Step 1
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-incomplete"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button sub-step clickable"
-                    data-testid="step-button-sub-sub-step-2"
-                    disabled={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <div
-                      className="line-sub"
-                    />
-                    <span
-                      className="icon"
-                      title="Sub Step 2"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Sub Step 2"
-                      >
-                        Sub Step 2
-                      </p>
-                      <p
-                        className="label-optional"
-                      >
-                        Optional label
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-invalid"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button sub-step clickable"
-                    data-testid="step-button-sub-sub-step-3"
-                    disabled={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <div
-                      className="line-sub"
-                    />
-                    <span
-                      className="icon"
-                      title="Sub Step 3"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                        />
-                        <path
-                          d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Sub Step 3"
-                      >
-                        Sub Step 3
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-disabled step-invalid"
-                >
-                  <button
-                    aria-disabled={true}
-                    className="step-button sub-step"
-                    data-testid="step-button-sub-sub-step-4"
-                    disabled={true}
-                    onClick={null}
-                    onKeyDown={null}
-                    type="button"
-                  >
-                    <div
-                      className="line-sub"
-                    />
-                    <span
-                      className="icon"
-                      title="Sub Step 4"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
-                        />
-                        <path
-                          d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Sub Step 4"
-                      >
-                        Sub Step 4
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-disabled"
-                >
-                  <button
-                    aria-disabled={true}
-                    className="step-button main-step"
-                    data-testid="step-button-main-third-step"
-                    disabled={true}
-                    onClick={null}
-                    onKeyDown={null}
-                    type="button"
-                  >
-                    <div
-                      className="line"
-                    />
-                    <span
-                      className="icon"
-                      title="Third Step"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                        />
-                        <text
-                          dominantBaseline="middle"
-                          id="icon-numbered"
-                          textAnchor="middle"
-                          x="50%"
-                          y="55%"
-                        >
-                          3
-                        </text>
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Third Step"
-                      >
-                        Third Step
-                      </p>
-                      <p
-                        className="label-optional"
-                      >
-                        Optional label
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-invalid"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button main-step clickable"
-                    data-testid="step-button-main-fourth-step"
-                    disabled={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <div
-                      className="line"
-                    />
-                    <span
-                      className="icon"
-                      title="Fourth Step"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                        />
-                        <path
-                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
-                        />
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Fourth Step"
-                      >
-                        Fourth Step
-                      </p>
-                    </div>
-                  </button>
-                </li>
-                <li
-                  className="step-incomplete"
-                >
-                  <button
-                    aria-disabled={false}
-                    className="step-button main-step clickable"
-                    data-testid="step-button-main-final-step"
-                    disabled={false}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    type="button"
-                  >
-                    <span
-                      className="icon"
-                      title="Final Step"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        focusable="false"
-                        height={24}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={24}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                        />
-                        <text
-                          dominantBaseline="middle"
-                          id="icon-numbered"
-                          textAnchor="middle"
-                          x="50%"
-                          y="55%"
-                        >
-                          5
-                        </text>
-                      </svg>
-                    </span>
-                    <div
-                      className="label-container"
-                    >
-                      <p
-                        className="label"
-                        value="Final Step"
-                      >
-                        Final Step
-                      </p>
-                    </div>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div
-              className="iot--page-wizard--content"
-            >
-              <div
-                className="iot--page-wizard--step"
-                id="step1"
-              >
-                <div
-                  className="iot--page-wizard--step--title"
-                >
-                  Enter some things
-                </div>
-                <div
-                  className="iot--page-wizard--step--description"
-                >
-                  Make sure you do not try to go to the next step with an empty input! Bad things will happen.
-                </div>
-                <div
-                  className="iot--page-wizard--step--content"
-                >
-                  <form
-                    className="bx--form"
-                  >
-                     
-                    <fieldset
-                      className="bx--fieldset"
-                    >
-                      <legend
-                        className="bx--label"
-                      >
-                        Name
-                      </legend>
-                      <div
-                        className="bx--form-item"
-                      >
-                        <div
-                          className="bx--form-item bx--text-input-wrapper"
-                        >
-                          <label
-                            className="bx--label"
-                            htmlFor="first-name"
-                          >
-                            First name
-                          </label>
-                          <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
-                          >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="first-name"
-                              disabled={false}
-                              id="first-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="bx--form-item"
-                      >
-                        <div
-                          className="bx--form-item bx--text-input-wrapper"
-                        >
-                          <label
-                            className="bx--label"
-                            htmlFor="last-name"
-                          >
-                            Last name
-                          </label>
-                          <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
-                          >
-                            <input
-                              className="bx--text-input bx--text__input"
-                              data-testid="last-name"
-                              disabled={false}
-                              id="last-name"
-                              onChange={[Function]}
-                              onClick={[Function]}
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                     
-                  </form>
-                </div>
-                <div
-                  className="iot--page-wizard--content--actions"
-                >
-                  <button
-                    className="iot--btn bx--btn bx--btn--secondary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="iot--btn bx--btn bx--btn--primary"
-                    disabled={false}
-                    onClick={[Function]}
-                    tabIndex={0}
-                    type="button"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className="info__show-button"
-    onClick={[Function]}
-    style={
-      Object {
-        "background": "#027ac5",
-        "border": "none",
-        "borderRadius": "0 0 0 5px",
-        "color": "#fff",
-        "cursor": "pointer",
-        "display": "block",
-        "fontFamily": "sans-serif",
-        "fontSize": 12,
-        "padding": "5px 15px",
-        "position": "fixed",
-        "right": 0,
-        "top": 0,
-      }
-    }
-    type="button"
-  >
-    Show Info
-  </button>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful with IotProgressIndicator 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div>
-      <div
-        className="iot--page-wizard"
-      >
-        <div
-          className="iot--page-wizard--progress--vertical"
-        >
-          <ul
-            className="iot--progress-indicator-new iot--progress-indicator-new--vertical"
-            data-testid="iot-progress-indicator-new-testid"
+            className="iot--progress-indicator iot--progress-indicator--vertical"
+            data-testid="iot-progress-indicator-testid"
             onChange={[Function]}
           >
             <li
@@ -3727,6 +2201,399 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard stateful example w/ validation in PageTitleBar 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="page-title-bar"
+      >
+        <div
+          className="page-title-bar-header"
+        >
+          <div>
+            <div
+              className="page-title-bar-breadcrumb"
+            >
+              <nav
+                aria-label="Breadcrumb"
+              >
+                <ol
+                  className="bx--breadcrumb"
+                >
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      to="www.ibm.com"
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      to="www.ibm.com"
+                    >
+                      Something
+                    </a>
+                  </li>
+                  <li
+                    className="bx--breadcrumb-item"
+                  >
+                    <a
+                      className="bx--link bx--link"
+                      to="www.ibm.com"
+                    >
+                      Something Else
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <div
+              className="page-title-bar-title"
+            >
+              <div
+                className="page-title-bar-title--text"
+              >
+                <h2>
+                  A cool PageWizard!
+                </h2>
+                <div
+                  className="bx--tooltip__label"
+                  id="tooltip"
+                >
+                  
+                  <div
+                    aria-describedby={null}
+                    aria-label="More information"
+                    className="bx--tooltip__trigger"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      description={null}
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      role={null}
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 22L17 13 13 13 13 15 15 15 15 22 12 22 12 24 20 24 20 22 17 22zM16 7a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 7z"
+                      />
+                      <path
+                        d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="page-title-bar-content"
+        >
+          <div
+            className="iot--page-wizard"
+          >
+            <div
+              className="iot--page-wizard--progress--vertical"
+            >
+              <ul
+                className="iot--progress-indicator iot--progress-indicator--vertical"
+                data-testid="iot-progress-indicator-testid"
+                onChange={[Function]}
+              >
+                <li
+                  className="step-current"
+                >
+                  <button
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-first-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line"
+                    />
+                    <span
+                      className="icon"
+                      title="First Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="10"
+                        />
+                        <path
+                          d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          1
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="First Step"
+                      >
+                        First Step
+                      </p>
+                      <p
+                        className="label-optional"
+                      >
+                        With validation
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-incomplete"
+                >
+                  <button
+                    aria-disabled={false}
+                    className="step-button main-step clickable"
+                    data-testid="step-button-main-second-step"
+                    disabled={false}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className="icon"
+                      title="Second Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          2
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Second Step"
+                      >
+                        Second Step
+                      </p>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="iot--page-wizard--content"
+            >
+              <div
+                className="iot--page-wizard--step"
+                id="step1"
+              >
+                <div
+                  className="iot--page-wizard--step--title"
+                >
+                  Enter some things
+                </div>
+                <div
+                  className="iot--page-wizard--step--description"
+                >
+                  Make sure you do not try to go to the next step with an empty input! Bad things will happen.
+                </div>
+                <div
+                  className="iot--page-wizard--step--content"
+                >
+                  <form
+                    className="bx--form"
+                  >
+                     
+                    <fieldset
+                      className="bx--fieldset"
+                    >
+                      <legend
+                        className="bx--label"
+                      >
+                        Name
+                      </legend>
+                      <div
+                        className="bx--form-item"
+                      >
+                        <div
+                          className="bx--form-item bx--text-input-wrapper"
+                        >
+                          <label
+                            className="bx--label"
+                            htmlFor="first-name"
+                          >
+                            First name
+                          </label>
+                          <div
+                            className="bx--text-input__field-wrapper"
+                            data-invalid={null}
+                          >
+                            <input
+                              className="bx--text-input bx--text__input"
+                              data-testid="first-name"
+                              disabled={false}
+                              id="first-name"
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="bx--form-item"
+                      >
+                        <div
+                          className="bx--form-item bx--text-input-wrapper"
+                        >
+                          <label
+                            className="bx--label"
+                            htmlFor="last-name"
+                          >
+                            Last name
+                          </label>
+                          <div
+                            className="bx--text-input__field-wrapper"
+                            data-invalid={null}
+                          >
+                            <input
+                              className="bx--text-input bx--text__input"
+                              data-testid="last-name"
+                              disabled={false}
+                              id="last-name"
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                     
+                  </form>
+                </div>
+                <div
+                  className="iot--page-wizard--content--actions"
+                >
+                  <button
+                    className="iot--btn bx--btn bx--btn--secondary"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="iot--btn bx--btn bx--btn--primary"
+                    disabled={false}
+                    onClick={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageWizard w/ i18n 1`] = `
 <div
   className="storybook-container"
@@ -3747,130 +2614,475 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
           className="iot--page-wizard--progress--vertical"
         >
           <ul
-            className="bx--progress bx--progress--vertical iot--progress-indicator"
+            className="iot--progress-indicator iot--progress-indicator--vertical"
+            data-testid="iot-progress-indicator-testid"
             onChange={[Function]}
           >
             <li
-              className="bx--progress-step bx--progress-step--current"
+              className="step-current"
             >
               <button
-                className="bx--progress-step-button bx--progress-step-button--unclickable"
-                onKeyDown={[Function]}
-                tabIndex={-1}
+                aria-disabled={false}
+                className="step-button main-step"
+                data-testid="step-button-main-first-step"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
               >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Current
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 1
-                </p>
-                <p
-                  className="bx--progress-optional"
-                >
-                  Optional label
-                </p>
-                <span
-                  className="bx--progress-line"
+                <div
+                  className="line"
                 />
+                <span
+                  className="icon"
+                  title="This is displayed when step icon is hovered"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="10"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      1
+                    </text>
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="This is displayed when step icon is hovered"
+                  >
+                    First Step
+                  </p>
+                  <p
+                    className="label-optional"
+                  >
+                    Optional label
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--incomplete"
+              className="step-incomplete"
             >
               <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
+                aria-disabled={false}
+                className="step-button main-step"
+                data-testid="step-button-main-second-step"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
               >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Incomplete
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 2
-                </p>
-                <span
-                  className="bx--progress-line"
+                <div
+                  className="line"
                 />
+                <span
+                  className="icon"
+                  title="Second Step"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      2
+                    </text>
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Second Step"
+                  >
+                    Second Step
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--incomplete"
+              className="step-incomplete"
             >
               <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                tabIndex={0}
+                aria-disabled={false}
+                className="step-button sub-step"
+                data-testid="step-button-sub-sub-step-1"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line-sub"
+                />
+                <span
+                  className="icon"
+                  title="Sub Step 1"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Sub Step 1"
+                  >
+                    Sub Step 1
+                  </p>
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-incomplete"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button sub-step"
+                data-testid="step-button-sub-sub-step-2"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line-sub"
+                />
+                <span
+                  className="icon"
+                  title="Sub Step 2"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Sub Step 2"
+                  >
+                    Sub Step 2
+                  </p>
+                  <p
+                    className="label-optional"
+                  >
+                    Optional label
+                  </p>
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-invalid"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button sub-step"
+                data-testid="step-button-sub-sub-step-3"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line-sub"
+                />
+                <span
+                  className="icon"
+                  title="Sub Step 3"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                    />
+                    <path
+                      d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Sub Step 3"
+                  >
+                    Sub Step 3
+                  </p>
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-disabled step-invalid"
+            >
+              <button
+                aria-disabled={true}
+                className="step-button sub-step"
+                data-testid="step-button-sub-sub-step-4"
+                disabled={true}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line-sub"
+                />
+                <span
+                  className="icon"
+                  title="Sub Step 4"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                    />
+                    <path
+                      d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Sub Step 4"
+                  >
+                    Sub Step 4
+                  </p>
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-disabled"
+            >
+              <button
+                aria-disabled={true}
+                className="step-button main-step"
+                data-testid="step-button-main-third-step"
+                disabled={true}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line"
+                />
+                <span
+                  className="icon"
+                  title="Third Step"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      3
+                    </text>
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Third Step"
+                  >
+                    Third Step
+                  </p>
+                  <p
+                    className="label-optional"
+                  >
+                    Optional label
+                  </p>
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-invalid"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button main-step"
+                data-testid="step-button-main-fourth-step"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
+              >
+                <div
+                  className="line"
+                />
+                <span
+                  className="icon"
+                  title="Fourth Step"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <path
+                      d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  className="label-container"
+                >
+                  <p
+                    className="label"
+                    value="Fourth Step"
+                  >
+                    Fourth Step
+                  </p>
+                </div>
+              </button>
+            </li>
+            <li
+              className="step-incomplete"
+            >
+              <button
+                aria-disabled={false}
+                className="step-button main-step"
+                data-testid="step-button-main-final-step"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
+                type="button"
               >
                 <span
-                  className="bx--assistive-text"
+                  className="icon"
+                  title="Final Step"
                 >
-                  Incomplete
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      id="icon-numbered"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      5
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="label-container"
                 >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title />
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  Step 3
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  <p
+                    className="label"
+                    value="Final Step"
+                  >
+                    Final Step
+                  </p>
+                </div>
               </button>
             </li>
           </ul>
@@ -4098,130 +3310,475 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               className="iot--page-wizard--progress--vertical"
             >
               <ul
-                className="bx--progress bx--progress--vertical iot--progress-indicator"
+                className="iot--progress-indicator iot--progress-indicator--vertical"
+                data-testid="iot-progress-indicator-testid"
                 onChange={[Function]}
               >
                 <li
-                  className="bx--progress-step bx--progress-step--current"
+                  className="step-current"
                 >
                   <button
-                    className="bx--progress-step-button bx--progress-step-button--unclickable"
-                    onKeyDown={[Function]}
-                    tabIndex={-1}
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-first-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Current
-                    </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="16"
-                        cy="16"
-                        r="10"
-                      />
-                      <path
-                        d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step 1
-                    </p>
-                    <p
-                      className="bx--progress-optional"
-                    >
-                      Optional label
-                    </p>
-                    <span
-                      className="bx--progress-line"
+                    <div
+                      className="line"
                     />
+                    <span
+                      className="icon"
+                      title="This is displayed when step icon is hovered"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="10"
+                        />
+                        <path
+                          d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          1
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="This is displayed when step icon is hovered"
+                      >
+                        First Step
+                      </p>
+                      <p
+                        className="label-optional"
+                      >
+                        Optional label
+                      </p>
+                    </div>
                   </button>
                 </li>
                 <li
-                  className="bx--progress-step bx--progress-step--incomplete"
+                  className="step-incomplete"
                 >
                   <button
-                    className="bx--progress-step-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    tabIndex={0}
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-second-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
                   >
-                    <span
-                      className="bx--assistive-text"
-                    >
-                      Incomplete
-                    </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step 2
-                    </p>
-                    <span
-                      className="bx--progress-line"
+                    <div
+                      className="line"
                     />
+                    <span
+                      className="icon"
+                      title="Second Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          2
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Second Step"
+                      >
+                        Second Step
+                      </p>
+                    </div>
                   </button>
                 </li>
                 <li
-                  className="bx--progress-step bx--progress-step--incomplete"
+                  className="step-incomplete"
                 >
                   <button
-                    className="bx--progress-step-button"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    tabIndex={0}
+                    aria-disabled={false}
+                    className="step-button sub-step"
+                    data-testid="step-button-sub-sub-step-1"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line-sub"
+                    />
+                    <span
+                      className="icon"
+                      title="Sub Step 1"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Sub Step 1"
+                      >
+                        Sub Step 1
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-incomplete"
+                >
+                  <button
+                    aria-disabled={false}
+                    className="step-button sub-step"
+                    data-testid="step-button-sub-sub-step-2"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line-sub"
+                    />
+                    <span
+                      className="icon"
+                      title="Sub Step 2"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Sub Step 2"
+                      >
+                        Sub Step 2
+                      </p>
+                      <p
+                        className="label-optional"
+                      >
+                        Optional label
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-invalid"
+                >
+                  <button
+                    aria-disabled={false}
+                    className="step-button sub-step"
+                    data-testid="step-button-sub-sub-step-3"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line-sub"
+                    />
+                    <span
+                      className="icon"
+                      title="Sub Step 3"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                        />
+                        <path
+                          d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                        />
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Sub Step 3"
+                      >
+                        Sub Step 3
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-disabled step-invalid"
+                >
+                  <button
+                    aria-disabled={true}
+                    className="step-button sub-step"
+                    data-testid="step-button-sub-sub-step-4"
+                    disabled={true}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line-sub"
+                    />
+                    <span
+                      className="icon"
+                      title="Sub Step 4"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S11.3,14,8,14z"
+                        />
+                        <path
+                          d="M7.5 4H8.5V9H7.5zM8 10.2c-.4 0-.8.3-.8.8s.3.8.8.8c.4 0 .8-.3.8-.8S8.4 10.2 8 10.2z"
+                        />
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Sub Step 4"
+                      >
+                        Sub Step 4
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-disabled"
+                >
+                  <button
+                    aria-disabled={true}
+                    className="step-button main-step"
+                    data-testid="step-button-main-third-step"
+                    disabled={true}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line"
+                    />
+                    <span
+                      className="icon"
+                      title="Third Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          3
+                        </text>
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Third Step"
+                      >
+                        Third Step
+                      </p>
+                      <p
+                        className="label-optional"
+                      >
+                        Optional label
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-invalid"
+                >
+                  <button
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-fourth-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
+                  >
+                    <div
+                      className="line"
+                    />
+                    <span
+                      className="icon"
+                      title="Fourth Step"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </span>
+                    <div
+                      className="label-container"
+                    >
+                      <p
+                        className="label"
+                        value="Fourth Step"
+                      >
+                        Fourth Step
+                      </p>
+                    </div>
+                  </button>
+                </li>
+                <li
+                  className="step-incomplete"
+                >
+                  <button
+                    aria-disabled={false}
+                    className="step-button main-step"
+                    data-testid="step-button-main-final-step"
+                    disabled={false}
+                    onClick={null}
+                    onKeyDown={null}
+                    type="button"
                   >
                     <span
-                      className="bx--assistive-text"
+                      className="icon"
+                      title="Final Step"
                     >
-                      Incomplete
+                      <svg
+                        aria-hidden={true}
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <text
+                          dominantBaseline="middle"
+                          id="icon-numbered"
+                          textAnchor="middle"
+                          x="50%"
+                          y="55%"
+                        >
+                          5
+                        </text>
+                      </svg>
                     </span>
-                    <svg
-                      aria-hidden={true}
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 32 32"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="label-container"
                     >
-                      <path
-                        d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                      />
-                      <title />
-                    </svg>
-                    <p
-                      className="bx--progress-label"
-                    >
-                      Step 3
-                    </p>
-                    <span
-                      className="bx--progress-line"
-                    />
+                      <p
+                        className="label"
+                        value="Final Step"
+                      >
+                        Final Step
+                      </p>
+                    </div>
                   </button>
                 </li>
               </ul>

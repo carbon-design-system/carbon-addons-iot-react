@@ -1,31 +1,13 @@
 /* Used dependencies */
-import React, { Component } from 'react';
+import React from 'react';
 import { boolean, number, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { ProgressIndicatorSkeleton } from 'carbon-components-react';
 
 import ProgressIndicator from './ProgressIndicator';
-import { IotProgressIndicator } from './IotProgressIndicator';
 
 const items = [
-  {
-    id: 'step1',
-    label: 'First Step',
-    secondaryLabel: 'Optional label',
-    description: 'This is displayed when step icon is hovered',
-  },
-  {
-    id: 'step2',
-    label: 'Second Step',
-  },
-  { id: 'step3', label: 'Third Step' },
-  { id: 'step4', label: 'Fourth Step' },
-  { id: 'step5', label: 'Fifth Step' },
-  { id: 'step6', label: 'Sixth Step' },
-];
-
-const itemsIot = [
   {
     id: 'step1',
     label: 'First step',
@@ -48,37 +30,11 @@ const itemsIot = [
   { id: 'step5', label: 'Fifth Step' },
 ];
 
-class ProgressIndicatorExample extends Component {
-  state = {
-    currentItemId: 'step1',
-  };
-
-  setItem = id => {
-    action('onClickItem')(id);
-    this.setState({ currentItemId: id });
-  };
-
-  render() {
-    const { currentItemId } = this.state;
-
-    return (
-      <ProgressIndicator
-        items={items}
-        onChange={this.setItem}
-        onClickItem={this.setItem}
-        currentItemId={currentItemId}
-        showLabels={boolean('showLabels', true)}
-        isVerticalMode={boolean('isVerticalMode', false)}
-      />
-    );
-  }
-}
-
 /* Adds the stories */
 storiesOf('Watson IoT/ProgressIndicator', module)
-  .add('IoT ProgressIndicator', () => (
-    <IotProgressIndicator
-      items={itemsIot}
+  .add('stateful', () => (
+    <ProgressIndicator
+      items={items}
       currentItemId="step2_substep2"
       stepWidth={number('stepWidth', 6)}
       showLabels={boolean('showlabels', true)}
@@ -86,16 +42,6 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       clickable={boolean('clickable', false)}
     />
   ))
-  .add('IoT ProgressIndicator Vertical', () => (
-    <IotProgressIndicator
-      items={itemsIot}
-      currentItemId="step2_substep2"
-      showLabels={boolean('showlabels', true)}
-      isVerticalMode
-      clickable={boolean('clickable', false)}
-    />
-  ))
-  .add('Stateful', () => <ProgressIndicatorExample />)
   .add('presentation', () => (
     <ProgressIndicator
       items={items}
@@ -112,6 +58,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       currentItemId={select('id', items.map(item => item.id), items[0].id)}
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
+      clickable={boolean('clickable', false)}
       isVerticalMode
     />
   ))
