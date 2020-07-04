@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { itemsAndComponents } from './TableDetailWizard.story';
 import StatefulTableDetailWizard from './StatefulTableDetailWizard';
@@ -22,14 +23,13 @@ describe('StatefulWizardInline', () => {
     expect(mockNext).toHaveBeenCalled();
   });
   it('setItem', () => {
-    const mockSetItem = jest.fn();
-    const wrapper = mount(
-      <StatefulTableDetailWizard {...commonWizardProps} setItem={mockSetItem} />
-    );
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
-    expect(progressIndicatorButtons).toHaveLength(4);
-    progressIndicatorButtons.at(1).simulate('click');
-    expect(mockSetItem).toHaveBeenCalled();
+    const mocks = {
+      clickable: true,
+      setItem: jest.fn(),
+    };
+    const { getByText } = render(<StatefulTableDetailWizard {...commonWizardProps} {...mocks} />);
+    fireEvent.click(getByText('Notifications'));
+    expect(mocks.setItem).toHaveBeenCalledTimes(1);
   });
   it('error', () => {
     const wrapper = mount(
@@ -65,7 +65,7 @@ describe('StatefulWizardInline', () => {
         setItem={mockSetItem}
       />
     );
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
+    const progressIndicatorButtons = wrapper.find('.step-button');
     expect(progressIndicatorButtons).toHaveLength(2);
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();
@@ -117,11 +117,6 @@ describe('StatefulWizardInline', () => {
     expect(backAndNextButtons).toHaveLength(3);
     backAndNextButtons.at(1).simulate('click');
     expect(mockBack).toHaveBeenCalled();
-  });
-  it('Handle currentItemId empty', () => {
-    const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} currentItemId="" />);
-    const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
-    expect(element.prop('currentIndex')).toEqual(0);
   });
   it('onNext not triggered if nextItem is undefined', () => {
     const mockNext = jest.fn();

@@ -28,26 +28,37 @@ class DetailWizardSidebar extends Component {
     ).isRequired,
     showLabels: PropTypes.bool,
     stepWidth: PropTypes.number,
+    clickable: PropTypes.bool,
   };
 
   static defaultProps = {
     showLabels: true,
     stepWidth: 80,
+    clickable: false,
   };
 
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, className } = this.props;
+    const {
+      currentItemId,
+      setItem,
+      items,
+      showLabels,
+      stepWidth,
+      className,
+      clickable,
+    } = this.props;
 
     const sideBarProgressIndicator = (
       <ProgressIndicator
         currentItemId={currentItemId}
         items={items.map(item => ({ id: item.id, label: item.name }))}
         showLabels={showLabels}
-        onClickItem={setItem}
+        setStep={setItem}
         stepWidth={stepWidth}
         isVerticalMode
+        clickable={clickable}
       />
     );
     return (

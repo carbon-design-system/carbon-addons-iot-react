@@ -170,7 +170,7 @@ const PageWizard = ({
           <ProgressIndicator
             items={newItemsArray()}
             currentItemId={currentStepId}
-            setStep={idx => setStep(steps[idx].id)}
+            setStep={setStep}
             isVerticalMode={isProgressIndicatorVertical}
             clickable={clickable}
           />

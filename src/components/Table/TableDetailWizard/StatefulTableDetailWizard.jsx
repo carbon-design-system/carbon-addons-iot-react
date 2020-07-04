@@ -12,8 +12,10 @@ const StatefulTableDetailWizard = ({
 }) => {
   const [currentItemId, setCurrentItemId] = useState(currentItemIdProp || (items && items[0].id));
   const currentItemIndex = items.findIndex(item => item.id === currentItemId);
+
   const nextItem = currentItemIndex < items.length - 1 ? items[currentItemIndex + 1] : undefined;
   const prevItem = currentItemIndex > 0 ? items[currentItemIndex - 1] : undefined;
+
   const handleNext = id => {
     // Find the last one
     setCurrentItemId(id);
@@ -29,6 +31,7 @@ const StatefulTableDetailWizard = ({
       onBack(id);
     }
   };
+
   return (
     <TableDetailWizard
       {...other}

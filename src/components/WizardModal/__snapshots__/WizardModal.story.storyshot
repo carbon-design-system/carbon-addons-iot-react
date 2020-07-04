@@ -141,11 +141,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 aria-disabled={false}
-                className="step-button main-step"
+                className="step-button main-step clickable"
                 data-testid="step-button-main-step2"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <div
@@ -195,11 +195,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             >
               <button
                 aria-disabled={false}
-                className="step-button main-step"
+                className="step-button main-step clickable"
                 data-testid="step-button-main-step3"
                 disabled={false}
-                onClick={null}
-                onKeyDown={null}
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 type="button"
               >
                 <span

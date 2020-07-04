@@ -18,7 +18,7 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 
-export const IotProgressStep = ({
+export const ProgressStep = ({
   id,
   index,
   label,
@@ -45,7 +45,7 @@ export const IotProgressStep = ({
   const isClickable = clickable && !disabled && !current;
 
   const handleClick = () => {
-    onChange(id, index);
+    onChange(id);
   };
 
   const handleKeyDown = e => {
@@ -188,7 +188,7 @@ export const IotProgressStep = ({
   );
 };
 
-IotProgressStep.propTypes = {
+ProgressStep.propTypes = {
   id: IDPropTypes.isRequired,
   index: PropTypes.number,
   label: PropTypes.string,
@@ -208,7 +208,7 @@ IotProgressStep.propTypes = {
   clickable: PropTypes.bool,
 };
 
-IotProgressStep.defaultProps = {
+ProgressStep.defaultProps = {
   index: 0,
   label: null,
   secondaryLabel: null,
@@ -227,7 +227,8 @@ IotProgressStep.defaultProps = {
   clickable: false,
 };
 
-export const IotProgressIndicator = ({
+export const ProgressIndicator = ({
+  className,
   items,
   currentItemId,
   showLabels,
@@ -275,10 +276,10 @@ export const IotProgressIndicator = ({
     return idx;
   };
 
-  const handleChange = (step, index) => {
+  const handleChange = step => {
     if (step !== currentStep) {
       if (setStep) {
-        setStep(index);
+        setStep(step);
       } else {
         setCurrentStep(step);
       }
@@ -292,6 +293,7 @@ export const IotProgressIndicator = ({
   const classes = classnames({
     [`${iotPrefix}--progress-indicator`]: true,
     [`${iotPrefix}--progress-indicator--vertical`]: isVerticalMode,
+    [className]: className,
   });
 
   return hasItems() ? (
@@ -327,7 +329,8 @@ export const IotProgressIndicator = ({
   ) : null;
 };
 
-IotProgressIndicator.propTypes = {
+ProgressIndicator.propTypes = {
+  className: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: IDPropTypes,
@@ -346,7 +349,8 @@ IotProgressIndicator.propTypes = {
   setStep: PropTypes.func,
 };
 
-IotProgressIndicator.defaultProps = {
+ProgressIndicator.defaultProps = {
+  className: null,
   items: null,
   showLabels: true,
   stepWidth: null,
@@ -356,4 +360,4 @@ IotProgressIndicator.defaultProps = {
   setStep: null,
 };
 
-export default IotProgressIndicator;
+export default ProgressIndicator;

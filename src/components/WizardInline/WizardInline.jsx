@@ -119,6 +119,9 @@ export const propTypes = {
   error: PropTypes.string,
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
   onClearError: PropTypes.func,
+
+  /** Set the progress indicator button to clickable */
+  clickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -146,6 +149,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   onClearError: null,
+  clickable: false,
 };
 
 const WizardInline = ({
@@ -175,6 +179,7 @@ const WizardInline = ({
   error,
   onClearError,
   closeButtonTitle,
+  clickable,
 }) => {
   if (__DEV__) {
     warning(
@@ -219,6 +224,7 @@ const WizardInline = ({
           onClose={showCloseButton ? onClose : null}
           stepWidth={stepWidth}
           closeButtonTitle={closeButtonTitle}
+          clickable={clickable}
         />
         {error ? (
           <StyledMessageBox

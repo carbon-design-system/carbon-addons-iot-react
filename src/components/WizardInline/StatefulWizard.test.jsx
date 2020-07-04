@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { itemsAndComponents } from './WizardInline.story';
 import StatefulWizardInline from './StatefulWizardInline';
@@ -22,12 +23,13 @@ describe('StatefulWizardInline', () => {
     expect(mockNext).toHaveBeenCalled();
   });
   it('setItem', () => {
-    const mockSetItem = jest.fn();
-    const wrapper = mount(<StatefulWizardInline {...commonWizardProps} setItem={mockSetItem} />);
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
-    expect(progressIndicatorButtons).toHaveLength(4);
-    progressIndicatorButtons.at(1).simulate('click');
-    expect(mockSetItem).toHaveBeenCalled();
+    const mocks = {
+      clickable: true,
+      setItem: jest.fn(),
+    };
+    const { getByText } = render(<StatefulWizardInline {...commonWizardProps} {...mocks} />);
+    fireEvent.click(getByText('Long step'));
+    expect(mocks.setItem).toHaveBeenCalledTimes(1);
   });
   it('error', () => {
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} error="I'm in error" />);
@@ -61,7 +63,7 @@ describe('StatefulWizardInline', () => {
         setItem={mockSetItem}
       />
     );
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
+    const progressIndicatorButtons = wrapper.find('.step-button');
     expect(progressIndicatorButtons).toHaveLength(2);
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();
@@ -132,11 +134,5 @@ describe('StatefulWizardInline', () => {
     const backButton = wrapper.find('.bx--btn').at(1);
     backButton.simulate('click');
     expect(wrapper.find('WizardInline').props().currentItemId).toBe(itemsAndComponents[1].id);
-  });
-  it('setItem advances to the set item with no setItem callback', () => {
-    const wrapper = mount(<StatefulWizardInline {...commonWizardProps} />);
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
-    progressIndicatorButtons.at(3).simulate('click');
-    expect(wrapper.find('WizardInline').props().currentItemId).toBe(itemsAndComponents[3].id);
   });
 });

@@ -2587,6 +2587,7 @@ Map {
   },
   "WizardModal" => Object {
     "defaultProps": Object {
+      "clickable": false,
       "currentStepIndex": 0,
       "footer": Object {
         "cancelButtonLabel": "Cancel",
@@ -2597,6 +2598,9 @@ Map {
       },
     },
     "propTypes": Object {
+      "clickable": Object {
+        "type": "bool",
+      },
       "currentStepIndex": Object {
         "type": "number",
       },
@@ -2676,6 +2680,7 @@ Map {
       "blurb": null,
       "breadcrumb": null,
       "cancelLabel": "Cancel",
+      "clickable": false,
       "closeButtonTitle": "Close",
       "currentItemId": null,
       "description": null,
@@ -2712,6 +2717,9 @@ Map {
       },
       "cancelLabel": Object {
         "type": "node",
+      },
+      "clickable": Object {
+        "type": "bool",
       },
       "closeButtonTitle": Object {
         "type": "string",
@@ -2809,6 +2817,7 @@ Map {
       "blurb": null,
       "breadcrumb": null,
       "cancelLabel": "Cancel",
+      "clickable": false,
       "closeButtonTitle": "Close",
       "currentItemId": null,
       "description": null,
@@ -2845,6 +2854,9 @@ Map {
       },
       "cancelLabel": Object {
         "type": "node",
+      },
+      "clickable": Object {
+        "type": "bool",
       },
       "closeButtonTitle": Object {
         "type": "string",
@@ -3227,6 +3239,7 @@ Map {
   },
   "ProgressIndicator" => Object {
     "defaultProps": Object {
+      "className": null,
       "clickable": false,
       "currentItemId": null,
       "isVerticalMode": false,
@@ -3236,6 +3249,9 @@ Map {
       "stepWidth": null,
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "clickable": Object {
         "type": "bool",
       },

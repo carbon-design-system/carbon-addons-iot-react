@@ -42,18 +42,4 @@ describe('TableDetailWizard', () => {
     wrapper.find('NotificationButton').simulate('click');
     expect(onClearError.mock.calls).toHaveLength(1);
   });
-  it('Handle current item empty', () => {
-    const wrapper = mount(
-      <TableDetailWizard
-        currentItemId=""
-        items={itemsAndComponents}
-        title="Create Physical Interface"
-        onClose={() => jest.fn()}
-        onBack={() => jest.fn()}
-        onSubmit={() => jest.fn()}
-      />
-    );
-    const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
-    expect(element.prop('currentIndex')).toEqual(0);
-  });
 });

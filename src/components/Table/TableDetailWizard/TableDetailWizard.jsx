@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
@@ -95,6 +95,8 @@ export const propTypes = {
   error: PropTypes.string,
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
   onClearError: PropTypes.func,
+  /** Set the progress indicator button to clickable */
+  clickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -114,6 +116,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   onClearError: null,
+  clickable: false,
 };
 
 const TableDetailWizard = ({
@@ -136,9 +139,11 @@ const TableDetailWizard = ({
   className,
   error,
   onClearError,
+  clickable,
 }) => {
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
+
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;
 
@@ -157,6 +162,8 @@ const TableDetailWizard = ({
     callback();
   };
 
+  console.log(`current:`, currentItemId);
+
   return (
     <StyledWizardWrapper className={className}>
       <TableDetailWizardHeader title={title} onClose={onClose} />
@@ -168,6 +175,7 @@ const TableDetailWizard = ({
           items={items}
           showLabels={showLabels}
           stepWidth={stepWidth}
+          clickable={clickable}
         />
         <StyledContentContainer>
           <WizardContent component={currentItemObj.component} />
