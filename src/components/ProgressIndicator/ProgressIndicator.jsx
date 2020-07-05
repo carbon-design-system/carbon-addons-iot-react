@@ -18,30 +18,26 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 const IDPropTypes = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
 
-export const ProgressStep = ({
+const ProgressStep = ({
   id,
-  index,
   label,
   secondaryLabel,
   description,
-  currentStep,
-  currentIndex,
   onChange,
   disabled,
   showLabel,
   stepWidth,
   vertical,
   invalid,
-  level,
   stepNumber,
   lastItem,
   clickable,
+  current,
+  complete,
+  incomplete,
+  mainStep,
+  subStep,
 }) => {
-  const current = currentStep === id;
-  const complete = currentIndex > index;
-  const incomplete = currentIndex < index;
-  const mainStep = level === 0;
-  const subStep = level > 0;
   const isClickable = clickable && !disabled && !current;
 
   const handleClick = () => {
@@ -190,44 +186,46 @@ export const ProgressStep = ({
 
 ProgressStep.propTypes = {
   id: IDPropTypes.isRequired,
-  index: PropTypes.number,
   label: PropTypes.string,
   secondaryLabel: PropTypes.string,
   description: PropTypes.string,
-  currentStep: PropTypes.string,
-  currentIndex: PropTypes.number,
   onChange: PropTypes.func,
   disabled: PropTypes.bool,
   showLabel: PropTypes.bool,
   stepWidth: PropTypes.number,
   vertical: PropTypes.bool,
   invalid: PropTypes.bool,
-  level: PropTypes.number,
   stepNumber: PropTypes.number,
   lastItem: PropTypes.bool,
   clickable: PropTypes.bool,
+  current: PropTypes.bool,
+  complete: PropTypes.bool,
+  incomplete: PropTypes.bool,
+  mainStep: PropTypes.bool,
+  subStep: PropTypes.bool,
 };
 
 ProgressStep.defaultProps = {
-  index: 0,
   label: null,
   secondaryLabel: null,
   description: null,
-  currentStep: null,
-  currentIndex: null,
   onChange: null,
   disabled: false,
   showLabel: false,
   stepWidth: null,
   vertical: false,
   invalid: false,
-  level: 0,
   stepNumber: 0,
   lastItem: false,
   clickable: false,
+  current: false,
+  complete: false,
+  incomplete: false,
+  mainStep: false,
+  subStep: false,
 };
 
-export const ProgressIndicator = ({
+const ProgressIndicator = ({
   className,
   items,
   currentItemId,
@@ -237,7 +235,7 @@ export const ProgressIndicator = ({
   clickable,
   setStep,
 }) => {
-  const [currentStep, setCurrentStep] = useState(currentItemId);
+  const [currentStep, setCurrentStep] = useState(currentItemId || items[0].id);
 
   const flattenItems = (itemsList, level = 0) => {
     let newList = [];
@@ -303,17 +301,18 @@ export const ProgressIndicator = ({
           { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
           index
         ) => (
-          <IotProgressStep
+          <ProgressStep
             id={id}
             key={id}
             label={label}
             secondaryLabel={secondaryLabel}
             description={description || label}
-            index={index}
-            currentStep={currentStep}
-            currentIndex={getCurrentIndex()}
+            current={currentStep === id}
+            complete={getCurrentIndex() > index}
+            incomplete={getCurrentIndex() < index}
+            mainStep={level === 0}
+            subStep={level > 0}
             onChange={handleChange}
-            level={level}
             stepNumber={stepNumber}
             vertical={isVerticalMode}
             showLabel={showLabels}

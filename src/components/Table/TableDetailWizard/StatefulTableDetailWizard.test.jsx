@@ -22,6 +22,16 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).toHaveBeenCalled();
   });
+  it('onNext without currentItemId', () => {
+    const mockNext = jest.fn();
+    const wrapper = mount(
+      <StatefulTableDetailWizard {...commonWizardProps} currentItemId="" onNext={mockNext} />
+    );
+    const cancelAndNextButtons = wrapper.find('.bx--btn');
+    expect(cancelAndNextButtons).toHaveLength(3);
+    cancelAndNextButtons.at(2).simulate('click');
+    expect(mockNext).toHaveBeenCalled();
+  });
   it('setItem', () => {
     const mocks = {
       clickable: true,

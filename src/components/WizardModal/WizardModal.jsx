@@ -165,7 +165,7 @@ class WizardModal extends Component {
       >
         <ProgressIndicator
           items={items}
-          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : items[0].id}
+          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
           setStep={this.handleClick}
           clickable={clickable}
         />

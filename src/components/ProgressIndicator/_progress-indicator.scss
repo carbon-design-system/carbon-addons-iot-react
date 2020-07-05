@@ -1,10 +1,7 @@
 @import '~carbon-components/scss/components/progress-indicator/progress-indicator';
 @import '../../globals/vars';
 
-$IBMPlexSans: 'IBM Plex Sans',
-'Helvetica Neue',
-Arial,
-sans-serif;
+$IBMPlexSans: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
 .#{$iot-prefix}--progress-indicator {
   display: flex;
@@ -46,7 +43,7 @@ sans-serif;
     }
 
     transition: box-shadow $duration--fast-02 motion(standard, productive),
-    color $duration--fast-02 motion(standard, productive);
+      color $duration--fast-02 motion(standard, productive);
   }
 
   .line {
