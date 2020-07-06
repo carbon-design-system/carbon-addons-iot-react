@@ -5,6 +5,7 @@ import { Settings16 } from '@carbon/icons-react';
 import withSize from 'react-sizeme';
 
 import { settings } from '../../../constants/Settings';
+import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 
 import TableViewItemPropType from './TableViewItemPropTypes';
 import TableViewDropdownItem from './TableViewDropdownItem';
@@ -42,14 +43,8 @@ const propTypes = {
   }).isRequired,
   /** Used to overide the internal components and props of the TableViewDropdown */
   overrides: PropTypes.shape({
-    dropdown: PropTypes.shape({
-      props: PropTypes.object,
-      component: PropTypes.elementType,
-    }),
-    dropdownItem: PropTypes.shape({
-      props: PropTypes.object,
-      component: PropTypes.elementType,
-    }),
+    dropdown: OverridePropTypes,
+    dropdownItem: OverridePropTypes,
   }),
   testID: PropTypes.string,
 };
