@@ -13,7 +13,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal
+          iot--composed-modal--modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -208,7 +209,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
@@ -282,7 +288,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI
+          iot--composed-modal--modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -477,7 +484,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <div
             className="WizardInline-custom-footer-content"
@@ -558,7 +570,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal
+          iot--composed-modal--modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -759,7 +772,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"

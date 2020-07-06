@@ -1,0 +1,59 @@
+@import '../../globals/vars';
+@import '../../globals/layout';
+
+.#{$iot-prefix}--composed-modal--modal {
+  .bx--modal-container {
+    @media (min-height: carbon--rem(515px)) {
+      overflow-y: auto;
+    }
+  }
+
+  /* support large modals for ll the sizes */
+  &.big-modal {
+    .bx--modal-header {
+      margin-bottom: 0rem;
+    }
+    .bx--modal-container {
+      min-height: carbon--rem(600px);
+      min-width: carbon--rem(800px);
+      max-height: 80%;
+      @media (min-width: carbon--rem(600px)) {
+        height: auto;
+      }
+      @media (min-width: carbon--rem(1024px)) {
+        max-width: 80%;
+      }
+      @media (min-width: carbon--rem(1200px)) {
+        max-width: 60%;
+      }
+    }
+  }
+
+  /* Needed for buttons when they're next to each other */
+
+  .bx--modal-header__heading {
+    margin-bottom: 0.75rem;
+  }
+
+  .bx--modal-content {
+    min-height: carbon--rem(200px);
+  }
+}
+
+.#{$iot-prefix}--composed-modal--inline-notification {
+  width: calc(100% - 1rem * 2);
+  margin: 1rem auto;
+}
+
+.#{$iot-prefix}--composed-modal--modal-footer {
+  justify-content: flex-end;
+
+  & > * {
+    width: 100%;
+  }
+
+  .modal-greedy-spacer {
+    flex-grow: 2;
+    text-align: left; // needed to override the dialog style
+  }
+}

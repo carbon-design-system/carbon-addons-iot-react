@@ -13,7 +13,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible 
+          iot--composed-modal--modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -247,7 +248,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -317,7 +323,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible 
+          iot--composed-modal--modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -408,7 +415,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -478,7 +490,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible 
+          iot--composed-modal--modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -629,7 +642,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -699,7 +717,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible 
+          iot--composed-modal--modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -848,7 +867,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal--modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"

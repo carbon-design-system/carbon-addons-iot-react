@@ -9,76 +9,13 @@ import {
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import classnames from 'classnames';
-import styled from 'styled-components';
-import { rem } from 'polished';
 import warning from 'warning';
 
-import { PADDING } from '../../styles/styles';
+import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
 
-const StyledModal = styled(CarbonComposedModal)`
-   {
-    .bx--modal-container {
-      @media (min-height: ${rem(515)}) {
-        overflow-y: auto;
-      }
-    }
-
-    /* support large modals for ll the sizes */
-    &.big-modal {
-      .bx--modal-header {
-        margin-bottom: 0rem;
-      }
-      .bx--modal-container {
-        min-height: ${rem(600)};
-        min-width: ${rem(800)};
-        max-height: 80%;
-        @media (min-width: ${rem(600)}) {
-          height: auto;
-        }
-        @media (min-width: ${rem(1024)}) {
-          max-width: 80%;
-        }
-        @media (min-width: ${rem(1200)}) {
-          max-width: 60%;
-        }
-      }
-    }
-
-    /* Needed for buttons when they're next to each other */
-
-    .bx--modal-header__heading {
-      margin-bottom: 0.75rem;
-    }
-
-    .bx--modal-content {
-      min-height: ${rem(200)};
-    }
-  }
-`;
-
-const StyledMessageBox = styled(InlineNotification)`
-  &&& {
-    width: calc(100% - ${PADDING.horizontalWrapPadding} * 2);
-    margin: ${PADDING.verticalPadding} auto;
-  }
-`;
-
-const StyledModalFooter = styled(ModalFooter)`
-   {
-    justify-content: flex-end;
-
-    & > * {
-      width: 100%;
-    }
-
-    .modal-greedy-spacer {
-      flex-grow: 2;
-      text-align: left; // needed to override the dialog style
-    }
-  }
-`;
+const { iotPrefix } = settings;
 
 export const ComposedModalPropTypes = {
   /** Header Props
@@ -225,14 +162,15 @@ class ComposedModal extends React.Component {
     return isFetchingData ? (
       <Loading />
     ) : (
-      <StyledModal
+      <CarbonComposedModal
         {...props}
         open={open}
         onClose={this.doNotClose}
-        className={classnames(className, {
+        className={`${classnames(className, {
           'error-modal': type === 'warn',
           'big-modal': isLarge,
         })}
+          ${iotPrefix}--composed-modal--modal`}
       >
         <ModalHeader
           label={label}
@@ -245,15 +183,16 @@ class ComposedModal extends React.Component {
         </ModalHeader>
         {children ? <ModalBody>{children}</ModalBody> : null}
         {error ? (
-          <StyledMessageBox
+          <InlineNotification
             title={error}
             subtitle=""
             kind="error"
             onCloseButtonClick={this.handleClearError}
+            className={`${iotPrefix}--composed-modal--inline-notification`}
           />
         ) : null}
         {!passiveModal ? (
-          <StyledModalFooter>
+          <ModalFooter className={`${iotPrefix}--composed-modal--modal-footer`}>
             {React.isValidElement(footer) ? (
               footer
             ) : (
@@ -276,9 +215,9 @@ class ComposedModal extends React.Component {
                 ) : null}
               </Fragment>
             )}
-          </StyledModalFooter>
+          </ModalFooter>
         ) : null}
-      </StyledModal>
+      </CarbonComposedModal>
     );
   }
 }
