@@ -28,7 +28,6 @@ const propTypes = {
 const defaultProps = {
   ...CarbonComboBox.defaultProps,
   loading: false,
-  inline: false,
   wrapperClassName: null,
   closeButtonText: 'Close',
   editOptionText: '-Create',
@@ -37,18 +36,35 @@ const defaultProps = {
 };
 
 const ComboBox = ({
-  inline,
   loading,
   wrapperClassName,
   closeButtonText,
   editOptionText,
   hasMultiValue,
-  itemToString,
   onChange,
-  items,
-  downshiftProps,
   ...comboProps
 }) => {
+  const {
+    items,
+    ariaLabel,
+    className,
+    disabled,
+    id,
+    initialSelectedItem,
+    downshiftProps,
+    itemToString,
+    itemToElement,
+    placeholder,
+    shouldFilterItem,
+    type,
+    invalid,
+    invalidText,
+    translateWithId,
+    size,
+    onInputChange,
+    light,
+    direction,
+  } = comboProps;
   // Ref for the combobox input
   const comboRef = React.createRef();
   // Input value that is added to list
@@ -66,13 +82,12 @@ const ComboBox = ({
     // If there are tags then clear and focus the input
     if (hasMultiValue) {
       setSelectedItem(null);
-      // comboRef.current.textInput.current.focus();
     }
   });
 
   const handleOnClose = e => {
     // Get close target's text
-    const closedValue = e.currentTarget.parentNode.children[0].textContent;
+    const closedValue = e.currentTarget.parentNode?.children[0]?.textContent;
     // If there is a tag with the same value then remove from tag array
     tagItems.forEach((item, idx) => {
       if (itemToString(item) === closedValue) {
@@ -82,14 +97,15 @@ const ComboBox = ({
     });
     // Send new value to users onChange callback
     onChange([...tagItems]);
-    e.currentTarget.parentNode.parentNode.parentNode.firstChild.children[0].children[1].focus();
+    // eslint-disable-next-line no-unused-expressions
+    e.currentTarget.parentNode?.parentNode?.parentNode?.firstChild?.children[0]?.children[1]?.focus();
   };
 
   const handleOnChange = ({ selectedItem: downShiftSelectedItem }) => {
     const newItem =
       downShiftSelectedItem &&
       Object.keys(downShiftSelectedItem).reduce(
-        (acc, id) => ({ ...acc, [id]: downShiftSelectedItem[id].trim() }),
+        (acc, currentId) => ({ ...acc, [currentId]: downShiftSelectedItem[currentId].trim() }),
         {}
       );
 
@@ -144,6 +160,8 @@ const ComboBox = ({
     } else {
       setInputValue(null);
     }
+    // Pass on to user callback
+    onInputChange(e);
   };
 
   const findHighlightedIndex = ({ items: carbonItems }, carbonInputValue) => {
@@ -180,7 +198,18 @@ const ComboBox = ({
     >
       <CarbonComboBox
         data-testid="combo-box"
-        {...comboProps}
+        ariaLabel={ariaLabel}
+        id={id}
+        type={type}
+        placeholder={placeholder}
+        shouldFilterItem={shouldFilterItem}
+        size={size}
+        invalid={invalid}
+        light={light}
+        direction={direction}
+        invalidText={invalidText}
+        translateWithId={translateWithId}
+        initialSelectedItem={initialSelectedItem}
         downshiftProps={downshiftProps}
         findHighlightedIndex={findHighlightedIndex}
         onHighligtedIndexChange={setHighlightedIndex}
@@ -188,11 +217,12 @@ const ComboBox = ({
         selectedItem={comboProps.selectedItem || selectedItem}
         items={combinedItems}
         itemToString={itemToString}
+        itemToElement={itemToElement}
         editOptionText={editOptionText}
         onChange={handleOnChange}
         onInputChange={handleInputChange}
-        className={classnames(comboProps.className, `${iotPrefix}--combobox-input`)}
-        disabled={comboProps.disabled || (loading !== undefined && loading !== false)}
+        className={classnames(className, `${iotPrefix}--combobox-input`)}
+        disabled={disabled || (loading !== undefined && loading !== false)}
       />
       <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
         {tagItems.map((item, idx) => (

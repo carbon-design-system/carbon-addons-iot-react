@@ -13659,7 +13659,6 @@ Map {
       "disabled": false,
       "editOptionText": "-Create",
       "hasMultiValue": false,
-      "inline": false,
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
