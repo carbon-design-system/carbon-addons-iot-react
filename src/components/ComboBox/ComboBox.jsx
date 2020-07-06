@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
+import deprecate from '../../internal/deprecate';
 
 import CarbonComboBox from './CarbonComboBox';
 
@@ -22,7 +23,10 @@ const propTypes = {
   // String to pass for tags close button aria-label. Will be prepended to value name
   closeButtonText: PropTypes.string,
   // Bit that will allow mult value and tag feature
-  hasMultiValue: PropTypes.bool,
+  hasMultiValue: deprecate(
+    PropTypes.bool,
+    '\nThe prop `hasMultiValue` for Combobox is experimental. The functionality that is enabled by this prop is subject to change until Combobbox moves out of experimental.'
+  ),
 };
 
 const defaultProps = {

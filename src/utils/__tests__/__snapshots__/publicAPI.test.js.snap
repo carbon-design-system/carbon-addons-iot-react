@@ -13968,9 +13968,7 @@ Map {
       "findHighlightedIndex": Object {
         "type": "func",
       },
-      "hasMultiValue": Object {
-        "type": "bool",
-      },
+      "hasMultiValue": [Function],
       "id": Object {
         "isRequired": true,
         "type": "string",
