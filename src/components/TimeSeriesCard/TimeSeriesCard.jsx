@@ -22,7 +22,7 @@ import { settings } from '../../constants/Settings';
 import {
   getUpdatedCardSize,
   handleCardVariables,
-  valueFormatter,
+  chartValueFormatter,
 } from '../../utils/cardUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
@@ -492,7 +492,7 @@ const TimeSeriesCard = ({
                     title: `${yLabel || ''} ${unit ? `(${unit})` : ''}`,
                     mapsTo: 'value',
                     ticks: {
-                      formatter: axisValue => valueFormatter(axisValue, newSize, null, locale),
+                      formatter: axisValue => chartValueFormatter(axisValue, newSize, null, locale),
                     },
                     ...(chartType !== TIME_SERIES_TYPES.BAR
                       ? { yMaxAdjuster: yMaxValue => yMaxValue * 1.3 }
@@ -506,7 +506,7 @@ const TimeSeriesCard = ({
                 containerResizable: true,
                 tooltip: {
                   valueFormatter: tooltipValue =>
-                    valueFormatter(tooltipValue, newSize, unit, locale),
+                    chartValueFormatter(tooltipValue, newSize, unit, locale),
                   customHTML: (...args) =>
                     handleTooltip(
                       ...args,
