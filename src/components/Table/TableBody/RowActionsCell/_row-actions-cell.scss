@@ -1,5 +1,4 @@
 @import '../../../../globals/vars';
-@import '../../../../styles';
 @mixin backgroundGradient($color) {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }
