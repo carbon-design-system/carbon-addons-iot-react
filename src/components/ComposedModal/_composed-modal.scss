@@ -1,5 +1,5 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--composed-modal__body--small-margin-bottom {
-  margin-bottom: 1em;
+  margin-bottom: $spacing-05;
 }
