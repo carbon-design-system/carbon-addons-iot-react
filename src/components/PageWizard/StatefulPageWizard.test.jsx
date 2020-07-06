@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import StatefulPageWizard from './StatefulPageWizard';
-import { content } from './PageWizard.story';
+import { content, StepValidationWizard } from './PageWizard.story';
 
 describe('StatefulPageWizard', () => {
   it('button events during first step (no validation)', () => {
@@ -131,5 +131,20 @@ describe('StatefulPageWizard', () => {
     fireEvent.click(screen.getByText(i18n.back));
     fireEvent.click(screen.getByText(i18n.next));
     expect(renderedElement.container.innerHTML).toBeTruthy();
+  });
+
+  it('clicking on step indicator should validate before going to step', () => {
+    const { container, getByText, queryByText } = render(<StepValidationWizard />);
+
+    // check that the next step won't happen if inputs aren't filled
+    fireEvent.click(getByText('Step 2'));
+    expect(getByText('First name and Last name cannot be empty')).toBeTruthy();
+
+    // fill in inputs, then try to go to step 2
+    const inputs = container.querySelectorAll('input');
+    fireEvent.change(inputs[0], { target: { value: 'firstname' } });
+    fireEvent.change(inputs[1], { target: { value: 'lastname' } });
+    fireEvent.click(getByText('Step 2'));
+    expect(queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });

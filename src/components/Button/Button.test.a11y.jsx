@@ -1,24 +1,19 @@
 import React from 'react';
-/* eslint-disable import/no-extraneous-dependencies */
-import { mount } from 'enzyme';
-import AAT from '@ibma/aat';
-/* eslint-enable import/no-extraneous-dependencies */
+import { render } from '@testing-library/react';
 
-import HTMLWrap from '../../a11y/a11y-test-helper';
+import { emptyDOMTree } from '../../../config/testHelpers';
 
 import Button from './Button';
 
-describe('Button a11y scan', () => {
-  it('Button is accessible', done => {
-    const wrapper = mount(
-      <HTMLWrap>
-        <Button onClick={() => {}}>Label</Button>
-      </HTMLWrap>
-    );
+describe('Button', () => {
+  beforeEach(() => {
+    document.getElementsByTagName('html')[0].innerHTML = emptyDOMTree;
+  });
 
-    AAT.getCompliance(wrapper.html(), 'Button', data => {
-      expect(AAT.assertCompliance(data)).toEqual(0);
-      done();
+  it('is accessible', async () => {
+    const { container } = render(<Button onClick={() => {}}>Label</Button>, {
+      container: document.getElementById('main'),
     });
+    await expect(container).toBeAccessible('Button is accessible');
   }, 20000);
 });

@@ -2144,6 +2144,166 @@ Map {
       },
     },
   },
+  "TableSaveViewModal" => Object {
+    "defaultProps": Object {
+      "error": undefined,
+      "i18n": Object {
+        "cancelButtonLabelText": "Cancel",
+        "closeIconDescription": "Close",
+        "defaultCheckboxLabelText": "Save as my default view",
+        "modalBodyText": "You can save the current view's settings including applied filters and search.",
+        "modalTitle": "Save new view",
+        "publicCheckboxLabelText": "Public view",
+        "saveButtonLabelText": "Save",
+        "titleInputLabelText": "View title",
+      },
+      "initialFormValues": Object {
+        "isDefault": false,
+        "isPublic": false,
+        "title": "",
+      },
+      "overrides": undefined,
+      "sendingData": false,
+      "testID": "TableSaveViewModal",
+      "titleInputInvalid": false,
+      "titleInputInvalidText": undefined,
+      "viewDescription": undefined,
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "onChange": Object {
+              "type": "func",
+            },
+            "onClearError": Object {
+              "type": "func",
+            },
+            "onClose": Object {
+              "type": "func",
+            },
+            "onSave": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "isRequired": true,
+        "type": "shape",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "cancelButtonLabelText": Object {
+              "type": "string",
+            },
+            "closeIconDescription": Object {
+              "type": "string",
+            },
+            "defaultCheckboxLabelText": Object {
+              "type": "string",
+            },
+            "modalBodyText": Object {
+              "type": "string",
+            },
+            "modalTitle": Object {
+              "type": "string",
+            },
+            "publicCheckboxLabelText": Object {
+              "type": "string",
+            },
+            "saveButtonLabelText": Object {
+              "type": "string",
+            },
+            "titleInputLabelText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "initialFormValues": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "isDefault": Object {
+                    "type": "bool",
+                  },
+                  "isPublic": Object {
+                    "type": "bool",
+                  },
+                  "title": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "open": Object {
+        "isRequired": true,
+        "type": "bool",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "composedModal": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "tableSaveViewForm": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "sendingData": Object {
+        "type": "bool",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "titleInputInvalid": Object {
+        "type": "bool",
+      },
+      "titleInputInvalidText": Object {
+        "type": "string",
+      },
+      "viewDescription": Object {
+        "type": "string",
+      },
+    },
+  },
   "TableSkeletonWithHeaders" => Object {
     "defaultProps": Object {
       "columns": Array [],
@@ -3408,6 +3568,7 @@ Map {
       "extraContent": undefined,
       "i18n": Object {
         "editIconDescription": "Edit page title",
+        "tooltipIconDescription": "More information",
       },
       "isLoading": false,
       "onEdit": null,
@@ -3562,6 +3723,7 @@ Map {
         "layout": "VERTICAL",
         "type": "SIMPLE",
       },
+      "domainRange": null,
       "i18n": Object {
         "noDataLabel": "No data",
       },
@@ -4136,6 +4298,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "domainRange": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "object",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hideHeader": Object {
         "type": "bool",
@@ -8333,6 +8513,7 @@ Map {
         "includeZeroOnXaxis": false,
         "includeZeroOnYaxis": false,
       },
+      "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
       },
@@ -8957,6 +9138,24 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "domainRange": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "object",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hideHeader": Object {
         "type": "bool",

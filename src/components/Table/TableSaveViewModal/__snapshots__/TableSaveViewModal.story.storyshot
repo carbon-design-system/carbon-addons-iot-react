@@ -1,0 +1,906 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Custom description and public checkbox (using overrides) 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      data-testid="TableSaveViewModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      onTransitionEnd={[Function]}
+      open={true}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--modal-container"
+        tabIndex={-1}
+      >
+        <div
+          className="bx--modal-header"
+        >
+          <p
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Save new view
+          </p>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+        >
+          <p
+            className="iot--save-view-modal__body-text"
+          >
+            You can save the current view's settings including applied filters and search.
+          </p>
+          <form
+            data-testid="TableSaveViewModal-form"
+          >
+            <div
+              className="bx--form-item bx--text-input-wrapper"
+            >
+              <label
+                className="bx--label"
+                htmlFor="save-view-modal-view-title"
+              >
+                View title
+              </label>
+              <div
+                className="bx--text-input__field-wrapper"
+                data-invalid={null}
+              >
+                <input
+                  className="bx--text-input bx--text__input"
+                  data-testid="TableSaveViewModal-form-title-input"
+                  disabled={false}
+                  id="save-view-modal-view-title"
+                  name="title"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <ul
+              className="bx--accordion iot--save-view-modal__view-description bx--accordion--end"
+            >
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-1"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  title="4 active filters"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    4 active filters
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-1"
+                >
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+              </li>
+              <li
+                className="bx--accordion__item"
+                onAnimationEnd={[Function]}
+              >
+                <button
+                  aria-controls="accordion-item-2"
+                  aria-expanded={false}
+                  className="bx--accordion__heading"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  title="1 hidden column"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--accordion__arrow"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                    />
+                  </svg>
+                  <div
+                    className="bx--accordion__title"
+                  >
+                    1 hidden column
+                  </div>
+                </button>
+                <div
+                  className="bx--accordion__content"
+                  id="accordion-item-2"
+                >
+                  <p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <fieldset
+              className="bx--fieldset"
+            >
+              <div
+                className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              >
+                <input
+                  checked={false}
+                  className="bx--checkbox"
+                  data-testid="TableSaveViewModal-form-default-checkbox"
+                  disabled={false}
+                  id="save-view-modal-default-checkbox-label"
+                  name="isDefault"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="save-view-modal-default-checkbox-label"
+                  title={null}
+                >
+                  <span
+                    className="bx--checkbox-label-text"
+                  >
+                    Save as my default view
+                  </span>
+                </label>
+              </div>
+              <div
+                className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              >
+                <input
+                  checked={false}
+                  className="bx--checkbox"
+                  data-testid="TableSaveViewModal-form-public-checkbox"
+                  disabled={true}
+                  id="save-view-modal-public-checkbox-label"
+                  name="isPublic"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="save-view-modal-public-checkbox-label"
+                  title={null}
+                >
+                  <span
+                    className="bx--checkbox-label-text"
+                  >
+                    Public view
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div
+          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+        >
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Custom form (using overrides) 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      data-testid="TableSaveViewModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      onTransitionEnd={[Function]}
+      open={true}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--modal-container"
+        tabIndex={-1}
+      >
+        <div
+          className="bx--modal-header"
+        >
+          <p
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Save new view
+          </p>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+        >
+          <p
+            className="iot--save-view-modal__body-text"
+          >
+            You can save whatever you want
+          </p>
+          <form>
+            <div
+              className="bx--form-item"
+            >
+              <label
+                className="bx--label"
+                htmlFor="myTextArea"
+              >
+                My custom form element
+              </label>
+              <div
+                className="bx--text-area__wrapper"
+                data-invalid={null}
+              >
+                <textarea
+                  aria-describedby={null}
+                  aria-invalid={null}
+                  className="bx--text-area"
+                  cols={50}
+                  disabled={false}
+                  id="myTextArea"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  placeholder=""
+                  rows={4}
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div
+          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+        >
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Default with knobs 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      data-testid="TableSaveViewModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      onTransitionEnd={[Function]}
+      open={true}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--modal-container"
+        tabIndex={-1}
+      >
+        <div
+          className="bx--modal-header"
+        >
+          <p
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Save new view
+          </p>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+        >
+          <p
+            className="iot--save-view-modal__body-text"
+          >
+            You can save the current view's settings including applied filters and search.
+          </p>
+          <form
+            data-testid="TableSaveViewModal-form"
+          >
+            <div
+              className="bx--form-item bx--text-input-wrapper"
+            >
+              <label
+                className="bx--label"
+                htmlFor="save-view-modal-view-title"
+              >
+                View title
+              </label>
+              <div
+                className="bx--text-input__field-wrapper"
+                data-invalid={null}
+              >
+                <input
+                  className="bx--text-input bx--text__input"
+                  data-testid="TableSaveViewModal-form-title-input"
+                  disabled={false}
+                  id="save-view-modal-view-title"
+                  name="title"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <p
+              className="iot--save-view-modal__view-description"
+            >
+              Entities: 2 filters, Alerts: 3 filters
+            </p>
+            <fieldset
+              className="bx--fieldset"
+            >
+              <div
+                className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              >
+                <input
+                  checked={false}
+                  className="bx--checkbox"
+                  data-testid="TableSaveViewModal-form-default-checkbox"
+                  disabled={false}
+                  id="save-view-modal-default-checkbox-label"
+                  name="isDefault"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="save-view-modal-default-checkbox-label"
+                  title={null}
+                >
+                  <span
+                    className="bx--checkbox-label-text"
+                  >
+                    Save as my default view
+                  </span>
+                </label>
+              </div>
+              <div
+                className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              >
+                <input
+                  checked={false}
+                  className="bx--checkbox"
+                  data-testid="TableSaveViewModal-form-public-checkbox"
+                  disabled={false}
+                  id="save-view-modal-public-checkbox-label"
+                  name="isPublic"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="save-view-modal-public-checkbox-label"
+                  title={null}
+                >
+                  <span
+                    className="bx--checkbox-label-text"
+                  >
+                    Public view
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div
+          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+        >
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table/TableSaveViewModal Prefilled 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="bx--modal is-visible ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      data-testid="TableSaveViewModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      onTransitionEnd={[Function]}
+      open={true}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+      <div
+        className="bx--modal-container"
+        tabIndex={-1}
+      >
+        <div
+          className="bx--modal-header"
+        >
+          <p
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Save new view
+          </p>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+        >
+          <p
+            className="iot--save-view-modal__body-text"
+          >
+            You can save the current view's settings including applied filters and search.
+          </p>
+          <form
+            data-testid="TableSaveViewModal-form"
+          >
+            <div
+              className="bx--form-item bx--text-input-wrapper"
+            >
+              <label
+                className="bx--label"
+                htmlFor="save-view-modal-view-title"
+              >
+                View title
+              </label>
+              <div
+                className="bx--text-input__field-wrapper"
+                data-invalid={null}
+              >
+                <input
+                  className="bx--text-input bx--text__input"
+                  data-testid="TableSaveViewModal-form-title-input"
+                  disabled={false}
+                  id="save-view-modal-view-title"
+                  name="title"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  type="text"
+                  value="My view 1"
+                />
+              </div>
+            </div>
+            <p
+              className="iot--save-view-modal__view-description"
+            />
+            <fieldset
+              className="bx--fieldset"
+            >
+              <div
+                className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              >
+                <input
+                  checked={true}
+                  className="bx--checkbox"
+                  data-testid="TableSaveViewModal-form-default-checkbox"
+                  disabled={false}
+                  id="save-view-modal-default-checkbox-label"
+                  name="isDefault"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="save-view-modal-default-checkbox-label"
+                  title={null}
+                >
+                  <span
+                    className="bx--checkbox-label-text"
+                  >
+                    Save as my default view
+                  </span>
+                </label>
+              </div>
+              <div
+                className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              >
+                <input
+                  checked={false}
+                  className="bx--checkbox"
+                  data-testid="TableSaveViewModal-form-public-checkbox"
+                  disabled={false}
+                  id="save-view-modal-public-checkbox-label"
+                  name="isPublic"
+                  onChange={[Function]}
+                  type="checkbox"
+                />
+                <label
+                  className="bx--checkbox-label"
+                  htmlFor="save-view-modal-public-checkbox-label"
+                  title={null}
+                >
+                  <span
+                    className="bx--checkbox-label-text"
+                  >
+                    Public view
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div
+          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+        >
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
