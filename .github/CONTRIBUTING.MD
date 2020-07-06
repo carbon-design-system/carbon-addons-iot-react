@@ -96,7 +96,7 @@ Before every push, the test suite is ran automatically and takes snapshots of al
 
 The items below are high level points of guidance for writing tests:
 
-- Use The `@testing-library` family of packages instead of `enzyme`. Helping to refactor away from `enzyme` where possible is appreciated.
+- Use the `@testing-library` family of packages instead of `enzyme`. Helping to refactor away from `enzyme` where possible is appreciated.
 - Prefer queries that reflect the experience of visual/mouse users as well as those that use assistive technology, [read more from the `@testing-library` docs](https://testing-library.com/docs/guide-which-query)
   - `getByRole`, `getByLabelText`, `getByPlaceholderText`, `getByText`, `getByDisplayValue`
 - Write tests using queries directly from the `screen` object rather than destructuring them from `render` result, [read more from the `prefer-screen-queries` eslint rule](https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-screen-queries.md)
