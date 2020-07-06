@@ -372,11 +372,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             ],
             xLabel: 'Time',
             yLabel: 'Temperature (˚F)',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
+            includeZeroOnXaxis: false,
+            includeZeroOnYaxis: false,
             timeDataSourceId: 'timestamp',
           })}
-          values={getIntervalChartData('minute', 15, { min: 10, max: 100 }, 100)}
+          values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
           interval="minute"
           breakpoint="lg"
           size={size}
@@ -491,9 +491,9 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               },
             ],
             xLabel: 'Time',
-            yLabel: 'Temperature (˚F)',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
+            yLabel: 'Temperature',
+            includeZeroOnXaxis: false,
+            includeZeroOnYaxis: false,
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
