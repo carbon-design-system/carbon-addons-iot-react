@@ -4,8 +4,9 @@ import {
   compareGrains,
   getUpdatedCardSize,
   formatNumberWithPrecision,
+  formatChartNumberWithPrecision,
   handleCardVariables,
-  valueFormatter,
+  chartValueFormatter,
 } from '../cardUtilityFunctions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -43,6 +44,12 @@ describe('cardUtilityFunctions', () => {
     expect(formatNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
     expect(formatNumberWithPrecision(35000, 2, 'en')).toEqual('35.00K'); // K separator
     expect(formatNumberWithPrecision(35000, null, 'en')).toEqual('35K'); // K separator
+  });
+  it('formatChartNumberWithPrecision', () => {
+    expect(formatChartNumberWithPrecision(3.45, 1, 'fr')).toEqual('3,5'); // decimal separator should be comma
+    expect(formatChartNumberWithPrecision(3.45, 2, 'en')).toEqual('3.45'); // decimal separator should be period
+    expect(formatChartNumberWithPrecision(35000, 2, 'en')).toEqual('35,000.00');
+    expect(formatChartNumberWithPrecision(35000, null, 'en')).toEqual('35,000');
   });
   it('handleCardVariables updates value cards with variables', () => {
     const valueCardPropsWithVariables = {
@@ -676,19 +683,19 @@ describe('cardUtilityFunctions', () => {
       ...others,
     });
   });
-  it('valueFormatter', () => {
+  it('chartValueFormatter', () => {
     // Small should get 3 precision
-    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
+    expect(chartValueFormatter(0.23456, CARD_SIZES.LARGE, null)).toEqual('0.235');
     // default precision
-    expect(valueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
+    expect(chartValueFormatter(1.23456, CARD_SIZES.LARGE, null)).toEqual('1.2');
     // With units
-    expect(valueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
+    expect(chartValueFormatter(0.23456, CARD_SIZES.LARGE, 'writes per second')).toEqual(
       '0.235 writes per second'
     );
 
     // Large numbers!
-    expect(valueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('2K');
+    expect(chartValueFormatter(1500, CARD_SIZES.LARGE, null)).toEqual('1,500');
     // nil
-    expect(valueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
+    expect(chartValueFormatter(null, CARD_SIZES.LARGE, null)).toEqual('--');
   });
 });

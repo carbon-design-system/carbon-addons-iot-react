@@ -130,8 +130,8 @@ export const getUpdatedCardSize = oldSize => {
  * @param {number} precision, how many decimal values to display configured at the attribute level
  * @param {string} locale, the local browser locale because locales use different decimal separators
  */
-export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =>
-  value > 1000000000000
+export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') => {
+  return value > 1000000000000
     ? `${(value / 1000000000000).toLocaleString(
         locale,
         !isNil(precision)
@@ -180,6 +180,8 @@ export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =
             }
           : undefined
       );
+};
+
 /**
  * Find variables in a string that are identified by surrounding curly braces
  * @param {string} value - A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`
@@ -261,6 +263,24 @@ export const handleCardVariables = (title, content, values, card) => {
 };
 
 /**
+ * This function provides common value formatting across all chart card types
+ * @param {number} value, the value the card will display
+ * @param {number} precision, how many decimal values to display configured at the attribute level
+ * @param {string} locale, the local browser locale because locales use different decimal separators
+ */
+export const formatChartNumberWithPrecision = (value, precision = 0, locale = 'en') => {
+  return value.toLocaleString(
+    locale,
+    !isNil(precision)
+      ? {
+          minimumFractionDigits: precision,
+          maximumFractionDigits: precision,
+        }
+      : undefined
+  );
+};
+
+/**
  * Determines how many decimals to show for a value based on the value, the available size of the card
  * @param {string} size constant that describes the size of the Table card
  * @param {any} value will be checked to determine how many decimals to show
@@ -281,17 +301,17 @@ export const determinePrecision = (size, value, precision) => {
 };
 
 /**
- * Determines how to format our values for our lines
+ * Determines how to format our values for our lines and bars
  *
  * @param {any} value any value possible, but will only special format if a number
  * @param {string} size card size
  * @param {string} unit any optional units to show
  */
-export const valueFormatter = (value, size, unit, locale) => {
+export const chartValueFormatter = (value, size, unit, locale) => {
   const precision = determinePrecision(size, value, Math.abs(value) > 1 ? 1 : 3);
   let renderValue = value;
   if (typeof value === 'number') {
-    renderValue = formatNumberWithPrecision(value, precision, locale);
+    renderValue = formatChartNumberWithPrecision(value, precision, locale);
   } else if (isNil(value)) {
     renderValue = '--';
   }

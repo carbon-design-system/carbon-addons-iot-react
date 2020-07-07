@@ -10,7 +10,7 @@ import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTy
 import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
-import { valueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
+import { chartValueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
 import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
@@ -172,7 +172,8 @@ const BarChartCard = ({
               containerResizable: true,
               color: colors,
               tooltip: {
-                valueFormatter: tooltipValue => valueFormatter(tooltipValue, size, unit, locale),
+                valueFormatter: tooltipValue =>
+                  chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
               },
             }}
