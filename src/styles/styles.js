@@ -20,6 +20,7 @@ export const COLORS = {
   gray80hover: '#4c4c4c',
   gray70: '#565656',
   gray20: '#dcdcdc',
+  gray20hover: '#cacaca',
   gray10: '#f3f3f3',
   gray10hover: '#e5e5e5',
   blue60: '#0062ff',
