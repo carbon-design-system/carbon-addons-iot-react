@@ -25,6 +25,9 @@ storybook-static
 *.tar.gz
 *.rar
 
+# Development notes
+*.notes.md
+
 # log files
 *.log
 
