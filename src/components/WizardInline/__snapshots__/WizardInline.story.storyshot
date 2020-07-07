@@ -249,7 +249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hQUsqs"
             width={200}
           >
             <div>
@@ -1255,7 +1255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="WizardInline__StyledWizardContainer-sc-8orpb0-1 jxomPl"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 bJpUtv"
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hQUsqs"
             width={200}
           >
             <div>

@@ -13,18 +13,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="TableDetailWizard__StyledWizardWrapper-sc-15frmjo-0 fotMIZ"
+      className="iot--table-detail-wizard"
     >
       <div
-        className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
+        className="wizard-header"
       >
         <h2
-          className="TableDetailWizardHeader__StyledDivHeading-sc-1pa3n63-1 eKyans"
+          className="header-heading"
         >
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="header-button"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -50,13 +50,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
+        className="wizard-container"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="wizard-sidebar"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 byZqMj"
             width={250}
           >
             <ul
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="content-container"
         >
           <div>
             <div
@@ -249,33 +249,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledFooter-sc-15frmjo-3 dZaQHZ"
+        className="bx--modal-footer"
       >
         <div
-          className="bx--modal-footer"
+          className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
         >
-          <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Next
-            </button>
-          </div>
+            Cancel
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
@@ -319,18 +315,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="TableDetailWizard__StyledWizardWrapper-sc-15frmjo-0 fotMIZ"
+      className="iot--table-detail-wizard"
     >
       <div
-        className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
+        className="wizard-header"
       >
         <h2
-          className="TableDetailWizardHeader__StyledDivHeading-sc-1pa3n63-1 eKyans"
+          className="header-heading"
         >
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="header-button"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -356,13 +352,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
+        className="wizard-container"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="wizard-sidebar"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 byZqMj"
             width={250}
           >
             <ul
@@ -540,7 +536,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="content-container"
         >
           <div>
             <div
@@ -559,33 +555,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledFooter-sc-15frmjo-3 dZaQHZ"
+        className="bx--modal-footer"
       >
         <div
-          className="bx--modal-footer"
+          className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
         >
-          <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Back
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Next
-            </button>
-          </div>
+            Back
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
@@ -629,18 +621,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="TableDetailWizard__StyledWizardWrapper-sc-15frmjo-0 fotMIZ"
+      className="iot--table-detail-wizard"
     >
       <div
-        className="TableDetailWizardHeader__StyledDivWizardHeader-sc-1pa3n63-0 hKHZJV"
+        className="wizard-header"
       >
         <h2
-          className="TableDetailWizardHeader__StyledDivHeading-sc-1pa3n63-1 eKyans"
+          className="header-heading"
         >
           Create Physical Interface
         </h2>
         <div
-          className="TableDetailWizardHeader__StyledButton-sc-1pa3n63-2 jNjnLX"
+          className="header-button"
         >
           <button
             className="bx--btn bx--btn--ghost"
@@ -666,13 +658,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledWizardContainer-sc-15frmjo-1 kjwloH"
+        className="wizard-container"
       >
         <div
-          className="TableDetailWizardSidebar__StyledDivWizardHeader-sc-1wxoi33-0 iAqtjs"
+          className="wizard-sidebar"
         >
           <div
-            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 hklDaT"
+            className="WizardSidebar__StyledSidebar-sc-1bufur3-0 byZqMj"
             width={250}
           >
             <ul
@@ -847,7 +839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </div>
         </div>
         <div
-          className="TableDetailWizard__StyledContentContainer-sc-15frmjo-4 hxUSxO"
+          className="content-container"
         >
           <div>
             <div
@@ -865,7 +857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </div>
       </div>
       <div
-        className="TableDetailWizard__StyledMessageBox-sc-15frmjo-2 bHjJtp bx--inline-notification bx--inline-notification--error"
+        className="bx--inline-notification bx--inline-notification--error"
         kind="error"
         role="alert"
       >
@@ -934,33 +926,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
         </button>
       </div>
       <div
-        className="TableDetailWizard__StyledFooter-sc-15frmjo-3 dZaQHZ"
+        className="bx--modal-footer"
       >
         <div
-          className="bx--modal-footer"
+          className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
         >
-          <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          <button
+            className="iot--btn bx--btn bx--btn--secondary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
           >
-            <button
-              className="iot--btn bx--btn bx--btn--secondary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              className="iot--btn bx--btn bx--btn--primary"
-              disabled={false}
-              onClick={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Next
-            </button>
-          </div>
+            Cancel
+          </button>
+          <button
+            className="iot--btn bx--btn bx--btn--primary"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>

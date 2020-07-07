@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import classnames from 'classnames';
 
 import ProgressIndicator from '../../../ProgressIndicator/ProgressIndicator';
 import WizardSidebar from '../../../WizardInline/WizardLeftSidebar/WizardSidebar';
-
-const StyledDivWizardHeader = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  border-right: 1px solid #dadada8c;
-
-  .bx--progress {
-    padding: 1rem 1rem 1rem 4rem;
-  }
-`;
 
 class DetailWizardSidebar extends Component {
   static propTypes = {
@@ -51,9 +41,9 @@ class DetailWizardSidebar extends Component {
       />
     );
     return (
-      <StyledDivWizardHeader className={className}>
+      <div className={classnames(`wizard-sidebar`, className)}>
         <WizardSidebar sidebar={sideBarProgressIndicator} width={250} />
-      </StyledDivWizardHeader>
+      </div>
     );
   };
 }

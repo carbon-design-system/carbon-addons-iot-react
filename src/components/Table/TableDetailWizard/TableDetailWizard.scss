@@ -1,0 +1,97 @@
+.#{$iot-prefix}--table-detail-wizard {
+  background-color: '#f3f3f3';
+  display: flex;
+  flex-flow: column;
+  align-items: left;
+  border: 1px solid #a2a2a28c;
+
+  .wizard-container {
+    display: flex;
+
+    .content-container {
+      padding: 2rem;
+    }
+  }
+
+  .#{$prefix}--inline-notification {
+    max-width: none;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+
+    html[dir='rtl'] & {
+      .#{$prefix}--inline-notification__close-button,
+      .#{$prefix}--inline-notification__icon {
+        margin-right: unset;
+      }
+
+      .#{$prefix}--inline-notification__icon {
+        margin-left: 1rem;
+      }
+
+      &--error {
+        border-left: unset;
+        border-right: 3px solid #fa4d56;
+      }
+    }
+  }
+
+  .#{$prefix}--modal-footer {
+    justify-content: flex-end;
+
+    & > div {
+      width: 100%;
+    }
+  }
+
+  .wizard-sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    border-right: 1px solid #dadada8c;
+
+    html[dir='rtl'] & {
+      border-right: unset;
+      border-left: 1px solid #dadada8c;
+    }
+
+    .#{$prefix}--progress {
+      padding: 1rem;
+    }
+  }
+
+  .wizard-header {
+    display: block;
+    border-bottom: 1px solid #dadada8c;
+
+    .header-button {
+      float: right;
+      margin-left: auto;
+
+      .#{$prefix}--btn--ghost {
+        height: 50px;
+      }
+
+      .#{$prefix}--btn__icon {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      html[dir='rtl'] & {
+        float: left;
+      }
+    }
+
+    .header-heading {
+      float: left;
+      font-size: 1.25rem;
+      line-height: 50px;
+      vertical-align: middle;
+      margin-left: 1rem;
+
+      html[dir='rtl'] & {
+        float: right;
+        margin-left: unset;
+        margin-right: 1rem;
+      }
+    }
+  }
+}

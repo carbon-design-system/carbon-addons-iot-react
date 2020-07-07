@@ -112,6 +112,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
   src: url(//unpkg.com/@ibm/plex/IBM-Plex-Sans-Condensed/fonts/complete/woff2/IBMPlexSansCondensed-LightItalic.woff2)
     format('woff2');
 }
+
 @font-face {
   font-family: 'IBM Plex Sans Condensed';
   font-style: italic;
@@ -119,6 +120,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
   src: url(//unpkg.com/@ibm/plex/IBM-Plex-Sans-Condensed/fonts/complete/woff2/IBMPlexSansCondensed-Italic.woff2)
     format('woff2');
 }
+
 @font-face {
   font-family: 'IBM Plex Sans Condensed';
   font-style: italic;
@@ -206,6 +208,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 // accumulated through the @import process.
 @if (length($deprecations--reasons) > 0) {
   $deprecations--message: '';
+
   @each $reason in $deprecations--reasons {
     $deprecations--message: '#{$deprecations--message} REASON: #{$reason}';
   }
@@ -238,6 +241,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Table/pagination';
 @import 'components/Table/TableBody/RowActionsCell/row-actions-cell';
 @import 'components/Table/table';
+@import 'components/Table/TableDetailWizard/TableDetailWizard';
 @import 'components/Table/TableViewDropdown/table-view-dropdown';
 @import 'components/Table/TableSaveViewModal/table-save-view-modal';
 @import 'components/TableCard/threshold-icon';
