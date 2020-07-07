@@ -13811,6 +13811,259 @@ Map {
       },
     },
   },
+  "ComboBox" => Object {
+    "defaultProps": Object {
+      "ariaLabel": "Choose an item",
+      "closeButtonText": "Close",
+      "direction": "bottom",
+      "disabled": false,
+      "editOptionText": "-Create",
+      "hasMultiValue": false,
+      "itemToElement": null,
+      "itemToString": [Function],
+      "items": Array [],
+      "light": false,
+      "loading": false,
+      "shouldFilterItem": [Function],
+      "type": "default",
+      "wrapperClassName": null,
+    },
+    "propTypes": Object {
+      "ariaLabel": Object {
+        "type": "string",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "closeButtonText": Object {
+        "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "downshiftProps": Object {
+        "args": Array [
+          Object {
+            "breakingChanges": Object {
+              "args": Array [
+                Object {
+                  "resetInputOnSelection": Object {
+                    "type": "bool",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "children": Object {
+              "type": "func",
+            },
+            "defaultHighlightedIndex": Object {
+              "type": "number",
+            },
+            "defaultInputValue": Object {
+              "type": "string",
+            },
+            "defaultIsOpen": Object {
+              "type": "bool",
+            },
+            "defaultSelectedItem": Object {
+              "type": "any",
+            },
+            "environment": Object {
+              "args": Array [
+                Object {
+                  "addEventListener": Object {
+                    "type": "func",
+                  },
+                  "document": Object {
+                    "args": Array [
+                      Object {
+                        "activeElement": Object {
+                          "type": "any",
+                        },
+                        "body": Object {
+                          "type": "any",
+                        },
+                        "getElementById": Object {
+                          "type": "func",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "removeEventListener": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "getA11yStatusMessage": Object {
+              "type": "func",
+            },
+            "highlightedIndex": Object {
+              "type": "number",
+            },
+            "id": Object {
+              "type": "string",
+            },
+            "inputValue": Object {
+              "type": "string",
+            },
+            "isOpen": Object {
+              "type": "bool",
+            },
+            "itemCount": Object {
+              "type": "number",
+            },
+            "itemToString": Object {
+              "type": "func",
+            },
+            "onChange": Object {
+              "type": "func",
+            },
+            "onInputValueChange": Object {
+              "type": "func",
+            },
+            "onOuterClick": Object {
+              "type": "func",
+            },
+            "onSelect": Object {
+              "type": "func",
+            },
+            "onStateChange": Object {
+              "type": "func",
+            },
+            "onUserAction": Object {
+              "type": "func",
+            },
+            "render": Object {
+              "type": "func",
+            },
+            "selectedItem": Object {
+              "type": "any",
+            },
+            "selectedItemChanged": Object {
+              "type": "func",
+            },
+            "stateReducer": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "editOptionText": Object {
+        "type": "string",
+      },
+      "findHighlightedIndex": Object {
+        "type": "func",
+      },
+      "hasMultiValue": [Function],
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "initialSelectedItem": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "invalid": Object {
+        "type": "bool",
+      },
+      "invalidText": Object {
+        "type": "string",
+      },
+      "itemToElement": Object {
+        "type": "func",
+      },
+      "itemToString": Object {
+        "type": "func",
+      },
+      "items": Object {
+        "isRequired": true,
+        "type": "array",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "loading": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "isRequired": true,
+        "type": "func",
+      },
+      "onHighligtedIndexChange": Object {
+        "type": "func",
+      },
+      "onInputChange": Object {
+        "type": "func",
+      },
+      "placeholder": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "selectedItem": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "shouldFilterItem": Object {
+        "type": "func",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "translateWithId": Object {
+        "type": "func",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "default",
+            "inline",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "wrapperClassName": Object {
+        "type": "string",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
@@ -13948,234 +14201,6 @@ Map {
             "single",
             "inline",
             "multi",
-          ],
-        ],
-        "type": "oneOf",
-      },
-    },
-  },
-  "ComboBox" => Object {
-    "defaultProps": Object {
-      "ariaLabel": "Choose an item",
-      "direction": "bottom",
-      "disabled": false,
-      "itemToElement": null,
-      "itemToString": [Function],
-      "light": false,
-      "shouldFilterItem": [Function],
-      "type": "default",
-    },
-    "propTypes": Object {
-      "ariaLabel": Object {
-        "type": "string",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "direction": Object {
-        "args": Array [
-          Array [
-            "top",
-            "bottom",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "disabled": Object {
-        "type": "bool",
-      },
-      "downshiftProps": Object {
-        "args": Array [
-          Object {
-            "breakingChanges": Object {
-              "args": Array [
-                Object {
-                  "resetInputOnSelection": Object {
-                    "type": "bool",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            "children": Object {
-              "type": "func",
-            },
-            "defaultHighlightedIndex": Object {
-              "type": "number",
-            },
-            "defaultInputValue": Object {
-              "type": "string",
-            },
-            "defaultIsOpen": Object {
-              "type": "bool",
-            },
-            "defaultSelectedItem": Object {
-              "type": "any",
-            },
-            "environment": Object {
-              "args": Array [
-                Object {
-                  "addEventListener": Object {
-                    "type": "func",
-                  },
-                  "document": Object {
-                    "args": Array [
-                      Object {
-                        "activeElement": Object {
-                          "type": "any",
-                        },
-                        "body": Object {
-                          "type": "any",
-                        },
-                        "getElementById": Object {
-                          "type": "func",
-                        },
-                      },
-                    ],
-                    "type": "shape",
-                  },
-                  "removeEventListener": Object {
-                    "type": "func",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            "getA11yStatusMessage": Object {
-              "type": "func",
-            },
-            "highlightedIndex": Object {
-              "type": "number",
-            },
-            "id": Object {
-              "type": "string",
-            },
-            "inputValue": Object {
-              "type": "string",
-            },
-            "isOpen": Object {
-              "type": "bool",
-            },
-            "itemCount": Object {
-              "type": "number",
-            },
-            "itemToString": Object {
-              "type": "func",
-            },
-            "onChange": Object {
-              "type": "func",
-            },
-            "onInputValueChange": Object {
-              "type": "func",
-            },
-            "onOuterClick": Object {
-              "type": "func",
-            },
-            "onSelect": Object {
-              "type": "func",
-            },
-            "onStateChange": Object {
-              "type": "func",
-            },
-            "onUserAction": Object {
-              "type": "func",
-            },
-            "render": Object {
-              "type": "func",
-            },
-            "selectedItem": Object {
-              "type": "any",
-            },
-            "selectedItemChanged": Object {
-              "type": "func",
-            },
-            "stateReducer": Object {
-              "type": "func",
-            },
-          },
-        ],
-        "type": "shape",
-      },
-      "id": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "initialSelectedItem": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "object",
-            },
-            Object {
-              "type": "string",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "invalid": Object {
-        "type": "bool",
-      },
-      "invalidText": Object {
-        "type": "string",
-      },
-      "itemToElement": Object {
-        "type": "func",
-      },
-      "itemToString": Object {
-        "type": "func",
-      },
-      "items": Object {
-        "isRequired": true,
-        "type": "array",
-      },
-      "light": Object {
-        "type": "bool",
-      },
-      "onChange": Object {
-        "isRequired": true,
-        "type": "func",
-      },
-      "onInputChange": Object {
-        "type": "func",
-      },
-      "placeholder": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "selectedItem": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "object",
-            },
-            Object {
-              "type": "string",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "shouldFilterItem": Object {
-        "type": "func",
-      },
-      "size": Object {
-        "args": Array [
-          Array [
-            "sm",
-            "xl",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "translateWithId": Object {
-        "type": "func",
-      },
-      "type": Object {
-        "args": Array [
-          Array [
-            "default",
-            "inline",
           ],
         ],
         "type": "oneOf",
