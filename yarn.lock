@@ -19984,10 +19984,10 @@ use-deep-compare-effect@^1.2.0:
     "@babel/runtime" "^7.2.0"
     dequal "^1.0.0"
 
-use-lang-direction@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/use-lang-direction/-/use-lang-direction-0.1.8.tgz#07c9d2ef00eca2c277d43ed5b0a056c5eeaea45c"
-  integrity sha512-BHB85HezgSqU+ckefxCKfOqaVGZ+OyzNJQFKpjjFizfexw6GHKSopxzfkJDuK/DudsOgkoRI3vidkJ1xvRc/jw==
+use-lang-direction@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/use-lang-direction/-/use-lang-direction-0.1.11.tgz#dc235fa11c2f082abced76d2b291f0613c013e5b"
+  integrity sha512-YCVJ8/EyaagfltYL/f6xkikwh1gCUIoU6mszDOYR301zZ3jRM2v+XzRo/8eK4MOuqC/o6OtFWNepNiP7NJYkdw==
 
 use-resize-observer@^5.0.0:
   version "5.0.0"

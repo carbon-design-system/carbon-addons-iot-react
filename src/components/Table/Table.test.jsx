@@ -517,8 +517,7 @@ describe('Table', () => {
   });
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
-    document.documentElement.setAttribute('dir', 'ltr');
-
+    // Should render correctly by default even if no lang attribute exist
     const { getByTestId, unmount, rerender } = render(
       <Table columns={tableColumns} data={[tableData[0]]} options={options} />
     );
