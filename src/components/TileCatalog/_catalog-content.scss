@@ -39,7 +39,7 @@
 .#{$iot-prefix}--sample-tile-contents {
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 1rem;
+  padding: 0 $spacing-05;
   align-self: flex-start;
 }
 

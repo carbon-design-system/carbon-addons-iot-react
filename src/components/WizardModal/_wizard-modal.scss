@@ -7,7 +7,7 @@
 
   .#{$prefix}--progress {
     /* need to pad some space for the focus outlines*/
-    padding: 3px;
+    padding: $spacing-09;
   }
   .#{$prefix}--progress-step {
     max-width: 150px;

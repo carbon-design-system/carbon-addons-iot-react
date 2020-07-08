@@ -1,11 +1,11 @@
+import formatter from './sassMsgFormatter';
 import {
   filterForErrors,
   generateErrorIcon,
   formatTabbing,
   createCustomMessage,
   formatError,
-  formatter,
-} from './sassMsgFormatter';
+} from './sassMsgFormatterFunctions';
 
 const chalk = require('chalk');
 
@@ -41,7 +41,7 @@ const exampleTwo = {
   ],
 };
 
-describe('sass-msg-formatter', () => {
+describe('sassMsgFormatter', () => {
   it('filters for errors', () => {
     // this function should return false unless errored is equal to true
     expect(filterForErrors({ errored: undefined })).toBeFalsy();

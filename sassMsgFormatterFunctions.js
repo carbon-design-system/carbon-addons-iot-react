@@ -3,7 +3,6 @@ const chalk = require('chalk');
 /**
  * @constant
  */
-const TITLE = chalk.bgYellow;
 const ERROR = chalk.bold.red;
 const WARNING = chalk.yellow;
 const URL = chalk.underline.cyan;
@@ -95,25 +94,10 @@ function formatError(errors) {
   return errorMsg;
 }
 
-/**
- * @type {import('stylelint').Formatter}
- */
-function formatter(results) {
-  let formattedMsg = '';
-  if (results) {
-    const filesWithErrors = results.filter(filterForErrors);
-    if (filesWithErrors.length > 0) {
-      formattedMsg += TITLE('\n!! WARNINGS !!\n\n');
-    }
-    filesWithErrors.forEach(result => {
-      const errors = result.warnings;
-      const errorMessage = formatError(errors);
-      formattedMsg += chalk.bold('Source: ');
-      formattedMsg += `${result.source}\n`;
-      formattedMsg += `${errorMessage}\n`;
-    });
-  }
-  return formattedMsg;
-}
-
-module.exports = formatter;
+module.exports = {
+  filterForErrors,
+  generateErrorIcon,
+  formatTabbing,
+  createCustomMessage,
+  formatError,
+};
