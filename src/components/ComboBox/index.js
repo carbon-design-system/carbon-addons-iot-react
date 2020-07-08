@@ -1,1 +1,1 @@
-export { ComboBox } from 'carbon-components-react';
+export default from './ComboBox';

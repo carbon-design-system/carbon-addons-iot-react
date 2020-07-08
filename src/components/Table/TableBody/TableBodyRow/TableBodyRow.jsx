@@ -206,7 +206,7 @@ const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
     cursor: pointer;
     td {
       div .bx--btn--ghost:hover {
-        background: ${COLORS.gray20};
+        background: ${COLORS.gray20hover};
       }
     }
 
