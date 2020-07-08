@@ -134,17 +134,16 @@ describe('StatefulPageWizard', () => {
   });
 
   it('clicking on step indicator should validate before going to step', () => {
-    const { container, getByText, queryByText } = render(<StepValidationWizard />);
+    render(<StepValidationWizard />);
 
     // check that the next step won't happen if inputs aren't filled
-    fireEvent.click(getByText('Step 2'));
-    expect(getByText('First name and Last name cannot be empty')).toBeTruthy();
+    fireEvent.click(screen.getByText('Step 2'));
+    expect(screen.getByText('First name and Last name cannot be empty')).toBeTruthy();
 
     // fill in inputs, then try to go to step 2
-    const inputs = container.querySelectorAll('input');
-    fireEvent.change(inputs[0], { target: { value: 'firstname' } });
-    fireEvent.change(inputs[1], { target: { value: 'lastname' } });
-    fireEvent.click(getByText('Step 2'));
-    expect(queryByText('First name and Last name cannot be empty')).toBeFalsy();
+    fireEvent.change(screen.getByLabelText('First name'), { target: { value: 'john' } });
+    fireEvent.change(screen.getByLabelText('Last name'), { target: { value: 'smith' } });
+    fireEvent.click(screen.getByText('Step 2'));
+    expect(screen.queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });
