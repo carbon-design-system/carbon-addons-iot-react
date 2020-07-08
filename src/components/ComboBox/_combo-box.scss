@@ -1,1 +1,44 @@
 @import '~carbon-components/scss/components/combo-box/combo-box';
+
+.#{$iot-prefix}--combobox {
+  display: flex;
+  flex-flow: column-reverse;
+  position: relative;
+  padding-top: $spacing-08;
+
+  .#{$prefix}--form__helper-text,
+  .#{$prefix}--label {
+    bottom: 100%;
+    position: absolute;
+  }
+
+  .#{$prefix}--label {
+    transform: translateY(25px);
+  }
+
+  .#{$prefix}--form__helper-text {
+    transform: translateY(40px);
+  }
+
+  &-tags {
+    margin-bottom: $spacing-03;
+
+    li {
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+
+  &.#{$iot-prefix}--combobox-add {
+    .#{$prefix}--list-box__menu-item:first-child {
+      &::after {
+        content: attr(data-text);
+        color: $text-03;
+        position: absolute;
+        right: $spacing-03;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

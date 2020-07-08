@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import TestBackend from 'react-dnd-test-backend';
 import { DragDropContext } from 'react-dnd';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { UnconnectedColumnHeaderRow } from './ColumnHeaderRow';
 
@@ -76,10 +76,10 @@ describe('ColumnHeaderRow', () => {
     };
 
     const Wrapped = wrapInTestContext(UnconnectedColumnHeaderRow, tableHeadProps);
-    const { getByText } = render(<Wrapped />);
+    render(<Wrapped />);
 
-    expect(getByText('Column 1').textContent).toContain('Column 1');
-    expect(getByText('Column 2').textContent).toContain('Column 2');
+    expect(screen.getByText('Column 1').textContent).toContain('Column 1');
+    expect(screen.getByText('Column 2').textContent).toContain('Column 2');
   });
 
   it('when ordering is empty, no columns are displayed', () => {
