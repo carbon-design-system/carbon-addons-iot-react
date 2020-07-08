@@ -13,8 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible big-modal
-          iot--composed-modal--modal"
+      className="bx--modal is-visible big-modal iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -76,7 +75,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           Lots of really wide content here...
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -151,8 +150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -209,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -271,8 +269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -398,7 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -543,8 +540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -601,7 +597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -676,8 +672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -782,8 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -840,7 +834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -906,8 +900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -964,7 +957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -1072,8 +1065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible error-modal
-          iot--composed-modal--modal"
+      className="bx--modal is-visible error-modal iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1135,7 +1127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
           </button>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,

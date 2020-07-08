@@ -1,8 +1,8 @@
 @import '../../globals/vars';
 @import '../../globals/layout';
 
-.#{$iot-prefix}--composed-modal--modal {
-  .bx--modal-container {
+.#{$iot-prefix}--composed-modal {
+  .#{$prefix}--modal-container {
     @media (min-height: carbon--rem(515px)) {
       overflow-y: auto;
     }
@@ -10,10 +10,10 @@
 
   /* support large modals for ll the sizes */
   &.big-modal {
-    .bx--modal-header {
-      margin-bottom: 0rem;
+    .#{$prefix}--modal-header {
+      margin-bottom: 0;
     }
-    .bx--modal-container {
+    .#{$prefix}--modal-container {
       min-height: carbon--rem(600px);
       min-width: carbon--rem(800px);
       max-height: 80%;
@@ -31,21 +31,21 @@
 
   /* Needed for buttons when they're next to each other */
 
-  .bx--modal-header__heading {
-    margin-bottom: 0.75rem;
+  .#{$prefix}--modal-header__heading {
+    margin-bottom: $spacing-04;
   }
 
-  .bx--modal-content {
+  .#{$prefix}--modal-content {
     min-height: carbon--rem(200px);
   }
 }
 
 .#{$iot-prefix}--composed-modal--inline-notification {
   width: calc(100% - 1rem * 2);
-  margin: 1rem auto;
+  margin: $spacing-05 auto;
 }
 
-.#{$iot-prefix}--composed-modal--modal-footer {
+.#{$iot-prefix}--composed-modal-footer {
   justify-content: flex-end;
 
   & > * {

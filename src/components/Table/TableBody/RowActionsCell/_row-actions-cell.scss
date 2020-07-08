@@ -15,7 +15,7 @@
   }
 
   /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
-  .bx--loading--small {
+  .#{$prefix}--loading--small {
     width: 1.875rem;
     height: 1.875rem;
   }
@@ -71,7 +71,7 @@
     @include backgroundGradient($ui-01);
   }
 
-  &.bx--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
+  &.#{$prefix}--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
     @include backgroundGradient($hover-selected-ui);
   }
 

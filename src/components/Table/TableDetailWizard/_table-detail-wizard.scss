@@ -9,7 +9,7 @@
   align-items: left;
   border: 1px solid #a2a2a28c;
 
-  .bx--inline-notification {
+  .#{$prefix}--inline-notification {
     max-width: none;
     width: calc(100% - 2rem);
     margin: 1rem;
@@ -25,7 +25,7 @@
 }
 
 .#{$iot-prefix}--table-detail-wizard--footer {
-  .bx--modal-footer {
+  .#{$prefix}--modal-footer {
     justify-content: flex-end;
 
     & > div {

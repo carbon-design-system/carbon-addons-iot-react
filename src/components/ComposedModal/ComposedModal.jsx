@@ -166,11 +166,14 @@ class ComposedModal extends React.Component {
         {...props}
         open={open}
         onClose={this.doNotClose}
-        className={`${classnames(className, {
-          'error-modal': type === 'warn',
-          'big-modal': isLarge,
-        })}
-          ${iotPrefix}--composed-modal--modal`}
+        className={classnames(
+          className,
+          {
+            'error-modal': type === 'warn',
+            'big-modal': isLarge,
+          },
+          `${iotPrefix}--composed-modal`
+        )}
       >
         <ModalHeader
           label={label}
@@ -192,7 +195,7 @@ class ComposedModal extends React.Component {
           />
         ) : null}
         {!passiveModal ? (
-          <ModalFooter className={`${iotPrefix}--composed-modal--modal-footer`}>
+          <ModalFooter className={`${iotPrefix}--composed-modal-footer`}>
             {React.isValidElement(footer) ? (
               footer
             ) : (

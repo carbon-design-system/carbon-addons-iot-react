@@ -8,7 +8,7 @@
 .#{$iot-prefix}--column-header-row--table-header {
   border-top: none;
 
-  .bx--form-item {
+  .#{$prefix}--form-item {
     display: table-cell;
 
     input {

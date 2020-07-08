@@ -13,8 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -209,7 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -288,8 +287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -484,7 +482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -570,8 +568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -772,7 +769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,

@@ -13,8 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -248,7 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -323,8 +322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -415,7 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -490,8 +488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -642,7 +639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,
@@ -717,8 +714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
     }
   >
     <div
-      className="bx--modal is-visible 
-          iot--composed-modal--modal"
+      className="bx--modal is-visible iot--composed-modal"
       data-testid="TableSaveViewModal"
       onBlur={[Function]}
       onClick={[Function]}
@@ -867,7 +863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </form>
         </div>
         <div
-          className="bx--modal-footer iot--composed-modal--modal-footer"
+          className="bx--modal-footer iot--composed-modal-footer"
           inputref={
             Object {
               "current": null,

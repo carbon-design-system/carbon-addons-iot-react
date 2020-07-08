@@ -82,7 +82,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             >
               <div
                 className="iot--row-actions-container"
-                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -233,7 +232,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             >
               <div
                 className="iot--row-actions-container"
-                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -456,7 +454,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             >
               <div
                 className="iot--row-actions-container"
-                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -604,7 +601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             >
               <div
                 className="iot--row-actions-container"
-                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -799,7 +795,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             >
               <div
                 className="iot--row-actions-container"
-                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"
@@ -957,7 +952,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             >
               <div
                 className="iot--row-actions-container"
-                isRowExpanded={false}
               >
                 <div
                   className="iot--row-actions-container__background"

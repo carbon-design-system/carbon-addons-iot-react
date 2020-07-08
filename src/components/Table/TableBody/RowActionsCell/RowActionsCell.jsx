@@ -142,7 +142,7 @@ class RowActionsCell extends React.Component {
         key={`${id}-row-actions-cell`}
         className={`${iotPrefix}--row-actions-cell--table-cell`}
       >
-        <div className={`${iotPrefix}--row-actions-container`} isRowExpanded={isRowExpanded}>
+        <div className={`${iotPrefix}--row-actions-container`}>
           <div
             className={classnames(`${iotPrefix}--row-actions-container__background`, {
               [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,

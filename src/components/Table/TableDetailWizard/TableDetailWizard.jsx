@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
@@ -119,7 +120,7 @@ const TableDetailWizard = ({
   };
 
   return (
-    <div className={`${className} ${iotPrefix}--table-detail-wizard--wizard-wrapper`}>
+    <div className={classnames(className, `${iotPrefix}--table-detail-wizard--wizard-wrapper`)}>
       <TableDetailWizardHeader title={title} onClose={onClose} />
       <div className={`${iotPrefix}--table-detail-wizard--wizard-container`}>
         <DetailWizardSidebar
@@ -143,7 +144,7 @@ const TableDetailWizard = ({
           className={`${iotPrefix}--table-detail-wizard--inline-notification`}
         />
       ) : null}
-      <div className={`${className} ${iotPrefix}--table-detail-wizard--footer`}>
+      <div className={classnames(className, `${iotPrefix}--table-detail-wizard--footer`)}>
         <div className="bx--modal-footer">
           <WizardFooter
             backLabel={backLabel}

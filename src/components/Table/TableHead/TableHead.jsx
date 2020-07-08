@@ -307,7 +307,7 @@ const TableHead = ({
                   currentColumnWidths[matchingColumnMeta.id].width,
               }}
               style={{
-                '--table-header-width': initialColumnWidths[matchingColumnMeta.id],
+                '--table-header-width': classnames(initialColumnWidths[matchingColumnMeta.id]),
               }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {

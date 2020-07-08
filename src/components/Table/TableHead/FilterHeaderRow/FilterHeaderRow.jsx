@@ -168,10 +168,10 @@ class FilterHeaderRow extends Component {
     return isVisible ? (
       <TableRow>
         {hasRowSelection === 'multi' ? (
-          <TableHeader className={`${iotPrefix}--filter-header-row--table-header`} />
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
         {hasRowExpansion ? (
-          <TableHeader className={`${iotPrefix}--filter-header-row--table-header`} />
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
         {ordering
           .filter(c => !c.isHidden)
@@ -277,14 +277,15 @@ class FilterHeaderRow extends Component {
 
             return (
               <TableHeader
-                className={`${iotPrefix}--tableheader-filter ${iotPrefix}--filter-header-row--table-header`}
+                className={`${iotPrefix}--tableheader-filter ${iotPrefix}--filter-header-row--header ${
+                  column.width === undefined ? `${iotPrefix}--filter-header-row--header-width` : ``
+                }`}
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}
-                isSelectColumn={!!column.options}
                 style={{
-                  '--table-header-width': column.width,
-                  '--table-header-is-select-column': !!column.options,
+                  '--table-header-width': classnames(column.width),
+                  '--table-header-is-select-column': column.options ? 'hidden' : 'inherit',
                 }}
               >
                 {headerContent}
@@ -292,7 +293,7 @@ class FilterHeaderRow extends Component {
             );
           })}
         {hasRowActions ? (
-          <TableHeader className={`${iotPrefix}--filter-header-row--table-header`} />
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
       </TableRow>
     ) : null;

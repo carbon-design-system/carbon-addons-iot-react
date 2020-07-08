@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import ProgressIndicator from '../../../ProgressIndicator/ProgressIndicator';
 import WizardSidebar from '../../../WizardInline/WizardLeftSidebar/WizardSidebar';
@@ -43,7 +44,7 @@ class DetailWizardSidebar extends Component {
       />
     );
     return (
-      <div className={`${className} ${iotPrefix}--table-detail-wizard-sidebar--header`}>
+      <div className={classnames(className, `${iotPrefix}--table-detail-wizard-sidebar--header`)}>
         <WizardSidebar sidebar={sideBarProgressIndicator} width={250} />
       </div>
     );
