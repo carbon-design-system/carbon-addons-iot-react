@@ -20,6 +20,7 @@ cache:
 install:
   - yarn install
   - yarn list
+  - yarn build
 
 script:
   - yarn lint
