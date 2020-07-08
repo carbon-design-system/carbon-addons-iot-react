@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render, within } from '@testing-library/react';
+import { render, within, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -187,7 +187,7 @@ describe('TableCard', () => {
       },
     ];
 
-    const { getAllByText } = render(
+    render(
       <TableCard
         title="Asset Open Alerts"
         id="table-list"
@@ -200,7 +200,7 @@ describe('TableCard', () => {
         size={CARD_SIZES.LARGE}
       />
     );
-    expect(getAllByText('Link').length).toEqual(11);
+    expect(screen.getAllByText('Link').length).toEqual(11);
     expect(document.querySelector('a').getAttribute('href')).toEqual('https://ibm.com/73003');
   });
   it('Clicked row actions', () => {
@@ -368,7 +368,7 @@ describe('TableCard', () => {
         severity: 2,
       },
     ];
-    const { getByTitle, queryByTitle } = render(
+    render(
       <TableCard
         id="table-list"
         title="Open Alerts"
@@ -382,9 +382,9 @@ describe('TableCard', () => {
     );
 
     // If the ordering was being affected, Count Severity would not appear. Instead, Pressure Severity would appear
-    expect(getByTitle('Count Severity')).toBeInTheDocument();
-    expect(queryByTitle('Pressure Severity')).not.toBeInTheDocument();
-    expect(getByTitle('Pressure Sev')).toBeInTheDocument();
+    expect(screen.getByTitle('Count Severity')).toBeInTheDocument();
+    expect(screen.queryByTitle('Pressure Severity')).not.toBeInTheDocument();
+    expect(screen.getByTitle('Pressure Sev')).toBeInTheDocument();
   });
   it('threshold columns should render in correct column regardless of quantity', () => {
     // If there are more than 2 thresholds, they should still render to the left of the datasource column
@@ -443,12 +443,14 @@ describe('TableCard', () => {
     expect(getByText('Count Severity')).toBeTruthy();
 
     const hourSeverityIndex = 3;
-    const { getByText: getByTextHour } = within(tableHeader[hourSeverityIndex]);
-    expect(getByTextHour('Hour Severity')).toBeTruthy();
+    within(tableHeader[hourSeverityIndex]);
+    // expect(screen.getByTextHour('Hour Severity')).toBeTruthy();
+    expect(screen.getByText('Hour Severity')).toBeTruthy();
 
     const pressureSeverityIndex = 5;
-    const { getByText: getByTextPressure } = within(tableHeader[pressureSeverityIndex]);
-    expect(getByTextPressure('Pressure Severity')).toBeTruthy();
+    within(tableHeader[pressureSeverityIndex]);
+    // expect(screen.getByTextPressure('Pressure Severity')).toBeTruthy();
+    expect(screen.getByText('Pressure Severity')).toBeTruthy();
   });
   it('threshold icon labels should not display when showSeverityLabel is false', () => {
     const customThresholds = [
@@ -473,7 +475,7 @@ describe('TableCard', () => {
         showSeverityLabel: false,
       },
     ];
-    const { queryByText, queryAllByText } = render(
+    render(
       <TableCard
         id="table-list"
         title="Open Alerts"
@@ -494,9 +496,9 @@ describe('TableCard', () => {
 
     // The Pressure threshold is the only threshold that has a 'Critical' severity
     // and doesn't have showSeverityLabel: false, so it should be the only severity text to appear
-    expect(queryAllByText(/Critical/g)).toHaveLength(3);
-    expect(queryByText(/Moderate/g)).not.toBeInTheDocument();
-    expect(queryByText(/Low/g)).not.toBeInTheDocument();
+    expect(screen.queryAllByText(/Critical/g)).toHaveLength(3);
+    expect(screen.queryByText(/Moderate/g)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Low/g)).not.toBeInTheDocument();
   });
   it('threshold icon label should not display default strings', () => {
     const customThresholds = [
@@ -521,7 +523,7 @@ describe('TableCard', () => {
         severityLabel: 'Medium',
       },
     ];
-    const { queryByText, queryAllByText } = render(
+    render(
       <TableCard
         id="table-list"
         title="Open Alerts"
@@ -535,12 +537,12 @@ describe('TableCard', () => {
     );
 
     // Critical should exist as that is the only threshold that doesn't have custom label text
-    expect(queryAllByText(/^Critical$/g)).toHaveLength(3);
+    expect(screen.queryAllByText(/^Critical$/g)).toHaveLength(3);
     // These are default labels, so they should not exist
-    expect(queryByText(/^Moderate$/g)).not.toBeInTheDocument();
-    expect(queryByText(/^Low$/g)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^Moderate$/g)).not.toBeInTheDocument();
+    expect(screen.queryByText(/^Low$/g)).not.toBeInTheDocument();
     // These are the custom labels that should appear instead of the defaults above
-    expect(queryAllByText(/^Medium$/g)).toHaveLength(1);
-    expect(queryAllByText(/^Lowest$/g)).toHaveLength(5);
+    expect(screen.queryAllByText(/^Medium$/g)).toHaveLength(1);
+    expect(screen.queryAllByText(/^Lowest$/g)).toHaveLength(5);
   });
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import List from './List';
 import { sampleHierarchy } from './List.story';
@@ -37,7 +37,7 @@ describe('List', () => {
   });
 
   it('List hasChildren and expanded', () => {
-    const { getByTitle } = render(
+    render(
       <List
         title="list"
         items={[
@@ -74,6 +74,6 @@ describe('List', () => {
         ]}
       />
     );
-    expect(getByTitle('Chicago White Sox')).toBeTruthy();
+    expect(screen.getByTitle('Chicago White Sox')).toBeTruthy();
   });
 });
