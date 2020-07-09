@@ -62,6 +62,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     sortDirection,
     translateWithId: t,
     thStyle,
+    initialWidth,
     ...rest
   },
   ref
@@ -69,7 +70,14 @@ const TableHeader = React.forwardRef(function TableHeader(
   if (!isSortable) {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
-      <th {...rest} className={headerClassName} scope={scope} ref={ref} style={thStyle}>
+      <th
+        {...rest}
+        width={initialWidth}
+        className={headerClassName}
+        scope={scope}
+        ref={ref}
+        style={thStyle}
+      >
         <span className={`${prefix}--table-header-label`}>{children}</span>
       </th>
     );
@@ -83,7 +91,14 @@ const TableHeader = React.forwardRef(function TableHeader(
   const ariaSort = !isSortHeader ? 'none' : sortDirections[sortDirection];
 
   return (
-    <th scope={scope} className={headerClassName} aria-sort={ariaSort} ref={ref} style={thStyle}>
+    <th
+      width={initialWidth}
+      scope={scope}
+      className={headerClassName}
+      aria-sort={ariaSort}
+      ref={ref}
+      style={thStyle}
+    >
       <button className={className} onClick={onClick} {...rest}>
         <span className={`${prefix}--table-header-label`}>{children}</span>
         <Arrow
@@ -119,6 +134,12 @@ TableHeader.propTypes = {
    * Pass in children that will be embedded in the table header label
    */
   children: PropTypes.node,
+
+  /**
+   * The initial width of the column when resize is active and the fixed with
+   * if resize is inactive. E.g. '200px'
+   */
+  initialWidth: PropTypes.string,
 
   /**
    * Specify whether this header is one through which a user can sort the table
@@ -170,6 +191,7 @@ TableHeader.defaultProps = {
   scope: 'col',
   translateWithId,
   thStyle: {},
+  initialWidth: undefined,
 };
 
 TableHeader.translationKeys = Object.values(translationKeys);

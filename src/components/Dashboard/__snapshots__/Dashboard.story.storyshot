@@ -1582,6 +1582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -1589,7 +1590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -1642,6 +1642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -1649,7 +1650,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -1702,6 +1702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -1709,7 +1710,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -3860,6 +3860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -3867,7 +3868,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -3920,6 +3920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -3927,7 +3928,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -3980,6 +3980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -3987,7 +3988,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -6165,6 +6165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -6172,7 +6173,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -6225,6 +6225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -6232,7 +6233,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -6285,6 +6285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -6292,7 +6293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -7811,6 +7811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7818,7 +7819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="timestamp"
                                 id="column-timestamp"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -7871,6 +7871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7878,7 +7879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="Campus_EGL"
                                 id="column-Campus_EGL"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -7931,6 +7931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7938,7 +7939,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="peopleCount_EnterpriseBuilding_mean"
                                 id="column-peopleCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -7991,6 +7991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7998,7 +7999,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="headCount_EnterpriseBuilding_mean"
                                 id="column-headCount_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -8051,6 +8051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -8058,7 +8059,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="capacity_EnterpriseBuilding_mean"
                                 id="column-capacity_EnterpriseBuilding_mean"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -10929,6 +10929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -10936,7 +10937,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -10989,6 +10989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -10996,7 +10997,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -11049,6 +11049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -11056,7 +11057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -25343,6 +25343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -25350,7 +25351,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="alert"
                                 id="column-alert"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -25403,6 +25403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -25410,7 +25411,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="hour"
                                 id="column-hour"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
@@ -25463,6 +25463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -25470,7 +25471,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                 data-column="pressure"
                                 id="column-pressure"
                                 onClick={[Function]}
-                                width=""
                               >
                                 <span
                                   className="bx--table-header-label"
