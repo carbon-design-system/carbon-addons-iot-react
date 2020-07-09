@@ -57,3 +57,7 @@
     text-align: left; // needed to override the dialog style
   }
 }
+
+.#{$iot-prefix}--composed-modal__body--small-margin-bottom {
+  margin-bottom: $spacing-05;
+}

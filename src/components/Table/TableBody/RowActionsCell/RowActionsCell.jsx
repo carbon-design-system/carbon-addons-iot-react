@@ -173,6 +173,9 @@ class RowActionsCell extends React.Component {
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
                       hasIconOnly={!labelText}
+                      tooltipPosition="left"
+                      tooltipAlignment="end"
+                      size="small"
                       onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     >
                       {labelText}

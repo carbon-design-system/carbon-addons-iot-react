@@ -221,7 +221,9 @@ const TableHead = ({
     () => {
       // An initial measuring is needed since there might not be an initial value from the columns prop
       // which means that the layout engine will have to set the widths dynamically
-      // before we know what they are.
+      // before we know what they are. More importantly, the sum of the inital widths may not match
+      // the available width of the table, e.g. if the user has resized the browser since the
+      // column widths was last saved.
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
         const measuredWidths = measureColumnWidths();
         const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
@@ -295,6 +297,7 @@ const TableHead = ({
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               width={initialColumnWidths[matchingColumnMeta.id]}
+              initialWidth={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
@@ -319,7 +322,7 @@ const TableHead = ({
               align={align}
               className={classnames(
                 `table-header-label-${align}`,
-                `${iotPrefix}--table-head--table-header`,
+                initialColumnWidths === undefined ? `` : `${iotPrefix}--table-head--table-header`,
                 {
                   'table-header-sortable': matchingColumnMeta.isSortable,
                   [`${iotPrefix}--table-header-resize`]: hasResize,

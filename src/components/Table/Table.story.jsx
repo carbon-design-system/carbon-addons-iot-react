@@ -1533,13 +1533,14 @@ storiesOf('Watson IoT/Table', module)
   .add('with zebra striping', () => (
     <Table useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
   ))
-  .add('with resize and initial column widths on Simple Stateful and row selection', () => (
+  .add('with resize and initial column widths on Simple Stateful with row selection & sort', () => (
     <StatefulTable
       {...initialState}
       actions={actions}
       lightweight={boolean('lightweight', false)}
       columns={tableColumns.map((i, idx) => ({
         width: idx % 2 === 0 ? '100px' : '200px',
+        isSortable: true,
         ...i,
       }))}
       options={{

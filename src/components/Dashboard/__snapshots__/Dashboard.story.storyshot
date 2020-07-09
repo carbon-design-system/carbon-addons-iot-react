@@ -1582,6 +1582,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -1647,6 +1648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -1712,6 +1714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -3875,6 +3878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -3940,6 +3944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -4005,6 +4010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -6195,6 +6201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -6260,6 +6267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -6325,6 +6333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7856,6 +7865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7921,6 +7931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -7986,6 +7997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -8051,6 +8063,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -8116,6 +8129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -10999,6 +11013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -11064,6 +11079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -11129,6 +11145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -25428,6 +25445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -25493,6 +25511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
@@ -25558,6 +25577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                                   "width": undefined,
                                 }
                               }
+                              width=""
                             >
                               <button
                                 align="start"
