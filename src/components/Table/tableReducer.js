@@ -35,8 +35,8 @@ import { baseTableReducer } from './baseTableReducer';
  */
 export const defaultComparison = (value1, value2) =>
   !isNil(value1) && typeof value1 === 'number' // only if the column value filter is not null/undefined
-    ? value1 === value2 // type number do a direct comparison
-    : value1 && // type string do a lowercase includes comparison
+    ? value1 === (!isNil(Number(value2)) ? Number(value2) : value2) // for a number type, attempt to convert filter to number and direct compare
+    : value1 !== undefined && // type string do a lowercase includes comparison
       value1.toString &&
       caseInsensitiveSearch([value1.toString()], value2.toString());
 
