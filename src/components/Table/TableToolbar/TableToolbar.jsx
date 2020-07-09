@@ -187,7 +187,7 @@ const TableToolbar = ({
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
-            key={hasSearch ? search.defaultValue || search.value : 'table-toolbar-search'}
+            key={search.defaultValue || search.value || 'table-toolbar-search'}
             defaultValue={search.defaultValue || search.value}
             className="table-toolbar-search"
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
