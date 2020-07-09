@@ -36,3 +36,27 @@
     padding-bottom: 0.5rem;
   }
 }
+
+html[dir='rtl'] {
+  .#{$prefix}--tile--selectable {
+    padding-left: 3rem;
+    padding-right: 1rem;
+  }
+
+  .#{$prefix}--tile__checkmark {
+    right: initial;
+    left: 1rem;
+  }
+}
+
+html[dir='ltr'] {
+  .#{$prefix}--tile--selectable {
+    padding-left: 1rem;
+    padding-right: 3rem;
+  }
+
+  .#{$prefix}--tile__checkmark {
+    right: 1rem;
+    left: initial;
+  }
+}
