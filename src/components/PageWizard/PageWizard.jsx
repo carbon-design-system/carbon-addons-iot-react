@@ -121,6 +121,13 @@ const PageWizard = ({
     beforeFooterContent,
   });
 
+    /**
+   * The progress indicator requires an array of items(steps) with substeps passed as children.
+   * This function takes all the steps from PageWizardSteps and puts subSteps as children into
+   * the corresponding parent step
+   * @type {array} steps - The steps array extracted from PageWizardSteps
+   * @return {array} newItemsArray - An array with steps items and nested children steps
+   */
   const newItemsArray = () => {
     const array = [];
     steps.forEach(({ id, label, secondaryLabel, description, subStep, disabled, invalid }) => {
