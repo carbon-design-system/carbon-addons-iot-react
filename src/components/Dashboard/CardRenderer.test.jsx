@@ -1,6 +1,6 @@
 import React from 'react';
 import { Add16, Maximize16 } from '@carbon/icons-react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { CARD_SIZES, CARD_TYPES, COLORS } from '../../constants/LayoutConstants';
 import { tableColumns, tableData } from '../../utils/sample';
@@ -141,7 +141,7 @@ describe('CardRenderer', () => {
   });
 
   it('expanded card rendered', async () => {
-    const { getByTitle } = render(
+    render(
       <Dashboard
         title="My Dashboard"
         layouts={{ lg: [{ id: 'bogus', x: 0, y: 0 }] }}
@@ -165,9 +165,9 @@ describe('CardRenderer', () => {
         hasLastUpdated={false}
       />
     );
-    fireEvent.click(getByTitle('Expand to fullscreen'));
-    expect(getByTitle('Close')).toBeTruthy();
-    fireEvent.click(getByTitle('Close'));
-    expect(getByTitle('Expand to fullscreen')).toBeTruthy();
+    fireEvent.click(screen.getByTitle('Expand to fullscreen'));
+    expect(screen.getByTitle('Close')).toBeTruthy();
+    fireEvent.click(screen.getByTitle('Close'));
+    expect(screen.getByTitle('Expand to fullscreen')).toBeTruthy();
   });
 });

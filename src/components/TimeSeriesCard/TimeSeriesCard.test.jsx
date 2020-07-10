@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import Table from '../Table/Table';
@@ -49,11 +49,11 @@ describe('TimeSeriesCard', () => {
     // For whatever reason, these devices do not give back real data so the No data message
     // should render instead of the line graph
     const emptyValues = [{ deviceid: 'robot1' }, { deviceid: 'robot2' }];
-    const { getByText } = render(
+    render(
       <TimeSeriesCard {...timeSeriesCardProps} values={emptyValues} size={CARD_SIZES.MEDIUM} />
     );
 
-    expect(getByText('No data is available for this time range.')).toBeInTheDocument();
+    expect(screen.getByText('No data is available for this time range.')).toBeInTheDocument();
   });
   it('shows table with data when expanded', () => {
     const wrapper = mount(

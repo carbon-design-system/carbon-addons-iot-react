@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import { mount } from 'enzyme';
 
@@ -17,7 +17,7 @@ describe('CardRangePicker', () => {
   const thisWeekLabel = 'This week';
 
   it('card editable actions', async () => {
-    const { getAllByTitle, getByText } = render(
+    render(
       <CardRangePicker
         i18n={{
           selectTimeRangeLabel,
@@ -28,17 +28,17 @@ describe('CardRangePicker', () => {
         onCardAction={mockOnCardAction}
       />
     );
-    fireEvent.click(getAllByTitle(selectTimeRangeLabel)[0]);
+    fireEvent.click(screen.getAllByTitle(selectTimeRangeLabel)[0]);
     // Click on the default
-    const defaultRange = await waitFor(() => getByText(defaultLabel));
+    const defaultRange = await screen.findByText(defaultLabel);
     fireEvent.click(defaultRange);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'default',
     });
     mockOnCardAction.mockClear();
     // Reopen menu
-    fireEvent.click(getAllByTitle(selectTimeRangeLabel)[0]);
-    const last24Hours = await waitFor(() => getByText(last24HoursLabel));
+    fireEvent.click(screen.getAllByTitle(selectTimeRangeLabel)[0]);
+    const last24Hours = await screen.findByText(last24HoursLabel);
     fireEvent.click(last24Hours);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'last24Hours',
@@ -46,9 +46,9 @@ describe('CardRangePicker', () => {
     mockOnCardAction.mockClear();
 
     // Reopen menu
-    fireEvent.click(getAllByTitle(selectTimeRangeLabel)[0]);
+    fireEvent.click(screen.getAllByTitle(selectTimeRangeLabel)[0]);
     mockOnCardAction.mockClear();
-    const thisWeek = await waitFor(() => getByText(thisWeekLabel));
+    const thisWeek = await screen.findByText(thisWeekLabel);
     fireEvent.click(thisWeek);
     expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
       range: 'thisWeek',

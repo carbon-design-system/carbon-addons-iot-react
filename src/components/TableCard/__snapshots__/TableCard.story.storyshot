@@ -315,6 +315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -322,7 +323,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -375,6 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -382,7 +383,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="count"
                         id="column-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -435,6 +435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -442,7 +443,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -495,6 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -502,7 +503,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -555,6 +555,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -562,7 +563,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -615,6 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -622,7 +623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="deviceId"
                         id="column-deviceId"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -2714,6 +2714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -2721,7 +2722,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -2774,6 +2774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -2781,7 +2782,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="deviceId"
                         id="column-deviceId"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -3878,6 +3878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -3885,7 +3886,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -3938,6 +3938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -3945,7 +3946,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="count"
                         id="column-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -3998,6 +3998,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -4005,7 +4006,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -4058,6 +4058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -4065,7 +4066,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -4118,6 +4118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -4125,7 +4126,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -4178,6 +4178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -4185,7 +4186,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="deviceId"
                         id="column-deviceId"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -4238,6 +4238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -4245,7 +4246,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="Link"
                         id="column-Link"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -6540,6 +6540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -6547,7 +6548,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -6600,6 +6600,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -6607,7 +6608,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -6660,6 +6660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -6667,7 +6668,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -7913,6 +7913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -7920,7 +7921,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -7973,6 +7973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -7980,7 +7981,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -8033,6 +8033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -8040,7 +8041,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -8090,7 +8090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   aria-live="polite"
                 >
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8186,7 +8186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8282,7 +8282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8378,7 +8378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8474,7 +8474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8570,7 +8570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8666,7 +8666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8762,7 +8762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8858,7 +8858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -8954,7 +8954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -9617,6 +9617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -9624,7 +9625,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -9677,6 +9677,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -9684,7 +9685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -9737,6 +9737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -9744,7 +9745,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -10170,6 +10170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -10177,7 +10178,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -10230,6 +10230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -10237,7 +10238,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -10290,6 +10290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -10297,7 +10298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="count"
                         id="column-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -10350,6 +10350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -10357,7 +10358,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -10410,6 +10410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -10417,7 +10418,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -10470,6 +10470,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -10477,7 +10478,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -12797,6 +12797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -12804,7 +12805,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -12857,6 +12857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -12864,7 +12865,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -12917,6 +12917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -12924,7 +12925,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -14171,6 +14171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -14178,7 +14179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -14231,6 +14231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -14238,7 +14239,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="count"
                         id="column-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -14291,6 +14291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -14298,7 +14299,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -14351,6 +14351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -14358,7 +14359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -15833,6 +15833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width="250px"
                     >
                       <button
                         align="start"
@@ -15840,7 +15841,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width="250px"
                       >
                         <span
                           className="bx--table-header-label"
@@ -15893,6 +15893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -15900,7 +15901,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -15953,6 +15953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -15960,7 +15961,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -17235,6 +17235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -17242,7 +17243,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -17295,6 +17295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -17302,7 +17303,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -17355,6 +17355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -17362,7 +17363,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -19225,6 +19225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -19232,7 +19233,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -19285,6 +19285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -19292,7 +19293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -19345,6 +19345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -19352,7 +19353,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -19402,7 +19402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   aria-live="polite"
                 >
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -19498,7 +19498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -19594,7 +19594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -19690,7 +19690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -19786,7 +19786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -19882,7 +19882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -19978,7 +19978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -20074,7 +20074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -20170,7 +20170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -20266,7 +20266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -20941,6 +20941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -20948,7 +20949,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -21001,6 +21001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -21008,7 +21009,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -21061,6 +21061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -21068,7 +21069,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -21118,7 +21118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   aria-live="polite"
                 >
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21214,7 +21214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21310,7 +21310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21406,7 +21406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21502,7 +21502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21598,7 +21598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21694,7 +21694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21790,7 +21790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21886,7 +21886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -21982,7 +21982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -22657,6 +22657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -22664,7 +22665,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -22717,6 +22717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -22724,7 +22725,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -22777,6 +22777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -22784,7 +22785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -22834,7 +22834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   aria-live="polite"
                 >
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -22930,7 +22930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23026,7 +23026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23122,7 +23122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23218,7 +23218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23314,7 +23314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23410,7 +23410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23506,7 +23506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23602,7 +23602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -23698,7 +23698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -24369,6 +24369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -24376,7 +24377,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -24429,6 +24429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -24436,7 +24437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -24489,6 +24489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -24496,7 +24497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -26107,6 +26107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -26114,7 +26115,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -26167,6 +26167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -26174,7 +26175,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -26227,6 +26227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -26234,7 +26235,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="count"
                         id="column-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -26287,6 +26287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -26294,7 +26295,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -26347,6 +26347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -26354,7 +26355,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -26407,6 +26407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -26414,7 +26415,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -28706,6 +28706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -28713,7 +28714,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -28766,6 +28766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -28773,7 +28774,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -28826,6 +28826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -28833,7 +28834,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -28886,6 +28886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -28893,7 +28894,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -30789,6 +30789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -30796,7 +30797,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -30849,6 +30849,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -30856,7 +30857,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -30909,6 +30909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -30916,7 +30917,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="count"
                         id="column-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -30969,6 +30969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -30976,7 +30977,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -31029,6 +31029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -31036,7 +31037,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-pressure"
                         id="column-iconColumn-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -31089,6 +31089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -31096,7 +31097,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -31146,7 +31146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   aria-live="polite"
                 >
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -31296,7 +31296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -31446,7 +31446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -31596,7 +31596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -31746,7 +31746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -31971,7 +31971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -32151,7 +32151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -32301,7 +32301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -32496,7 +32496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -32646,7 +32646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -33450,6 +33450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -33457,7 +33458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="alert"
                         id="column-alert"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -33510,6 +33510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -33517,7 +33518,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="iconColumn-count"
                         id="column-iconColumn-count"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -33570,6 +33570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -33577,7 +33578,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="hour"
                         id="column-hour"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -33630,6 +33630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                           "width": undefined,
                         }
                       }
+                      width=""
                     >
                       <button
                         align="start"
@@ -33637,7 +33638,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         data-column="pressure"
                         id="column-pressure"
                         onClick={[Function]}
-                        width=""
                       >
                         <span
                           className="bx--table-header-label"
@@ -33687,7 +33687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   aria-live="polite"
                 >
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -33847,7 +33847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34005,7 +34005,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34165,7 +34165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34325,7 +34325,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34483,7 +34483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34641,7 +34641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34799,7 +34799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -34957,7 +34957,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}
@@ -35070,7 +35070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     </td>
                   </tr>
                   <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 dndkEF"
+                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 jiOXXf"
                     data-child-count={0}
                     data-nesting-offset={0}
                     data-parent-row={true}

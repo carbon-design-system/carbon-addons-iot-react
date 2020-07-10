@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render, fireEvent } from '@testing-library/react';
-import { screen } from '@testing-library/dom';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';

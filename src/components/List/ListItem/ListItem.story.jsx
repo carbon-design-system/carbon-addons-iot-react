@@ -96,7 +96,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       <ListItem
         id="list-item"
         value="Selectable List Item"
-        secondaryValue={text('secondaryValue', null)}
+        secondaryValue={text('secondaryValue', '')}
         isSelectable
         onSelect={action('onSelect')}
         isLargeRow={boolean('isLargeRow', false)}
@@ -128,7 +128,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       <ListItem
         id="list-item"
         value="Expandable List Item"
-        secondaryValue={text('secondaryValue', null)}
+        secondaryValue={text('secondaryValue', '')}
         isExpandable
         onExpand={action('onExpand')}
         isLargeRow={boolean('isLargeRow', false)}
@@ -140,7 +140,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       <ListItem
         id="list-item"
         value="List Item"
-        secondaryValue={text('secondaryValue', null)}
+        secondaryValue={text('secondaryValue', '')}
         isExpandable
         onExpand={action('onExpand')}
         isCategory
