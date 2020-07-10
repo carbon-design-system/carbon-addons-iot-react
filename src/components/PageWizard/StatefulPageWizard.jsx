@@ -78,7 +78,7 @@ const StatefulPageWizard = ({
   const currentStepIndex = steps.findIndex(i => i.id === currentStepId);
 
   const getNextStep = () => {
-    let nextStep = undefined;
+    let nextStep;
     let idx = currentStepIndex + 1;
     if (idx < steps.length) {
       for (idx; idx < steps.length; idx += 1) {
@@ -92,7 +92,7 @@ const StatefulPageWizard = ({
   };
 
   const getPreviousStep = () => {
-    let prevStep = undefined;
+    let prevStep;
     let idx = currentStepIndex - 1;
     if (idx >= 0) {
       for (idx; idx >= 0; idx -= 1) {
