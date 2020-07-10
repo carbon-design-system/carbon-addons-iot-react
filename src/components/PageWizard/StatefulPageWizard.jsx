@@ -77,28 +77,33 @@ const StatefulPageWizard = ({
   const [currentStepId, setCurrentStepId] = useState(currentStepIdProp || (steps && steps[0].id));
   const currentStepIndex = steps.findIndex(i => i.id === currentStepId);
 
-  // skip disabled steps when clicking next or prev
-  const getAvailableStep = previous => {
-    let idx = previous ? currentStepIndex - 1 : currentStepIndex + 1;
-    while (true) {
-      if (idx >= 0 && idx < steps.length) {
-        if (steps[idx].disabled === true) {
-          if (previous && idx !== 0) {
-            idx -= 1;
-          } else if (idx !== steps.length - 1) {
-            idx += 1;
-          }
-        } else {
-          return steps[idx];
+  const getNextStep = () => {
+    let nextStep = undefined;
+    let idx = currentStepIndex + 1;
+    if (idx < steps.length) {
+      for (idx; idx < steps.length; idx += 1) {
+        if (steps[idx].disabled !== true) {
+          nextStep = steps[idx];
+          break;
         }
-      } else {
-        return undefined;
       }
     }
+    return nextStep;
   };
 
-  const nextStep = getAvailableStep();
-  const prevStep = getAvailableStep(true);
+  const getPreviousStep = () => {
+    let prevStep = undefined;
+    let idx = currentStepIndex - 1;
+    if (idx >= 0) {
+      for (idx; idx >= 0; idx -= 1) {
+        if (steps[idx].disabled !== true) {
+          prevStep = steps[idx];
+          break;
+        }
+      }
+    }
+    return prevStep;
+  };
 
   const handleNext = id => {
     setCurrentStepId(id);
@@ -121,8 +126,8 @@ const StatefulPageWizard = ({
   return (
     <PageWizard
       {...other}
-      onBack={() => handleBack(prevStep.id)}
-      onNext={() => handleNext(nextStep.id)}
+      onBack={() => handleBack(getPreviousStep().id)}
+      onNext={() => handleNext(getNextStep().id)}
       currentStepId={currentStepId}
       setStep={id => {
         const idx = steps.findIndex(i => i.id === id);
