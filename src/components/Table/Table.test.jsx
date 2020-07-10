@@ -402,26 +402,17 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
     expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={{
-          hasSearch: true,
-        }}
-        view={{
-          toolbar: {
-            search: {
-              defaultValue: 'ferrari',
-            },
-          },
-        }}
-      />
-    );
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
+    wrapper.update();
 
-    expect(wrapper2.find('.bx--search-input').prop('value')).toEqual('ferrari');
-    expect(wrapper2.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
+    wrapper.update();
+
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
   it('cells should always wrap by default', () => {
