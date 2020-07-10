@@ -34,7 +34,7 @@ describe('StatefulWizardInline', () => {
   });
   it('setItem', () => {
     const mocks = {
-      clickable: true,
+      isClickable: true,
       setItem: jest.fn(),
     };
     const { getByText } = render(<StatefulTableDetailWizard {...commonWizardProps} {...mocks} />);

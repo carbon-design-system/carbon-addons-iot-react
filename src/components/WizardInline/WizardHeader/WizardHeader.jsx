@@ -25,7 +25,7 @@ class WizardHeader extends Component {
     ).isRequired,
     showLabels: PropTypes.bool,
     stepWidth: PropTypes.number,
-    clickable: PropTypes.bool,
+    isClickable: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -36,7 +36,7 @@ class WizardHeader extends Component {
     stepWidth: 136,
     onClose: null,
     closeButtonTitle: 'Close',
-    clickable: false,
+    isClickable: false,
   };
 
   state = {};
@@ -53,7 +53,7 @@ class WizardHeader extends Component {
       description,
       onClose,
       closeButtonTitle,
-      clickable,
+      isClickable,
     } = this.props;
 
     const closeButton = (
@@ -77,7 +77,7 @@ class WizardHeader extends Component {
           showLabels={showLabels}
           setStep={setItem}
           stepWidth={stepWidth}
-          clickable={clickable}
+          isClickable={isClickable}
         />
       </Fragment>
     );

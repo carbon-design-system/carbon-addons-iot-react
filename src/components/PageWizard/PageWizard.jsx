@@ -53,7 +53,7 @@ export const PageWizardPropTypes = {
   /** Content to render before footer buttons (on left side, in LTR) */
   beforeFooterContent: PropTypes.node,
   /** Make the ProgressIndicator clickable */
-  clickable: PropTypes.bool,
+  isClickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -75,7 +75,7 @@ export const defaultProps = {
   onBack: null,
   setStep: null,
   beforeFooterContent: null,
-  clickable: false,
+  isClickable: false,
 };
 
 const PageWizard = ({
@@ -95,7 +95,7 @@ const PageWizard = ({
   onClearError,
   isProgressIndicatorVertical,
   beforeFooterContent,
-  clickable,
+  isClickable,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
@@ -172,7 +172,7 @@ const PageWizard = ({
             currentItemId={currentStepId}
             setStep={setStep}
             isVerticalMode={isProgressIndicatorVertical}
-            clickable={clickable}
+            isClickable={isClickable}
           />
         </div>
       ) : null}

@@ -31,14 +31,14 @@ const ProgressStep = ({
   invalid,
   stepNumber,
   lastItem,
-  clickable,
+  isClickable,
   current,
   complete,
   incomplete,
   mainStep,
   subStep,
 }) => {
-  const isClickable = clickable && !disabled && !current;
+  const accessible = isClickable && !disabled && !current;
 
   const handleClick = () => {
     onChange(id);
@@ -139,7 +139,7 @@ const ProgressStep = ({
       [`step-button`]: true,
       [`main-step`]: mainStep,
       [`sub-step`]: subStep,
-      [`clickable`]: isClickable,
+      [`clickable`]: accessible,
     });
 
     // for testing purposes
@@ -154,8 +154,8 @@ const ProgressStep = ({
           aria-disabled={disabled}
           disabled={disabled}
           style={getStepWidth()}
-          onClick={isClickable ? handleClick : null}
-          onKeyDown={isClickable ? handleKeyDown : null}
+          onClick={accessible ? handleClick : null}
+          onKeyDown={accessible ? handleKeyDown : null}
           data-testid={`step-button-${type}-${dataTestIdLabel}`}
         >
           <StepLine />
@@ -197,7 +197,7 @@ ProgressStep.propTypes = {
   invalid: PropTypes.bool,
   stepNumber: PropTypes.number,
   lastItem: PropTypes.bool,
-  clickable: PropTypes.bool,
+  isClickable: PropTypes.bool,
   current: PropTypes.bool,
   complete: PropTypes.bool,
   incomplete: PropTypes.bool,
@@ -217,7 +217,7 @@ ProgressStep.defaultProps = {
   invalid: false,
   stepNumber: 0,
   lastItem: false,
-  clickable: false,
+  isClickable: false,
   current: false,
   complete: false,
   incomplete: false,
@@ -232,7 +232,7 @@ const ProgressIndicator = ({
   showLabels,
   isVerticalMode,
   stepWidth,
-  clickable,
+  isClickable,
   setStep,
 }) => {
   const [currentStep, setCurrentStep] = useState(currentItemId || items[0].id);
@@ -320,7 +320,7 @@ const ProgressIndicator = ({
             lastItem={lastItemId() === id}
             disabled={disabled}
             invalid={invalid}
-            clickable={clickable}
+            isClickable={isClickable}
           />
         )
       )}
@@ -344,7 +344,7 @@ ProgressIndicator.propTypes = {
   showLabels: PropTypes.bool,
   stepWidth: PropTypes.number,
   isVerticalMode: PropTypes.bool,
-  clickable: PropTypes.bool,
+  isClickable: PropTypes.bool,
   setStep: PropTypes.func,
 };
 
@@ -355,7 +355,7 @@ ProgressIndicator.defaultProps = {
   stepWidth: null,
   currentItemId: null,
   isVerticalMode: false,
-  clickable: false,
+  isClickable: false,
   setStep: null,
 };
 

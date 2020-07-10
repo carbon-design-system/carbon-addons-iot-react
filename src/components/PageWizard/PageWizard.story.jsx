@@ -258,7 +258,7 @@ export const StepValidationWizard = ({ ...props }) => {
       onBack={() => {}}
       setStep={() => {}}
       error={error}
-      clickable
+      isClickable
     >
       <PageWizardStep
         id="step1"
@@ -324,7 +324,7 @@ storiesOf('Watson IoT/PageWizard', module)
         onNext={action('next', () => {})}
         onBack={action('back', () => {})}
         setStep={action('step clicked', () => {})}
-        clickable
+        isClickable
       >
         {content}
       </StatefulPageWizard>
@@ -382,7 +382,7 @@ storiesOf('Watson IoT/PageWizard', module)
         setStep={action('step clicked', () => {})}
         onClearError={action('Clear error', () => {})}
         isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
-        clickable
+        isClickable
       >
         {content}
       </PageWizard>
@@ -430,7 +430,7 @@ storiesOf('Watson IoT/PageWizard', module)
           <StepValidationWizard
             hasStickyFooter={boolean('hasStickyFooter', true)}
             isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
-            clickable
+            isClickable
           />
         }
       />
@@ -451,7 +451,7 @@ storiesOf('Watson IoT/PageWizard', module)
             hasStickyFooter={boolean('hasStickyFooter', true)}
             isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
             beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
-            clickable
+            isClickable
           />
         }
       />

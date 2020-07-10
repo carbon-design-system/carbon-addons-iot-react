@@ -150,7 +150,7 @@ storiesOf('Watson IoT/TableDetailWizard', module)
       onNext={action('next')}
       onBack={action('back')}
       setItem={action('step clicked')}
-      clickable={boolean('clickable', true)}
+      isClickable={boolean('isClickable', true)}
     />
   ))
   .add('Static', () => (
@@ -164,7 +164,7 @@ storiesOf('Watson IoT/TableDetailWizard', module)
       currentItemId="step2"
       setItem={action('step clicked')}
       showLabels={boolean('showLabels', true)}
-      clickable={boolean('clickable', false)}
+      isClickable={boolean('isClickable', true)}
     />
   ))
   .add('with error', () => (
@@ -180,6 +180,6 @@ storiesOf('Watson IoT/TableDetailWizard', module)
       showLabels={boolean('showLabels', true)}
       error="Error on the form"
       onClearError={action('clear error')}
-      clickable={boolean('clickable', false)}
+      isClickable={boolean('isClickable', true)}
     />
   ));

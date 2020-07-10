@@ -121,7 +121,7 @@ export const propTypes = {
   onClearError: PropTypes.func,
 
   /** Set the progress indicator button to clickable */
-  clickable: PropTypes.bool,
+  isClickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -149,7 +149,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   onClearError: null,
-  clickable: false,
+  isClickable: false,
 };
 
 const WizardInline = ({
@@ -179,7 +179,7 @@ const WizardInline = ({
   error,
   onClearError,
   closeButtonTitle,
-  clickable,
+  isClickable,
 }) => {
   if (__DEV__) {
     warning(
@@ -224,7 +224,7 @@ const WizardInline = ({
           onClose={showCloseButton ? onClose : null}
           stepWidth={stepWidth}
           closeButtonTitle={closeButtonTitle}
-          clickable={clickable}
+          isClickable={isClickable}
         />
         {error ? (
           <StyledMessageBox

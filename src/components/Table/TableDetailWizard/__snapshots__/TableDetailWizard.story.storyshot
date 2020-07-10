@@ -454,11 +454,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <button
                   aria-disabled={false}
-                  className="step-button main-step"
+                  className="step-button main-step clickable"
                   data-testid="step-button-main-identity"
                   disabled={false}
-                  onClick={null}
-                  onKeyDown={null}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   style={
                     Object {
                       "height": "7rem",
@@ -573,11 +573,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <button
                   aria-disabled={false}
-                  className="step-button main-step"
+                  className="step-button main-step clickable"
                   data-testid="step-button-main-notifications"
                   disabled={false}
-                  onClick={null}
-                  onKeyDown={null}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   style={
                     Object {
                       "height": "7rem",
@@ -633,11 +633,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <button
                   aria-disabled={false}
-                  className="step-button main-step"
+                  className="step-button main-step clickable"
                   data-testid="step-button-main-final-step"
                   disabled={false}
-                  onClick={null}
-                  onKeyDown={null}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   style={
                     Object {
                       "height": "7rem",
@@ -899,11 +899,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <button
                   aria-disabled={false}
-                  className="step-button main-step"
+                  className="step-button main-step clickable"
                   data-testid="step-button-main-state-model"
                   disabled={false}
-                  onClick={null}
-                  onKeyDown={null}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   style={
                     Object {
                       "height": "7rem",
@@ -959,11 +959,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <button
                   aria-disabled={false}
-                  className="step-button main-step"
+                  className="step-button main-step clickable"
                   data-testid="step-button-main-notifications"
                   disabled={false}
-                  onClick={null}
-                  onKeyDown={null}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   style={
                     Object {
                       "height": "7rem",
@@ -1019,11 +1019,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <button
                   aria-disabled={false}
-                  className="step-button main-step"
+                  className="step-button main-step clickable"
                   data-testid="step-button-main-final-step"
                   disabled={false}
-                  onClick={null}
-                  onKeyDown={null}
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   style={
                     Object {
                       "height": "7rem",

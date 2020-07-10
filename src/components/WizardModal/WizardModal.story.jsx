@@ -33,7 +33,7 @@ storiesOf('Watson IoT/WizardModal', module)
         { label: 'step2', content: 'page 2', onValidate: action('validateStep2') },
         { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
       ]}
-      clickable
+      isClickable
       {...commonWizardProps}
     />
   ))

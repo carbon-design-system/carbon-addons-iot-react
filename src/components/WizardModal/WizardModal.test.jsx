@@ -5,7 +5,7 @@ import { Loading } from 'carbon-components-react';
 import WizardModal from './WizardModal';
 
 const commonWizardProps = {
-  clickable: true,
+  isClickable: true,
   onSubmit: () => console.log('submit'),
   onClose: () => console.log('close'),
 };

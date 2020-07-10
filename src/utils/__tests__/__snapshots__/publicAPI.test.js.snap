@@ -2587,7 +2587,6 @@ Map {
   },
   "WizardModal" => Object {
     "defaultProps": Object {
-      "clickable": false,
       "currentStepIndex": 0,
       "footer": Object {
         "cancelButtonLabel": "Cancel",
@@ -2596,11 +2595,9 @@ Map {
         "previousButtonLabel": "Previous",
         "submitButtonLabel": "Submit",
       },
+      "isClickable": false,
     },
     "propTypes": Object {
-      "clickable": Object {
-        "type": "bool",
-      },
       "currentStepIndex": Object {
         "type": "number",
       },
@@ -2644,6 +2641,9 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
+      "isClickable": Object {
+        "type": "bool",
+      },
       "onSubmit": Object {
         "isRequired": true,
         "type": "func",
@@ -2680,12 +2680,12 @@ Map {
       "blurb": null,
       "breadcrumb": null,
       "cancelLabel": "Cancel",
-      "clickable": false,
       "closeButtonTitle": "Close",
       "currentItemId": null,
       "description": null,
       "error": null,
       "footerLeftContent": null,
+      "isClickable": false,
       "nextDisabled": false,
       "nextLabel": "Next",
       "onBack": null,
@@ -2718,9 +2718,6 @@ Map {
       "cancelLabel": Object {
         "type": "node",
       },
-      "clickable": Object {
-        "type": "bool",
-      },
       "closeButtonTitle": Object {
         "type": "string",
       },
@@ -2735,6 +2732,9 @@ Map {
       },
       "footerLeftContent": Object {
         "type": "element",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "items": Object {
         "args": Array [
@@ -2817,12 +2817,12 @@ Map {
       "blurb": null,
       "breadcrumb": null,
       "cancelLabel": "Cancel",
-      "clickable": false,
       "closeButtonTitle": "Close",
       "currentItemId": null,
       "description": null,
       "error": null,
       "footerLeftContent": null,
+      "isClickable": false,
       "nextDisabled": false,
       "nextLabel": "Next",
       "onBack": null,
@@ -2855,9 +2855,6 @@ Map {
       "cancelLabel": Object {
         "type": "node",
       },
-      "clickable": Object {
-        "type": "bool",
-      },
       "closeButtonTitle": Object {
         "type": "string",
       },
@@ -2872,6 +2869,9 @@ Map {
       },
       "footerLeftContent": Object {
         "type": "element",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "items": Object {
         "args": Array [
@@ -3240,8 +3240,8 @@ Map {
   "ProgressIndicator" => Object {
     "defaultProps": Object {
       "className": null,
-      "clickable": false,
       "currentItemId": null,
+      "isClickable": false,
       "isVerticalMode": false,
       "items": null,
       "setStep": null,
@@ -3251,9 +3251,6 @@ Map {
     "propTypes": Object {
       "className": Object {
         "type": "string",
-      },
-      "clickable": Object {
-        "type": "bool",
       },
       "currentItemId": Object {
         "args": Array [
@@ -3267,6 +3264,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "isVerticalMode": Object {
         "type": "bool",
@@ -12676,7 +12676,6 @@ Map {
     "defaultProps": Object {
       "beforeFooterContent": null,
       "children": Array [],
-      "clickable": false,
       "currentStepId": null,
       "error": null,
       "hasStickyFooter": false,
@@ -12687,6 +12686,7 @@ Map {
         "next": "Next",
         "submit": "Submit",
       },
+      "isClickable": false,
       "isProgressIndicatorVertical": true,
       "nextDisabled": false,
       "onBack": null,
@@ -12715,9 +12715,6 @@ Map {
           ],
         ],
         "type": "oneOfType",
-      },
-      "clickable": Object {
-        "type": "bool",
       },
       "currentStepId": Object {
         "type": "string",
@@ -12749,6 +12746,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "isProgressIndicatorVertical": Object {
         "type": "bool",

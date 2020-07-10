@@ -26,8 +26,8 @@ const mockItems = [
   { id: 'step5', label: 'Fifth Step' },
 ];
 
-test('simulate onClick on clickable', () => {
-  render(<ProgressIndicator items={mockItems} clickable />);
+test('simulate onClick on isClickable', () => {
+  render(<ProgressIndicator items={mockItems} isClickable />);
   const beforeClick = screen.getByTitle('First Step').children[0];
   // screen.debug(beforeClick);
   screen.getByTestId('step-button-main-second-step').click();

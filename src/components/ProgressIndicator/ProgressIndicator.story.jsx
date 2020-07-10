@@ -39,7 +39,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       stepWidth={number('stepWidth', 6)}
       showLabels={boolean('showlabels', true)}
       isVerticalMode={boolean('isVerticalMode', false)}
-      clickable={boolean('clickable', false)}
+      isClickable={boolean('isClickable', false)}
     />
   ))
   .add('presentation', () => (
@@ -58,7 +58,7 @@ storiesOf('Watson IoT/ProgressIndicator', module)
       currentItemId={select('id', items.map(item => item.id), items[0].id)}
       onClickItem={action('onClickItem')}
       showLabels={boolean('showlabels', true)}
-      clickable={boolean('clickable', false)}
+      isClickable={boolean('isClickable', false)}
       isVerticalMode
     />
   ))

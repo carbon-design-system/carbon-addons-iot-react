@@ -96,7 +96,7 @@ export const propTypes = {
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
   onClearError: PropTypes.func,
   /** Set the progress indicator button to clickable */
-  clickable: PropTypes.bool,
+  isClickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -116,7 +116,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   onClearError: null,
-  clickable: false,
+  isClickable: false,
 };
 
 const TableDetailWizard = ({
@@ -139,7 +139,7 @@ const TableDetailWizard = ({
   className,
   error,
   onClearError,
-  clickable,
+  isClickable,
 }) => {
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
@@ -173,7 +173,7 @@ const TableDetailWizard = ({
           items={items}
           showLabels={showLabels}
           stepWidth={stepWidth}
-          clickable={clickable}
+          isClickable={isClickable}
         />
         <StyledContentContainer>
           <WizardContent component={currentItemObj.component} />

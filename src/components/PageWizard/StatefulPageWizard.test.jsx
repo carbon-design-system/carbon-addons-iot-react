@@ -92,7 +92,7 @@ describe('StatefulPageWizard', () => {
 
   it('step indicator to go to a specific step', () => {
     const mocks = {
-      clickable: true,
+      isClickable: true,
       setStep: jest.fn(),
     };
 
@@ -109,7 +109,7 @@ describe('StatefulPageWizard', () => {
 
   it('without setting currentStepId', () => {
     const mocks = {
-      clickable: true,
+      isClickable: true,
       setStep: jest.fn(),
     };
 
