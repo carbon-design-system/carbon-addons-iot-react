@@ -22,10 +22,10 @@ export const content = [
     key="step1"
     secondaryLabel="Optional label"
     description="This is displayed when step icon is hovered"
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -54,10 +54,10 @@ export const content = [
     id="step2"
     key="step2"
     label="Second Step"
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -95,10 +95,10 @@ export const content = [
     key="step2-substep1"
     label="Sub Step 1"
     subStep
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 2: Sub Step 1</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -117,10 +117,10 @@ export const content = [
     label="Sub Step 2"
     secondaryLabel="Optional label"
     subStep
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 2: Sub Step 2</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -139,10 +139,10 @@ export const content = [
     label="Sub Step 3"
     subStep
     invalid
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 2: Sub Step 3</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -162,10 +162,10 @@ export const content = [
     subStep
     disabled
     invalid
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 2: Sub Step 4</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -184,10 +184,10 @@ export const content = [
     label="Third Step"
     secondaryLabel="Optional label"
     disabled
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -205,10 +205,10 @@ export const content = [
     key="step4"
     label="Fourth Step"
     invalid
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 4: Define your dashboard</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -225,10 +225,10 @@ export const content = [
     id="step5"
     key="step5"
     label="Final Step"
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 5: Final Step</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -251,11 +251,11 @@ export const StepValidationWizard = ({ ...props }) => {
   return (
     <StatefulPageWizard
       {...props}
-      onClearError={() => {}}
-      onClose={() => {}}
-      onSubmit={() => {}}
-      onNext={() => {}}
-      onBack={() => {}}
+      onClearError={action('Clear error', () => {})}
+      onClose={action('closed', () => {})}
+      onSubmit={action('submit', () => {})}
+      onNext={action('next', () => {})}
+      onBack={action('back', () => {})}
       setStep={() => {}}
       error={error}
       isClickable
@@ -273,10 +273,10 @@ export const StepValidationWizard = ({ ...props }) => {
           setError('First name and Last name cannot be empty');
           return false;
         }}
-        onClose={() => {}}
-        onSubmit={() => {}}
-        onNext={() => {}}
-        onBack={() => {}}
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
       >
         <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
         <PageWizardStepDescription>
