@@ -121,7 +121,7 @@ const PageWizard = ({
     beforeFooterContent,
   });
 
-    /**
+  /**
    * The progress indicator requires an array of items(steps) with substeps passed as children.
    * This function takes all the steps from PageWizardSteps and puts subSteps as children into
    * the corresponding parent step

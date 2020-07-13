@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { itemsAndComponents } from './TableDetailWizard.story';
 import StatefulTableDetailWizard from './StatefulTableDetailWizard';
@@ -37,8 +37,8 @@ describe('StatefulWizardInline', () => {
       isClickable: true,
       setItem: jest.fn(),
     };
-    const { getByText } = render(<StatefulTableDetailWizard {...commonWizardProps} {...mocks} />);
-    fireEvent.click(getByText('Notifications'));
+    render(<StatefulTableDetailWizard {...commonWizardProps} {...mocks} />);
+    fireEvent.click(screen.getByText('Notifications'));
     expect(mocks.setItem).toHaveBeenCalledTimes(1);
   });
   it('error', () => {

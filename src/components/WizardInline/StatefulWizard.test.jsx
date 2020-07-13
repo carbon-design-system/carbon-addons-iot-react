@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { itemsAndComponents } from './WizardInline.story';
 import StatefulWizardInline from './StatefulWizardInline';
@@ -27,8 +27,8 @@ describe('StatefulWizardInline', () => {
       isClickable: true,
       setItem: jest.fn(),
     };
-    const { getByText } = render(<StatefulWizardInline {...commonWizardProps} {...mocks} />);
-    fireEvent.click(getByText('Long step'));
+    render(<StatefulWizardInline {...commonWizardProps} {...mocks} />);
+    fireEvent.click(screen.getByText('Long step'));
     expect(mocks.setItem).toHaveBeenCalledTimes(1);
   });
   it('error', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import StatefulPageWizard from './StatefulPageWizard';
 import { content, StepValidationWizard } from './PageWizard.story';
@@ -15,18 +15,18 @@ describe('StatefulPageWizard', () => {
       cancel: 'Cancel',
     };
 
-    const { getByText } = render(
+    render(
       <StatefulPageWizard currentStepId="step1" {...mocks} i18n={i18n}>
         {content}
       </StatefulPageWizard>
     );
 
     // click on Cancel
-    fireEvent.click(getByText(i18n.cancel));
+    fireEvent.click(screen.getByText(i18n.cancel));
     expect(mocks.onClose).toHaveBeenCalledTimes(1);
 
     // click on Next
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
@@ -40,22 +40,22 @@ describe('StatefulPageWizard', () => {
       back: 'Back',
     };
 
-    const { getByText } = render(
+    render(
       <StatefulPageWizard currentStepId="step2" {...mocks} i18n={i18n}>
         {content}
       </StatefulPageWizard>
     );
 
     // go back to step 1
-    fireEvent.click(getByText(i18n.back));
+    fireEvent.click(screen.getByText(i18n.back));
     expect(mocks.onBack).toHaveBeenCalledTimes(1);
 
     // reset to step 2
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
 
     // go to step 3
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(2);
   });
 
@@ -71,22 +71,22 @@ describe('StatefulPageWizard', () => {
       submit: 'Submit',
     };
 
-    const { getByText } = render(
+    render(
       <StatefulPageWizard currentStepId="step5" {...mocks} i18n={i18n}>
         {content}
       </StatefulPageWizard>
     );
 
     // go back to step 4
-    fireEvent.click(getByText(i18n.back));
+    fireEvent.click(screen.getByText(i18n.back));
     expect(mocks.onBack).toHaveBeenCalledTimes(1);
 
     // reset to step 5
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
 
     // click on Submit
-    fireEvent.click(getByText(i18n.submit));
+    fireEvent.click(screen.getByText(i18n.submit));
     expect(mocks.onSubmit).toHaveBeenCalledTimes(1);
   });
 
@@ -96,14 +96,14 @@ describe('StatefulPageWizard', () => {
       setStep: jest.fn(),
     };
 
-    const { getByText } = render(
+    render(
       <StatefulPageWizard currentStepId="step5" {...mocks}>
         {content}
       </StatefulPageWizard>
     );
 
     // go back to step 1
-    fireEvent.click(getByText('First Step'));
+    fireEvent.click(screen.getByText('First Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
@@ -113,10 +113,10 @@ describe('StatefulPageWizard', () => {
       setStep: jest.fn(),
     };
 
-    const { getByText } = render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
+    render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
 
-    // go to fourth step
-    fireEvent.click(getByText('Fourth Step'));
+    // go back to step 4
+    fireEvent.click(screen.getByText('Fourth Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
@@ -130,23 +130,22 @@ describe('StatefulPageWizard', () => {
         {content}
       </StatefulPageWizard>
     );
-    fireEvent.click(renderedElement.getByText(i18n.back));
-    fireEvent.click(renderedElement.getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.back));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
   it('clicking on step indicator should validate before going to step', () => {
-    const { container, getByText, queryByText } = render(<StepValidationWizard />);
+    render(<StepValidationWizard />);
 
     // check that the next step won't happen if inputs aren't filled
-    fireEvent.click(getByText('Second Step'));
-    expect(getByText('First name and Last name cannot be empty')).toBeTruthy();
+    fireEvent.click(screen.getByText('Second Step'));
+    expect(screen.getByText('First name and Last name cannot be empty')).toBeTruthy();
 
     // fill in inputs, then try to go to step 2
-    const inputs = container.querySelectorAll('input');
-    fireEvent.change(inputs[0], { target: { value: 'firstname' } });
-    fireEvent.change(inputs[1], { target: { value: 'lastname' } });
-    fireEvent.click(getByText('Second Step'));
-    expect(queryByText('First name and Last name cannot be empty')).toBeFalsy();
+    fireEvent.change(screen.getByLabelText('First name'), { target: { value: 'john' } });
+    fireEvent.change(screen.getByLabelText('Last name'), { target: { value: 'smith' } });
+    fireEvent.click(screen.getByText('Second Step'));
+    expect(screen.queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });

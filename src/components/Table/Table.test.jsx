@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import merge from 'lodash/merge';
 import { Add20 } from '@carbon/icons-react';
@@ -306,18 +306,18 @@ describe('Table', () => {
   });
 
   it('click should trigger onDownload', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar actions={mockActions.toolbar} options={options2} tableState={tableState} />
     );
 
-    const downloadButton = getByTestId('download-button');
+    const downloadButton = screen.getByTestId('download-button');
     expect(downloadButton).toBeTruthy();
     fireEvent.click(downloadButton);
     expect(mockActions.toolbar.onDownloadCSV).toHaveBeenCalledTimes(1);
   });
 
   it('click should trigger onColumnSelection', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasColumnSelection: true }}
@@ -325,14 +325,14 @@ describe('Table', () => {
       />
     );
 
-    const columnSelectButton = getByTestId('column-selection-button');
+    const columnSelectButton = screen.getByTestId('column-selection-button');
     expect(columnSelectButton).toBeTruthy();
     fireEvent.click(columnSelectButton);
     expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(1);
   });
 
   it('click should trigger onFilter', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasFilter: true }}
@@ -340,14 +340,14 @@ describe('Table', () => {
       />
     );
 
-    const filterButton = getByTestId('filter-button');
+    const filterButton = screen.getByTestId('filter-button');
     expect(filterButton).toBeTruthy();
     fireEvent.click(filterButton);
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
 
   it('mouse click should trigger rowEdit toolbar', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasRowEdit: true }}
@@ -355,7 +355,7 @@ describe('Table', () => {
       />
     );
 
-    const rowEditButton = getByTestId('row-edit-button');
+    const rowEditButton = screen.getByTestId('row-edit-button');
     expect(rowEditButton).toBeTruthy();
 
     fireEvent.click(rowEditButton);
@@ -363,7 +363,7 @@ describe('Table', () => {
   });
 
   it('rowEdit toolbar should contain external rowEditBarButtons', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasRowEdit: true }}
@@ -375,7 +375,7 @@ describe('Table', () => {
       />
     );
 
-    const rowEditBarButton = getByTestId('row-edit-bar-button');
+    const rowEditBarButton = screen.getByTestId('row-edit-bar-button');
     expect(rowEditBarButton).toBeTruthy();
   });
 
@@ -402,26 +402,17 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
     expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={{
-          hasSearch: true,
-        }}
-        view={{
-          toolbar: {
-            search: {
-              defaultValue: 'ferrari',
-            },
-          },
-        }}
-      />
-    );
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
+    wrapper.update();
 
-    expect(wrapper2.find('.bx--search-input').prop('value')).toEqual('ferrari');
-    expect(wrapper2.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
+    wrapper.update();
+
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
   it('cells should always wrap by default', () => {

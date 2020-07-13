@@ -16,6 +16,9 @@ import warning from 'warning';
 import { PADDING } from '../../styles/styles';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const StyledModal = styled(CarbonComposedModal)`
    {
@@ -243,7 +246,16 @@ class ComposedModal extends React.Component {
         >
           {helpText ? <p className="bx--modal-content__text">{helpText}</p> : null}
         </ModalHeader>
-        {children ? <ModalBody>{children}</ModalBody> : null}
+        {children ? (
+          <ModalBody
+            className={classnames({
+              // Prevent double scrollbars
+              [`${iotPrefix}--composed-modal__body--small-margin-bottom`]: error,
+            })}
+          >
+            {children}
+          </ModalBody>
+        ) : null}
         {error ? (
           <StyledMessageBox
             title={error}

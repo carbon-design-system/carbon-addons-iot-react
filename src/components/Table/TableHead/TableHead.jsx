@@ -118,12 +118,12 @@ const defaultProps = {
 const StyledCustomTableHeader = styled(TableHeader)`
   &&& {
     ${props => {
-      const { width } = props;
-      return width !== undefined
+      const { initialWidth } = props;
+      return initialWidth !== undefined
         ? `
        .bx--table-header-label {
-          min-width: ${width};
-          max-width: ${width};
+          min-width: ${initialWidth};
+          max-width: ${initialWidth};
           white-space: nowrap;
           overflow-x: hidden;
           overflow-y: hidden;
@@ -246,7 +246,9 @@ const TableHead = ({
     () => {
       // An initial measuring is needed since there might not be an initial value from the columns prop
       // which means that the layout engine will have to set the widths dynamically
-      // before we know what they are.
+      // before we know what they are. More importantly, the sum of the inital widths may not match
+      // the available width of the table, e.g. if the user has resized the browser since the
+      // column widths was last saved.
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
         const measuredWidths = measureColumnWidths();
         const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
@@ -319,7 +321,7 @@ const TableHead = ({
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
             <StyledCustomTableHeader
-              width={initialColumnWidths[matchingColumnMeta.id]}
+              initialWidth={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
               data-column={matchingColumnMeta.id}
