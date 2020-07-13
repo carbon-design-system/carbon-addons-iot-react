@@ -151,7 +151,7 @@
     "@testing-library/jest-dom": "^5.10.0",
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^11.4.2",
-    "accessibility-checker": "^3.0.5",
+    "accessibility-checker": "^3.0.6",
     "autoprefixer": "^9.4.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
