@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import ImageHotspots from './ImageHotspots';
 import Landscape from './landscape.jpg';
@@ -29,7 +29,7 @@ afterAll(() => {
 
 describe('render tests for the image hotspots component', () => {
   it('minimap rendering', () => {
-    const { getByAltText, queryByAltText, getByTitle } = render(
+    render(
       <div style={{ maxWidth: '50px', maxHeight: '50px', width: '50px', height: '50px' }}>
         <ImageHotspots
           src={Landscape}
@@ -41,22 +41,22 @@ describe('render tests for the image hotspots component', () => {
       </div>
     );
 
-    const img = getByAltText('landscape');
+    const img = screen.getByAltText('landscape');
     const imageLoadEvent = { target: { offsetWidth: 2000, offsetHeight: 2000 } };
     // Image should appear
     expect(img).toBeTruthy();
     // Minimap should not appear before drag starts
-    expect(queryByAltText('Minimap')).toBeFalsy();
+    expect(screen.queryByAltText('Minimap')).toBeFalsy();
     // onImageLoad event needs to be fired to initialize the image
     fireEvent.load(img, imageLoadEvent);
     // Zoom needs to be triggered one time to enable dragging
-    const zoomInBtn = getByTitle('Zoom in');
+    const zoomInBtn = screen.getByTitle('Zoom in');
     fireEvent.click(zoomInBtn);
     fireEvent.mouseDown(img);
     // Minimap should appear once drag starts
-    expect(queryByAltText('Minimap')).toBeTruthy();
+    expect(screen.queryByAltText('Minimap')).toBeTruthy();
     fireEvent.mouseUp(img);
     // Minimap should disappear once drag ends
-    expect(queryByAltText('Minimap')).toBeFalsy();
+    expect(screen.queryByAltText('Minimap')).toBeFalsy();
   });
 });
