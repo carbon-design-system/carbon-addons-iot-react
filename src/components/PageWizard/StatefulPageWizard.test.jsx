@@ -115,7 +115,7 @@ describe('StatefulPageWizard', () => {
 
     render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
 
-    // go back to step 4
+    // go back to fourth step
     fireEvent.click(screen.getByText('Fourth Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
