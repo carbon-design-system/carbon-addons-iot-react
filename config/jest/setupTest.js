@@ -22,21 +22,7 @@ async function toBeAccessible(node, label) {
     };
   }
 }
-console.log(`hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-i
-i
-i
-i
-i
 
-I
-i
-i
-i
-i
-i
-i`);
-console.log(toBeAccessible);
 expect.extend({ toBeAccessible });
 
 beforeEach(() => {
