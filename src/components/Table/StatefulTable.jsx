@@ -158,11 +158,27 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onApplyRowAction: async (actionId, rowId) => {
-        const action =
-          state.data &&
-          state.data
-            .find(row => row.id === rowId)
-            .rowActions.find(currentAction => currentAction.id === actionId);
+        const getAction = data => {
+          let rowActionItem;
+          for (let index = 0; index < data.length; index += 1) {
+            const element = data[index];
+            if (element.id === rowId) {
+              rowActionItem = element.rowActions.find(
+                currentAction => currentAction.id === actionId
+              );
+              break;
+            }
+            if (element.children !== undefined) {
+              rowActionItem = getAction(element.children);
+              if (rowActionItem !== null) {
+                break;
+              }
+            }
+          }
+          return rowActionItem;
+        };
+
+        const action = state.data && getAction(state.data);
 
         dispatch(tableRowActionStart(rowId));
         try {
