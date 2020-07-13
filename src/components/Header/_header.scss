@@ -1,4 +1,5 @@
 @import '~carbon-components/scss/globals/scss/vars';
+@include carbon--type-style('body-short-01');
 
 .#{$prefix}--header {
   .#{$prefix}--skip-to-content:focus {
@@ -100,11 +101,6 @@
   padding: 0 mini-units(2);
   // Used for links that are directly in the menubar to span the full height
   height: 100%;
-  // Text styles
-  font-size: carbon--type-scale(1);
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: carbon--type-scale(3);
   // Reset link styles and make sure the text isn't selectable
   text-decoration: none;
   user-select: none;
