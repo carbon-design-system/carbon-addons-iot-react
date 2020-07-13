@@ -13,7 +13,6 @@ import omit from 'lodash/omit';
 
 import { settings } from '../../../../constants/Settings';
 import { RowActionPropTypes, RowActionErrorPropTypes } from '../../TablePropTypes';
-import { COLORS } from '../../../../styles/styles';
 import icons from '../../../../utils/bundledIcons';
 
 import RowActionsError from './RowActionsError';
@@ -62,9 +61,6 @@ const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
     svg {
       margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
     }
-  }
-  &&&:hover > svg {
-    fill: ${COLORS.blue};
   }
 `;
 
@@ -219,6 +215,9 @@ class RowActionsCell extends React.Component {
                       data-testid={`${tableId}-${id}-row-actions-button-${actionId}`}
                       kind="ghost"
                       hasIconOnly={!labelText}
+                      tooltipPosition="left"
+                      tooltipAlignment="end"
+                      size="small"
                       onClick={e => onClick(e, id, actionId, onApplyRowAction)}
                     >
                       {labelText}

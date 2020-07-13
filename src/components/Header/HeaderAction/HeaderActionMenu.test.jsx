@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import HeaderActionMenu from './HeaderActionMenu';
@@ -42,18 +42,16 @@ describe('HeaderActionMenu', () => {
   });
 
   it('should render aria-label', () => {
-    const { getByText } = render(<HeaderActionMenu {...mockProps} />);
+    render(<HeaderActionMenu {...mockProps} />);
 
-    expect(getByText('Accessibility label')).toBeInTheDocument();
+    expect(screen.getByText('Accessibility label')).toBeInTheDocument();
   });
 
   it('should render content prop', () => {
     const menuContent = () => <p>Some other text</p>;
-    const { getByText, queryByText } = render(
-      <HeaderActionMenu renderMenuContent={menuContent} {...mockProps} />
-    );
+    render(<HeaderActionMenu renderMenuContent={menuContent} {...mockProps} />);
 
-    expect(queryByText('Accessibility label')).not.toBeInTheDocument();
-    expect(getByText('Some other text')).toBeInTheDocument();
+    expect(screen.queryByText('Accessibility label')).not.toBeInTheDocument();
+    expect(screen.getByText('Some other text')).toBeInTheDocument();
   });
 });

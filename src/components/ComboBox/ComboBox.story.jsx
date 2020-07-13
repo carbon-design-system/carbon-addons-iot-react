@@ -7,11 +7,12 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
-import { ComboBox } from 'carbon-components-react';
 
 import Button from '../Button';
 
-const items = [
+import ComboBox from './ComboBox';
+
+export const items = [
   {
     id: 'option-0',
     text: 'Option 1',
@@ -23,7 +24,6 @@ const items = [
   {
     id: 'option-2',
     text: 'Option 3',
-    selected: true,
   },
   {
     id: 'option-3',
@@ -51,7 +51,7 @@ const props = () => ({
   invalid: boolean('Invalid (invalid)', false),
   invalidText: text('Invalid text (invalidText)', 'A valid value is required'),
   size: select('Field size (size)', sizes, undefined) || undefined,
-  onChange: action('onChange'),
+  onChange: action('fired onChange'),
 });
 
 const itemToElement = item => {
@@ -59,10 +59,13 @@ const itemToElement = item => {
   return (
     <div>
       <span>{itemAsArray[0]}</span>
-      <span style={{ color: 'blue' }}> {itemAsArray[1]}</span>
+      <span style={{ color: 'blue' }}> {itemAsArray.splice(1, itemAsArray.length).join(' ')}</span>
     </div>
   );
 };
+
+const shouldFilterItem = ({ item, itemToString, inputValue }) =>
+  itemToString(item).includes(inputValue);
 
 const ControlledComboBoxApp = props => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
@@ -73,7 +76,11 @@ const ControlledComboBoxApp = props => {
         {...props}
         items={items}
         itemToString={item => (item ? item.text : '')}
-        onChange={({ selectedItem }) => setSelectedItem(selectedItem)}
+        onChange={changeSelection => {
+          if (changeSelection) {
+            setSelectedItem(changeSelection.selectedItem);
+          }
+        }}
         initialSelectedItem={items[0]}
         selectedItem={selectedItem}
       />
@@ -93,14 +100,41 @@ const ControlledComboBoxApp = props => {
   );
 };
 
-storiesOf('ComboBox', module)
+const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
+
+storiesOf('Watson IoT Experimental/ComboBox', module)
   .addDecorator(withKnobs)
   .add(
     'Default',
     () => (
-      <div style={{ width: 300 }}>
-        <ComboBox items={items} itemToString={item => (item ? item.text : '')} {...props()} />
-      </div>
+      <Wrapper>
+        <ComboBox
+          shouldFilterItem={shouldFilterItem}
+          items={items}
+          initialSelectedItem="Option 1"
+          itemToString={item => (item ? item.text : '')}
+          {...props()}
+        />
+      </Wrapper>
+    ),
+    {
+      info: {
+        text: 'ComboBox',
+      },
+    }
+  )
+  .add(
+    'Mult-value tags',
+    () => (
+      <Wrapper>
+        <ComboBox
+          shouldFilterItem={shouldFilterItem}
+          items={items}
+          hasMultiValue
+          itemToString={item => (item ? item.text : '')}
+          {...props()}
+        />
+      </Wrapper>
     ),
     {
       info: {
@@ -111,14 +145,14 @@ storiesOf('ComboBox', module)
   .add(
     'items as components',
     () => (
-      <div style={{ width: 300 }}>
+      <Wrapper>
         <ComboBox
           items={items}
           itemToString={item => (item ? item.text : '')}
           itemToElement={itemToElement}
           {...props()}
         />
-      </div>
+      </Wrapper>
     ),
     {
       info: {
