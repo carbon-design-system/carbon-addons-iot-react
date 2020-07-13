@@ -509,18 +509,19 @@ describe('Table', () => {
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
     // Should render correctly by default even if no lang attribute exist
-    const { getByTestId, unmount, rerender } = render(
+    const { unmount, rerender } = render(
       <Table columns={tableColumns} data={[tableData[0]]} options={options} />
     );
-    await fireEvent.click(getByTestId('Table-row-0-row-actions-cell-overflow'));
+    await fireEvent.click(screen.getByTestId('Table-row-0-row-actions-cell-overflow'));
     expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
 
     document.documentElement.setAttribute('dir', 'rtl');
 
     rerender(<Table columns={tableColumns} data={[tableData[1]]} options={options} />);
-    await fireEvent.click(getByTestId('Table-row-1-row-actions-cell-overflow'));
+    await fireEvent.click(screen.getByTestId('Table-row-1-row-actions-cell-overflow'));
     expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
 
+    // unmounting to be sure to clean up the documentElement
     unmount();
   });
 
