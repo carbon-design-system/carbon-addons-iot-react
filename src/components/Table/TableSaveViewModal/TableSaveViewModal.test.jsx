@@ -246,6 +246,41 @@ describe('TableSaveViewModal', () => {
 
     expect(wrapper.exists('.bx--modal.is-visible')).toBeFalsy();
   });
+
+  it('i18n string tests', () => {
+    const i18nTest = {
+      modalTitle: 'modal-title',
+      modalBodyText: `modal-body`,
+      titleInputLabelText: 'title-input',
+      defaultCheckboxLabelText: 'default-label',
+      publicCheckboxLabelText: 'public-label',
+      closeIconDescription: 'close-descript',
+      saveButtonLabelText: 'save-button',
+      cancelButtonLabelText: 'cancel-button',
+    };
+
+    const i18nDefault = TableSaveViewModal.defaultProps.i18n;
+
+    render(<TableSaveViewModal actions={actions} i18n={i18nTest} />);
+
+    expect(screen.getByText(i18nTest.modalTitle)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.modalBodyText)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.titleInputLabelText)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.defaultCheckboxLabelText)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.publicCheckboxLabelText)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.closeIconDescription)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.saveButtonLabelText)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.cancelButtonLabelText)).toBeInTheDocument();
+
+    expect(screen.queryByText(i18nDefault.modalTitle)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.modalBodyText)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.titleInputLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.defaultCheckboxLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.publicCheckboxLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.closeIconDescription)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.saveButtonLabelText)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.cancelButtonLabelText)).not.toBeInTheDocument();
+  });
 });
 
 // test callbacks works

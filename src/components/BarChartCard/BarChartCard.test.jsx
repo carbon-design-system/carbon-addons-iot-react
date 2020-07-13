@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { render, fireEvent } from '@testing-library/react';
 import { screen } from '@testing-library/dom';
+import '@testing-library/jest-dom/extend-expect';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
@@ -178,5 +179,38 @@ describe('BarChartCard', () => {
       />
     );
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
+  });
+
+  it('i18n string test', () => {
+    const i18nTest = {
+      noDataLabel: 'no-data-label',
+    };
+
+    render(
+      <BarChartCard
+        title="Particles and temperature in cities"
+        id="simple-sample-no-data"
+        isLoading={false}
+        isEditable={false}
+        isExpanded={false}
+        i18n={i18nTest}
+        content={{
+          xLabel: 'Cities',
+          yLabel: 'Particles',
+          series: [
+            {
+              dataSourceId: 'particles',
+            },
+          ],
+          categoryDataSourceId: 'city',
+          layout: BAR_CHART_LAYOUTS.VERTICAL,
+          type: BAR_CHART_TYPES.SIMPLE,
+        }}
+        values={barChartData.quarters.filter(a => a.quarter === 'NOT_VALID')}
+        availableActions={{ expand: true, range: true }}
+      />
+    );
+    expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
+    expect(screen.queryByText(BarChartCard.defaultProps.i18n.noDataLabel)).not.toBeInTheDocument();
   });
 });

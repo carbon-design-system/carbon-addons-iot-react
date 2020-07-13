@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { ProgressIndicator } from 'carbon-components-react';
+import '@testing-library/jest-dom/extend-expect';
 
-import PageWizard from './PageWizard';
+import PageWizard, { defaultProps } from './PageWizard';
 import { content, StepValidation } from './PageWizard.story';
 
 describe('PageWizard', () => {
@@ -124,5 +125,39 @@ describe('PageWizard', () => {
   it('progress indicator should not render if there is only 1 step', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
     expect(wrapper.find(ProgressIndicator)).toHaveLength(0);
+  });
+
+  it('i18n string tests', () => {
+    const i18nTest = {
+      back: 'back',
+      next: 'next',
+      cancel: 'cancel',
+      submit: 'submit',
+      close: 'close',
+    };
+
+    const i18nDefault = defaultProps.i18n;
+    render(
+      <PageWizard i18n={i18nTest} currentStepId="step1" error="error">
+        {content}
+      </PageWizard>
+    );
+
+    expect(screen.getByText(i18nTest.next)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.cancel)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.next)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.cancel)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.close)).not.toBeInTheDocument();
+
+    render(
+      <PageWizard currentStepId="step3" i18n={i18nTest}>
+        {content}
+      </PageWizard>
+    );
+    expect(screen.getByText(i18nTest.back)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.submit)).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.back)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.submit)).not.toBeInTheDocument();
   });
 });

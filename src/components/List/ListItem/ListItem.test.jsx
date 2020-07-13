@@ -81,4 +81,19 @@ describe('ListItem', () => {
     expect(rowActionOnClick).toHaveBeenCalledTimes(1);
     expect(screen.getByTitle('iconTitle')).toBeVisible();
   });
+
+  it('ListItem i18n string test', () => {
+    const i18nTest = {
+      expand: 'expand',
+      close: 'close',
+    };
+    const i18nDefaults = ListItem.defaultProps.i18n;
+    render(<ListItem i18n={i18nTest} id="1" value="" isExpandable />);
+    expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
+
+    render(<ListItem i18n={i18nTest} id="1" value="" isExpandable expanded />);
+    expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
+  });
 });

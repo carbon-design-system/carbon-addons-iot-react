@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import TileCatalogNew from './TileCatalogNew';
 import SampleTile from './SampleTile';
@@ -218,5 +219,17 @@ describe('TileCatalogNew', () => {
     expect(screen.getByText('Tile 26')).toBeTruthy();
     expect(screen.getByText('Tile 27')).toBeTruthy();
     expect(screen.getByText('Tile 28')).toBeTruthy();
+  });
+
+  it('i18n string tests', () => {
+    const i18nTests = {
+      error: 'error-message',
+    };
+
+    const i18nDefault = TileCatalogNew.defaultProps.i18n;
+
+    render(<TileCatalogNew i18n={i18nTests} />);
+    expect(screen.getByText(i18nTests.error)).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.error)).not.toBeInTheDocument();
   });
 });

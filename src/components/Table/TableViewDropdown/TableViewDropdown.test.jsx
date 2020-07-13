@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import '@testing-library/jest-dom/extend-expect';
 import { mount } from 'enzyme';
 import { Dropdown } from 'carbon-components-react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import { settings } from '../../../constants/Settings';
 
@@ -226,5 +227,36 @@ describe('TableViewDropdown', () => {
       .first()
       .find('TableViewDropdownItem');
     expect(firstTableViewDropdownItem.props().isCompact).toEqual(true);
+  });
+
+  it('i18n string tests', () => {
+    const i18nTest = {
+      view: 'viewz',
+      edited: 'edited',
+      viewAll: 'view-all',
+      saveAsNewView: 'save-as-new',
+      saveView: 'save-view',
+      manageViews: 'manage-view',
+      ariaLabel: 'aria-label',
+      tableViewMenu: 'table-view',
+    };
+
+    const i18nDefault = TableViewDropdown.defaultProps.i18n;
+
+    render(<TableViewDropdown views={myViews} actions={actions} i18n={i18nTest} />);
+
+    expect(screen.getAllByText(i18nTest.view, { exact: false })[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.viewAll)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.saveAsNewView)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.saveView)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.manageViews)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.ariaLabel)[0]).toBeInTheDocument();
+
+    expect(screen.queryByText(i18nDefault.view)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.viewAll)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.saveAsNewView)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.saveView)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.manageViews)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.ariaLabel)).not.toBeInTheDocument();
   });
 });

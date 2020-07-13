@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { act, isDOMComponent } from 'react-dom/test-utils';
+import { render } from '@testing-library/react';
+import { screen } from '@testing-library/dom';
+import '@testing-library/jest-dom/extend-expect';
 
 import ImageHotspots, {
   calculateImageHeight,
@@ -190,5 +193,18 @@ describe('ImageHotspots', () => {
     expect(mockSetImage).toHaveBeenCalled();
     expect(mockSetMinimap).toHaveBeenCalled();
     expect(mockSetOptions).toHaveBeenCalledWith(expect.objectContaining({ draggable: true }));
+  });
+  it('i18n string tests', () => {
+    const i18nTest = {
+      zoomIn: 'zoom-in',
+      zoomOut: 'zoom-out',
+      zoomToFit: 'zoom-to-fit',
+    };
+    const i18nDefault = ImageHotspots.defaultProps.i18n;
+    render(<ImageHotspots i18n={i18nTest} />);
+    expect(screen.getByTitle(i18nTest.zoomIn)).toBeInTheDocument();
+    expect(screen.getByTitle(i18nTest.zoomOut)).toBeInTheDocument();
+    expect(screen.queryByTitle(i18nDefault.zoomIn)).not.toBeInTheDocument();
+    expect(screen.queryByTitle(i18nDefault.zoomOut)).not.toBeInTheDocument();
   });
 });
