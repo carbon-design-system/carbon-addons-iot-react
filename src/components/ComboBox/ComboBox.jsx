@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
+import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
 import CarbonComboBox from './CarbonComboBox';
@@ -37,6 +38,8 @@ const defaultProps = {
   editOptionText: '-Create',
   hasMultiValue: false,
   items: [],
+  onInputChange: defaultFunction('onInputChange'),
+  onChange: defaultFunction('onChange'),
 };
 
 const ComboBox = ({
