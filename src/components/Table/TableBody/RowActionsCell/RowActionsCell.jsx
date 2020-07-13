@@ -230,7 +230,7 @@ class RowActionsCell extends React.Component {
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
                     flipped={ltr}
                     ariaLabel={overflowMenuAria}
-                    // onClick={event => event.stopPropagation()}
+                    onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
                     onOpen={this.handleOpen}
