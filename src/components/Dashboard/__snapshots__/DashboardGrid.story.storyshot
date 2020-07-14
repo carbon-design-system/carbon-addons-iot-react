@@ -29,28 +29,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       >
         <div
           className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
           style={
             Object {
-              "height": "1776px",
+              "height": "1744px",
             }
           }
         >
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Small"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(16px,16px)",
-                "OTransform": "translate(16px,16px)",
-                "WebkitTransform": "translate(16px,16px)",
                 "height": "144px",
-                "msTransform": "translate(16px,16px)",
+                "left": "0%",
                 "position": "absolute",
-                "transform": "translate(16px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -79,24 +83,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Small Wide"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(332px,16px)",
-                "OTransform": "translate(332px,16px)",
-                "WebkitTransform": "translate(332px,16px)",
                 "height": "144px",
-                "msTransform": "translate(332px,16px)",
+                "left": "25.3125%",
                 "position": "absolute",
-                "transform": "translate(332px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -125,24 +142,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Medium Thin"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
-                "MozTransform": "translate(16px,176px)",
-                "OTransform": "translate(16px,176px)",
-                "WebkitTransform": "translate(16px,176px)",
                 "height": "304px",
-                "msTransform": "translate(16px,176px)",
+                "left": "0%",
                 "position": "absolute",
-                "transform": "translate(16px,176px)",
-                "width": "300px",
+                "top": "160px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -171,24 +201,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "256px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Medium"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
-                "MozTransform": "translate(332px,176px)",
-                "OTransform": "translate(332px,176px)",
-                "WebkitTransform": "translate(332px,176px)",
                 "height": "304px",
-                "msTransform": "translate(332px,176px)",
+                "left": "25.3125%",
                 "position": "absolute",
-                "transform": "translate(332px,176px)",
-                "width": "300px",
+                "top": "160px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -217,24 +260,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "256px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Medium Wide"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
-                "MozTransform": "translate(648px,16px)",
-                "OTransform": "translate(648px,16px)",
-                "WebkitTransform": "translate(648px,16px)",
                 "height": "304px",
-                "msTransform": "translate(648px,16px)",
+                "left": "50.625%",
                 "position": "absolute",
-                "transform": "translate(648px,16px)",
-                "width": "616px",
+                "top": "0px",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -263,24 +319,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "256px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Large Thin"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "624px",
-                "MozTransform": "translate(16px,496px)",
-                "OTransform": "translate(16px,496px)",
-                "WebkitTransform": "translate(16px,496px)",
                 "height": "624px",
-                "msTransform": "translate(16px,496px)",
+                "left": "0%",
                 "position": "absolute",
-                "transform": "translate(16px,496px)",
-                "width": "300px",
+                "top": "480px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -309,24 +378,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "576px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Large"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "624px",
-                "MozTransform": "translate(332px,496px)",
-                "OTransform": "translate(332px,496px)",
-                "WebkitTransform": "translate(332px,496px)",
                 "height": "624px",
-                "msTransform": "translate(332px,496px)",
+                "left": "25.3125%",
                 "position": "absolute",
-                "transform": "translate(332px,496px)",
-                "width": "616px",
+                "top": "480px",
+                "width": "49.375%",
               }
             }
             type="VALUE"
@@ -355,24 +437,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "576px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             data-testid="Card"
             id="Large Wide"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "624px",
-                "MozTransform": "translate(16px,1136px)",
-                "OTransform": "translate(16px,1136px)",
-                "WebkitTransform": "translate(16px,1136px)",
                 "height": "624px",
-                "msTransform": "translate(16px,1136px)",
+                "left": "0%",
                 "position": "absolute",
-                "transform": "translate(16px,1136px)",
-                "width": "1248px",
+                "top": "1120px",
+                "width": "100%",
               }
             }
             type="VALUE"
@@ -401,7 +496,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "576px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -462,29 +570,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       >
         <div
           className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
           style={
             Object {
-              "height": "656px",
+              "height": "624px",
             }
           }
         >
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
-                "MozTransform": "translate(332px,336px)",
-                "OTransform": "translate(332px,336px)",
-                "WebkitTransform": "translate(332px,336px)",
                 "height": "304px",
-                "msTransform": "translate(332px,336px)",
+                "left": "25.3125%",
                 "position": "absolute",
-                "transform": "translate(332px,336px)",
-                "width": "300px",
+                "top": "320px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -513,25 +625,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "256px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(16px,16px)",
-                "OTransform": "translate(16px,16px)",
-                "WebkitTransform": "translate(16px,16px)",
                 "height": "144px",
-                "msTransform": "translate(16px,16px)",
+                "left": "0%",
                 "position": "absolute",
-                "transform": "translate(16px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -560,25 +685,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(253px,176px)",
-                "OTransform": "translate(253px,176px)",
-                "WebkitTransform": "translate(253px,176px)",
                 "height": "144px",
-                "msTransform": "translate(253px,176px)",
+                "left": "18.984375%",
                 "position": "absolute",
-                "transform": "translate(253px,176px)",
-                "width": "300px",
+                "top": "160px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -607,7 +745,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -668,29 +819,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       >
         <div
           className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
           style={
             Object {
-              "height": "336px",
+              "height": "304px",
             }
           }
         >
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
-                "MozTransform": "translate(16px,16px)",
-                "OTransform": "translate(16px,16px)",
-                "WebkitTransform": "translate(16px,16px)",
                 "height": "304px",
-                "msTransform": "translate(16px,16px)",
+                "left": "0%",
                 "position": "absolute",
-                "transform": "translate(16px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -719,25 +874,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "256px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(332px,16px)",
-                "OTransform": "translate(332px,16px)",
-                "WebkitTransform": "translate(332px,16px)",
                 "height": "144px",
-                "msTransform": "translate(332px,16px)",
+                "left": "25.3125%",
                 "position": "absolute",
-                "transform": "translate(332px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -766,25 +934,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(648px,16px)",
-                "OTransform": "translate(648px,16px)",
-                "WebkitTransform": "translate(648px,16px)",
                 "height": "144px",
-                "msTransform": "translate(648px,16px)",
+                "left": "50.625%",
                 "position": "absolute",
-                "transform": "translate(648px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -813,7 +994,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -874,34 +1068,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       >
         <div
           className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
           style={
             Object {
-              "height": "336px",
+              "height": "304px",
             }
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
-            onTouchStart={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "304px",
-                "MozTransform": "translate(16px,16px)",
-                "OTransform": "translate(16px,16px)",
-                "WebkitTransform": "translate(16px,16px)",
                 "height": "304px",
-                "msTransform": "translate(16px,16px)",
+                "left": "0%",
                 "position": "absolute",
-                "touchAction": "none",
-                "transform": "translate(16px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -930,30 +1123,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "256px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
-            onTouchStart={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(332px,16px)",
-                "OTransform": "translate(332px,16px)",
-                "WebkitTransform": "translate(332px,16px)",
                 "height": "144px",
-                "msTransform": "translate(332px,16px)",
+                "left": "25.3125%",
                 "position": "absolute",
-                "touchAction": "none",
-                "transform": "translate(332px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -982,30 +1183,38 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable cssTransforms iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
             onMouseDown={[Function]}
             onMouseUp={[Function]}
             onTouchEnd={[Function]}
-            onTouchStart={[Function]}
             role="presentation"
             style={
               Object {
                 "--card-default-height": "144px",
-                "MozTransform": "translate(648px,16px)",
-                "OTransform": "translate(648px,16px)",
-                "WebkitTransform": "translate(648px,16px)",
                 "height": "144px",
-                "msTransform": "translate(648px,16px)",
+                "left": "50.625%",
                 "position": "absolute",
-                "touchAction": "none",
-                "transform": "translate(648px,16px)",
-                "width": "300px",
+                "top": "0px",
+                "width": "24.0625%",
               }
             }
             type="VALUE"
@@ -1034,7 +1243,20 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   "--card-content-height": "96px",
                 }
               }
-            />
+            >
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
+            </div>
           </div>
         </div>
       </div>

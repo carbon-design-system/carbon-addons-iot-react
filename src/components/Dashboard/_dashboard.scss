@@ -60,3 +60,7 @@
     }
   }
 }
+// workaround to hide the resize handles in react-grid-layout
+.react-resizable-hide .react-resizable-handle {
+  display: none;
+}
