@@ -39,24 +39,12 @@
 
 html[dir='rtl'] {
   .#{$prefix}--tile--selectable {
-    padding-left: 3rem;
-    padding-right: 1rem;
+    padding-left: $spacing-09;
+    padding-right: $spacing-05;
   }
 
   .#{$prefix}--tile__checkmark {
     right: initial;
-    left: 1rem;
-  }
-}
-
-html[dir='ltr'] {
-  .#{$prefix}--tile--selectable {
-    padding-left: 1rem;
-    padding-right: 3rem;
-  }
-
-  .#{$prefix}--tile__checkmark {
-    right: 1rem;
-    left: initial;
+    left: $spacing-05;
   }
 }
