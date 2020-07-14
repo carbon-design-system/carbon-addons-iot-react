@@ -168,10 +168,7 @@ class ComposedModal extends React.Component {
         onClose={this.doNotClose}
         className={classnames(
           className,
-          {
-            'error-modal': type === 'warn',
-            'big-modal': isLarge,
-          },
+          isLarge ? `${iotPrefix}--composed-modal--big` : ``,
           `${iotPrefix}--composed-modal`
         )}
       >

@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible big-modal iot--composed-modal"
+      className="bx--modal is-visible iot--composed-modal--big iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -1065,7 +1065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
     }
   >
     <div
-      className="bx--modal is-visible error-modal iot--composed-modal"
+      className="bx--modal is-visible iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}

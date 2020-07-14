@@ -9,7 +9,7 @@
   }
 
   /* support large modals for ll the sizes */
-  &.big-modal {
+  &.#{$iot-prefix}--composed-modal--big {
     .#{$prefix}--modal-header {
       margin-bottom: 0;
     }
