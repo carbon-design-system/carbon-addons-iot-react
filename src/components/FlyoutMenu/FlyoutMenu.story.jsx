@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, number, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import {
   SettingsAdjust16 as SettingsAdjust,
@@ -23,7 +23,7 @@ const CustomFooter = () => {
   );
 };
 
-storiesOf('Watson IoT/Flyout Menu', module)
+storiesOf('Watson IoT Experimental/Flyout Menu', module)
   .add('Default Example', () => (
     <div
       style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
@@ -33,9 +33,10 @@ storiesOf('Watson IoT/Flyout Menu', module)
         renderIcon={ShareKnowledge}
         disabled={boolean('Disabled', false)}
         iconDescription="Helpful description"
-        transactional={boolean('Transactional Flyout', true)}
+        passive={boolean('Passive Flyout', false)}
         triggerId="test-trigger-id-2"
         light={boolean('Light Mode', true)}
+        menuOffset={{ top: number('Menu Offset top', 0), left: number('Menu offset left', 0) }}
         onCancel={action('On Cancel Clicked')}
         onApply={action('On Apply Clicked')}
         direction={select('Flyout direction', FlyoutMenuDirection, FlyoutMenuDirection.BottomStart)}
@@ -51,12 +52,11 @@ storiesOf('Watson IoT/Flyout Menu', module)
         renderIcon={ShareKnowledge}
         disabled={boolean('Disabled', false)}
         iconDescription="Helpful description"
-        transactional={boolean('Transactional Flyout', true)}
+        passive={boolean('Passive Flyout', false)}
         triggerId="test-trigger-id-2"
         light={boolean('Light Mode', true)}
         onCancel={action('On Cancel Clicked')}
         onApply={action('On Apply Clicked')}
-        direction={select('Flyout direction', FlyoutMenuDirection, FlyoutMenuDirection.BottomStart)}
       >
         <div>
           <h2>This is a header</h2>
@@ -78,7 +78,8 @@ storiesOf('Watson IoT/Flyout Menu', module)
         renderIcon={SettingsAdjust}
         disabled={boolean('Disabled', false)}
         iconDescription="Helpful description"
-        transactional={<CustomFooter />}
+        passive={false}
+        customFooter={<CustomFooter />}
         triggerId="test-trigger-id-2"
         light={boolean('Light Mode', true)}
         onCancel={action('On Cancel Clicked')}

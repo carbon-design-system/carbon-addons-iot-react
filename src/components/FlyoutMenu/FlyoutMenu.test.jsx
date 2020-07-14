@@ -1,248 +1,267 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render, waitFor, waitForElement } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import FlyoutMenu, { FlyoutMenuDirection } from './FlyoutMenu';
 
-const applyButtonText = 'Apply';
-const cancelButtonText = 'Cancel';
-
 describe('FlyoutMenu', () => {
-  it('Renders an open transactional menu', async () => {
+  it('Renders an open flyout menu with a default footer', () => {
     const { queryByText } = render(
-      <FlyoutMenu defaultOpen transactional triggerId="flyout-test" />
+      <FlyoutMenu defaultOpen iconDescription="Helpful description" triggerId="flyout-test" />
     );
 
-    const applyButtonTest = await waitForElement(() => queryByText(applyButtonText));
-
-    const cancelButtonTest = await waitForElement(() => queryByText(cancelButtonText));
+    const applyButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const cancelButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     expect(applyButtonTest).toBeTruthy();
     expect(cancelButtonTest).toBeTruthy();
   });
 
-  it('Renders an open menu', async () => {
-    const { queryByText } = render(<FlyoutMenu defaultOpen triggerId="flyout-test" />);
+  it('Renders an open passive menu', () => {
+    const { queryByText } = render(
+      <FlyoutMenu open passive iconDescription="Helpful description" triggerId="flyout-test" />
+    );
 
-    const applyButtonTest = queryByText(applyButtonText);
-
-    const cancelButtonTest = queryByText(cancelButtonText);
-
-    expect(applyButtonTest).toBeNull();
-    expect(cancelButtonTest).toBeNull();
-  });
-
-  it('Renders closed', async () => {
-    const { queryByText } = render(<FlyoutMenu triggerId="flyout-test" />);
-
-    const applyButtonTest = await waitFor(() => queryByText(applyButtonText));
-
-    const cancelButtonTest = await waitFor(() => queryByText(cancelButtonText));
+    const applyButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const cancelButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     expect(applyButtonTest).toBeNull();
     expect(cancelButtonTest).toBeNull();
   });
 
-  it('Cancel Action', async () => {
+  it('Renders an open menu with content', () => {
+    const testText = 'this is a test';
+    const { queryByText } = render(
+      <FlyoutMenu open passive iconDescription="Helpful description" triggerId="flyout-test">
+        <div>{testText}</div>
+      </FlyoutMenu>
+    );
+
+    expect(queryByText(testText)).toBeTruthy();
+  });
+
+  it('Renders closed', () => {
+    const testText = 'this is a test';
+
+    const { queryByText } = render(
+      <FlyoutMenu iconDescription="Helpful description" triggerId="flyout-test">
+        {testText}
+      </FlyoutMenu>
+    );
+
+    const applyButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const cancelButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
+
+    expect(applyButtonTest).toBeNull();
+    expect(cancelButtonTest).toBeNull();
+    expect(queryByText(testText)).toBeNull();
+  });
+
+  it('Cancel Action', () => {
     const cancelAction = jest.fn();
 
     const { queryByText } = render(
-      <FlyoutMenu open triggerId="flyout-test" transactional onCancel={cancelAction} />
+      <FlyoutMenu
+        open
+        triggerId="flyout-test"
+        transactional
+        iconDescription="Helpful description"
+        onCancel={cancelAction}
+      />
     );
 
-    const cancelButton = await waitForElement(() => queryByText(cancelButtonText));
+    const cancelButton = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     fireEvent.click(cancelButton);
 
     expect(cancelAction).toHaveBeenCalled();
   });
 
-  it('Apply Action', async () => {
+  it('Apply Action', () => {
     const applyAction = jest.fn();
 
     const { queryByText } = render(
-      <FlyoutMenu open triggerId="flyout-test" transactional onApply={applyAction} />
+      <FlyoutMenu
+        open
+        triggerId="flyout-test"
+        transactional
+        iconDescription="Helpful description"
+        onApply={applyAction}
+      />
     );
 
-    const applyButton = await waitForElement(() => queryByText(applyButtonText));
+    const applyButton = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     fireEvent.click(applyButton);
 
     expect(applyAction).toHaveBeenCalled();
   });
 
-  it('Flyout closes when cancel triggered', async () => {
+  it('Flyout closes when cancel triggered', () => {
     const { queryByText } = render(
       <FlyoutMenu
         triggerId="flyout-test"
         defaultOpen
+        iconDescription="Helpful description"
         transactional
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
-    const cancelButton = await waitForElement(() => queryByText(cancelButtonText));
+    const cancelButton = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     fireEvent.click(cancelButton);
 
-    const applyButtonVisible = queryByText(applyButtonText);
+    const applyButtonVisible = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisible).toBeNull();
   });
 
-  it('Flyout closes when apply triggered', async () => {
+  it('Flyout closes when apply triggered', () => {
     const { queryByText } = render(
       <FlyoutMenu
         triggerId="flyout-test"
         defaultOpen
+        iconDescription="Helpful description"
         transactional
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
-    const applyButton = await waitForElement(() => queryByText(applyButtonText));
+    const applyButton = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     fireEvent.click(applyButton);
 
-    const applyButtonVisible = queryByText(applyButtonText);
+    const applyButtonVisible = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisible).toBeNull();
   });
 
-  it('Click to open and close menu', async () => {
-    const { container, queryByText } = render(<FlyoutMenu transactional triggerId="flyout-test" />);
+  it('Click to open and close menu', () => {
+    const iconDescription = 'Helpful description';
+    const { queryAllByLabelText, queryByText } = render(
+      <FlyoutMenu iconDescription={iconDescription} transactional triggerId="flyout-test" />
+    );
 
-    const button = await container.firstChild.firstChild;
+    const button = queryAllByLabelText(iconDescription)[0];
 
     fireEvent.click(button);
 
-    const applyButtonVisible = await waitForElement(() => queryByText(applyButtonText));
+    const applyButtonVisible = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisible).toBeTruthy();
 
     fireEvent.click(button);
 
-    const applyButtonVisibleStill = queryByText(applyButtonText);
+    const applyButtonVisibleStill = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisibleStill).toBeNull();
   });
 
-  it('Flyout Anchor Points Rendered bottom for bottom start', async () => {
+  it('Flyout Anchor Points Rendered bottom for bottom start', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
+        iconDescription="Helpful description"
         triggerId="flyout-test"
         transactional
         direction={FlyoutMenuDirection.BottomStart}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('bottom');
   });
 
-  it('Flyout Anchor Points Rendered bottom for bottom end', async () => {
+  it('Flyout Anchor Points Rendered bottom for bottom end', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.BottomEnd}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('bottom');
   });
 
-  it('Flyout Anchor Points Rendered bottom for top start', async () => {
+  it('Flyout Anchor Points Rendered bottom for top start', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.TopStart}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('top');
   });
 
-  it('Flyout Anchor Points Rendered bottom for top end', async () => {
+  it('Flyout Anchor Points Rendered bottom for top end', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.TopEnd}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('top');
   });
 
-  it('Flyout Anchor Points Rendered bottom for left start', async () => {
+  it('Flyout Anchor Points Rendered bottom for left start', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.LeftStart}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('left');
   });
 
-  it('Flyout Anchor Points Rendered bottom for left end', async () => {
+  it('Flyout Anchor Points Rendered bottom for left end', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.LeftEnd}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('left');
   });
 
-  it('Flyout Anchor Points Rendered bottom for right start', async () => {
+  it('Flyout Anchor Points Rendered bottom for right start', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.RightStart}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
     expect(container.firstChild).toHaveClass('right');
   });
 
-  it('Flyout Anchor Points Rendered bottom for right end', async () => {
+  it('Flyout Anchor Points Rendered bottom for right end', () => {
     const { container } = render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
         transactional
+        iconDescription="Helpful description"
         direction={FlyoutMenuDirection.RightEnd}
-        onApply={jest.fn()}
-        onCancel={jest.fn()}
       />
     );
 
