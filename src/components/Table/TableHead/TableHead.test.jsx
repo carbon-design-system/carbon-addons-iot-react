@@ -162,7 +162,7 @@ describe('TableHead', () => {
   it('fixed column widths for non-resizable columns', () => {
     const myProps = {
       ...commonTableHeadProps,
-      columns: [{ id: 'col1', name: 'Column 1', width: '101' }],
+      columns: [{ id: 'col1', name: 'Column 1', width: '101px', isSortable: false }],
       tableState: {
         ...commonTableHeadProps.tableState,
         ordering: [{ columnId: 'col1', isHidden: false }],
@@ -170,9 +170,20 @@ describe('TableHead', () => {
       options: { hasResize: false },
     };
 
-    const wrapper = mount(<TableHead {...myProps} />);
-    const tableHeader = wrapper.find(TableHeader).first();
-    expect(tableHeader.prop('width')).toBe('101');
+    let wrapper = mount(<TableHead {...myProps} />);
+    const nonSortableTableHead = wrapper
+      .find(TableHeader)
+      .first()
+      .find('th');
+    expect(nonSortableTableHead.prop('width')).toBe('101px');
+
+    myProps.columns[0].isSortable = true;
+    wrapper = mount(<TableHead {...myProps} />);
+    const sortableTableHead = wrapper
+      .find(TableHeader)
+      .first()
+      .find('th');
+    expect(sortableTableHead.prop('width')).toBe('101px');
   });
 
   describe('Column resizing active', () => {
