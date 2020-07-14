@@ -64,3 +64,8 @@
 .react-resizable-hide .react-resizable-handle {
   display: none;
 }
+
+// fix to preserve default padding on top
+.react-grid-layout {
+  padding-top: 1rem;
+}
