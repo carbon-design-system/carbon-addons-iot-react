@@ -1362,7 +1362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 fVpkmV iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -3640,7 +3640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 fVpkmV iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -5945,7 +5945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 fVpkmV iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -7592,7 +7592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 kBrrPa iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 cSTvat iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -10709,7 +10709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 fVpkmV iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -25123,7 +25123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 fVpkmV iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -26881,7 +26881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       role="alert"
       style={
         Object {
-          "marginBottom": ".5rem",
+          "marginBottom": "0.5rem",
           "minWidth": "30rem",
         }
       }

@@ -7,7 +7,7 @@ import uniqBy from 'lodash/uniqBy';
 import cloneDeep from 'lodash/cloneDeep';
 import capitalize from 'lodash/capitalize';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
-import { spacing01, spacing02, spacing03, spacing05 } from '@carbon/layout';
+import { spacing01, spacing05 } from '@carbon/layout';
 
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
 import Card, { defaultProps as CardDefaultProps } from '../Card/Card';
@@ -91,8 +91,8 @@ const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) =
       height: 3rem;
 
       th {
-        padding-top: ${spacing02};
-        padding-bottom: ${spacing03 - 2};
+        padding-top: 5px;
+        padding-bottom: 10px;
 
         input {
           height: 2rem;
@@ -672,7 +672,7 @@ const TableCard = ({
                       >
                         {item.linkTemplate ? (
                           <>
-                            <p key={`${item.id}-label`} style={{ marginRight: spacing02 }}>
+                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                               {item ? item.label : '--'}
                             </p>
                             <Link
@@ -685,7 +685,7 @@ const TableCard = ({
                           </>
                         ) : (
                           <>
-                            <p key={`${item.id}-label`} style={{ marginRight: spacing02 }}>
+                            <p key={`${item.id}-label`} style={{ marginRight: '5px' }}>
                               {item ? item.label : '--'}
                             </p>
                             <span key={`${item.id}-value`}>

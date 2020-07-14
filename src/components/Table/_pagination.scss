@@ -62,7 +62,7 @@ html[dir='rtl'] {
     padding: 0 $spacing-05 0 $spacing-08;
 
     @media (min-width: 42rem) {
-      padding-left: $spacing-07 + 0.25rem;
+      padding-left: 2.25rem;
     }
 
     & + svg {
