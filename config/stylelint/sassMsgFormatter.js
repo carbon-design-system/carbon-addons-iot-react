@@ -3,7 +3,6 @@ const chalk = require('chalk');
 /**
  * @constant
  */
-const TITLE = chalk.bgYellow;
 const ERROR = chalk.bold.red;
 const WARNING = chalk.yellow;
 const URL = chalk.underline.cyan;
@@ -116,4 +115,9 @@ function formatter(results) {
   return formattedMsg;
 }
 
-module.exports = formatter;
+const formatterModule = (module.exports = formatter);
+formatterModule.filterForErrors = filterForErrors;
+formatterModule.generateErrorIcon = generateErrorIcon;
+formatterModule.formatTabbing = formatTabbing;
+formatterModule.createCustomMessage = createCustomMessage;
+formatterModule.formatError = formatError;

@@ -1,12 +1,4 @@
-import formatter from './sassMsgFormatter';
-import {
-  filterForErrors,
-  generateErrorIcon,
-  formatTabbing,
-  createCustomMessage,
-  formatError,
-} from './sassMsgFormatterFunctions';
-
+const formatter = require('./sassMsgFormatter');
 const chalk = require('chalk');
 
 const ERROR = chalk.bold.red;
@@ -44,21 +36,21 @@ const exampleTwo = {
 describe('sassMsgFormatter', () => {
   it('filters for errors', () => {
     // this function should return false unless errored is equal to true
-    expect(filterForErrors({ errored: undefined })).toBeFalsy();
-    expect(filterForErrors({ errored: true })).toBeTruthy();
-    expect(filterForErrors({ errored: false })).toBeFalsy();
-    expect(filterForErrors({ errored: null })).toBeFalsy();
+    expect(formatter.filterForErrors({ errored: undefined })).toBeFalsy();
+    expect(formatter.filterForErrors({ errored: true })).toBeTruthy();
+    expect(formatter.filterForErrors({ errored: false })).toBeFalsy();
+    expect(formatter.filterForErrors({ errored: null })).toBeFalsy();
   });
   it('generates error icons', () => {
     // expect(generateErrorIcon('error')).toEqual(ERROR('ERROR'));
-    expect(generateErrorIcon('error')).toContain('ERROR');
-    expect(generateErrorIcon('warning')).toContain('warning');
-    expect(generateErrorIcon(undefined)).toHaveLength(0);
+    expect(formatter.generateErrorIcon('error')).toContain('ERROR');
+    expect(formatter.generateErrorIcon('warning')).toContain('warning');
+    expect(formatter.generateErrorIcon(undefined)).toHaveLength(0);
   });
   it('formats tabbing', () => {
-    expect(formatTabbing({ line: 121, column: 23 })).toHaveLength(1);
-    expect(formatTabbing({ line: 1, column: 123 })).toHaveLength(3);
-    expect(formatTabbing({ line: 14, column: 23 })).toHaveLength(3);
+    expect(formatter.formatTabbing({ line: 121, column: 23 })).toHaveLength(1);
+    expect(formatter.formatTabbing({ line: 1, column: 123 })).toHaveLength(3);
+    expect(formatter.formatTabbing({ line: 14, column: 23 })).toHaveLength(3);
   });
   it('creates custom message', () => {
     console.log(exampleOne.warnings[0].text);
@@ -71,8 +63,8 @@ describe('sassMsgFormatter', () => {
     expect(createCustomMessage(null)).toHaveLength(0);
   });
   it('formats errors', () => {
-    expect(formatError(exampleOne.warnings)).toContain(ERROR('ERROR'));
-    expect(formatError(exampleTwo.warnings)).toContain(ERROR('ERROR'));
+    expect(formatter.formatError(exampleOne.warnings)).toContain(ERROR('ERROR'));
+    expect(formatter.formatError(exampleTwo.warnings)).toContain(ERROR('ERROR'));
     expect(
       formatError([
         {
@@ -87,7 +79,7 @@ describe('sassMsgFormatter', () => {
   });
   it('formats message', () => {
     const resultsTest = [exampleOne, exampleTwo, { errored: false, warnings: undefined }];
-    expect(resultsTest.filter(filterForErrors)).toHaveLength(2);
+    expect(resultsTest.filter(formatter.filterForErrors)).toHaveLength(2);
     expect(formatter(resultsTest)).toContain(TITLE('\n!! WARNINGS !!\n\n'));
     expect(formatter(resultsTest)).toContain(formatError(exampleOne.warnings));
     expect(formatter(resultsTest)).toContain(formatError(exampleTwo.warnings));
