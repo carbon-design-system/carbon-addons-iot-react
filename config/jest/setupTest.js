@@ -1,7 +1,15 @@
 import 'jest-styled-components';
-import aChecker from 'accessibility-checker';
+
+let aChecker;
 
 async function toBeAccessible(node, label) {
+  // We defer initialization of AAT as it seems to have a race condition if
+  // we are running a test suite in node instead of jsdom. As a result, we only
+  // initialize it if this matcher is called
+  if (!aChecker) {
+    aChecker = require('accessibility-checker');
+  }
+
   let results = await aChecker.getCompliance(node, label);
   if (aChecker.assertCompliance(results.report) === 0) {
     return {
