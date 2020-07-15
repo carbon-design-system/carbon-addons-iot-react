@@ -2194,6 +2194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             aria-hidden={true}
             className="iot-simple-pagination-caret-disabled"
             description="Prev page"
+            dir="ltr"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -2217,6 +2218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             aria-hidden={true}
             className="iot-simple-pagination-caret"
             description="Next page"
+            dir="ltr"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -2855,6 +2857,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             aria-hidden={true}
             className="iot-simple-pagination-caret-disabled"
             description="Prev page"
+            dir="ltr"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -2878,6 +2881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
             aria-hidden={true}
             className="iot-simple-pagination-caret"
             description="Next page"
+            dir="ltr"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"

@@ -1723,6 +1723,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "langDir": "ltr",
       "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
@@ -1903,6 +1904,15 @@ Map {
       },
       "inProgressText": Object {
         "type": "string",
+      },
+      "langDir": Object {
+        "args": Array [
+          Array [
+            "ltr",
+            "rtl",
+          ],
+        ],
+        "type": "oneOf",
       },
       "learnMoreText": Object {
         "type": "string",
@@ -12764,7 +12774,9 @@ Map {
       "nextDisabled": false,
       "onBack": null,
       "onClearError": null,
+      "onClose": null,
       "onNext": null,
+      "onSubmit": null,
       "onValidate": [Function],
       "sendingData": false,
     },
@@ -12824,14 +12836,12 @@ Map {
         "type": "func",
       },
       "onClose": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onNext": Object {
         "type": "func",
       },
       "onSubmit": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onValidate": Object {
@@ -12961,6 +12971,7 @@ Map {
       "onBack": null,
       "onNext": null,
       "sendingData": false,
+      "setStep": null,
     },
     "propTypes": Object {
       "beforeFooterContent": Object {
@@ -13043,7 +13054,6 @@ Map {
         "type": "bool",
       },
       "setStep": Object {
-        "isRequired": true,
         "type": "func",
       },
     },
@@ -13824,6 +13834,7 @@ Map {
       "items": Array [],
       "light": false,
       "loading": false,
+      "onInputChange": null,
       "shouldFilterItem": [Function],
       "type": "default",
       "wrapperClassName": null,
