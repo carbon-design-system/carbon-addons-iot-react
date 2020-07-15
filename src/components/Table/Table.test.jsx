@@ -561,7 +561,7 @@ describe('Table', () => {
     expect(wrapper2.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeFalsy();
   });
 
-  it('i18n string test', () => {
+  it('i18n string test 1', () => {
     const i18nTest = {
       /** table body */
       overflowMenuAria: 'overflow-menu',
@@ -591,29 +591,28 @@ describe('Table', () => {
 
     const i18nDefault = defaultProps({}).i18n;
 
-    render(
-      <Table
-        {...initialState}
-        options={{
-          ...initialState.options,
-          hasRowActions: true,
-          hasFilter: true,
-          hasSingleRowEdit: true,
-        }}
-        actions={{
-          toolbar: {
-            onDownloadCSV: () => {},
-          },
-        }}
-        isSortable
-        i18n={i18nTest}
-        view={{
-          ...initialState.view,
-          table: {
-            expandedIds: ['row-3', 'row-7'],
-          },
-        }}
-      />
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowActions: true,
+        hasFilter: true,
+        hasSingleRowEdit: true,
+      },
+      actions: {
+        toolbar: {
+          onDownloadCSV: () => {},
+        },
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          expandedIds: ['row-3', 'row-7'],
+        },
+      },
+    };
+
+    const { rerender } = render(
+      <Table {...initialState} {...additionalProps} isSortable i18n={i18nTest} />
     );
 
     expect(screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]).toBeInTheDocument();
@@ -633,14 +632,7 @@ describe('Table', () => {
     expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
     expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
     expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
-    expect(
-      screen.getAllByText((content, element) => {
-        if (RegExp(`.*\\s${i18nTest.itemSelected}.*`).test(content)) {
-          return element;
-        }
-        return undefined;
-      })[0]
-    ).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemSelected}.*`))).toBeInTheDocument();
 
     expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
@@ -660,7 +652,7 @@ describe('Table', () => {
     expect(screen.queryByLabelText(i18nDefault.openMenuAria)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.batchCancel)).not.toBeInTheDocument();
 
-    render(
+    rerender(
       <Table
         {...initialState}
         options={{
@@ -678,8 +670,39 @@ describe('Table', () => {
     );
     expect(screen.getAllByText(i18nTest.columnSelectionConfig)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.columnSelectionConfig)).not.toBeInTheDocument();
+  });
 
-    render(
+  it('i18n string test 2', () => {
+    const i18nTest = {
+      /** table body */
+      overflowMenuAria: 'overflow-menu',
+      clickToExpandAria: 'expand-aria',
+      clickToCollapseAria: 'collapse-aria',
+      selectAllAria: 'select-all',
+      selectRowAria: 'select-row',
+      /** toolbar */
+      clearAllFilters: 'clear-filters',
+      columnSelectionButtonAria: 'column-select-aria',
+      columnSelectionConfig: 'column-select-config',
+      filterButtonAria: 'filter-aria',
+      editButtonAria: 'edit-button',
+      searchLabel: 'search-label',
+      searchPlaceholder: 'search-placeholder',
+      clearFilterAria: 'clear-filter',
+      filterAria: 'filter-aria',
+      openMenuAria: 'open-menu',
+      batchCancel: 'cancel',
+      itemSelected: 'item-selected',
+      /** empty state */
+      emptyMessage: 'empty-message',
+      emptyMessageWithFilters: 'empty-filters',
+      emptyButtonLabel: 'empty-button',
+      downloadIconDescription: 'download-descript',
+    };
+
+    const i18nDefault = defaultProps({}).i18n;
+
+    const { rerender } = render(
       <Table
         columns={tableColumns}
         data={[]}
@@ -695,7 +718,7 @@ describe('Table', () => {
     expect(screen.getAllByText(i18nTest.emptyMessageWithFilters)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyMessageWithFilters)).not.toBeInTheDocument();
 
-    render(
+    rerender(
       <Table
         columns={tableColumns}
         data={[]}

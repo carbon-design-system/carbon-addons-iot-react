@@ -25,10 +25,7 @@ describe('ListHeader', () => {
       searchPlaceHolderText: 'enter-value',
     };
 
-    const searchProp = {
-      onChange: () => {},
-      value: 'hello',
-    };
+    const searchProp = {};
 
     const i18nDefault = ListHeader.defaultProps.i18n;
 

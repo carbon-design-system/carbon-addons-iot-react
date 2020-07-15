@@ -408,54 +408,46 @@ describe('DateTimePicker', () => {
     ];
 
     render(<DateTimePicker presets={presets} i18n={i18nTest} relatives={relatives} />);
+    i18nTest.presetLabels.forEach(label => {
+      expect(screen.getAllByText(label)[0]).toBeInTheDocument();
+    });
     expect(screen.getAllByText(i18nTest.toNowLabel, { exact: false })[0]).toBeInTheDocument();
     expect(screen.getByLabelText(i18nTest.calendarLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.customRangeLinkLabel)).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.presetLabels[0])[0]).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.presetLabels[1])[0]).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.presetLabels[2])[0]).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.presetLabels[3])[0]).toBeInTheDocument();
-    expect(screen.getAllByText(i18nTest.presetLabels[4])[0]).toBeInTheDocument();
     expect(screen.getByText(i18nTest.applyBtnLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.cancelBtnLabel)).toBeInTheDocument();
 
+    i18nDefault.presetLabels.forEach(label => {
+      expect(screen.queryByText(label)).not.toBeInTheDocument();
+    });
     expect(screen.queryByText(i18nDefault.toNowLabel, { exact: false })).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.calendarLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.customRangeLinkLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.presetLabels[0])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.presetLabels[1])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.presetLabels[2])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.presetLabels[3])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.presetLabels[4])).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.applyBtnLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.cancelBtnLabel)).not.toBeInTheDocument();
     // custom relative range screen
     fireEvent.click(screen.getByText(i18nTest.customRangeLinkLabel));
+    i18nTest.intervalLabels.forEach(label => {
+      expect(screen.getAllByText(label)[0]).toBeInTheDocument();
+    });
+    i18nTest.relativeLabels.forEach(label => {
+      expect(screen.getAllByText(label)[0]).toBeInTheDocument();
+    });
     expect(screen.getByText(i18nTest.customRangeLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.backBtnLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.relativeLabel)).toBeInTheDocument();
     expect(screen.getByText(i18nTest.lastLabel)).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.intervalLabels[0])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.intervalLabels[1])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.intervalLabels[2])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.intervalLabels[3])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.intervalLabels[4])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.intervalLabels[5])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.relativeLabels[0])).toBeInTheDocument();
-    expect(screen.getByText(i18nTest.relativeLabels[1])).toBeInTheDocument();
 
+    i18nDefault.intervalLabels.forEach(label => {
+      expect(screen.queryByText(label)).not.toBeInTheDocument();
+    });
+    i18nDefault.relativeLabels.forEach(label => {
+      expect(screen.queryByText(label)).not.toBeInTheDocument();
+    });
     expect(screen.queryByText(i18nDefault.customRangeLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.backBtnLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.relativeLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.lastLabel)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.intervalLabels[0])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.intervalLabels[1])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.intervalLabels[2])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.intervalLabels[3])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.intervalLabels[4])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.intervalLabels[5])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.relativeLabels[0])).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.relativeLabels[1])).not.toBeInTheDocument();
     // custom range absolute screen.
     fireEvent.click(screen.getByText(i18nTest.absoluteLabel));
     expect(screen.getByText(i18nTest.startTimeLabel)).toBeInTheDocument();
@@ -465,15 +457,10 @@ describe('DateTimePicker', () => {
     expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
     // click apply
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
-    expect(screen.getAllByTitle(i18nTest.toLabel, { exact: false })[0]).toBeInTheDocument();
+    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
 
     expect(
-      screen.queryByText((content, element) => {
-        if (RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`).test(content)) {
-          return element;
-        }
-        return undefined;
-      })
+      screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))
     ).not.toBeInTheDocument();
   });
 });

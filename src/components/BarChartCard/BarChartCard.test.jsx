@@ -186,31 +186,10 @@ describe('BarChartCard', () => {
       noDataLabel: 'no-data-label',
     };
 
-    render(
-      <BarChartCard
-        title="Particles and temperature in cities"
-        id="simple-sample-no-data"
-        isLoading={false}
-        isEditable={false}
-        isExpanded={false}
-        i18n={i18nTest}
-        content={{
-          xLabel: 'Cities',
-          yLabel: 'Particles',
-          series: [
-            {
-              dataSourceId: 'particles',
-            },
-          ],
-          categoryDataSourceId: 'city',
-          layout: BAR_CHART_LAYOUTS.VERTICAL,
-          type: BAR_CHART_TYPES.SIMPLE,
-        }}
-        values={barChartData.quarters.filter(a => a.quarter === 'NOT_VALID')}
-        availableActions={{ expand: true, range: true }}
-      />
-    );
+    const i18nDefault = BarChartCard.defaultProps.i18n;
+
+    render(<BarChartCard {...barChartCardProps} values={[]} i18n={i18nTest} />);
     expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
-    expect(screen.queryByText(BarChartCard.defaultProps.i18n.noDataLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.noDataLabel)).not.toBeInTheDocument();
   });
 });

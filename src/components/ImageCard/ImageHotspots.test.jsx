@@ -200,7 +200,9 @@ describe('ImageHotspots', () => {
       zoomOut: 'zoom-out',
       zoomToFit: 'zoom-to-fit',
     };
+
     const i18nDefault = ImageHotspots.defaultProps.i18n;
+
     render(<ImageHotspots i18n={i18nTest} />);
     expect(screen.getByTitle(i18nTest.zoomIn)).toBeInTheDocument();
     expect(screen.getByTitle(i18nTest.zoomOut)).toBeInTheDocument();

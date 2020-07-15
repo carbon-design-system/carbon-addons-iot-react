@@ -88,11 +88,11 @@ describe('ListItem', () => {
       close: 'close',
     };
     const i18nDefaults = ListItem.defaultProps.i18n;
-    render(<ListItem i18n={i18nTest} id="1" value="" isExpandable />);
+    const { rerender } = render(<ListItem i18n={i18nTest} id="1" value="" isExpandable />);
     expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
 
-    render(<ListItem i18n={i18nTest} id="1" value="" isExpandable expanded />);
+    rerender(<ListItem i18n={i18nTest} id="1" value="" isExpandable expanded />);
     expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
   });

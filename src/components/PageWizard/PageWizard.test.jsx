@@ -137,7 +137,7 @@ describe('PageWizard', () => {
     };
 
     const i18nDefault = defaultProps.i18n;
-    render(
+    const { rerender } = render(
       <PageWizard i18n={i18nTest} currentStepId="step1" error="error">
         {content}
       </PageWizard>
@@ -150,7 +150,7 @@ describe('PageWizard', () => {
     expect(screen.queryByText(i18nDefault.cancel)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.close)).not.toBeInTheDocument();
 
-    render(
+    rerender(
       <PageWizard currentStepId="step3" i18n={i18nTest}>
         {content}
       </PageWizard>
