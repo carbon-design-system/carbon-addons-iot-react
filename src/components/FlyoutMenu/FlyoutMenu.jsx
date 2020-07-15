@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
@@ -121,9 +121,31 @@ const FlyoutMenu = ({
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const [justOpened, setJustOpened] = useState(false);
 
   const buttonRef = useRef(null);
   const tooltipContentRef = useRef(null);
+  const tooltipRef = React.createRef();
+
+  useLayoutEffect(
+    () => {
+      if (isOpen && !justOpened) {
+        setJustOpened(true);
+      } else if (!isOpen) {
+        setJustOpened(false);
+      }
+    },
+    [isOpen, justOpened, tooltipRef]
+  );
+
+  useLayoutEffect(
+    () => {
+      if (justOpened && isOpen) {
+        tooltipRef.current.focus();
+      }
+    },
+    [isOpen, justOpened, tooltipRef]
+  );
 
   const defaultFooter =
     passive === false ? (
@@ -196,6 +218,7 @@ const FlyoutMenu = ({
             {...props}
           >
             <div ref={tooltipContentRef}>
+              <div style={{ overflow: 'scroll' }} ref={tooltipRef} tabIndex={-1} />
               {children}
 
               {customFooter === null ? (
