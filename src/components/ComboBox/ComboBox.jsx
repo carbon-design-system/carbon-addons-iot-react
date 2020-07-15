@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
-import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import deprecate from '../../internal/deprecate';
 
 import CarbonComboBox from './CarbonComboBox';
@@ -38,8 +37,7 @@ const defaultProps = {
   editOptionText: '-Create',
   hasMultiValue: false,
   items: [],
-  onInputChange: defaultFunction('onInputChange'),
-  onChange: defaultFunction('onChange'),
+  onInputChange: null,
 };
 
 const ComboBox = ({
@@ -168,7 +166,9 @@ const ComboBox = ({
       setInputValue(null);
     }
     // Pass on to user callback
-    onInputChange(e);
+    if (typeof onInputChange === 'function') {
+      onInputChange(e);
+    }
   };
 
   const findHighlightedIndex = ({ items: carbonItems }, carbonInputValue) => {
