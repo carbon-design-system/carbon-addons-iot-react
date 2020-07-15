@@ -13834,6 +13834,7 @@ Map {
       "items": Array [],
       "light": false,
       "loading": false,
+      "onInputChange": null,
       "shouldFilterItem": [Function],
       "type": "default",
       "wrapperClassName": null,
