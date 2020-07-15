@@ -28,7 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -569,7 +569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -818,7 +818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -1039,7 +1039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, is Edtiable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard Grid dashboard, is Editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -1067,7 +1067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
         }
       >
         <div
-          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 hTrCDO"
+          className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
           onDragEnter={[Function]}
           onDragLeave={[Function]}
           onDragOver={[Function]}
@@ -1079,7 +1079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
           }
         >
           <div
-            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
             content="My Facility Metrics"
             data-testid="Card"
             id="facility"
@@ -1139,7 +1139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
             content="My Humidity Values"
             data-testid="Card"
             id="humidity"
@@ -1199,7 +1199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
             </div>
           </div>
           <div
-            className="iot--card react-grid-item react-draggable react-resizable-hide react-resizable iot--card--wrapper"
+            className="iot--card react-grid-item react-draggable react-resizable iot--card--wrapper"
             content="My utilization chart"
             data-testid="Card"
             id="utilization"
