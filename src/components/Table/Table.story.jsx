@@ -1001,7 +1001,6 @@ storiesOf('Watson IoT/Table', module)
       return React.createElement(() => {
         const [defaultValue, setDefaultValue] = useState('toyota');
         const sampleDefaultValues = ['whiteboard', 'scott', 'helping'];
-        console.log(`defaultValue in story: ${defaultValue}`);
         return (
           <>
             <p>
