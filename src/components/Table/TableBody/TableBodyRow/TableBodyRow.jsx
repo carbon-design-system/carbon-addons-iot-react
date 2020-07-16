@@ -100,6 +100,10 @@ const propTypes = {
   rowEditMode: PropTypes.bool,
   singleRowEditMode: PropTypes.bool,
   singleRowEditButtons: PropTypes.element,
+  /**
+   * direction of document
+   */
+  langDir: PropTypes.oneOf(['ltr', 'rtl']),
 };
 
 const defaultProps = {
@@ -331,6 +335,7 @@ const StyledNestedSpan = styled.span`
 const TableBodyRow = ({
   id,
   tableId,
+  langDir,
   totalColumns,
   ordering,
   columns,
@@ -450,6 +455,7 @@ const TableBodyRow = ({
       {hasRowActions && rowActions && rowActions.length > 0 ? (
         <RowActionsCell
           id={id}
+          langDir={langDir}
           tableId={tableId}
           actions={rowActions}
           isRowActionRunning={isRowActionRunning}

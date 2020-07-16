@@ -1723,6 +1723,7 @@ Map {
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "langDir": "ltr",
       "locale": null,
       "overflowMenuAria": "More actions",
       "rowActionsState": Array [],
@@ -1903,6 +1904,15 @@ Map {
       },
       "inProgressText": Object {
         "type": "string",
+      },
+      "langDir": Object {
+        "args": Array [
+          Array [
+            "ltr",
+            "rtl",
+          ],
+        ],
+        "type": "oneOf",
       },
       "learnMoreText": Object {
         "type": "string",
@@ -7410,7 +7420,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -8294,7 +8304,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -9862,7 +9872,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -11638,7 +11648,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -12448,7 +12458,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
