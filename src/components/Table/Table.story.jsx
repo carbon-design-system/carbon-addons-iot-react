@@ -998,23 +998,55 @@ storiesOf('Watson IoT/Table', module)
   )
   .add(
     'with pre-filled search',
-    () => (
-      <StatefulTable
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-        style={{ maxWidth: '300px' }}
-        columns={tableColumns.slice(0, 2)}
-        data={tableData}
-        actions={actions}
-        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
-        view={{
-          toolbar: {
-            search: {
-              defaultValue: 'toyota',
-            },
-          },
-        }}
-      />
-    ),
+    () => {
+      return React.createElement(() => {
+        const [defaultValue, setDefaultValue] = useState('toyota');
+        const sampleDefaultValues = ['whiteboard', 'scott', 'helping'];
+        console.log(`defaultValue in story: ${defaultValue}`);
+        return (
+          <>
+            <p>
+              Click the button below to demonstrate updating the pre-filled search (defaultValue)
+              via state/props
+            </p>
+            <Button
+              onClick={() => {
+                setDefaultValue(
+                  sampleDefaultValues[sampleDefaultValues.indexOf(defaultValue) + 1] ||
+                    sampleDefaultValues[0]
+                );
+              }}
+              style={{ marginBottom: '1rem' }}
+            >
+              Update defaultValue prop to new value
+            </Button>
+            <Button
+              onClick={() => {
+                setDefaultValue('');
+              }}
+              style={{ marginBottom: '1rem', marginLeft: '1rem' }}
+            >
+              Reset defaultValue prop to empty string
+            </Button>
+            <StatefulTable
+              secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+              style={{ maxWidth: '300px' }}
+              columns={tableColumns.slice(0, 2)}
+              data={tableData}
+              actions={actions}
+              options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+              view={{
+                toolbar: {
+                  search: {
+                    defaultValue,
+                  },
+                },
+              }}
+            />
+          </>
+        );
+      });
+    },
     {
       info: {
         text: `The table will pre-fill a search value, expand the search input and trigger a search`,

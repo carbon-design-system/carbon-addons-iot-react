@@ -1528,7 +1528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <div
-                          className="react-grid-item iot--card--toolbar"
+                          className="react-grid-item cssTransforms iot--card--toolbar"
                         >
                           <button
                             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
@@ -3806,7 +3806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <div
-                          className="react-grid-item iot--card--toolbar"
+                          className="react-grid-item cssTransforms iot--card--toolbar"
                         >
                           <button
                             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
@@ -6111,7 +6111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <div
-                          className="react-grid-item iot--card--toolbar"
+                          className="react-grid-item cssTransforms iot--card--toolbar"
                         >
                           <button
                             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
@@ -7757,7 +7757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <div
-                          className="react-grid-item iot--card--toolbar"
+                          className="react-grid-item cssTransforms iot--card--toolbar"
                         >
                           <button
                             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
@@ -10875,7 +10875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <div
-                          className="react-grid-item iot--card--toolbar"
+                          className="react-grid-item cssTransforms iot--card--toolbar"
                         >
                           <button
                             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
@@ -25289,7 +25289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </svg>
                         </button>
                         <div
-                          className="react-grid-item iot--card--toolbar"
+                          className="react-grid-item cssTransforms iot--card--toolbar"
                         >
                           <button
                             className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"

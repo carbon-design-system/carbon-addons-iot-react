@@ -279,6 +279,7 @@ export const tableReducer = (state = {}, action) => {
       const updatedData = action.payload.data || state.data;
       const { view, totalItems } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
+      const toolbar = get(view, 'toolbar') || {};
       const paginationFromState = get(state, 'view.pagination');
       // update the column ordering if I'm passed new columns
       const ordering = get(view, 'table.ordering') || get(state, 'view.table.ordering');
@@ -322,6 +323,9 @@ export const tableReducer = (state = {}, action) => {
             isSelectAllSelected: {
               $set: view ? view.table.isSelectAllSelected : false,
             },
+          },
+          toolbar: {
+            $set: toolbar,
           },
         },
       });
