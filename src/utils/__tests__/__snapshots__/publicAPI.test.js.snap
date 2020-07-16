@@ -7420,7 +7420,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -8304,7 +8304,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -9876,7 +9876,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -11652,7 +11652,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -12462,7 +12462,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
