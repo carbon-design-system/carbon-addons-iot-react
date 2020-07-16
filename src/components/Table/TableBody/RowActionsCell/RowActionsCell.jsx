@@ -178,6 +178,7 @@ class RowActionsCell extends React.Component {
           className={`${iotPrefix}--row-actions-container`}
         >
           <div
+            data-testid="row-action-container-background"
             className={classnames(`${iotPrefix}--row-actions-container__background`, {
               [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
             })}
