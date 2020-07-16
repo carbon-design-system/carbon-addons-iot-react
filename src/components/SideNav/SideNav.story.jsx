@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import AppSwitcher from '@carbon/icons-react/lib/app-switcher/24';
+import { Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/lib/chip/24';
 import Dashboard from '@carbon/icons-react/lib/dashboard/24';
 import Group from '@carbon/icons-react/lib/group/24';
@@ -23,7 +23,7 @@ const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</di
 
 const links = [
   {
-    icon: AppSwitcher,
+    icon: Switcher24,
     isEnabled: true,
     metaData: {
       onClick: action('menu click'),
