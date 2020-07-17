@@ -144,8 +144,19 @@ const TableToolbar = ({
     rowEditBarButtons,
   },
 }) => {
-  const [currentSearchValue, setCurrentSearchValue] = useState(search?.defaultValue || '');
+  const [currentSearchValue, setCurrentSearchValue] = useState(search.defaultValue || '');
 
+  console.log(`defaultValue: ${search.defaultValue}`);
+  console.log(`currentSearchValue: ${currentSearchValue}`);
+  console.log(
+    ((search.defaultValue || search.defaultValue === '') &&
+      search.defaultValue !== currentSearchValue) ||
+      ((search.value || search.value === '') && search.value !== currentSearchValue)
+      ? `${tableId}-toolbar-search${search.defaultValue || 'emptyDefault'}${search.value ||
+          'emptyDefault'}`
+      : `${tableId}-toolbar-search`
+  );
+  console.log(`--------------------------------------------------`);
   return (
     <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
       <TableBatchActions
@@ -198,10 +209,21 @@ const TableToolbar = ({
                 ((search.defaultValue || search.defaultValue === '') &&
                   search.defaultValue !== currentSearchValue) ||
                 ((search.value || search.value === '') && search.value !== currentSearchValue)
-                  ? `${search.defaultValue}${search.value}`
+                  ? `${tableId}-toolbar-search${search.defaultValue ||
+                      'emptyDefault'}${search.value ?? 'emptyDefault'}`
                   : `${tableId}-toolbar-search`
               }
-              defaultValue={search.defaultValue || search.value}
+              // key={`${tableId}-toolbar-search${
+              //   (search.defaultValue || search.defaultValue === '') &&
+              //   search.defaultValue !== currentSearchValue
+              //     ? search.defaultValue
+              //     : ''
+              // }${
+              //   (search.value || search.value === '') && search.value !== currentSearchValue
+              //     ? search.value
+              //     : ''
+              // }`}
+              defaultValue={search.defaultValue ?? search.value}
               className="table-toolbar-search"
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               id={`${tableId}-toolbar-search`}
