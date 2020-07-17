@@ -227,6 +227,9 @@
     "webpack": "^4.28.4",
     "whatwg-fetch": "^3.0.0"
   },
+  "resolutions": {
+    "@babel/preset-env": "^7.8.7"
+  },
   "sideEffects": false,
   "version": "0.0.0-development"
 }

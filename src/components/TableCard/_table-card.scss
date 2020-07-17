@@ -1,7 +1,7 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--table-card--overflow-menu & {
-  margin-left: 10px;
+  margin-left: $spacing-03;
   opacity: 1;
   overflow-y: hidden;
   display: flex;
@@ -14,7 +14,7 @@
 
 .#{$iot-prefix}--table-card--action-icon {
   cursor: pointer;
-  margin-left: 11px;
+  margin-left: $spacing-04;
   &:hover {
     fill: rgb(61, 112, 178);
   }

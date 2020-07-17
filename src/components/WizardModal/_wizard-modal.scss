@@ -7,7 +7,7 @@
 
   .#{$prefix}--progress {
     /* need to pad some space for the focus outlines*/
-    padding: 3px;
+    padding: $spacing-01;
   }
   .#{$prefix}--progress-step {
     max-width: 150px;
@@ -24,7 +24,7 @@
   .#{$iot-prefix}--wizard-modal__content {
     padding-top: $spacing-05;
     padding-left: $spacing-05;
-    padding-bottom: 7rem;
+    padding-bottom: $layout-06;
   }
 }
 

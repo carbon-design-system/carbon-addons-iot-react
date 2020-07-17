@@ -55,7 +55,7 @@ html[dir='rtl'] {
 
   .#{$prefix}--pagination__right .#{$prefix}--pagination__text {
     margin-left: $spacing-05;
-    margin-right: $spacing-01 - 0.0625rem;
+    margin-right: $spacing-01;
   }
 
   .#{$iot-prefix}--pagination.#{$prefix}--pagination .#{$prefix}--select-input {
