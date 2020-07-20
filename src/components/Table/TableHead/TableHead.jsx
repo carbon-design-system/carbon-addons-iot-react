@@ -322,8 +322,8 @@ const TableHead = ({
               align={align}
               className={classnames(
                 `table-header-label-${align}`,
-                initialColumnWidths === undefined ? `` : `${iotPrefix}--table-head--table-header`,
                 {
+                  [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                   'table-header-sortable': matchingColumnMeta.isSortable,
                   [`${iotPrefix}--table-header-resize`]: hasResize,
                 }

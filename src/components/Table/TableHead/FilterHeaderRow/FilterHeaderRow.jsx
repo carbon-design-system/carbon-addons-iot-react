@@ -277,9 +277,9 @@ class FilterHeaderRow extends Component {
 
             return (
               <TableHeader
-                className={`${iotPrefix}--tableheader-filter ${iotPrefix}--filter-header-row--header ${
-                  column.width === undefined ? `${iotPrefix}--filter-header-row--header-width` : ``
-                }`}
+                className={classnames(`${iotPrefix}--tableheader-filter`, `${iotPrefix}--filter-header-row--header`,
+                 {[`${iotPrefix}--filter-header-row--header-width`] : column.width === undefined}
+                )}
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}
