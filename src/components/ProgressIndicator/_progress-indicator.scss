@@ -48,28 +48,6 @@
       outline: none;
       border: none;
 
-      &--clickable {
-        .#{$iot-prefix}--progress-text-label {
-          cursor: pointer;
-        }
-      }
-
-      &:focus {
-        box-shadow: inset 0 0 0 rem(2px) $focus;
-      }
-
-      &:hover {
-        .#{$iot-prefix}--progress-text-label:not(.#{$iot-prefix}--progress-text-label--optional) {
-          box-shadow: 0 rem(1px) $link-01;
-        }
-      }
-
-      &:active {
-        .#{$iot-prefix}--progress-text-label:not(.#{$iot-prefix}--progress-text-label--optional) {
-          box-shadow: 0 rem(3px) 0 0 $interactive-01;
-        }
-      }
-
       .#{$iot-prefix}--progress-step-icon text {
         font-size: 1.125rem;
       }
@@ -104,7 +82,6 @@
             @extend .#{$iot-prefix}--progress-text-label;
             font-size: $spacing-04;
             color: $icon-02;
-            cursor: default !important;
             margin-top: $spacing-01;
           }
 
@@ -114,6 +91,28 @@
 
         &--hidden {
           visibility: hidden;
+        }
+      }
+
+      &:focus {
+        box-shadow: inset 0 0 0 rem(2px) $focus;
+      }
+
+      &:hover {
+        .#{$iot-prefix}--progress-text-label:not(.#{$iot-prefix}--progress-text-label--optional) {
+          box-shadow: 0 rem(1px) $link-01;
+        }
+      }
+
+      &:active {
+        .#{$iot-prefix}--progress-text-label:not(.#{$iot-prefix}--progress-text-label--optional) {
+          box-shadow: 0 rem(3px) 0 0 $interactive-01;
+        }
+      }
+
+      &--clickable {
+        .#{$iot-prefix}--progress-text-label:not(.#{$iot-prefix}--progress-text-label--optional) {
+          cursor: pointer;
         }
       }
     }
@@ -173,11 +172,12 @@
         }
       }
 
-      .#{$iot-prefix}--progress-text-label {
-        @extend .#{$iot-prefix}--progress-text-label;
+      .#{$iot-prefix}--progress-step-button
+        .#{$iot-prefix}--progress-text
+        .#{$iot-prefix}--progress-text-label {
         color: $disabled-02;
-        cursor: default !important;
-        box-shadow: none !important;
+        cursor: default;
+        box-shadow: none;
       }
     }
 
