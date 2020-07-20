@@ -30,7 +30,7 @@ test('simulate onClick on isClickable', () => {
   render(<ProgressIndicator items={mockItems} isClickable />);
   const beforeClick = screen.getByTitle('First Step').children[0];
   // screen.debug(beforeClick);
-  screen.getByTestId('step-button-main-second-step').click();
+  screen.getByTestId('iot--progress-step-button-main-second-step').click();
   // const afterClick = screen.getByTitle('First Step').children[0];
   // screen.debug(afterClick);
   expect(screen.getByTitle('First Step').children[0]).not.toContain(beforeClick);

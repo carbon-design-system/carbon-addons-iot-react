@@ -71,7 +71,7 @@ const ProgressStep = ({
       } else {
         const number = (
           <>
-            <text id="icon-numbered" x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">
+            <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">
               {stepNumber}
             </text>
           </>
@@ -133,7 +133,7 @@ const ProgressStep = ({
     });
 
     const textClasses = classnames({
-      [`${iotPrefix}-progress-text`]: true,
+      [`${iotPrefix}--progress-text`]: true,
       [`${iotPrefix}--progress-text--hidden`]: !showLabel && !current,
     });
 
