@@ -8,6 +8,7 @@ const WARNING = chalk.yellow;
 const URL = chalk.underline.cyan;
 const NUMBER = chalk.dim;
 const RULE = chalk.bgWhite.black;
+const TITLE = chalk.bgYellow;
 
 /**
  * returns the boolean representing whether a file has any errors for filtering purposes
@@ -102,7 +103,7 @@ function formatter(results) {
   if (results) {
     const filesWithErrors = results.filter(filterForErrors);
     if (filesWithErrors.length > 0) {
-      formattedMsg += WARNING('\n!! WARNINGS !!\n\n');
+      formattedMsg += TITLE('\n!! WARNINGS !!\n\n');
     }
     filesWithErrors.forEach(result => {
       const errors = result.warnings;
