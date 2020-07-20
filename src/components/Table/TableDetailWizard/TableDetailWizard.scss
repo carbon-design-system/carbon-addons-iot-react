@@ -3,20 +3,20 @@
   display: flex;
   flex-flow: column;
   align-items: left;
-  border: 1px solid #a2a2a28c;
+  border: rem(1px) solid #a2a2a28c;
 
   .wizard-container {
     display: flex;
 
     .content-container {
-      padding: 2rem;
+      padding: $spacing-07;
     }
   }
 
   .#{$prefix}--inline-notification {
     max-width: none;
-    width: calc(100% - 2rem);
-    margin: 1rem;
+    width: calc(100% - #{$spacing-07});
+    margin: $spacing-05;
 
     html[dir='rtl'] & {
       .#{$prefix}--inline-notification__close-button,
@@ -25,12 +25,12 @@
       }
 
       .#{$prefix}--inline-notification__icon {
-        margin-left: 1rem;
+        margin-left: $spacing-05;
       }
 
       &--error {
         border-left: unset;
-        border-right: 3px solid #fa4d56;
+        border-right: rem(3px) solid $inverse-support-01;
       }
     }
   }
@@ -46,33 +46,33 @@
   .wizard-sidebar {
     display: flex;
     flex-flow: column nowrap;
-    border-right: 1px solid #dadada8c;
+    border-right: rem(1px) solid #dadada8c;
 
     html[dir='rtl'] & {
       border-right: unset;
-      border-left: 1px solid #dadada8c;
+      border-left: rem(1px) solid #dadada8c;
     }
 
     .#{$prefix}--progress {
-      padding: 1rem;
+      padding: $spacing-05;
     }
   }
 
   .wizard-header {
     display: block;
-    border-bottom: 1px solid #dadada8c;
+    border-bottom: rem(1px) solid #dadada8c;
 
     .header-button {
       float: right;
       margin-left: auto;
 
       .#{$prefix}--btn--ghost {
-        height: 50px;
+        height: rem(50px);
       }
 
       .#{$prefix}--btn__icon {
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: rem(5px);
+        margin-right: rem(5px);
       }
 
       html[dir='rtl'] & {
@@ -83,14 +83,14 @@
     .header-heading {
       float: left;
       font-size: 1.25rem;
-      line-height: 50px;
+      line-height: rem(50px);
       vertical-align: middle;
-      margin-left: 1rem;
+      margin-left: $spacing-05;
 
       html[dir='rtl'] & {
         float: right;
         margin-left: unset;
-        margin-right: 1rem;
+        margin-right: $spacing-05;
       }
     }
   }
