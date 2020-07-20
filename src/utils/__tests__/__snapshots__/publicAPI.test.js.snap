@@ -4462,6 +4462,7 @@ Map {
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
+      "tiles": null,
       "title": "",
     },
     "propTypes": Object {
@@ -4532,7 +4533,6 @@ Map {
             "type": "node",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "title": Object {
@@ -13062,25 +13062,8 @@ Map {
     "defaultProps": Object {},
     "propTypes": Object {
       "children": Object {
-        "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "type": Object {
-                  "args": Array [
-                    Array [
-                      [Function],
-                    ],
-                  ],
-                  "type": "oneOf",
-                },
-              },
-            ],
-            "type": "shape",
-          },
-        ],
         "isRequired": true,
-        "type": "arrayOf",
+        "type": "node",
       },
     },
   },

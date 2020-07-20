@@ -20,7 +20,7 @@ const propTypes = {
   /** Number of rows to be rendered per page */
   numRows: PropTypes.number,
   /** A collection of tiles to to rendered  */
-  tiles: PropTypes.arrayOf(PropTypes.node).isRequired,
+  tiles: PropTypes.arrayOf(PropTypes.node),
   /** Set to true if a search is needed */
   hasSearch: PropTypes.bool,
   /** Call back function of search */
@@ -66,6 +66,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     error: 'An error has occurred. Please make sure your catalog has content.',
   },
+  tiles: null,
 };
 
 const TileCatalogNew = ({
