@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { User20, Help20 } from '@carbon/icons-react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -102,8 +102,8 @@ describe('Header', () => {
   });
 
   it('sidepanel should not render', () => {
-    const { queryByLabelText } = render(<Header {...HeaderProps} />);
-    expect(queryByLabelText(APP_SWITCHER)).toBeFalsy();
+    render(<Header {...HeaderProps} />);
+    expect(screen.queryByLabelText(APP_SWITCHER)).toBeFalsy();
   });
 
   it('sidepanel should render', () => {
@@ -117,65 +117,65 @@ describe('Header', () => {
         </a>
       )),
     };
-    const { queryAllByLabelText } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    expect(queryAllByLabelText(APP_SWITCHER).length).toBeGreaterThan(0);
+    render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    expect(screen.queryAllByLabelText(APP_SWITCHER).length).toBeGreaterThan(0);
   });
 
   it('children should render inside UL', () => {
-    const { getByText } = render(<Header {...HeaderProps} />);
-    expect(getByText('This is a link').parentElement.parentElement.nodeName).toBe('LI');
-    expect(getByText('This is a link').parentElement.parentElement.className).toEqual(
+    render(<Header {...HeaderProps} />);
+    expect(screen.getByText('This is a link').parentElement.parentElement.nodeName).toBe('LI');
+    expect(screen.getByText('This is a link').parentElement.parentElement.className).toEqual(
       'action-btn__headerpanel-li'
     );
     expect(
-      getByText('This is a link').parentElement.parentElement.parentNode.childElementCount
+      screen.getByText('This is a link').parentElement.parentElement.parentNode.childElementCount
     ).toEqual(2);
   });
 
   it('clicking trigger button should expand the header panel', () => {
-    const { getByTitle } = render(<Header {...HeaderProps} />);
-    fireEvent.click(getByTitle('help'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    render(<Header {...HeaderProps} />);
+    fireEvent.click(screen.getByTitle('help'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
     );
-    fireEvent.click(getByTitle('help'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByTitle('help'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );
   });
 
   it('closes when focus leaves panel', () => {
-    const { getByTitle, getByText } = render(<Header {...HeaderProps} />);
-    fireEvent.click(getByTitle('help'));
-    fireEvent.focus(getByText('This is a link'));
-    fireEvent.blur(getByText('This is a link'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    render(<Header {...HeaderProps} />);
+    fireEvent.click(screen.getByTitle('help'));
+    fireEvent.focus(screen.getByText('This is a link'));
+    fireEvent.blur(screen.getByText('This is a link'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );
   });
 
   it('closes when focus leaves trigger', () => {
-    const { getByTitle } = render(<Header {...HeaderProps} />);
-    fireEvent.click(getByTitle('help'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    render(<Header {...HeaderProps} />);
+    fireEvent.click(screen.getByTitle('help'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
     );
-    fireEvent.blur(getByTitle('help'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.blur(screen.getByTitle('help'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );
   });
 
   it('closes when focus leaves the current action', () => {
-    const { getByTitle } = render(<Header {...HeaderProps} />);
+    render(<Header {...HeaderProps} />);
 
-    fireEvent.click(getByTitle('help'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByTitle('help'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
     );
     // focus leaves the first button
-    fireEvent.blur(getByTitle('help'));
-    expect(getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.blur(screen.getByTitle('help'));
+    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
       'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
     );
   });
@@ -191,15 +191,15 @@ describe('Header', () => {
         </a>
       )),
     };
-    const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
-    fireEvent.click(getByTitle(APP_SWITCHER));
-    expect(getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByTitle(APP_SWITCHER));
+    expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
       'bx--header-panel bx--header-panel--expanded bx--app-switcher'
     );
 
-    fireEvent.click(getByTitle(APP_SWITCHER));
-    expect(getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByTitle(APP_SWITCHER));
+    expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
       'bx--header-panel bx--app-switcher'
     );
   });
@@ -215,9 +215,9 @@ describe('Header', () => {
         </a>
       )),
     };
-    const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
-    const menuItem = getByTestId('menuitem');
+    const menuItem = screen.getByTestId('menuitem');
     fireEvent.click(menuItem);
     expect(menuItem.getAttribute('aria-expanded')).toBeTruthy();
   });
@@ -233,8 +233,8 @@ describe('Header', () => {
         </a>
       )),
     };
-    const { getByTestId } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    const menuTrigger = getByTestId('menuitem');
+    render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    const menuTrigger = screen.getByTestId('menuitem');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
@@ -252,8 +252,8 @@ describe('Header', () => {
         </a>
       )),
     };
-    const { getByTitle } = render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    const menuTrigger = getByTitle('help');
+    render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    const menuTrigger = screen.getByTitle('help');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
@@ -271,11 +271,9 @@ describe('Header', () => {
         </a>
       )),
     };
-    const { getByTestId, getByRole } = render(
-      <Header {...HeaderProps} headerPanel={headerPanel} />
-    );
-    const menuParent = getByRole('menu');
-    const menuTrigger = getByTestId('menuitem');
+    render(<Header {...HeaderProps} headerPanel={headerPanel} />);
+    const menuParent = screen.getByRole('menu');
+    const menuTrigger = screen.getByTestId('menuitem');
     fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESCAPE });
@@ -283,9 +281,9 @@ describe('Header', () => {
   });
 
   it('onClick event on empty onClick prop', () => {
-    const { getByLabelText } = render(<Header {...HeaderPropsWithoutOnClick} />);
-    const menuItem = getByLabelText('user');
+    render(<Header {...HeaderPropsWithoutOnClick} />);
+    const menuItem = screen.getByLabelText('user');
     fireEvent.click(menuItem);
-    expect(getByLabelText('user')).toBeTruthy();
+    expect(screen.getByLabelText('user')).toBeTruthy();
   });
 });

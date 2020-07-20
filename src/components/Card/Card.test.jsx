@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { Tooltip } from 'carbon-components-react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { Popup16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
@@ -138,7 +138,7 @@ describe('Card', () => {
   });
   it('card editable actions', async () => {
     const mockOnCardAction = jest.fn();
-    const { getByTitle, getByText } = render(
+    render(
       <Card
         {...cardProps}
         isEditable
@@ -148,22 +148,22 @@ describe('Card', () => {
         availableActions={{ edit: true, clone: true, delete: true }}
       />
     );
-    fireEvent.click(getByTitle('Open and close list of options'));
+    fireEvent.click(screen.getByTitle('Open and close list of options'));
     // Click on the first overflow menu item
-    const firstMenuItem = await waitFor(() => getByText('Edit card'));
+    const firstMenuItem = await screen.findByText('Edit card');
     fireEvent.click(firstMenuItem);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.EDIT_CARD);
     mockOnCardAction.mockClear();
     // Reopen menu
-    fireEvent.click(getByTitle('Open and close list of options'));
-    const secondElement = await waitFor(() => getByText('Clone card'));
+    fireEvent.click(screen.getByTitle('Open and close list of options'));
+    const secondElement = await screen.findByText('Clone card');
     fireEvent.click(secondElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CLONE_CARD);
 
     // Reopen menu
-    fireEvent.click(getByTitle('Open and close list of options'));
+    fireEvent.click(screen.getByTitle('Open and close list of options'));
     mockOnCardAction.mockClear();
-    const thirdElement = await waitFor(() => getByText('Delete card'));
+    const thirdElement = await screen.findByText('Delete card');
     fireEvent.click(thirdElement);
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.DELETE_CARD);
   });
