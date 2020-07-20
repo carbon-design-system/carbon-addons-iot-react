@@ -63,7 +63,7 @@ describe('StatefulWizardInline', () => {
         setItem={mockSetItem}
       />
     );
-    const progressIndicatorButtons = wrapper.find('.step-button');
+    const progressIndicatorButtons = wrapper.find('.iot--progress-step-button');
     expect(progressIndicatorButtons).toHaveLength(2);
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();

@@ -14,26 +14,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
   >
     <ul
       className="iot--progress-indicator"
-      data-testid="iot-progress-indicator-testid"
+      data-testid="iot--progress-indicator-testid"
       onChange={[Function]}
     >
       <li
-        className="step-complete"
+        className="iot--progress-step--complete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-first-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-first-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-complete"
+            className="iot--progress-step-line--complete"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="This is displayed when step icon is hovered"
           >
             <svg
@@ -54,16 +54,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
               First step
             </p>
             <p
-              className="label-optional hidden"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -71,22 +71,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-current"
+        className="iot--progress-step--current"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-second-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-second-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Second Step"
           >
             <svg
@@ -108,7 +108,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -118,16 +117,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Second Step"
             >
               Second Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -135,22 +134,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-1"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-1"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 1"
           >
             <svg
@@ -168,10 +167,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Sub Step 1"
             >
               Sub Step 1
@@ -180,22 +179,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-2"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-2"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 2"
           >
             <svg
@@ -213,16 +212,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Sub Step 2"
             >
               Sub Step 2
             </p>
             <p
-              className="label-optional hidden"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -230,22 +229,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-3"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-3"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 3"
           >
             <svg
@@ -266,10 +265,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Sub Step 3"
             >
               Sub Step 3
@@ -278,22 +277,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled step-invalid"
+        className="iot--progress-step--disabled iot--progress-step--invalid"
       >
         <button
           aria-disabled={true}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-4"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-4"
           disabled={true}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 4"
           >
             <svg
@@ -314,10 +313,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Sub Step 4"
             >
               Sub Step 4
@@ -326,22 +325,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled"
+        className="iot--progress-step--disabled"
       >
         <button
           aria-disabled={true}
-          className="step-button main-step"
-          data-testid="step-button-main-third-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-third-step"
           disabled={true}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Third Step"
           >
             <svg
@@ -358,7 +357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -368,16 +366,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Third Step"
             >
               Third Step
             </p>
             <p
-              className="label-optional hidden"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -385,22 +383,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fourth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fourth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fourth Step"
           >
             <svg
@@ -421,10 +419,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Fourth Step"
             >
               Fourth Step
@@ -433,19 +431,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fifth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fifth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fifth Step"
           >
             <svg
@@ -462,7 +460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -472,10 +469,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text iot--progress-text--hidden"
           >
             <p
-              className="label hidden"
+              className="iot--progress-text-label"
               value="Fifth Step"
             >
               Fifth Step
@@ -525,16 +522,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
   >
     <ul
       className="iot--progress-indicator"
-      data-testid="iot-progress-indicator-testid"
+      data-testid="iot--progress-indicator-testid"
       onChange={[Function]}
     >
       <li
-        className="step-current"
+        className="iot--progress-step--current"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-first-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-first-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -547,10 +544,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="This is displayed when step icon is hovered"
           >
             <svg
@@ -572,7 +569,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -582,16 +578,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
               First step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -599,12 +595,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-second-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-second-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -617,10 +613,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Second Step"
           >
             <svg
@@ -637,7 +633,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -647,16 +642,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Second Step"
             >
               Second Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -664,12 +659,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-1"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-1"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -682,10 +677,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 1"
           >
             <svg
@@ -703,10 +698,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 1"
             >
               Sub Step 1
@@ -715,12 +710,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-2"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-2"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -733,10 +728,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 2"
           >
             <svg
@@ -754,16 +749,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 2"
             >
               Sub Step 2
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -771,12 +766,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-3"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-3"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -789,10 +784,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 3"
           >
             <svg
@@ -813,10 +808,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 3"
             >
               Sub Step 3
@@ -825,12 +820,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled step-invalid"
+        className="iot--progress-step--disabled iot--progress-step--invalid"
       >
         <button
           aria-disabled={true}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-4"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-4"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -843,10 +838,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 4"
           >
             <svg
@@ -867,10 +862,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 4"
             >
               Sub Step 4
@@ -879,12 +874,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled"
+        className="iot--progress-step--disabled"
       >
         <button
           aria-disabled={true}
-          className="step-button main-step"
-          data-testid="step-button-main-third-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-third-step"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -897,10 +892,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Third Step"
           >
             <svg
@@ -917,7 +912,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -927,16 +921,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Third Step"
             >
               Third Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -944,12 +938,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fourth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fourth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -962,10 +956,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fourth Step"
           >
             <svg
@@ -986,10 +980,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Fourth Step"
             >
               Fourth Step
@@ -998,12 +992,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fifth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fifth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1016,7 +1010,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fifth Step"
           >
             <svg
@@ -1033,7 +1027,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -1043,10 +1036,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Fifth Step"
             >
               Fifth Step
@@ -1096,26 +1089,26 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
   >
     <ul
       className="iot--progress-indicator iot--progress-indicator--vertical"
-      data-testid="iot-progress-indicator-testid"
+      data-testid="iot--progress-indicator-testid"
       onChange={[Function]}
     >
       <li
-        className="step-current"
+        className="iot--progress-step--current"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-first-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-first-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="This is displayed when step icon is hovered"
           >
             <svg
@@ -1137,7 +1130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -1147,16 +1139,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
               First step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1164,22 +1156,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-second-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-second-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Second Step"
           >
             <svg
@@ -1196,7 +1188,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -1206,16 +1197,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Second Step"
             >
               Second Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1223,22 +1214,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-1"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-1"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 1"
           >
             <svg
@@ -1256,10 +1247,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 1"
             >
               Sub Step 1
@@ -1268,22 +1259,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-2"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-2"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 2"
           >
             <svg
@@ -1301,16 +1292,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 2"
             >
               Sub Step 2
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1318,22 +1309,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-3"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-3"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 3"
           >
             <svg
@@ -1354,10 +1345,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 3"
             >
               Sub Step 3
@@ -1366,22 +1357,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled step-invalid"
+        className="iot--progress-step--disabled iot--progress-step--invalid"
       >
         <button
           aria-disabled={true}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-4"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-4"
           disabled={true}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 4"
           >
             <svg
@@ -1402,10 +1393,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 4"
             >
               Sub Step 4
@@ -1414,22 +1405,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled"
+        className="iot--progress-step--disabled"
       >
         <button
           aria-disabled={true}
-          className="step-button main-step"
-          data-testid="step-button-main-third-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-third-step"
           disabled={true}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Third Step"
           >
             <svg
@@ -1446,7 +1437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -1456,16 +1446,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Third Step"
             >
               Third Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1473,22 +1463,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fourth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fourth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fourth Step"
           >
             <svg
@@ -1509,10 +1499,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Fourth Step"
             >
               Fourth Step
@@ -1521,19 +1511,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fifth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fifth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
           type="button"
         >
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fifth Step"
           >
             <svg
@@ -1550,7 +1540,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -1560,10 +1549,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Fifth Step"
             >
               Fifth Step
@@ -1732,16 +1721,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
   >
     <ul
       className="iot--progress-indicator"
-      data-testid="iot-progress-indicator-testid"
+      data-testid="iot--progress-indicator-testid"
       onChange={[Function]}
     >
       <li
-        className="step-complete"
+        className="iot--progress-step--complete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-first-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-first-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1754,10 +1743,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-complete"
+            className="iot--progress-step-line--complete"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="This is displayed when step icon is hovered"
           >
             <svg
@@ -1778,16 +1767,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="This is displayed when step icon is hovered"
             >
               First step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1795,12 +1784,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-complete"
+        className="iot--progress-step--complete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-second-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-second-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1813,10 +1802,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-complete"
+            className="iot--progress-step-line--complete"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Second Step"
           >
             <svg
@@ -1837,16 +1826,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Second Step"
             >
               Second Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1854,12 +1843,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-complete"
+        className="iot--progress-step--complete"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-1"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-1"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1872,10 +1861,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub-complete"
+            className="iot--progress-step-line--sub-complete"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 1"
           >
             <svg
@@ -1896,10 +1885,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 1"
             >
               Sub Step 1
@@ -1908,12 +1897,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-current"
+        className="iot--progress-step--current"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-2"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-2"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1926,10 +1915,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 2"
           >
             <svg
@@ -1952,16 +1941,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 2"
             >
               Sub Step 2
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -1969,12 +1958,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-3"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-3"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -1987,10 +1976,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 3"
           >
             <svg
@@ -2011,10 +2000,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 3"
             >
               Sub Step 3
@@ -2023,12 +2012,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled step-invalid"
+        className="iot--progress-step--disabled iot--progress-step--invalid"
       >
         <button
           aria-disabled={true}
-          className="step-button sub-step"
-          data-testid="step-button-sub-sub-step-4"
+          className="iot--progress-step-button iot--progress-step-button--sub-step"
+          data-testid="iot--progress-step-button-sub-sub-step-4"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -2041,10 +2030,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line-sub"
+            className="iot--progress-step-line--sub"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Sub Step 4"
           >
             <svg
@@ -2065,10 +2054,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Sub Step 4"
             >
               Sub Step 4
@@ -2077,12 +2066,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-disabled"
+        className="iot--progress-step--disabled"
       >
         <button
           aria-disabled={true}
-          className="step-button main-step"
-          data-testid="step-button-main-third-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-third-step"
           disabled={true}
           onClick={null}
           onKeyDown={null}
@@ -2095,10 +2084,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Third Step"
           >
             <svg
@@ -2115,7 +2104,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -2125,16 +2113,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Third Step"
             >
               Third Step
             </p>
             <p
-              className="label-optional"
+              className="iot--progress-text-label--optional"
             >
               Optional label
             </p>
@@ -2142,12 +2130,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-invalid"
+        className="iot--progress-step--invalid"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fourth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fourth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -2160,10 +2148,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <div
-            className="line"
+            className="iot--progress-step-line"
           />
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fourth Step"
           >
             <svg
@@ -2184,10 +2172,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Fourth Step"
             >
               Fourth Step
@@ -2196,12 +2184,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
         </button>
       </li>
       <li
-        className="step-incomplete"
+        className="iot--progress-step--incomplete"
       >
         <button
           aria-disabled={false}
-          className="step-button main-step"
-          data-testid="step-button-main-fifth-step"
+          className="iot--progress-step-button iot--progress-step-button--main-step"
+          data-testid="iot--progress-step-button-main-fifth-step"
           disabled={false}
           onClick={null}
           onKeyDown={null}
@@ -2214,7 +2202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
           type="button"
         >
           <span
-            className="icon"
+            className="iot--progress-step-icon"
             title="Fifth Step"
           >
             <svg
@@ -2231,7 +2219,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
               />
               <text
                 dominantBaseline="middle"
-                id="icon-numbered"
                 textAnchor="middle"
                 x="50%"
                 y="55%"
@@ -2241,10 +2228,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Progr
             </svg>
           </span>
           <div
-            className="label-container"
+            className="iot--progress-text"
           >
             <p
-              className="label"
+              className="iot--progress-text-label"
               value="Fifth Step"
             >
               Fifth Step
