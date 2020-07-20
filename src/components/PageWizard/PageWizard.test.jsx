@@ -122,6 +122,6 @@ describe('PageWizard', () => {
 
   it('progress indicator should not render if there is only 1 step', () => {
     const wrapper = shallow(<PageWizard currentStepId="step1">{content[0]}</PageWizard>);
-    expect(wrapper.find('[data-testid="iot-progress-indicator-testid"]')).toHaveLength(0);
+    expect(wrapper.find('[data-testid="iot--progress-indicator-testid"]')).toHaveLength(0);
   });
 });

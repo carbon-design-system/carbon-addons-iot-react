@@ -93,7 +93,7 @@ const ProgressStep = ({
     }
 
     return (
-      <span className="icon" title={description}>
+      <span className={`${iotPrefix}--progress-step-icon`} title={description}>
         {value}
       </span>
     );
@@ -101,45 +101,40 @@ const ProgressStep = ({
 
   const StepLine = () => {
     const classes = classnames({
-      [`line`]: !complete && !subStep,
-      [`line-sub`]: !complete && subStep,
-      [`line-complete`]: complete && !subStep,
-      [`line-sub-complete`]: complete && subStep,
+      [`${iotPrefix}--progress-step-line`]: !complete && !subStep,
+      [`${iotPrefix}--progress-step-line--sub`]: !complete && subStep,
+      [`${iotPrefix}--progress-step-line--complete`]: complete && !subStep,
+      [`${iotPrefix}--progress-step-line--sub-complete`]: complete && subStep,
     });
 
     return !lastItem ? <div className={classes} /> : null;
   };
 
   const StepLabel = () => {
-    const classes = classnames({
-      [`label`]: mainStep || subStep,
-      [`hidden`]: !showLabel && !current,
-    });
-
     return (
-      <p className={classes} value={description}>
+      <p className={`${iotPrefix}--progress-text-label`} value={description}>
         {label}
       </p>
     );
   };
 
   const StepSecondaryLabel = () => {
-    const classes = classnames({
-      [`label-optional`]: mainStep || subStep,
-      [`hidden`]: !showLabel && !current,
-    });
-
     return secondaryLabel !== null && secondaryLabel !== undefined ? (
-      <p className={classes}>{secondaryLabel}</p>
+      <p className={`${iotPrefix}--progress-text-label--optional`}>{secondaryLabel}</p>
     ) : null;
   };
 
   const StepButton = () => {
-    const classes = classnames({
-      [`step-button`]: true,
-      [`main-step`]: mainStep,
-      [`sub-step`]: subStep,
-      [`clickable`]: accessible,
+    const buttonClasses = classnames({
+      [`${iotPrefix}--progress-step-button`]: true,
+      [`${iotPrefix}--progress-step-button--main-step`]: mainStep,
+      [`${iotPrefix}--progress-step-button--sub-step`]: subStep,
+      [`${iotPrefix}--progress-step-button--clickable`]: accessible,
+    });
+
+    const textClasses = classnames({
+      [`${iotPrefix}-progress-text`]: true,
+      [`${iotPrefix}--progress-text--hidden`]: !showLabel && !current,
     });
 
     // for testing purposes
@@ -149,18 +144,18 @@ const ProgressStep = ({
     return (
       <>
         <button
-          className={classes}
+          className={buttonClasses}
           type="button"
           aria-disabled={disabled}
           disabled={disabled}
           style={getStepWidth()}
           onClick={accessible ? handleClick : null}
           onKeyDown={accessible ? handleKeyDown : null}
-          data-testid={`step-button-${type}-${dataTestIdLabel}`}
+          data-testid={`${iotPrefix}--progress-step-button-${type}-${dataTestIdLabel}`}
         >
           <StepLine />
           <StepIcon />
-          <div className="label-container">
+          <div className={textClasses}>
             <StepLabel />
             <StepSecondaryLabel tabIndex="-1" />
           </div>
@@ -170,11 +165,11 @@ const ProgressStep = ({
   };
 
   const classes = classnames({
-    [`step-current`]: current && !disabled,
-    [`step-complete`]: complete && !disabled && !invalid,
-    [`step-incomplete`]: incomplete && !current && !disabled && !invalid,
-    [`step-disabled`]: disabled,
-    [`step-invalid`]: invalid,
+    [`${iotPrefix}--progress-step--current`]: current && !disabled,
+    [`${iotPrefix}--progress-step--complete`]: complete && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--incomplete`]: incomplete && !current && !disabled && !invalid,
+    [`${iotPrefix}--progress-step--disabled`]: disabled,
+    [`${iotPrefix}--progress-step--invalid`]: invalid,
   });
 
   return (
@@ -286,16 +281,18 @@ const ProgressIndicator = ({
 
   useEffect(() => setCurrentStep(currentItemId), [currentItemId]);
 
-  const hasItems = () => newItems.length > 1;
-
   const classes = classnames({
     [`${iotPrefix}--progress-indicator`]: true,
     [`${iotPrefix}--progress-indicator--vertical`]: isVerticalMode,
     [className]: className,
   });
 
-  return hasItems() ? (
-    <ul className={classes} data-testid="iot-progress-indicator-testid" onChange={handleChange}>
+  return newItems.length > 1 ? (
+    <ul
+      className={classes}
+      data-testid={`${iotPrefix}--progress-indicator-testid`}
+      onChange={handleChange}
+    >
       {newItems.map(
         (
           { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },

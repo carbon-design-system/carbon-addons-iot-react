@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 import { settings } from '../../constants/Settings';
@@ -160,7 +160,7 @@ const PageWizard = ({
 
   return (
     <div
-      className={classNames(
+      className={classnames(
         isProgressIndicatorVertical ? `${iotPrefix}--page-wizard` : null,
         className,
         hasStickyFooter ? `${iotPrefix}--page-wizard__sticky` : null
