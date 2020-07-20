@@ -37,6 +37,7 @@ const defaultProps = {
   editOptionText: '-Create',
   hasMultiValue: false,
   items: [],
+  onInputChange: null,
 };
 
 const ComboBox = ({
@@ -165,7 +166,9 @@ const ComboBox = ({
       setInputValue(null);
     }
     // Pass on to user callback
-    onInputChange(e);
+    if (typeof onInputChange === 'function') {
+      onInputChange(e);
+    }
   };
 
   const findHighlightedIndex = ({ items: carbonItems }, carbonInputValue) => {
