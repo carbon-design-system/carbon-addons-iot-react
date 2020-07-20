@@ -102,7 +102,7 @@ function formatter(results) {
   if (results) {
     const filesWithErrors = results.filter(filterForErrors);
     if (filesWithErrors.length > 0) {
-      formattedMsg += TITLE('\n!! WARNINGS !!\n\n');
+      formattedMsg += WARNING('\n!! WARNINGS !!\n\n');
     }
     filesWithErrors.forEach(result => {
       const errors = result.warnings;
