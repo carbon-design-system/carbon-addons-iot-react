@@ -115,6 +115,35 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
+const i18nTest = {
+  /** table body */
+  overflowMenuAria: 'overflow-menu',
+  clickToExpandAria: 'expand-aria',
+  clickToCollapseAria: 'collapse-aria',
+  selectAllAria: 'select-all',
+  selectRowAria: 'select-row',
+  /** toolbar */
+  clearAllFilters: 'clear-filters',
+  columnSelectionButtonAria: 'column-select-aria',
+  columnSelectionConfig: 'column-select-config',
+  filterButtonAria: 'filter-aria',
+  editButtonAria: 'edit-button',
+  searchLabel: 'search-label',
+  searchPlaceholder: 'search-placeholder',
+  clearFilterAria: 'clear-filter',
+  filterAria: 'filter-aria',
+  openMenuAria: 'open-menu',
+  batchCancel: 'cancel',
+  itemSelected: 'item-selected',
+  /** empty state */
+  emptyMessage: 'empty-message',
+  emptyMessageWithFilters: 'empty-filters',
+  emptyButtonLabel: 'empty-button',
+  downloadIconDescription: 'download-descript',
+};
+
+const i18nDefault = defaultProps({}).i18n;
+
 describe('Table', () => {
   beforeAll(() => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -562,35 +591,6 @@ describe('Table', () => {
   });
 
   it('i18n string test 1', () => {
-    const i18nTest = {
-      /** table body */
-      overflowMenuAria: 'overflow-menu',
-      clickToExpandAria: 'expand-aria',
-      clickToCollapseAria: 'collapse-aria',
-      selectAllAria: 'select-all',
-      selectRowAria: 'select-row',
-      /** toolbar */
-      clearAllFilters: 'clear-filters',
-      columnSelectionButtonAria: 'column-select-aria',
-      columnSelectionConfig: 'column-select-config',
-      filterButtonAria: 'filter-aria',
-      editButtonAria: 'edit-button',
-      searchLabel: 'search-label',
-      searchPlaceholder: 'search-placeholder',
-      clearFilterAria: 'clear-filter',
-      filterAria: 'filter-aria',
-      openMenuAria: 'open-menu',
-      batchCancel: 'cancel',
-      itemSelected: 'item-selected',
-      /** empty state */
-      emptyMessage: 'empty-message',
-      emptyMessageWithFilters: 'empty-filters',
-      emptyButtonLabel: 'empty-button',
-      downloadIconDescription: 'download-descript',
-    };
-
-    const i18nDefault = defaultProps({}).i18n;
-
     const additionalProps = {
       options: {
         ...initialState.options,
@@ -673,35 +673,6 @@ describe('Table', () => {
   });
 
   it('i18n string test 2', () => {
-    const i18nTest = {
-      /** table body */
-      overflowMenuAria: 'overflow-menu',
-      clickToExpandAria: 'expand-aria',
-      clickToCollapseAria: 'collapse-aria',
-      selectAllAria: 'select-all',
-      selectRowAria: 'select-row',
-      /** toolbar */
-      clearAllFilters: 'clear-filters',
-      columnSelectionButtonAria: 'column-select-aria',
-      columnSelectionConfig: 'column-select-config',
-      filterButtonAria: 'filter-aria',
-      editButtonAria: 'edit-button',
-      searchLabel: 'search-label',
-      searchPlaceholder: 'search-placeholder',
-      clearFilterAria: 'clear-filter',
-      filterAria: 'filter-aria',
-      openMenuAria: 'open-menu',
-      batchCancel: 'cancel',
-      itemSelected: 'item-selected',
-      /** empty state */
-      emptyMessage: 'empty-message',
-      emptyMessageWithFilters: 'empty-filters',
-      emptyButtonLabel: 'empty-button',
-      downloadIconDescription: 'download-descript',
-    };
-
-    const i18nDefault = defaultProps({}).i18n;
-
     const { rerender } = render(
       <Table
         columns={tableColumns}
