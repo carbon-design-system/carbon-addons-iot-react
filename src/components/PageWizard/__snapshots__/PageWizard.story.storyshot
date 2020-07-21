@@ -22,7 +22,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
           <ul
             className="iot--progress-indicator"
             data-testid="iot--progress-indicator-testid"
-            onChange={[Function]}
           >
             <li
               className="iot--progress-step--current"
@@ -714,7 +713,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               <ul
                 className="iot--progress-indicator iot--progress-indicator--vertical"
                 data-testid="iot--progress-indicator-testid"
-                onChange={[Function]}
               >
                 <li
                   className="iot--progress-step--current"
@@ -1105,7 +1103,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               <ul
                 className="iot--progress-indicator iot--progress-indicator--vertical"
                 data-testid="iot--progress-indicator-testid"
-                onChange={[Function]}
               >
                 <li
                   className="iot--progress-step--current"
@@ -1622,7 +1619,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
           <ul
             className="iot--progress-indicator iot--progress-indicator--vertical"
             data-testid="iot--progress-indicator-testid"
-            onChange={[Function]}
           >
             <li
               className="iot--progress-step--current"
@@ -2314,7 +2310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               <ul
                 className="iot--progress-indicator iot--progress-indicator--vertical"
                 data-testid="iot--progress-indicator-testid"
-                onChange={[Function]}
               >
                 <li
                   className="iot--progress-step--current"
@@ -2602,7 +2597,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
           <ul
             className="iot--progress-indicator iot--progress-indicator--vertical"
             data-testid="iot--progress-indicator-testid"
-            onChange={[Function]}
           >
             <li
               className="iot--progress-step--current"
@@ -3294,7 +3288,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageW
               <ul
                 className="iot--progress-indicator iot--progress-indicator--vertical"
                 data-testid="iot--progress-indicator-testid"
-                onChange={[Function]}
               >
                 <li
                   className="iot--progress-step--current"

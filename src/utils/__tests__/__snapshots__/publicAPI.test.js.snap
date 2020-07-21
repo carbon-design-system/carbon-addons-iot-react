@@ -3255,7 +3255,6 @@ Map {
       "isVerticalMode": false,
       "items": null,
       "onClickItem": null,
-      "setStep": null,
       "showLabels": true,
       "stepWidth": null,
     },
@@ -3324,9 +3323,6 @@ Map {
         "type": "arrayOf",
       },
       "onClickItem": Object {
-        "type": "func",
-      },
-      "setStep": Object {
         "type": "func",
       },
       "showLabels": Object {

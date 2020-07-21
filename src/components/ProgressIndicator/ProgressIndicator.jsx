@@ -23,7 +23,7 @@ const ProgressStep = ({
   label,
   secondaryLabel,
   description,
-  onChange,
+  onClick,
   disabled,
   showLabel,
   stepWidth,
@@ -41,8 +41,8 @@ const ProgressStep = ({
   const accessible = isClickable && !disabled && !current;
 
   const handleClick = () => {
-    if (onChange) {
-      onChange(id);
+    if (onClick) {
+      onClick(id);
     }
   };
 
@@ -186,7 +186,6 @@ ProgressStep.propTypes = {
   label: PropTypes.string,
   secondaryLabel: PropTypes.string,
   description: PropTypes.string,
-  onChange: PropTypes.func,
   disabled: PropTypes.bool,
   showLabel: PropTypes.bool,
   stepWidth: PropTypes.number,
@@ -200,13 +199,13 @@ ProgressStep.propTypes = {
   incomplete: PropTypes.bool,
   mainStep: PropTypes.bool,
   subStep: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 ProgressStep.defaultProps = {
   label: null,
   secondaryLabel: null,
   description: null,
-  onChange: null,
   disabled: false,
   showLabel: false,
   stepWidth: null,
@@ -220,6 +219,7 @@ ProgressStep.defaultProps = {
   incomplete: false,
   mainStep: false,
   subStep: false,
+  onClick: null,
 };
 
 const ProgressIndicator = ({
@@ -230,7 +230,6 @@ const ProgressIndicator = ({
   isVerticalMode,
   stepWidth,
   isClickable,
-  setStep,
   onClickItem,
 }) => {
   const [currentStep, setCurrentStep] = useState(currentItemId || items[0].id);
@@ -274,8 +273,8 @@ const ProgressIndicator = ({
 
   const handleChange = step => {
     if (step !== currentStep) {
-      if (setStep) {
-        setStep(step);
+      if (onClickItem) {
+        onClickItem(step);
       } else {
         setCurrentStep(step);
       }
@@ -291,11 +290,7 @@ const ProgressIndicator = ({
   });
 
   return newItems.length > 1 ? (
-    <ul
-      className={classes}
-      data-testid={`${iotPrefix}--progress-indicator-testid`}
-      onChange={onClickItem || handleChange}
-    >
+    <ul className={classes} data-testid={`${iotPrefix}--progress-indicator-testid`}>
       {newItems.map(
         (
           { id, label, secondaryLabel, description, disabled, invalid, stepNumber, level },
@@ -312,7 +307,7 @@ const ProgressIndicator = ({
             incomplete={getCurrentIndex() < index}
             mainStep={level === 0}
             subStep={level > 0}
-            onChange={handleChange}
+            onClick={handleChange}
             stepNumber={stepNumber}
             vertical={isVerticalMode}
             showLabel={showLabels}
@@ -345,7 +340,6 @@ ProgressIndicator.propTypes = {
   stepWidth: PropTypes.number,
   isVerticalMode: PropTypes.bool,
   isClickable: PropTypes.bool,
-  setStep: PropTypes.func,
   onClickItem: PropTypes.func,
 };
 
@@ -357,7 +351,6 @@ ProgressIndicator.defaultProps = {
   currentItemId: null,
   isVerticalMode: false,
   isClickable: false,
-  setStep: null,
   onClickItem: null,
 };
 

@@ -55,7 +55,7 @@ class DetailWizardSidebar extends Component {
         currentItemId={currentItemId}
         items={items.map(item => ({ id: item.id, label: item.name }))}
         showLabels={showLabels}
-        setStep={setItem}
+        onClickItem={setItem}
         stepWidth={stepWidth}
         isVerticalMode
         isClickable={isClickable}

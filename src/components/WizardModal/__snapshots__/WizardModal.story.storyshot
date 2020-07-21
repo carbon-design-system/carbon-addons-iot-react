@@ -75,7 +75,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <ul
             className="iot--progress-indicator"
             data-testid="iot--progress-indicator-testid"
-            onChange={[Function]}
           >
             <li
               className="iot--progress-step--current"
@@ -382,7 +381,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <ul
             className="iot--progress-indicator"
             data-testid="iot--progress-indicator-testid"
-            onChange={[Function]}
           >
             <li
               className="iot--progress-step--current"
@@ -696,7 +694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           <ul
             className="iot--progress-indicator"
             data-testid="iot--progress-indicator-testid"
-            onChange={[Function]}
           >
             <li
               className="iot--progress-step--complete"
