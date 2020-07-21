@@ -77,7 +77,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             data-testid="iot--progress-indicator-testid"
           >
             <li
-              className="iot--progress-step--current"
+              className="iot--progress-step iot--progress-step--current"
             >
               <button
                 aria-disabled={false}
@@ -86,6 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={-1}
                 type="button"
               >
                 <div
@@ -135,7 +136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
             </li>
             <li
-              className="iot--progress-step--incomplete"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
                 aria-disabled={false}
@@ -144,6 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                tabIndex={0}
                 type="button"
               >
                 <div
@@ -188,7 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
             </li>
             <li
-              className="iot--progress-step--incomplete"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
                 aria-disabled={false}
@@ -197,6 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
+                tabIndex={0}
                 type="button"
               >
                 <span
@@ -383,7 +386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             data-testid="iot--progress-indicator-testid"
           >
             <li
-              className="iot--progress-step--current"
+              className="iot--progress-step iot--progress-step--current"
             >
               <button
                 aria-disabled={false}
@@ -392,6 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={-1}
                 type="button"
               >
                 <div
@@ -441,7 +445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
             </li>
             <li
-              className="iot--progress-step--incomplete"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
                 aria-disabled={false}
@@ -450,6 +454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={0}
                 type="button"
               >
                 <div
@@ -494,7 +499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
             </li>
             <li
-              className="iot--progress-step--incomplete"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
                 aria-disabled={false}
@@ -503,6 +508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={0}
                 type="button"
               >
                 <span
@@ -696,7 +702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             data-testid="iot--progress-indicator-testid"
           >
             <li
-              className="iot--progress-step--complete"
+              className="iot--progress-step iot--progress-step--complete"
             >
               <button
                 aria-disabled={false}
@@ -705,6 +711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={0}
                 type="button"
               >
                 <div
@@ -744,7 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
             </li>
             <li
-              className="iot--progress-step--complete"
+              className="iot--progress-step iot--progress-step--complete"
             >
               <button
                 aria-disabled={false}
@@ -753,6 +760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={0}
                 type="button"
               >
                 <div
@@ -792,7 +800,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               </button>
             </li>
             <li
-              className="iot--progress-step--current"
+              className="iot--progress-step iot--progress-step--current"
             >
               <button
                 aria-disabled={false}
@@ -801,6 +809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
                 disabled={false}
                 onClick={null}
                 onKeyDown={null}
+                tabIndex={-1}
                 type="button"
               >
                 <span

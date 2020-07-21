@@ -150,16 +150,16 @@ const ProgressStep = ({
           type="button"
           aria-disabled={disabled}
           disabled={disabled}
-          style={getStepWidth()}
           onClick={accessible ? handleClick : null}
           onKeyDown={accessible ? handleKeyDown : null}
           data-testid={`${iotPrefix}--progress-step-button-${type}-${dataTestIdLabel}`}
+          tabIndex={current || disabled ? -1 : 0}
         >
           <StepLine />
           <StepIcon />
           <div className={textClasses}>
             <StepLabel />
-            <StepSecondaryLabel tabIndex="-1" />
+            <StepSecondaryLabel />
           </div>
         </button>
       </>
@@ -167,6 +167,7 @@ const ProgressStep = ({
   };
 
   const classes = classnames({
+    [`${iotPrefix}--progress-step`]: true,
     [`${iotPrefix}--progress-step--current`]: current && !disabled,
     [`${iotPrefix}--progress-step--complete`]: complete && !disabled && !invalid,
     [`${iotPrefix}--progress-step--incomplete`]: incomplete && !current && !disabled && !invalid,
@@ -175,8 +176,8 @@ const ProgressStep = ({
   });
 
   return (
-    <li className={classes}>
-      <StepButton tabIndex="0" />
+    <li className={classes} style={getStepWidth()}>
+      <StepButton />
     </li>
   );
 };

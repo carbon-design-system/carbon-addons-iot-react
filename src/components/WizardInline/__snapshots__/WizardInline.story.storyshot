@@ -81,7 +81,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           data-testid="iot--progress-indicator-testid"
         >
           <li
-            className="iot--progress-step--current"
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "minWidth": "9rem",
+                "width": "9rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -90,12 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "9rem",
-                  "width": "9rem",
-                }
-              }
+              tabIndex={-1}
               type="button"
             >
               <div
@@ -145,7 +146,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "9rem",
+                "width": "9rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -154,12 +161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "9rem",
-                  "width": "9rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -204,7 +206,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "9rem",
+                "width": "9rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -213,12 +221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "9rem",
-                  "width": "9rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -263,7 +266,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "9rem",
+                "width": "9rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -272,12 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "9rem",
-                  "width": "9rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <span
@@ -494,7 +498,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           data-testid="iot--progress-indicator-testid"
         >
           <li
-            className="iot--progress-step--complete"
+            className="iot--progress-step iot--progress-step--complete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -503,12 +513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -548,7 +553,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--current"
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -557,12 +568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={-1}
               type="button"
             >
               <div
@@ -612,7 +618,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -621,12 +633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -671,7 +678,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -680,12 +693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <span
@@ -886,7 +894,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           data-testid="iot--progress-indicator-testid"
         >
           <li
-            className="iot--progress-step--complete"
+            className="iot--progress-step iot--progress-step--complete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -895,12 +909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -940,7 +949,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--complete"
+            className="iot--progress-step iot--progress-step--complete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -949,12 +964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -994,7 +1004,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--complete"
+            className="iot--progress-step iot--progress-step--complete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1003,12 +1019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -1048,7 +1059,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--current"
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1057,12 +1074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={-1}
               type="button"
             >
               <span
@@ -1277,7 +1289,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           data-testid="iot--progress-indicator-testid"
         >
           <li
-            className="iot--progress-step--current"
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1286,12 +1304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={-1}
               type="button"
             >
               <div
@@ -1341,7 +1354,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1350,12 +1369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -1400,7 +1414,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1409,12 +1429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -1459,7 +1474,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1468,12 +1489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1681,7 +1697,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           data-testid="iot--progress-indicator-testid"
         >
           <li
-            className="iot--progress-step--complete"
+            className="iot--progress-step iot--progress-step--complete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1690,12 +1712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -1735,7 +1752,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--current"
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1744,12 +1767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={-1}
               type="button"
             >
               <div
@@ -1799,7 +1817,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1808,12 +1832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -1858,7 +1877,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -1867,12 +1892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <span
@@ -2073,7 +2093,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           data-testid="iot--progress-indicator-testid"
         >
           <li
-            className="iot--progress-step--current"
+            className="iot--progress-step iot--progress-step--current"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -2082,12 +2108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={-1}
               type="button"
             >
               <div
@@ -2137,7 +2158,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -2146,12 +2173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -2196,7 +2218,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -2205,12 +2233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <div
@@ -2255,7 +2278,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
             </button>
           </li>
           <li
-            className="iot--progress-step--incomplete"
+            className="iot--progress-step iot--progress-step--incomplete"
+            style={
+              Object {
+                "minWidth": "8rem",
+                "width": "8rem",
+              }
+            }
           >
             <button
               aria-disabled={false}
@@ -2264,12 +2293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
               disabled={false}
               onClick={null}
               onKeyDown={null}
-              style={
-                Object {
-                  "minWidth": "8rem",
-                  "width": "8rem",
-                }
-              }
+              tabIndex={0}
               type="button"
             >
               <span

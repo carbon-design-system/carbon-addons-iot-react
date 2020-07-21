@@ -64,7 +64,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               data-testid="iot--progress-indicator-testid"
             >
               <li
-                className="iot--progress-step--current"
+                className="iot--progress-step iot--progress-step--current"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -73,12 +79,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={null}
                   onKeyDown={null}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={-1}
                   type="button"
                 >
                   <div
@@ -128,7 +129,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -137,12 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <div
@@ -187,7 +189,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -196,12 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <div
@@ -246,7 +249,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -255,12 +264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <span
@@ -444,7 +448,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               data-testid="iot--progress-indicator-testid"
             >
               <li
-                className="iot--progress-step--complete"
+                className="iot--progress-step iot--progress-step--complete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -453,12 +463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <div
@@ -498,7 +503,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--current"
+                className="iot--progress-step iot--progress-step--current"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -507,12 +518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={null}
                   onKeyDown={null}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={-1}
                   type="button"
                 >
                   <div
@@ -562,7 +568,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -571,12 +583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <div
@@ -621,7 +628,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -630,12 +643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <span
@@ -820,7 +828,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               data-testid="iot--progress-indicator-testid"
             >
               <li
-                className="iot--progress-step--current"
+                className="iot--progress-step iot--progress-step--current"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -829,12 +843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={null}
                   onKeyDown={null}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={-1}
                   type="button"
                 >
                   <div
@@ -884,7 +893,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -893,12 +908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <div
@@ -943,7 +953,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -952,12 +968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <div
@@ -1002,7 +1013,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 </button>
               </li>
               <li
-                className="iot--progress-step--incomplete"
+                className="iot--progress-step iot--progress-step--incomplete"
+                style={
+                  Object {
+                    "height": "7rem",
+                    "minHeight": "7rem",
+                  }
+                }
               >
                 <button
                   aria-disabled={false}
@@ -1011,12 +1028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                   disabled={false}
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  style={
-                    Object {
-                      "height": "7rem",
-                      "minHeight": "7rem",
-                    }
-                  }
+                  tabIndex={0}
                   type="button"
                 >
                   <span
