@@ -66,7 +66,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     error: 'An error has occurred. Please make sure your catalog has content.',
   },
-  tiles: null,
+  tiles: [],
 };
 
 const TileCatalogNew = ({
@@ -118,9 +118,7 @@ const TileCatalogNew = ({
   // only render pagination if there is no minTileWidth and there are more tiles than can fit in
   // the bounds of our specified number of rows and columns
   const hasPagination =
-    tiles && !minTileWidth && !isLoading
-      ? Math.ceil(tiles.length / (numRows * numColumns)) > 1
-      : null;
+    !minTileWidth && !isLoading ? Math.ceil(tiles.length / (numRows * numColumns)) > 1 : null;
 
   return (
     <div className={className}>
@@ -162,7 +160,7 @@ const TileCatalogNew = ({
               ) : null}
             </div>
           </div>
-          {tiles && tiles.length && !error ? (
+          {tiles.length > 0 && !error ? (
             <div className={`${iotPrefix}--tile-catalog--tile-canvas--content`}>{renderGrid()}</div>
           ) : (
             <Tile className={`${iotPrefix}--tile-catalog--empty-tile`}>
@@ -174,7 +172,7 @@ const TileCatalogNew = ({
           )}
 
           <div className={`${iotPrefix}--tile-catalog--tile-canvas--bottom`}>
-            {tiles && hasPagination ? (
+            {hasPagination ? (
               <TilePagination
                 page={currentPage}
                 numPages={Math.ceil(tiles.length / (numRows * numColumns))}

@@ -4462,7 +4462,7 @@ Map {
       "onSort": [Function],
       "selectedSortOption": "",
       "sortOptions": Array [],
-      "tiles": null,
+      "tiles": Array [],
       "title": "",
     },
     "propTypes": Object {
