@@ -7420,7 +7420,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -8304,7 +8304,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -8526,6 +8526,7 @@ Map {
       "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
+        "noDataLabel": "No data is available for this time range.",
       },
       "locale": "en",
       "showTimeInGMT": false,
@@ -9174,6 +9175,9 @@ Map {
         "args": Array [
           Object {
             "alertDetected": Object {
+              "type": "string",
+            },
+            "noData": Object {
               "type": "string",
             },
           },
@@ -9872,7 +9876,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -11648,7 +11652,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
@@ -12458,7 +12462,7 @@ Map {
               "type": "string",
             },
             "defaultLabel": Object {
-              "type": "string",
+              "type": "node",
             },
             "deleteCardLabel": Object {
               "type": "string",
