@@ -41,3 +41,10 @@ test('check last number of step', () => {
   // Check if last step is number 5
   expect(screen.getByTitle('Fifth Step').children[0].textContent).toEqual('5');
 });
+
+test('handleChange', () => {
+  const mockOnClickItem = jest.fn();
+  render(<ProgressIndicator items={mockItems} onClickItem={mockOnClickItem} isClickable />);
+  screen.getByTestId('iot--progress-step-button-main-second-step').click();
+  expect(mockOnClickItem).toHaveBeenCalledWith('step2');
+});
