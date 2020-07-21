@@ -299,7 +299,7 @@ const StyledCustomToolbarContent = styled.div`
   &&& {
     align-items: center;
     display: flex;
-    padding: 0 1rem;
+    padding: 0 1rem; /* stylelint-disable-line declaration-property-unit-blacklist */
   }
 `;
 
@@ -440,6 +440,66 @@ export const initialState = {
       rowEditBarButtons: <div>App implementation of rowEdit bar buttons expected</div>,
     },
   },
+};
+
+export const StatefulTableWithNestedRowItems = props => {
+  const tableData = initialState.data.map((i, idx) => ({
+    ...i,
+    children:
+      idx % 4 !== 0
+        ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
+        : idx === 4
+        ? [
+            getNewRow(idx, 'A', true),
+            {
+              ...getNewRow(idx, 'B'),
+              children: [
+                getNewRow(idx, 'B-1', true),
+                {
+                  ...getNewRow(idx, 'B-2'),
+                  children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+                },
+                getNewRow(idx, 'B-3', true),
+              ],
+            },
+            getNewRow(idx, 'C', true),
+            {
+              ...getNewRow(idx, 'D', true),
+              children: [
+                getNewRow(idx, 'D-1', true),
+                getNewRow(idx, 'D-2', true),
+                getNewRow(idx, 'D-3', true),
+              ],
+            },
+          ]
+        : undefined,
+  }));
+  return (
+    <div>
+      <StatefulTable
+        {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        columns={tableColumnsFixedWidth}
+        data={tableData}
+        options={{
+          ...initialState.options,
+          hasRowNesting: true,
+          hasFilter: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+        }}
+        view={{
+          ...initialState.view,
+          filters: [],
+          toolbar: {
+            activeBar: null,
+          },
+        }}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        {...props}
+      />
+    </div>
+  );
 };
 
 storiesOf('Watson IoT/Table', module)
@@ -596,64 +656,7 @@ storiesOf('Watson IoT/Table', module)
   )
   .add(
     'Stateful Example with row nesting and fixed columns',
-    () => {
-      const tableData = initialState.data.map((i, idx) => ({
-        ...i,
-        children:
-          idx % 4 !== 0
-            ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
-            : idx === 4
-            ? [
-                getNewRow(idx, 'A', true),
-                {
-                  ...getNewRow(idx, 'B'),
-                  children: [
-                    getNewRow(idx, 'B-1', true),
-                    {
-                      ...getNewRow(idx, 'B-2'),
-                      children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
-                    },
-                    getNewRow(idx, 'B-3', true),
-                  ],
-                },
-                getNewRow(idx, 'C', true),
-                {
-                  ...getNewRow(idx, 'D', true),
-                  children: [
-                    getNewRow(idx, 'D-1', true),
-                    getNewRow(idx, 'D-2', true),
-                    getNewRow(idx, 'D-3', true),
-                  ],
-                },
-              ]
-            : undefined,
-      }));
-      return (
-        <div>
-          <StatefulTable
-            {...initialState}
-            secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-            columns={tableColumnsFixedWidth}
-            data={tableData}
-            options={{
-              ...initialState.options,
-              hasRowNesting: true,
-              hasFilter: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-            }}
-            view={{
-              ...initialState.view,
-              filters: [],
-              toolbar: {
-                activeBar: null,
-              },
-            }}
-            actions={actions}
-            lightweight={boolean('lightweight', false)}
-          />
-        </div>
-      );
-    },
+    () => <StatefulTableWithNestedRowItems />,
     {
       info: {
         text: `

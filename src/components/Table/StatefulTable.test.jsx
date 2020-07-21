@@ -8,7 +8,7 @@ import '@testing-library/jest-dom/extend-expect';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import { mockActions } from './Table.test.helpers';
-import { initialState } from './Table.story';
+import { initialState, StatefulTableWithNestedRowItems } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 describe('stateful table with real reducer', () => {
@@ -81,5 +81,12 @@ describe('stateful table with real reducer', () => {
         expect(true).toBeTruthy();
         expect(statefulTable.text()).toContain('myButtons');
       });
+  });
+  it('render nestedRows', () => {
+    render(<StatefulTableWithNestedRowItems />);
+
+    const val = screen.getByText('whiteboard can eat 2').closest('tr');
+
+    expect(val).toBeInTheDocument();
   });
 });
