@@ -34,33 +34,49 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
   return newColumnWidths;
 }
 
-function addWidthForColHiddenOnInit(currentColumnWidths, colToShowId, origColumns) {
-  // If the column to show was hidden on init it will not have a width
-  // in currentColumnWidths since it has not been rendered and measured.
-  // Therefore the width must be added from the original column definition.
-  let modified;
-  if (currentColumnWidths[colToShowId].width === undefined) {
-    modified = cloneDeep(currentColumnWidths);
-    const originalWidth = parseInt(origColumns.find(col => col.id === colToShowId).width, 10);
-    modified[colToShowId].width = originalWidth;
-  }
-  return modified || currentColumnWidths;
+function getVisibleColumns(currentColumnWidths, ordering, excludeId) {
+  return Object.values(currentColumnWidths).filter(
+    col => col.id !== excludeId && isColumnVisible(ordering, col.id)
+  );
 }
 
-function calculateWidthOnShow(curColumnWidths, ordering, colToShowId, origColumns) {
-  const currentColumnWidths = addWidthForColHiddenOnInit(curColumnWidths, colToShowId, origColumns);
-  const neededWidth = currentColumnWidths[colToShowId].width;
-  const availableCols = Object.values(currentColumnWidths).filter(col => {
-    return (
-      col.width > MIN_COLUMN_WIDTH && isColumnVisible(ordering, col.id) && col.id !== colToShowId
-    );
-  });
+function getOriginalWidthOfColumn(origColumns, colId) {
+  const orginalWidth = origColumns.find(col => col.id === colId).width;
+  return orginalWidth ? parseInt(orginalWidth, 10) : undefined;
+}
 
-  const availableWidth = getTotalWidth(availableCols);
-  const adjustedCols = availableCols.map(col => {
-    const newWidth = col.width - (col.width / availableWidth) * neededWidth;
+function getExistingColumnWidth(currentColumnWidths, origColumns, colId) {
+  const currentColumnWidth = currentColumnWidths[colId].width;
+
+  // If the column to show was hidden on init it will not have a current width
+  // since it has not been rendered and measured. Then we try to get the original width.
+  return currentColumnWidth || getOriginalWidthOfColumn(origColumns, colId);
+}
+
+function getAverageVisibleColumnWidth(visibleColumns) {
+  const totalCurrentWidth = getTotalWidth(visibleColumns);
+  return totalCurrentWidth / visibleColumns.length;
+}
+
+function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
+  const availableWidth = getTotalWidth(shrinkableColumns);
+  const shrunkenColumns = shrinkableColumns.map(col => {
+    const shrinkByWidth = (col.width / availableWidth) * widthOfColumnToShow;
+    const newWidth = col.width - shrinkByWidth;
     return { id: col.id, width: Math.round(newWidth) };
   });
+  return shrunkenColumns;
+}
+
+function calculateWidthOnShow(currentColumnWidths, ordering, colToShowId, origColumns) {
+  const visibleColumns = getVisibleColumns(currentColumnWidths, ordering, colToShowId);
+  const shrinkableColumns = visibleColumns.filter(col => col.width > MIN_COLUMN_WIDTH);
+  const widthOfColumnToShow =
+    getExistingColumnWidth(currentColumnWidths, origColumns, colToShowId) ||
+    getAverageVisibleColumnWidth(visibleColumns);
+
+  const adjustedCols = shrinkColumns(shrinkableColumns, widthOfColumnToShow);
+  adjustedCols.push({ id: colToShowId, width: Math.round(widthOfColumnToShow) });
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
 }
