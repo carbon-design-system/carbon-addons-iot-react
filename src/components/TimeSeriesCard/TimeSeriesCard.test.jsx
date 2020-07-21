@@ -17,7 +17,7 @@ const timeSeriesCardProps = {
   content: {
     series: [
       {
-        label: 'Temperature',
+        label: 'Temp',
         dataSourceId: 'temperature',
         // color: text('color', COLORS.PURPLE),
       },
@@ -319,5 +319,11 @@ describe('TimeSeriesCard', () => {
       identifier: 'group',
       scale: { Amsterdam: 'blue' },
     });
+  });
+  it('tableColumn headers should use the label, not the dataSourceId', () => {
+    render(<TimeSeriesCard {...timeSeriesCardProps} isExpanded size={CARD_SIZES.MEDIUM} />);
+
+    // the dataSourceId is temperature so this should show the appreviated label Temp instead
+    expect(screen.getByText('Temp')).toBeInTheDocument();
   });
 });

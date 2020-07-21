@@ -85,6 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
@@ -235,6 +236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
@@ -457,6 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
@@ -604,6 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
                 >
                   <button
                     className="bx--btn bx--btn--sm bx--btn--ghost bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--left bx--tooltip--align-end"
@@ -798,6 +802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
                 >
                   <div
                     className="bx--tooltip__label"
@@ -955,6 +960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
               >
                 <div
                   className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
                 >
                   <div
                     aria-atomic="true"
