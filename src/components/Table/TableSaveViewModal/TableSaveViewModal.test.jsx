@@ -24,11 +24,11 @@ describe('TableSaveViewModal', () => {
   });
 
   it('passes along all input data onSave callback', () => {
-    const { getByText, getByTestId, getByLabelText } = render(
-      <TableSaveViewModal actions={actions} open testID="my-modal" />
-    );
-    fireEvent.change(getByTestId('my-modal-form-title-input'), { target: { value: 'testval1' } });
-    fireEvent.click(getByText(i18n.saveButtonLabelText));
+    render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
+    fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
+      target: { value: 'testval1' },
+    });
+    fireEvent.click(screen.getByText(i18n.saveButtonLabelText));
 
     expect(actions.onSave).toHaveBeenCalledWith({
       isDefault: false,
@@ -36,10 +36,12 @@ describe('TableSaveViewModal', () => {
       title: 'testval1',
     });
 
-    fireEvent.change(getByTestId('my-modal-form-title-input'), { target: { value: 'testval2' } });
-    fireEvent.click(getByLabelText(i18n.defaultCheckboxLabelText));
-    fireEvent.click(getByLabelText(i18n.publicCheckboxLabelText));
-    fireEvent.click(getByText(i18n.saveButtonLabelText));
+    fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
+      target: { value: 'testval2' },
+    });
+    fireEvent.click(screen.getByLabelText(i18n.defaultCheckboxLabelText));
+    fireEvent.click(screen.getByLabelText(i18n.publicCheckboxLabelText));
+    fireEvent.click(screen.getByText(i18n.saveButtonLabelText));
 
     expect(actions.onSave).toHaveBeenCalledWith({
       isDefault: true,
@@ -49,12 +51,12 @@ describe('TableSaveViewModal', () => {
   });
 
   it('calls onChange when form elements value changes', () => {
-    const { getByTestId, getByLabelText } = render(
-      <TableSaveViewModal actions={actions} open testID="my-modal" />
-    );
-    fireEvent.change(getByTestId('my-modal-form-title-input'), { target: { value: 'testval1' } });
-    fireEvent.click(getByLabelText(i18n.defaultCheckboxLabelText));
-    fireEvent.click(getByLabelText(i18n.publicCheckboxLabelText));
+    render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
+    fireEvent.change(screen.getByTestId('my-modal-form-title-input'), {
+      target: { value: 'testval1' },
+    });
+    fireEvent.click(screen.getByLabelText(i18n.defaultCheckboxLabelText));
+    fireEvent.click(screen.getByLabelText(i18n.publicCheckboxLabelText));
 
     expect(actions.onChange).toHaveBeenCalledWith({
       title: 'testval1',
@@ -68,24 +70,20 @@ describe('TableSaveViewModal', () => {
   });
 
   it('calls onClose on cancel and close-icon click', () => {
-    const { getByRole, getByText } = render(
-      <TableSaveViewModal actions={actions} open testID="my-modal" />
-    );
-    fireEvent.click(getByText(i18n.cancelButtonLabelText));
-    fireEvent.click(getByRole('button', { name: i18n.closeIconDescription }));
+    render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
+    fireEvent.click(screen.getByText(i18n.cancelButtonLabelText));
+    fireEvent.click(screen.getByRole('button', { name: i18n.closeIconDescription }));
 
     expect(actions.onClose).toHaveBeenCalledTimes(2);
   });
 
   it('handles errors correctly', () => {
-    const { getByRole, queryByText } = render(
-      <TableSaveViewModal actions={actions} open testID="my-modal" error="my test error" />
-    );
-    expect(queryByText('my test error')).toBeInTheDocument();
+    render(<TableSaveViewModal actions={actions} open testID="my-modal" error="my test error" />);
+    expect(screen.queryByText('my test error')).toBeInTheDocument();
     expect(actions.onClearError).not.toHaveBeenCalled();
 
-    fireEvent.click(getByRole('button', { name: 'closes notification' }));
-    expect(queryByText('my test error')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'closes notification' }));
+    expect(screen.queryByText('my test error')).not.toBeInTheDocument();
     expect(actions.onClearError).toHaveBeenCalled();
   });
 
@@ -124,14 +122,14 @@ describe('TableSaveViewModal', () => {
   });
 
   it('has disabled Save unless the view title input has gotten a value', () => {
-    const { getByText } = render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
-    fireEvent.click(getByText(i18n.saveButtonLabelText));
+    render(<TableSaveViewModal actions={actions} open testID="my-modal" />);
+    fireEvent.click(screen.getByText(i18n.saveButtonLabelText));
 
     expect(actions.onSave).not.toHaveBeenCalled();
   });
 
   it('correctly sets initial form values', () => {
-    const { getByTestId } = render(
+    render(
       <TableSaveViewModal
         actions={actions}
         open
@@ -143,7 +141,7 @@ describe('TableSaveViewModal', () => {
         }}
       />
     );
-    expect(getByTestId('my-modal-form')).toHaveFormValues({
+    expect(screen.getByTestId('my-modal-form')).toHaveFormValues({
       title: 'titleVal',
       isDefault: true,
       isPublic: false,
@@ -170,7 +168,7 @@ describe('TableSaveViewModal', () => {
       return <Checkbox {...props} data-testid="custom-test-form-public-checkbox" />;
     };
 
-    const { getByTestId } = render(
+    render(
       <TableSaveViewModal
         actions={actions}
         open
@@ -190,16 +188,16 @@ describe('TableSaveViewModal', () => {
         }}
       />
     );
-    expect(getByTestId('custom-test-modal')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-title-input')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-description-container')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-default-checkbox')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-public-checkbox')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-modal')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-title-input')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-description-container')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-default-checkbox')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-public-checkbox')).toBeInTheDocument();
   });
 
   it('can be customised with props overrides', () => {
-    const { getByTestId } = render(
+    render(
       <TableSaveViewModal
         actions={actions}
         open
@@ -221,20 +219,18 @@ describe('TableSaveViewModal', () => {
         }}
       />
     );
-    expect(getByTestId('custom-test-modal')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-title-input')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-description-container')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-default-checkbox')).toBeInTheDocument();
-    expect(getByTestId('custom-test-form-public-checkbox')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-modal')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-title-input')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-description-container')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-default-checkbox')).toBeInTheDocument();
+    expect(screen.getByTestId('custom-test-form-public-checkbox')).toBeInTheDocument();
   });
 
   it('shows a description text', () => {
-    const { getByText } = render(
-      <TableSaveViewModal actions={actions} open viewDescription="test view description" />
-    );
+    render(<TableSaveViewModal actions={actions} open viewDescription="test view description" />);
 
-    expect(getByText('test view description')).toBeInTheDocument();
+    expect(screen.getByText('test view description')).toBeInTheDocument();
   });
 
   it('can be opened and closed', () => {

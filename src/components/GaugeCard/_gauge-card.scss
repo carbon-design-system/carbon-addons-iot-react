@@ -32,7 +32,7 @@
   stroke-dasharray: 0 var(--stroke-dash-array);
   transform: rotate(-90deg);
   transform-origin: center;
-  transition: all 0.2s ease-in;
+  transition: all $duration--moderate-01 ease-in;
 
   .#{$iot-prefix}--gauge__loaded & {
     stroke-dasharray: var(--stroke-dash) var(--stroke-dash-array);

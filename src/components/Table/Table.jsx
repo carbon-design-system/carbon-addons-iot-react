@@ -5,6 +5,7 @@ import pick from 'lodash/pick';
 import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import classnames from 'classnames';
+import { useLangDirection } from 'use-lang-direction';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
@@ -312,6 +313,7 @@ const Table = props => {
     ...others
   } = merge({}, defaultProps(props), props);
   const { maxPages, ...paginationProps } = view.pagination;
+  const langDir = useLangDirection();
 
   const [, forceUpdateCellTextWidth] = useState(0);
 
@@ -513,6 +515,7 @@ const Table = props => {
             />
           ) : visibleData && visibleData.length ? (
             <TableBody
+              langDir={langDir}
               tableId={id}
               rows={visibleData}
               locale={locale}

@@ -15,18 +15,18 @@ describe('PageWizard', () => {
     const mocks = {
       onClearError: jest.fn(),
     };
-    const { getByText, queryByText, getAllByTitle } = render(
+    render(
       <PageWizard error="My Custom Error" currentStepId="step1" {...mocks} i18n={i18n}>
         {content}
       </PageWizard>
     );
     // The error should show
-    expect(getByText('My Custom Error')).toBeDefined();
+    expect(screen.getByText('My Custom Error')).toBeDefined();
     // The first close is the SVG
-    fireEvent.click(getAllByTitle(i18n.close)[0]);
+    fireEvent.click(screen.getAllByTitle(i18n.close)[0]);
     // The error should go away
     expect(mocks.onClearError).toHaveBeenCalledTimes(1);
-    expect(queryByText('My Custom Error')).toBeNull();
+    expect(screen.queryByText('My Custom Error')).toBeNull();
   });
 
   it('currentStepId prop', () => {
@@ -43,14 +43,14 @@ describe('PageWizard', () => {
       next: 'Next',
       cancel: 'Cancel',
     };
-    const { getByText } = render(
+    render(
       <PageWizard currentStepId="step1" {...mocks} i18n={i18n}>
         {content}
       </PageWizard>
     );
-    fireEvent.click(getByText(i18n.cancel));
+    fireEvent.click(screen.getByText(i18n.cancel));
     expect(mocks.onClose).toHaveBeenCalledTimes(1);
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
@@ -63,14 +63,14 @@ describe('PageWizard', () => {
       back: 'Back',
       next: 'Next',
     };
-    const { getByText } = render(
+    render(
       <PageWizard currentStepId="step2" {...mocks} i18n={i18n}>
         {content}
       </PageWizard>
     );
-    fireEvent.click(getByText(i18n.back));
+    fireEvent.click(screen.getByText(i18n.back));
     expect(mocks.onBack).toHaveBeenCalledTimes(1);
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 
@@ -83,14 +83,14 @@ describe('PageWizard', () => {
       back: 'Back',
       submit: 'Submit',
     };
-    const { getByText } = render(
+    render(
       <PageWizard currentStepId="step3" {...mocks} i18n={i18n}>
         {content}
       </PageWizard>
     );
-    fireEvent.click(getByText(i18n.back));
+    fireEvent.click(screen.getByText(i18n.back));
     expect(mocks.onBack).toHaveBeenCalledTimes(1);
-    fireEvent.click(getByText(i18n.submit));
+    fireEvent.click(screen.getByText(i18n.submit));
     expect(mocks.onSubmit).toHaveBeenCalledTimes(1);
   });
 
@@ -104,7 +104,7 @@ describe('PageWizard', () => {
       next: 'Next',
       cancel: 'Cancel',
     };
-    const { getByTestId, getByText } = render(
+    render(
       <PageWizard currentStepId="step1" {...mocks} i18n={i18n} isProgressIndicatorVertical={false}>
         <StepValidation id="step1" label="Step with validation" />
         {content[1]}
@@ -112,13 +112,13 @@ describe('PageWizard', () => {
       </PageWizard>
     );
     // validation should fail if only first name is entered
-    fireEvent.change(getByTestId('first-name'), { target: { value: 'First Name' } });
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.change(screen.getByTestId('first-name'), { target: { value: 'First Name' } });
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(0);
 
     // validation should succeed if both fields are entered
-    fireEvent.change(getByTestId('last-name'), { target: { value: 'Last Name' } });
-    fireEvent.click(getByText(i18n.next));
+    fireEvent.change(screen.getByTestId('last-name'), { target: { value: 'Last Name' } });
+    fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
   });
 

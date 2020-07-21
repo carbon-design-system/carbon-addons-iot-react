@@ -7,8 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
-import Delete from '@carbon/icons-react/lib/delete/16';
-import { Add20 } from '@carbon/icons-react';
+import { Add20, TrashCan16 } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -370,7 +369,7 @@ export const initialState = {
       },
       {
         id: 'delete',
-        renderIcon: Delete,
+        renderIcon: TrashCan16,
         labelText: 'Delete',
         isOverflow: true,
         iconDescription: 'Delete',
@@ -434,7 +433,7 @@ export const initialState = {
         {
           id: 'delete',
           labelText: 'Delete',
-          renderIcon: Delete,
+          renderIcon: TrashCan16,
           iconDescription: 'Delete',
         },
       ],
@@ -867,20 +866,20 @@ storiesOf('Watson IoT/Table', module)
       info: {
         text: `
 
-        This table has editable rows. It is wrapped in a component that handles the state of the table data and 
-        the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit' 
-        functionality with your own data store. 
-        
-        When the 'hasRowEdit' is true an edit icon will be shown in the 
+        This table has editable rows. It is wrapped in a component that handles the state of the table data and
+        the active bar to serve as a simple example of how to use the 'hasRowEdit' and the 'hasSingleRowEdit'
+        functionality with your own data store.
+
+        When the 'hasRowEdit' is true an edit icon will be shown in the
         table toolbar. Clicking the edit icon should enable row edit for all rows, but it requires the
         columns to have an 'editDataFunction' prop defined. For StatefulTable this is handled automatically, for normal tables it
         should be handled manually as shown in this story.
 
-        The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true. 
-        Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have 
-        provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with 
+        The 'hasSingleRowEdit' must be combined with a row action that has the "isEdit" property set to true.
+        Clicking that row action shoulf turn that specific row editable, and it also requires the columns to have
+        provided a 'editDataFunction'. For StatefulTable the row action state is automatically updated with
         isEditMode:true but for normal tables it should be handled manually as shown in this story.
-    
+
 
         ~~~js
 
@@ -1039,7 +1038,7 @@ storiesOf('Watson IoT/Table', module)
             {
               id: 'delete',
               labelText: 'Delete',
-              renderIcon: Delete,
+              renderIcon: TrashCan16,
               iconDescription: 'Delete Item',
             },
           ],
@@ -1153,7 +1152,7 @@ storiesOf('Watson IoT/Table', module)
             },
             {
               id: 'delete',
-              renderIcon: Delete,
+              renderIcon: TrashCan16,
               iconDescription: 'Delete',
               labelText: 'Delete',
               isOverflow: true,
@@ -1533,13 +1532,14 @@ storiesOf('Watson IoT/Table', module)
   .add('with zebra striping', () => (
     <Table useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
   ))
-  .add('with resize and initial column widths on Simple Stateful and row selection', () => (
+  .add('with resize and initial column widths on Simple Stateful with row selection & sort', () => (
     <StatefulTable
       {...initialState}
       actions={actions}
       lightweight={boolean('lightweight', false)}
       columns={tableColumns.map((i, idx) => ({
         width: idx % 2 === 0 ? '100px' : '200px',
+        isSortable: true,
         ...i,
       }))}
       options={{

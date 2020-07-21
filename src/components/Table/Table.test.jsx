@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
-import { Add20 } from '@carbon/icons-react';
+import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -87,6 +87,22 @@ const tableData = Array(20)
       select: selectData[idx % 3].id,
       number: idx * idx,
     },
+    rowActions: [
+      {
+        id: 'drilldown',
+        renderIcon: ArrowRight16,
+        iconDescription: 'Drill in',
+        labelText: 'Drill in',
+        isOverflow: true,
+      },
+      {
+        id: 'Add',
+        renderIcon: Add16,
+        iconDescription: 'Add',
+        labelText: 'Add',
+        isOverflow: true,
+      },
+    ],
   }));
 
 const largeTableData = Array(100)
@@ -158,6 +174,7 @@ describe('Table', () => {
   const options = {
     hasRowExpansion: true,
     hasRowCountInHeader: true,
+    hasRowActions: true,
   };
   const options2 = {
     hasRowExpansion: true,
@@ -337,18 +354,18 @@ describe('Table', () => {
   });
 
   it('click should trigger onDownload', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar actions={mockActions.toolbar} options={options2} tableState={tableState} />
     );
 
-    const downloadButton = getByTestId('download-button');
+    const downloadButton = screen.getByTestId('download-button');
     expect(downloadButton).toBeTruthy();
     fireEvent.click(downloadButton);
     expect(mockActions.toolbar.onDownloadCSV).toHaveBeenCalledTimes(1);
   });
 
   it('click should trigger onColumnSelection', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasColumnSelection: true }}
@@ -356,14 +373,14 @@ describe('Table', () => {
       />
     );
 
-    const columnSelectButton = getByTestId('column-selection-button');
+    const columnSelectButton = screen.getByTestId('column-selection-button');
     expect(columnSelectButton).toBeTruthy();
     fireEvent.click(columnSelectButton);
     expect(mockActions.toolbar.onToggleColumnSelection).toHaveBeenCalledTimes(1);
   });
 
   it('click should trigger onFilter', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasFilter: true }}
@@ -371,14 +388,14 @@ describe('Table', () => {
       />
     );
 
-    const filterButton = getByTestId('filter-button');
+    const filterButton = screen.getByTestId('filter-button');
     expect(filterButton).toBeTruthy();
     fireEvent.click(filterButton);
     expect(mockActions.toolbar.onToggleFilter).toHaveBeenCalledTimes(1);
   });
 
   it('mouse click should trigger rowEdit toolbar', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasRowEdit: true }}
@@ -386,7 +403,7 @@ describe('Table', () => {
       />
     );
 
-    const rowEditButton = getByTestId('row-edit-button');
+    const rowEditButton = screen.getByTestId('row-edit-button');
     expect(rowEditButton).toBeTruthy();
 
     fireEvent.click(rowEditButton);
@@ -394,7 +411,7 @@ describe('Table', () => {
   });
 
   it('rowEdit toolbar should contain external rowEditBarButtons', () => {
-    const { getByTestId } = render(
+    render(
       <TableToolbar
         actions={mockActions.toolbar}
         options={{ hasRowEdit: true }}
@@ -406,7 +423,7 @@ describe('Table', () => {
       />
     );
 
-    const rowEditBarButton = getByTestId('row-edit-bar-button');
+    const rowEditBarButton = screen.getByTestId('row-edit-bar-button');
     expect(rowEditBarButton).toBeTruthy();
   });
 
@@ -433,26 +450,17 @@ describe('Table', () => {
     expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
     expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
 
-    const wrapper2 = mount(
-      <Table
-        columns={tableColumns}
-        data={tableData}
-        actions={mockActions}
-        options={{
-          hasSearch: true,
-        }}
-        view={{
-          toolbar: {
-            search: {
-              defaultValue: 'ferrari',
-            },
-          },
-        }}
-      />
-    );
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: 'ferrari' } } } });
+    wrapper.update();
 
-    expect(wrapper2.find('.bx--search-input').prop('value')).toEqual('ferrari');
-    expect(wrapper2.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('ferrari');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="false"`);
+
+    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
+    wrapper.update();
+
+    expect(wrapper.find('.bx--search-input').prop('value')).toEqual('');
+    expect(wrapper.find('.bx--search-input').html()).toContain(`aria-hidden="true"`);
   });
 
   it('cells should always wrap by default', () => {
@@ -528,6 +536,24 @@ describe('Table', () => {
     expect(wrapper3.find(TableHead).prop('options').truncateCellText).toBeFalsy();
     expect(wrapper3.find(TableBodyRow).prop('options').wrapCellText).toEqual('auto');
     expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('auto');
+  });
+
+  it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
+    // Should render correctly by default even if no lang attribute exist
+    const { unmount, rerender } = render(
+      <Table columns={tableColumns} data={[tableData[0]]} options={options} />
+    );
+    await fireEvent.click(screen.getByTestId('Table-row-0-row-actions-cell-overflow'));
+    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
+
+    document.documentElement.setAttribute('dir', 'rtl');
+
+    rerender(<Table columns={tableColumns} data={[tableData[1]]} options={options} />);
+    await fireEvent.click(screen.getByTestId('Table-row-1-row-actions-cell-overflow'));
+    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
+
+    // unmounting to be sure to clean up the documentElement
+    unmount();
   });
 
   it('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {

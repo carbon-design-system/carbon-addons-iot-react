@@ -86,19 +86,28 @@ Components should have their own sass partial in which the corresponding styles 
 
 Do not use `styled-components`. Any components using it should be refactored to the sass partial approach. This helps promote consistency with the Carbon Design System.
 
-## Testing changes
+## Testing
 
 An automated unit test bucket runs when you execute `yarn test:base`.
 
 Before every push, the test suite is ran automatically and takes snapshots of all of the current component stories. If you have made changes to a component, our tests will likely fail because the snapshots will no longer match. You will be prevented from pushing to git until you fix this error.
 
-## Updating snapshots
+### Writing tests
+
+The items below are high level points of guidance for writing tests:
+
+- Use the `@testing-library` family of packages instead of `enzyme`. Helping to refactor away from `enzyme` where possible is appreciated.
+- Prefer queries that reflect the experience of visual/mouse users as well as those that use assistive technology, [read more from the `@testing-library` docs](https://testing-library.com/docs/guide-which-query)
+  - `getByRole`, `getByLabelText`, `getByPlaceholderText`, `getByText`, `getByDisplayValue`
+- Write tests using queries directly from the `screen` object rather than destructuring them from `render` result, [read more from the `prefer-screen-queries` eslint rule](https://github.com/testing-library/eslint-plugin-testing-library/blob/master/docs/rules/prefer-screen-queries.md)
+
+### Updating snapshots
 
 After the unit test engine has detected a snapshot difference, all snapshots can be updated by running `yarn test:update`.
 
 _Do not blindly update snapshots to pass the testcase._ Make sure the detected change is intentional and not unintentional before updating the snapshot.
 
-## Minimum code coverage
+### Minimum code coverage
 
 Code coverage thresholds are enforced in the repository. If you add code but do not cover it with unit tests, the git push may fail because the coverage fell to a level under the required code coverage thresholds. Please add storybook stories or unit tests to cover your new code before checking in. _Do not reduce the code coverage threshold to get around this constraint._
 
