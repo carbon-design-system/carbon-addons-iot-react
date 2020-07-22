@@ -32,6 +32,19 @@ const exampleTwo = {
     },
   ],
 };
+const exampleThree = {
+  source: 'test1.js',
+  errored: true,
+  warnings: [
+    {
+      severity: 'error',
+      line: 21,
+      column: 33,
+      rule: 'declaration-property-unit-blacklist',
+      text: 'Unexpected value in property "color"',
+    },
+  ],
+};
 
 describe('sassMsgFormatter', () => {
   it('filters for errors', () => {
@@ -40,6 +53,14 @@ describe('sassMsgFormatter', () => {
     expect(formatter.filterForErrors({ errored: true })).toBeTruthy();
     expect(formatter.filterForErrors({ errored: false })).toBeFalsy();
     expect(formatter.filterForErrors({ errored: null })).toBeFalsy();
+  });
+  it('filters duplicates', () => {
+    expect(formatter.filterDuplicates([exampleOne, exampleOne])).toMatchObject([exampleOne]);
+    expect(formatter.filterDuplicates([exampleOne, exampleTwo])).toMatchObject([
+      exampleOne,
+      exampleTwo,
+    ]);
+    expect(formatter.filterDuplicates([exampleOne, exampleThree])).toMatchObject([exampleOne]);
   });
   it('generates error icons', () => {
     // expect(generateErrorIcon('error')).toEqual(ERROR('ERROR'));
