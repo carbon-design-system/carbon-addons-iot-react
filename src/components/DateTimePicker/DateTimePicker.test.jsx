@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
-import { render, fireEvent } from '@testing-library/react';
-import { screen } from '@testing-library/dom';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom/extend-expect';
 import DateTimePicker, {
