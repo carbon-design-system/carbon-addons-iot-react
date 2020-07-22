@@ -17,7 +17,10 @@ export const useResize = resizeRef => {
    * we need to conditionally set this hook for now until it is fixed in the library
    */
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  useResizeObserver(resizeRef);
+  useResizeObserver({
+    useDefaults: false,
+    ref: resizeRef,
+  });
 
   return resizeRef;
 };
