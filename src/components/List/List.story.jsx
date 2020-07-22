@@ -363,6 +363,7 @@ storiesOf('Watson IoT Experimental/List', module)
               <Checkbox
                 id={`${team}-checkbox`}
                 name={team}
+                labelText={`${team}`}
                 onClick={e => handleCheckboxChange(e, nestedItems, team)}
                 checked={selectedIds.some(id => team === id)}
                 indeterminate={
@@ -383,6 +384,7 @@ storiesOf('Watson IoT Experimental/List', module)
                 <Checkbox
                   id={`${team}-${player}-checkbox`}
                   name={player}
+                  labelText={`${player}`}
                   onClick={e => {
                     handleCheckboxChange(e, nestedItems, `${team}-${player}`);
                   }}
@@ -402,6 +404,7 @@ storiesOf('Watson IoT Experimental/List', module)
               <Checkbox
                 id={`${team}-checkbox`}
                 name={team}
+                labelText={`${team}`}
                 onClick={e => handleCheckboxChange(e, nestedItems, team)}
                 checked={selectedIds.some(id => team === id)}
                 indeterminate={
@@ -422,6 +425,7 @@ storiesOf('Watson IoT Experimental/List', module)
                 <Checkbox
                   id={`${team}-${player}-checkbox`}
                   name={player}
+                  labelText={`${player}`}
                   onClick={e => {
                     handleCheckboxChange(e, nestedItems, `${team}-${player}`);
                   }}
