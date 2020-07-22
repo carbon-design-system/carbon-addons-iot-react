@@ -3,7 +3,6 @@ const chalk = require('chalk');
 /**
  * @constant
  */
-const TITLE = chalk.bgYellow;
 const ERROR = chalk.bold.red;
 const WARNING = chalk.yellow;
 const URL = chalk.underline.cyan;
