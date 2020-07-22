@@ -169,9 +169,9 @@ class ComposedModal extends React.Component {
         className={classnames(
           className,
           {
-            [`${iotPrefix}--composed-modal--large`] : isLarge,
+            [`${iotPrefix}--composed-modal--large`]: isLarge,
           },
-          `${iotPrefix}--composed-modal`,
+          `${iotPrefix}--composed-modal`
         )}
       >
         <ModalHeader

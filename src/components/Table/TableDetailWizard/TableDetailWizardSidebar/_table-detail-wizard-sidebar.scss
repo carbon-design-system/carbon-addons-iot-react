@@ -6,6 +6,6 @@
   border-right: 1px solid #dadada8c;
 
   .#{$prefix}--progress {
-    padding: 1rem 1rem 1rem 4rem;
+    padding: $spacing-05 $spacing-05 $spacing-05 ($spacing-09 + $spacing-05);
   }
 }

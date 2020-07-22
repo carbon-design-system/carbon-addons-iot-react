@@ -45,7 +45,7 @@ html[dir='rtl'] {
 }
 
 .#{$iot-prefix}--empty-table--table-row {
-  height: calc(100% - 3rem);
+  height: calc(100% - $spacing-09);
   &:hover td {
     background: inherit;
   }
@@ -54,14 +54,14 @@ html[dir='rtl'] {
     align-items: center;
     justify-content: middle;
     flex-direction: column;
-    padding: 3rem;
+    padding: $spacing-09;
 
     svg {
-      margin: 1rem;
+      margin: $spacing-05;
     }
 
     & > * {
-      margin: 0.5rem;
+      margin: $spacing-03;
     }
   }
 

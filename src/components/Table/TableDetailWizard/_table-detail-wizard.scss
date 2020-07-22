@@ -11,8 +11,8 @@
 
   .#{$prefix}--inline-notification {
     max-width: none;
-    width: calc(100% - 2rem);
-    margin: 1rem;
+    width: calc(100% - $spacing-07);
+    margin: $spacing-05;
   }
 }
 

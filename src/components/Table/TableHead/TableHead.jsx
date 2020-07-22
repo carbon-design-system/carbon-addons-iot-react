@@ -320,14 +320,11 @@ const TableHead = ({
               translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
               sortDirection={hasSort ? sort.direction : 'NONE'}
               align={align}
-              className={classnames(
-                `table-header-label-${align}`,
-                {
-                  [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
-                  'table-header-sortable': matchingColumnMeta.isSortable,
-                  [`${iotPrefix}--table-header-resize`]: hasResize,
-                }
-              )}
+              className={classnames(`table-header-label-${align}`, {
+                [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
+                'table-header-sortable': matchingColumnMeta.isSortable,
+                [`${iotPrefix}--table-header-resize`]: hasResize,
+              })}
             >
               <TableCellRenderer
                 wrapText={wrapCellText}

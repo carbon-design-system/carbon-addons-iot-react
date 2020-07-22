@@ -3,7 +3,7 @@
   display: inline-block;
   position: relative;
   input {
-    padding-right: 2.5rem;
+    padding-right: $spacing-08;
   }
 
   .#{$prefix}--list-box__selection {
@@ -41,10 +41,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-right: 2rem;
+    padding-right: $spacing-07;
   }
   .#{$prefix}--form-item input:placeholder-shown {
-    padding-right: 0.5rem;
+    padding-right: $spacing-03;
   }
 
   .#{$prefix}--tag--filter {
