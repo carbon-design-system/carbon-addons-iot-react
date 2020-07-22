@@ -541,19 +541,17 @@ storiesOf('Watson IoT/Table', module)
             toolbar: {
               activeBar: 'filter',
               customToolbarContent: (
-                <StyledCustomToolbarContent>
-                  <FlyoutMenu
-                    direction={FlyoutMenuDirection.BottomEnd}
-                    buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
-                    iconDescription="Helpful description"
-                    triggerId="test-flyout-id"
-                    transactional={boolean('Flyout Transactional', true)}
-                    onApply={action('Flyout Menu Apply Clicked')}
-                    onCancel={action('Flyout Menu Cancel Clicked')}
-                  >
-                    Example Flyout Content
-                  </FlyoutMenu>
-                </StyledCustomToolbarContent>
+                <FlyoutMenu
+                  direction={FlyoutMenuDirection.BottomEnd}
+                  buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
+                  iconDescription="Helpful description"
+                  triggerId="test-flyout-id"
+                  transactional={boolean('Flyout Transactional', true)}
+                  onApply={action('Flyout Menu Apply Clicked')}
+                  onCancel={action('Flyout Menu Cancel Clicked')}
+                >
+                  Example Flyout Content
+                </FlyoutMenu>
               ),
             },
           }}

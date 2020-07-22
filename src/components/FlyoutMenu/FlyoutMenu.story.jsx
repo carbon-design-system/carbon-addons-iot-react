@@ -7,6 +7,8 @@ import {
   ShareKnowledge16 as ShareKnowledge,
 } from '@carbon/icons-react';
 
+import Button from '../Button/Button';
+
 import FlyoutMenu, { FlyoutMenuDirection } from './FlyoutMenu';
 
 const buttonSizes = {
@@ -15,10 +17,18 @@ const buttonSizes = {
   Small: 'small',
 };
 
-const CustomFooter = () => {
+const CustomFooter = ({ setIsOpen, isOpen }) => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', height: 64 }}>
-      I&apos;m a custom footer!
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        height: 64,
+        'justify-content': 'space-between',
+      }}
+    >
+      I&apos;m a custom footer! &nbsp;
+      <Button onClick={() => setIsOpen(!isOpen)}>Confirm</Button>
     </div>
   );
 };
@@ -35,7 +45,7 @@ storiesOf('Watson IoT Experimental/Flyout Menu', module)
         iconDescription="Helpful description"
         passive={boolean('Passive Flyout', false)}
         triggerId="test-trigger-id-2"
-        light={boolean('Light Mode', true)}
+        light={boolean('Light Mode', false)}
         menuOffset={{ top: number('Menu Offset top', 0), left: number('Menu offset left', 0) }}
         onCancel={action('On Cancel Clicked')}
         onApply={action('On Apply Clicked')}
@@ -79,12 +89,13 @@ storiesOf('Watson IoT Experimental/Flyout Menu', module)
         disabled={boolean('Disabled', false)}
         iconDescription="Helpful description"
         passive={false}
-        customFooter={<CustomFooter />}
+        customFooter={CustomFooter}
         triggerId="test-trigger-id-2"
         light={boolean('Light Mode', true)}
         onCancel={action('On Cancel Clicked')}
         onApply={action('On Apply Clicked')}
-        direction={select('Flyout direction', FlyoutMenuDirection, FlyoutMenuDirection.BottomStart)}
+        defaultOpen
+        direction={FlyoutMenuDirection.BottomStart}
       >
         <div>
           <h2>This is a header</h2>

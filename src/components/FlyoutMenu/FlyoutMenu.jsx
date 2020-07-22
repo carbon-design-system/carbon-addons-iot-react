@@ -1,5 +1,5 @@
 import React, { useRef, useState, useLayoutEffect } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 
@@ -36,14 +36,13 @@ const getTooltipDirection = direction => {
   }
 };
 
-const borderWidth = 1;
-
 const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
   let topOffset = 0;
   let leftOffset = 0;
 
   const caretWidth = 16;
   const caretHeight = 14;
+  const borderWidth = 1;
 
   const tooltipWidth = tooltipContentRef.current
     ? tooltipContentRef.current.getBoundingClientRect().width
@@ -57,37 +56,41 @@ const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
   let rtlOffset = buttonWidth;
 
   switch (direction) {
-    case FlyoutMenuDirection.BottomEnd:
-      topOffset = -caretHeight;
-      leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
-      break;
-    case FlyoutMenuDirection.TopStart:
-      leftOffset = caretWidth + tooltipWidth / 2 + borderWidth;
-      topOffset = caretHeight;
-      break;
-    case FlyoutMenuDirection.TopEnd:
-      leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth - borderWidth;
-      topOffset = caretHeight;
-      break;
     case FlyoutMenuDirection.LeftStart:
       topOffset = tooltipHeight / 2 + caretHeight - borderWidth;
       rtlOffset = 0;
       break;
+
+    // off
     case FlyoutMenuDirection.LeftEnd:
-      topOffset = -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth;
+      topOffset = -tooltipHeight / 2 + caretHeight + caretWidth - borderWidth - (48 - buttonWidth);
       rtlOffset = 0;
       break;
     case FlyoutMenuDirection.RightStart:
       topOffset = tooltipHeight / 2 + borderWidth;
-      rtlOffset = 0;
+      rtlOffset = -rtlOffset;
       break;
+
+    // off
     case FlyoutMenuDirection.RightEnd:
-      topOffset = caretWidth - tooltipHeight / 2 + borderWidth;
-      rtlOffset = 0;
+      topOffset = caretWidth - tooltipHeight / 2 + borderWidth - (48 - buttonWidth);
+      rtlOffset = -rtlOffset;
+      break;
+    case FlyoutMenuDirection.TopStart:
+      leftOffset = caretWidth + tooltipWidth / 2;
+      topOffset = caretHeight;
+      break;
+    case FlyoutMenuDirection.TopEnd:
+      leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
+      topOffset = caretHeight;
+      break;
+    case FlyoutMenuDirection.BottomEnd:
+      topOffset = -caretHeight;
+      leftOffset = -tooltipWidth / 2 - caretWidth + buttonWidth;
       break;
     default:
       // Bottom Start
-      leftOffset = caretWidth + tooltipWidth / 2 + borderWidth;
+      leftOffset = caretWidth + tooltipWidth / 2;
       topOffset = -caretHeight;
   }
 
@@ -101,6 +104,41 @@ const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
   };
 };
 
+// No need to do prop checks since these are alredy done in flyout
+// eslint-disable-next-line  react/prop-types
+const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
+  <>
+    <Button
+      className={`${iotPrefix}--flyout-menu__cancel`}
+      kind="secondary"
+      testId="flyout-menu-cancel"
+      onClick={() => {
+        setIsOpen(false);
+
+        if (onCancel) {
+          onCancel();
+        }
+      }}
+      aria-label={i18n.cancelButtonText}
+    >
+      {i18n.cancelButtonText}
+    </Button>
+    <Button
+      className={`${iotPrefix}--flyout-menu__submit`}
+      aria-label={i18n.applyButtonText}
+      testId="flyout-menu-apply"
+      onClick={() => {
+        setIsOpen(false);
+        if (onApply) {
+          onApply();
+        }
+      }}
+    >
+      {i18n.applyButtonText}
+    </Button>
+  </>
+);
+
 const FlyoutMenu = ({
   buttonSize,
   direction,
@@ -113,12 +151,14 @@ const FlyoutMenu = ({
   light,
   renderIcon,
   testId,
+  tooltipId,
+  triggerId,
+  tabIndex,
   tooltipClassName,
   passive,
-  customFooter,
+  customFooter: CustomFooter,
   onApply,
   onCancel,
-  ...props
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const [justOpened, setJustOpened] = useState(false);
@@ -147,52 +187,28 @@ const FlyoutMenu = ({
     [isOpen, justOpened, tooltipRef]
   );
 
-  const defaultFooter =
-    passive === false ? (
-      <div className={`${iotPrefix}-flyout-menu__bottom-container`}>
-        <Button
-          className={`${iotPrefix}-flyout-menu__cancel`}
-          kind="secondary"
-          testId="flyout-menu-cancel"
-          onClick={() => {
-            setIsOpen(false);
-
-            if (onCancel) {
-              onCancel();
-            }
-          }}
-          aria-label={i18n.cancelButtonText}
-        >
-          {i18n.cancelButtonText}
-        </Button>
-        <Button
-          className={`${iotPrefix}-flyout-menu__submit`}
-          aria-label={i18n.applyButtonText}
-          testId="flyout-menu-apply"
-          onClick={() => {
-            setIsOpen(false);
-
-            if (onApply) {
-              onApply();
-            }
-          }}
-        >
-          {i18n.applyButtonText}
-        </Button>
-      </div>
-    ) : null;
-
   const tooltipDirection = getTooltipDirection(direction);
-
+  const Footer = CustomFooter ? (
+    <CustomFooter setIsOpen={setIsOpen} isOpen={isOpen} />
+  ) : (
+    <DefaultFooter setIsOpen={setIsOpen} onCancel={onCancel} onApply={onApply} i18n={i18n} />
+  );
   return (
-    <div ref={buttonRef} className={classNames([`${iotPrefix}-flyout-menu`], tooltipDirection)}>
+    <div
+      ref={buttonRef}
+      className={classnames(
+        [`${iotPrefix}--flyout-menu`],
+        `${iotPrefix}--flyout-menu__${tooltipDirection}`,
+        {
+          [`${iotPrefix}--flyout-menu__light`]: light,
+          [`${iotPrefix}--flyout-menu__open`]: isOpen,
+        }
+      )}
+    >
       <Button
         aria-label={iconDescription}
         iconDescription={iconDescription}
-        className={classNames([`${iotPrefix}-flyout-menu__trigger-button`], {
-          [`${iotPrefix}-flyout-menu__light`]: light,
-          [`${iotPrefix}-flyout-menu--open`]: isOpen,
-        })}
+        className={`${iotPrefix}--flyout-menu--trigger-button`}
         disabled={disabled}
         hasIconOnly
         kind="ghost"
@@ -203,43 +219,37 @@ const FlyoutMenu = ({
         }}
       />
       {
-        <div className={`${iotPrefix}-flyout-menu--tooltip-anchor`}>
+        <div className={`${iotPrefix}--flyout-menu--tooltip-anchor`}>
           <Tooltip
             disabled={disabled}
-            className={classNames(tooltipClassName, [`${iotPrefix}-flyout-menu--body`], {
-              [`${iotPrefix}-flyout-menu__light`]: light,
-            })}
+            className={classnames(
+              tooltipClassName,
+              `${iotPrefix}--flyout-menu--body`,
+              `${iotPrefix}--flyout-menu--body__${direction}`,
+              {
+                [`${iotPrefix}--flyout-menu--body__light`]: light,
+                [`${iotPrefix}--flyout-menu--body__open`]: isOpen,
+                [`${iotPrefix}--flyout-menu--body__${buttonSize}`]: buttonSize !== 'default',
+              }
+            )}
             iconDescription={iconDescription}
             data-testid={testId}
             showIcon={false}
             open={isOpen}
             direction={tooltipDirection}
             menuOffset={() => getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)}
-            {...props}
+            tooltipId={tooltipId}
+            triggerId={triggerId}
+            tabIndex={tabIndex}
           >
             <div ref={tooltipContentRef}>
               <div style={{ overflow: 'scroll' }} ref={tooltipRef} tabIndex={-1} />
               {children}
 
-              {customFooter === null ? (
-                defaultFooter
-              ) : (
-                <div className={`${iotPrefix}-flyout-menu__bottom-container-custom`}>
-                  {customFooter}
-                </div>
+              {!passive && (
+                <div className={`${iotPrefix}--flyout-menu__bottom-container`}>{Footer}</div>
               )}
             </div>
-            <div
-              className={classNames(direction, [`${iotPrefix}-flyout-menu__shadow-block`], {
-                [`${iotPrefix}-flyout-menu__light`]: light,
-              })}
-              style={{
-                width: buttonRef.current
-                  ? buttonRef.current.getBoundingClientRect().width - borderWidth * 2
-                  : 0,
-                height: buttonRef.current ? buttonRef.current.getBoundingClientRect().height : 0,
-              }}
-            />
           </Tooltip>
         </div>
       }
@@ -316,9 +326,9 @@ const propTypes = {
   passive: PropTypes.bool,
 
   /**
-   * Content to be rendered in place of the normal footer
+   * Content to be rendered in place of the normal footer (ie. MyComponent).
    */
-  customFooter: PropTypes.node,
+  customFooter: PropTypes.elementType,
 
   /**
    * On Cancel button callback
