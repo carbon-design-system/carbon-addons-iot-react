@@ -1,29 +1,34 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import FlyoutMenu, { FlyoutMenuDirection } from './FlyoutMenu';
 
 describe('FlyoutMenu', () => {
   it('Renders an open flyout menu with a default footer', () => {
-    const { queryByText } = render(
+    render(
       <FlyoutMenu defaultOpen iconDescription="Helpful description" triggerId="flyout-test" />
     );
 
-    const applyButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
-    const cancelButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
+    const applyButtonTest = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const cancelButtonTest = screen.queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     expect(applyButtonTest).toBeTruthy();
     expect(cancelButtonTest).toBeTruthy();
   });
 
   it('Renders an open passive menu', () => {
-    const { queryByText } = render(
-      <FlyoutMenu open passive iconDescription="Helpful description" triggerId="flyout-test" />
+    render(
+      <FlyoutMenu
+        openDefault
+        passive
+        iconDescription="Helpful description"
+        triggerId="flyout-test"
+      />
     );
 
-    const applyButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
-    const cancelButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
+    const applyButtonTest = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const cancelButtonTest = screen.queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     expect(applyButtonTest).toBeNull();
     expect(cancelButtonTest).toBeNull();
@@ -31,38 +36,43 @@ describe('FlyoutMenu', () => {
 
   it('Renders an open menu with content', () => {
     const testText = 'this is a test';
-    const { queryByText } = render(
-      <FlyoutMenu open passive iconDescription="Helpful description" triggerId="flyout-test">
+    render(
+      <FlyoutMenu
+        defaultOpen
+        passive
+        iconDescription="Helpful description"
+        triggerId="flyout-test"
+        customFooter={() => <div>This is it</div>}
+      >
         <div>{testText}</div>
       </FlyoutMenu>
     );
-
-    expect(queryByText(testText)).toBeTruthy();
+    expect(screen.queryByText(testText)).toBeTruthy();
   });
 
   it('Renders closed', () => {
     const testText = 'this is a test';
 
-    const { queryByText } = render(
+    render(
       <FlyoutMenu iconDescription="Helpful description" triggerId="flyout-test">
         {testText}
       </FlyoutMenu>
     );
 
-    const applyButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
-    const cancelButtonTest = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
+    const applyButtonTest = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const cancelButtonTest = screen.queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     expect(applyButtonTest).toBeNull();
     expect(cancelButtonTest).toBeNull();
-    expect(queryByText(testText)).toBeNull();
+    expect(screen.queryByText(testText)).toBeNull();
   });
 
   it('Cancel Action', () => {
     const cancelAction = jest.fn();
 
-    const { queryByText } = render(
+    render(
       <FlyoutMenu
-        open
+        defaultOpen
         triggerId="flyout-test"
         transactional
         iconDescription="Helpful description"
@@ -70,7 +80,7 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    const cancelButton = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
+    const cancelButton = screen.queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     fireEvent.click(cancelButton);
 
@@ -80,9 +90,9 @@ describe('FlyoutMenu', () => {
   it('Apply Action', () => {
     const applyAction = jest.fn();
 
-    const { queryByText } = render(
+    render(
       <FlyoutMenu
-        open
+        defaultOpen
         triggerId="flyout-test"
         transactional
         iconDescription="Helpful description"
@@ -90,7 +100,7 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    const applyButton = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const applyButton = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     fireEvent.click(applyButton);
 
@@ -98,7 +108,7 @@ describe('FlyoutMenu', () => {
   });
 
   it('Flyout closes when cancel triggered', () => {
-    const { queryByText } = render(
+    render(
       <FlyoutMenu
         triggerId="flyout-test"
         defaultOpen
@@ -107,17 +117,17 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    const cancelButton = queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
+    const cancelButton = screen.queryByText(FlyoutMenu.defaultProps.i18n.cancelButtonText);
 
     fireEvent.click(cancelButton);
 
-    const applyButtonVisible = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const applyButtonVisible = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisible).toBeNull();
   });
 
   it('Flyout closes when apply triggered', () => {
-    const { queryByText } = render(
+    render(
       <FlyoutMenu
         triggerId="flyout-test"
         defaultOpen
@@ -126,38 +136,38 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    const applyButton = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const applyButton = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     fireEvent.click(applyButton);
 
-    const applyButtonVisible = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const applyButtonVisible = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisible).toBeNull();
   });
 
   it('Click to open and close menu', () => {
     const iconDescription = 'Helpful description';
-    const { queryAllByLabelText, queryByText } = render(
-      <FlyoutMenu iconDescription={iconDescription} transactional triggerId="flyout-test" />
-    );
+    render(<FlyoutMenu iconDescription={iconDescription} transactional triggerId="flyout-test" />);
 
-    const button = queryAllByLabelText(iconDescription)[0];
+    const button = screen.queryAllByLabelText(iconDescription)[0];
 
     fireEvent.click(button);
 
-    const applyButtonVisible = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const applyButtonVisible = screen.queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
 
     expect(applyButtonVisible).toBeTruthy();
 
     fireEvent.click(button);
 
-    const applyButtonVisibleStill = queryByText(FlyoutMenu.defaultProps.i18n.applyButtonText);
+    const applyButtonVisibleStill = screen.queryByText(
+      FlyoutMenu.defaultProps.i18n.applyButtonText
+    );
 
     expect(applyButtonVisibleStill).toBeNull();
   });
 
   it('Flyout Anchor Points Rendered bottom for bottom start', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         iconDescription="Helpful description"
@@ -166,12 +176,11 @@ describe('FlyoutMenu', () => {
         direction={FlyoutMenuDirection.BottomStart}
       />
     );
-
-    expect(container.firstChild).toHaveClass('bottom');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__bottom-start');
   });
 
   it('Flyout Anchor Points Rendered bottom for bottom end', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -181,11 +190,11 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('bottom');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__bottom-end');
   });
 
   it('Flyout Anchor Points Rendered bottom for top start', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -195,11 +204,11 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('top');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__top-start');
   });
 
   it('Flyout Anchor Points Rendered bottom for top end', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -209,11 +218,11 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('top');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__top-end');
   });
 
   it('Flyout Anchor Points Rendered bottom for left start', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -223,11 +232,11 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('left');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__left-start');
   });
 
   it('Flyout Anchor Points Rendered bottom for left end', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -237,11 +246,11 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('left');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__left-end');
   });
 
   it('Flyout Anchor Points Rendered bottom for right start', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -251,11 +260,11 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('right');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__right-start');
   });
 
   it('Flyout Anchor Points Rendered bottom for right end', () => {
-    const { container } = render(
+    render(
       <FlyoutMenu
         defaultOpen
         triggerId="flyout-test"
@@ -265,6 +274,6 @@ describe('FlyoutMenu', () => {
       />
     );
 
-    expect(container.firstChild).toHaveClass('right');
+    expect(screen.queryByTestId('flyout-menu')).toHaveClass('iot--flyout-menu--body__right-end');
   });
 });
