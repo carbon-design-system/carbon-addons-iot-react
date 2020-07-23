@@ -31,7 +31,7 @@ export const pageTitleBarBreadcrumb = [
   <span>Instance</span>,
 ];
 
-const NodeTooltip = () => (
+export const PageTitleBarNodeTooltip = () => (
   <div>
     <p>Descriptive text about this page and what the user can or should do on it </p>
     <div
@@ -65,7 +65,7 @@ storiesOf('Watson IoT/PageTitleBar', module)
   .add('with tooltip description with node', () => (
     <PageTitleBar
       title={commonPageTitleBarProps.title}
-      description={<NodeTooltip />}
+      description={<PageTitleBarNodeTooltip />}
       breadcrumb={pageTitleBarBreadcrumb}
       collapsed
     />

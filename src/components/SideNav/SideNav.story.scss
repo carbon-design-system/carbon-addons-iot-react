@@ -3,7 +3,7 @@
 .#{$iot-prefix}--main-content {
   padding-top: $spacing-09;
   height: 100%;
-  transition: all 0.11s cubic-bezier(0.2, 0, 1, 0.9);
+  transition: all $duration--fast-02 cubic-bezier(0.2, 0, 1, 0.9);
   width: 100%;
 
   @media (min-width: 66em) {

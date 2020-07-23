@@ -2,7 +2,7 @@ import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import Pin from '@carbon/icons-react/lib/pin/20';
 import Edit from '@carbon/icons-react/lib/edit/20';
-import Delete from '@carbon/icons-react/lib/delete/20';
+import { TrashCan20 } from '@carbon/icons-react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { DatePicker, DatePickerInput } from 'carbon-components-react';
@@ -56,7 +56,7 @@ storiesOf('Watson IoT/Dashboard Header (Deprecated)', module)
           lastUpdated={text('lastUpdated', '03/31/2019 13:55')}
           actions={[
             { id: 'edit', labelText: 'Edit', icon: <Edit /> },
-            { id: 'delete', labelText: 'Delete', icon: Delete },
+            { id: 'delete', labelText: 'Delete', icon: TrashCan20 },
           ]}
           onDashboardAction={action('onDashboardAction')}
         />
@@ -88,7 +88,7 @@ storiesOf('Watson IoT/Dashboard Header (Deprecated)', module)
           }
           actions={[
             { id: 'edit', labelText: 'Edit', icon: <Edit /> },
-            { id: 'delete', labelText: 'Delete', icon: <Delete /> },
+            { id: 'delete', labelText: 'Delete', icon: <TrashCan20 /> },
             { id: 'pin', labelText: 'Pin', icon: <Pin /> },
           ]}
           onDashboardAction={action('onDashboardAction')}

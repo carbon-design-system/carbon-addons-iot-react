@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, render } from 'enzyme';
-import { AppSwitcher24, Chip24, Group24 } from '@carbon/icons-react';
+import { Switcher24, Chip24, Group24 } from '@carbon/icons-react';
 
 import SideNav from './SideNav';
 
@@ -10,7 +10,7 @@ describe('SideNav', () => {
   const links = [
     {
       icon: () => (
-        <AppSwitcher24
+        <Switcher24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -73,7 +73,7 @@ describe('SideNav', () => {
   const links2 = [
     {
       icon: () => (
-        <AppSwitcher24
+        <Switcher24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"
@@ -93,7 +93,7 @@ describe('SideNav', () => {
   const linksDisabled = [
     {
       icon: () => (
-        <AppSwitcher24
+        <Switcher24
           fill="white"
           description="Icon"
           className="bx--header__menu-item bx--header__menu-title"

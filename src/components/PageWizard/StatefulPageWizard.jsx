@@ -28,7 +28,7 @@ const StatefulPageWizardPropTypes = {
     close: PropTypes.string,
   }),
   /** function to go to step when click ProgressIndicator step. */
-  setStep: PropTypes.func.isRequired,
+  setStep: PropTypes.func,
   /** next button disabled */
   nextDisabled: PropTypes.bool,
   /** show progress indicator on finish button */
@@ -63,6 +63,7 @@ const defaultProps = {
   onNext: null,
   onBack: null,
   beforeFooterContent: null,
+  setStep: null,
 };
 
 const StatefulPageWizard = ({
@@ -86,7 +87,13 @@ const StatefulPageWizard = ({
     setCurrentStepId(id);
     if (onBack) onBack(id);
   };
-
+  const validateSteps = (start, end) => {
+    let valid = true;
+    for (let i = start; i < end; i += 1) {
+      valid = steps[i].onValidate() && valid;
+    }
+    return valid;
+  };
   return (
     <PageWizard
       {...other}
@@ -94,8 +101,11 @@ const StatefulPageWizard = ({
       onNext={() => handleNext(nextStep.id)}
       currentStepId={currentStepId}
       setStep={id => {
-        setCurrentStepId(id);
-        setStep(id);
+        const idx = steps.findIndex(i => i.id === id);
+        if (idx <= currentStepIndex || validateSteps(currentStepIndex, idx)) {
+          setCurrentStepId(id);
+          setStep(id);
+        }
       }}
     >
       {children}

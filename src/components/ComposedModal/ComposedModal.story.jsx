@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, object } from '@storybook/addon-knobs';
+import { boolean, object, text } from '@storybook/addon-knobs';
 import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 
@@ -64,7 +64,9 @@ REDUXFORM or REDUXDIALOG`,
       onSubmit={action('submit')}
       onClose={action('close')}
       onClearError={action('onClearError')}
-    />
+    >
+      {text('body content', '')}
+    </ComposedModal>
   ))
   .add('sending data', () => (
     <ComposedModal

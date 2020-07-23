@@ -12,6 +12,7 @@ export EmptyTable from './components/Table/EmptyTable/EmptyTable';
 export Table from './components/Table';
 export TableHead from './components/Table/TableHead/TableHead';
 export TableBody from './components/Table/TableBody/TableBody';
+export TableSaveViewModal from './components/Table/TableSaveViewModal/TableSaveViewModal';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';
@@ -99,13 +100,15 @@ export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitc
 
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 
+export ComboBox from './components/ComboBox';
+
 // Carbon proxy
 export {
   Accordion,
   AccordionItem,
   Checkbox,
   CodeSnippet,
-  ComboBox,
+  // ComboBox,
   ModalHeader,
   ModalBody,
   ModalFooter,

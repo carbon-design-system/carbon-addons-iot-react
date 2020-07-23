@@ -31,7 +31,7 @@
     "format:diff": "prettier --list-different \"**/*.{scss,css,js,jsx,md,ts}\"",
     "lint": "yarn lint:javascript && yarn lint:stylelint",
     "lint:javascript": "eslint --ext .jsx --ext .js .",
-    "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore",
+    "lint:stylelint": "stylelint './src/**/*.scss' --syntax scss --ignorePath .gitignore --custom-formatter ./config/stylelint/sassMsgFormatter.js",
     "prepare": "yarn build",
     "publish-npm": "yarn semantic-release",
     "start": "yarn test:engines && yarn storybook",
@@ -48,7 +48,44 @@
     "extends": "stylelint-config-recommended-scss",
     "plugins": [
       "stylelint-scss"
-    ]
+    ],
+    "rules": {
+      "declaration-property-unit-blacklist": [
+        {
+          "font-size": [
+            "em",
+            "px",
+            "pt"
+          ],
+          "margin": [
+            "px",
+            "rem"
+          ],
+          "padding": [
+            "px",
+            "rem"
+          ],
+          "transition": [
+            "s",
+            "ms"
+          ]
+        },
+        {
+          "severity": "error"
+        }
+      ],
+      "declaration-property-value-blacklist": [
+        {
+          "color": [
+            "/^#/",
+            "/^rgb/"
+          ]
+        },
+        {
+          "severity": "error"
+        }
+      ]
+    }
   },
   "husky": {
     "hooks": {
@@ -89,23 +126,24 @@
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
     "core-js": "3.6.5",
+    "downshift": "^1.31.14",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "polished": "^2.3.3",
     "prop-types": "^15.7.2",
     "react-dnd": "7.0.2",
     "react-dnd-html5-backend": "2.5.1",
     "react-dnd-test-backend": "^7.2.0",
-    "react-grid-layout": "^0.16.6",
-    "react-resizable": "^1.8.0",
+    "react-grid-layout": "^0.18.3",
     "react-sizeme": "^2.6.3",
     "react-transition-group": "^2.6.0",
     "react-visibility-sensor": "^5.0.2",
     "rollup-plugin-auto-external": "^2.0.0",
     "styled-components": "^4.1.3",
     "use-deep-compare-effect": "^1.2.0",
+    "use-lang-direction": "^0.1.11",
     "use-resize-observer": "^5.0.0",
     "uuid": "^3.3.2",
     "warning": "^4.0.3"
@@ -139,7 +177,6 @@
     "@babel/preset-react": "^7.10.1",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
-    "@ibma/aat": "https://able.ibm.com/tools/dist/ibma-aat-2.0.8.tgz",
     "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-info": "^5.3.17",
@@ -148,9 +185,11 @@
     "@storybook/addon-storyshots": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
-    "@testing-library/dom": "^7.2.2",
-    "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.3",
+    "@testing-library/dom": "^7.12.0",
+    "@testing-library/jest-dom": "^5.10.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^11.4.2",
+    "accessibility-checker": "^3.0.6",
     "autoprefixer": "^9.4.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
@@ -161,6 +200,7 @@
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "chalk": "^4.1.0",
     "check-node-version": "^4.0.3",
     "coveralls": "^3.0.2",
     "cross-env": "^6.0.3",
@@ -181,6 +221,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.2",
     "eslint-plugin-react-hooks": "^1.5.0",
+    "eslint-plugin-testing-library": "^3.3.1",
     "eslint-plugin-unicorn": "^20.1.0",
     "faker": "^4.1.0",
     "fast-sass-loader": "^1.5.0",

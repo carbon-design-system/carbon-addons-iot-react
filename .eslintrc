@@ -21,7 +21,8 @@
     "lodash",
     "react-hooks",
     "prettier",
-    "unicorn"
+    "unicorn",
+    "testing-library"
   ],
   "settings": {
     "react": {
@@ -37,7 +38,8 @@
     "plugin:jest/recommended",
     "airbnb",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "plugin:testing-library/react"
   ],
   "globals": {
     "__WEBPACK__": true,
@@ -87,12 +89,19 @@
     "jest/expect-expect": "error",
     "jest/prefer-hooks-on-top": "error",
     "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }],
-    "unicorn/no-abusive-eslint-disable": "error"
+    "unicorn/no-abusive-eslint-disable": "error",
+    "testing-library/prefer-screen-queries": "error",
+    "testing-library/prefer-wait-for": "error"
   },
   // Testcases have less eslint rules applied to them
   "overrides": [
     {
-      "files": ["**/*-fixture.{js,jsx}", "**/*.test.{js,jsx}", "**/*.story.{js,jsx}"],
+      "files": [
+        "**/*-fixture.{js,jsx}",
+        "**/*.test.{js,jsx}",
+        "**/*.test.a11y.{js,jsx}",
+        "**/*.story.{js,jsx}"
+      ],
       "rules": {
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
         "no-underscore-dangle": 0,
