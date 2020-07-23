@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       style={
         Object {
-          "margin": 60,
+          "margin": "4rem",
           "width": "232px",
         }
       }
@@ -108,7 +108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               style={
                 Object {
                   "--gauge-bg": "#e0e0e0",
-                  "--gauge-colors": "#42be65",
+                  "--gauge-colors": "green",
                   "--gauge-max-value": 100,
                   "--gauge-size": "80px",
                   "--gauge-trend-color": "",
@@ -204,7 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
     <div
       style={
         Object {
-          "margin": 60,
+          "margin": "4rem",
           "width": "252px",
         }
       }

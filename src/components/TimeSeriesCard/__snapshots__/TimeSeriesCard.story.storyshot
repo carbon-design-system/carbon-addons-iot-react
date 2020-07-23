@@ -607,7 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
             }
           >
             <div
-              className="TimeSeriesCard__LineChartWrapper-q25vbg-0 jFNbs"
+              className="TimeSeriesCard__LineChartWrapper-q25vbg-0 cUshBn"
               size="MEDIUM"
             >
               <div
