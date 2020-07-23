@@ -82,11 +82,24 @@ describe('stateful table with real reducer', () => {
         expect(statefulTable.text()).toContain('myButtons');
       });
   });
+
   it('render nestedRows', () => {
-    render(<StatefulTableWithNestedRowItems />);
+    render(<StatefulTableWithNestedRowItems actions={mockActions} />);
 
-    const val = screen.getByText('whiteboard can eat 2').closest('tr');
+    expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
 
-    expect(val).toBeInTheDocument();
+    fireEvent.click(
+      screen
+        .getByText('whiteboard can eat 2')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+
+    expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
+
+    fireEvent.click(screen.getByTestId('Table-row-2_A-row-actions-cell-overflow'));
+    fireEvent.click(screen.getByText('Add'));
+
+    expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
 });
