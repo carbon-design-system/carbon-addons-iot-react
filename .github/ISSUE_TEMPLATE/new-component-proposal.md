@@ -2,7 +2,7 @@
 name: New component proposal ✨
 about: Nominate a new component to be added to the library
 title: '[Component Proposal] New_ComponentName'
-labels: 'type: enhancement :bulb:, type: discussion :speech_balloon:, type: contribution :gift:, status: needs triage :mag:'
+labels: 'type: enhancement :bulb:, type: discussion :speech_balloon:, type: contribution :gift:, status: needs triage :mag:, status: needs priority :inbox_tray:'
 assignees: ''
 ---
 
