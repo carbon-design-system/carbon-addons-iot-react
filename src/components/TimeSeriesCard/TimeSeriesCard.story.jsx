@@ -127,7 +127,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
-          domainRange={[new Date(), new Date()]}
           interval="hour"
           breakpoint="lg"
           size={size}
@@ -137,7 +136,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - custom domain', () => {
+  .add('medium / single line - custom domainRange', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
     const timestamps = data.map(d => d.timestamp);
