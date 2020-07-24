@@ -2318,6 +2318,17 @@
     lodash-es "4.17.15"
     resize-observer-polyfill "1.5.0"
 
+"@carbon/charts@^0.34.5":
+  version "0.34.5"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.34.5.tgz#a8e6b4cd030597c6ba992e4b51dac28f5839fb81"
+  integrity sha512-8MlWV2kMovGp94HMsIm4ebiTUwC++vfSTE03RJA5gpDtNzSjpu08Xk/kXYntWFeQwEZIY7ofegJ9qlL62B6mvQ==
+  dependencies:
+    "@carbon/colors" "10.4.0"
+    "@carbon/utils-position" "1.1.1"
+    date-fns "2.8.1"
+    lodash-es "4.17.15"
+    resize-observer-polyfill "1.5.0"
+
 "@carbon/colors@10.4.0":
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/@carbon/colors/-/colors-10.4.0.tgz#8c21127926bc389dcb4d415b55d4eae278f3d525"
