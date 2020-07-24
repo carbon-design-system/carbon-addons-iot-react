@@ -7,12 +7,13 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
+import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -596,6 +597,22 @@ storiesOf('Watson IoT/Table', module)
             pagination: {
               ...initialState.view.pagination,
               maxPages: 5,
+            },
+            toolbar: {
+              activeBar: 'filter',
+              customToolbarContent: (
+                <FlyoutMenu
+                  direction={FlyoutMenuDirection.BottomEnd}
+                  buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
+                  iconDescription="Helpful description"
+                  triggerId="test-flyout-id"
+                  transactional={boolean('Flyout Transactional', true)}
+                  onApply={action('Flyout Menu Apply Clicked')}
+                  onCancel={action('Flyout Menu Cancel Clicked')}
+                >
+                  Example Flyout Content
+                </FlyoutMenu>
+              ),
             },
           }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
