@@ -8,7 +8,7 @@
   "unpkg": "umd/carbon-addons-iot-react.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM/carbon-addons-iot-react.git"
+    "url": "https://github.com/carbon-design-system/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
   "files": [
@@ -19,7 +19,7 @@
     "css/**/*"
   ],
   "bugs": {
-    "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
+    "url": "https://github.com/carbon-design-system/carbon-addons-iot-react/issues"
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {
@@ -129,7 +129,7 @@
     "downshift": "^1.31.14",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "polished": "^2.3.3",
     "prop-types": "^15.7.2",
@@ -144,7 +144,7 @@
     "styled-components": "^4.1.3",
     "use-deep-compare-effect": "^1.2.0",
     "use-lang-direction": "^0.1.11",
-    "use-resize-observer": "^5.0.0",
+    "use-resize-observer": "^6.1.0",
     "uuid": "^3.3.2",
     "warning": "^4.0.3"
   },
@@ -240,7 +240,7 @@
     "promise": "^8.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-is": "^16.13.0",
+    "react-is": "^16.13.1",
     "react-lorem-component": "^0.13.0",
     "react-test-renderer": "^16.8.6",
     "rimraf": "^3.0.0",

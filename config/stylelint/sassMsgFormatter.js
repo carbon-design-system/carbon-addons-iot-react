@@ -8,6 +8,7 @@ const WARNING = chalk.yellow;
 const URL = chalk.underline.cyan;
 const NUMBER = chalk.dim;
 const RULE = chalk.bgWhite.black;
+const TITLE = chalk.bgYellow;
 
 /**
  * returns the boolean representing whether a file has any errors for filtering purposes
