@@ -2300,23 +2300,12 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@^0.32.7":
-  version "0.32.11"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.32.11.tgz#8df055dcc8f4602bed1afa6830c3ca677cfef910"
-  integrity sha512-02TGaDBHKhjZAqXTSsdr6fUB0eKICygstePCKwyAI09KLou9El0cIM82OvB0hovqOGqxuXwkiMgP2OrYVg+09A==
+"@carbon/charts-react@^0.34.5":
+  version "0.34.5"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.34.5.tgz#ee7f4aa80f2fc158f354eb1fcb3e5a5942fc280b"
+  integrity sha512-+4NErNxR0Xxbawk2GnQArR/y/s1XnoZTdYAwWkTuQVyiJEtlg2eDYGMr5Zk9g9n0pOAVlL1Rr7ZYrnKim5MgNA==
   dependencies:
-    "@carbon/charts" "^0.32.11"
-
-"@carbon/charts@^0.32.11":
-  version "0.32.11"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.32.11.tgz#8efb3e22590d95e033e21b2ca6277eefd88c4d2e"
-  integrity sha512-9qdmapW6UZ5a7vgwmVhyqNTk8G0NHDk7NvdmhY9U3mz3fF4x7Cztq4W4At/cXxfCxwH3LVHmVyoxThqqYOqWVg==
-  dependencies:
-    "@carbon/colors" "10.4.0"
-    "@carbon/utils-position" "1.1.1"
-    date-fns "2.8.1"
-    lodash-es "4.17.15"
-    resize-observer-polyfill "1.5.0"
+    "@carbon/charts" "^0.34.5"
 
 "@carbon/charts@^0.34.5":
   version "0.34.5"
