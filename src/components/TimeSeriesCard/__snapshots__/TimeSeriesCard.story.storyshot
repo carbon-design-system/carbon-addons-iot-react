@@ -3434,7 +3434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - custom domain 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeSeriesCard medium / single line - custom domainRange 1`] = `
 <div
   className="storybook-container"
 >
