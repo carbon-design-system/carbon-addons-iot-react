@@ -1,0 +1,11 @@
+@import '../../../../globals/vars';
+
+.#{$iot-prefix}--table-detail-wizard-sidebar--header {
+  display: flex;
+  flex-flow: column nowrap;
+  border-right: 1px solid #dadada8c;
+
+  .#{$prefix}--progress {
+    padding: $spacing-05 $spacing-05 $spacing-05 ($spacing-09 + $spacing-05);
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../../../globals/vars';
+.#{$iot-prefix}--filter-header-row--form-item {
+  display: inline-block;
+  position: relative;
+  input {
+    padding-right: $spacing-08;
+  }
+
+  .#{$prefix}--list-box__selection {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.#{$iot-prefix}--filter-header-row--header-width {
+  min-width: var('--table-header-width');
+  max-width: var('--table-header-width');
+  overflow-x: var('--table-header-is-select-column');
+  text-overflow: ellipsis;
+
+  .#{$prefix}--list-box input[role='combobox'] {
+    /* need to save enough room for clear and dropdown button */
+    padding-right: 4rem;
+    min-width: calc(var('--table-header-width') - 10px);
+    max-width: calc(var('--table-header-width') - 10px);
+  }
+
+  .#{$prefix}--form-item.bx--combo-box {
+    min-width: calc(var('--table-header-width') - 10px);
+    max-width: calc(var('--table-header-width') - 10px);
+  }
+}
+
+.#{$iot-prefix}--filter-header-row--header {
+  span.#{$prefix}--table-header-label {
+    padding-top: 0;
+  }
+
+  .#{$prefix}--form-item input {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: $spacing-07;
+  }
+  .#{$prefix}--form-item input:placeholder-shown {
+    padding-right: $spacing-03;
+  }
+
+  .#{$prefix}--tag--filter {
+    background-color: transparent;
+
+    &:focus {
+      outline: 2px solid $interactive-01;
+      outline-offset: -2px;
+
+      svg {
+        border: none;
+      }
+    }
+
+    & > svg {
+      fill: $ui-05;
+      border-radius: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
