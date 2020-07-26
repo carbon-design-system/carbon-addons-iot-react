@@ -23,6 +23,24 @@ describe('TableDetailWizard', () => {
     );
     expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(errorString);
   });
+  it('Error dialog without currentItemId', () => {
+    const onClearError = jest.fn();
+    const errorString = 'There is an error';
+
+    const wrapper = mount(
+      <TableDetailWizard
+        currentItemId=""
+        items={itemsAndComponents}
+        title="Create Physical Interface"
+        onClose={() => jest.fn()}
+        onBack={() => jest.fn()}
+        onSubmit={() => jest.fn()}
+        error={errorString}
+        onClearError={onClearError}
+      />
+    );
+    expect(wrapper.find('NotificationTextDetails').prop('title')).toEqual(errorString);
+  });
   it('Handle Clear error', () => {
     const onClearError = jest.fn();
     const errorString = 'There is an error';
@@ -41,19 +59,5 @@ describe('TableDetailWizard', () => {
     );
     wrapper.find('NotificationButton').simulate('click');
     expect(onClearError.mock.calls).toHaveLength(1);
-  });
-  it('Handle current item empty', () => {
-    const wrapper = mount(
-      <TableDetailWizard
-        currentItemId=""
-        items={itemsAndComponents}
-        title="Create Physical Interface"
-        onClose={() => jest.fn()}
-        onBack={() => jest.fn()}
-        onSubmit={() => jest.fn()}
-      />
-    );
-    const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
-    expect(element.prop('currentIndex')).toEqual(0);
   });
 });

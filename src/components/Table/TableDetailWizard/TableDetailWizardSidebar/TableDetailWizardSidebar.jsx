@@ -21,17 +21,27 @@ class DetailWizardSidebar extends Component {
     ).isRequired,
     showLabels: PropTypes.bool,
     stepWidth: PropTypes.number,
+    isClickable: PropTypes.bool,
   };
 
   static defaultProps = {
     showLabels: true,
     stepWidth: 80,
+    isClickable: false,
   };
 
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, className } = this.props;
+    const {
+      currentItemId,
+      setItem,
+      items,
+      showLabels,
+      stepWidth,
+      className,
+      isClickable,
+    } = this.props;
 
     const sideBarProgressIndicator = (
       <ProgressIndicator
@@ -41,6 +51,7 @@ class DetailWizardSidebar extends Component {
         onClickItem={setItem}
         stepWidth={stepWidth}
         isVerticalMode
+        isClickable={isClickable}
       />
     );
     return (

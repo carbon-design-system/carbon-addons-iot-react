@@ -57,6 +57,8 @@ export const propTypes = {
   error: PropTypes.string,
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
   onClearError: PropTypes.func,
+  /** Set the progress indicator button to clickable */
+  isClickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -76,6 +78,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   onClearError: null,
+  isClickable: false,
 };
 
 const TableDetailWizard = ({
@@ -98,9 +101,11 @@ const TableDetailWizard = ({
   className,
   error,
   onClearError,
+  isClickable,
 }) => {
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
+
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;
 
@@ -130,6 +135,7 @@ const TableDetailWizard = ({
           items={items}
           showLabels={showLabels}
           stepWidth={stepWidth}
+          isClickable={isClickable}
         />
         <div className={`${iotPrefix}--table-detail-wizard--content-container`}>
           <WizardContent component={currentItemObj.component} />

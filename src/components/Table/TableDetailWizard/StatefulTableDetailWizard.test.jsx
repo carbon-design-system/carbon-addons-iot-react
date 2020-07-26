@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { itemsAndComponents } from './TableDetailWizard.story';
 import StatefulTableDetailWizard from './StatefulTableDetailWizard';
@@ -21,15 +22,24 @@ describe('StatefulWizardInline', () => {
     cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).toHaveBeenCalled();
   });
-  it('setItem', () => {
-    const mockSetItem = jest.fn();
+  it('onNext without currentItemId', () => {
+    const mockNext = jest.fn();
     const wrapper = mount(
-      <StatefulTableDetailWizard {...commonWizardProps} setItem={mockSetItem} />
+      <StatefulTableDetailWizard {...commonWizardProps} currentItemId="" onNext={mockNext} />
     );
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
-    expect(progressIndicatorButtons).toHaveLength(4);
-    progressIndicatorButtons.at(1).simulate('click');
-    expect(mockSetItem).toHaveBeenCalled();
+    const cancelAndNextButtons = wrapper.find('.bx--btn');
+    expect(cancelAndNextButtons).toHaveLength(3);
+    cancelAndNextButtons.at(2).simulate('click');
+    expect(mockNext).toHaveBeenCalled();
+  });
+  it('setItem', () => {
+    const mocks = {
+      isClickable: true,
+      setItem: jest.fn(),
+    };
+    render(<StatefulTableDetailWizard {...commonWizardProps} {...mocks} />);
+    fireEvent.click(screen.getByText('Notifications'));
+    expect(mocks.setItem).toHaveBeenCalledTimes(1);
   });
   it('error', () => {
     const wrapper = mount(
@@ -65,7 +75,7 @@ describe('StatefulWizardInline', () => {
         setItem={mockSetItem}
       />
     );
-    const progressIndicatorButtons = wrapper.find('.bx--progress-step-button');
+    const progressIndicatorButtons = wrapper.find('.iot--progress-step-button');
     expect(progressIndicatorButtons).toHaveLength(2);
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();
@@ -117,11 +127,6 @@ describe('StatefulWizardInline', () => {
     expect(backAndNextButtons).toHaveLength(3);
     backAndNextButtons.at(1).simulate('click');
     expect(mockBack).toHaveBeenCalled();
-  });
-  it('Handle currentItemId empty', () => {
-    const wrapper = mount(<StatefulTableDetailWizard {...commonWizardProps} currentItemId="" />);
-    const element = wrapper.find('ProgressIndicator__StyledProgressIndicator');
-    expect(element.prop('currentIndex')).toEqual(0);
   });
   it('onNext not triggered if nextItem is undefined', () => {
     const mockNext = jest.fn();

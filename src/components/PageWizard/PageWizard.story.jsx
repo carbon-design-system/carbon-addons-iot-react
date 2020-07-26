@@ -18,13 +18,14 @@ import StatefulPageWizard from './StatefulPageWizard';
 export const content = [
   <PageWizardStep
     id="step1"
-    label="Step 1"
+    label="First Step"
     key="step1"
     secondaryLabel="Optional label"
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    description="This is displayed when step icon is hovered"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 1: Define the data</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -52,11 +53,11 @@ export const content = [
   <PageWizardStep
     id="step2"
     key="step2"
-    label="Step 2"
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    label="Second Step"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 2: Pick the contents</PageWizardStepTitle>
     <PageWizardStepDescription>
@@ -90,15 +91,146 @@ export const content = [
     </PageWizardStepExtraContent>
   </PageWizardStep>,
   <PageWizardStep
+    id="step2-substep1"
+    key="step2-substep1"
+    label="Sub Step 1"
+    subStep
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+  >
+    <PageWizardStepTitle>Step 2: Sub Step 1</PageWizardStepTitle>
+    <PageWizardStepDescription>
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
+    </PageWizardStepDescription>
+    <PageWizardStepContent>
+      <h1>A dashboard could go here.</h1>
+      <h3>Some other form items could go here</h3>
+      <h4>And other things here</h4>
+    </PageWizardStepContent>
+  </PageWizardStep>,
+  <PageWizardStep
+    id="step2-substep2"
+    key="step2-substep2"
+    label="Sub Step 2"
+    secondaryLabel="Optional label"
+    subStep
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+  >
+    <PageWizardStepTitle>Step 2: Sub Step 2</PageWizardStepTitle>
+    <PageWizardStepDescription>
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
+    </PageWizardStepDescription>
+    <PageWizardStepContent>
+      <h1>A dashboard could go here.</h1>
+      <h3>Some other form items could go here</h3>
+      <h4>And other things here</h4>
+    </PageWizardStepContent>
+  </PageWizardStep>,
+  <PageWizardStep
+    id="step2-substep3"
+    key="step2-substep3"
+    label="Sub Step 3"
+    subStep
+    invalid
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+  >
+    <PageWizardStepTitle>Step 2: Sub Step 3</PageWizardStepTitle>
+    <PageWizardStepDescription>
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
+    </PageWizardStepDescription>
+    <PageWizardStepContent>
+      <h1>A dashboard could go here.</h1>
+      <h3>Some other form items could go here</h3>
+      <h4>And other things here</h4>
+    </PageWizardStepContent>
+  </PageWizardStep>,
+  <PageWizardStep
+    id="step2-substep4"
+    key="step2-substep4"
+    label="Sub Step 4"
+    subStep
+    disabled
+    invalid
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+  >
+    <PageWizardStepTitle>Step 2: Sub Step 4</PageWizardStepTitle>
+    <PageWizardStepDescription>
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
+    </PageWizardStepDescription>
+    <PageWizardStepContent>
+      <h1>A dashboard could go here.</h1>
+      <h3>Some other form items could go here</h3>
+      <h4>And other things here</h4>
+    </PageWizardStepContent>
+  </PageWizardStep>,
+  <PageWizardStep
     id="step3"
     key="step3"
-    label="Step 3"
-    onClose={() => {}}
-    onSubmit={() => {}}
-    onNext={() => {}}
-    onBack={() => {}}
+    label="Third Step"
+    secondaryLabel="Optional label"
+    disabled
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
   >
     <PageWizardStepTitle>Step 3: Define your dashboard</PageWizardStepTitle>
+    <PageWizardStepDescription>
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
+    </PageWizardStepDescription>
+    <PageWizardStepContent>
+      <h1>A dashboard could go here.</h1>
+      <h3>Some other form items could go here</h3>
+      <h4>And other things here</h4>
+    </PageWizardStepContent>
+  </PageWizardStep>,
+  <PageWizardStep
+    id="step4"
+    key="step4"
+    label="Fourth Step"
+    invalid
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+  >
+    <PageWizardStepTitle>Step 4: Define your dashboard</PageWizardStepTitle>
+    <PageWizardStepDescription>
+      Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
+      odio, rhoncus et sapien quis, vestibulum bibendum est.
+    </PageWizardStepDescription>
+    <PageWizardStepContent>
+      <h1>A dashboard could go here.</h1>
+      <h3>Some other form items could go here</h3>
+      <h4>And other things here</h4>
+    </PageWizardStepContent>
+  </PageWizardStep>,
+  <PageWizardStep
+    id="step5"
+    key="step5"
+    label="Final Step"
+    onClose={action('closed', () => {})}
+    onSubmit={action('submit', () => {})}
+    onNext={action('next', () => {})}
+    onBack={action('back', () => {})}
+  >
+    <PageWizardStepTitle>Step 5: Final Step</PageWizardStepTitle>
     <PageWizardStepDescription>
       Dashboards are useful lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
       odio, rhoncus et sapien quis, vestibulum bibendum est.
@@ -119,18 +251,20 @@ export const StepValidationWizard = ({ ...props }) => {
   return (
     <StatefulPageWizard
       {...props}
-      onClearError={() => {}}
-      onClose={() => {}}
-      onSubmit={() => {}}
-      onNext={() => {}}
-      onBack={() => {}}
+      onClearError={action('Clear error', () => {})}
+      onClose={action('closed', () => {})}
+      onSubmit={action('submit', () => {})}
+      onNext={action('next', () => {})}
+      onBack={action('back', () => {})}
       setStep={() => {}}
       error={error}
+      isClickable
     >
       <PageWizardStep
         id="step1"
         key="step1"
-        label="Step with validation"
+        label="First Step"
+        secondaryLabel="With validation"
         onValidate={() => {
           if (firstName.length > 0 && lastName.length > 0) {
             setError(null);
@@ -139,10 +273,10 @@ export const StepValidationWizard = ({ ...props }) => {
           setError('First name and Last name cannot be empty');
           return false;
         }}
-        onClose={() => {}}
-        onSubmit={() => {}}
-        onNext={() => {}}
-        onBack={() => {}}
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
       >
         <PageWizardStepTitle>Enter some things</PageWizardStepTitle>
         <PageWizardStepDescription>
@@ -183,12 +317,14 @@ storiesOf('Watson IoT/PageWizard', module)
   .add('stateful example', () => (
     <div>
       <StatefulPageWizard
-        onClearError={() => {}}
-        onClose={() => {}}
-        onSubmit={() => {}}
-        onNext={() => {}}
-        onBack={() => {}}
-        setStep={() => {}}
+        currentStepId="step1"
+        onClose={action('closed', () => {})}
+        onSubmit={action('submit', () => {})}
+        onClearError={action('Clear error', () => {})}
+        onNext={action('next', () => {})}
+        onBack={action('back', () => {})}
+        setStep={action('step clicked', () => {})}
+        isClickable
       >
         {content}
       </StatefulPageWizard>
@@ -246,6 +382,7 @@ storiesOf('Watson IoT/PageWizard', module)
         setStep={action('step clicked', () => {})}
         onClearError={action('Clear error', () => {})}
         isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', false)}
+        isClickable
       >
         {content}
       </PageWizard>
@@ -293,6 +430,7 @@ storiesOf('Watson IoT/PageWizard', module)
           <StepValidationWizard
             hasStickyFooter={boolean('hasStickyFooter', true)}
             isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
+            isClickable
           />
         }
       />
@@ -313,6 +451,7 @@ storiesOf('Watson IoT/PageWizard', module)
             hasStickyFooter={boolean('hasStickyFooter', true)}
             isProgressIndicatorVertical={boolean('Toggle Progress Indicator Alignment', true)}
             beforeFooterContent={<Button kind="tertiary">Save and close</Button>}
+            isClickable
           />
         }
       />
