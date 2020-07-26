@@ -1,6 +1,8 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import 'TableHead/table-head';
+@import 'TableSkeletonWithHeaders/table-skeleton-with-headers';
 @import 'TableCellRenderer/table-cell-renderer';
+@import 'TableDetailWizard/table-detail-wizard';
 @import '../../globals/vars';
 
 table.#{$prefix}--side-nav--data-table {
@@ -39,5 +41,31 @@ html[dir='rtl'] {
   }
   .#{$iot-prefix}--expanded-tablerow > td * {
     text-align: right;
+  }
+}
+
+.#{$iot-prefix}--empty-table--table-row {
+  height: calc(100% - $spacing-09);
+  &:hover td {
+    background: inherit;
+  }
+  .empty-table-cell--default {
+    display: flex;
+    align-items: center;
+    justify-content: middle;
+    flex-direction: column;
+    padding: $spacing-09;
+
+    svg {
+      margin: $spacing-05;
+    }
+
+    & > * {
+      margin: $spacing-03;
+    }
+  }
+
+  td {
+    border-bottom: unset;
   }
 }
