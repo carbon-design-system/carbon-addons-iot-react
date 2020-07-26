@@ -1,7 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import * as utilityFunctions from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';

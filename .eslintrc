@@ -108,6 +108,10 @@
         "no-shadow": 0,
         "no-console": 0,
         "no-extend-native": 0,
+        "no-restricted-imports": ["warn", {
+          "name": "@testing-library/jest-dom",
+          "message": "@testing-library/jest-dom is already imported globally in /config/jest/setupTest.js"
+        }],
         "no-template-curly-in-string": 0,
         "react/prop-types": 0,
         "react/jsx-no-bind": 0
