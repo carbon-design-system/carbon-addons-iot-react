@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import classnames from 'classnames';
 
 import ProgressIndicator from '../../../ProgressIndicator/ProgressIndicator';
 import WizardSidebar from '../../../WizardInline/WizardLeftSidebar/WizardSidebar';
+import { settings } from '../../../../constants/Settings';
 
-const StyledDivWizardHeader = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  border-right: 1px solid #dadada8c;
-
-  .bx--progress {
-    padding: 1rem 1rem 1rem 4rem;
-  }
-`;
+const { iotPrefix } = settings;
 
 class DetailWizardSidebar extends Component {
   static propTypes = {
@@ -28,17 +21,27 @@ class DetailWizardSidebar extends Component {
     ).isRequired,
     showLabels: PropTypes.bool,
     stepWidth: PropTypes.number,
+    isClickable: PropTypes.bool,
   };
 
   static defaultProps = {
     showLabels: true,
     stepWidth: 80,
+    isClickable: false,
   };
 
   state = {};
 
   render = () => {
-    const { currentItemId, setItem, items, showLabels, stepWidth, className } = this.props;
+    const {
+      currentItemId,
+      setItem,
+      items,
+      showLabels,
+      stepWidth,
+      className,
+      isClickable,
+    } = this.props;
 
     const sideBarProgressIndicator = (
       <ProgressIndicator
@@ -48,12 +51,13 @@ class DetailWizardSidebar extends Component {
         onClickItem={setItem}
         stepWidth={stepWidth}
         isVerticalMode
+        isClickable={isClickable}
       />
     );
     return (
-      <StyledDivWizardHeader className={className}>
+      <div className={classnames(className, `${iotPrefix}--table-detail-wizard-sidebar--header`)}>
         <WizardSidebar sidebar={sideBarProgressIndicator} width={250} />
-      </StyledDivWizardHeader>
+      </div>
     );
   };
 }

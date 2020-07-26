@@ -1,0 +1,8 @@
+@import '../../../globals/vars';
+.#{$iot-prefix}--table-skeleton-with-headers--table-row {
+  pointer-events: none;
+  &:hover td {
+    border: 1px solid #dfe3e6;
+    background: inherit;
+  }
+}

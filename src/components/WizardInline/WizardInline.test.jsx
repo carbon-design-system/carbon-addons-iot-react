@@ -28,6 +28,27 @@ describe('WizardInline', () => {
       />
     );
     expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
+    wrapper = shallow(
+      <WizardInline
+        title="Wizard Title"
+        items={itemsAndComponents}
+        blurb={fakeBlurb}
+        currentItemId=""
+        onClose={() => {}}
+      />
+    );
+    expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
+    wrapper = shallow(
+      <WizardInline
+        title="Wizard Title"
+        items={itemsAndComponents}
+        blurb={fakeBlurb}
+        currentItemId=""
+        onClose={() => {}}
+        showCloseButton={false}
+      />
+    );
+    expect(wrapper.find('WizardHeader').prop('blurb')).toEqual(fakeBlurb);
   });
   it('deprecation notice', () => {
     // globally this is false, but we need it true so the warning pops
