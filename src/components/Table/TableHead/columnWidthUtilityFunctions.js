@@ -9,7 +9,8 @@ import cloneDeep from 'lodash/cloneDeep';
 export const MIN_COLUMN_WIDTH = 62;
 
 function isColumnVisible(ordering, columnId) {
-  return !ordering.find(orderedCol => orderedCol.columnId === columnId).isHidden;
+  const orderedColumn = ordering.find(orderedCol => orderedCol.columnId === columnId);
+  return orderedColumn && !orderedColumn.isHidden;
 }
 
 function getTotalWidth(cols) {
@@ -34,9 +35,10 @@ function createWidthsMap(ordering, columnWidths, adjustedCols) {
   return newColumnWidths;
 }
 
-function getVisibleColumns(currentColumnWidths, ordering, excludeId) {
+function getVisibleColumns(currentColumnWidths, ordering, excludeIDs) {
   return Object.values(currentColumnWidths).filter(
-    col => col.id !== excludeId && isColumnVisible(ordering, col.id)
+    col =>
+      col.width !== undefined && !excludeIDs.includes(col.id) && isColumnVisible(ordering, col.id)
   );
 }
 
@@ -46,7 +48,7 @@ function getOriginalWidthOfColumn(origColumns, colId) {
 }
 
 function getExistingColumnWidth(currentColumnWidths, origColumns, colId) {
-  const currentColumnWidth = currentColumnWidths[colId].width;
+  const currentColumnWidth = currentColumnWidths[colId]?.width;
 
   // If the column to show was hidden on init it will not have a current width
   // since it has not been rendered and measured. Then we try to get the original width.
@@ -61,30 +63,85 @@ function getAverageVisibleColumnWidth(visibleColumns) {
 function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
   const availableWidth = getTotalWidth(shrinkableColumns);
   const shrunkenColumns = shrinkableColumns.map(col => {
-    const shrinkByWidth = (col.width / availableWidth) * widthOfColumnToShow;
-    const newWidth = col.width - shrinkByWidth;
+    const preferredShrinkWidth = (col.width / availableWidth) * widthOfColumnToShow;
+    const preferredNewWidth = col.width - preferredShrinkWidth;
+    const newWidth = preferredNewWidth >= MIN_COLUMN_WIDTH ? preferredNewWidth : MIN_COLUMN_WIDTH;
     return { id: col.id, width: Math.round(newWidth) };
   });
   return shrunkenColumns;
 }
 
-function calculateWidthOnShow(currentColumnWidths, ordering, colToShowId, origColumns) {
-  const visibleColumns = getVisibleColumns(currentColumnWidths, ordering, colToShowId);
-  const shrinkableColumns = visibleColumns.filter(col => col.width > MIN_COLUMN_WIDTH);
-  const widthOfColumnToShow =
-    getExistingColumnWidth(currentColumnWidths, origColumns, colToShowId) ||
-    getAverageVisibleColumnWidth(visibleColumns);
+/**
+ * Returns an array of the IDs of all columns that exists in the
+ * currentColumnWidths map but not in the ordering prop.
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ * @param {object} currentColumnWidths map of the current column IDs and widths
+ */
+export const getIDsOfRemovedColumns = (ordering, currentColumnWidths) => {
+  return Object.values(currentColumnWidths)
+    .filter(currCol => !ordering.find(orderCol => orderCol.columnId === currCol.id))
+    .map(col => col.id);
+};
 
-  const adjustedCols = shrinkColumns(shrinkableColumns, widthOfColumnToShow);
-  adjustedCols.push({ id: colToShowId, width: Math.round(widthOfColumnToShow) });
+/**
+ * Returns an array of the IDs of all columns that exists in the
+ * ordering prop but not in the currentColumnWidths map.
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ * @param {object} currentColumnWidths map of the current column IDs and widths
+ */
+export const getIDsOfAddedColumns = (ordering, currentColumnWidths) => {
+  return ordering
+    .filter(col => !col.isHidden)
+    .filter(col => !currentColumnWidths.hasOwnProperty(col.columnId))
+    .map(col => col.columnId);
+};
+
+/**
+ * Returns true if all visible columns have a width.
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ * @param {array} columns The table column props
+ */
+export const visibleColumnsHaveWidth = (ordering, columns) => {
+  return columns
+    .filter(col => isColumnVisible(ordering, col.id))
+    .every(col => col.hasOwnProperty('width') && col.width !== undefined);
+};
+
+/**
+ * Returns the new column widths map when one or more columns are shown or added.
+ * @param {object} currentColumnWidths map of the current column IDs and widths
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ * @param {array} colToShowIDs array of IDs of the columns to be shown/added
+ * @param {array} columns The table column props
+ */
+export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs, columns) => {
+  const visibleColumns = getVisibleColumns(currentColumnWidths, ordering, colToShowIDs);
+  const newColumnsToShow = colToShowIDs.reduce((accumulator, colToShowId) => {
+    const widthOfColumnToShow =
+      getExistingColumnWidth(currentColumnWidths, columns, colToShowId) ||
+      getAverageVisibleColumnWidth(visibleColumns);
+    return [...accumulator, { id: colToShowId, width: Math.round(widthOfColumnToShow) }];
+  }, []);
+  const totalWidthNeeded = newColumnsToShow.reduce((acc, col) => acc + col.width, 0);
+  const shrinkableColumns = visibleColumns.filter(col => col.width > MIN_COLUMN_WIDTH);
+
+  const adjustedCols = shrinkColumns(shrinkableColumns, totalWidthNeeded);
+  adjustedCols.push(...newColumnsToShow);
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
-}
+};
 
-function calculateWidthOnHide(currentColumnWidths, ordering, colToHideId) {
-  const widthToDistribute = currentColumnWidths[colToHideId].width;
+/**
+ * Calculates the new column widths when one ore more columns are hidden or deleted.
+ * @param {object} currentColumnWidths map of the current column IDs and widths
+ * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
+ * @param {array} colToHideIDs Array with the IDs of one or more columns being hidden/deleted
+ */
+export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs) => {
+  const widthToDistribute = getTotalWidth(colToHideIDs.map(hideId => currentColumnWidths[hideId]));
+
   const visibleCols = Object.values(currentColumnWidths).filter(
-    col => isColumnVisible(ordering, col.id) && col.id !== colToHideId
+    col => isColumnVisible(ordering, col.id) && !colToHideIDs.includes(col.id)
   );
 
   const availableWidth = getTotalWidth(visibleCols);
@@ -94,7 +151,7 @@ function calculateWidthOnHide(currentColumnWidths, ordering, colToHideId) {
   });
 
   return createWidthsMap(ordering, currentColumnWidths, adjustedCols);
-}
+};
 
 /**
  * If the table isn't wide enough for all columns that has a defined width
@@ -144,6 +201,6 @@ export const calculateWidthsOnToggle = ({
 }) => {
   const hideColumn = ordering.find(col => col.columnId === columnId).isHidden;
   return hideColumn
-    ? calculateWidthOnHide(currentColumnWidths, ordering, columnId)
-    : calculateWidthOnShow(currentColumnWidths, ordering, columnId, columns);
+    ? calculateWidthOnHide(currentColumnWidths, ordering, [columnId])
+    : calculateWidthOnShow(currentColumnWidths, ordering, [columnId], columns);
 };
