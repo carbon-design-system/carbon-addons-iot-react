@@ -20,6 +20,33 @@ function filterForErrors(result) {
 }
 
 /**
+ * returns an array that contains only unique objects
+ * @param {Array[Object]} results - the array containing results
+ * @returns {Array[Object]} a filtered array
+ */
+function filterDuplicates(results) {
+  let filteredArray = [];
+  let isUnique = true;
+  results.forEach(result => {
+    if (filteredArray.length == 0) {
+      // if the filtered array is empty then it's automatically unique
+      filteredArray.push(result);
+    } else {
+      filteredArray.forEach(uniqueResult => {
+        if (uniqueResult.source === result.source) {
+          // each result comes from one source
+          isUnique = false;
+        }
+      });
+      if (isUnique) {
+        filteredArray.push(result);
+      }
+    }
+  });
+  return filteredArray;
+}
+
+/**
  * creates colored text that describes the severity of a problem
  * @param {String} severity - error.severity, the severity of the error
  * @returns {String} returns colored error text depending on the severity
@@ -101,7 +128,10 @@ function formatError(errors) {
 function formatter(results) {
   let formattedMsg = '';
   if (results) {
-    const filesWithErrors = results.filter(filterForErrors);
+    let filesWithErrors = results.filter(filterForErrors);
+    // filter out duplicate values
+    filesWithErrors = filterDuplicates(filesWithErrors);
+    filesWithErrors = filesWithErrors.filter((v, i, a) => a.indexOf(v) == i);
     if (filesWithErrors.length > 0) {
       formattedMsg += TITLE('\n!! WARNINGS !!\n\n');
     }
@@ -118,6 +148,7 @@ function formatter(results) {
 
 const formatterModule = (module.exports = formatter);
 formatterModule.filterForErrors = filterForErrors;
+formatterModule.filterDuplicates = filterDuplicates;
 formatterModule.generateErrorIcon = generateErrorIcon;
 formatterModule.formatTabbing = formatTabbing;
 formatterModule.createCustomMessage = createCustomMessage;
