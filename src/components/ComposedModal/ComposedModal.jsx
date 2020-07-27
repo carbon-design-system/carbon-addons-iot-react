@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import classnames from 'classnames';
 import warning from 'warning';
-import { spacing04 } from '@carbon/layout';
 
 import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
