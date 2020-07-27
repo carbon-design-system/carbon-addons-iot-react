@@ -16,19 +16,19 @@
   <a href="https://app.netlify.com/sites/carbon-addons-iot-react/deploys">
     <img src="https://api.netlify.com/api/v1/badges/d037c99a-d51a-4729-bf7c-589679e2663e/deploy-status" alt="Netlify status" />
   </a>
-  <a href="https://travis-ci.org/IBM/carbon-addons-iot-react">
-    <img src="https://travis-ci.org/IBM/carbon-addons-iot-react.svg?branch=master" alt="Build Status" />
+  <a href="https://travis-ci.org/carbon-design-system/carbon-addons-iot-react">
+    <img src="https://travis-ci.org/carbon-design-system/carbon-addons-iot-react.svg?branch=master" alt="Build Status" />
   </a>
   <a href="https://www.npmjs.com/package/carbon-addons-iot-react">
     <img src="https://img.shields.io/npm/v/carbon-addons-iot-react/master.svg" alt="master release" />
   </a>
-  <a href="https://coveralls.io/github/IBM/carbon-addons-iot-react?branch=master">
-    <img src="https://coveralls.io/repos/github/IBM/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />
+  <a href="https://coveralls.io/github/carbon-design-system/carbon-addons-iot-react?branch=master">
+    <img src="https://coveralls.io/repos/github/carbon-design-system/carbon-addons-iot-react/badge.svg?branch=master" alt="Coverage Report" />
   </a>
-  <a href="https://github.com/IBM/carbon-addons-iot-react/blob/master/LICENSE">
+  <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-Apache--2.0-blue.svg" alt="Carbon add-ons for Watson IoT is released under the Apache-2.0 license" />
   </a>
-  <a href="https://github.com/IBM/carbon-addons-iot-react/blob/master/.github/CONTRIBUTING.MD">
+  <a href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/master/.github/CONTRIBUTING.MD">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
   </a>
 </p>
@@ -47,7 +47,7 @@ If you prefer [Yarn Classic](https://classic.yarnpkg.com/), use the following co
 yarn add carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 ```
 
-> _Note `d3` is a peer dependency due to the usage of `@carbon/charts` in various components. The required version range is specified in [our package.json](https://github.com/IBM/carbon-addons-iot-react/search?l=JSON&q=peerDependencies+d3)_
+> _Note `d3` is a peer dependency due to the usage of `@carbon/charts` in various components. The required version range is specified in [our package.json](https://github.com/carbon-design-system/carbon-addons-iot-react/search?l=JSON&q=peerDependencies+d3)_
 
 You can then import any component that you need by doing the following in your project:
 
@@ -92,7 +92,7 @@ A sass entrypoint is available at `scss/styles.scss` for use in your project.
 
 Using sass files (instead of the compiled .css) infers usage of a SCSS pre-processor. All Sass files use the `*.scss` file extension. For transpiling Sass code, use node-sass based Sass compilers, for example, WebPack sass-loader or gulp-sass. Make sure your build process uses autoprefixer to ensure vendor prefixes are automatically added to your output CSS.
 
-Feedback and improvement requests regarding this configuration would be appreciated, [please open an issue](https://github.com/IBM/carbon-addons-iot-react/issues/new?assignees=&labels=%3Ahammer%3A++Enhancement&template=feature-request-or-enhancement.md&title=%5BComponentName%5D+request_title).
+Feedback and improvement requests regarding this configuration would be appreciated, [please open an issue](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/new?assignees=&labels=%3Ahammer%3A++Enhancement&template=feature-request-or-enhancement.md&title=%5BComponentName%5D+request_title).
 
 ## Dependencies
 

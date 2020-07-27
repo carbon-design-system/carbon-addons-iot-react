@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, within, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2, tableColumnsWithLinks } from '../../utils/sample';

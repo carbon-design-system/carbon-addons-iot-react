@@ -3,7 +3,6 @@ import React from 'react';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { screen, render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
