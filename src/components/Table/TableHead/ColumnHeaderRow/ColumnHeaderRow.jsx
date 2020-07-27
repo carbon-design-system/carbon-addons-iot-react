@@ -3,59 +3,16 @@ import PropTypes from 'prop-types';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DataTable, Button } from 'carbon-components-react';
-import styled from 'styled-components';
 import { Settings16 } from '@carbon/icons-react';
 import { spacing03, spacing06 } from '@carbon/layout';
 
+import { settings } from '../../../../constants/Settings';
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
 import { defaultI18NPropTypes } from '../../TablePropTypes';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
 
 const { TableHeader, TableRow } = DataTable;
-
-const StyledTableHeader = styled(TableHeader)`
-  &&& {
-    border-top: none;
-
-    .bx--form-item {
-      display: table-cell;
-
-      input {
-        min-width: 12.75rem;
-      }
-    }
-  }
-`;
-
-const StyledColumnSelectWrapper = styled.div`
-   {
-    display: flex;
-    flex-wrap: wrap;
-  }
-`;
-
-const StyledColumnSelectTableRow = styled(TableRow)`
-  &&& {
-    th {
-      padding-top: ${spacing06};
-      padding-bottom: ${spacing03};
-    }
-    td {
-      background-color: inherit;
-      border-left: none;
-      border-width: 0 0 0 4px;
-    }
-    :hover {
-      border: inherit;
-      background-color: inherit;
-      td {
-        background-color: inherit;
-        border-left: none;
-        border-width: 0 0 0 4px;
-      }
-    }
-  }
-`;
+const { iotPrefix } = settings;
 
 class ColumnHeaderRow extends Component {
   static propTypes = {
@@ -123,11 +80,19 @@ class ColumnHeaderRow extends Component {
       c => !(ordering.find(o => o.columnId === c.id) || { isHidden: false }).isHidden
     );
     return (
-      <StyledColumnSelectTableRow>
-        {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
-        {hasRowExpansion ? <StyledTableHeader /> : null}
-        <StyledTableHeader colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)} scope="col">
-          <StyledColumnSelectWrapper>
+      <TableRow className={`${iotPrefix}--column-header-row--table-row`}>
+        {hasRowSelection === 'multi' ? (
+          <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
+        ) : null}
+        {hasRowExpansion ? (
+          <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
+        ) : null}
+        <TableHeader
+          className={`${iotPrefix}--column-header-row--table-header`}
+          colSpan={visibleColumns.length + (hasRowActions ? 1 : 0)}
+          scope="col"
+        >
+          <div className={`${iotPrefix}--column-header-row--select-wrapper`}>
             {ordering.map((c, idx) => (
               <ColumnHeaderSelect
                 key={`${idx}-item`}
@@ -141,7 +106,7 @@ class ColumnHeaderRow extends Component {
                 {columns.find(i => c.columnId === i.id).name}
               </ColumnHeaderSelect>
             ))}
-          </StyledColumnSelectWrapper>
+          </div>
           {hasColumnSelectionConfig ? (
             <Button
               disabled={isDisabled}
@@ -154,8 +119,8 @@ class ColumnHeaderRow extends Component {
               {columnSelectionConfigText}
             </Button>
           ) : null}
-        </StyledTableHeader>
-      </StyledColumnSelectTableRow>
+        </TableHeader>
+      </TableRow>
     );
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
 import Table from '../Table/Table';
 import { getIntervalChartData } from '../../utils/sample';

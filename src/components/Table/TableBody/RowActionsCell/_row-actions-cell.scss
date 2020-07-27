@@ -1,11 +1,25 @@
 @import '../../../../globals/vars';
-
 @mixin backgroundGradient($color) {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$color} 16px);
 }
 
 .#{$iot-prefix}--row-actions-container {
   height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  /* If the actions are focused on, they should show up */
+  > *:focus {
+    opacity: 1;
+  }
+
+  /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
+  .#{$prefix}--loading--small {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
   > * {
     margin-left: $spacing-04;
   }
@@ -57,7 +71,7 @@
     @include backgroundGradient($ui-01);
   }
 
-  &.bx--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
+  &.#{$prefix}--data-table--selected:hover .#{$iot-prefix}--row-actions-container__background {
     @include backgroundGradient($hover-selected-ui);
   }
 
@@ -82,4 +96,46 @@ html[dir='rtl'] {
       transform: rotate(180deg);
     }
   }
+}
+
+.#{$iot-prefix}--row-actions-cell--table-cell {
+  &.#{$iot-prefix}--row-actions-cell--table-cell {
+    padding: 0;
+    vertical-align: middle;
+  }
+}
+
+.#{$iot-prefix}--row-actions-cell--overflow-menu-content {
+  display: flex;
+  align-items: center;
+}
+
+.#{$iot-prefix}--row-actions-cell--overflow-menu {
+  &.#{$iot-prefix}--row-actions-cell--overflow-menu {
+    margin-left: 0.5rem;
+    &:hover > svg {
+      fill: $interactive-01;
+    }
+  }
+}
+
+.#{$iot-prefix}--row-actions-error--span {
+  margin-left: 0.5rem;
+  line-height: 1.875rem;
+}
+
+.#{$iot-prefix}--row-actions-error--title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.#{$iot-prefix}--row-actions-error--footer {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.#{$iot-prefix}--row-actions-error--tooltip {
+  font-size: 0.875rem;
 }

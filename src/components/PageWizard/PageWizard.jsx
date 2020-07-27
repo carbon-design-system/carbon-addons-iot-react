@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ProgressIndicator, ProgressStep } from 'carbon-components-react';
 import classnames from 'classnames';
 
+import ProgressIndicator from '../ProgressIndicator/ProgressIndicator';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -52,6 +52,8 @@ export const PageWizardPropTypes = {
   isProgressIndicatorVertical: PropTypes.bool,
   /** Content to render before footer buttons (on left side, in LTR) */
   beforeFooterContent: PropTypes.node,
+  /** Make the ProgressIndicator clickable */
+  isClickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -73,6 +75,7 @@ export const defaultProps = {
   onBack: null,
   setStep: null,
   beforeFooterContent: null,
+  isClickable: false,
 };
 
 const PageWizard = ({
@@ -92,12 +95,15 @@ const PageWizard = ({
   onClearError,
   isProgressIndicatorVertical,
   beforeFooterContent,
+  isClickable,
 }) => {
   const children = ch.length ? ch : [ch];
   const steps = React.Children.map(children, step => step.props);
   const currentStepIdx = steps.findIndex(i => i.id === currentStepId);
+
   const hasPrev = currentStepIdx !== 0;
   const hasNext = currentStepIdx !== steps.length - 1;
+
   const currentStep = children.find((i, idx) => idx === currentStepIdx);
   const currentStepToRender = React.cloneElement(currentStep, {
     hasPrev,
@@ -114,6 +120,43 @@ const PageWizard = ({
     onClearError,
     beforeFooterContent,
   });
+
+  /**
+   * The progress indicator requires an array of items(steps) with substeps passed as children.
+   * This function takes all the steps from PageWizardSteps and puts subSteps as children into
+   * the corresponding parent step
+   * @type {array} steps - The steps array extracted from PageWizardSteps
+   * @return {array} newItemsArray - An array with steps items and nested children steps
+   */
+  const newItemsArray = () => {
+    const array = [];
+    steps.forEach(({ id, label, secondaryLabel, description, subStep, disabled, invalid }) => {
+      if (!subStep) {
+        array.push({
+          ...(id && { id }),
+          ...(label && { label }),
+          ...(secondaryLabel && { secondaryLabel }),
+          ...(description && { description }),
+          ...(disabled && { disabled }),
+          ...(invalid && { invalid }),
+        });
+      } else {
+        const lastMainStep = array[array.length - 1];
+        if (!('children' in lastMainStep)) {
+          lastMainStep.children = [];
+        }
+        lastMainStep.children.push({
+          ...(id && { id }),
+          ...(label && { label }),
+          ...(secondaryLabel && { secondaryLabel }),
+          ...(description && { description }),
+          ...(disabled && { disabled }),
+          ...(invalid && { invalid }),
+        });
+      }
+    });
+    return array;
+  };
 
   return (
     <div
@@ -132,20 +175,12 @@ const PageWizard = ({
           }
         >
           <ProgressIndicator
-            className={classnames(className, `${iotPrefix}--progress-indicator`)}
-            currentIndex={currentStepIdx}
-            onChange={idx => setStep(steps[idx].id)}
-            vertical={isProgressIndicatorVertical}
-          >
-            {steps.map((step, idx) => (
-              <ProgressStep
-                key={idx}
-                description={step.description}
-                label={step.label}
-                secondaryLabel={step.secondaryLabel}
-              />
-            ))}
-          </ProgressIndicator>
+            items={newItemsArray()}
+            currentItemId={currentStepId}
+            onClickItem={setStep}
+            isVerticalMode={isProgressIndicatorVertical}
+            isClickable={isClickable}
+          />
         </div>
       ) : null}
       <div className={`${iotPrefix}--page-wizard--content`}>{currentStepToRender}</div>

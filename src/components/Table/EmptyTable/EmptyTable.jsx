@@ -1,42 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Button } from 'carbon-components-react';
-import styled from 'styled-components';
 import { Bee32 } from '@carbon/icons-react';
 import { spacing09 } from '@carbon/layout';
 
+import { settings } from '../../../constants/Settings';
 import { EmptyStatePropTypes } from '../TablePropTypes';
 
 const { TableBody, TableCell, TableRow } = DataTable;
-
-const StyledEmptyTableRow = styled(TableRow)`
-  &&& {
-    height: calc(100% - 3rem);
-    &:hover td {
-      background: inherit;
-    }
-    .empty-table-cell--default {
-      display: flex;
-      align-items: center;
-      justify-content: middle;
-      flex-direction: column;
-      padding: ${spacing09};
-
-      svg {
-        margin: 1rem;
-      }
-
-      & > * {
-        margin: 0.5rem;
-      }
-    }
-
-    td {
-      /* if the table is empty, remove border */
-      border-bottom: unset;
-    }
-  }
-`;
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** The unique id of the table */
@@ -62,7 +34,7 @@ const EmptyTable = ({
   emptyState: { messageWithFilters, message, buttonLabel, buttonLabelWithFilters },
 }) => (
   <TableBody id={id}>
-    <StyledEmptyTableRow>
+    <TableRow className={`${iotPrefix}--empty-table--table-row`}>
       <TableCell colSpan={totalColumns}>
         {React.isValidElement(emptyState) ? (
           emptyState
@@ -78,7 +50,7 @@ const EmptyTable = ({
           </div>
         )}
       </TableCell>
-    </StyledEmptyTableRow>
+    </TableRow>
   </TableBody>
 );
 

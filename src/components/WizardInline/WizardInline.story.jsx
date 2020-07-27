@@ -24,7 +24,7 @@ const items = [
   },
   {
     id: 'step2',
-    name: 'Device Information step goes here',
+    name: 'Device Information',
   },
   {
     id: 'step3',
