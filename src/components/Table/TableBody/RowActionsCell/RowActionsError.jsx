@@ -1,32 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { WarningAlt16 } from '@carbon/icons-react';
-import { spacing03 } from '@carbon/layout';
-import styled from 'styled-components';
 import { Tooltip, Button } from 'carbon-components-react';
 
+import { settings } from '../../../../constants/Settings';
 import { RowActionErrorPropTypes } from '../../TablePropTypes';
 
-const StyledSpan = styled.span`
-  margin-left: ${spacing03};
-  line-height: 1.875rem;
-`;
-
-const StyledTitle = styled.p`
-  font-weight: bold;
-  margin-bottom: ${spacing03};
-`;
-
-const StyledTooltipFooter = styled.div`
-  margin-top: ${spacing03};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const StyledTooltipContents = styled.div`
-  font-size: 0.875rem;
-`;
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** I18N label for action failed */
@@ -71,10 +51,10 @@ const RowActionsError = ({
           <WarningAlt16 ref={ref} />
         ))}
       >
-        <StyledTooltipContents>
-          <StyledTitle>{title}</StyledTitle>
+        <div className={`${iotPrefix}--row-actions-error--tooltip`}>
+          <p className={`${iotPrefix}--row-actions-error--title`}>{title}</p>
           {message}
-          <StyledTooltipFooter>
+          <div className={`${iotPrefix}--row-actions-error--footer`}>
             {learnMoreURL ? (
               <a href={learnMoreURL} target="_blank" rel="noopener noreferrer">
                 {learnMoreText}
@@ -92,10 +72,10 @@ const RowActionsError = ({
                 {dismissText}
               </Button>
             ) : null}
-          </StyledTooltipFooter>
-        </StyledTooltipContents>
+          </div>
+        </div>
       </Tooltip>
-      <StyledSpan>{actionFailedText}</StyledSpan>
+      <span className={`${iotPrefix}--row-actions-error--span`}>{actionFailedText}</span>
     </Fragment>
   ) : null;
 };

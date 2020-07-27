@@ -2605,6 +2605,7 @@ Map {
         "previousButtonLabel": "Previous",
         "submitButtonLabel": "Submit",
       },
+      "isClickable": false,
     },
     "propTypes": Object {
       "currentStepIndex": Object {
@@ -2650,6 +2651,9 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
+      "isClickable": Object {
+        "type": "bool",
+      },
       "onSubmit": Object {
         "isRequired": true,
         "type": "func",
@@ -2691,6 +2695,7 @@ Map {
       "description": null,
       "error": null,
       "footerLeftContent": null,
+      "isClickable": false,
       "nextDisabled": false,
       "nextLabel": "Next",
       "onBack": null,
@@ -2737,6 +2742,9 @@ Map {
       },
       "footerLeftContent": Object {
         "type": "element",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "items": Object {
         "args": Array [
@@ -2824,6 +2832,7 @@ Map {
       "description": null,
       "error": null,
       "footerLeftContent": null,
+      "isClickable": false,
       "nextDisabled": false,
       "nextLabel": "Next",
       "onBack": null,
@@ -2870,6 +2879,9 @@ Map {
       },
       "footerLeftContent": Object {
         "type": "element",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "items": Object {
         "args": Array [
@@ -3237,13 +3249,19 @@ Map {
   },
   "ProgressIndicator" => Object {
     "defaultProps": Object {
+      "className": null,
       "currentItemId": null,
+      "isClickable": false,
       "isVerticalMode": false,
+      "items": null,
       "onClickItem": null,
       "showLabels": true,
       "stepWidth": null,
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "currentItemId": Object {
         "args": Array [
           Array [
@@ -3257,6 +3275,9 @@ Map {
         ],
         "type": "oneOfType",
       },
+      "isClickable": Object {
+        "type": "bool",
+      },
       "isVerticalMode": Object {
         "type": "bool",
       },
@@ -3265,6 +3286,12 @@ Map {
           Object {
             "args": Array [
               Object {
+                "description": Object {
+                  "type": "string",
+                },
+                "disabled": Object {
+                  "type": "bool",
+                },
                 "id": Object {
                   "args": Array [
                     Array [
@@ -3278,8 +3305,14 @@ Map {
                   ],
                   "type": "oneOfType",
                 },
+                "invalid": Object {
+                  "type": "bool",
+                },
                 "label": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "secondaryLabel": Object {
                   "type": "string",
                 },
               },
@@ -3287,7 +3320,6 @@ Map {
             "type": "shape",
           },
         ],
-        "isRequired": true,
         "type": "arrayOf",
       },
       "onClickItem": Object {
@@ -12668,6 +12700,7 @@ Map {
         "next": "Next",
         "submit": "Submit",
       },
+      "isClickable": false,
       "isProgressIndicatorVertical": true,
       "nextDisabled": false,
       "onBack": null,
@@ -12727,6 +12760,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isClickable": Object {
+        "type": "bool",
       },
       "isProgressIndicatorVertical": Object {
         "type": "bool",

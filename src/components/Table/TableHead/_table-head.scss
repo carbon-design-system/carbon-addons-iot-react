@@ -1,6 +1,8 @@
 @import '../../../globals/vars';
 @import '~carbon-components/scss/globals/scss/layout';
 @import 'column-resize';
+@import 'ColumnHeaderRow/column-header-row';
+@import 'FilterHeaderRow/filter-header-row';
 
 .#{$prefix}--data-table {
   th {
@@ -87,4 +89,17 @@
 
 .#{$prefix}--data-table--sort thead tr:first-child th {
   padding: 0 $spacing-05;
+}
+
+.#{$iot-prefix}--table-head--table-header {
+  .#{$prefix}--table-header-label {
+    min-width: var(--table-header-width);
+    max-width: var(--table-header-width);
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+  }
+
+  vertical-align: middle;
 }

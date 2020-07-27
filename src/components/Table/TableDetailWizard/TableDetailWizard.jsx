@@ -1,55 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { InlineNotification } from 'carbon-components-react';
-import { spacing07, spacing08, spacing09 } from '@carbon/layout';
+import classnames from 'classnames';
 
 import WizardFooter from '../../WizardInline/WizardFooter/WizardFooter';
 import WizardContent from '../../WizardInline/WizardContent/WizardContent';
-import { COLORS } from '../../../styles/styles';
+import { settings } from '../../../constants/Settings';
 
 import TableDetailWizardHeader from './TableDetailWizardHeader/TableDetailWizardHeader';
 import DetailWizardSidebar from './TableDetailWizardSidebar/TableDetailWizardSidebar';
 
-const StyledWizardWrapper = styled.div`
-  background-color: ${COLORS.gray10};
-  display: flex;
-  flex-flow: column;
-  align-items: left;
-  border: 1px solid #a2a2a28c;
-
-  .bx--inline-notification {
-    max-width: none;
-    width: calc(100% - 2rem);
-    margin: 1rem;
-  }
-`;
-
-const StyledWizardContainer = styled.div`
-  display: flex;
-`;
-
-const StyledMessageBox = styled(InlineNotification)`
-   {
-    width: 100%;
-  }
-`;
-
-const StyledFooter = styled.div`
-  .bx--modal-footer {
-    justify-content: flex-end;
-
-    & > div {
-      width: 100%;
-    }
-  }
-`;
-
-const StyledContentContainer = styled.div`
-  padding-top: ${spacing07};
-  padding-right: ${spacing09};
-  padding-left: ${spacing08};
-`;
+const { iotPrefix } = settings;
 
 export const propTypes = {
   /** Title in the header */
@@ -96,6 +57,8 @@ export const propTypes = {
   error: PropTypes.string,
   /**  Clear the currently shown error, triggered if the user closes the ErrorNotification */
   onClearError: PropTypes.func,
+  /** Set the progress indicator button to clickable */
+  isClickable: PropTypes.bool,
 };
 
 export const defaultProps = {
@@ -115,6 +78,7 @@ export const defaultProps = {
   sendingData: false,
   error: null,
   onClearError: null,
+  isClickable: false,
 };
 
 const TableDetailWizard = ({
@@ -137,9 +101,11 @@ const TableDetailWizard = ({
   className,
   error,
   onClearError,
+  isClickable,
 }) => {
   const currentItemObj = items.find(({ id }) => currentItemId === id) || items[0];
   const currentItemIndex = items.findIndex(({ id }) => currentItemId === id);
+
   const hasNext = currentItemIndex !== items.length - 1;
   const hasPrev = currentItemIndex !== 0;
 
@@ -159,9 +125,9 @@ const TableDetailWizard = ({
   };
 
   return (
-    <StyledWizardWrapper className={className}>
+    <div className={classnames(className, `${iotPrefix}--table-detail-wizard--wizard-wrapper`)}>
       <TableDetailWizardHeader title={title} onClose={onClose} />
-      <StyledWizardContainer>
+      <div className={`${iotPrefix}--table-detail-wizard--wizard-container`}>
         <DetailWizardSidebar
           currentItemId={currentItemId}
           // only go if current step passes validation
@@ -169,20 +135,22 @@ const TableDetailWizard = ({
           items={items}
           showLabels={showLabels}
           stepWidth={stepWidth}
+          isClickable={isClickable}
         />
-        <StyledContentContainer>
+        <div className={`${iotPrefix}--table-detail-wizard--content-container`}>
           <WizardContent component={currentItemObj.component} />
-        </StyledContentContainer>
-      </StyledWizardContainer>
+        </div>
+      </div>
       {error ? (
-        <StyledMessageBox
+        <InlineNotification
           title={error}
           subtitle=""
           kind="error"
           onCloseButtonClick={handleClearError}
+          className={`${iotPrefix}--table-detail-wizard--inline-notification`}
         />
       ) : null}
-      <StyledFooter className={className}>
+      <div className={classnames(className, `${iotPrefix}--table-detail-wizard--footer`)}>
         <div className="bx--modal-footer">
           <WizardFooter
             backLabel={backLabel}
@@ -200,8 +168,8 @@ const TableDetailWizard = ({
             sendingData={sendingData}
           />
         </div>
-      </StyledFooter>
-    </StyledWizardWrapper>
+      </div>
+    </div>
   );
 };
 
