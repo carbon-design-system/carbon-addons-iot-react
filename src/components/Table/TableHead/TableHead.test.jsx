@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
+import { render, fireEvent, screen, prettyDOM } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
@@ -32,6 +33,18 @@ const commonTableHeadProps = {
 };
 
 describe('TableHead', () => {
+  it('checks translation keys', () => {
+    render(<TableHead {...commonTableHeadProps} />);
+    console.log(prettyDOM(screen.getByRole('button', {name: /Column 3/i})));
+    expect(screen.getAllByLabelText('Sort rows by this header in descending order')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', {name: /Column 3/i}));
+    expect(screen.getAllByLabelText('Un sort rows by this header')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', {name: /Column 3/i}));
+    expect(screen.getAllByLabelText('Sort rows by this header in ascending order')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', {name: /Column 3/i}));
+    expect(screen.getAllByLabelText('Sort rows by this header in descending order')).toBeTruthy();
+  });
+
   it('columns should render', () => {
     const wrapper = mount(<TableHead {...commonTableHeadProps} />);
     const tableHeaders = wrapper.find(TableHeader);
