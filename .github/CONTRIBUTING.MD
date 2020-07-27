@@ -24,13 +24,13 @@ To get a Windows environment set up for contributing to this codebase, you'll ne
 To set up WSL, follow [this guide published by the Carbon team](https://github.com/carbon-design-system/carbon/blob/master/docs/guides/setup/windows.md). The steps should be the same, except that you'll be cloning this repository instead of the Carbon repository.
 
 ```sh
-git clone git@github.com:IBM/carbon-addons-iot-react.git
+git clone git@github.com:carbon-design-system/carbon-addons-iot-react.git
 ```
 
 or with `https`:
 
 ```sh
-git clone https://github.com/IBM/carbon-addons-iot-react.git
+git clone https://github.com/carbon-design-system/carbon-addons-iot-react.git
 ```
 
 ## Build and start the development server
@@ -68,9 +68,9 @@ Any change to `dependencies` (including version bumps) will impact consumers tha
 
 ## Submitting pull requests and commits
 
-Commits must follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/IBM/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
+Commits must follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#summary) format. You won't be able to create a commit unless you follow those rules. The [recent commits in the repository](https://github.com/carbon-design-system/carbon-addons-iot-react/commits/master) show examples of the format and how it's generally used.
 
-For more information on what type of change commit should be labeled a `BREAKING CHANGE`, `feat`, or `fix`, please read [the versioning documentation](https://github.com/IBM/carbon-addons-iot-react/blob/master/docs/guides/versioning.md).
+For more information on what type of change commit should be labeled a `BREAKING CHANGE`, `feat`, or `fix`, please read [the versioning documentation](https://github.com/carbon-design-system/carbon-addons-iot-react/blob/master/docs/guides/versioning.md).
 
 Commits are preferred but not required to contain a link to an issue. If you choose to link commits to an issue, the 72 character limit can be avoided by placing the link in the body of the commit. Example:
 
