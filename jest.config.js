@@ -9,7 +9,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|TableHead|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,
@@ -20,12 +20,12 @@ module.exports = {
       // https://github.com/carbon-design-system/carbon-charts/issues/594
       functions: 60,
     },
-    './src/components/Table/TableHead/TableHead.jsx': {
-      statements: 73,
-      branches: 77,
-      lines: 73,
-      functions: 57,
-    },
+    // './src/components/Table/TableHead/TableHead.jsx': {
+    //   statements: 73,
+    //   branches: 77,
+    //   lines: 73,
+    //   functions: 57,
+    // },
     './src/components/Table/TableHead/ColumnResize.jsx': {
       statements: 36,
       branches: 11,
