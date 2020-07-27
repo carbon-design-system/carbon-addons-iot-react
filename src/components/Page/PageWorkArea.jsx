@@ -5,7 +5,7 @@ import { spacing05, spacing07 } from '@carbon/layout';
 
 const StyledDiv = styled.div`
   width: 100%;
-  padding: ${spacing05} ${spacing07};
+  padding: ${spacing07} ${spacing05};
 `;
 
 const propTypes = {
