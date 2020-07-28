@@ -28,7 +28,7 @@ const StatefulPageWizardPropTypes = {
     close: PropTypes.string,
   }),
   /** function to go to step when click ProgressIndicator step. */
-  setStep: PropTypes.func.isRequired,
+  setStep: PropTypes.func,
   /** next button disabled */
   nextDisabled: PropTypes.bool,
   /** show progress indicator on finish button */
@@ -63,6 +63,7 @@ const defaultProps = {
   onNext: null,
   onBack: null,
   beforeFooterContent: null,
+  setStep: null,
 };
 
 const StatefulPageWizard = ({

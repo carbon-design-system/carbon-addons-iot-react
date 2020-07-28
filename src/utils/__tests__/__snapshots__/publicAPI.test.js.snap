@@ -12764,7 +12764,9 @@ Map {
       "nextDisabled": false,
       "onBack": null,
       "onClearError": null,
+      "onClose": null,
       "onNext": null,
+      "onSubmit": null,
       "onValidate": [Function],
       "sendingData": false,
     },
@@ -12824,14 +12826,12 @@ Map {
         "type": "func",
       },
       "onClose": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onNext": Object {
         "type": "func",
       },
       "onSubmit": Object {
-        "isRequired": true,
         "type": "func",
       },
       "onValidate": Object {
@@ -12961,6 +12961,7 @@ Map {
       "onBack": null,
       "onNext": null,
       "sendingData": false,
+      "setStep": null,
     },
     "propTypes": Object {
       "beforeFooterContent": Object {
@@ -13043,7 +13044,6 @@ Map {
         "type": "bool",
       },
       "setStep": Object {
-        "isRequired": true,
         "type": "func",
       },
     },

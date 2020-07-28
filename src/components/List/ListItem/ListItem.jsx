@@ -43,7 +43,7 @@ const ListItemWrapperProps = {
   isSelectable: PropTypes.bool.isRequired,
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
-  children: React.Children.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const ListItemPropTypes = {

@@ -24,7 +24,7 @@ const PageWizardStepPropTypes = {
   /** Optional sticky footer */
   hasStickyFooter: PropTypes.bool,
   /** Callback function to close the wizard */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /** Determines if Cancel or Previous button is rendered */
   hasPrev: PropTypes.bool,
   /** Determines if Next or Submit button is rendered */
@@ -38,7 +38,7 @@ const PageWizardStepPropTypes = {
   /** Renders a loading icon in the Next button */
   sendingData: PropTypes.bool,
   /** Callback function when Submit button is clicked */
-  onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
   /** Content to render before footer buttons (on left side, in LTR) */
   beforeFooterContent: PropTypes.node,
 };
@@ -63,6 +63,8 @@ const PageWizardStepDefaultProps = {
   onNext: null,
   onBack: null,
   beforeFooterContent: null,
+  onSubmit: null,
+  onClose: null,
 };
 
 const PageWizardStep = ({
