@@ -63,9 +63,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     view,
     view: {
       table: { filteredData, selectedIds, sort },
-      toolbar: { initialDefaultSearch },
     },
   } = state;
+
+  const initialDefaultSearch = state?.table?.toolbar?.initialDefaultSearch || '';
 
   const { pagination, toolbar, table } = callbackActions;
   const { onChangePage } = pagination || {};
@@ -227,9 +228,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       view={{
         ...view,
         toolbar: {
-          ...view.toolbar,
+          ...view?.toolbar,
           search: {
-            ...view.toolbar.search,
+            ...view?.toolbar?.search,
             defaultValue: initialDefaultSearch,
           },
         },
