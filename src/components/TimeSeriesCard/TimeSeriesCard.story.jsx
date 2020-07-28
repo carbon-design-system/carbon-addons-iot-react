@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
+import { spacing05 } from '@carbon/layout';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -20,11 +21,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -59,11 +61,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         'hour'
       );
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TimeSeriesCard
             title={text('title', 'Temperature {not-working}')}
             id="facility-temperature"
             isLoading={boolean('isLoading', false)}
+            isExpanded={boolean('isExpandable', false)}
             cardVariables={object('Variables', {
               'not-working': 'working',
             })}
@@ -105,11 +108,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('medium / single line - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -124,7 +128,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
-          domainRange={[new Date(), new Date()]}
           interval="hour"
           breakpoint="lg"
           size={size}
@@ -134,7 +137,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - domain range', () => {
+  .add('medium / single line - custom domainRange', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
     const timestamps = data.map(d => d.timestamp);
@@ -148,6 +151,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -180,6 +184,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -211,6 +216,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -241,6 +247,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -282,6 +289,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -315,11 +323,17 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -363,6 +377,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -423,6 +438,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -453,6 +469,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -483,6 +500,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -512,6 +530,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -546,11 +565,17 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -583,11 +608,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('large / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -616,11 +642,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('empty', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -644,11 +671,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('highlight alert ranges', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -689,11 +717,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('empty for a range', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -720,11 +749,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('lots of dots', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -751,12 +781,13 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('isEditable', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
           isLoading={boolean('isLoading', false)}
           isEditable={boolean('isEditable', true)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -790,16 +821,122 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
+  .add('isExpanded', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    // needs static data so that the snapshot will always retain the same values
+    const staticData = [
+      {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: 20,
+        humidity: 5.51,
+        ecount: 6,
+        devname: '6ctgim0Qcq',
+        pressure: 7.4,
+        status: true,
+        timestamp: 1569945252000,
+      },
+      {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: 19,
+        humidity: 7.36,
+        ecount: 58,
+        devname: '6ctgim0Qcq',
+        pressure: 9.21,
+        status: true,
+        timestamp: 1567353252000,
+      },
+      {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: 29,
+        humidity: 3.32,
+        ecount: 32,
+        devname: '6ctgim0Qcq',
+        pressure: 9.58,
+        status: true,
+        timestamp: 1564674852000,
+      },
+      {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: 86,
+        humidity: 2.98,
+        ecount: 45,
+        devname: '6ctgim0Qcq',
+        pressure: 8.72,
+        status: true,
+        timestamp: 1561996452000,
+      },
+      {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: 11,
+        humidity: 9.25,
+        ecount: 38,
+        devname: '6ctgim0Qcq',
+        pressure: 9.57,
+        status: true,
+        timestamp: 1559404452000,
+      },
+      {
+        ENTITY_ID: 'Sensor2-1',
+        temperature: 35,
+        humidity: 8.15,
+        ecount: 18,
+        devname: '6ctgim0Qcq',
+        pressure: 8.3,
+        status: true,
+        timestamp: 1556726052000,
+      },
+    ];
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', true)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temp',
+                dataSourceId: 'temperature',
+              },
+              {
+                label: 'Humidity',
+                dataSourceId: 'humidity',
+              },
+              {
+                label: 'Electricity',
+                dataSourceId: 'ecount',
+              },
+              {
+                label: 'Pressure',
+                dataSourceId: 'pressure',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+          })}
+          values={staticData}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+        />
+      </div>
+    );
+  })
   .add('dataFilter', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           key="dataFilter"
           id="facility-temperature"
           isEditable={boolean('isEditable', false)}
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {
@@ -851,11 +988,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('locale', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Pressure')}
           id="facility-pressure"
           isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
           content={object('content', {
             series: [
               {

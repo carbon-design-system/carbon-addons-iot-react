@@ -5,8 +5,8 @@
   justify-content: flex-start;
 
   .#{$prefix}--loading {
-    margin-top: -1rem;
-    margin-bottom: -1rem;
+    margin-top: -$spacing-05;
+    margin-bottom: -$spacing-05;
   }
   .#{$prefix}--loading__stroke {
     stroke: $carbon--gray-50;
@@ -55,7 +55,7 @@
   outline-color: transparent;
 }
 
-html[dir='rtl'] .#{$iot-prefix}--btn {
+[dir='rtl'] .#{$iot-prefix}--btn:not(.#{$prefix}--btn--icon-only) {
   text-align: right;
   padding-left: 60px; // fixed values to invert $button-padding of Carbon's theme-tokens.scss
   padding-right: 12px;

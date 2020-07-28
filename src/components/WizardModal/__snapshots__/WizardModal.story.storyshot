@@ -13,7 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -73,131 +73,171 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-            onChange={[Function]}
+            className="iot--progress-indicator"
+            data-testid="iot--progress-indicator-testid"
           >
             <li
-              className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--current"
             >
               <button
-                className="bx--progress-step-button bx--progress-step-button--unclickable"
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step1"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={-1}
+                type="button"
               >
+                <div
+                  className="iot--progress-step-line"
+                />
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step1"
                 >
-                  Current
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="10"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      1
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step1"
+                  >
                     step1
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step1
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
-                className="bx--progress-step-button"
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
+                data-testid="iot--progress-step-button-main-step2"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="iot--progress-step-line"
+                />
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step2"
                 >
-                  Incomplete
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      2
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step2"
+                  >
                     step2
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step2
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
-                className="bx--progress-step-button"
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step iot--progress-step-button--clickable"
+                data-testid="iot--progress-step-button-main-step3"
+                disabled={false}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 tabIndex={0}
+                type="button"
               >
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step3"
                 >
-                  Incomplete
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      3
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step3"
+                  >
                     step3
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step3
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
           </ul>
@@ -208,7 +248,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
@@ -282,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal WizardModalstory__StyledWizard-sc-1z46gj-0 eiobyI iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -342,131 +387,171 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-            onChange={[Function]}
+            className="iot--progress-indicator"
+            data-testid="iot--progress-indicator-testid"
           >
             <li
-              className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--current"
             >
               <button
-                className="bx--progress-step-button bx--progress-step-button--unclickable"
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step1"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={-1}
+                type="button"
               >
+                <div
+                  className="iot--progress-step-line"
+                />
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step1"
                 >
-                  Current
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="10"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      1
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step1"
+                  >
                     step1
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step1
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step2"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="iot--progress-step-line"
+                />
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step2"
                 >
-                  Incomplete
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      2
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step2"
+                  >
                     step2
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step2
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--incomplete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--incomplete"
             >
               <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step3"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={0}
+                type="button"
               >
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step3"
                 >
-                  Incomplete
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      3
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step3"
+                  >
                     step3
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step3
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
           </ul>
@@ -477,7 +562,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <div
             className="WizardInline-custom-footer-content"
@@ -558,7 +648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
     }
   >
     <div
-      className="bx--modal is-visible iot--wizard-modal ComposedModal__StyledModal-sc-12pj5f-0 eVCcTg"
+      className="bx--modal is-visible iot--wizard-modal iot--composed-modal"
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -618,137 +708,161 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           className="bx--modal-content"
         >
           <ul
-            className="bx--progress iot--progress-indicator ProgressIndicator__StyledProgressIndicator-sc-1sy51cd-0 egbeyA"
-            onChange={[Function]}
+            className="iot--progress-indicator"
+            data-testid="iot--progress-indicator-testid"
           >
             <li
-              className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--complete"
             >
               <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step1"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={0}
+                type="button"
               >
+                <div
+                  className="iot--progress-step-line--complete"
+                />
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step1"
                 >
-                  Complete
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <path
+                      d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                    />
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <path
-                    d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step1"
+                  >
                     step1
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step1
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--complete ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--complete"
             >
               <button
-                className="bx--progress-step-button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step2"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={0}
+                type="button"
               >
-                <span
-                  className="bx--assistive-text"
-                >
-                  Complete
-                </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
-                  />
-                  <path
-                    d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
-                  />
-                  <title>
-                    step2
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step2
-                </p>
-                <span
-                  className="bx--progress-line"
+                <div
+                  className="iot--progress-step-line--complete"
                 />
+                <span
+                  className="iot--progress-step-icon"
+                  title="step2"
+                >
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                    />
+                    <path
+                      d="M14 21.5L9 16.54 10.59 14.97 14 18.35 21.41 11 23 12.58 14 21.5z"
+                    />
+                  </svg>
+                </span>
+                <div
+                  className="iot--progress-text"
+                >
+                  <p
+                    className="iot--progress-text-label"
+                    value="step2"
+                  >
+                    step2
+                  </p>
+                </div>
               </button>
             </li>
             <li
-              className="bx--progress-step bx--progress-step--current ProgressIndicator__StyledProgressStep-sc-1sy51cd-1 gyomnR"
+              className="iot--progress-step iot--progress-step--current"
             >
               <button
-                className="bx--progress-step-button bx--progress-step-button--unclickable"
-                onKeyDown={[Function]}
+                aria-disabled={false}
+                className="iot--progress-step-button iot--progress-step-button--main-step"
+                data-testid="iot--progress-step-button-main-step3"
+                disabled={false}
+                onClick={null}
+                onKeyDown={null}
                 tabIndex={-1}
+                type="button"
               >
                 <span
-                  className="bx--assistive-text"
+                  className="iot--progress-step-icon"
+                  title="step3"
                 >
-                  Current
+                  <svg
+                    aria-hidden={true}
+                    focusable="false"
+                    height={24}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="16"
+                      cy="16"
+                      r="10"
+                    />
+                    <path
+                      d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
+                    />
+                    <text
+                      dominantBaseline="middle"
+                      textAnchor="middle"
+                      x="50%"
+                      y="55%"
+                    >
+                      3
+                    </text>
+                  </svg>
                 </span>
-                <svg
-                  aria-hidden={true}
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="iot--progress-text"
                 >
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="10"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"
-                  />
-                  <title>
+                  <p
+                    className="iot--progress-text-label"
+                    value="step3"
+                  >
                     step3
-                  </title>
-                </svg>
-                <p
-                  className="bx--progress-label"
-                >
-                  step3
-                </p>
-                <span
-                  className="bx--progress-line"
-                />
+                  </p>
+                </div>
               </button>
             </li>
           </ul>
@@ -759,7 +873,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Wizar
           </div>
         </div>
         <div
-          className="bx--modal-footer ComposedModal__StyledModalFooter-sc-12pj5f-2 ctEQpf"
+          className="bx--modal-footer iot--composed-modal-footer"
+          inputref={
+            Object {
+              "current": null,
+            }
+          }
         >
           <div
             className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"

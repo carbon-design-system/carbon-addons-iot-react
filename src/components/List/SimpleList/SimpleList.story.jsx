@@ -3,6 +3,7 @@ import { Add16, Close16, Edit16 } from '@carbon/icons-react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { spacing03 } from '@carbon/layout';
 import { Button, OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import { withReadme } from 'storybook-readme';
 
@@ -21,13 +22,13 @@ const getListItems = num =>
 const listItemsWithEmptyRow = getListItems(5).concat({ id: '6', content: { value: '' } });
 
 const rowActions = [
-  <Edit16 onClick={action('edit')} />,
-  <Add16 onClick={action('add')} />,
-  <Close16 onClick={action('close')} />,
+  <Edit16 onClick={action('edit')} key="simple-list-action-edit" />,
+  <Add16 onClick={action('add')} key="simple-list-action-add" />,
+  <Close16 onClick={action('close')} key="simple-list-action-close" />,
 ];
 
 const rowActionsOverFlowMenu = [
-  <OverflowMenu flipped>
+  <OverflowMenu flipped key="simple-list-overflow-menu">
     <OverflowMenuItem itemText="Edit" primaryFocus />
     <OverflowMenuItem itemText="Add" />
     <OverflowMenuItem itemText="Delete" />
@@ -108,7 +109,7 @@ const buttonsToRender = [
 
 storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
-    'basic',
+    'basic - SimpleList',
     withReadme(SimpleListREADME, () => (
       <div style={{ width: 500 }}>
         <SimpleList
@@ -133,7 +134,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'tall list (isFullHeight = true)',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -155,7 +156,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'tall list (isFullHeight = false)',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -178,7 +179,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with overflow grow',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -198,7 +199,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with pageSize',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -218,7 +219,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with empty row',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 500, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 500, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -237,7 +238,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with large row',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -258,7 +259,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with multiple actions',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -278,7 +279,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'list with overflow menu',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -299,7 +300,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'large row list with multiple actions',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch
@@ -320,7 +321,7 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
   .add(
     'large row list with overflow menu',
     withReadme(SimpleListREADME, () => (
-      <div style={{ width: 500, height: 600, background: '#fee', padding: 10 }}>
+      <div style={{ width: 500, height: 600, background: '#fee', padding: spacing03 }}>
         <SimpleList
           title={text('Text', 'Simple List')}
           hasSearch

@@ -7,12 +7,14 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { spacing03 } from '@carbon/layout';
+import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
+import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -299,7 +301,7 @@ const StyledCustomToolbarContent = styled.div`
   &&& {
     align-items: center;
     display: flex;
-    padding: 0 1rem;
+    padding: 0 1rem; /* stylelint-disable-line declaration-property-unit-blacklist */
   }
 `;
 
@@ -442,6 +444,66 @@ export const initialState = {
   },
 };
 
+export const StatefulTableWithNestedRowItems = props => {
+  const tableData = initialState.data.map((i, idx) => ({
+    ...i,
+    children:
+      idx % 4 !== 0
+        ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
+        : idx === 4
+        ? [
+            getNewRow(idx, 'A', true),
+            {
+              ...getNewRow(idx, 'B'),
+              children: [
+                getNewRow(idx, 'B-1', true),
+                {
+                  ...getNewRow(idx, 'B-2'),
+                  children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+                },
+                getNewRow(idx, 'B-3', true),
+              ],
+            },
+            getNewRow(idx, 'C', true),
+            {
+              ...getNewRow(idx, 'D', true),
+              children: [
+                getNewRow(idx, 'D-1', true),
+                getNewRow(idx, 'D-2', true),
+                getNewRow(idx, 'D-3', true),
+              ],
+            },
+          ]
+        : undefined,
+  }));
+  return (
+    <div>
+      <StatefulTable
+        {...initialState}
+        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+        columns={tableColumnsFixedWidth}
+        data={tableData}
+        options={{
+          ...initialState.options,
+          hasRowNesting: true,
+          hasFilter: true,
+          wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+        }}
+        view={{
+          ...initialState.view,
+          filters: [],
+          toolbar: {
+            activeBar: null,
+          },
+        }}
+        actions={actions}
+        lightweight={boolean('lightweight', false)}
+        {...props}
+      />
+    </div>
+  );
+};
+
 storiesOf('Watson IoT/Table', module)
   .add(
     'Simple Stateful Example',
@@ -537,6 +599,22 @@ storiesOf('Watson IoT/Table', module)
               ...initialState.view.pagination,
               maxPages: 5,
             },
+            toolbar: {
+              activeBar: 'filter',
+              customToolbarContent: (
+                <FlyoutMenu
+                  direction={FlyoutMenuDirection.BottomEnd}
+                  buttonProps={{ size: 'default', renderIcon: SettingsAdjust }}
+                  iconDescription="Helpful description"
+                  triggerId="test-flyout-id"
+                  transactional={boolean('Flyout Transactional', true)}
+                  onApply={action('Flyout Menu Apply Clicked')}
+                  onCancel={action('Flyout Menu Cancel Clicked')}
+                >
+                  Example Flyout Content
+                </FlyoutMenu>
+              ),
+            },
           }}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           actions={{
@@ -596,64 +674,7 @@ storiesOf('Watson IoT/Table', module)
   )
   .add(
     'Stateful Example with row nesting and fixed columns',
-    () => {
-      const tableData = initialState.data.map((i, idx) => ({
-        ...i,
-        children:
-          idx % 4 !== 0
-            ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
-            : idx === 4
-            ? [
-                getNewRow(idx, 'A', true),
-                {
-                  ...getNewRow(idx, 'B'),
-                  children: [
-                    getNewRow(idx, 'B-1', true),
-                    {
-                      ...getNewRow(idx, 'B-2'),
-                      children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
-                    },
-                    getNewRow(idx, 'B-3', true),
-                  ],
-                },
-                getNewRow(idx, 'C', true),
-                {
-                  ...getNewRow(idx, 'D', true),
-                  children: [
-                    getNewRow(idx, 'D-1', true),
-                    getNewRow(idx, 'D-2', true),
-                    getNewRow(idx, 'D-3', true),
-                  ],
-                },
-              ]
-            : undefined,
-      }));
-      return (
-        <div>
-          <StatefulTable
-            {...initialState}
-            secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-            columns={tableColumnsFixedWidth}
-            data={tableData}
-            options={{
-              ...initialState.options,
-              hasRowNesting: true,
-              hasFilter: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-            }}
-            view={{
-              ...initialState.view,
-              filters: [],
-              toolbar: {
-                activeBar: null,
-              },
-            }}
-            actions={actions}
-            lightweight={boolean('lightweight', false)}
-          />
-        </div>
-      );
-    },
+    () => <StatefulTableWithNestedRowItems />,
     {
       info: {
         text: `
@@ -767,7 +788,7 @@ storiesOf('Watson IoT/Table', module)
           <React.Fragment>
             <Button
               key="cancel"
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: spacing03 }}
               size="small"
               kind="tertiary"
               onClick={onCancelRowEdit}

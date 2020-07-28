@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
+import { gray20, yellow } from '@carbon/colors';
 
 import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes, GaugeCardPropTypes } from '../../constants/CardPropTypes';
@@ -184,8 +185,8 @@ GaugeCard.defaultProps = {
         minimumValue: 0,
         maximumValue: 100,
         renderValueFunction: null,
-        color: 'yellow',
-        backgroundColor: 'gray',
+        color: yellow,
+        backgroundColor: gray20,
         // @TODO: support half-circle and line gauge
         shape: 'circle',
         trend: null,

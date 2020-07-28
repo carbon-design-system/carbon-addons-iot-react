@@ -47,7 +47,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           >
             <span
               className="bx--list-box__label"
-              htmlFor="downshift-6-input"
+              htmlFor="downshift-10-input"
               id="dropdown-field-label-iot--view-dropdown"
               title={
                 <TableViewDropdownItem
@@ -145,7 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           >
             <div
               className="bx--list-box__menu-item bx--list-box__menu-item--active bx--list-box__menu-item--highlighted"
-              id="downshift-6-item-0"
+              id="downshift-10-item-0"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}
@@ -234,7 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </div>
             <div
               className="bx--list-box__menu-item"
-              id="downshift-6-item-1"
+              id="downshift-10-item-1"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}
@@ -281,7 +281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </div>
             <div
               className="bx--list-box__menu-item"
-              id="downshift-6-item-2"
+              id="downshift-10-item-2"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}
@@ -328,7 +328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </div>
             <div
               className="bx--list-box__menu-item"
-              id="downshift-6-item-3"
+              id="downshift-10-item-3"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}
@@ -375,7 +375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </div>
             <div
               className="bx--list-box__menu-item"
-              id="downshift-6-item-4"
+              id="downshift-10-item-4"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}
@@ -423,7 +423,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </div>
             <div
               className="bx--list-box__menu-item"
-              id="downshift-6-item-5"
+              id="downshift-10-item-5"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}
@@ -471,7 +471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             </div>
             <div
               className="bx--list-box__menu-item"
-              id="downshift-6-item-6"
+              id="downshift-10-item-6"
               onClick={[Function]}
               onMouseDown={[Function]}
               onMouseMove={[Function]}

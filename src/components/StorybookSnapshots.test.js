@@ -11,6 +11,7 @@ function mockDate(isoDate) {
     }
   };
 }
+const realScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
 
 describe(`Storybook Snapshot tests and console checks`, () => {
   const spy = {};
@@ -68,6 +69,10 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         !e.includes(
           // https://github.com/carbon-design-system/carbon/issues/6156
           'Warning: Failed prop type: The prop `labelText` is marked as required in `DatePickerInput`, but its value is `undefined`'
+        ) &&
+        !e.includes(
+          // TODO: remove when ComboBox is no longer experimental
+          'The prop `hasMultiValue` for Combobox is experimental. The functionality that is enabled by this prop is subject to change until Combobbox moves out of experimental.'
         )
       ) {
         done.fail(e);
@@ -80,9 +85,12 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   beforeEach(() => {
     mockDate('2018-10-28T12:34:56z');
     jest.setTimeout(15000);
+    // Mock the scroll function as its not implemented in jsdom
+    // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
   });
   initStoryshots({
-    storyKindRegex: /^(?!.*Experimental).*Watson\sIoT|.*Getting\sStarted/,
+    storyKindRegex: /Watson\sIoT.*(?<!SimpleList)(?<!TileCatalogNew)(?<!ListItem)$|.*Getting\sStarted/g,
     test: multiSnapshotWithOptions(story => ({
       createNodeMock: element => {
         // https://github.com/storybookjs/storybook/tree/next/addons/storyshots/storyshots-core#using-createnodemock-to-mock-refs
@@ -120,6 +128,18 @@ describe(`Storybook Snapshot tests and console checks`, () => {
           return document.createElement('input');
         }
 
+        // needed for HierarchyList ref
+        if (
+          element.props?.className?.includes(
+            'iot--list-item--content iot--list-item--content__selected'
+          )
+        ) {
+          return {
+            ...element,
+            parentNode: document.createElement('div'),
+          };
+        }
+
         return document.createElement('div');
       },
     })),
@@ -131,5 +151,6 @@ describe(`Storybook Snapshot tests and console checks`, () => {
   });
   afterEach(() => {
     global.Date = RealDate;
+    window.HTMLElement.prototype.scrollIntoView = realScrollIntoView;
   });
 });

@@ -28,7 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           onAnimationEnd={[Function]}
         >
           <button
-            aria-controls="accordion-item-4"
+            aria-controls="accordion-item-11"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
@@ -58,7 +58,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           </button>
           <div
             className="bx--accordion__content"
-            id="accordion-item-4"
+            id="accordion-item-11"
           >
             <p>
               This content is always rendered to the DOM, no matter if the accordion item has been open or closed.
@@ -72,7 +72,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           onAnimationEnd={[Function]}
         >
           <button
-            aria-controls="accordion-item-5"
+            aria-controls="accordion-item-12"
             aria-expanded={false}
             className="bx--accordion__heading"
             onClick={[Function]}
@@ -102,7 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Accor
           </button>
           <div
             className="bx--accordion__content"
-            id="accordion-item-5"
+            id="accordion-item-12"
           />
         </li>
       </ul>

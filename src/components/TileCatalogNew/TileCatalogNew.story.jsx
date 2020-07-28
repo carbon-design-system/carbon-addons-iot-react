@@ -18,7 +18,13 @@ const getTiles = num => {
   Array(num)
     .fill(0)
     .map((i, idx) => {
-      tiles[idx] = <SampleTile title={`${idx + 1}`} description="This is a sample product tile" />;
+      tiles[idx] = (
+        <SampleTile
+          key={`${idx}-sample-tile`}
+          title={`${idx + 1}`}
+          description="This is a sample product tile"
+        />
+      );
       return tiles[idx];
     });
   return tiles;
@@ -31,10 +37,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
       <div style={{ width: '60rem' }}>
         <TileCatalogNew
           title="Product name"
-          tiles={getTiles(
-            numOfTiles,
-            <SampleTile title="Sample product tile" description="This is a sample product tile" />
-          )}
+          tiles={getTiles(numOfTiles)}
           numColumns={number('numColumns', 2)}
           numRows={number('numRows', 2)}
           hasSearch={boolean('hasSearch', true)}
@@ -49,10 +52,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
       <div>
         <TileCatalogNew
           title="Product name"
-          tiles={getTiles(
-            numOfTiles,
-            <SampleTile title="Sample product tile" description="This is a sample product tile" />
-          )}
+          tiles={getTiles(numOfTiles)}
           minTileWidth={text('minTileWidth', '15rem')}
           hasSearch={boolean('hasSearch', true)}
           hasSort={boolean('hasSort', true)}
@@ -66,10 +66,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
       <div style={{ width: '60rem' }}>
         <TileCatalogNew
           title="Product name"
-          tiles={getTiles(
-            numOfTiles,
-            <SampleTile title="Sample product tile" description="This is a sample product tile" />
-          )}
+          tiles={getTiles(numOfTiles)}
           numColumns={number('numColumns', 2)}
           numRows={number('numRows', 2)}
           hasSearch={boolean('hasSearch', true)}
@@ -99,10 +96,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
       <div style={{ width: '60rem' }}>
         <TileCatalogNew
           title="Product name"
-          tiles={getTiles(
-            numOfTiles,
-            <SampleTile title="Sample product tile" description="This is a sample product tile" />
-          )}
+          tiles={getTiles(numOfTiles)}
           numColumns={number('numColumns', 4)}
           numRows={number('numRows', 2)}
           hasSearch={boolean('hasSearch', true)}
@@ -127,10 +121,7 @@ storiesOf('Watson IoT Experimental/TileCatalogNew', module)
     <div style={{ width: '60rem' }}>
       <TileCatalogNew
         title="Product name"
-        tiles={getTiles(
-          8,
-          <SampleTile title="Sample product tile" description="This is a sample product tile" />
-        )}
+        tiles={getTiles(8)}
         numColumns={number('numColumns', 4)}
         numRows={number('numRows', 2)}
         hasSort={boolean('hasSort', true)}

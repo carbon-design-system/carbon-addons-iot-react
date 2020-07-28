@@ -1,0 +1,968 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ComboBox Default 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": "1rem",
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="iot--combobox"
+        data-testid="combo-wrapper"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="bx--list-box__wrapper"
+        >
+          <div
+            aria-label="Choose an item"
+            className="bx--combo-box iot--combobox-input bx--list-box"
+            id="combobox-a11y-1"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            <div
+              aria-controls={null}
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="open menu"
+              aria-labelledby="combobox-label-1"
+              aria-owns={null}
+              className="bx--list-box__field"
+              data-toggle={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+              type="button"
+            >
+              <input
+                aria-activedescendant={null}
+                aria-autocomplete="list"
+                aria-controls={null}
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-labelledby="combobox-a11y-1"
+                aria-owns={null}
+                autoComplete="off"
+                className="bx--text-input bx--text-input--empty"
+                data-testid="combo-box"
+                disabled={false}
+                id="carbon-combobox-example"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Filter..."
+                role="combobox"
+                tabIndex="0"
+                title=""
+                value=""
+              />
+              
+              <div
+                className="bx--list-box__menu-icon"
+              >
+                <svg
+                  aria-label="Open menu"
+                  focusable="false"
+                  height={16}
+                  name="chevron--down"
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                  <title>
+                    Open menu
+                  </title>
+                </svg>
+              </div>
+            </div>
+            <div
+              aria-label="Choose an item"
+              className="bx--list-box__menu"
+              id="carbon-combobox-example__menu"
+              role="listbox"
+            >
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-0-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 1"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 1
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-0-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 2"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 2
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-0-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 3"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 3
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-0-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 4"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 4
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-0-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="An example option that is really long to show what should be done to handle long text"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  An example option that is really long to show what should be done to handle long text
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="iot--combobox-tags"
+          data-testid="combo-tags"
+        />
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ComboBox Mult-value tags 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": "1rem",
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="iot--combobox"
+        data-testid="combo-wrapper"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="bx--list-box__wrapper"
+        >
+          <div
+            aria-label="Choose an item"
+            className="bx--combo-box iot--combobox-input bx--list-box"
+            id="combobox-a11y-2"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            <div
+              aria-controls={null}
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="open menu"
+              aria-labelledby="combobox-label-2"
+              aria-owns={null}
+              className="bx--list-box__field"
+              data-toggle={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+              type="button"
+            >
+              <input
+                aria-activedescendant={null}
+                aria-autocomplete="list"
+                aria-controls={null}
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-labelledby="combobox-a11y-2"
+                aria-owns={null}
+                autoComplete="off"
+                className="bx--text-input bx--text-input--empty"
+                data-testid="combo-box"
+                disabled={false}
+                id="carbon-combobox-example"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Filter..."
+                role="combobox"
+                tabIndex="0"
+                title=""
+                value=""
+              />
+              
+              <div
+                className="bx--list-box__menu-icon"
+              >
+                <svg
+                  aria-label="Open menu"
+                  focusable="false"
+                  height={16}
+                  name="chevron--down"
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                  <title>
+                    Open menu
+                  </title>
+                </svg>
+              </div>
+            </div>
+            <div
+              aria-label="Choose an item"
+              className="bx--list-box__menu"
+              id="carbon-combobox-example__menu"
+              role="listbox"
+            >
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-1-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 1"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 1
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-1-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 2"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 2
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-1-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 3"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 3
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-1-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 4"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  Option 4
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-1-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="An example option that is really long to show what should be done to handle long text"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  An example option that is really long to show what should be done to handle long text
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="iot--combobox-tags"
+          data-testid="combo-tags"
+        />
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ComboBox application-level control for selection 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      className="iot--combobox"
+      data-testid="combo-wrapper"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="bx--list-box__wrapper"
+      >
+        <div
+          aria-label="Choose an item"
+          className="bx--combo-box iot--combobox-input bx--list-box"
+          id="combobox-a11y-4"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            aria-controls={null}
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="open menu"
+            aria-labelledby="combobox-label-4"
+            aria-owns={null}
+            className="bx--list-box__field"
+            data-toggle={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={-1}
+            type="button"
+          >
+            <input
+              aria-activedescendant={null}
+              aria-autocomplete="list"
+              aria-controls={null}
+              aria-disabled={false}
+              aria-expanded={false}
+              aria-labelledby="combobox-a11y-4"
+              aria-owns={null}
+              autoComplete="off"
+              className="bx--text-input"
+              data-testid="combo-box"
+              disabled={false}
+              id="carbon-combobox-example"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Filter..."
+              role="combobox"
+              tabIndex="0"
+              title="Option 1"
+              value="Option 1"
+            />
+            <div
+              aria-label="Clear Selection"
+              className="bx--list-box__selection"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              title="Clear selected item"
+            >
+              <svg
+                aria-hidden={true}
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </div>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-label="Open menu"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title>
+                  Open menu
+                </title>
+              </svg>
+            </div>
+          </div>
+          <div
+            aria-label="Choose an item"
+            className="bx--list-box__menu"
+            id="carbon-combobox-example__menu"
+            role="listbox"
+          >
+            <div
+              className="bx--list-box__menu-item bx--list-box__menu-item--active bx--list-box__menu-item--highlighted"
+              data-text="-Create"
+              id="downshift-3-item-0"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              title="Option 1"
+            >
+              <div
+                className="bx--list-box__menu-item__option"
+              >
+                Option 1
+                <svg
+                  aria-hidden={true}
+                  className="bx--list-box__menu-item__selected-icon"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 21.2L5.4 13.6 4 15 13 24 28 9 26.6 7.5 13 21.2z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              className="bx--list-box__menu-item"
+              data-text="-Create"
+              id="downshift-3-item-1"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              title="Option 2"
+            >
+              <div
+                className="bx--list-box__menu-item__option"
+              >
+                Option 2
+              </div>
+            </div>
+            <div
+              className="bx--list-box__menu-item"
+              data-text="-Create"
+              id="downshift-3-item-2"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              title="Option 3"
+            >
+              <div
+                className="bx--list-box__menu-item__option"
+              >
+                Option 3
+              </div>
+            </div>
+            <div
+              className="bx--list-box__menu-item"
+              data-text="-Create"
+              id="downshift-3-item-3"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              title="Option 4"
+            >
+              <div
+                className="bx--list-box__menu-item__option"
+              >
+                Option 4
+              </div>
+            </div>
+            <div
+              className="bx--list-box__menu-item"
+              data-text="-Create"
+              id="downshift-3-item-4"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              onMouseMove={[Function]}
+              title="An example option that is really long to show what should be done to handle long text"
+            >
+              <div
+                className="bx--list-box__menu-item__option"
+              >
+                An example option that is really long to show what should be done to handle long text
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul
+        className="iot--combobox-tags"
+        data-testid="combo-tags"
+      />
+    </div>
+    <button
+      className="iot--btn bx--btn bx--btn--primary"
+      disabled={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "marginTop": "1rem",
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      Add new item
+    </button>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/ComboBox items as components 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "padding": "1rem",
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="iot--combobox"
+        data-testid="combo-wrapper"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="bx--list-box__wrapper"
+        >
+          <div
+            aria-label="Choose an item"
+            className="bx--combo-box iot--combobox-input bx--list-box"
+            id="combobox-a11y-3"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            <div
+              aria-controls={null}
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="open menu"
+              aria-labelledby="combobox-label-3"
+              aria-owns={null}
+              className="bx--list-box__field"
+              data-toggle={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+              type="button"
+            >
+              <input
+                aria-activedescendant={null}
+                aria-autocomplete="list"
+                aria-controls={null}
+                aria-disabled={false}
+                aria-expanded={false}
+                aria-labelledby="combobox-a11y-3"
+                aria-owns={null}
+                autoComplete="off"
+                className="bx--text-input bx--text-input--empty"
+                data-testid="combo-box"
+                disabled={false}
+                id="carbon-combobox-example"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Filter..."
+                role="combobox"
+                tabIndex="0"
+                title=""
+                value=""
+              />
+              
+              <div
+                className="bx--list-box__menu-icon"
+              >
+                <svg
+                  aria-label="Open menu"
+                  focusable="false"
+                  height={16}
+                  name="chevron--down"
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                  <title>
+                    Open menu
+                  </title>
+                </svg>
+              </div>
+            </div>
+            <div
+              aria-label="Choose an item"
+              className="bx--list-box__menu"
+              id="carbon-combobox-example__menu"
+              role="listbox"
+            >
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-2-item-0"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 1"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  <div>
+                    <span>
+                      Option
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "blue",
+                        }
+                      }
+                    >
+                       
+                      1
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-2-item-1"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 2"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  <div>
+                    <span>
+                      Option
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "blue",
+                        }
+                      }
+                    >
+                       
+                      2
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-2-item-2"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 3"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  <div>
+                    <span>
+                      Option
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "blue",
+                        }
+                      }
+                    >
+                       
+                      3
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-2-item-3"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="Option 4"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  <div>
+                    <span>
+                      Option
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "blue",
+                        }
+                      }
+                    >
+                       
+                      4
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="bx--list-box__menu-item"
+                data-text="-Create"
+                id="downshift-2-item-4"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseMove={[Function]}
+                title="An example option that is really long to show what should be done to handle long text"
+              >
+                <div
+                  className="bx--list-box__menu-item__option"
+                >
+                  <div>
+                    <span>
+                      An
+                    </span>
+                    <span
+                      style={
+                        Object {
+                          "color": "blue",
+                        }
+                      }
+                    >
+                       
+                      example option that is really long to show what should be done to handle long text
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="iot--combobox-tags"
+          data-testid="combo-tags"
+        />
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

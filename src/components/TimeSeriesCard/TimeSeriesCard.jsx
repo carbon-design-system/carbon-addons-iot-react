@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
+import { spacing02, spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
@@ -70,6 +71,7 @@ const TimeSeriesCardPropTypes = {
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
+    noData: PropTypes.string,
   }),
   /** array of data from the backend for instance [{timestamp: Date object || ms timestamp, temperature: 35, humidity: 10}, ...] */
   values: PropTypes.arrayOf(
@@ -93,10 +95,10 @@ const TimeSeriesCardPropTypes = {
 };
 
 const LineChartWrapper = styled.div`
-  padding-left: 16px;
-  padding-right: 1rem;
+  padding-left: ${spacing05};
+  padding-right: ${spacing05};
   padding-top: 0px;
-  padding-bottom: 16px;
+  padding-bottom: ${spacing05};
   position: absolute;
   width: 100%;
   height: ${props => (props.isExpanded ? '55%' : '100%')};
@@ -108,7 +110,7 @@ const LineChartWrapper = styled.div`
     }
     .chart-holder {
       width: 100%;
-      padding-top: 0.25rem;
+      padding-top: ${spacing02};
     }
     .axis-title {
       font-weight: 500;
@@ -402,6 +404,7 @@ const TimeSeriesCard = ({
   const { tableData, columnNames } = useMemo(
     () => {
       let maxColumnNames = [];
+
       const tableValues = valueSort.map((value, index) => {
         const currentValueColumns = Object.keys(omit(value, timeDataSourceId));
         maxColumnNames =
@@ -434,15 +437,21 @@ const TimeSeriesCard = ({
       ];
       // then the rest in series order
       return columns.concat(
-        columnNames.map(columnName => ({
-          id: columnName,
-          name: capitalize(columnName),
-          isSortable: true,
-          filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
-        }))
+        columnNames.map(columnName => {
+          const matchingDataSource = Array.isArray(series)
+            ? series.find(d => d.dataSourceId === columnName)
+            : series;
+          return {
+            id: columnName,
+            // use the label if one exists as it will be the user-defined, readable name
+            name: matchingDataSource ? matchingDataSource.label : columnName,
+            isSortable: true,
+            filter: { placeholderText: i18n.defaultFilterStringPlaceholdText },
+          };
+        })
       );
     },
-    [columnNames, i18n.defaultFilterStringPlaceholdText, timeDataSourceId]
+    [columnNames, i18n.defaultFilterStringPlaceholdText, series, timeDataSourceId]
   );
 
   // TODO: remove in next release
@@ -530,7 +539,6 @@ const TimeSeriesCard = ({
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
-              isExpanded={isExpanded}
               options={{
                 hasPagination: true,
                 hasSearch: true,
@@ -576,6 +584,7 @@ TimeSeriesCard.defaultProps = {
   values: [],
   i18n: {
     alertDetected: 'Alert detected:',
+    noDataLabel: 'No data is available for this time range.',
   },
   chartType: TIME_SERIES_TYPES.LINE,
   locale: 'en',

@@ -12,6 +12,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
+import { layout05, spacing05 } from '@carbon/layout';
 
 import Breadcrumb from './Breadcrumb';
 
@@ -22,7 +23,7 @@ const props = () => ({
 });
 
 const PolyfillWarning = () => (
-  <p style={{ marginTop: '5rem' }}>
+  <p style={{ marginTop: layout05 }}>
     Note: `hasOverflow` utilizes a{' '}
     <a href="https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver">ResizeObserver</a> to
     detect changes to the container width. This library does not provide a{' '}
@@ -88,7 +89,7 @@ storiesOf('Watson IoT/Breadcrumb', module)
     () => {
       return (
         <>
-          <div style={{ width: '50vw', border: '1px solid', padding: '1rem' }}>
+          <div style={{ width: '50vw', border: '1px solid', padding: spacing05 }}>
             <Breadcrumb hasOverflow {...props()}>
               <BreadcrumbItem href="#" title="1 Homexxxxxxxxxxxxxxxxxxxxxx">
                 1 Homexxxxxxxxxxxxxxxxxxxxxx

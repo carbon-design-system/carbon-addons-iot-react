@@ -35,7 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           />
         </div>
         <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
         >
           <p
             className="bx--skeleton__text"
@@ -104,7 +104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
           >
             <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
+              className="Hero__StyledTitle-nej8yx-2 bbRUKN"
             >
               Page Title
             </div>
@@ -134,7 +134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           </div>
         </div>
         <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
         >
           <div>
             child
@@ -220,7 +220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             className="Hero__StyledTitleSection-nej8yx-1 imCjnH"
           >
             <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
+              className="Hero__StyledTitle-nej8yx-2 bbRUKN"
             >
               Page Title
             </div>
@@ -249,13 +249,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             </button>
           </div>
           <p
-            className="Hero__StyledPageDescription-nej8yx-3 hgaTeB"
+            className="Hero__StyledPageDescription-nej8yx-3 ubnfT"
           >
             My blurrrrbbbb!!
           </p>
         </div>
         <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
         >
           <div>
             child
@@ -386,7 +386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
             className="Hero__StyledTitleSection-nej8yx-1 djCalR"
           >
             <div
-              className="Hero__StyledTitle-nej8yx-2 emqnjy"
+              className="Hero__StyledTitle-nej8yx-2 bbRUKN"
             >
               Page Title
             </div>
@@ -416,7 +416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
           </div>
         </div>
         <div
-          className="EditPage__StyledPageContent-gpmt4s-1 hrCgLC"
+          className="EditPage__StyledPageContent-gpmt4s-1 eZSUrC"
         >
           <div>
             child
@@ -494,7 +494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/EditP
         role="alert"
         style={
           Object {
-            "marginBottom": ".5rem",
+            "marginBottom": "0.5rem",
             "minWidth": "30rem",
           }
         }

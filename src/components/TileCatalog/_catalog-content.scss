@@ -26,7 +26,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
-  padding-bottom: 0.5rem;
+  padding-bottom: $spacing-03;
   max-width: calc(100vw - 20rem);
   @media screen and (min-width: $two-pane) {
     max-width: calc(100vw / 2 - 15rem);
