@@ -12,7 +12,7 @@
 }
 
 .#{$iot-prefix}--data-state-grid {
-  margin-top: 1rem;
+  margin-top: $spacing-05;
   display: grid;
   align-items: center;
   grid-template-columns: auto auto 1fr;
@@ -70,7 +70,7 @@
 
 .#{$iot-prefix}--data-state-tooltip {
   > * {
-    margin-bottom: 1rem;
+    margin-bottom: $spacing-05;
   }
 
   .#{$iot-prefix}--data-state-tooltip__label {

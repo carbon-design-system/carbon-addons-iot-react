@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, number, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 
 import DeprecationNotice, { deprecatedStoryTitle } from '../../internal/DeprecationNotice';
@@ -13,7 +14,7 @@ import StatefulWizardInline from './StatefulWizardInline';
 const StyledFooterContent = styled.p`
   height: 100%;
   line-height: 100%;
-  padding: 1rem;
+  padding: ${spacing05};
 `;
 
 const items = [
