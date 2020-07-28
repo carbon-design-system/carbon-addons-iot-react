@@ -92,6 +92,32 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onColumnResize,
   } = table || {};
 
+  const getRowAction = (data, actionId, rowId) => {
+    let item;
+    for (let idx = 0; idx < data.length; idx += 1) {
+      const element = data[idx];
+      if (element.id === rowId) {
+        item = element.rowActions.find(action => action.id === actionId);
+        if (item) {
+          break;
+        }
+        if (Array.isArray(element?.children)) {
+          item = getRowAction(element.children, actionId, rowId);
+          if (item) {
+            break;
+          }
+        }
+      }
+      if (Array.isArray(element?.children)) {
+        item = getRowAction(element.children, actionId, rowId);
+        if (item) {
+          break;
+        }
+      }
+    }
+    return item;
+  };
+
   // In addition to updating the store, I always callback to the parent in case they want to do something
   const actions = {
     pagination: {
@@ -158,11 +184,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onRowExpanded, rowId, isExpanded);
       },
       onApplyRowAction: async (actionId, rowId) => {
-        const action =
-          state.data &&
-          state.data
-            .find(row => row.id === rowId)
-            .rowActions.find(currentAction => currentAction.id === actionId);
+        const action = state.data && getRowAction(state.data, actionId, rowId);
 
         dispatch(tableRowActionStart(rowId));
         try {
