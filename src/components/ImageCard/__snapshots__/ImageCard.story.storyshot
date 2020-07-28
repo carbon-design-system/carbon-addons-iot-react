@@ -15,7 +15,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1.5rem",
           "width": "1056px",
         }
       }
@@ -86,7 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
           >
             <div
               onBlur={[Function]}
@@ -130,7 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                  className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                 >
                   <div
                     aria-describedby={null}
@@ -256,7 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1.5rem",
           "width": "1056px",
         }
       }
@@ -327,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
           >
             <div
               onBlur={[Function]}
@@ -371,7 +371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                 }
               >
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                  className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                 >
                   <div
                     aria-describedby={null}
@@ -490,7 +490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
                   </div>
                 </div>
                 <div
-                  className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                  className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
                 >
                   <div
                     aria-describedby={null}
@@ -618,7 +618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1.5rem",
           "width": "1056px",
         }
       }
@@ -743,7 +743,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1.5rem",
           "width": "1056px",
         }
       }
@@ -868,7 +868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1.5rem",
           "width": "1056px",
         }
       }
@@ -939,7 +939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
           >
             <div
               onBlur={[Function]}
@@ -1114,7 +1114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
     <div
       style={
         Object {
-          "margin": 20,
+          "margin": "1.5rem",
           "width": "1056px",
         }
       }
@@ -1185,7 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Image
           }
         >
           <div
-            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+            className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
           >
             <div
               className="ImageCard__EmptyDiv-sc-1p2j9dm-1 dkLZTG"

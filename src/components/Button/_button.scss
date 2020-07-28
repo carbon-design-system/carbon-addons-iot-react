@@ -5,8 +5,8 @@
   justify-content: flex-start;
 
   .#{$prefix}--loading {
-    margin-top: -1rem;
-    margin-bottom: -1rem;
+    margin-top: -$spacing-05;
+    margin-bottom: -$spacing-05;
   }
   .#{$prefix}--loading__stroke {
     stroke: $carbon--gray-50;

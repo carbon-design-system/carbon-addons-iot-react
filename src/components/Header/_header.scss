@@ -75,7 +75,7 @@
   width: 100%;
 
   &:focus {
-    border-color: white;
+    border-color: $inverse-focus-ui;
   }
 }
 
@@ -116,7 +116,7 @@ button.#{$prefix}--header__menu-item {
   width: 100%;
 
   &:focus {
-    border-color: #fff;
+    border-color: $inverse-focus-ui;
     color: $ui-02;
     outline: none;
   }

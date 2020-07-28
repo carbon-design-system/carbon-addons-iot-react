@@ -20,7 +20,7 @@
   }
   .#{$prefix}--tab-content {
     padding: unset;
-    padding-top: 1rem;
+    padding-top: $spacing-05;
   }
 
   &-header {

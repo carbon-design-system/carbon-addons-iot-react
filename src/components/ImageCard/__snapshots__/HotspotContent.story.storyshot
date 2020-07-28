@@ -520,7 +520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
               className="iot--hotspot-content-threshold-section"
             >
               <svg
-                fill="#FF0000"
+                fill="#da1e28"
                 focusable="true"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -576,7 +576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
               className="iot--hotspot-content-threshold-section"
             >
               <svg
-                fill="#FF0000"
+                fill="#da1e28"
                 focusable="true"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -770,7 +770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
               className="iot--hotspot-content-threshold-section"
             >
               <svg
-                fill="#FF0000"
+                fill="#da1e28"
                 focusable="true"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -826,7 +826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
               className="iot--hotspot-content-threshold-section"
             >
               <svg
-                fill="#FF0000"
+                fill="#da1e28"
                 focusable="true"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"

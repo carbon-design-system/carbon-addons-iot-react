@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
+import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
@@ -787,7 +788,7 @@ storiesOf('Watson IoT/Table', module)
           <React.Fragment>
             <Button
               key="cancel"
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: spacing03 }}
               size="small"
               kind="tertiary"
               onClick={onCancelRowEdit}

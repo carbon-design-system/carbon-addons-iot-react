@@ -1328,7 +1328,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="MEDIUM"
                   >
                     <div
@@ -1366,7 +1366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -1933,7 +1933,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="LARGE"
                   >
                     <div
@@ -2017,7 +2017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
                   >
                     <div
                       onBlur={[Function]}
@@ -2061,7 +2061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                         >
                           <div
                             aria-describedby={null}
@@ -2178,7 +2178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
                         >
                           <div
                             aria-describedby={null}
@@ -3628,7 +3628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="MEDIUM"
                   >
                     <div
@@ -3666,7 +3666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -4233,7 +4233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="LARGE"
                   >
                     <div
@@ -4317,7 +4317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
                   >
                     <div
                       onBlur={[Function]}
@@ -4361,7 +4361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                         >
                           <div
                             aria-describedby={null}
@@ -4478,7 +4478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
                         >
                           <div
                             aria-describedby={null}
@@ -5955,7 +5955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="MEDIUM"
                   >
                     <div
@@ -5993,7 +5993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -6560,7 +6560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="LARGE"
                   >
                     <div
@@ -6644,7 +6644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
                   >
                     <div
                       onBlur={[Function]}
@@ -6688,7 +6688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                         >
                           <div
                             aria-describedby={null}
@@ -6805,7 +6805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
                         >
                           <div
                             aria-describedby={null}
@@ -7258,7 +7258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
                   >
                     <div
                       onBlur={[Function]}
@@ -7527,7 +7527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                 }
               >
                 <div
-                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                   size="LARGE"
                 >
                   <div
@@ -7674,7 +7674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 hICOrC iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 cSTvat iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -10787,7 +10787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="MEDIUM"
                   >
                     <div
@@ -10825,7 +10825,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -11392,7 +11392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="LARGE"
                   >
                     <div
@@ -11476,7 +11476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
                   >
                     <div
                       onBlur={[Function]}
@@ -11520,7 +11520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                         >
                           <div
                             aria-describedby={null}
@@ -11637,7 +11637,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
                         >
                           <div
                             aria-describedby={null}
@@ -11770,7 +11770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -12456,7 +12456,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -13142,7 +13142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -13561,7 +13561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -13980,7 +13980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -14498,7 +14498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -15016,7 +15016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -15515,7 +15515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -16014,7 +16014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -17916,7 +17916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -19818,7 +19818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -20275,7 +20275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -20732,7 +20732,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -21189,7 +21189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -21646,7 +21646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -22080,7 +22080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -22514,7 +22514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1056,
           }
         }
@@ -23212,7 +23212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       <div
         style={
           Object {
-            "paddingBottom": 50,
+            "paddingBottom": "3rem",
             "width": 1057,
           }
         }
@@ -25295,7 +25295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="MEDIUM"
                   >
                     <div
@@ -25333,7 +25333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TableCard__StyledStatefulTable-q9l5bz-0 ksLVxJ iot--table-container bx--data-table-container"
+                    className="TableCard__StyledStatefulTable-q9l5bz-0 jnbqeq iot--table-container bx--data-table-container"
                   >
                     <section
                       aria-label="data table toolbar"
@@ -25900,7 +25900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 gRXFrT"
+                    className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
                     size="LARGE"
                   >
                     <div
@@ -25984,7 +25984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                   }
                 >
                   <div
-                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 jJnAwR"
+                    className="ImageCard__ContentWrapper-sc-1p2j9dm-0 iIDYGo"
                   >
                     <div
                       onBlur={[Function]}
@@ -26028,7 +26028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                         }
                       >
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 fvESgj"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 fxwZek"
                         >
                           <div
                             aria-describedby={null}
@@ -26145,7 +26145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                           </div>
                         </div>
                         <div
-                          className="Hotspot__StyledHotspot-nlpwmi-0 ezcTmr"
+                          className="Hotspot__StyledHotspot-nlpwmi-0 jjFGEa"
                         >
                           <div
                             aria-describedby={null}
@@ -26364,7 +26364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <div
                         style={
                           Object {
-                            "padding": "12px",
+                            "padding": "0.75rem",
                           }
                         }
                       >
@@ -26443,7 +26443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                       <div
                         style={
                           Object {
-                            "padding": "12px",
+                            "padding": "0.75rem",
                           }
                         }
                       >
@@ -26510,7 +26510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     <div
                       style={
                         Object {
-                          "padding": "12px",
+                          "padding": "0.75rem",
                         }
                       }
                     >
@@ -26576,7 +26576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     <div
                       style={
                         Object {
-                          "padding": "12px",
+                          "padding": "0.75rem",
                         }
                       }
                     >
@@ -26644,7 +26644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
                     <div
                       style={
                         Object {
-                          "padding": "12px",
+                          "padding": "0.75rem",
                         }
                       }
                     >
@@ -27113,7 +27113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
       role="alert"
       style={
         Object {
-          "marginBottom": ".5rem",
+          "marginBottom": "0.5rem",
           "minWidth": "30rem",
         }
       }

@@ -4,6 +4,7 @@ import withSize from 'react-sizeme';
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
 import find from 'lodash/find';
+import { spacing02, spacing03, spacing05 } from '@carbon/layout';
 
 import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_LAYOUTS, CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
@@ -28,7 +29,7 @@ const ContentWrapper = styled.div`
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-around;
-    padding: 0 0 1rem;
+    padding: 0 0 ${spacing05};
   `}
   ${props =>
     props.layout === CARD_LAYOUTS.VERTICAL &&
@@ -37,7 +38,7 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 0 0 0.5rem;
+    padding: 0 0 ${spacing03};
   `}
 `;
 
@@ -132,10 +133,10 @@ const AttributeLabel = styled.div`
   text-align: ${props => (props.shouldDoubleWrap ? 'left' : getLabelAlignment(props))};
   ${props =>
     (props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.MEDIUM) &&
-    `padding-top: 0.25rem;`};
+    `padding-top: ${spacing02};`};
   ${props =>
     !(props.isVertical || props.size === CARD_SIZES.SMALL || props.size === CARD_SIZES.SMALLWIDE) &&
-    `padding-left: 0.5rem`};
+    `padding-left: ${spacing03}`};
   order: ${props => (props.isVertical ? 0 : 2)};
   color: ${COLORS.gray};
   font-weight: lighter;

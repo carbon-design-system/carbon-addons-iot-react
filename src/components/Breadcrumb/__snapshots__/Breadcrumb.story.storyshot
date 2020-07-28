@@ -265,7 +265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Bread
     <p
       style={
         Object {
-          "marginTop": "5rem",
+          "marginTop": "4rem",
         }
       }
     >
