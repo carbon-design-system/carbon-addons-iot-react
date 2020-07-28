@@ -1,5 +1,8 @@
 'use strict';
 import React from 'react';
+import addons, { mockChannel } from '@storybook/addons';
+
+addons.setChannel(mockChannel());
 
 const enzyme = require.requireActual('enzyme');
 const Adapter = require.requireActual('enzyme-adapter-react-16');
