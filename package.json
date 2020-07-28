@@ -8,7 +8,7 @@
   "unpkg": "umd/carbon-addons-iot-react.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM/carbon-addons-iot-react.git"
+    "url": "https://github.com/carbon-design-system/carbon-addons-iot-react.git"
   },
   "license": "Apache-2",
   "files": [
@@ -19,7 +19,7 @@
     "css/**/*"
   ],
   "bugs": {
-    "url": "https://github.com/IBM/carbon-addons-iot-react/issues"
+    "url": "https://github.com/carbon-design-system/carbon-addons-iot-react/issues"
   },
   "homepage": "https://carbon-addons-iot-react.com",
   "scripts": {

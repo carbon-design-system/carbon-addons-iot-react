@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { SkeletonText, Tabs, Tab } from 'carbon-components-react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Button from '../Button';
 
@@ -115,5 +117,23 @@ describe('PageTitleBar', () => {
   it('Renders loading state as expected', () => {
     const wrapper = mount(<PageTitleBar title={commonPageTitleBarProps.title} isLoading />);
     expect(wrapper.find(SkeletonText)).toHaveLength(1);
+  });
+
+  it('i18n string test', () => {
+    const i18nTest = {
+      editIconDescription: 'edit-icon-description',
+      tooltipIconDescription: 'tooltip-icon-description',
+    };
+
+    const i18nDefault = PageTitleBar.defaultProps.i18n;
+    render(
+      <PageTitleBar title="testTitle" i18n={i18nTest} editable description="test" collapsed />
+    );
+
+    expect(screen.getByText(i18nTest.editIconDescription)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.tooltipIconDescription)).toBeInTheDocument();
+
+    expect(screen.queryByText(i18nDefault.editIconDescription)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.tooltipIconDescription)).not.toBeInTheDocument();
   });
 });

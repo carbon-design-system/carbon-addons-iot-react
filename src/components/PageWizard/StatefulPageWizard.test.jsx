@@ -72,16 +72,16 @@ describe('StatefulPageWizard', () => {
     };
 
     render(
-      <StatefulPageWizard currentStepId="step3" {...mocks} i18n={i18n}>
+      <StatefulPageWizard currentStepId="step5" {...mocks} i18n={i18n}>
         {content}
       </StatefulPageWizard>
     );
 
-    // go back to step 2
+    // go back to step 4
     fireEvent.click(screen.getByText(i18n.back));
     expect(mocks.onBack).toHaveBeenCalledTimes(1);
 
-    // reset to step 3
+    // reset to step 5
     fireEvent.click(screen.getByText(i18n.next));
     expect(mocks.onNext).toHaveBeenCalledTimes(1);
 
@@ -92,29 +92,31 @@ describe('StatefulPageWizard', () => {
 
   it('step indicator to go to a specific step', () => {
     const mocks = {
+      isClickable: true,
       setStep: jest.fn(),
     };
 
     render(
-      <StatefulPageWizard currentStepId="step3" {...mocks}>
+      <StatefulPageWizard currentStepId="step5" {...mocks}>
         {content}
       </StatefulPageWizard>
     );
 
     // go back to step 1
-    fireEvent.click(screen.getByText('Step 1'));
+    fireEvent.click(screen.getByText('First Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
   it('without setting currentStepId', () => {
     const mocks = {
+      isClickable: true,
       setStep: jest.fn(),
     };
 
     render(<StatefulPageWizard {...mocks}>{content}</StatefulPageWizard>);
 
-    // go back to step 1
-    fireEvent.click(screen.getByText('Step 2'));
+    // go back to fourth step
+    fireEvent.click(screen.getByText('Fourth Step'));
     expect(mocks.setStep).toHaveBeenCalledTimes(1);
   });
 
@@ -137,13 +139,13 @@ describe('StatefulPageWizard', () => {
     render(<StepValidationWizard />);
 
     // check that the next step won't happen if inputs aren't filled
-    fireEvent.click(screen.getByText('Step 2'));
+    fireEvent.click(screen.getByText('Second Step'));
     expect(screen.getByText('First name and Last name cannot be empty')).toBeTruthy();
 
     // fill in inputs, then try to go to step 2
     fireEvent.change(screen.getByLabelText('First name'), { target: { value: 'john' } });
     fireEvent.change(screen.getByLabelText('Last name'), { target: { value: 'smith' } });
-    fireEvent.click(screen.getByText('Step 2'));
+    fireEvent.click(screen.getByText('Second Step'));
     expect(screen.queryByText('First name and Last name cannot be empty')).toBeFalsy();
   });
 });

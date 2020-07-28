@@ -1,7 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
+import { render, fireEvent, screen } from '@testing-library/react';
 
+import '@testing-library/jest-dom/extend-expect';
 import DateTimePicker, {
   INTERVAL_VALUES,
   RELATIVE_VALUES,
@@ -344,5 +346,120 @@ describe('DateTimePicker', () => {
     expect(
       wrapper.find('.iot--date-time-picker__listitem--preset-selected').hostNodes()
     ).toHaveLength(1);
+  });
+
+  it('i18n string test', () => {
+    const i18nTest = {
+      toLabel: 'to-label',
+      toNowLabel: 'to-now-label',
+      calendarLabel: 'calendar-label',
+      presetLabels: ['last-30-min', 'last-1-hour', 'last-6-hour', 'last-12-hour', 'last-24-hour'],
+      intervalLabels: ['mins', 'hrs', 'dys', 'wks', 'mths', 'yrs'],
+      relativeLabels: ['today', 'yesterday'],
+      customRangeLinkLabel: 'custom-range',
+      customRangeLabel: 'custom-range-2',
+      relativeLabel: 'relative',
+      lastLabel: 'last',
+      invalidNumberLabel: 'number-is-not-valid',
+      relativeToLabel: 'relative-to',
+      absoluteLabel: 'absolute',
+      startTimeLabel: 'start-time',
+      endTimeLabel: 'end-time',
+      applyBtnLabel: 'apply',
+      cancelBtnLabel: 'cancel',
+      backBtnLabel: 'back',
+    };
+
+    const presets = [
+      {
+        label: 'last-30-min',
+        offset: 30,
+      },
+      {
+        label: 'last-1-hour',
+        offset: 60,
+      },
+      {
+        label: 'last-6-hour',
+        offset: 360,
+      },
+      {
+        label: 'last-12-hour',
+        offset: 720,
+      },
+      {
+        label: 'last-24-hour',
+        offset: 1440,
+      },
+    ];
+
+    const i18nDefault = DateTimePicker.defaultProps.i18n;
+
+    const relatives = [
+      {
+        label: 'today',
+        value: RELATIVE_VALUES.TODAY,
+      },
+      {
+        label: 'yesterday',
+        value: RELATIVE_VALUES.YESTERDAY,
+      },
+    ];
+
+    render(<DateTimePicker presets={presets} i18n={i18nTest} relatives={relatives} />);
+    i18nTest.presetLabels.forEach(label => {
+      expect(screen.getAllByText(label)[0]).toBeInTheDocument();
+    });
+    expect(screen.getAllByText(i18nTest.toNowLabel, { exact: false })[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(i18nTest.calendarLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.customRangeLinkLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.applyBtnLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.cancelBtnLabel)).toBeInTheDocument();
+
+    i18nDefault.presetLabels.forEach(label => {
+      expect(screen.queryByText(label)).not.toBeInTheDocument();
+    });
+    expect(screen.queryByText(i18nDefault.toNowLabel, { exact: false })).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.calendarLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.customRangeLinkLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.applyBtnLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.cancelBtnLabel)).not.toBeInTheDocument();
+    // custom relative range screen
+    fireEvent.click(screen.getByText(i18nTest.customRangeLinkLabel));
+    i18nTest.intervalLabels.forEach(label => {
+      expect(screen.getAllByText(label)[0]).toBeInTheDocument();
+    });
+    i18nTest.relativeLabels.forEach(label => {
+      expect(screen.getAllByText(label)[0]).toBeInTheDocument();
+    });
+    expect(screen.getByText(i18nTest.customRangeLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.backBtnLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.relativeLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.lastLabel)).toBeInTheDocument();
+
+    i18nDefault.intervalLabels.forEach(label => {
+      expect(screen.queryByText(label)).not.toBeInTheDocument();
+    });
+    i18nDefault.relativeLabels.forEach(label => {
+      expect(screen.queryByText(label)).not.toBeInTheDocument();
+    });
+    expect(screen.queryByText(i18nDefault.customRangeLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.backBtnLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.relativeLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.lastLabel)).not.toBeInTheDocument();
+    // custom range absolute screen.
+    fireEvent.click(screen.getByText(i18nTest.absoluteLabel));
+    expect(screen.getByText(i18nTest.startTimeLabel)).toBeInTheDocument();
+    expect(screen.getByText(i18nTest.endTimeLabel)).toBeInTheDocument();
+
+    expect(screen.queryByText(i18nDefault.startTimeLabel)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
+    // click apply
+    fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
+    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
+
+    expect(
+      screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))
+    ).not.toBeInTheDocument();
   });
 });

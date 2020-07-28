@@ -671,7 +671,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <tr>
                   <th
                     align="start"
-                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                    className="table-header-label-start iot--table-head--table-header"
                     data-column="value1"
                     id="column-value1"
                     scope="col"
@@ -694,7 +694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                   </th>
                   <th
                     align="start"
-                    className="table-header-label-start TableHead__StyledCustomTableHeader-sc-1fviaow-0 dYYJkz"
+                    className="table-header-label-start iot--table-head--table-header"
                     data-column="timestamp"
                     id="column-timestamp"
                     scope="col"

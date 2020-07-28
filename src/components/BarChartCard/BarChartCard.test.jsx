@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Table from '../Table/Table';
 import { barChartData } from '../../utils/barChartDataSample';
@@ -177,5 +178,17 @@ describe('BarChartCard', () => {
       />
     );
     expect(wrapper.find('GroupedBarChart')).toHaveLength(1);
+  });
+
+  it('i18n string test', () => {
+    const i18nTest = {
+      noDataLabel: 'no-data-label',
+    };
+
+    const i18nDefault = BarChartCard.defaultProps.i18n;
+
+    render(<BarChartCard {...barChartCardProps} values={[]} i18n={i18nTest} />);
+    expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.noDataLabel)).not.toBeInTheDocument();
   });
 });
