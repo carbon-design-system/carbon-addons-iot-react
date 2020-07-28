@@ -149,7 +149,7 @@ describe('PageWizard', () => {
     expect(screen.queryByLabelText(i18nDefault.close)).not.toBeInTheDocument();
 
     rerender(
-      <PageWizard currentStepId="step3" i18n={i18nTest}>
+      <PageWizard currentStepId="step5" i18n={i18nTest}>
         {content}
       </PageWizard>
     );
