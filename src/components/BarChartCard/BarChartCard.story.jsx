@@ -83,7 +83,7 @@ storiesOf('Watson IoT/BarChartCard', module)
       </div>
     );
   })
-  .add('Simple bar - Time series', () => {
+  .add('Simple bar - Time series - custom domainRange', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>

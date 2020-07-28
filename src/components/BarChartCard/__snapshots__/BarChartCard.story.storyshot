@@ -534,7 +534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Time series 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard Simple bar - Time series - custom domainRange 1`] = `
 <div
   className="storybook-container"
 >
