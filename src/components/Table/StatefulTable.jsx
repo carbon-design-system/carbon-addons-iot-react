@@ -63,6 +63,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     view,
     view: {
       table: { filteredData, selectedIds, sort },
+      toolbar: { initialDefaultSearch },
     },
   } = state;
 
@@ -203,6 +204,13 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       options={options}
       view={{
         ...view,
+        toolbar: {
+          ...view.toolbar,
+          search: {
+            ...view.toolbar.search,
+            defaultValue: initialDefaultSearch,
+          },
+        },
         pagination: {
           ...view.pagination,
           totalItems: filteredData.length,

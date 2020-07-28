@@ -281,8 +281,12 @@ export const tableReducer = (state = {}, action) => {
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
       const toolbar = get(view, 'toolbar') || {};
       const paginationFromState = get(state, 'view.pagination');
+      const initialDefaultSearch =
+        get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
       // update the column ordering if I'm passed new columns
       const ordering = get(view, 'table.ordering') || get(state, 'view.table.ordering');
+      // update the search if a new one is passed
+      const searchFromState = get(state, 'view.toolbar.search');
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: totalItems || updatedData.length },
@@ -296,13 +300,17 @@ export const tableReducer = (state = {}, action) => {
         },
         view: {
           pagination,
+          toolbar: {
+            initialDefaultSearch: { $set: initialDefaultSearch },
+            search: { $set: searchFromState },
+          },
           table: {
             ordering: { $set: ordering },
             filteredData: {
               $set: filterSearchAndSort(
                 updatedData,
                 get(state, 'view.table.sort'),
-                get(state, 'view.toolbar.search'),
+                searchFromState,
                 get(state, 'view.filters'),
                 get(state, 'columns')
               ),

@@ -1031,13 +1031,7 @@ storiesOf('Watson IoT/Table', module)
               style={{ maxWidth: '300px' }}
               columns={tableColumns.slice(0, 2)}
               data={tableData}
-              actions={{
-                toolbar: {
-                  onApplySearch: newValue => {
-                    setDefaultValue(newValue);
-                  },
-                },
-              }}
+              actions={actions}
               options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
               view={{
                 toolbar: {
