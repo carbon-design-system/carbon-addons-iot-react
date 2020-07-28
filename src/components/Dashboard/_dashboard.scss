@@ -56,7 +56,7 @@
     flex-grow: 0;
 
     & > div + div {
-      margin-left: 0.5rem;
+      margin-left: $spacing-03;
     }
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Add16, Edit16 } from '@carbon/icons-react';
-import '@testing-library/jest-dom/extend-expect';
 
 import ListItem from './ListItem';
 
@@ -80,5 +79,20 @@ describe('ListItem', () => {
     fireEvent.click(screen.getByTitle('iconTitle'));
     expect(rowActionOnClick).toHaveBeenCalledTimes(1);
     expect(screen.getByTitle('iconTitle')).toBeVisible();
+  });
+
+  it('ListItem i18n string test', () => {
+    const i18nTest = {
+      expand: 'expand',
+      close: 'close',
+    };
+    const i18nDefaults = ListItem.defaultProps.i18n;
+    const { rerender } = render(<ListItem i18n={i18nTest} id="1" value="" isExpandable />);
+    expect(screen.getByLabelText(i18nTest.close)).toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefaults.close)).not.toBeInTheDocument();
+
+    rerender(<ListItem i18n={i18nTest} id="1" value="" isExpandable expanded />);
+    expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
   });
 });

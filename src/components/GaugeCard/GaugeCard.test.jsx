@@ -11,7 +11,7 @@ const content = {
       minimumValue: 0,
       maximumValue: 100,
       color: 'orange',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: '#e0e',
       shape: 'circle',
       trend: {
         /** the key to load the trend value from the values object. */
@@ -23,19 +23,19 @@ const content = {
         {
           comparison: '>',
           value: 0,
-          color: '#fa4d56', // red
+          color: 'red', // red
           label: 'Poor',
         },
         {
           comparison: '>',
           value: 60,
-          color: '#f1c21b', // yellow
+          color: 'yellow', // yellow
           label: 'Fair',
         },
         {
           comparison: '>',
           value: 80,
-          color: '#42be65', // green
+          color: 'green', // green
           label: 'Good',
         },
       ],
@@ -45,7 +45,7 @@ const content = {
       units: '%',
       minimumValue: 0,
       color: 'orange',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: '#e0e',
       shape: 'circle',
       trend: {
         /** the key to load the trend value from the values object. */
@@ -60,7 +60,7 @@ const content = {
       minimumValue: 0,
       maximumValue: 100,
       color: 'orange',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: '#e0e',
       shape: 'circle',
       trend: {
         /** the key to load the trend value from the values object. */
@@ -78,7 +78,7 @@ const content = {
         {
           comparison: '<',
           value: 3,
-          color: '#f1c21b', // yellow
+          color: 'yellow', // yellow
           label: 'Fair',
         },
         {

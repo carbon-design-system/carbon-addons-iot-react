@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { spacing05 } from '@carbon/layout';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 
 import Button from '../Button';
@@ -85,7 +86,7 @@ const ControlledComboBoxApp = props => {
         selectedItem={selectedItem}
       />
       <Button
-        style={{ marginTop: '1rem' }}
+        style={{ marginTop: spacing05 }}
         onClick={() => {
           items.push({
             id: `id-${(uid += 1)}`,

@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 
 import WizardModal from './WizardModal';
 
 const StyledWizard = styled(WizardModal)`
   .WizardInline-custom-footer-content {
-    padding: 1rem;
+    padding: ${spacing05};
   }
 `;
 
@@ -33,6 +34,7 @@ storiesOf('Watson IoT/WizardModal', module)
         { label: 'step2', content: 'page 2', onValidate: action('validateStep2') },
         { label: 'step3', content: 'page 3', onValidate: action('validateStep3') },
       ]}
+      isClickable
       {...commonWizardProps}
     />
   ))

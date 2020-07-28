@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { spacing05, spacing07, layout06 } from '@carbon/layout';
 import { SkeletonText } from 'carbon-components-react';
 import warning from 'warning';
 
@@ -22,8 +23,8 @@ const StyledPageContent = styled.div`
     display: flex;
     flex-flow: column;
     min-height: calc(100vh - 125px);
-    padding: 1rem 2rem;
-    padding-bottom: 7rem;
+    padding: ${spacing05} ${spacing07};
+    padding-bottom: ${layout06};
   }
 `;
 
