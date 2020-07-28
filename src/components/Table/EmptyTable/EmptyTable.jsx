@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DataTable, Button } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
-import { spacing09 } from '@carbon/layout';
 
 import { settings } from '../../../constants/Settings';
 import { EmptyStatePropTypes } from '../TablePropTypes';

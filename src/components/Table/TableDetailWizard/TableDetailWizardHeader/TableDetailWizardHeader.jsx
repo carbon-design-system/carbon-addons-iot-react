@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Button } from 'carbon-components-react';
 import { Close20 } from '@carbon/icons-react';
-import { spacing02 } from '@carbon/layout';
 
 import { settings } from '../../../../constants/Settings';
 

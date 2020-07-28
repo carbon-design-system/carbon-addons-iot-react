@@ -14,7 +14,7 @@ import ImageHotspots from './ImageHotspots';
 const ContentWrapper = styled.div`
   height: 100%;
   max-height: 100%;
-  padding: 0 ${spacing05} ${spacing05} ${spacing05};
+  padding: 0 ${spacing05} ${spacing05};
 `;
 
 const EmptyDiv = styled.div`

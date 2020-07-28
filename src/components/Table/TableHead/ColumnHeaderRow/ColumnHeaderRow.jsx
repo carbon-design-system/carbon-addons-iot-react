@@ -4,7 +4,6 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { DataTable, Button } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
-import { spacing03, spacing06 } from '@carbon/layout';
 
 import { settings } from '../../../../constants/Settings';
 import { defaultFunction } from '../../../../utils/componentUtilityFunctions';
