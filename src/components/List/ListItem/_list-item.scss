@@ -4,6 +4,21 @@
   position: relative;
 }
 
+.#{$iot-prefix}--list-item-editable {
+  &-drag-above {
+    border-top: solid 2px $focus;
+  }
+
+  &-drag-below {
+    border-bottom: solid 2px $focus;
+  }
+
+  &:hover {
+    background: $hover-ui;
+    cursor: grab;
+  }
+}
+
 .#{$iot-prefix}--list-item {
   background: $ui-01;
   border-bottom: 1px solid $ui-03;
@@ -13,6 +28,10 @@
   padding: $spacing-03 $spacing-03 $spacing-03 $spacing-05;
   align-items: center;
   overflow-x: hidden;
+
+  &--handle {
+    fill: $ibm-color__gray-100;
+  }
 
   &__large {
     height: rem(96px);

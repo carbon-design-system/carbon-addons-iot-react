@@ -341,6 +341,586 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/List basic (single column) with reorder 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list"
+      >
+        <div
+          className="iot--list-header-container"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              NY Yankees
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Cancel
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Cancel"
+                  className="bx--btn__icon"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Save
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Save"
+                  className="bx--btn__icon"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 21.2L5.4 13.6 4 15 13 24 28 9 26.6 7.5 13 21.2z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--content"
+        >
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
+                    >
+                      DJ LeMahieu
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
+                    >
+                      Luke Voit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
+                    >
+                      Gary Sanchez
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Kendrys Morales"
+                    >
+                      Kendrys Morales
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gleyber Torres"
+                    >
+                      Gleyber Torres
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Clint Frazier"
+                    >
+                      Clint Frazier
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Brett Gardner"
+                    >
+                      Brett Gardner
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gio Urshela"
+                    >
+                      Gio Urshela
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Cameron Maybin"
+                    >
+                      Cameron Maybin
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item--content"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Robinson Cano"
+                    >
+                      Robinson Cano
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/List with categories, fixed height 1`] = `
 <div
   className="storybook-container"

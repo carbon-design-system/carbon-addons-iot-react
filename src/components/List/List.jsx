@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
@@ -37,6 +39,8 @@ const propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
+  /** list can be rearranged */
+  isEditing: PropTypes.bool,
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -63,6 +67,8 @@ const propTypes = {
   handleSelect: PropTypes.func,
   /** call back function of expansion */
   toggleExpansion: PropTypes.func,
+  /** callback function for reorder */
+  onItemMoved: PropTypes.func,
 };
 
 const defaultProps = {
@@ -70,6 +76,7 @@ const defaultProps = {
   title: null,
   search: null,
   buttons: [],
+  isEditing: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -85,6 +92,7 @@ const defaultProps = {
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
+  onItemMoved: () => {},
 };
 
 const List = forwardRef((props, ref) => {
@@ -104,11 +112,13 @@ const List = forwardRef((props, ref) => {
     handleSelect,
     toggleExpansion,
     iconPosition,
+    isEditing,
     isLargeRow,
     isLoading,
+    onItemMoved,
   } = props;
   const selectedItemRef = ref;
-  const renderItemAndChildren = (item, level) => {
+  const renderItemAndChildren = (item, index, depth) => {
     const hasChildren = item.children && item.children.length > 0;
     const isSelected = item.id === selectedId || selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
@@ -128,15 +138,18 @@ const List = forwardRef((props, ref) => {
       >
         <ListItem
           id={item.id}
+          index={index}
           key={`${item.id}-list-item-${level}-${value}`}
           nestingLevel={level}
           value={value}
           icon={icon}
           iconPosition={iconPosition}
+          isEditing={isEditing}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
           onSelect={handleSelect}
           onExpand={toggleExpansion}
+          onItemMoved={onItemMoved}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
@@ -148,14 +161,17 @@ const List = forwardRef((props, ref) => {
           tags={tags}
         />
       </div>,
-
       ...(hasChildren && isExpanded
-        ? item.children.map(child => renderItemAndChildren(child, level + 1))
+        ? item.children.map((child, nestedIndex) => {
+            const newDepth = [...depth, index];
+
+            return renderItemAndChildren(child, nestedIndex, newDepth);
+          })
         : []),
     ];
   };
 
-  const listItems = items.map(item => renderItemAndChildren(item, 0));
+  const listItems = items.map((item, index) => renderItemAndChildren(item, index, []));
 
   return (
     <div
@@ -198,4 +214,5 @@ const List = forwardRef((props, ref) => {
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 
-export default List;
+export { List as UnconnectedList };
+export default DragDropContext(HTML5Backend)(List);

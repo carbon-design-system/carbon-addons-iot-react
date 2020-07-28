@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
-import { Add16, Edit16, Star16 } from '@carbon/icons-react';
+import { Add16, Edit16, Star16, Close16, Checkmark16, NumberSmall_132 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
@@ -483,3 +483,205 @@ storiesOf('Watson IoT Experimental/List', module)
       />
     </div>
   ));
+  .add('basic (single column) with reorder', () => {
+    const SingleColumnReorder = () => {
+      const startData = Object.entries(
+        sampleHierarchy.MLB['American League']['New York Yankees']
+      ).map(([key]) => ({
+        id: key,
+        content: { value: key },
+      }));
+
+      const [listItems, setListItems] = useState(startData);
+      const editing = boolean('isEditing,', true);
+
+      const onItemMoved = (dragProps, hoverProps) => {
+        console.log(`raw drag: ${dragProps} raw hover: ${hoverProps}`);
+
+        const dragCard = listItems[dragProps.index];
+        listItems.splice(dragProps.index, 1);
+        listItems.splice(hoverProps.index, 0, dragCard);
+
+        console.log(
+          `drag: ${dragProps.index} hover: ${hoverProps.index} items: ${JSON.stringify(listItems)}`
+        );
+
+        setListItems([...listItems]);
+      };
+
+      const saveButton = (
+        <Button
+          renderIcon={Checkmark16}
+          hasIconOnly
+          size="small"
+          iconDescription="Save"
+          key="expandable-list-button-check"
+          onClick={() => action('Reordered list saved')}
+        />
+      );
+
+      const cancelButton = (
+        <Button
+          renderIcon={Close16}
+          hasIconOnly
+          kind="secondary"
+          size="small"
+          iconDescription="Cancel"
+          key="expandable-list-button-cancel"
+          onClick={() => setListItems(startData)}
+        />
+      );
+
+      return (
+        <div style={{ width: 400 }}>
+          <List
+            buttons={editing ? [cancelButton, saveButton] : []}
+            title={text('title', 'NY Yankees')}
+            items={listItems}
+            isEditing={editing}
+            isLoading={boolean('isLoading', false)}
+            onItemMoved={onItemMoved}
+          />
+        </div>
+      );
+    };
+
+    return <SingleColumnReorder />;
+  })
+  .add('reorder hierarchy', () => {
+    const HierarchyReorder = () => {
+      const [expandedIds, setExpandedIds] = useState([
+        'MLB',
+        'MLB_American League',
+        'MLB_National League',
+        'MLB_American League_New York Yankees',
+      ]);
+
+      const startData = [
+        ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
+          id: team,
+          isCategory: true,
+          isSelectable: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
+            id: `${team}-${player}`,
+            isSelectable: true,
+            content: {
+              value: player,
+              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+            },
+          })),
+        })),
+      ];
+
+      const [listItems, setListItems] = useState(startData);
+      const editing = boolean('isEditing,', true);
+
+      const searchNestedItems = (items, draggedItem, hoverProps, isAbove) => {
+        const finalList = [];
+
+        cloneDeep(items).forEach(item => {
+          if (item.children) {
+            item.children = searchNestedItems(item.children, draggedItem, hoverProps);
+          }
+
+          if (item.id === hoverProps.id && isAbove) {
+            finalList.push(draggedItem);
+          }
+
+          if (item.id !== draggedItem.id) {
+            finalList.push(item);
+          }
+
+          if (item.id === hoverProps.id && !isAbove) {
+            finalList.push(draggedItem);
+          }
+        });
+
+        return finalList;
+      };
+
+      const searchDraggedItem = (items, id) => {
+        let draggedItem = null;
+
+        cloneDeep(items).forEach(item => {
+          if (draggedItem === null) {
+            if (item.id === id) {
+              draggedItem = item;
+            } else if (item.children) {
+              draggedItem = searchDraggedItem(item.children, id);
+            }
+          }
+        });
+
+        return draggedItem;
+      };
+
+      const onItemMoved = (dragProps, hoverProps, isAbove) => {
+        if (dragProps.id === hoverProps.id) {
+          return false;
+        }
+
+        const draggedItem = searchDraggedItem(listItems, dragProps.id);
+
+        console.log(`before ${dragProps.id}  ${hoverProps.id} above? ${isAbove}`);
+
+        const newList = searchNestedItems(listItems, draggedItem, hoverProps, isAbove);
+
+        // console.log(`after ${JSON.stringify(newList)}`);
+
+        setListItems(newList);
+
+        return true;
+      };
+
+      const saveButton = (
+        <Button
+          renderIcon={Checkmark16}
+          hasIconOnly
+          size="small"
+          iconDescription="Save"
+          key="expandable-list-button-check"
+          onClick={() => action('Reordered list saved')}
+        />
+      );
+
+      const cancelButton = (
+        <Button
+          renderIcon={Close16}
+          hasIconOnly
+          kind="secondary"
+          size="small"
+          iconDescription="Cancel"
+          key="expandable-list-button-cancel"
+          onClick={() => setListItems(startData)}
+        />
+      );
+
+      return (
+        <div style={{ width: 400 }}>
+          <List
+            buttons={editing ? [cancelButton, saveButton] : []}
+            title={text('title', 'NY Yankees')}
+            items={listItems}
+            isEditing={editing}
+            isLoading={boolean('isLoading', false)}
+            onItemMoved={onItemMoved}
+            expandedIds={expandedIds}
+            toggleExpansion={id => {
+              if (expandedIds.filter(rowId => rowId === id).length > 0) {
+                // remove id from array
+                setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+              } else {
+                setExpandedIds(expandedIds.concat([id]));
+              }
+            }}
+          />
+        </div>
+      );
+    };
+
+    return <HierarchyReorder />;
+  });

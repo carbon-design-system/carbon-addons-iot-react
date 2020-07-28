@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import List from './List';
+import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
 describe('List', () => {
@@ -15,23 +15,23 @@ describe('List', () => {
       }));
 
   it('List when pagination is null', () => {
-    const renderedElement = render(<List title="list" items={getListItems(5)} />);
+    const renderedElement = render(<UnconnectedList title="list" items={getListItems(5)} />);
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
 
   it('List to have default handleSelect', () => {
-    expect(List.defaultProps.handleSelect).toBeDefined();
-    List.defaultProps.handleSelect();
+    expect(UnconnectedList.defaultProps.handleSelect).toBeDefined();
+    UnconnectedList.defaultProps.handleSelect();
   });
 
   it('List to have default toggleExpansion', () => {
-    expect(List.defaultProps.toggleExpansion).toBeDefined();
-    List.defaultProps.toggleExpansion();
+    expect(UnconnectedList.defaultProps.toggleExpansion).toBeDefined();
+    UnconnectedList.defaultProps.toggleExpansion();
   });
 
   it('List when selectedIds is set', () => {
     const renderedElement = render(
-      <List title="list" items={getListItems(5)} selectedIds={['1', '2']} />
+      <UnconnectedList title="list" items={getListItems(5)} selectedIds={['1', '2']} />
     );
     expect(renderedElement.container.innerHTML).toBeTruthy();
   });
