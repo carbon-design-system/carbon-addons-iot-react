@@ -279,7 +279,6 @@ export const tableReducer = (state = {}, action) => {
       const updatedData = action.payload.data || state.data;
       const { view, totalItems } = action.payload;
       const { pageSize, pageSizes } = get(view, 'pagination') || {};
-      const toolbar = get(view, 'toolbar') || {};
       const paginationFromState = get(state, 'view.pagination');
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
