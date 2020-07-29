@@ -2,113 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
-import styled from 'styled-components';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import isEqual from 'lodash/isEqual';
 
-import { COLORS } from '../../../../styles/styles';
 import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
 
 const { iotPrefix, prefix } = settings;
 const { TableHeader, TableRow } = DataTable;
-
-const StyledTableHeader = styled(({ isSelectColumn, ...others }) => <TableHeader {...others} />)`
-  &&& {
-    span.bx--table-header-label {
-      padding-top: 0;
-    }
-
-    .bx--form-item input {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding-right: 2rem;
-    }
-    .bx--form-item input:placeholder-shown {
-      padding-right: 0.5rem;
-    }
-
-    .bx--list-box input[role='combobox'] {
-      /* need to save enough room for clear and dropdown button */
-      padding-right: 4rem;
-      ${props => {
-        const { width } = props;
-        return width !== undefined
-          ? `
-        min-width: calc(${width} - 10px);
-        max-width: calc(${width} - 10px);
-      `
-          : '';
-      }}
-    }
-    .bx--form-item.bx--combo-box {
-      ${props => {
-        const { width } = props;
-        return width !== undefined
-          ? `
-        min-width: calc(${width} - 10px);
-        max-width:calc(${width} - 10px);
-      `
-          : '';
-      }}
-    }
-
-    ${props => {
-      const { width, isSelectColumn } = props;
-
-      return width !== undefined
-        ? `
-        min-width: ${width};
-        max-width: ${width};
-        white-space: nowrap;
-        overflow-x: ${!isSelectColumn ? 'hidden' : 'inherit'};
-        text-overflow: ellipsis;
-      `
-        : '';
-    }};
-
-    .bx--tag--filter {
-      background-color: transparent;
-
-      &:focus {
-        outline: 2px solid ${COLORS.blue60};
-        outline-offset: -2px;
-
-        svg {
-          border: none;
-        }
-      }
-
-      & > svg {
-        fill: ${COLORS.gray100};
-        border-radius: 0;
-
-        &:hover {
-          background-color: transparent;
-        }
-      }
-    }
-  }
-`;
-const StyledFormItem = styled(FormItem)`
-  &&& {
-    display: inline-block;
-    position: relative;
-
-    input {
-      padding-right: 2.5rem;
-    }
-
-    .bx--list-box__selection {
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-`;
 
 class FilterHeaderRow extends Component {
   static propTypes = {
@@ -264,8 +167,12 @@ class FilterHeaderRow extends Component {
     const { filterValues } = this.state;
     return isVisible ? (
       <TableRow>
-        {hasRowSelection === 'multi' ? <StyledTableHeader /> : null}
-        {hasRowExpansion ? <StyledTableHeader /> : null}
+        {hasRowSelection === 'multi' ? (
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+        ) : null}
+        {hasRowExpansion ? (
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+        ) : null}
         {ordering
           .filter(c => !c.isHidden)
           .map((c, i) => {
@@ -315,7 +222,7 @@ class FilterHeaderRow extends Component {
                   disabled={isDisabled}
                 />
               ) : (
-                <StyledFormItem>
+                <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
                   <TextInput
                     id={column.id}
                     labelText={column.id}
@@ -365,22 +272,31 @@ class FilterHeaderRow extends Component {
                       <Close16 description={clearFilterText} />
                     </div>
                   ) : null}
-                </StyledFormItem>
+                </FormItem>
               );
 
             return (
-              <StyledTableHeader
-                className={`${iotPrefix}--tableheader-filter`}
+              <TableHeader
+                className={classnames(
+                  `${iotPrefix}--tableheader-filter`,
+                  `${iotPrefix}--filter-header-row--header`,
+                  { [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined }
+                )}
                 data-column={column.id}
                 key={`FilterHeader${column.id}`}
                 width={column.width}
-                isSelectColumn={!!column.options}
+                style={{
+                  '--table-header-width': classnames(column.width),
+                  '--table-header-is-select-column': column.options ? 'hidden' : 'inherit',
+                }}
               >
                 {headerContent}
-              </StyledTableHeader>
+              </TableHeader>
             );
           })}
-        {hasRowActions ? <StyledTableHeader /> : null}
+        {hasRowActions ? (
+          <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
+        ) : null}
       </TableRow>
     ) : null;
   }

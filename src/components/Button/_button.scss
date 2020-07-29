@@ -55,7 +55,7 @@
   outline-color: transparent;
 }
 
-html[dir='rtl'] .#{$iot-prefix}--btn {
+[dir='rtl'] .#{$iot-prefix}--btn:not(.#{$prefix}--btn--icon-only) {
   text-align: right;
   padding-left: 60px; // fixed values to invert $button-padding of Carbon's theme-tokens.scss
   padding-right: 12px;

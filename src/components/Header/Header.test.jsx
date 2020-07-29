@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { User20, Help20 } from '@carbon/icons-react';
-import '@testing-library/jest-dom/extend-expect';
 
 import { keyCodes } from '../../constants/KeyCodeConstants';
 

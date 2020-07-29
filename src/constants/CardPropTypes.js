@@ -427,7 +427,7 @@ export const CardPropTypes = {
     weeklyLabel: PropTypes.string,
     monthlyLabel: PropTypes.string,
     /** If no time range is selected we should show this string as the default */
-    defaultLabel: PropTypes.string,
+    defaultLabel: PropTypes.node,
     // card actions
     selectTimeRangeLabel: PropTypes.string,
     editCardLabel: PropTypes.string,

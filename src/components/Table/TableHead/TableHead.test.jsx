@@ -285,6 +285,43 @@ describe('TableHead', () => {
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
 
+    it('toggle show column without initial width correctly updates the column widths of visible columns', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: false },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: true },
+        ],
+      };
+      myProps.columns = [
+        { id: 'col1', name: 'Column 1', width: '200px' },
+        { id: 'col2', name: 'Column 2', width: '200px' },
+        { id: 'col3', name: 'Column 3' },
+      ];
+
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const wrapper = mount(<TableHead {...myProps} />);
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
+
+      const orderingAfterTogleShow = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+
+      // Show col3 which has no initial column width.
+      onColumnToggleFunc('col3', orderingAfterTogleShow);
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '100px' },
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+    });
+
     it('the last visible column should never have a resize handle', () => {
       myProps.tableState = {
         ...myProps.tableState,

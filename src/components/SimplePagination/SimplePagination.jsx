@@ -66,6 +66,7 @@ const SimplePagination = ({
             onKeyDown={hasPrev ? evt => handleEnterKeyDown(evt, handlePrev) : undefined}
           >
             <CaretLeft16
+              dir="ltr"
               description={prevPageText}
               className={
                 hasPrev
@@ -86,6 +87,7 @@ const SimplePagination = ({
             onKeyDown={hasNext ? evt => handleEnterKeyDown(evt, handleNext) : undefined}
           >
             <CaretRight16
+              dir="ltr"
               description={nextPageText}
               className={
                 hasNext

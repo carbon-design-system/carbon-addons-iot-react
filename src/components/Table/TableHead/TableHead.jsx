@@ -6,7 +6,6 @@ import { DataTable, Checkbox } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
 import isEqual from 'lodash/isEqual';
-import styled from 'styled-components';
 import classnames from 'classnames';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
@@ -114,30 +113,6 @@ const defaultProps = {
   },
   hasFastFilter: true,
 };
-
-const StyledCustomTableHeader = styled(TableHeader)`
-  &&& {
-    ${props => {
-      const { initialWidth } = props;
-      return initialWidth !== undefined
-        ? `
-       .bx--table-header-label {
-          min-width: ${initialWidth};
-          max-width: ${initialWidth};
-          white-space: nowrap;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          text-overflow: ellipsis;
-        }
-      `
-        : '';
-    }}
-
-    vertical-align: middle;
-
-    &
-  }
-`;
 
 const generateOrderedColumnRefs = ordering =>
   ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
@@ -320,7 +295,8 @@ const TableHead = ({
           const align =
             matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
           return !item.isHidden && matchingColumnMeta ? (
-            <StyledCustomTableHeader
+            <TableHeader
+              width={initialColumnWidths[matchingColumnMeta.id]}
               initialWidth={initialColumnWidths[matchingColumnMeta.id]}
               id={`column-${matchingColumnMeta.id}`}
               key={`column-${matchingColumnMeta.id}`}
@@ -333,6 +309,9 @@ const TableHead = ({
                   currentColumnWidths[matchingColumnMeta.id] &&
                   currentColumnWidths[matchingColumnMeta.id].width,
               }}
+              style={{
+                '--table-header-width': classnames(initialColumnWidths[matchingColumnMeta.id]),
+              }}
               onClick={() => {
                 if (matchingColumnMeta.isSortable && onChangeSort) {
                   onChangeSort(matchingColumnMeta.id);
@@ -342,6 +321,7 @@ const TableHead = ({
               sortDirection={hasSort ? sort.direction : 'NONE'}
               align={align}
               className={classnames(`table-header-label-${align}`, {
+                [`${iotPrefix}--table-head--table-header`]: initialColumnWidths !== undefined,
                 'table-header-sortable': matchingColumnMeta.isSortable,
                 [`${iotPrefix}--table-header-resize`]: hasResize,
               })}
@@ -362,7 +342,7 @@ const TableHead = ({
                   ordering={ordering}
                 />
               ) : null}
-            </StyledCustomTableHeader>
+            </TableHeader>
           ) : null;
         })}
         {options.hasRowActions ? (

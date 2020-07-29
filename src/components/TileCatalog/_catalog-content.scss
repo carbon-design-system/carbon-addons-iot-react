@@ -22,7 +22,7 @@
 }
 
 .#{$iot-prefix}--sample-tile-title {
-  color: #3d70b2;
+  color: $link-01;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
@@ -39,7 +39,7 @@
 .#{$iot-prefix}--sample-tile-contents {
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 1rem;
+  padding: 0 $spacing-05;
   align-self: flex-start;
 }
 

@@ -7,7 +7,6 @@ import {
   OverflowMenuItem,
   Loading,
 } from 'carbon-components-react';
-import styled from 'styled-components';
 import classnames from 'classnames';
 import omit from 'lodash/omit';
 
@@ -19,50 +18,6 @@ import RowActionsError from './RowActionsError';
 
 const { TableCell } = DataTable;
 const { iotPrefix } = settings;
-
-const StyledTableCell = styled(TableCell)`
-  && {
-    padding: 0;
-    vertical-align: middle;
-  }
-`;
-
-const RowActionsContainer = styled.div`
-  &&& {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    /* If the actions are focused on, they should show up */
-    > *:focus {
-      opacity: 1;
-    }
-
-    /* the spinner was a little too big and causing the row to scroll so need to scale down a bit */
-    .bx--loading--small {
-      width: 1.875rem;
-      height: 1.875rem;
-    }
-  }
-`;
-
-const OverflowMenuContent = styled.div`
-  & {
-    display: flex;
-    align-items: center;
-  }
-`;
-
-const StyledOverflowMenu = styled(({ isRowExpanded, isOpen, ...other }) => (
-  <OverflowMenu {...other} />
-))`
-  &&& {
-    margin-left: 0.5rem;
-    svg {
-      margin-left: ${props => (props.hideLabel !== 'false' ? '0' : '')};
-    }
-  }
-`;
 
 const propTypes = {
   /** Need to render different styles if expanded */
@@ -97,6 +52,10 @@ const propTypes = {
   /** `true` hides all the normal actions/statuses and shows the singleRowEditButtons */
   showSingleRowEditButtons: PropTypes.bool,
   singleRowEditButtons: PropTypes.element,
+  /**
+   * Direction of document. Passed in at Table
+   */
+  langDir: PropTypes.oneOf(['ltr', 'rtl']),
 };
 
 const defaultProps = {
@@ -111,6 +70,7 @@ const defaultProps = {
   isDelete: false,
   showSingleRowEditButtons: false,
   singleRowEditButtons: null,
+  langDir: 'ltr',
 };
 
 const onClick = (e, id, action, onApplyRowAction) => {
@@ -122,21 +82,7 @@ const onClick = (e, id, action, onApplyRowAction) => {
 class RowActionsCell extends React.Component {
   state = {
     isOpen: false,
-    ltr: true,
   };
-
-  componentDidMount() {
-    if (document.dir === 'rtl') {
-      this.setState(state => ({ ltr: !state.ltr }));
-    }
-  }
-
-  componentDidUpdate(prevProp, prevState) {
-    const isLtr = document.dir === 'ltr';
-    if (prevState.ltr !== isLtr) {
-      this.setState(state => ({ ltr: !state.ltr }));
-    }
-  }
 
   handleOpen = () => {
     const { isOpen } = this.state;
@@ -169,23 +115,28 @@ class RowActionsCell extends React.Component {
       inProgressText,
       showSingleRowEditButtons,
       singleRowEditButtons,
+      langDir,
     } = this.props;
-    const { isOpen, ltr } = this.state;
+    const { isOpen } = this.state;
     const overflowActions = actions ? actions.filter(action => action.isOverflow) : [];
     const hasOverflow = overflowActions.length > 0;
     const firstSelectableItemIndex = overflowActions.findIndex(action => !action.disabled);
 
     return showSingleRowEditButtons ? (
-      <StyledTableCell key={`${id}-single-row-edit-buttons`}>
+      <TableCell
+        key={`${id}-single-row-edit-buttons`}
+        className={`${iotPrefix}--row-actions-cell--table-cell`}
+      >
         {singleRowEditButtons}
-      </StyledTableCell>
+      </TableCell>
     ) : actions && actions.length > 0 ? (
-      <StyledTableCell key={`${id}-row-actions-cell`}>
-        <RowActionsContainer
-          isRowExpanded={isRowExpanded}
-          className={`${iotPrefix}--row-actions-container`}
-        >
+      <TableCell
+        key={`${id}-row-actions-cell`}
+        className={`${iotPrefix}--row-actions-cell--table-cell`}
+      >
+        <div className={`${iotPrefix}--row-actions-container`}>
           <div
+            data-testid="row-action-container-background"
             className={classnames(`${iotPrefix}--row-actions-container__background`, {
               [`${iotPrefix}--row-actions-container__background--overflow-menu-open`]: isOpen,
             })}
@@ -224,16 +175,17 @@ class RowActionsCell extends React.Component {
                     </Button>
                   ))}
                 {hasOverflow ? (
-                  <StyledOverflowMenu
+                  <OverflowMenu
                     id={`${tableId}-${id}-row-actions-cell-overflow`}
                     data-testid={`${tableId}-${id}-row-actions-cell-overflow`}
-                    flipped={ltr}
+                    flipped={langDir === 'ltr'}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
                     isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
+                    className={`${iotPrefix}--row-actions-cell--overflow-menu`}
                   >
                     {overflowActions.map((action, actionIndex) => (
                       <OverflowMenuItem
@@ -247,7 +199,10 @@ class RowActionsCell extends React.Component {
                         isDelete={action.isDelete}
                         itemText={
                           action.renderIcon ? (
-                            <OverflowMenuContent title={action.labelText}>
+                            <div
+                              className={`${iotPrefix}--row-actions-cell--overflow-menu-content`}
+                              title={action.labelText}
+                            >
                               {typeof action.renderIcon === 'string' ? (
                                 React.createElement(icons[action.renderIcon], {
                                   'aria-label': action.labelText,
@@ -256,7 +211,7 @@ class RowActionsCell extends React.Component {
                                 <action.renderIcon description={action.labelText} />
                               )}
                               {action.labelText}
-                            </OverflowMenuContent>
+                            </div>
                           ) : (
                             action.labelText
                           )
@@ -264,13 +219,13 @@ class RowActionsCell extends React.Component {
                         disabled={action.disabled}
                       />
                     ))}
-                  </StyledOverflowMenu>
+                  </OverflowMenu>
                 ) : null}
               </Fragment>
             )}
           </div>
-        </RowActionsContainer>
-      </StyledTableCell>
+        </div>
+      </TableCell>
     ) : null;
   }
 }

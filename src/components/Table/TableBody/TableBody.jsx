@@ -69,6 +69,10 @@ const propTypes = {
   ).isRequired,
   rowEditMode: PropTypes.bool,
   singleRowEditButtons: PropTypes.element,
+  /**
+   * direction of document
+   */
+  langDir: PropTypes.oneOf(['ltr', 'rtl']),
 };
 
 const defaultProps = {
@@ -92,6 +96,7 @@ const defaultProps = {
   shouldLazyRender: false,
   rowEditMode: false,
   singleRowEditButtons: null,
+  langDir: 'ltr',
 };
 
 const TableBody = ({
@@ -124,6 +129,7 @@ const TableBody = ({
   locale,
   rowEditMode,
   singleRowEditButtons,
+  langDir,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -147,6 +153,7 @@ const TableBody = ({
 
     const rowElement = (
       <TableBodyRow
+        langDir={langDir}
         key={row.id}
         isExpanded={isRowExpanded}
         isSelectable={isSelectable}

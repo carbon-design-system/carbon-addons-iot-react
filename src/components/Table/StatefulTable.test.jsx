@@ -3,12 +3,11 @@ import React from 'react';
 import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { screen, render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import { mockActions } from './Table.test.helpers';
-import { initialState } from './Table.story';
+import { initialState, StatefulTableWithNestedRowItems } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 describe('stateful table with real reducer', () => {
@@ -81,5 +80,25 @@ describe('stateful table with real reducer', () => {
         expect(true).toBeTruthy();
         expect(statefulTable.text()).toContain('myButtons');
       });
+  });
+
+  it('render nestedRows', () => {
+    render(<StatefulTableWithNestedRowItems actions={mockActions} />);
+
+    expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
+
+    fireEvent.click(
+      screen
+        .getByText('whiteboard can eat 2')
+        .closest('tr')
+        .querySelector('.bx--table-expand__button')
+    );
+
+    expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
+
+    fireEvent.click(screen.getByTestId('Table-row-2_A-row-actions-cell-overflow'));
+    fireEvent.click(screen.getByText('Add'));
+
+    expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
   });
 });

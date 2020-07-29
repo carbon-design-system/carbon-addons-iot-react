@@ -169,7 +169,7 @@
       transform: translate(-50%, -50%);
       width: 100%;
       height: 100%;
-      transition: 0.5s ease;
+      transition: $duration--slow-01 ease;
       opacity: 0;
       display: flex;
       align-items: center;

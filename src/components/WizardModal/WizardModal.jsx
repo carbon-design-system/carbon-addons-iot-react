@@ -40,6 +40,9 @@ class WizardModal extends Component {
     /** optionally pass in the current Step */
     currentStepIndex: PropTypes.number,
 
+    /** Make the progress indicator clickable */
+    isClickable: PropTypes.bool,
+
     /** callback when dialog is submitted */
     onSubmit: PropTypes.func.isRequired,
 
@@ -58,6 +61,7 @@ class WizardModal extends Component {
 
   static defaultProps = {
     currentStepIndex: 0,
+    isClickable: false,
     footer: {
       leftContent: null,
       nextButtonLabel: 'Next',
@@ -82,6 +86,7 @@ class WizardModal extends Component {
   handleClick = key => {
     const { step } = this.state;
     // If you're trying to go higher then validate
+
     if (key < step || this.validateCurrentStep()) {
       this.setState({ step: key });
     }
@@ -148,7 +153,7 @@ class WizardModal extends Component {
   };
 
   render() {
-    const { steps, className, currentStepIndex, ...other } = this.props;
+    const { steps, className, currentStepIndex, isClickable, ...other } = this.props;
     // Transform object to be what Progress Indicator expects
     const items = steps.map((step, index) => ({ id: index, label: step.label }));
     const { step: stepIndex } = this.state;
@@ -160,8 +165,9 @@ class WizardModal extends Component {
       >
         <ProgressIndicator
           items={items}
-          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : undefined}
-          onClickItem={this.handleClick}
+          currentItemId={!isNil(stepIndex) ? items[stepIndex] && items[stepIndex].id : null}
+          setStep={this.handleClick}
+          isClickable={isClickable}
         />
         <div className={`${iotPrefix}--wizard-modal__content`}>{steps[stepIndex].content}</div>
       </ComposedModal>

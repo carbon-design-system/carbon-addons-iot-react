@@ -28,67 +28,7 @@ const defaultProps = {
 
 const TilePagination = ({ page, numPages, onChange, i18n }) => {
   const [selectedValue, setSelectedValue] = useState();
-  const prevButton = (
-    <button
-      type="button"
-      onClick={() => page > 1 && onChange(page - 1)}
-      className={classnames(
-        `${prefix}--pagination-nav__page`,
-        `${prefix}--pagination-nav__page--direction`,
-        {
-          [`${prefix}--pagination-nav__page--disabled`]: page === 1,
-        }
-      )}
-      aria-disabled="true"
-    >
-      <span className={`${prefix}--pagination-nav__accessibility-label`}>
-        {i18n.ariaLabelPreviousPage}
-      </span>
-      <svg
-        focusable="false"
-        preserveAspectRatio="xMidYMid meet"
-        style={{ willChange: 'transform' }}
-        xmlns="http://www.w3.org/2000/svg"
-        className={`${prefix}--pagination-nav__icon`}
-        width="5"
-        height="8"
-        viewBox="0 0 5 8"
-        aria-hidden="true"
-      >
-        <path d="M5 8L0 4 5 0z" />
-      </svg>
-    </button>
-  );
-  const nextButton = (
-    <button
-      type="button"
-      onClick={() => page < numPages && onChange(page + 1)}
-      className={classnames(
-        `${prefix}--pagination-nav__page`,
-        `${prefix}--pagination-nav__page--direction`,
-        {
-          [`${prefix}--pagination-nav__page--disabled`]: page === numPages,
-        }
-      )}
-    >
-      <span className={`${prefix}--pagination-nav__accessibility-label`}>
-        {i18n.ariaLabelNextPage}
-      </span>
-      <svg
-        focusable="false"
-        preserveAspectRatio="xMidYMid meet"
-        style={{ willChange: 'transform' }}
-        xmlns="http://www.w3.org/2000/svg"
-        className={`${prefix}--pagination-nav__icon`}
-        width="5"
-        height="8"
-        viewBox="0 0 5 8"
-        aria-hidden="true"
-      >
-        <path d="M0 0L5 4 0 8z" />
-      </svg>
-    </button>
-  );
+
   const getPageButton = pageNumber => (
     <button
       type="button"
@@ -104,6 +44,7 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
       {pageNumber}
     </button>
   );
+
   const getPageSelect = (pageNumber, accumulator) => (
     <li className={`${prefix}--pagination-nav__list-item`}>
       <div className={`${prefix}--pagination-nav__select`}>
@@ -201,7 +142,37 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
   return (
     <nav className={`${prefix}--pagination-nav`} aria-label={i18n.ariaLabelPagination}>
       <ul className={`${prefix}--pagination-nav__list`}>
-        <li className={`${prefix}--pagination-nav__list-item`}>{prevButton}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>
+          <button
+            type="button"
+            onClick={() => page > 1 && onChange(page - 1)}
+            className={classnames(
+              `${prefix}--pagination-nav__page`,
+              `${prefix}--pagination-nav__page--direction`,
+              {
+                [`${prefix}--pagination-nav__page--disabled`]: page === 1,
+              }
+            )}
+            aria-disabled="true"
+          >
+            <span className={`${prefix}--pagination-nav__accessibility-label`}>
+              {i18n.ariaLabelPreviousPage}
+            </span>
+            <svg
+              focusable="false"
+              preserveAspectRatio="xMidYMid meet"
+              style={{ willChange: 'transform' }}
+              xmlns="http://www.w3.org/2000/svg"
+              className={`${prefix}--pagination-nav__icon`}
+              width="5"
+              height="8"
+              viewBox="0 0 5 8"
+              aria-hidden="true"
+            >
+              <path d="M5 8L0 4 5 0z" />
+            </svg>
+          </button>
+        </li>
         <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(1)}</li>
 
         {showFrontOverFlowMenu ? getFrontOverFlowMenu() : null}
@@ -213,7 +184,36 @@ const TilePagination = ({ page, numPages, onChange, i18n }) => {
         {numPages > 1 ? (
           <li className={`${prefix}--pagination-nav__list-item`}>{getPageButton(numPages)}</li>
         ) : null}
-        <li className={`${prefix}--pagination-nav__list-item`}>{nextButton}</li>
+        <li className={`${prefix}--pagination-nav__list-item`}>
+          <button
+            type="button"
+            onClick={() => page < numPages && onChange(page + 1)}
+            className={classnames(
+              `${prefix}--pagination-nav__page`,
+              `${prefix}--pagination-nav__page--direction`,
+              {
+                [`${prefix}--pagination-nav__page--disabled`]: page === numPages,
+              }
+            )}
+          >
+            <span className={`${prefix}--pagination-nav__accessibility-label`}>
+              {i18n.ariaLabelNextPage}
+            </span>
+            <svg
+              focusable="false"
+              preserveAspectRatio="xMidYMid meet"
+              style={{ willChange: 'transform' }}
+              xmlns="http://www.w3.org/2000/svg"
+              className={`${prefix}--pagination-nav__icon`}
+              width="5"
+              height="8"
+              viewBox="0 0 5 8"
+              aria-hidden="true"
+            >
+              <path d="M0 0L5 4 0 8z" />
+            </svg>
+          </button>
+        </li>
       </ul>
     </nav>
   );

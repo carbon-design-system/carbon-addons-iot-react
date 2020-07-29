@@ -23,6 +23,11 @@ const StyledGridLayout = styled(GridLayout)`
     .react-grid-item.cssTransforms {
       transition-property: ${props => (props.shouldAnimate ? 'transform' : 'none')};
     }
+
+    .react-resizable-hide .react-resizable-handle {
+      /* workaround to hide the resize handles in react-grid-layout */
+      display: none;
+    }
   }
 `;
 

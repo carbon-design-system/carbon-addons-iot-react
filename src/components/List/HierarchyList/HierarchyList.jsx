@@ -149,9 +149,8 @@ const HierarchyList = ({
 
   const selectedItemRef = useCallback(
     node => {
-      if (node) {
-        node.parentNode.scrollIntoView();
-      }
+      // eslint-disable-next-line no-unused-expressions
+      node?.parentNode?.scrollIntoView();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId]

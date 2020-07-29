@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import { DataTable } from 'carbon-components-react';
-import { Add32, Edit16, Stop16, Delete16 } from '@carbon/icons-react';
+import { Add32, Edit16, Stop16, TrashCan16 } from '@carbon/icons-react';
 
 import TableBodyRow from './TableBodyRow';
 
@@ -66,7 +66,7 @@ storiesOf('Watson IoT/TableBodyRow', module)
         { id: 'test3', renderIcon: Stop16, isOverflow: true, labelText: 'Test 3' },
         {
           id: 'delete',
-          renderIcon: Delete16,
+          renderIcon: TrashCan16,
           isOverflow: true,
           labelText: 'Delete',
           isDelete: true,

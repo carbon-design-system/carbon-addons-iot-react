@@ -43,7 +43,8 @@
     padding: 0 $spacing-05;
     position: relative;
     text-decoration: none;
-    transition: color 110ms, background-color 110ms, outline 110ms;
+    transition: color $duration--fast-02, background-color $duration--fast-02,
+      outline $duration--fast-02;
 
     &:focus {
       outline: 2px solid $interactive-01;

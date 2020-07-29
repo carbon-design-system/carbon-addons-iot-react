@@ -73,14 +73,18 @@ storiesOf('Watson IoT/Dashboard Grid', module)
     }
   )
   .add(
-    'dashboard, is Edtiable',
+    'dashboard, is Editable',
     () => {
       return (
         <Fragment>
           You can drag and drop the cards around. Watch the handler get triggered on the Actions
           tab.
           <FullWidthWrapper>
-            <DashboardGrid {...commonGridProps} isEditable={boolean('isEditable', true)}>
+            <DashboardGrid
+              {...commonGridProps}
+              isEditable={boolean('isEditable', true)}
+              isResizable={boolean('isResizable', true)}
+            >
               {Cards}
             </DashboardGrid>
           </FullWidthWrapper>

@@ -1,17 +1,19 @@
 import { mount } from 'enzyme';
 import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import merge from 'lodash/merge';
-import { Add20 } from '@carbon/icons-react';
+import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
 import { mockActions } from './Table.test.helpers';
-import Table from './Table';
+import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import EmptyTable from './EmptyTable/EmptyTable';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
 import TableHead from './TableHead/TableHead';
+import { initialState } from './Table.story';
 
 const { iotPrefix } = settings;
 
@@ -85,6 +87,22 @@ const tableData = Array(20)
       select: selectData[idx % 3].id,
       number: idx * idx,
     },
+    rowActions: [
+      {
+        id: 'drilldown',
+        renderIcon: ArrowRight16,
+        iconDescription: 'Drill in',
+        labelText: 'Drill in',
+        isOverflow: true,
+      },
+      {
+        id: 'Add',
+        renderIcon: Add16,
+        iconDescription: 'Add',
+        labelText: 'Add',
+        isOverflow: true,
+      },
+    ],
   }));
 
 const largeTableData = Array(100)
@@ -113,6 +131,35 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
+const i18nTest = {
+  /** table body */
+  overflowMenuAria: 'overflow-menu',
+  clickToExpandAria: 'expand-aria',
+  clickToCollapseAria: 'collapse-aria',
+  selectAllAria: 'select-all',
+  selectRowAria: 'select-row',
+  /** toolbar */
+  clearAllFilters: 'clear-filters',
+  columnSelectionButtonAria: 'column-select-aria',
+  columnSelectionConfig: 'column-select-config',
+  filterButtonAria: 'filter-aria',
+  editButtonAria: 'edit-button',
+  searchLabel: 'search-label',
+  searchPlaceholder: 'search-placeholder',
+  clearFilterAria: 'clear-filter',
+  filterAria: 'filter-aria',
+  openMenuAria: 'open-menu',
+  batchCancel: 'cancel',
+  itemSelected: 'item-selected',
+  /** empty state */
+  emptyMessage: 'empty-message',
+  emptyMessageWithFilters: 'empty-filters',
+  emptyButtonLabel: 'empty-button',
+  downloadIconDescription: 'download-descript',
+};
+
+const i18nDefault = defaultProps({}).i18n;
+
 describe('Table', () => {
   beforeAll(() => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -127,6 +174,7 @@ describe('Table', () => {
   const options = {
     hasRowExpansion: true,
     hasRowCountInHeader: true,
+    hasRowActions: true,
   };
   const options2 = {
     hasRowExpansion: true,
@@ -490,6 +538,24 @@ describe('Table', () => {
     expect(wrapper3.find(TableHead).prop('options').wrapCellText).toEqual('auto');
   });
 
+  it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
+    // Should render correctly by default even if no lang attribute exist
+    const { unmount, rerender } = render(
+      <Table columns={tableColumns} data={[tableData[0]]} options={options} />
+    );
+    await fireEvent.click(screen.getByTestId('Table-row-0-row-actions-cell-overflow'));
+    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
+
+    document.documentElement.setAttribute('dir', 'rtl');
+
+    rerender(<Table columns={tableColumns} data={[tableData[1]]} options={options} />);
+    await fireEvent.click(screen.getByTestId('Table-row-1-row-actions-cell-overflow'));
+    expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
+
+    // unmounting to be sure to clean up the documentElement
+    unmount();
+  });
+
   it('cells should wrap (not truncate) for wrapCellText:auto + resize + table-layout:auto', () => {
     const wrapper = mount(
       <Table
@@ -548,5 +614,122 @@ describe('Table', () => {
       <Table columns={tableColumns} data={[tableData[0]]} options={{ hasRowActions: false }} />
     );
     expect(wrapper2.exists(`table.${iotPrefix}--data-table--row-actions`)).toBeFalsy();
+  });
+
+  it('i18n string test 1', () => {
+    const additionalProps = {
+      options: {
+        ...initialState.options,
+        hasRowActions: true,
+        hasFilter: true,
+        hasSingleRowEdit: true,
+      },
+      actions: {
+        toolbar: {
+          onDownloadCSV: () => {},
+        },
+      },
+      view: {
+        ...initialState.view,
+        table: {
+          expandedIds: ['row-3', 'row-7'],
+        },
+      },
+    };
+
+    const { rerender } = render(
+      <Table {...initialState} {...additionalProps} isSortable i18n={i18nTest} />
+    );
+
+    expect(screen.getAllByLabelText(i18nTest.overflowMenuAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.clickToExpandAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.clickToCollapseAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.selectAllAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.selectRowAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.downloadIconDescription)[0]).toBeInTheDocument();
+
+    expect(screen.getAllByText(i18nTest.clearAllFilters)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.columnSelectionButtonAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.filterButtonAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.editButtonAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.searchLabel)[0]).toBeInTheDocument();
+    expect(screen.getAllByPlaceholderText(i18nTest.searchPlaceholder)[0]).toBeInTheDocument();
+    expect(screen.getAllByTitle(i18nTest.clearFilterAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.filterAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByLabelText(i18nTest.openMenuAria)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.batchCancel)[0]).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(`.*\\s${i18nTest.itemSelected}.*`))).toBeInTheDocument();
+
+    expect(screen.queryByLabelText(i18nDefault.overflowMenuAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.clickToExpandAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.clickToCollapseAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.selectAllAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.selectRowAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.downloadIconDescription)).not.toBeInTheDocument();
+
+    expect(screen.queryByText(i18nDefault.clearAllFilters)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.columnSelectionButtonAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.filterButtonAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.editButtonAria)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.searchLabel)).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(i18nDefault.searchPlaceholder)).not.toBeInTheDocument();
+    expect(screen.queryByTitle(i18nDefault.clearFilterAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.filterAria)).not.toBeInTheDocument();
+    expect(screen.queryByLabelText(i18nDefault.openMenuAria)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.batchCancel)).not.toBeInTheDocument();
+
+    rerender(
+      <Table
+        {...initialState}
+        options={{
+          ...initialState.options,
+          hasColumnSelectionConfig: true,
+        }}
+        i18n={i18nTest}
+        view={{
+          ...initialState.view,
+          toolbar: {
+            activeBar: 'column',
+          },
+        }}
+      />
+    );
+    expect(screen.getAllByText(i18nTest.columnSelectionConfig)[0]).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.columnSelectionConfig)).not.toBeInTheDocument();
+  });
+
+  it('i18n string test 2', () => {
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={[]}
+        view={{
+          filters: [{ columnId: 'select', value: 'option-B' }],
+        }}
+        i18n={i18nTest}
+        options={{
+          hasFilter: true,
+        }}
+      />
+    );
+    expect(screen.getAllByText(i18nTest.emptyMessageWithFilters)[0]).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.emptyMessageWithFilters)).not.toBeInTheDocument();
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={[]}
+        actions={{
+          table: {
+            onEmptyStateAction: () => {},
+          },
+        }}
+        i18n={i18nTest}
+      />
+    );
+    expect(screen.getAllByText(i18nTest.emptyMessage)[0]).toBeInTheDocument();
+    expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
+    expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
   });
 });
