@@ -8,7 +8,7 @@ import '@testing-library/jest-dom/extend-expect';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 import { mockActions } from './Table.test.helpers';
-import { initialState } from './Table.story';
+import { initialState, tableColumnsWithAlignment } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
 
 describe('stateful table with real reducer', () => {
@@ -22,6 +22,27 @@ describe('stateful table with real reducer', () => {
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalled();
     expect(screen.queryByDisplayValue('whiteboard')).not.toBeInTheDocument();
     expect(screen.queryByDisplayValue('option-B')).not.toBeInTheDocument();
+  });
+
+  it('should update aria label', () => {
+    render(
+      <StatefulTable
+        {...initialState}
+        options={{ hasFilter: false, hasRowExpansion: false }}
+        actions={mockActions}
+      />
+    );
+    expect(screen.getAllByLabelText('Sort rows by this header in ascending order')).toBeTruthy();
+    expect(tableColumnsWithAlignment[0].isSortable).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /string/i }));
+    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+    expect(screen.getAllByLabelText('Sort rows by this header in descending order')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /string/i }));
+    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+    expect(screen.getAllByLabelText('Unsort rows by this header')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: /string/i }));
+    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+    expect(screen.getAllByLabelText('Sort rows by this header in ascending order')).toBeTruthy();
   });
 
   it('verify stateful table can support loading state', () => {
