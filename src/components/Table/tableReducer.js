@@ -332,9 +332,6 @@ export const tableReducer = (state = {}, action) => {
               $set: view ? view.table.isSelectAllSelected : false,
             },
           },
-          toolbar: {
-            $set: toolbar,
-          },
         },
       });
     }
