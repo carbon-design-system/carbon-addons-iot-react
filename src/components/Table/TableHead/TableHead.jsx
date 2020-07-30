@@ -228,7 +228,6 @@ const TableHead = ({
       // which means that the layout engine will have to set the widths dynamically
       // before we know what they are.
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
-        console.info('setting currentColumnWidths');
         const measuredWidths = measureColumnWidths();
         const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
         const newWidthsMap = createNewWidthsMap(ordering, currentColumnWidths, adjustedWidths);
