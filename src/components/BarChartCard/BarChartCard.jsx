@@ -192,7 +192,7 @@ const BarChartCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: () => csvDownloadHandler(tableData, title),
+                  onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{
