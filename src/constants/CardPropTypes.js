@@ -263,6 +263,17 @@ export const BarChartCardPropTypes = {
     },
     /** optional units to put in the legend for all datasets */
     unit: PropTypes.string,
+    /** Optionally addes a zoom bar to the chart */
+    zoomBar: PropTypes.shape({
+      /** Determines which axis to put the zoomBar */
+      axes: PropTypes.string,
+      /** Determines whether the zoomBar is enabled */
+      enabled: PropTypes.bool,
+      /** Optional domain to zoom to by default. Can be a timestamp or date string */
+      initialZoomDomain: PropTypes.arrayOf(
+        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      ),
+    }),
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
