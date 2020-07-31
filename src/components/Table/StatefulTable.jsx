@@ -66,7 +66,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   } = state;
 
-  const initialDefaultSearch = state?.table?.toolbar?.initialDefaultSearch || '';
+  const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
 
   const { pagination, toolbar, table } = callbackActions;
   const { onChangePage } = pagination || {};
