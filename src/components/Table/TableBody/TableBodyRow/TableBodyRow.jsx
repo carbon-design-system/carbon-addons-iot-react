@@ -452,7 +452,7 @@ const TableBodyRow = ({
           </TableCell>
         ) : null;
       })}
-      {hasRowActions && rowActions && rowActions.length > 0 ? (
+      {hasRowActions && rowActions ? (
         <RowActionsCell
           id={id}
           langDir={langDir}

@@ -129,7 +129,7 @@ class RowActionsCell extends React.Component {
       >
         {singleRowEditButtons}
       </TableCell>
-    ) : actions && actions.length > 0 ? (
+    ) : actions ? (
       <TableCell
         key={`${id}-row-actions-cell`}
         className={`${iotPrefix}--row-actions-cell--table-cell`}
