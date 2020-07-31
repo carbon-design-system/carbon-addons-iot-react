@@ -621,7 +621,7 @@ storiesOf('Watson IoT/Table', module)
             ...actions,
             toolbar: {
               ...actions.toolbar,
-              onDownloadCSV: () => csvDownloadHandler(initialState.data, 'my table data'),
+              onDownloadCSV: filteredData => csvDownloadHandler(filteredData, 'my table data'),
             },
           }}
           isSortable

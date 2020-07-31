@@ -2430,6 +2430,134 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "array",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+                "rowActions": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "disabled": Object {
+                            "type": "bool",
+                          },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
+                          },
+                          "isEdit": Object {
+                            "type": "bool",
+                          },
+                          "isOverflow": Object {
+                            "type": "bool",
+                          },
+                          "labelText": Object {
+                            "type": "string",
+                          },
+                          "renderIcon": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "args": Array [
+                                    Object {
+                                      "height": Object {
+                                        "type": "string",
+                                      },
+                                      "svgData": Object {
+                                        "isRequired": true,
+                                        "type": "object",
+                                      },
+                                      "viewBox": Object {
+                                        "isRequired": true,
+                                        "type": "string",
+                                      },
+                                      "width": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                Object {
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
+                                    ],
+                                  ],
+                                  "type": "oneOf",
+                                },
+                                Object {
+                                  "type": "node",
+                                },
+                                Object {
+                                  "type": "object",
+                                },
+                                Object {
+                                  "type": "func",
+                                },
+                              ],
+                            ],
+                            "type": "oneOfType",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "values": Object {
+                  "args": Array [
+                    Object {
+                      "type": "any",
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "objectOf",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
       "i18n": Object {
         "args": Array [
           Object {
