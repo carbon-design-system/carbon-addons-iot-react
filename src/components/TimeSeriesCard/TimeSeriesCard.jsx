@@ -16,7 +16,12 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { CardPropTypes } from '../../constants/CardPropTypes';
-import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  TIME_SERIES_TYPES,
+  DISABLED_COLORS,
+  ZOOM_BAR_ENABLED_CARD_SIZES,
+} from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 import { settings } from '../../constants/Settings';
@@ -68,6 +73,18 @@ const TimeSeriesCardPropTypes = {
     ),
     /** optional units to put in the legend */
     unit: PropTypes.string,
+    /** Optionally addes a zoom bar to the chart */
+    zoomBar: PropTypes.shape({
+      /** Determines which axis to put the zoomBar */
+      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
+      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
+      /** Determines whether the zoomBar is enabled */
+      enabled: PropTypes.bool,
+      /** Optional domain to zoom to by default. Can be a timestamp or date string */
+      initialZoomDomain: PropTypes.arrayOf(
+        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      ),
+    }),
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -274,6 +291,7 @@ const TimeSeriesCard = ({
       includeZeroOnYaxis,
       unit,
       chartType,
+      zoomBar,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -529,6 +547,17 @@ const TimeSeriesCard = ({
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
                 color: colors,
+                ...(zoomBar?.enabled && ZOOM_BAR_ENABLED_CARD_SIZES.includes(size)
+                  ? {
+                      zoomBar: {
+                        // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
+                        top: {
+                          enabled: zoomBar.enabled,
+                          initialZoomDomain: zoomBar.initialZoomDomain,
+                        },
+                      },
+                    }
+                  : {}),
               }}
               width="100%"
               height="100%"

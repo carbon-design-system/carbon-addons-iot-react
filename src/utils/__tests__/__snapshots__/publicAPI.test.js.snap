@@ -4426,6 +4426,42 @@ Map {
             "yLabel": Object {
               "type": "string",
             },
+            "zoomBar": Object {
+              "args": Array [
+                Object {
+                  "axes": Object {
+                    "args": Array [
+                      Array [
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "enabled": Object {
+                    "type": "bool",
+                  },
+                  "initialZoomDomain": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
           },
         ],
         "isRequired": true,
@@ -9266,6 +9302,42 @@ Map {
             },
             "yLabel": Object {
               "type": "string",
+            },
+            "zoomBar": Object {
+              "args": Array [
+                Object {
+                  "axes": Object {
+                    "args": Array [
+                      Array [
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "enabled": Object {
+                    "type": "bool",
+                  },
+                  "initialZoomDomain": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                },
+              ],
+              "type": "shape",
             },
           },
         ],
