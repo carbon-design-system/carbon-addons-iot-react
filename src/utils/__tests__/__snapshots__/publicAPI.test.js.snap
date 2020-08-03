@@ -4430,7 +4430,12 @@ Map {
               "args": Array [
                 Object {
                   "axes": Object {
-                    "type": "string",
+                    "args": Array [
+                      Array [
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
                   },
                   "enabled": Object {
                     "type": "bool",
@@ -9302,7 +9307,12 @@ Map {
               "args": Array [
                 Object {
                   "axes": Object {
-                    "type": "string",
+                    "args": Array [
+                      Array [
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
                   },
                   "enabled": Object {
                     "type": "bool",
