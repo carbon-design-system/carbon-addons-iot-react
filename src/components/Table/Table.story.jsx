@@ -1185,32 +1185,33 @@ storiesOf('Watson IoT/Table', module)
         columns={tableColumns}
         data={tableData.map((i, idx) => ({
           ...i,
-          rowActions: [
-            idx % 4 === 0
-              ? {
-                  id: 'drilldown',
-                  renderIcon: Arrow,
-                  iconDescription: 'See more',
-                  labelText: 'See more',
-                }
-              : null,
-            {
-              id: 'add',
-              renderIcon: Add,
-              iconDescription: 'Add',
-              labelText: 'Add',
-              isOverflow: true,
-              hasDivider: true,
-            },
-            {
-              id: 'delete',
-              renderIcon: TrashCan16,
-              iconDescription: 'Delete',
-              labelText: 'Delete',
-              isOverflow: true,
-              isDelete: true,
-            },
-          ].filter(i => i),
+          rowActions:
+            idx % 4 === 0 // every 4th row shouldn't have any actions
+              ? []
+              : [
+                  {
+                    id: 'drilldown',
+                    renderIcon: Arrow,
+                    iconDescription: 'See more',
+                    labelText: 'See more',
+                  },
+                  {
+                    id: 'add',
+                    renderIcon: Add,
+                    iconDescription: 'Add',
+                    labelText: 'Add',
+                    isOverflow: true,
+                    hasDivider: true,
+                  },
+                  {
+                    id: 'delete',
+                    renderIcon: TrashCan16,
+                    iconDescription: 'Delete',
+                    labelText: 'Delete',
+                    isOverflow: true,
+                    isDelete: true,
+                  },
+                ].filter(i => i),
         }))}
         actions={actions}
         options={{
