@@ -390,6 +390,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: false,
             includeZeroOnYaxis: false,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
           interval="minute"
@@ -482,6 +487,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
           interval="month"
@@ -513,6 +523,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: false,
             includeZeroOnYaxis: false,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
           interval="year"
@@ -547,6 +562,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           breakpoint="lg"
@@ -634,6 +654,42 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
           breakpoint="lg"
           size={size}
           showTimeInGMT={boolean('showTimeInGMT', false)}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('with zoomBar', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
+          })}
+          values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
           onCardAction={action('onCardAction')}
         />
       </div>
