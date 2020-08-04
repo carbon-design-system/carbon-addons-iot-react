@@ -83,7 +83,7 @@ storiesOf('Watson IoT/BarChartCard', module)
       </div>
     );
   })
-  .add('Simple bar - Time series', () => {
+  .add('Simple bar - Time series - custom domainRange', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -341,6 +341,42 @@ storiesOf('Watson IoT/BarChartCard', module)
             ],
             timeDataSourceId: 'timestamp',
             categoryDataSourceId: 'city',
+          })}
+          values={barChartData.timestamps}
+          size={size}
+          onCardAction={action('onCardAction')}
+          availableActions={{ expand: true, range: true }}
+        />
+      </div>
+    );
+  })
+  .add('with zoomBar', () => {
+    const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <BarChartCard
+          title={text('title', 'Particles by city over time')}
+          id="stacked-horizontal-sample"
+          isLoading={boolean('isLoading', false)}
+          isEditable={boolean('isEditable', false)}
+          isExpanded={boolean('isExpandable', false)}
+          content={object('content', {
+            type: BAR_CHART_TYPES.STACKED,
+            layout: BAR_CHART_LAYOUTS.VERTICAL,
+            xLabel: 'Dates',
+            yLabel: 'Total',
+            series: [
+              {
+                dataSourceId: 'particles',
+              },
+            ],
+            timeDataSourceId: 'timestamp',
+            categoryDataSourceId: 'city',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={barChartData.timestamps}
           size={size}

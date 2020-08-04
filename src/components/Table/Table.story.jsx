@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Arrow from '@carbon/icons-react/lib/arrow--right/16';
 import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
+import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
 import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
@@ -620,7 +621,7 @@ storiesOf('Watson IoT/Table', module)
             ...actions,
             toolbar: {
               ...actions.toolbar,
-              onDownloadCSV: () => csvDownloadHandler(initialState.data, 'my table data'),
+              onDownloadCSV: filteredData => csvDownloadHandler(filteredData, 'my table data'),
             },
           }}
           isSortable
@@ -787,7 +788,7 @@ storiesOf('Watson IoT/Table', module)
           <React.Fragment>
             <Button
               key="cancel"
-              style={{ marginRight: '8px' }}
+              style={{ marginRight: spacing03 }}
               size="small"
               kind="tertiary"
               onClick={onCancelRowEdit}
@@ -1017,23 +1018,54 @@ storiesOf('Watson IoT/Table', module)
   )
   .add(
     'with pre-filled search',
-    () => (
-      <StatefulTable
-        secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
-        style={{ maxWidth: '300px' }}
-        columns={tableColumns.slice(0, 2)}
-        data={tableData}
-        actions={actions}
-        options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
-        view={{
-          toolbar: {
-            search: {
-              defaultValue: 'toyota',
-            },
-          },
-        }}
-      />
-    ),
+    () => {
+      return React.createElement(() => {
+        const [defaultValue, setDefaultValue] = useState('toyota');
+        const sampleDefaultValues = ['whiteboard', 'scott', 'helping'];
+        return (
+          <>
+            <p>
+              Click the button below to demonstrate updating the pre-filled search (defaultValue)
+              via state/props
+            </p>
+            <Button
+              onClick={() => {
+                setDefaultValue(
+                  sampleDefaultValues[sampleDefaultValues.indexOf(defaultValue) + 1] ||
+                    sampleDefaultValues[0]
+                );
+              }}
+              style={{ marginBottom: '1rem' }}
+            >
+              Update defaultValue prop to new value
+            </Button>
+            <Button
+              onClick={() => {
+                setDefaultValue('');
+              }}
+              style={{ marginBottom: '1rem', marginLeft: '1rem' }}
+            >
+              Reset defaultValue prop to empty string
+            </Button>
+            <StatefulTable
+              secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+              style={{ maxWidth: '300px' }}
+              columns={tableColumns.slice(0, 2)}
+              data={tableData}
+              actions={actions}
+              options={{ hasSearch: true, hasPagination: true, hasRowSelection: 'single' }}
+              view={{
+                toolbar: {
+                  search: {
+                    defaultValue,
+                  },
+                },
+              }}
+            />
+          </>
+        );
+      });
+    },
     {
       info: {
         text: `The table will pre-fill a search value, expand the search input and trigger a search`,
@@ -1153,32 +1185,33 @@ storiesOf('Watson IoT/Table', module)
         columns={tableColumns}
         data={tableData.map((i, idx) => ({
           ...i,
-          rowActions: [
-            idx % 4 === 0
-              ? {
-                  id: 'drilldown',
-                  renderIcon: Arrow,
-                  iconDescription: 'See more',
-                  labelText: 'See more',
-                }
-              : null,
-            {
-              id: 'add',
-              renderIcon: Add,
-              iconDescription: 'Add',
-              labelText: 'Add',
-              isOverflow: true,
-              hasDivider: true,
-            },
-            {
-              id: 'delete',
-              renderIcon: TrashCan16,
-              iconDescription: 'Delete',
-              labelText: 'Delete',
-              isOverflow: true,
-              isDelete: true,
-            },
-          ].filter(i => i),
+          rowActions:
+            idx % 4 === 0 // every 4th row shouldn't have any actions
+              ? []
+              : [
+                  {
+                    id: 'drilldown',
+                    renderIcon: Arrow,
+                    iconDescription: 'See more',
+                    labelText: 'See more',
+                  },
+                  {
+                    id: 'add',
+                    renderIcon: Add,
+                    iconDescription: 'Add',
+                    labelText: 'Add',
+                    isOverflow: true,
+                    hasDivider: true,
+                  },
+                  {
+                    id: 'delete',
+                    renderIcon: TrashCan16,
+                    iconDescription: 'Delete',
+                    labelText: 'Delete',
+                    isOverflow: true,
+                    isDelete: true,
+                  },
+                ].filter(i => i),
         }))}
         actions={actions}
         options={{

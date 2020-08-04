@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'moment/min/locales';
 import LineChart from '@carbon/charts-react/line-chart';
 import StackedBarChart from '@carbon/charts-react/bar-chart-stacked';
+import { spacing02, spacing05 } from '@carbon/layout';
 import styled from 'styled-components';
 import isNil from 'lodash/isNil';
 import isEmpty from 'lodash/isEmpty';
@@ -15,7 +16,12 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import { CardPropTypes } from '../../constants/CardPropTypes';
-import { CARD_SIZES, TIME_SERIES_TYPES, DISABLED_COLORS } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  TIME_SERIES_TYPES,
+  DISABLED_COLORS,
+  ZOOM_BAR_ENABLED_CARD_SIZES,
+} from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import StatefulTable from '../Table/StatefulTable';
 import { settings } from '../../constants/Settings';
@@ -67,6 +73,18 @@ const TimeSeriesCardPropTypes = {
     ),
     /** optional units to put in the legend */
     unit: PropTypes.string,
+    /** Optionally addes a zoom bar to the chart */
+    zoomBar: PropTypes.shape({
+      /** Determines which axis to put the zoomBar */
+      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
+      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
+      /** Determines whether the zoomBar is enabled */
+      enabled: PropTypes.bool,
+      /** Optional domain to zoom to by default. Can be a timestamp or date string */
+      initialZoomDomain: PropTypes.arrayOf(
+        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      ),
+    }),
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -94,10 +112,10 @@ const TimeSeriesCardPropTypes = {
 };
 
 const LineChartWrapper = styled.div`
-  padding-left: 16px;
-  padding-right: 1rem;
+  padding-left: ${spacing05};
+  padding-right: ${spacing05};
   padding-top: 0px;
-  padding-bottom: 16px;
+  padding-bottom: ${spacing05};
   position: absolute;
   width: 100%;
   height: ${props => (props.isExpanded ? '55%' : '100%')};
@@ -109,7 +127,7 @@ const LineChartWrapper = styled.div`
     }
     .chart-holder {
       width: 100%;
-      padding-top: 0.25rem;
+      padding-top: ${spacing02};
     }
     .axis-title {
       font-weight: 500;
@@ -273,6 +291,7 @@ const TimeSeriesCard = ({
       includeZeroOnYaxis,
       unit,
       chartType,
+      zoomBar,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -528,6 +547,17 @@ const TimeSeriesCard = ({
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
                 color: colors,
+                ...(zoomBar?.enabled && ZOOM_BAR_ENABLED_CARD_SIZES.includes(size)
+                  ? {
+                      zoomBar: {
+                        // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
+                        top: {
+                          enabled: zoomBar.enabled,
+                          initialZoomDomain: zoomBar.initialZoomDomain,
+                        },
+                      },
+                    }
+                  : {}),
               }}
               width="100%"
               height="100%"
@@ -545,7 +575,7 @@ const TimeSeriesCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: () => csvDownloadHandler(tableData, title),
+                  onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{

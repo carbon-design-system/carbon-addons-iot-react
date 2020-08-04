@@ -446,6 +446,7 @@ const Table = props => {
               'rowEditBarButtons'
             ),
           }}
+          data={data}
         />
       ) : null}
       <div className="addons-iot-table-container">

@@ -9,6 +9,7 @@ import {
   TableSearchPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
+  TableRowPropTypes,
 } from '../TablePropTypes';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
@@ -98,6 +99,8 @@ const propTypes = {
     /** buttons to be shown with when activeBar is 'rowEdit' */
     rowEditBarButtons: PropTypes.node,
   }).isRequired,
+  /** Row value data for the body of the table */
+  data: TableRowPropTypes.isRequired,
 };
 
 const defaultProps = {
@@ -143,6 +146,7 @@ const TableToolbar = ({
     totalItemsCount,
     rowEditBarButtons,
   },
+  data,
 }) => (
   <CarbonTableToolbar className={classnames(`${iotPrefix}--table-toolbar`, className)}>
     <TableBatchActions
@@ -187,17 +191,15 @@ const TableToolbar = ({
         {hasSearch ? (
           <TableToolbarSearch
             {...search}
-            key={search.defaultValue || search.value || 'table-toolbar-search'}
+            key={`table-toolbar-search${search.defaultValue}${search.value}`}
             defaultValue={search.defaultValue || search.value}
             className="table-toolbar-search"
             translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
             id={`${tableId}-toolbar-search`}
-            onChange={(
-              event,
-              defaultValue // https://github.com/carbon-design-system/carbon/issues/6157
-            ) =>
-              onApplySearch(defaultValue || (event.currentTarget ? event.currentTarget.value : ''))
-            }
+            onChange={(event, defaultValue) => {
+              // https://github.com/carbon-design-system/carbon/issues/6157
+              onApplySearch(event?.target?.value || defaultValue);
+            }}
             disabled={isDisabled}
           />
         ) : null}
@@ -208,7 +210,10 @@ const TableToolbar = ({
         ) : null}
         {onDownloadCSV ? (
           <TableToolbarSVGButton
-            onClick={onDownloadCSV}
+            onClick={() => {
+              // hand back the filtered data
+              onDownloadCSV(data);
+            }}
             description={i18n.downloadIconDescription}
             testId="download-button"
             renderIcon={Download20}

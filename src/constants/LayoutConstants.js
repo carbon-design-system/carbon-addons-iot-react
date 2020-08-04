@@ -233,3 +233,10 @@ export const BAR_CHART_LAYOUTS = {
   HORIZONTAL: 'HORIZONTAL',
   VERTICAL: 'VERTICAL',
 };
+
+// If the card is too small, the chart will be too small when the zoom bar renders
+export const ZOOM_BAR_ENABLED_CARD_SIZES = [
+  CARD_SIZES.MEDIUMWIDE,
+  CARD_SIZES.LARGE,
+  CARD_SIZES.LARGEWIDE,
+];

@@ -91,7 +91,7 @@ const StyledPageHeroWrap = styled.div`
 `;
 
 const StyledPageBlurb = styled.p`
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-05;
   font-size: 0.875rem;
   line-height: 1.25rem;
   max-width: 50rem;

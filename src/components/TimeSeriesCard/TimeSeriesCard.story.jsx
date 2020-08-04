@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, object, boolean } from '@storybook/addon-knobs';
+import { spacing05 } from '@carbon/layout';
 
 import { COLORS, CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
@@ -20,7 +21,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -60,7 +61,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
         'hour'
       );
       return (
-        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
           <TimeSeriesCard
             title={text('title', 'Temperature {not-working}')}
             id="facility-temperature"
@@ -107,7 +108,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('medium / single line - interval hour', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -127,7 +128,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
           })}
           values={getIntervalChartData('hour', 10, { min: 10, max: 100 }, 100)}
-          domainRange={[new Date(), new Date()]}
           interval="hour"
           breakpoint="lg"
           size={size}
@@ -137,7 +137,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - custom domain', () => {
+  .add('medium / single line - custom domainRange', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
     const timestamps = data.map(d => d.timestamp);
@@ -323,7 +323,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -385,6 +390,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: false,
             includeZeroOnYaxis: false,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
           interval="minute"
@@ -477,6 +487,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
           interval="month"
@@ -508,6 +523,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: false,
             includeZeroOnYaxis: false,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
           interval="year"
@@ -542,6 +562,11 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           breakpoint="lg"
@@ -560,7 +585,12 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       'hour'
     );
     return (
-      <div style={{ width: text('cardWidth', `${getCardMinSize('lg', size).x}px`), margin: 20 }}>
+      <div
+        style={{
+          width: text('cardWidth', `${getCardMinSize('lg', size).x}px`),
+          margin: spacing05 + 4,
+        }}
+      >
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -598,7 +628,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('large / units', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -629,10 +659,46 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('empty', () => {
+  .add('with zoomBar', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              // initialZoomDomain: []
+            },
+          })}
+          values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('empty', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -661,7 +727,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('highlight alert ranges', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -707,7 +773,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('empty for a range', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -739,7 +805,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('lots of dots', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -771,7 +837,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('isEditable', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           id="facility-temperature"
@@ -919,7 +985,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('dataFilter', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Temperature')}
           key="dataFilter"
@@ -978,7 +1044,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
   .add('locale', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: spacing05 + 4 }}>
         <TimeSeriesCard
           title={text('title', 'Pressure')}
           id="facility-pressure"
