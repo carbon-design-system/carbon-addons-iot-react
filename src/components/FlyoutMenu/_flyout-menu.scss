@@ -59,12 +59,12 @@ $shadow: 0.4rem;
       content: '';
       position: absolute;
       top: -$shadow-plus-padding;
-      left: -1rem;
+      left: var(--after-offset);
     }
 
     &.#{$iot-prefix}--flyout-menu--body__bottom-end .#{$prefix}--tooltip__content::after {
       left: unset;
-      right: -1rem;
+      right: var(--after-offset);
     }
 
     &.#{$iot-prefix}--flyout-menu--body__top-start .#{$prefix}--tooltip__content::after {
@@ -75,7 +75,7 @@ $shadow: 0.4rem;
     &.#{$iot-prefix}--flyout-menu--body__top-end .#{$prefix}--tooltip__content::after {
       bottom: -$shadow-plus-padding;
       left: unset;
-      right: -1rem;
+      right: var(--after-offset);
       top: unset;
     }
 

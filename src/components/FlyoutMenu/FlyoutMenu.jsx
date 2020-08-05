@@ -39,7 +39,6 @@ const getTooltipDirection = direction => {
 const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
   let topOffset = 0;
   let leftOffset = 0;
-
   const caretWidth = 16;
   const caretHeight = 14;
   const borderWidth = 1;
@@ -96,6 +95,21 @@ const getMenuOffset = (direction, menuOffset, tooltipContentRef, buttonRef) => {
 
   if (document.dir === 'rtl') {
     leftOffset -= rtlOffset;
+  }
+
+  if (tooltipContentRef.current && tooltipContentRef.current.parentElement) {
+    tooltipContentRef.current.parentElement.style.setProperty('--after-offset', '-1rem');
+  }
+
+  if (typeof menuOffset === 'function' && tooltipContentRef.current && buttonRef.current) {
+    const offset = menuOffset(tooltipContentRef.current, direction, buttonRef.current) || {
+      top: 0,
+      left: 0,
+    };
+    return {
+      top: topOffset + offset.top,
+      left: leftOffset + offset.left,
+    };
   }
 
   return {
@@ -220,7 +234,7 @@ const FlyoutMenu = ({
             triggerId={triggerId}
             tabIndex={tabIndex}
           >
-            <div ref={tooltipContentRef}>
+            <div ref={tooltipContentRef} style={{ maxWidth: '960px' }}>
               <div style={{ overflow: 'scroll' }} tabIndex={-1} />
               {children}
 

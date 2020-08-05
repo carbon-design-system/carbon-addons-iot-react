@@ -111,7 +111,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               role="dialog"
               tabIndex="-1"
             >
-              <div>
+              <div
+                style={
+                  Object {
+                    "maxWidth": "960px",
+                  }
+                }
+              >
                 <div
                   style={
                     Object {
