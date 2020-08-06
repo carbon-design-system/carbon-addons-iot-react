@@ -111,6 +111,16 @@ REDUXFORM or REDUXDIALOG`,
       onClose={action('close')}
     />
   ))
+  .add('header custom nodes', () => (
+    <ComposedModal
+      header={{
+        label: <strong>Custom node label</strong>,
+        title: <strong>Custom node title</strong>,
+      }}
+      onClose={action('close')}
+      onSubmit={action('submit')}
+    />
+  ))
   .add('i18n', () => (
     <ComposedModal
       header={{
