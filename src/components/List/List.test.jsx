@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
+import { Checkbox } from '../..';
+
 import List, { UnconnectedList } from './List';
 import { sampleHierarchy } from './List.story';
 
@@ -75,5 +77,24 @@ describe('List', () => {
       />
     );
     expect(screen.getByTitle('Chicago White Sox')).toBeTruthy();
+  });
+
+  it('List renders icons', () => {
+    render(
+      <List
+        title="list"
+        items={[
+          ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
+            id: team,
+            isCategory: true,
+            content: {
+              value: team,
+              icon: <Checkbox id={`${team}-checkbox`} name={team} labelText={`${team}`} checked />,
+            },
+          })),
+        ]}
+      />
+    );
+    expect(screen.getByLabelText('Chicago White Sox')).toBeTruthy();
   });
 });

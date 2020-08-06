@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
-import { Add16, Edit16, Star16, Close16, Checkmark16, NumberSmall_132 } from '@carbon/icons-react';
+import { Add16, Edit16, Star16, Close16, Checkmark16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
@@ -496,15 +496,9 @@ storiesOf('Watson IoT Experimental/List', module)
       const editing = boolean('isEditing,', true);
 
       const onItemMoved = (dragProps, hoverProps) => {
-        console.log(`raw drag: ${dragProps} raw hover: ${hoverProps}`);
-
         const dragCard = listItems[dragProps.index];
         listItems.splice(dragProps.index, 1);
         listItems.splice(hoverProps.index, 0, dragCard);
-
-        console.log(
-          `drag: ${dragProps.index} hover: ${hoverProps.index} items: ${JSON.stringify(listItems)}`
-        );
 
         setListItems([...listItems]);
       };
@@ -584,7 +578,7 @@ storiesOf('Watson IoT Experimental/List', module)
 
         cloneDeep(items).forEach(item => {
           if (item.children) {
-            item.children = searchNestedItems(item.children, draggedItem, hoverProps);
+            item.children = searchNestedItems(item.children, draggedItem, hoverProps); // eslint-disable-line no-param-reassign
           }
 
           if (item.id === hoverProps.id && isAbove) {
@@ -625,12 +619,7 @@ storiesOf('Watson IoT Experimental/List', module)
         }
 
         const draggedItem = searchDraggedItem(listItems, dragProps.id);
-
-        console.log(`before ${dragProps.id}  ${hoverProps.id} above? ${isAbove}`);
-
         const newList = searchNestedItems(listItems, draggedItem, hoverProps, isAbove);
-
-        // console.log(`after ${JSON.stringify(newList)}`);
 
         setListItems(newList);
 

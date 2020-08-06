@@ -8,13 +8,13 @@ import { UnconnectedListItem } from './ListItem';
 
 describe('ListItem', () => {
   it('test ListItem gets rendered', () => {
-    render(<UnconnectedListItem id="1" value="test" />);
-    expect(screen.getByText('test')).toBeTruthy();
+    render(<UnconnectedListItem id="1" value="some content" />);
+    expect(screen.getByText('some content')).toBeTruthy();
   });
 
   it('ListItem with large row and secondary value', () => {
-    render(<UnconnectedListItem id="1" value="test" secondaryValue="second" isLargeRow />);
-    expect(screen.getByText('test')).toBeTruthy();
+    render(<UnconnectedListItem id="1" value="some content" secondaryValue="second" isLargeRow />);
+    expect(screen.getByText('some content')).toBeTruthy();
     expect(screen.getByText('second')).toBeTruthy();
   });
 

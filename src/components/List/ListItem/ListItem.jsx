@@ -4,11 +4,10 @@ import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
-import { withSize } from 'react-sizeme';
 
 import { settings } from '../../../constants/Settings';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 // internal component
 const ListItemWrapper = ({
@@ -54,16 +53,14 @@ const ListItemWrapper = ({
     </div>
   );
 
-  const opacity = isDragging ? 0 : 1;
-
   if (isEditing) {
     return (
       <div
         className={classnames({
           [`${iotPrefix}--list-item-editable-drag-above`]: isOver && isMovingUp,
           [`${iotPrefix}--list-item-editable-drag-below`]: isOver && !isMovingUp,
+          [`${iotPrefix}--list-item-editable-dragging`]: isDragging,
         })}
-        style={{ opacity }}
         ref={instance => {
           if (connectDragSource && connectDropTarget) {
             connectDragSource(instance);
@@ -125,12 +122,13 @@ const ListItemPropTypes = {
   /* these props come from react-dnd */
   connectDragSource: PropTypes.func.isRequired,
   connectDropTarget: PropTypes.func.isRequired,
-  index: PropTypes.number.isRequired, // eslint-disable-line react/no-unused-prop-types
-  nestingLevel: PropTypes.arrayOf(PropTypes.number),
-  isDragging: PropTypes.bool.isRequired, // eslint-disable-line react/no-unused-prop-types
-  isOver: PropTypes.bool.isRequired, // eslint-disable-line react/no-unused-prop-types
-  isMovingUp: PropTypes.bool.isRequired, // eslint-disable-line react/no-unused-prop-types
-  onItemMoved: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
+  connectDragPreview: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  nestedIndex: PropTypes.arrayOf(PropTypes.number),
+  isDragging: PropTypes.bool.isRequired,
+  isOver: PropTypes.bool.isRequired,
+  isMovingUp: PropTypes.bool.isRequired,
+  onItemMoved: PropTypes.func.isRequired,
 };
 
 const ListItemDefaultProps = {
@@ -184,17 +182,16 @@ const ListItem = ({
   tags,
   connectDragSource,
   connectDropTarget,
+  connectDragPreview,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
   const renderNestingOffset = () =>
     nestingLevel.length > 0 ? (
       <div
-        className={`${iotPrefix}--list-item--nesting-offset`}
+        className={`${prefix}--assistive-text ${iotPrefix}--list-item--nesting-offset`}
         style={{ width: `${nestingLevel.length * 30}px` }}
-      >
-        {JSON.stringify(nestingLevel)}&nbsp;
-      </div>
+      />
     ) : null;
 
   const renderExpander = () =>
@@ -229,6 +226,17 @@ const ListItem = ({
     ) : null;
 
   const renderTags = () => (tags && tags.length > 0 ? <div>{tags}</div> : null);
+
+  const renderDragPreview = () => {
+    if (isEditing && connectDragPreview) {
+      return connectDragPreview(
+        <div className={`${iotPrefix}--list-item-editable--drag-preview`}>{value}</div>
+      );
+    }
+
+    return null;
+  };
+
   const dragIcon = () =>
     isEditing ? (
       <Draggable16
@@ -255,7 +263,9 @@ const ListItem = ({
         isMovingUp,
       }}
     >
+      {renderDragPreview()}
       {renderNestingOffset()}
+      {dragIcon()}
       {renderExpander()}
       <div
         className={classnames(
@@ -265,7 +275,6 @@ const ListItem = ({
         )}
         ref={selectedItemRef}
       >
-        {dragIcon()}
         {renderIcon()}
         <div
           className={classnames(`${iotPrefix}--list-item--content--values`, {
@@ -346,9 +355,6 @@ const ListItem = ({
 };
 
 const cardSource = {
-  /**
-   * Implements the drag source contract.
-   */
   beginDrag(props) {
     return {
       id: props.columnId,
@@ -360,7 +366,6 @@ const cardSource = {
 
 const rowTarget = {
   drop(hoverProps, monitor) {
-    // Update the view if allowed
     if (
       hoverProps.onItemMoved(
         monitor.getItem().props,
@@ -375,6 +380,7 @@ const rowTarget = {
 
 const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
+  connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging(),
 }));
 

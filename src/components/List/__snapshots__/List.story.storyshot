@@ -442,33 +442,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--list--content"
         >
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                DJ LeMahieu
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -487,33 +488,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Luke Voit
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -532,33 +534,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Gary Sanchez
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -577,33 +580,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Kendrys Morales
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -622,33 +626,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Gleyber Torres
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -667,33 +672,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Clint Frazier
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -712,33 +718,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Brett Gardner
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -757,33 +764,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Gio Urshela
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -802,33 +810,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Cameron Maybin
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -847,33 +856,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             </div>
           </div>
           <div
-            style={
-              Object {
-                "opacity": 1,
-              }
-            }
+            className=""
           >
             <div
               className="iot--list-item iot--list-item-editable"
             >
               <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Robinson Cano
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
                 className="iot--list-item--content"
               >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
                 <div
                   className="iot--list-item--content--values"
                 >
@@ -885,6 +895,352 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                       title="Robinson Cano"
                     >
                       Robinson Cano
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/List reorder hierarchy 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list"
+      >
+        <div
+          className="iot--list-header-container"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              NY Yankees
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            >
+              <button
+                className="iot--btn bx--btn bx--btn--sm bx--btn--secondary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Cancel
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Cancel"
+                  className="bx--btn__icon"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+              <button
+                className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y"
+                disabled={false}
+                onClick={[Function]}
+                tabIndex={0}
+                type="button"
+              >
+                <span
+                  className="bx--assistive-text"
+                >
+                  Save
+                </span>
+                <svg
+                  aria-hidden="true"
+                  aria-label="Save"
+                  className="bx--btn__icon"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 21.2L5.4 13.6 4 15 13 24 28 9 26.6 7.5 13 21.2z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list--content"
+        >
+          <div
+            className=""
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable iot--list-item-editable"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Chicago White Sox
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
+                className="iot--list-item--expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Chicago White Sox"
+                    >
+                      Chicago White Sox
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className=""
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable iot--list-item-editable"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                New York Yankees
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
+                className="iot--list-item--expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="New York Yankees"
+                    >
+                      New York Yankees
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className=""
+          >
+            <div
+              className="iot--list-item iot--list-item__selectable iot--list-item-editable"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Houston Astros
+              </div>
+              <svg
+                aria-hidden={true}
+                className="iot--list-item--handle"
+                data-testid="list-item-editable"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                />
+              </svg>
+              <div
+                className="iot--list-item--expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <svg
+                  aria-label="Close"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Houston Astros"
+                    >
+                      Houston Astros
                     </div>
                   </div>
                 </div>
@@ -1096,7 +1452,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1139,7 +1507,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1182,7 +1562,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1225,7 +1617,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1268,7 +1672,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1311,7 +1727,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1354,7 +1782,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1397,7 +1837,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1440,7 +1892,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1483,7 +1947,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1624,7 +2100,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1667,7 +2155,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1710,7 +2210,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1753,7 +2265,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1796,7 +2320,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1839,7 +2375,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1882,7 +2430,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1925,7 +2485,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -1968,7 +2540,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -2846,6 +3430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
             >
               <div
@@ -2855,6 +3440,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     "width": "30px",
                   }
                 }
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="Expand"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+>>>>>>> feat(list): updated drag style
               >
                  
               </div>
@@ -2880,6 +3490,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   />
                 </svg>
               </div>
+<<<<<<< HEAD
+=======
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "60px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="Close"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--list-item--content"
+            >
+>>>>>>> feat(list): updated drag style
               <div
                 className="iot--list-item--content"
               >
@@ -2943,7 +3594,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "60px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="Expand"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -2955,6 +3640,25 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               >
                  
               </div>
+<<<<<<< HEAD
+=======
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+>>>>>>> feat(list): updated drag style
               <div
                 className="iot--list-item--expand-icon"
                 onClick={[Function]}
@@ -3050,7 +3754,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3157,7 +3873,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3217,7 +3945,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3277,7 +4017,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3337,7 +4089,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3397,7 +4161,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3457,7 +4233,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3517,7 +4305,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3577,7 +4377,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "90px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3637,7 +4449,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "60px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3697,7 +4525,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "30px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="Expand"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
+                />
+              </svg>
+            </div>
+            <div
+              className="iot--list-item--content"
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -3864,7 +4726,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "60px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -4068,7 +4946,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "60px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"
@@ -4175,7 +5069,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             data-floating-menu-container={true}
           >
             <div
+<<<<<<< HEAD
               className="iot--list-item"
+=======
+              className="bx--assistive-text iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "60px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--expand-icon"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="button"
+              tabIndex={0}
+>>>>>>> feat(list): updated drag style
             >
               <div
                 className="iot--list-item--nesting-offset"

@@ -14085,12 +14085,12 @@ Map {
                         "required": false,
                       },
                       "tags": Object {
-                        "args": Array [
-                          Object {
-                            "type": "node",
-                          },
-                        ],
-                        "type": "arrayOf",
+                        "description": "The nodes should be Carbon Tags components",
+                        "name": "arrayOf",
+                        "required": false,
+                        "value": Object {
+                          "name": "node",
+                        },
                       },
                       "value": Object {
                         "name": "string",
@@ -14301,6 +14301,14 @@ Map {
                       Object {
                         "icon": Object {
                           "type": "node",
+                        },
+                        "tags": Object {
+                          "args": Array [
+                            Object {
+                              "type": "node",
+                            },
+                          ],
+                          "type": "arrayOf",
                         },
                         "value": Object {
                           "type": "string",
