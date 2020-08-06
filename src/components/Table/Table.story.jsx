@@ -9,9 +9,17 @@ import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
-import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
 
+import {
+  Tooltip,
+  TextInput,
+  Checkbox,
+  ToastNotification,
+  Button,
+  FormGroup,
+  Form,
+} from '../../index';
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
@@ -1664,21 +1672,130 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with resize, onColumnResize callback and no initial column width',
+    'with resize, onColumnResize callback, no initial column width and column management',
     () => {
-      return React.createElement(() => {
-        const [myColumns, setMyColumns] = useState(tableColumns);
-        const onColumnResize = cols => setMyColumns(cols);
+      const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
+        const [colsToAddField, setColsToAddField] = useState('colX, colY');
+        const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
+        const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
+        const [isHidden, setIsHidden] = useState(false);
+
         return (
-          <Table
-            options={{
-              hasResize: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-            }}
-            columns={myColumns}
-            data={tableData}
-            actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
+            <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
+              <TextInput
+                labelText="Ids of one or more columns"
+                id="colsToAddInput"
+                value={colsToAddField}
+                type="text"
+                onChange={evt => setColsToAddField(evt.currentTarget.value)}
+              />
+              <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
+                <Checkbox
+                  labelText="add as hidden column(s)"
+                  id="isHiddenCheckbox"
+                  defaultChecked={isHidden}
+                  onChange={() => setIsHidden(!isHidden)}
+                />
+              </FormGroup>
+              <TextInput
+                labelText="The width of the added columns (if any)"
+                id="colsToAddWidthInput"
+                value={colsToAddWidthField}
+                type="text"
+                onChange={evt => setColsToAddWidthField(evt.currentTarget.value)}
+              />
+              <Button
+                style={{ marginTop: '1rem' }}
+                onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
+              >
+                Add
+              </Button>
+            </Form>
+            <div style={{ maxWidth: '50%' }}>
+              <div style={{ margin: '1rem' }}>
+                <p>COLUMNS prop</p>
+                <samp>{JSON.stringify(columns)}</samp>
+              </div>
+              <div style={{ margin: '1rem' }}>
+                <p>ORDERING prop</p>
+                <samp>{JSON.stringify(ordering)}</samp>
+              </div>
+            </div>
+
+            <Form style={{ maxWidth: '300px' }}>
+              <TextInput
+                labelText="One or more IDs of columns to delete"
+                id="removeColInput"
+                value={colsToDeleteField}
+                type="text"
+                onChange={evt => setColsToDeleteField(evt.currentTarget.value)}
+              />
+              <Button
+                style={{ marginTop: '1rem' }}
+                id="removeColInput"
+                onClick={() => onRemove(colsToDeleteField)}
+              >
+                Remove
+              </Button>
+            </Form>
+          </div>
+        );
+      };
+
+      return React.createElement(() => {
+        const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
+        const [myOrdering, setMyOrdering] = useState(defaultOrdering);
+
+        const onAdd = (colIds, colWidths, isHidden) => {
+          const colsToAdd = colIds.split(', ');
+          const widths = colWidths.split(', ');
+          const newColumns = [];
+          const newOrdering = [];
+          colsToAdd.forEach((colToAddId, index) => {
+            newColumns.push({
+              id: colToAddId,
+              name: colToAddId,
+              width: widths[index] || undefined,
+            });
+            newOrdering.push({ columnId: colToAddId, isHidden });
+          });
+          setMyColumns([...myColumns, ...newColumns]);
+          setMyOrdering([...myOrdering, ...newOrdering]);
+        };
+
+        const onRemove = colIds => {
+          const colsToDelete = colIds.split(', ');
+          setMyColumns(myColumns.filter(col => !colsToDelete.includes(col.id)));
+          setMyOrdering(myOrdering.filter(col => !colsToDelete.includes(col.columnId)));
+        };
+        const onColumnResize = cols => setMyColumns(cols);
+
+        return (
+          <>
+            <ColumnsModifier
+              onAdd={onAdd}
+              onRemove={onRemove}
+              columns={myColumns}
+              ordering={myOrdering}
+            />
+            <Table
+              options={{
+                hasColumnSelection: true,
+                hasResize: true,
+                wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+              }}
+              columns={myColumns}
+              view={{
+                filters: [],
+                table: {
+                  ordering: myOrdering,
+                },
+              }}
+              data={tableData}
+              actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
+            />
+          </>
         );
       });
     },
