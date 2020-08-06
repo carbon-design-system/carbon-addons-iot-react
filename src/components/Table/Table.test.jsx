@@ -6,6 +6,7 @@ import merge from 'lodash/merge';
 import { Add20, ArrowRight16, Add16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
+import { Modal } from '../Modal';
 
 import { mockActions } from './Table.test.helpers';
 import Table, { defaultProps } from './Table';
@@ -731,5 +732,36 @@ describe('Table', () => {
     expect(screen.getAllByText(i18nTest.emptyButtonLabel)[0]).toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyMessage)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.emptyButtonLabel)).not.toBeInTheDocument();
+  });
+
+  it('Table in modal select all', () => {
+    const inModal = jest.fn();
+    const notInModal = jest.fn();
+    render(
+      <div>
+        <Table
+          columns={tableColumns}
+          data={[tableData[0]]}
+          options={{ hasRowSelection: 'multi' }}
+          actions={{ table: { onSelectAll: notInModal } }}
+          i18n={{ selectAllAria: 'select1' }}
+        />
+        <Modal open>
+          <Table
+            columns={tableColumns}
+            data={[tableData[0]]}
+            options={{ hasRowSelection: 'multi' }}
+            actions={{ table: { onSelectAll: inModal } }}
+            i18n={{ selectAllAria: 'select2' }}
+          />
+        </Modal>
+      </div>
+    );
+
+    expect(inModal.mock.calls.length).toBe(0);
+    expect(notInModal.mock.calls.length).toBe(0);
+    fireEvent.click(screen.getByText('select2'));
+    expect(inModal.mock.calls.length).toBe(1);
+    expect(notInModal.mock.calls.length).toBe(0);
   });
 });
