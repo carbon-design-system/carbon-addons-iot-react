@@ -547,7 +547,7 @@ const TimeSeriesCard = ({
                 getFillColor: handleFillColor,
                 getIsFilled: handleIsFilled,
                 color: colors,
-                ...(zoomBar?.enabled && ZOOM_BAR_ENABLED_CARD_SIZES.includes(size)
+                ...(zoomBar?.enabled && (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                   ? {
                       zoomBar: {
                         // [zoomBar.axes]: {    TODO: the top axis is the only axis supported at the moment so default to top
