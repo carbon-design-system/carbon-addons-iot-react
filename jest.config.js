@@ -9,7 +9,7 @@ module.exports = {
       functions: 80,
       lines: 80,
     },
-    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|ImageCard|WizardHeader|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard).jsx': {
+    './src/components/**/!(ColumnHeaderSelect|FilterHeaderRow|TableToolbar|RowActionsCell|RowActionsError|StatefulTable|StatefulTableDetailWizard|CatalogContent|FileDrop|HeaderMenu|Dashboard|CardRenderer|Attribute|UnitRenderer|ImageHotspots|ImageControls|PageHero|PageTitle|EditPage|AsyncTable|yaImageCard|WizardHeader|ColumnResize|DateTimePicker|TimeSeriesCard|BarChartCard).jsx': {
       statements: 80,
       branches: 80,
       functions: 80,

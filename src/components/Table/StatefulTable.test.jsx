@@ -25,23 +25,24 @@ describe('stateful table with real reducer', () => {
   });
 
   it('should update aria label', () => {
-    render(
+    const statefulTable = (
       <StatefulTable
         {...initialState}
-        options={{ hasFilter: false, hasRowExpansion: false }}
+        options={{ hasFilter: false, hasRowExpansion: false, hasResize: true }}
         actions={mockActions}
       />
     );
+    render(statefulTable);
     expect(screen.getAllByLabelText('Sort rows by this header in ascending order')).toBeTruthy();
     expect(tableColumnsWithAlignment[0].isSortable).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: /string/i }));
-    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+    expect(statefulTable.props.actions.table.onChangeSort).toHaveBeenCalled();
     expect(screen.getAllByLabelText('Sort rows by this header in descending order')).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: /string/i }));
-    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+    expect(statefulTable.props.actions.table.onChangeSort).toHaveBeenCalled();
     expect(screen.getAllByLabelText('Unsort rows by this header')).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: /string/i }));
-    expect(mockActions.table.onChangeSort).toHaveBeenCalled();
+    expect(statefulTable.props.actions.table.onChangeSort).toHaveBeenCalled();
     expect(screen.getAllByLabelText('Sort rows by this header in ascending order')).toBeTruthy();
   });
 
