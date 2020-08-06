@@ -71,7 +71,6 @@ export {
 
 // Experimental
 export ListCard from './components/ListCard/ListCard';
-
 export PageWizard from './components/PageWizard/PageWizard';
 export PageWizardStep from './components/PageWizard/PageWizardStep/PageWizardStep';
 export PageWizardStepContent from './components/PageWizard/PageWizardStep/PageWizardStepContent';
@@ -79,28 +78,18 @@ export PageWizardStepDescription from './components/PageWizard/PageWizardStep/Pa
 export PageWizardStepExtraContent from './components/PageWizard/PageWizardStep/PageWizardStepExtraContent';
 export PageWizardStepTitle from './components/PageWizard/PageWizardStep/PageWizardStepTitle';
 export StatefulPageWizard from './components/PageWizard/StatefulPageWizard';
-
 export TileGallery from './components/TileGallery/TileGallery';
-
 export TileGallerySection from './components/TileGallery/TileGallerySection';
-
 export TileGalleryItem from './components/TileGallery/TileGalleryItem';
-
 export TileGalleryViewSwitcher from './components/TileGallery/TileGalleryViewSwitcher';
-
 export TileGallerySearch from './components/TileGallery/TileGallerySearch';
-
 export StatefulTileGallery from './components/TileGallery/StatefulTileGallery';
-
 export List from './components/List/List';
-
 export SimpleList from './components/List/SimpleList/SimpleList';
-
 export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitch';
-
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
-
 export ComboBox from './components/ComboBox';
+export FlyoutMenu from './components/FlyoutMenu';
 
 // Carbon proxy
 export {
