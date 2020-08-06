@@ -9,6 +9,8 @@ import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
+import cloneDeep from 'lodash/cloneDeep';
+
 import {
   Tooltip,
   TextInput,
@@ -17,9 +19,7 @@ import {
   Button,
   FormGroup,
   Form,
-} from 'carbon-components-react';
-import cloneDeep from 'lodash/cloneDeep';
-
+} from '../../index';
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
@@ -1694,7 +1694,7 @@ storiesOf('Watson IoT/Table', module)
                 <Checkbox
                   labelText="add as hidden column(s)"
                   id="isHiddenCheckbox"
-                  value={isHidden}
+                  defaultChecked={isHidden}
                   onChange={() => setIsHidden(!isHidden)}
                 />
               </FormGroup>
@@ -1753,7 +1753,11 @@ storiesOf('Watson IoT/Table', module)
           const newColumns = [];
           const newOrdering = [];
           colsToAdd.forEach((colToAddId, index) => {
-            newColumns.push({ id: colToAddId, name: colToAddId, width: widths[index] });
+            newColumns.push({
+              id: colToAddId,
+              name: colToAddId,
+              width: widths[index] || undefined,
+            });
             newOrdering.push({ columnId: colToAddId, isHidden });
           });
           setMyColumns([...myColumns, ...newColumns]);

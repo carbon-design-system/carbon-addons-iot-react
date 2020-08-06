@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
@@ -31,6 +31,7 @@ const commonTableHeadProps = {
     ],
   },
   actions: { onChangeOrdering: jest.fn() },
+  options: { wrapCellText: 'auto', truncateCellText: false },
 };
 
 describe('TableHead', () => {
@@ -43,10 +44,7 @@ describe('TableHead', () => {
   it('columns should render extra column for multi select', () => {
     const myProps = {
       ...commonTableHeadProps,
-      options: {
-        hasRowExpansion: true,
-        hasRowSelection: 'multi',
-      },
+      options: { ...commonTableHeadProps.options, hasRowExpansion: true, hasRowSelection: 'multi' },
     };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find(TableHeader);
@@ -57,6 +55,7 @@ describe('TableHead', () => {
     const myProps = {
       ...commonTableHeadProps,
       options: {
+        ...commonTableHeadProps.options,
         hasRowActions: true,
       },
     };
@@ -96,7 +95,10 @@ describe('TableHead', () => {
   });
 
   it('check has resize if has resize is true ', () => {
-    const myProps = { ...commonTableHeadProps, options: { hasResize: true } };
+    const myProps = {
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options, hasResize: true },
+    };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
     tableHeaders.first().simulate('click');
@@ -104,7 +106,10 @@ describe('TableHead', () => {
   });
 
   it('check not resize if has resize is false ', () => {
-    const myProps = { ...commonTableHeadProps, options: { hasResize: false } };
+    const myProps = {
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options, hasResize: false },
+    };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(0);
@@ -145,13 +150,16 @@ describe('TableHead', () => {
           selection: { isSelectAllSelected: false },
         }}
         actions={{ onColumnResize: jest.fn() }}
-        options={{ hasResize: true }}
+        options={{ ...commonTableHeadProps.options, hasResize: true }}
       />
     );
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(0);
     // trigger a re-render with non-empty columns
-    wrapper.setProps({ ...commonTableHeadProps, options: { hasResize: true } });
+    wrapper.setProps({
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options, hasResize: true },
+    });
     // sync enzyme component tree with the updated dom
     wrapper.update();
     const tableHeaderResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
@@ -169,7 +177,7 @@ describe('TableHead', () => {
         ...commonTableHeadProps.tableState,
         ordering: [{ columnId: 'col1', isHidden: false }],
       },
-      options: { hasResize: false },
+      options: { ...commonTableHeadProps.options, hasResize: false },
     };
 
     let wrapper = mount(<TableHead {...myProps} />);
@@ -485,6 +493,29 @@ describe('TableHead', () => {
       rerender(<TableHead {...myProps} />);
 
       expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '300px' });
+    });
+
+    it('handles removing hidden columns without any widths', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const orderingWidthHiddenCol1 = [
+        { columnId: 'col1', isHidden: true },
+        ...myProps.tableState.ordering.slice(1),
+      ];
+      myProps.tableState.ordering = orderingWidthHiddenCol1;
+      myProps.tableState.activeBar = 'column';
+
+      const { rerender } = render(<TableHead {...myProps} />);
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
+      myProps.columns = myProps.columns.slice(1);
+
+      rerender(<TableHead {...myProps} />);
+      const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
+      fireEvent.click(toggleHideCol2Button);
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ]);
     });
 
     it('handles adding new columns by subtracting the needed width from other visible columns', () => {

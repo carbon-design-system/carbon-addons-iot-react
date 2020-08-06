@@ -1,4 +1,5 @@
 import cloneDeep from 'lodash/cloneDeep';
+import warning from 'warning';
 
 /**
  * Utility functions related to the measurement and calculation
@@ -72,6 +73,28 @@ function shrinkColumns(shrinkableColumns, widthOfColumnToShow) {
 }
 
 /**
+ * Warns the developer in DEV mode if a column width is of incorrect format.
+ * @param {array} columns The table column props
+ */
+export const checkColumnWidthFormat = columns => {
+  columns.forEach(col => {
+    if (col.hasOwnProperty('width') && col.width !== undefined) {
+      if (
+        typeof col.width !== 'string' ||
+        !col.width.endsWith('px') ||
+        Number.isNaN(parseInt(col.width, 10))
+      ) {
+        warning(
+          !__DEV__,
+          `Column width should be a string containing the width and the pixel unit 
+          e.g. '100px' or have the value undefined.`
+        );
+      }
+    }
+  });
+};
+
+/**
  * Returns an array of the IDs of all columns that exists in the
  * currentColumnWidths map but not in the ordering prop.
  * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
@@ -89,7 +112,7 @@ export const getIDsOfRemovedColumns = (ordering, currentColumnWidths) => {
  * @param {array} ordering the table ordering prop that specifies the order and visibility of columns
  * @param {object} currentColumnWidths map of the current column IDs and widths
  */
-export const getIDsOfAddedColumns = (ordering, currentColumnWidths) => {
+export const getIDsOfAddedVisibleColumns = (ordering, currentColumnWidths) => {
   return ordering
     .filter(col => !col.isHidden)
     .filter(col => !currentColumnWidths.hasOwnProperty(col.columnId))
@@ -138,7 +161,12 @@ export const calculateWidthOnShow = (currentColumnWidths, ordering, colToShowIDs
  * @param {array} colToHideIDs Array with the IDs of one or more columns being hidden/deleted
  */
 export const calculateWidthOnHide = (currentColumnWidths, ordering, colToHideIDs) => {
-  const widthToDistribute = getTotalWidth(colToHideIDs.map(hideId => currentColumnWidths[hideId]));
+  const columnsToHide = colToHideIDs.map(hideId => {
+    const col = currentColumnWidths[hideId];
+    return Number.isNaN(parseInt(col.width, 10)) ? { width: 0, id: hideId } : col;
+  });
+
+  const widthToDistribute = getTotalWidth(columnsToHide);
 
   const visibleCols = Object.values(currentColumnWidths).filter(
     col => isColumnVisible(ordering, col.id) && !colToHideIDs.includes(col.id)

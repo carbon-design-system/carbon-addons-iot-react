@@ -30,8 +30,9 @@ import {
   adjustLastColumnWidth,
   calculateWidthOnShow,
   visibleColumnsHaveWidth,
-  getIDsOfAddedColumns,
+  getIDsOfAddedVisibleColumns,
   getIDsOfRemovedColumns,
+  checkColumnWidthFormat,
 } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
@@ -242,13 +243,21 @@ const TableHead = ({
       // We need to update the currentColumnWidths (state) after the initial render
       // only if the widths of the column prop is updated or columns are added/removed .
       if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
-        const addedColumnIDs = getIDsOfAddedColumns(ordering, currentColumnWidths);
-        const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
+        checkColumnWidthFormat(columns);
 
-        if (addedColumnIDs.length > 0 || removedColumnIDs.length > 0) {
-          const afterRemove = calculateWidthOnHide(currentColumnWidths, ordering, removedColumnIDs);
-          const afterAdd = calculateWidthOnShow(afterRemove, ordering, addedColumnIDs, columns);
-          setCurrentColumnWidths(afterAdd);
+        const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
+        const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
+        const adjustedForRemoved =
+          removedColumnIDs.length > 0
+            ? calculateWidthOnHide(currentColumnWidths, ordering, removedColumnIDs)
+            : currentColumnWidths;
+        const adjustedForRemovedAndAdded =
+          addedVisibleColumnIDs.length > 0
+            ? calculateWidthOnShow(adjustedForRemoved, ordering, addedVisibleColumnIDs, columns)
+            : adjustedForRemoved;
+
+        if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
+          setCurrentColumnWidths(adjustedForRemovedAndAdded);
         } else if (visibleColumnsHaveWidth(ordering, columns)) {
           const propsColumnWidths = createNewWidthsMap(ordering, columns);
           if (!isEqual(currentColumnWidths, propsColumnWidths)) {
