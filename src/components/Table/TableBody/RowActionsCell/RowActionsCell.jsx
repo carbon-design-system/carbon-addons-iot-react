@@ -181,7 +181,6 @@ class RowActionsCell extends React.Component {
                     flipped={langDir === 'ltr'}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
-                    isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
