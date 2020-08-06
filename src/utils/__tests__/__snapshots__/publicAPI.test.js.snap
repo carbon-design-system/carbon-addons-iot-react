@@ -177,10 +177,10 @@ Map {
               "type": "node",
             },
             "label": Object {
-              "type": "string",
+              "type": "node",
             },
             "title": Object {
-              "type": "string",
+              "type": "node",
             },
           },
         ],

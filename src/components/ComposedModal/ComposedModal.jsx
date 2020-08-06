@@ -24,8 +24,8 @@ export const ComposedModalPropTypes = {
    * helpText, additional information will stay at the top of the screen when scrolling dialog content
    */
   header: PropTypes.shape({
-    label: PropTypes.string,
-    title: PropTypes.string,
+    label: PropTypes.node,
+    title: PropTypes.node,
     helpText: PropTypes.node,
   }),
   /** ability to add translation string to close icon */
