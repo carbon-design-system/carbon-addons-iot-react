@@ -25,8 +25,14 @@ import TableHeader from './TableHeader';
 import ColumnResize from './ColumnResize';
 import {
   createNewWidthsMap,
+  calculateWidthOnHide,
   calculateWidthsOnToggle,
   adjustLastColumnWidth,
+  calculateWidthOnShow,
+  visibleColumnsHaveWidth,
+  getIDsOfAddedVisibleColumns,
+  getIDsOfRemovedColumns,
+  checkColumnWidthFormat,
 } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
@@ -221,9 +227,7 @@ const TableHead = ({
     () => {
       // An initial measuring is needed since there might not be an initial value from the columns prop
       // which means that the layout engine will have to set the widths dynamically
-      // before we know what they are. More importantly, the sum of the inital widths may not match
-      // the available width of the table, e.g. if the user has resized the browser since the
-      // column widths was last saved.
+      // before we know what they are.
       if (hasResize && columns.length && isEmpty(currentColumnWidths)) {
         const measuredWidths = measureColumnWidths();
         const adjustedWidths = adjustLastColumnWidth(ordering, columns, measuredWidths);
@@ -236,10 +240,25 @@ const TableHead = ({
 
   useDeepCompareEffect(
     () => {
-      // We need to update the currentColumnWidths (state) only if the widths
-      // of the column prop is updated after the initial render.
+      // We need to update the currentColumnWidths (state) after the initial render
+      // only if the widths of the column prop is updated or columns are added/removed .
       if (hasResize && columns.length && !isEmpty(currentColumnWidths)) {
-        if (columns.every(col => col.hasOwnProperty('width'))) {
+        checkColumnWidthFormat(columns);
+
+        const removedColumnIDs = getIDsOfRemovedColumns(ordering, currentColumnWidths);
+        const addedVisibleColumnIDs = getIDsOfAddedVisibleColumns(ordering, currentColumnWidths);
+        const adjustedForRemoved =
+          removedColumnIDs.length > 0
+            ? calculateWidthOnHide(currentColumnWidths, ordering, removedColumnIDs)
+            : currentColumnWidths;
+        const adjustedForRemovedAndAdded =
+          addedVisibleColumnIDs.length > 0
+            ? calculateWidthOnShow(adjustedForRemoved, ordering, addedVisibleColumnIDs, columns)
+            : adjustedForRemoved;
+
+        if (addedVisibleColumnIDs.length > 0 || removedColumnIDs.length > 0) {
+          setCurrentColumnWidths(adjustedForRemovedAndAdded);
+        } else if (visibleColumnsHaveWidth(ordering, columns)) {
           const propsColumnWidths = createNewWidthsMap(ordering, columns);
           if (!isEqual(currentColumnWidths, propsColumnWidths)) {
             setCurrentColumnWidths(propsColumnWidths);
