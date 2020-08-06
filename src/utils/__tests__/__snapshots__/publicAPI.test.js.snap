@@ -14298,6 +14298,149 @@ Map {
       },
     },
   },
+  "FlyoutMenu" => Object {
+    "defaultProps": Object {
+      "buttonSize": "default",
+      "children": undefined,
+      "customFooter": null,
+      "defaultOpen": false,
+      "direction": "bottom-start",
+      "disabled": false,
+      "i18n": Object {
+        "applyButtonText": "Apply",
+        "cancelButtonText": "Cancel",
+      },
+      "light": true,
+      "menuOffset": Object {
+        "left": 0,
+        "top": 0,
+      },
+      "onApply": null,
+      "onCancel": null,
+      "passive": false,
+      "renderIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "tabIndex": 0,
+      "testId": "flyout-menu",
+      "tooltipClassName": "",
+      "tooltipId": "flyout-tooltip",
+      "triggerId": "flyout-trigger-id",
+    },
+    "propTypes": Object {
+      "buttonSize": Object {
+        "type": "string",
+      },
+      "children": Object {
+        "type": "node",
+      },
+      "customFooter": Object {
+        "type": "elementType",
+      },
+      "defaultOpen": Object {
+        "type": "bool",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "bottom-start",
+            "bottom-end",
+            "top-start",
+            "top-end",
+            "left-start",
+            "left-end",
+            "right-start",
+            "right-end",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "applyButton": Object {
+              "type": "string",
+            },
+            "cancelButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "menuOffset": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "left": Object {
+                    "type": "number",
+                  },
+                  "top": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "onApply": Object {
+        "type": "func",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "passive": Object {
+        "type": "bool",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "tabIndex": Object {
+        "type": "number",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "tooltipClassName": Object {
+        "type": "string",
+      },
+      "tooltipId": Object {
+        "type": "string",
+      },
+      "triggerId": Object {
+        "type": "string",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
