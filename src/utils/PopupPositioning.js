@@ -127,6 +127,7 @@ const getClassName = (flowDown, flowRight) => {
 
 const flyoutMenuOffset = (menuBody, menuDirection, menuElement) => {
   const toReturn = { top: 0, left: 0 };
+  const edgePadding = 16;
 
   const bodyRect = menuBody.getBoundingClientRect();
   const activatorRect = menuElement.getBoundingClientRect();
@@ -138,116 +139,63 @@ const flyoutMenuOffset = (menuBody, menuDirection, menuElement) => {
   const flowRight = (activatorRect.right + activatorRect.left) / 2 <= 0.5 * rightBound;
   switch (menuDirection) {
     case FlyoutMenuDirection.TopEnd:
-      if (flowDown) {
-        toReturn.top = -(bodyRect.height + activatorRect.height);
-      }
-      if (flowRight) {
-        toReturn.left = bodyRect.width - activatorRect.width;
-      }
+      toReturn.top = flowDown ? -(bodyRect.height + activatorRect.height) : 0;
+      toReturn.left = flowRight ? bodyRect.width - activatorRect.width : 0;
       break;
     case FlyoutMenuDirection.TopStart:
-      if (flowDown) {
-        toReturn.top = -(bodyRect.height + activatorRect.height);
-      }
-      if (!flowRight) {
-        toReturn.left = -(bodyRect.width - activatorRect.width);
-      }
+      toReturn.top = flowDown ? -(bodyRect.height + activatorRect.height) : 0;
+      toReturn.left = flowRight ? 0 : -(bodyRect.width - activatorRect.width);
       break;
     case FlyoutMenuDirection.LeftEnd:
-      if (flowDown) {
-        toReturn.top = bodyRect.height;
-      } else {
-        toReturn.top = -activatorRect.height;
-      }
-      if (flowRight) {
-        toReturn.left = -bodyRect.width;
-      } else {
-        toReturn.left = -activatorRect.width;
-      }
+      toReturn.top = flowDown ? bodyRect.height : -activatorRect.height;
+      toReturn.left = flowRight ? -bodyRect.width : -activatorRect.width;
       break;
     case FlyoutMenuDirection.LeftStart:
-      if (flowDown) {
-        toReturn.top = activatorRect.height;
-      } else {
-        toReturn.top = -bodyRect.height;
-      }
-      if (flowRight) {
-        toReturn.left = -bodyRect.width;
-      } else {
-        toReturn.left = -activatorRect.width;
-      }
+      toReturn.top = flowDown ? activatorRect.height : -bodyRect.height;
+      toReturn.left = flowRight ? -bodyRect.width : -activatorRect.width;
       break;
     case FlyoutMenuDirection.RightEnd:
-      if (flowDown) {
-        toReturn.top = bodyRect.height;
-      } else {
-        toReturn.top = -activatorRect.height;
-      }
-      if (flowRight) {
-        toReturn.left = -activatorRect.width;
-      } else {
-        toReturn.left = -bodyRect.width;
-      }
+      toReturn.top = flowDown ? bodyRect.height : -activatorRect.height;
+      toReturn.left = flowRight ? -activatorRect.width : -bodyRect.width;
       break;
     case FlyoutMenuDirection.RightStart:
-      if (flowDown) {
-        toReturn.top = activatorRect.height;
-      } else {
-        toReturn.top = -bodyRect.height;
-      }
-      if (flowRight) {
-        toReturn.left = -activatorRect.width;
-      } else {
-        toReturn.left = -bodyRect.width;
-      }
+      toReturn.top = flowDown ? activatorRect.height : -bodyRect.height;
+      toReturn.left = flowRight ? -activatorRect.width : -bodyRect.width;
       break;
     case FlyoutMenuDirection.BottomEnd:
-      if (!flowDown) {
-        toReturn.top = -(activatorRect.height + bodyRect.height);
-      }
-      if (flowRight) {
-        toReturn.left = bodyRect.width - activatorRect.width;
-      }
+      toReturn.top = flowDown ? 0 : -(activatorRect.height + bodyRect.height);
+      toReturn.left = flowRight ? bodyRect.width - activatorRect.width : 0;
       break;
     case FlyoutMenuDirection.BottomStart:
-      if (!flowDown) {
-        toReturn.top = -(activatorRect.height + bodyRect.height);
-      }
-      if (!flowRight) {
-        toReturn.left = -(bodyRect.width - activatorRect.width);
-      }
+      toReturn.top = flowDown ? 0 : -(activatorRect.height + bodyRect.height);
+      toReturn.left = flowRight ? 0 : -(bodyRect.width - activatorRect.width);
       break;
     default:
   }
 
-  const edgePadding = 16;
   const offscreenRight = bodyRect.width + activatorRect.left + edgePadding > rightBound;
   const offscreenLeft = activatorRect.right - bodyRect.width - edgePadding < 0;
   if (flowRight && offscreenRight) {
-    if (
+    const offscreenOffset = rightBound - (activatorRect.left + bodyRect.width + edgePadding);
+    toReturn.left +=
       menuDirection === FlyoutMenuDirection.LeftEnd ||
       menuDirection === FlyoutMenuDirection.LeftStart
-    ) {
-      toReturn.left -= rightBound - (activatorRect.left + bodyRect.width + edgePadding);
-    } else {
-      toReturn.left += rightBound - (activatorRect.left + bodyRect.width + edgePadding);
-    }
+        ? -offscreenOffset
+        : offscreenOffset;
     menuBody.children[1].style.setProperty(
       '--after-offset',
-      `${stripUnit(rem(activatorRect.left + bodyRect.width + edgePadding - rightBound)) - 1}rem`
+      `${stripUnit(rem(-offscreenOffset)) - 1}rem`
     );
   } else if (!flowRight && offscreenLeft) {
-    if (
+    const offscreenOffset = activatorRect.right - bodyRect.width - edgePadding;
+    toReturn.left +=
       menuDirection === FlyoutMenuDirection.LeftEnd ||
       menuDirection === FlyoutMenuDirection.LeftStart
-    ) {
-      toReturn.left += activatorRect.right - bodyRect.width - edgePadding;
-    } else {
-      toReturn.left += -(activatorRect.right - bodyRect.width - edgePadding);
-    }
+        ? offscreenOffset
+        : -offscreenOffset;
     menuBody.children[1].style.setProperty(
       '--after-offset',
-      `${stripUnit(rem(-activatorRect.right + bodyRect.width + edgePadding)) - 1}rem`
+      `${stripUnit(rem(-offscreenOffset)) - 1}rem`
     );
   }
   menuBody.classList.remove(`${iotPrefix}--flyout-menu--body__${menuDirection}`);
