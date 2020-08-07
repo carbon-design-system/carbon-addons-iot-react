@@ -540,17 +540,18 @@ describe('Table', () => {
   });
 
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
+    const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
     const { unmount, rerender } = render(
-      <Table columns={tableColumns} data={[tableData[0]]} options={options} />
+      <Table id={id} columns={tableColumns} data={[tableData[0]]} options={options} />
     );
-    await fireEvent.click(screen.getByTestId('Table-row-0-row-actions-cell-overflow'));
+    await fireEvent.click(screen.getByTestId(`${id}-row-0-row-actions-cell-overflow`));
     expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeTruthy();
 
     document.documentElement.setAttribute('dir', 'rtl');
 
-    rerender(<Table columns={tableColumns} data={[tableData[1]]} options={options} />);
-    await fireEvent.click(screen.getByTestId('Table-row-1-row-actions-cell-overflow'));
+    rerender(<Table id={id} columns={tableColumns} data={[tableData[1]]} options={options} />);
+    await fireEvent.click(screen.getByTestId(`${id}-row-1-row-actions-cell-overflow`));
     expect(document.body.childNodes[2].className.includes('bx--overflow-menu--flip')).toBeFalsy();
 
     // unmounting to be sure to clean up the documentElement
@@ -737,22 +738,26 @@ describe('Table', () => {
   it('Table in modal select all', () => {
     const inModal = jest.fn();
     const notInModal = jest.fn();
+    const table1Text = 'select1';
+    const table2Text = 'select2;';
     render(
       <div>
         <Table
+          id="tableid1"
           columns={tableColumns}
           data={[tableData[0]]}
           options={{ hasRowSelection: 'multi' }}
           actions={{ table: { onSelectAll: notInModal } }}
-          i18n={{ selectAllAria: 'select1' }}
+          i18n={{ selectAllAria: table1Text }}
         />
         <Modal open>
           <Table
+            id="tableid2"
             columns={tableColumns}
             data={[tableData[0]]}
             options={{ hasRowSelection: 'multi' }}
             actions={{ table: { onSelectAll: inModal } }}
-            i18n={{ selectAllAria: 'select2' }}
+            i18n={{ selectAllAria: table2Text }}
           />
         </Modal>
       </div>
@@ -760,7 +765,7 @@ describe('Table', () => {
 
     expect(inModal.mock.calls.length).toBe(0);
     expect(notInModal.mock.calls.length).toBe(0);
-    fireEvent.click(screen.getByText('select2'));
+    fireEvent.click(screen.getByText(table2Text).parentElement);
     expect(inModal.mock.calls.length).toBe(1);
     expect(notInModal.mock.calls.length).toBe(0);
   });
