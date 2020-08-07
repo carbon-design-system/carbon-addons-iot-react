@@ -1624,7 +1624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       tabIndex="0"
                     >
                       <div
-                        aria-labelledby="Table-toolbar-search-search"
+                        aria-labelledby="Table_0-toolbar-search-search"
                         className="bx--search bx--search--sm table-toolbar-search"
                         role="search"
                       >
@@ -1644,8 +1644,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="Table-toolbar-search"
-                          id="Table-toolbar-search-search"
+                          htmlFor="Table_0-toolbar-search"
+                          id="Table_0-toolbar-search-search"
                         >
                           Search
                         </label>
@@ -1653,7 +1653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           aria-hidden={true}
                           autoComplete="off"
                           className="bx--search-input"
-                          id="Table-toolbar-search"
+                          id="Table_0-toolbar-search"
                           onChange={[Function]}
                           placeholder="Search"
                           role="searchbox"
@@ -2022,7 +2022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="city"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-city"
+                          id="cell-Table_0-dataindex-0-city"
                           offset={0}
                         >
                           <span
@@ -2041,7 +2041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Particles"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-Particles"
+                          id="cell-Table_0-dataindex-0-Particles"
                           offset={0}
                         >
                           <span
@@ -2060,7 +2060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Temperature"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-Temperature"
+                          id="cell-Table_0-dataindex-0-Temperature"
                           offset={0}
                         >
                           <span
@@ -2079,7 +2079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Emissions"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-Emissions"
+                          id="cell-Table_0-dataindex-0-Emissions"
                           offset={0}
                         >
                           <span
@@ -2103,7 +2103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="city"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-city"
+                          id="cell-Table_0-dataindex-1-city"
                           offset={0}
                         >
                           <span
@@ -2122,7 +2122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Particles"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-Particles"
+                          id="cell-Table_0-dataindex-1-Particles"
                           offset={0}
                         >
                           <span
@@ -2141,7 +2141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Temperature"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-Temperature"
+                          id="cell-Table_0-dataindex-1-Temperature"
                           offset={0}
                         >
                           <span
@@ -2160,7 +2160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Emissions"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-Emissions"
+                          id="cell-Table_0-dataindex-1-Emissions"
                           offset={0}
                         >
                           <span
@@ -2184,7 +2184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="city"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-city"
+                          id="cell-Table_0-dataindex-2-city"
                           offset={0}
                         >
                           <span
@@ -2203,7 +2203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Particles"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-Particles"
+                          id="cell-Table_0-dataindex-2-Particles"
                           offset={0}
                         >
                           <span
@@ -2222,7 +2222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Temperature"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-Temperature"
+                          id="cell-Table_0-dataindex-2-Temperature"
                           offset={0}
                         >
                           <span
@@ -2241,7 +2241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Emissions"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-Emissions"
+                          id="cell-Table_0-dataindex-2-Emissions"
                           offset={0}
                         >
                           <span
@@ -2265,7 +2265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="city"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-city"
+                          id="cell-Table_0-dataindex-3-city"
                           offset={0}
                         >
                           <span
@@ -2284,7 +2284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Particles"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-Particles"
+                          id="cell-Table_0-dataindex-3-Particles"
                           offset={0}
                         >
                           <span
@@ -2303,7 +2303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Temperature"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-Temperature"
+                          id="cell-Table_0-dataindex-3-Temperature"
                           offset={0}
                         >
                           <span
@@ -2322,7 +2322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           className="data-table-start"
                           data-column="Emissions"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-Emissions"
+                          id="cell-Table_0-dataindex-3-Emissions"
                           offset={0}
                         >
                           <span
