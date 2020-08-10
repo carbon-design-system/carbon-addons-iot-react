@@ -9,7 +9,7 @@ const propTypes = {
   /** optional icon to visually describe catalog item */
   icon: PropTypes.node,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  description: PropTypes.node,
 };
 
 const defaultProps = {
