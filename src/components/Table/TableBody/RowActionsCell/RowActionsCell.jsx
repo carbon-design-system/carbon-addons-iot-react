@@ -20,8 +20,6 @@ const { TableCell } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /** Need to render different styles if expanded */
-  isRowExpanded: PropTypes.bool,
   /** Unique id for each row, passed back for each click */
   id: PropTypes.string.isRequired,
   /** Unique id for the table */
@@ -59,7 +57,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isRowExpanded: false,
   actions: null,
   isRowActionRunning: false,
   rowActionsError: null,
@@ -100,7 +97,6 @@ class RowActionsCell extends React.Component {
 
   render() {
     const {
-      isRowExpanded,
       id,
       tableId,
       actions,
@@ -181,7 +177,6 @@ class RowActionsCell extends React.Component {
                     flipped={langDir === 'ltr'}
                     ariaLabel={overflowMenuAria}
                     onClick={event => event.stopPropagation()}
-                    isRowExpanded={isRowExpanded}
                     iconDescription={overflowMenuAria}
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}

@@ -646,7 +646,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     className="iot--row-actions-cell--overflow-menu bx--overflow-menu"
                     data-testid="tableId-rowId-row-actions-cell-overflow"
                     id="tableId-rowId-row-actions-cell-overflow"
-                    isRowExpanded={false}
                     onClick={[Function]}
                     onClose={[Function]}
                     onKeyDown={[Function]}
