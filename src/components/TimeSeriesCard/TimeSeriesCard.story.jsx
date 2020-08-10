@@ -973,6 +973,10 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+            },
           })}
           values={staticData}
           interval="month"

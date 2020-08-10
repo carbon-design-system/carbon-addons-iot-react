@@ -387,7 +387,7 @@ storiesOf('Watson IoT/BarChartCard', module)
     );
   })
   .add('No data', () => {
-    const size = select('size', acceptableSizes, CARD_SIZES.MEDIUMWIDE);
+    const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
@@ -425,36 +425,33 @@ storiesOf('Watson IoT/BarChartCard', module)
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
         <BarChartCard
-          title={text('title', 'Particles and temperature in cities')}
-          id="grouped-sample"
+          title={text('title', 'Particles by city over time')}
+          id="stacked-horizontal-sample"
           isLoading={boolean('isLoading', false)}
           isEditable={boolean('isEditable', false)}
           isExpanded={boolean('isExpandable', true)}
           content={object('content', {
-            type: BAR_CHART_TYPES.GROUPED,
-            xLabel: 'Cities',
+            type: BAR_CHART_TYPES.STACKED,
+            layout: BAR_CHART_LAYOUTS.VERTICAL,
+            xLabel: 'Dates',
             yLabel: 'Total',
             series: [
               {
                 dataSourceId: 'particles',
-                label: 'Particles',
-                color: 'blue',
-              },
-              {
-                dataSourceId: 'temperature',
-                label: 'Temperature',
-              },
-              {
-                dataSourceId: 'emissions',
-                label: 'Emissions',
+                // colors: COLORS,
               },
             ],
+            timeDataSourceId: 'timestamp',
             categoryDataSourceId: 'city',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+            },
           })}
-          values={barChartData.quarters.filter(a => a.quarter === '2020-Q1')}
+          values={barChartData.timestamps}
           size={size}
           onCardAction={action('onCardAction')}
-          availableActions={{ expand: true }}
+          availableActions={{ expand: true, range: true }}
         />
       </div>
     );

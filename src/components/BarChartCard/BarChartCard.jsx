@@ -182,7 +182,10 @@ const BarChartCard = ({
                   chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
               },
-              ...(zoomBar?.enabled && ZOOM_BAR_ENABLED_CARD_SIZES.includes(size)
+              // zoomBar should only be enabled for time-based charts
+              ...(zoomBar?.enabled &&
+              timeDataSourceId &&
+              (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
                 ? {
                     zoomBar: {
                       // [zoomBar.axes]: {    TODO: the top axes is the only one support at the moment so default to top
