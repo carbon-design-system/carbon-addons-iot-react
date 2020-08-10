@@ -3330,7 +3330,7 @@ Map {
     },
     "propTypes": Object {
       "description": Object {
-        "type": "string",
+        "type": "node",
       },
       "icon": Object {
         "type": "node",
