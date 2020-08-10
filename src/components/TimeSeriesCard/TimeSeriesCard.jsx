@@ -529,7 +529,7 @@ const TimeSeriesCard = ({
                     scaleType: 'linear',
                   },
                 },
-                legend: { position: 'top', clickable: !isEditable, enabled: lines.length > 1 },
+                legend: { position: 'bottom', clickable: !isEditable, enabled: lines.length > 1 },
                 containerResizable: true,
                 tooltip: {
                   valueFormatter: tooltipValue =>
