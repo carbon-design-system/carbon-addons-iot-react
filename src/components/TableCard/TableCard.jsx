@@ -781,7 +781,7 @@ const TableCard = ({
               toolbar: {
                 onClearAllFilters: () => {},
                 onToggleFilter: () => {},
-                onDownloadCSV: () => csvDownloadHandler(tableDataWithTimestamp, title),
+                onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
               },
             }}
             view={{

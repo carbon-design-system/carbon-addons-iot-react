@@ -177,10 +177,10 @@ Map {
               "type": "node",
             },
             "label": Object {
-              "type": "string",
+              "type": "node",
             },
             "title": Object {
-              "type": "string",
+              "type": "node",
             },
           },
         ],
@@ -2430,6 +2430,134 @@ Map {
         "isRequired": true,
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "array",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+                "rowActions": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "disabled": Object {
+                            "type": "bool",
+                          },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
+                          },
+                          "isEdit": Object {
+                            "type": "bool",
+                          },
+                          "isOverflow": Object {
+                            "type": "bool",
+                          },
+                          "labelText": Object {
+                            "type": "string",
+                          },
+                          "renderIcon": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "args": Array [
+                                    Object {
+                                      "height": Object {
+                                        "type": "string",
+                                      },
+                                      "svgData": Object {
+                                        "isRequired": true,
+                                        "type": "object",
+                                      },
+                                      "viewBox": Object {
+                                        "isRequired": true,
+                                        "type": "string",
+                                      },
+                                      "width": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                Object {
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
+                                    ],
+                                  ],
+                                  "type": "oneOf",
+                                },
+                                Object {
+                                  "type": "node",
+                                },
+                                Object {
+                                  "type": "object",
+                                },
+                                Object {
+                                  "type": "func",
+                                },
+                              ],
+                            ],
+                            "type": "oneOfType",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "values": Object {
+                  "args": Array [
+                    Object {
+                      "type": "any",
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "objectOf",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
       "i18n": Object {
         "args": Array [
           Object {
@@ -3202,7 +3330,7 @@ Map {
     },
     "propTypes": Object {
       "description": Object {
-        "type": "string",
+        "type": "node",
       },
       "icon": Object {
         "type": "node",
@@ -4297,6 +4425,42 @@ Map {
             },
             "yLabel": Object {
               "type": "string",
+            },
+            "zoomBar": Object {
+              "args": Array [
+                Object {
+                  "axes": Object {
+                    "args": Array [
+                      Array [
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "enabled": Object {
+                    "type": "bool",
+                  },
+                  "initialZoomDomain": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                },
+              ],
+              "type": "shape",
             },
           },
         ],
@@ -9138,6 +9302,42 @@ Map {
             },
             "yLabel": Object {
               "type": "string",
+            },
+            "zoomBar": Object {
+              "args": Array [
+                Object {
+                  "axes": Object {
+                    "args": Array [
+                      Array [
+                        "top",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "enabled": Object {
+                    "type": "bool",
+                  },
+                  "initialZoomDomain": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                },
+              ],
+              "type": "shape",
             },
           },
         ],
@@ -14094,6 +14294,149 @@ Map {
         "type": "oneOf",
       },
       "wrapperClassName": Object {
+        "type": "string",
+      },
+    },
+  },
+  "FlyoutMenu" => Object {
+    "defaultProps": Object {
+      "buttonSize": "default",
+      "children": undefined,
+      "customFooter": null,
+      "defaultOpen": false,
+      "direction": "bottom-start",
+      "disabled": false,
+      "i18n": Object {
+        "applyButtonText": "Apply",
+        "cancelButtonText": "Cancel",
+      },
+      "light": true,
+      "menuOffset": Object {
+        "left": 0,
+        "top": 0,
+      },
+      "onApply": null,
+      "onCancel": null,
+      "passive": false,
+      "renderIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "tabIndex": 0,
+      "testId": "flyout-menu",
+      "tooltipClassName": "",
+      "tooltipId": "flyout-tooltip",
+      "triggerId": "flyout-trigger-id",
+    },
+    "propTypes": Object {
+      "buttonSize": Object {
+        "type": "string",
+      },
+      "children": Object {
+        "type": "node",
+      },
+      "customFooter": Object {
+        "type": "elementType",
+      },
+      "defaultOpen": Object {
+        "type": "bool",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "bottom-start",
+            "bottom-end",
+            "top-start",
+            "top-end",
+            "left-start",
+            "left-end",
+            "right-start",
+            "right-end",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "applyButton": Object {
+              "type": "string",
+            },
+            "cancelButton": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "iconDescription": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "menuOffset": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "left": Object {
+                    "type": "number",
+                  },
+                  "top": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "onApply": Object {
+        "type": "func",
+      },
+      "onCancel": Object {
+        "type": "func",
+      },
+      "passive": Object {
+        "type": "bool",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "tabIndex": Object {
+        "type": "number",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "tooltipClassName": Object {
+        "type": "string",
+      },
+      "tooltipId": Object {
+        "type": "string",
+      },
+      "triggerId": Object {
         "type": "string",
       },
     },

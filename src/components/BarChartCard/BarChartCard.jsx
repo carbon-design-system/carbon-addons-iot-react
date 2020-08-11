@@ -7,7 +7,12 @@ import isEmpty from 'lodash/isEmpty';
 import memoize from 'lodash/memoize';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
-import { CARD_SIZES, BAR_CHART_TYPES, BAR_CHART_LAYOUTS } from '../../constants/LayoutConstants';
+import {
+  CARD_SIZES,
+  BAR_CHART_TYPES,
+  BAR_CHART_LAYOUTS,
+  ZOOM_BAR_ENABLED_CARD_SIZES,
+} from '../../constants/LayoutConstants';
 import Card from '../Card/Card';
 import { settings } from '../../constants/Settings';
 import { chartValueFormatter, handleCardVariables } from '../../utils/cardUtilityFunctions';
@@ -56,6 +61,7 @@ const BarChartCard = ({
       yLabel,
       unit,
       type = BAR_CHART_TYPES.SIMPLE,
+      zoomBar,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -176,6 +182,20 @@ const BarChartCard = ({
                   chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
               },
+              // zoomBar should only be enabled for time-based charts
+              ...(zoomBar?.enabled &&
+              timeDataSourceId &&
+              (ZOOM_BAR_ENABLED_CARD_SIZES.includes(size) || isExpanded)
+                ? {
+                    zoomBar: {
+                      // [zoomBar.axes]: {    TODO: the top axes is the only one support at the moment so default to top
+                      top: {
+                        enabled: zoomBar.enabled,
+                        initialZoomDomain: zoomBar.initialZoomDomain,
+                      },
+                    },
+                  }
+                : {}),
             }}
             width="100%"
             height="100%"
@@ -192,7 +212,7 @@ const BarChartCard = ({
               }}
               actions={{
                 toolbar: {
-                  onDownloadCSV: () => csvDownloadHandler(tableData, title),
+                  onDownloadCSV: filteredData => csvDownloadHandler(filteredData, title),
                 },
               }}
               view={{
