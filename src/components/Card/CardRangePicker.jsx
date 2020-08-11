@@ -36,18 +36,6 @@ const CardRangePicker = ({
   cardWidth,
 }) => {
   const [timeRange, setTimeRange] = useState(timeRangeProp);
-  // maps the timebox internal label to a translated string
-  // const timeBoxLabels = {
-  //   last24Hours: i18n.last24HoursLabel,
-  //   last7Days: i18n.last7DaysLabel,
-  //   lastMonth: i18n.lastMonthLabel,
-  //   lastQuarter: i18n.lastQuarterLabel,
-  //   lastYear: i18n.lastYearLabel,
-  //   thisWeek: i18n.thisWeekLabel,
-  //   thisMonth: i18n.thisMonthLabel,
-  //   thisQuarter: i18n.thisQuarterLabel,
-  //   thisYear: i18n.thisYearLabel,
-  // };
 
   const handleTimeRange = useCallback(
     value => {
