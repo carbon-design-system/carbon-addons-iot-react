@@ -4606,21 +4606,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -7783,21 +7777,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -8667,21 +8655,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -9519,21 +9501,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -10275,21 +10251,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -11133,21 +11103,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -12051,21 +12015,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",
@@ -12859,21 +12817,15 @@ Map {
         "type": "string",
       },
       "timeRange": Object {
+        "type": "string",
+      },
+      "timeRangeOptions": Object {
         "args": Array [
-          Array [
-            "last24Hours",
-            "last7Days",
-            "lastMonth",
-            "lastQuarter",
-            "lastYear",
-            "thisWeek",
-            "thisMonth",
-            "thisQuarter",
-            "thisYear",
-            "",
-          ],
+          Object {
+            "type": "string",
+          },
         ],
-        "type": "oneOf",
+        "type": "objectOf",
       },
       "title": Object {
         "type": "string",

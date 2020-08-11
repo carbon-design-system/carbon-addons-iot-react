@@ -35,11 +35,14 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   className: PropTypes.string,
   ...omit(CardRangePickerPropTypes, 'onClose'),
+  /** Generates the available time range selection options */
+  timeRangeOptions: PropTypes.objectOf(PropTypes.string),
 };
 const defaultProps = {
   isEditable: false,
   isExpanded: false,
   className: null,
+  timeRangeOptions: null,
 };
 const CardToolbar = ({
   i18n,
@@ -48,9 +51,24 @@ const CardToolbar = ({
   isExpanded,
   availableActions,
   timeRange,
+  timeRangeOptions,
   onCardAction,
   className,
 }) => {
+  // maps the timebox internal label to a translated string
+  // Need the default here in case that the CardToolbar is used by multiple different components
+  const timeBoxLabels = {
+    last24Hours: i18n.last24HoursLabel,
+    last7Days: i18n.last7DaysLabel,
+    lastMonth: i18n.lastMonthLabel,
+    lastQuarter: i18n.lastQuarterLabel,
+    lastYear: i18n.lastYearLabel,
+    thisWeek: i18n.thisWeekLabel,
+    thisMonth: i18n.thisMonthLabel,
+    thisQuarter: i18n.thisQuarterLabel,
+    thisYear: i18n.thisYearLabel,
+  };
+
   return isEditable ? (
     <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.edit || availableActions.clone || availableActions.delete) && (
@@ -91,6 +109,7 @@ const CardToolbar = ({
           width={width}
           i18n={i18n}
           timeRange={timeRange}
+          timeRangeOptions={timeRangeOptions || timeBoxLabels}
           onCardAction={onCardAction}
           cardWidth={width}
         />

@@ -395,19 +395,10 @@ export const CardPropTypes = {
   size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
-  /** Optional range to pass at the card level */
-  timeRange: PropTypes.oneOf([
-    'last24Hours',
-    'last7Days',
-    'lastMonth',
-    'lastQuarter',
-    'lastYear',
-    'thisWeek',
-    'thisMonth',
-    'thisQuarter',
-    'thisYear',
-    '',
-  ]),
+  /** Optional selected range to pass at the card level */
+  timeRange: PropTypes.string,
+  /** Generates the available time range selection options */
+  timeRangeOptions: PropTypes.objectOf(PropTypes.string),
 
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
