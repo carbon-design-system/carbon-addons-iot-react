@@ -29,6 +29,8 @@ import Pagination from './Pagination';
 
 const { iotPrefix } = settings;
 
+let tableIdNumber = 0;
+
 const propTypes = {
   /** DOM ID for component */
   id: PropTypes.string,
@@ -178,7 +180,7 @@ const propTypes = {
 };
 
 export const defaultProps = baseProps => ({
-  id: 'Table',
+  id: `Table_${tableIdNumber}`,
   useZebraStyles: false,
   lightweight: false,
   title: null,
@@ -372,7 +374,7 @@ const Table = props => {
 
   const rowEditMode = view.toolbar.activeBar === 'rowEdit';
   const singleRowEditMode = !!view.table.rowActions.find(action => action.isEditMode);
-
+  tableIdNumber += 1;
   return (
     <TableContainer
       style={style}
@@ -496,6 +498,7 @@ const Table = props => {
             clearSelectionText={i18n.clearSelectionAria}
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
+            id={id}
             tableState={{
               isDisabled: rowEditMode || singleRowEditMode,
               activeBar: view.toolbar.activeBar,

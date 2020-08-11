@@ -40,6 +40,7 @@ const { iotPrefix } = settings;
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
+  id: PropTypes.string.isRequired,
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
@@ -124,6 +125,7 @@ const generateOrderedColumnRefs = ordering =>
   ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
 
 const TableHead = ({
+  id,
   options,
   options: {
     hasRowExpansion,
@@ -298,7 +300,7 @@ const TableHead = ({
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
               disabled={isDisabled}
-              id="select-all"
+              id={id}
               labelText={selectAllText}
               hideLabel
               indeterminate={isSelectAllIndeterminate}
@@ -307,7 +309,6 @@ const TableHead = ({
             />
           </TableHeader>
         ) : null}
-
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
