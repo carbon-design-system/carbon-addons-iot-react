@@ -4608,14 +4608,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -7779,14 +7772,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -8657,14 +8643,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -9503,14 +9482,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -10253,14 +10225,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -11105,14 +11070,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -12017,14 +11975,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },
@@ -12819,14 +12770,7 @@ Map {
       "timeRange": Object {
         "type": "string",
       },
-      "timeRangeOptions": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-          },
-        ],
-        "type": "objectOf",
-      },
+      "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
       },

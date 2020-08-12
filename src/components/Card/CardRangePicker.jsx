@@ -5,6 +5,7 @@ import { ToolbarItem, OverflowMenu, OverflowMenuItem } from 'carbon-components-r
 import classnames from 'classnames';
 import isNil from 'lodash/isNil';
 
+import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -12,8 +13,10 @@ const { iotPrefix } = settings;
 export const CardRangePickerPropTypes = {
   /** Optional selected range to pass at the card level */
   timeRange: PropTypes.string,
-  /** Generates the available time range selection options */
-  timeRangeOptions: PropTypes.objectOf(PropTypes.string).isRequired,
+  /** Generates the available time range selection options. Each option should include 'this' or 'last'.
+   * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
+   */
+  timeRangeOptions: TimeRangeOptionsPropTypes, // eslint-disable-line react/require-default-props
   /** callback to handle interactions with the range picker */
   onCardAction: PropTypes.func.isRequired,
   /** set of internationalized labels */

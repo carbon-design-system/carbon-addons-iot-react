@@ -377,6 +377,26 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
   XLARGE: CardDimensionsPropTypes,
 });
 
+export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
+  let error;
+  // if the
+  if (props[propName]) {
+    const timeRangeKeys = Object.keys(props[propName]);
+    // only validate the options if they are populated
+    if (timeRangeKeys.length > 0) {
+      // throw error if timeRangeOptions does not include 'this' or 'last'
+      const isError = timeRangeKeys.some(key => !key.includes('this') && !key.includes('last'));
+
+      if (isError) {
+        error = new Error(
+          `\`${componentName}\` prop \`${propName}\` key's should include \`this\` or \`last\` i.e. \`{ thisWeek: 'This week', lastWeek: 'Last week'}\``
+        );
+      }
+    }
+  }
+  return error;
+};
+
 export const CardPropTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
@@ -397,9 +417,10 @@ export const CardPropTypes = {
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
   /** Optional selected range to pass at the card level */
   timeRange: PropTypes.string,
-  /** Generates the available time range selection options */
-  timeRangeOptions: PropTypes.objectOf(PropTypes.string),
-
+  /** Generates the available time range selection options. Each option should include 'this' or 'last'.
+   * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
+   */
+  timeRangeOptions: TimeRangeOptionsPropTypes,
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
