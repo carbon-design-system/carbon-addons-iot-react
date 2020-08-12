@@ -4458,6 +4458,15 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "view": Object {
+                    "args": Array [
+                      Array [
+                        "graph_view",
+                        "slider_view",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
                 },
               ],
               "type": "shape",
@@ -9334,6 +9343,15 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "view": Object {
+                    "args": Array [
+                      Array [
+                        "graph_view",
+                        "slider_view",
+                      ],
+                    ],
+                    "type": "oneOf",
                   },
                 },
               ],
