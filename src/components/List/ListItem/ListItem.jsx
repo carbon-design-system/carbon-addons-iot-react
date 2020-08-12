@@ -1,27 +1,30 @@
 import React from 'react';
-import { DragSource, DropTarget } from 'react-dnd';
+import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 
+import { DropLocation } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
+
+import ListTarget from './ListTarget';
 
 const { iotPrefix, prefix } = settings;
 
-// internal component
+export const ItemType = 'ListItem';
+
 const ListItemWrapper = ({
   id,
   isEditing,
   isSelectable,
-  isOver,
-  isMovingUp,
+  itemWillMove,
+  onItemMoved,
   onSelect,
   selected,
   isDragging,
   isLargeRow,
   children,
-  connectDropTarget,
   connectDragSource,
 }) => {
   const body = isSelectable ? (
@@ -56,18 +59,40 @@ const ListItemWrapper = ({
   if (isEditing) {
     return (
       <div
-        className={classnames({
-          [`${iotPrefix}--list-item-editable-drag-above`]: isOver && isMovingUp,
-          [`${iotPrefix}--list-item-editable-drag-below`]: isOver && !isMovingUp,
+        className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
           [`${iotPrefix}--list-item-editable-dragging`]: isDragging,
         })}
         ref={instance => {
-          if (connectDragSource && connectDropTarget) {
+          if (connectDragSource) {
             connectDragSource(instance);
-            connectDropTarget(instance);
           }
         }}
       >
+        <div
+          className={classnames(`${iotPrefix}--list-item-editable--drop-targets`, {
+            [`${iotPrefix}--list-item__large`]: isLargeRow,
+          })}
+        >
+          <ListTarget
+            id={id}
+            targetPosition={DropLocation.Nested}
+            itemWillMove={itemWillMove}
+            onItemMoved={onItemMoved}
+          />
+          <ListTarget
+            id={id}
+            targetPosition={DropLocation.Above}
+            itemWillMove={itemWillMove}
+            onItemMoved={onItemMoved}
+          />
+          <ListTarget
+            id={id}
+            targetPosition={DropLocation.Below}
+            itemWillMove={itemWillMove}
+            onItemMoved={onItemMoved}
+          />
+        </div>
+
         {body}
       </div>
     );
@@ -77,6 +102,7 @@ const ListItemWrapper = ({
 };
 
 const ListItemWrapperProps = {
+  dragPreviewText: PropTypes.string,
   id: PropTypes.string.isRequired,
   isEditing: PropTypes.bool.isRequired,
   isLargeRow: PropTypes.bool.isRequired,
@@ -85,8 +111,8 @@ const ListItemWrapperProps = {
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  connectDragSource: PropTypes.func.isRequired,
-  connectDropTarget: PropTypes.func.isRequired,
+  onItemMoved: PropTypes.func.isRequired,
+  itemWillMove: PropTypes.func.isRequired,
 };
 
 const ListItemPropTypes = {
@@ -121,20 +147,21 @@ const ListItemPropTypes = {
   tags: PropTypes.arrayOf(PropTypes.node),
   /* these props come from react-dnd */
   connectDragSource: PropTypes.func.isRequired,
-  connectDropTarget: PropTypes.func.isRequired,
   connectDragPreview: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
+  dragPreviewText: PropTypes.string,
   nestedIndex: PropTypes.arrayOf(PropTypes.number),
   isDragging: PropTypes.bool.isRequired,
   isOver: PropTypes.bool.isRequired,
-  isMovingUp: PropTypes.bool.isRequired,
   onItemMoved: PropTypes.func.isRequired,
+  itemWillMove: PropTypes.func.isRequired,
 };
 
 const ListItemDefaultProps = {
   isEditing: false,
   isLargeRow: false,
   isExpandable: false,
+  dragHandleText: null,
   onExpand: () => {},
   isSelectable: false,
   onSelect: () => {},
@@ -154,14 +181,11 @@ const ListItemDefaultProps = {
   tags: null,
 };
 
-const ItemType = 'ListItem';
-
 const ListItem = ({
   id,
   isEditing,
   isLargeRow,
   isExpandable,
-  isMovingUp,
   onExpand,
   expanded,
   isSelectable,
@@ -181,8 +205,9 @@ const ListItem = ({
   selectedItemRef,
   tags,
   connectDragSource,
-  connectDropTarget,
   connectDragPreview,
+  itemWillMove,
+  dragPreviewText,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
@@ -230,7 +255,9 @@ const ListItem = ({
   const renderDragPreview = () => {
     if (isEditing && connectDragPreview) {
       return connectDragPreview(
-        <div className={`${iotPrefix}--list-item-editable--drag-preview`}>{value}</div>
+        <div className={`${iotPrefix}--list-item-editable--drag-preview`}>
+          {dragPreviewText || value}
+        </div>
       );
     }
 
@@ -258,9 +285,8 @@ const ListItem = ({
         isLargeRow,
         onSelect,
         connectDragSource,
-        connectDropTarget,
         onItemMoved,
-        isMovingUp,
+        itemWillMove,
       }}
     >
       {renderDragPreview()}
@@ -364,30 +390,10 @@ const cardSource = {
   },
 };
 
-const rowTarget = {
-  drop(hoverProps, monitor) {
-    if (
-      hoverProps.onItemMoved(
-        monitor.getItem().props,
-        hoverProps,
-        monitor.getItem().index > hoverProps.index
-      )
-    ) {
-      monitor.getItem().index = hoverProps.index; // eslint-disable-line no-param-reassign
-    }
-  },
-};
-
 const ds = DragSource(ItemType, cardSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   connectDragPreview: connect.dragPreview(),
   isDragging: monitor.isDragging(),
-}));
-
-const dt = DropTarget(ItemType, rowTarget, (connect, monitor) => ({
-  connectDropTarget: connect.dropTarget(),
-  isOver: monitor.isOver(),
-  isMovingUp: monitor.getDifferenceFromInitialOffset()?.y <= 0,
 }));
 
 ListItemWrapper.propTypes = ListItemWrapperProps;
@@ -395,4 +401,5 @@ ListItem.propTypes = ListItemPropTypes;
 ListItem.defaultProps = ListItemDefaultProps;
 
 export { ListItem as UnconnectedListItem };
-export default ds(dt(ListItem));
+
+export default ds(ListItem);

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { DragDropContext } from 'react-dnd';
@@ -7,6 +7,8 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
+import { Checkbox } from '../..';
+import { moveItemsInList } from '../../utils/DragAndDropUtils';
 
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
@@ -40,7 +42,7 @@ const propTypes = {
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
   /** list can be rearranged */
-  isEditing: PropTypes.bool,
+  editMode: PropTypes.oneOf(['single', 'multiple']),
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -54,6 +56,7 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
+    items: PropTypes.string,
   }),
   /** Currently selected item */
   selectedId: PropTypes.string,
@@ -69,6 +72,8 @@ const propTypes = {
   toggleExpansion: PropTypes.func,
   /** callback function for reorder */
   onItemMoved: PropTypes.func,
+  /** callback to check if item is allowed to be moved */
+  itemWillMove: PropTypes.func,
 };
 
 const defaultProps = {
@@ -76,7 +81,7 @@ const defaultProps = {
   title: null,
   search: null,
   buttons: [],
-  isEditing: false,
+  editMode: null,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -84,6 +89,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
+    items: '%d items',
   },
   iconPosition: 'left',
   pagination: null,
@@ -92,7 +98,53 @@ const defaultProps = {
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
-  onItemMoved: () => {},
+  onItemMoved: null,
+  itemWillMove: () => {
+    return true;
+  },
+};
+
+const getAllChildIds = listItem => {
+  let childIds = [];
+
+  if (listItem.children) {
+    listItem.children.forEach(child => {
+      childIds.push(child.id);
+
+      childIds = [...childIds, ...getAllChildIds(child)];
+    });
+  }
+
+  return childIds;
+};
+
+const handleEditModeSelect = (list, currentSelection, id, parentId) => {
+  let newSelection = [];
+  if (currentSelection.filter(editId => editId === id).length > 0) {
+    // setEditModeSelection(editModeSelection.filter(selected => selected !== item.id && selected !== parentId));
+    newSelection = currentSelection.filter(selected => selected !== id && selected !== parentId);
+  } else {
+    list.forEach(editItem => {
+      if (editItem.id === id) {
+        newSelection.push(id);
+
+        newSelection = [...newSelection, ...getAllChildIds(editItem)];
+      }
+
+      if (editItem.children) {
+        newSelection = [
+          ...newSelection,
+          ...handleEditModeSelect(editItem.children, currentSelection, id, parentId),
+        ];
+      }
+
+      if (currentSelection.some(selectionId => selectionId === editItem.id)) {
+        newSelection.push(editItem.id);
+      }
+    });
+  }
+
+  return newSelection;
 };
 
 const List = forwardRef((props, ref) => {
@@ -112,15 +164,19 @@ const List = forwardRef((props, ref) => {
     handleSelect,
     toggleExpansion,
     iconPosition,
-    isEditing,
+    editMode,
     isLargeRow,
     isLoading,
+    itemWillMove,
     onItemMoved,
   } = props;
+
+  const [editingItems, setEditingItems] = useState(items);
+  const [editModeSelection, setEditModeSelection] = useState([]);
+
   const selectedItemRef = ref;
-  const renderItemAndChildren = (item, index, depth) => {
+  const renderItemAndChildren = (item, index, depth, parentId) => {
     const hasChildren = item.children && item.children.length > 0;
-    const isSelected = item.id === selectedId || selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
@@ -129,7 +185,13 @@ const List = forwardRef((props, ref) => {
       isCategory,
     } = item;
 
+    const isEditSelected = editModeSelection.filter(editId => editId === item.id).length > 0;
+
+    const isSelected =
+      editMode === null ? item.id === selectedId || selectedIds.some(id => item.id === id) : false;
+
     return [
+<<<<<<< HEAD
       // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
       <div
         key={`${item.id}-list-item-parent-${level}-${value}`}
@@ -161,17 +223,77 @@ const List = forwardRef((props, ref) => {
           tags={tags}
         />
       </div>,
+=======
+      <ListItem
+        id={item.id}
+        index={index}
+        key={`${item.id}-list-item-${depth.length}-${value}`}
+        dragPreviewText={
+          isEditSelected ? i18n.items.replace('%d', editModeSelection.length) : value
+        }
+        nestedIndex={depth}
+        value={value}
+        icon={
+          editMode === 'multiple' ? (
+            <Checkbox
+              id={`${item.id}-checkbox`}
+              name={item.id}
+              onClick={() => {
+                const newSelection = handleEditModeSelect(
+                  editingItems,
+                  editModeSelection,
+                  item.id,
+                  parentId
+                );
+
+                setEditModeSelection(newSelection);
+              }}
+              checked={isEditSelected}
+            />
+          ) : (
+            icon
+          )
+        }
+        iconPosition={iconPosition}
+        isEditing={editMode !== null}
+        secondaryValue={secondaryValue}
+        rowActions={rowActions}
+        onSelect={editMode === null ? handleSelect : () => {}}
+        onExpand={toggleExpansion}
+        selected={isSelected}
+        expanded={isExpanded}
+        isExpandable={hasChildren}
+        isLargeRow={isLargeRow}
+        isCategory={isCategory}
+        isSelectable={isSelectable}
+        i18n={i18n}
+        selectedItemRef={isSelected ? selectedItemRef : null}
+        onItemMoved={(dragId, hoverId, target) => {
+          if (
+            editModeSelection.length > 0 &&
+            editModeSelection.find(selectionId => selectionId === dragId)
+          ) {
+            setEditingItems(moveItemsInList(editingItems, editModeSelection, hoverId, target));
+          } else {
+            setEditingItems(moveItemsInList(editingItems, [dragId], hoverId, target));
+          }
+        }}
+        itemWillMove={itemWillMove}
+      />,
+>>>>>>> feat(list): uadded multi-select for drag and drop
       ...(hasChildren && isExpanded
         ? item.children.map((child, nestedIndex) => {
             const newDepth = [...depth, index];
 
-            return renderItemAndChildren(child, nestedIndex, newDepth);
+            return renderItemAndChildren(child, nestedIndex, newDepth, item.id);
           })
         : []),
     ];
   };
 
-  const listItems = items.map((item, index) => renderItemAndChildren(item, index, []));
+  const listItems = (editMode ? editingItems : items).map((item, index) =>
+    renderItemAndChildren(item, index, [], null)
+  );
 
   return (
     <div

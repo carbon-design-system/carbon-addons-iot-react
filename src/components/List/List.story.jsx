@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16, Close16, Checkmark16 } from '@carbon/icons-react';
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
+import { DropLocation } from '../../utils/DragAndDropUtils';
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 import { Tag } from '../Tag';
 
 import List from './List';
+
+const EditMode = {
+  Single: 'single',
+  Multiple: 'multiple',
+};
 
 export const sampleHierarchy = {
   MLB: {
@@ -532,7 +538,7 @@ storiesOf('Watson IoT Experimental/List', module)
             buttons={editing ? [cancelButton, saveButton] : []}
             title={text('title', 'NY Yankees')}
             items={listItems}
-            isEditing={editing}
+            editMode={select('Edit Mode', EditMode, EditMode.Single)}
             isLoading={boolean('isLoading', false)}
             onItemMoved={onItemMoved}
           />
@@ -573,59 +579,6 @@ storiesOf('Watson IoT Experimental/List', module)
       const [listItems, setListItems] = useState(startData);
       const editing = boolean('isEditing,', true);
 
-      const searchNestedItems = (items, draggedItem, hoverProps, isAbove) => {
-        const finalList = [];
-
-        cloneDeep(items).forEach(item => {
-          if (item.children) {
-            item.children = searchNestedItems(item.children, draggedItem, hoverProps); // eslint-disable-line no-param-reassign
-          }
-
-          if (item.id === hoverProps.id && isAbove) {
-            finalList.push(draggedItem);
-          }
-
-          if (item.id !== draggedItem.id) {
-            finalList.push(item);
-          }
-
-          if (item.id === hoverProps.id && !isAbove) {
-            finalList.push(draggedItem);
-          }
-        });
-
-        return finalList;
-      };
-
-      const searchDraggedItem = (items, id) => {
-        let draggedItem = null;
-
-        cloneDeep(items).forEach(item => {
-          if (draggedItem === null) {
-            if (item.id === id) {
-              draggedItem = item;
-            } else if (item.children) {
-              draggedItem = searchDraggedItem(item.children, id);
-            }
-          }
-        });
-
-        return draggedItem;
-      };
-
-      const onItemMoved = (dragProps, hoverProps, isAbove) => {
-        if (dragProps.id === hoverProps.id) {
-          return false;
-        }
-
-        const draggedItem = searchDraggedItem(listItems, dragProps.id);
-        const newList = searchNestedItems(listItems, draggedItem, hoverProps, isAbove);
-
-        setListItems(newList);
-
-        return true;
-      };
-
       const saveButton = (
         <Button
           renderIcon={Checkmark16}
@@ -655,9 +608,9 @@ storiesOf('Watson IoT Experimental/List', module)
             buttons={editing ? [cancelButton, saveButton] : []}
             title={text('title', 'NY Yankees')}
             items={listItems}
-            isEditing={editing}
+            editMode="multiple"
+            // editMode={editing ? 'multiple' : null}
             isLoading={boolean('isLoading', false)}
-            onItemMoved={onItemMoved}
             expandedIds={expandedIds}
             toggleExpansion={id => {
               if (expandedIds.filter(rowId => rowId === id).length > 0) {
