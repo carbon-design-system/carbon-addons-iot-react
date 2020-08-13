@@ -108,7 +108,7 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
     </div>
   ))
   .add('With OverflowMenu', () => (
-    <div style={{ width: 400, height: 400, overflow: 'scroll' }}>
+    <div style={{ width: 400, height: 400 }}>
       <HierarchyList
         title={text('Title', 'MLB Expanded List')}
         items={[
