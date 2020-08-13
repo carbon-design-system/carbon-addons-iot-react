@@ -2635,7 +2635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard with slider_view zoomBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarChartCard with zoomBar 1`] = `
 <div
   className="storybook-container"
 >

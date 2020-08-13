@@ -192,7 +192,7 @@ const BarChartCard = ({
                       top: {
                         enabled: zoomBar.enabled,
                         initialZoomDomain: zoomBar.initialZoomDomain,
-                        type: zoomBar.type || 'slider_view', // default to slider view
+                        type: zoomBar.view || 'slider_view', // default to slider view
                       },
                     },
                   }
