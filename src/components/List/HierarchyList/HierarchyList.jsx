@@ -264,39 +264,41 @@ const HierarchyList = ({
   const delayedSearch = useCallback(debounce(textInput => handleSearch(textInput), 150), [items]);
 
   return (
-    <List
-      title={title}
-      buttons={buttons}
-      search={
-        hasSearch
-          ? {
-              value: searchValue,
-              onChange: evt => {
-                setSearchValue(evt.target.value);
-                delayedSearch(evt.target.value);
-              },
-            }
-          : null
-      }
-      items={pageSize != null ? itemsToShow : filteredItems}
-      expandedIds={expandedIds}
-      toggleExpansion={id => {
-        if (expandedIds.filter(rowId => rowId === id).length > 0) {
-          // remove id from array
-          setExpandedIds(expandedIds.filter(rowId => rowId !== id));
-        } else {
-          setExpandedIds(expandedIds.concat([id]));
+    <div data-floating-menu-container style={{ position: 'relative' }}>
+      <List
+        title={title}
+        buttons={buttons}
+        search={
+          hasSearch
+            ? {
+                value: searchValue,
+                onChange: evt => {
+                  setSearchValue(evt.target.value);
+                  delayedSearch(evt.target.value);
+                },
+              }
+            : null
         }
-      }}
-      i18n={i18n}
-      pagination={hasPagination ? pagination : null}
-      isFullHeight={isFullHeight}
-      isLoading={isLoading}
-      selectedId={selectedId}
-      selectedIds={selectedIds}
-      handleSelect={handleSelect}
-      ref={selectedItemRef}
-    />
+        items={pageSize != null ? itemsToShow : filteredItems}
+        expandedIds={expandedIds}
+        toggleExpansion={id => {
+          if (expandedIds.filter(rowId => rowId === id).length > 0) {
+            // remove id from array
+            setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+          } else {
+            setExpandedIds(expandedIds.concat([id]));
+          }
+        }}
+        i18n={i18n}
+        pagination={hasPagination ? pagination : null}
+        isFullHeight={isFullHeight}
+        isLoading={isLoading}
+        selectedId={selectedId}
+        selectedIds={selectedIds}
+        handleSelect={handleSelect}
+        ref={selectedItemRef}
+      />
+    </div>
   );
 };
 
