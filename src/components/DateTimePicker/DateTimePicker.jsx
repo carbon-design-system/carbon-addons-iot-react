@@ -488,8 +488,7 @@ const DateTimePicker = ({
     });
   };
 
-  const parseDefaultValue = (lastValue = null) => {
-    const parsableValue = lastValue || defaultValue;
+  const parseDefaultValue = parsableValue => {
     const currentCustomRangeKind = showRelativeOption
       ? PICKER_KINDS.RELATIVE
       : PICKER_KINDS.ABSOLUTE;
@@ -551,7 +550,9 @@ const DateTimePicker = ({
   useEffect(
     () => {
       if (defaultValue || humanValue === null) {
-        parseDefaultValue();
+        parseDefaultValue(defaultValue);
+        setLastAppliedValue(defaultValue);
+        setIsExpanded(false);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -570,6 +571,7 @@ const DateTimePicker = ({
   const onApplyClick = () => {
     setIsExpanded(false);
     const value = renderValue();
+    setLastAppliedValue(value);
     const returnValue = {
       timeRangeKind: value.kind,
       timeRangeValue: null,
@@ -577,15 +579,12 @@ const DateTimePicker = ({
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
         returnValue.timeRangeValue = value.absolute;
-        setLastAppliedValue(value.absolute);
         break;
       case PICKER_KINDS.RELATIVE:
         returnValue.timeRangeValue = value.relative;
-        setLastAppliedValue(value.relative);
         break;
       default:
         returnValue.timeRangeValue = value.preset;
-        setLastAppliedValue(value.preset);
         break;
     }
 
@@ -828,19 +827,17 @@ const DateTimePicker = ({
                         ref={datePickerRef}
                         onChange={onDatePickerChange}
                         onClose={onDatePickerClose}
+                        value={
+                          absoluteValue
+                            ? [
+                                moment(absoluteValue.startDate).format('MM/DD/YYYY'),
+                                moment(absoluteValue.endDate).format('MM/DD/YYYY'),
+                              ]
+                            : ''
+                        }
                       >
-                        <DatePickerInput
-                          labelText=""
-                          id="date-picker-input-start"
-                          hideLabel
-                          value={absoluteValue ? absoluteValue.startDate : ''}
-                        />
-                        <DatePickerInput
-                          labelText=""
-                          id="date-picker-input-end"
-                          hideLabel
-                          value={absoluteValue ? absoluteValue.endDate : ''}
-                        />
+                        <DatePickerInput labelText="" id="date-picker-input-start" hideLabel />
+                        <DatePickerInput labelText="" id="date-picker-input-end" hideLabel />
                       </DatePicker>
                     </div>
                     {hasTimeInput ? (
