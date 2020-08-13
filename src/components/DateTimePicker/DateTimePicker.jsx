@@ -830,8 +830,8 @@ const DateTimePicker = ({
                         value={
                           absoluteValue
                             ? [
-                                moment(absoluteValue.startDate).format('MM/DD/YYYY'),
-                                moment(absoluteValue.endDate).format('MM/DD/YYYY'),
+                                moment(absoluteValue.startDate, dateTimeMask).format('MM/DD/YYYY'),
+                                moment(absoluteValue.endDate, dateTimeMask).format('MM/DD/YYYY'),
                               ]
                             : ''
                         }
