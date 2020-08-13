@@ -211,6 +211,7 @@ const Card = props => {
     id,
     tooltip,
     timeRange,
+    timeRangeOptions,
     onCardAction,
     availableActions,
     breakpoint,
@@ -293,6 +294,7 @@ const Card = props => {
                 isEditable={isEditable}
                 isExpanded={isExpanded}
                 timeRange={timeRange}
+                timeRangeOptions={timeRangeOptions}
                 onCardAction={cachedOnCardAction}
               />
             ) : null;
