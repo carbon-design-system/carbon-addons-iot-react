@@ -350,7 +350,7 @@ storiesOf('Watson IoT/BarChartCard', module)
       </div>
     );
   })
-  .add('with zoomBar', () => {
+  .add('with slider_view zoomBar', () => {
     const size = select('size', acceptableSizes, CARD_SIZES.LARGEWIDE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -375,7 +375,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             zoomBar: {
               enabled: true,
               axes: 'top',
-              // initialZoomDomain: []
+              type: 'slider_view',
             },
           })}
           values={barChartData.timestamps}

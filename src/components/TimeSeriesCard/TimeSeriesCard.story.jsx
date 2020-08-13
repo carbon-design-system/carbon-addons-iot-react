@@ -659,7 +659,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('with zoomBar', () => {
+  .add('with slider_view zoomBar', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
     return (
       <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
@@ -683,7 +683,43 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             zoomBar: {
               enabled: true,
               axes: 'top',
-              view: select('view', ['slider_view', 'graph_view'], 'slider_view'),
+              view: 'slider_view',
+            },
+          })}
+          values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
+          interval="month"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('with graph_view zoomBar', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.LARGE);
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+            zoomBar: {
+              enabled: true,
+              axes: 'top',
+              view: 'graph_view',
             },
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
