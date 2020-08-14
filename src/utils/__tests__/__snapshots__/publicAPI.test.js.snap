@@ -5745,6 +5745,48 @@ Map {
       },
     },
   },
+  "PageSwitcher" => Object {
+    "defaultProps": Object {
+      "switcher": Object {
+        "onChange": null,
+        "selectedIndex": null,
+      },
+    },
+    "propTypes": Object {
+      "switcher": Object {
+        "args": Array [
+          Object {
+            "onChange": Object {
+              "type": "func",
+            },
+            "options": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "id": Object {
+                        "type": "string",
+                      },
+                      "text": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+            "selectedIndex": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+    },
+  },
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],

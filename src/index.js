@@ -48,6 +48,7 @@ export EditPage from './components/Page/EditPage';
 export NavigationBar from './components/NavigationBar/NavigationBar';
 export Header from './components/Header';
 export SideNav from './components/SideNav';
+export PageSwitcher from './components/Page/PageSwitcher';
 
 // Dashboard
 export Dashboard from './components/Dashboard/Dashboard';
