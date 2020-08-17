@@ -5,10 +5,10 @@ import { Draggable16, ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 
-import { DropLocation } from '../../../utils/DragAndDropUtils';
+import { EditingStyle, DropLocation } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 
-import ListTarget from './ListTarget';
+import ListTarget, { TargetSize } from './ListTarget';
 
 const { iotPrefix, prefix } = settings;
 
@@ -16,7 +16,7 @@ export const ItemType = 'ListItem';
 
 const ListItemWrapper = ({
   id,
-  isEditing,
+  editingStyle,
   isSelectable,
   itemWillMove,
   onItemMoved,
@@ -34,9 +34,9 @@ const ListItemWrapper = ({
       className={classnames(
         `${iotPrefix}--list-item`,
         `${iotPrefix}--list-item__selectable`,
-        { [`${iotPrefix}--list-item__selected`]: selected },
+        { [`${iotPrefix}--list-item__selected`]: editingStyle ? false : selected },
         { [`${iotPrefix}--list-item__large`]: isLargeRow },
-        { [`${iotPrefix}--list-item-editable`]: isEditing }
+        { [`${iotPrefix}--list-item-editable`]: editingStyle }
       )}
       onKeyPress={({ key }) => key === 'Enter' && onSelect(id)}
       onClick={() => {
@@ -49,14 +49,17 @@ const ListItemWrapper = ({
     <div
       className={classnames(`${iotPrefix}--list-item`, {
         [`${iotPrefix}--list-item__large`]: isLargeRow,
-        [`${iotPrefix}--list-item-editable`]: isEditing,
+        [`${iotPrefix}--list-item-editable`]: editingStyle,
       })}
     >
       {children}
     </div>
   );
 
-  if (isEditing) {
+  if (editingStyle) {
+    const canNest =
+      editingStyle === EditingStyle.SingleNesting || editingStyle === EditingStyle.MultipleNesting;
+
     return (
       <div
         className={classnames(`${iotPrefix}--list-item-editable--drag-container`, {
@@ -73,22 +76,30 @@ const ListItemWrapper = ({
             [`${iotPrefix}--list-item__large`]: isLargeRow,
           })}
         >
-          <ListTarget
-            id={id}
-            targetPosition={DropLocation.Nested}
-            itemWillMove={itemWillMove}
-            onItemMoved={onItemMoved}
-          />
+          {// Renders Nested location only if nesting is allowed
+
+          canNest ? (
+            <ListTarget
+              id={id}
+              targetPosition={DropLocation.Nested}
+              targetSize={TargetSize.Full}
+              itemWillMove={itemWillMove}
+              onItemMoved={onItemMoved}
+            />
+          ) : null}
+
           <ListTarget
             id={id}
             targetPosition={DropLocation.Above}
             itemWillMove={itemWillMove}
+            targetSize={canNest ? TargetSize.Third : TargetSize.Half}
             onItemMoved={onItemMoved}
           />
           <ListTarget
             id={id}
             targetPosition={DropLocation.Below}
             itemWillMove={itemWillMove}
+            targetSize={canNest ? TargetSize.Third : TargetSize.Half}
             onItemMoved={onItemMoved}
           />
         </div>
@@ -104,7 +115,12 @@ const ListItemWrapper = ({
 const ListItemWrapperProps = {
   dragPreviewText: PropTypes.string,
   id: PropTypes.string.isRequired,
-  isEditing: PropTypes.bool.isRequired,
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   isLargeRow: PropTypes.bool.isRequired,
   isSelectable: PropTypes.bool.isRequired,
   isDragging: PropTypes.bool.isRequired,
@@ -117,7 +133,12 @@ const ListItemWrapperProps = {
 
 const ListItemPropTypes = {
   id: PropTypes.string.isRequired,
-  isEditing: PropTypes.bool,
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   isLargeRow: PropTypes.bool,
   isExpandable: PropTypes.bool,
   onExpand: PropTypes.func,
@@ -152,16 +173,15 @@ const ListItemPropTypes = {
   dragPreviewText: PropTypes.string,
   nestedIndex: PropTypes.arrayOf(PropTypes.number),
   isDragging: PropTypes.bool.isRequired,
-  isOver: PropTypes.bool.isRequired,
   onItemMoved: PropTypes.func.isRequired,
   itemWillMove: PropTypes.func.isRequired,
 };
 
 const ListItemDefaultProps = {
-  isEditing: false,
+  editingStyle: null,
   isLargeRow: false,
   isExpandable: false,
-  dragHandleText: null,
+  dragPreviewText: null,
   onExpand: () => {},
   isSelectable: false,
   onSelect: () => {},
@@ -183,7 +203,7 @@ const ListItemDefaultProps = {
 
 const ListItem = ({
   id,
-  isEditing,
+  editingStyle,
   isLargeRow,
   isExpandable,
   onExpand,
@@ -253,7 +273,7 @@ const ListItem = ({
   const renderTags = () => (tags && tags.length > 0 ? <div>{tags}</div> : null);
 
   const renderDragPreview = () => {
-    if (isEditing && connectDragPreview) {
+    if (editingStyle && connectDragPreview) {
       return connectDragPreview(
         <div className={`${iotPrefix}--list-item-editable--drag-preview`}>
           {dragPreviewText || value}
@@ -265,7 +285,7 @@ const ListItem = ({
   };
 
   const dragIcon = () =>
-    isEditing ? (
+    editingStyle ? (
       <Draggable16
         className={classnames(`${iotPrefix}--list-item--handle`)}
         data-testid="list-item-editable"
@@ -281,7 +301,7 @@ const ListItem = ({
         isOver,
         selected,
         isDragging,
-        isEditing,
+        editingStyle,
         isLargeRow,
         onSelect,
         connectDragSource,
@@ -296,7 +316,7 @@ const ListItem = ({
       <div
         className={classnames(
           `${iotPrefix}--list-item--content`,
-          { [`${iotPrefix}--list-item--content__selected`]: selected },
+          { [`${iotPrefix}--list-item--content__selected`]: editingStyle ? null : selected },
           { [`${iotPrefix}--list-item--content__large`]: isLargeRow }
         )}
         ref={selectedItemRef}

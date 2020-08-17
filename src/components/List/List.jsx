@@ -8,8 +8,11 @@ import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
 import { Checkbox } from '../..';
-import { moveItemsInList } from '../../utils/DragAndDropUtils';
-
+import {
+  EditingStyle,
+  editingStyleIsMultiple,
+  handleEditModeSelect,
+} from '../../utils/DragAndDropUtils';
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
 
@@ -41,8 +44,13 @@ const propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
-  /** list can be rearranged */
-  editMode: PropTypes.oneOf(['single', 'multiple']),
+  /** list editing style */
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -58,9 +66,7 @@ const propTypes = {
     close: PropTypes.string,
     items: PropTypes.string,
   }),
-  /** Currently selected item */
-  selectedId: PropTypes.string,
-  /** Multiple currently selected items */
+  /** Currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
   pagination: PropTypes.shape(SimplePaginationPropTypes),
@@ -81,7 +87,7 @@ const defaultProps = {
   title: null,
   search: null,
   buttons: [],
-  editMode: null,
+  editingStyle: null,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -93,7 +99,6 @@ const defaultProps = {
   },
   iconPosition: 'left',
   pagination: null,
-  selectedId: null,
   selectedIds: [],
   expandedIds: [],
   handleSelect: () => {},
@@ -102,49 +107,6 @@ const defaultProps = {
   itemWillMove: () => {
     return true;
   },
-};
-
-const getAllChildIds = listItem => {
-  let childIds = [];
-
-  if (listItem.children) {
-    listItem.children.forEach(child => {
-      childIds.push(child.id);
-
-      childIds = [...childIds, ...getAllChildIds(child)];
-    });
-  }
-
-  return childIds;
-};
-
-const handleEditModeSelect = (list, currentSelection, id, parentId) => {
-  let newSelection = [];
-  if (currentSelection.filter(editId => editId === id).length > 0) {
-    // setEditModeSelection(editModeSelection.filter(selected => selected !== item.id && selected !== parentId));
-    newSelection = currentSelection.filter(selected => selected !== id && selected !== parentId);
-  } else {
-    list.forEach(editItem => {
-      if (editItem.id === id) {
-        newSelection.push(id);
-
-        newSelection = [...newSelection, ...getAllChildIds(editItem)];
-      }
-
-      if (editItem.children) {
-        newSelection = [
-          ...newSelection,
-          ...handleEditModeSelect(editItem.children, currentSelection, id, parentId),
-        ];
-      }
-
-      if (currentSelection.some(selectionId => selectionId === editItem.id)) {
-        newSelection.push(editItem.id);
-      }
-    });
-  }
-
-  return newSelection;
 };
 
 const List = forwardRef((props, ref) => {
@@ -158,21 +120,17 @@ const List = forwardRef((props, ref) => {
     isFullHeight,
     i18n,
     pagination,
-    selectedId,
     selectedIds,
     expandedIds,
     handleSelect,
     toggleExpansion,
     iconPosition,
-    editMode,
+    editingStyle,
     isLargeRow,
     isLoading,
     itemWillMove,
     onItemMoved,
   } = props;
-
-  const [editingItems, setEditingItems] = useState(items);
-  const [editModeSelection, setEditModeSelection] = useState([]);
 
   const selectedItemRef = ref;
   const renderItemAndChildren = (item, index, depth, parentId) => {
@@ -185,10 +143,7 @@ const List = forwardRef((props, ref) => {
       isCategory,
     } = item;
 
-    const isEditSelected = editModeSelection.filter(editId => editId === item.id).length > 0;
-
-    const isSelected =
-      editMode === null ? item.id === selectedId || selectedIds.some(id => item.id === id) : false;
+    const isSelected = selectedIds.some(id => item.id === id);
 
     return [
 <<<<<<< HEAD
@@ -229,36 +184,30 @@ const List = forwardRef((props, ref) => {
         index={index}
         key={`${item.id}-list-item-${depth.length}-${value}`}
         dragPreviewText={
-          isEditSelected ? i18n.items.replace('%d', editModeSelection.length) : value
+          editingStyleIsMultiple(editingStyle) && selectedIds.length > 1 && isSelectable
+            ? i18n.items?.replace('%d', selectedIds.length) ?? value
+            : value
         }
         nestedIndex={depth}
         value={value}
         icon={
-          editMode === 'multiple' ? (
+          editingStyleIsMultiple(editingStyle) ? (
             <Checkbox
               id={`${item.id}-checkbox`}
+              labelText=""
               name={item.id}
-              onClick={() => {
-                const newSelection = handleEditModeSelect(
-                  editingItems,
-                  editModeSelection,
-                  item.id,
-                  parentId
-                );
-
-                setEditModeSelection(newSelection);
-              }}
-              checked={isEditSelected}
+              onClick={() => handleSelect(item.id, parentId)}
+              checked={isSelected}
             />
           ) : (
             icon
           )
         }
         iconPosition={iconPosition}
-        isEditing={editMode !== null}
+        editingStyle={editingStyle}
         secondaryValue={secondaryValue}
         rowActions={rowActions}
-        onSelect={editMode === null ? handleSelect : () => {}}
+        onSelect={editingStyle === null ? handleSelect : () => {}}
         onExpand={toggleExpansion}
         selected={isSelected}
         expanded={isExpanded}
@@ -268,16 +217,7 @@ const List = forwardRef((props, ref) => {
         isSelectable={isSelectable}
         i18n={i18n}
         selectedItemRef={isSelected ? selectedItemRef : null}
-        onItemMoved={(dragId, hoverId, target) => {
-          if (
-            editModeSelection.length > 0 &&
-            editModeSelection.find(selectionId => selectionId === dragId)
-          ) {
-            setEditingItems(moveItemsInList(editingItems, editModeSelection, hoverId, target));
-          } else {
-            setEditingItems(moveItemsInList(editingItems, [dragId], hoverId, target));
-          }
-        }}
+        onItemMoved={onItemMoved}
         itemWillMove={itemWillMove}
       />,
 >>>>>>> feat(list): uadded multi-select for drag and drop
@@ -291,9 +231,7 @@ const List = forwardRef((props, ref) => {
     ];
   };
 
-  const listItems = (editMode ? editingItems : items).map((item, index) =>
-    renderItemAndChildren(item, index, [], null)
-  );
+  const listItems = items.map((item, index) => renderItemAndChildren(item, index, [], null));
 
   return (
     <div

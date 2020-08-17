@@ -5,25 +5,43 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../../constants/Settings';
 
-import { ItemType } from './ListItem';
-
 const { iotPrefix } = settings;
 
-const ListTargetPropTypes = {
-  id: PropTypes.string.isRequired,
-  targetPosition: PropTypes.string.isRequired,
-  onItemMoved: PropTypes.func.isRequired,
-  itemWillMove: PropTypes.func.isRequired,
-  isOver: PropTypes.bool.isRequired,
-  connectDropTarget: PropTypes.func.isRequired,
+export const TargetSize = {
+  Third: 'third',
+  Half: 'half',
+  Full: 'full',
 };
 
-const ListTarget = ({ connectDropTarget, targetPosition, isOver }) => {
+const ListTargetPropTypes = {
+  connectDropTarget: PropTypes.func.isRequired,
+  isOver: PropTypes.bool,
+  targetPosition: PropTypes.string.isRequired,
+  targetSize: PropTypes.oneOf[(TargetSize.Third, TargetSize.Half, TargetSize.Full)],
+};
+
+const ListTargetDefaultProps = {
+  isOver: false,
+  targetSize: TargetSize.Third,
+};
+
+const ListTarget = ({ connectDropTarget, targetPosition, targetSize, isOver }) => {
+  let height = 33; // defaults to TargetSize.Third
+
+  if (targetSize === TargetSize.Full) {
+    height = 100;
+  } else if (targetSize === TargetSize.Half) {
+    height = 50;
+  }
+
   return (
     <div
       className={classnames(`${iotPrefix}--list-item-editable--drop-target-${targetPosition}`, {
         [`${iotPrefix}--list-item-editable--drop-target-${targetPosition}__over`]: isOver,
       })}
+      style={{
+        height: `${height}%`,
+      }}
       ref={instance => {
         if (connectDropTarget) {
           connectDropTarget(instance);
@@ -53,5 +71,6 @@ const dt = DropTarget('ListItem', rowTarget, (connect, monitor) => ({
 }));
 
 ListTarget.propTypes = ListTargetPropTypes;
+ListTarget.defaultProps = ListTargetDefaultProps;
 
 export default dt(ListTarget);

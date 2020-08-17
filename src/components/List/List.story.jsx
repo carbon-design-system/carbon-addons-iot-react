@@ -6,7 +6,6 @@ import { Add16, Edit16, Star16, Close16, Checkmark16 } from '@carbon/icons-react
 import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
-import { DropLocation } from '../../utils/DragAndDropUtils';
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
 import { Tag } from '../Tag';
 
@@ -608,7 +607,7 @@ storiesOf('Watson IoT Experimental/List', module)
             buttons={editing ? [cancelButton, saveButton] : []}
             title={text('title', 'NY Yankees')}
             items={listItems}
-            editMode="multiple"
+            editingStyle="multiple"
             // editMode={editing ? 'multiple' : null}
             isLoading={boolean('isLoading', false)}
             expandedIds={expandedIds}

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import {
+  EditingStyle,
+  handleEditModeSelect,
+  moveItemsInList,
+} from '../../../utils/DragAndDropUtils';
+
 import List from '../List';
 
 const itemPropTypes = {
@@ -20,6 +26,13 @@ const propTypes = {
   hasSearch: PropTypes.bool,
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
+  /** list editing style */
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
   /** use full height in list */
@@ -37,34 +50,43 @@ const propTypes = {
   }),
   /** pageSize */
   pageSize: PropTypes.string,
+  /** callback function returned a modified list */
+  onListUpdated: PropTypes.func,
 };
 
 const defaultProps = {
-  hasSearch: false,
   buttons: [],
-  pageSize: null,
-  isLargeRow: false,
-  isFullHeight: false,
+  editingStyle: null,
+  hasSearch: false,
+  onListUpdated: () => {},
   i18n: {
     searchPlaceHolderText: 'Enter a value',
     pageOfPagesText: page => `Page ${page}`,
+    items: '%d items',
   },
+  isLargeRow: false,
+  isFullHeight: false,
   isLoading: false,
+  pageSize: null,
 };
 
 const SimpleList = ({
-  title,
-  hasSearch,
   buttons,
-  items,
+  editingStyle,
+  hasSearch,
   i18n,
   isFullHeight,
-  pageSize,
   isLargeRow,
   isLoading,
+  items,
+  onListUpdated,
+  pageSize,
+  title,
 }) => {
+  const [selectedIds, setSelectedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
+  const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
 
   const numberOfItems = filteredItems.length;
   let rowPerPage = numberOfItems;
@@ -81,16 +103,16 @@ const SimpleList = ({
       break;
   }
 
-  const [selectedIds, setSelectedIds] = useState([]);
-  const [selectedId, setSelectedId] = useState(null);
-
-  const handleSelect = id => {
-    setSelectedId(selectedIds.indexOf(id) !== -1 ? null : id);
-    setSelectedIds(
-      selectedIds.indexOf(id) !== -1
-        ? selectedIds.filter(item => item !== id)
-        : [...selectedIds, id]
-    );
+  const handleSelect = (id, parentId = null) => {
+    if (editingStyle) {
+      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+    } else {
+      setSelectedIds(
+        selectedIds.indexOf(id) !== -1
+          ? selectedIds.filter(item => item !== id)
+          : [...selectedIds, id]
+      );
+    }
   };
 
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
@@ -152,11 +174,26 @@ const SimpleList = ({
       isFullHeight={isFullHeight}
       items={pageSize != null ? itemsToShow : filteredItems}
       pagination={pagination}
-      selectedId={selectedId}
-      selectedIds={selectedIds}
+      selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
       handleSelect={handleSelect}
       isLargeRow={isLargeRow}
       isLoading={isLoading}
+      editingStyle={editingStyle}
+      onItemMoved={(dragId, hoverId, target) => {
+        let updatedList;
+
+        if (
+          editModeSelectedIds.length > 0 &&
+          editModeSelectedIds.find(selectionId => selectionId === dragId)
+        ) {
+          updatedList = moveItemsInList(items, editModeSelectedIds, hoverId, target);
+        } else {
+          updatedList = moveItemsInList(items, [dragId], hoverId, target);
+        }
+
+        onListUpdated(updatedList);
+        setFilteredItems(updatedList);
+      }}
     />
   );
 };

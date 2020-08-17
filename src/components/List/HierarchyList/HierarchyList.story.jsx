@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean } from '@storybook/addon-knobs';
@@ -6,6 +6,7 @@ import { Add16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 
 import { Button } from '../../..';
+import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { sampleHierarchy } from '../List.story';
 
 import HierarchyList from './HierarchyList';
@@ -175,3 +176,59 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
       />
     </div>
   ));
+  .add('With Nested Reorder', () => {
+    const HierarchyListWithReorder = () => {
+      const [items, setItems] = useState([
+        ...Object.keys(sampleHierarchy.MLB['American League']).map(team => ({
+          id: team,
+          isCategory: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map(player => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+            },
+            isSelectable: true,
+          })),
+        })),
+        ...Object.keys(sampleHierarchy.MLB['National League']).map(team => ({
+          id: team,
+          isCategory: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map(player => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+            },
+            isSelectable: true,
+          })),
+        })),
+      ]);
+
+      return (
+        <div style={{ width: 400, height: 400 }}>
+          <HierarchyList
+            title={text('Title', 'MLB Expanded List')}
+            defaultSelectedId={text('Default Selected Id', 'New York Mets_Pete Alonso')}
+            items={items}
+            editingStyle={select(
+              'Editing Style',
+              [EditingStyle.SingleNesting, EditingStyle.MultipleNesting],
+              EditingStyle.SingleNesting
+            )}
+            pageSize={select('Page Size', ['sm', 'lg', 'xl'], 'lg')}
+            isLoading={boolean('isLoading', false)}
+            onListUpdated={updatedItems => {
+              setItems(updatedItems);
+            }}
+          />
+        </div>
+      );
+    };
+
+    return <HierarchyListWithReorder />;
+  });

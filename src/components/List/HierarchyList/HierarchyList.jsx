@@ -7,8 +7,20 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
 import List from '../List';
+import {
+  EditingStyle,
+  handleEditModeSelect,
+  moveItemsInList,
+} from '../../../utils/DragAndDropUtils';
 
 const propTypes = {
+  /** list editing style */
+  editingStyle: PropTypes.oneOf([
+    EditingStyle.Single,
+    EditingStyle.Multiple,
+    EditingStyle.SingleNesting,
+    EditingStyle.MultipleNesting,
+  ]),
   /** List heading */
   title: PropTypes.string,
   /** Determines whether the search function is enabled */
@@ -38,9 +50,12 @@ const propTypes = {
   defaultSelectedId: PropTypes.string,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
+  /** callback function returned a modified list */
+  onListUpdated: PropTypes.func,
 };
 
 const defaultProps = {
+  editingStyle: null,
   title: null,
   hasSearch: false,
   hasPagination: true,
@@ -56,6 +71,7 @@ const defaultProps = {
   pageSize: null,
   defaultSelectedId: null,
   onSelect: null,
+  onListUpdated: () => {},
 };
 
 /**
@@ -120,6 +136,7 @@ export const searchForNestedItemIds = (items, value) => {
 };
 
 const HierarchyList = ({
+  editingStyle,
   title,
   hasSearch,
   hasPagination,
@@ -132,13 +149,14 @@ const HierarchyList = ({
   pageSize,
   defaultSelectedId,
   onSelect,
+  onListUpdated,
 }) => {
   const [expandedIds, setExpandedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const [selectedIds, setSelectedIds] = useState([]);
-  const [selectedId, setSelectedId] = useState(defaultSelectedId);
+  const [selectedIds, setSelectedIds] = useState(defaultSelectedId ? [defaultSelectedId] : []);
+  const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
 
   useDeepCompareEffect(
     () => {
@@ -156,6 +174,28 @@ const HierarchyList = ({
     [defaultSelectedId]
   );
 
+  const handleSelect = (id, parentId = null) => {
+    if (editingStyle) {
+      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+    } else if (selectedIds.includes(id)) {
+      if (hasMultiSelect) {
+        setSelectedIds(selectedIds.filter(item => item !== id));
+      } else {
+        setSelectedIds([]);
+      }
+    } else {
+      if (hasMultiSelect) {
+        setSelectedIds([...selectedIds, id]);
+      } else {
+        setSelectedIds([id]);
+      }
+
+      if (onSelect) {
+        onSelect(id);
+      }
+    }
+  };
+
   useEffect(
     () => {
       // Expand the parent elements of the defaultSelectedId
@@ -167,33 +207,14 @@ const HierarchyList = ({
           tempExpandedIds.push(categoryItem.id);
         });
         setExpandedIds(tempExpandedIds);
+
         // If the defaultSelectedId prop is updated from the outside, we need to use it
-        if (selectedId !== defaultSelectedId) {
-          setSelectedId(defaultSelectedId);
-        }
+        handleSelect(defaultSelectedId);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultSelectedId, items]
   );
-
-  const handleSelect = id => {
-    if (selectedIds.includes(id)) {
-      setSelectedId(null);
-      if (hasMultiSelect) {
-        setSelectedIds(selectedIds.filter(item => item !== id));
-      }
-    } else {
-      setSelectedId(id);
-      if (hasMultiSelect) {
-        setSelectedIds([...selectedIds, id]);
-      }
-
-      if (onSelect) {
-        onSelect(id);
-      }
-    }
-  };
 
   const numberOfItems = filteredItems.length;
   let rowsPerPage;
@@ -267,6 +288,7 @@ const HierarchyList = ({
     <List
       title={title}
       buttons={buttons}
+      editingStyle={editingStyle}
       search={
         hasSearch
           ? {
@@ -292,10 +314,24 @@ const HierarchyList = ({
       pagination={hasPagination ? pagination : null}
       isFullHeight={isFullHeight}
       isLoading={isLoading}
-      selectedId={selectedId}
       selectedIds={selectedIds}
       handleSelect={handleSelect}
       ref={selectedItemRef}
+      onItemMoved={(dragId, hoverId, target) => {
+        let updatedList;
+
+        if (
+          editModeSelectedIds.length > 0 &&
+          editModeSelectedIds.find(selectionId => selectionId === dragId)
+        ) {
+          updatedList = moveItemsInList(items, editModeSelectedIds, hoverId, target);
+        } else {
+          updatedList = moveItemsInList(items, [dragId], hoverId, target);
+        }
+
+        onListUpdated(updatedList);
+        setFilteredItems(updatedList);
+      }}
     />
   );
 };

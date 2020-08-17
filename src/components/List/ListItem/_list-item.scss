@@ -23,10 +23,7 @@
 
   &--drop-target-above {
     position: relative;
-
     width: 100%;
-    height: 33%;
-
     bottom: 0;
 
     &__over {
@@ -50,7 +47,6 @@
     position: absolute;
 
     width: 100%;
-    height: 33%;
     bottom: 0;
 
     &__over {
