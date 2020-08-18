@@ -4,6 +4,8 @@ import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 
+import { Tag } from '../../Tag';
+import { ListTagsPropTypes } from '../../../constants/SharedPropTypes';
 import { settings } from '../../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -74,6 +76,7 @@ const ListItemPropTypes = {
     // Or the instance of a DOM native element (see the note about SSR)
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]),
+  tags: ListTagsPropTypes,
 };
 
 const ListItemDefaultProps = {
@@ -95,6 +98,7 @@ const ListItemDefaultProps = {
     close: 'Close',
   },
   selectedItemRef: null,
+  tags: null,
 };
 
 const ListItem = ({
@@ -115,6 +119,7 @@ const ListItem = ({
   isCategory,
   i18n,
   selectedItemRef,
+  tags,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
@@ -159,6 +164,17 @@ const ListItem = ({
       <div className={`${iotPrefix}--list-item--content--row-actions`}>{rowActions}</div>
     ) : null;
 
+  const renderTags = () =>
+    tags && tags.length > 0 ? (
+      <div>
+        {tags.map((tag, i) => (
+          <Tag key={`tag-${i}`} type={tag.type}>
+            {tag.content}
+          </Tag>
+        ))}
+      </div>
+    ) : null;
+
   return (
     <ListItemWrapper {...{ id, isSelectable, selected, isLargeRow, onSelect }}>
       {renderNestingOffset()}
@@ -193,6 +209,7 @@ const ListItem = ({
                 >
                   {value}
                 </div>
+                {renderTags()}
                 {renderRowActions()}
               </div>
               {secondaryValue ? (
@@ -238,6 +255,7 @@ const ListItem = ({
                     {secondaryValue}
                   </div>
                 ) : null}
+                {renderTags()}
                 {renderRowActions()}
               </div>
             </>

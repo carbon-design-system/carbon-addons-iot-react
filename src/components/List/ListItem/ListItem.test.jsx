@@ -95,4 +95,15 @@ describe('ListItem', () => {
     expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
   });
+
+  it('shows Tags when available', () => {
+    const tags = [{ type: 'blue', content: 'my tag 1' }, { type: 'red', content: 'my tag 2' }];
+    const { rerender } = render(<ListItem id="1" value="test" />);
+    expect(screen.queryByText('my tag 1')).not.toBeInTheDocument();
+    expect(screen.queryByText('my tag 2')).not.toBeInTheDocument();
+
+    rerender(<ListItem id="1" value="test" tags={tags} />);
+    expect(screen.getByText('my tag 1')).toBeVisible();
+    expect(screen.getByText('my tag 2')).toBeVisible();
+  });
 });

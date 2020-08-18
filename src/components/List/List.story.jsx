@@ -460,4 +460,18 @@ storiesOf('Watson IoT Experimental/List', module)
       );
     };
     return <MultiSelectList />;
-  });
+  })
+  .add('with tags', () => (
+    <div style={{ width: 400 }}>
+      <List
+        title={text('title', 'NY Yankees')}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key]) => ({
+            id: key,
+            content: { value: key, tags: [{ type: 'blue', content: 'my tag 1' }] },
+          })
+        )}
+        isLoading={boolean('isLoading', false)}
+      />
+    </div>
+  ));

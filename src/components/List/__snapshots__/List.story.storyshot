@@ -5860,3 +5860,364 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
   </button>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Experimental/List with tags 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": 400,
+        }
+      }
+    >
+      <div
+        className="iot--list"
+      >
+        <div
+          className="iot--list-header-container"
+        >
+          <div
+            className="iot--list-header"
+          >
+            <div
+              className="iot--list-header--title"
+            >
+              NY Yankees
+            </div>
+            <div
+              className="iot--list-header--btn-container"
+            />
+          </div>
+        </div>
+        <div
+          className="iot--list--content"
+        >
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="DJ LeMahieu"
+                  >
+                    DJ LeMahieu
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Luke Voit"
+                  >
+                    Luke Voit
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Gary Sanchez"
+                  >
+                    Gary Sanchez
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Kendrys Morales"
+                  >
+                    Kendrys Morales
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Gleyber Torres"
+                  >
+                    Gleyber Torres
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Clint Frazier"
+                  >
+                    Clint Frazier
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Brett Gardner"
+                  >
+                    Brett Gardner
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Gio Urshela"
+                  >
+                    Gio Urshela
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Cameron Maybin"
+                  >
+                    Cameron Maybin
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item"
+          >
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Robinson Cano"
+                  >
+                    Robinson Cano
+                  </div>
+                  <div>
+                    <span
+                      className="bx--tag bx--tag--blue"
+                    >
+                      my tag 1
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;

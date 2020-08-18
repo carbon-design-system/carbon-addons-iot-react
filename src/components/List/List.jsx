@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
+import { ListTagsPropTypes } from '../../constants/SharedPropTypes';
 
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
@@ -16,6 +17,7 @@ export const itemPropTypes = {
   content: PropTypes.shape({
     value: PropTypes.string,
     icon: PropTypes.node,
+    tags: ListTagsPropTypes,
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
@@ -108,7 +110,7 @@ const List = forwardRef((props, ref) => {
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
-      content: { value, secondaryValue, icon, rowActions },
+      content: { value, secondaryValue, icon, rowActions, tags },
       isSelectable,
       isCategory,
     } = item;
@@ -133,6 +135,7 @@ const List = forwardRef((props, ref) => {
         isSelectable={isSelectable}
         i18n={i18n}
         selectedItemRef={isSelected ? selectedItemRef : null}
+        tags={tags}
       />,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))

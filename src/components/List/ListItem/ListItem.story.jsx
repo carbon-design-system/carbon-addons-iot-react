@@ -16,6 +16,8 @@ storiesOf('Watson IoT Experimental/ListItem', module)
     const iconComponent =
       iconName === 'Star16' ? Star16 : iconName === 'StarFilled16' ? StarFilled16 : null;
     const rowActionSet = select('row action example', ['none', 'single', 'multi'], 'none');
+    const tagsConfig = select('tags example', ['none', 'single', 'multi'], 'none');
+
     const rowActionComponent =
       rowActionSet === 'single'
         ? [
@@ -39,6 +41,12 @@ storiesOf('Watson IoT Experimental/ListItem', module)
             </OverflowMenu>,
           ]
         : [];
+    const tagsData =
+      tagsConfig === 'single'
+        ? [{ type: 'blue', content: 'default' }]
+        : tagsConfig === 'multi'
+        ? [{ type: 'blue', content: 'default' }, { type: 'red', content: 'warning' }]
+        : undefined;
     return (
       <div style={{ width: 400 }}>
         <ListItem
@@ -57,6 +65,7 @@ storiesOf('Watson IoT Experimental/ListItem', module)
           isLargeRow={boolean('isLargeRow', false)}
           nestingLevel={select('nestingLevel', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 0)}
           rowActions={rowActionComponent}
+          tags={tagsData}
         />
       </div>
     );
@@ -183,6 +192,15 @@ storiesOf('Watson IoT Experimental/ListItem', module)
             <OverflowMenuItem itemText="Danger option" hasDivider isDelete />
           </OverflowMenu>,
         ]}
+      />
+    </div>
+  ))
+  .add('with Tags', () => (
+    <div style={{ width: 400 }}>
+      <ListItem
+        id="list-item"
+        value={text('value', 'List Item')}
+        tags={[{ type: 'blue', content: 'default' }, { type: 'red', content: 'warning' }]}
       />
     </div>
   ));
