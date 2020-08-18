@@ -15,7 +15,7 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { CardPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -74,17 +74,7 @@ const TimeSeriesCardPropTypes = {
     /** optional units to put in the legend */
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
-    zoomBar: PropTypes.shape({
-      /** Determines which axis to put the zoomBar */
-      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
-      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
-      /** Determines whether the zoomBar is enabled */
-      enabled: PropTypes.bool,
-      /** Optional domain to zoom to by default. Can be a timestamp or date string */
-      initialZoomDomain: PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      ),
-    }),
+    zoomBar: ZoomBarPropTypes,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -554,6 +544,7 @@ const TimeSeriesCard = ({
                         top: {
                           enabled: zoomBar.enabled,
                           initialZoomDomain: zoomBar.initialZoomDomain,
+                          type: zoomBar.view || 'slider_view', // default to slider view
                         },
                       },
                     }
