@@ -683,7 +683,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             zoomBar: {
               enabled: true,
               axes: 'top',
-              // initialZoomDomain: []
+              view: 'slider_view',
             },
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}

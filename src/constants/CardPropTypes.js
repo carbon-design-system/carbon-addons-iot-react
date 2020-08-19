@@ -159,6 +159,20 @@ export const TableCardPropTypes = {
   ),
 };
 
+/** Optionally addes a zoom bar to the chart */
+export const ZoomBarPropTypes = PropTypes.shape({
+  /** Determines which axis to put the zoomBar */
+  axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
+  // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
+  /** Determines whether the zoomBar is enabled */
+  enabled: PropTypes.bool,
+  /** Optional domain to zoom to by default. Can be a timestamp or date string */
+  initialZoomDomain: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  /** How the zoomBar will display. Graph view shows a graphical interpretation of the chart data.
+   * Slider view is a simple slider with no graphical interpretation */
+  view: PropTypes.oneOf(['graph_view', 'slider_view']),
+});
+
 /** This dataset only supports one data attribute at a time */
 const BarChartDatasetPropType = {
   /** data attribute that will be displayed as bar height y-axis value */
@@ -264,17 +278,7 @@ export const BarChartCardPropTypes = {
     /** optional units to put in the legend for all datasets */
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
-    zoomBar: PropTypes.shape({
-      /** Determines which axis to put the zoomBar */
-      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
-      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
-      /** Determines whether the zoomBar is enabled */
-      enabled: PropTypes.bool,
-      /** Optional domain to zoom to by default. Can be a timestamp or date string */
-      initialZoomDomain: PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      ),
-    }),
+    zoomBar: ZoomBarPropTypes,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -377,6 +381,26 @@ export const CardSizesToDimensionsPropTypes = PropTypes.shape({
   XLARGE: CardDimensionsPropTypes,
 });
 
+export const TimeRangeOptionsPropTypes = (props, propName, componentName) => {
+  let error;
+  // if the
+  if (props[propName]) {
+    const timeRangeKeys = Object.keys(props[propName]);
+    // only validate the options if they are populated
+    if (timeRangeKeys.length > 0) {
+      // throw error if timeRangeOptions does not include 'this' or 'last'
+      const isError = timeRangeKeys.some(key => !key.includes('this') && !key.includes('last'));
+
+      if (isError) {
+        error = new Error(
+          `\`${componentName}\` prop \`${propName}\` key's should include \`this\` or \`last\` i.e. \`{ thisWeek: 'This week', lastWeek: 'Last week'}\``
+        );
+      }
+    }
+  }
+  return error;
+};
+
 export const CardPropTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
@@ -395,20 +419,12 @@ export const CardPropTypes = {
   size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
-  /** Optional range to pass at the card level */
-  timeRange: PropTypes.oneOf([
-    'last24Hours',
-    'last7Days',
-    'lastMonth',
-    'lastQuarter',
-    'lastYear',
-    'thisWeek',
-    'thisMonth',
-    'thisQuarter',
-    'thisYear',
-    '',
-  ]),
-
+  /** Optional selected range to pass at the card level */
+  timeRange: PropTypes.string,
+  /** Generates the available time range selection options. Each option should include 'this' or 'last'.
+   * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
+   */
+  timeRangeOptions: TimeRangeOptionsPropTypes,
   availableActions: PropTypes.shape({
     edit: PropTypes.bool,
     clone: PropTypes.bool,
