@@ -114,26 +114,33 @@ const List = forwardRef((props, ref) => {
     } = item;
 
     return [
-      <ListItem
-        id={item.id}
-        key={`${item.id}-list-item-${level}-${value}`}
-        nestingLevel={level}
-        value={value}
-        icon={icon}
-        iconPosition={iconPosition}
-        secondaryValue={secondaryValue}
-        rowActions={rowActions}
-        onSelect={handleSelect}
-        onExpand={toggleExpansion}
-        selected={isSelected}
-        expanded={isExpanded}
-        isExpandable={hasChildren}
-        isLargeRow={isLargeRow}
-        isCategory={isCategory}
-        isSelectable={isSelectable}
-        i18n={i18n}
-        selectedItemRef={isSelected ? selectedItemRef : null}
-      />,
+      // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
+      <div
+        key={`${item.id}-list-item-parent-${level}-${value}`}
+        data-floating-menu-container
+        className={`${iotPrefix}--list-item-parent`}
+      >
+        <ListItem
+          id={item.id}
+          key={`${item.id}-list-item-${level}-${value}`}
+          nestingLevel={level}
+          value={value}
+          icon={icon}
+          iconPosition={iconPosition}
+          secondaryValue={secondaryValue}
+          rowActions={rowActions}
+          onSelect={handleSelect}
+          onExpand={toggleExpansion}
+          selected={isSelected}
+          expanded={isExpanded}
+          isExpandable={hasChildren}
+          isLargeRow={isLargeRow}
+          isCategory={isCategory}
+          isSelectable={isSelectable}
+          i18n={i18n}
+          selectedItemRef={isSelected ? selectedItemRef : null}
+        />
+      </div>,
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))
         : []),
