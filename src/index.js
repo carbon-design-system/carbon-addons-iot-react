@@ -90,6 +90,7 @@ export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitc
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
+export FilterTags from './components/FilterTags/FilterTags';
 
 // Carbon proxy
 export {
