@@ -175,9 +175,7 @@ const ComboBox = ({
     if (!carbonInputValue) {
       return -1;
     }
-    const searchValue = carbonItems[0].id.startsWith(`${iotPrefix}-input`)
-      ? carbonInputValue.slice(0, -1).toLowerCase()
-      : carbonInputValue.toLowerCase();
+    const searchValue = carbonInputValue.toLowerCase();
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < carbonItems.length; i++) {
       const item = itemToString(carbonItems[i]).toLowerCase();

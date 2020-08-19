@@ -1,132 +1,26 @@
-import React from 'react';
+/**
+ * Copyright IBM Corp. 2016, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import cx from 'classnames';
 import Downshift from 'downshift';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { settings } from 'carbon-components';
 import { Checkmark16, WarningFilled16 } from '@carbon/icons-react';
-import ListBox from 'carbon-components-react/es/components/ListBox';
+import ListBox, {
+  PropTypes as ListBoxPropTypes,
+} from 'carbon-components-react/es/components/ListBox';
+import { match, keys } from 'carbon-components-react/es/internal/keyboard';
+import setupGetInstanceId from 'carbon-components-react/es/tools/setupGetInstanceId';
+import { mapDownshiftProps } from 'carbon-components-react/es/tools/createPropAdapter';
 
-const keys = {
-  Tab: {
-    key: 'Tab',
-    which: 9,
-    keyCode: 9,
-  },
-  Enter: {
-    key: 'Enter',
-    which: 13,
-    keyCode: 13,
-  },
-  Escape: {
-    key: [
-      'Escape',
-      // IE11 Escape
-      'Esc',
-    ],
-    which: 27,
-    keyCode: 27,
-  },
-  Space: {
-    key: ' ',
-    which: 32,
-    keyCode: 32,
-  },
-  PageUp: {
-    key: 'PageUp',
-    which: 33,
-    keyCode: 33,
-  },
-  PageDown: {
-    key: 'PageDown',
-    which: 34,
-    keyCode: 34,
-  },
-  End: {
-    key: 'End',
-    which: 35,
-    keyCode: 35,
-  },
-  Home: {
-    key: 'Home',
-    which: 36,
-    keyCode: 36,
-  },
-  ArrowLeft: {
-    key: 'ArrowLeft',
-    which: 37,
-    keyCode: 37,
-  },
-  ArrowUp: {
-    key: 'ArrowUp',
-    which: 38,
-    keyCode: 38,
-  },
-  ArrowRight: {
-    key: 'ArrowRight',
-    which: 39,
-    keyCode: 39,
-  },
-  ArrowDown: {
-    key: 'ArrowDown',
-    which: 40,
-    keyCode: 40,
-  },
-};
-
-const ListBoxPropTypes = {
-  ListBoxType: PropTypes.oneOf(['default', 'inline']),
-  ListBoxSize: PropTypes.oneOf(['sm', 'xl']),
-};
 const { prefix } = settings;
 
-/**
- * Check to see if the given key matches the corresponding keyboard event. Also
- * supports passing in the value directly if you can't used the given event.
- *
- * @example
- * import * as keys from '../keys';
- * import { matches } from '../match';
- *
- * function handleOnKeyDown(event) {
- *   if (match(event, keys.Enter) {
- *     // ...
- *   }
- * }
- *
- * @param {Event|number|string} eventOrCode
- * @param {Key} key
- * @returns {boolean}
- */
-
-/* istanbul ignore next */
-export function match(eventOrCode, { key, which, keyCode } = {}) {
-  if (typeof eventOrCode === 'string') {
-    return eventOrCode === key;
-  }
-
-  if (typeof eventOrCode === 'number') {
-    return eventOrCode === which || eventOrCode === keyCode;
-  }
-
-  if (eventOrCode.key && Array.isArray(key)) {
-    return key.indexOf(eventOrCode.key) !== -1;
-  }
-
-  return eventOrCode.key === key || eventOrCode.which === which || eventOrCode.keyCode === keyCode;
-}
-
-/**
- * Generic utility to initialize a method that will return a unique instance id
- * for a component.
- */
-export function setupGetInstanceId() {
-  let instanceId = 0;
-  return function getInstanceId() {
-    return ++instanceId; // eslint-disable-line no-plusplus
-  };
-}
-
-export const defaultItemToString = item => {
+const defaultItemToString = item => {
   if (typeof item === 'string') {
     return item;
   }
@@ -147,8 +41,7 @@ const getInputValue = (props, state) => {
 
   return state.inputValue || '';
 };
-// Since we always provide a func this will never be hit
-/* istanbul ignore next */
+
 const defaultFindHighlightedIndex = ({ items, itemToString }, inputValue) => {
   if (!inputValue) {
     return -1;
@@ -156,8 +49,7 @@ const defaultFindHighlightedIndex = ({ items, itemToString }, inputValue) => {
 
   const searchValue = inputValue.toLowerCase();
 
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < items.length; i++) {
+  for (let i = 0; i < items.length; i += 1) {
     const item = itemToString(items[i]).toLowerCase();
     if (item.indexOf(searchValue) !== -1 && searchValue.length > 1) {
       return i;
@@ -169,8 +61,8 @@ const defaultFindHighlightedIndex = ({ items, itemToString }, inputValue) => {
 
 const getInstanceId = setupGetInstanceId();
 
-/* eslint react/require-default-props: 0 */
 export default class ComboBox extends React.Component {
+  /* eslint-disable react/require-default-props */
   static propTypes = {
     /**
      * 'aria-label' of the ListBox component.
@@ -289,6 +181,10 @@ export default class ComboBox extends React.Component {
      * Specify the direction of the combobox dropdown. Can be either top or bottom.
      */
     direction: PropTypes.oneOf(['top', 'bottom']),
+
+    titleText: PropTypes.string,
+    helperText: PropTypes.string,
+
     /**
      *  Optional callback to pass the highlighted index to parent
      */
@@ -302,6 +198,7 @@ export default class ComboBox extends React.Component {
      */
     editOptionText: PropTypes.string,
   };
+  /* eslint-enable react/require-default-props */
 
   static defaultProps = {
     disabled: false,
@@ -313,6 +210,8 @@ export default class ComboBox extends React.Component {
     light: false,
     direction: 'bottom',
     editOptionText: '+ Add',
+    findHighlightedIndex: defaultFindHighlightedIndex,
+    onHighligtedIndexChange: () => {},
   };
 
   static getDerivedStateFromProps(nextProps, state) {
@@ -371,19 +270,32 @@ export default class ComboBox extends React.Component {
     );
   };
 
+  handleSelectionClear = () => {
+    if (this.textInput?.current) {
+      this.textInput.current.focus();
+    }
+  };
+
   handleOnStateChange = (newState, { setHighlightedIndex, highlightedIndex }) => {
     this.props.onHighligtedIndexChange(highlightedIndex);
-    const findHighlightedIndex = this.props.findHighlightedIndex || defaultFindHighlightedIndex;
     if (Object.prototype.hasOwnProperty.call(newState, 'inputValue')) {
       const { inputValue } = newState;
-      setHighlightedIndex(findHighlightedIndex(this.props, inputValue));
+      const items = this.filterItems(this.props.items, this.props.itemToString, inputValue);
+      setHighlightedIndex(
+        this.props.findHighlightedIndex(
+          {
+            ...this.props,
+            items,
+          },
+          inputValue
+        )
+      );
     }
   };
 
   onToggleClick = isOpen => event => {
     if (event.target === this.textInput.current && isOpen) {
-      // eslint-disable-next-line no-param-reassign
-      event.preventDownshiftDefault = true;
+      event.preventDownshiftDefault = true; // eslint-disable-line no-param-reassign
       event.persist();
     }
   };
@@ -396,8 +308,8 @@ export default class ComboBox extends React.Component {
       items,
       itemToString,
       itemToElement,
-      titleText, // eslint-disable-line react/prop-types
-      helperText, // eslint-disable-line react/prop-types
+      titleText,
+      helperText,
       placeholder,
       initialSelectedItem,
       selectedItem,
@@ -418,7 +330,6 @@ export default class ComboBox extends React.Component {
       editOptionText,
       ...rest
     } = this.props;
-    const { inputValue } = this.state;
     const className = cx(`${prefix}--combo-box`, containerClassName, {
       [`${prefix}--list-box--up`]: direction === 'top',
     });
@@ -428,96 +339,79 @@ export default class ComboBox extends React.Component {
     const comboBoxHelperId = !helperText
       ? undefined
       : `combobox-helper-text-${this.comboBoxInstanceId}`;
-    const comboBoxLabelId = `combobox-label-${this.comboBoxInstanceId}`;
-    const title = titleText ? (
-      // eslint-disable-next-line jsx-a11y/label-has-for
-      <label id={comboBoxLabelId} htmlFor={id} className={titleClasses}>
-        {titleText}
-      </label>
-    ) : null;
     const helperClasses = cx(`${prefix}--form__helper-text`, {
       [`${prefix}--form__helper-text--disabled`]: disabled,
     });
-    const helper = helperText ? (
-      <div id={comboBoxHelperId} className={helperClasses}>
-        {helperText}
-      </div>
-    ) : null;
     const wrapperClasses = cx(`${prefix}--list-box__wrapper`);
-    const comboBoxA11yId = `combobox-a11y-${this.comboBoxInstanceId}`;
     const inputClasses = cx(`${prefix}--text-input`, {
-      [`${prefix}--text-input--empty`]: !inputValue,
+      [`${prefix}--text-input--empty`]: !this.state.inputValue,
     });
 
     // needs to be Capitalized for react to render it correctly
     const ItemToElement = itemToElement;
-    const input = (
+    return (
       <Downshift
-        {...downshiftProps}
+        {...mapDownshiftProps(downshiftProps)}
         onChange={this.handleOnChange}
         onInputValueChange={this.handleOnInputValueChange}
         onStateChange={this.handleOnStateChange}
-        inputValue={inputValue || ''}
+        inputValue={this.state.inputValue || ''} // eslint-disable-line react/destructuring-assignment
         itemToString={itemToString}
-        initialIsOpen={false}
-        defaultSelectedItem={initialSelectedItem}
+        initialSelectedItem={initialSelectedItem}
+        inputId={id}
         selectedItem={selectedItem}
       >
         {({
-          getButtonProps,
+          getToggleButtonProps,
           getInputProps,
           getItemProps,
-          getRootProps,
+          getLabelProps,
           isOpen,
-          inputValue, // eslint-disable-line no-shadow
+          inputValue,
           selectedItem, // eslint-disable-line no-shadow
           highlightedIndex,
           clearSelection,
           toggleMenu,
-        }) => {
-          // console.log({ highlightedIndex });
-          return (
+          getMenuProps,
+        }) => (
+          <div className={wrapperClasses}>
+            {titleText && (
+              <label className={titleClasses} {...getLabelProps()}>
+                {titleText}
+              </label>
+            )}
             <ListBox
               className={className}
               disabled={disabled}
               invalid={invalid}
-              id={comboBoxA11yId}
               aria-label={ariaLabel}
               invalidText={invalidText}
               isOpen={isOpen}
               light={light}
               size={size}
-              {...getRootProps({ refKey: 'innerRef' })}
             >
               <ListBox.Field
-                id={id}
-                disabled={disabled}
-                aria-labelledby={comboBoxLabelId}
-                aria-describedby={comboBoxHelperId}
-                {...getButtonProps({
+                {...getToggleButtonProps({
                   disabled,
                   onClick: this.onToggleClick(isOpen),
                 })}
               >
                 <input
+                  disabled={disabled}
                   className={inputClasses}
-                  aria-labelledby={comboBoxA11yId}
+                  type="text"
                   tabIndex="0"
-                  aria-disabled={disabled}
-                  aria-controls={isOpen ? `${id}__menu` : null}
-                  aria-owns={isOpen ? `${id}__menu` : null}
                   aria-autocomplete="list"
                   ref={this.textInput}
-                  title={inputValue}
                   {...rest}
                   {...getInputProps({
                     disabled,
-                    id,
                     placeholder,
                     onKeyDown: event => {
                       if (match(event, keys.Space)) {
                         event.stopPropagation();
                       }
+
                       if (match(event, keys.Enter)) {
                         toggleMenu();
                       }
@@ -530,53 +424,53 @@ export default class ComboBox extends React.Component {
                     clearSelection={clearSelection}
                     translateWithId={translateWithId}
                     disabled={disabled}
+                    onClearSelection={this.handleSelectionClear}
                   />
                 )}
                 <ListBox.MenuIcon isOpen={isOpen} translateWithId={translateWithId} />
               </ListBox.Field>
-              <ListBox.Menu aria-label={ariaLabel} id={id}>
-                {this.filterItems(items, itemToString, inputValue).map((item, index) => {
-                  const itemProps = getItemProps({
-                    item,
-                    index,
-                  });
-                  return (
-                    <ListBox.MenuItem
-                      key={itemProps.id}
-                      data-text={editOptionText}
-                      isActive={selectedItem === item}
-                      isHighlighted={
-                        highlightedIndex === index ||
-                        (selectedItem && selectedItem.id === item.id) ||
-                        false
-                      }
-                      title={itemToElement ? item.text : itemToString(item)}
-                      {...itemProps}
-                    >
-                      {itemToElement ? (
-                        <ItemToElement key={itemProps.id} {...item} />
-                      ) : (
-                        itemToString(item)
-                      )}
-                      {selectedItem === item && (
-                        <Checkmark16 className={`${prefix}--list-box__menu-item__selected-icon`} />
-                      )}
-                    </ListBox.MenuItem>
-                  );
-                })}
-              </ListBox.Menu>
+              {isOpen && (
+                <ListBox.Menu {...getMenuProps({ 'aria-label': ariaLabel })}>
+                  {this.filterItems(items, itemToString, inputValue).map((item, index) => {
+                    const itemProps = getItemProps({ item, index });
+                    return (
+                      <ListBox.MenuItem
+                        key={itemProps.id}
+                        data-text={editOptionText}
+                        isActive={selectedItem === item}
+                        tabIndex="-1"
+                        isHighlighted={
+                          highlightedIndex === index ||
+                          (selectedItem && selectedItem.id === item.id) ||
+                          false
+                        }
+                        title={itemToElement ? item.text : itemToString(item)}
+                        {...itemProps}
+                      >
+                        {itemToElement ? (
+                          <ItemToElement key={itemProps.id} {...item} />
+                        ) : (
+                          itemToString(item)
+                        )}
+                        {selectedItem === item && (
+                          <Checkmark16
+                            className={`${prefix}--list-box__menu-item__selected-icon`}
+                          />
+                        )}
+                      </ListBox.MenuItem>
+                    );
+                  })}
+                </ListBox.Menu>
+              )}
             </ListBox>
-          );
-        }}
+            {helperText && !invalid && (
+              <div id={comboBoxHelperId} className={helperClasses}>
+                {helperText}
+              </div>
+            )}
+          </div>
+        )}
       </Downshift>
-    );
-
-    return (
-      <div className={wrapperClasses}>
-        {title}
-        {helper}
-        {input}
-      </div>
     );
   }
 }

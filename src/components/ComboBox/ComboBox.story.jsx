@@ -109,13 +109,7 @@ storiesOf('Watson IoT Experimental/ComboBox', module)
     'Default',
     () => (
       <Wrapper>
-        <ComboBox
-          shouldFilterItem={shouldFilterItem}
-          items={items}
-          initialSelectedItem="Option 1"
-          itemToString={item => (item ? item.text : '')}
-          {...props()}
-        />
+        <ComboBox items={items} itemToString={item => (item ? item.text : '')} {...props()} />
       </Wrapper>
     ),
     {
