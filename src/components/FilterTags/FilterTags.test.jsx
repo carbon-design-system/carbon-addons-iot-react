@@ -67,6 +67,25 @@ describe('Filtertags', () => {
     expect(screen.queryByText(/More:*/)).toBeFalsy();
   });
 
+  it('will render tags without overflow when hasOverflow is false', async () => {
+    render(
+      <FilterTags hasOverflow={false}>
+        {tagData.map(tag => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    );
+    expect(screen.queryByText(/More:*/)).toBeFalsy();
+  });
+
   it('will render tags with overflow tag when size is too small', async () => {
     render(
       <FilterTags>

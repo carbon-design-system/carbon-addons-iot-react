@@ -70,20 +70,20 @@ const StatefulFilterTags = ({ tags }) => {
   );
 };
 
-storiesOf('Watson IoT Experimental/FilterTags', module).add('Default Example', () => (
-  <StatefulFilterTags tags={tagData} />
-  // <FilterTags>
-  //   <Tag filter title="Clear Filter" style={{ marginRight: '1rem' }}>
-  //     Hello world
-  //   </Tag>
-  //   <Tag filter title="Clear Filter" style={{ marginRight: '1rem' }}>
-  //     Hello Space
-  //   </Tag>
-  //   <Tag filter title="Clear Filter" style={{ marginRight: '1rem' }}>
-  //     Hello Sun
-  //   </Tag>
-  //   <Tag filter title="Clear Filter">
-  //     Hello Daughter
-  //   </Tag>
-  // </FilterTags>
-));
+storiesOf('Watson IoT Experimental/FilterTags', module)
+  .add('Default Example', () => <StatefulFilterTags tags={tagData} />)
+  .add('With hasOverflow set to false', () => (
+    <FilterTags hasOverflow={false}>
+      {tagData.map(tag => (
+        <Tag
+          key={`tag-${tag.id}`}
+          filter
+          type={tag.type}
+          title="Clear Filter"
+          style={{ marginRight: '1rem' }}
+        >
+          {tag.text}
+        </Tag>
+      ))}
+    </FilterTags>
+  ));

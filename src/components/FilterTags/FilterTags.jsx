@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import useResizeObserver from 'use-resize-observer';
 import { OverflowMenuItem, OverflowMenu } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
+import classnames from 'classnames';
+
+import { settings } from '../../constants/Settings';
+
+const { prefix, iotPrefix } = settings;
 /* eslint-disable-next-line react/prop-types */
 const DefaultWrapper = React.forwardRef(({ children, ...props }, ref) => {
   return (
@@ -42,7 +47,7 @@ const FilterTags = ({ children, hasOverflow, id }) => {
   useEffect(
     () => {
       /* istanbul ignore else */
-      if (overFlowContainerRef.current) {
+      if (hasOverflow && overFlowContainerRef.current) {
         const clientWidth = overFlowContainerRef.current?.clientWidth;
         const scrollWidth = overFlowContainerRef.current?.scrollWidth;
         const currBreakingWidth = breakingWidth.current;
@@ -80,16 +85,20 @@ const FilterTags = ({ children, hasOverflow, id }) => {
     <DefaultWrapper
       id={id}
       data-testid={id}
-      className="filtertags--container"
+      className={classnames(`${iotPrefix}--filtertags-container`, {
+        [`${iotPrefix}--filtertags-container__wrap`]: hasOverflow,
+      })}
       ref={overFlowContainerRef}
     >
       {visibleItems}
       {overflowItems.length > 0 && (
         <OverflowMenu
           data-floating-menu-container
-          className="filtertags--overflow"
-          renderIcon={() => <div className="bx--tag">{`More: ${overflowItems.length}`}</div>}
-          menuOptionsClass="filtertags--overflow-items"
+          className={`${iotPrefix}--filtertags-overflow-menu`}
+          renderIcon={() => (
+            <div className={`${prefix}--tag`}>{`More: ${overflowItems.length}`}</div>
+          )}
+          menuOptionsClass={`${iotPrefix}--filtertags-overflow-items`}
           menuOffset={{
             top: 15,
           }}
@@ -97,7 +106,7 @@ const FilterTags = ({ children, hasOverflow, id }) => {
           {overflowItems.map((child, i) => (
             <OverflowMenuItem
               primaryFocus={i === 0}
-              className="filtertags--overflow-item"
+              className={`${iotPrefix}--filtertags-overflow-item`}
               title={child.props.children}
               key={`${child.props.children}-${i}`}
               onClick={child.props.onClose}
