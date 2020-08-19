@@ -13671,17 +13671,7 @@ Map {
                       "tags": Object {
                         "args": Array [
                           Object {
-                            "args": Array [
-                              Object {
-                                "content": Object {
-                                  "type": "string",
-                                },
-                                "type": Object {
-                                  "type": "string",
-                                },
-                              },
-                            ],
-                            "type": "shape",
+                            "type": "node",
                           },
                         ],
                         "type": "arrayOf",

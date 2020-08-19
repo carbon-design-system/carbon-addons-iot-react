@@ -5,6 +5,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { Edit16, Star16, StarFilled16 } from '@carbon/icons-react';
 
 import { Button, OverflowMenu, OverflowMenuItem } from '../../..';
+import { Tag } from '../../Tag';
 
 import ListItem from './ListItem';
 
@@ -43,9 +44,20 @@ storiesOf('Watson IoT Experimental/ListItem', module)
         : [];
     const tagsData =
       tagsConfig === 'single'
-        ? [{ type: 'blue', content: 'default' }]
+        ? [
+            <Tag type="blue" title="descriptor" key="tag1">
+              default
+            </Tag>,
+          ]
         : tagsConfig === 'multi'
-        ? [{ type: 'blue', content: 'default' }, { type: 'red', content: 'warning' }]
+        ? [
+            <Tag type="blue" title="descriptor" key="tag1">
+              default
+            </Tag>,
+            <Tag type="red" disabled key="tag2">
+              disabled tag
+            </Tag>,
+          ]
         : undefined;
     return (
       <div style={{ width: 400 }}>
@@ -200,7 +212,14 @@ storiesOf('Watson IoT Experimental/ListItem', module)
       <ListItem
         id="list-item"
         value={text('value', 'List Item')}
-        tags={[{ type: 'blue', content: 'default' }, { type: 'red', content: 'warning' }]}
+        tags={[
+          <Tag type="blue" title="descriptor" key="tag1">
+            default
+          </Tag>,
+          <Tag type="red" disabled key="tag2">
+            disabled tag
+          </Tag>,
+        ]}
       />
     </div>
   ));

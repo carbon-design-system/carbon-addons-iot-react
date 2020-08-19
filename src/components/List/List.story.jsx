@@ -7,6 +7,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import someDeep from 'deepdash/someDeep';
 
 import { Button, OverflowMenu, OverflowMenuItem, Checkbox } from '../..';
+import { Tag } from '../Tag';
 
 import List from './List';
 
@@ -468,7 +469,14 @@ storiesOf('Watson IoT Experimental/List', module)
         items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
           ([key]) => ({
             id: key,
-            content: { value: key, tags: [{ type: 'blue', content: 'my tag 1' }] },
+            content: {
+              value: key,
+              tags: [
+                <Tag type="blue" title="descriptor" key="tag1">
+                  default
+                </Tag>,
+              ],
+            },
           })
         )}
         isLoading={boolean('isLoading', false)}

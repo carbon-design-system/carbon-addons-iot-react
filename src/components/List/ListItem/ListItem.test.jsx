@@ -2,6 +2,8 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Add16, Edit16 } from '@carbon/icons-react';
 
+import { Tag } from '../../Tag';
+
 import ListItem from './ListItem';
 
 describe('ListItem', () => {
@@ -97,7 +99,14 @@ describe('ListItem', () => {
   });
 
   it('shows Tags when available', () => {
-    const tags = [{ type: 'blue', content: 'my tag 1' }, { type: 'red', content: 'my tag 2' }];
+    const tags = [
+      <Tag type="blue" title="descriptor" key="tag1">
+        my tag 1
+      </Tag>,
+      <Tag type="red" disabled key="tag2">
+        my tag 2
+      </Tag>,
+    ];
     const { rerender } = render(<ListItem id="1" value="test" />);
     expect(screen.queryByText('my tag 1')).not.toBeInTheDocument();
     expect(screen.queryByText('my tag 2')).not.toBeInTheDocument();

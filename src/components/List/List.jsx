@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
-import { ListTagsPropTypes } from '../../constants/SharedPropTypes';
 
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
@@ -17,7 +16,8 @@ export const itemPropTypes = {
   content: PropTypes.shape({
     value: PropTypes.string,
     icon: PropTypes.node,
-    tags: ListTagsPropTypes,
+    /** The nodes should be Carbon Tags components */
+    tags: PropTypes.arrayOf(PropTypes.node),
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,

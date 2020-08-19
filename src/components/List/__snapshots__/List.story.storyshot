@@ -6403,290 +6403,340 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--list--content"
         >
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="DJ LeMahieu"
+                    className="iot--list-item--content--values--main"
                   >
-                    DJ LeMahieu
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="DJ LeMahieu"
                     >
-                      my tag 1
-                    </span>
+                      DJ LeMahieu
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Luke Voit"
+                    className="iot--list-item--content--values--main"
                   >
-                    Luke Voit
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Luke Voit"
                     >
-                      my tag 1
-                    </span>
+                      Luke Voit
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Gary Sanchez"
+                    className="iot--list-item--content--values--main"
                   >
-                    Gary Sanchez
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gary Sanchez"
                     >
-                      my tag 1
-                    </span>
+                      Gary Sanchez
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Kendrys Morales"
+                    className="iot--list-item--content--values--main"
                   >
-                    Kendrys Morales
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Kendrys Morales"
                     >
-                      my tag 1
-                    </span>
+                      Kendrys Morales
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Gleyber Torres"
+                    className="iot--list-item--content--values--main"
                   >
-                    Gleyber Torres
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gleyber Torres"
                     >
-                      my tag 1
-                    </span>
+                      Gleyber Torres
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Clint Frazier"
+                    className="iot--list-item--content--values--main"
                   >
-                    Clint Frazier
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Clint Frazier"
                     >
-                      my tag 1
-                    </span>
+                      Clint Frazier
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Brett Gardner"
+                    className="iot--list-item--content--values--main"
                   >
-                    Brett Gardner
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Brett Gardner"
                     >
-                      my tag 1
-                    </span>
+                      Brett Gardner
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Gio Urshela"
+                    className="iot--list-item--content--values--main"
                   >
-                    Gio Urshela
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Gio Urshela"
                     >
-                      my tag 1
-                    </span>
+                      Gio Urshela
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Cameron Maybin"
+                    className="iot--list-item--content--values--main"
                   >
-                    Cameron Maybin
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Cameron Maybin"
                     >
-                      my tag 1
-                    </span>
+                      Cameron Maybin
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            className="iot--list-item"
+            className="iot--list-item-parent"
+            data-floating-menu-container={true}
           >
             <div
-              className="iot--list-item--content"
+              className="iot--list-item"
             >
               <div
-                className="iot--list-item--content--values"
+                className="iot--list-item--content"
               >
                 <div
-                  className="iot--list-item--content--values--main"
+                  className="iot--list-item--content--values"
                 >
                   <div
-                    className="iot--list-item--content--values--value"
-                    title="Robinson Cano"
+                    className="iot--list-item--content--values--main"
                   >
-                    Robinson Cano
-                  </div>
-                  <div>
-                    <span
-                      className="bx--tag bx--tag--blue"
+                    <div
+                      className="iot--list-item--content--values--value"
+                      title="Robinson Cano"
                     >
-                      my tag 1
-                    </span>
+                      Robinson Cano
+                    </div>
+                    <div>
+                      <span
+                        className="bx--tag bx--tag--blue"
+                      >
+                        default
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
