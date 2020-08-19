@@ -13668,6 +13668,14 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "tags": Object {
+                        "args": Array [
+                          Object {
+                            "type": "node",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
                       "value": Object {
                         "type": "string",
                       },

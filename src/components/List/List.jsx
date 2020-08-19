@@ -16,6 +16,8 @@ export const itemPropTypes = {
   content: PropTypes.shape({
     value: PropTypes.string,
     icon: PropTypes.node,
+    /** The nodes should be Carbon Tags components */
+    tags: PropTypes.arrayOf(PropTypes.node),
   }),
   children: PropTypes.arrayOf(PropTypes.object),
   isSelectable: PropTypes.bool,
@@ -108,7 +110,7 @@ const List = forwardRef((props, ref) => {
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
-      content: { value, secondaryValue, icon, rowActions },
+      content: { value, secondaryValue, icon, rowActions, tags },
       isSelectable,
       isCategory,
     } = item;
@@ -139,8 +141,10 @@ const List = forwardRef((props, ref) => {
           isSelectable={isSelectable}
           i18n={i18n}
           selectedItemRef={isSelected ? selectedItemRef : null}
+          tags={tags}
         />
       </div>,
+
       ...(hasChildren && isExpanded
         ? item.children.map(child => renderItemAndChildren(child, level + 1))
         : []),

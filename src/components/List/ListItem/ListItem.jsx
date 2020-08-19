@@ -74,6 +74,8 @@ const ListItemPropTypes = {
     // Or the instance of a DOM native element (see the note about SSR)
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]),
+  /** The nodes should be Carbon Tags components */
+  tags: PropTypes.arrayOf(PropTypes.node),
 };
 
 const ListItemDefaultProps = {
@@ -95,6 +97,7 @@ const ListItemDefaultProps = {
     close: 'Close',
   },
   selectedItemRef: null,
+  tags: null,
 };
 
 const ListItem = ({
@@ -115,6 +118,7 @@ const ListItem = ({
   isCategory,
   i18n,
   selectedItemRef,
+  tags,
 }) => {
   const handleExpansionClick = () => isExpandable && onExpand(id);
 
@@ -159,6 +163,8 @@ const ListItem = ({
       <div className={`${iotPrefix}--list-item--content--row-actions`}>{rowActions}</div>
     ) : null;
 
+  const renderTags = () => (tags && tags.length > 0 ? <div>{tags}</div> : null);
+
   return (
     <ListItemWrapper {...{ id, isSelectable, selected, isLargeRow, onSelect }}>
       {renderNestingOffset()}
@@ -193,6 +199,7 @@ const ListItem = ({
                 >
                   {value}
                 </div>
+                {renderTags()}
                 {renderRowActions()}
               </div>
               {secondaryValue ? (
@@ -238,6 +245,7 @@ const ListItem = ({
                     {secondaryValue}
                   </div>
                 ) : null}
+                {renderTags()}
                 {renderRowActions()}
               </div>
             </>
