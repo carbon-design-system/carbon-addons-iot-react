@@ -101,7 +101,7 @@ const FilterTags = ({ children, hasOverflow, id }) => {
               title={child.props.children}
               key={`${child.props.children}-${i}`}
               onClick={child.props.onClose}
-              itemText={<OverflowTag filter>{child.props.children}</OverflowTag>}
+              itemText={<OverflowTag>{child.props.children}</OverflowTag>}
             />
           ))}
         </OverflowMenu>
