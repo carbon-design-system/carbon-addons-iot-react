@@ -45,7 +45,7 @@ const props = {
 const OverflowMenuExample = ({ overflowMenuProps, overflowMenuItemProps }) => (
   <>
     <OverflowMenu {...overflowMenuProps}>
-      <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 1" primaryFocus />
+      <OverflowMenuItem {...overflowMenuItemProps} itemText="Option 1" />
       <OverflowMenuItem
         {...overflowMenuItemProps}
         itemText="Option 2 is an example of a really long string and how we recommend handling this"

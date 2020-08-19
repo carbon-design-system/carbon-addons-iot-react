@@ -47,7 +47,7 @@ describe('stateful table with real reducer', () => {
         actions={mockActions}
       />
     );
-    statefulTable.find('.bx--pagination__button--forward').simulate('click');
+    statefulTable.find('button.bx--pagination__button--forward').simulate('click');
     expect(statefulTable.text()).toContain('100 of 100');
   });
   it('should show singleRowEditButtons when choosing to edit a row', () => {

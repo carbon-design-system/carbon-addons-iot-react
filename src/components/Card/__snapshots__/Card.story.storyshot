@@ -65,6 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -102,6 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -222,6 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -259,6 +262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -601,6 +605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     <svg
                       aria-label="Select time range"
                       className="bx--overflow-menu__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       onClick={[Function]}
@@ -638,6 +643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                     aria-hidden="true"
                     aria-label="Expand to fullscreen"
                     className="bx--btn__icon"
+                    fill="currentColor"
                     focusable="false"
                     height={16}
                     preserveAspectRatio="xMidYMid meet"
@@ -858,6 +864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
               <svg
                 aria-label="open and close list of options"
                 className="bx--overflow-menu__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 onClick={[Function]}
@@ -986,6 +993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -1166,6 +1174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1270,6 +1279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1374,6 +1384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1478,6 +1489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1582,6 +1594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1686,6 +1699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1790,6 +1804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -1928,6 +1943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-hidden={true}
                   description={null}
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -1967,6 +1983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -2004,6 +2021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 aria-hidden="true"
                 aria-label="Expand to fullscreen"
                 className="bx--btn__icon"
+                fill="currentColor"
                 focusable="false"
                 height={16}
                 preserveAspectRatio="xMidYMid meet"
@@ -2124,6 +2142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}
@@ -2382,6 +2401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Card 
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}

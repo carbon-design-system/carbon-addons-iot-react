@@ -122,6 +122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         aria-hidden="true"
         aria-label="Button icon"
         className="bx--btn__icon"
+        fill="currentColor"
         focusable="false"
         height={16}
         preserveAspectRatio="xMidYMid meet"
@@ -191,6 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Butto
         aria-hidden="true"
         aria-label="Button icon"
         className="bx--btn__icon"
+        fill="currentColor"
         focusable="false"
         height={16}
         preserveAspectRatio="xMidYMid meet"

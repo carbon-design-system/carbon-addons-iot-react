@@ -31,7 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -56,6 +56,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -76,11 +77,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -168,7 +164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -193,6 +189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -208,11 +205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <div
             className="ComposedModalstory__CustomFooter-sc-1ctuyyf-0 cxIHUM"
@@ -287,7 +279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -312,6 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -336,6 +329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--inline-notification__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -380,6 +374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-label="close notification"
               className="bx--inline-notification__close-icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -396,11 +391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -558,7 +548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -583,6 +573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -598,11 +589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -690,7 +676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -715,6 +701,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -795,7 +782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -820,6 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -835,11 +823,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -918,7 +901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -943,6 +926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -958,11 +942,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"
@@ -1083,7 +1062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
       </span>
       <div
         className="bx--modal-container"
-        tabIndex={-1}
+        role="dialog"
       >
         <div
           className="bx--modal-header"
@@ -1113,6 +1092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
             <svg
               aria-hidden={true}
               className="bx--modal-close__icon"
+              fill="currentColor"
               focusable="false"
               height={20}
               preserveAspectRatio="xMidYMid meet"
@@ -1128,11 +1108,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Compo
         </div>
         <div
           className="bx--modal-footer iot--composed-modal-footer"
-          inputref={
-            Object {
-              "current": null,
-            }
-          }
         >
           <button
             className="iot--btn bx--btn bx--btn--secondary"

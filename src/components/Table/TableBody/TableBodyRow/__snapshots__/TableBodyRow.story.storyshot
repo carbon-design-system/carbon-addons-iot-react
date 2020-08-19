@@ -104,6 +104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       aria-hidden="true"
                       aria-label="Add"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
@@ -255,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       aria-hidden="true"
                       aria-label="Add"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
@@ -418,6 +420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <svg
                   aria-label="Click to expand."
                   className="bx--table-expand__svg"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -478,6 +481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       aria-hidden="true"
                       aria-label="Add"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
@@ -566,6 +570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <svg
                   aria-label="Click to expand."
                   className="bx--table-expand__svg"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -626,6 +631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                       aria-hidden="true"
                       aria-label="Add"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={32}
                       preserveAspectRatio="xMidYMid meet"
@@ -656,6 +662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     <svg
                       aria-label="More actions"
                       className="bx--overflow-menu__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={16}
                       onClick={[Function]}
@@ -761,6 +768,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <svg
                   aria-label="Click to expand."
                   className="bx--table-expand__svg"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"
@@ -823,6 +831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                     >
                       <svg
                         aria-hidden={true}
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -919,6 +928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                 <svg
                   aria-label="Click to expand."
                   className="bx--table-expand__svg"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   preserveAspectRatio="xMidYMid meet"

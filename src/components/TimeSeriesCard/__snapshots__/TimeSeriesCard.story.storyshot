@@ -657,6 +657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     onBlur={[Function]}
                     onClick={[Function]}
                     onFocus={[Function]}
+                    onKeyDown={[Function]}
                     tabIndex="0"
                   >
                     <div
@@ -667,6 +668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       <svg
                         aria-hidden={true}
                         className="bx--search-magnifier"
+                        fill="currentColor"
                         focusable="false"
                         height={16}
                         preserveAspectRatio="xMidYMid meet"
@@ -705,6 +707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       >
                         <svg
                           aria-hidden={true}
+                          fill="currentColor"
                           focusable="false"
                           height={16}
                           preserveAspectRatio="xMidYMid meet"
@@ -732,6 +735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       aria-hidden="true"
                       aria-label="Download table content"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -761,6 +765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       aria-hidden="true"
                       aria-label="Filters"
                       className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
                       height={20}
                       preserveAspectRatio="xMidYMid meet"
@@ -823,6 +828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Unsort rows by this header"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -838,6 +844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Unsort rows by this header"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -887,6 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -902,6 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -951,6 +960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -966,6 +976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1015,6 +1026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1030,6 +1042,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1079,6 +1092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1094,6 +1108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1143,6 +1158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1158,6 +1174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1207,6 +1224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1222,6 +1240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1271,6 +1290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -1286,6 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-label="Sort rows by this header in ascending order"
                             className="bx--table-sort__icon-unsorted"
+                            fill="currentColor"
                             focusable="false"
                             height={20}
                             preserveAspectRatio="xMidYMid meet"
@@ -2252,7 +2273,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
               </div>
               <div
                 className="bx--pagination iot--pagination"
-                disabled={false}
                 style={
                   Object {
                     "--pagination-text-display": "flex",
@@ -2316,6 +2336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-hidden={true}
                             className="bx--select__arrow"
+                            fill="currentColor"
                             focusable="false"
                             height={16}
                             preserveAspectRatio="xMidYMid meet"
@@ -2377,6 +2398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                           <svg
                             aria-hidden={true}
                             className="bx--select__arrow"
+                            fill="currentColor"
                             focusable="false"
                             height={16}
                             preserveAspectRatio="xMidYMid meet"
@@ -2398,19 +2420,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     1 of 1 pages
                   </span>
                   <button
-                    aria-label="Previous page"
-                    className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index"
+                    className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-center"
                     disabled={true}
                     onClick={[Function]}
+                    tabIndex={0}
                     type="button"
                   >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Previous page
+                    </span>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Previous page"
+                      className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
-                      height={24}
+                      height={16}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
-                      width={24}
+                      width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -2419,19 +2450,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     </svg>
                   </button>
                   <button
-                    aria-label="Next page"
-                    className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index"
+                    className="bx--pagination__button bx--pagination__button--forward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--tooltip--top bx--tooltip--align-end"
                     disabled={true}
                     onClick={[Function]}
+                    tabIndex={0}
                     type="button"
                   >
+                    <span
+                      className="bx--assistive-text"
+                    >
+                      Next page
+                    </span>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Next page"
+                      className="bx--btn__icon"
+                      fill="currentColor"
                       focusable="false"
-                      height={24}
+                      height={16}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
-                      width={24}
+                      width={16}
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -3539,6 +3579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 <svg
                   aria-label="Select time range"
                   className="bx--overflow-menu__icon"
+                  fill="currentColor"
                   focusable="false"
                   height={16}
                   onClick={[Function]}

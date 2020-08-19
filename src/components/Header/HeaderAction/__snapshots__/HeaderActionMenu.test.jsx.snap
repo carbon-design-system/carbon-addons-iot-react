@@ -19,6 +19,7 @@ exports[`HeaderActionMenu should render 1`] = `
       <svg
         aria-hidden="true"
         class="bx--header__menu-arrow"
+        fill="currentColor"
         focusable="false"
         height="32"
         preserveAspectRatio="xMidYMid meet"
