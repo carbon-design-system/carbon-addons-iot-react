@@ -1,24 +1,24 @@
 import React, { useRef, useEffect, useState, Children } from 'react';
 import PropTypes from 'prop-types';
 import useResizeObserver from 'use-resize-observer';
-import { OverflowMenuItem, OverflowMenu, Tag } from 'carbon-components-react';
+import { OverflowMenuItem, OverflowMenu } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
-
+/* eslint-disable-next-line react/prop-types */
 const DefaultWrapper = React.forwardRef(({ children, ...props }, ref) => {
   return (
-    <span {...props} ref={ref}>
+    <div {...props} ref={ref}>
       {children}
-    </span>
+    </div>
   );
 });
-
+/* eslint-disable-next-line react/prop-types */
 const OverflowTag = ({ children }) => (
   <span>
     {children} <Close16 />
   </span>
 );
 
-const FilterTags = ({ children, hasOverflow, startingIndex }) => {
+const FilterTags = ({ children, hasOverflow, id }) => {
   const overFlowContainerRef = useRef(null);
   useResizeObserver({
     ref: overFlowContainerRef,
@@ -30,9 +30,10 @@ const FilterTags = ({ children, hasOverflow, startingIndex }) => {
 
   useEffect(
     () => {
+      /* istanbul ignore else */
       if (hasOverflow && overFlowContainerRef) {
         setOverflowItems([]);
-        setVisibleItems(childrenItems.slice(startingIndex));
+        setVisibleItems(childrenItems.slice(0));
       }
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     [children]
@@ -40,6 +41,7 @@ const FilterTags = ({ children, hasOverflow, startingIndex }) => {
 
   useEffect(
     () => {
+      /* istanbul ignore else */
       if (overFlowContainerRef.current) {
         const clientWidth = overFlowContainerRef.current?.clientWidth;
         const scrollWidth = overFlowContainerRef.current?.scrollWidth;
@@ -75,7 +77,12 @@ const FilterTags = ({ children, hasOverflow, startingIndex }) => {
   );
 
   return (
-    <DefaultWrapper className="filtertags--container" ref={overFlowContainerRef}>
+    <DefaultWrapper
+      id={id}
+      data-testid={id}
+      className="filtertags--container"
+      ref={overFlowContainerRef}
+    >
       {visibleItems}
       {overflowItems.length > 0 && (
         <OverflowMenu
@@ -89,7 +96,6 @@ const FilterTags = ({ children, hasOverflow, startingIndex }) => {
         >
           {overflowItems.map((child, i) => (
             <OverflowMenuItem
-              // {...child.props}
               primaryFocus={i === 0}
               className="filtertags--overflow-item"
               title={child.props.children}
@@ -106,9 +112,13 @@ const FilterTags = ({ children, hasOverflow, startingIndex }) => {
 
 const propTypes = {
   /**
+   * ID for filter tag container
+   */
+  id: PropTypes.string,
+  /**
    * Tag components nested inside Filter tag component
    */
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   /**
    * Bit to determine if tags collapse into overflow tag
    */
@@ -116,8 +126,8 @@ const propTypes = {
 };
 
 const defaultProps = {
+  id: 'filter-tag-container',
   hasOverflow: true,
-  startingIndex: 0,
 };
 
 FilterTags.propTypes = propTypes;

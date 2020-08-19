@@ -5,6 +5,8 @@
 
 .filtertags--container {
   white-space: nowrap;
+  min-width: 0;
+  flex: 1;
 }
 .filtertags--overflow {
   display: inline-block;

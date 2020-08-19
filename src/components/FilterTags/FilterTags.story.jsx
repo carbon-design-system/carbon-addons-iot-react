@@ -5,7 +5,7 @@ import { Tag, Button } from '../../index';
 
 import FilterTags from './FilterTags';
 
-const tagData = [
+export const tagData = [
   {
     id: 'tag-one',
     text: 'Hello World',
@@ -50,10 +50,8 @@ const StatefulFilterTags = ({ tags }) => {
   };
 
   return (
-    <div style={{ display: 'flex', overflow: 'hidden' }}>
-      <Button onClick={() => handleOnClick()} style={{ marginBottom: '1rem' }}>
-        Add tag
-      </Button>
+    <div style={{ display: 'flex' }}>
+      <Button onClick={() => handleOnClick()}>Add tag</Button>
       <FilterTags>
         {renderedTags.map(tag => (
           <Tag
