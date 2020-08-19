@@ -31,6 +31,14 @@ export const tagData = [
     type: 'red',
   },
 ];
+
+const TagWrapper = React.forwardRef(({ children, ...props }, ref) => {
+  return (
+    <div {...props} ref={ref} style={{ border: '1px solid red' }}>
+      {children}
+    </div>
+  );
+});
 const StatefulFilterTags = ({ tags }) => {
   const index = useRef(0);
   const [renderedTags, setRenderedTags] = useState(tags);
@@ -74,6 +82,21 @@ storiesOf('Watson IoT Experimental/FilterTags', module)
   .add('Default Example', () => <StatefulFilterTags tags={tagData} />)
   .add('With hasOverflow set to false', () => (
     <FilterTags hasOverflow={false}>
+      {tagData.map(tag => (
+        <Tag
+          key={`tag-${tag.id}`}
+          filter
+          type={tag.type}
+          title="Clear Filter"
+          style={{ marginRight: '1rem' }}
+        >
+          {tag.text}
+        </Tag>
+      ))}
+    </FilterTags>
+  ))
+  .add('With tagContainer prop', () => (
+    <FilterTags hasOverflow={false} tagContainer={TagWrapper}>
       {tagData.map(tag => (
         <Tag
           key={`tag-${tag.id}`}

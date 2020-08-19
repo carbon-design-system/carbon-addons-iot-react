@@ -23,7 +23,8 @@ const OverflowTag = ({ children }) => (
   </span>
 );
 
-const FilterTags = ({ children, hasOverflow, id }) => {
+const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
+  const TagContainer = tagContainer || DefaultWrapper;
   const overFlowContainerRef = useRef(null);
   useResizeObserver({
     ref: overFlowContainerRef,
@@ -82,7 +83,7 @@ const FilterTags = ({ children, hasOverflow, id }) => {
   );
 
   return (
-    <DefaultWrapper
+    <TagContainer
       id={id}
       data-testid={id}
       className={classnames(`${iotPrefix}--filtertags-container`, {
@@ -115,7 +116,7 @@ const FilterTags = ({ children, hasOverflow, id }) => {
           ))}
         </OverflowMenu>
       )}
-    </DefaultWrapper>
+    </TagContainer>
   );
 };
 
@@ -132,11 +133,16 @@ const propTypes = {
    * Bit to determine if tags collapse into overflow tag
    */
   hasOverflow: PropTypes.bool,
+  /**
+   * Optional container for filter tags
+   */
+  tagContainer: PropTypes.elementType,
 };
 
 const defaultProps = {
   id: 'filter-tag-container',
   hasOverflow: true,
+  tagContainer: null,
 };
 
 FilterTags.propTypes = propTypes;
