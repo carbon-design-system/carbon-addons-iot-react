@@ -14359,6 +14359,7 @@ Map {
     "defaultProps": Object {
       "hasOverflow": true,
       "id": "filter-tag-container",
+      "tagContainer": null,
     },
     "propTypes": Object {
       "children": Object {
@@ -14370,6 +14371,9 @@ Map {
       },
       "id": Object {
         "type": "string",
+      },
+      "tagContainer": Object {
+        "type": "elementType",
       },
     },
   },
