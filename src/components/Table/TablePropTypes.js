@@ -112,6 +112,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     filter: PropTypes.shape({
       /** I18N text for the filter */
       placeholderText: PropTypes.string,
+      isMultiselect: PropTypes.bool,
       options: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,

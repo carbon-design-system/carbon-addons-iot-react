@@ -47,6 +47,15 @@
     padding-right: $spacing-03;
   }
 
+  .#{$iot-prefix}--filterheader-multiselect {
+    .bx--list-box__selection--multi {
+      background-color: #393939;
+    }
+    .bx--list-box__selection--multi > svg {
+      fill: #fff;
+    }
+  }
+
   .#{$prefix}--tag--filter {
     background-color: transparent;
 

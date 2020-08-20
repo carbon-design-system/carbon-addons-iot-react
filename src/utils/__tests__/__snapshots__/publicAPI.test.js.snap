@@ -526,6 +526,9 @@ Map {
                       "filterFunction": Object {
                         "type": "func",
                       },
+                      "isMultiselect": Object {
+                        "type": "bool",
+                      },
                       "options": Object {
                         "args": Array [
                           Object {
@@ -985,6 +988,14 @@ Map {
                             Object {
                               "type": "bool",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
                           ],
                         ],
                         "isRequired": true,
@@ -1363,6 +1374,9 @@ Map {
                       "filterFunction": Object {
                         "type": "func",
                       },
+                      "isMultiselect": Object {
+                        "type": "bool",
+                      },
                       "options": Object {
                         "args": Array [
                           Object {
@@ -1642,6 +1656,14 @@ Map {
                             Object {
                               "type": "bool",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
                           ],
                         ],
                         "isRequired": true,
@@ -1786,6 +1808,9 @@ Map {
                     Object {
                       "filterFunction": Object {
                         "type": "func",
+                      },
+                      "isMultiselect": Object {
+                        "type": "bool",
                       },
                       "options": Object {
                         "args": Array [
