@@ -207,7 +207,7 @@ class FilterHeaderRow extends Component {
                     aria-label={filterText}
                     translateWithId={this.handleTranslation}
                     items={memoizeColumnOptions(column.options)}
-                    label="Multiselect label"
+                    label={column.placeholderText || 'Choose an option'}
                     itemToString={item => (item ? item.text : '')}
                     initialSelectedItems={
                       Array.isArray(columnStateValue)
@@ -216,7 +216,6 @@ class FilterHeaderRow extends Component {
                           )
                         : [{ id: columnStateValue, text: columnStateValue }]
                     }
-                    placeholder={column.placeholderText || 'Choose an option'}
                     onChange={evt => {
                       this.setState(
                         state => ({
