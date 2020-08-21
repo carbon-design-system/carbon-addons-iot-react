@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ComboBox, DataTable, FormItem, TextInput } from 'carbon-components-react';
+import { ComboBox, DataTable, FormItem, TextInput, MultiSelect } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import memoize from 'lodash/memoize';
 import classnames from 'classnames';
@@ -30,6 +30,8 @@ class FilterHeaderRow extends Component {
             text: PropTypes.string.isRequired,
           })
         ),
+        /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
+        isMultiselect: PropTypes.bool,
       })
     ).isRequired,
     /** internationalized string */
@@ -48,7 +50,12 @@ class FilterHeaderRow extends Component {
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+          PropTypes.arrayOf(PropTypes.string),
+        ]).isRequired,
       })
     ),
     /** Callback when filter is applied sends object of keys and values with the filter values */
@@ -192,35 +199,70 @@ class FilterHeaderRow extends Component {
               column.isFilterable !== undefined && !column.isFilterable ? (
                 <div />
               ) : column.options ? (
-                <ComboBox
-                  key={columnStateValue}
-                  className={`${iotPrefix}--filterheader-combo`}
-                  id={`column-${i}`}
-                  aria-label={filterText}
-                  translateWithId={this.handleTranslation}
-                  items={memoizeColumnOptions(column.options)}
-                  itemToString={item => (item ? item.text : '')}
-                  initialSelectedItem={{
-                    id: columnStateValue,
-                    text: (
-                      column.options.find(option => option.id === columnStateValue) || { text: '' }
-                    ).text, // eslint-disable-line react/destructuring-assignment
-                  }}
-                  placeholder={column.placeholderText || 'Choose an option'}
-                  onChange={evt => {
-                    this.setState(
-                      state => ({
-                        filterValues: {
-                          ...state.filterValues,
-                          [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
-                        },
-                      }),
-                      this.handleApplyFilter
-                    );
-                  }}
-                  light={lightweight}
-                  disabled={isDisabled}
-                />
+                column.isMultiselect ? (
+                  <MultiSelect
+                    key={columnStateValue}
+                    className={`${iotPrefix}--filterheader-multiselect`}
+                    id={`column-${i}`}
+                    aria-label={filterText}
+                    translateWithId={this.handleTranslation}
+                    items={memoizeColumnOptions(column.options)}
+                    label={column.placeholderText || 'Choose an option'}
+                    itemToString={item => (item ? item.text : '')}
+                    initialSelectedItems={
+                      Array.isArray(columnStateValue)
+                        ? columnStateValue.map(value =>
+                            typeof value !== 'object' ? { id: value, text: value } : value
+                          )
+                        : [{ id: columnStateValue, text: columnStateValue }]
+                    }
+                    onChange={evt => {
+                      this.setState(
+                        state => ({
+                          filterValues: {
+                            ...state.filterValues,
+                            [column.id]: evt.selectedItems.map(item => item.text),
+                          },
+                        }),
+                        this.handleApplyFilter
+                      );
+                    }}
+                    light
+                    disabled={isDisabled}
+                  />
+                ) : (
+                  <ComboBox
+                    key={columnStateValue}
+                    className={`${iotPrefix}--filterheader-combo`}
+                    id={`column-${i}`}
+                    aria-label={filterText}
+                    translateWithId={this.handleTranslation}
+                    items={memoizeColumnOptions(column.options)}
+                    itemToString={item => (item ? item.text : '')}
+                    initialSelectedItem={{
+                      id: columnStateValue,
+                      text: (
+                        column.options.find(option => option.id === columnStateValue) || {
+                          text: '',
+                        }
+                      ).text, // eslint-disable-line react/destructuring-assignment
+                    }}
+                    placeholder={column.placeholderText || 'Choose an option'}
+                    onChange={evt => {
+                      this.setState(
+                        state => ({
+                          filterValues: {
+                            ...state.filterValues,
+                            [column.id]: evt.selectedItem === null ? '' : evt.selectedItem.id,
+                          },
+                        }),
+                        this.handleApplyFilter
+                      );
+                    }}
+                    light={lightweight}
+                    disabled={isDisabled}
+                  />
+                )
               ) : (
                 <FormItem className={`${iotPrefix}--filter-header-row--form-item`}>
                   <TextInput
