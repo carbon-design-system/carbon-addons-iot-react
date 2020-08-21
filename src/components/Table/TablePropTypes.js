@@ -112,6 +112,8 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     filter: PropTypes.shape({
       /** I18N text for the filter */
       placeholderText: PropTypes.string,
+      /** if isMultiselect is true, the table is filtered based on a multiselect */
+      isMultiselect: PropTypes.bool,
       options: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,

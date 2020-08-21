@@ -681,6 +681,52 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
+    'Stateful Example with multiselect filtering',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          {...initialState}
+          columns={initialState.columns.map(column => {
+            if (column.filter) {
+              return {
+                ...column,
+                filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+              };
+            }
+            return column;
+          })}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 5,
+            },
+            toolbar: {
+              activeBar: 'filter',
+            },
+          }}
+          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          actions={actions}
+          isSortable
+          lightweight={boolean('lightweight', false)}
+          options={{
+            ...initialState.options,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            hasSingleRowEdit: true,
+          }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text: `This table has a multiselect filter. To support multiselect filtering, make sure to pass isMultiselect: true to the filter prop on the table.`,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
     'Stateful Example with row nesting and fixed columns',
     () => <StatefulTableWithNestedRowItems />,
     {

@@ -2,6 +2,8 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { Add16, Edit16 } from '@carbon/icons-react';
 
+import { Tag } from '../../Tag';
+
 import ListItem from './ListItem';
 
 describe('ListItem', () => {
@@ -94,5 +96,23 @@ describe('ListItem', () => {
     rerender(<ListItem i18n={i18nTest} id="1" value="" isExpandable expanded />);
     expect(screen.getByLabelText(i18nTest.expand)).toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefaults.expand)).not.toBeInTheDocument();
+  });
+
+  it('shows Tags when available', () => {
+    const tags = [
+      <Tag type="blue" title="descriptor" key="tag1">
+        my tag 1
+      </Tag>,
+      <Tag type="red" disabled key="tag2">
+        my tag 2
+      </Tag>,
+    ];
+    const { rerender } = render(<ListItem id="1" value="test" />);
+    expect(screen.queryByText('my tag 1')).not.toBeInTheDocument();
+    expect(screen.queryByText('my tag 2')).not.toBeInTheDocument();
+
+    rerender(<ListItem id="1" value="test" tags={tags} />);
+    expect(screen.getByText('my tag 1')).toBeVisible();
+    expect(screen.getByText('my tag 2')).toBeVisible();
   });
 });
