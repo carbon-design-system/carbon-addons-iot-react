@@ -86,7 +86,12 @@ const propTypes = {
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+          PropTypes.arrayOf(PropTypes.string),
+        ]).isRequired,
       })
     ),
   }).isRequired,
@@ -379,6 +384,7 @@ const TableHead = ({
             ...column.filter,
             id: column.id,
             isFilterable: !isNil(column.filter),
+            isMultiselect: column.filter?.isMultiselect,
             width: column.width,
           }))}
           hasFastFilter={hasFastFilter}
