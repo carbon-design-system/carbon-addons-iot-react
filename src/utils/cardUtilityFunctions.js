@@ -213,22 +213,7 @@ export const replaceVariables = (variables, cardVariables, target) => {
   if (Array.isArray(target)) {
     return target.map(element => replaceVariables(variables, cardVariables, element));
   }
-  // variables.forEach(variable => {
-  //   const insensitiveVariable = variable.toLowerCase();
-  //   const variableRegex = new RegExp(`{${variable}}`, 'g');
-  //   // Need to update the target with all lower-case variables for case-insesitivity
-  //   updatedTarget = updatedTarget.replace(variableRegex, `{${insensitiveVariable}}`);
 
-  //   if (typeof insensitiveCardVariables[insensitiveVariable] === 'function') {
-  //     const callback = insensitiveCardVariables[insensitiveVariable];
-  //     updatedTarget = callback(variable, target);
-  //   } else {
-  //     const insensitiveVariableRegex = new RegExp(`{${insensitiveVariable}}`, 'g');
-  //     updatedTarget = updatedTarget.replace(
-  //       insensitiveVariableRegex,
-  //       insensitiveCardVariables[insensitiveVariable]
-  //     );
-  //   }
   // if it's an object, then recursively replace each value unless it's a react element
   if (typeof target === 'object') {
     // if it's a react element, leave it alone
