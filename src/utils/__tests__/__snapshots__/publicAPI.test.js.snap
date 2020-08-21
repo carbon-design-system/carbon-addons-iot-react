@@ -526,6 +526,9 @@ Map {
                       "filterFunction": Object {
                         "type": "func",
                       },
+                      "isMultiselect": Object {
+                        "type": "bool",
+                      },
                       "options": Object {
                         "args": Array [
                           Object {
@@ -985,6 +988,14 @@ Map {
                             Object {
                               "type": "bool",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
                           ],
                         ],
                         "isRequired": true,
@@ -1363,6 +1374,9 @@ Map {
                       "filterFunction": Object {
                         "type": "func",
                       },
+                      "isMultiselect": Object {
+                        "type": "bool",
+                      },
                       "options": Object {
                         "args": Array [
                           Object {
@@ -1646,6 +1660,14 @@ Map {
                             Object {
                               "type": "bool",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "string",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
                           ],
                         ],
                         "isRequired": true,
@@ -1790,6 +1812,9 @@ Map {
                     Object {
                       "filterFunction": Object {
                         "type": "func",
+                      },
+                      "isMultiselect": Object {
+                        "type": "bool",
                       },
                       "options": Object {
                         "args": Array [
@@ -4461,6 +4486,15 @@ Map {
                       },
                     ],
                     "type": "arrayOf",
+                  },
+                  "view": Object {
+                    "args": Array [
+                      Array [
+                        "graph_view",
+                        "slider_view",
+                      ],
+                    ],
+                    "type": "oneOf",
                   },
                 },
               ],
@@ -9300,6 +9334,15 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "view": Object {
+                    "args": Array [
+                      Array [
+                        "graph_view",
+                        "slider_view",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
                 },
               ],
               "type": "shape",
@@ -13653,6 +13696,14 @@ Map {
                     Object {
                       "icon": Object {
                         "type": "node",
+                      },
+                      "tags": Object {
+                        "args": Array [
+                          Object {
+                            "type": "node",
+                          },
+                        ],
+                        "type": "arrayOf",
                       },
                       "value": Object {
                         "type": "string",

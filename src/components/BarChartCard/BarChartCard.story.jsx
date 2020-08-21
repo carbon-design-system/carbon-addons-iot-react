@@ -375,7 +375,7 @@ storiesOf('Watson IoT/BarChartCard', module)
             zoomBar: {
               enabled: true,
               axes: 'top',
-              // initialZoomDomain: []
+              view: select('view', ['slider_view', 'graph_view'], 'slider_view'),
             },
           })}
           values={barChartData.timestamps}
