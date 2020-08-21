@@ -79,34 +79,57 @@ const StatefulFilterTags = ({ tags }) => {
 };
 
 storiesOf('Watson IoT Experimental/FilterTags', module)
-  .add('Default Example', () => <StatefulFilterTags tags={tagData} />)
-  .add('With hasOverflow set to false', () => (
-    <FilterTags hasOverflow={false}>
-      {tagData.map(tag => (
-        <Tag
-          key={`tag-${tag.id}`}
-          filter
-          type={tag.type}
-          title="Clear Filter"
-          style={{ marginRight: '1rem' }}
-        >
-          {tag.text}
-        </Tag>
-      ))}
-    </FilterTags>
-  ))
-  .add('With tagContainer prop', () => (
-    <FilterTags hasOverflow={false} tagContainer={TagWrapper}>
-      {tagData.map(tag => (
-        <Tag
-          key={`tag-${tag.id}`}
-          filter
-          type={tag.type}
-          title="Clear Filter"
-          style={{ marginRight: '1rem' }}
-        >
-          {tag.text}
-        </Tag>
-      ))}
-    </FilterTags>
-  ));
+  .add('Default Example', () => <StatefulFilterTags tags={tagData} />, {
+    info: {
+      propTables: [FilterTags],
+      propTablesExclude: [StatefulFilterTags],
+    },
+  })
+  .add(
+    'With hasOverflow set to false',
+    () => (
+      <FilterTags hasOverflow={false}>
+        {tagData.map(tag => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    ),
+    {
+      info: {
+        propTables: [FilterTags],
+        propTablesExclude: [Tag],
+      },
+    }
+  )
+  .add(
+    'With tagContainer prop',
+    () => (
+      <FilterTags hasOverflow={false} tagContainer={TagWrapper}>
+        {tagData.map(tag => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    ),
+    {
+      info: {
+        propTables: [FilterTags],
+        propTablesExclude: [Tag],
+      },
+    }
+  );
