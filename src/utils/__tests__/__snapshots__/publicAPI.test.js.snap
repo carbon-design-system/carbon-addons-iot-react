@@ -356,7 +356,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
       },
-      "id": "Table_0",
+      "id": null,
       "lightweight": false,
       "locale": null,
       "options": Object {
@@ -1555,10 +1555,6 @@ Map {
         ],
         "type": "shape",
       },
-      "id": Object {
-        "isRequired": true,
-        "type": "string",
-      },
       "lightweight": Object {
         "type": "bool",
       },
@@ -1610,6 +1606,10 @@ Map {
         "type": "shape",
       },
       "selectAllText": Object {
+        "type": "string",
+      },
+      "tableId": Object {
+        "isRequired": true,
         "type": "string",
       },
       "tableState": Object {

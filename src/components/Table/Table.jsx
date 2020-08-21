@@ -498,7 +498,7 @@ const Table = props => {
             clearSelectionText={i18n.clearSelectionAria}
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
-            tableId={`${id || tableId}-head`}
+            tableId={id || tableId}
             tableState={{
               isDisabled: rowEditMode || singleRowEditMode,
               activeBar: view.toolbar.activeBar,

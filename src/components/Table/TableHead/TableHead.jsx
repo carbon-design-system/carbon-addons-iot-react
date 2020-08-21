@@ -300,7 +300,7 @@ const TableHead = ({
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
               disabled={isDisabled}
-              id={tableId}
+              id={`${tableId}-head`}
               labelText={selectAllText}
               hideLabel
               indeterminate={isSelectAllIndeterminate}

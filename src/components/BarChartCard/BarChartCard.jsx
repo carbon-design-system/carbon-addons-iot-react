@@ -202,6 +202,7 @@ const BarChartCard = ({
           />
           {isExpanded ? (
             <StatefulTable
+              id="BarChartCard-table"
               className={`${iotPrefix}--bar-chart-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
