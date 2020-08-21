@@ -116,7 +116,7 @@ describe('stateful table with real reducer', () => {
         })}
         view={{
           ...initialState.view,
-          filters: [{ columnId: 'select', value: 'option-B' }],
+          filters: [{ columnId: 'select', value: 'option-B' }], // start with filtering by option-B
           pagination: {
             ...initialState.view.pagination,
             maxPages: 10,
@@ -206,7 +206,7 @@ describe('stateful table with real reducer', () => {
         })}
         view={{
           ...initialState.view,
-          filters: [],
+          filters: [], // start with no filters
           pagination: {
             ...initialState.view.pagination,
             maxPages: 10,
