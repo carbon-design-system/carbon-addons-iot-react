@@ -19834,6 +19834,9 @@ Map {
   "determineMaxValueCardAttributeCount" => Object {},
   "compareGrains" => Object {},
   "formatNumberWithPrecision" => Object {},
+  "getVariables" => Object {},
+  "getCardVariables" => Object {},
+  "replaceVariables" => Object {},
   "csvDownloadHandler" => Object {},
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

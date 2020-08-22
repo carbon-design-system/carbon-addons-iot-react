@@ -271,6 +271,9 @@ export {
   determineMaxValueCardAttributeCount,
   compareGrains,
   formatNumberWithPrecision,
+  getVariables,
+  getCardVariables,
+  replaceVariables,
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';
