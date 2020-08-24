@@ -199,7 +199,7 @@ export const getVariables = value => {
  * Replace variables from the list of variables that are found on the target with their corresponding value
  * @param {Array<String>} variables an array of variable strings
  * @param {object} cardVariables an object with properties such that the key is a variable name and the value is the value to replace it with, i.e. { manufacturer: 'Rentech', sensor: 3 }
- * @param {Object || String} target a card or string to replace variables on
+ * @param {Object || Array || String} target a card or string to replace variables on
  * @returns {Object} a parsed object with all variables replaced with their corresponding values found on the values object
  */
 export const replaceVariables = (variables, cardVariables, target) => {
@@ -232,9 +232,6 @@ export const replaceVariables = (variables, cardVariables, target) => {
   variables.forEach(variable => {
     const insensitiveVariable = variable.toLowerCase();
     const variableRegex = new RegExp(`{${variable}}`, 'g');
-    const insensitiveVariableRegex = new RegExp(`{${insensitiveVariable}}`, 'g');
-    // Need to update the target with all lower-case variables for case-insesitivity
-    updatedTarget = updatedTarget.replace(variableRegex, `{${insensitiveVariable}}`);
     const exactMatch = new RegExp(`^{${insensitiveVariable}}$`, 'g');
     // if we're an exact match on number then set to number (to support numeric thresholds)
     if (
@@ -249,10 +246,7 @@ export const replaceVariables = (variables, cardVariables, target) => {
       // if the target is still a string then continue
       updatedTarget =
         typeof updatedTarget === 'string' && !isNil(insensitiveCardVariables[insensitiveVariable])
-          ? updatedTarget.replace(
-              insensitiveVariableRegex,
-              insensitiveCardVariables[insensitiveVariable]
-            ) // otherwise do string replace
+          ? updatedTarget.replace(variableRegex, insensitiveCardVariables[insensitiveVariable])
           : updatedTarget;
     }
   });
