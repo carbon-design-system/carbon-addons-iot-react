@@ -26,7 +26,7 @@ describe('Filtertags', () => {
     delete HTMLElement.prototype.scrollWidth;
   });
 
-  it('will render tags without overflow when size is large enough', async () => {
+  it('will render tags without overflow when size is large enough', () => {
     const { rerender } = render(
       <FilterTags>
         {tagData.map(tag => (
@@ -67,7 +67,7 @@ describe('Filtertags', () => {
     expect(screen.queryByText(/More:*/)).toBeFalsy();
   });
 
-  it('will render tags without overflow when hasOverflow is false', async () => {
+  it('will render tags without overflow when hasOverflow is false', () => {
     render(
       <FilterTags hasOverflow={false}>
         {tagData.map(tag => (
@@ -86,7 +86,7 @@ describe('Filtertags', () => {
     expect(screen.queryByText(/More:*/)).toBeFalsy();
   });
 
-  it('will render tags with overflow tag when size is too small', async () => {
+  it('will render tags with overflow tag when size is too small', () => {
     render(
       <FilterTags>
         {tagData.map(tag => (
@@ -105,7 +105,7 @@ describe('Filtertags', () => {
     expect(screen.queryByText(/More:*/)).toBeTruthy();
   });
 
-  it('will collapse tags that do not fit into an overflow menu', async () => {
+  it('will collapse tags that do not fit into an overflow menu', () => {
     render(
       <FilterTags>
         {tagData.map(tag => (
@@ -128,7 +128,7 @@ describe('Filtertags', () => {
     expect(screen.getByText('Hello Daughter')).toBeTruthy();
   });
 
-  it('will pass onClose cb to corresponding OverflowItem', async () => {
+  it('will pass onClose cb to corresponding OverflowItem', () => {
     const mockOnClose = jest.fn();
     render(
       <FilterTags>

@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState, Children } from 'react';
+import React, { useRef, useEffect, useLayoutEffect, useState, Children } from 'react';
 import PropTypes from 'prop-types';
-import useResizeObserver from 'use-resize-observer';
 import { OverflowMenuItem, OverflowMenu } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { useResize } from '../../internal/UseResizeObserver';
 
 const { prefix, iotPrefix } = settings;
 /* eslint-disable-next-line react/prop-types */
@@ -26,9 +26,7 @@ const OverflowTag = ({ children }) => (
 const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
   const TagContainer = tagContainer || DefaultWrapper;
   const overFlowContainerRef = useRef(null);
-  useResizeObserver({
-    ref: overFlowContainerRef,
-  });
+  useResize(overFlowContainerRef);
   const childrenItems = Children.map(children, child => child);
   const breakingWidth = useRef([]);
   const [overflowItems, setOverflowItems] = useState([]);
@@ -45,7 +43,7 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
     [children]
   );
 
-  useEffect(
+  useLayoutEffect(
     () => {
       /* istanbul ignore else */
       if (hasOverflow && overFlowContainerRef.current) {
@@ -84,6 +82,7 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
 
   return (
     <TagContainer
+      key={`${hasOverflow}-Tag-Container`}
       id={id}
       data-testid={id}
       className={classnames(`${iotPrefix}--filtertags-container`, {
