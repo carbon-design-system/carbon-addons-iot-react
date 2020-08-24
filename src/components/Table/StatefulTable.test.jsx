@@ -234,6 +234,7 @@ describe('stateful table with real reducer', () => {
     const initialFilteredRowsOptionB = screen.getAllByTitle('option-B');
     const initialFilteredRowsOptionC = screen.getAllByTitle('option-C');
     const initialItemCount = screen.getByText('1–10 of 100 items'); // confirm row count in the pagination
+    expect(screen.queryByLabelText('Clear Selection')).toBeNull(); // there should be no clear button when there are no filters selected
     expect(initialFilteredRowsOptionA).toHaveLength(5);
     expect(initialFilteredRowsOptionB).toHaveLength(4);
     expect(initialFilteredRowsOptionC).toHaveLength(4);
