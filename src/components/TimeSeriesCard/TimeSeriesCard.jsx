@@ -62,10 +62,6 @@ const TimeSeriesCardPropTypes = {
     includeZeroOnYaxis: PropTypes.bool,
     /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
-    /** Show timestamp in browser local time or GMT */
-    showTimeInGMT: PropTypes.bool,
-    /** tooltip format pattern that follows the moment formatting patterns */
-    tooltipDateFormatPattern: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: deprecate(
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -99,6 +95,12 @@ const TimeSeriesCardPropTypes = {
    * can be date instance or timestamp
    */
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  /** Region for value and text formatting */
+  locale: PropTypes.string,
+  /** Show timestamp in browser local time or GMT */
+  showTimeInGMT: PropTypes.bool,
+  /** tooltip format pattern that follows the moment formatting patterns */
+  tooltipDateFormatPattern: PropTypes.string,
 };
 
 const LineChartWrapper = styled.div`

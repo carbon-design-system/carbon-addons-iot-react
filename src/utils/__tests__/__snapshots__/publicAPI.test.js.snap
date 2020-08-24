@@ -3923,7 +3923,9 @@ Map {
         "noDataLabel": "No data",
       },
       "locale": "en",
+      "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
+      "tooltipDateFormatPattern": "L HH:mm:ss",
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -4635,6 +4637,9 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
+      "showTimeInGMT": Object {
+        "type": "bool",
+      },
       "size": [Function],
       "testID": Object {
         "type": "string",
@@ -4651,6 +4656,9 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "tooltipDateFormatPattern": Object {
+        "type": "string",
       },
       "values": Object {
         "args": Array [
@@ -9280,13 +9288,7 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
-            "showTimeInGMT": Object {
-              "type": "bool",
-            },
             "timeDataSourceId": Object {
-              "type": "string",
-            },
-            "tooltipDateFormatPattern": Object {
               "type": "string",
             },
             "unit": Object {
@@ -9499,6 +9501,9 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
+      "showTimeInGMT": Object {
+        "type": "bool",
+      },
       "size": Object {
         "args": Array [
           Array [
@@ -9534,6 +9539,9 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "tooltipDateFormatPattern": Object {
+        "type": "string",
       },
       "values": Object {
         "args": Array [

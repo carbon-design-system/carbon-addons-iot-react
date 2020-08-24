@@ -302,7 +302,6 @@ export const formatColors = (series, datasetNames, isEditable) => {
  * @param {object} data data object for this particular datapoint
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {string} timeDatasourceId time-based attribute
- * @param {Object} colors defined by the user and formatted for carbon charts
  * @param {bool} showTimeInGMT
  * @param {string} tooltipDataFormatPattern
  */
@@ -310,39 +309,32 @@ export const handleTooltip = (
   dataOrHoveredElement,
   defaultTooltip,
   timeDataSourceId,
-  colors,
   showTimeInGMT,
   tooltipDateFormatPattern = 'L HH:mm:ss'
 ) => {
-  // console.log(defaultTooltip);
   // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
   const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
+  const typedData = Array.isArray(data) ? data[0] : data;
 
   // First add the dataset name as the current implementation only shows the value
   let updatedTooltip = defaultTooltip.replace(
     `<div class="datapoint-tooltip"><p class="value">`,
-    `<p class="label">${dataOrHoveredElement.group}</p><p class="value">`
+    `<p class="label">${typedData.group}</p><p class="value">`
   );
   updatedTooltip = updatedTooltip.replace('</div>', '');
 
-  // add the dataset color to the dataset name row
-  const coloredTooltip = `<div class="datapoint-tooltip"><a style="background-color:${
-    colors.scale[dataOrHoveredElement.group]
-  }" class="tooltip-color"></a>${updatedTooltip}</div>`;
-
-  let updatedWithColorTooltip = coloredTooltip;
   // If theres a time attribute, add an extra list item with the formatted date
   if (timeDataSourceId) {
     // First remove carbon charts tooltips
     // the first <li> will always be carbon chart's Dates row
-    const carbonChartsDateIndex = updatedWithColorTooltip.indexOf(`<li>`);
-    const endOfDateIndex = updatedWithColorTooltip.indexOf(`</li>`);
-    updatedWithColorTooltip = updatedWithColorTooltip.replace(
-      updatedWithColorTooltip.substring(carbonChartsDateIndex, endOfDateIndex + 5),
+    const carbonChartsDateIndex = updatedTooltip.indexOf(`<li>`);
+    const endOfDateIndex = updatedTooltip.indexOf(`</li>`);
+    updatedTooltip = updatedTooltip.replace(
+      updatedTooltip.substring(carbonChartsDateIndex, endOfDateIndex + 5),
       ''
     );
 
-    const timestamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+    const timestamp = typedData?.date?.getTime();
     const dateLabel = timestamp
       ? `<li class='datapoint-tooltip'>
             <p class='label'>
@@ -354,10 +346,10 @@ export const handleTooltip = (
       : '';
 
     // wrap to make single a multi-tooltip
-    updatedWithColorTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedWithColorTooltip}</li></ul>`;
+    updatedTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedTooltip}</li></ul>`;
   }
 
-  return updatedWithColorTooltip;
+  return updatedTooltip;
 };
 
 /**

@@ -183,13 +183,7 @@ const BarChartCard = ({
                 valueFormatter: tooltipValue =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
                 customHTML: (...args) =>
-                  handleTooltip(
-                    ...args,
-                    timeDataSourceId,
-                    colors,
-                    showTimeInGMT,
-                    tooltipDateFormatPattern
-                  ),
+                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
@@ -266,6 +260,8 @@ BarChartCard.defaultProps = {
     layout: BAR_CHART_LAYOUTS.VERTICAL,
   },
   locale: 'en',
+  showTimeInGMT: false,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
 };
 
 export default BarChartCard;
