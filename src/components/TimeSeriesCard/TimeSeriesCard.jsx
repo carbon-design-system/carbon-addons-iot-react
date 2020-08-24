@@ -161,7 +161,8 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
         // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
           .filter(dataItem => {
-            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            // only allow valid timestamp matches
+            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
           })
           .forEach(dataItem =>
             data.push({
