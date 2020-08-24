@@ -3385,6 +3385,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    getVariables
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    getCardVariables
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    replaceVariables
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     csvDownloadHandler
                   </div>
                 </div>
