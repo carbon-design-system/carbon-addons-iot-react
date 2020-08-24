@@ -156,10 +156,10 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
       if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
           .filter(dataItem => {
-            // only allow valid timestamp matches
-            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp;
           })
           .forEach(dataItem =>
             data.push({
@@ -187,6 +187,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  * @param {bool} showTimeInGMT
+ * @param {string} tooltipDataFormatPattern
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -265,8 +266,6 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showTimeInGMT,
-  tooltipDateFormatPattern,
   ...others
 }) => {
   const {
@@ -282,6 +281,8 @@ const TimeSeriesCard = ({
       unit,
       chartType,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);

@@ -303,16 +303,29 @@ export const formatColors = (series, datasetNames, isEditable) => {
  * @param {string} defaultTooltip Default HTML generated for this tooltip that needs to be marked up
  * @param {string} timeDatasourceId time-based attribute
  * @param {Object} colors defined by the user and formatted for carbon charts
+ * @param {bool} showTimeInGMT
+ * @param {string} tooltipDataFormatPattern
  */
-export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSourceId, colors) => {
+export const handleTooltip = (
+  dataOrHoveredElement,
+  defaultTooltip,
+  timeDataSourceId,
+  colors,
+  showTimeInGMT,
+  tooltipDateFormatPattern = 'L HH:mm:ss'
+) => {
+  // console.log(defaultTooltip);
+  // TODO: need to fix this in carbon-charts to support true stacked bar charts in the tooltip
+  const data = dataOrHoveredElement.__data__ ? dataOrHoveredElement.__data__ : dataOrHoveredElement; // eslint-disable-line no-underscore-dangle
+
   // First add the dataset name as the current implementation only shows the value
   let updatedTooltip = defaultTooltip.replace(
     `<div class="datapoint-tooltip"><p class="value">`,
     `<p class="label">${dataOrHoveredElement.group}</p><p class="value">`
   );
-
   updatedTooltip = updatedTooltip.replace('</div>', '');
 
+  // add the dataset color to the dataset name row
   const coloredTooltip = `<div class="datapoint-tooltip"><a style="background-color:${
     colors.scale[dataOrHoveredElement.group]
   }" class="tooltip-color"></a>${updatedTooltip}</div>`;
@@ -320,13 +333,28 @@ export const handleTooltip = (dataOrHoveredElement, defaultTooltip, timeDataSour
   let updatedWithColorTooltip = coloredTooltip;
   // If theres a time attribute, add an extra list item with the formatted date
   if (timeDataSourceId) {
-    const timeStamp = dataOrHoveredElement.date;
-    const dateLabel = `<li class='datapoint-tooltip'>
-                        <p class='label'>${moment(timeStamp).format('L HH:mm:ss')}</p>
-                      </li>`;
+    // First remove carbon charts tooltips
+    // the first <li> will always be carbon chart's Dates row
+    const carbonChartsDateIndex = updatedWithColorTooltip.indexOf(`<li>`);
+    const endOfDateIndex = updatedWithColorTooltip.indexOf(`</li>`);
+    updatedWithColorTooltip = updatedWithColorTooltip.replace(
+      updatedWithColorTooltip.substring(carbonChartsDateIndex, endOfDateIndex + 5),
+      ''
+    );
+
+    const timestamp = Array.isArray(data) ? data[0]?.date?.getTime() : data?.date?.getTime();
+    const dateLabel = timestamp
+      ? `<li class='datapoint-tooltip'>
+            <p class='label'>
+              ${(showTimeInGMT // show timestamp in gmt or local time
+                ? moment.utc(timestamp)
+                : moment(timestamp)
+              ).format(tooltipDateFormatPattern)}</p>
+          </li>`
+      : '';
 
     // wrap to make single a multi-tooltip
-    updatedWithColorTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${coloredTooltip}</li></ul>`;
+    updatedWithColorTooltip = `<ul class='multi-tooltip'>${dateLabel}<li>${updatedWithColorTooltip}</li></ul>`;
   }
 
   return updatedWithColorTooltip;

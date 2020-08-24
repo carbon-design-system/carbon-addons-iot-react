@@ -62,6 +62,8 @@ const BarChartCard = ({
       unit,
       type = BAR_CHART_TYPES.SIMPLE,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -180,7 +182,14 @@ const BarChartCard = ({
               tooltip: {
                 valueFormatter: tooltipValue =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
-                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
+                customHTML: (...args) =>
+                  handleTooltip(
+                    ...args,
+                    timeDataSourceId,
+                    colors,
+                    showTimeInGMT,
+                    tooltipDateFormatPattern
+                  ),
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
