@@ -214,7 +214,9 @@ class FilterHeaderRow extends Component {
                         ? columnStateValue.map(value =>
                             typeof value !== 'object' ? { id: value, text: value } : value
                           )
-                        : [{ id: columnStateValue, text: columnStateValue }]
+                        : columnStateValue
+                        ? [{ id: columnStateValue, text: columnStateValue }]
+                        : []
                     }
                     onChange={evt => {
                       this.setState(
