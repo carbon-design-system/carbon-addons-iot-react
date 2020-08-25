@@ -83,7 +83,8 @@ describe('stateful table with real reducer', () => {
   });
 
   it('render nestedRows', () => {
-    render(<StatefulTableWithNestedRowItems actions={mockActions} />);
+    const tableId = 'tableId';
+    render(<StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />);
 
     expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
 
@@ -96,7 +97,7 @@ describe('stateful table with real reducer', () => {
 
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
 
-    fireEvent.click(screen.getByTestId('Table-row-2_A-row-actions-cell-overflow'));
+    fireEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
     fireEvent.click(screen.getByText('Add'));
 
     expect(mockActions.table.onApplyRowAction).toHaveBeenCalled();
@@ -233,6 +234,7 @@ describe('stateful table with real reducer', () => {
     const initialFilteredRowsOptionB = screen.getAllByTitle('option-B');
     const initialFilteredRowsOptionC = screen.getAllByTitle('option-C');
     const initialItemCount = screen.getByText('1–10 of 100 items'); // confirm row count in the pagination
+    expect(screen.queryByLabelText('Clear Selection')).toBeNull(); // there should be no clear button when there are no filters selected
     expect(initialFilteredRowsOptionA).toHaveLength(5);
     expect(initialFilteredRowsOptionB).toHaveLength(4);
     expect(initialFilteredRowsOptionC).toHaveLength(4);

@@ -798,7 +798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     tabIndex="0"
                   >
                     <div
-                      aria-labelledby="Table-toolbar-search-search"
+                      aria-labelledby="TimeSeries-table-toolbar-search-search"
                       className="bx--search bx--search--sm table-toolbar-search"
                       role="search"
                     >
@@ -818,8 +818,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                       </svg>
                       <label
                         className="bx--label"
-                        htmlFor="Table-toolbar-search"
-                        id="Table-toolbar-search-search"
+                        htmlFor="TimeSeries-table-toolbar-search"
+                        id="TimeSeries-table-toolbar-search-search"
                       >
                         Search
                       </label>
@@ -827,7 +827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         aria-hidden={true}
                         autoComplete="off"
                         className="bx--search-input"
-                        id="Table-toolbar-search"
+                        id="TimeSeries-table-toolbar-search"
                         onChange={[Function]}
                         placeholder="Search"
                         role="searchbox"
@@ -1452,7 +1452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="timestamp"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-timestamp"
+                        id="cell-TimeSeries-table-dataindex-0-timestamp"
                         offset={0}
                       >
                         <span
@@ -1471,7 +1471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ENTITY_ID"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-ENTITY_ID"
+                        id="cell-TimeSeries-table-dataindex-0-ENTITY_ID"
                         offset={0}
                       >
                         <span
@@ -1490,7 +1490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="temperature"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-temperature"
+                        id="cell-TimeSeries-table-dataindex-0-temperature"
                         offset={0}
                       >
                         <span
@@ -1509,7 +1509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="humidity"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-humidity"
+                        id="cell-TimeSeries-table-dataindex-0-humidity"
                         offset={0}
                       >
                         <span
@@ -1528,7 +1528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ecount"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-ecount"
+                        id="cell-TimeSeries-table-dataindex-0-ecount"
                         offset={0}
                       >
                         <span
@@ -1547,7 +1547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="devname"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-devname"
+                        id="cell-TimeSeries-table-dataindex-0-devname"
                         offset={0}
                       >
                         <span
@@ -1566,7 +1566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="pressure"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-pressure"
+                        id="cell-TimeSeries-table-dataindex-0-pressure"
                         offset={0}
                       >
                         <span
@@ -1585,7 +1585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="status"
                         data-offset={0}
-                        id="cell-Table-dataindex-0-status"
+                        id="cell-TimeSeries-table-dataindex-0-status"
                         offset={0}
                       >
                         <span
@@ -1609,7 +1609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="timestamp"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-timestamp"
+                        id="cell-TimeSeries-table-dataindex-1-timestamp"
                         offset={0}
                       >
                         <span
@@ -1628,7 +1628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ENTITY_ID"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-ENTITY_ID"
+                        id="cell-TimeSeries-table-dataindex-1-ENTITY_ID"
                         offset={0}
                       >
                         <span
@@ -1647,7 +1647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="temperature"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-temperature"
+                        id="cell-TimeSeries-table-dataindex-1-temperature"
                         offset={0}
                       >
                         <span
@@ -1666,7 +1666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="humidity"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-humidity"
+                        id="cell-TimeSeries-table-dataindex-1-humidity"
                         offset={0}
                       >
                         <span
@@ -1685,7 +1685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ecount"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-ecount"
+                        id="cell-TimeSeries-table-dataindex-1-ecount"
                         offset={0}
                       >
                         <span
@@ -1704,7 +1704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="devname"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-devname"
+                        id="cell-TimeSeries-table-dataindex-1-devname"
                         offset={0}
                       >
                         <span
@@ -1723,7 +1723,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="pressure"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-pressure"
+                        id="cell-TimeSeries-table-dataindex-1-pressure"
                         offset={0}
                       >
                         <span
@@ -1742,7 +1742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="status"
                         data-offset={0}
-                        id="cell-Table-dataindex-1-status"
+                        id="cell-TimeSeries-table-dataindex-1-status"
                         offset={0}
                       >
                         <span
@@ -1766,7 +1766,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="timestamp"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-timestamp"
+                        id="cell-TimeSeries-table-dataindex-2-timestamp"
                         offset={0}
                       >
                         <span
@@ -1785,7 +1785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ENTITY_ID"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-ENTITY_ID"
+                        id="cell-TimeSeries-table-dataindex-2-ENTITY_ID"
                         offset={0}
                       >
                         <span
@@ -1804,7 +1804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="temperature"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-temperature"
+                        id="cell-TimeSeries-table-dataindex-2-temperature"
                         offset={0}
                       >
                         <span
@@ -1823,7 +1823,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="humidity"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-humidity"
+                        id="cell-TimeSeries-table-dataindex-2-humidity"
                         offset={0}
                       >
                         <span
@@ -1842,7 +1842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ecount"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-ecount"
+                        id="cell-TimeSeries-table-dataindex-2-ecount"
                         offset={0}
                       >
                         <span
@@ -1861,7 +1861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="devname"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-devname"
+                        id="cell-TimeSeries-table-dataindex-2-devname"
                         offset={0}
                       >
                         <span
@@ -1880,7 +1880,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="pressure"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-pressure"
+                        id="cell-TimeSeries-table-dataindex-2-pressure"
                         offset={0}
                       >
                         <span
@@ -1899,7 +1899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="status"
                         data-offset={0}
-                        id="cell-Table-dataindex-2-status"
+                        id="cell-TimeSeries-table-dataindex-2-status"
                         offset={0}
                       >
                         <span
@@ -1923,7 +1923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="timestamp"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-timestamp"
+                        id="cell-TimeSeries-table-dataindex-3-timestamp"
                         offset={0}
                       >
                         <span
@@ -1942,7 +1942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ENTITY_ID"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-ENTITY_ID"
+                        id="cell-TimeSeries-table-dataindex-3-ENTITY_ID"
                         offset={0}
                       >
                         <span
@@ -1961,7 +1961,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="temperature"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-temperature"
+                        id="cell-TimeSeries-table-dataindex-3-temperature"
                         offset={0}
                       >
                         <span
@@ -1980,7 +1980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="humidity"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-humidity"
+                        id="cell-TimeSeries-table-dataindex-3-humidity"
                         offset={0}
                       >
                         <span
@@ -1999,7 +1999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ecount"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-ecount"
+                        id="cell-TimeSeries-table-dataindex-3-ecount"
                         offset={0}
                       >
                         <span
@@ -2018,7 +2018,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="devname"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-devname"
+                        id="cell-TimeSeries-table-dataindex-3-devname"
                         offset={0}
                       >
                         <span
@@ -2037,7 +2037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="pressure"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-pressure"
+                        id="cell-TimeSeries-table-dataindex-3-pressure"
                         offset={0}
                       >
                         <span
@@ -2056,7 +2056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="status"
                         data-offset={0}
-                        id="cell-Table-dataindex-3-status"
+                        id="cell-TimeSeries-table-dataindex-3-status"
                         offset={0}
                       >
                         <span
@@ -2080,7 +2080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="timestamp"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-timestamp"
+                        id="cell-TimeSeries-table-dataindex-4-timestamp"
                         offset={0}
                       >
                         <span
@@ -2099,7 +2099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ENTITY_ID"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-ENTITY_ID"
+                        id="cell-TimeSeries-table-dataindex-4-ENTITY_ID"
                         offset={0}
                       >
                         <span
@@ -2118,7 +2118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="temperature"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-temperature"
+                        id="cell-TimeSeries-table-dataindex-4-temperature"
                         offset={0}
                       >
                         <span
@@ -2137,7 +2137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="humidity"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-humidity"
+                        id="cell-TimeSeries-table-dataindex-4-humidity"
                         offset={0}
                       >
                         <span
@@ -2156,7 +2156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ecount"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-ecount"
+                        id="cell-TimeSeries-table-dataindex-4-ecount"
                         offset={0}
                       >
                         <span
@@ -2175,7 +2175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="devname"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-devname"
+                        id="cell-TimeSeries-table-dataindex-4-devname"
                         offset={0}
                       >
                         <span
@@ -2194,7 +2194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="pressure"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-pressure"
+                        id="cell-TimeSeries-table-dataindex-4-pressure"
                         offset={0}
                       >
                         <span
@@ -2213,7 +2213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="status"
                         data-offset={0}
-                        id="cell-Table-dataindex-4-status"
+                        id="cell-TimeSeries-table-dataindex-4-status"
                         offset={0}
                       >
                         <span
@@ -2237,7 +2237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="timestamp"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-timestamp"
+                        id="cell-TimeSeries-table-dataindex-5-timestamp"
                         offset={0}
                       >
                         <span
@@ -2256,7 +2256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ENTITY_ID"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-ENTITY_ID"
+                        id="cell-TimeSeries-table-dataindex-5-ENTITY_ID"
                         offset={0}
                       >
                         <span
@@ -2275,7 +2275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="temperature"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-temperature"
+                        id="cell-TimeSeries-table-dataindex-5-temperature"
                         offset={0}
                       >
                         <span
@@ -2294,7 +2294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="humidity"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-humidity"
+                        id="cell-TimeSeries-table-dataindex-5-humidity"
                         offset={0}
                       >
                         <span
@@ -2313,7 +2313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="ecount"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-ecount"
+                        id="cell-TimeSeries-table-dataindex-5-ecount"
                         offset={0}
                       >
                         <span
@@ -2332,7 +2332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="devname"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-devname"
+                        id="cell-TimeSeries-table-dataindex-5-devname"
                         offset={0}
                       >
                         <span
@@ -2351,7 +2351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="pressure"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-pressure"
+                        id="cell-TimeSeries-table-dataindex-5-pressure"
                         offset={0}
                       >
                         <span
@@ -2370,7 +2370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         className="data-table-start"
                         data-column="status"
                         data-offset={0}
-                        id="cell-Table-dataindex-5-status"
+                        id="cell-TimeSeries-table-dataindex-5-status"
                         offset={0}
                       >
                         <span
@@ -2402,8 +2402,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                 >
                   <label
                     className="bx--pagination__text"
-                    htmlFor="bx-pagination-select-40"
-                    id="bx-pagination-select-40-count-label"
+                    htmlFor="bx-pagination-select-41"
+                    id="bx-pagination-select-41-count-label"
                   >
                     Items per page:
                   </label>
@@ -2422,7 +2422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-40"
+                            id="bx-pagination-select-41"
                             onChange={[Function]}
                             value={10}
                           >
@@ -2486,7 +2486,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="bx-pagination-select-40-right"
+                        htmlFor="bx-pagination-select-41-right"
                       >
                         Page number, of 1 pages
                       </label>
@@ -2499,7 +2499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TimeS
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-40-right"
+                            id="bx-pagination-select-41-right"
                             onChange={[Function]}
                             value={1}
                           >
