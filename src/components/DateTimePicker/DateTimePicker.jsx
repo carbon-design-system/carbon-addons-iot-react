@@ -520,6 +520,8 @@ const DateTimePicker = ({
         if (!absolute.hasOwnProperty('end')) {
           absolute.end = moment(absolute.endDate).valueOf();
         }
+        absolute.startDate = moment(absolute.start).format('MM/DD/YYYY');
+        absolute.endDate = moment(absolute.end).format('MM/DD/YYYY');
         setAbsoluteValue(absolute);
       }
     } else {
@@ -552,7 +554,6 @@ const DateTimePicker = ({
       if (defaultValue || humanValue === null) {
         parseDefaultValue(defaultValue);
         setLastAppliedValue(defaultValue);
-        setIsExpanded(false);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -828,12 +829,7 @@ const DateTimePicker = ({
                         onChange={onDatePickerChange}
                         onClose={onDatePickerClose}
                         value={
-                          absoluteValue
-                            ? [
-                                moment(absoluteValue.startDate, dateTimeMask).format('MM/DD/YYYY'),
-                                moment(absoluteValue.endDate, dateTimeMask).format('MM/DD/YYYY'),
-                              ]
-                            : ''
+                          absoluteValue ? [absoluteValue.startDate, absoluteValue.endDate] : ''
                         }
                       >
                         <DatePickerInput labelText="" id="date-picker-input-start" hideLabel />
