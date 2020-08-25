@@ -1,5 +1,7 @@
+import React from 'react';
 import warning from 'warning';
 import isNil from 'lodash/isNil';
+import mapValues from 'lodash/mapValues';
 
 import { CARD_SIZES } from '../constants/LayoutConstants';
 
@@ -183,59 +185,95 @@ export const formatNumberWithPrecision = (value, precision = 0, locale = 'en') =
 };
 
 /**
- * Find variables in a string that are identified by surrounding curly braces
- * @param {string} value - A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`
- * @return {array} variables - an array of variables, i.e. ['manufacturer', 'sensor']
+ * Reusable function to check if a string contains variables identified by surrounding curly braces i.e. {deviceid}
+ * @param {string} value A string with variables, i.e. `{manufacturer} acceleration over the last {sensor} hours`
+ * @returns {Array<String>} an array of variables, i.e. ['manufacturer', 'sensor']
  */
 export const getVariables = value => {
-  // an array of instances of a substring surrounded by curly braces
-  const variables = value && typeof value === 'string' ? value.match(/{[a-zA-Z0-9_-]+}/g) : null;
-  // if there are variables found, trim the curly braces from each and return
-  return variables ? variables.map(variable => variable.replace(/[{}]/g, '')) : null;
+  let variables = value && typeof value === 'string' ? value.match(/{[a-zA-Z0-9_-]+}/g) : null;
+  variables = variables?.map(variable => variable.replace(/[{}]/g, ''));
+  return variables;
 };
 
 /**
  * Replace variables from the list of variables that are found on the target with their corresponding value
- * @param {array} variables - Array of variables to be replaced
- * @param {object} cardVariables - Object with variable properties and replacement values, i.e. { manufacturer: 'Rentech', sensor: 3 }
- * @param {string} target - The raw string to insert variable values into
- * @return {array} updatedTarget - the new string with the updated variable values
+ * @param {Array<String>} variables an array of variable strings
+ * @param {object} cardVariables an object with properties such that the key is a variable name and the value is the value to replace it with, i.e. { manufacturer: 'Rentech', sensor: 3 }
+ * @param {Object || Array || String} target a card or string to replace variables on
+ * @returns {Object} a parsed object with all variables replaced with their corresponding values found on the values object
  */
 export const replaceVariables = (variables, cardVariables, target) => {
-  let updatedTarget = JSON.stringify(target);
-
   // Need to create a copy of cardVariables with all lower-case keys
   const insensitiveCardVariables = Object.keys(cardVariables).reduce((acc, variable) => {
     acc[variable.toLowerCase()] = cardVariables[variable];
     return acc;
   }, {});
 
+  // if it's an array then recursively place the variables in each element
+  if (Array.isArray(target)) {
+    return target.map(element => replaceVariables(variables, cardVariables, element));
+  }
+
+  // if it's an object, then recursively replace each value unless it's a react element
+  if (typeof target === 'object') {
+    // if it's a react element, leave it alone
+    return React.isValidElement(target)
+      ? target
+      : mapValues(target, property =>
+          replaceVariables(variables, insensitiveCardVariables, property)
+        );
+  }
+
+  // we can only replace on string targets at this point
+  if (typeof target !== 'string') {
+    return target;
+  }
+  let updatedTarget = target;
   variables.forEach(variable => {
     const insensitiveVariable = variable.toLowerCase();
     const variableRegex = new RegExp(`{${variable}}`, 'g');
-    // Need to update the target with all lower-case variables for case-insesitivity
-    updatedTarget = updatedTarget.replace(variableRegex, `{${insensitiveVariable}}`);
-
-    if (typeof insensitiveCardVariables[insensitiveVariable] === 'function') {
+    const exactMatch = new RegExp(`^{${insensitiveVariable}}$`, 'g');
+    // if we're an exact match on number then set to number (to support numeric thresholds)
+    if (
+      exactMatch.test(target) &&
+      typeof insensitiveCardVariables[insensitiveVariable] === 'number'
+    ) {
+      updatedTarget = insensitiveCardVariables[insensitiveVariable];
+    } else if (typeof insensitiveCardVariables[insensitiveVariable] === 'function') {
       const callback = insensitiveCardVariables[insensitiveVariable];
       updatedTarget = callback(variable, target);
     } else {
-      const insensitiveVariableRegex = new RegExp(`{${insensitiveVariable}}`, 'g');
-      updatedTarget = updatedTarget.replace(
-        insensitiveVariableRegex,
-        insensitiveCardVariables[insensitiveVariable]
-      );
+      // if the target is still a string then continue
+      updatedTarget =
+        typeof updatedTarget === 'string' && !isNil(insensitiveCardVariables[insensitiveVariable])
+          ? updatedTarget.replace(variableRegex, insensitiveCardVariables[insensitiveVariable])
+          : updatedTarget;
     }
   });
-  return JSON.parse(updatedTarget);
+  return updatedTarget;
 };
 
 /**
- *
- * @param {object} card
- * @returns {array} an array of unique variable values
+ * @param {Object} card
+ * @returns {Array<String>} an array of unique variable values
  */
-export const getCardVariables = card => [...new Set(getVariables(JSON.stringify(card)))];
+export const getCardVariables = card => {
+  // for each
+  const propertyVariables = Object.values(card).reduce((acc, property) => {
+    if (typeof property === 'object' && !React.isValidElement(property)) {
+      // recursively search any objects for additional string properties
+      acc.push(...getCardVariables(property));
+    } else if (typeof property === 'string') {
+      // if it's a string, look for variables
+      const detectedVariables = getVariables(property);
+      if (detectedVariables) {
+        acc.push(...detectedVariables);
+      }
+    }
+    return acc;
+  }, []);
+  return [...new Set(propertyVariables)];
+};
 
 /**
  * Replace variables from the list of variables that are found on the target with their corresponding value
