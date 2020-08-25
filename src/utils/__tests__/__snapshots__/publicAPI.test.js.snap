@@ -356,7 +356,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
       },
-      "id": "Table",
+      "id": null,
       "lightweight": false,
       "locale": null,
       "options": Object {
@@ -1620,6 +1620,10 @@ Map {
         "type": "shape",
       },
       "selectAllText": Object {
+        "type": "string",
+      },
+      "tableId": Object {
+        "isRequired": true,
         "type": "string",
       },
       "tableState": Object {
@@ -9208,6 +9212,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "addSpaceOnEdges": Object {
+              "type": "number",
+            },
             "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
