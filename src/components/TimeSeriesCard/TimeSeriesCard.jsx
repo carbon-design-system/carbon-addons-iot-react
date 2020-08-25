@@ -556,6 +556,7 @@ const TimeSeriesCard = ({
           </LineChartWrapper>
           {isExpanded ? (
             <StatefulTable
+              id="TimeSeries-table"
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
