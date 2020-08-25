@@ -1,4 +1,3 @@
-import React from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
 export const DropLocation = {
@@ -35,66 +34,46 @@ const searchDraggedItem = (items, ids) => {
 const updateList = (items, draggedItems, dropId, location, dropped = false) => {
   let finalList = [];
   let itemDropped = dropped; // Protects against dupe ids and multiple drops
-  const dragContainsDrop = draggedItems.some(dragId => dragId === dropId);
 
   if (items) {
-    cloneDeep(items)
-      // .filter(item => !draggedItems.find(dragged => dragged.id === item.id)) // filter out dragged items
-      .forEach(item => {
-        // Insert dragged items in before location
-        if (!itemDropped && item.id === dropId && location === DropLocation.Above) {
-          finalList = [...finalList, ...draggedItems];
-          itemDropped = true;
-        }
+    cloneDeep(items).forEach(item => {
+      // Insert dragged items in before location
+      if (!itemDropped && item.id === dropId && location === DropLocation.Above) {
+        finalList = [...finalList, ...draggedItems];
+        itemDropped = true;
+      }
 
-        let { children = [] } = item;
+      let { children = [] } = item;
 
-        // Insert dragged items in nested location
-        if (!itemDropped && location === DropLocation.Nested && dropId === item.id) {
-          itemDropped = true;
+      // Insert dragged items in nested location
+      if (!itemDropped && location === DropLocation.Nested && dropId === item.id) {
+        itemDropped = true;
+        children = draggedItems.concat(
+          updateList(children, draggedItems, dropId, location, itemDropped)
+        );
+      } else if (children?.length) {
+        children = updateList(children, draggedItems, dropId, location, itemDropped);
+      }
 
-          console.log(
-            `dropping in the nest: ${JSON.stringify(draggedItems)} ${JSON.stringify(children)} `
-          );
+      // Add item into final list if it isn't a dragged item
+      if (!draggedItems.find(drag => drag.id === item.id)) {
+        item.children = children; // eslint-disable-line no-param-reassign
+        finalList.push(item);
+      }
 
-          children = draggedItems.concat(children);
-
-          console.log(`what a drag: ${JSON.stringify(draggedItems)} ${JSON.stringify(children)} `);
-        } else if (children?.length) {
-          children = updateList(children, draggedItems, dropId, location, itemDropped);
-        }
-
-        if (!draggedItems.find(drag => drag.id === item.id)) {
-          item.children = children; // eslint-disable-line no-param-reassign
-          finalList.push(item);
-        }
-
-        // Insert dragged items in after location
-        if (!itemDropped && item.id === dropId && location === DropLocation.Below) {
-          finalList = [...finalList, ...draggedItems];
-        }
-      });
+      // Insert dragged items in after location
+      if (!itemDropped && item.id === dropId && location === DropLocation.Below) {
+        finalList = [...finalList, ...draggedItems];
+      }
+    });
   }
 
   return finalList;
 };
 
 export const moveItemsInList = (items, dragIds, dropId, target) => {
-  // if (dragId === hoverId) {
-  //   return false;
-  // }
-
-  console.log(
-    `items before: ${JSON.stringify(items)} ${JSON.stringify(dragIds)} ${dropId} ${target}`
-  );
-
   const draggedItems = searchDraggedItem(items, dragIds);
-
-  // console.log(`dragged items: ${JSON.stringify(draggedItems)}`);
-
   const newList = updateList(items, draggedItems, dropId, target);
-
-  console.log(`items after: ${JSON.stringify(newList)}`);
 
   return newList;
 };

@@ -12,7 +12,7 @@ import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import SimpleList from './SimpleList';
 import SimpleListREADME from './README.md';
 
-const getListItems = num =>
+export const getListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({

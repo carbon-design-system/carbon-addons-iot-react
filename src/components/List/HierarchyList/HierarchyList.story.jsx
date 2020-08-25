@@ -175,7 +175,7 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         isLoading={boolean('isLoading', false)}
       />
     </div>
-  ));
+  ))
   .add('With Nested Reorder', () => {
     const HierarchyListWithReorder = () => {
       const [items, setItems] = useState([
@@ -209,6 +209,8 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
         })),
       ]);
 
+      const allowsEdit = boolean('Allow Item Movement', true);
+
       return (
         <div style={{ width: 400, height: 400 }}>
           <HierarchyList
@@ -224,6 +226,9 @@ storiesOf('Watson IoT Experimental/HierarchyList', module)
             isLoading={boolean('isLoading', false)}
             onListUpdated={updatedItems => {
               setItems(updatedItems);
+            }}
+            itemWillMove={() => {
+              return allowsEdit;
             }}
           />
         </div>

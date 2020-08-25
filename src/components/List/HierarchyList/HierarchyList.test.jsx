@@ -1,10 +1,12 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 import debounce from 'lodash/debounce';
 
 import { sampleHierarchy } from '../List.story';
+import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import HierarchyList, { searchForNestedItemValues, searchForNestedItemIds } from './HierarchyList';
+
 // https://github.com/facebook/jest/issues/3465#issuecomment-449007170
 jest.mock('lodash/debounce', () => fn => fn);
 
@@ -117,7 +119,7 @@ describe('HierarchyList', () => {
 
   it('clicking expansion caret should expand item', () => {
     render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
-    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Category item should be expanded
     expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
     // Nested item should be visible
@@ -134,7 +136,7 @@ describe('HierarchyList', () => {
   it('clicking expansion caret should collapse expanded item', () => {
     render(<HierarchyList items={items} title="Hierarchy List" pageSize="xl" />);
     // Expand
-    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Category item should be expanded
     expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
     // Nested item should be visible
@@ -147,7 +149,7 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('Houston Astros')).toBeInTheDocument();
     expect(screen.getByTitle('Washington Nationals')).toBeInTheDocument();
     // Collapse
-    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Category item should be expanded
     expect(screen.getByTitle('Chicago White Sox')).toBeInTheDocument();
     // Nested item should be visible
@@ -243,6 +245,7 @@ describe('HierarchyList', () => {
         hasPagination={false}
       />
     );
+
     // Nested item should be visible
     const selectedItem = screen.getByTitle('JD Davis');
     expect(selectedItem).toBeInTheDocument();
@@ -272,9 +275,12 @@ describe('HierarchyList', () => {
         hasPagination={false}
       />
     );
+
     expect(screen.queryByTitle('JD Davis')).toBeInTheDocument();
+
     const selectedYankee = screen.getByTitle('Gary Sanchez');
     expect(selectedYankee).toBeInTheDocument();
+
     expect(selectedYankee?.parentElement?.parentElement?.parentElement?.className).toContain(
       '__selected'
     );
@@ -286,9 +292,84 @@ describe('HierarchyList', () => {
       <HierarchyList items={items} title="Hierarchy List" pageSize="xl" onSelect={onSelect} />
     );
     // Expand the category
-    fireEvent.click(screen.getAllByRole('button')[0]);
+    fireEvent.click(screen.getAllByTestId('expand-icon')[0]);
     // Select the item
-    fireEvent.click(screen.getByTitle('Leury Garcia'));
+    fireEvent.click(screen.getAllByTitle('Leury Garcia')[0]);
     expect(onSelect).toHaveBeenCalledTimes(1);
+  });
+
+  it('shows custom header when item is selected', () => {
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+      />
+    );
+
+    const expandIcons = screen.queryAllByTestId('expand-icon');
+
+    fireEvent.click(expandIcons[1]);
+
+    const checkbox = screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox');
+
+    fireEvent.click(checkbox);
+
+    const itemSelectedText = screen.queryByText('1 item selected');
+    const moveText = screen.queryByText('Move');
+
+    expect(itemSelectedText).toBeInTheDOM();
+    expect(moveText).toBeInTheDOM();
+
+    fireEvent.click(checkbox);
+
+    const itemSelectedTextMissing = screen.queryByText('1 item selected');
+    const moveTextMissing = screen.queryByText('Move');
+
+    expect(itemSelectedTextMissing).toBeNull();
+    expect(moveTextMissing).toBeNull();
+  });
+
+  it('shows modal when move selected', () => {
+    render(
+      <HierarchyList
+        items={items}
+        title="Hierarchy List"
+        editingStyle={EditingStyle.MultipleNesting}
+      />
+    );
+
+    const expandIcons = screen.queryAllByTestId('expand-icon');
+
+    fireEvent.click(expandIcons[1]);
+
+    const checkbox = screen.queryByTestId('New York Yankees_Gary Sanchez-checkbox');
+    const checkbox2 = screen.queryByTestId('New York Yankees_Luke Voit-checkbox');
+
+    fireEvent.click(checkbox);
+    fireEvent.click(checkbox2);
+
+    const itemSelectedText = screen.queryByText('2 items selected');
+    const moveText = screen.queryByText('Move');
+
+    expect(itemSelectedText).toBeInTheDOM();
+    expect(moveText).toBeInTheDOM();
+
+    fireEvent.click(moveText);
+
+    const radioButtons = screen.queryAllByRole('radio');
+
+    fireEvent.click(radioButtons[0]);
+
+    const saveButton = screen.queryByText('Save');
+
+    fireEvent.click(saveButton);
+
+    fireEvent.click(expandIcons[0]);
+
+    const listItems = screen.queryAllByRole('listitem');
+
+    expect(within(listItems[2]).queryAllByText('Luke Voit').length).toBeGreaterThanOrEqual(1);
+    expect(within(listItems[3]).queryAllByText('Gary Sanchez').length).toBeGreaterThanOrEqual(1);
   });
 });

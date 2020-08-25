@@ -69,7 +69,7 @@ export const sampleHierarchy = {
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
-        'Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto': 'RF',
+        'Michael Conforto': 'RF',
         'Pete Alonso': '1B',
         'Wilson Ramos': 'C',
         'Robinson Cano': '2B',
@@ -487,7 +487,7 @@ storiesOf('Watson IoT Experimental/List', module)
         isLoading={boolean('isLoading', false)}
       />
     </div>
-  ));
+  ))
   .add('basic (single column) with reorder', () => {
     const SingleColumnReorder = () => {
       const startData = Object.entries(

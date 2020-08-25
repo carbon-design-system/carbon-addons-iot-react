@@ -1,17 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
+import { Move16 } from '@carbon/icons-react';
 import debounce from 'lodash/debounce';
 import isNil from 'lodash/isNil';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
 import List from '../List';
+import { Button } from '../../..';
 import {
   EditingStyle,
   handleEditModeSelect,
   moveItemsInList,
+  DropLocation,
 } from '../../../utils/DragAndDropUtils';
+import { settings } from '../../../constants/Settings';
+
+import HierarchyListReorderModal from './HierarchyListReorderModal';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /** list editing style */
@@ -39,6 +47,12 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
+    itemsSelected: PropTypes.string,
+    move: PropTypes.string,
+    cancel: PropTypes.string,
+    allRows: PropTypes.string,
+    modalTitle: PropTypes.string,
+    modalDescription: PropTypes.string,
   }),
   /** Displays the List as full height */
   isFullHeight: PropTypes.bool,
@@ -52,6 +66,12 @@ const propTypes = {
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
   onListUpdated: PropTypes.func,
+  /** callback function returned before a list is modified */
+  itemWillMove: PropTypes.func,
+  /** callback function to exit edit mode */
+  cancelMoveClicked: PropTypes.func,
+  /**  Is data currently being sent to the backend */
+  sendingData: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 const defaultProps = {
@@ -65,13 +85,26 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
+    itemSelected: '%d item selected',
+    itemsSelected: '%d items selected',
+    move: 'Move',
+    cancel: 'Cancel',
+    allRows: 'All rows',
+    itemTitle: 'Move %d item underneath',
+    itemsTitle: 'Move %d items underneath',
+    modalDescription: 'Select a destination',
   },
   isFullHeight: false,
   isLoading: false,
   pageSize: null,
   defaultSelectedId: null,
   onSelect: null,
+  sendingData: null,
   onListUpdated: () => {},
+  cancelMoveClicked: () => {},
+  itemWillMove: () => {
+    return true;
+  },
 };
 
 /**
@@ -150,13 +183,17 @@ const HierarchyList = ({
   defaultSelectedId,
   onSelect,
   onListUpdated,
+  itemWillMove,
+  cancelMoveClicked,
+  sendingData,
 }) => {
   const [expandedIds, setExpandedIds] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(cloneDeep(items));
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const [selectedIds, setSelectedIds] = useState(defaultSelectedId ? [defaultSelectedId] : []);
+  const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useDeepCompareEffect(
     () => {
@@ -256,6 +293,38 @@ const HierarchyList = ({
     pageOfPagesText: page => `Page ${page}`,
   };
 
+  const headerOverride = () => {
+    return editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
+      <div className={`${iotPrefix}--hierarchy-list-bulk-header`}>
+        <div className={`${iotPrefix}--hierarchy-list-bulk-header--title`}>
+          {editModeSelectedIds.length > 1
+            ? i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
+            : i18n.itemSelected.replace('%d', editModeSelectedIds.length)}
+        </div>
+        <div className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>
+          <Button
+            className={`${iotPrefix}--hierarchy-list-bulk-header--button`}
+            renderIcon={Move16}
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            {i18n.move}
+          </Button>
+
+          <div className={`${iotPrefix}--hierarchy-list-bulk-header--divider`} />
+
+          <Button
+            className={`${iotPrefix}--hierarchy-list-bulk-header--button-no-icon`}
+            onClick={cancelMoveClicked}
+          >
+            {i18n.cancel}
+          </Button>
+        </div>
+      </div>
+    ) : null;
+  };
+
   /**
    * Once the array is finished, the category needs to be expanded to show
    * the found results and the filter children array needs to be added to
@@ -284,55 +353,80 @@ const HierarchyList = ({
    */
   const delayedSearch = useCallback(debounce(textInput => handleSearch(textInput), 150), [items]);
 
+  const handleMove = (dragIds, hoverId, target) => {
+    const updatedList = moveItemsInList(items, dragIds, hoverId, target);
+
+    onListUpdated(updatedList);
+    setFilteredItems(updatedList);
+  };
+
+  const handleDrag = (dragId, hoverId, target) => {
+    if (
+      editModeSelectedIds.length > 0 &&
+      editModeSelectedIds.find(selectionId => selectionId === dragId)
+    ) {
+      handleMove(editModeSelectedIds, hoverId, target);
+    } else {
+      handleMove([dragId], hoverId, target);
+    }
+  };
+
   return (
-    <List
-      title={title}
-      buttons={buttons}
-      editingStyle={editingStyle}
-      search={
-        hasSearch
-          ? {
-              value: searchValue,
-              onChange: evt => {
-                setSearchValue(evt.target.value);
-                delayedSearch(evt.target.value);
-              },
-            }
-          : null
-      }
-      items={pageSize != null ? itemsToShow : filteredItems}
-      expandedIds={expandedIds}
-      toggleExpansion={id => {
-        if (expandedIds.filter(rowId => rowId === id).length > 0) {
-          // remove id from array
-          setExpandedIds(expandedIds.filter(rowId => rowId !== id));
-        } else {
-          setExpandedIds(expandedIds.concat([id]));
-        }
-      }}
-      i18n={i18n}
-      pagination={hasPagination ? pagination : null}
-      isFullHeight={isFullHeight}
-      isLoading={isLoading}
-      selectedIds={selectedIds}
-      handleSelect={handleSelect}
-      ref={selectedItemRef}
-      onItemMoved={(dragId, hoverId, target) => {
-        let updatedList;
+    <>
+      <HierarchyListReorderModal
+        open={showModal}
+        items={items}
+        selectedIds={editModeSelectedIds}
+        i18n={i18n}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        onSubmit={dropId => {
+          if (dropId !== null) {
+            handleMove(editModeSelectedIds, dropId, DropLocation.Nested);
+          }
 
-        if (
-          editModeSelectedIds.length > 0 &&
-          editModeSelectedIds.find(selectionId => selectionId === dragId)
-        ) {
-          updatedList = moveItemsInList(items, editModeSelectedIds, hoverId, target);
-        } else {
-          updatedList = moveItemsInList(items, [dragId], hoverId, target);
+          setShowModal(false);
+        }}
+        sendingData={sendingData}
+      />
+      <List
+        title={title}
+        buttons={buttons}
+        editingStyle={editingStyle}
+        search={
+          hasSearch
+            ? {
+                value: searchValue,
+                onChange: evt => {
+                  setSearchValue(evt.target.value);
+                  delayedSearch(evt.target.value);
+                },
+              }
+            : null
         }
-
-        onListUpdated(updatedList);
-        setFilteredItems(updatedList);
-      }}
-    />
+        items={pageSize != null ? itemsToShow : filteredItems}
+        expandedIds={expandedIds}
+        toggleExpansion={id => {
+          if (expandedIds.filter(rowId => rowId === id).length > 0) {
+            // remove id from array
+            setExpandedIds(expandedIds.filter(rowId => rowId !== id));
+          } else {
+            setExpandedIds(expandedIds.concat([id]));
+          }
+        }}
+        headerOverride={headerOverride()}
+        i18n={i18n}
+        pagination={hasPagination ? pagination : null}
+        isFullHeight={isFullHeight}
+        isLoading={isLoading}
+        itemWillMove={itemWillMove}
+        selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
+        handleSelect={handleSelect}
+        ref={selectedItemRef}
+        onItemMoved={handleDrag}
+      />
+    </>
   );
 };
 

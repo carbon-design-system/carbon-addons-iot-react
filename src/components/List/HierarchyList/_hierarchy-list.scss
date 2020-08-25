@@ -1,0 +1,101 @@
+@import '../../../globals/vars';
+
+.#{$iot-prefix}--hierarchy-list-bulk {
+  &-header {
+    width: 100%;
+    background-color: $focus;
+
+    display: flex;
+
+    &--title {
+      padding-left: $spacing-05;
+      margin: auto;
+
+      flex-grow: 1;
+      color: $ui-background;
+    }
+
+    &--button-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &--divider {
+      height: $spacing-04;
+      padding-right: $spacing-02;
+      margin: auto 0 auto $spacing-02;
+      border-left: 1px solid $ui-background;
+    }
+
+    &--button {
+      padding: 0 $spacing-08 0 $spacing-05 !important;
+
+      &-no-icon {
+        padding: 0 $spacing-05;
+      }
+    }
+  }
+
+  &-modal {
+    &--breadcrumb {
+      overflow-y: scroll;
+
+      > button {
+        padding: 0 !important;
+      }
+    }
+
+    .#{prefix}--modal-content {
+      padding-right: 0 !important;
+    }
+
+    &--list {
+      display: flex;
+
+      width: 100%;
+
+      align-items: flex-start;
+      margin-top: rem(6px);
+      flex-direction: column;
+
+      &-item {
+        display: flex;
+        position: relative;
+        width: 100%;
+        background-color: $ui-background;
+
+        &:hover {
+          background-color: $hover-ui;
+        }
+
+        &::after {
+          height: 1px;
+
+          content: '';
+          background: $ui-03;
+          position: absolute;
+          bottom: 0px;
+          right: $spacing-08;
+          left: 0;
+        }
+
+        &-button {
+          display: flex;
+          align-content: flex-start;
+          padding: auto 0;
+          padding-right: $spacing-04;
+          flex-grow: 1;
+        }
+
+        &-value {
+          margin: auto 0;
+        }
+      }
+    }
+
+    &--radio {
+      padding: $spacing-05;
+      margin: 0 !important;
+    }
+  }
+}

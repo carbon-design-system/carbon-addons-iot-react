@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { DragDropContext } from 'react-dnd';
@@ -7,12 +7,9 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { SkeletonText } from '../SkeletonText';
+import { EditingStyle, editingStyleIsMultiple } from '../../utils/DragAndDropUtils';
 import { Checkbox } from '../..';
-import {
-  EditingStyle,
-  editingStyleIsMultiple,
-  handleEditModeSelect,
-} from '../../utils/DragAndDropUtils';
+
 import ListItem from './ListItem/ListItem';
 import ListHeader from './ListHeader/ListHeader';
 
@@ -42,6 +39,8 @@ const propTypes = {
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
+  /** Node to override the default header */
+  headerOverride: PropTypes.node,
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
   /** list editing style */
@@ -64,9 +63,8 @@ const propTypes = {
     searchPlaceHolderText: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
-    items: PropTypes.string,
   }),
-  /** Currently selected items */
+  /** Multiple currently selected items */
   selectedIds: PropTypes.arrayOf(PropTypes.string),
   /** pagination at the bottom of list */
   pagination: PropTypes.shape(SimplePaginationPropTypes),
@@ -78,16 +76,18 @@ const propTypes = {
   toggleExpansion: PropTypes.func,
   /** callback function for reorder */
   onItemMoved: PropTypes.func,
-  /** callback to check if item is allowed to be moved */
+  /** callback function when reorder will occur */
   itemWillMove: PropTypes.func,
 };
 
+/* istanbul ignore next */
 const defaultProps = {
   className: null,
   title: null,
   search: null,
   buttons: [],
   editingStyle: null,
+  headerOverride: null,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -95,7 +95,6 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    items: '%d items',
   },
   iconPosition: 'left',
   pagination: null,
@@ -103,7 +102,7 @@ const defaultProps = {
   expandedIds: [],
   handleSelect: () => {},
   toggleExpansion: () => {},
-  onItemMoved: null,
+  onItemMoved: () => {},
   itemWillMove: () => {
     return true;
   },
@@ -123,18 +122,19 @@ const List = forwardRef((props, ref) => {
     selectedIds,
     expandedIds,
     handleSelect,
+    headerOverride,
     toggleExpansion,
     iconPosition,
     editingStyle,
     isLargeRow,
     isLoading,
-    itemWillMove,
     onItemMoved,
+    itemWillMove,
   } = props;
-
   const selectedItemRef = ref;
-  const renderItemAndChildren = (item, index, depth, parentId) => {
+  const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item.children && item.children.length > 0;
+    const isSelected = selectedIds.some(id => item.id === id);
     const isExpanded = expandedIds.filter(rowId => rowId === item.id).length > 0;
 
     const {
@@ -143,10 +143,7 @@ const List = forwardRef((props, ref) => {
       isCategory,
     } = item;
 
-    const isSelected = selectedIds.some(id => item.id === id);
-
     return [
-<<<<<<< HEAD
       // data-floating-menu-container is a work around for this carbon issue: https://github.com/carbon-design-system/carbon/issues/4755
       <div
         key={`${item.id}-list-item-parent-${level}-${value}`}
@@ -159,79 +156,48 @@ const List = forwardRef((props, ref) => {
           key={`${item.id}-list-item-${level}-${value}`}
           nestingLevel={level}
           value={value}
-          icon={icon}
+          icon={
+            editingStyleIsMultiple(editingStyle) ? (
+              <Checkbox
+                id={`${item.id}-checkbox`}
+                name={item.value}
+                data-testid={`${item.id}-checkbox`}
+                labelText=""
+                onClick={() => handleSelect(item.id, parentId)}
+                checked={isSelected}
+              />
+            ) : (
+              icon
+            )
+          }
           iconPosition={iconPosition}
-          isEditing={isEditing}
+          editingStyle={editingStyle}
           secondaryValue={secondaryValue}
           rowActions={rowActions}
-          onSelect={handleSelect}
+          onSelect={editingStyle ? () => {} : () => handleSelect(item.id)}
           onExpand={toggleExpansion}
           onItemMoved={onItemMoved}
+          itemWillMove={itemWillMove}
           selected={isSelected}
           expanded={isExpanded}
           isExpandable={hasChildren}
           isLargeRow={isLargeRow}
           isCategory={isCategory}
-          isSelectable={isSelectable}
+          isSelectable={editingStyle === null && isSelectable}
           i18n={i18n}
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
         />
       </div>,
-=======
-      <ListItem
-        id={item.id}
-        index={index}
-        key={`${item.id}-list-item-${depth.length}-${value}`}
-        dragPreviewText={
-          editingStyleIsMultiple(editingStyle) && selectedIds.length > 1 && isSelectable
-            ? i18n.items?.replace('%d', selectedIds.length) ?? value
-            : value
-        }
-        nestedIndex={depth}
-        value={value}
-        icon={
-          editingStyleIsMultiple(editingStyle) ? (
-            <Checkbox
-              id={`${item.id}-checkbox`}
-              labelText=""
-              name={item.id}
-              onClick={() => handleSelect(item.id, parentId)}
-              checked={isSelected}
-            />
-          ) : (
-            icon
-          )
-        }
-        iconPosition={iconPosition}
-        editingStyle={editingStyle}
-        secondaryValue={secondaryValue}
-        rowActions={rowActions}
-        onSelect={editingStyle === null ? handleSelect : () => {}}
-        onExpand={toggleExpansion}
-        selected={isSelected}
-        expanded={isExpanded}
-        isExpandable={hasChildren}
-        isLargeRow={isLargeRow}
-        isCategory={isCategory}
-        isSelectable={isSelectable}
-        i18n={i18n}
-        selectedItemRef={isSelected ? selectedItemRef : null}
-        onItemMoved={onItemMoved}
-        itemWillMove={itemWillMove}
-      />,
->>>>>>> feat(list): uadded multi-select for drag and drop
       ...(hasChildren && isExpanded
         ? item.children.map((child, nestedIndex) => {
-            const newDepth = [...depth, index];
-
-            return renderItemAndChildren(child, nestedIndex, newDepth, item.id);
+            return renderItemAndChildren(child, nestedIndex, item.id, level + 1);
           })
         : []),
     ];
   };
 
-  const listItems = items.map((item, index) => renderItemAndChildren(item, index, [], null));
+  const listItems = items.map((item, index) => renderItemAndChildren(item, index, null, 0));
 
   return (
     <div
@@ -239,14 +205,16 @@ const List = forwardRef((props, ref) => {
         [`${iotPrefix}--list__full-height`]: isFullHeight,
       })}
     >
-      <ListHeader
-        className={`${iotPrefix}--list--header`}
-        title={title}
-        buttons={buttons}
-        search={search}
-        i18n={i18n}
-        isLoading={isLoading}
-      />
+      {headerOverride ?? (
+        <ListHeader
+          className={`${iotPrefix}--list--header`}
+          title={title}
+          buttons={buttons}
+          search={search}
+          i18n={i18n}
+          isLoading={isLoading}
+        />
+      )}
       <div
         className={classnames(
           {

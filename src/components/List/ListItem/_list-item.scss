@@ -19,6 +19,7 @@
     flex-direction: column;
     position: absolute;
     align-items: stretch;
+    // pointer-events: none;
   }
 
   &--drop-target-above {
@@ -86,6 +87,7 @@
   overflow-x: hidden;
 
   &--handle {
+    flex-shrink: 0;
     fill: $inverse-02;
     margin-right: $spacing-03;
   }
