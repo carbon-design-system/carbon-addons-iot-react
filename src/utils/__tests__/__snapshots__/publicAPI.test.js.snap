@@ -9212,6 +9212,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "addSpaceOnEdges": Object {
+              "type": "number",
+            },
             "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",

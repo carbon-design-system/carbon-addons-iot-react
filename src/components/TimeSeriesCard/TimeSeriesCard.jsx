@@ -75,6 +75,8 @@ const TimeSeriesCardPropTypes = {
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
+    /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
+    addSpaceOnEdges: PropTypes.number,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -282,6 +284,7 @@ const TimeSeriesCard = ({
       unit,
       chartType,
       zoomBar,
+      addSpaceOnEdges,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -549,6 +552,9 @@ const TimeSeriesCard = ({
                       },
                     }
                   : {}),
+                timeScale: {
+                  addSpaceOnEdges: addSpaceOnEdges || 1,
+                },
               }}
               width="100%"
               height="100%"
