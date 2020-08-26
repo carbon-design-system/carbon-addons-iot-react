@@ -22,6 +22,7 @@ import {
   tableRowActionEdit,
   tableRowActionComplete,
   tableRowActionError,
+  tableColumnResize,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -32,7 +33,8 @@ const callbackParent = (callback, ...args) => callback && callback(...args);
 const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     id: tableId,
-    columns,
+    columns: initialColumns,
+    options: { hasUserViewManagement },
     options,
     view: {
       toolbar: { customToolbarContent },
@@ -44,7 +46,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const [state, dispatch] = useReducer(tableReducer, {
     data: initialData,
     view: initialState,
-    columns,
+    columns: initialColumns,
   });
   const isLoading = get(initialState, 'table.loadingState.isLoading');
   // Need to initially sort and filter the tables data, but preserve the selectedId
@@ -56,6 +58,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           isLoading,
           view: initialState,
           totalItems: initialData.length,
+          hasUserViewManagement,
         })
       );
     },
@@ -69,9 +72,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     },
   } = state;
 
+  const columns = hasUserViewManagement ? state.columns : initialColumns;
   const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
 
-  const { pagination, toolbar, table } = callbackActions;
+  const { pagination, toolbar, table, onUserViewModified } = callbackActions;
   const { onChangePage } = pagination || {};
   const {
     onApplyFilter,
@@ -161,8 +165,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onApplyBatchAction, id, selectedIds);
       },
       onApplySearch: string => {
-        callbackParent(onApplySearch, string);
         dispatch(tableSearchApply(string));
+        callbackParent(onApplySearch, string);
       },
       onDownloadCSV,
     },
@@ -216,10 +220,18 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onChangeOrdering, ordering);
       },
       onColumnResize: resizedColumns => {
+        // For backwards compatability we only update the state when hasUserViewManagement is active
+        if (hasUserViewManagement) {
+          dispatch(tableColumnResize(resizedColumns));
+        }
         callbackParent(onColumnResize, resizedColumns);
       },
     },
+    onUserViewModified: viewConfiguration => {
+      callbackParent(onUserViewModified, viewConfiguration);
+    },
   };
+
   return filteredData ? (
     <Table
       {...other} // need to passthrough all other props

@@ -76,6 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </p>
           <form
             data-testid="TableSaveViewModal-form"
+            onSubmit={[Function]}
           >
             <div
               className="bx--form-item bx--text-input-wrapper"
@@ -548,6 +549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </p>
           <form
             data-testid="TableSaveViewModal-form"
+            onSubmit={[Function]}
           >
             <div
               className="bx--form-item bx--text-input-wrapper"
@@ -775,6 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
           </p>
           <form
             data-testid="TableSaveViewModal-form"
+            onSubmit={[Function]}
           >
             <div
               className="bx--form-item bx--text-input-wrapper"

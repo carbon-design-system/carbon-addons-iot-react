@@ -1,5 +1,10 @@
 @import '../../../globals/vars';
 
+.#{$iot-prefix}--view-dropdown__container {
+  padding: 0 $spacing-05;
+  margin: auto 0;
+}
+
 .#{$iot-prefix}--view-dropdown__button-prefix {
   display: none;
 }

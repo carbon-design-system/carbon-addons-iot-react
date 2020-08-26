@@ -13,6 +13,6 @@ export const ViewsPropType = PropTypes.arrayOf(
     /** The name of the view */
     title: PropTypes.string,
     /** A string that describes what this view contains */
-    viewDescription: PropTypes.string,
+    description: PropTypes.string,
   })
 );
