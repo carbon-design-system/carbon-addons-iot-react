@@ -14674,6 +14674,28 @@ Map {
       },
     },
   },
+  "FilterTags" => Object {
+    "defaultProps": Object {
+      "hasOverflow": true,
+      "id": "filter-tag-container",
+      "tagContainer": null,
+    },
+    "propTypes": Object {
+      "children": Object {
+        "isRequired": true,
+        "type": "node",
+      },
+      "hasOverflow": Object {
+        "type": "bool",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "tagContainer": Object {
+        "type": "elementType",
+      },
+    },
+  },
   "Accordion" => Object {
     "defaultProps": Object {
       "align": "end",
