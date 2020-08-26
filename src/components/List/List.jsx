@@ -24,6 +24,8 @@ export const itemPropTypes = {
 };
 
 const propTypes = {
+  /** Specify an optional className to be applied to the container */
+  className: PropTypes.string,
   /** list title */
   title: PropTypes.string,
   /** search bar call back function and search value */
@@ -64,6 +66,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  className: null,
   title: null,
   search: null,
   buttons: [],
@@ -87,6 +90,7 @@ const defaultProps = {
 const List = forwardRef((props, ref) => {
   // Destructuring this way is needed to retain the propTypes and defaultProps
   const {
+    className,
     title,
     search,
     buttons,
@@ -155,7 +159,7 @@ const List = forwardRef((props, ref) => {
 
   return (
     <div
-      className={classnames(`${iotPrefix}--list`, {
+      className={classnames(`${iotPrefix}--list`, className, {
         [`${iotPrefix}--list__full-height`]: isFullHeight,
       })}
     >
