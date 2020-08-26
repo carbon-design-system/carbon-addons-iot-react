@@ -62,10 +62,6 @@ const TimeSeriesCardPropTypes = {
     includeZeroOnYaxis: PropTypes.bool,
     /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
-    /** Show timestamp in browser local time or GMT */
-    showTimeInGMT: PropTypes.bool,
-    /** tooltip format pattern that follows the moment formatting patterns */
-    tooltipDateFormatPattern: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: deprecate(
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -75,6 +71,8 @@ const TimeSeriesCardPropTypes = {
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
     zoomBar: ZoomBarPropTypes,
+    /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
+    addSpaceOnEdges: PropTypes.number,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -99,6 +97,12 @@ const TimeSeriesCardPropTypes = {
    * can be date instance or timestamp
    */
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  /** Region for value and text formatting */
+  locale: PropTypes.string,
+  /** Show timestamp in browser local time or GMT */
+  showTimeInGMT: PropTypes.bool,
+  /** tooltip format pattern that follows the moment formatting patterns */
+  tooltipDateFormatPattern: PropTypes.string,
 };
 
 const LineChartWrapper = styled.div`
@@ -156,6 +160,7 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
       // First filter based on on the dataFilter
       const filteredData = filter(values, dataFilter);
       if (!isEmpty(filteredData)) {
+        // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
           .filter(dataItem => {
             // only allow valid timestamp matches
@@ -187,6 +192,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  * @param {bool} showTimeInGMT
+ * @param {string} tooltipDataFormatPattern
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -265,8 +271,6 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showTimeInGMT,
-  tooltipDateFormatPattern,
   ...others
 }) => {
   const {
@@ -282,6 +286,9 @@ const TimeSeriesCard = ({
       unit,
       chartType,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
+      addSpaceOnEdges,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -549,6 +556,9 @@ const TimeSeriesCard = ({
                       },
                     }
                   : {}),
+                timeScale: {
+                  addSpaceOnEdges: addSpaceOnEdges || 1,
+                },
               }}
               width="100%"
               height="100%"
@@ -556,6 +566,7 @@ const TimeSeriesCard = ({
           </LineChartWrapper>
           {isExpanded ? (
             <StatefulTable
+              id="TimeSeries-table"
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}

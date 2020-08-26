@@ -62,6 +62,8 @@ const BarChartCard = ({
       unit,
       type = BAR_CHART_TYPES.SIMPLE,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -180,7 +182,8 @@ const BarChartCard = ({
               tooltip: {
                 valueFormatter: tooltipValue =>
                   chartValueFormatter(tooltipValue, size, unit, locale),
-                customHTML: (...args) => handleTooltip(...args, timeDataSourceId, colors, locale),
+                customHTML: (...args) =>
+                  handleTooltip(...args, timeDataSourceId, showTimeInGMT, tooltipDateFormatPattern),
               },
               // zoomBar should only be enabled for time-based charts
               ...(zoomBar?.enabled &&
@@ -203,6 +206,7 @@ const BarChartCard = ({
           />
           {isExpanded ? (
             <StatefulTable
+              id="BarChartCard-table"
               className={`${iotPrefix}--bar-chart-card--stateful-table`}
               columns={tableColumns}
               data={tableData}
@@ -257,6 +261,8 @@ BarChartCard.defaultProps = {
     layout: BAR_CHART_LAYOUTS.VERTICAL,
   },
   locale: 'en',
+  showTimeInGMT: false,
+  tooltipDateFormatPattern: 'L HH:mm:ss',
 };
 
 export default BarChartCard;

@@ -356,7 +356,7 @@ Map {
         "selectAllAria": "Select all items",
         "selectRowAria": "Select row",
       },
-      "id": "Table",
+      "id": null,
       "lightweight": false,
       "locale": null,
       "options": Object {
@@ -1620,6 +1620,10 @@ Map {
         "type": "shape",
       },
       "selectAllText": Object {
+        "type": "string",
+      },
+      "tableId": Object {
+        "isRequired": true,
         "type": "string",
       },
       "tableState": Object {
@@ -3923,7 +3927,9 @@ Map {
         "noDataLabel": "No data",
       },
       "locale": "en",
+      "showTimeInGMT": false,
       "size": "MEDIUMWIDE",
+      "tooltipDateFormatPattern": "L HH:mm:ss",
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -4635,6 +4641,9 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
+      "showTimeInGMT": Object {
+        "type": "bool",
+      },
       "size": [Function],
       "testID": Object {
         "type": "string",
@@ -4651,6 +4660,9 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "tooltipDateFormatPattern": Object {
+        "type": "string",
       },
       "values": Object {
         "args": Array [
@@ -9208,6 +9220,9 @@ Map {
       "content": Object {
         "args": Array [
           Object {
+            "addSpaceOnEdges": Object {
+              "type": "number",
+            },
             "chartType": [Function],
             "includeZeroOnXaxis": Object {
               "type": "bool",
@@ -9280,13 +9295,7 @@ Map {
               "isRequired": true,
               "type": "oneOfType",
             },
-            "showTimeInGMT": Object {
-              "type": "bool",
-            },
             "timeDataSourceId": Object {
-              "type": "string",
-            },
-            "tooltipDateFormatPattern": Object {
               "type": "string",
             },
             "unit": Object {
@@ -9499,6 +9508,9 @@ Map {
         "type": "shape",
       },
       "showOverflow": [Function],
+      "showTimeInGMT": Object {
+        "type": "bool",
+      },
       "size": Object {
         "args": Array [
           Array [
@@ -9534,6 +9546,9 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "tooltipDateFormatPattern": Object {
+        "type": "string",
       },
       "values": Object {
         "args": Array [

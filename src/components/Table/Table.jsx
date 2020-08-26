@@ -4,6 +4,7 @@ import merge from 'lodash/merge';
 import pick from 'lodash/pick';
 import { Table as CarbonTable, TableContainer } from 'carbon-components-react';
 import isNil from 'lodash/isNil';
+import uniqueId from 'lodash/uniqueId';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 
@@ -183,7 +184,7 @@ const propTypes = {
 };
 
 export const defaultProps = baseProps => ({
-  id: 'Table',
+  id: null,
   useZebraStyles: false,
   lightweight: false,
   title: null,
@@ -320,6 +321,7 @@ const Table = props => {
   const { maxPages, ...paginationProps } = view.pagination;
   const langDir = useLangDirection();
 
+  const [tableId] = useState(() => uniqueId('table-'));
   const [, forceUpdateCellTextWidth] = useState(0);
 
   const useCellTextTruncate = useMemo(
@@ -395,7 +397,7 @@ const Table = props => {
       view.toolbar.customToolbarContent ||
       tooltip ? (
         <TableToolbar
-          tableId={id}
+          tableId={id || tableId}
           secondaryTitle={secondaryTitle}
           tooltip={tooltip}
           i18n={{
@@ -501,6 +503,7 @@ const Table = props => {
             clearSelectionText={i18n.clearSelectionAria}
             openMenuText={i18n.openMenuAria}
             closeMenuText={i18n.closeMenuAria}
+            tableId={id || tableId}
             tableState={{
               isDisabled: rowEditMode || singleRowEditMode,
               activeBar: view.toolbar.activeBar,
@@ -522,7 +525,7 @@ const Table = props => {
           ) : visibleData && visibleData.length ? (
             <TableBody
               langDir={langDir}
-              tableId={id}
+              tableId={id || tableId}
               rows={visibleData}
               locale={locale}
               rowActionsState={view.table.rowActions}
