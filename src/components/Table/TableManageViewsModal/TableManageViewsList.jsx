@@ -116,7 +116,7 @@ const TableManageViewsList = ({
   rowTagsRenderer = getRowTags,
   rowTitleInterpolation = getRowTitle,
   testID,
-  views = rowTagsRenderer,
+  views,
   ...props
 }) => {
   const MyList = overrides?.list?.component || List;
@@ -127,7 +127,7 @@ const TableManageViewsList = ({
       content: {
         rowActions: rowActionsRenderer(view, { ...props, i18n, testID }),
         secondaryValue: rowDescriptionInterpolation(view),
-        tags: rowTagsRenderer(view, { ...props, i18n }),
+        tags: rowTagsRenderer(view, { ...props, defaultViewId, i18n }),
         value: rowTitleInterpolation(view, publicLabelText, privateLabelText),
       },
       id,

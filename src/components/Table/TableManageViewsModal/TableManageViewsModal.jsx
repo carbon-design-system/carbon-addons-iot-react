@@ -85,7 +85,7 @@ const defaultProps = {
     closeIconDescription: 'Close',
     defaultLabelText: 'default',
     deleteIconText: 'delete',
-    deleteWarningTextTemplate: label => `You are about to delete view "${label}".`,
+    deleteWarningTextTemplate: label => `You are about to delete view ${label}.`,
     deleteWarningCancel: 'Cancel',
     deleteWarningConfirm: 'Delete',
     editIconText: 'edit',

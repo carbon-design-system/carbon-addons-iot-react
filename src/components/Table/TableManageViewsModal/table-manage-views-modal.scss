@@ -20,3 +20,8 @@
   flex-shrink: 0;
   margin-left: $spacing-05;
 }
+
+html[dir='rtl'] .#{$iot-prefix}--manage-views-modal__public-checkbox {
+  margin-left: 0;
+  margin-right: $spacing-05;
+}

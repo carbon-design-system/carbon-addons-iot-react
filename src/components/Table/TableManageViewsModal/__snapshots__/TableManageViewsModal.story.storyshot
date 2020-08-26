@@ -298,6 +298,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
                         >
                           myView1 (Public)
                         </div>
+                        <div>
+                          <span
+                            className="bx--tag bx--tag--blue"
+                          >
+                            default
+                          </span>
+                        </div>
                         <div
                           className="iot--list-item--content--row-actions"
                         >
