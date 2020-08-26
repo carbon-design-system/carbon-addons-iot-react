@@ -34,7 +34,6 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
 
   useEffect(
     () => {
-      /* istanbul ignore else */
       if (hasOverflow && overFlowContainerRef) {
         setOverflowItems([]);
         setVisibleItems(childrenItems.slice(0));
@@ -45,7 +44,6 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
 
   useLayoutEffect(
     () => {
-      /* istanbul ignore else */
       if (hasOverflow && overFlowContainerRef.current) {
         const clientWidth = overFlowContainerRef.current?.clientWidth;
         const scrollWidth = overFlowContainerRef.current?.scrollWidth;
