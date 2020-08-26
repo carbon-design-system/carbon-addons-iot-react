@@ -525,7 +525,7 @@ const Table = props => {
           ) : visibleData && visibleData.length ? (
             <TableBody
               langDir={langDir}
-              tableId={id}
+              tableId={id || tableId}
               rows={visibleData}
               locale={locale}
               rowActionsState={view.table.rowActions}

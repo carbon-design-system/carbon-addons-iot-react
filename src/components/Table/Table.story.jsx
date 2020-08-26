@@ -1445,7 +1445,6 @@ storiesOf('Watson IoT/Table', module)
   )
   .add('with sorting', () => (
     <Table
-      id="table"
       columns={tableColumns.map((i, idx) => ({
         ...i,
         isSortable: idx !== 1,
