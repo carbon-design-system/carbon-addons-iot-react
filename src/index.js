@@ -13,6 +13,7 @@ export Table from './components/Table';
 export TableHead from './components/Table/TableHead/TableHead';
 export TableBody from './components/Table/TableBody/TableBody';
 export TableSaveViewModal from './components/Table/TableSaveViewModal/TableSaveViewModal';
+export TableManageViewsModal from './components/Table/TableManageViewsModal/TableManageViewsModal';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';

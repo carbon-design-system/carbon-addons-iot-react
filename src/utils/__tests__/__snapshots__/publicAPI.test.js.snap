@@ -2343,6 +2343,273 @@ Map {
       },
     },
   },
+  "TableManageViewsModal" => Object {
+    "defaultProps": Object {
+      "defaultViewId": undefined,
+      "displayPublicDefaultChecked": true,
+      "error": undefined,
+      "i18n": Object {
+        "closeIconDescription": "Close",
+        "defaultLabelText": "default",
+        "deleteIconText": "delete",
+        "deleteWarningCancel": "Cancel",
+        "deleteWarningConfirm": "Delete",
+        "deleteWarningTextTemplate": [Function],
+        "editIconText": "edit",
+        "listTitle": "Available Views",
+        "modalTitle": "Manage views",
+        "privateLabelText": "Private",
+        "publicCheckboxLabelText": "Display public views",
+        "publicLabelText": "Public",
+        "searchClearButtonLabelText": "Clear search input",
+        "searchIconLabelText": "Search",
+        "searchPlaceholderText": "Search views",
+      },
+      "isLoading": false,
+      "overrides": undefined,
+      "pagination": undefined,
+      "searchValueDefault": "",
+      "testID": "TableManageViewsModal",
+    },
+    "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "onClearError": Object {
+              "type": "func",
+            },
+            "onClose": Object {
+              "type": "func",
+            },
+            "onDelete": Object {
+              "type": "func",
+            },
+            "onDisplayPublicChange": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+            "onEdit": Object {
+              "type": "func",
+            },
+            "onSearchChange": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+          },
+        ],
+        "isRequired": true,
+        "type": "shape",
+      },
+      "defaultViewId": Object {
+        "type": "string",
+      },
+      "displayPublicDefaultChecked": Object {
+        "type": "bool",
+      },
+      "error": Object {
+        "type": "string",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "closeIconDescription": Object {
+              "type": "string",
+            },
+            "defaultLabelText": Object {
+              "type": "string",
+            },
+            "deleteIconText": Object {
+              "type": "string",
+            },
+            "deleteWarningCancel": Object {
+              "type": "string",
+            },
+            "deleteWarningConfirm": Object {
+              "type": "string",
+            },
+            "deleteWarningTextTemplate": Object {
+              "type": "func",
+            },
+            "editIconText": Object {
+              "type": "string",
+            },
+            "listTitle": Object {
+              "type": "string",
+            },
+            "modalTitle": Object {
+              "type": "string",
+            },
+            "privateLabelText": Object {
+              "type": "string",
+            },
+            "publicCheckboxLabelText": Object {
+              "type": "string",
+            },
+            "publicLabelText": Object {
+              "type": "string",
+            },
+            "searchClearButtonLabelText": Object {
+              "type": "string",
+            },
+            "searchIconLabelText": Object {
+              "type": "string",
+            },
+            "searchPlaceholderText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "open": Object {
+        "isRequired": true,
+        "type": "bool",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "mainModal": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "publicCheckbox": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "search": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "tableManageViewsList": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "warningModal": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "type": "object",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "pagination": Object {
+        "args": Array [
+          Object {
+            "maxPage": Object {
+              "isRequired": true,
+              "type": "number",
+            },
+            "nextPageText": Object {
+              "type": "string",
+            },
+            "onPage": Object {
+              "isRequired": true,
+              "type": "func",
+            },
+            "page": Object {
+              "isRequired": true,
+              "type": "number",
+            },
+            "pageOfPagesText": Object {
+              "type": "func",
+            },
+            "pageText": Object {
+              "type": "string",
+            },
+            "prevPageText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "searchValueDefault": Object {
+        "type": "string",
+      },
+      "testID": Object {
+        "type": "string",
+      },
+      "views": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "id": Object {
+                  "type": "string",
+                },
+                "isDeleteable": Object {
+                  "type": "bool",
+                },
+                "isEditable": Object {
+                  "type": "bool",
+                },
+                "isPublic": Object {
+                  "type": "bool",
+                },
+                "title": Object {
+                  "type": "string",
+                },
+                "viewDescription": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "isRequired": true,
+        "type": "arrayOf",
+      },
+    },
+  },
   "TableSkeletonWithHeaders" => Object {
     "defaultProps": Object {
       "columns": Array [],
@@ -13617,6 +13884,7 @@ Map {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
       "buttons": Array [],
+      "className": null,
       "expandedIds": Array [],
       "handleSelect": [Function],
       "i18n": Object {
@@ -13643,6 +13911,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "className": Object {
+        "type": "string",
       },
       "expandedIds": Object {
         "args": Array [
