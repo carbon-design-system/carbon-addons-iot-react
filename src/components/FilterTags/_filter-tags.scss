@@ -17,6 +17,10 @@
     box-shadow: none;
     background-color: unset;
     display: inline-block;
+
+    .#{$prefix}--tag {
+      cursor: pointer;
+    }
   }
   .#{$iot-prefix}--filtertags-overflow-items[data-floating-menu-direction='bottom']::after {
     background-color: unset;
