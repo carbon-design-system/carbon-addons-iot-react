@@ -769,4 +769,40 @@ describe('Table', () => {
     expect(inModal.mock.calls.length).toBe(1);
     expect(notInModal.mock.calls.length).toBe(0);
   });
+
+  it('will fire row actions when Table is in modal', () => {
+    const inModal = jest.fn();
+    const { container } = render(
+      <Modal open>
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={[
+            {
+              ...tableData[0],
+              rowActions: [
+                ...tableData[0].rowActions,
+                {
+                  id: 'drilldown',
+                  renderIcon: ArrowRight16,
+                  iconDescription: 'Drill in 2',
+                  labelText: 'Drill in 2',
+                  isOverflow: false,
+                },
+              ],
+            },
+          ]}
+          options={{ hasRowActions: true }}
+          actions={{ table: { onApplyRowAction: inModal } }}
+        />
+      </Modal>
+    );
+
+    expect(inModal.mock.calls.length).toBe(0);
+    fireEvent.click(screen.getByText('Drill in 2').closest('button'));
+    expect(inModal.mock.calls.length).toBe(1);
+    fireEvent.click(container.querySelector('.iot--row-actions-cell--overflow-menu'));
+    fireEvent.click(screen.queryByText('Drill in').closest('button'));
+    expect(inModal.mock.calls.length).toBe(2);
+  });
 });
