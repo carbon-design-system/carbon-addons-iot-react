@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash/omit';
 import { Close16, Popup16 } from '@carbon/icons-react';
@@ -6,6 +6,7 @@ import { OverflowMenu, OverflowMenuItem, Button } from 'carbon-components-react'
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
@@ -35,12 +36,19 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   className: PropTypes.string,
   ...omit(CardRangePickerPropTypes, 'onClose'),
+  /** Generates the available time range selection options. Each option should include 'this' or 'last'.
+   * i.e. { thisWeek: 'This week', lastWeek: 'Last week'}
+   */
+  timeRangeOptions: TimeRangeOptionsPropTypes, // eslint-disable-line react/require-default-props
 };
+
 const defaultProps = {
   isEditable: false,
   isExpanded: false,
   className: null,
+  timeRangeOptions: null,
 };
+
 const CardToolbar = ({
   i18n,
   width,
@@ -48,9 +56,40 @@ const CardToolbar = ({
   isExpanded,
   availableActions,
   timeRange,
+  timeRangeOptions: timeRangeOptionsProp,
   onCardAction,
   className,
 }) => {
+  // maps the timebox internal label to a translated string
+  // Need the default here in case that the CardToolbar is used by multiple different components
+  // Also needs to reassign itself if i18n changes
+  const timeRangeOptions = useMemo(
+    () =>
+      timeRangeOptionsProp || {
+        last24Hours: i18n.last24HoursLabel,
+        last7Days: i18n.last7DaysLabel,
+        lastMonth: i18n.lastMonthLabel,
+        lastQuarter: i18n.lastQuarterLabel,
+        lastYear: i18n.lastYearLabel,
+        thisWeek: i18n.thisWeekLabel,
+        thisMonth: i18n.thisMonthLabel,
+        thisQuarter: i18n.thisQuarterLabel,
+        thisYear: i18n.thisYearLabel,
+      },
+    [
+      i18n.last24HoursLabel,
+      i18n.last7DaysLabel,
+      i18n.lastMonthLabel,
+      i18n.lastQuarterLabel,
+      i18n.lastYearLabel,
+      i18n.thisMonthLabel,
+      i18n.thisQuarterLabel,
+      i18n.thisWeekLabel,
+      i18n.thisYearLabel,
+      timeRangeOptionsProp,
+    ]
+  );
+
   return isEditable ? (
     <div className={classnames(className, `${iotPrefix}--card--toolbar`)}>
       {(availableActions.edit || availableActions.clone || availableActions.delete) && (
@@ -90,6 +129,7 @@ const CardToolbar = ({
           width={width}
           i18n={i18n}
           timeRange={timeRange}
+          timeRangeOptions={timeRangeOptions}
           onCardAction={onCardAction}
           cardWidth={width}
         />

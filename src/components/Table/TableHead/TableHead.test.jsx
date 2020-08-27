@@ -1,11 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import cloneDeep from 'lodash/cloneDeep';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
 
 import TableHead from './TableHead';
 import TableHeader from './TableHeader';
+import { MIN_COLUMN_WIDTH } from './columnWidthUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -29,6 +31,7 @@ const commonTableHeadProps = {
     ],
   },
   actions: { onChangeOrdering: jest.fn() },
+  options: { wrapCellText: 'auto', truncateCellText: false },
 };
 
 describe('TableHead', () => {
@@ -41,10 +44,7 @@ describe('TableHead', () => {
   it('columns should render extra column for multi select', () => {
     const myProps = {
       ...commonTableHeadProps,
-      options: {
-        hasRowExpansion: true,
-        hasRowSelection: 'multi',
-      },
+      options: { ...commonTableHeadProps.options, hasRowExpansion: true, hasRowSelection: 'multi' },
     };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find(TableHeader);
@@ -55,6 +55,7 @@ describe('TableHead', () => {
     const myProps = {
       ...commonTableHeadProps,
       options: {
+        ...commonTableHeadProps.options,
         hasRowActions: true,
       },
     };
@@ -94,7 +95,10 @@ describe('TableHead', () => {
   });
 
   it('check has resize if has resize is true ', () => {
-    const myProps = { ...commonTableHeadProps, options: { hasResize: true } };
+    const myProps = {
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options, hasResize: true },
+    };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
     tableHeaders.first().simulate('click');
@@ -102,7 +106,10 @@ describe('TableHead', () => {
   });
 
   it('check not resize if has resize is false ', () => {
-    const myProps = { ...commonTableHeadProps, options: { hasResize: false } };
+    const myProps = {
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options, hasResize: false },
+    };
     const wrapper = mount(<TableHead {...myProps} />);
     const tableHeaders = wrapper.find('div.column-resize-handle');
     expect(tableHeaders).toHaveLength(0);
@@ -143,13 +150,16 @@ describe('TableHead', () => {
           selection: { isSelectAllSelected: false },
         }}
         actions={{ onColumnResize: jest.fn() }}
-        options={{ hasResize: true }}
+        options={{ ...commonTableHeadProps.options, hasResize: true }}
       />
     );
     const tableHeaders = wrapper.find(TableHeader);
     expect(tableHeaders).toHaveLength(0);
     // trigger a re-render with non-empty columns
-    wrapper.setProps({ ...commonTableHeadProps, options: { hasResize: true } });
+    wrapper.setProps({
+      ...commonTableHeadProps,
+      options: { ...commonTableHeadProps.options, hasResize: true },
+    });
     // sync enzyme component tree with the updated dom
     wrapper.update();
     const tableHeaderResizeHandles = wrapper.find(`div.${iotPrefix}--column-resize-handle`);
@@ -167,7 +177,7 @@ describe('TableHead', () => {
         ...commonTableHeadProps.tableState,
         ordering: [{ columnId: 'col1', isHidden: false }],
       },
-      options: { hasResize: false },
+      options: { ...commonTableHeadProps.options, hasResize: false },
     };
 
     let wrapper = mount(<TableHead {...myProps} />);
@@ -262,6 +272,48 @@ describe('TableHead', () => {
         ],
       };
 
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const wrapper = mount(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '200px' },
+            { id: 'col2', name: 'Column 2', width: '200px' },
+            { id: 'col3', name: 'Column 3', width: '200px' },
+          ]}
+        />
+      );
+      const onColumnToggleFunc = wrapper.find('ColumnHeaderRow').prop('onColumnToggle');
+
+      const orderingAfterTogleShow = [
+        { columnId: 'col1', isHidden: false },
+        { columnId: 'col2', isHidden: false },
+        { columnId: 'col3', isHidden: false },
+      ];
+
+      // Show col1. The width needed for col1 is proportionally subtracted from
+      // the other visible columns.
+      onColumnToggleFunc('col1', orderingAfterTogleShow);
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col1', name: 'Column 1', width: '200px' },
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '100px' },
+      ]);
+      expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
+    });
+
+    it('toggle show column does not allow columns to shrink below MIN WIDTH', () => {
+      myProps.tableState = {
+        ...myProps.tableState,
+        ordering: [
+          { columnId: 'col1', isHidden: true },
+          { columnId: 'col2', isHidden: false },
+          { columnId: 'col3', isHidden: false },
+        ],
+      };
+
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
 
       const wrapper = mount(<TableHead {...myProps} />);
@@ -279,8 +331,8 @@ describe('TableHead', () => {
 
       expect(myActions.onColumnResize).toHaveBeenCalledWith([
         { id: 'col1', name: 'Column 1', width: '100px' },
-        { id: 'col2', name: 'Column 2', width: '50px' },
-        { id: 'col3', name: 'Column 3', width: '50px' },
+        { id: 'col2', name: 'Column 2', width: `${MIN_COLUMN_WIDTH}px` },
+        { id: 'col3', name: 'Column 3', width: `${MIN_COLUMN_WIDTH}px` },
       ]);
       expect(myActions.onChangeOrdering).toHaveBeenCalledWith(orderingAfterTogleShow);
     });
@@ -355,32 +407,199 @@ describe('TableHead', () => {
       expect(modLastTableHeader.find(`div.${iotPrefix}--column-resize-handle`)).toHaveLength(0);
     });
 
-    it('should update the column widths when column prop changes', () => {
+    it('should update the column widths when column prop changes and all column prop have widths defined', () => {
       mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
-      const wrapper = mount(<TableHead {...myProps} />);
-      expect(
-        wrapper
-          .find('.iot--table-header-resize')
-          .first()
-          .props().thStyle.width
-      ).toEqual(100);
+      const { rerender } = render(<TableHead {...myProps} />);
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '100px' });
 
-      wrapper.setProps({
-        ...myProps,
-        columns: [
-          { id: 'col1', name: 'Column 1', width: '50px' },
-          { id: 'col2', name: 'Column 2', width: '150px' },
-          { id: 'col3', name: 'Column 3', width: '100px' },
-        ],
-      });
-      wrapper.update();
+      // All props have widths so the column widths are updated
+      rerender(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '250px' },
+            { id: 'col2', name: 'Column 2', width: '150px' },
+            { id: 'col3', name: 'Column 3', width: '100px' },
+          ]}
+        />
+      );
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '250px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '150px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '100px' });
+    });
 
-      expect(
-        wrapper
-          .find('.iot--table-header-resize')
-          .first()
-          .props().thStyle.width
-      ).toEqual(50);
+    it('should update the column widths when column prop changes and all visible column props have widths defined', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const orderingWidthHiddenCol1 = [
+        { columnId: 'col1', isHidden: true },
+        ...myProps.tableState.ordering.slice(1),
+      ];
+      myProps.tableState.ordering = orderingWidthHiddenCol1;
+
+      const { rerender } = render(<TableHead {...myProps} />);
+
+      rerender(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1' },
+            { id: 'col2', name: 'Column 2', width: '300px' },
+            { id: 'col3', name: 'Column 3', width: '400px' },
+          ]}
+        />
+      );
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '300px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '400px' });
+    });
+
+    it('should not update the column widths when column prop changes and visible columns are lacking width', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const { rerender } = render(<TableHead {...myProps} />);
+      rerender(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: undefined },
+            { id: 'col2', name: 'Column 2', width: '150px' },
+            { id: 'col3', name: 'Column 3', width: '100px' },
+          ]}
+        />
+      );
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '100px' });
+
+      rerender(
+        <TableHead
+          {...myProps}
+          columns={[
+            { id: 'col1', name: 'Column 1', width: '100' },
+            { id: 'col2', name: 'Column 2', width: '150px' },
+            { id: 'col3', name: 'Column 3' },
+          ]}
+        />
+      );
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '100px' });
+    });
+
+    it('handles removing columns by distributing the width on remaining cols', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const { rerender } = render(<TableHead {...myProps} />);
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(2);
+      myProps.columns = myProps.columns.slice(2);
+
+      rerender(<TableHead {...myProps} />);
+
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '300px' });
+    });
+
+    it('handles removing hidden columns without any widths', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const orderingWidthHiddenCol1 = [
+        { columnId: 'col1', isHidden: true },
+        ...myProps.tableState.ordering.slice(1),
+      ];
+      myProps.tableState.ordering = orderingWidthHiddenCol1;
+      myProps.tableState.activeBar = 'column';
+
+      const { rerender } = render(<TableHead {...myProps} />);
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
+      myProps.columns = myProps.columns.slice(1);
+
+      rerender(<TableHead {...myProps} />);
+      const toggleHideCol2Button = screen.getAllByText('Column 2')[1];
+      fireEvent.click(toggleHideCol2Button);
+
+      expect(myActions.onColumnResize).toHaveBeenCalledWith([
+        { id: 'col2', name: 'Column 2', width: '100px' },
+        { id: 'col3', name: 'Column 3', width: '200px' },
+      ]);
+    });
+
+    it('handles adding new columns by subtracting the needed width from other visible columns', () => {
+      // Make sure all columns have an initial width of 200 so that there is plenty of space to subtract
+      myProps.columns = myProps.columns.map(col => ({ ...col, width: '200px' }));
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { rerender } = render(<TableHead {...myProps} />);
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '200px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '200px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '200px' });
+
+      // Add two new columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: false },
+        { columnId: 'col5', isHidden: false },
+      ];
+      myProps.columns = [
+        ...myProps.columns,
+        { id: 'col4', name: 'Column 4', width: '150px' },
+        { id: 'col5', name: 'Column 5', width: '150px' },
+      ];
+
+      rerender(<TableHead {...myProps} />);
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({ width: '150px' });
+      expect(screen.getAllByText('Column 5')[0].closest('th')).toHaveStyle({ width: '150px' });
+    });
+
+    it('handles adding and removing columns during the same rerender', () => {
+      // Make sure all columns have an initial width of 200 so that there is plenty of space to subtract
+      myProps.columns = myProps.columns.map(col => ({ ...col, width: '200px' }));
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 200 }));
+
+      const { rerender } = render(<TableHead {...myProps} />);
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '200px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '200px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '200px' });
+
+      // Add 2 new columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: false },
+        { columnId: 'col5', isHidden: false },
+      ];
+      myProps.columns = [
+        ...myProps.columns,
+        { id: 'col4', name: 'Column 4', width: '200px' },
+        { id: 'col5', name: 'Column 5', width: '200px' },
+      ];
+      // Remove one column
+      myProps.tableState.ordering = myProps.tableState.ordering.slice(1);
+      myProps.columns = myProps.columns.slice(1);
+
+      rerender(<TableHead {...myProps} />);
+
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).toHaveStyle({ width: '200px' });
+    });
+
+    it('handles adding a new hidden column', () => {
+      mockGetBoundingClientRect.mockImplementation(() => ({ width: 100 }));
+      const { rerender } = render(<TableHead {...myProps} />);
+
+      // Add 1 new hidden columns
+      myProps.tableState.ordering = [
+        ...myProps.tableState.ordering,
+        { columnId: 'col4', isHidden: true },
+      ];
+      myProps.columns = [...myProps.columns, { id: 'col4', name: 'Column 4', width: '100px' }];
+
+      rerender(<TableHead {...myProps} />);
+
+      expect(screen.getAllByText('Column 1')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 2')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 3')[0].closest('th')).toHaveStyle({ width: '100px' });
+      expect(screen.getAllByText('Column 4')[0].closest('th')).not.toHaveStyle({ width: '100px' });
     });
   });
 });

@@ -277,7 +277,3 @@ describe('TableSaveViewModal', () => {
     expect(screen.queryByText(i18nDefault.cancelButtonLabelText)).not.toBeInTheDocument();
   });
 });
-
-// test callbacks works
-// test that disable works
-// test open/close

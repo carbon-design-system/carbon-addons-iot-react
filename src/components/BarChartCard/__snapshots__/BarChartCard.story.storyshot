@@ -262,7 +262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
       style={
         Object {
           "margin": 20,
-          "width": "520px",
+          "width": "1056px",
         }
       }
     >
@@ -273,7 +273,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
         role="presentation"
         style={
           Object {
-            "--card-default-height": "304px",
+            "--card-default-height": "624px",
           }
         }
       >
@@ -372,7 +372,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
           className="iot--card--content"
           style={
             Object {
-              "--card-content-height": "256px",
+              "--card-content-height": "576px",
             }
           }
         >
@@ -1525,7 +1525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
         <div
           className="iot--card iot--bar-chart-card iot--card--wrapper"
           data-testid="Card"
-          id="grouped-sample"
+          id="stacked-horizontal-sample"
           role="presentation"
           style={
             Object {
@@ -1540,17 +1540,61 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
           >
             <span
               className="iot--card--title"
-              title="Particles and temperature in cities"
+              title="Particles by city over time"
             >
               <div
                 className="iot--card--title--text"
               >
-                Particles and temperature in cities
+                Particles by city over time
               </div>
             </span>
             <div
               className="iot--card--toolbar"
             >
+              <div
+                className="iot--card--toolbar-date-range-wrapper"
+              >
+                <button
+                  aria-expanded={false}
+                  aria-haspopup={true}
+                  aria-label="Menu"
+                  className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                  onClick={[Function]}
+                  onClose={[Function]}
+                  onKeyDown={[Function]}
+                  open={false}
+                  tabIndex={0}
+                  title="Select time range"
+                >
+                  <svg
+                    aria-label="Select time range"
+                    className="bx--overflow-menu__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                    />
+                    <path
+                      d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
+                    />
+                    <path
+                      d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
+                    />
+                    <title>
+                      Select time range
+                    </title>
+                  </svg>
+                </button>
+              </div>
               <button
                 className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only bx--btn bx--btn--ghost"
                 disabled={false}
@@ -1640,7 +1684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                       tabIndex="0"
                     >
                       <div
-                        aria-labelledby="Table-toolbar-search-search"
+                        aria-labelledby="BarChartCard-table-toolbar-search-search"
                         className="bx--search bx--search--sm table-toolbar-search"
                         role="search"
                       >
@@ -1661,8 +1705,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         </svg>
                         <label
                           className="bx--label"
-                          htmlFor="Table-toolbar-search"
-                          id="Table-toolbar-search-search"
+                          htmlFor="BarChartCard-table-toolbar-search"
+                          id="BarChartCard-table-toolbar-search-search"
                         >
                           Search
                         </label>
@@ -1670,7 +1714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           aria-hidden={true}
                           autoComplete="off"
                           className="bx--search-input"
-                          id="Table-toolbar-search"
+                          id="BarChartCard-table-toolbar-search"
                           onChange={[Function]}
                           placeholder="Search"
                           role="searchbox"
@@ -1773,7 +1817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                     >
                       <tr>
                         <th
-                          aria-sort="none"
+                          aria-sort="descending"
                           className="table-header-label-start iot--table-head--table-header table-header-sortable"
                           scope="col"
                           style={
@@ -1784,9 +1828,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         >
                           <button
                             align="start"
-                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                            data-column="city"
-                            id="column-city"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort bx--table-sort--active bx--table-sort--ascending"
+                            data-column="timestamp"
+                            id="column-timestamp"
                             onClick={[Function]}
                             style={
                               Object {
@@ -1799,9 +1843,75 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="City"
+                                title="Timestamp"
                               >
-                                City
+                                Timestamp
+                              </span>
+                            </span>
+                            <svg
+                              aria-label="Unsort rows by this header"
+                              className="bx--table-sort__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M16 4L6 14 7.41 15.41 15 7.83 15 30 17 30 17 7.83 24.59 15.41 26 14 16 4z"
+                              />
+                            </svg>
+                            <svg
+                              aria-label="Unsort rows by this header"
+                              className="bx--table-sort__icon-unsorted"
+                              fill="currentColor"
+                              focusable="false"
+                              height={20}
+                              preserveAspectRatio="xMidYMid meet"
+                              role="img"
+                              viewBox="0 0 32 32"
+                              width={20}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                              />
+                            </svg>
+                          </button>
+                        </th>
+                        <th
+                          aria-sort="none"
+                          className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                          scope="col"
+                          style={
+                            Object {
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <button
+                            align="start"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                            data-column="Amsterdam"
+                            id="column-Amsterdam"
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "--table-header-width": "",
+                              }
+                            }
+                          >
+                            <span
+                              className="bx--table-header-label"
+                            >
+                              <span
+                                className=""
+                                title="Amsterdam"
+                              >
+                                Amsterdam
                               </span>
                             </span>
                             <svg
@@ -1851,8 +1961,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                            data-column="Particles"
-                            id="column-Particles"
+                            data-column="New York"
+                            id="column-New York"
                             onClick={[Function]}
                             style={
                               Object {
@@ -1865,9 +1975,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="Particles"
+                                title="New york"
                               >
-                                Particles
+                                New york
                               </span>
                             </span>
                             <svg
@@ -1917,8 +2027,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                            data-column="Temperature"
-                            id="column-Temperature"
+                            data-column="Bangkok"
+                            id="column-Bangkok"
                             onClick={[Function]}
                             style={
                               Object {
@@ -1931,9 +2041,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="Temperature"
+                                title="Bangkok"
                               >
-                                Temperature
+                                Bangkok
                               </span>
                             </span>
                             <svg
@@ -1983,8 +2093,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           <button
                             align="start"
                             className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
-                            data-column="Emissions"
-                            id="column-Emissions"
+                            data-column="San Francisco"
+                            id="column-San Francisco"
                             onClick={[Function]}
                             style={
                               Object {
@@ -1997,9 +2107,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                             >
                               <span
                                 className=""
-                                title="Emissions"
+                                title="San francisco"
                               >
-                                Emissions
+                                San francisco
                               </span>
                             </span>
                             <svg
@@ -2048,9 +2158,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="city"
+                          data-column="timestamp"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-city"
+                          id="cell-BarChartCard-table-dataindex-0-timestamp"
                           offset={0}
                         >
                           <span
@@ -2058,68 +2168,59 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className=""
-                              title="Amsterdam"
+                              title="10/28/2018 07:34"
                             >
-                              Amsterdam
+                              10/28/2018 07:34
                             </span>
                           </span>
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Particles"
+                          data-column="Amsterdam"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-Particles"
+                          id="cell-BarChartCard-table-dataindex-0-Amsterdam"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={447}
-                            >
-                              447
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Temperature"
+                          data-column="New York"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-Temperature"
+                          id="cell-BarChartCard-table-dataindex-0-New York"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={44}
-                            >
-                              44
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Emissions"
+                          data-column="Bangkok"
                           data-offset={0}
-                          id="cell-Table-dataindex-0-Emissions"
+                          id="cell-BarChartCard-table-dataindex-0-Bangkok"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={120}
-                            >
-                              120
-                            </span>
-                          </span>
+                          />
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="San Francisco"
+                          data-offset={0}
+                          id="cell-BarChartCard-table-dataindex-0-San Francisco"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          />
                         </td>
                       </tr>
                       <tr
@@ -2129,9 +2230,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="city"
+                          data-column="timestamp"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-city"
+                          id="cell-BarChartCard-table-dataindex-1-timestamp"
                           offset={0}
                         >
                           <span
@@ -2139,68 +2240,59 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className=""
-                              title="New York"
+                              title="10/28/2018 07:34"
                             >
-                              New York
+                              10/28/2018 07:34
                             </span>
                           </span>
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Particles"
+                          data-column="Amsterdam"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-Particles"
+                          id="cell-BarChartCard-table-dataindex-1-Amsterdam"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={528}
-                            >
-                              528
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Temperature"
+                          data-column="New York"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-Temperature"
+                          id="cell-BarChartCard-table-dataindex-1-New York"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={11}
-                            >
-                              11
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Emissions"
+                          data-column="Bangkok"
                           data-offset={0}
-                          id="cell-Table-dataindex-1-Emissions"
+                          id="cell-BarChartCard-table-dataindex-1-Bangkok"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={130}
-                            >
-                              130
-                            </span>
-                          </span>
+                          />
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="San Francisco"
+                          data-offset={0}
+                          id="cell-BarChartCard-table-dataindex-1-San Francisco"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          />
                         </td>
                       </tr>
                       <tr
@@ -2210,9 +2302,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="city"
+                          data-column="timestamp"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-city"
+                          id="cell-BarChartCard-table-dataindex-2-timestamp"
                           offset={0}
                         >
                           <span
@@ -2220,68 +2312,59 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className=""
-                              title="Bangkok"
+                              title="10/28/2018 07:34"
                             >
-                              Bangkok
+                              10/28/2018 07:34
                             </span>
                           </span>
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Particles"
+                          data-column="Amsterdam"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-Particles"
+                          id="cell-BarChartCard-table-dataindex-2-Amsterdam"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={435}
-                            >
-                              435
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Temperature"
+                          data-column="New York"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-Temperature"
+                          id="cell-BarChartCard-table-dataindex-2-New York"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={32}
-                            >
-                              32
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Emissions"
+                          data-column="Bangkok"
                           data-offset={0}
-                          id="cell-Table-dataindex-2-Emissions"
+                          id="cell-BarChartCard-table-dataindex-2-Bangkok"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={30}
-                            >
-                              30
-                            </span>
-                          </span>
+                          />
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="San Francisco"
+                          data-offset={0}
+                          id="cell-BarChartCard-table-dataindex-2-San Francisco"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          />
                         </td>
                       </tr>
                       <tr
@@ -2291,9 +2374,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="city"
+                          data-column="timestamp"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-city"
+                          id="cell-BarChartCard-table-dataindex-3-timestamp"
                           offset={0}
                         >
                           <span
@@ -2301,68 +2384,59 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/BarCh
                           >
                             <span
                               className=""
-                              title="San Francisco"
+                              title="10/28/2018 07:34"
                             >
-                              San Francisco
+                              10/28/2018 07:34
                             </span>
                           </span>
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Particles"
+                          data-column="Amsterdam"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-Particles"
+                          id="cell-BarChartCard-table-dataindex-3-Amsterdam"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={388}
-                            >
-                              388
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Temperature"
+                          data-column="New York"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-Temperature"
+                          id="cell-BarChartCard-table-dataindex-3-New York"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={120}
-                            >
-                              120
-                            </span>
-                          </span>
+                          />
                         </td>
                         <td
                           align="start"
                           className="data-table-start"
-                          data-column="Emissions"
+                          data-column="Bangkok"
                           data-offset={0}
-                          id="cell-Table-dataindex-3-Emissions"
+                          id="cell-BarChartCard-table-dataindex-3-Bangkok"
                           offset={0}
                         >
                           <span
                             className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                          >
-                            <span
-                              className=""
-                              title={312}
-                            >
-                              312
-                            </span>
-                          </span>
+                          />
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start"
+                          data-column="San Francisco"
+                          data-offset={0}
+                          id="cell-BarChartCard-table-dataindex-3-San Francisco"
+                          offset={0}
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                          />
                         </td>
                       </tr>
                     </tbody>

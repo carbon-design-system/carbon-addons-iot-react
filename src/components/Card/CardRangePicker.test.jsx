@@ -16,6 +16,18 @@ describe('CardRangePicker', () => {
   const last24HoursLabel = 'Last 24 Hours';
   const thisWeekLabel = 'This week';
 
+  const defaultTimeRangeOptions = {
+    last24Hours: last24HoursLabel,
+    last7Days: 'Last 7 days',
+    lastMonth: 'Last month',
+    lastQuarter: 'Last quarter',
+    lastYear: 'Last year',
+    thisWeek: thisWeekLabel,
+    thisMonth: 'This month',
+    thisQuarter: 'This quarter',
+    thisYear: 'This year',
+  };
+
   it('card editable actions', async () => {
     render(
       <CardRangePicker
@@ -25,6 +37,7 @@ describe('CardRangePicker', () => {
           last24HoursLabel,
           thisWeekLabel,
         }}
+        timeRangeOptions={defaultTimeRangeOptions}
         onCardAction={mockOnCardAction}
       />
     );
@@ -64,6 +77,7 @@ describe('CardRangePicker', () => {
         onCardAction={mockOnCardAction}
         cardWidth={500}
         timeRange="thisWeek"
+        timeRangeOptions={defaultTimeRangeOptions}
       />
     );
     expect(wrapper.find(`.${iotPrefix}--card--toolbar-timerange-label`)).toHaveLength(1);
@@ -76,8 +90,46 @@ describe('CardRangePicker', () => {
         onCardAction={mockOnCardAction}
         cardWidth={229}
         timeRange="thisWeek"
+        timeRangeOptions={defaultTimeRangeOptions}
       />
     );
     expect(wrapper2.find(`.${iotPrefix}--card--toolbar-timerange-label`)).toHaveLength(0);
+  });
+
+  it('should show custom time range options', async () => {
+    const last2hoursLabel = 'Last 2 Hours';
+    const customTimeRangeOptions = {
+      last8Hours: 'Last 8 Hours',
+      last4Hours: 'Last 4 Hours',
+      last2Hours: last2hoursLabel,
+      lastHour: 'Last Hour',
+      this8Hours: 'This 8 Hours',
+      this4Hours: 'This 4 Hours',
+      this2Hours: 'This 2 Hours',
+      thisHour: 'This Hour',
+    };
+
+    render(
+      <CardRangePicker
+        i18n={{
+          selectTimeRangeLabel,
+          defaultLabel,
+          last24HoursLabel,
+          thisWeekLabel,
+        }}
+        timeRangeOptions={customTimeRangeOptions}
+        onCardAction={mockOnCardAction}
+      />
+    );
+
+    // first click the CardRangePicker
+    fireEvent.click(screen.getAllByTitle(selectTimeRangeLabel)[0]);
+    // then find the options
+    const last2hours = await screen.findByText(last2hoursLabel);
+    fireEvent.click(last2hours);
+    expect(mockOnCardAction).toHaveBeenCalledWith(CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'last2Hours',
+    });
+    mockOnCardAction.mockClear();
   });
 });

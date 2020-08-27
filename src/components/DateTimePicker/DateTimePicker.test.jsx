@@ -348,6 +348,61 @@ describe('DateTimePicker', () => {
     ).toHaveLength(1);
   });
 
+  it('should render with programmatically set absolute range', () => {
+    const wrapper = mount(<DateTimePicker {...dateTimePickerProps} />);
+    jest.runAllTimers();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(wrapper.find('.bx--tooltip__trigger').text()).toEqual(PRESET_VALUES[0].label);
+
+    wrapper.setProps({ defaultValue: defaultAbsoluteValue });
+    jest.runAllTimers();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(
+      wrapper
+        .find('.iot--date-time-picker__field')
+        .first()
+        .text()
+    ).toEqual('2020-04-01 12:34 to 2020-04-06 10:49');
+
+    wrapper
+      .find('.iot--date-time-picker__icon')
+      .first()
+      .simulate('click');
+    jest.runAllTimers();
+
+    wrapper
+      .find('.iot--time-picker__controls--btn.up-icon')
+      .first()
+      .simulate('click');
+    jest.runAllTimers();
+    expect(
+      wrapper
+        .find('.iot--date-time-picker__field')
+        .first()
+        .text()
+    ).toEqual('2020-04-01 13:34 to 2020-04-06 10:49');
+
+    wrapper
+      .find('.iot--date-time-picker__menu-btn-back')
+      .first()
+      .simulate('click');
+    jest.runAllTimers();
+    wrapper
+      .find('.iot--date-time-picker__menu-btn-cancel')
+      .first()
+      .simulate('click');
+    jest.runAllTimers();
+
+    expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
+    expect(wrapper.find('.iot--date-time-picker__field')).toHaveLength(1);
+    expect(
+      wrapper
+        .find('.iot--date-time-picker__field')
+        .first()
+        .text()
+    ).toEqual('2020-04-01 12:34 to 2020-04-06 10:49');
+  });
+
   it('i18n string test', () => {
     const i18nTest = {
       toLabel: 'to-label',

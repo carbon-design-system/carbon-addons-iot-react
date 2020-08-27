@@ -9,9 +9,17 @@ import Add from '@carbon/icons-react/lib/add/16';
 import Edit from '@carbon/icons-react/lib/edit/16';
 import { spacing03 } from '@carbon/layout';
 import { Add20, TrashCan16, SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
-import { Tooltip, TextInput, Checkbox, ToastNotification, Button } from 'carbon-components-react';
 import cloneDeep from 'lodash/cloneDeep';
 
+import {
+  Tooltip,
+  TextInput,
+  Checkbox,
+  ToastNotification,
+  Button,
+  FormGroup,
+  Form,
+} from '../../index';
 import { getSortedData, csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
@@ -480,6 +488,7 @@ export const StatefulTableWithNestedRowItems = props => {
   return (
     <div>
       <StatefulTable
+        id="table"
         {...initialState}
         secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         columns={tableColumnsFixedWidth}
@@ -511,6 +520,7 @@ storiesOf('Watson IoT/Table', module)
     () => (
       <FullWidthWrapper>
         <StatefulTable
+          id="table"
           {...initialState}
           actions={actions}
           lightweight={boolean('lightweight', false)}
@@ -537,6 +547,7 @@ storiesOf('Watson IoT/Table', module)
     () => (
       <FullWidthWrapper>
         <StatefulTable
+          id="table"
           {...initialState}
           secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
           columns={tableColumnsWithAlignment}
@@ -564,6 +575,7 @@ storiesOf('Watson IoT/Table', module)
     'Stateful Example with every third row unselectable',
     () => (
       <StatefulTable
+        id="table"
         {...initialState}
         secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         data={initialState.data.map((eachRow, index) => ({
@@ -593,6 +605,7 @@ storiesOf('Watson IoT/Table', module)
     () => (
       <FullWidthWrapper>
         <StatefulTable
+          id="table"
           {...initialState}
           view={{
             ...initialState.view,
@@ -668,6 +681,101 @@ storiesOf('Watson IoT/Table', module)
         <br />
 
         `,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with pre-set multiselect filtering',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          id="table"
+          {...initialState}
+          columns={initialState.columns.map(column => {
+            if (column.filter) {
+              return {
+                ...column,
+                filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+              };
+            }
+            return column;
+          })}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 5,
+            },
+            toolbar: {
+              activeBar: 'filter',
+            },
+          }}
+          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          actions={actions}
+          isSortable
+          lightweight={boolean('lightweight', false)}
+          options={{
+            ...initialState.options,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            hasSingleRowEdit: true,
+          }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text: `This table has a multiselect filter. To support multiselect filtering, make sure to pass isMultiselect: true to the filter prop on the table.`,
+        propTables: [Table],
+        propTablesExclude: [StatefulTable],
+      },
+    }
+  )
+  .add(
+    'Stateful Example with multiselect filtering',
+    () => (
+      <FullWidthWrapper>
+        <StatefulTable
+          id="table"
+          {...initialState}
+          columns={initialState.columns.map(column => {
+            if (column.filter) {
+              return {
+                ...column,
+                filter: { ...column.filter, isMultiselect: !!column.filter?.options },
+              };
+            }
+            return column;
+          })}
+          view={{
+            ...initialState.view,
+            pagination: {
+              ...initialState.view.pagination,
+              maxPages: 5,
+            },
+            toolbar: {
+              activeBar: 'filter',
+            },
+            filters: [],
+          }}
+          secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
+          actions={actions}
+          isSortable
+          lightweight={boolean('lightweight', false)}
+          options={{
+            ...initialState.options,
+            hasFilter: select('hasFilter', ['onKeyPress', 'onEnterAndBlur'], 'onKeyPress'),
+            wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+            hasSingleRowEdit: true,
+          }}
+        />
+      </FullWidthWrapper>
+    ),
+    {
+      info: {
+        text: `This table has a multiselect filter. To support multiselect filtering, make sure to pass isMultiselect: true to the filter prop on the table.`,
         propTables: [Table],
         propTablesExclude: [StatefulTable],
       },
@@ -859,6 +967,7 @@ storiesOf('Watson IoT/Table', module)
           <div>
             {showToast ? myToast : null}
             <Table
+              id="table"
               secondaryTitle="My editable table"
               view={{
                 toolbar: {
@@ -949,6 +1058,7 @@ storiesOf('Watson IoT/Table', module)
     'basic `dumb` table',
     () => (
       <Table
+        id="table"
         columns={tableColumns}
         data={tableData}
         actions={actions}
@@ -1003,6 +1113,7 @@ storiesOf('Watson IoT/Table', module)
     'minitable',
     () => (
       <StatefulTable
+        id="table"
         secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         style={{ maxWidth: '300px' }}
         columns={tableColumns.slice(0, 2)}
@@ -1049,6 +1160,7 @@ storiesOf('Watson IoT/Table', module)
               Reset defaultValue prop to empty string
             </Button>
             <StatefulTable
+              id="table"
               secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
               style={{ maxWidth: '300px' }}
               columns={tableColumns.slice(0, 2)}
@@ -1075,6 +1187,7 @@ storiesOf('Watson IoT/Table', module)
   )
   .add('with multi select and batch actions', () => (
     <StatefulTable
+      id="table"
       secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
       columns={tableColumns}
       data={tableData}
@@ -1107,6 +1220,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with single select', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData}
       actions={actions}
@@ -1116,6 +1230,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with single select and nested table rows ', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData.map((i, idx) => ({
         ...i,
@@ -1154,6 +1269,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with row expansion and on row click expands', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData}
       actions={actions}
@@ -1183,6 +1299,7 @@ storiesOf('Watson IoT/Table', module)
     'with row expansion and actions',
     () => (
       <Table
+        id="table"
         columns={tableColumns}
         data={tableData.map((i, idx) => ({
           ...i,
@@ -1358,6 +1475,7 @@ storiesOf('Watson IoT/Table', module)
       const renderDataFunction = ({ value }) => <div style={{ color: 'red' }}>{value}</div>;
       return (
         <Table
+          id="table"
           columns={tableColumns.map(i => ({
             ...i,
             renderDataFunction,
@@ -1422,6 +1540,7 @@ storiesOf('Watson IoT/Table', module)
     );
     return (
       <Table
+        id="table"
         columns={tableColumns}
         data={filteredData}
         actions={actions}
@@ -1456,6 +1575,7 @@ storiesOf('Watson IoT/Table', module)
   })
   .add('with column selection', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData}
       actions={actions}
@@ -1478,6 +1598,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with no results', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={[]}
       actions={actions}
@@ -1500,6 +1621,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with no data', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={[]}
       actions={actions}
@@ -1513,6 +1635,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with nested table rows', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData.map((i, idx) => ({
         ...i,
@@ -1550,6 +1673,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with no data and custom empty state', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={[]}
       actions={actions}
@@ -1569,6 +1693,7 @@ storiesOf('Watson IoT/Table', module)
   ))
   .add('with loading state', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData}
       actions={actions}
@@ -1584,10 +1709,11 @@ storiesOf('Watson IoT/Table', module)
     />
   ))
   .add('with zebra striping', () => (
-    <Table useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
+    <Table id="table" useZebraStyles columns={tableColumns} data={tableData} actions={actions} />
   ))
   .add('with resize and initial column widths on Simple Stateful with row selection & sort', () => (
     <StatefulTable
+      id="table"
       {...initialState}
       actions={actions}
       lightweight={boolean('lightweight', false)}
@@ -1610,6 +1736,7 @@ storiesOf('Watson IoT/Table', module)
     () => (
       <FullWidthWrapper>
         <Table
+          id="table"
           options={{
             hasResize: true,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
@@ -1639,6 +1766,7 @@ storiesOf('Watson IoT/Table', module)
     'with resize, hasColumnSelection and initial column widths',
     () => (
       <StatefulTable
+        id="table"
         options={{
           hasResize: true,
           hasColumnSelection: true,
@@ -1665,21 +1793,131 @@ storiesOf('Watson IoT/Table', module)
     }
   )
   .add(
-    'with resize, onColumnResize callback and no initial column width',
+    'with resize, onColumnResize callback, no initial column width and column management',
     () => {
-      return React.createElement(() => {
-        const [myColumns, setMyColumns] = useState(tableColumns);
-        const onColumnResize = cols => setMyColumns(cols);
+      const ColumnsModifier = ({ onAdd, onRemove, columns, ordering }) => {
+        const [colsToAddField, setColsToAddField] = useState('colX, colY');
+        const [colsToAddWidthField, setColsToAddWidthField] = useState('100px, 150px');
+        const [colsToDeleteField, setColsToDeleteField] = useState('select, status');
+        const [isHidden, setIsHidden] = useState(false);
+
         return (
-          <Table
-            options={{
-              hasResize: true,
-              wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
-            }}
-            columns={myColumns}
-            data={tableData}
-            actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
+            <Form style={{ maxWidth: '300px', marginRight: '2rem' }}>
+              <TextInput
+                labelText="Ids of one or more columns"
+                id="colsToAddInput"
+                value={colsToAddField}
+                type="text"
+                onChange={evt => setColsToAddField(evt.currentTarget.value)}
+              />
+              <FormGroup legendText="" style={{ marginBottom: '1rem' }}>
+                <Checkbox
+                  labelText="add as hidden column(s)"
+                  id="isHiddenCheckbox"
+                  defaultChecked={isHidden}
+                  onChange={() => setIsHidden(!isHidden)}
+                />
+              </FormGroup>
+              <TextInput
+                labelText="The width of the added columns (if any)"
+                id="colsToAddWidthInput"
+                value={colsToAddWidthField}
+                type="text"
+                onChange={evt => setColsToAddWidthField(evt.currentTarget.value)}
+              />
+              <Button
+                style={{ marginTop: '1rem' }}
+                onClick={() => onAdd(colsToAddField, colsToAddWidthField, isHidden)}
+              >
+                Add
+              </Button>
+            </Form>
+            <div style={{ maxWidth: '50%' }}>
+              <div style={{ margin: '1rem' }}>
+                <p>COLUMNS prop</p>
+                <samp>{JSON.stringify(columns)}</samp>
+              </div>
+              <div style={{ margin: '1rem' }}>
+                <p>ORDERING prop</p>
+                <samp>{JSON.stringify(ordering)}</samp>
+              </div>
+            </div>
+
+            <Form style={{ maxWidth: '300px' }}>
+              <TextInput
+                labelText="One or more IDs of columns to delete"
+                id="removeColInput"
+                value={colsToDeleteField}
+                type="text"
+                onChange={evt => setColsToDeleteField(evt.currentTarget.value)}
+              />
+              <Button
+                style={{ marginTop: '1rem' }}
+                id="removeColInput"
+                onClick={() => onRemove(colsToDeleteField)}
+              >
+                Remove
+              </Button>
+            </Form>
+          </div>
+        );
+      };
+
+      return React.createElement(() => {
+        const [myColumns, setMyColumns] = useState(tableColumns.map(({ filter, ...rest }) => rest));
+        const [myOrdering, setMyOrdering] = useState(defaultOrdering);
+
+        const onAdd = (colIds, colWidths, isHidden) => {
+          const colsToAdd = colIds.split(', ');
+          const widths = colWidths.split(', ');
+          const newColumns = [];
+          const newOrdering = [];
+          colsToAdd.forEach((colToAddId, index) => {
+            newColumns.push({
+              id: colToAddId,
+              name: colToAddId,
+              width: widths[index] || undefined,
+            });
+            newOrdering.push({ columnId: colToAddId, isHidden });
+          });
+          setMyColumns([...myColumns, ...newColumns]);
+          setMyOrdering([...myOrdering, ...newOrdering]);
+        };
+
+        const onRemove = colIds => {
+          const colsToDelete = colIds.split(', ');
+          setMyColumns(myColumns.filter(col => !colsToDelete.includes(col.id)));
+          setMyOrdering(myOrdering.filter(col => !colsToDelete.includes(col.columnId)));
+        };
+        const onColumnResize = cols => setMyColumns(cols);
+
+        return (
+          <>
+            <ColumnsModifier
+              onAdd={onAdd}
+              onRemove={onRemove}
+              columns={myColumns}
+              ordering={myOrdering}
+            />
+            <Table
+              id="table"
+              options={{
+                hasColumnSelection: true,
+                hasResize: true,
+                wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
+              }}
+              columns={myColumns}
+              view={{
+                filters: [],
+                table: {
+                  ordering: myOrdering,
+                },
+              }}
+              data={tableData}
+              actions={{ ...actions, table: { ...actions.table, onColumnResize } }}
+            />
+          </>
         );
       });
     },
@@ -1702,6 +1940,7 @@ storiesOf('Watson IoT/Table', module)
         </p>
         <FullWidthWrapper>
           <Table
+            id="table"
             options={{
               hasResize: true,
               useAutoTableLayoutForResize: true,
@@ -1727,6 +1966,7 @@ storiesOf('Watson IoT/Table', module)
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <FullWidthWrapper>
         <Table
+          id="table"
           options={{
             hasResize: false,
             hasColumnSelection: true,
@@ -1762,6 +2002,7 @@ storiesOf('Watson IoT/Table', module)
       }, []);
       return (
         <Table
+          id="table"
           options={{
             hasResize: true,
             wrapCellText: select('wrapCellText', selectTextWrapping, 'always'),
@@ -1778,7 +2019,12 @@ storiesOf('Watson IoT/Table', module)
     () => (
       // You don't need to use styled components, just pass a className to the Table component and use selectors to find the correct column
       <FullWidthWrapper>
-        <StyledTableCustomRowHeight columns={tableColumns} data={tableData} actions={actions} />
+        <StyledTableCustomRowHeight
+          id="table"
+          columns={tableColumns}
+          data={tableData}
+          actions={actions}
+        />
       </FullWidthWrapper>
     ),
     {
@@ -1792,6 +2038,7 @@ storiesOf('Watson IoT/Table', module)
   )
   .add('with lightweight design', () => (
     <Table
+      id="table"
       columns={tableColumns}
       data={tableData}
       options={{ hasPagination: true }}
@@ -1804,6 +2051,7 @@ storiesOf('Watson IoT/Table', module)
     () => {
       return (
         <Table
+          id="table"
           columns={tableColumns}
           options={{ hasOnlyPageData: true, hasPagination: true }}
           data={tableData.slice(25, 35)} // this isn't the "8267th page", but we just want to indicate that it is not the first page of data
@@ -1840,6 +2088,7 @@ storiesOf('Watson IoT/Table', module)
     return (
       <div style={{ width: '800px' }}>
         <Table
+          id="table"
           columns={tableColumns.concat(tableColumnsConcat)}
           options={{
             hasFilter: true,
@@ -1871,6 +2120,7 @@ storiesOf('Watson IoT/Table', module)
     // You don't n,eed to use styled components, just pass a className to the Table component and use selectors to find the correct column
     return (
       <Table
+        id="table"
         columns={tableColumns.concat(tableColumnsConcat)}
         options={{
           hasFilter: true,
@@ -1905,6 +2155,7 @@ storiesOf('Watson IoT/Table', module)
   )
   .add('Custom toolbar content', () => (
     <Table
+      id="table"
       columns={tableColumns}
       options={{ hasFilter: true, hasPagination: true }}
       data={tableData}
@@ -1925,6 +2176,7 @@ storiesOf('Watson IoT/Table', module)
     'Stateful Example with I18N strings',
     () => (
       <StatefulTable
+        id="table"
         {...initialState}
         secondaryTitle={text('Secondary Title', `Row count: ${initialState.data.length}`)}
         actions={actions}
@@ -2086,6 +2338,7 @@ storiesOf('Watson IoT/Table', module)
       return (
         <div>
           <Table
+            id="table"
             columns={tableColumns.map(i => ({
               ...i,
               renderDataFunction,

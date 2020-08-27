@@ -198,6 +198,8 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Table/table';
 @import 'components/Table/TableViewDropdown/table-view-dropdown';
 @import 'components/Table/TableSaveViewModal/table-save-view-modal';
+@import 'components/Table/TableManageViewsModal/table-manage-views-modal';
+@import 'components/Table/TableManageViewsModal/table-manage-views-list';
 @import 'components/TableCard/threshold-icon';
 @import 'components/TableCard/table-card';
 @import 'components/TileCatalogNew/tile-catalog';
@@ -209,3 +211,4 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/TimeSeriesCard/time-series-card';
 @import 'components/WizardInline/wizard-inline';
 @import 'components/WizardModal/wizard-modal';
+@import 'components/FilterTags/filter-tags';

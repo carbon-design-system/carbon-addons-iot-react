@@ -55,17 +55,29 @@ export const filterData = (data, filters, columns) => {
           if (
             typeof value === 'number' ||
             typeof value === 'string' ||
-            typeof value === 'boolean'
+            typeof value === 'boolean' ||
+            Array.isArray(value)
           ) {
             if (!isNil(columns)) {
               const { filter } = find(columns, { id: columnId }) || {};
               const filterFunction = filter?.filterFunction;
+              if (Array.isArray(value) && !isEmpty(value)) {
+                return (
+                  acc &&
+                  (filterFunction
+                    ? filterFunction(values[columnId], value)
+                    : value.includes(values[columnId]))
+                );
+              }
               return (
                 acc &&
                 (filterFunction
                   ? filterFunction(values[columnId], value)
                   : defaultComparison(values[columnId], value))
               );
+            }
+            if (Array.isArray(value) && !isEmpty(value)) {
+              return acc && value.includes(values[columnId]);
             }
             return acc && defaultComparison(values[columnId], value);
           }

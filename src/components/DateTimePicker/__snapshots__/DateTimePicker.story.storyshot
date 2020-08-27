@@ -335,7 +335,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               onClick={[Function]}
                               pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
                               type="text"
-                              value="2020-04-01"
                             />
                             <svg
                               aria-hidden={true}
@@ -370,7 +369,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                               onClick={[Function]}
                               pattern="\\\\d{1,2}\\\\/\\\\d{1,2}\\\\/\\\\d{4}"
                               type="text"
-                              value="2020-04-06"
                             />
                             <svg
                               aria-hidden={true}

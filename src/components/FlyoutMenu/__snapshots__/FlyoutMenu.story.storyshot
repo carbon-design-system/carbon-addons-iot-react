@@ -58,8 +58,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
-            aria-controls="__carbon-tooltip_lkpzey1ta3i"
-            aria-describedby="__carbon-tooltip_lkpzey1ta3i"
+            aria-controls="__carbon-tooltip_5nwulidr9lq"
+            aria-describedby="__carbon-tooltip_5nwulidr9lq"
             aria-expanded={true}
             aria-label="Helpful description"
             className="bx--tooltip__label"
@@ -88,7 +88,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
               data-floating-menu-direction="bottom"
               data-testid="flyout-menu"
               disabled={false}
-              id="__carbon-tooltip_lkpzey1ta3i"
+              id="__carbon-tooltip_5nwulidr9lq"
               onBlur={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
