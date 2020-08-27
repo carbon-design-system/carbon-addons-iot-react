@@ -13,7 +13,7 @@ storiesOf('Watson IoT/HotspotContent', module)
   .addParameters({ info: 'This Hotspot content is recommended to be used with a Carbon tooltip' })
   .add('basic', () => {
     return (
-      <Tooltip open direction="right" triggerId="tooltipTrigger" tooltipId="tooltip">
+      <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip">
         <HotspotContent
           title={text('title', 'Hotspot title')}
           description={text('description', 'description')}
@@ -28,7 +28,7 @@ storiesOf('Watson IoT/HotspotContent', module)
   })
   .add('basic with units and precision', () => {
     return (
-      <Tooltip open direction="right" triggerId="tooltipTrigger" tooltipId="tooltip">
+      <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip">
         <HotspotContent
           title={text('title', 'Hotspot title')}
           description={text('description', 'description')}
@@ -45,7 +45,7 @@ storiesOf('Watson IoT/HotspotContent', module)
     'with thresholds',
     () => {
       return (
-        <Tooltip open direction="right" triggerId="tooltipTrigger" tooltipId="tooltip">
+        <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip">
           <HotspotContent
             title={text('title', 'Hotspot title')}
             description={text('description', 'description')}
@@ -89,7 +89,7 @@ storiesOf('Watson IoT/HotspotContent', module)
     'locale',
     () => {
       return (
-        <Tooltip open direction="right" triggerId="tooltipTrigger" tooltipId="tooltip">
+        <Tooltip open direction="right" triggerId="tooltipTrigger" id="tooltip">
           <HotspotContent
             title={text('title', 'Hotspot title')}
             description={text('description', 'description')}

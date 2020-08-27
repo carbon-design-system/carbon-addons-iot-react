@@ -14059,25 +14059,25 @@ Map {
   },
   "ComboBox" => Object {
     "defaultProps": Object {
+      "addToList": false,
       "ariaLabel": "Choose an item",
       "closeButtonText": "Close",
       "direction": "bottom",
       "disabled": false,
-      "editOptionText": "-Create",
-      "findHighlightedIndex": [Function],
+      "editOptionText": "Create",
       "hasMultiValue": false,
       "itemToElement": null,
       "itemToString": [Function],
       "items": Array [],
       "light": false,
       "loading": false,
-      "onHighligtedIndexChange": [Function],
       "onInputChange": null,
       "shouldFilterItem": [Function],
       "type": "default",
       "wrapperClassName": null,
     },
     "propTypes": Object {
+      "addToList": [Function],
       "ariaLabel": Object {
         "type": "string",
       },
@@ -14225,9 +14225,6 @@ Map {
       "editOptionText": Object {
         "type": "string",
       },
-      "findHighlightedIndex": Object {
-        "type": "func",
-      },
       "hasMultiValue": [Function],
       "helperText": Object {
         "type": "string",
@@ -14273,9 +14270,6 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
-        "type": "func",
-      },
-      "onHighligtedIndexChange": Object {
         "type": "func",
       },
       "onInputChange": Object {

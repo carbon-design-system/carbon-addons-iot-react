@@ -1,10 +1,9 @@
 import React from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, prettyDOM, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
-import { defaultItemToString } from './CarbonComboBox';
 
 const item = [
   {
@@ -46,217 +45,186 @@ describe('ComboBox', () => {
     jest.clearAllMocks();
   });
 
-  const setup = props => {
-    const { container } = render(<ComboBox {...defaultProps} {...props} />);
-    // Input element
-    const input = screen.getByRole('combobox');
-    // List container
-    const list = screen.getByRole('listbox');
-    // Tag container
-    const tags = screen.getByTestId('combo-tags');
-    return {
-      input,
-      tags,
-      list,
-      container,
-    };
+  // Helper function to open the list and return it
+  const getListBox = async () => {
+    // open the list by clicking the open menu icon
+    userEvent.click(screen.getByTitle('Open menu'));
+    const list = await screen.findByRole('listbox');
+    return list;
   };
 
-  // Temp test to pass threshold for Carbon Combobox component. Can be removed once we are updated to carbon-components-react@7.13.0
-  it('will return a string', async () => {
-    const item = {
-      id: 'option-0',
-      label: 'Option 1',
-    };
-    expect(defaultItemToString(item)).toEqual('Option 1');
-    expect(defaultItemToString('Option 1')).toEqual('Option 1');
-  });
+  it('renders with default props', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-  it('will not add tag when input is blank or add to list', async () => {
-    const { input, tags, list } = setup({
-      itemToString: defaultItemToString,
-      items: item,
-    });
-
-    // Pre-check tag and list count
+    // only the defaults should be present
     expect(tags.childElementCount).toEqual(0);
-    expect(list.childElementCount).toEqual(5);
-
-    await userEvent.type(input, '{enter}');
-
-    // Post-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
+    const list = await getListBox();
     expect(list.childElementCount).toEqual(5);
   });
 
-  it('will add tags when user types in new value and adds that value to list', async () => {
-    const { input, tags, list } = setup();
+  it('does not add tag when input is blank or add to list', async () => {
+    render(<ComboBox {...defaultProps} items={item} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    // Pre-check tag and list count
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), '{enter}');
+
     expect(tags.childElementCount).toEqual(0);
+    const list = await getListBox();
     expect(list.childElementCount).toEqual(5);
+  });
 
-    await userEvent.type(input, 'Hello{enter}');
+  it('adds a tag and a list item when user types in new value and hits enter', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    // Post-check tag and list count
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello{enter}');
+
     expect(tags.childElementCount).toEqual(1);
+    let list = await getListBox();
     expect(list.childElementCount).toEqual(6);
 
-    // Check tag value is what it is supposed to be
     expect(tags.firstChild.firstChild.firstChild.innerHTML).toEqual('Hello');
-
-    // Check new item value is what it is supposed to be
     expect(list.firstChild.firstChild.innerHTML).toEqual('Hello');
 
-    // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Hello');
 
-    await userEvent.type(input, 'World{enter}');
-    // Post-check tag and list count
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'World{enter}');
+
     expect(tags.childElementCount).toEqual(2);
+    list = await getListBox();
     expect(list.childElementCount).toEqual(7);
 
-    // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(2);
     expect(defaultProps.onChange.mock.calls[1][0][0].text).toBe('Hello');
     expect(defaultProps.onChange.mock.calls[1][0][1].text).toBe('World');
   });
 
-  it('will not add tag when user types in existing tag value or duplicate to list', async () => {
-    const { input, tags, list } = setup();
+  it('does not add duplicate tags or list items', async () => {
+    render(<ComboBox {...defaultProps} />);
 
-    // Pre-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
-    expect(list.childElementCount).toEqual(5);
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello{enter}');
+    await waitFor(() => expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1));
 
-    await userEvent.type(input, 'Hello{enter}');
-    await userEvent.type(input, 'Hello{enter}');
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello{enter}');
+    await waitFor(() => expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1));
 
-    // Post-check tag and list count - should only increment by 1
-    expect(tags.childElementCount).toEqual(1);
+    userEvent.click(screen.getByTitle('Clear selected item'));
+
+    const list = await getListBox();
     expect(list.childElementCount).toEqual(6);
 
-    // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Hello');
   });
 
-  it('will add tag when user selects from list but not duplicate to list', async () => {
-    const { list, tags } = setup();
+  it('adds a tag when user selects from list, does not add a duplicate list item', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    // Pre-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
-    expect(list.childElementCount).toEqual(5);
-
+    userEvent.click(screen.getByTitle('Open menu'));
     userEvent.click(screen.getByTitle('Option 1'));
 
-    // Post-check tag and list count
     expect(tags.childElementCount).toEqual(1);
-    expect(list.childElementCount).toEqual(5);
-    // Check value is what it is supposed to be
     expect(tags.firstChild.firstChild.firstChild.innerHTML).toEqual('Option 1');
 
-    // Check that our onChange callback was fired and passed the proper value
+    const list = await getListBox();
+    expect(list.childElementCount).toEqual(5);
+
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
   });
 
-  it('will not add additional tag when user selects same value from list', async () => {
-    const { list, tags } = setup();
+  it('does not add duplicate tag when user selects same value from list', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    // Pre-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
-    expect(list.childElementCount).toEqual(5);
+    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
+    userEvent.click(screen.getByTitle('Open menu'));
+    userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
-    userEvent.click(screen.getByTitle('Option 1'));
-    userEvent.click(screen.getByTitle('Option 1'));
-
-    // Post-check tag and list count
     expect(tags.childElementCount).toEqual(1);
+    const list = await getListBox();
     expect(list.childElementCount).toEqual(5);
 
-    // Check that our onChange callback was fired only once
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
   });
 
-  it('will remove tag when close button is clicked', async () => {
-    const { input, tags, container } = setup();
+  it('removes tag when close button is clicked', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    await userEvent.click(input);
-    await userEvent.type(input, 'Home{enter}');
+    await userEvent.click(screen.getByPlaceholderText('Filter...'));
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Home{enter}');
 
-    await waitFor(() => container.querySelector('.bx--tag__close-icon'));
-    await userEvent.click(container.querySelector('.bx--tag__close-icon'));
+    const close = await screen.findByRole('button', { name: /close/i });
+    await userEvent.click(close);
 
-    // Post-check tag count
     expect(tags.childElementCount).toEqual(0);
 
-    // Check that onChange callback was fired twice and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(2);
     expect(defaultProps.onChange.mock.calls[1][0].length).toBe(0);
   });
 
-  it('will remove tag with keyboard tabbing and entering', async () => {
-    const { input, tags } = setup();
+  it('removes tag via keyboard tabbing and entering', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    await userEvent.click(input);
-    await userEvent.type(input, 'Home{enter}');
+    await userEvent.click(screen.getByPlaceholderText('Filter...'));
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Home{enter}');
 
     expect(tags.childElementCount).toEqual(1);
 
     // tab over to tag and hit enter
     userEvent.tab();
-    await userEvent.type(tags.querySelector('.bx--tag__close-icon'), '{enter}');
+    await userEvent.type(screen.getByRole('button', { name: /close/i }), '{enter}');
 
     expect(tags.childElementCount).toEqual(0);
   });
 
-  it('will not add tag when hasMultiValue is set to false but will add to list', async () => {
-    const { input, tags, list } = setup({
-      hasMultiValue: false,
-      initialSelectedItem: {
-        id: 'option-0',
-        label: 'Option 1',
-      },
-    });
+  it.only('adds to list (not tags) when addToList is passed and no hasMultiValue', async () => {
+    render(
+      <ComboBox
+        {...defaultProps}
+        addToList
+        hasMultiValue={false}
+        initialSelectedItem={{
+          id: 'option-0',
+          label: 'Option 1',
+        }}
+      />
+    );
 
-    // Pre-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
-    expect(list.childElementCount).toEqual(5);
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), 'Hello {enter}');
 
-    await userEvent.type(input, 'Hello {enter}');
+    expect(screen.queryByTestId('combo-tags')).toBeNull();
 
-    // Post-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
+    const list = await getListBox();
     expect(list.childElementCount).toEqual(6);
 
-    // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0].text).toBe('Hello');
   });
 
-  it('will add tag when keyboard is used', async () => {
-    const { input, tags } = setup();
+  it('adds tag via keyboard interaction only', async () => {
+    render(<ComboBox {...defaultProps} />);
+    const tags = screen.getByTestId('combo-tags');
 
-    // Pre-check tag and list count
-    expect(tags.childElementCount).toEqual(0);
+    await userEvent.click(screen.getByPlaceholderText('Filter...'));
 
-    await userEvent.click(input);
-
-    fireEvent.keyDown(input, {
+    fireEvent.keyDown(screen.getByPlaceholderText('Filter...'), {
       key: 'ArrowDown',
       code: 'ArrowDown',
       keyCode: 'ArrowDown',
       which: 40,
       charCode: 40,
     });
-    await userEvent.type(input, '{enter}');
+    await userEvent.type(screen.getByPlaceholderText('Filter...'), '{enter}');
 
-    // Post-check tag and list count
     expect(tags.childElementCount).toEqual(1);
 
-    // Check that our onChange callback was fired and passed the proper value
     expect(defaultProps.onChange.mock.calls.length).toBe(1);
     expect(defaultProps.onChange.mock.calls[0][0][0].text).toBe('Option 1');
   });

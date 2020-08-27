@@ -17,8 +17,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       id="tooltipTrigger"
     >
       <div
-        aria-controls="__carbon-tooltip_kvykbzlae3h"
-        aria-describedby="__carbon-tooltip_kvykbzlae3h"
+        aria-controls="tooltip"
+        aria-describedby="tooltip"
         aria-expanded={true}
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -64,7 +64,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       <div
         className="bx--tooltip bx--tooltip--shown"
         data-floating-menu-direction="right"
-        id="__carbon-tooltip_kvykbzlae3h"
+        id="tooltip"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onFocus={[Function]}
@@ -82,7 +82,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -219,8 +218,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       id="tooltipTrigger"
     >
       <div
-        aria-controls="__carbon-tooltip_pihgxeglyz"
-        aria-describedby="__carbon-tooltip_pihgxeglyz"
+        aria-controls="tooltip"
+        aria-describedby="tooltip"
         aria-expanded={true}
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -266,7 +265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       <div
         className="bx--tooltip bx--tooltip--shown"
         data-floating-menu-direction="right"
-        id="__carbon-tooltip_pihgxeglyz"
+        id="tooltip"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onFocus={[Function]}
@@ -284,7 +283,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -431,8 +429,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       id="tooltipTrigger"
     >
       <div
-        aria-controls="__carbon-tooltip_cswz3osoa67"
-        aria-describedby="__carbon-tooltip_cswz3osoa67"
+        aria-controls="tooltip"
+        aria-describedby="tooltip"
         aria-expanded={true}
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -478,7 +476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       <div
         className="bx--tooltip bx--tooltip--shown"
         data-floating-menu-direction="right"
-        id="__carbon-tooltip_cswz3osoa67"
+        id="tooltip"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onFocus={[Function]}
@@ -496,7 +494,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"
@@ -687,8 +684,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       id="tooltipTrigger"
     >
       <div
-        aria-controls="__carbon-tooltip_84lbpjgvkz3"
-        aria-describedby="__carbon-tooltip_84lbpjgvkz3"
+        aria-controls="tooltip"
+        aria-describedby="tooltip"
         aria-expanded={true}
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -734,7 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
       <div
         className="bx--tooltip bx--tooltip--shown"
         data-floating-menu-direction="right"
-        id="__carbon-tooltip_84lbpjgvkz3"
+        id="tooltip"
         onBlur={[Function]}
         onContextMenu={[Function]}
         onFocus={[Function]}
@@ -752,7 +749,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Hotsp
             "top": "3px",
           }
         }
-        tooltipId="tooltip"
       >
         <span
           className="bx--tooltip__caret"

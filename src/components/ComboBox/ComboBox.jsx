@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Tag } from 'carbon-components-react';
+import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
-
-import CarbonComboBox from './CarbonComboBox';
 
 const { iotPrefix } = settings;
 
@@ -16,7 +14,7 @@ const propTypes = {
   loading: PropTypes.bool,
   // Callback that is called with the value of the input on change
   onChange: PropTypes.func.isRequired,
-  // OPtional classname to be applied to wrapper
+  // Optional classname to be applied to wrapper
   wrapperClassName: PropTypes.string,
   // String to pass to input field option
   editOptionText: PropTypes.string,
@@ -25,7 +23,12 @@ const propTypes = {
   // Bit that will allow mult value and tag feature
   hasMultiValue: deprecate(
     PropTypes.bool,
-    '\nThe prop `hasMultiValue` for Combobox is experimental. The functionality that is enabled by this prop is subject to change until Combobbox moves out of experimental.'
+    '\nThe prop `hasMultiValue` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
+  ),
+  // On submit/enter, new items should be added to the listbox
+  addToList: deprecate(
+    PropTypes.bool,
+    '\nThe prop `addToList` for ComboBox is experimental. The functionality that is enabled by this prop is subject to change until ComboBox moves out of experimental.'
   ),
 };
 
@@ -34,8 +37,9 @@ const defaultProps = {
   loading: false,
   wrapperClassName: null,
   closeButtonText: 'Close',
-  editOptionText: '-Create',
+  editOptionText: 'Create',
   hasMultiValue: false,
+  addToList: false,
   items: [],
   onInputChange: null,
 };
@@ -47,48 +51,26 @@ const ComboBox = ({
   editOptionText,
   hasMultiValue,
   onChange,
-  ...comboProps
+  items,
+  className,
+  disabled,
+  id,
+  itemToString,
+  size,
+  onInputChange,
+  addToList,
+  helperText,
+  shouldFilterItem,
+  ...rest
 }) => {
-  const {
-    items,
-    ariaLabel,
-    className,
-    disabled,
-    id,
-    initialSelectedItem,
-    downshiftProps,
-    itemToString,
-    itemToElement,
-    placeholder,
-    shouldFilterItem,
-    type,
-    invalid,
-    invalidText,
-    translateWithId,
-    size,
-    onInputChange,
-    light,
-    direction,
-  } = comboProps;
   // Ref for the combobox input
   const comboRef = React.createRef();
   // Input value that is added to list
   const [inputValue, setInputValue] = useState('');
-  // Current selected item that shows in the input
-  const [selectedItem, setSelectedItem] = useState(null);
   // Array that populates list
   const [listItems, setListItems] = useState(items);
   // Array that populates tags
   const [tagItems, setTagItems] = useState([]);
-  // Highlighted index for list dropdown
-  const [highlightedIndex, setHighlightedIndex] = useState(-1);
-
-  useEffect(() => {
-    // If there are tags then clear and focus the input
-    if (hasMultiValue) {
-      setSelectedItem(null);
-    }
-  });
 
   const handleOnClose = e => {
     // Get close target's text
@@ -118,7 +100,7 @@ const ComboBox = ({
     // Check that there is no existing tag
     const hasNoExistingTag = tagItems.filter(x => itemToString(x) === currentValue).length < 1;
     // Check if value is part of items array
-    const matchedItem = listItems.filter(x => itemToString(x).trim() === currentValue)[0];
+    const isInList = listItems.filter(x => itemToString(x).trim() === currentValue)[0];
 
     if (hasMultiValue) {
       // If tags array does not contain new value
@@ -132,32 +114,35 @@ const ComboBox = ({
       onChange(newItem);
     }
 
-    if (newItem?.id.startsWith(`${iotPrefix}-input-`) && !matchedItem) {
+    if (
+      (addToList || hasMultiValue) &&
+      newItem?.id.startsWith(`${iotPrefix}-input-`) &&
+      !isInList
+    ) {
       // Add new item to items array
       setListItems(currentList => [newItem, ...currentList]);
     }
 
-    setSelectedItem(newItem);
     setInputValue(null);
   };
 
+  // If the input text doesn't match something in the list, the CarbonComboBox does not call the onChange handler
+  // https://github.com/carbon-design-system/carbon/issues/6613
   const handleOnKeypress = evt => {
     // Current value of input
     const currentValue = comboRef.current.textInput.current.value.trim();
-
-    if (evt.key === 'Enter' && currentValue && highlightedIndex < 0) {
+    if (evt.key === 'Enter' && currentValue) {
       const newItem = {
         id: `${iotPrefix}-input-${currentValue.split(' ').join('-')}-${currentValue.length}`,
         text: currentValue,
       };
-
       handleOnChange({ selectedItem: newItem });
     }
   };
 
   const handleInputChange = e => {
     const matchedItem = listItems.filter(x => itemToString(x) === e)[0];
-    if (e !== '' && !matchedItem) {
+    if ((addToList || hasMultiValue) && e && e !== '' && !matchedItem) {
       setInputValue({
         id: `${iotPrefix}-input-${e.split(' ').join('-')}-${e.length}`,
         text: e,
@@ -165,84 +150,65 @@ const ComboBox = ({
     } else {
       setInputValue(null);
     }
-    // Pass on to user callback
+    // Pass on to user callbacks
     if (typeof onInputChange === 'function') {
       onInputChange(e);
     }
-  };
-
-  const findHighlightedIndex = ({ items: carbonItems }, carbonInputValue) => {
-    if (!carbonInputValue) {
-      return -1;
-    }
-    const searchValue = carbonInputValue.toLowerCase();
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < carbonItems.length; i++) {
-      const item = itemToString(carbonItems[i]).toLowerCase();
-      if (item.indexOf(searchValue) !== -1 && searchValue && searchValue.trim() === item.trim()) {
-        return i;
-      }
-    }
-    return -1;
   };
 
   const combinedItems = useMemo(() => (inputValue ? [inputValue, ...listItems] : listItems), [
     inputValue,
     listItems,
   ]);
+
+  const shouldFilterItemForTags = ({ item, itemToString, inputValue }) =>
+    itemToString(item).includes(inputValue);
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={classnames(
         `${iotPrefix}--combobox`,
         { [wrapperClassName]: wrapperClassName },
-        { [`${iotPrefix}--combobox-add`]: inputValue }
+        { [`${iotPrefix}--combobox-add`]: inputValue },
+        { [`${iotPrefix}--combobox-size-${size}`]: size },
+        { [`${iotPrefix}--combobox-helper-text`]: helperText }
       )}
       onKeyDown={evt => handleOnKeypress(evt)}
       data-testid="combo-wrapper"
+      data-edit-option-text={editOptionText}
     >
       <CarbonComboBox
         data-testid="combo-box"
-        ariaLabel={ariaLabel}
         id={id}
-        type={type}
-        placeholder={placeholder}
-        shouldFilterItem={shouldFilterItem}
+        key={`tags:${tagItems.length} listItems:${listItems.length}`}
         size={size}
-        invalid={invalid}
-        light={light}
-        direction={direction}
-        invalidText={invalidText}
-        translateWithId={translateWithId}
-        initialSelectedItem={initialSelectedItem}
-        downshiftProps={downshiftProps}
-        findHighlightedIndex={findHighlightedIndex}
-        onHighligtedIndexChange={setHighlightedIndex}
         ref={comboRef}
-        selectedItem={comboProps.selectedItem || selectedItem}
         items={combinedItems}
         itemToString={itemToString}
-        itemToElement={itemToElement}
-        editOptionText={editOptionText}
         onChange={handleOnChange}
         onInputChange={handleInputChange}
         className={classnames(className, `${iotPrefix}--combobox-input`)}
         disabled={disabled || (loading !== undefined && loading !== false)}
+        helperText={helperText}
+        shouldFilterItem={hasMultiValue || addToList ? shouldFilterItemForTags : shouldFilterItem}
+        {...rest}
       />
-      <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
-        {tagItems.map((item, idx) => (
-          <li key={`li-${item?.id}-${idx}`}>
-            <Tag
-              key={`tag-${item?.id}-${idx}`}
-              filter
-              onClose={e => handleOnClose(e)}
-              title={closeButtonText}
-            >
-              {itemToString(item)}
-            </Tag>
-          </li>
-        ))}
-      </ul>
+      {hasMultiValue ? (
+        <ul data-testid="combo-tags" className={`${iotPrefix}--combobox-tags`}>
+          {tagItems.map((item, idx) => (
+            <li key={`li-${item?.id}-${idx}`}>
+              <Tag
+                key={`tag-${item?.id}-${idx}`}
+                filter
+                onClose={e => handleOnClose(e)}
+                title={closeButtonText}
+              >
+                {itemToString(item)}
+              </Tag>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 };

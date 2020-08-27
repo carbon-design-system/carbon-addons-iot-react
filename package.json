@@ -121,7 +121,7 @@
     "@carbon/motion": "10.6.0",
     "@carbon/themes": "10.16.0",
     "carbon-components": "10.17.0",
-    "carbon-components-react": "7.17.0",
+    "carbon-components-react": "7.17.0-rc.0",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
     "core-js": "3.6.5",
