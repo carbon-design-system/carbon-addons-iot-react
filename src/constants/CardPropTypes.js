@@ -159,6 +159,20 @@ export const TableCardPropTypes = {
   ),
 };
 
+/** Optionally addes a zoom bar to the chart */
+export const ZoomBarPropTypes = PropTypes.shape({
+  /** Determines which axis to put the zoomBar */
+  axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
+  // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
+  /** Determines whether the zoomBar is enabled */
+  enabled: PropTypes.bool,
+  /** Optional domain to zoom to by default. Can be a timestamp or date string */
+  initialZoomDomain: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  /** How the zoomBar will display. Graph view shows a graphical interpretation of the chart data.
+   * Slider view is a simple slider with no graphical interpretation */
+  view: PropTypes.oneOf(['graph_view', 'slider_view']),
+});
+
 /** This dataset only supports one data attribute at a time */
 const BarChartDatasetPropType = {
   /** data attribute that will be displayed as bar height y-axis value */
@@ -264,17 +278,7 @@ export const BarChartCardPropTypes = {
     /** optional units to put in the legend for all datasets */
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
-    zoomBar: PropTypes.shape({
-      /** Determines which axis to put the zoomBar */
-      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
-      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
-      /** Determines whether the zoomBar is enabled */
-      enabled: PropTypes.bool,
-      /** Optional domain to zoom to by default. Can be a timestamp or date string */
-      initialZoomDomain: PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      ),
-    }),
+    zoomBar: ZoomBarPropTypes,
   }).isRequired,
   /** array of data from the backend for instance [{quarter: '2020-Q1', city: 'Amsterdam', particles: 44700}, ...] */
   values: PropTypes.arrayOf(PropTypes.object),
@@ -285,6 +289,10 @@ export const BarChartCardPropTypes = {
   /** optional domain to graph from. First value is the beginning of the range. Second value is the end of the range
    * can be date instance or timestamp */
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  /** Show timestamp in browser local time or GMT */
+  showTimeInGMT: PropTypes.bool,
+  /** tooltip format pattern that follows the moment formatting patterns */
+  tooltipDateFormatPattern: PropTypes.string,
 };
 
 export const DonutCardPropTypes = {
