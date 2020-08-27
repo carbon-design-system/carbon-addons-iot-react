@@ -6,3 +6,58 @@
   top: 55%;
   width: 100%;
 }
+
+.#{$iot-prefix}--time-series-card--wrapper {
+  padding-left: $spacing-05;
+  padding-right: $spacing-05;
+  padding-top: 0px;
+  padding-bottom: $spacing-05;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .chart-wrapper g.x.axis g.tick text {
+    transform: rotateY(0);
+    text-anchor: initial !important;
+  }
+  .chart-holder {
+    width: 100%;
+    padding-top: $spacing-02;
+  }
+  .axis-title {
+    font-weight: 500;
+  }
+  .bx--cc--chart-svg {
+    width: 100%;
+    height: 100%;
+    circle.dot.unfilled {
+      opacity: 1;
+    }
+  }
+  .bx--cc--tooltip {
+    display: initial;
+  }
+  // force the slider to be the white theme background color until
+  // https://github.com/carbon-design-system/carbon-charts/issues/750 is fixed
+  g.bx--cc--zoom-bar rect.zoom-slider-bg {
+    fill: #f4f4f4;
+  }
+}
+
+.#{$iot-prefix}--time-series-card--wrapper--expanded {
+  height: 55%;
+}
+
+.#{$iot-prefix}--time-series-card--wrapper--lots-of-points {
+  .bx--cc--chart-svg {
+    circle.dot.unfilled {
+      opacity: 0;
+    }
+  }
+}
+
+.#{$iot-prefix}--time-series-card--wrapper--editable {
+  .bx--cc--tooltip {
+    display: none;
+  }
+}
