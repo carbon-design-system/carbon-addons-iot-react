@@ -453,10 +453,10 @@ const TimeSeriesCard = ({
         <>
           <div
             className={classNames(`${iotPrefix}--time-series-card--wrapper`, {
-              [`${iotPrefix}--time-series-card--wrapper--expanded`]: isExpanded,
-              [`${iotPrefix}--time-series-card--wrapper--lots-of-points`]:
+              [`${iotPrefix}--time-series-card--wrapper__expanded`]: isExpanded,
+              [`${iotPrefix}--time-series-card--wrapper__lots-of-points`]:
                 valueSort && valueSort.length > 50,
-              [`${iotPrefix}--time-series-card--wrapper--editable`]: isEditable,
+              [`${iotPrefix}--time-series-card--wrapper__editable`]: isEditable,
             })}
           >
             <ChartComponent

@@ -27,37 +27,37 @@
   .axis-title {
     font-weight: 500;
   }
-  .bx--cc--chart-svg {
+  .#{$prefix}--cc--chart-svg {
     width: 100%;
     height: 100%;
     circle.dot.unfilled {
       opacity: 1;
     }
   }
-  .bx--cc--tooltip {
+  .#{$prefix}--cc--tooltip {
     display: initial;
   }
   // force the slider to be the white theme background color until
   // https://github.com/carbon-design-system/carbon-charts/issues/750 is fixed
-  g.bx--cc--zoom-bar rect.zoom-slider-bg {
+  g.#{$prefix}--cc--zoom-bar rect.zoom-slider-bg {
     fill: #f4f4f4;
   }
 }
 
-.#{$iot-prefix}--time-series-card--wrapper--expanded {
+.#{$iot-prefix}--time-series-card--wrapper__expanded {
   height: 55%;
 }
 
-.#{$iot-prefix}--time-series-card--wrapper--lots-of-points {
-  .bx--cc--chart-svg {
+.#{$iot-prefix}--time-series-card--wrapper__lots-of-points {
+  .#{$prefix}--cc--chart-svg {
     circle.dot.unfilled {
       opacity: 0;
     }
   }
 }
 
-.#{$iot-prefix}--time-series-card--wrapper--editable {
-  .bx--cc--tooltip {
+.#{$iot-prefix}--time-series-card--wrapper__editable {
+  .#{$prefix}--cc--tooltip {
     display: none;
   }
 }
