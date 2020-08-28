@@ -22,6 +22,11 @@ export default {
   decorators: [withKnobs],
 };
 
+const props = {
+  onClick: action('onClick'),
+  onHeadingClick: action('onHeadingClick'),
+};
+
 export const accordion = () => (
   <Accordion>
     <AccordionItem title="Section 1 title">
@@ -63,11 +68,6 @@ export const skeleton = () => (
     <AccordionSkeleton open count={4} />
   </div>
 );
-
-const props = {
-  onClick: action('onClick'),
-  onHeadingClick: action('onHeadingClick'),
-};
 
 export const playground = () => (
   <Accordion align={select('Accordion heading alignment (align)', ['start', 'end'], 'end')}>

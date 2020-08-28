@@ -354,7 +354,7 @@ const TableCard = ({
           <OverflowMenuVertical16 fill="#5a6872" description={i18n.overflowMenuIconDescription} />
         )}
       >
-        {actionList.map((item, i) => {
+        {actionList.map(item => {
           return (
             <OverflowMenuItem
               key={item.id}
