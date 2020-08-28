@@ -43,6 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-describedby="definition-tooltip-2"
                 className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
                 onFocus={[Function]}
+                type="button"
               >
                 Last 30 minutes
               </button>
@@ -708,6 +709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-describedby="definition-tooltip-4"
                 className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
                 onFocus={[Function]}
+                type="button"
               >
                 Last 12 hours
               </button>
@@ -1423,6 +1425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 aria-describedby="definition-tooltip-6"
                 className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
                 onFocus={[Function]}
+                type="button"
               >
                 Last 12 hours
               </button>

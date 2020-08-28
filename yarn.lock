@@ -2572,7 +2572,7 @@
   dependencies:
     "@carbon/icon-helpers" "^10.9.0"
 
-"@carbon/icons-react@^10.15.0-rc.0":
+"@carbon/icons-react@^10.15.0":
   version "10.16.0"
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.16.0.tgz#e0800a5aa61194fc86e71a0e26f393dcac71f8b6"
   integrity sha512-Ls+CvONNt5HoHXd/CcZvqxQ9gbM4DDqoDguL1beZuqnTKo43+Wie8GnAO8Sx/5DKeJlxDEEO8hfE96gAljHZhw==
@@ -6370,12 +6370,12 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
   integrity sha512-mYQLZnx5Qt1JgB1WEiMCf2647plpGeQ2NMR/5L0HNZzGQo4fuSPnK+wjfPnKZV0aiJDgzmWqqkV/g7JD+DW0qw==
 
-carbon-components-react@7.17.0-rc.0:
-  version "7.17.0-rc.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.17.0-rc.0.tgz#a7eb4897df7b795216d6c976bdf433a386c1de46"
-  integrity sha512-YE3mLY1NvkyYoVdeS4dmR+DQ+A0HU85VJUFS2EnlxMuyHjDVDxAV8mN/oTmEKcJsaM207jn2B5nIuEep6UCldQ==
+carbon-components-react@7.17.0:
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.17.0.tgz#bf614707ac1eae7630c7729a8fbfaf59428aee3d"
+  integrity sha512-h8Cv72WF0w7w68LBRmfHAJdDmVgT/GZEgxmmL+aqjimjgp09noKxtusaDvSiVFQcyWUTTR5Q+g+QiE3jlNd1Ng==
   dependencies:
-    "@carbon/icons-react" "^10.15.0-rc.0"
+    "@carbon/icons-react" "^10.15.0"
     classnames "2.2.6"
     downshift "5.2.1"
     flatpickr "4.6.1"

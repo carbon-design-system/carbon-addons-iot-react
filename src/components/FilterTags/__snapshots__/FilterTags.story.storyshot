@@ -54,6 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="bx--tag__close-icon"
             onClick={[Function]}
             title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -92,6 +93,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="bx--tag__close-icon"
             onClick={[Function]}
             title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -130,6 +132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="bx--tag__close-icon"
             onClick={[Function]}
             title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -168,6 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
             className="bx--tag__close-icon"
             onClick={[Function]}
             title="Clear Filter"
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -252,6 +256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -290,6 +295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -328,6 +334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -366,6 +373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -454,6 +462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -492,6 +501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -530,6 +540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -568,6 +579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           className="bx--tag__close-icon"
           onClick={[Function]}
           title="Clear Filter"
+          type="button"
         >
           <svg
             aria-hidden={true}

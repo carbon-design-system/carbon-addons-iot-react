@@ -2444,6 +2444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -2553,6 +2554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -3272,6 +3274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -3480,6 +3483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -3589,6 +3593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -3698,6 +3703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4432,6 +4438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4514,6 +4521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4596,6 +4604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4678,6 +4687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4760,6 +4770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4842,6 +4853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -4924,6 +4936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -5006,6 +5019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -5088,6 +5102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"
@@ -5170,6 +5185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                         onKeyDown={[Function]}
                         open={false}
                         tabIndex={0}
+                        type="button"
                       >
                         <svg
                           aria-label="open and close list of options"

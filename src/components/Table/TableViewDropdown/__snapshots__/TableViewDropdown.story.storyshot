@@ -41,6 +41,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Table
             id="downshift-13-toggle-button"
             onClick={[Function]}
             onKeyDown={[Function]}
+            type="button"
           >
             <span
               className="bx--list-box__label"

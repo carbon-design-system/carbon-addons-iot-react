@@ -280,6 +280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
               onKeyDown={[Function]}
               role="tab"
               tabIndex="-1"
+              type="button"
             >
               <span
                 className="bx--content-switcher__label"
@@ -295,6 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/PageH
               onKeyDown={[Function]}
               role="tab"
               tabIndex="0"
+              type="button"
             >
               <span
                 className="bx--content-switcher__label"

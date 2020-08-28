@@ -200,14 +200,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test1"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test1"
         />
         <label
           className="bx--tile bx--tile--selectable bx--tile--is-selected"
           htmlFor="test1"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -283,14 +283,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test2"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test2"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test2"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -366,14 +366,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test3"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test3"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test3"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -449,14 +449,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test4"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test4"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test4"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -532,14 +532,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test5"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test5"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test5"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -615,14 +615,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test6"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test6"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test6"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -698,14 +698,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test7"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test7"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test7"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -903,14 +903,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test1"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test1"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test1"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -986,14 +986,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test2"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test2"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test2"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1069,14 +1069,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test3"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test3"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test3"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1152,14 +1152,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test4"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test4"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test4"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1235,14 +1235,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test5"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test5"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test5"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1318,14 +1318,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test6"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test6"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test6"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1401,14 +1401,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test7"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test7"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test7"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1720,14 +1720,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test1"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test1"
         />
         <label
           className="bx--tile bx--tile--selectable bx--tile--is-selected"
           htmlFor="test1"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1803,14 +1803,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test2"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test2"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test2"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1886,14 +1886,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test3"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test3"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test3"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -1969,14 +1969,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test4"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test4"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test4"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2052,14 +2052,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test5"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test5"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test5"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2135,14 +2135,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test6"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test6"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test6"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2400,14 +2400,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test1"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test1"
         />
         <label
           className="bx--tile bx--tile--selectable bx--tile--is-selected"
           htmlFor="test1"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2483,14 +2483,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test2"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test2"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test2"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2566,14 +2566,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test3"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test3"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test3"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2649,14 +2649,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test4"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test4"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test4"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2732,14 +2732,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test5"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test5"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test5"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"
@@ -2815,14 +2815,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/TileC
           id="test6"
           name="entityType"
           onChange={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={0}
           type="radio"
           value="test6"
         />
         <label
           className="bx--tile bx--tile--selectable"
           htmlFor="test6"
-          onKeyDown={[Function]}
-          tabIndex={0}
         >
           <span
             className="bx--tile__checkmark"

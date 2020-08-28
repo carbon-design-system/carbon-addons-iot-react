@@ -18001,6 +18001,9 @@ Map {
       "className": Object {
         "type": "string",
       },
+      "disabled": Object {
+        "type": "bool",
+      },
       "index": Object {
         "type": "number",
       },
