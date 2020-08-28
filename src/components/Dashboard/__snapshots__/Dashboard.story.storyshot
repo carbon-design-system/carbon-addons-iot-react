@@ -11752,6 +11752,160 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashb
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) line card with no options 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div>
+      <div
+        className="dashboard--header"
+      >
+        <div
+          className="dashboard--header-left"
+        >
+          <h2>
+            No options card, no range or expand options
+          </h2>
+          <div
+            className="dashboard--lastupdated"
+          >
+            Last updated: 
+             
+            <p
+              className="bx--skeleton__text"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="dashboard--header-right"
+        >
+          <div
+            className="dashboard--header-actions"
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <div
+            className="react-grid-layout DashboardGrid__StyledGridLayout-vxs00g-0 ANzdO"
+            onDragEnter={[Function]}
+            onDragLeave={[Function]}
+            onDragOver={[Function]}
+            onDrop={[Function]}
+            style={
+              Object {
+                "height": "624px",
+              }
+            }
+          >
+            <div
+              className="iot--card react-grid-item react-resizable-hide react-resizable iot--card--wrapper"
+              data-testid="Card"
+              id="nooptionscard"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              role="presentation"
+              style={
+                Object {
+                  "--card-default-height": "624px",
+                  "height": "624px",
+                  "left": "0%",
+                  "position": "absolute",
+                  "top": "0px",
+                  "width": "49.375%",
+                }
+              }
+              type="TIMESERIES"
+            >
+              <div
+                className="iot--card--header"
+              >
+                <span
+                  className="iot--card--title"
+                  title="No options card"
+                >
+                  <div
+                    className="iot--card--title--text"
+                  >
+                    No options card
+                  </div>
+                </span>
+              </div>
+              <div
+                className="iot--card--content"
+                style={
+                  Object {
+                    "--card-content-height": "576px",
+                  }
+                }
+              >
+                <div
+                  className="TimeSeriesCard__LineChartWrapper-q25vbg-0 kjKxHK"
+                  size="LARGE"
+                >
+                  <div
+                    className="chart-holder"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="info__show-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#027ac5",
+        "border": "none",
+        "borderRadius": "0 0 0 5px",
+        "color": "#fff",
+        "cursor": "pointer",
+        "display": "block",
+        "fontFamily": "sans-serif",
+        "fontSize": 12,
+        "padding": "5px 15px",
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    type="button"
+  >
+    Show Info
+  </button>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Dashboard (Deprecated) only value cards 1`] = `
 <div
   className="storybook-container"
