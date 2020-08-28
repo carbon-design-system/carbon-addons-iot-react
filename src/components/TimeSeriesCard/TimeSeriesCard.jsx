@@ -15,7 +15,7 @@ import capitalize from 'lodash/capitalize';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { CardPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes, ZoomBarPropTypes } from '../../constants/CardPropTypes';
 import {
   CARD_SIZES,
   TIME_SERIES_TYPES,
@@ -62,10 +62,6 @@ const TimeSeriesCardPropTypes = {
     includeZeroOnYaxis: PropTypes.bool,
     /** Which attribute is the time attribute i.e. 'timestamp' */
     timeDataSourceId: PropTypes.string,
-    /** Show timestamp in browser local time or GMT */
-    showTimeInGMT: PropTypes.bool,
-    /** tooltip format pattern that follows the moment formatting patterns */
-    tooltipDateFormatPattern: PropTypes.string,
     /** should it be a line chart or bar chart, default is line chart */
     chartType: deprecate(
       PropTypes.oneOf(Object.values(TIME_SERIES_TYPES)),
@@ -74,17 +70,9 @@ const TimeSeriesCardPropTypes = {
     /** optional units to put in the legend */
     unit: PropTypes.string,
     /** Optionally addes a zoom bar to the chart */
-    zoomBar: PropTypes.shape({
-      /** Determines which axis to put the zoomBar */
-      axes: PropTypes.oneOf(['top']), // top is the only axes supported right now
-      // axes: PropTypes.oneOf(['top', 'bottom', 'left', 'right']), // TODO: When the other axes are supported, swap to this proptype
-      /** Determines whether the zoomBar is enabled */
-      enabled: PropTypes.bool,
-      /** Optional domain to zoom to by default. Can be a timestamp or date string */
-      initialZoomDomain: PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      ),
-    }),
+    zoomBar: ZoomBarPropTypes,
+    /** Number of grid-line spaces to the left and right of the chart to add white space to. Defaults to 1 */
+    addSpaceOnEdges: PropTypes.number,
   }).isRequired,
   i18n: PropTypes.shape({
     alertDetected: PropTypes.string,
@@ -109,6 +97,12 @@ const TimeSeriesCardPropTypes = {
    * can be date instance or timestamp
    */
   domainRange: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.object])),
+  /** Region for value and text formatting */
+  locale: PropTypes.string,
+  /** Show timestamp in browser local time or GMT */
+  showTimeInGMT: PropTypes.bool,
+  /** tooltip format pattern that follows the moment formatting patterns */
+  tooltipDateFormatPattern: PropTypes.string,
 };
 
 const LineChartWrapper = styled.div`
@@ -169,7 +163,8 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
         // have to filter out null values from the dataset, as it causes Carbon Charts to break
         filteredData
           .filter(dataItem => {
-            return !isNil(dataItem[dataSourceId]) && dataItem[timeDataSourceId] === timestamp;
+            // only allow valid timestamp matches
+            return !isNil(dataItem[timeDataSourceId]) && dataItem[timeDataSourceId] === timestamp;
           })
           .forEach(dataItem =>
             data.push({
@@ -197,6 +192,7 @@ const memoizedGenerateSampleValues = memoize(generateSampleValues);
  * @param {array} alertRanges Array of alert range information to search
  * @param {string} alertDetected Translated string to indicate that the alert is detected
  * @param {bool} showTimeInGMT
+ * @param {string} tooltipDataFormatPattern
  */
 export const handleTooltip = (
   dataOrHoveredElement,
@@ -275,8 +271,6 @@ const TimeSeriesCard = ({
   isLazyLoading,
   isLoading,
   domainRange,
-  showTimeInGMT,
-  tooltipDateFormatPattern,
   ...others
 }) => {
   const {
@@ -292,6 +286,9 @@ const TimeSeriesCard = ({
       unit,
       chartType,
       zoomBar,
+      showTimeInGMT,
+      tooltipDateFormatPattern,
+      addSpaceOnEdges,
     },
     values: valuesProp,
   } = handleCardVariables(titleProp, content, initialValues, others);
@@ -554,10 +551,14 @@ const TimeSeriesCard = ({
                         top: {
                           enabled: zoomBar.enabled,
                           initialZoomDomain: zoomBar.initialZoomDomain,
+                          type: zoomBar.view || 'slider_view', // default to slider view
                         },
                       },
                     }
                   : {}),
+                timeScale: {
+                  addSpaceOnEdges: addSpaceOnEdges || 1,
+                },
               }}
               width="100%"
               height="100%"
@@ -565,6 +566,7 @@ const TimeSeriesCard = ({
           </LineChartWrapper>
           {isExpanded ? (
             <StatefulTable
+              id="TimeSeries-table"
               className={`${iotPrefix}--time-series-card--stateful-table`}
               columns={tableColumns}
               data={tableData}

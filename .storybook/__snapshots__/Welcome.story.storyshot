@@ -2569,6 +2569,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    TableManageViewsModal
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     TableSkeletonWithHeaders
                   </div>
                 </div>
@@ -3325,6 +3337,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                   <div
                     className="bx--structured-list-td"
                   >
+                    FilterTags
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
                     determineCardRange
                   </div>
                 </div>
@@ -3362,6 +3386,42 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0/Getting Starte
                     className="bx--structured-list-td"
                   >
                     formatNumberWithPrecision
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    getVariables
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    getCardVariables
+                  </div>
+                </div>
+                <div
+                  className="bx--structured-list-row"
+                >
+                  <div
+                    className="bx--structured-list-td"
+                  />
+                  <div
+                    className="bx--structured-list-td"
+                  >
+                    replaceVariables
                   </div>
                 </div>
                 <div

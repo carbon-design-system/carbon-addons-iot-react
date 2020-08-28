@@ -40,6 +40,7 @@ const { iotPrefix } = settings;
 const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
+  tableId: PropTypes.string.isRequired,
   /** Important table options that the head needs to know about */
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
@@ -86,7 +87,12 @@ const propTypes = {
     filters: PropTypes.arrayOf(
       PropTypes.shape({
         columnId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+          PropTypes.arrayOf(PropTypes.string),
+        ]).isRequired,
       })
     ),
   }).isRequired,
@@ -124,6 +130,7 @@ const generateOrderedColumnRefs = ordering =>
   ordering.map(col => col.columnId).reduce((acc, id) => ({ ...acc, [id]: createRef() }), {});
 
 const TableHead = ({
+  tableId,
   options,
   options: {
     hasRowExpansion,
@@ -298,7 +305,7 @@ const TableHead = ({
                     https://github.com/IBM/carbon-components-react/issues/1088 */}
             <Checkbox
               disabled={isDisabled}
-              id="select-all"
+              id={`${tableId}-head`}
               labelText={selectAllText}
               hideLabel
               indeterminate={isSelectAllIndeterminate}
@@ -307,7 +314,6 @@ const TableHead = ({
             />
           </TableHeader>
         ) : null}
-
         {ordering.map(item => {
           const matchingColumnMeta = columns.find(column => column.id === item.columnId);
           const hasSort = matchingColumnMeta && sort && sort.columnId === matchingColumnMeta.id;
@@ -379,6 +385,7 @@ const TableHead = ({
             ...column.filter,
             id: column.id,
             isFilterable: !isNil(column.filter),
+            isMultiselect: column.filter?.isMultiselect,
             width: column.width,
           }))}
           hasFastFilter={hasFastFilter}

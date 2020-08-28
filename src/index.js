@@ -13,6 +13,7 @@ export Table from './components/Table';
 export TableHead from './components/Table/TableHead/TableHead';
 export TableBody from './components/Table/TableBody/TableBody';
 export TableSaveViewModal from './components/Table/TableSaveViewModal/TableSaveViewModal';
+export TableManageViewsModal from './components/Table/TableManageViewsModal/TableManageViewsModal';
 export TableSkeletonWithHeaders from './components/Table/TableSkeletonWithHeaders/TableSkeletonWithHeaders';
 export TableToolbar from './components/Table/TableToolbar/TableToolbar';
 export WizardModal from './components/WizardModal';
@@ -90,6 +91,7 @@ export IconSwitch, { ICON_SWITCH_SIZES } from './components/IconSwitch/IconSwitc
 export AccordionItemDefer from './components/Accordion/AccordionItemDefer';
 export ComboBox from './components/ComboBox';
 export FlyoutMenu from './components/FlyoutMenu';
+export FilterTags from './components/FilterTags/FilterTags';
 
 // Carbon proxy
 export {
@@ -271,6 +273,9 @@ export {
   determineMaxValueCardAttributeCount,
   compareGrains,
   formatNumberWithPrecision,
+  getVariables,
+  getCardVariables,
+  replaceVariables,
 } from './utils/cardUtilityFunctions';
 
 export { csvDownloadHandler } from './utils/componentUtilityFunctions';

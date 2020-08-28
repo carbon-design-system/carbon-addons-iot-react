@@ -39,6 +39,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
           interval={interval}
@@ -82,6 +83,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               includeZeroOnXaxis: true,
               includeZeroOnYaxis: true,
               timeDataSourceId: 'timestamp',
+              addSpaceOnEdges: 1,
             })}
             values={getIntervalChartData(interval, 1, { min: 10, max: 100 }, 100)}
             interval={interval}
@@ -137,45 +139,6 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
       </div>
     );
   })
-  .add('medium / single line - custom domainRange', () => {
-    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
-    const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
-    const timestamps = data.map(d => d.timestamp);
-    const minDate = new Date(Math.min(...timestamps));
-    const day = minDate.getDay();
-    minDate.setDate(day + 10);
-
-    return (
-      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
-        <TimeSeriesCard
-          title={text('title', 'Temperature')}
-          id="facility-temperature"
-          isLoading={boolean('isLoading', false)}
-          isExpanded={boolean('isExpandable', false)}
-          content={object('content', {
-            series: [
-              {
-                label: 'Temperature',
-                dataSourceId: 'temperature',
-              },
-            ],
-            xLabel: 'Time t',
-            yLabel: 'Temperature (˚F)',
-            includeZeroOnXaxis: true,
-            includeZeroOnYaxis: true,
-            timeDataSourceId: 'timestamp',
-          })}
-          values={data}
-          availableActions={{ range: true }}
-          interval="hour"
-          breakpoint="lg"
-          size={size}
-          onCardAction={action('onCardAction')}
-          domainRange={[minDate.valueOf(), Math.max(...timestamps)]}
-        />
-      </div>
-    );
-  })
   .add('multi line - (No X/Y Label)', () => {
     const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
     return (
@@ -198,6 +161,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
           interval="day"
@@ -229,6 +193,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
           interval="month"
@@ -272,6 +237,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('month', 6, { min: 10, max: 100 }, 100, 1569945252000)}
           interval="month"
@@ -306,6 +272,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('year', 2, { min: 10, max: 100 }, 100)}
           interval="year"
@@ -358,6 +325,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
           interval={interval}
@@ -395,6 +363,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               axes: 'top',
               // initialZoomDomain: []
             },
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('minute', 15, { min: 4700000, max: 4800000 }, 100)}
           interval="minute"
@@ -425,6 +394,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 7, { min: 10, max: 100 }, 100)}
           interval="day"
@@ -456,6 +426,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 30, { min: 10, max: 100 }, 100)}
           interval="day"
@@ -492,6 +463,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               axes: 'top',
               // initialZoomDomain: []
             },
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
           interval="month"
@@ -528,6 +500,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               axes: 'top',
               // initialZoomDomain: []
             },
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('year', 10, { min: 10, max: 100 }, 100)}
           interval="year"
@@ -567,6 +540,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               axes: 'top',
               // initialZoomDomain: []
             },
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100)}
           breakpoint="lg"
@@ -614,6 +588,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData(interval, 12, { min: 10, max: 100 }, 100)}
           interval={interval}
@@ -648,6 +623,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 10, { min: 10, max: 100 }, 100)}
           interval="day"
@@ -683,14 +659,55 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             zoomBar: {
               enabled: true,
               axes: 'top',
-              // initialZoomDomain: []
+              view: 'slider_view',
             },
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('month', 24, { min: 10, max: 100 }, 100)}
           interval="month"
           breakpoint="lg"
           size={size}
           onCardAction={action('onCardAction')}
+        />
+      </div>
+    );
+  })
+  .add('domainRange', () => {
+    const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+    const data = getIntervalChartData('day', 50, { min: 10, max: 100 }, 100);
+    const timestamps = data.map(d => d.timestamp);
+    const minDate = new Date(Math.min(...timestamps));
+    const day = minDate.getDay();
+    minDate.setDate(day + 10);
+
+    return (
+      <div style={{ width: `${getCardMinSize('lg', size).x}px`, margin: 20 }}>
+        <TimeSeriesCard
+          title={text('title', 'Temperature')}
+          id="facility-temperature"
+          isLoading={boolean('isLoading', false)}
+          isExpanded={boolean('isExpandable', false)}
+          content={object('content', {
+            series: [
+              {
+                label: 'Temperature',
+                dataSourceId: 'temperature',
+              },
+            ],
+            xLabel: 'Time t',
+            yLabel: 'Temperature (˚F)',
+            includeZeroOnXaxis: true,
+            includeZeroOnYaxis: true,
+            timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
+          })}
+          values={data}
+          availableActions={{ range: true }}
+          interval="hour"
+          breakpoint="lg"
+          size={size}
+          onCardAction={action('onCardAction')}
+          domainRange={[minDate.valueOf(), Math.max(...timestamps)]}
         />
       </div>
     );
@@ -759,6 +776,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
                 details: 'Less severe',
               },
             ],
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
@@ -790,6 +808,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             timeDataSourceId: 'timestamp',
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
+            addSpaceOnEdges: 1,
           })}
           range="day"
           interval="hour"
@@ -823,6 +842,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 100, { min: 10, max: 100 }, 100, 1572824320000)}
           interval="hour"
@@ -866,6 +886,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           interval={select('interval', ['hour', 'day', 'week', 'month', 'year'], 'hour')}
           breakpoint="lg"
@@ -977,6 +998,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
               enabled: true,
               axes: 'top',
             },
+            addSpaceOnEdges: 1,
           })}
           values={staticData}
           interval="month"
@@ -1022,6 +1044,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           values={getIntervalChartData('day', 12, { min: 10, max: 100 }, 100).reduce(
             (acc, dataPoint) => {
@@ -1068,6 +1091,7 @@ storiesOf('Watson IoT/TimeSeriesCard', module)
             includeZeroOnXaxis: true,
             includeZeroOnYaxis: true,
             timeDataSourceId: 'timestamp',
+            addSpaceOnEdges: 1,
           })}
           locale={select('locale', ['fr', 'en'], 'fr')}
           values={getIntervalChartData('day', 12, { min: 10, max: 100000 }, 100)}

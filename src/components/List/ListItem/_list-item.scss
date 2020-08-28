@@ -1,5 +1,9 @@
 @import '../../../globals/vars';
 
+.#{$iot-prefix}--list-item-parent {
+  position: relative;
+}
+
 .#{$iot-prefix}--list-item {
   background: $ui-01;
   border-bottom: 1px solid $ui-03;
