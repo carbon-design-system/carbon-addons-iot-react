@@ -367,7 +367,6 @@ const TableCard = ({
                   actionId: item.id,
                 });
               }}
-              primaryFocus={i === 0}
             />
           );
         })}

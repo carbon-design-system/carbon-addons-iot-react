@@ -161,8 +161,12 @@ const ComboBox = ({
     listItems,
   ]);
 
-  const shouldFilterItemForTags = ({ item, itemToString, inputValue }) =>
-    itemToString(item).includes(inputValue);
+  const shouldFilterItemForTags = ({
+    item,
+    itemToString: _itemToString,
+    inputValue: _inputValue,
+  }) => _itemToString(item)?.includes(_inputValue);
+
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div

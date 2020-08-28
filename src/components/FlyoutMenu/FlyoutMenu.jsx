@@ -217,6 +217,7 @@ const FlyoutMenu = ({
             direction={tooltipDirection}
             menuOffset={() => getMenuOffset(direction, menuOffset, tooltipContentRef, buttonRef)}
             tooltipId={tooltipId}
+            id={tooltipId} // https://github.com/carbon-design-system/carbon/pull/6744
             triggerId={triggerId}
             tabIndex={tabIndex}
           >

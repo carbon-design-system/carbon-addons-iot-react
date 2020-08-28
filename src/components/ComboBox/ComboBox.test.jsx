@@ -1,32 +1,9 @@
 import React from 'react';
-import { render, screen, fireEvent, prettyDOM, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ComboBox from './ComboBox';
 import { items } from './ComboBox.story';
-
-const item = [
-  {
-    id: 'option-0',
-    label: 'Option 1',
-  },
-  {
-    id: 'option-1',
-    label: 'Option 2',
-  },
-  {
-    id: 'option-2',
-    label: 'Option 3',
-  },
-  {
-    id: 'option-3',
-    label: 'Option 4',
-  },
-  {
-    id: 'option-4',
-    label: 'An example option that is really long to show what should be done to handle long text',
-  },
-];
 
 const defaultProps = {
   items,
@@ -64,7 +41,7 @@ describe('ComboBox', () => {
   });
 
   it('does not add tag when input is blank or add to list', async () => {
-    render(<ComboBox {...defaultProps} items={item} />);
+    render(<ComboBox {...defaultProps} />);
     const tags = screen.getByTestId('combo-tags');
 
     await userEvent.type(screen.getByPlaceholderText('Filter...'), '{enter}');
@@ -138,14 +115,15 @@ describe('ComboBox', () => {
 
   it('does not add duplicate tag when user selects same value from list', async () => {
     render(<ComboBox {...defaultProps} />);
-    const tags = screen.getByTestId('combo-tags');
 
     userEvent.click(screen.getByTitle('Open menu'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
     userEvent.click(screen.getByTitle('Open menu'));
     userEvent.click(screen.getByRole('option', { name: 'Option 1' }));
 
-    expect(tags.childElementCount).toEqual(1);
+    userEvent.click(screen.getByTitle('Clear selected item'));
+
+    expect(screen.getByTestId('combo-tags').childElementCount).toEqual(1);
     const list = await getListBox();
     expect(list.childElementCount).toEqual(5);
 
@@ -184,7 +162,7 @@ describe('ComboBox', () => {
     expect(tags.childElementCount).toEqual(0);
   });
 
-  it.only('adds to list (not tags) when addToList is passed and no hasMultiValue', async () => {
+  it('adds to list (not tags) when addToList is passed and no hasMultiValue', async () => {
     render(
       <ComboBox
         {...defaultProps}

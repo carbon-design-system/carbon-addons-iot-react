@@ -2320,7 +2320,7 @@ storiesOf('Watson IoT/Table', module)
           <Tooltip
             direction="right"
             tabIndex={0}
-            tooltipId="table-tooltip"
+            id="table-tooltip"
             triggerId="table-tooltip-trigger"
             triggerText=""
             menuOffset={menuBody => {

@@ -185,8 +185,6 @@ class RowActionsCell extends React.Component {
                   >
                     {overflowActions.map((action, actionIndex) => (
                       <OverflowMenuItem
-                        // We need to focus a MenuItem for the keyboard navigation to work
-                        primaryFocus={actionIndex === firstSelectableItemIndex}
                         className={classnames(`${iotPrefix}--action-overflow-item`, {
                           [`${iotPrefix}--action-overflow-item--initialFocus`]:
                             actionIndex === firstSelectableItemIndex,

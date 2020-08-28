@@ -103,7 +103,6 @@ const FilterTags = ({ children, hasOverflow, id, tagContainer }) => {
         >
           {overflowItems.map((child, i) => (
             <OverflowMenuItem
-              primaryFocus={i === 0}
               className={`${iotPrefix}--filtertags-overflow-item`}
               title={child.props.children}
               key={`${child.props.children}-${i}`}
