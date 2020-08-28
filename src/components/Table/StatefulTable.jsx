@@ -34,6 +34,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     id: tableId,
     columns,
     options,
+    view: {
+      toolbar: { customToolbarContent },
+    },
     view: initialState,
     actions: callbackActions,
     lightweight,
@@ -233,6 +236,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
             ...view?.toolbar?.search,
             defaultValue: initialDefaultSearch,
           },
+          customToolbarContent,
         },
         pagination: {
           ...view.pagination,
