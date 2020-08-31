@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { ComboBox as CarbonComboBox, Tag } from 'carbon-components-react';
@@ -71,6 +71,24 @@ const ComboBox = ({
   const [listItems, setListItems] = useState(items);
   // Array that populates tags
   const [tagItems, setTagItems] = useState([]);
+  // Array that populates tags
+  const prevTagAndListCount = useRef(items.length + tagItems.length);
+
+  // Handle focus after adding new tags or list items
+  useEffect(
+    () => {
+      const currentTagAndListCount = tagItems.length + listItems.length;
+
+      // only focus input if the tags or list have increased
+      if (prevTagAndListCount.current < currentTagAndListCount) {
+        comboRef.current.textInput.current.focus();
+      }
+
+      // Store the value for the next render
+      prevTagAndListCount.current = currentTagAndListCount;
+    },
+    [tagItems, listItems, comboRef]
+  );
 
   const handleOnClose = e => {
     // Get close target's text
