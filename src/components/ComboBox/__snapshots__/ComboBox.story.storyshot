@@ -28,6 +28,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="bx--list-box__wrapper"
         >
+          <label
+            className="bx--label"
+            htmlFor="carbon-combobox-example"
+            id="combobox-label-1"
+          >
+            Combobox title
+          </label>
+          <div
+            className="bx--form__helper-text"
+            id="combobox-helper-text-1"
+          >
+            Optional helper text here
+          </div>
           <div
             aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
@@ -37,6 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               aria-controls={null}
+              aria-describedby="combobox-helper-text-1"
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open menu"
@@ -242,6 +256,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="bx--list-box__wrapper"
         >
+          <label
+            className="bx--label"
+            htmlFor="carbon-combobox-example"
+            id="combobox-label-2"
+          >
+            Combobox title
+          </label>
+          <div
+            className="bx--form__helper-text"
+            id="combobox-helper-text-2"
+          >
+            Optional helper text here
+          </div>
           <div
             aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
@@ -251,6 +278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               aria-controls={null}
+              aria-describedby="combobox-helper-text-2"
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open menu"
@@ -448,6 +476,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
       <div
         className="bx--list-box__wrapper"
       >
+        <label
+          className="bx--label"
+          htmlFor="carbon-combobox-example"
+          id="combobox-label-4"
+        >
+          Combobox title
+        </label>
+        <div
+          className="bx--form__helper-text"
+          id="combobox-helper-text-4"
+        >
+          Optional helper text here
+        </div>
         <div
           aria-label="Choose an item"
           className="bx--combo-box iot--combobox-input bx--list-box"
@@ -457,6 +498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         >
           <div
             aria-controls={null}
+            aria-describedby="combobox-helper-text-4"
             aria-expanded={false}
             aria-haspopup={true}
             aria-label="open menu"
@@ -711,6 +753,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
         <div
           className="bx--list-box__wrapper"
         >
+          <label
+            className="bx--label"
+            htmlFor="carbon-combobox-example"
+            id="combobox-label-3"
+          >
+            Combobox title
+          </label>
+          <div
+            className="bx--form__helper-text"
+            id="combobox-helper-text-3"
+          >
+            Optional helper text here
+          </div>
           <div
             aria-label="Choose an item"
             className="bx--combo-box iot--combobox-input bx--list-box"
@@ -720,6 +775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
           >
             <div
               aria-controls={null}
+              aria-describedby="combobox-helper-text-3"
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open menu"

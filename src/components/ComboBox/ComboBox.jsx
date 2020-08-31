@@ -204,6 +204,7 @@ const ComboBox = ({
       data-testid="combo-wrapper"
     >
       <CarbonComboBox
+        {...comboProps}
         data-testid="combo-box"
         ariaLabel={ariaLabel}
         id={id}
