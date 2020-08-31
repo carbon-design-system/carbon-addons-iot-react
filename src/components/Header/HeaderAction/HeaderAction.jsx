@@ -112,7 +112,7 @@ const HeaderAction = ({ item, index }) => {
   // Otherwise render a simple menu button with no wrapper div
   return (
     <HeaderGlobalAction
-      className={`${carbonPrefix}--header-action-btn`}
+      className={[`${carbonPrefix}--header-action-btn`, item.className].filter(i => i).join(' ')}
       key={`menu-item-${item.label}-global-${index}`}
       aria-label={item.label}
       onClick={item.onClick || (() => {})}
