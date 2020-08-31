@@ -61,7 +61,7 @@ describe('componentUtilityFunctions', () => {
 
   it('move multiple items to top of the list', () => {
     const itemsToMove = [
-      simpleListItems[0].id,
+      simpleListItems[1].id,
       simpleListItems[3].id,
       simpleListItems[5].id,
       simpleListItems[9].id,
@@ -70,7 +70,7 @@ describe('componentUtilityFunctions', () => {
     const newList = moveItemsInList(
       simpleListItems,
       itemsToMove,
-      itemsToMove[0],
+      simpleListItems[0].id,
       DropLocation.Above
     );
 

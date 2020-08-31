@@ -2058,7 +2058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-item-editable--drag-preview"
                 >
-                  Michael Conforto
+                  Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto
                 </div>
                 <svg
                   aria-hidden={true}
@@ -2094,9 +2094,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <div
                         className="iot--list-item--content--values--value"
-                        title="Michael Conforto"
+                        title="Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto"
                       >
-                        Michael Conforto
+                        Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto
                       </div>
                     </div>
                   </div>
@@ -4497,9 +4497,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <div
                       className="iot--list-item--content--values--value"
-                      title="Michael Conforto"
+                      title="Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto"
                     >
-                      Michael Conforto
+                      Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto
                     </div>
                   </div>
                 </div>

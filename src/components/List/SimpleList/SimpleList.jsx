@@ -132,7 +132,6 @@ const SimpleList = ({
     pageOfPagesText: page => i18n.pageOfPagesText(page),
   };
 
-  /* istanbul ignore next */
   const onItemMoved = (dragId, hoverId, target) => {
     let updatedList;
 

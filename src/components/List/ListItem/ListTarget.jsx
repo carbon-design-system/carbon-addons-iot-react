@@ -55,7 +55,6 @@ const ListTarget = ({ connectDropTarget, targetPosition, targetSize, isOver }) =
   );
 };
 
-/* istanbul ignore next */
 const rowTarget = {
   drop(hoverProps, monitor) {
     const hoverId = hoverProps.id;
@@ -69,11 +68,9 @@ const rowTarget = {
   },
 };
 
-/* istanbul ignore next */
 const dt = DropTarget('ListItem', rowTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver({ shallow: true }),
-  isMovingUp: monitor.getDifferenceFromInitialOffset()?.y <= 0,
 }));
 
 ListTarget.propTypes = ListTargetPropTypes;

@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 
 import { settings } from '../../../constants/Settings';
+import { EditingStyle } from '../../../utils/DragAndDropUtils';
 
 import SimpleList from './SimpleList';
 
@@ -11,7 +12,7 @@ const getFatRowListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: (idx + 1).toString(),
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
@@ -160,5 +161,56 @@ describe('SimpleList', () => {
     expect(
       screen.getAllByRole('button')[0].className.includes(`${iotPrefix}--list-item__selected`)
     ).toEqual(false);
+  });
+
+  it('SimpleList reorder', () => {
+    let newData = null;
+    render(
+      <SimpleList
+        title="Simple list"
+        items={getListItems(5)}
+        editingStyle={EditingStyle.Multiple}
+        onListUpdated={newList => {
+          newData = newList;
+        }}
+      />
+    );
+
+    const listItems = screen.getAllByRole('listitem');
+    const firstItem = within(listItems[0]).getByTitle('Item 1');
+
+    expect(firstItem).toBeInTheDocument();
+    expect(listItems.length).toEqual(5);
+
+    const targets = within(listItems[1]).getAllByTestId('list-target');
+
+    expect(targets.length).toEqual(2);
+
+    fireEvent.dragStart(firstItem, {
+      dataTransfer: {
+        dropEffect: 'move',
+      },
+    });
+    fireEvent.dragEnter(targets[1], {
+      dataTransfer: {
+        dropEffect: 'move',
+      },
+    });
+    fireEvent.dragOver(targets[1], {
+      dataTransfer: {
+        dropEffect: 'move',
+      },
+    });
+    fireEvent.drop(targets[1], {
+      dataTransfer: {
+        dropEffect: 'move',
+      },
+    });
+
+    expect(within(screen.getAllByRole('listitem')[0]).queryByTitle('Item 2')).toBeDefined();
+    expect(within(screen.getAllByRole('listitem')[1]).queryByTitle('Item 1')).toBeDefined();
+
+    expect(newData[0].content.value).toEqual('Item 2');
+    expect(newData[1].content.value).toEqual('Item 1');
   });
 });

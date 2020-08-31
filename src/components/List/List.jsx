@@ -80,7 +80,6 @@ const propTypes = {
   itemWillMove: PropTypes.func,
 };
 
-/* istanbul ignore next */
 const defaultProps = {
   className: null,
   title: null,
