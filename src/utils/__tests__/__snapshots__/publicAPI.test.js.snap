@@ -13945,46 +13945,6 @@ Map {
     },
   },
   "List" => Object {
-<<<<<<< HEAD
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "buttons": Array [],
-      "className": null,
-      "expandedIds": Array [],
-      "handleSelect": [Function],
-      "i18n": Object {
-        "close": "Close",
-        "expand": "Expand",
-        "searchPlaceHolderText": "Enter a value",
-      },
-      "iconPosition": "left",
-      "isFullHeight": false,
-      "isLargeRow": false,
-      "isLoading": false,
-      "pagination": null,
-      "search": null,
-      "selectedId": null,
-      "selectedIds": Array [],
-      "title": null,
-      "toggleExpansion": [Function],
-    },
-    "propTypes": Object {
-      "buttons": Object {
-        "args": Array [
-          Object {
-            "type": "node",
-          },
-        ],
-        "type": "arrayOf",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "expandedIds": Object {
-        "args": Array [
-          Object {
-            "type": "string",
-=======
     "DecoratedComponent": Object {
       "$$typeof": Symbol(react.forward_ref),
       "__docgenInfo": Object {
@@ -14003,6 +13963,17 @@ Map {
               "value": Object {
                 "name": "node",
               },
+            },
+          },
+          "className": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "Specify an optional className to be applied to the container",
+            "required": false,
+            "type": Object {
+              "name": "string",
             },
           },
           "editingStyle": Object {
@@ -14047,7 +14018,6 @@ Map {
                 "name": "string",
               },
             },
->>>>>>> feat(list): added simple reordering
           },
           "handleSelect": Object {
             "defaultValue": Object {
@@ -14301,6 +14271,7 @@ Map {
       },
       "defaultProps": Object {
         "buttons": Array [],
+        "className": null,
         "editingStyle": null,
         "expandedIds": Array [],
         "handleSelect": [Function],
@@ -14330,6 +14301,9 @@ Map {
             },
           ],
           "type": "arrayOf",
+        },
+        "className": Object {
+          "type": "string",
         },
         "editingStyle": Object {
           "args": Array [

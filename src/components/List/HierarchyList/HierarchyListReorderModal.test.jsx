@@ -58,7 +58,7 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(breadcrumbs).queryByText('All rows')).toBeInTheDOM();
+    expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
 
     expect(itemSelectedText).toBeNull();
     expect(itemSelectedTwoText).toBeNull();
@@ -83,8 +83,8 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(breadcrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeInTheDOM();
+    expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
   });
 
   it('clicking current breadcrumb does not update the view', () => {
@@ -106,16 +106,16 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(breadcrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeInTheDOM();
+    expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
 
     // Selects the current breadcrumb
     const thirdBreadCrumb = screen.queryAllByRole('button')[3];
     fireEvent.click(thirdBreadCrumb);
 
     const updatedBreadCrumbs = screen.queryByTestId('modal-breadcrumb');
-    expect(within(updatedBreadCrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(updatedBreadCrumbs).queryByText(items[1].content.value)).toBeInTheDOM();
+    expect(within(updatedBreadCrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(updatedBreadCrumbs).queryByText(items[1].content.value)).toBeDefined();
   });
 
   it('clicking parent breadcrumb updates the view', () => {
@@ -143,16 +143,16 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(breadcrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(breadcrumbs).queryByText(newList[0].content.value)).toBeInTheDOM();
-    expect(within(breadcrumbs).queryByText(newList[0].children[0].content.value)).toBeInTheDOM();
+    expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(breadcrumbs).queryByText(newList[0].content.value)).toBeDefined();
+    expect(within(breadcrumbs).queryByText(newList[0].children[0].content.value)).toBeDefined();
 
     fireEvent.click(within(breadcrumbs).queryAllByRole('button')[1]);
 
     const updatedBreadCrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(updatedBreadCrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(updatedBreadCrumbs).queryByText(newList[0].content.value)).toBeInTheDOM();
+    expect(within(updatedBreadCrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(updatedBreadCrumbs).queryByText(newList[0].content.value)).toBeDefined();
     expect(within(updatedBreadCrumbs).queryByText(newList[0].children[0].content.value)).toBeNull();
   });
 
@@ -175,15 +175,15 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(breadcrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeInTheDOM();
+    expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
 
     const allItemsButton = screen.queryAllByRole('button')[1];
 
     fireEvent.click(allItemsButton);
 
     const breadcrumbsRerender = screen.queryByTestId('modal-breadcrumb');
-    expect(within(breadcrumbsRerender).queryByText('All rows')).toBeInTheDOM();
+    expect(within(breadcrumbsRerender).queryByText('All rows')).toBeDefined();
     expect(within(breadcrumbsRerender).queryByText(items[1].content.value)).toBeNull();
   });
 
@@ -244,8 +244,8 @@ describe('HierarchyListReorderModal', () => {
 
     const breadcrumbs = screen.queryByTestId('modal-breadcrumb');
 
-    expect(within(breadcrumbs).queryByText('All rows')).toBeInTheDOM();
-    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeInTheDOM();
+    expect(within(breadcrumbs).queryByText('All rows')).toBeDefined();
+    expect(within(breadcrumbs).queryByText(items[1].content.value)).toBeDefined();
     expect(within(breadcrumbs).queryByText(items[2].content.value)).toBeNull();
 
     fireEvent.click(saveButton);

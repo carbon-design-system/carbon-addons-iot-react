@@ -69,7 +69,7 @@ export const sampleHierarchy = {
       'New York Mets': {
         'Jeff McNeil': '3B',
         'Amed Rosario': 'SS',
-        'Michael Conforto': 'RF',
+        'Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto': 'RF',
         'Pete Alonso': '1B',
         'Wilson Ramos': 'C',
         'Robinson Cano': '2B',

@@ -341,9 +341,9 @@ storiesOf('Watson IoT Experimental/SimpleList', module)
     )),
     { info: { text: `` } }
   )
-  .add('basic - SimpleList with reorder', () => {
+  .add('list with reorder', () => {
     const SimpleListWithReorder = () => {
-      const [items, setItems] = useState(getListItems(5));
+      const [items, setItems] = useState(getListItems(15));
 
       return (
         <div style={{ width: 500 }}>

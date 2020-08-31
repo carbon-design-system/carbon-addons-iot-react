@@ -28,7 +28,7 @@
     }
 
     &--button {
-      padding: 0 $spacing-08 0 $spacing-05 !important;
+      padding: 0 $spacing-08 0 $spacing-05;
 
       &-no-icon {
         padding: 0 $spacing-05;
@@ -41,12 +41,8 @@
       overflow-y: scroll;
 
       > button {
-        padding: 0 !important;
+        padding: 0;
       }
-    }
-
-    .#{prefix}--modal-content {
-      padding-right: 0 !important;
     }
 
     &--list {
@@ -95,7 +91,7 @@
 
     &--radio {
       padding: $spacing-05;
-      margin: 0 !important;
+      margin-right: 0 !important;
     }
   }
 }

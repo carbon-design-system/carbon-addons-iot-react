@@ -13,10 +13,19 @@ export const EditingStyle = {
   MultipleNesting: 'multiple-nesting',
 };
 
+/**
+ * Returns true if a passed in editing style is multiple rather than single
+ * @param {EditingStyle} editingStyle current editing style
+ */
 export const editingStyleIsMultiple = editingStyle => {
   return editingStyle === EditingStyle.MultipleNesting || editingStyle === EditingStyle.Multiple;
 };
 
+/**
+ * Returns a set of items that match the set of ids
+ * @param {Array<ListItem>} items full set of items
+ * @param {Array[string]} ids selected ids from the set of items
+ */
 const searchDraggedItem = (items, ids) => {
   let draggedItems = [];
 
@@ -31,6 +40,14 @@ const searchDraggedItem = (items, ids) => {
   return draggedItems;
 };
 
+/**
+ * Helper function that returns a new list with the dragged items moved to the specified location
+ * @param {Array<ListItem>} items original list of ListItems
+ * @param {Array<ListItem>} draggedItems items to be moved
+ * @param {string} dropId the id of the drop location
+ * @param {DropLocation} location Where the drop will occur, above or below the specified id or as the first child of the specified id
+ * @param {boolean} dropped flag stating if the drop has already occured in case there are duplicate ids in the list
+ */
 const updateList = (items, draggedItems, dropId, location, dropped = false) => {
   let finalList = [];
   let itemDropped = dropped; // Protects against dupe ids and multiple drops
@@ -71,13 +88,23 @@ const updateList = (items, draggedItems, dropId, location, dropped = false) => {
   return finalList;
 };
 
-export const moveItemsInList = (items, dragIds, dropId, target) => {
-  const draggedItems = searchDraggedItem(items, dragIds);
-  const newList = updateList(items, draggedItems, dropId, target);
+/**
+ * Returns a new list with the dragged items moved to the specified location
+ * @param {Array<ListItem>} items original list of ListItems
+ * @param {Array<ListItem>} draggedItems items to be moved
+ * @param {string} dropId the id of the drop location
+ * @param {DropLocation} location Where the drop will occur, above or below the specified id or as the first child of the specified id
+ */
+export const moveItemsInList = (items, dragIds, dropId, location) => {
+  const draggedItems = searchDraggedItem(items, dragIds.filter(id => id !== dropId));
 
-  return newList;
+  return updateList(items, draggedItems, dropId, location);
 };
 
+/**
+ * Returns every child id from the ListItem and their children's ids
+ * @param {ListItem} listItem
+ */
 const getAllChildIds = listItem => {
   let childIds = [];
 
@@ -92,6 +119,13 @@ const getAllChildIds = listItem => {
   return childIds;
 };
 
+/**
+ * Handles adding and removing items to a list to determine which list items are selected or deselected
+ * @param {Array<ListItem>} list original list of ListItems
+ * @param {Array<string>} currentSelection current selection of ListItems as ids
+ * @param {string} id the id of an item that has been selected or deselected
+ * @param {string} parentId the parent id of the selected or deselected item - if unselected, the parent is also unselected
+ */
 export const handleEditModeSelect = (list, currentSelection, id, parentId) => {
   let newSelection = [];
 

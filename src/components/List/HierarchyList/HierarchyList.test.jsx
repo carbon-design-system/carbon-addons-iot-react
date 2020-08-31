@@ -318,8 +318,8 @@ describe('HierarchyList', () => {
     const itemSelectedText = screen.queryByText('1 item selected');
     const moveText = screen.queryByText('Move');
 
-    expect(itemSelectedText).toBeInTheDOM();
-    expect(moveText).toBeInTheDOM();
+    expect(itemSelectedText).toBeDefined();
+    expect(moveText).toBeDefined();
 
     fireEvent.click(checkbox);
 
@@ -352,8 +352,8 @@ describe('HierarchyList', () => {
     const itemSelectedText = screen.queryByText('2 items selected');
     const moveText = screen.queryByText('Move');
 
-    expect(itemSelectedText).toBeInTheDOM();
-    expect(moveText).toBeInTheDOM();
+    expect(itemSelectedText).toBeDefined();
+    expect(moveText).toBeDefined();
 
     fireEvent.click(moveText);
 
