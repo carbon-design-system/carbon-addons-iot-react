@@ -1,0 +1,178 @@
+.#{$iot-prefix}--suite-header-profile {
+  background-color: $ui-05;
+  color: $inverse-01;
+  width: 100%;
+  padding: $spacing-05;
+
+  h5 {
+    margin-bottom: $spacing-04;
+  }
+
+  &--user {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-05;
+
+    &--chip {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: $ui-03;
+      color: $text-01;
+      text-align: center;
+      line-height: 2rem;
+    }
+
+    &--detail {
+      flex: 1;
+      padding-left: 1rem;
+    }
+  }
+
+  &--manage-button {
+    padding-bottom: 2.5rem;
+
+    .#{$prefix}--btn {
+      border: solid 1px $inverse-01;
+      background-color: $ui-05;
+
+      &:hover {
+        background-color: $ui-03;
+      }
+    }
+  }
+
+  &--logout {
+    margin: -1rem;
+
+    .#{$prefix}--btn {
+      width: 100%;
+    }
+  }
+}
+
+.#{$iot-prefix}--suite-header-app-switcher {
+  padding-top: 0;
+
+  li {
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: $spacing-05;
+  }
+
+  &--nav-link {
+    border-bottom: solid 1px $ui-03;
+
+    a {
+      text-decoration: none;
+      color: $text-02;
+
+      &:hover {
+        background-color: $hover-ui;
+      }
+
+      svg {
+        margin-right: $spacing-03;
+      }
+    }
+  }
+
+  &--app-link {
+    a {
+      @include type-style('productive-heading-01');
+      text-decoration: none;
+      color: $text-02;
+
+      &:hover {
+        background-color: $hover-ui;
+      }
+    }
+  }
+
+  &--no-app {
+    padding: $layout-05 $spacing-07 $spacing-05;
+    .bee-icon-container {
+      display: block;
+      svg {
+        display: inherit;
+      }
+      .bee-shadow {
+        background-color: $ui-03;
+        height: $spacing-03;
+        width: $spacing-07;
+        border-radius: 50%;
+        margin-top: $spacing-02;
+      }
+    }
+    span {
+      @include type-style('body-short-01');
+      color: $text-01;
+      padding-top: $spacing-05;
+    }
+    a {
+      text-decoration: none;
+      padding: 0;
+      margin: $spacing-05 0;
+    }
+  }
+}
+
+.#{$iot-prefix}--suite-header {
+  button.admin-icon {
+    .#{$prefix}--tooltip__trigger svg {
+      fill: $ui-01;
+    }
+  }
+  button.admin-icon__selected {
+    background-color: $interactive-02;
+    border: none;
+    border-bottom: $spacing-01 solid $ui-01;
+    padding-top: $spacing-01;
+  }
+
+  .#{$prefix}--header__global {
+    position: relative;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .#{$prefix}--header__menu {
+    div.#{$prefix}--header__menu-item {
+      padding: 0;
+      border: none;
+      color: $text-02;
+      background-color: $ui-background;
+
+      &:hover {
+        background-color: inherit;
+        color: inherit;
+      }
+
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+    }
+
+    a.#{$prefix}--header__menu-item {
+      padding: $spacing-05;
+
+      &:hover {
+        color: $text-04;
+      }
+    }
+  }
+
+  .bx--header__menu-title[role='menuitem'][aria-expanded='true'] + .bx--header__menu {
+    width: 16rem;
+  }
+}

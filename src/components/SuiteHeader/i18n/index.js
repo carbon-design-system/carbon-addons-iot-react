@@ -1,0 +1,28 @@
+const SuiteHeaderI18N = {
+  en: {
+    help: 'Help',
+    profileTitle: 'Profile',
+    profileManageButton: 'Manage profile',
+    profileLogoutButton: 'Log out',
+    logout: 'Logout',
+    userIcon: 'User',
+    administrationIcon: 'Administration',
+    settingsIcon: 'Settings',
+    profileLogoutModalHeading: 'Do you wish to log out?',
+    profileLogoutModalSecondaryButton: 'Cancel',
+    profileLogoutModalPrimaryButton: 'Log out',
+    profileLogoutModalBody: (suiteName, userName) =>
+      `You are logged in to ${suiteName} as ${userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.`,
+    switcherNavigatorLink: 'All applications',
+    switcherLearnMoreLink: 'Learn more',
+    switcherRequestAccess: 'Contact your administrator to request application access',
+    whatsNew: "What's new",
+    documentation: 'Documentation',
+    requestEnhancement: 'Request enhancement',
+    about: 'About',
+    support: 'Support',
+    gettingStarted: 'Getting started',
+  },
+};
+
+export default SuiteHeaderI18N;
