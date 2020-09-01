@@ -7,7 +7,7 @@ import {
   // SideNavSwitcher,
 } from 'carbon-components-react/es/components/UIShell';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -79,6 +79,9 @@ const defaultProps = {
 /**
  * Side Navigation. part of UI shell
  */
+
+const buttonBindings = [];
+
 const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) => {
   const nav = links
     .map(link => {
@@ -86,54 +89,20 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
       if (!enabled) {
         return null;
       }
-      if (link.hasOwnProperty('childContent')) {
-        let parentActive = false;
-        const children = link.childContent.map(childlink => {
-          if (childlink.isActive) {
-            parentActive = true;
-          }
-          return (
-            <SideNavMenuItem
-              key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
-              isActive={childlink.isActive}
-              {...childlink.metaData}
-            >
-              {childlink.content}
-            </SideNavMenuItem>
-          );
-        });
-        return (
-          <SideNavMenu
-            isActive={parentActive}
-            renderIcon={link.icon}
-            aria-label="dropdown"
-            key={`menu-link-${links.indexOf(link)}-dropdown`}
-            title={link.linkContent}
-            large
-          >
-            {children}
-          </SideNavMenu>
-        );
-      }
-      return (
-        <SideNavLink
-          key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
-          aria-label={link.metaData.label}
-          onClick={link.metaData.onClick}
-          href={link.metaData.href}
-          renderIcon={link.icon}
-          isActive={link.isActive}
-          {...link.metaData}
-          large
-        >
-          {link.linkContent}
-        </SideNavLink>
-      );
+      return getChildren(links, link);
     })
     .filter(i => i);
 
   const translateById = id =>
     id !== 'carbon.sidenav.state.closed' ? i18n.closeText : i18n.openText;
+
+  useEffect(() => {
+    buttonBindings.forEach(binding => {
+      binding.buttonref.current.addEventListener('click', e => {
+        binding.callback();
+      });
+    });
+  });
 
   return (
     <CarbonSideNav
@@ -151,6 +120,75 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, ...props }) 
     </CarbonSideNav>
   );
 };
+
+function getChildren(links, link) {
+  if (link.hasOwnProperty('childContent')) {
+    let parentActive = false;
+    const children = link.childContent.map(childlink => {
+      if (childlink.isActive) {
+        parentActive = true;
+      }
+
+      if (childlink.hasOwnProperty('childContent')) {
+        return getChildren(links, childlink);
+      }
+      return (
+        <SideNavMenuItem
+          key={`menu-link-${link.childContent.indexOf(childlink)}-child`}
+          isActive={childlink.isActive}
+          {...childlink.metaData}
+        >
+          {childlink.content}
+        </SideNavMenuItem>
+      );
+    });
+
+    if (link.metaData && link.metaData.onclick) {
+      const buttonref = useRef(null);
+      buttonBindings.push({ buttonref: buttonref, callback: link.metaData.onclick });
+
+      return (
+        <SideNavMenu
+          isActive={parentActive}
+          renderIcon={link.icon}
+          aria-label="dropdown"
+          key={`menu-link-${links.indexOf(link)}-dropdown`}
+          title={link.linkContent}
+          large
+          ref={buttonref}
+        >
+          {children}
+        </SideNavMenu>
+      );
+    } else
+      return (
+        <SideNavMenu
+          isActive={parentActive}
+          renderIcon={link.icon}
+          aria-label="dropdown"
+          key={`menu-link-${links.indexOf(link)}-dropdown`}
+          title={link.linkContent}
+          large
+        >
+          {children}
+        </SideNavMenu>
+      );
+  } else
+    return (
+      <SideNavLink
+        key={`menu-link-${link.metaData.label.replace(/\s/g, '')}-global`}
+        aria-label={link.metaData.label}
+        onClick={link.metaData.onClick}
+        href={link.metaData.href}
+        renderIcon={link.icon}
+        isActive={link.isActive}
+        {...link.metaData}
+        large
+      >
+        {link.linkContent}
+      </SideNavLink>
+    );
+}
 
 SideNav.propTypes = propTypes;
 SideNav.defaultProps = defaultProps;
