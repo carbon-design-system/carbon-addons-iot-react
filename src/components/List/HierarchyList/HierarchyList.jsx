@@ -168,6 +168,43 @@ export const searchForNestedItemIds = (items, value) => {
   return filteredItems;
 };
 
+/* this component is only used internally where props are defined and set. */
+const BulkActionHeader = ({
+  className,
+  i18n /* eslint-disable-line react/prop-types */,
+  editModeSelectedIds /* eslint-disable-line react/prop-types */,
+  cancelMoveClicked /* eslint-disable-line react/prop-types */,
+  setShowModal /* eslint-disable-line react/prop-types */,
+}) => (
+  <div className={className}>
+    <div className={`${iotPrefix}--hierarchy-list-bulk-header--title`}>
+      {editModeSelectedIds.length > 1
+        ? i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
+        : i18n.itemSelected.replace('%d', editModeSelectedIds.length)}
+    </div>
+    <div className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>
+      <Button
+        className={`${iotPrefix}--hierarchy-list-bulk-header--button`}
+        renderIcon={Move16}
+        onClick={() => {
+          setShowModal(true);
+        }}
+      >
+        {i18n.move}
+      </Button>
+
+      <div className={`${iotPrefix}--hierarchy-list-bulk-header--divider`} />
+
+      <Button
+        className={`${iotPrefix}--hierarchy-list-bulk-header--button-no-icon`}
+        onClick={cancelMoveClicked}
+      >
+        {i18n.cancel}
+      </Button>
+    </div>
+  </div>
+);
+
 const HierarchyList = ({
   editingStyle,
   title,
@@ -293,38 +330,6 @@ const HierarchyList = ({
     pageOfPagesText: page => `Page ${page}`,
   };
 
-  const headerOverride = () => {
-    return editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
-      <div className={`${iotPrefix}--hierarchy-list-bulk-header`}>
-        <div className={`${iotPrefix}--hierarchy-list-bulk-header--title`}>
-          {editModeSelectedIds.length > 1
-            ? i18n.itemsSelected.replace('%d', editModeSelectedIds.length)
-            : i18n.itemSelected.replace('%d', editModeSelectedIds.length)}
-        </div>
-        <div className={`${iotPrefix}--hierarchy-list-bulk-header--button-container`}>
-          <Button
-            className={`${iotPrefix}--hierarchy-list-bulk-header--button`}
-            renderIcon={Move16}
-            onClick={() => {
-              setShowModal(true);
-            }}
-          >
-            {i18n.move}
-          </Button>
-
-          <div className={`${iotPrefix}--hierarchy-list-bulk-header--divider`} />
-
-          <Button
-            className={`${iotPrefix}--hierarchy-list-bulk-header--button-no-icon`}
-            onClick={cancelMoveClicked}
-          >
-            {i18n.cancel}
-          </Button>
-        </div>
-      </div>
-    ) : null;
-  };
-
   /**
    * Once the array is finished, the category needs to be expanded to show
    * the found results and the filter children array needs to be added to
@@ -415,7 +420,21 @@ const HierarchyList = ({
             setExpandedIds(expandedIds.concat([id]));
           }
         }}
-        headerOverride={headerOverride()}
+        overrides={{
+          header: {
+            component:
+              editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0
+                ? BulkActionHeader
+                : null,
+            props: {
+              i18n,
+              editModeSelectedIds,
+              cancelMoveClicked,
+              setShowModal,
+              className: `${iotPrefix}--hierarchy-list-bulk-header`,
+            },
+          },
+        }}
         i18n={i18n}
         pagination={hasPagination ? pagination : null}
         isFullHeight={isFullHeight}

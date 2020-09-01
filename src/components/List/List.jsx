@@ -9,9 +9,10 @@ import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination
 import { SkeletonText } from '../SkeletonText';
 import { EditingStyle, editingStyleIsMultiple } from '../../utils/DragAndDropUtils';
 import { Checkbox } from '../..';
+import { OverridePropTypes } from '../../constants/SharedPropTypes';
 
 import ListItem from './ListItem/ListItem';
-import ListHeader from './ListHeader/ListHeader';
+import DefaultListHeader from './ListHeader/ListHeader';
 
 const { iotPrefix } = settings;
 
@@ -40,7 +41,9 @@ const propTypes = {
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** Node to override the default header */
-  headerOverride: PropTypes.node,
+  overrides: PropTypes.shape({
+    header: OverridePropTypes,
+  }),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(itemPropTypes)).isRequired,
   /** list editing style */
@@ -86,7 +89,7 @@ const defaultProps = {
   search: null,
   buttons: [],
   editingStyle: null,
-  headerOverride: null,
+  overrides: null,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -121,7 +124,7 @@ const List = forwardRef((props, ref) => {
     selectedIds,
     expandedIds,
     handleSelect,
-    headerOverride,
+    overrides,
     toggleExpansion,
     iconPosition,
     editingStyle,
@@ -131,6 +134,7 @@ const List = forwardRef((props, ref) => {
     itemWillMove,
   } = props;
   const selectedItemRef = ref;
+  const ListHeader = overrides?.header?.component || DefaultListHeader;
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item.children && item.children.length > 0;
     const isSelected = selectedIds.some(id => item.id === id);
@@ -204,16 +208,16 @@ const List = forwardRef((props, ref) => {
         [`${iotPrefix}--list__full-height`]: isFullHeight,
       })}
     >
-      {headerOverride ?? (
-        <ListHeader
-          className={`${iotPrefix}--list--header`}
-          title={title}
-          buttons={buttons}
-          search={search}
-          i18n={i18n}
-          isLoading={isLoading}
-        />
-      )}
+      <ListHeader
+        className={classnames(`${iotPrefix}--list--header`, overrides?.header?.props?.className)}
+        title={title}
+        buttons={buttons}
+        search={search}
+        i18n={i18n}
+        isLoading={isLoading}
+        {...overrides?.header?.props}
+      />
+
       <div
         className={classnames(
           {

@@ -14030,17 +14030,6 @@ Map {
               "name": "func",
             },
           },
-          "headerOverride": Object {
-            "defaultValue": Object {
-              "computed": false,
-              "value": "null",
-            },
-            "description": "Node to override the default header",
-            "required": false,
-            "type": Object {
-              "name": "node",
-            },
-          },
           "i18n": Object {
             "defaultValue": Object {
               "computed": false,
@@ -14197,6 +14186,24 @@ Map {
               "name": "func",
             },
           },
+          "overrides": Object {
+            "defaultValue": Object {
+              "computed": false,
+              "value": "null",
+            },
+            "description": "Node to override the default header",
+            "required": false,
+            "type": Object {
+              "name": "shape",
+              "value": Object {
+                "header": Object {
+                  "name": "custom",
+                  "raw": "OverridePropTypes",
+                  "required": false,
+                },
+              },
+            },
+          },
           "pagination": Object {
             "defaultValue": Object {
               "computed": false,
@@ -14275,7 +14282,6 @@ Map {
         "editingStyle": null,
         "expandedIds": Array [],
         "handleSelect": [Function],
-        "headerOverride": null,
         "i18n": Object {
           "close": "Close",
           "expand": "Expand",
@@ -14287,6 +14293,7 @@ Map {
         "isLoading": false,
         "itemWillMove": [Function],
         "onItemMoved": [Function],
+        "overrides": null,
         "pagination": null,
         "search": null,
         "selectedIds": Array [],
@@ -14326,9 +14333,6 @@ Map {
         },
         "handleSelect": Object {
           "type": "func",
-        },
-        "headerOverride": Object {
-          "type": "node",
         },
         "i18n": Object {
           "args": Array [
@@ -14417,6 +14421,26 @@ Map {
         },
         "onItemMoved": Object {
           "type": "func",
+        },
+        "overrides": Object {
+          "args": Array [
+            Object {
+              "header": Object {
+                "args": Array [
+                  Object {
+                    "component": Object {
+                      "type": "elementType",
+                    },
+                    "props": Object {
+                      "type": "object",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+            },
+          ],
+          "type": "shape",
         },
         "pagination": Object {
           "args": Array [
