@@ -2072,7 +2072,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                 <div
                   className="iot--list-item-editable--drag-preview"
                 >
-                  Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto
+                  Michael Conforto is a super duper long name that will get cut off
                 </div>
                 <svg
                   aria-hidden={true}
@@ -2109,9 +2109,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                     >
                       <div
                         className="iot--list-item--content--values--value"
-                        title="Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto"
+                        title="Michael Conforto is a super duper long name that will get cut off"
                       >
-                        Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto
+                        Michael Conforto is a super duper long name that will get cut off
                       </div>
                     </div>
                   </div>
@@ -4527,9 +4527,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT Exper
                   >
                     <div
                       className="iot--list-item--content--values--value"
-                      title="Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto"
+                      title="Michael Conforto is a super duper long name that will get cut off"
                     >
-                      Michael ConfortoMichael ConfortoMichael ConfortoMichael Conforto
+                      Michael Conforto is a super duper long name that will get cut off
                     </div>
                   </div>
                 </div>
