@@ -12,7 +12,7 @@ const getFatRowListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: (idx + 1).toString(),
+      id: `${idx + 1}`,
       content: {
         value: `Item ${idx + 1}`,
         secondaryValue: `This is a description or some secondary bit of data for Item ${idx + 100}`,
@@ -24,7 +24,7 @@ const getListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: `${idx + 1}`,
       content: { value: `Item ${idx + 1}` },
       isSelectable: true,
     }));
@@ -33,7 +33,7 @@ const getEmptyListItems = num =>
   Array(num)
     .fill(0)
     .map((i, idx) => ({
-      id: idx + 1,
+      id: `${idx + 1}`,
       content: {},
       isSelectable: true,
     }));
@@ -103,33 +103,33 @@ describe('SimpleList', () => {
 
   it('SimpleList when hasSearch', () => {
     render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '5' } });
     expect(screen.getByTitle('Item 5')).toBeTruthy();
     expect(screen.queryByTitle('Item 1')).toBeFalsy();
   });
 
   it('SimpleList when hasSearch and item values are empty', () => {
     render(<SimpleList title="Simple list" hasSearch items={getEmptyListItems(5)} />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '5' } });
     expect(screen.queryByTitle('Item 1')).toBeFalsy();
   });
 
   it('SimpleList when hasSearch and pagination', () => {
     render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} pageSize="sm" />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '5' } });
     expect(screen.getByTitle('Item 5')).toBeTruthy();
     expect(screen.queryByTitle('Item 1')).toBeFalsy();
   });
 
   it('SimpleList when search large row', () => {
     render(<SimpleList title="Simple list" hasSearch items={getFatRowListItems(5)} />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: '5' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '5' } });
     expect(screen.getByTitle('Item 5')).toBeTruthy();
   });
 
   it('SimpleList when search term is empty should return all items', () => {
     render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: ' ' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: ' ' } });
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
     expect(screen.getByTitle('Item 3')).toBeTruthy();
@@ -139,7 +139,7 @@ describe('SimpleList', () => {
 
   it('SimpleList when search input is undefined should return all items', () => {
     render(<SimpleList title="Simple list" hasSearch items={getListItems(5)} />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0]);
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'));
     expect(screen.getByTitle('Item 1')).toBeTruthy();
     expect(screen.getByTitle('Item 2')).toBeTruthy();
     expect(screen.getByTitle('Item 3')).toBeTruthy();

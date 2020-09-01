@@ -100,7 +100,6 @@ const CardToolbar = ({
                 onCardAction(CARD_ACTIONS.EDIT_CARD);
               }}
               itemText={i18n.editCardLabel}
-              primaryFocus
             />
           )}
           {availableActions.clone && (

@@ -191,7 +191,7 @@ describe('HierarchyList', () => {
 
   it('found search result categories should be expanded', () => {
     render(<HierarchyList items={items} hasSearch title="Hierarchy List" pageSize="lg" />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: 'jd' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: 'jd' } });
 
     // Category containing value should appear
     expect(screen.getByTitle('New York Mets')).toBeInTheDocument();
@@ -207,7 +207,7 @@ describe('HierarchyList', () => {
 
   it('all items should return if search value is empty string', () => {
     render(<HierarchyList items={items} hasSearch title="Hierarchy List" />);
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], {
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), {
       target: { value: 'jd davis' },
     });
 
@@ -223,7 +223,7 @@ describe('HierarchyList', () => {
     expect(screen.getByTitle('JD Davis')).toBeInTheDocument();
 
     // Change search to empty string
-    fireEvent.change(screen.getAllByLabelText('Enter a value')[0], { target: { value: '' } });
+    fireEvent.change(screen.getByPlaceholderText('Enter a value'), { target: { value: '' } });
 
     // All categories should appear
     expect(screen.getByTitle('New York Mets')).toBeInTheDocument();

@@ -31,7 +31,7 @@ const rowActions = [
 
 const rowActionsOverFlowMenu = [
   <OverflowMenu flipped key="simple-list-overflow-menu">
-    <OverflowMenuItem itemText="Edit" primaryFocus />
+    <OverflowMenuItem itemText="Edit" />
     <OverflowMenuItem itemText="Add" />
     <OverflowMenuItem itemText="Delete" />
     <OverflowMenuItem itemText="Danger option" hasDivider isDelete />

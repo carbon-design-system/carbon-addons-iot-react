@@ -34,6 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
             className="iot-simple-pagination-caret-disabled"
             description="Prev page"
             dir="ltr"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
@@ -58,6 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots Watson IoT/Simpl
             className="iot-simple-pagination-caret"
             description="Next page"
             dir="ltr"
+            fill="currentColor"
             focusable="false"
             height={16}
             preserveAspectRatio="xMidYMid meet"
